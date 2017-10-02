@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * FeatureFlagConfigFallthrough
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-02T17:44:21.439-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-02T17:48:52.608-05:00")
 public class FeatureFlagConfigFallthrough {
   @SerializedName("variation")
   private Integer variation = null;
