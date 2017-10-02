@@ -16,7 +16,7 @@ package io.swagger.client.api;
 import io.swagger.client.ApiException;
 import io.swagger.client.model.PatchDelta;
 import io.swagger.client.model.Webhook;
-import io.swagger.client.model.WebhookPost;
+import io.swagger.client.model.WebhookBody;
 import io.swagger.client.model.Webhooks;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -45,8 +45,8 @@ public class WebhooksApiTest {
      */
     @Test
     public void deleteWebhookTest() throws ApiException {
-        String webhookId = null;
-        api.deleteWebhook(webhookId);
+        String resourceId = null;
+        api.deleteWebhook(resourceId);
 
         // TODO: test validations
     }
@@ -61,8 +61,8 @@ public class WebhooksApiTest {
      */
     @Test
     public void getWebhookTest() throws ApiException {
-        String webhookId = null;
-        Webhook response = api.getWebhook(webhookId);
+        String resourceId = null;
+        Webhook response = api.getWebhook(resourceId);
 
         // TODO: test validations
     }
@@ -92,9 +92,9 @@ public class WebhooksApiTest {
      */
     @Test
     public void patchWebhookTest() throws ApiException {
-        String webhookId = null;
+        String resourceId = null;
         List<PatchDelta> patchDelta = null;
-        api.patchWebhook(webhookId, patchDelta);
+        Webhook response = api.patchWebhook(resourceId, patchDelta);
 
         // TODO: test validations
     }
@@ -109,8 +109,8 @@ public class WebhooksApiTest {
      */
     @Test
     public void postWebhookTest() throws ApiException {
-        WebhookPost webhookPost = null;
-        api.postWebhook(webhookPost);
+        WebhookBody webhookBody = null;
+        api.postWebhook(webhookBody);
 
         // TODO: test validations
     }

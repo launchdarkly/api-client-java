@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Link
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-02T17:24:56.662-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-02T17:44:21.439-05:00")
 public class Link {
   @SerializedName("href")
   private String href = null;
