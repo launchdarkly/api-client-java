@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PatchDelta
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-09-08T15:00:05.263-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-02T17:24:56.662-05:00")
 public class PatchDelta {
   @SerializedName("op")
   private String op = null;

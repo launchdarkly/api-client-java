@@ -4,16 +4,16 @@ All URIs are relative to *https://app.launchdarkly.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteWebhook**](WebhooksApi.md#deleteWebhook) | **DELETE** /webhooks/{webhookId} | Delete a webhook by ID
-[**getWebhook**](WebhooksApi.md#getWebhook) | **GET** /webhooks/{webhookId} | Get a webhook by ID
+[**deleteWebhook**](WebhooksApi.md#deleteWebhook) | **DELETE** /webhooks/{resourceId} | Delete a webhook by ID
+[**getWebhook**](WebhooksApi.md#getWebhook) | **GET** /webhooks/{resourceId} | Get a webhook by ID
 [**getWebhooks**](WebhooksApi.md#getWebhooks) | **GET** /webhooks | Fetch a list of all webhooks
-[**patchWebhook**](WebhooksApi.md#patchWebhook) | **PATCH** /webhooks/{webhookId} | Modify a webhook by ID
+[**patchWebhook**](WebhooksApi.md#patchWebhook) | **PATCH** /webhooks/{resourceId} | Modify a webhook by ID
 [**postWebhook**](WebhooksApi.md#postWebhook) | **POST** /webhooks | Create a webhook
 
 
 <a name="deleteWebhook"></a>
 # **deleteWebhook**
-> deleteWebhook(webhookId)
+> deleteWebhook(resourceId)
 
 Delete a webhook by ID
 
@@ -35,9 +35,9 @@ Token.setApiKey("YOUR API KEY");
 //Token.setApiKeyPrefix("Token");
 
 WebhooksApi apiInstance = new WebhooksApi();
-String webhookId = "webhookId_example"; // String | The webhook ID
+String resourceId = "resourceId_example"; // String | The resource ID
 try {
-    apiInstance.deleteWebhook(webhookId);
+    apiInstance.deleteWebhook(resourceId);
 } catch (ApiException e) {
     System.err.println("Exception when calling WebhooksApi#deleteWebhook");
     e.printStackTrace();
@@ -48,7 +48,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhookId** | **String**| The webhook ID |
+ **resourceId** | **String**| The resource ID |
 
 ### Return type
 
@@ -65,7 +65,7 @@ null (empty response body)
 
 <a name="getWebhook"></a>
 # **getWebhook**
-> Webhook getWebhook(webhookId)
+> Webhook getWebhook(resourceId)
 
 Get a webhook by ID
 
@@ -87,9 +87,9 @@ Token.setApiKey("YOUR API KEY");
 //Token.setApiKeyPrefix("Token");
 
 WebhooksApi apiInstance = new WebhooksApi();
-String webhookId = "webhookId_example"; // String | The webhook ID
+String resourceId = "resourceId_example"; // String | The resource ID
 try {
-    Webhook result = apiInstance.getWebhook(webhookId);
+    Webhook result = apiInstance.getWebhook(resourceId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WebhooksApi#getWebhook");
@@ -101,7 +101,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhookId** | **String**| The webhook ID |
+ **resourceId** | **String**| The resource ID |
 
 ### Return type
 
@@ -167,7 +167,7 @@ This endpoint does not need any parameter.
 
 <a name="patchWebhook"></a>
 # **patchWebhook**
-> patchWebhook(webhookId, patchDelta)
+> Webhook patchWebhook(resourceId, patchDelta)
 
 Modify a webhook by ID
 
@@ -189,10 +189,11 @@ Token.setApiKey("YOUR API KEY");
 //Token.setApiKeyPrefix("Token");
 
 WebhooksApi apiInstance = new WebhooksApi();
-String webhookId = "webhookId_example"; // String | The webhook ID
+String resourceId = "resourceId_example"; // String | The resource ID
 List<PatchDelta> patchDelta = Arrays.asList(new PatchDelta()); // List<PatchDelta> | http://jsonpatch.com/
 try {
-    apiInstance.patchWebhook(webhookId, patchDelta);
+    Webhook result = apiInstance.patchWebhook(resourceId, patchDelta);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WebhooksApi#patchWebhook");
     e.printStackTrace();
@@ -203,12 +204,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhookId** | **String**| The webhook ID |
+ **resourceId** | **String**| The resource ID |
  **patchDelta** | [**List&lt;PatchDelta&gt;**](PatchDelta.md)| http://jsonpatch.com/ |
 
 ### Return type
 
-null (empty response body)
+[**Webhook**](Webhook.md)
 
 ### Authorization
 
@@ -221,7 +222,7 @@ null (empty response body)
 
 <a name="postWebhook"></a>
 # **postWebhook**
-> postWebhook(webhookPost)
+> postWebhook(webhookBody)
 
 Create a webhook
 
@@ -243,9 +244,9 @@ Token.setApiKey("YOUR API KEY");
 //Token.setApiKeyPrefix("Token");
 
 WebhooksApi apiInstance = new WebhooksApi();
-WebhookPost webhookPost = new WebhookPost(); // WebhookPost | New webhook
+WebhookBody webhookBody = new WebhookBody(); // WebhookBody | New webhook
 try {
-    apiInstance.postWebhook(webhookPost);
+    apiInstance.postWebhook(webhookBody);
 } catch (ApiException e) {
     System.err.println("Exception when calling WebhooksApi#postWebhook");
     e.printStackTrace();
@@ -256,7 +257,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhookPost** | [**WebhookPost**](WebhookPost.md)| New webhook |
+ **webhookBody** | [**WebhookBody**](WebhookBody.md)| New webhook |
 
 ### Return type
 

@@ -27,31 +27,10 @@ import java.io.IOException;
 /**
  * Links
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-09-08T15:00:05.263-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-02T17:24:56.662-05:00")
 public class Links {
-  @SerializedName("parent")
-  private Link parent = null;
-
   @SerializedName("self")
   private Link self = null;
-
-  public Links parent(Link parent) {
-    this.parent = parent;
-    return this;
-  }
-
-   /**
-   * Get parent
-   * @return parent
-  **/
-  @ApiModelProperty(value = "")
-  public Link getParent() {
-    return parent;
-  }
-
-  public void setParent(Link parent) {
-    this.parent = parent;
-  }
 
   public Links self(Link self) {
     this.self = self;
@@ -81,13 +60,12 @@ public class Links {
       return false;
     }
     Links links = (Links) o;
-    return Objects.equals(this.parent, links.parent) &&
-        Objects.equals(this.self, links.self);
+    return Objects.equals(this.self, links.self);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(parent, self);
+    return Objects.hash(self);
   }
 
 
@@ -96,7 +74,6 @@ public class Links {
     StringBuilder sb = new StringBuilder();
     sb.append("class Links {\n");
     
-    sb.append("    parent: ").append(toIndentedString(parent)).append("\n");
     sb.append("    self: ").append(toIndentedString(self)).append("\n");
     sb.append("}");
     return sb.toString();
