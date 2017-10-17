@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Links
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-02T18:49:13.486-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-17T14:52:38.201-07:00")
 public class Links {
   @SerializedName("self")
   private Link self = null;
