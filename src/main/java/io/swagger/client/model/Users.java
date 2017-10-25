@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * Users
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-25T12:45:40.194-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-25T12:47:59.743-07:00")
 public class Users {
   @SerializedName("_links")
   private Links links = null;

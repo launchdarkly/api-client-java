@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * WeightedVariation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-25T12:45:40.194-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-25T12:47:59.743-07:00")
 public class WeightedVariation {
   @SerializedName("variation")
   private Integer variation = null;
