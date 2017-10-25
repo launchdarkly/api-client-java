@@ -263,7 +263,7 @@ public class EnvironmentsApi {
     }
 
     /**
-     * Get an environment by key.
+     * Get an environment given a project and key.
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param environmentKey The environment key (required)
@@ -276,7 +276,7 @@ public class EnvironmentsApi {
     }
 
     /**
-     * Get an environment by key.
+     * Get an environment given a project and key.
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param environmentKey The environment key (required)
@@ -290,7 +290,7 @@ public class EnvironmentsApi {
     }
 
     /**
-     * Get an environment by key. (asynchronously)
+     * Get an environment given a project and key. (asynchronously)
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param environmentKey The environment key (required)
@@ -539,7 +539,7 @@ public class EnvironmentsApi {
     }
 
     /**
-     * Create an environment
+     * Create a new environment in a specified project with a given name, key, and swatch color.
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param environmentBody New environment (required)
@@ -550,7 +550,7 @@ public class EnvironmentsApi {
     }
 
     /**
-     * Create an environment
+     * Create a new environment in a specified project with a given name, key, and swatch color.
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param environmentBody New environment (required)
@@ -563,7 +563,7 @@ public class EnvironmentsApi {
     }
 
     /**
-     * Create an environment (asynchronously)
+     * Create a new environment in a specified project with a given name, key, and swatch color. (asynchronously)
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param environmentBody New environment (required)

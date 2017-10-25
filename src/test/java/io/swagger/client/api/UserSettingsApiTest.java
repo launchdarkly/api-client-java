@@ -54,7 +54,7 @@ public class UserSettingsApiTest {
     }
     
     /**
-     * Lists the current flag settings for a given user.
+     * Fetch a single flag setting for a user by key.
      *
      * 
      *

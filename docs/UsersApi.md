@@ -5,9 +5,9 @@ All URIs are relative to *https://app.launchdarkly.com/api/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteUser**](UsersApi.md#deleteUser) | **DELETE** /users/{projectKey}/{environmentKey}/{userKey} | Delete a user by ID
-[**getSearchUsers**](UsersApi.md#getSearchUsers) | **GET** /user-search/{projectKey}/{environmentKey} | Search users in LaunchDarkly based on their last active date, or a search query.
+[**getSearchUsers**](UsersApi.md#getSearchUsers) | **GET** /user-search/{projectKey}/{environmentKey} | Search users in LaunchDarkly based on their last active date, or a search query. It should not be used to enumerate all users in LaunchDarkly-- use the List users API resource.
 [**getUser**](UsersApi.md#getUser) | **GET** /users/{projectKey}/{environmentKey}/{userKey} | Get a user by key.
-[**getUsers**](UsersApi.md#getUsers) | **GET** /users/{projectKey}/{environmentKey} | List all users in the environment.
+[**getUsers**](UsersApi.md#getUsers) | **GET** /users/{projectKey}/{environmentKey} | List all users in the environment. Includes the total count of users. In each page, there will be up to &#39;limit&#39; users returned (default 20). This is useful for exporting all users in the system for further analysis. Paginated collections will include a next link containing a URL with the next set of elements in the collection.
 
 
 <a name="deleteUser"></a>
@@ -70,7 +70,7 @@ null (empty response body)
 # **getSearchUsers**
 > Users getSearchUsers(projectKey, environmentKey, q, limit, offset, after)
 
-Search users in LaunchDarkly based on their last active date, or a search query.
+Search users in LaunchDarkly based on their last active date, or a search query. It should not be used to enumerate all users in LaunchDarkly-- use the List users API resource.
 
 ### Example
 ```java
@@ -95,7 +95,7 @@ String environmentKey = "environmentKey_example"; // String | The environment ke
 String q = "q_example"; // String | Search query
 BigDecimal limit = new BigDecimal(); // BigDecimal | Pagination limit
 BigDecimal offset = new BigDecimal(); // BigDecimal | Specifies the first item to return in the collection
-BigDecimal after = new BigDecimal(); // BigDecimal | A unix epoch time in milliseconds specifying the maximum last time a user requested a feature flag
+Long after = 789L; // Long | A unix epoch time in milliseconds specifying the maximum last time a user requested a feature flag
 try {
     Users result = apiInstance.getSearchUsers(projectKey, environmentKey, q, limit, offset, after);
     System.out.println(result);
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
  **q** | **String**| Search query | [optional]
  **limit** | **BigDecimal**| Pagination limit | [optional]
  **offset** | **BigDecimal**| Specifies the first item to return in the collection | [optional]
- **after** | **BigDecimal**| A unix epoch time in milliseconds specifying the maximum last time a user requested a feature flag | [optional]
+ **after** | **Long**| A unix epoch time in milliseconds specifying the maximum last time a user requested a feature flag | [optional]
 
 ### Return type
 
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 # **getUsers**
 > Users getUsers(projectKey, environmentKey, limit)
 
-List all users in the environment.
+List all users in the environment. Includes the total count of users. In each page, there will be up to &#39;limit&#39; users returned (default 20). This is useful for exporting all users in the system for further analysis. Paginated collections will include a next link containing a URL with the next set of elements in the collection.
 
 ### Example
 ```java

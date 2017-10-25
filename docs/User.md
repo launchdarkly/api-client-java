@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**lastPing** | **String** |  |  [optional]
+**lastPing** | **Long** |  |  [optional]
 **environmentId** | **String** |  |  [optional]
 **ownerId** | **String** |  |  [optional]
 **user** | **Object** |  |  [optional]

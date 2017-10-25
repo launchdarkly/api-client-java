@@ -27,7 +27,7 @@ import java.math.BigDecimal;
 /**
  * EnvironmentBody
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-25T12:58:24.419-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-25T13:57:42.322-07:00")
 public class EnvironmentBody {
   @SerializedName("name")
   private String name = null;
@@ -47,10 +47,10 @@ public class EnvironmentBody {
   }
 
    /**
-   * Get name
+   * The name of the new environment
    * @return name
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "Development", required = true, value = "The name of the new environment")
   public String getName() {
     return name;
   }
@@ -65,10 +65,10 @@ public class EnvironmentBody {
   }
 
    /**
-   * Get key
+   * A project-unique key for the new environment
    * @return key
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "dev", required = true, value = "A project-unique key for the new environment")
   public String getKey() {
     return key;
   }
@@ -86,7 +86,7 @@ public class EnvironmentBody {
    * A color swatch (as an RGB hex value with no leading &#39;#&#39;, e.g. C8C8C8)
    * @return color
   **/
-  @ApiModelProperty(required = true, value = "A color swatch (as an RGB hex value with no leading '#', e.g. C8C8C8)")
+  @ApiModelProperty(example = "417505", required = true, value = "A color swatch (as an RGB hex value with no leading '#', e.g. C8C8C8)")
   public String getColor() {
     return color;
   }
@@ -101,10 +101,10 @@ public class EnvironmentBody {
   }
 
    /**
-   * Get defaultTtl
+   * The default TTL for the new environment
    * @return defaultTtl
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "0.0", value = "The default TTL for the new environment")
   public BigDecimal getDefaultTtl() {
     return defaultTtl;
   }

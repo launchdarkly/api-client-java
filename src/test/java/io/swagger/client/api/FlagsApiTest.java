@@ -126,7 +126,7 @@ public class FlagsApiTest {
     }
     
     /**
-     * Modify a feature flag by ID
+     * Perform a partial update to a feature.
      *
      * 
      *

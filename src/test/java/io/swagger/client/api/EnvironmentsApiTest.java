@@ -52,7 +52,7 @@ public class EnvironmentsApiTest {
     }
     
     /**
-     * Get an environment by key.
+     * Get an environment given a project and key.
      *
      * 
      *
@@ -87,7 +87,7 @@ public class EnvironmentsApiTest {
     }
     
     /**
-     * Create an environment
+     * Create a new environment in a specified project with a given name, key, and swatch color.
      *
      * 
      *

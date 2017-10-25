@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Rule
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-25T12:58:24.419-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-25T13:57:42.322-07:00")
 public class Rule {
   @SerializedName("variation")
   private Integer variation = null;

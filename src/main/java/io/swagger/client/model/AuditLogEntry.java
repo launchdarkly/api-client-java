@@ -25,12 +25,11 @@ import io.swagger.client.model.AuditLogEntryTarget;
 import io.swagger.client.model.Links;
 import io.swagger.client.model.Member;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 /**
  * AuditLogEntry
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-25T12:58:24.419-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-25T13:57:42.322-07:00")
 public class AuditLogEntry {
   @SerializedName("_links")
   private Links links = null;
@@ -39,7 +38,7 @@ public class AuditLogEntry {
   private String id = null;
 
   @SerializedName("date")
-  private BigDecimal date = null;
+  private Long date = null;
 
   @SerializedName("kind")
   private String kind = null;
@@ -98,7 +97,7 @@ public class AuditLogEntry {
     this.id = id;
   }
 
-  public AuditLogEntry date(BigDecimal date) {
+  public AuditLogEntry date(Long date) {
     this.date = date;
     return this;
   }
@@ -108,11 +107,11 @@ public class AuditLogEntry {
    * @return date
   **/
   @ApiModelProperty(value = "")
-  public BigDecimal getDate() {
+  public Long getDate() {
     return date;
   }
 
-  public void setDate(BigDecimal date) {
+  public void setDate(Long date) {
     this.date = date;
   }
 

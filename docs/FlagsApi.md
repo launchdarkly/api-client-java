@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**getFeatureFlagStatus**](FlagsApi.md#getFeatureFlagStatus) | **GET** /flag-statuses/{projectKey}/{environmentKey} | Get a list of statuses for all feature flags
 [**getFeatureFlagStatuses**](FlagsApi.md#getFeatureFlagStatuses) | **GET** /flag-statuses/{projectKey}/{environmentKey}/{featureFlagKey} | Get a list of statuses for all feature flags
 [**getFeatureFlags**](FlagsApi.md#getFeatureFlags) | **GET** /flags/{projectKey} | Get a list of all features in the given project.
-[**patchFeatureFlag**](FlagsApi.md#patchFeatureFlag) | **PATCH** /flags/{projectKey}/{featureFlagKey} | Modify a feature flag by ID
+[**patchFeatureFlag**](FlagsApi.md#patchFeatureFlag) | **PATCH** /flags/{projectKey}/{featureFlagKey} | Perform a partial update to a feature.
 [**postFeatureFlag**](FlagsApi.md#postFeatureFlag) | **POST** /flags/{projectKey} | Creates a new feature flag.
 
 
@@ -297,7 +297,7 @@ Name | Type | Description  | Notes
 # **patchFeatureFlag**
 > FeatureFlag patchFeatureFlag(projectKey, featureFlagKey, patchDelta)
 
-Modify a feature flag by ID
+Perform a partial update to a feature.
 
 ### Example
 ```java

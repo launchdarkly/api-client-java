@@ -211,7 +211,7 @@ public class UsersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getSearchUsersCall(String projectKey, String environmentKey, String q, BigDecimal limit, BigDecimal offset, BigDecimal after, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getSearchUsersCall(String projectKey, String environmentKey, String q, BigDecimal limit, BigDecimal offset, Long after, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -262,7 +262,7 @@ public class UsersApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getSearchUsersValidateBeforeCall(String projectKey, String environmentKey, String q, BigDecimal limit, BigDecimal offset, BigDecimal after, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getSearchUsersValidateBeforeCall(String projectKey, String environmentKey, String q, BigDecimal limit, BigDecimal offset, Long after, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
@@ -285,7 +285,7 @@ public class UsersApi {
     }
 
     /**
-     * Search users in LaunchDarkly based on their last active date, or a search query.
+     * Search users in LaunchDarkly based on their last active date, or a search query. It should not be used to enumerate all users in LaunchDarkly-- use the List users API resource.
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param environmentKey The environment key (required)
@@ -296,13 +296,13 @@ public class UsersApi {
      * @return Users
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Users getSearchUsers(String projectKey, String environmentKey, String q, BigDecimal limit, BigDecimal offset, BigDecimal after) throws ApiException {
+    public Users getSearchUsers(String projectKey, String environmentKey, String q, BigDecimal limit, BigDecimal offset, Long after) throws ApiException {
         ApiResponse<Users> resp = getSearchUsersWithHttpInfo(projectKey, environmentKey, q, limit, offset, after);
         return resp.getData();
     }
 
     /**
-     * Search users in LaunchDarkly based on their last active date, or a search query.
+     * Search users in LaunchDarkly based on their last active date, or a search query. It should not be used to enumerate all users in LaunchDarkly-- use the List users API resource.
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param environmentKey The environment key (required)
@@ -313,14 +313,14 @@ public class UsersApi {
      * @return ApiResponse&lt;Users&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Users> getSearchUsersWithHttpInfo(String projectKey, String environmentKey, String q, BigDecimal limit, BigDecimal offset, BigDecimal after) throws ApiException {
+    public ApiResponse<Users> getSearchUsersWithHttpInfo(String projectKey, String environmentKey, String q, BigDecimal limit, BigDecimal offset, Long after) throws ApiException {
         com.squareup.okhttp.Call call = getSearchUsersValidateBeforeCall(projectKey, environmentKey, q, limit, offset, after, null, null);
         Type localVarReturnType = new TypeToken<Users>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Search users in LaunchDarkly based on their last active date, or a search query. (asynchronously)
+     * Search users in LaunchDarkly based on their last active date, or a search query. It should not be used to enumerate all users in LaunchDarkly-- use the List users API resource. (asynchronously)
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param environmentKey The environment key (required)
@@ -332,7 +332,7 @@ public class UsersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getSearchUsersAsync(String projectKey, String environmentKey, String q, BigDecimal limit, BigDecimal offset, BigDecimal after, final ApiCallback<Users> callback) throws ApiException {
+    public com.squareup.okhttp.Call getSearchUsersAsync(String projectKey, String environmentKey, String q, BigDecimal limit, BigDecimal offset, Long after, final ApiCallback<Users> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -582,7 +582,7 @@ public class UsersApi {
     }
 
     /**
-     * List all users in the environment.
+     * List all users in the environment. Includes the total count of users. In each page, there will be up to &#39;limit&#39; users returned (default 20). This is useful for exporting all users in the system for further analysis. Paginated collections will include a next link containing a URL with the next set of elements in the collection.
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param environmentKey The environment key (required)
@@ -596,7 +596,7 @@ public class UsersApi {
     }
 
     /**
-     * List all users in the environment.
+     * List all users in the environment. Includes the total count of users. In each page, there will be up to &#39;limit&#39; users returned (default 20). This is useful for exporting all users in the system for further analysis. Paginated collections will include a next link containing a URL with the next set of elements in the collection.
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param environmentKey The environment key (required)
@@ -611,7 +611,7 @@ public class UsersApi {
     }
 
     /**
-     * List all users in the environment. (asynchronously)
+     * List all users in the environment. Includes the total count of users. In each page, there will be up to &#39;limit&#39; users returned (default 20). This is useful for exporting all users in the system for further analysis. Paginated collections will include a next link containing a URL with the next set of elements in the collection. (asynchronously)
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param environmentKey The environment key (required)

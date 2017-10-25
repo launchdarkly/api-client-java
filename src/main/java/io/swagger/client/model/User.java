@@ -26,10 +26,10 @@ import java.io.IOException;
 /**
  * User
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-25T12:58:24.419-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-25T13:57:42.322-07:00")
 public class User {
   @SerializedName("lastPing")
-  private String lastPing = null;
+  private Long lastPing = null;
 
   @SerializedName("environmentId")
   private String environmentId = null;
@@ -43,7 +43,7 @@ public class User {
   @SerializedName("avatar")
   private String avatar = null;
 
-  public User lastPing(String lastPing) {
+  public User lastPing(Long lastPing) {
     this.lastPing = lastPing;
     return this;
   }
@@ -53,11 +53,11 @@ public class User {
    * @return lastPing
   **/
   @ApiModelProperty(value = "")
-  public String getLastPing() {
+  public Long getLastPing() {
     return lastPing;
   }
 
-  public void setLastPing(String lastPing) {
+  public void setLastPing(Long lastPing) {
     this.lastPing = lastPing;
   }
 

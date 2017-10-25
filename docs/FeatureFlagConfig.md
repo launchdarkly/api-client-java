@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **archived** | **Boolean** |  |  [optional]
 **salt** | **String** |  |  [optional]
 **sel** | **String** |  |  [optional]
-**lastModified** | **Integer** |  |  [optional]
+**lastModified** | **Long** |  |  [optional]
 **version** | **Integer** |  |  [optional]
 **targets** | [**List&lt;Target&gt;**](Target.md) |  |  [optional]
 **rules** | [**List&lt;Rule&gt;**](Rule.md) |  |  [optional]

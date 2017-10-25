@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * Environment
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-25T12:58:24.419-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-25T13:57:42.322-07:00")
 public class Environment {
   @SerializedName("_links")
   private Links links = null;
@@ -81,10 +81,10 @@ public class Environment {
   }
 
    /**
-   * Get id
+   * The unique id for the environment
    * @return id
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "57ae15fc40cda6071f6c242e", value = "The unique id for the environment")
   public String getId() {
     return id;
   }
@@ -99,10 +99,10 @@ public class Environment {
   }
 
    /**
-   * Get key
+   * The key for the environment
    * @return key
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "production", value = "The key for the environment")
   public String getKey() {
     return key;
   }
@@ -117,10 +117,10 @@ public class Environment {
   }
 
    /**
-   * Get name
+   * The name of the environment
    * @return name
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "Production", value = "The name of the environment")
   public String getName() {
     return name;
   }
@@ -135,10 +135,10 @@ public class Environment {
   }
 
    /**
-   * Get apiKey
+   * The SDK key for backend LaunchDarkly SDKs
    * @return apiKey
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "XXX", value = "The SDK key for backend LaunchDarkly SDKs")
   public String getApiKey() {
     return apiKey;
   }
@@ -153,10 +153,10 @@ public class Environment {
   }
 
    /**
-   * Get mobileKey
+   * The SDK key for mobile LaunchDarkly SDKs
    * @return mobileKey
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "XXX", value = "The SDK key for mobile LaunchDarkly SDKs")
   public String getMobileKey() {
     return mobileKey;
   }
@@ -171,10 +171,10 @@ public class Environment {
   }
 
    /**
-   * Get color
+   * The swatch color for the environment
    * @return color
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "417505", value = "The swatch color for the environment")
   public String getColor() {
     return color;
   }
@@ -189,10 +189,10 @@ public class Environment {
   }
 
    /**
-   * Get defaultTtl
+   * The default TTL
    * @return defaultTtl
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "0.0", value = "The default TTL")
   public BigDecimal getDefaultTtl() {
     return defaultTtl;
   }
@@ -207,10 +207,10 @@ public class Environment {
   }
 
    /**
-   * Get secureMode
+   * Determines if this environment is in safe mode
    * @return secureMode
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "false", value = "Determines if this environment is in safe mode")
   public Boolean getSecureMode() {
     return secureMode;
   }

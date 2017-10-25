@@ -33,7 +33,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.launchdarkly</groupId>
     <artifactId>api-client</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:1.0.4"
+compile "com.launchdarkly:api-client:1.0.5"
 ```
 
 ### Others
@@ -54,7 +54,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/api-client-1.0.4.jar
+* target/api-client-1.0.5.jar
 * target/lib/*.jar
 
 ## Getting Started
@@ -104,15 +104,15 @@ Class | Method | HTTP request | Description
 *AuditLogApi* | [**getAuditLogEntries**](docs/AuditLogApi.md#getAuditLogEntries) | **GET** /auditlog | Fetch a list of all audit log entries
 *AuditLogApi* | [**getAuditLogEntry**](docs/AuditLogApi.md#getAuditLogEntry) | **GET** /auditlog/{resourceId} | Get an audit log entry by ID
 *EnvironmentsApi* | [**deleteEnvironment**](docs/EnvironmentsApi.md#deleteEnvironment) | **DELETE** /environments/{projectKey}/{environmentKey} | Delete an environment by ID
-*EnvironmentsApi* | [**getEnvironment**](docs/EnvironmentsApi.md#getEnvironment) | **GET** /environments/{projectKey}/{environmentKey} | Get an environment by key.
+*EnvironmentsApi* | [**getEnvironment**](docs/EnvironmentsApi.md#getEnvironment) | **GET** /environments/{projectKey}/{environmentKey} | Get an environment given a project and key.
 *EnvironmentsApi* | [**patchEnvironment**](docs/EnvironmentsApi.md#patchEnvironment) | **PATCH** /environments/{projectKey}/{environmentKey} | Modify an environment by ID
-*EnvironmentsApi* | [**postEnvironment**](docs/EnvironmentsApi.md#postEnvironment) | **POST** /environments/{projectKey} | Create an environment
+*EnvironmentsApi* | [**postEnvironment**](docs/EnvironmentsApi.md#postEnvironment) | **POST** /environments/{projectKey} | Create a new environment in a specified project with a given name, key, and swatch color.
 *FlagsApi* | [**deleteFeatureFlag**](docs/FlagsApi.md#deleteFeatureFlag) | **DELETE** /flags/{projectKey}/{featureFlagKey} | Delete a feature flag by ID
 *FlagsApi* | [**getFeatureFlag**](docs/FlagsApi.md#getFeatureFlag) | **GET** /flags/{projectKey}/{featureFlagKey} | Get a single feature flag by key.
 *FlagsApi* | [**getFeatureFlagStatus**](docs/FlagsApi.md#getFeatureFlagStatus) | **GET** /flag-statuses/{projectKey}/{environmentKey} | Get a list of statuses for all feature flags
 *FlagsApi* | [**getFeatureFlagStatuses**](docs/FlagsApi.md#getFeatureFlagStatuses) | **GET** /flag-statuses/{projectKey}/{environmentKey}/{featureFlagKey} | Get a list of statuses for all feature flags
 *FlagsApi* | [**getFeatureFlags**](docs/FlagsApi.md#getFeatureFlags) | **GET** /flags/{projectKey} | Get a list of all features in the given project.
-*FlagsApi* | [**patchFeatureFlag**](docs/FlagsApi.md#patchFeatureFlag) | **PATCH** /flags/{projectKey}/{featureFlagKey} | Modify a feature flag by ID
+*FlagsApi* | [**patchFeatureFlag**](docs/FlagsApi.md#patchFeatureFlag) | **PATCH** /flags/{projectKey}/{featureFlagKey} | Perform a partial update to a feature.
 *FlagsApi* | [**postFeatureFlag**](docs/FlagsApi.md#postFeatureFlag) | **POST** /flags/{projectKey} | Creates a new feature flag.
 *ProjectsApi* | [**deleteProject**](docs/ProjectsApi.md#deleteProject) | **DELETE** /projects/{projectKey} | Delete a project by ID
 *ProjectsApi* | [**getProject**](docs/ProjectsApi.md#getProject) | **GET** /projects/{projectKey} | Fetch a single project by key.
@@ -121,12 +121,12 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**postProject**](docs/ProjectsApi.md#postProject) | **POST** /projects | Create a project
 *RootApi* | [**getRoot**](docs/RootApi.md#getRoot) | **GET** / | Get the root resource
 *UserSettingsApi* | [**getUserFlagSetting**](docs/UserSettingsApi.md#getUserFlagSetting) | **GET** /users/{projectKey}/{environmentKey}/{userKey}/flags/{featureFlagKey} | Get a user by key.
-*UserSettingsApi* | [**getUserFlagSettings**](docs/UserSettingsApi.md#getUserFlagSettings) | **GET** /users/{projectKey}/{environmentKey}/{userKey}/flags | Lists the current flag settings for a given user.
+*UserSettingsApi* | [**getUserFlagSettings**](docs/UserSettingsApi.md#getUserFlagSettings) | **GET** /users/{projectKey}/{environmentKey}/{userKey}/flags | Fetch a single flag setting for a user by key.
 *UserSettingsApi* | [**putFlagSetting**](docs/UserSettingsApi.md#putFlagSetting) | **PUT** /users/{projectKey}/{environmentKey}/{userKey}/flags/{featureFlagKey} | Specifically enable or disable a feature flag for a user based on their key.
 *UsersApi* | [**deleteUser**](docs/UsersApi.md#deleteUser) | **DELETE** /users/{projectKey}/{environmentKey}/{userKey} | Delete a user by ID
-*UsersApi* | [**getSearchUsers**](docs/UsersApi.md#getSearchUsers) | **GET** /user-search/{projectKey}/{environmentKey} | Search users in LaunchDarkly based on their last active date, or a search query.
+*UsersApi* | [**getSearchUsers**](docs/UsersApi.md#getSearchUsers) | **GET** /user-search/{projectKey}/{environmentKey} | Search users in LaunchDarkly based on their last active date, or a search query. It should not be used to enumerate all users in LaunchDarkly-- use the List users API resource.
 *UsersApi* | [**getUser**](docs/UsersApi.md#getUser) | **GET** /users/{projectKey}/{environmentKey}/{userKey} | Get a user by key.
-*UsersApi* | [**getUsers**](docs/UsersApi.md#getUsers) | **GET** /users/{projectKey}/{environmentKey} | List all users in the environment.
+*UsersApi* | [**getUsers**](docs/UsersApi.md#getUsers) | **GET** /users/{projectKey}/{environmentKey} | List all users in the environment. Includes the total count of users. In each page, there will be up to &#39;limit&#39; users returned (default 20). This is useful for exporting all users in the system for further analysis. Paginated collections will include a next link containing a URL with the next set of elements in the collection.
 *WebhooksApi* | [**deleteWebhook**](docs/WebhooksApi.md#deleteWebhook) | **DELETE** /webhooks/{resourceId} | Delete a webhook by ID
 *WebhooksApi* | [**getWebhook**](docs/WebhooksApi.md#getWebhook) | **GET** /webhooks/{resourceId} | Get a webhook by ID
 *WebhooksApi* | [**getWebhooks**](docs/WebhooksApi.md#getWebhooks) | **GET** /webhooks | Fetch a list of all webhooks

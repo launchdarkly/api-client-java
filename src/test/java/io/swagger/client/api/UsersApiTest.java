@@ -53,7 +53,7 @@ public class UsersApiTest {
     }
     
     /**
-     * Search users in LaunchDarkly based on their last active date, or a search query.
+     * Search users in LaunchDarkly based on their last active date, or a search query. It should not be used to enumerate all users in LaunchDarkly-- use the List users API resource.
      *
      * 
      *
@@ -67,7 +67,7 @@ public class UsersApiTest {
         String q = null;
         BigDecimal limit = null;
         BigDecimal offset = null;
-        BigDecimal after = null;
+        Long after = null;
         Users response = api.getSearchUsers(projectKey, environmentKey, q, limit, offset, after);
 
         // TODO: test validations
@@ -92,7 +92,7 @@ public class UsersApiTest {
     }
     
     /**
-     * List all users in the environment.
+     * List all users in the environment. Includes the total count of users. In each page, there will be up to &#39;limit&#39; users returned (default 20). This is useful for exporting all users in the system for further analysis. Paginated collections will include a next link containing a URL with the next set of elements in the collection.
      *
      * 
      *

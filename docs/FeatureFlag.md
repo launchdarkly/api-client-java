@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **key** | **String** |  |  [optional]
 **name** | **String** |  |  [optional]
 **kind** | **String** |  |  [optional]
-**creationDate** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**creationDate** | **Long** |  |  [optional]
 **includeInSnippet** | **Boolean** |  |  [optional]
 **temporary** | **Boolean** |  |  [optional]
 **maintainerId** | **String** |  |  [optional]

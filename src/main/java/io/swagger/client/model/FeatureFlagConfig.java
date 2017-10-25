@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * FeatureFlagConfig
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-25T12:58:24.419-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-25T13:57:42.322-07:00")
 public class FeatureFlagConfig {
   @SerializedName("on")
   private Boolean on = null;
@@ -46,7 +46,7 @@ public class FeatureFlagConfig {
   private String sel = null;
 
   @SerializedName("lastModified")
-  private Integer lastModified = null;
+  private Long lastModified = null;
 
   @SerializedName("version")
   private Integer version = null;
@@ -132,7 +132,7 @@ public class FeatureFlagConfig {
     this.sel = sel;
   }
 
-  public FeatureFlagConfig lastModified(Integer lastModified) {
+  public FeatureFlagConfig lastModified(Long lastModified) {
     this.lastModified = lastModified;
     return this;
   }
@@ -142,11 +142,11 @@ public class FeatureFlagConfig {
    * @return lastModified
   **/
   @ApiModelProperty(value = "")
-  public Integer getLastModified() {
+  public Long getLastModified() {
     return lastModified;
   }
 
-  public void setLastModified(Integer lastModified) {
+  public void setLastModified(Long lastModified) {
     this.lastModified = lastModified;
   }
 

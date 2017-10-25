@@ -294,7 +294,7 @@ public class UserSettingsApi {
     }
 
     /**
-     * Lists the current flag settings for a given user.
+     * Fetch a single flag setting for a user by key.
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param environmentKey The environment key (required)
@@ -308,7 +308,7 @@ public class UserSettingsApi {
     }
 
     /**
-     * Lists the current flag settings for a given user.
+     * Fetch a single flag setting for a user by key.
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param environmentKey The environment key (required)
@@ -323,7 +323,7 @@ public class UserSettingsApi {
     }
 
     /**
-     * Lists the current flag settings for a given user. (asynchronously)
+     * Fetch a single flag setting for a user by key. (asynchronously)
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param environmentKey The environment key (required)

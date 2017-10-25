@@ -26,7 +26,6 @@ import io.swagger.client.model.Links;
 import io.swagger.client.model.Member;
 import io.swagger.client.model.Variation;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -35,7 +34,7 @@ import java.util.Map;
 /**
  * FeatureFlag
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-25T12:58:24.419-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-25T13:57:42.322-07:00")
 public class FeatureFlag {
   @SerializedName("key")
   private String key = null;
@@ -47,7 +46,7 @@ public class FeatureFlag {
   private String kind = null;
 
   @SerializedName("creationDate")
-  private BigDecimal creationDate = null;
+  private Long creationDate = null;
 
   @SerializedName("includeInSnippet")
   private Boolean includeInSnippet = null;
@@ -127,7 +126,7 @@ public class FeatureFlag {
     this.kind = kind;
   }
 
-  public FeatureFlag creationDate(BigDecimal creationDate) {
+  public FeatureFlag creationDate(Long creationDate) {
     this.creationDate = creationDate;
     return this;
   }
@@ -137,11 +136,11 @@ public class FeatureFlag {
    * @return creationDate
   **/
   @ApiModelProperty(value = "")
-  public BigDecimal getCreationDate() {
+  public Long getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate(BigDecimal creationDate) {
+  public void setCreationDate(Long creationDate) {
     this.creationDate = creationDate;
   }
 

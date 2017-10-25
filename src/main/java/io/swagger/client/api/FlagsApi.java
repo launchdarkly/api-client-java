@@ -834,7 +834,7 @@ public class FlagsApi {
     }
 
     /**
-     * Modify a feature flag by ID
+     * Perform a partial update to a feature.
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param featureFlagKey The feature flag&#39;s key. The key identifies the flag in your code. (required)
@@ -848,7 +848,7 @@ public class FlagsApi {
     }
 
     /**
-     * Modify a feature flag by ID
+     * Perform a partial update to a feature.
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param featureFlagKey The feature flag&#39;s key. The key identifies the flag in your code. (required)
@@ -863,7 +863,7 @@ public class FlagsApi {
     }
 
     /**
-     * Modify a feature flag by ID (asynchronously)
+     * Perform a partial update to a feature. (asynchronously)
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param featureFlagKey The feature flag&#39;s key. The key identifies the flag in your code. (required)
