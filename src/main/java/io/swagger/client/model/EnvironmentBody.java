@@ -27,7 +27,7 @@ import java.math.BigDecimal;
 /**
  * EnvironmentBody
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-25T12:54:15.848-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-25T12:58:24.419-07:00")
 public class EnvironmentBody {
   @SerializedName("name")
   private String name = null;

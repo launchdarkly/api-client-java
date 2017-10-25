@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * Environment
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-25T12:54:15.848-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-25T12:58:24.419-07:00")
 public class Environment {
   @SerializedName("_links")
   private Links links = null;
