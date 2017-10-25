@@ -972,7 +972,7 @@ public class FlagsApi {
     }
 
     /**
-     * Create a feature flag
+     * Creates a new feature flag.
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param featureFlagBody Create a new feature flag (required)
@@ -983,7 +983,7 @@ public class FlagsApi {
     }
 
     /**
-     * Create a feature flag
+     * Creates a new feature flag.
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param featureFlagBody Create a new feature flag (required)
@@ -996,7 +996,7 @@ public class FlagsApi {
     }
 
     /**
-     * Create a feature flag (asynchronously)
+     * Creates a new feature flag. (asynchronously)
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param featureFlagBody Create a new feature flag (required)

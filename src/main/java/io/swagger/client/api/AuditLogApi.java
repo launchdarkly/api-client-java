@@ -116,7 +116,7 @@ public class AuditLogApi {
     }
 
     /**
-     * Fetch a list of all webhooks
+     * Fetch a list of all audit log entries
      * 
      * @return AuditLogEntries
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -127,7 +127,7 @@ public class AuditLogApi {
     }
 
     /**
-     * Fetch a list of all webhooks
+     * Fetch a list of all audit log entries
      * 
      * @return ApiResponse&lt;AuditLogEntries&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -139,7 +139,7 @@ public class AuditLogApi {
     }
 
     /**
-     * Fetch a list of all webhooks (asynchronously)
+     * Fetch a list of all audit log entries (asynchronously)
      * 
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -239,7 +239,7 @@ public class AuditLogApi {
     }
 
     /**
-     * Get a webhook by ID
+     * Get an audit log entry by ID
      * 
      * @param resourceId The resource ID (required)
      * @return AuditLogEntry
@@ -251,7 +251,7 @@ public class AuditLogApi {
     }
 
     /**
-     * Get a webhook by ID
+     * Get an audit log entry by ID
      * 
      * @param resourceId The resource ID (required)
      * @return ApiResponse&lt;AuditLogEntry&gt;
@@ -264,7 +264,7 @@ public class AuditLogApi {
     }
 
     /**
-     * Get a webhook by ID (asynchronously)
+     * Get an audit log entry by ID (asynchronously)
      * 
      * @param resourceId The resource ID (required)
      * @param callback The callback to be executed when the API call finishes

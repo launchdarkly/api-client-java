@@ -144,7 +144,7 @@ public class FlagsApiTest {
     }
     
     /**
-     * Create a feature flag
+     * Creates a new feature flag.
      *
      * 
      *

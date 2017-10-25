@@ -52,7 +52,7 @@ public class ProjectsApiTest {
     }
     
     /**
-     * Get a project by key.
+     * Fetch a single project by key.
      *
      * 
      *

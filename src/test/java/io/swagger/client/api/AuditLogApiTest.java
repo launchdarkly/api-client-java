@@ -34,7 +34,7 @@ public class AuditLogApiTest {
 
     
     /**
-     * Fetch a list of all webhooks
+     * Fetch a list of all audit log entries
      *
      * 
      *
@@ -49,7 +49,7 @@ public class AuditLogApiTest {
     }
     
     /**
-     * Get a webhook by ID
+     * Get an audit log entry by ID
      *
      * 
      *

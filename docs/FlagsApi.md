@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**getFeatureFlagStatuses**](FlagsApi.md#getFeatureFlagStatuses) | **GET** /flag-statuses/{projectKey}/{environmentKey}/{featureFlagKey} | Get a list of statuses for all feature flags
 [**getFeatureFlags**](FlagsApi.md#getFeatureFlags) | **GET** /flags/{projectKey} | Get a list of all features in the given project.
 [**patchFeatureFlag**](FlagsApi.md#patchFeatureFlag) | **PATCH** /flags/{projectKey}/{featureFlagKey} | Modify a feature flag by ID
-[**postFeatureFlag**](FlagsApi.md#postFeatureFlag) | **POST** /flags/{projectKey} | Create a feature flag
+[**postFeatureFlag**](FlagsApi.md#postFeatureFlag) | **POST** /flags/{projectKey} | Creates a new feature flag.
 
 
 <a name="deleteFeatureFlag"></a>
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 # **postFeatureFlag**
 > postFeatureFlag(projectKey, featureFlagBody)
 
-Create a feature flag
+Creates a new feature flag.
 
 ### Example
 ```java

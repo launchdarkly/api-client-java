@@ -247,7 +247,7 @@ public class ProjectsApi {
     }
 
     /**
-     * Get a project by key.
+     * Fetch a single project by key.
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @return Project
@@ -259,7 +259,7 @@ public class ProjectsApi {
     }
 
     /**
-     * Get a project by key.
+     * Fetch a single project by key.
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @return ApiResponse&lt;Project&gt;
@@ -272,7 +272,7 @@ public class ProjectsApi {
     }
 
     /**
-     * Get a project by key. (asynchronously)
+     * Fetch a single project by key. (asynchronously)
      * 
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param callback The callback to be executed when the API call finishes
