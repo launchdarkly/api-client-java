@@ -4,7 +4,7 @@ All URIs are relative to *https://app.launchdarkly.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteUser**](UsersApi.md#deleteUser) | **DELETE** /users/{projectKey}/{environmentKey}/{userKey} | Delete a user by ID
+[**deleteUser**](UsersApi.md#deleteUser) | **DELETE** /users/{projectKey}/{environmentKey}/{userKey} | Delete a user by ID.
 [**getSearchUsers**](UsersApi.md#getSearchUsers) | **GET** /user-search/{projectKey}/{environmentKey} | Search users in LaunchDarkly based on their last active date, or a search query. It should not be used to enumerate all users in LaunchDarkly-- use the List users API resource.
 [**getUser**](UsersApi.md#getUser) | **GET** /users/{projectKey}/{environmentKey}/{userKey} | Get a user by key.
 [**getUsers**](UsersApi.md#getUsers) | **GET** /users/{projectKey}/{environmentKey} | List all users in the environment. Includes the total count of users. In each page, there will be up to &#39;limit&#39; users returned (default 20). This is useful for exporting all users in the system for further analysis. Paginated collections will include a next link containing a URL with the next set of elements in the collection.
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 # **deleteUser**
 > deleteUser(projectKey, environmentKey, userKey)
 
-Delete a user by ID
+Delete a user by ID.
 
 ### Example
 ```java
@@ -35,8 +35,8 @@ Token.setApiKey("YOUR API KEY");
 
 UsersApi apiInstance = new UsersApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String environmentKey = "environmentKey_example"; // String | The environment key
-String userKey = "userKey_example"; // String | The user's key
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
+String userKey = "userKey_example"; // String | The user's key.
 try {
     apiInstance.deleteUser(projectKey, environmentKey, userKey);
 } catch (ApiException e) {
@@ -50,8 +50,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentKey** | **String**| The environment key |
- **userKey** | **String**| The user&#39;s key |
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
+ **userKey** | **String**| The user&#39;s key. |
 
 ### Return type
 
@@ -91,11 +91,11 @@ Token.setApiKey("YOUR API KEY");
 
 UsersApi apiInstance = new UsersApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String environmentKey = "environmentKey_example"; // String | The environment key
-String q = "q_example"; // String | Search query
-BigDecimal limit = new BigDecimal(); // BigDecimal | Pagination limit
-BigDecimal offset = new BigDecimal(); // BigDecimal | Specifies the first item to return in the collection
-Long after = 789L; // Long | A unix epoch time in milliseconds specifying the maximum last time a user requested a feature flag
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
+String q = "q_example"; // String | Search query.
+BigDecimal limit = new BigDecimal(); // BigDecimal | Pagination limit.
+BigDecimal offset = new BigDecimal(); // BigDecimal | Specifies the first item to return in the collection.
+BigDecimal after = new BigDecimal(); // BigDecimal | A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned will have occured after this timestamp.
 try {
     Users result = apiInstance.getSearchUsers(projectKey, environmentKey, q, limit, offset, after);
     System.out.println(result);
@@ -110,11 +110,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentKey** | **String**| The environment key |
- **q** | **String**| Search query | [optional]
- **limit** | **BigDecimal**| Pagination limit | [optional]
- **offset** | **BigDecimal**| Specifies the first item to return in the collection | [optional]
- **after** | **Long**| A unix epoch time in milliseconds specifying the maximum last time a user requested a feature flag | [optional]
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
+ **q** | **String**| Search query. | [optional]
+ **limit** | **BigDecimal**| Pagination limit. | [optional]
+ **offset** | **BigDecimal**| Specifies the first item to return in the collection. | [optional]
+ **after** | **BigDecimal**| A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned will have occured after this timestamp. | [optional]
 
 ### Return type
 
@@ -154,8 +154,8 @@ Token.setApiKey("YOUR API KEY");
 
 UsersApi apiInstance = new UsersApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String environmentKey = "environmentKey_example"; // String | The environment key
-String userKey = "userKey_example"; // String | The user's key
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
+String userKey = "userKey_example"; // String | The user's key.
 try {
     User result = apiInstance.getUser(projectKey, environmentKey, userKey);
     System.out.println(result);
@@ -170,8 +170,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentKey** | **String**| The environment key |
- **userKey** | **String**| The user&#39;s key |
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
+ **userKey** | **String**| The user&#39;s key. |
 
 ### Return type
 
@@ -211,8 +211,8 @@ Token.setApiKey("YOUR API KEY");
 
 UsersApi apiInstance = new UsersApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String environmentKey = "environmentKey_example"; // String | The environment key
-BigDecimal limit = new BigDecimal(); // BigDecimal | Pagination limit
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
+BigDecimal limit = new BigDecimal(); // BigDecimal | Pagination limit.
 try {
     Users result = apiInstance.getUsers(projectKey, environmentKey, limit);
     System.out.println(result);
@@ -227,8 +227,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentKey** | **String**| The environment key |
- **limit** | **BigDecimal**| Pagination limit | [optional]
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
+ **limit** | **BigDecimal**| Pagination limit. | [optional]
 
 ### Return type
 

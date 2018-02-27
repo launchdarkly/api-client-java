@@ -4,15 +4,15 @@ All URIs are relative to *https://app.launchdarkly.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAuditLogEntries**](AuditLogApi.md#getAuditLogEntries) | **GET** /auditlog | Fetch a list of all audit log entries
-[**getAuditLogEntry**](AuditLogApi.md#getAuditLogEntry) | **GET** /auditlog/{resourceId} | Get an audit log entry by ID
+[**getAuditLogEntries**](AuditLogApi.md#getAuditLogEntries) | **GET** /auditlog | Get a list of all audit log entries. The query parameters allow you to restrict the returned results by date ranges, resource specifiers, or a full-text search query.
+[**getAuditLogEntry**](AuditLogApi.md#getAuditLogEntry) | **GET** /auditlog/{resourceId} | Use this endpoint to fetch a single audit log entry by its resouce ID.
 
 
 <a name="getAuditLogEntries"></a>
 # **getAuditLogEntries**
-> AuditLogEntries getAuditLogEntries()
+> AuditLogEntries getAuditLogEntries(before, after, q, limit, spec)
 
-Fetch a list of all audit log entries
+Get a list of all audit log entries. The query parameters allow you to restrict the returned results by date ranges, resource specifiers, or a full-text search query.
 
 ### Example
 ```java
@@ -32,8 +32,13 @@ Token.setApiKey("YOUR API KEY");
 //Token.setApiKeyPrefix("Token");
 
 AuditLogApi apiInstance = new AuditLogApi();
+BigDecimal before = new BigDecimal(); // BigDecimal | A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned will have before this timestamp.
+BigDecimal after = new BigDecimal(); // BigDecimal | A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned will have occured after this timestamp.
+String q = "q_example"; // String | Text to search for. You can search for the full or partial name of the resource involved or fullpartial email address of the member who made the change.
+BigDecimal limit = new BigDecimal(); // BigDecimal | A limit on the number of audit log entries to be returned, between 1 and 20.
+String spec = "spec_example"; // String | A resource specifier, allowing you to filter audit log listings by resource.
 try {
-    AuditLogEntries result = apiInstance.getAuditLogEntries();
+    AuditLogEntries result = apiInstance.getAuditLogEntries(before, after, q, limit, spec);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuditLogApi#getAuditLogEntries");
@@ -42,7 +47,14 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **before** | **BigDecimal**| A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned will have before this timestamp. | [optional]
+ **after** | **BigDecimal**| A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned will have occured after this timestamp. | [optional]
+ **q** | **String**| Text to search for. You can search for the full or partial name of the resource involved or fullpartial email address of the member who made the change. | [optional]
+ **limit** | **BigDecimal**| A limit on the number of audit log entries to be returned, between 1 and 20. | [optional]
+ **spec** | **String**| A resource specifier, allowing you to filter audit log listings by resource. | [optional]
 
 ### Return type
 
@@ -61,7 +73,7 @@ This endpoint does not need any parameter.
 # **getAuditLogEntry**
 > AuditLogEntry getAuditLogEntry(resourceId)
 
-Get an audit log entry by ID
+Use this endpoint to fetch a single audit log entry by its resouce ID.
 
 ### Example
 ```java
@@ -81,7 +93,7 @@ Token.setApiKey("YOUR API KEY");
 //Token.setApiKeyPrefix("Token");
 
 AuditLogApi apiInstance = new AuditLogApi();
-String resourceId = "resourceId_example"; // String | The resource ID
+String resourceId = "resourceId_example"; // String | The resource ID.
 try {
     AuditLogEntry result = apiInstance.getAuditLogEntry(resourceId);
     System.out.println(result);
@@ -95,7 +107,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resourceId** | **String**| The resource ID |
+ **resourceId** | **String**| The resource ID. |
 
 ### Return type
 

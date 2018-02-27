@@ -4,18 +4,18 @@ All URIs are relative to *https://app.launchdarkly.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteProject**](ProjectsApi.md#deleteProject) | **DELETE** /projects/{projectKey} | Delete a project by ID
+[**deleteProject**](ProjectsApi.md#deleteProject) | **DELETE** /projects/{projectKey} | Delete a project by key. Caution-- deleting a project will delete all associated environments and feature flags. You cannot delete the last project in an account.
 [**getProject**](ProjectsApi.md#getProject) | **GET** /projects/{projectKey} | Fetch a single project by key.
 [**getProjects**](ProjectsApi.md#getProjects) | **GET** /projects | Returns a list of all projects in the account.
-[**patchProject**](ProjectsApi.md#patchProject) | **PATCH** /projects/{projectKey} | Modify a project by ID
-[**postProject**](ProjectsApi.md#postProject) | **POST** /projects | Create a project
+[**patchProject**](ProjectsApi.md#patchProject) | **PATCH** /projects/{projectKey} | Modify a project by ID.
+[**postProject**](ProjectsApi.md#postProject) | **POST** /projects | Create a new project with the given key and name.
 
 
 <a name="deleteProject"></a>
 # **deleteProject**
 > deleteProject(projectKey)
 
-Delete a project by ID
+Delete a project by key. Caution-- deleting a project will delete all associated environments and feature flags. You cannot delete the last project in an account.
 
 ### Example
 ```java
@@ -167,9 +167,9 @@ This endpoint does not need any parameter.
 
 <a name="patchProject"></a>
 # **patchProject**
-> patchProject(projectKey, patchDelta)
+> Project patchProject(projectKey, patchDelta)
 
-Modify a project by ID
+Modify a project by ID.
 
 ### Example
 ```java
@@ -190,9 +190,10 @@ Token.setApiKey("YOUR API KEY");
 
 ProjectsApi apiInstance = new ProjectsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-List<PatchDelta> patchDelta = Arrays.asList(new PatchDelta()); // List<PatchDelta> | http://jsonpatch.com/
+List<PatchDelta> patchDelta = Arrays.asList(new PatchDelta()); // List<PatchDelta> | Requires a JSON Patch representation of the desired changes to the project. 'http://jsonpatch.com/'
 try {
-    apiInstance.patchProject(projectKey, patchDelta);
+    Project result = apiInstance.patchProject(projectKey, patchDelta);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProjectsApi#patchProject");
     e.printStackTrace();
@@ -204,11 +205,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **patchDelta** | [**List&lt;PatchDelta&gt;**](PatchDelta.md)| http://jsonpatch.com/ |
+ **patchDelta** | [**List&lt;PatchDelta&gt;**](PatchDelta.md)| Requires a JSON Patch representation of the desired changes to the project. &#39;http://jsonpatch.com/&#39; |
 
 ### Return type
 
-null (empty response body)
+[**Project**](Project.md)
 
 ### Authorization
 
@@ -223,7 +224,7 @@ null (empty response body)
 # **postProject**
 > postProject(projectBody)
 
-Create a project
+Create a new project with the given key and name.
 
 ### Example
 ```java
@@ -243,7 +244,7 @@ Token.setApiKey("YOUR API KEY");
 //Token.setApiKeyPrefix("Token");
 
 ProjectsApi apiInstance = new ProjectsApi();
-ProjectBody projectBody = new ProjectBody(); // ProjectBody | New project
+ProjectBody projectBody = new ProjectBody(); // ProjectBody | Project keys must be unique within an account.
 try {
     apiInstance.postProject(projectBody);
 } catch (ApiException e) {
@@ -256,7 +257,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectBody** | [**ProjectBody**](ProjectBody.md)| New project |
+ **projectBody** | [**ProjectBody**](ProjectBody.md)| Project keys must be unique within an account. |
 
 ### Return type
 

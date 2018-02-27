@@ -4,17 +4,17 @@ All URIs are relative to *https://app.launchdarkly.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteEnvironment**](EnvironmentsApi.md#deleteEnvironment) | **DELETE** /environments/{projectKey}/{environmentKey} | Delete an environment by ID
-[**getEnvironment**](EnvironmentsApi.md#getEnvironment) | **GET** /environments/{projectKey}/{environmentKey} | Get an environment given a project and key.
-[**patchEnvironment**](EnvironmentsApi.md#patchEnvironment) | **PATCH** /environments/{projectKey}/{environmentKey} | Modify an environment by ID
-[**postEnvironment**](EnvironmentsApi.md#postEnvironment) | **POST** /environments/{projectKey} | Create a new environment in a specified project with a given name, key, and swatch color.
+[**deleteEnvironment**](EnvironmentsApi.md#deleteEnvironment) | **DELETE** /projects/{projectKey}/environments/{environmentKey} | Delete an environment in a specific project.
+[**getEnvironment**](EnvironmentsApi.md#getEnvironment) | **GET** /projects/{projectKey}/environments/{environmentKey} | Get an environment given a project and key.
+[**patchEnvironment**](EnvironmentsApi.md#patchEnvironment) | **PATCH** /projects/{projectKey}/environments/{environmentKey} | Modify an environment by ID.
+[**postEnvironment**](EnvironmentsApi.md#postEnvironment) | **POST** /projects/{projectKey}/environments | Create a new environment in a specified project with a given name, key, and swatch color.
 
 
 <a name="deleteEnvironment"></a>
 # **deleteEnvironment**
 > deleteEnvironment(projectKey, environmentKey)
 
-Delete an environment by ID
+Delete an environment in a specific project.
 
 ### Example
 ```java
@@ -35,7 +35,7 @@ Token.setApiKey("YOUR API KEY");
 
 EnvironmentsApi apiInstance = new EnvironmentsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String environmentKey = "environmentKey_example"; // String | The environment key
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
 try {
     apiInstance.deleteEnvironment(projectKey, environmentKey);
 } catch (ApiException e) {
@@ -49,7 +49,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentKey** | **String**| The environment key |
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
 
 ### Return type
 
@@ -89,7 +89,7 @@ Token.setApiKey("YOUR API KEY");
 
 EnvironmentsApi apiInstance = new EnvironmentsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String environmentKey = "environmentKey_example"; // String | The environment key
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
 try {
     Environment result = apiInstance.getEnvironment(projectKey, environmentKey);
     System.out.println(result);
@@ -104,7 +104,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentKey** | **String**| The environment key |
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
 
 ### Return type
 
@@ -121,9 +121,9 @@ Name | Type | Description  | Notes
 
 <a name="patchEnvironment"></a>
 # **patchEnvironment**
-> patchEnvironment(projectKey, environmentKey, patchDelta)
+> Environment patchEnvironment(projectKey, environmentKey, patchDelta)
 
-Modify an environment by ID
+Modify an environment by ID.
 
 ### Example
 ```java
@@ -144,10 +144,11 @@ Token.setApiKey("YOUR API KEY");
 
 EnvironmentsApi apiInstance = new EnvironmentsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String environmentKey = "environmentKey_example"; // String | The environment key
-List<PatchDelta> patchDelta = Arrays.asList(new PatchDelta()); // List<PatchDelta> | http://jsonpatch.com/
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
+List<PatchDelta> patchDelta = Arrays.asList(new PatchDelta()); // List<PatchDelta> | Requires a JSON Patch representation of the desired changes to the project. 'http://jsonpatch.com/'
 try {
-    apiInstance.patchEnvironment(projectKey, environmentKey, patchDelta);
+    Environment result = apiInstance.patchEnvironment(projectKey, environmentKey, patchDelta);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling EnvironmentsApi#patchEnvironment");
     e.printStackTrace();
@@ -159,12 +160,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentKey** | **String**| The environment key |
- **patchDelta** | [**List&lt;PatchDelta&gt;**](PatchDelta.md)| http://jsonpatch.com/ |
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
+ **patchDelta** | [**List&lt;PatchDelta&gt;**](PatchDelta.md)| Requires a JSON Patch representation of the desired changes to the project. &#39;http://jsonpatch.com/&#39; |
 
 ### Return type
 
-null (empty response body)
+[**Environment**](Environment.md)
 
 ### Authorization
 
@@ -200,7 +201,7 @@ Token.setApiKey("YOUR API KEY");
 
 EnvironmentsApi apiInstance = new EnvironmentsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-EnvironmentBody environmentBody = new EnvironmentBody(); // EnvironmentBody | New environment
+EnvironmentBody environmentBody = new EnvironmentBody(); // EnvironmentBody | New environment.
 try {
     apiInstance.postEnvironment(projectKey, environmentBody);
 } catch (ApiException e) {
@@ -214,7 +215,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentBody** | [**EnvironmentBody**](EnvironmentBody.md)| New environment |
+ **environmentBody** | [**EnvironmentBody**](EnvironmentBody.md)| New environment. |
 
 ### Return type
 

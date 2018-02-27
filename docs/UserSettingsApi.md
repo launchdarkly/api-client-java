@@ -4,7 +4,7 @@ All URIs are relative to *https://app.launchdarkly.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getUserFlagSetting**](UserSettingsApi.md#getUserFlagSetting) | **GET** /users/{projectKey}/{environmentKey}/{userKey}/flags/{featureFlagKey} | Get a user by key.
+[**getUserFlagSetting**](UserSettingsApi.md#getUserFlagSetting) | **GET** /users/{projectKey}/{environmentKey}/{userKey}/flags/{featureFlagKey} | Fetch a single flag setting for a user by key.
 [**getUserFlagSettings**](UserSettingsApi.md#getUserFlagSettings) | **GET** /users/{projectKey}/{environmentKey}/{userKey}/flags | Fetch a single flag setting for a user by key.
 [**putFlagSetting**](UserSettingsApi.md#putFlagSetting) | **PUT** /users/{projectKey}/{environmentKey}/{userKey}/flags/{featureFlagKey} | Specifically enable or disable a feature flag for a user based on their key.
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 # **getUserFlagSetting**
 > UserFlagSetting getUserFlagSetting(projectKey, environmentKey, userKey, featureFlagKey)
 
-Get a user by key.
+Fetch a single flag setting for a user by key.
 
 ### Example
 ```java
@@ -34,8 +34,8 @@ Token.setApiKey("YOUR API KEY");
 
 UserSettingsApi apiInstance = new UserSettingsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String environmentKey = "environmentKey_example"; // String | The environment key
-String userKey = "userKey_example"; // String | The user's key
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
+String userKey = "userKey_example"; // String | The user's key.
 String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
 try {
     UserFlagSetting result = apiInstance.getUserFlagSetting(projectKey, environmentKey, userKey, featureFlagKey);
@@ -51,8 +51,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentKey** | **String**| The environment key |
- **userKey** | **String**| The user&#39;s key |
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
+ **userKey** | **String**| The user&#39;s key. |
  **featureFlagKey** | **String**| The feature flag&#39;s key. The key identifies the flag in your code. |
 
 ### Return type
@@ -93,8 +93,8 @@ Token.setApiKey("YOUR API KEY");
 
 UserSettingsApi apiInstance = new UserSettingsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String environmentKey = "environmentKey_example"; // String | The environment key
-String userKey = "userKey_example"; // String | The user's key
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
+String userKey = "userKey_example"; // String | The user's key.
 try {
     UserFlagSettings result = apiInstance.getUserFlagSettings(projectKey, environmentKey, userKey);
     System.out.println(result);
@@ -109,8 +109,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentKey** | **String**| The environment key |
- **userKey** | **String**| The user&#39;s key |
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
+ **userKey** | **String**| The user&#39;s key. |
 
 ### Return type
 
@@ -150,8 +150,8 @@ Token.setApiKey("YOUR API KEY");
 
 UserSettingsApi apiInstance = new UserSettingsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String environmentKey = "environmentKey_example"; // String | The environment key
-String userKey = "userKey_example"; // String | The user's key
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
+String userKey = "userKey_example"; // String | The user's key.
 String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
 UserSettingsBody userSettingsBody = new UserSettingsBody(); // UserSettingsBody | 
 try {
@@ -167,8 +167,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentKey** | **String**| The environment key |
- **userKey** | **String**| The user&#39;s key |
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
+ **userKey** | **String**| The user&#39;s key. |
  **featureFlagKey** | **String**| The feature flag&#39;s key. The key identifies the flag in your code. |
  **userSettingsBody** | [**UserSettingsBody**](UserSettingsBody.md)|  |
 

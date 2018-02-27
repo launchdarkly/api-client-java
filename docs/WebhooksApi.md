@@ -4,18 +4,18 @@ All URIs are relative to *https://app.launchdarkly.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteWebhook**](WebhooksApi.md#deleteWebhook) | **DELETE** /webhooks/{resourceId} | Delete a webhook by ID
-[**getWebhook**](WebhooksApi.md#getWebhook) | **GET** /webhooks/{resourceId} | Get a webhook by ID
-[**getWebhooks**](WebhooksApi.md#getWebhooks) | **GET** /webhooks | Fetch a list of all webhooks
-[**patchWebhook**](WebhooksApi.md#patchWebhook) | **PATCH** /webhooks/{resourceId} | Modify a webhook by ID
-[**postWebhook**](WebhooksApi.md#postWebhook) | **POST** /webhooks | Create a webhook
+[**deleteWebhook**](WebhooksApi.md#deleteWebhook) | **DELETE** /webhooks/{resourceId} | Delete a webhook by ID.
+[**getWebhook**](WebhooksApi.md#getWebhook) | **GET** /webhooks/{resourceId} | Get a webhook by ID.
+[**getWebhooks**](WebhooksApi.md#getWebhooks) | **GET** /webhooks | Fetch a list of all webhooks.
+[**patchWebhook**](WebhooksApi.md#patchWebhook) | **PATCH** /webhooks/{resourceId} | Modify a webhook by ID.
+[**postWebhook**](WebhooksApi.md#postWebhook) | **POST** /webhooks | Create a webhook.
 
 
 <a name="deleteWebhook"></a>
 # **deleteWebhook**
 > deleteWebhook(resourceId)
 
-Delete a webhook by ID
+Delete a webhook by ID.
 
 ### Example
 ```java
@@ -35,7 +35,7 @@ Token.setApiKey("YOUR API KEY");
 //Token.setApiKeyPrefix("Token");
 
 WebhooksApi apiInstance = new WebhooksApi();
-String resourceId = "resourceId_example"; // String | The resource ID
+String resourceId = "resourceId_example"; // String | The resource ID.
 try {
     apiInstance.deleteWebhook(resourceId);
 } catch (ApiException e) {
@@ -48,7 +48,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resourceId** | **String**| The resource ID |
+ **resourceId** | **String**| The resource ID. |
 
 ### Return type
 
@@ -67,7 +67,7 @@ null (empty response body)
 # **getWebhook**
 > Webhook getWebhook(resourceId)
 
-Get a webhook by ID
+Get a webhook by ID.
 
 ### Example
 ```java
@@ -87,7 +87,7 @@ Token.setApiKey("YOUR API KEY");
 //Token.setApiKeyPrefix("Token");
 
 WebhooksApi apiInstance = new WebhooksApi();
-String resourceId = "resourceId_example"; // String | The resource ID
+String resourceId = "resourceId_example"; // String | The resource ID.
 try {
     Webhook result = apiInstance.getWebhook(resourceId);
     System.out.println(result);
@@ -101,7 +101,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resourceId** | **String**| The resource ID |
+ **resourceId** | **String**| The resource ID. |
 
 ### Return type
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 # **getWebhooks**
 > Webhooks getWebhooks()
 
-Fetch a list of all webhooks
+Fetch a list of all webhooks.
 
 ### Example
 ```java
@@ -169,7 +169,7 @@ This endpoint does not need any parameter.
 # **patchWebhook**
 > Webhook patchWebhook(resourceId, patchDelta)
 
-Modify a webhook by ID
+Modify a webhook by ID.
 
 ### Example
 ```java
@@ -189,8 +189,8 @@ Token.setApiKey("YOUR API KEY");
 //Token.setApiKeyPrefix("Token");
 
 WebhooksApi apiInstance = new WebhooksApi();
-String resourceId = "resourceId_example"; // String | The resource ID
-List<PatchDelta> patchDelta = Arrays.asList(new PatchDelta()); // List<PatchDelta> | http://jsonpatch.com/
+String resourceId = "resourceId_example"; // String | The resource ID.
+List<PatchDelta> patchDelta = Arrays.asList(new PatchDelta()); // List<PatchDelta> | Requires a JSON Patch representation of the desired changes to the project. 'http://jsonpatch.com/'
 try {
     Webhook result = apiInstance.patchWebhook(resourceId, patchDelta);
     System.out.println(result);
@@ -204,8 +204,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resourceId** | **String**| The resource ID |
- **patchDelta** | [**List&lt;PatchDelta&gt;**](PatchDelta.md)| http://jsonpatch.com/ |
+ **resourceId** | **String**| The resource ID. |
+ **patchDelta** | [**List&lt;PatchDelta&gt;**](PatchDelta.md)| Requires a JSON Patch representation of the desired changes to the project. &#39;http://jsonpatch.com/&#39; |
 
 ### Return type
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 # **postWebhook**
 > postWebhook(webhookBody)
 
-Create a webhook
+Create a webhook.
 
 ### Example
 ```java
@@ -244,7 +244,7 @@ Token.setApiKey("YOUR API KEY");
 //Token.setApiKeyPrefix("Token");
 
 WebhooksApi apiInstance = new WebhooksApi();
-WebhookBody webhookBody = new WebhookBody(); // WebhookBody | New webhook
+WebhookBody webhookBody = new WebhookBody(); // WebhookBody | New webhook.
 try {
     apiInstance.postWebhook(webhookBody);
 } catch (ApiException e) {
@@ -257,7 +257,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhookBody** | [**WebhookBody**](WebhookBody.md)| New webhook |
+ **webhookBody** | [**WebhookBody**](WebhookBody.md)| New webhook. |
 
 ### Return type
 

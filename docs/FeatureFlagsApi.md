@@ -1,23 +1,23 @@
-# FlagsApi
+# FeatureFlagsApi
 
 All URIs are relative to *https://app.launchdarkly.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteFeatureFlag**](FlagsApi.md#deleteFeatureFlag) | **DELETE** /flags/{projectKey}/{featureFlagKey} | Delete a feature flag by ID
-[**getFeatureFlag**](FlagsApi.md#getFeatureFlag) | **GET** /flags/{projectKey}/{featureFlagKey} | Get a single feature flag by key.
-[**getFeatureFlagStatus**](FlagsApi.md#getFeatureFlagStatus) | **GET** /flag-statuses/{projectKey}/{environmentKey} | Get a list of statuses for all feature flags
-[**getFeatureFlagStatuses**](FlagsApi.md#getFeatureFlagStatuses) | **GET** /flag-statuses/{projectKey}/{environmentKey}/{featureFlagKey} | Get a list of statuses for all feature flags
-[**getFeatureFlags**](FlagsApi.md#getFeatureFlags) | **GET** /flags/{projectKey} | Get a list of all features in the given project.
-[**patchFeatureFlag**](FlagsApi.md#patchFeatureFlag) | **PATCH** /flags/{projectKey}/{featureFlagKey} | Perform a partial update to a feature.
-[**postFeatureFlag**](FlagsApi.md#postFeatureFlag) | **POST** /flags/{projectKey} | Creates a new feature flag.
+[**deleteFeatureFlag**](FeatureFlagsApi.md#deleteFeatureFlag) | **DELETE** /flags/{projectKey}/{featureFlagKey} | Delete a feature flag in all environments. Be careful-- only delete feature flags that are no longer being used by your application.
+[**getFeatureFlag**](FeatureFlagsApi.md#getFeatureFlag) | **GET** /flags/{projectKey}/{featureFlagKey} | Get a single feature flag by key.
+[**getFeatureFlagStatus**](FeatureFlagsApi.md#getFeatureFlagStatus) | **GET** /flag-statuses/{projectKey}/{environmentKey} | Get a list of statuses for all feature flags. The status includes the last time the feature flag was requested, as well as the state of the flag.
+[**getFeatureFlagStatuses**](FeatureFlagsApi.md#getFeatureFlagStatuses) | **GET** /flag-statuses/{projectKey}/{environmentKey}/{featureFlagKey} | Get the status for a particular feature flag.
+[**getFeatureFlags**](FeatureFlagsApi.md#getFeatureFlags) | **GET** /flags/{projectKey} | Get a list of all features in the given project.
+[**patchFeatureFlag**](FeatureFlagsApi.md#patchFeatureFlag) | **PATCH** /flags/{projectKey}/{featureFlagKey} | Perform a partial update to a feature.
+[**postFeatureFlag**](FeatureFlagsApi.md#postFeatureFlag) | **POST** /flags/{projectKey} | Creates a new feature flag.
 
 
 <a name="deleteFeatureFlag"></a>
 # **deleteFeatureFlag**
 > deleteFeatureFlag(projectKey, featureFlagKey)
 
-Delete a feature flag by ID
+Delete a feature flag in all environments. Be careful-- only delete feature flags that are no longer being used by your application.
 
 ### Example
 ```java
@@ -26,7 +26,7 @@ Delete a feature flag by ID
 //import io.swagger.client.ApiException;
 //import io.swagger.client.Configuration;
 //import io.swagger.client.auth.*;
-//import io.swagger.client.api.FlagsApi;
+//import io.swagger.client.api.FeatureFlagsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -36,13 +36,13 @@ Token.setApiKey("YOUR API KEY");
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Token.setApiKeyPrefix("Token");
 
-FlagsApi apiInstance = new FlagsApi();
+FeatureFlagsApi apiInstance = new FeatureFlagsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
 String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
 try {
     apiInstance.deleteFeatureFlag(projectKey, featureFlagKey);
 } catch (ApiException e) {
-    System.err.println("Exception when calling FlagsApi#deleteFeatureFlag");
+    System.err.println("Exception when calling FeatureFlagsApi#deleteFeatureFlag");
     e.printStackTrace();
 }
 ```
@@ -69,7 +69,7 @@ null (empty response body)
 
 <a name="getFeatureFlag"></a>
 # **getFeatureFlag**
-> FeatureFlag getFeatureFlag(projectKey, featureFlagKey, environmentKeyQuery)
+> FeatureFlag getFeatureFlag(projectKey, featureFlagKey, env)
 
 Get a single feature flag by key.
 
@@ -80,7 +80,7 @@ Get a single feature flag by key.
 //import io.swagger.client.ApiException;
 //import io.swagger.client.Configuration;
 //import io.swagger.client.auth.*;
-//import io.swagger.client.api.FlagsApi;
+//import io.swagger.client.api.FeatureFlagsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -90,15 +90,15 @@ Token.setApiKey("YOUR API KEY");
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Token.setApiKeyPrefix("Token");
 
-FlagsApi apiInstance = new FlagsApi();
+FeatureFlagsApi apiInstance = new FeatureFlagsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
 String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
-String environmentKeyQuery = "environmentKeyQuery_example"; // String | The environment key
+String env = "env_example"; // String | By default, each feature will include configurations for each environment. You can filter environments with the env query parameter. For example, setting env=production will restrict the returned configurations to just your production environment.
 try {
-    FeatureFlag result = apiInstance.getFeatureFlag(projectKey, featureFlagKey, environmentKeyQuery);
+    FeatureFlag result = apiInstance.getFeatureFlag(projectKey, featureFlagKey, env);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling FlagsApi#getFeatureFlag");
+    System.err.println("Exception when calling FeatureFlagsApi#getFeatureFlag");
     e.printStackTrace();
 }
 ```
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
  **featureFlagKey** | **String**| The feature flag&#39;s key. The key identifies the flag in your code. |
- **environmentKeyQuery** | **String**| The environment key | [optional]
+ **env** | **String**| By default, each feature will include configurations for each environment. You can filter environments with the env query parameter. For example, setting env&#x3D;production will restrict the returned configurations to just your production environment. | [optional]
 
 ### Return type
 
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 # **getFeatureFlagStatus**
 > FeatureFlagStatuses getFeatureFlagStatus(projectKey, environmentKey)
 
-Get a list of statuses for all feature flags
+Get a list of statuses for all feature flags. The status includes the last time the feature flag was requested, as well as the state of the flag.
 
 ### Example
 ```java
@@ -137,7 +137,7 @@ Get a list of statuses for all feature flags
 //import io.swagger.client.ApiException;
 //import io.swagger.client.Configuration;
 //import io.swagger.client.auth.*;
-//import io.swagger.client.api.FlagsApi;
+//import io.swagger.client.api.FeatureFlagsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -147,14 +147,14 @@ Token.setApiKey("YOUR API KEY");
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Token.setApiKeyPrefix("Token");
 
-FlagsApi apiInstance = new FlagsApi();
+FeatureFlagsApi apiInstance = new FeatureFlagsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String environmentKey = "environmentKey_example"; // String | The environment key
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
 try {
     FeatureFlagStatuses result = apiInstance.getFeatureFlagStatus(projectKey, environmentKey);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling FlagsApi#getFeatureFlagStatus");
+    System.err.println("Exception when calling FeatureFlagsApi#getFeatureFlagStatus");
     e.printStackTrace();
 }
 ```
@@ -164,7 +164,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentKey** | **String**| The environment key |
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
 
 ### Return type
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 # **getFeatureFlagStatuses**
 > FeatureFlagStatus getFeatureFlagStatuses(projectKey, environmentKey, featureFlagKey)
 
-Get a list of statuses for all feature flags
+Get the status for a particular feature flag.
 
 ### Example
 ```java
@@ -192,7 +192,7 @@ Get a list of statuses for all feature flags
 //import io.swagger.client.ApiException;
 //import io.swagger.client.Configuration;
 //import io.swagger.client.auth.*;
-//import io.swagger.client.api.FlagsApi;
+//import io.swagger.client.api.FeatureFlagsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -202,15 +202,15 @@ Token.setApiKey("YOUR API KEY");
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Token.setApiKeyPrefix("Token");
 
-FlagsApi apiInstance = new FlagsApi();
+FeatureFlagsApi apiInstance = new FeatureFlagsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String environmentKey = "environmentKey_example"; // String | The environment key
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
 String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
 try {
     FeatureFlagStatus result = apiInstance.getFeatureFlagStatuses(projectKey, environmentKey, featureFlagKey);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling FlagsApi#getFeatureFlagStatuses");
+    System.err.println("Exception when calling FeatureFlagsApi#getFeatureFlagStatuses");
     e.printStackTrace();
 }
 ```
@@ -220,7 +220,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentKey** | **String**| The environment key |
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
  **featureFlagKey** | **String**| The feature flag&#39;s key. The key identifies the flag in your code. |
 
 ### Return type
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 <a name="getFeatureFlags"></a>
 # **getFeatureFlags**
-> FeatureFlags getFeatureFlags(projectKey, environmentKeyQuery, tag)
+> FeatureFlags getFeatureFlags(projectKey, env, tag)
 
 Get a list of all features in the given project.
 
@@ -249,7 +249,7 @@ Get a list of all features in the given project.
 //import io.swagger.client.ApiException;
 //import io.swagger.client.Configuration;
 //import io.swagger.client.auth.*;
-//import io.swagger.client.api.FlagsApi;
+//import io.swagger.client.api.FeatureFlagsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -259,15 +259,15 @@ Token.setApiKey("YOUR API KEY");
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Token.setApiKeyPrefix("Token");
 
-FlagsApi apiInstance = new FlagsApi();
+FeatureFlagsApi apiInstance = new FeatureFlagsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String environmentKeyQuery = "environmentKeyQuery_example"; // String | The environment key
+String env = "env_example"; // String | By default, each feature will include configurations for each environment. You can filter environments with the env query parameter. For example, setting env=production will restrict the returned configurations to just your production environment.
 String tag = "tag_example"; // String | Filter by tag. A tag can be used to group flags across projects.
 try {
-    FeatureFlags result = apiInstance.getFeatureFlags(projectKey, environmentKeyQuery, tag);
+    FeatureFlags result = apiInstance.getFeatureFlags(projectKey, env, tag);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling FlagsApi#getFeatureFlags");
+    System.err.println("Exception when calling FeatureFlagsApi#getFeatureFlags");
     e.printStackTrace();
 }
 ```
@@ -277,7 +277,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentKeyQuery** | **String**| The environment key | [optional]
+ **env** | **String**| By default, each feature will include configurations for each environment. You can filter environments with the env query parameter. For example, setting env&#x3D;production will restrict the returned configurations to just your production environment. | [optional]
  **tag** | **String**| Filter by tag. A tag can be used to group flags across projects. | [optional]
 
 ### Return type
@@ -295,7 +295,7 @@ Name | Type | Description  | Notes
 
 <a name="patchFeatureFlag"></a>
 # **patchFeatureFlag**
-> FeatureFlag patchFeatureFlag(projectKey, featureFlagKey, patchDelta)
+> FeatureFlag patchFeatureFlag(projectKey, featureFlagKey, patchComment)
 
 Perform a partial update to a feature.
 
@@ -306,7 +306,7 @@ Perform a partial update to a feature.
 //import io.swagger.client.ApiException;
 //import io.swagger.client.Configuration;
 //import io.swagger.client.auth.*;
-//import io.swagger.client.api.FlagsApi;
+//import io.swagger.client.api.FeatureFlagsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -316,15 +316,15 @@ Token.setApiKey("YOUR API KEY");
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Token.setApiKeyPrefix("Token");
 
-FlagsApi apiInstance = new FlagsApi();
+FeatureFlagsApi apiInstance = new FeatureFlagsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
 String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
-List<PatchDelta> patchDelta = Arrays.asList(new PatchDelta()); // List<PatchDelta> | http://jsonpatch.com/
+PatchComment patchComment = new PatchComment(); // PatchComment | Requires a JSON Patch representation of the desired changes to the project. 'http://jsonpatch.com/' Feature flag patches also support JSON Merge Patch format. 'https://tools.ietf.org/html/rfc7386' The addition of comments is also supported.
 try {
-    FeatureFlag result = apiInstance.patchFeatureFlag(projectKey, featureFlagKey, patchDelta);
+    FeatureFlag result = apiInstance.patchFeatureFlag(projectKey, featureFlagKey, patchComment);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling FlagsApi#patchFeatureFlag");
+    System.err.println("Exception when calling FeatureFlagsApi#patchFeatureFlag");
     e.printStackTrace();
 }
 ```
@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
  **featureFlagKey** | **String**| The feature flag&#39;s key. The key identifies the flag in your code. |
- **patchDelta** | [**List&lt;PatchDelta&gt;**](PatchDelta.md)| http://jsonpatch.com/ |
+ **patchComment** | [**PatchComment**](PatchComment.md)| Requires a JSON Patch representation of the desired changes to the project. &#39;http://jsonpatch.com/&#39; Feature flag patches also support JSON Merge Patch format. &#39;https://tools.ietf.org/html/rfc7386&#39; The addition of comments is also supported. |
 
 ### Return type
 
@@ -363,7 +363,7 @@ Creates a new feature flag.
 //import io.swagger.client.ApiException;
 //import io.swagger.client.Configuration;
 //import io.swagger.client.auth.*;
-//import io.swagger.client.api.FlagsApi;
+//import io.swagger.client.api.FeatureFlagsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -373,13 +373,13 @@ Token.setApiKey("YOUR API KEY");
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Token.setApiKeyPrefix("Token");
 
-FlagsApi apiInstance = new FlagsApi();
+FeatureFlagsApi apiInstance = new FeatureFlagsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-FeatureFlagBody featureFlagBody = new FeatureFlagBody(); // FeatureFlagBody | Create a new feature flag
+FeatureFlagBody featureFlagBody = new FeatureFlagBody(); // FeatureFlagBody | Create a new feature flag.
 try {
     apiInstance.postFeatureFlag(projectKey, featureFlagBody);
 } catch (ApiException e) {
-    System.err.println("Exception when calling FlagsApi#postFeatureFlag");
+    System.err.println("Exception when calling FeatureFlagsApi#postFeatureFlag");
     e.printStackTrace();
 }
 ```
@@ -389,7 +389,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **featureFlagBody** | [**FeatureFlagBody**](FeatureFlagBody.md)| Create a new feature flag |
+ **featureFlagBody** | [**FeatureFlagBody**](FeatureFlagBody.md)| Create a new feature flag. |
 
 ### Return type
 
