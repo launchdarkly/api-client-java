@@ -33,7 +33,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.launchdarkly</groupId>
     <artifactId>api-client</artifactId>
-    <version>1.0.7</version>
+    <version>2.0.1</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:1.0.7"
+compile "com.launchdarkly:api-client:2.0.1"
 ```
 
 ### Others
@@ -54,7 +54,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/api-client-1.0.7.jar
+* target/api-client-2.0.1.jar
 * target/lib/*.jar
 
 ## Getting Started
@@ -63,10 +63,10 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import io.swagger.client.*;
-import io.swagger.client.auth.*;
-import io.swagger.client.model.*;
-import io.swagger.client.api.AuditLogApi;
+import com.launchdarkly.api.*;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.model.*;
+import com.launchdarkly.api.api.AuditLogApi;
 
 import java.io.File;
 import java.util.*;
@@ -119,8 +119,8 @@ Class | Method | HTTP request | Description
 *EnvironmentsApi* | [**postEnvironment**](docs/EnvironmentsApi.md#postEnvironment) | **POST** /projects/{projectKey}/environments | Create a new environment in a specified project with a given name, key, and swatch color.
 *FeatureFlagsApi* | [**deleteFeatureFlag**](docs/FeatureFlagsApi.md#deleteFeatureFlag) | **DELETE** /flags/{projectKey}/{featureFlagKey} | Delete a feature flag in all environments. Be careful-- only delete feature flags that are no longer being used by your application.
 *FeatureFlagsApi* | [**getFeatureFlag**](docs/FeatureFlagsApi.md#getFeatureFlag) | **GET** /flags/{projectKey}/{featureFlagKey} | Get a single feature flag by key.
-*FeatureFlagsApi* | [**getFeatureFlagStatus**](docs/FeatureFlagsApi.md#getFeatureFlagStatus) | **GET** /flag-statuses/{projectKey}/{environmentKey} | Get a list of statuses for all feature flags. The status includes the last time the feature flag was requested, as well as the state of the flag.
-*FeatureFlagsApi* | [**getFeatureFlagStatuses**](docs/FeatureFlagsApi.md#getFeatureFlagStatuses) | **GET** /flag-statuses/{projectKey}/{environmentKey}/{featureFlagKey} | Get the status for a particular feature flag.
+*FeatureFlagsApi* | [**getFeatureFlagStatus**](docs/FeatureFlagsApi.md#getFeatureFlagStatus) | **GET** /flag-statuses/{projectKey}/{environmentKey}/{featureFlagKey} | Get the status for a particular feature flag.
+*FeatureFlagsApi* | [**getFeatureFlagStatuses**](docs/FeatureFlagsApi.md#getFeatureFlagStatuses) | **GET** /flag-statuses/{projectKey}/{environmentKey} | Get a list of statuses for all feature flags. The status includes the last time the feature flag was requested, as well as the state of the flag.
 *FeatureFlagsApi* | [**getFeatureFlags**](docs/FeatureFlagsApi.md#getFeatureFlags) | **GET** /flags/{projectKey} | Get a list of all features in the given project.
 *FeatureFlagsApi* | [**patchFeatureFlag**](docs/FeatureFlagsApi.md#patchFeatureFlag) | **PATCH** /flags/{projectKey}/{featureFlagKey} | Perform a partial update to a feature.
 *FeatureFlagsApi* | [**postFeatureFlag**](docs/FeatureFlagsApi.md#postFeatureFlag) | **POST** /flags/{projectKey} | Creates a new feature flag.
@@ -135,6 +135,11 @@ Class | Method | HTTP request | Description
 *TeamMembersApi* | [**getMembers**](docs/TeamMembersApi.md#getMembers) | **GET** /members | Returns a list of all members in the account.
 *TeamMembersApi* | [**patchMember**](docs/TeamMembersApi.md#patchMember) | **PATCH** /members/{memberId} | Modify a team member by ID.
 *TeamMembersApi* | [**postMembers**](docs/TeamMembersApi.md#postMembers) | **POST** /members | Invite new members.
+*UserSegmentsApi* | [**deleteUserSegment**](docs/UserSegmentsApi.md#deleteUserSegment) | **DELETE** /segments/{projectKey}/{environmentKey}/{userSegmentKey} | Delete a user segment.
+*UserSegmentsApi* | [**getUserSegment**](docs/UserSegmentsApi.md#getUserSegment) | **GET** /segments/{projectKey}/{environmentKey}/{userSegmentKey} | Get a single user segment by key.
+*UserSegmentsApi* | [**getUserSegments**](docs/UserSegmentsApi.md#getUserSegments) | **GET** /segments/{projectKey}/{environmentKey} | Get a list of all user segments in the given project.
+*UserSegmentsApi* | [**patchUserSegment**](docs/UserSegmentsApi.md#patchUserSegment) | **PATCH** /segments/{projectKey}/{environmentKey}/{userSegmentKey} | Perform a partial update to a user segment.
+*UserSegmentsApi* | [**postUserSegment**](docs/UserSegmentsApi.md#postUserSegment) | **POST** /segments/{projectKey}/{environmentKey} | Creates a new user segment.
 *UserSettingsApi* | [**getUserFlagSetting**](docs/UserSettingsApi.md#getUserFlagSetting) | **GET** /users/{projectKey}/{environmentKey}/{userKey}/flags/{featureFlagKey} | Fetch a single flag setting for a user by key.
 *UserSettingsApi* | [**getUserFlagSettings**](docs/UserSettingsApi.md#getUserFlagSettings) | **GET** /users/{projectKey}/{environmentKey}/{userKey}/flags | Fetch a single flag setting for a user by key.
 *UserSettingsApi* | [**putFlagSetting**](docs/UserSettingsApi.md#putFlagSetting) | **PUT** /users/{projectKey}/{environmentKey}/{userKey}/flags/{featureFlagKey} | Specifically enable or disable a feature flag for a user based on their key.
@@ -161,23 +166,22 @@ Class | Method | HTTP request | Description
  - [CustomRoles](docs/CustomRoles.md)
  - [Environment](docs/Environment.md)
  - [EnvironmentBody](docs/EnvironmentBody.md)
+ - [Fallthrough](docs/Fallthrough.md)
  - [FeatureFlag](docs/FeatureFlag.md)
  - [FeatureFlagBody](docs/FeatureFlagBody.md)
  - [FeatureFlagConfig](docs/FeatureFlagConfig.md)
- - [FeatureFlagConfigFallthrough](docs/FeatureFlagConfigFallthrough.md)
  - [FeatureFlagStatus](docs/FeatureFlagStatus.md)
  - [FeatureFlagStatuses](docs/FeatureFlagStatuses.md)
  - [FeatureFlags](docs/FeatureFlags.md)
- - [FlagsprojectKeyfeatureFlagKeyPatch](docs/FlagsprojectKeyfeatureFlagKeyPatch.md)
  - [Link](docs/Link.md)
  - [Links](docs/Links.md)
  - [Member](docs/Member.md)
  - [Members](docs/Members.md)
  - [MembersBody](docs/MembersBody.md)
- - [NonOwnerRole](docs/NonOwnerRole.md)
  - [PatchComment](docs/PatchComment.md)
- - [PatchDelta](docs/PatchDelta.md)
+ - [PatchOperation](docs/PatchOperation.md)
  - [Policy](docs/Policy.md)
+ - [Prerequisite](docs/Prerequisite.md)
  - [Project](docs/Project.md)
  - [ProjectBody](docs/ProjectBody.md)
  - [Projects](docs/Projects.md)
@@ -191,6 +195,11 @@ Class | Method | HTTP request | Description
  - [User](docs/User.md)
  - [UserFlagSetting](docs/UserFlagSetting.md)
  - [UserFlagSettings](docs/UserFlagSettings.md)
+ - [UserRecord](docs/UserRecord.md)
+ - [UserSegment](docs/UserSegment.md)
+ - [UserSegmentBody](docs/UserSegmentBody.md)
+ - [UserSegmentRule](docs/UserSegmentRule.md)
+ - [UserSegments](docs/UserSegments.md)
  - [UserSettingsBody](docs/UserSettingsBody.md)
  - [Users](docs/Users.md)
  - [Variation](docs/Variation.md)

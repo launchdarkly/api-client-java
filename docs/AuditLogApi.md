@@ -17,11 +17,11 @@ Get a list of all audit log entries. The query parameters allow you to restrict 
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.AuditLogApi;
+//import com.launchdarkly.api.ApiClient;
+//import com.launchdarkly.api.ApiException;
+//import com.launchdarkly.api.Configuration;
+//import com.launchdarkly.api.auth.*;
+//import com.launchdarkly.api.api.AuditLogApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -78,11 +78,11 @@ Use this endpoint to fetch a single audit log entry by its resouce ID.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.AuditLogApi;
+//import com.launchdarkly.api.ApiClient;
+//import com.launchdarkly.api.ApiException;
+//import com.launchdarkly.api.Configuration;
+//import com.launchdarkly.api.auth.*;
+//import com.launchdarkly.api.api.AuditLogApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

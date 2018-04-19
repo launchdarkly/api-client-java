@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **key** | **String** |  |  [optional]
 **name** | **String** | Name of the feature flag. |  [optional]
+**description** | **String** | Description of the feature flag. |  [optional]
 **kind** | **String** | Whether the feature flag is a boolean flag or multivariate. |  [optional]
 **creationDate** | [**BigDecimal**](BigDecimal.md) | A unix epoch time in milliseconds specifying the creation time of this flag. |  [optional]
 **includeInSnippet** | **Boolean** |  |  [optional]

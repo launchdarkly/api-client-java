@@ -12,7 +12,9 @@ Name | Type | Description | Notes
 **version** | **Integer** |  |  [optional]
 **targets** | [**List&lt;Target&gt;**](Target.md) |  |  [optional]
 **rules** | [**List&lt;Rule&gt;**](Rule.md) |  |  [optional]
-**fallthrough** | [**FeatureFlagConfigFallthrough**](FeatureFlagConfigFallthrough.md) |  |  [optional]
+**fallthrough** | [**Fallthrough**](Fallthrough.md) |  |  [optional]
+**offVariation** | **Integer** |  |  [optional]
+**prerequisites** | [**List&lt;Prerequisite&gt;**](Prerequisite.md) |  |  [optional]
 
 
 

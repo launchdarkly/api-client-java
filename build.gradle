@@ -3,7 +3,7 @@ apply plugin: 'eclipse'
 apply plugin: 'signing'
 
 group = 'com.launchdarkly'
-version = '1.0.7'
+version = '1.0.5'
 
 buildscript {
     repositories {

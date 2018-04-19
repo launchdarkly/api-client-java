@@ -19,11 +19,11 @@ Delete a user by ID.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.UsersApi;
+//import com.launchdarkly.api.ApiClient;
+//import com.launchdarkly.api.ApiException;
+//import com.launchdarkly.api.Configuration;
+//import com.launchdarkly.api.auth.*;
+//import com.launchdarkly.api.api.UsersApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -75,11 +75,11 @@ Search users in LaunchDarkly based on their last active date, or a search query.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.UsersApi;
+//import com.launchdarkly.api.ApiClient;
+//import com.launchdarkly.api.ApiException;
+//import com.launchdarkly.api.Configuration;
+//import com.launchdarkly.api.auth.*;
+//import com.launchdarkly.api.api.UsersApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -93,8 +93,8 @@ UsersApi apiInstance = new UsersApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
 String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
 String q = "q_example"; // String | Search query.
-BigDecimal limit = new BigDecimal(); // BigDecimal | Pagination limit.
-BigDecimal offset = new BigDecimal(); // BigDecimal | Specifies the first item to return in the collection.
+Integer limit = 56; // Integer | Pagination limit.
+Integer offset = 56; // Integer | Specifies the first item to return in the collection.
 BigDecimal after = new BigDecimal(); // BigDecimal | A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned will have occured after this timestamp.
 try {
     Users result = apiInstance.getSearchUsers(projectKey, environmentKey, q, limit, offset, after);
@@ -112,8 +112,8 @@ Name | Type | Description  | Notes
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
  **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
  **q** | **String**| Search query. | [optional]
- **limit** | **BigDecimal**| Pagination limit. | [optional]
- **offset** | **BigDecimal**| Specifies the first item to return in the collection. | [optional]
+ **limit** | **Integer**| Pagination limit. | [optional]
+ **offset** | **Integer**| Specifies the first item to return in the collection. | [optional]
  **after** | **BigDecimal**| A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned will have occured after this timestamp. | [optional]
 
 ### Return type
@@ -138,11 +138,11 @@ Get a user by key.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.UsersApi;
+//import com.launchdarkly.api.ApiClient;
+//import com.launchdarkly.api.ApiException;
+//import com.launchdarkly.api.Configuration;
+//import com.launchdarkly.api.auth.*;
+//import com.launchdarkly.api.api.UsersApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -188,18 +188,18 @@ Name | Type | Description  | Notes
 
 <a name="getUsers"></a>
 # **getUsers**
-> Users getUsers(projectKey, environmentKey, limit)
+> Users getUsers(projectKey, environmentKey, limit, h, scrollId)
 
 List all users in the environment. Includes the total count of users. In each page, there will be up to &#39;limit&#39; users returned (default 20). This is useful for exporting all users in the system for further analysis. Paginated collections will include a next link containing a URL with the next set of elements in the collection.
 
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.UsersApi;
+//import com.launchdarkly.api.ApiClient;
+//import com.launchdarkly.api.ApiException;
+//import com.launchdarkly.api.Configuration;
+//import com.launchdarkly.api.auth.*;
+//import com.launchdarkly.api.api.UsersApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -212,9 +212,11 @@ Token.setApiKey("YOUR API KEY");
 UsersApi apiInstance = new UsersApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
 String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
-BigDecimal limit = new BigDecimal(); // BigDecimal | Pagination limit.
+Integer limit = 56; // Integer | Pagination limit.
+String h = "h_example"; // String | This parameter is required when following \"next\" links.
+String scrollId = "scrollId_example"; // String | This parameter is required when following \"next\" links.
 try {
-    Users result = apiInstance.getUsers(projectKey, environmentKey, limit);
+    Users result = apiInstance.getUsers(projectKey, environmentKey, limit, h, scrollId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#getUsers");
@@ -228,7 +230,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
  **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
- **limit** | **BigDecimal**| Pagination limit. | [optional]
+ **limit** | **Integer**| Pagination limit. | [optional]
+ **h** | **String**| This parameter is required when following \&quot;next\&quot; links. | [optional]
+ **scrollId** | **String**| This parameter is required when following \&quot;next\&quot; links. | [optional]
 
 ### Return type
 
