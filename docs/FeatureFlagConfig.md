@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **fallthrough** | [**Fallthrough**](Fallthrough.md) |  |  [optional]
 **offVariation** | **Integer** |  |  [optional]
 **prerequisites** | [**List&lt;Prerequisite&gt;**](Prerequisite.md) |  |  [optional]
+**trackEvents** | **Boolean** | Set to true to send detailed event information for this flag. |  [optional]
 
 
 

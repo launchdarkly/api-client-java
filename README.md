@@ -33,7 +33,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.launchdarkly</groupId>
     <artifactId>api-client</artifactId>
-    <version>2.0.1</version>
+    <version>2.0.2</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:2.0.1"
+compile "com.launchdarkly:api-client:2.0.2"
 ```
 
 ### Others
@@ -54,7 +54,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/api-client-2.0.1.jar
+* target/api-client-2.0.2.jar
 * target/lib/*.jar
 
 ## Getting Started

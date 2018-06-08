@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **color** | **String** | The swatch color for the environment. |  [optional]
 **defaultTtl** | [**BigDecimal**](BigDecimal.md) | The default TTL. |  [optional]
 **secureMode** | **Boolean** | Determines if this environment is in safe mode. |  [optional]
+**defaultTrackEvents** | **Boolean** | Set to true to send detailed event information for new flags. |  [optional]
 
 
 
