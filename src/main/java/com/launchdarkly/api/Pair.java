@@ -13,7 +13,7 @@
 
 package com.launchdarkly.api;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-08T11:19:31.647-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-08T11:21:18.311-07:00")
 public class Pair {
     private String name = "";
     private String value = "";
