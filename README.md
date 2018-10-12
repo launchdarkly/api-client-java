@@ -33,7 +33,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.launchdarkly</groupId>
     <artifactId>api-client</artifactId>
-    <version>2.0.6</version>
+    <version>2.0.9</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -43,7 +43,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:2.0.6"
+compile "com.launchdarkly:api-client:2.0.9"
 ```
 
 ### Others
@@ -54,7 +54,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/api-client-2.0.6.jar
+* target/api-client-2.0.9.jar
 * target/lib/*.jar
 
 ## Getting Started
@@ -161,6 +161,9 @@ Class | Method | HTTP request | Description
  - [AuditLogEntry](docs/AuditLogEntry.md)
  - [AuditLogEntryTarget](docs/AuditLogEntryTarget.md)
  - [Clause](docs/Clause.md)
+ - [CustomProperties](docs/CustomProperties.md)
+ - [CustomProperty](docs/CustomProperty.md)
+ - [CustomPropertyValues](docs/CustomPropertyValues.md)
  - [CustomRole](docs/CustomRole.md)
  - [CustomRoleBody](docs/CustomRoleBody.md)
  - [CustomRoles](docs/CustomRoles.md)

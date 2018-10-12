@@ -19,56 +19,57 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.launchdarkly.api.model.Link;
+import com.launchdarkly.api.model.CustomPropertyValues;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Links
+ * A name and value describing a custom property.
  */
+@ApiModel(description = "A name and value describing a custom property.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-12T02:47:33.078Z")
-public class Links {
-  @SerializedName("self")
-  private Link self = null;
+public class CustomProperty {
+  @SerializedName("name")
+  private String name = null;
 
-  @SerializedName("next")
-  private Link next = null;
+  @SerializedName("value")
+  private CustomPropertyValues value = null;
 
-  public Links self(Link self) {
-    this.self = self;
+  public CustomProperty name(String name) {
+    this.name = name;
     return this;
   }
 
    /**
-   * Get self
-   * @return self
+   * The name of the property.
+   * @return name
   **/
-  @ApiModelProperty(value = "")
-  public Link getSelf() {
-    return self;
+  @ApiModelProperty(example = "My property", required = true, value = "The name of the property.")
+  public String getName() {
+    return name;
   }
 
-  public void setSelf(Link self) {
-    this.self = self;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public Links next(Link next) {
-    this.next = next;
+  public CustomProperty value(CustomPropertyValues value) {
+    this.value = value;
     return this;
   }
 
    /**
-   * Get next
-   * @return next
+   * Get value
+   * @return value
   **/
   @ApiModelProperty(value = "")
-  public Link getNext() {
-    return next;
+  public CustomPropertyValues getValue() {
+    return value;
   }
 
-  public void setNext(Link next) {
-    this.next = next;
+  public void setValue(CustomPropertyValues value) {
+    this.value = value;
   }
 
 
@@ -80,24 +81,24 @@ public class Links {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Links links = (Links) o;
-    return Objects.equals(this.self, links.self) &&
-        Objects.equals(this.next, links.next);
+    CustomProperty customProperty = (CustomProperty) o;
+    return Objects.equals(this.name, customProperty.name) &&
+        Objects.equals(this.value, customProperty.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(self, next);
+    return Objects.hash(name, value);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Links {\n");
+    sb.append("class CustomProperty {\n");
     
-    sb.append("    self: ").append(toIndentedString(self)).append("\n");
-    sb.append("    next: ").append(toIndentedString(next)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **links** | [**Links**](Links.md) |  |  [optional]
-**items** | **Object** |  |  [optional]
+**items** | [**Map&lt;String, UserFlagSetting&gt;**](UserFlagSetting.md) |  |  [optional]
 
 
 

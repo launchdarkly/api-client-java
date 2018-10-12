@@ -14,14 +14,14 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
+import io.swagger.annotations.ApiModel;
 
 /**
- * Resources
+ * A mapping of keys to CustomProperty entries.
  */
+@ApiModel(description = "A mapping of keys to CustomProperty entries.")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-12T02:47:33.078Z")
-public class Resources extends ArrayList<String> {
+public class CustomProperties {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -31,20 +31,20 @@ public class Resources extends ArrayList<String> {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return super.equals(o);
+    return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode());
+    return Objects.hash();
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Resources {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("class CustomProperties {\n");
+    
     sb.append("}");
     return sb.toString();
   }
