@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Fallthrough
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-12T02:47:33.078Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-12T03:53:44.991Z")
 public class Fallthrough {
   @SerializedName("variation")
   private Integer variation = null;

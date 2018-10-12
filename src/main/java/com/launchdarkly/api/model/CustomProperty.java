@@ -28,7 +28,7 @@ import java.io.IOException;
  * A name and value describing a custom property.
  */
 @ApiModel(description = "A name and value describing a custom property.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-12T02:47:33.078Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-12T03:53:44.991Z")
 public class CustomProperty {
   @SerializedName("name")
   private String name = null;
