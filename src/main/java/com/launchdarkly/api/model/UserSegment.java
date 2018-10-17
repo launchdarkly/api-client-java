@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * UserSegment
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-12T03:53:44.991Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-17T21:13:20.773Z")
 public class UserSegment {
   @SerializedName("key")
   private String key = null;
@@ -134,7 +134,7 @@ public class UserSegment {
    * An array of tags for this user segment.
    * @return tags
   **/
-  @ApiModelProperty(value = "An array of tags for this user segment.")
+  @ApiModelProperty(example = "[\"dev\",\"ops\"]", value = "An array of tags for this user segment.")
   public List<String> getTags() {
     return tags;
   }

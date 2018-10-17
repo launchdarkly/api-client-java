@@ -36,7 +36,7 @@ import java.util.Map;
 /**
  * FeatureFlag
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-12T03:53:44.991Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-17T21:13:20.773Z")
 public class FeatureFlag {
   @SerializedName("key")
   private String key = null;
@@ -241,7 +241,7 @@ public class FeatureFlag {
    * An array of tags for this feature flag.
    * @return tags
   **/
-  @ApiModelProperty(example = "\"[]\"", value = "An array of tags for this feature flag.")
+  @ApiModelProperty(example = "[]", value = "An array of tags for this feature flag.")
   public List<String> getTags() {
     return tags;
   }
@@ -267,7 +267,7 @@ public class FeatureFlag {
    * The variations for this feature flag.
    * @return variations
   **/
-  @ApiModelProperty(example = "\"[ { \\\"value\\\": \\\"a\\\" }, { \\\"value\\\": \\\"b\\\" } ]\"", value = "The variations for this feature flag.")
+  @ApiModelProperty(example = "[{\"value\":\"a\"},{\"value\":\"b\"}]", value = "The variations for this feature flag.")
   public List<Variation> getVariations() {
     return variations;
   }

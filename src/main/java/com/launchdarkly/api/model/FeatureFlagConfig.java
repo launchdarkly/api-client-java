@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * FeatureFlagConfig
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-12T03:53:44.991Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-17T21:13:20.773Z")
 public class FeatureFlagConfig {
   @SerializedName("on")
   private Boolean on = null;
@@ -224,7 +224,7 @@ public class FeatureFlagConfig {
    * Get goalIds
    * @return goalIds
   **/
-  @ApiModelProperty(example = "\"[\\\"d7239405bd89c930e885aa76\\\", \\\"405bc930e88d7239d895aa76\\\"]\"", value = "")
+  @ApiModelProperty(example = "[\"d7239405bd89c930e885aa76\",\"405bc930e88d7239d895aa76\"]", value = "")
   public List<String> getGoalIds() {
     return goalIds;
   }

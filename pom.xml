@@ -6,12 +6,12 @@
     <packaging>jar</packaging>
     <name>api-client</name>
     <version>2.0.9</version>
-    <url>https://github.com/swagger-api/swagger-codegen</url>
-    <description>Swagger Java</description>
+    <url>https://github.com/launchdarkly/api-client-java</url>
+    <description>LaunchDarkly API client</description>
     <scm>
-        <connection>scm:git:git@github.com:swagger-api/swagger-codegen.git</connection>
-        <developerConnection>scm:git:git@github.com:swagger-api/swagger-codegen.git</developerConnection>
-        <url>https://github.com/swagger-api/swagger-codegen</url>
+        <connection>scm:git:git://github.com/launchdarkly/api-client-java.git</connection>
+        <developerConnection>scm:git:ssh:git@github.com:launchdarkly/api-client-java.git</developerConnection>
+        <url>https://github.com/launchdarkly/api-client-java</url>
     </scm>
 
     <licenses>
@@ -24,10 +24,10 @@
 
     <developers>
         <developer>
-            <name>Swagger</name>
-            <email>apiteam@swagger.io</email>
-            <organization>Swagger</organization>
-            <organizationUrl>http://swagger.io</organizationUrl>
+            <name>LaunchDarkly</name>
+            <email>support@launchdarkly.com</email>
+            <organization>LaunchDarkly</organization>
+            <organizationUrl>https://launchdarkly.com</organizationUrl>
         </developer>
     </developers>
 
