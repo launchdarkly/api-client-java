@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 
 <a name="postFeatureFlag"></a>
 # **postFeatureFlag**
-> postFeatureFlag(projectKey, featureFlagBody)
+> postFeatureFlag(projectKey, featureFlagBody, clone)
 
 Creates a new feature flag.
 
@@ -376,8 +376,9 @@ Token.setApiKey("YOUR API KEY");
 FeatureFlagsApi apiInstance = new FeatureFlagsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
 FeatureFlagBody featureFlagBody = new FeatureFlagBody(); // FeatureFlagBody | Create a new feature flag.
+String clone = "clone_example"; // String | The key of the feature flag to be cloned. The key identifies the flag in your code.  For example, setting clone=flagKey will copy the full targeting configuration for all environments (including on/off state) from the original flag to the new flag.
 try {
-    apiInstance.postFeatureFlag(projectKey, featureFlagBody);
+    apiInstance.postFeatureFlag(projectKey, featureFlagBody, clone);
 } catch (ApiException e) {
     System.err.println("Exception when calling FeatureFlagsApi#postFeatureFlag");
     e.printStackTrace();
@@ -390,6 +391,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
  **featureFlagBody** | [**FeatureFlagBody**](FeatureFlagBody.md)| Create a new feature flag. |
+ **clone** | **String**| The key of the feature flag to be cloned. The key identifies the flag in your code.  For example, setting clone&#x3D;flagKey will copy the full targeting configuration for all environments (including on/off state) from the original flag to the new flag. | [optional]
 
 ### Return type
 

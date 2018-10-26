@@ -201,7 +201,7 @@ Token.setApiKey("YOUR API KEY");
 
 EnvironmentsApi apiInstance = new EnvironmentsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-EnvironmentBody environmentBody = new EnvironmentBody(); // EnvironmentBody | New environment.
+EnvironmentPost environmentBody = new EnvironmentPost(); // EnvironmentPost | New environment.
 try {
     apiInstance.postEnvironment(projectKey, environmentBody);
 } catch (ApiException e) {
@@ -215,7 +215,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentBody** | [**EnvironmentBody**](EnvironmentBody.md)| New environment. |
+ **environmentBody** | [**EnvironmentPost**](EnvironmentPost.md)| New environment. |
 
 ### Return type
 
