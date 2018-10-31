@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * PatchComment
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-26T18:20:24.162Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T21:15:34.474Z")
 public class PatchComment {
   @SerializedName("comment")
   private String comment = null;

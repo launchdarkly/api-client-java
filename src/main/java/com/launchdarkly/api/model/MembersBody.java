@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * MembersBody
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-26T18:20:24.162Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T21:15:34.474Z")
 public class MembersBody {
   @SerializedName("email")
   private String email = null;
