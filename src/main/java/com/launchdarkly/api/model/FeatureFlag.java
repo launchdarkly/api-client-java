@@ -36,7 +36,7 @@ import java.util.Map;
 /**
  * FeatureFlag
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T21:15:34.474Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-28T23:28:49.451Z")
 public class FeatureFlag {
   @SerializedName("key")
   private String key = null;
@@ -67,6 +67,9 @@ public class FeatureFlag {
 
   @SerializedName("variations")
   private List<Variation> variations = null;
+
+  @SerializedName("_version")
+  private Integer version = null;
 
   @SerializedName("customProperties")
   private CustomProperties customProperties = null;
@@ -276,6 +279,24 @@ public class FeatureFlag {
     this.variations = variations;
   }
 
+  public FeatureFlag version(Integer version) {
+    this.version = version;
+    return this;
+  }
+
+   /**
+   * Get version
+   * @return version
+  **/
+  @ApiModelProperty(example = "23", value = "")
+  public Integer getVersion() {
+    return version;
+  }
+
+  public void setVersion(Integer version) {
+    this.version = version;
+  }
+
   public FeatureFlag customProperties(CustomProperties customProperties) {
     this.customProperties = customProperties;
     return this;
@@ -376,6 +397,7 @@ public class FeatureFlag {
         Objects.equals(this.maintainerId, featureFlag.maintainerId) &&
         Objects.equals(this.tags, featureFlag.tags) &&
         Objects.equals(this.variations, featureFlag.variations) &&
+        Objects.equals(this.version, featureFlag.version) &&
         Objects.equals(this.customProperties, featureFlag.customProperties) &&
         Objects.equals(this.links, featureFlag.links) &&
         Objects.equals(this.maintainer, featureFlag.maintainer) &&
@@ -384,7 +406,7 @@ public class FeatureFlag {
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, name, description, kind, creationDate, includeInSnippet, temporary, maintainerId, tags, variations, customProperties, links, maintainer, environments);
+    return Objects.hash(key, name, description, kind, creationDate, includeInSnippet, temporary, maintainerId, tags, variations, version, customProperties, links, maintainer, environments);
   }
 
 
@@ -403,6 +425,7 @@ public class FeatureFlag {
     sb.append("    maintainerId: ").append(toIndentedString(maintainerId)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    variations: ").append(toIndentedString(variations)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    customProperties: ").append(toIndentedString(customProperties)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    maintainer: ").append(toIndentedString(maintainer)).append("\n");

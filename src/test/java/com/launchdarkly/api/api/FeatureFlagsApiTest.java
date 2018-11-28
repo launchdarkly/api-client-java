@@ -156,7 +156,7 @@ public class FeatureFlagsApiTest {
         String projectKey = null;
         FeatureFlagBody featureFlagBody = null;
         String clone = null;
-        api.postFeatureFlag(projectKey, featureFlagBody, clone);
+        FeatureFlag response = api.postFeatureFlag(projectKey, featureFlagBody, clone);
 
         // TODO: test validations
     }

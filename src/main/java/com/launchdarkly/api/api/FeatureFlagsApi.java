@@ -959,10 +959,12 @@ public class FeatureFlagsApi {
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param featureFlagBody Create a new feature flag. (required)
      * @param clone The key of the feature flag to be cloned. The key identifies the flag in your code.  For example, setting clone&#x3D;flagKey will copy the full targeting configuration for all environments (including on/off state) from the original flag to the new flag. (optional)
+     * @return FeatureFlag
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void postFeatureFlag(String projectKey, FeatureFlagBody featureFlagBody, String clone) throws ApiException {
-        postFeatureFlagWithHttpInfo(projectKey, featureFlagBody, clone);
+    public FeatureFlag postFeatureFlag(String projectKey, FeatureFlagBody featureFlagBody, String clone) throws ApiException {
+        ApiResponse<FeatureFlag> resp = postFeatureFlagWithHttpInfo(projectKey, featureFlagBody, clone);
+        return resp.getData();
     }
 
     /**
@@ -971,12 +973,13 @@ public class FeatureFlagsApi {
      * @param projectKey The project key, used to tie the flags together under one project so they can be managed together. (required)
      * @param featureFlagBody Create a new feature flag. (required)
      * @param clone The key of the feature flag to be cloned. The key identifies the flag in your code.  For example, setting clone&#x3D;flagKey will copy the full targeting configuration for all environments (including on/off state) from the original flag to the new flag. (optional)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;FeatureFlag&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> postFeatureFlagWithHttpInfo(String projectKey, FeatureFlagBody featureFlagBody, String clone) throws ApiException {
+    public ApiResponse<FeatureFlag> postFeatureFlagWithHttpInfo(String projectKey, FeatureFlagBody featureFlagBody, String clone) throws ApiException {
         com.squareup.okhttp.Call call = postFeatureFlagValidateBeforeCall(projectKey, featureFlagBody, clone, null, null);
-        return apiClient.execute(call);
+        Type localVarReturnType = new TypeToken<FeatureFlag>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
     }
 
     /**
@@ -989,7 +992,7 @@ public class FeatureFlagsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call postFeatureFlagAsync(String projectKey, FeatureFlagBody featureFlagBody, String clone, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call postFeatureFlagAsync(String projectKey, FeatureFlagBody featureFlagBody, String clone, final ApiCallback<FeatureFlag> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1011,7 +1014,8 @@ public class FeatureFlagsApi {
         }
 
         com.squareup.okhttp.Call call = postFeatureFlagValidateBeforeCall(projectKey, featureFlagBody, clone, progressListener, progressRequestListener);
-        apiClient.executeAsync(call, callback);
+        Type localVarReturnType = new TypeToken<FeatureFlag>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
 }

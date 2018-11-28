@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * FeatureFlagStatus
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T21:15:34.474Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-28T23:28:49.451Z")
 public class FeatureFlagStatus {
   @SerializedName("_links")
   private Links links = null;

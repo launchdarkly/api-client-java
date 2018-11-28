@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 
 <a name="postFeatureFlag"></a>
 # **postFeatureFlag**
-> postFeatureFlag(projectKey, featureFlagBody, clone)
+> FeatureFlag postFeatureFlag(projectKey, featureFlagBody, clone)
 
 Creates a new feature flag.
 
@@ -378,7 +378,8 @@ String projectKey = "projectKey_example"; // String | The project key, used to t
 FeatureFlagBody featureFlagBody = new FeatureFlagBody(); // FeatureFlagBody | Create a new feature flag.
 String clone = "clone_example"; // String | The key of the feature flag to be cloned. The key identifies the flag in your code.  For example, setting clone=flagKey will copy the full targeting configuration for all environments (including on/off state) from the original flag to the new flag.
 try {
-    apiInstance.postFeatureFlag(projectKey, featureFlagBody, clone);
+    FeatureFlag result = apiInstance.postFeatureFlag(projectKey, featureFlagBody, clone);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FeatureFlagsApi#postFeatureFlag");
     e.printStackTrace();
@@ -395,7 +396,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**FeatureFlag**](FeatureFlag.md)
 
 ### Authorization
 
