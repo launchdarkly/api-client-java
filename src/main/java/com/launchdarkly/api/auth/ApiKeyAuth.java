@@ -18,7 +18,7 @@ import com.launchdarkly.api.Pair;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-28T23:28:49.451Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-12-03T23:58:04.366Z")
 public class ApiKeyAuth implements Authentication {
   private final String location;
   private final String paramName;
