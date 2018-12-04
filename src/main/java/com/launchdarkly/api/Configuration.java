@@ -13,7 +13,7 @@
 
 package com.launchdarkly.api;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-12-03T23:58:04.366Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-12-04T00:30:42.479Z")
 public class Configuration {
     private static ApiClient defaultApiClient = new ApiClient();
 
