@@ -22,7 +22,7 @@ import java.util.List;
  * Values for this property.
  */
 @ApiModel(description = "Values for this property.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-12-04T00:30:42.479Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-12-04T00:41:48.376Z")
 public class CustomPropertyValues extends ArrayList<String> {
 
   @Override
