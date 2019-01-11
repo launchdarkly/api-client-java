@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **maintainerId** | **String** | The ID of the member that should maintain this flag. |  [optional]
 **tags** | **List&lt;String&gt;** | An array of tags for this feature flag. |  [optional]
 **variations** | [**List&lt;Variation&gt;**](Variation.md) | The variations for this feature flag. |  [optional]
+**goalIds** | **List&lt;String&gt;** | An array goals from all environments associated with this feature flag |  [optional]
 **version** | **Integer** |  |  [optional]
 **customProperties** | [**Map&lt;String, CustomProperty&gt;**](CustomProperty.md) | A mapping of keys to CustomProperty entries. |  [optional]
 **links** | [**Links**](Links.md) |  |  [optional]

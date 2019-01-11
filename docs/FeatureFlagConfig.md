@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **lastModified** | **Long** |  |  [optional]
 **version** | **Integer** |  |  [optional]
 **targets** | [**List&lt;Target&gt;**](Target.md) |  |  [optional]
-**goalIds** | **List&lt;String&gt;** |  |  [optional]
 **rules** | [**List&lt;Rule&gt;**](Rule.md) |  |  [optional]
 **fallthrough** | [**Fallthrough**](Fallthrough.md) |  |  [optional]
 **offVariation** | **Integer** |  |  [optional]
