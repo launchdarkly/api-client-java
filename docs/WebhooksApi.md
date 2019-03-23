@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 <a name="postWebhook"></a>
 # **postWebhook**
-> postWebhook(webhookBody)
+> Webhook postWebhook(webhookBody)
 
 Create a webhook.
 
@@ -246,7 +246,8 @@ Token.setApiKey("YOUR API KEY");
 WebhooksApi apiInstance = new WebhooksApi();
 WebhookBody webhookBody = new WebhookBody(); // WebhookBody | New webhook.
 try {
-    apiInstance.postWebhook(webhookBody);
+    Webhook result = apiInstance.postWebhook(webhookBody);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WebhooksApi#postWebhook");
     e.printStackTrace();
@@ -261,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**Webhook**](Webhook.md)
 
 ### Authorization
 

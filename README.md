@@ -6,8 +6,8 @@ This REST API is for custom integrations, data export, or automating your featur
 # api-client
 
 LaunchDarkly REST API
-- API version: 2.0.14
-  - Build date: 2019-02-20T21:46:59.634Z
+- API version: 2.0.15
+  - Build date: 2019-03-23T00:27:14.692Z
 
 Build custom integrations with the LaunchDarkly REST API
 
@@ -46,7 +46,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>2.0.14</version>
+  <version>2.0.15</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -56,7 +56,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:2.0.14"
+compile "com.launchdarkly:api-client:2.0.15"
 ```
 
 ### Others
@@ -69,7 +69,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-2.0.14.jar`
+* `target/api-client-2.0.15.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -172,13 +172,11 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [Actions](docs/Actions.md)
  - [AuditLogEntries](docs/AuditLogEntries.md)
  - [AuditLogEntry](docs/AuditLogEntry.md)
  - [AuditLogEntryTarget](docs/AuditLogEntryTarget.md)
  - [Clause](docs/Clause.md)
  - [CustomProperty](docs/CustomProperty.md)
- - [CustomPropertyValues](docs/CustomPropertyValues.md)
  - [CustomRole](docs/CustomRole.md)
  - [CustomRoleBody](docs/CustomRoleBody.md)
  - [CustomRoles](docs/CustomRoles.md)
@@ -203,7 +201,6 @@ Class | Method | HTTP request | Description
  - [Project](docs/Project.md)
  - [ProjectBody](docs/ProjectBody.md)
  - [Projects](docs/Projects.md)
- - [Resources](docs/Resources.md)
  - [Role](docs/Role.md)
  - [Rollout](docs/Rollout.md)
  - [Rule](docs/Rule.md)

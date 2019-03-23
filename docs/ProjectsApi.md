@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 <a name="postProject"></a>
 # **postProject**
-> postProject(projectBody)
+> Project postProject(projectBody)
 
 Create a new project with the given key and name.
 
@@ -246,7 +246,8 @@ Token.setApiKey("YOUR API KEY");
 ProjectsApi apiInstance = new ProjectsApi();
 ProjectBody projectBody = new ProjectBody(); // ProjectBody | Project keys must be unique within an account.
 try {
-    apiInstance.postProject(projectBody);
+    Project result = apiInstance.postProject(projectBody);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProjectsApi#postProject");
     e.printStackTrace();
@@ -261,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**Project**](Project.md)
 
 ### Authorization
 

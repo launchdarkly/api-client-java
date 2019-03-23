@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 
 <a name="postUserSegment"></a>
 # **postUserSegment**
-> postUserSegment(projectKey, environmentKey, userSegmentBody)
+> UserSegment postUserSegment(projectKey, environmentKey, userSegmentBody)
 
 Creates a new user segment.
 
@@ -268,7 +268,8 @@ String projectKey = "projectKey_example"; // String | The project key, used to t
 String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
 UserSegmentBody userSegmentBody = new UserSegmentBody(); // UserSegmentBody | Create a new user segment.
 try {
-    apiInstance.postUserSegment(projectKey, environmentKey, userSegmentBody);
+    UserSegment result = apiInstance.postUserSegment(projectKey, environmentKey, userSegmentBody);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UserSegmentsApi#postUserSegment");
     e.printStackTrace();
@@ -285,7 +286,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**UserSegment**](UserSegment.md)
 
 ### Authorization
 

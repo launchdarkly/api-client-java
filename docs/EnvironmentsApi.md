@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 <a name="postEnvironment"></a>
 # **postEnvironment**
-> postEnvironment(projectKey, environmentBody)
+> Environment postEnvironment(projectKey, environmentBody)
 
 Create a new environment in a specified project with a given name, key, and swatch color.
 
@@ -203,7 +203,8 @@ EnvironmentsApi apiInstance = new EnvironmentsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
 EnvironmentPost environmentBody = new EnvironmentPost(); // EnvironmentPost | New environment.
 try {
-    apiInstance.postEnvironment(projectKey, environmentBody);
+    Environment result = apiInstance.postEnvironment(projectKey, environmentBody);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling EnvironmentsApi#postEnvironment");
     e.printStackTrace();
@@ -219,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**Environment**](Environment.md)
 
 ### Authorization
 

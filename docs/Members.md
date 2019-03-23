@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **links** | [**Links**](Links.md) |  |  [optional]
-**items** | [**Member**](Member.md) |  |  [optional]
+**items** | [**List&lt;Member&gt;**](Member.md) |  |  [optional]
 
 
 

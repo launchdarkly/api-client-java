@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 <a name="postMembers"></a>
 # **postMembers**
-> postMembers(membersBody)
+> Members postMembers(membersBody)
 
 Invite new members.
 
@@ -246,7 +246,8 @@ Token.setApiKey("YOUR API KEY");
 TeamMembersApi apiInstance = new TeamMembersApi();
 List<MembersBody> membersBody = Arrays.asList(new MembersBody()); // List<MembersBody> | New members to invite.
 try {
-    apiInstance.postMembers(membersBody);
+    Members result = apiInstance.postMembers(membersBody);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TeamMembersApi#postMembers");
     e.printStackTrace();
@@ -261,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**Members**](Members.md)
 
 ### Authorization
 

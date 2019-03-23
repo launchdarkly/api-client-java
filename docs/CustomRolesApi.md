@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 <a name="postCustomRole"></a>
 # **postCustomRole**
-> postCustomRole(customRoleBody)
+> CustomRole postCustomRole(customRoleBody)
 
 Create a new custom role.
 
@@ -246,7 +246,8 @@ Token.setApiKey("YOUR API KEY");
 CustomRolesApi apiInstance = new CustomRolesApi();
 CustomRoleBody customRoleBody = new CustomRoleBody(); // CustomRoleBody | New role or roles to create.
 try {
-    apiInstance.postCustomRole(customRoleBody);
+    CustomRole result = apiInstance.postCustomRole(customRoleBody);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CustomRolesApi#postCustomRole");
     e.printStackTrace();
@@ -261,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**CustomRole**](CustomRole.md)
 
 ### Authorization
 
