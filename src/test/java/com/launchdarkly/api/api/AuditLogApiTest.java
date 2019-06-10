@@ -44,8 +44,8 @@ public class AuditLogApiTest {
      */
     @Test
     public void getAuditLogEntriesTest() throws ApiException {
-        BigDecimal before = null;
-        BigDecimal after = null;
+        Long before = null;
+        Long after = null;
         String q = null;
         BigDecimal limit = null;
         String spec = null;

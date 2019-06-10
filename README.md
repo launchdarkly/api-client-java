@@ -7,7 +7,7 @@ This REST API is for custom integrations, data export, or automating your featur
 
 LaunchDarkly REST API
 - API version: 2.0.15
-  - Build date: 2019-03-23T00:27:14.692Z
+  - Build date: 2019-06-10T16:49:44.233Z
 
 Build custom integrations with the LaunchDarkly REST API
 
@@ -98,8 +98,8 @@ public class AuditLogApiExample {
         //Token.setApiKeyPrefix("Token");
 
         AuditLogApi apiInstance = new AuditLogApi();
-        BigDecimal before = new BigDecimal(); // BigDecimal | A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned will have before this timestamp.
-        BigDecimal after = new BigDecimal(); // BigDecimal | A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned will have occured after this timestamp.
+        Long before = 789L; // Long | A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned will have before this timestamp.
+        Long after = 789L; // Long | A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned will have occured after this timestamp.
         String q = "q_example"; // String | Text to search for. You can search for the full or partial name of the resource involved or fullpartial email address of the member who made the change.
         BigDecimal limit = new BigDecimal(); // BigDecimal | A limit on the number of audit log entries to be returned, between 1 and 20.
         String spec = "spec_example"; // String | A resource specifier, allowing you to filter audit log listings by resource.

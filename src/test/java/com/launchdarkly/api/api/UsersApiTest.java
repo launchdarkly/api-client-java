@@ -14,7 +14,6 @@
 package com.launchdarkly.api.api;
 
 import com.launchdarkly.api.ApiException;
-import java.math.BigDecimal;
 import com.launchdarkly.api.model.User;
 import com.launchdarkly.api.model.Users;
 import org.junit.Test;
@@ -67,7 +66,7 @@ public class UsersApiTest {
         String q = null;
         Integer limit = null;
         Integer offset = null;
-        BigDecimal after = null;
+        Long after = null;
         Users response = api.getSearchUsers(projectKey, environmentKey, q, limit, offset, after);
 
         // TODO: test validations

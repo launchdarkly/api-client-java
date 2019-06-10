@@ -68,7 +68,7 @@ public class AuditLogApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getAuditLogEntriesCall(BigDecimal before, BigDecimal after, String q, BigDecimal limit, String spec, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getAuditLogEntriesCall(Long before, Long after, String q, BigDecimal limit, String spec, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -120,7 +120,7 @@ public class AuditLogApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAuditLogEntriesValidateBeforeCall(BigDecimal before, BigDecimal after, String q, BigDecimal limit, String spec, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getAuditLogEntriesValidateBeforeCall(Long before, Long after, String q, BigDecimal limit, String spec, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
         com.squareup.okhttp.Call call = getAuditLogEntriesCall(before, after, q, limit, spec, progressListener, progressRequestListener);
@@ -139,7 +139,7 @@ public class AuditLogApi {
      * @return AuditLogEntries
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AuditLogEntries getAuditLogEntries(BigDecimal before, BigDecimal after, String q, BigDecimal limit, String spec) throws ApiException {
+    public AuditLogEntries getAuditLogEntries(Long before, Long after, String q, BigDecimal limit, String spec) throws ApiException {
         ApiResponse<AuditLogEntries> resp = getAuditLogEntriesWithHttpInfo(before, after, q, limit, spec);
         return resp.getData();
     }
@@ -155,7 +155,7 @@ public class AuditLogApi {
      * @return ApiResponse&lt;AuditLogEntries&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AuditLogEntries> getAuditLogEntriesWithHttpInfo(BigDecimal before, BigDecimal after, String q, BigDecimal limit, String spec) throws ApiException {
+    public ApiResponse<AuditLogEntries> getAuditLogEntriesWithHttpInfo(Long before, Long after, String q, BigDecimal limit, String spec) throws ApiException {
         com.squareup.okhttp.Call call = getAuditLogEntriesValidateBeforeCall(before, after, q, limit, spec, null, null);
         Type localVarReturnType = new TypeToken<AuditLogEntries>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -173,7 +173,7 @@ public class AuditLogApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAuditLogEntriesAsync(BigDecimal before, BigDecimal after, String q, BigDecimal limit, String spec, final ApiCallback<AuditLogEntries> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAuditLogEntriesAsync(Long before, Long after, String q, BigDecimal limit, String spec, final ApiCallback<AuditLogEntries> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

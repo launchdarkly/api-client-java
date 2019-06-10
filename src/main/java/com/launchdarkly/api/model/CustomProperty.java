@@ -30,7 +30,7 @@ import java.util.List;
  * A name and value describing a custom property.
  */
 @ApiModel(description = "A name and value describing a custom property.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-23T00:27:14.692Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-10T16:49:44.233Z")
 public class CustomProperty {
   @SerializedName("name")
   private String name = null;

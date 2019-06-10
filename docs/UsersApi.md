@@ -95,7 +95,7 @@ String environmentKey = "environmentKey_example"; // String | The environment ke
 String q = "q_example"; // String | Search query.
 Integer limit = 56; // Integer | Pagination limit.
 Integer offset = 56; // Integer | Specifies the first item to return in the collection.
-BigDecimal after = new BigDecimal(); // BigDecimal | A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned will have occured after this timestamp.
+Long after = 789L; // Long | A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned will have occured after this timestamp.
 try {
     Users result = apiInstance.getSearchUsers(projectKey, environmentKey, q, limit, offset, after);
     System.out.println(result);
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
  **q** | **String**| Search query. | [optional]
  **limit** | **Integer**| Pagination limit. | [optional]
  **offset** | **Integer**| Specifies the first item to return in the collection. | [optional]
- **after** | **BigDecimal**| A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned will have occured after this timestamp. | [optional]
+ **after** | **Long**| A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned will have occured after this timestamp. | [optional]
 
 ### Return type
 

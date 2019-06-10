@@ -27,7 +27,6 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import java.math.BigDecimal;
 import com.launchdarkly.api.model.User;
 import com.launchdarkly.api.model.Users;
 
@@ -208,7 +207,7 @@ public class UsersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getSearchUsersCall(String projectKey, String environmentKey, String q, Integer limit, Integer offset, BigDecimal after, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getSearchUsersCall(String projectKey, String environmentKey, String q, Integer limit, Integer offset, Long after, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -260,7 +259,7 @@ public class UsersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getSearchUsersValidateBeforeCall(String projectKey, String environmentKey, String q, Integer limit, Integer offset, BigDecimal after, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getSearchUsersValidateBeforeCall(String projectKey, String environmentKey, String q, Integer limit, Integer offset, Long after, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
@@ -290,7 +289,7 @@ public class UsersApi {
      * @return Users
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Users getSearchUsers(String projectKey, String environmentKey, String q, Integer limit, Integer offset, BigDecimal after) throws ApiException {
+    public Users getSearchUsers(String projectKey, String environmentKey, String q, Integer limit, Integer offset, Long after) throws ApiException {
         ApiResponse<Users> resp = getSearchUsersWithHttpInfo(projectKey, environmentKey, q, limit, offset, after);
         return resp.getData();
     }
@@ -307,7 +306,7 @@ public class UsersApi {
      * @return ApiResponse&lt;Users&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Users> getSearchUsersWithHttpInfo(String projectKey, String environmentKey, String q, Integer limit, Integer offset, BigDecimal after) throws ApiException {
+    public ApiResponse<Users> getSearchUsersWithHttpInfo(String projectKey, String environmentKey, String q, Integer limit, Integer offset, Long after) throws ApiException {
         com.squareup.okhttp.Call call = getSearchUsersValidateBeforeCall(projectKey, environmentKey, q, limit, offset, after, null, null);
         Type localVarReturnType = new TypeToken<Users>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -326,7 +325,7 @@ public class UsersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getSearchUsersAsync(String projectKey, String environmentKey, String q, Integer limit, Integer offset, BigDecimal after, final ApiCallback<Users> callback) throws ApiException {
+    public com.squareup.okhttp.Call getSearchUsersAsync(String projectKey, String environmentKey, String q, Integer limit, Integer offset, Long after, final ApiCallback<Users> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
