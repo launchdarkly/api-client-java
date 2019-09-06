@@ -7,7 +7,7 @@ This REST API is for custom integrations, data export, or automating your featur
 
 LaunchDarkly REST API
 - API version: 2.0.15
-  - Build date: 2019-06-10T16:49:44.233Z
+  - Build date: 2019-09-06T20:16:25.962Z
 
 Build custom integrations with the LaunchDarkly REST API
 

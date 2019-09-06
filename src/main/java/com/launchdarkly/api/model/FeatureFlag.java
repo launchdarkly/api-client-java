@@ -37,7 +37,7 @@ import java.util.Map;
 /**
  * FeatureFlag
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-10T16:49:44.233Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-06T20:16:25.962Z")
 public class FeatureFlag {
   @SerializedName("key")
   private String key = null;

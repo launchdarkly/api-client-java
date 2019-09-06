@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * Environment
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-10T16:49:44.233Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-06T20:16:25.962Z")
 public class Environment {
   @SerializedName("_links")
   private Links links = null;
@@ -65,6 +65,12 @@ public class Environment {
 
   @SerializedName("tags")
   private List<String> tags = null;
+
+  @SerializedName("requireComments")
+  private Boolean requireComments = null;
+
+  @SerializedName("confirmChanges")
+  private Boolean confirmChanges = null;
 
   public Environment links(Links links) {
     this.links = links;
@@ -272,6 +278,42 @@ public class Environment {
     this.tags = tags;
   }
 
+  public Environment requireComments(Boolean requireComments) {
+    this.requireComments = requireComments;
+    return this;
+  }
+
+   /**
+   * Determines if this environment requires comments for flag and segment changes.
+   * @return requireComments
+  **/
+  @ApiModelProperty(example = "false", value = "Determines if this environment requires comments for flag and segment changes.")
+  public Boolean isRequireComments() {
+    return requireComments;
+  }
+
+  public void setRequireComments(Boolean requireComments) {
+    this.requireComments = requireComments;
+  }
+
+  public Environment confirmChanges(Boolean confirmChanges) {
+    this.confirmChanges = confirmChanges;
+    return this;
+  }
+
+   /**
+   * Determines if this environment requires confirmation for flag and segment changes.
+   * @return confirmChanges
+  **/
+  @ApiModelProperty(example = "false", value = "Determines if this environment requires confirmation for flag and segment changes.")
+  public Boolean isConfirmChanges() {
+    return confirmChanges;
+  }
+
+  public void setConfirmChanges(Boolean confirmChanges) {
+    this.confirmChanges = confirmChanges;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -292,12 +334,14 @@ public class Environment {
         Objects.equals(this.defaultTtl, environment.defaultTtl) &&
         Objects.equals(this.secureMode, environment.secureMode) &&
         Objects.equals(this.defaultTrackEvents, environment.defaultTrackEvents) &&
-        Objects.equals(this.tags, environment.tags);
+        Objects.equals(this.tags, environment.tags) &&
+        Objects.equals(this.requireComments, environment.requireComments) &&
+        Objects.equals(this.confirmChanges, environment.confirmChanges);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, key, name, apiKey, mobileKey, color, defaultTtl, secureMode, defaultTrackEvents, tags);
+    return Objects.hash(links, id, key, name, apiKey, mobileKey, color, defaultTtl, secureMode, defaultTrackEvents, tags, requireComments, confirmChanges);
   }
 
 
@@ -317,6 +361,8 @@ public class Environment {
     sb.append("    secureMode: ").append(toIndentedString(secureMode)).append("\n");
     sb.append("    defaultTrackEvents: ").append(toIndentedString(defaultTrackEvents)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+    sb.append("    requireComments: ").append(toIndentedString(requireComments)).append("\n");
+    sb.append("    confirmChanges: ").append(toIndentedString(confirmChanges)).append("\n");
     sb.append("}");
     return sb.toString();
   }
