@@ -25,50 +25,50 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Link
+ * FeatureFlagCopyObject
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-10T16:34:07.906Z")
-public class Link {
-  @SerializedName("href")
-  private String href = null;
+public class FeatureFlagCopyObject {
+  @SerializedName("key")
+  private String key = null;
 
-  @SerializedName("type")
-  private String type = null;
+  @SerializedName("currentVersion")
+  private Integer currentVersion = null;
 
-  public Link href(String href) {
-    this.href = href;
+  public FeatureFlagCopyObject key(String key) {
+    this.key = key;
     return this;
   }
 
    /**
-   * Get href
-   * @return href
+   * The environment key to be used.
+   * @return key
   **/
-  @ApiModelProperty(example = "/api/v2/endpoint", value = "")
-  public String getHref() {
-    return href;
+  @ApiModelProperty(example = "staging", required = true, value = "The environment key to be used.")
+  public String getKey() {
+    return key;
   }
 
-  public void setHref(String href) {
-    this.href = href;
+  public void setKey(String key) {
+    this.key = key;
   }
 
-  public Link type(String type) {
-    this.type = type;
+  public FeatureFlagCopyObject currentVersion(Integer currentVersion) {
+    this.currentVersion = currentVersion;
     return this;
   }
 
    /**
-   * Get type
-   * @return type
+   * If the latest version of the flag matches provided version it will copy, otherwise it will return a conflict.
+   * @return currentVersion
   **/
-  @ApiModelProperty(example = "application/json", value = "")
-  public String getType() {
-    return type;
+  @ApiModelProperty(example = "65", value = "If the latest version of the flag matches provided version it will copy, otherwise it will return a conflict.")
+  public Integer getCurrentVersion() {
+    return currentVersion;
   }
 
-  public void setType(String type) {
-    this.type = type;
+  public void setCurrentVersion(Integer currentVersion) {
+    this.currentVersion = currentVersion;
   }
 
 
@@ -80,24 +80,24 @@ public class Link {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Link link = (Link) o;
-    return Objects.equals(this.href, link.href) &&
-        Objects.equals(this.type, link.type);
+    FeatureFlagCopyObject featureFlagCopyObject = (FeatureFlagCopyObject) o;
+    return Objects.equals(this.key, featureFlagCopyObject.key) &&
+        Objects.equals(this.currentVersion, featureFlagCopyObject.currentVersion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, type);
+    return Objects.hash(key, currentVersion);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Link {\n");
+    sb.append("class FeatureFlagCopyObject {\n");
     
-    sb.append("    href: ").append(toIndentedString(href)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    key: ").append(toIndentedString(key)).append("\n");
+    sb.append("    currentVersion: ").append(toIndentedString(currentVersion)).append("\n");
     sb.append("}");
     return sb.toString();
   }

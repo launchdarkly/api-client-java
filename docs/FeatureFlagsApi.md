@@ -4,7 +4,7 @@ All URIs are relative to *https://app.launchdarkly.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**copyFeatureFlag**](FeatureFlagsApi.md#copyFeatureFlag) | **POST** /flags/{projectKey}/{environmentKey}/{featureFlagKey}/copy | Copies the feature flag configuration from one environment to the same feature flag in another environment.
+[**copyFeatureFlag**](FeatureFlagsApi.md#copyFeatureFlag) | **POST** /flags/{projectKey}/{featureFlagKey}/copy | Copies the feature flag configuration from one environment to the same feature flag in another environment.
 [**deleteFeatureFlag**](FeatureFlagsApi.md#deleteFeatureFlag) | **DELETE** /flags/{projectKey}/{featureFlagKey} | Delete a feature flag in all environments. Be careful-- only delete feature flags that are no longer being used by your application.
 [**getFeatureFlag**](FeatureFlagsApi.md#getFeatureFlag) | **GET** /flags/{projectKey}/{featureFlagKey} | Get a single feature flag by key.
 [**getFeatureFlagStatus**](FeatureFlagsApi.md#getFeatureFlagStatus) | **GET** /flag-statuses/{projectKey}/{environmentKey}/{featureFlagKey} | Get the status for a particular feature flag.
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="copyFeatureFlag"></a>
 # **copyFeatureFlag**
-> FeatureFlag copyFeatureFlag(projectKey, environmentKey, featureFlagKey)
+> FeatureFlag copyFeatureFlag(projectKey, featureFlagKey, featureFlagCopyBody)
 
 Copies the feature flag configuration from one environment to the same feature flag in another environment.
 
@@ -39,10 +39,10 @@ Token.setApiKey("YOUR API KEY");
 
 FeatureFlagsApi apiInstance = new FeatureFlagsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
 String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
+FeatureFlagCopyBody featureFlagCopyBody = new FeatureFlagCopyBody(); // FeatureFlagCopyBody | Copy feature flag configurations between environments.
 try {
-    FeatureFlag result = apiInstance.copyFeatureFlag(projectKey, environmentKey, featureFlagKey);
+    FeatureFlag result = apiInstance.copyFeatureFlag(projectKey, featureFlagKey, featureFlagCopyBody);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FeatureFlagsApi#copyFeatureFlag");
@@ -55,8 +55,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
  **featureFlagKey** | **String**| The feature flag&#39;s key. The key identifies the flag in your code. |
+ **featureFlagCopyBody** | [**FeatureFlagCopyBody**](FeatureFlagCopyBody.md)| Copy feature flag configurations between environments. |
 
 ### Return type
 

@@ -6,8 +6,8 @@ This REST API is for custom integrations, data export, or automating your featur
 # api-client
 
 LaunchDarkly REST API
-- API version: 2.0.18
-  - Build date: 2019-09-06T20:21:07.729Z
+- API version: 2.0.19
+  - Build date: 2019-09-10T16:34:07.906Z
 
 Build custom integrations with the LaunchDarkly REST API
 
@@ -46,7 +46,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>2.0.18</version>
+  <version>2.0.19</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -56,7 +56,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:2.0.18"
+compile "com.launchdarkly:api-client:2.0.19"
 ```
 
 ### Others
@@ -69,7 +69,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-2.0.18.jar`
+* `target/api-client-2.0.19.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -132,7 +132,7 @@ Class | Method | HTTP request | Description
 *EnvironmentsApi* | [**getEnvironment**](docs/EnvironmentsApi.md#getEnvironment) | **GET** /projects/{projectKey}/environments/{environmentKey} | Get an environment given a project and key.
 *EnvironmentsApi* | [**patchEnvironment**](docs/EnvironmentsApi.md#patchEnvironment) | **PATCH** /projects/{projectKey}/environments/{environmentKey} | Modify an environment by ID.
 *EnvironmentsApi* | [**postEnvironment**](docs/EnvironmentsApi.md#postEnvironment) | **POST** /projects/{projectKey}/environments | Create a new environment in a specified project with a given name, key, and swatch color.
-*FeatureFlagsApi* | [**copyFeatureFlag**](docs/FeatureFlagsApi.md#copyFeatureFlag) | **POST** /flags/{projectKey}/{environmentKey}/{featureFlagKey}/copy | Copies the feature flag configuration from one environment to the same feature flag in another environment.
+*FeatureFlagsApi* | [**copyFeatureFlag**](docs/FeatureFlagsApi.md#copyFeatureFlag) | **POST** /flags/{projectKey}/{featureFlagKey}/copy | Copies the feature flag configuration from one environment to the same feature flag in another environment.
 *FeatureFlagsApi* | [**deleteFeatureFlag**](docs/FeatureFlagsApi.md#deleteFeatureFlag) | **DELETE** /flags/{projectKey}/{featureFlagKey} | Delete a feature flag in all environments. Be careful-- only delete feature flags that are no longer being used by your application.
 *FeatureFlagsApi* | [**getFeatureFlag**](docs/FeatureFlagsApi.md#getFeatureFlag) | **GET** /flags/{projectKey}/{featureFlagKey} | Get a single feature flag by key.
 *FeatureFlagsApi* | [**getFeatureFlagStatus**](docs/FeatureFlagsApi.md#getFeatureFlagStatus) | **GET** /flag-statuses/{projectKey}/{environmentKey}/{featureFlagKey} | Get the status for a particular feature flag.
@@ -176,6 +176,7 @@ Class | Method | HTTP request | Description
  - [AuditLogEntry](docs/AuditLogEntry.md)
  - [AuditLogEntryTarget](docs/AuditLogEntryTarget.md)
  - [Clause](docs/Clause.md)
+ - [CopyActions](docs/CopyActions.md)
  - [CustomProperty](docs/CustomProperty.md)
  - [CustomRole](docs/CustomRole.md)
  - [CustomRoleBody](docs/CustomRoleBody.md)
@@ -186,6 +187,8 @@ Class | Method | HTTP request | Description
  - [FeatureFlag](docs/FeatureFlag.md)
  - [FeatureFlagBody](docs/FeatureFlagBody.md)
  - [FeatureFlagConfig](docs/FeatureFlagConfig.md)
+ - [FeatureFlagCopyBody](docs/FeatureFlagCopyBody.md)
+ - [FeatureFlagCopyObject](docs/FeatureFlagCopyObject.md)
  - [FeatureFlagStatus](docs/FeatureFlagStatus.md)
  - [FeatureFlagStatuses](docs/FeatureFlagStatuses.md)
  - [FeatureFlags](docs/FeatureFlags.md)

@@ -24,22 +24,26 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Gets or Sets Role
+ * Gets or Sets CopyActions
  */
-@JsonAdapter(Role.Adapter.class)
-public enum Role {
+@JsonAdapter(CopyActions.Adapter.class)
+public enum CopyActions {
   
-  WRITER("writer"),
+  UPDATEON("updateOn"),
   
-  READER("reader"),
+  UPDATEPREREQUISITES("updatePrerequisites"),
   
-  ADMIN("admin"),
+  UPDATETARGETS("updateTargets"),
   
-  OWNER("owner");
+  UPDATERULES("updateRules"),
+  
+  UPDATEFALLTHROUGH("updateFallthrough"),
+  
+  UPDATEOFFVARIATION("updateOffVariation");
 
   private String value;
 
-  Role(String value) {
+  CopyActions(String value) {
     this.value = value;
   }
 
@@ -52,8 +56,8 @@ public enum Role {
     return String.valueOf(value);
   }
 
-  public static Role fromValue(String text) {
-    for (Role b : Role.values()) {
+  public static CopyActions fromValue(String text) {
+    for (CopyActions b : CopyActions.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
@@ -61,16 +65,16 @@ public enum Role {
     return null;
   }
 
-  public static class Adapter extends TypeAdapter<Role> {
+  public static class Adapter extends TypeAdapter<CopyActions> {
     @Override
-    public void write(final JsonWriter jsonWriter, final Role enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final CopyActions enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public Role read(final JsonReader jsonReader) throws IOException {
+    public CopyActions read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return Role.fromValue(String.valueOf(value));
+      return CopyActions.fromValue(String.valueOf(value));
     }
   }
 }
