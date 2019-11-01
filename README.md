@@ -6,8 +6,8 @@ This REST API is for custom integrations, data export, or automating your featur
 # api-client
 
 LaunchDarkly REST API
-- API version: 2.0.19
-  - Build date: 2019-09-10T16:34:07.906Z
+- API version: 2.0.20
+  - Build date: 2019-11-01T18:23:24.409Z
 
 Build custom integrations with the LaunchDarkly REST API
 
@@ -46,7 +46,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>2.0.19</version>
+  <version>2.0.20</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -56,7 +56,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:2.0.19"
+compile "com.launchdarkly:api-client:2.0.20"
 ```
 
 ### Others
@@ -69,7 +69,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-2.0.19.jar`
+* `target/api-client-2.0.20.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -136,6 +136,7 @@ Class | Method | HTTP request | Description
 *FeatureFlagsApi* | [**deleteFeatureFlag**](docs/FeatureFlagsApi.md#deleteFeatureFlag) | **DELETE** /flags/{projectKey}/{featureFlagKey} | Delete a feature flag in all environments. Be careful-- only delete feature flags that are no longer being used by your application.
 *FeatureFlagsApi* | [**getFeatureFlag**](docs/FeatureFlagsApi.md#getFeatureFlag) | **GET** /flags/{projectKey}/{featureFlagKey} | Get a single feature flag by key.
 *FeatureFlagsApi* | [**getFeatureFlagStatus**](docs/FeatureFlagsApi.md#getFeatureFlagStatus) | **GET** /flag-statuses/{projectKey}/{environmentKey}/{featureFlagKey} | Get the status for a particular feature flag.
+*FeatureFlagsApi* | [**getFeatureFlagStatusAcrossEnvironments**](docs/FeatureFlagsApi.md#getFeatureFlagStatusAcrossEnvironments) | **GET** /flag-status/{projectKey}/{featureFlagKey} | [BETA] Get the status for a particular feature flag across environments
 *FeatureFlagsApi* | [**getFeatureFlagStatuses**](docs/FeatureFlagsApi.md#getFeatureFlagStatuses) | **GET** /flag-statuses/{projectKey}/{environmentKey} | Get a list of statuses for all feature flags. The status includes the last time the feature flag was requested, as well as the state of the flag.
 *FeatureFlagsApi* | [**getFeatureFlags**](docs/FeatureFlagsApi.md#getFeatureFlags) | **GET** /flags/{projectKey} | Get a list of all features in the given project.
 *FeatureFlagsApi* | [**patchFeatureFlag**](docs/FeatureFlagsApi.md#patchFeatureFlag) | **PATCH** /flags/{projectKey}/{featureFlagKey} | Perform a partial update to a feature.
@@ -151,6 +152,16 @@ Class | Method | HTTP request | Description
 *TeamMembersApi* | [**getMembers**](docs/TeamMembersApi.md#getMembers) | **GET** /members | Returns a list of all members in the account.
 *TeamMembersApi* | [**patchMember**](docs/TeamMembersApi.md#patchMember) | **PATCH** /members/{memberId} | Modify a team member by ID.
 *TeamMembersApi* | [**postMembers**](docs/TeamMembersApi.md#postMembers) | **POST** /members | Invite new members.
+*UsageApi* | [**getEvaluations**](docs/UsageApi.md#getEvaluations) | **GET** /usage/evaluations/{envId}/{flagKey} | [BETA] Get events usage by event id and the feature flag key.
+*UsageApi* | [**getEvent**](docs/UsageApi.md#getEvent) | **GET** /usage/events/{type} | [BETA] Get events usage by event type.
+*UsageApi* | [**getEvents**](docs/UsageApi.md#getEvents) | **GET** /usage/events | [BETA] Get events usage endpoints.
+*UsageApi* | [**getMAU**](docs/UsageApi.md#getMAU) | **GET** /usage/mau | [BETA] Get monthly active user data.
+*UsageApi* | [**getMAUByCategory**](docs/UsageApi.md#getMAUByCategory) | **GET** /usage/mau/bycategory | [BETA] Get monthly active user data by category.
+*UsageApi* | [**getStream**](docs/UsageApi.md#getStream) | **GET** /usage/streams/{source} | [BETA] Get a stream endpoint and return timeseries data.
+*UsageApi* | [**getStreamBySDK**](docs/UsageApi.md#getStreamBySDK) | **GET** /usage/streams/{source}/bysdkversion | [BETA] Get a stream timeseries data by source show sdk version metadata.
+*UsageApi* | [**getStreamSDKVersion**](docs/UsageApi.md#getStreamSDKVersion) | **GET** /usage/streams/{source}/sdkversions | [BETA] Get a stream timeseries data by source and show all sdk version associated.
+*UsageApi* | [**getStreams**](docs/UsageApi.md#getStreams) | **GET** /usage/streams | [BETA] Returns a list of all streams.
+*UsageApi* | [**getUsage**](docs/UsageApi.md#getUsage) | **GET** /usage | [BETA] Returns of the usage endpoints available.
 *UserSegmentsApi* | [**deleteUserSegment**](docs/UserSegmentsApi.md#deleteUserSegment) | **DELETE** /segments/{projectKey}/{environmentKey}/{userSegmentKey} | Delete a user segment.
 *UserSegmentsApi* | [**getUserSegment**](docs/UserSegmentsApi.md#getUserSegment) | **GET** /segments/{projectKey}/{environmentKey}/{userSegmentKey} | Get a single user segment by key.
 *UserSegmentsApi* | [**getUserSegments**](docs/UserSegmentsApi.md#getUserSegments) | **GET** /segments/{projectKey}/{environmentKey} | Get a list of all user segments in the given project.
@@ -178,11 +189,14 @@ Class | Method | HTTP request | Description
  - [Clause](docs/Clause.md)
  - [CopyActions](docs/CopyActions.md)
  - [CustomProperty](docs/CustomProperty.md)
+ - [CustomPropertyValues](docs/CustomPropertyValues.md)
  - [CustomRole](docs/CustomRole.md)
  - [CustomRoleBody](docs/CustomRoleBody.md)
  - [CustomRoles](docs/CustomRoles.md)
  - [Environment](docs/Environment.md)
  - [EnvironmentPost](docs/EnvironmentPost.md)
+ - [EvaluationUsageError](docs/EvaluationUsageError.md)
+ - [Events](docs/Events.md)
  - [Fallthrough](docs/Fallthrough.md)
  - [FeatureFlag](docs/FeatureFlag.md)
  - [FeatureFlagBody](docs/FeatureFlagBody.md)
@@ -190,10 +204,15 @@ Class | Method | HTTP request | Description
  - [FeatureFlagCopyBody](docs/FeatureFlagCopyBody.md)
  - [FeatureFlagCopyObject](docs/FeatureFlagCopyObject.md)
  - [FeatureFlagStatus](docs/FeatureFlagStatus.md)
+ - [FeatureFlagStatusAcrossEnvironments](docs/FeatureFlagStatusAcrossEnvironments.md)
+ - [FeatureFlagStatusForQueriedEnvironment](docs/FeatureFlagStatusForQueriedEnvironment.md)
  - [FeatureFlagStatuses](docs/FeatureFlagStatuses.md)
  - [FeatureFlags](docs/FeatureFlags.md)
  - [Link](docs/Link.md)
  - [Links](docs/Links.md)
+ - [MAU](docs/MAU.md)
+ - [MAUMetadata](docs/MAUMetadata.md)
+ - [MAUbyCategory](docs/MAUbyCategory.md)
  - [Member](docs/Member.md)
  - [Members](docs/Members.md)
  - [MembersBody](docs/MembersBody.md)
@@ -209,7 +228,22 @@ Class | Method | HTTP request | Description
  - [Rule](docs/Rule.md)
  - [Statement](docs/Statement.md)
  - [Statements](docs/Statements.md)
+ - [Stream](docs/Stream.md)
+ - [StreamBySDK](docs/StreamBySDK.md)
+ - [StreamBySDKLinks](docs/StreamBySDKLinks.md)
+ - [StreamBySDKLinksMetadata](docs/StreamBySDKLinksMetadata.md)
+ - [StreamLinks](docs/StreamLinks.md)
+ - [StreamSDKVersion](docs/StreamSDKVersion.md)
+ - [StreamSDKVersionData](docs/StreamSDKVersionData.md)
+ - [StreamUsageError](docs/StreamUsageError.md)
+ - [StreamUsageLinks](docs/StreamUsageLinks.md)
+ - [StreamUsageMetadata](docs/StreamUsageMetadata.md)
+ - [StreamUsageSeries](docs/StreamUsageSeries.md)
+ - [Streams](docs/Streams.md)
  - [Target](docs/Target.md)
+ - [Usage](docs/Usage.md)
+ - [UsageError](docs/UsageError.md)
+ - [UsageLinks](docs/UsageLinks.md)
  - [User](docs/User.md)
  - [UserFlagSetting](docs/UserFlagSetting.md)
  - [UserFlagSettings](docs/UserFlagSettings.md)

@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 **links** | [**Links**](Links.md) |  |  [optional]
 **maintainer** | [**Member**](Member.md) |  |  [optional]
 **environments** | [**Map&lt;String, FeatureFlagConfig&gt;**](FeatureFlagConfig.md) |  |  [optional]
+**archivedDate** | [**BigDecimal**](BigDecimal.md) | A unix epoch time in milliseconds specifying the archived time of this flag. |  [optional]
+**archived** | **Boolean** | Whether or not this flag is archived. |  [optional]
 
 
 
