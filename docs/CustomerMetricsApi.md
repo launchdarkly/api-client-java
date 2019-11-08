@@ -1,26 +1,26 @@
-# UsageApi
+# CustomerMetricsApi
 
 All URIs are relative to *https://app.launchdarkly.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getEvaluations**](UsageApi.md#getEvaluations) | **GET** /usage/evaluations/{envId}/{flagKey} | [BETA] Get events usage by event id and the feature flag key.
-[**getEvent**](UsageApi.md#getEvent) | **GET** /usage/events/{type} | [BETA] Get events usage by event type.
-[**getEvents**](UsageApi.md#getEvents) | **GET** /usage/events | [BETA] Get events usage endpoints.
-[**getMAU**](UsageApi.md#getMAU) | **GET** /usage/mau | [BETA] Get monthly active user data.
-[**getMAUByCategory**](UsageApi.md#getMAUByCategory) | **GET** /usage/mau/bycategory | [BETA] Get monthly active user data by category.
-[**getStream**](UsageApi.md#getStream) | **GET** /usage/streams/{source} | [BETA] Get a stream endpoint and return timeseries data.
-[**getStreamBySDK**](UsageApi.md#getStreamBySDK) | **GET** /usage/streams/{source}/bysdkversion | [BETA] Get a stream timeseries data by source show sdk version metadata.
-[**getStreamSDKVersion**](UsageApi.md#getStreamSDKVersion) | **GET** /usage/streams/{source}/sdkversions | [BETA] Get a stream timeseries data by source and show all sdk version associated.
-[**getStreams**](UsageApi.md#getStreams) | **GET** /usage/streams | [BETA] Returns a list of all streams.
-[**getUsage**](UsageApi.md#getUsage) | **GET** /usage | [BETA] Returns of the usage endpoints available.
+[**getEvaluations**](CustomerMetricsApi.md#getEvaluations) | **GET** /usage/evaluations/{envId}/{flagKey} | Get events usage by event id and the feature flag key.
+[**getEvent**](CustomerMetricsApi.md#getEvent) | **GET** /usage/events/{type} | Get events usage by event type.
+[**getEvents**](CustomerMetricsApi.md#getEvents) | **GET** /usage/events | Get events usage endpoints.
+[**getMAU**](CustomerMetricsApi.md#getMAU) | **GET** /usage/mau | Get monthly active user data.
+[**getMAUByCategory**](CustomerMetricsApi.md#getMAUByCategory) | **GET** /usage/mau/bycategory | Get monthly active user data by category.
+[**getStream**](CustomerMetricsApi.md#getStream) | **GET** /usage/streams/{source} | Get a stream endpoint and return timeseries data.
+[**getStreamBySDK**](CustomerMetricsApi.md#getStreamBySDK) | **GET** /usage/streams/{source}/bysdkversion | Get a stream timeseries data by source show sdk version metadata.
+[**getStreamSDKVersion**](CustomerMetricsApi.md#getStreamSDKVersion) | **GET** /usage/streams/{source}/sdkversions | Get a stream timeseries data by source and show all sdk version associated.
+[**getStreams**](CustomerMetricsApi.md#getStreams) | **GET** /usage/streams | Returns a list of all streams.
+[**getUsage**](CustomerMetricsApi.md#getUsage) | **GET** /usage | Returns of the usage endpoints available.
 
 
 <a name="getEvaluations"></a>
 # **getEvaluations**
 > StreamSDKVersion getEvaluations(envId, flagKey)
 
-[BETA] Get events usage by event id and the feature flag key.
+Get events usage by event id and the feature flag key.
 
 ### Example
 ```java
@@ -29,7 +29,7 @@ Method | HTTP request | Description
 //import com.launchdarkly.api.ApiException;
 //import com.launchdarkly.api.Configuration;
 //import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.UsageApi;
+//import com.launchdarkly.api.api.CustomerMetricsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -39,14 +39,14 @@ Token.setApiKey("YOUR API KEY");
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Token.setApiKeyPrefix("Token");
 
-UsageApi apiInstance = new UsageApi();
+CustomerMetricsApi apiInstance = new CustomerMetricsApi();
 String envId = "envId_example"; // String | The environment id for the flag evaluations in question.
 String flagKey = "flagKey_example"; // String | The key of the flag we want metrics for.
 try {
     StreamSDKVersion result = apiInstance.getEvaluations(envId, flagKey);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UsageApi#getEvaluations");
+    System.err.println("Exception when calling CustomerMetricsApi#getEvaluations");
     e.printStackTrace();
 }
 ```
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 # **getEvent**
 > StreamSDKVersion getEvent(type)
 
-[BETA] Get events usage by event type.
+Get events usage by event type.
 
 ### Example
 ```java
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 //import com.launchdarkly.api.ApiException;
 //import com.launchdarkly.api.Configuration;
 //import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.UsageApi;
+//import com.launchdarkly.api.api.CustomerMetricsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -94,13 +94,13 @@ Token.setApiKey("YOUR API KEY");
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Token.setApiKeyPrefix("Token");
 
-UsageApi apiInstance = new UsageApi();
+CustomerMetricsApi apiInstance = new CustomerMetricsApi();
 String type = "type_example"; // String | The type of event we would like to track.
 try {
     StreamSDKVersion result = apiInstance.getEvent(type);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UsageApi#getEvent");
+    System.err.println("Exception when calling CustomerMetricsApi#getEvent");
     e.printStackTrace();
 }
 ```
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 # **getEvents**
 > Events getEvents()
 
-[BETA] Get events usage endpoints.
+Get events usage endpoints.
 
 ### Example
 ```java
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 //import com.launchdarkly.api.ApiException;
 //import com.launchdarkly.api.Configuration;
 //import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.UsageApi;
+//import com.launchdarkly.api.api.CustomerMetricsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -147,12 +147,12 @@ Token.setApiKey("YOUR API KEY");
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Token.setApiKeyPrefix("Token");
 
-UsageApi apiInstance = new UsageApi();
+CustomerMetricsApi apiInstance = new CustomerMetricsApi();
 try {
     Events result = apiInstance.getEvents();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UsageApi#getEvents");
+    System.err.println("Exception when calling CustomerMetricsApi#getEvents");
     e.printStackTrace();
 }
 ```
@@ -177,7 +177,7 @@ This endpoint does not need any parameter.
 # **getMAU**
 > MAU getMAU()
 
-[BETA] Get monthly active user data.
+Get monthly active user data.
 
 ### Example
 ```java
@@ -186,7 +186,7 @@ This endpoint does not need any parameter.
 //import com.launchdarkly.api.ApiException;
 //import com.launchdarkly.api.Configuration;
 //import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.UsageApi;
+//import com.launchdarkly.api.api.CustomerMetricsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -196,12 +196,12 @@ Token.setApiKey("YOUR API KEY");
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Token.setApiKeyPrefix("Token");
 
-UsageApi apiInstance = new UsageApi();
+CustomerMetricsApi apiInstance = new CustomerMetricsApi();
 try {
     MAU result = apiInstance.getMAU();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UsageApi#getMAU");
+    System.err.println("Exception when calling CustomerMetricsApi#getMAU");
     e.printStackTrace();
 }
 ```
@@ -226,7 +226,7 @@ This endpoint does not need any parameter.
 # **getMAUByCategory**
 > MAUbyCategory getMAUByCategory()
 
-[BETA] Get monthly active user data by category.
+Get monthly active user data by category.
 
 ### Example
 ```java
@@ -235,7 +235,7 @@ This endpoint does not need any parameter.
 //import com.launchdarkly.api.ApiException;
 //import com.launchdarkly.api.Configuration;
 //import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.UsageApi;
+//import com.launchdarkly.api.api.CustomerMetricsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -245,12 +245,12 @@ Token.setApiKey("YOUR API KEY");
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Token.setApiKeyPrefix("Token");
 
-UsageApi apiInstance = new UsageApi();
+CustomerMetricsApi apiInstance = new CustomerMetricsApi();
 try {
     MAUbyCategory result = apiInstance.getMAUByCategory();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UsageApi#getMAUByCategory");
+    System.err.println("Exception when calling CustomerMetricsApi#getMAUByCategory");
     e.printStackTrace();
 }
 ```
@@ -275,7 +275,7 @@ This endpoint does not need any parameter.
 # **getStream**
 > Stream getStream(source)
 
-[BETA] Get a stream endpoint and return timeseries data.
+Get a stream endpoint and return timeseries data.
 
 ### Example
 ```java
@@ -284,7 +284,7 @@ This endpoint does not need any parameter.
 //import com.launchdarkly.api.ApiException;
 //import com.launchdarkly.api.Configuration;
 //import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.UsageApi;
+//import com.launchdarkly.api.api.CustomerMetricsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -294,13 +294,13 @@ Token.setApiKey("YOUR API KEY");
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Token.setApiKeyPrefix("Token");
 
-UsageApi apiInstance = new UsageApi();
+CustomerMetricsApi apiInstance = new CustomerMetricsApi();
 String source = "source_example"; // String | The source of where the stream comes from.
 try {
     Stream result = apiInstance.getStream(source);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UsageApi#getStream");
+    System.err.println("Exception when calling CustomerMetricsApi#getStream");
     e.printStackTrace();
 }
 ```
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 # **getStreamBySDK**
 > StreamBySDK getStreamBySDK(source)
 
-[BETA] Get a stream timeseries data by source show sdk version metadata.
+Get a stream timeseries data by source show sdk version metadata.
 
 ### Example
 ```java
@@ -337,7 +337,7 @@ Name | Type | Description  | Notes
 //import com.launchdarkly.api.ApiException;
 //import com.launchdarkly.api.Configuration;
 //import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.UsageApi;
+//import com.launchdarkly.api.api.CustomerMetricsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -347,13 +347,13 @@ Token.setApiKey("YOUR API KEY");
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Token.setApiKeyPrefix("Token");
 
-UsageApi apiInstance = new UsageApi();
+CustomerMetricsApi apiInstance = new CustomerMetricsApi();
 String source = "source_example"; // String | The source of where the stream comes from.
 try {
     StreamBySDK result = apiInstance.getStreamBySDK(source);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UsageApi#getStreamBySDK");
+    System.err.println("Exception when calling CustomerMetricsApi#getStreamBySDK");
     e.printStackTrace();
 }
 ```
@@ -381,7 +381,7 @@ Name | Type | Description  | Notes
 # **getStreamSDKVersion**
 > StreamSDKVersion getStreamSDKVersion(source)
 
-[BETA] Get a stream timeseries data by source and show all sdk version associated.
+Get a stream timeseries data by source and show all sdk version associated.
 
 ### Example
 ```java
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 //import com.launchdarkly.api.ApiException;
 //import com.launchdarkly.api.Configuration;
 //import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.UsageApi;
+//import com.launchdarkly.api.api.CustomerMetricsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -400,13 +400,13 @@ Token.setApiKey("YOUR API KEY");
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Token.setApiKeyPrefix("Token");
 
-UsageApi apiInstance = new UsageApi();
+CustomerMetricsApi apiInstance = new CustomerMetricsApi();
 String source = "source_example"; // String | The source of where the stream comes from.
 try {
     StreamSDKVersion result = apiInstance.getStreamSDKVersion(source);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UsageApi#getStreamSDKVersion");
+    System.err.println("Exception when calling CustomerMetricsApi#getStreamSDKVersion");
     e.printStackTrace();
 }
 ```
@@ -434,7 +434,7 @@ Name | Type | Description  | Notes
 # **getStreams**
 > Streams getStreams()
 
-[BETA] Returns a list of all streams.
+Returns a list of all streams.
 
 ### Example
 ```java
@@ -443,7 +443,7 @@ Name | Type | Description  | Notes
 //import com.launchdarkly.api.ApiException;
 //import com.launchdarkly.api.Configuration;
 //import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.UsageApi;
+//import com.launchdarkly.api.api.CustomerMetricsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -453,12 +453,12 @@ Token.setApiKey("YOUR API KEY");
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Token.setApiKeyPrefix("Token");
 
-UsageApi apiInstance = new UsageApi();
+CustomerMetricsApi apiInstance = new CustomerMetricsApi();
 try {
     Streams result = apiInstance.getStreams();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UsageApi#getStreams");
+    System.err.println("Exception when calling CustomerMetricsApi#getStreams");
     e.printStackTrace();
 }
 ```
@@ -483,7 +483,7 @@ This endpoint does not need any parameter.
 # **getUsage**
 > Usage getUsage()
 
-[BETA] Returns of the usage endpoints available.
+Returns of the usage endpoints available.
 
 ### Example
 ```java
@@ -492,7 +492,7 @@ This endpoint does not need any parameter.
 //import com.launchdarkly.api.ApiException;
 //import com.launchdarkly.api.Configuration;
 //import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.UsageApi;
+//import com.launchdarkly.api.api.CustomerMetricsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -502,12 +502,12 @@ Token.setApiKey("YOUR API KEY");
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Token.setApiKeyPrefix("Token");
 
-UsageApi apiInstance = new UsageApi();
+CustomerMetricsApi apiInstance = new CustomerMetricsApi();
 try {
     Usage result = apiInstance.getUsage();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UsageApi#getUsage");
+    System.err.println("Exception when calling CustomerMetricsApi#getUsage");
     e.printStackTrace();
 }
 ```
