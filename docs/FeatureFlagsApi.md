@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 
 <a name="getFeatureFlags"></a>
 # **getFeatureFlags**
-> FeatureFlags getFeatureFlags(projectKey, env, tag)
+> FeatureFlags getFeatureFlags(projectKey, env, summary, archived, tag)
 
 Get a list of all features in the given project.
 
@@ -376,9 +376,11 @@ Token.setApiKey("YOUR API KEY");
 FeatureFlagsApi apiInstance = new FeatureFlagsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
 String env = "env_example"; // String | By default, each feature will include configurations for each environment. You can filter environments with the env query parameter. For example, setting env=production will restrict the returned configurations to just your production environment.
+String summary = "summary_example"; // String | By default in api version >= 1, flags will _not_ include their list of prerequisites, targets or rules.  Set summary=0 to include these fields for each flag returned.
+String archived = "archived_example"; // String | When set to 1, archived flags will be included in the list of flags returned.  By default, archived flags are not included in the list of flags.
 String tag = "tag_example"; // String | Filter by tag. A tag can be used to group flags across projects.
 try {
-    FeatureFlags result = apiInstance.getFeatureFlags(projectKey, env, tag);
+    FeatureFlags result = apiInstance.getFeatureFlags(projectKey, env, summary, archived, tag);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FeatureFlagsApi#getFeatureFlags");
@@ -392,6 +394,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
  **env** | **String**| By default, each feature will include configurations for each environment. You can filter environments with the env query parameter. For example, setting env&#x3D;production will restrict the returned configurations to just your production environment. | [optional]
+ **summary** | **String**| By default in api version &gt;&#x3D; 1, flags will _not_ include their list of prerequisites, targets or rules.  Set summary&#x3D;0 to include these fields for each flag returned. | [optional]
+ **archived** | **String**| When set to 1, archived flags will be included in the list of flags returned.  By default, archived flags are not included in the list of flags. | [optional]
  **tag** | **String**| Filter by tag. A tag can be used to group flags across projects. | [optional]
 
 ### Return type
