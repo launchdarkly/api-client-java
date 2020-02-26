@@ -20,26 +20,66 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.launchdarkly.api.model.StreamUsageSeries;
-import com.launchdarkly.api.model.UsageLinks;
+import com.launchdarkly.api.model.Links;
+import com.launchdarkly.api.model.Site;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * Usage
+ * FlagListItem
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-26T23:38:52.972Z")
-public class Usage {
+public class FlagListItem {
+  @SerializedName("name")
+  private String name = null;
+
+  @SerializedName("key")
+  private String key = null;
+
   @SerializedName("_links")
-  private UsageLinks links = null;
+  private Links links = null;
 
-  @SerializedName("series")
-  private List<StreamUsageSeries> series = null;
+  @SerializedName("_site")
+  private Site site = null;
 
-  public Usage links(UsageLinks links) {
+  public FlagListItem name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Get name
+   * @return name
+  **/
+  @ApiModelProperty(value = "")
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public FlagListItem key(String key) {
+    this.key = key;
+    return this;
+  }
+
+   /**
+   * Get key
+   * @return key
+  **/
+  @ApiModelProperty(value = "")
+  public String getKey() {
+    return key;
+  }
+
+  public void setKey(String key) {
+    this.key = key;
+  }
+
+  public FlagListItem links(Links links) {
     this.links = links;
     return this;
   }
@@ -49,38 +89,30 @@ public class Usage {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public UsageLinks getLinks() {
+  public Links getLinks() {
     return links;
   }
 
-  public void setLinks(UsageLinks links) {
+  public void setLinks(Links links) {
     this.links = links;
   }
 
-  public Usage series(List<StreamUsageSeries> series) {
-    this.series = series;
-    return this;
-  }
-
-  public Usage addSeriesItem(StreamUsageSeries seriesItem) {
-    if (this.series == null) {
-      this.series = new ArrayList<StreamUsageSeries>();
-    }
-    this.series.add(seriesItem);
+  public FlagListItem site(Site site) {
+    this.site = site;
     return this;
   }
 
    /**
-   * Get series
-   * @return series
+   * Get site
+   * @return site
   **/
   @ApiModelProperty(value = "")
-  public List<StreamUsageSeries> getSeries() {
-    return series;
+  public Site getSite() {
+    return site;
   }
 
-  public void setSeries(List<StreamUsageSeries> series) {
-    this.series = series;
+  public void setSite(Site site) {
+    this.site = site;
   }
 
 
@@ -92,24 +124,28 @@ public class Usage {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Usage usage = (Usage) o;
-    return Objects.equals(this.links, usage.links) &&
-        Objects.equals(this.series, usage.series);
+    FlagListItem flagListItem = (FlagListItem) o;
+    return Objects.equals(this.name, flagListItem.name) &&
+        Objects.equals(this.key, flagListItem.key) &&
+        Objects.equals(this.links, flagListItem.links) &&
+        Objects.equals(this.site, flagListItem.site);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, series);
+    return Objects.hash(name, key, links, site);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Usage {\n");
+    sb.append("class FlagListItem {\n");
     
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    series: ").append(toIndentedString(series)).append("\n");
+    sb.append("    site: ").append(toIndentedString(site)).append("\n");
     sb.append("}");
     return sb.toString();
   }

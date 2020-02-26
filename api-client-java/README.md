@@ -6,8 +6,8 @@ This REST API is for custom integrations, data export, or automating your featur
 # api-client
 
 LaunchDarkly REST API
-- API version: 2.0.29
-  - Build date: 2020-02-12T22:54:15.249Z
+- API version: 2.0.30
+  - Build date: 2020-02-26T23:38:52.972Z
 
 Build custom integrations with the LaunchDarkly REST API
 
@@ -46,7 +46,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>2.0.29</version>
+  <version>2.0.30</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -56,7 +56,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:2.0.29"
+compile "com.launchdarkly:api-client:2.0.30"
 ```
 
 ### Others
@@ -69,7 +69,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-2.0.29.jar`
+* `target/api-client-2.0.30.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -220,6 +220,7 @@ Class | Method | HTTP request | Description
  - [FeatureFlagStatusForQueriedEnvironment](docs/FeatureFlagStatusForQueriedEnvironment.md)
  - [FeatureFlagStatuses](docs/FeatureFlagStatuses.md)
  - [FeatureFlags](docs/FeatureFlags.md)
+ - [FlagListItem](docs/FlagListItem.md)
  - [Link](docs/Link.md)
  - [Links](docs/Links.md)
  - [MAU](docs/MAU.md)
@@ -238,6 +239,7 @@ Class | Method | HTTP request | Description
  - [Role](docs/Role.md)
  - [Rollout](docs/Rollout.md)
  - [Rule](docs/Rule.md)
+ - [Site](docs/Site.md)
  - [Statement](docs/Statement.md)
  - [Statements](docs/Statements.md)
  - [Stream](docs/Stream.md)

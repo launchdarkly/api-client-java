@@ -20,35 +20,55 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.launchdarkly.api.model.UsageLinks;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Events
+ * Site
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-26T23:38:52.972Z")
-public class Events {
-  @SerializedName("links")
-  private UsageLinks links = null;
+public class Site {
+  @SerializedName("href")
+  private String href = null;
 
-  public Events links(UsageLinks links) {
-    this.links = links;
+  @SerializedName("type")
+  private String type = null;
+
+  public Site href(String href) {
+    this.href = href;
     return this;
   }
 
    /**
-   * Get links
-   * @return links
+   * Get href
+   * @return href
   **/
-  @ApiModelProperty(value = "")
-  public UsageLinks getLinks() {
-    return links;
+  @ApiModelProperty(example = "/features/sort.order", value = "")
+  public String getHref() {
+    return href;
   }
 
-  public void setLinks(UsageLinks links) {
-    this.links = links;
+  public void setHref(String href) {
+    this.href = href;
+  }
+
+  public Site type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Get type
+   * @return type
+  **/
+  @ApiModelProperty(example = "text/html", value = "")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
   }
 
 
@@ -60,22 +80,24 @@ public class Events {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Events events = (Events) o;
-    return Objects.equals(this.links, events.links);
+    Site site = (Site) o;
+    return Objects.equals(this.href, site.href) &&
+        Objects.equals(this.type, site.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links);
+    return Objects.hash(href, type);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Events {\n");
+    sb.append("class Site {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    sb.append("    href: ").append(toIndentedString(href)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }
