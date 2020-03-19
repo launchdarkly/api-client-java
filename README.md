@@ -6,8 +6,8 @@ This REST API is for custom integrations, data export, or automating your featur
 # api-client
 
 LaunchDarkly REST API
-- API version: 2.0.26
-  - Build date: 2020-01-30T19:13:27.936Z
+- API version: 2.0.32
+  - Build date: 2020-03-19T21:29:46.236Z
 
 Build custom integrations with the LaunchDarkly REST API
 
@@ -46,7 +46,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>2.0.26</version>
+  <version>2.0.32</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -56,7 +56,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:2.0.26"
+compile "com.launchdarkly:api-client:2.0.32"
 ```
 
 ### Others
@@ -69,7 +69,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-2.0.26.jar`
+* `target/api-client-2.0.32.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -198,6 +198,7 @@ Class | Method | HTTP request | Description
  - [CustomRole](docs/CustomRole.md)
  - [CustomRoleBody](docs/CustomRoleBody.md)
  - [CustomRoles](docs/CustomRoles.md)
+ - [Defaults](docs/Defaults.md)
  - [Destination](docs/Destination.md)
  - [DestinationAmazonKinesis](docs/DestinationAmazonKinesis.md)
  - [DestinationBody](docs/DestinationBody.md)
@@ -220,6 +221,7 @@ Class | Method | HTTP request | Description
  - [FeatureFlagStatusForQueriedEnvironment](docs/FeatureFlagStatusForQueriedEnvironment.md)
  - [FeatureFlagStatuses](docs/FeatureFlagStatuses.md)
  - [FeatureFlags](docs/FeatureFlags.md)
+ - [FlagListItem](docs/FlagListItem.md)
  - [Link](docs/Link.md)
  - [Links](docs/Links.md)
  - [MAU](docs/MAU.md)
@@ -238,8 +240,8 @@ Class | Method | HTTP request | Description
  - [Role](docs/Role.md)
  - [Rollout](docs/Rollout.md)
  - [Rule](docs/Rule.md)
+ - [Site](docs/Site.md)
  - [Statement](docs/Statement.md)
- - [Statements](docs/Statements.md)
  - [Stream](docs/Stream.md)
  - [StreamBySDK](docs/StreamBySDK.md)
  - [StreamBySDKLinks](docs/StreamBySDKLinks.md)

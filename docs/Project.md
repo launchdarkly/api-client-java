@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **id** | **String** |  |  [optional]
 **key** | **String** |  |  [optional]
 **name** | **String** |  |  [optional]
+**includeInSnippetByDefault** | **Boolean** |  |  [optional]
 **environments** | [**List&lt;Environment&gt;**](Environment.md) |  |  [optional]
 **tags** | **List&lt;String&gt;** | An array of tags for this project. |  [optional]
 

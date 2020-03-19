@@ -20,25 +20,30 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.launchdarkly.api.model.Links;
+import com.launchdarkly.api.model.Site;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Variation
+ * FlagListItem
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-19T21:29:46.236Z")
-public class Variation {
+public class FlagListItem {
   @SerializedName("name")
   private String name = null;
 
-  @SerializedName("description")
-  private String description = null;
+  @SerializedName("key")
+  private String key = null;
 
-  @SerializedName("value")
-  private Object value = null;
+  @SerializedName("_links")
+  private Links links = null;
 
-  public Variation name(String name) {
+  @SerializedName("_site")
+  private Site site = null;
+
+  public FlagListItem name(String name) {
     this.name = name;
     return this;
   }
@@ -47,7 +52,7 @@ public class Variation {
    * Get name
    * @return name
   **/
-  @ApiModelProperty(example = "True", value = "")
+  @ApiModelProperty(value = "")
   public String getName() {
     return name;
   }
@@ -56,40 +61,58 @@ public class Variation {
     this.name = name;
   }
 
-  public Variation description(String description) {
-    this.description = description;
+  public FlagListItem key(String key) {
+    this.key = key;
     return this;
   }
 
    /**
-   * Get description
-   * @return description
+   * Get key
+   * @return key
   **/
-  @ApiModelProperty(example = "The true variation", value = "")
-  public String getDescription() {
-    return description;
+  @ApiModelProperty(value = "")
+  public String getKey() {
+    return key;
   }
 
-  public void setDescription(String description) {
-    this.description = description;
+  public void setKey(String key) {
+    this.key = key;
   }
 
-  public Variation value(Object value) {
-    this.value = value;
+  public FlagListItem links(Links links) {
+    this.links = links;
     return this;
   }
 
    /**
-   * Get value
-   * @return value
+   * Get links
+   * @return links
   **/
-  @ApiModelProperty(required = true, value = "")
-  public Object getValue() {
-    return value;
+  @ApiModelProperty(value = "")
+  public Links getLinks() {
+    return links;
   }
 
-  public void setValue(Object value) {
-    this.value = value;
+  public void setLinks(Links links) {
+    this.links = links;
+  }
+
+  public FlagListItem site(Site site) {
+    this.site = site;
+    return this;
+  }
+
+   /**
+   * Get site
+   * @return site
+  **/
+  @ApiModelProperty(value = "")
+  public Site getSite() {
+    return site;
+  }
+
+  public void setSite(Site site) {
+    this.site = site;
   }
 
 
@@ -101,26 +124,28 @@ public class Variation {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Variation variation = (Variation) o;
-    return Objects.equals(this.name, variation.name) &&
-        Objects.equals(this.description, variation.description) &&
-        Objects.equals(this.value, variation.value);
+    FlagListItem flagListItem = (FlagListItem) o;
+    return Objects.equals(this.name, flagListItem.name) &&
+        Objects.equals(this.key, flagListItem.key) &&
+        Objects.equals(this.links, flagListItem.links) &&
+        Objects.equals(this.site, flagListItem.site);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, value);
+    return Objects.hash(name, key, links, site);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Variation {\n");
+    sb.append("class FlagListItem {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    key: ").append(toIndentedString(key)).append("\n");
+    sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    sb.append("    site: ").append(toIndentedString(site)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **lastName** | **String** |  |  [optional]
 **role** | [**Role**](Role.md) |  |  [optional]
 **customRoles** | **List&lt;String&gt;** |  |  [optional]
-**inlineRole** | [**Statements**](Statements.md) |  |  [optional]
+**inlineRole** | [**List&lt;Statement&gt;**](Statement.md) |  |  [optional]
 
 
 

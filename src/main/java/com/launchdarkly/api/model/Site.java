@@ -20,56 +20,55 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.launchdarkly.api.model.Link;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Links
+ * Site
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-19T21:29:46.236Z")
-public class Links {
-  @SerializedName("self")
-  private Link self = null;
+public class Site {
+  @SerializedName("href")
+  private String href = null;
 
-  @SerializedName("next")
-  private Link next = null;
+  @SerializedName("type")
+  private String type = null;
 
-  public Links self(Link self) {
-    this.self = self;
+  public Site href(String href) {
+    this.href = href;
     return this;
   }
 
    /**
-   * Get self
-   * @return self
+   * Get href
+   * @return href
   **/
-  @ApiModelProperty(value = "")
-  public Link getSelf() {
-    return self;
+  @ApiModelProperty(example = "/features/sort.order", value = "")
+  public String getHref() {
+    return href;
   }
 
-  public void setSelf(Link self) {
-    this.self = self;
+  public void setHref(String href) {
+    this.href = href;
   }
 
-  public Links next(Link next) {
-    this.next = next;
+  public Site type(String type) {
+    this.type = type;
     return this;
   }
 
    /**
-   * Get next
-   * @return next
+   * Get type
+   * @return type
   **/
-  @ApiModelProperty(value = "")
-  public Link getNext() {
-    return next;
+  @ApiModelProperty(example = "text/html", value = "")
+  public String getType() {
+    return type;
   }
 
-  public void setNext(Link next) {
-    this.next = next;
+  public void setType(String type) {
+    this.type = type;
   }
 
 
@@ -81,24 +80,24 @@ public class Links {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Links links = (Links) o;
-    return Objects.equals(this.self, links.self) &&
-        Objects.equals(this.next, links.next);
+    Site site = (Site) o;
+    return Objects.equals(this.href, site.href) &&
+        Objects.equals(this.type, site.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(self, next);
+    return Objects.hash(href, type);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Links {\n");
+    sb.append("class Site {\n");
     
-    sb.append("    self: ").append(toIndentedString(self)).append("\n");
-    sb.append("    next: ").append(toIndentedString(next)).append("\n");
+    sb.append("    href: ").append(toIndentedString(href)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }
