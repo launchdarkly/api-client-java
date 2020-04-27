@@ -152,7 +152,7 @@ Token.setApiKey("YOUR API KEY");
 FeatureFlagsApi apiInstance = new FeatureFlagsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
 String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
-String env = "env_example"; // String | By default, each feature will include configurations for each environment. You can filter environments with the env query parameter. For example, setting env=production will restrict the returned configurations to just your production environment.
+List<String> env = Arrays.asList("env_example"); // List<String> | By default, each feature will include configurations for each environment. You can filter environments with the env query parameter. For example, setting env=[\"production\"] will restrict the returned configurations to just your production environment.
 try {
     FeatureFlag result = apiInstance.getFeatureFlag(projectKey, featureFlagKey, env);
     System.out.println(result);
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
  **featureFlagKey** | **String**| The feature flag&#39;s key. The key identifies the flag in your code. |
- **env** | **String**| By default, each feature will include configurations for each environment. You can filter environments with the env query parameter. For example, setting env&#x3D;production will restrict the returned configurations to just your production environment. | [optional]
+ **env** | [**List&lt;String&gt;**](String.md)| By default, each feature will include configurations for each environment. You can filter environments with the env query parameter. For example, setting env&#x3D;[\&quot;production\&quot;] will restrict the returned configurations to just your production environment. | [optional]
 
 ### Return type
 
@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 
 <a name="getFeatureFlags"></a>
 # **getFeatureFlags**
-> FeatureFlags getFeatureFlags(projectKey, env, summary, archived, tag)
+> FeatureFlags getFeatureFlags(projectKey, env, summary, archived, limit, number, filter, sort, tag)
 
 Get a list of all features in the given project.
 
@@ -375,12 +375,16 @@ Token.setApiKey("YOUR API KEY");
 
 FeatureFlagsApi apiInstance = new FeatureFlagsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String env = "env_example"; // String | By default, each feature will include configurations for each environment. You can filter environments with the env query parameter. For example, setting env=production will restrict the returned configurations to just your production environment.
+List<String> env = Arrays.asList("env_example"); // List<String> | By default, each feature will include configurations for each environment. You can filter environments with the env query parameter. For example, setting env=[\"production\"] will restrict the returned configurations to just your production environment.
 Boolean summary = true; // Boolean | By default in api version >= 1, flags will _not_ include their list of prerequisites, targets or rules.  Set summary=0 to include these fields for each flag returned.
 Boolean archived = true; // Boolean | When set to 1, archived flags will be included in the list of flags returned.  By default, archived flags are not included in the list of flags.
+BigDecimal limit = new BigDecimal(); // BigDecimal | The number of objects to return. Defaults to -1, which returns everything.
+Boolean number = true; // Boolean | Where to start in the list. This is for use with pagination. For example, an offset of 10 would skip the first 10 items and then return the next limit items.
+String filter = "filter_example"; // String | A comma-separated list of filters. Each filter is of the form field:value.
+String sort = "sort_example"; // String | A comma-separated list of fields to sort by. A field prefixed by a - will be sorted in descending order.
 String tag = "tag_example"; // String | Filter by tag. A tag can be used to group flags across projects.
 try {
-    FeatureFlags result = apiInstance.getFeatureFlags(projectKey, env, summary, archived, tag);
+    FeatureFlags result = apiInstance.getFeatureFlags(projectKey, env, summary, archived, limit, number, filter, sort, tag);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FeatureFlagsApi#getFeatureFlags");
@@ -393,9 +397,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **env** | **String**| By default, each feature will include configurations for each environment. You can filter environments with the env query parameter. For example, setting env&#x3D;production will restrict the returned configurations to just your production environment. | [optional]
+ **env** | [**List&lt;String&gt;**](String.md)| By default, each feature will include configurations for each environment. You can filter environments with the env query parameter. For example, setting env&#x3D;[\&quot;production\&quot;] will restrict the returned configurations to just your production environment. | [optional]
  **summary** | **Boolean**| By default in api version &gt;&#x3D; 1, flags will _not_ include their list of prerequisites, targets or rules.  Set summary&#x3D;0 to include these fields for each flag returned. | [optional]
  **archived** | **Boolean**| When set to 1, archived flags will be included in the list of flags returned.  By default, archived flags are not included in the list of flags. | [optional]
+ **limit** | **BigDecimal**| The number of objects to return. Defaults to -1, which returns everything. | [optional]
+ **number** | **Boolean**| Where to start in the list. This is for use with pagination. For example, an offset of 10 would skip the first 10 items and then return the next limit items. | [optional]
+ **filter** | **String**| A comma-separated list of filters. Each filter is of the form field:value. | [optional]
+ **sort** | **String**| A comma-separated list of fields to sort by. A field prefixed by a - will be sorted in descending order. | [optional]
  **tag** | **String**| Filter by tag. A tag can be used to group flags across projects. | [optional]
 
 ### Return type

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **email** | **String** |  |  [optional]
 **firstName** | **String** |  |  [optional]
 **lastName** | **String** |  |  [optional]
+**verified** | **Boolean** |  |  [optional]
 **pendingInvite** | **Boolean** |  |  [optional]
 **isBeta** | **Boolean** |  |  [optional]
 **customRoles** | **List&lt;String&gt;** |  |  [optional]

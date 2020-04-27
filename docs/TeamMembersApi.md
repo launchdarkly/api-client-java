@@ -5,6 +5,7 @@ All URIs are relative to *https://app.launchdarkly.com/api/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteMember**](TeamMembersApi.md#deleteMember) | **DELETE** /members/{memberId} | Delete a team member by ID.
+[**getMe**](TeamMembersApi.md#getMe) | **GET** /members/me | Get the current team member associated with the token
 [**getMember**](TeamMembersApi.md#getMember) | **GET** /members/{memberId} | Get a single team member by ID.
 [**getMembers**](TeamMembersApi.md#getMembers) | **GET** /members | Returns a list of all members in the account.
 [**patchMember**](TeamMembersApi.md#patchMember) | **PATCH** /members/{memberId} | Modify a team member by ID.
@@ -53,6 +54,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+[Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getMe"></a>
+# **getMe**
+> Member getMe()
+
+Get the current team member associated with the token
+
+### Example
+```java
+// Import classes:
+//import com.launchdarkly.api.ApiClient;
+//import com.launchdarkly.api.ApiException;
+//import com.launchdarkly.api.Configuration;
+//import com.launchdarkly.api.auth.*;
+//import com.launchdarkly.api.api.TeamMembersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
+
+TeamMembersApi apiInstance = new TeamMembersApi();
+try {
+    Member result = apiInstance.getMe();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TeamMembersApi#getMe");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Member**](Member.md)
 
 ### Authorization
 
@@ -118,7 +168,7 @@ Name | Type | Description  | Notes
 
 <a name="getMembers"></a>
 # **getMembers**
-> Members getMembers()
+> Members getMembers(limit, number, filter, sort)
 
 Returns a list of all members in the account.
 
@@ -140,8 +190,12 @@ Token.setApiKey("YOUR API KEY");
 //Token.setApiKeyPrefix("Token");
 
 TeamMembersApi apiInstance = new TeamMembersApi();
+BigDecimal limit = new BigDecimal(); // BigDecimal | The number of objects to return. Defaults to -1, which returns everything.
+Boolean number = true; // Boolean | Where to start in the list. This is for use with pagination. For example, an offset of 10 would skip the first 10 items and then return the next limit items.
+String filter = "filter_example"; // String | A comma-separated list of filters. Each filter is of the form field:value.
+String sort = "sort_example"; // String | A comma-separated list of fields to sort by. A field prefixed by a - will be sorted in descending order.
 try {
-    Members result = apiInstance.getMembers();
+    Members result = apiInstance.getMembers(limit, number, filter, sort);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TeamMembersApi#getMembers");
@@ -150,7 +204,13 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **BigDecimal**| The number of objects to return. Defaults to -1, which returns everything. | [optional]
+ **number** | **Boolean**| Where to start in the list. This is for use with pagination. For example, an offset of 10 would skip the first 10 items and then return the next limit items. | [optional]
+ **filter** | **String**| A comma-separated list of filters. Each filter is of the form field:value. | [optional]
+ **sort** | **String**| A comma-separated list of fields to sort by. A field prefixed by a - will be sorted in descending order. | [optional]
 
 ### Return type
 

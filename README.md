@@ -6,8 +6,8 @@ This REST API is for custom integrations, data export, or automating your featur
 # api-client
 
 LaunchDarkly REST API
-- API version: 2.0.33
-  - Build date: 2020-03-26T23:43:17.356Z
+- API version: 3.0.0
+  - Build date: 2020-04-27T18:44:50.991Z
 
 Build custom integrations with the LaunchDarkly REST API
 
@@ -46,7 +46,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>2.0.33</version>
+  <version>3.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -56,7 +56,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:2.0.33"
+compile "com.launchdarkly:api-client:3.0.0"
 ```
 
 ### Others
@@ -69,7 +69,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-2.0.33.jar`
+* `target/api-client-3.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -163,6 +163,7 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**postProject**](docs/ProjectsApi.md#postProject) | **POST** /projects | Create a new project with the given key and name.
 *RootApi* | [**getRoot**](docs/RootApi.md#getRoot) | **GET** / | 
 *TeamMembersApi* | [**deleteMember**](docs/TeamMembersApi.md#deleteMember) | **DELETE** /members/{memberId} | Delete a team member by ID.
+*TeamMembersApi* | [**getMe**](docs/TeamMembersApi.md#getMe) | **GET** /members/me | Get the current team member associated with the token
 *TeamMembersApi* | [**getMember**](docs/TeamMembersApi.md#getMember) | **GET** /members/{memberId} | Get a single team member by ID.
 *TeamMembersApi* | [**getMembers**](docs/TeamMembersApi.md#getMembers) | **GET** /members | Returns a list of all members in the account.
 *TeamMembersApi* | [**patchMember**](docs/TeamMembersApi.md#patchMember) | **PATCH** /members/{memberId} | Modify a team member by ID.
