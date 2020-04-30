@@ -6,11 +6,13 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**copyFeatureFlag**](FeatureFlagsApi.md#copyFeatureFlag) | **POST** /flags/{projectKey}/{featureFlagKey}/copy | Copies the feature flag configuration from one environment to the same feature flag in another environment.
 [**deleteFeatureFlag**](FeatureFlagsApi.md#deleteFeatureFlag) | **DELETE** /flags/{projectKey}/{featureFlagKey} | Delete a feature flag in all environments. Be careful-- only delete feature flags that are no longer being used by your application.
+[**getExpiringUserTargets**](FeatureFlagsApi.md#getExpiringUserTargets) | **GET** /flags/{projectKey}/{featureFlagKey}/expiring-user-targets/{environmentKey} | Get expiring user targets for feature flag
 [**getFeatureFlag**](FeatureFlagsApi.md#getFeatureFlag) | **GET** /flags/{projectKey}/{featureFlagKey} | Get a single feature flag by key.
 [**getFeatureFlagStatus**](FeatureFlagsApi.md#getFeatureFlagStatus) | **GET** /flag-statuses/{projectKey}/{environmentKey}/{featureFlagKey} | Get the status for a particular feature flag.
 [**getFeatureFlagStatusAcrossEnvironments**](FeatureFlagsApi.md#getFeatureFlagStatusAcrossEnvironments) | **GET** /flag-status/{projectKey}/{featureFlagKey} | Get the status for a particular feature flag across environments
 [**getFeatureFlagStatuses**](FeatureFlagsApi.md#getFeatureFlagStatuses) | **GET** /flag-statuses/{projectKey}/{environmentKey} | Get a list of statuses for all feature flags. The status includes the last time the feature flag was requested, as well as the state of the flag.
 [**getFeatureFlags**](FeatureFlagsApi.md#getFeatureFlags) | **GET** /flags/{projectKey} | Get a list of all features in the given project.
+[**patchExpiringUserTargets**](FeatureFlagsApi.md#patchExpiringUserTargets) | **PATCH** /flags/{projectKey}/{featureFlagKey}/expiring-user-targets/{environmentKey} | Update, add, or delete expiring user targets on feature flag
 [**patchFeatureFlag**](FeatureFlagsApi.md#patchFeatureFlag) | **PATCH** /flags/{projectKey}/{featureFlagKey} | Perform a partial update to a feature.
 [**postFeatureFlag**](FeatureFlagsApi.md#postFeatureFlag) | **POST** /flags/{projectKey} | Creates a new feature flag.
 
@@ -116,6 +118,63 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+[Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getExpiringUserTargets"></a>
+# **getExpiringUserTargets**
+> UserTargetingExpirationForFlags getExpiringUserTargets(projectKey, environmentKey, featureFlagKey)
+
+Get expiring user targets for feature flag
+
+### Example
+```java
+// Import classes:
+//import com.launchdarkly.api.ApiClient;
+//import com.launchdarkly.api.ApiException;
+//import com.launchdarkly.api.Configuration;
+//import com.launchdarkly.api.auth.*;
+//import com.launchdarkly.api.api.FeatureFlagsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
+
+FeatureFlagsApi apiInstance = new FeatureFlagsApi();
+String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
+String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
+try {
+    UserTargetingExpirationForFlags result = apiInstance.getExpiringUserTargets(projectKey, environmentKey, featureFlagKey);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling FeatureFlagsApi#getExpiringUserTargets");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
+ **featureFlagKey** | **String**| The feature flag&#39;s key. The key identifies the flag in your code. |
+
+### Return type
+
+[**UserTargetingExpirationForFlags**](UserTargetingExpirationForFlags.md)
 
 ### Authorization
 
@@ -409,6 +468,65 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**FeatureFlags**](FeatureFlags.md)
+
+### Authorization
+
+[Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="patchExpiringUserTargets"></a>
+# **patchExpiringUserTargets**
+> UserTargetingExpirationForFlags patchExpiringUserTargets(projectKey, environmentKey, featureFlagKey, patchComment)
+
+Update, add, or delete expiring user targets on feature flag
+
+### Example
+```java
+// Import classes:
+//import com.launchdarkly.api.ApiClient;
+//import com.launchdarkly.api.ApiException;
+//import com.launchdarkly.api.Configuration;
+//import com.launchdarkly.api.auth.*;
+//import com.launchdarkly.api.api.FeatureFlagsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
+
+FeatureFlagsApi apiInstance = new FeatureFlagsApi();
+String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
+String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
+PatchComment patchComment = new PatchComment(); // PatchComment | Requires a JSON Patch representation of the desired changes to the project, and an optional comment. 'http://jsonpatch.com/' Feature flag patches also support JSON Merge Patch format. 'https://tools.ietf.org/html/rfc7386' The addition of comments is also supported.
+try {
+    UserTargetingExpirationForFlags result = apiInstance.patchExpiringUserTargets(projectKey, environmentKey, featureFlagKey, patchComment);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling FeatureFlagsApi#patchExpiringUserTargets");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
+ **featureFlagKey** | **String**| The feature flag&#39;s key. The key identifies the flag in your code. |
+ **patchComment** | [**PatchComment**](PatchComment.md)| Requires a JSON Patch representation of the desired changes to the project, and an optional comment. &#39;http://jsonpatch.com/&#39; Feature flag patches also support JSON Merge Patch format. &#39;https://tools.ietf.org/html/rfc7386&#39; The addition of comments is also supported. |
+
+### Return type
+
+[**UserTargetingExpirationForFlags**](UserTargetingExpirationForFlags.md)
 
 ### Authorization
 
