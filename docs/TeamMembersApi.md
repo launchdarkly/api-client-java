@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 <a name="getMembers"></a>
 # **getMembers**
-> Members getMembers(limit, number, filter, sort)
+> Members getMembers(limit, offset, filter, sort)
 
 Returns a list of all members in the account.
 
@@ -191,11 +191,11 @@ Token.setApiKey("YOUR API KEY");
 
 TeamMembersApi apiInstance = new TeamMembersApi();
 BigDecimal limit = new BigDecimal(); // BigDecimal | The number of objects to return. Defaults to -1, which returns everything.
-Boolean number = true; // Boolean | Where to start in the list. This is for use with pagination. For example, an offset of 10 would skip the first 10 items and then return the next limit items.
+BigDecimal offset = new BigDecimal(); // BigDecimal | Where to start in the list. This is for use with pagination. For example, an offset of 10 would skip the first 10 items and then return the next limit items.
 String filter = "filter_example"; // String | A comma-separated list of filters. Each filter is of the form field:value.
 String sort = "sort_example"; // String | A comma-separated list of fields to sort by. A field prefixed by a - will be sorted in descending order.
 try {
-    Members result = apiInstance.getMembers(limit, number, filter, sort);
+    Members result = apiInstance.getMembers(limit, offset, filter, sort);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TeamMembersApi#getMembers");
@@ -208,7 +208,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **BigDecimal**| The number of objects to return. Defaults to -1, which returns everything. | [optional]
- **number** | **Boolean**| Where to start in the list. This is for use with pagination. For example, an offset of 10 would skip the first 10 items and then return the next limit items. | [optional]
+ **offset** | **BigDecimal**| Where to start in the list. This is for use with pagination. For example, an offset of 10 would skip the first 10 items and then return the next limit items. | [optional]
  **filter** | **String**| A comma-separated list of filters. Each filter is of the form field:value. | [optional]
  **sort** | **String**| A comma-separated list of fields to sort by. A field prefixed by a - will be sorted in descending order. | [optional]
 

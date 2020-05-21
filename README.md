@@ -6,8 +6,8 @@ This REST API is for custom integrations, data export, or automating your featur
 # api-client
 
 LaunchDarkly REST API
-- API version: 3.1.0
-  - Build date: 2020-04-30T22:42:00.060Z
+- API version: 3.2.0
+  - Build date: 2020-05-21T13:16:20.421Z
 
 Build custom integrations with the LaunchDarkly REST API
 
@@ -46,7 +46,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>3.1.0</version>
+  <version>3.2.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -56,7 +56,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:3.1.0"
+compile "com.launchdarkly:api-client:3.2.0"
 ```
 
 ### Others
@@ -69,7 +69,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-3.1.0.jar`
+* `target/api-client-3.2.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -171,8 +171,10 @@ Class | Method | HTTP request | Description
 *TeamMembersApi* | [**patchMember**](docs/TeamMembersApi.md#patchMember) | **PATCH** /members/{memberId} | Modify a team member by ID.
 *TeamMembersApi* | [**postMembers**](docs/TeamMembersApi.md#postMembers) | **POST** /members | Invite new members.
 *UserSegmentsApi* | [**deleteUserSegment**](docs/UserSegmentsApi.md#deleteUserSegment) | **DELETE** /segments/{projectKey}/{environmentKey}/{userSegmentKey} | Delete a user segment.
+*UserSegmentsApi* | [**getExpiringUserTargetsOnSegment**](docs/UserSegmentsApi.md#getExpiringUserTargetsOnSegment) | **GET** /segments/{projectKey}/{userSegmentKey}/expiring-user-targets/{environmentKey} | Get expiring user targets for user segment
 *UserSegmentsApi* | [**getUserSegment**](docs/UserSegmentsApi.md#getUserSegment) | **GET** /segments/{projectKey}/{environmentKey}/{userSegmentKey} | Get a single user segment by key.
 *UserSegmentsApi* | [**getUserSegments**](docs/UserSegmentsApi.md#getUserSegments) | **GET** /segments/{projectKey}/{environmentKey} | Get a list of all user segments in the given project.
+*UserSegmentsApi* | [**patchExpiringUserTargetsOnSegment**](docs/UserSegmentsApi.md#patchExpiringUserTargetsOnSegment) | **PATCH** /segments/{projectKey}/{userSegmentKey}/expiring-user-targets/{environmentKey} | Update, add, or delete expiring user targets on user segment
 *UserSegmentsApi* | [**patchUserSegment**](docs/UserSegmentsApi.md#patchUserSegment) | **PATCH** /segments/{projectKey}/{environmentKey}/{userSegmentKey} | Perform a partial update to a user segment.
 *UserSegmentsApi* | [**postUserSegment**](docs/UserSegmentsApi.md#postUserSegment) | **POST** /segments/{projectKey}/{environmentKey} | Creates a new user segment.
 *UserSettingsApi* | [**getExpiringUserTargetsForUser**](docs/UserSettingsApi.md#getExpiringUserTargetsForUser) | **GET** /users/{projectKey}/{userKey}/expiring-user-targets/{environmentKey} | Get expiring dates on flags for user
@@ -245,6 +247,8 @@ Class | Method | HTTP request | Description
  - [Role](docs/Role.md)
  - [Rollout](docs/Rollout.md)
  - [Rule](docs/Rule.md)
+ - [SemanticPatchOperation](docs/SemanticPatchOperation.md)
+ - [SemanticPatchOperationInstructions](docs/SemanticPatchOperationInstructions.md)
  - [Site](docs/Site.md)
  - [Statement](docs/Statement.md)
  - [Stream](docs/Stream.md)
@@ -274,6 +278,7 @@ Class | Method | HTTP request | Description
  - [UserSettingsBody](docs/UserSettingsBody.md)
  - [UserTargetingExpirationForFlag](docs/UserTargetingExpirationForFlag.md)
  - [UserTargetingExpirationForFlags](docs/UserTargetingExpirationForFlags.md)
+ - [UserTargetingExpirationForSegment](docs/UserTargetingExpirationForSegment.md)
  - [UserTargetingExpirationOnFlagsForUser](docs/UserTargetingExpirationOnFlagsForUser.md)
  - [UserTargetingExpirationResourceIdForFlag](docs/UserTargetingExpirationResourceIdForFlag.md)
  - [Users](docs/Users.md)

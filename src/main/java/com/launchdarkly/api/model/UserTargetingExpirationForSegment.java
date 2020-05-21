@@ -27,15 +27,15 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * UserTargetingExpirationForFlag
+ * UserTargetingExpirationForSegment
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-21T13:16:20.421Z")
-public class UserTargetingExpirationForFlag {
+public class UserTargetingExpirationForSegment {
   @SerializedName("expirationDate")
   private Integer expirationDate = null;
 
-  @SerializedName("variationId")
-  private String variationId = null;
+  @SerializedName("targetType")
+  private String targetType = null;
 
   @SerializedName("userKey")
   private String userKey = null;
@@ -52,7 +52,7 @@ public class UserTargetingExpirationForFlag {
   @SerializedName("_version")
   private Integer version = null;
 
-  public UserTargetingExpirationForFlag expirationDate(Integer expirationDate) {
+  public UserTargetingExpirationForSegment expirationDate(Integer expirationDate) {
     this.expirationDate = expirationDate;
     return this;
   }
@@ -70,25 +70,25 @@ public class UserTargetingExpirationForFlag {
     this.expirationDate = expirationDate;
   }
 
-  public UserTargetingExpirationForFlag variationId(String variationId) {
-    this.variationId = variationId;
+  public UserTargetingExpirationForSegment targetType(String targetType) {
+    this.targetType = targetType;
     return this;
   }
 
    /**
-   * the ID of the variation that the user is targeted on a flag
-   * @return variationId
+   * either the included or excluded variation that the user is targeted on a segment
+   * @return targetType
   **/
-  @ApiModelProperty(value = "the ID of the variation that the user is targeted on a flag")
-  public String getVariationId() {
-    return variationId;
+  @ApiModelProperty(value = "either the included or excluded variation that the user is targeted on a segment")
+  public String getTargetType() {
+    return targetType;
   }
 
-  public void setVariationId(String variationId) {
-    this.variationId = variationId;
+  public void setTargetType(String targetType) {
+    this.targetType = targetType;
   }
 
-  public UserTargetingExpirationForFlag userKey(String userKey) {
+  public UserTargetingExpirationForSegment userKey(String userKey) {
     this.userKey = userKey;
     return this;
   }
@@ -106,7 +106,7 @@ public class UserTargetingExpirationForFlag {
     this.userKey = userKey;
   }
 
-  public UserTargetingExpirationForFlag id(String id) {
+  public UserTargetingExpirationForSegment id(String id) {
     this.id = id;
     return this;
   }
@@ -124,7 +124,7 @@ public class UserTargetingExpirationForFlag {
     this.id = id;
   }
 
-  public UserTargetingExpirationForFlag resourceId(UserTargetingExpirationResourceIdForFlag resourceId) {
+  public UserTargetingExpirationForSegment resourceId(UserTargetingExpirationResourceIdForFlag resourceId) {
     this.resourceId = resourceId;
     return this;
   }
@@ -142,7 +142,7 @@ public class UserTargetingExpirationForFlag {
     this.resourceId = resourceId;
   }
 
-  public UserTargetingExpirationForFlag links(Links links) {
+  public UserTargetingExpirationForSegment links(Links links) {
     this.links = links;
     return this;
   }
@@ -160,7 +160,7 @@ public class UserTargetingExpirationForFlag {
     this.links = links;
   }
 
-  public UserTargetingExpirationForFlag version(Integer version) {
+  public UserTargetingExpirationForSegment version(Integer version) {
     this.version = version;
     return this;
   }
@@ -187,29 +187,29 @@ public class UserTargetingExpirationForFlag {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UserTargetingExpirationForFlag userTargetingExpirationForFlag = (UserTargetingExpirationForFlag) o;
-    return Objects.equals(this.expirationDate, userTargetingExpirationForFlag.expirationDate) &&
-        Objects.equals(this.variationId, userTargetingExpirationForFlag.variationId) &&
-        Objects.equals(this.userKey, userTargetingExpirationForFlag.userKey) &&
-        Objects.equals(this.id, userTargetingExpirationForFlag.id) &&
-        Objects.equals(this.resourceId, userTargetingExpirationForFlag.resourceId) &&
-        Objects.equals(this.links, userTargetingExpirationForFlag.links) &&
-        Objects.equals(this.version, userTargetingExpirationForFlag.version);
+    UserTargetingExpirationForSegment userTargetingExpirationForSegment = (UserTargetingExpirationForSegment) o;
+    return Objects.equals(this.expirationDate, userTargetingExpirationForSegment.expirationDate) &&
+        Objects.equals(this.targetType, userTargetingExpirationForSegment.targetType) &&
+        Objects.equals(this.userKey, userTargetingExpirationForSegment.userKey) &&
+        Objects.equals(this.id, userTargetingExpirationForSegment.id) &&
+        Objects.equals(this.resourceId, userTargetingExpirationForSegment.resourceId) &&
+        Objects.equals(this.links, userTargetingExpirationForSegment.links) &&
+        Objects.equals(this.version, userTargetingExpirationForSegment.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(expirationDate, variationId, userKey, id, resourceId, links, version);
+    return Objects.hash(expirationDate, targetType, userKey, id, resourceId, links, version);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UserTargetingExpirationForFlag {\n");
+    sb.append("class UserTargetingExpirationForSegment {\n");
     
     sb.append("    expirationDate: ").append(toIndentedString(expirationDate)).append("\n");
-    sb.append("    variationId: ").append(toIndentedString(variationId)).append("\n");
+    sb.append("    targetType: ").append(toIndentedString(targetType)).append("\n");
     sb.append("    userKey: ").append(toIndentedString(userKey)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");

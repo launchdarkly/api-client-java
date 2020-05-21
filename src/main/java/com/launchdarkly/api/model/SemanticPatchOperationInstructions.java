@@ -25,29 +25,29 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * DestinationSegment
+ * SemanticPatchOperationInstructions
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-21T13:16:20.421Z")
-public class DestinationSegment {
-  @SerializedName("writeKey")
-  private String writeKey = null;
+public class SemanticPatchOperationInstructions {
+  @SerializedName("kind")
+  private String kind = null;
 
-  public DestinationSegment writeKey(String writeKey) {
-    this.writeKey = writeKey;
+  public SemanticPatchOperationInstructions kind(String kind) {
+    this.kind = kind;
     return this;
   }
 
    /**
-   * Get writeKey
-   * @return writeKey
+   * The name of the modification you would like to perform on a resource.
+   * @return kind
   **/
-  @ApiModelProperty(example = "segmentWriteKey", value = "")
-  public String getWriteKey() {
-    return writeKey;
+  @ApiModelProperty(example = "removeUserTargets", value = "The name of the modification you would like to perform on a resource.")
+  public String getKind() {
+    return kind;
   }
 
-  public void setWriteKey(String writeKey) {
-    this.writeKey = writeKey;
+  public void setKind(String kind) {
+    this.kind = kind;
   }
 
 
@@ -59,22 +59,22 @@ public class DestinationSegment {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DestinationSegment destinationSegment = (DestinationSegment) o;
-    return Objects.equals(this.writeKey, destinationSegment.writeKey);
+    SemanticPatchOperationInstructions semanticPatchOperationInstructions = (SemanticPatchOperationInstructions) o;
+    return Objects.equals(this.kind, semanticPatchOperationInstructions.kind);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(writeKey);
+    return Objects.hash(kind);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DestinationSegment {\n");
+    sb.append("class SemanticPatchOperationInstructions {\n");
     
-    sb.append("    writeKey: ").append(toIndentedString(writeKey)).append("\n");
+    sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
     sb.append("}");
     return sb.toString();
   }

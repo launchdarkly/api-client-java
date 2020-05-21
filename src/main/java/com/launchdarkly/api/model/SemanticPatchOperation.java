@@ -20,7 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.launchdarkly.api.model.PatchOperation;
+import com.launchdarkly.api.model.SemanticPatchOperationInstructions;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -28,17 +28,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * PatchComment
+ * SemanticPatchOperation
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-21T13:16:20.421Z")
-public class PatchComment {
+public class SemanticPatchOperation {
   @SerializedName("comment")
   private String comment = null;
 
-  @SerializedName("patch")
-  private List<PatchOperation> patch = null;
+  @SerializedName("instructions")
+  private List<SemanticPatchOperationInstructions> instructions = new ArrayList<SemanticPatchOperationInstructions>();
 
-  public PatchComment comment(String comment) {
+  public SemanticPatchOperation comment(String comment) {
     this.comment = comment;
     return this;
   }
@@ -56,30 +56,27 @@ public class PatchComment {
     this.comment = comment;
   }
 
-  public PatchComment patch(List<PatchOperation> patch) {
-    this.patch = patch;
+  public SemanticPatchOperation instructions(List<SemanticPatchOperationInstructions> instructions) {
+    this.instructions = instructions;
     return this;
   }
 
-  public PatchComment addPatchItem(PatchOperation patchItem) {
-    if (this.patch == null) {
-      this.patch = new ArrayList<PatchOperation>();
-    }
-    this.patch.add(patchItem);
+  public SemanticPatchOperation addInstructionsItem(SemanticPatchOperationInstructions instructionsItem) {
+    this.instructions.add(instructionsItem);
     return this;
   }
 
    /**
-   * Get patch
-   * @return patch
+   * Get instructions
+   * @return instructions
   **/
-  @ApiModelProperty(value = "")
-  public List<PatchOperation> getPatch() {
-    return patch;
+  @ApiModelProperty(required = true, value = "")
+  public List<SemanticPatchOperationInstructions> getInstructions() {
+    return instructions;
   }
 
-  public void setPatch(List<PatchOperation> patch) {
-    this.patch = patch;
+  public void setInstructions(List<SemanticPatchOperationInstructions> instructions) {
+    this.instructions = instructions;
   }
 
 
@@ -91,24 +88,24 @@ public class PatchComment {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PatchComment patchComment = (PatchComment) o;
-    return Objects.equals(this.comment, patchComment.comment) &&
-        Objects.equals(this.patch, patchComment.patch);
+    SemanticPatchOperation semanticPatchOperation = (SemanticPatchOperation) o;
+    return Objects.equals(this.comment, semanticPatchOperation.comment) &&
+        Objects.equals(this.instructions, semanticPatchOperation.instructions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(comment, patch);
+    return Objects.hash(comment, instructions);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PatchComment {\n");
+    sb.append("class SemanticPatchOperation {\n");
     
     sb.append("    comment: ").append(toIndentedString(comment)).append("\n");
-    sb.append("    patch: ").append(toIndentedString(patch)).append("\n");
+    sb.append("    instructions: ").append(toIndentedString(instructions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
