@@ -6,8 +6,8 @@ This REST API is for custom integrations, data export, or automating your featur
 # api-client
 
 LaunchDarkly REST API
-- API version: 3.3.0
-  - Build date: 2020-05-27T13:18:25.424Z
+- API version: 3.3.1
+  - Build date: 2020-06-05T11:10:44.621Z
 
 Build custom integrations with the LaunchDarkly REST API
 
@@ -46,7 +46,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>3.3.0</version>
+  <version>3.3.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -56,7 +56,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:3.3.0"
+compile "com.launchdarkly:api-client:3.3.1"
 ```
 
 ### Others
@@ -69,7 +69,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-3.3.0.jar`
+* `target/api-client-3.3.1.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
