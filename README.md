@@ -6,8 +6,8 @@ This REST API is for custom integrations, data export, or automating your featur
 # api-client
 
 LaunchDarkly REST API
-- API version: 3.3.1
-  - Build date: 2020-06-05T11:10:44.621Z
+- API version: 3.3.2
+  - Build date: 2020-06-05T13:59:03.539Z
 
 Build custom integrations with the LaunchDarkly REST API
 
@@ -46,7 +46,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>3.3.1</version>
+  <version>3.3.2</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -56,7 +56,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:3.3.1"
+compile "com.launchdarkly:api-client:3.3.2"
 ```
 
 ### Others
@@ -69,7 +69,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-3.3.1.jar`
+* `target/api-client-3.3.2.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -99,8 +99,8 @@ public class AuditLogApiExample {
 
         AuditLogApi apiInstance = new AuditLogApi();
         Long before = 789L; // Long | A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned will have before this timestamp.
-        Long after = 789L; // Long | A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned will have occured after this timestamp.
-        String q = "q_example"; // String | Text to search for. You can search for the full or partial name of the resource involved or fullpartial email address of the member who made the change.
+        Long after = 789L; // Long | A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned will have occurred after this timestamp.
+        String q = "q_example"; // String | Text to search for. You can search for the full or partial name of the resource involved or full or partial email address of the member who made the change.
         BigDecimal limit = new BigDecimal(); // BigDecimal | A limit on the number of audit log entries to be returned, between 1 and 20.
         String spec = "spec_example"; // String | A resource specifier, allowing you to filter audit log listings by resource.
         try {

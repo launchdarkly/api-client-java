@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **name** | **String** | Name of the feature flag. |  [optional]
 **description** | **String** | Description of the feature flag. |  [optional]
 **kind** | **String** | Whether the feature flag is a boolean flag or multivariate. |  [optional]
-**creationDate** | [**BigDecimal**](BigDecimal.md) | A unix epoch time in milliseconds specifying the creation time of this flag. |  [optional]
+**creationDate** | **Long** | A unix epoch time in milliseconds specifying the creation time of this flag. |  [optional]
 **includeInSnippet** | **Boolean** |  |  [optional]
 **temporary** | **Boolean** | Whether or not this flag is temporary. |  [optional]
 **maintainerId** | **String** | The ID of the member that should maintain this flag. |  [optional]
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **links** | [**Links**](Links.md) |  |  [optional]
 **maintainer** | [**Member**](Member.md) |  |  [optional]
 **environments** | [**Map&lt;String, FeatureFlagConfig&gt;**](FeatureFlagConfig.md) |  |  [optional]
-**archivedDate** | [**BigDecimal**](BigDecimal.md) | A unix epoch time in milliseconds specifying the archived time of this flag. |  [optional]
+**archivedDate** | **Long** | A unix epoch time in milliseconds specifying the archived time of this flag. |  [optional]
 **archived** | **Boolean** | Whether or not this flag is archived. |  [optional]
 **defaults** | [**Defaults**](Defaults.md) |  |  [optional]
 
