@@ -6,8 +6,8 @@ This REST API is for custom integrations, data export, or automating your featur
 # api-client
 
 LaunchDarkly REST API
-- API version: 3.3.2
-  - Build date: 2020-06-05T13:59:03.539Z
+- API version: 3.4.0
+  - Build date: 2020-08-12T16:37:54.213Z
 
 Build custom integrations with the LaunchDarkly REST API
 
@@ -46,7 +46,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>3.3.2</version>
+  <version>3.4.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -56,7 +56,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:3.3.2"
+compile "com.launchdarkly:api-client:3.4.0"
 ```
 
 ### Others
@@ -69,7 +69,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-3.3.2.jar`
+* `target/api-client-3.4.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -81,12 +81,12 @@ Please follow the [installation](#installation) instruction and execute the foll
 import com.launchdarkly.api.*;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.model.*;
-import com.launchdarkly.api.api.AuditLogApi;
+import com.launchdarkly.api.api.AccessTokensApi;
 
 import java.io.File;
 import java.util.*;
 
-public class AuditLogApiExample {
+public class AccessTokensApiExample {
 
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
@@ -97,17 +97,12 @@ public class AuditLogApiExample {
         // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
         //Token.setApiKeyPrefix("Token");
 
-        AuditLogApi apiInstance = new AuditLogApi();
-        Long before = 789L; // Long | A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned will have before this timestamp.
-        Long after = 789L; // Long | A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned will have occurred after this timestamp.
-        String q = "q_example"; // String | Text to search for. You can search for the full or partial name of the resource involved or full or partial email address of the member who made the change.
-        BigDecimal limit = new BigDecimal(); // BigDecimal | A limit on the number of audit log entries to be returned, between 1 and 20.
-        String spec = "spec_example"; // String | A resource specifier, allowing you to filter audit log listings by resource.
+        AccessTokensApi apiInstance = new AccessTokensApi();
+        String tokenId = "tokenId_example"; // String | The access token ID.
         try {
-            AuditLogEntries result = apiInstance.getAuditLogEntries(before, after, q, limit, spec);
-            System.out.println(result);
+            apiInstance.deleteToken(tokenId);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AuditLogApi#getAuditLogEntries");
+            System.err.println("Exception when calling AccessTokensApi#deleteToken");
             e.printStackTrace();
         }
     }
@@ -121,6 +116,12 @@ All URIs are relative to *https://app.launchdarkly.com/api/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AccessTokensApi* | [**deleteToken**](docs/AccessTokensApi.md#deleteToken) | **DELETE** /tokens/{tokenId} | Delete an access token by ID.
+*AccessTokensApi* | [**getToken**](docs/AccessTokensApi.md#getToken) | **GET** /tokens/{tokenId} | Get a single access token by ID.
+*AccessTokensApi* | [**getTokens**](docs/AccessTokensApi.md#getTokens) | **GET** /tokens | Returns a list of tokens in the account.
+*AccessTokensApi* | [**patchToken**](docs/AccessTokensApi.md#patchToken) | **PATCH** /tokens/{tokenId} | Modify an access tokenby ID.
+*AccessTokensApi* | [**postToken**](docs/AccessTokensApi.md#postToken) | **POST** /tokens | Create a new token.
+*AccessTokensApi* | [**resetToken**](docs/AccessTokensApi.md#resetToken) | **POST** /tokens/{tokenId}/reset | Reset an access token&#39;s secret key with an optional expiry time for the old key.
 *AuditLogApi* | [**getAuditLogEntries**](docs/AuditLogApi.md#getAuditLogEntries) | **GET** /auditlog | Get a list of all audit log entries. The query parameters allow you to restrict the returned results by date ranges, resource specifiers, or a full-text search query.
 *AuditLogApi* | [**getAuditLogEntry**](docs/AuditLogApi.md#getAuditLogEntry) | **GET** /auditlog/{resourceId} | Use this endpoint to fetch a single audit log entry by its resouce ID.
 *CustomRolesApi* | [**deleteCustomRole**](docs/CustomRolesApi.md#deleteCustomRole) | **DELETE** /roles/{customRoleKey} | Delete a custom role by key.
@@ -264,6 +265,9 @@ Class | Method | HTTP request | Description
  - [StreamUsageSeries](docs/StreamUsageSeries.md)
  - [Streams](docs/Streams.md)
  - [Target](docs/Target.md)
+ - [Token](docs/Token.md)
+ - [TokenBody](docs/TokenBody.md)
+ - [Tokens](docs/Tokens.md)
  - [Usage](docs/Usage.md)
  - [UsageError](docs/UsageError.md)
  - [UsageLinks](docs/UsageLinks.md)
