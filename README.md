@@ -6,8 +6,8 @@ This REST API is for custom integrations, data export, or automating your featur
 # api-client
 
 LaunchDarkly REST API
-- API version: 3.4.0
-  - Build date: 2020-08-12T16:37:54.213Z
+- API version: 3.5.0
+  - Build date: 2020-08-26T21:01:29.182Z
 
 Build custom integrations with the LaunchDarkly REST API
 
@@ -46,7 +46,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>3.4.0</version>
+  <version>3.5.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -56,7 +56,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:3.4.0"
+compile "com.launchdarkly:api-client:3.5.0"
 ```
 
 ### Others
@@ -69,7 +69,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-3.4.0.jar`
+* `target/api-client-3.5.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -200,6 +200,7 @@ Class | Method | HTTP request | Description
  - [AuditLogEntry](docs/AuditLogEntry.md)
  - [AuditLogEntryTarget](docs/AuditLogEntryTarget.md)
  - [Clause](docs/Clause.md)
+ - [ClientSideAvailability](docs/ClientSideAvailability.md)
  - [CopyActions](docs/CopyActions.md)
  - [CustomProperty](docs/CustomProperty.md)
  - [CustomPropertyValues](docs/CustomPropertyValues.md)

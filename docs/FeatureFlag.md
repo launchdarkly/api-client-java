@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **environments** | [**Map&lt;String, FeatureFlagConfig&gt;**](FeatureFlagConfig.md) |  |  [optional]
 **archivedDate** | **Long** | A unix epoch time in milliseconds specifying the archived time of this flag. |  [optional]
 **archived** | **Boolean** | Whether or not this flag is archived. |  [optional]
+**clientSideAvailability** | [**ClientSideAvailability**](ClientSideAvailability.md) |  |  [optional]
 **defaults** | [**Defaults**](Defaults.md) |  |  [optional]
 
 
