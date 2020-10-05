@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**patchExpiringUserTargetsOnSegment**](UserSegmentsApi.md#patchExpiringUserTargetsOnSegment) | **PATCH** /segments/{projectKey}/{userSegmentKey}/expiring-user-targets/{environmentKey} | Update, add, or delete expiring user targets on user segment
 [**patchUserSegment**](UserSegmentsApi.md#patchUserSegment) | **PATCH** /segments/{projectKey}/{environmentKey}/{userSegmentKey} | Perform a partial update to a user segment.
 [**postUserSegment**](UserSegmentsApi.md#postUserSegment) | **POST** /segments/{projectKey}/{environmentKey} | Creates a new user segment.
+[**updatedUnboundedSegmentTargets**](UserSegmentsApi.md#updatedUnboundedSegmentTargets) | **POST** /segments/{projectKey}/{environmentKey}/{userSegmentKey}/unbounded-users | Update targets included or excluded in an unbounded segment
 
 
 <a name="deleteUserSegment"></a>
@@ -405,6 +406,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UserSegment**](UserSegment.md)
+
+### Authorization
+
+[Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updatedUnboundedSegmentTargets"></a>
+# **updatedUnboundedSegmentTargets**
+> updatedUnboundedSegmentTargets(projectKey, environmentKey, userSegmentKey, unboundedSegmentTargetsBody)
+
+Update targets included or excluded in an unbounded segment
+
+### Example
+```java
+// Import classes:
+//import com.launchdarkly.api.ApiClient;
+//import com.launchdarkly.api.ApiException;
+//import com.launchdarkly.api.Configuration;
+//import com.launchdarkly.api.auth.*;
+//import com.launchdarkly.api.api.UserSegmentsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
+
+UserSegmentsApi apiInstance = new UserSegmentsApi();
+String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
+String userSegmentKey = "userSegmentKey_example"; // String | The user segment's key. The key identifies the user segment in your code.
+UnboundedSegmentTargetsBody unboundedSegmentTargetsBody = new UnboundedSegmentTargetsBody(); // UnboundedSegmentTargetsBody | Add or remove user targets to the included or excluded lists on an unbounded segment
+try {
+    apiInstance.updatedUnboundedSegmentTargets(projectKey, environmentKey, userSegmentKey, unboundedSegmentTargetsBody);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UserSegmentsApi#updatedUnboundedSegmentTargets");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
+ **userSegmentKey** | **String**| The user segment&#39;s key. The key identifies the user segment in your code. |
+ **unboundedSegmentTargetsBody** | [**UnboundedSegmentTargetsBody**](UnboundedSegmentTargetsBody.md)| Add or remove user targets to the included or excluded lists on an unbounded segment |
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

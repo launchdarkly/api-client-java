@@ -6,8 +6,8 @@ This REST API is for custom integrations, data export, or automating your featur
 # api-client
 
 LaunchDarkly REST API
-- API version: 3.5.0
-  - Build date: 2020-08-26T21:01:29.182Z
+- API version: 3.6.0
+  - Build date: 2020-10-05T21:01:14.302Z
 
 Build custom integrations with the LaunchDarkly REST API
 
@@ -46,7 +46,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>3.5.0</version>
+  <version>3.6.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -56,7 +56,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:3.5.0"
+compile "com.launchdarkly:api-client:3.6.0"
 ```
 
 ### Others
@@ -69,7 +69,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-3.5.0.jar`
+* `target/api-client-3.6.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -119,7 +119,7 @@ Class | Method | HTTP request | Description
 *AccessTokensApi* | [**deleteToken**](docs/AccessTokensApi.md#deleteToken) | **DELETE** /tokens/{tokenId} | Delete an access token by ID.
 *AccessTokensApi* | [**getToken**](docs/AccessTokensApi.md#getToken) | **GET** /tokens/{tokenId} | Get a single access token by ID.
 *AccessTokensApi* | [**getTokens**](docs/AccessTokensApi.md#getTokens) | **GET** /tokens | Returns a list of tokens in the account.
-*AccessTokensApi* | [**patchToken**](docs/AccessTokensApi.md#patchToken) | **PATCH** /tokens/{tokenId} | Modify an access tokenby ID.
+*AccessTokensApi* | [**patchToken**](docs/AccessTokensApi.md#patchToken) | **PATCH** /tokens/{tokenId} | Modify an access token by ID.
 *AccessTokensApi* | [**postToken**](docs/AccessTokensApi.md#postToken) | **POST** /tokens | Create a new token.
 *AccessTokensApi* | [**resetToken**](docs/AccessTokensApi.md#resetToken) | **POST** /tokens/{tokenId}/reset | Reset an access token&#39;s secret key with an optional expiry time for the old key.
 *AuditLogApi* | [**getAuditLogEntries**](docs/AuditLogApi.md#getAuditLogEntries) | **GET** /auditlog | Get a list of all audit log entries. The query parameters allow you to restrict the returned results by date ranges, resource specifiers, or a full-text search query.
@@ -164,6 +164,12 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**getProjects**](docs/ProjectsApi.md#getProjects) | **GET** /projects | Returns a list of all projects in the account.
 *ProjectsApi* | [**patchProject**](docs/ProjectsApi.md#patchProject) | **PATCH** /projects/{projectKey} | Modify a project by ID.
 *ProjectsApi* | [**postProject**](docs/ProjectsApi.md#postProject) | **POST** /projects | Create a new project with the given key and name.
+*RelayProxyConfigurationsApi* | [**deleteRelayProxyConfig**](docs/RelayProxyConfigurationsApi.md#deleteRelayProxyConfig) | **DELETE** /account/relay-auto-configs/{id} | Delete a relay proxy configuration by ID.
+*RelayProxyConfigurationsApi* | [**getRelayProxyConfig**](docs/RelayProxyConfigurationsApi.md#getRelayProxyConfig) | **GET** /account/relay-auto-configs/{id} | Get a single relay proxy configuration by ID.
+*RelayProxyConfigurationsApi* | [**getRelayProxyConfigs**](docs/RelayProxyConfigurationsApi.md#getRelayProxyConfigs) | **GET** /account/relay-auto-configs | Returns a list of relay proxy configurations in the account.
+*RelayProxyConfigurationsApi* | [**patchRelayProxyConfig**](docs/RelayProxyConfigurationsApi.md#patchRelayProxyConfig) | **PATCH** /account/relay-auto-configs/{id} | Modify a relay proxy configuration by ID.
+*RelayProxyConfigurationsApi* | [**postRelayAutoConfig**](docs/RelayProxyConfigurationsApi.md#postRelayAutoConfig) | **POST** /account/relay-auto-configs | Create a new relay proxy config.
+*RelayProxyConfigurationsApi* | [**resetRelayProxyConfig**](docs/RelayProxyConfigurationsApi.md#resetRelayProxyConfig) | **POST** /account/relay-auto-configs/{id}/reset | Reset a relay proxy configuration&#39;s secret key with an optional expiry time for the old key.
 *RootApi* | [**getRoot**](docs/RootApi.md#getRoot) | **GET** / | 
 *TeamMembersApi* | [**deleteMember**](docs/TeamMembersApi.md#deleteMember) | **DELETE** /members/{memberId} | Delete a team member by ID.
 *TeamMembersApi* | [**getMe**](docs/TeamMembersApi.md#getMe) | **GET** /members/me | Get the current team member associated with the token
@@ -178,6 +184,7 @@ Class | Method | HTTP request | Description
 *UserSegmentsApi* | [**patchExpiringUserTargetsOnSegment**](docs/UserSegmentsApi.md#patchExpiringUserTargetsOnSegment) | **PATCH** /segments/{projectKey}/{userSegmentKey}/expiring-user-targets/{environmentKey} | Update, add, or delete expiring user targets on user segment
 *UserSegmentsApi* | [**patchUserSegment**](docs/UserSegmentsApi.md#patchUserSegment) | **PATCH** /segments/{projectKey}/{environmentKey}/{userSegmentKey} | Perform a partial update to a user segment.
 *UserSegmentsApi* | [**postUserSegment**](docs/UserSegmentsApi.md#postUserSegment) | **POST** /segments/{projectKey}/{environmentKey} | Creates a new user segment.
+*UserSegmentsApi* | [**updatedUnboundedSegmentTargets**](docs/UserSegmentsApi.md#updatedUnboundedSegmentTargets) | **POST** /segments/{projectKey}/{environmentKey}/{userSegmentKey}/unbounded-users | Update targets included or excluded in an unbounded segment
 *UserSettingsApi* | [**getExpiringUserTargetsForUser**](docs/UserSettingsApi.md#getExpiringUserTargetsForUser) | **GET** /users/{projectKey}/{userKey}/expiring-user-targets/{environmentKey} | Get expiring dates on flags for user
 *UserSettingsApi* | [**getUserFlagSetting**](docs/UserSettingsApi.md#getUserFlagSetting) | **GET** /users/{projectKey}/{environmentKey}/{userKey}/flags/{featureFlagKey} | Fetch a single flag setting for a user by key.
 *UserSettingsApi* | [**getUserFlagSettings**](docs/UserSettingsApi.md#getUserFlagSettings) | **GET** /users/{projectKey}/{environmentKey}/{userKey}/flags | Fetch a single flag setting for a user by key.
@@ -225,6 +232,10 @@ Class | Method | HTTP request | Description
  - [FeatureFlagConfig](docs/FeatureFlagConfig.md)
  - [FeatureFlagCopyBody](docs/FeatureFlagCopyBody.md)
  - [FeatureFlagCopyObject](docs/FeatureFlagCopyObject.md)
+ - [FeatureFlagScheduledChange](docs/FeatureFlagScheduledChange.md)
+ - [FeatureFlagScheduledChanges](docs/FeatureFlagScheduledChanges.md)
+ - [FeatureFlagScheduledChangesConflicts](docs/FeatureFlagScheduledChangesConflicts.md)
+ - [FeatureFlagScheduledChangesConflictsInstructions](docs/FeatureFlagScheduledChangesConflictsInstructions.md)
  - [FeatureFlagStatus](docs/FeatureFlagStatus.md)
  - [FeatureFlagStatusAcrossEnvironments](docs/FeatureFlagStatusAcrossEnvironments.md)
  - [FeatureFlagStatusForQueriedEnvironment](docs/FeatureFlagStatusForQueriedEnvironment.md)
@@ -246,11 +257,16 @@ Class | Method | HTTP request | Description
  - [Project](docs/Project.md)
  - [ProjectBody](docs/ProjectBody.md)
  - [Projects](docs/Projects.md)
+ - [RelayProxyConfig](docs/RelayProxyConfig.md)
+ - [RelayProxyConfigBody](docs/RelayProxyConfigBody.md)
+ - [RelayProxyConfigs](docs/RelayProxyConfigs.md)
  - [Role](docs/Role.md)
  - [Rollout](docs/Rollout.md)
  - [Rule](docs/Rule.md)
+ - [ScheduledChangesFeatureFlagConflict](docs/ScheduledChangesFeatureFlagConflict.md)
+ - [SemanticPatchInstruction](docs/SemanticPatchInstruction.md)
+ - [SemanticPatchInstructionInner](docs/SemanticPatchInstructionInner.md)
  - [SemanticPatchOperation](docs/SemanticPatchOperation.md)
- - [SemanticPatchOperationInstructions](docs/SemanticPatchOperationInstructions.md)
  - [Site](docs/Site.md)
  - [Statement](docs/Statement.md)
  - [Stream](docs/Stream.md)
@@ -269,6 +285,8 @@ Class | Method | HTTP request | Description
  - [Token](docs/Token.md)
  - [TokenBody](docs/TokenBody.md)
  - [Tokens](docs/Tokens.md)
+ - [UnboundedSegmentTargetChanges](docs/UnboundedSegmentTargetChanges.md)
+ - [UnboundedSegmentTargetsBody](docs/UnboundedSegmentTargetsBody.md)
  - [Usage](docs/Usage.md)
  - [UsageError](docs/UsageError.md)
  - [UsageLinks](docs/UsageLinks.md)

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **comment** | **String** |  |  [optional]
-**instructions** | [**List&lt;SemanticPatchOperationInstructions&gt;**](SemanticPatchOperationInstructions.md) |  | 
+**instructions** | [**SemanticPatchInstruction**](SemanticPatchInstruction.md) |  | 
 
 
 
