@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**getEnvironment**](EnvironmentsApi.md#getEnvironment) | **GET** /projects/{projectKey}/environments/{environmentKey} | Get an environment given a project and key.
 [**patchEnvironment**](EnvironmentsApi.md#patchEnvironment) | **PATCH** /projects/{projectKey}/environments/{environmentKey} | Modify an environment by ID.
 [**postEnvironment**](EnvironmentsApi.md#postEnvironment) | **POST** /projects/{projectKey}/environments | Create a new environment in a specified project with a given name, key, and swatch color.
-[**resetEnvironmentMobileKey**](EnvironmentsApi.md#resetEnvironmentMobileKey) | **POST** /projects/{projectKey}/environments/{environmentKey}/mobileKey | Reset an environment&#39;s mobile key with an optional expiry time for the old key.
+[**resetEnvironmentMobileKey**](EnvironmentsApi.md#resetEnvironmentMobileKey) | **POST** /projects/{projectKey}/environments/{environmentKey}/mobileKey | Reset an environment&#39;s mobile key. The optional expiry for the old key is deprecated for this endpoint, so the old key will always expire immediately.
 [**resetEnvironmentSDKKey**](EnvironmentsApi.md#resetEnvironmentSDKKey) | **POST** /projects/{projectKey}/environments/{environmentKey}/apiKey | Reset an environment&#39;s SDK key with an optional expiry time for the old key.
 
 
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 # **resetEnvironmentMobileKey**
 > Environment resetEnvironmentMobileKey(projectKey, environmentKey, expiry)
 
-Reset an environment&#39;s mobile key with an optional expiry time for the old key.
+Reset an environment&#39;s mobile key. The optional expiry for the old key is deprecated for this endpoint, so the old key will always expire immediately.
 
 ### Example
 ```java
@@ -259,7 +259,7 @@ Token.setApiKey("YOUR API KEY");
 EnvironmentsApi apiInstance = new EnvironmentsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
 String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
-Long expiry = 789L; // Long | An expiration time for the old environment SDK or mobile key, expressed as a Unix epoch time in milliseconds. By default, the key will expire immediately
+Long expiry = 789L; // Long | The expiry parameter is deprecated for this endpoint, so the old mobile key will always expire immediately. This parameter will be removed in an upcoming major API client version.
 try {
     Environment result = apiInstance.resetEnvironmentMobileKey(projectKey, environmentKey, expiry);
     System.out.println(result);
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
  **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
- **expiry** | **Long**| An expiration time for the old environment SDK or mobile key, expressed as a Unix epoch time in milliseconds. By default, the key will expire immediately | [optional]
+ **expiry** | **Long**| The expiry parameter is deprecated for this endpoint, so the old mobile key will always expire immediately. This parameter will be removed in an upcoming major API client version. | [optional]
 
 ### Return type
 
@@ -316,7 +316,7 @@ Token.setApiKey("YOUR API KEY");
 EnvironmentsApi apiInstance = new EnvironmentsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
 String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
-Long expiry = 789L; // Long | An expiration time for the old environment SDK or mobile key, expressed as a Unix epoch time in milliseconds. By default, the key will expire immediately
+Long expiry = 789L; // Long | An expiration time for the old environment SDK key, expressed as a Unix epoch time in milliseconds. By default, the key will expire immediately.
 try {
     Environment result = apiInstance.resetEnvironmentSDKKey(projectKey, environmentKey, expiry);
     System.out.println(result);
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
  **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
- **expiry** | **Long**| An expiration time for the old environment SDK or mobile key, expressed as a Unix epoch time in milliseconds. By default, the key will expire immediately | [optional]
+ **expiry** | **Long**| An expiration time for the old environment SDK key, expressed as a Unix epoch time in milliseconds. By default, the key will expire immediately. | [optional]
 
 ### Return type
 

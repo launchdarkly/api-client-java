@@ -6,8 +6,8 @@ This REST API is for custom integrations, data export, or automating your featur
 # api-client
 
 LaunchDarkly REST API
-- API version: 3.7.0
-  - Build date: 2020-10-12T20:59:14.915Z
+- API version: 3.7.1
+  - Build date: 2020-10-13T17:38:46.164Z
 
 Build custom integrations with the LaunchDarkly REST API
 
@@ -46,7 +46,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>3.7.0</version>
+  <version>3.7.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -56,7 +56,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:3.7.0"
+compile "com.launchdarkly:api-client:3.7.1"
 ```
 
 ### Others
@@ -69,7 +69,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-3.7.0.jar`
+* `target/api-client-3.7.1.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -148,7 +148,7 @@ Class | Method | HTTP request | Description
 *EnvironmentsApi* | [**getEnvironment**](docs/EnvironmentsApi.md#getEnvironment) | **GET** /projects/{projectKey}/environments/{environmentKey} | Get an environment given a project and key.
 *EnvironmentsApi* | [**patchEnvironment**](docs/EnvironmentsApi.md#patchEnvironment) | **PATCH** /projects/{projectKey}/environments/{environmentKey} | Modify an environment by ID.
 *EnvironmentsApi* | [**postEnvironment**](docs/EnvironmentsApi.md#postEnvironment) | **POST** /projects/{projectKey}/environments | Create a new environment in a specified project with a given name, key, and swatch color.
-*EnvironmentsApi* | [**resetEnvironmentMobileKey**](docs/EnvironmentsApi.md#resetEnvironmentMobileKey) | **POST** /projects/{projectKey}/environments/{environmentKey}/mobileKey | Reset an environment&#39;s mobile key with an optional expiry time for the old key.
+*EnvironmentsApi* | [**resetEnvironmentMobileKey**](docs/EnvironmentsApi.md#resetEnvironmentMobileKey) | **POST** /projects/{projectKey}/environments/{environmentKey}/mobileKey | Reset an environment&#39;s mobile key. The optional expiry for the old key is deprecated for this endpoint, so the old key will always expire immediately.
 *EnvironmentsApi* | [**resetEnvironmentSDKKey**](docs/EnvironmentsApi.md#resetEnvironmentSDKKey) | **POST** /projects/{projectKey}/environments/{environmentKey}/apiKey | Reset an environment&#39;s SDK key with an optional expiry time for the old key.
 *FeatureFlagsApi* | [**copyFeatureFlag**](docs/FeatureFlagsApi.md#copyFeatureFlag) | **POST** /flags/{projectKey}/{featureFlagKey}/copy | Copies the feature flag configuration from one environment to the same feature flag in another environment.
 *FeatureFlagsApi* | [**deleteFeatureFlag**](docs/FeatureFlagsApi.md#deleteFeatureFlag) | **DELETE** /flags/{projectKey}/{featureFlagKey} | Delete a feature flag in all environments. Be careful-- only delete feature flags that are no longer being used by your application.
