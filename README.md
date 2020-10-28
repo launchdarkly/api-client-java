@@ -6,8 +6,8 @@ This REST API is for custom integrations, data export, or automating your featur
 # api-client
 
 LaunchDarkly REST API
-- API version: 3.7.1
-  - Build date: 2020-10-13T17:38:46.164Z
+- API version: 3.8.0
+  - Build date: 2020-10-28T14:46:17.158Z
 
 Build custom integrations with the LaunchDarkly REST API
 
@@ -46,7 +46,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>3.7.1</version>
+  <version>3.8.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -56,7 +56,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:3.7.1"
+compile "com.launchdarkly:api-client:3.8.0"
 ```
 
 ### Others
@@ -69,7 +69,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-3.7.1.jar`
+* `target/api-client-3.8.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -161,6 +161,12 @@ Class | Method | HTTP request | Description
 *FeatureFlagsApi* | [**patchExpiringUserTargets**](docs/FeatureFlagsApi.md#patchExpiringUserTargets) | **PATCH** /flags/{projectKey}/{featureFlagKey}/expiring-user-targets/{environmentKey} | Update, add, or delete expiring user targets on feature flag
 *FeatureFlagsApi* | [**patchFeatureFlag**](docs/FeatureFlagsApi.md#patchFeatureFlag) | **PATCH** /flags/{projectKey}/{featureFlagKey} | Perform a partial update to a feature.
 *FeatureFlagsApi* | [**postFeatureFlag**](docs/FeatureFlagsApi.md#postFeatureFlag) | **POST** /flags/{projectKey} | Creates a new feature flag.
+*IntegrationsApi* | [**deleteIntegrationSubscription**](docs/IntegrationsApi.md#deleteIntegrationSubscription) | **DELETE** /integrations/{integrationKey}/{integrationId} | Delete an integration subscription by ID.
+*IntegrationsApi* | [**getIntegrationSubscription**](docs/IntegrationsApi.md#getIntegrationSubscription) | **GET** /integrations/{integrationKey}/{integrationId} | Get a single integration subscription by ID.
+*IntegrationsApi* | [**getIntegrationSubscriptions**](docs/IntegrationsApi.md#getIntegrationSubscriptions) | **GET** /integrations/{integrationKey} | Get a list of all configured integrations of a given kind.
+*IntegrationsApi* | [**getIntegrations**](docs/IntegrationsApi.md#getIntegrations) | **GET** /integrations | Get a list of all configured audit log event integrations associated with this account.
+*IntegrationsApi* | [**patchIntegrationSubscription**](docs/IntegrationsApi.md#patchIntegrationSubscription) | **PATCH** /integrations/{integrationKey}/{integrationId} | Modify an integration subscription by ID.
+*IntegrationsApi* | [**postIntegrationSubscription**](docs/IntegrationsApi.md#postIntegrationSubscription) | **POST** /integrations/{integrationKey} | Create a new integration subscription of a given kind.
 *ProjectsApi* | [**deleteProject**](docs/ProjectsApi.md#deleteProject) | **DELETE** /projects/{projectKey} | Delete a project by key. Caution-- deleting a project will delete all associated environments and feature flags. You cannot delete the last project in an account.
 *ProjectsApi* | [**getProject**](docs/ProjectsApi.md#getProject) | **GET** /projects/{projectKey} | Fetch a single project by key.
 *ProjectsApi* | [**getProjects**](docs/ProjectsApi.md#getProjects) | **GET** /projects | Returns a list of all projects in the account.
@@ -244,6 +250,12 @@ Class | Method | HTTP request | Description
  - [FeatureFlagStatuses](docs/FeatureFlagStatuses.md)
  - [FeatureFlags](docs/FeatureFlags.md)
  - [FlagListItem](docs/FlagListItem.md)
+ - [HierarchicalLinks](docs/HierarchicalLinks.md)
+ - [Integration](docs/Integration.md)
+ - [IntegrationLinks](docs/IntegrationLinks.md)
+ - [IntegrationSubscription](docs/IntegrationSubscription.md)
+ - [IntegrationSubscriptionStatus](docs/IntegrationSubscriptionStatus.md)
+ - [Integrations](docs/Integrations.md)
  - [Link](docs/Link.md)
  - [Links](docs/Links.md)
  - [MAU](docs/MAU.md)
@@ -283,6 +295,7 @@ Class | Method | HTTP request | Description
  - [StreamUsageMetadata](docs/StreamUsageMetadata.md)
  - [StreamUsageSeries](docs/StreamUsageSeries.md)
  - [Streams](docs/Streams.md)
+ - [SubscriptionBody](docs/SubscriptionBody.md)
  - [Target](docs/Target.md)
  - [Token](docs/Token.md)
  - [TokenBody](docs/TokenBody.md)
