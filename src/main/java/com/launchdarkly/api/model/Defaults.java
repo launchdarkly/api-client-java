@@ -28,7 +28,7 @@ import java.io.IOException;
  * Default values to be used when a new environment is created.
  */
 @ApiModel(description = "Default values to be used when a new environment is created.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-28T14:46:17.158Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-28T14:53:40.380Z")
 public class Defaults {
   @SerializedName("onVariation")
   private Integer onVariation = null;

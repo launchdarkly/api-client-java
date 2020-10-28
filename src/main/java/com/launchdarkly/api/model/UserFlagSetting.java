@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * UserFlagSetting
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-28T14:46:17.158Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-28T14:53:40.380Z")
 public class UserFlagSetting {
   @SerializedName("_links")
   private Links links = null;
