@@ -6,8 +6,8 @@ This REST API is for custom integrations, data export, or automating your featur
 # api-client
 
 LaunchDarkly REST API
-- API version: 3.8.0
-  - Build date: 2020-10-28T14:53:40.380Z
+- API version: 3.9.0
+  - Build date: 2020-11-20T01:06:04.895Z
 
 Build custom integrations with the LaunchDarkly REST API
 
@@ -46,7 +46,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>3.8.0</version>
+  <version>3.9.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -56,7 +56,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:3.8.0"
+compile "com.launchdarkly:api-client:3.9.0"
 ```
 
 ### Others
@@ -69,7 +69,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-3.8.0.jar`
+* `target/api-client-3.9.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -154,13 +154,18 @@ Class | Method | HTTP request | Description
 *FeatureFlagsApi* | [**deleteFeatureFlag**](docs/FeatureFlagsApi.md#deleteFeatureFlag) | **DELETE** /flags/{projectKey}/{featureFlagKey} | Delete a feature flag in all environments. Be careful-- only delete feature flags that are no longer being used by your application.
 *FeatureFlagsApi* | [**getExpiringUserTargets**](docs/FeatureFlagsApi.md#getExpiringUserTargets) | **GET** /flags/{projectKey}/{featureFlagKey}/expiring-user-targets/{environmentKey} | Get expiring user targets for feature flag
 *FeatureFlagsApi* | [**getFeatureFlag**](docs/FeatureFlagsApi.md#getFeatureFlag) | **GET** /flags/{projectKey}/{featureFlagKey} | Get a single feature flag by key.
+*FeatureFlagsApi* | [**getFeatureFlagChangeRequest**](docs/FeatureFlagsApi.md#getFeatureFlagChangeRequest) | **GET** /projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{featureFlagChangeRequestId} | Get a single change request for a feature flag
+*FeatureFlagsApi* | [**getFeatureFlagChangeRequests**](docs/FeatureFlagsApi.md#getFeatureFlagChangeRequests) | **GET** /{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests | Get all change requests for a feature flag
 *FeatureFlagsApi* | [**getFeatureFlagStatus**](docs/FeatureFlagsApi.md#getFeatureFlagStatus) | **GET** /flag-statuses/{projectKey}/{environmentKey}/{featureFlagKey} | Get the status for a particular feature flag.
 *FeatureFlagsApi* | [**getFeatureFlagStatusAcrossEnvironments**](docs/FeatureFlagsApi.md#getFeatureFlagStatusAcrossEnvironments) | **GET** /flag-status/{projectKey}/{featureFlagKey} | Get the status for a particular feature flag across environments
 *FeatureFlagsApi* | [**getFeatureFlagStatuses**](docs/FeatureFlagsApi.md#getFeatureFlagStatuses) | **GET** /flag-statuses/{projectKey}/{environmentKey} | Get a list of statuses for all feature flags. The status includes the last time the feature flag was requested, as well as the state of the flag.
 *FeatureFlagsApi* | [**getFeatureFlags**](docs/FeatureFlagsApi.md#getFeatureFlags) | **GET** /flags/{projectKey} | Get a list of all features in the given project.
 *FeatureFlagsApi* | [**patchExpiringUserTargets**](docs/FeatureFlagsApi.md#patchExpiringUserTargets) | **PATCH** /flags/{projectKey}/{featureFlagKey}/expiring-user-targets/{environmentKey} | Update, add, or delete expiring user targets on feature flag
 *FeatureFlagsApi* | [**patchFeatureFlag**](docs/FeatureFlagsApi.md#patchFeatureFlag) | **PATCH** /flags/{projectKey}/{featureFlagKey} | Perform a partial update to a feature.
+*FeatureFlagsApi* | [**postApplyFeatureFlagChangeRequest**](docs/FeatureFlagsApi.md#postApplyFeatureFlagChangeRequest) | **POST** /projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{featureFlagChangeRequestId}/apply | Apply change request for a feature flag
 *FeatureFlagsApi* | [**postFeatureFlag**](docs/FeatureFlagsApi.md#postFeatureFlag) | **POST** /flags/{projectKey} | Creates a new feature flag.
+*FeatureFlagsApi* | [**postFeatureFlagChangeRequest**](docs/FeatureFlagsApi.md#postFeatureFlagChangeRequest) | **POST** /{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests | 
+*FeatureFlagsApi* | [**postReviewFeatureFlagChangeRequest**](docs/FeatureFlagsApi.md#postReviewFeatureFlagChangeRequest) | **POST** /projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{featureFlagChangeRequestId}/review | Review change request for a feature flag
 *IntegrationsApi* | [**deleteIntegrationSubscription**](docs/IntegrationsApi.md#deleteIntegrationSubscription) | **DELETE** /integrations/{integrationKey}/{integrationId} | Delete an integration subscription by ID.
 *IntegrationsApi* | [**getIntegrationSubscription**](docs/IntegrationsApi.md#getIntegrationSubscription) | **GET** /integrations/{integrationKey}/{integrationId} | Get a single integration subscription by ID.
 *IntegrationsApi* | [**getIntegrationSubscriptions**](docs/IntegrationsApi.md#getIntegrationSubscriptions) | **GET** /integrations/{integrationKey} | Get a list of all configured integrations of a given kind.
@@ -237,6 +242,13 @@ Class | Method | HTTP request | Description
  - [Fallthrough](docs/Fallthrough.md)
  - [FeatureFlag](docs/FeatureFlag.md)
  - [FeatureFlagBody](docs/FeatureFlagBody.md)
+ - [FeatureFlagChangeRequest](docs/FeatureFlagChangeRequest.md)
+ - [FeatureFlagChangeRequestApplyConfigBody](docs/FeatureFlagChangeRequestApplyConfigBody.md)
+ - [FeatureFlagChangeRequestConfigBody](docs/FeatureFlagChangeRequestConfigBody.md)
+ - [FeatureFlagChangeRequestReview](docs/FeatureFlagChangeRequestReview.md)
+ - [FeatureFlagChangeRequestReviewConfigBody](docs/FeatureFlagChangeRequestReviewConfigBody.md)
+ - [FeatureFlagChangeRequestReviewStatus](docs/FeatureFlagChangeRequestReviewStatus.md)
+ - [FeatureFlagChangeRequests](docs/FeatureFlagChangeRequests.md)
  - [FeatureFlagConfig](docs/FeatureFlagConfig.md)
  - [FeatureFlagCopyBody](docs/FeatureFlagCopyBody.md)
  - [FeatureFlagCopyObject](docs/FeatureFlagCopyObject.md)

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **trackEvents** | **Boolean** |  |  [optional]
 **rollout** | [**Rollout**](Rollout.md) |  |  [optional]
 **clauses** | [**List&lt;Clause&gt;**](Clause.md) |  |  [optional]
+**description** | **String** |  |  [optional]
 
 
 
