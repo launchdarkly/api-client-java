@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **tags** | **List&lt;String&gt;** | An array of tags for this environment. |  [optional]
 **requireComments** | **Boolean** | Determines if this environment requires comments for flag and segment changes. |  [optional]
 **confirmChanges** | **Boolean** | Determines if this environment requires confirmation for flag and segment changes. |  [optional]
+**approvalSettings** | [**EnvironmentApprovalSettings**](EnvironmentApprovalSettings.md) |  |  [optional]
 
 
 
