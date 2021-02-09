@@ -5,22 +5,28 @@ All URIs are relative to *https://app.launchdarkly.com/api/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**copyFeatureFlag**](FeatureFlagsApi.md#copyFeatureFlag) | **POST** /flags/{projectKey}/{featureFlagKey}/copy | Copies the feature flag configuration from one environment to the same feature flag in another environment.
+[**deleteApprovalRequest**](FeatureFlagsApi.md#deleteApprovalRequest) | **DELETE** /projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{approvalRequestId} | Delete an approval request for a feature flag config
 [**deleteFeatureFlag**](FeatureFlagsApi.md#deleteFeatureFlag) | **DELETE** /flags/{projectKey}/{featureFlagKey} | Delete a feature flag in all environments. Be careful-- only delete feature flags that are no longer being used by your application.
-[**deleteFeatureFlagApprovalRequest**](FeatureFlagsApi.md#deleteFeatureFlagApprovalRequest) | **DELETE** /projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{featureFlagApprovalRequestId} | Delete an approval request for a feature flag
+[**deleteFlagConfigScheduledChanges**](FeatureFlagsApi.md#deleteFlagConfigScheduledChanges) | **DELETE** /projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes/{scheduledChangeId} | Delete a scheduled change on a feature flag in an environment.
+[**getApprovalRequest**](FeatureFlagsApi.md#getApprovalRequest) | **GET** /projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{approvalRequestId} | Get a single approval request for a feature flag config
+[**getApprovalRequests**](FeatureFlagsApi.md#getApprovalRequests) | **GET** /projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests | Get all approval requests for a feature flag config
 [**getExpiringUserTargets**](FeatureFlagsApi.md#getExpiringUserTargets) | **GET** /flags/{projectKey}/{featureFlagKey}/expiring-user-targets/{environmentKey} | Get expiring user targets for feature flag
 [**getFeatureFlag**](FeatureFlagsApi.md#getFeatureFlag) | **GET** /flags/{projectKey}/{featureFlagKey} | Get a single feature flag by key.
-[**getFeatureFlagApprovalRequest**](FeatureFlagsApi.md#getFeatureFlagApprovalRequest) | **GET** /projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{featureFlagApprovalRequestId} | Get a single approval request for a feature flag
-[**getFeatureFlagApprovalRequests**](FeatureFlagsApi.md#getFeatureFlagApprovalRequests) | **GET** /projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests | Get all approval requests for a feature flag
 [**getFeatureFlagStatus**](FeatureFlagsApi.md#getFeatureFlagStatus) | **GET** /flag-statuses/{projectKey}/{environmentKey}/{featureFlagKey} | Get the status for a particular feature flag.
 [**getFeatureFlagStatusAcrossEnvironments**](FeatureFlagsApi.md#getFeatureFlagStatusAcrossEnvironments) | **GET** /flag-status/{projectKey}/{featureFlagKey} | Get the status for a particular feature flag across environments
 [**getFeatureFlagStatuses**](FeatureFlagsApi.md#getFeatureFlagStatuses) | **GET** /flag-statuses/{projectKey}/{environmentKey} | Get a list of statuses for all feature flags. The status includes the last time the feature flag was requested, as well as the state of the flag.
 [**getFeatureFlags**](FeatureFlagsApi.md#getFeatureFlags) | **GET** /flags/{projectKey} | Get a list of all features in the given project.
+[**getFlagConfigScheduledChange**](FeatureFlagsApi.md#getFlagConfigScheduledChange) | **GET** /projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes/{scheduledChangeId} | Get a scheduled change on a feature flag by id.
+[**getFlagConfigScheduledChanges**](FeatureFlagsApi.md#getFlagConfigScheduledChanges) | **GET** /projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes | Get all scheduled workflows for a feature flag by key.
+[**getFlagConfigScheduledChangesConflicts**](FeatureFlagsApi.md#getFlagConfigScheduledChangesConflicts) | **POST** /projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes-conflicts | Lists conflicts between the given instructions and any existing scheduled changes for the feature flag. The actual HTTP verb should be REPORT, not POST.
 [**patchExpiringUserTargets**](FeatureFlagsApi.md#patchExpiringUserTargets) | **PATCH** /flags/{projectKey}/{featureFlagKey}/expiring-user-targets/{environmentKey} | Update, add, or delete expiring user targets on feature flag
 [**patchFeatureFlag**](FeatureFlagsApi.md#patchFeatureFlag) | **PATCH** /flags/{projectKey}/{featureFlagKey} | Perform a partial update to a feature.
-[**postApplyFeatureFlagApprovalRequest**](FeatureFlagsApi.md#postApplyFeatureFlagApprovalRequest) | **POST** /projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{featureFlagApprovalRequestId}/apply | Apply approval request for a feature flag
+[**patchFlagConfigScheduledChange**](FeatureFlagsApi.md#patchFlagConfigScheduledChange) | **PATCH** /projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes/{scheduledChangeId} | Updates an existing scheduled-change on a feature flag in an environment.
+[**postApplyApprovalRequest**](FeatureFlagsApi.md#postApplyApprovalRequest) | **POST** /projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{approvalRequestId}/apply | Apply approval request for a feature flag config
+[**postApprovalRequest**](FeatureFlagsApi.md#postApprovalRequest) | **POST** /projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{approvalRequestId} | Create an approval request for a feature flag config
 [**postFeatureFlag**](FeatureFlagsApi.md#postFeatureFlag) | **POST** /flags/{projectKey} | Creates a new feature flag.
-[**postFeatureFlagApprovalRequest**](FeatureFlagsApi.md#postFeatureFlagApprovalRequest) | **POST** /projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{featureFlagApprovalRequestId} | Create an approval request for a feature flag
-[**postReviewFeatureFlagApprovalRequest**](FeatureFlagsApi.md#postReviewFeatureFlagApprovalRequest) | **POST** /projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{featureFlagApprovalRequestId}/review | Review approval request for a feature flag
+[**postFlagConfigScheduledChanges**](FeatureFlagsApi.md#postFlagConfigScheduledChanges) | **POST** /projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes | Creates a new scheduled change for a feature flag.
+[**postReviewApprovalRequest**](FeatureFlagsApi.md#postReviewApprovalRequest) | **POST** /projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{approvalRequestId}/review | Review approval request for a feature flag config
 
 
 <a name="copyFeatureFlag"></a>
@@ -70,6 +76,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**FeatureFlag**](FeatureFlag.md)
+
+### Authorization
+
+[Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="deleteApprovalRequest"></a>
+# **deleteApprovalRequest**
+> deleteApprovalRequest(projectKey, environmentKey, featureFlagKey, approvalRequestId, approvalRequestConfigBody)
+
+Delete an approval request for a feature flag config
+
+### Example
+```java
+// Import classes:
+//import com.launchdarkly.api.ApiClient;
+//import com.launchdarkly.api.ApiException;
+//import com.launchdarkly.api.Configuration;
+//import com.launchdarkly.api.auth.*;
+//import com.launchdarkly.api.api.FeatureFlagsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
+
+FeatureFlagsApi apiInstance = new FeatureFlagsApi();
+String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
+String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
+String approvalRequestId = "approvalRequestId_example"; // String | The approval request ID
+ApprovalRequestConfigBody approvalRequestConfigBody = new ApprovalRequestConfigBody(); // ApprovalRequestConfigBody | Create a new approval request
+try {
+    apiInstance.deleteApprovalRequest(projectKey, environmentKey, featureFlagKey, approvalRequestId, approvalRequestConfigBody);
+} catch (ApiException e) {
+    System.err.println("Exception when calling FeatureFlagsApi#deleteApprovalRequest");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
+ **featureFlagKey** | **String**| The feature flag&#39;s key. The key identifies the flag in your code. |
+ **approvalRequestId** | **String**| The approval request ID |
+ **approvalRequestConfigBody** | [**ApprovalRequestConfigBody**](ApprovalRequestConfigBody.md)| Create a new approval request | [optional]
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 
@@ -134,11 +200,11 @@ null (empty response body)
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="deleteFeatureFlagApprovalRequest"></a>
-# **deleteFeatureFlagApprovalRequest**
-> deleteFeatureFlagApprovalRequest(projectKey, environmentKey, featureFlagKey, featureFlagApprovalRequestId, featureFlagApprovalRequestConfigBody)
+<a name="deleteFlagConfigScheduledChanges"></a>
+# **deleteFlagConfigScheduledChanges**
+> deleteFlagConfigScheduledChanges(projectKey, featureFlagKey, environmentKey, scheduledChangeId)
 
-Delete an approval request for a feature flag
+Delete a scheduled change on a feature flag in an environment.
 
 ### Example
 ```java
@@ -159,14 +225,13 @@ Token.setApiKey("YOUR API KEY");
 
 FeatureFlagsApi apiInstance = new FeatureFlagsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
 String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
-String featureFlagApprovalRequestId = "featureFlagApprovalRequestId_example"; // String | The feature flag approval request ID
-FeatureFlagApprovalRequestConfigBody featureFlagApprovalRequestConfigBody = new FeatureFlagApprovalRequestConfigBody(); // FeatureFlagApprovalRequestConfigBody | Create a new feature flag approval request
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
+String scheduledChangeId = "scheduledChangeId_example"; // String | The id of the scheduled change
 try {
-    apiInstance.deleteFeatureFlagApprovalRequest(projectKey, environmentKey, featureFlagKey, featureFlagApprovalRequestId, featureFlagApprovalRequestConfigBody);
+    apiInstance.deleteFlagConfigScheduledChanges(projectKey, featureFlagKey, environmentKey, scheduledChangeId);
 } catch (ApiException e) {
-    System.err.println("Exception when calling FeatureFlagsApi#deleteFeatureFlagApprovalRequest");
+    System.err.println("Exception when calling FeatureFlagsApi#deleteFlagConfigScheduledChanges");
     e.printStackTrace();
 }
 ```
@@ -176,14 +241,129 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
  **featureFlagKey** | **String**| The feature flag&#39;s key. The key identifies the flag in your code. |
- **featureFlagApprovalRequestId** | **String**| The feature flag approval request ID |
- **featureFlagApprovalRequestConfigBody** | [**FeatureFlagApprovalRequestConfigBody**](FeatureFlagApprovalRequestConfigBody.md)| Create a new feature flag approval request | [optional]
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
+ **scheduledChangeId** | **String**| The id of the scheduled change |
 
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+[Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getApprovalRequest"></a>
+# **getApprovalRequest**
+> ApprovalRequests getApprovalRequest(projectKey, featureFlagKey, environmentKey, approvalRequestId)
+
+Get a single approval request for a feature flag config
+
+### Example
+```java
+// Import classes:
+//import com.launchdarkly.api.ApiClient;
+//import com.launchdarkly.api.ApiException;
+//import com.launchdarkly.api.Configuration;
+//import com.launchdarkly.api.auth.*;
+//import com.launchdarkly.api.api.FeatureFlagsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
+
+FeatureFlagsApi apiInstance = new FeatureFlagsApi();
+String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
+String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
+String approvalRequestId = "approvalRequestId_example"; // String | The approval request ID
+try {
+    ApprovalRequests result = apiInstance.getApprovalRequest(projectKey, featureFlagKey, environmentKey, approvalRequestId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling FeatureFlagsApi#getApprovalRequest");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
+ **featureFlagKey** | **String**| The feature flag&#39;s key. The key identifies the flag in your code. |
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
+ **approvalRequestId** | **String**| The approval request ID |
+
+### Return type
+
+[**ApprovalRequests**](ApprovalRequests.md)
+
+### Authorization
+
+[Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getApprovalRequests"></a>
+# **getApprovalRequests**
+> ApprovalRequests getApprovalRequests(projectKey, featureFlagKey, environmentKey)
+
+Get all approval requests for a feature flag config
+
+### Example
+```java
+// Import classes:
+//import com.launchdarkly.api.ApiClient;
+//import com.launchdarkly.api.ApiException;
+//import com.launchdarkly.api.Configuration;
+//import com.launchdarkly.api.auth.*;
+//import com.launchdarkly.api.api.FeatureFlagsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
+
+FeatureFlagsApi apiInstance = new FeatureFlagsApi();
+String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
+String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
+try {
+    ApprovalRequests result = apiInstance.getApprovalRequests(projectKey, featureFlagKey, environmentKey);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling FeatureFlagsApi#getApprovalRequests");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
+ **featureFlagKey** | **String**| The feature flag&#39;s key. The key identifies the flag in your code. |
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
+
+### Return type
+
+[**ApprovalRequests**](ApprovalRequests.md)
 
 ### Authorization
 
@@ -298,122 +478,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**FeatureFlag**](FeatureFlag.md)
-
-### Authorization
-
-[Token](../README.md#Token)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="getFeatureFlagApprovalRequest"></a>
-# **getFeatureFlagApprovalRequest**
-> FeatureFlagApprovalRequests getFeatureFlagApprovalRequest(projectKey, featureFlagKey, environmentKey, featureFlagApprovalRequestId)
-
-Get a single approval request for a feature flag
-
-### Example
-```java
-// Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.FeatureFlagsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-FeatureFlagsApi apiInstance = new FeatureFlagsApi();
-String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
-String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
-String featureFlagApprovalRequestId = "featureFlagApprovalRequestId_example"; // String | The feature flag approval request ID
-try {
-    FeatureFlagApprovalRequests result = apiInstance.getFeatureFlagApprovalRequest(projectKey, featureFlagKey, environmentKey, featureFlagApprovalRequestId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FeatureFlagsApi#getFeatureFlagApprovalRequest");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **featureFlagKey** | **String**| The feature flag&#39;s key. The key identifies the flag in your code. |
- **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
- **featureFlagApprovalRequestId** | **String**| The feature flag approval request ID |
-
-### Return type
-
-[**FeatureFlagApprovalRequests**](FeatureFlagApprovalRequests.md)
-
-### Authorization
-
-[Token](../README.md#Token)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="getFeatureFlagApprovalRequests"></a>
-# **getFeatureFlagApprovalRequests**
-> FeatureFlagApprovalRequests getFeatureFlagApprovalRequests(projectKey, featureFlagKey, environmentKey)
-
-Get all approval requests for a feature flag
-
-### Example
-```java
-// Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.FeatureFlagsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-FeatureFlagsApi apiInstance = new FeatureFlagsApi();
-String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
-String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
-try {
-    FeatureFlagApprovalRequests result = apiInstance.getFeatureFlagApprovalRequests(projectKey, featureFlagKey, environmentKey);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FeatureFlagsApi#getFeatureFlagApprovalRequests");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **featureFlagKey** | **String**| The feature flag&#39;s key. The key identifies the flag in your code. |
- **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
-
-### Return type
-
-[**FeatureFlagApprovalRequests**](FeatureFlagApprovalRequests.md)
 
 ### Authorization
 
@@ -660,6 +724,181 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="getFlagConfigScheduledChange"></a>
+# **getFlagConfigScheduledChange**
+> FeatureFlagScheduledChange getFlagConfigScheduledChange(projectKey, featureFlagKey, environmentKey, scheduledChangeId)
+
+Get a scheduled change on a feature flag by id.
+
+### Example
+```java
+// Import classes:
+//import com.launchdarkly.api.ApiClient;
+//import com.launchdarkly.api.ApiException;
+//import com.launchdarkly.api.Configuration;
+//import com.launchdarkly.api.auth.*;
+//import com.launchdarkly.api.api.FeatureFlagsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
+
+FeatureFlagsApi apiInstance = new FeatureFlagsApi();
+String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
+String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
+String scheduledChangeId = "scheduledChangeId_example"; // String | The id of the scheduled change
+try {
+    FeatureFlagScheduledChange result = apiInstance.getFlagConfigScheduledChange(projectKey, featureFlagKey, environmentKey, scheduledChangeId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling FeatureFlagsApi#getFlagConfigScheduledChange");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
+ **featureFlagKey** | **String**| The feature flag&#39;s key. The key identifies the flag in your code. |
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
+ **scheduledChangeId** | **String**| The id of the scheduled change |
+
+### Return type
+
+[**FeatureFlagScheduledChange**](FeatureFlagScheduledChange.md)
+
+### Authorization
+
+[Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getFlagConfigScheduledChanges"></a>
+# **getFlagConfigScheduledChanges**
+> FeatureFlagScheduledChanges getFlagConfigScheduledChanges(projectKey, featureFlagKey, environmentKey)
+
+Get all scheduled workflows for a feature flag by key.
+
+### Example
+```java
+// Import classes:
+//import com.launchdarkly.api.ApiClient;
+//import com.launchdarkly.api.ApiException;
+//import com.launchdarkly.api.Configuration;
+//import com.launchdarkly.api.auth.*;
+//import com.launchdarkly.api.api.FeatureFlagsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
+
+FeatureFlagsApi apiInstance = new FeatureFlagsApi();
+String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
+String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
+try {
+    FeatureFlagScheduledChanges result = apiInstance.getFlagConfigScheduledChanges(projectKey, featureFlagKey, environmentKey);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling FeatureFlagsApi#getFlagConfigScheduledChanges");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
+ **featureFlagKey** | **String**| The feature flag&#39;s key. The key identifies the flag in your code. |
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
+
+### Return type
+
+[**FeatureFlagScheduledChanges**](FeatureFlagScheduledChanges.md)
+
+### Authorization
+
+[Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getFlagConfigScheduledChangesConflicts"></a>
+# **getFlagConfigScheduledChangesConflicts**
+> FeatureFlagScheduledChangesConflicts getFlagConfigScheduledChangesConflicts(projectKey, featureFlagKey, environmentKey, flagConfigScheduledChangesConflictsBody)
+
+Lists conflicts between the given instructions and any existing scheduled changes for the feature flag. The actual HTTP verb should be REPORT, not POST.
+
+### Example
+```java
+// Import classes:
+//import com.launchdarkly.api.ApiClient;
+//import com.launchdarkly.api.ApiException;
+//import com.launchdarkly.api.Configuration;
+//import com.launchdarkly.api.auth.*;
+//import com.launchdarkly.api.api.FeatureFlagsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
+
+FeatureFlagsApi apiInstance = new FeatureFlagsApi();
+String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
+String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
+FlagConfigScheduledChangesConflictsBody flagConfigScheduledChangesConflictsBody = new FlagConfigScheduledChangesConflictsBody(); // FlagConfigScheduledChangesConflictsBody | Used to determine if a semantic patch will result in conflicts with scheduled changes on a feature flag.
+try {
+    FeatureFlagScheduledChangesConflicts result = apiInstance.getFlagConfigScheduledChangesConflicts(projectKey, featureFlagKey, environmentKey, flagConfigScheduledChangesConflictsBody);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling FeatureFlagsApi#getFlagConfigScheduledChangesConflicts");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
+ **featureFlagKey** | **String**| The feature flag&#39;s key. The key identifies the flag in your code. |
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
+ **flagConfigScheduledChangesConflictsBody** | [**FlagConfigScheduledChangesConflictsBody**](FlagConfigScheduledChangesConflictsBody.md)| Used to determine if a semantic patch will result in conflicts with scheduled changes on a feature flag. |
+
+### Return type
+
+[**FeatureFlagScheduledChangesConflicts**](FeatureFlagScheduledChangesConflicts.md)
+
+### Authorization
+
+[Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="patchExpiringUserTargets"></a>
 # **patchExpiringUserTargets**
 > UserTargetingExpirationForFlags patchExpiringUserTargets(projectKey, environmentKey, featureFlagKey, semanticPatchWithComment)
@@ -776,11 +1015,72 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="postApplyFeatureFlagApprovalRequest"></a>
-# **postApplyFeatureFlagApprovalRequest**
-> FeatureFlagApprovalRequests postApplyFeatureFlagApprovalRequest(projectKey, featureFlagKey, environmentKey, featureFlagApprovalRequestId, featureFlagApprovalRequestApplyConfigBody)
+<a name="patchFlagConfigScheduledChange"></a>
+# **patchFlagConfigScheduledChange**
+> FeatureFlagScheduledChange patchFlagConfigScheduledChange(projectKey, featureFlagKey, flagConfigScheduledChangesPatchBody, environmentKey, scheduledChangeId)
 
-Apply approval request for a feature flag
+Updates an existing scheduled-change on a feature flag in an environment.
+
+### Example
+```java
+// Import classes:
+//import com.launchdarkly.api.ApiClient;
+//import com.launchdarkly.api.ApiException;
+//import com.launchdarkly.api.Configuration;
+//import com.launchdarkly.api.auth.*;
+//import com.launchdarkly.api.api.FeatureFlagsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
+
+FeatureFlagsApi apiInstance = new FeatureFlagsApi();
+String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
+String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
+FlagConfigScheduledChangesPatchBody flagConfigScheduledChangesPatchBody = new FlagConfigScheduledChangesPatchBody(); // FlagConfigScheduledChangesPatchBody | Update scheduled changes on a feature flag.
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
+String scheduledChangeId = "scheduledChangeId_example"; // String | The id of the scheduled change
+try {
+    FeatureFlagScheduledChange result = apiInstance.patchFlagConfigScheduledChange(projectKey, featureFlagKey, flagConfigScheduledChangesPatchBody, environmentKey, scheduledChangeId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling FeatureFlagsApi#patchFlagConfigScheduledChange");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
+ **featureFlagKey** | **String**| The feature flag&#39;s key. The key identifies the flag in your code. |
+ **flagConfigScheduledChangesPatchBody** | [**FlagConfigScheduledChangesPatchBody**](FlagConfigScheduledChangesPatchBody.md)| Update scheduled changes on a feature flag. |
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
+ **scheduledChangeId** | **String**| The id of the scheduled change |
+
+### Return type
+
+[**FeatureFlagScheduledChange**](FeatureFlagScheduledChange.md)
+
+### Authorization
+
+[Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postApplyApprovalRequest"></a>
+# **postApplyApprovalRequest**
+> ApprovalRequests postApplyApprovalRequest(projectKey, featureFlagKey, environmentKey, approvalRequestId, approvalRequestApplyConfigBody)
+
+Apply approval request for a feature flag config
 
 ### Example
 ```java
@@ -803,13 +1103,13 @@ FeatureFlagsApi apiInstance = new FeatureFlagsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
 String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
 String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
-String featureFlagApprovalRequestId = "featureFlagApprovalRequestId_example"; // String | The feature flag approval request ID
-FeatureFlagApprovalRequestApplyConfigBody featureFlagApprovalRequestApplyConfigBody = new FeatureFlagApprovalRequestApplyConfigBody(); // FeatureFlagApprovalRequestApplyConfigBody | Apply a new feature flag approval request
+String approvalRequestId = "approvalRequestId_example"; // String | The approval request ID
+ApprovalRequestApplyConfigBody approvalRequestApplyConfigBody = new ApprovalRequestApplyConfigBody(); // ApprovalRequestApplyConfigBody | Apply an approval request
 try {
-    FeatureFlagApprovalRequests result = apiInstance.postApplyFeatureFlagApprovalRequest(projectKey, featureFlagKey, environmentKey, featureFlagApprovalRequestId, featureFlagApprovalRequestApplyConfigBody);
+    ApprovalRequests result = apiInstance.postApplyApprovalRequest(projectKey, featureFlagKey, environmentKey, approvalRequestId, approvalRequestApplyConfigBody);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling FeatureFlagsApi#postApplyFeatureFlagApprovalRequest");
+    System.err.println("Exception when calling FeatureFlagsApi#postApplyApprovalRequest");
     e.printStackTrace();
 }
 ```
@@ -821,12 +1121,73 @@ Name | Type | Description  | Notes
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
  **featureFlagKey** | **String**| The feature flag&#39;s key. The key identifies the flag in your code. |
  **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
- **featureFlagApprovalRequestId** | **String**| The feature flag approval request ID |
- **featureFlagApprovalRequestApplyConfigBody** | [**FeatureFlagApprovalRequestApplyConfigBody**](FeatureFlagApprovalRequestApplyConfigBody.md)| Apply a new feature flag approval request |
+ **approvalRequestId** | **String**| The approval request ID |
+ **approvalRequestApplyConfigBody** | [**ApprovalRequestApplyConfigBody**](ApprovalRequestApplyConfigBody.md)| Apply an approval request |
 
 ### Return type
 
-[**FeatureFlagApprovalRequests**](FeatureFlagApprovalRequests.md)
+[**ApprovalRequests**](ApprovalRequests.md)
+
+### Authorization
+
+[Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="postApprovalRequest"></a>
+# **postApprovalRequest**
+> ApprovalRequest postApprovalRequest(projectKey, featureFlagKey, environmentKey, approvalRequestId, approvalRequestConfigBody)
+
+Create an approval request for a feature flag config
+
+### Example
+```java
+// Import classes:
+//import com.launchdarkly.api.ApiClient;
+//import com.launchdarkly.api.ApiException;
+//import com.launchdarkly.api.Configuration;
+//import com.launchdarkly.api.auth.*;
+//import com.launchdarkly.api.api.FeatureFlagsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
+
+FeatureFlagsApi apiInstance = new FeatureFlagsApi();
+String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
+String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
+String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
+String approvalRequestId = "approvalRequestId_example"; // String | The approval request ID
+ApprovalRequestConfigBody approvalRequestConfigBody = new ApprovalRequestConfigBody(); // ApprovalRequestConfigBody | Create a new approval request
+try {
+    ApprovalRequest result = apiInstance.postApprovalRequest(projectKey, featureFlagKey, environmentKey, approvalRequestId, approvalRequestConfigBody);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling FeatureFlagsApi#postApprovalRequest");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
+ **featureFlagKey** | **String**| The feature flag&#39;s key. The key identifies the flag in your code. |
+ **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
+ **approvalRequestId** | **String**| The approval request ID |
+ **approvalRequestConfigBody** | [**ApprovalRequestConfigBody**](ApprovalRequestConfigBody.md)| Create a new approval request | [optional]
+
+### Return type
+
+[**ApprovalRequest**](ApprovalRequest.md)
 
 ### Authorization
 
@@ -894,11 +1255,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="postFeatureFlagApprovalRequest"></a>
-# **postFeatureFlagApprovalRequest**
-> FeatureFlagApprovalRequest postFeatureFlagApprovalRequest(projectKey, featureFlagKey, environmentKey, featureFlagApprovalRequestId, featureFlagApprovalRequestConfigBody)
+<a name="postFlagConfigScheduledChanges"></a>
+# **postFlagConfigScheduledChanges**
+> FeatureFlagScheduledChange postFlagConfigScheduledChanges(projectKey, flagConfigScheduledChangesPostBody, featureFlagKey, environmentKey)
 
-Create an approval request for a feature flag
+Creates a new scheduled change for a feature flag.
 
 ### Example
 ```java
@@ -919,15 +1280,14 @@ Token.setApiKey("YOUR API KEY");
 
 FeatureFlagsApi apiInstance = new FeatureFlagsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
+FlagConfigScheduledChangesPostBody flagConfigScheduledChangesPostBody = new FlagConfigScheduledChangesPostBody(); // FlagConfigScheduledChangesPostBody | Create scheduled changes on a feature flag.
 String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
 String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
-String featureFlagApprovalRequestId = "featureFlagApprovalRequestId_example"; // String | The feature flag approval request ID
-FeatureFlagApprovalRequestConfigBody featureFlagApprovalRequestConfigBody = new FeatureFlagApprovalRequestConfigBody(); // FeatureFlagApprovalRequestConfigBody | Create a new feature flag approval request
 try {
-    FeatureFlagApprovalRequest result = apiInstance.postFeatureFlagApprovalRequest(projectKey, featureFlagKey, environmentKey, featureFlagApprovalRequestId, featureFlagApprovalRequestConfigBody);
+    FeatureFlagScheduledChange result = apiInstance.postFlagConfigScheduledChanges(projectKey, flagConfigScheduledChangesPostBody, featureFlagKey, environmentKey);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling FeatureFlagsApi#postFeatureFlagApprovalRequest");
+    System.err.println("Exception when calling FeatureFlagsApi#postFlagConfigScheduledChanges");
     e.printStackTrace();
 }
 ```
@@ -937,14 +1297,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
+ **flagConfigScheduledChangesPostBody** | [**FlagConfigScheduledChangesPostBody**](FlagConfigScheduledChangesPostBody.md)| Create scheduled changes on a feature flag. |
  **featureFlagKey** | **String**| The feature flag&#39;s key. The key identifies the flag in your code. |
  **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
- **featureFlagApprovalRequestId** | **String**| The feature flag approval request ID |
- **featureFlagApprovalRequestConfigBody** | [**FeatureFlagApprovalRequestConfigBody**](FeatureFlagApprovalRequestConfigBody.md)| Create a new feature flag approval request | [optional]
 
 ### Return type
 
-[**FeatureFlagApprovalRequest**](FeatureFlagApprovalRequest.md)
+[**FeatureFlagScheduledChange**](FeatureFlagScheduledChange.md)
 
 ### Authorization
 
@@ -955,11 +1314,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="postReviewFeatureFlagApprovalRequest"></a>
-# **postReviewFeatureFlagApprovalRequest**
-> FeatureFlagApprovalRequests postReviewFeatureFlagApprovalRequest(projectKey, featureFlagKey, environmentKey, featureFlagApprovalRequestId, featureFlagApprovalRequestReviewConfigBody)
+<a name="postReviewApprovalRequest"></a>
+# **postReviewApprovalRequest**
+> ApprovalRequests postReviewApprovalRequest(projectKey, featureFlagKey, environmentKey, approvalRequestId, approvalRequestReviewConfigBody)
 
-Review approval request for a feature flag
+Review approval request for a feature flag config
 
 ### Example
 ```java
@@ -982,13 +1341,13 @@ FeatureFlagsApi apiInstance = new FeatureFlagsApi();
 String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
 String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key. The key identifies the flag in your code.
 String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
-String featureFlagApprovalRequestId = "featureFlagApprovalRequestId_example"; // String | The feature flag approval request ID
-FeatureFlagApprovalRequestReviewConfigBody featureFlagApprovalRequestReviewConfigBody = new FeatureFlagApprovalRequestReviewConfigBody(); // FeatureFlagApprovalRequestReviewConfigBody | Review a feature flag approval request
+String approvalRequestId = "approvalRequestId_example"; // String | The approval request ID
+ApprovalRequestReviewConfigBody approvalRequestReviewConfigBody = new ApprovalRequestReviewConfigBody(); // ApprovalRequestReviewConfigBody | Review an approval request
 try {
-    FeatureFlagApprovalRequests result = apiInstance.postReviewFeatureFlagApprovalRequest(projectKey, featureFlagKey, environmentKey, featureFlagApprovalRequestId, featureFlagApprovalRequestReviewConfigBody);
+    ApprovalRequests result = apiInstance.postReviewApprovalRequest(projectKey, featureFlagKey, environmentKey, approvalRequestId, approvalRequestReviewConfigBody);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling FeatureFlagsApi#postReviewFeatureFlagApprovalRequest");
+    System.err.println("Exception when calling FeatureFlagsApi#postReviewApprovalRequest");
     e.printStackTrace();
 }
 ```
@@ -1000,12 +1359,12 @@ Name | Type | Description  | Notes
  **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
  **featureFlagKey** | **String**| The feature flag&#39;s key. The key identifies the flag in your code. |
  **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
- **featureFlagApprovalRequestId** | **String**| The feature flag approval request ID |
- **featureFlagApprovalRequestReviewConfigBody** | [**FeatureFlagApprovalRequestReviewConfigBody**](FeatureFlagApprovalRequestReviewConfigBody.md)| Review a feature flag approval request |
+ **approvalRequestId** | **String**| The approval request ID |
+ **approvalRequestReviewConfigBody** | [**ApprovalRequestReviewConfigBody**](ApprovalRequestReviewConfigBody.md)| Review an approval request |
 
 ### Return type
 
-[**FeatureFlagApprovalRequests**](FeatureFlagApprovalRequests.md)
+[**ApprovalRequests**](ApprovalRequests.md)
 
 ### Authorization
 
