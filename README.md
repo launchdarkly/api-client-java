@@ -6,8 +6,8 @@ This REST API is for custom integrations, data export, or automating your featur
 # api-client
 
 LaunchDarkly REST API
-- API version: 5.0.2
-  - Build date: 2021-02-22T22:04:52.396Z
+- API version: 5.0.3
+  - Build date: 2021-04-08T01:21:45.269Z
 
 Build custom integrations with the LaunchDarkly REST API
 
@@ -46,7 +46,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>5.0.2</version>
+  <version>5.0.3</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -56,7 +56,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:5.0.2"
+compile "com.launchdarkly:api-client:5.0.3"
 ```
 
 ### Others
@@ -69,7 +69,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-5.0.2.jar`
+* `target/api-client-5.0.3.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -204,7 +204,7 @@ Class | Method | HTTP request | Description
 *UserSegmentsApi* | [**patchExpiringUserTargetsOnSegment**](docs/UserSegmentsApi.md#patchExpiringUserTargetsOnSegment) | **PATCH** /segments/{projectKey}/{userSegmentKey}/expiring-user-targets/{environmentKey} | Update, add, or delete expiring user targets on user segment
 *UserSegmentsApi* | [**patchUserSegment**](docs/UserSegmentsApi.md#patchUserSegment) | **PATCH** /segments/{projectKey}/{environmentKey}/{userSegmentKey} | Perform a partial update to a user segment.
 *UserSegmentsApi* | [**postUserSegment**](docs/UserSegmentsApi.md#postUserSegment) | **POST** /segments/{projectKey}/{environmentKey} | Creates a new user segment.
-*UserSegmentsApi* | [**updatedUnboundedSegmentTargets**](docs/UserSegmentsApi.md#updatedUnboundedSegmentTargets) | **POST** /segments/{projectKey}/{environmentKey}/{userSegmentKey}/unbounded-users | Update targets included or excluded in an unbounded segment
+*UserSegmentsApi* | [**updatedBigSegmentTargets**](docs/UserSegmentsApi.md#updatedBigSegmentTargets) | **POST** /segments/{projectKey}/{environmentKey}/{userSegmentKey}/users | Update targets included or excluded in a big segment
 *UserSettingsApi* | [**getExpiringUserTargetsForUser**](docs/UserSettingsApi.md#getExpiringUserTargetsForUser) | **GET** /users/{projectKey}/{userKey}/expiring-user-targets/{environmentKey} | Get expiring dates on flags for user
 *UserSettingsApi* | [**getUserFlagSetting**](docs/UserSettingsApi.md#getUserFlagSetting) | **GET** /users/{projectKey}/{environmentKey}/{userKey}/flags/{featureFlagKey} | Fetch a single flag setting for a user by key.
 *UserSettingsApi* | [**getUserFlagSettings**](docs/UserSettingsApi.md#getUserFlagSettings) | **GET** /users/{projectKey}/{environmentKey}/{userKey}/flags | Fetch a single flag setting for a user by key.
@@ -233,6 +233,8 @@ Class | Method | HTTP request | Description
  - [AuditLogEntries](docs/AuditLogEntries.md)
  - [AuditLogEntry](docs/AuditLogEntry.md)
  - [AuditLogEntryTarget](docs/AuditLogEntryTarget.md)
+ - [BigSegmentTargetChanges](docs/BigSegmentTargetChanges.md)
+ - [BigSegmentTargetsBody](docs/BigSegmentTargetsBody.md)
  - [Clause](docs/Clause.md)
  - [ClientSideAvailability](docs/ClientSideAvailability.md)
  - [CopyActions](docs/CopyActions.md)
@@ -267,6 +269,7 @@ Class | Method | HTTP request | Description
  - [FeatureFlagStatus](docs/FeatureFlagStatus.md)
  - [FeatureFlagStatusAcrossEnvironments](docs/FeatureFlagStatusAcrossEnvironments.md)
  - [FeatureFlagStatusForQueriedEnvironment](docs/FeatureFlagStatusForQueriedEnvironment.md)
+ - [FeatureFlagStatusLinks](docs/FeatureFlagStatusLinks.md)
  - [FeatureFlagStatuses](docs/FeatureFlagStatuses.md)
  - [FeatureFlags](docs/FeatureFlags.md)
  - [FlagConfigScheduledChangesConflictsBody](docs/FlagConfigScheduledChangesConflictsBody.md)
@@ -324,8 +327,6 @@ Class | Method | HTTP request | Description
  - [Token](docs/Token.md)
  - [TokenBody](docs/TokenBody.md)
  - [Tokens](docs/Tokens.md)
- - [UnboundedSegmentTargetChanges](docs/UnboundedSegmentTargetChanges.md)
- - [UnboundedSegmentTargetsBody](docs/UnboundedSegmentTargetsBody.md)
  - [Usage](docs/Usage.md)
  - [UsageError](docs/UsageError.md)
  - [UsageLinks](docs/UsageLinks.md)

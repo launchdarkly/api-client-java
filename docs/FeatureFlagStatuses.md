@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**links** | [**Links**](Links.md) |  |  [optional]
+**links** | [**FeatureFlagStatusLinks**](FeatureFlagStatusLinks.md) |  |  [optional]
 **items** | [**List&lt;FeatureFlagStatus&gt;**](FeatureFlagStatus.md) |  |  [optional]
 
 
