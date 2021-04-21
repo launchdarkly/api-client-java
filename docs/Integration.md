@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**links** | [**IntegrationLinks**](IntegrationLinks.md) |  |  [optional]
+**links** | [**DependentFlagLinks**](DependentFlagLinks.md) |  |  [optional]
 **items** | [**List&lt;IntegrationSubscription&gt;**](IntegrationSubscription.md) |  |  [optional]
 
 
