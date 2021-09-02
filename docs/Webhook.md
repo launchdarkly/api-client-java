@@ -1,17 +1,21 @@
 
+
 # Webhook
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**links** | [**Links**](Links.md) |  |  [optional]
-**id** | **String** |  |  [optional]
-**url** | **String** | The URL of the remote webhook. |  [optional]
-**secret** | **String** | If defined, the webhooks post request will include a X-LD-Signature header whose value will contain an HMAC SHA256 hex digest of the webhook payload, using the secret as the key. |  [optional]
-**on** | **Boolean** | Whether this webhook is enabled or not. |  [optional]
-**name** | **String** | The name of the webhook. |  [optional]
-**statements** | [**List&lt;Statement&gt;**](Statement.md) |  |  [optional]
-**tags** | **List&lt;String&gt;** | Tags assigned to this webhook. |  [optional]
+**links** | [**Map&lt;String, Link&gt;**](Link.md) |  | 
+**id** | **String** |  | 
+**name** | **String** |  |  [optional]
+**url** | **String** |  | 
+**secret** | **String** |  |  [optional]
+**statements** | [**List&lt;StatementRep&gt;**](StatementRep.md) |  |  [optional]
+**on** | **Boolean** |  | 
+**tags** | **List&lt;String&gt;** |  | 
+**access** | [**AccessRep**](AccessRep.md) |  |  [optional]
 
 
 

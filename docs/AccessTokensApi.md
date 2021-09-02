@@ -1,47 +1,58 @@
 # AccessTokensApi
 
-All URIs are relative to *https://app.launchdarkly.com/api/v2*
+All URIs are relative to *https://app.launchdarkly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteToken**](AccessTokensApi.md#deleteToken) | **DELETE** /tokens/{tokenId} | Delete an access token by ID.
-[**getToken**](AccessTokensApi.md#getToken) | **GET** /tokens/{tokenId} | Get a single access token by ID.
-[**getTokens**](AccessTokensApi.md#getTokens) | **GET** /tokens | Returns a list of tokens in the account.
-[**patchToken**](AccessTokensApi.md#patchToken) | **PATCH** /tokens/{tokenId} | Modify an access token by ID.
-[**postToken**](AccessTokensApi.md#postToken) | **POST** /tokens | Create a new token.
-[**resetToken**](AccessTokensApi.md#resetToken) | **POST** /tokens/{tokenId}/reset | Reset an access token&#39;s secret key with an optional expiry time for the old key.
+[**deleteToken**](AccessTokensApi.md#deleteToken) | **DELETE** /api/v2/tokens/{id} | Delete access token
+[**getToken**](AccessTokensApi.md#getToken) | **GET** /api/v2/tokens/{id} | Get access token
+[**getTokens**](AccessTokensApi.md#getTokens) | **GET** /api/v2/tokens | List access tokens
+[**patchToken**](AccessTokensApi.md#patchToken) | **PATCH** /api/v2/tokens/{id} | Patch access token
+[**postToken**](AccessTokensApi.md#postToken) | **POST** /api/v2/tokens | Create access token
+[**resetToken**](AccessTokensApi.md#resetToken) | **POST** /api/v2/tokens/{id}/reset | Reset access token
 
 
 <a name="deleteToken"></a>
 # **deleteToken**
-> deleteToken(tokenId)
+> deleteToken(id)
+
+Delete access token
 
 Delete an access token by ID.
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.AccessTokensApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AccessTokensApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-AccessTokensApi apiInstance = new AccessTokensApi();
-String tokenId = "tokenId_example"; // String | The access token ID.
-try {
-    apiInstance.deleteToken(tokenId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccessTokensApi#deleteToken");
-    e.printStackTrace();
+    AccessTokensApi apiInstance = new AccessTokensApi(defaultClient);
+    String id = "id_example"; // String | The ID of the access token to update
+    try {
+      apiInstance.deleteToken(id);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AccessTokensApi#deleteToken");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -49,7 +60,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tokenId** | **String**| The access token ID. |
+ **id** | **String**| The ID of the access token to update |
 
 ### Return type
 
@@ -57,44 +68,64 @@ null (empty response body)
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Action completed successfully |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**404** | Invalid resource identifier |  -  |
+**429** | Rate limited |  -  |
 
 <a name="getToken"></a>
 # **getToken**
-> Token getToken(tokenId)
+> Token getToken(id)
+
+Get access token
 
 Get a single access token by ID.
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.AccessTokensApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AccessTokensApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-AccessTokensApi apiInstance = new AccessTokensApi();
-String tokenId = "tokenId_example"; // String | The access token ID.
-try {
-    Token result = apiInstance.getToken(tokenId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccessTokensApi#getToken");
-    e.printStackTrace();
+    AccessTokensApi apiInstance = new AccessTokensApi(defaultClient);
+    String id = "id_example"; // String | The ID of the access token
+    try {
+      Token result = apiInstance.getToken(id);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AccessTokensApi#getToken");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -102,7 +133,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tokenId** | **String**| The access token ID. |
+ **id** | **String**| The ID of the access token |
 
 ### Return type
 
@@ -110,44 +141,64 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Access token response JSON |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**404** | Invalid resource specifier |  -  |
+**429** | Rate limited |  -  |
 
 <a name="getTokens"></a>
 # **getTokens**
 > Tokens getTokens(showAll)
 
-Returns a list of tokens in the account.
+List access tokens
+
+Fetch a list of all access tokens.
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.AccessTokensApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AccessTokensApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-AccessTokensApi apiInstance = new AccessTokensApi();
-Boolean showAll = true; // Boolean | If set to true, and the authentication access token has the \"Admin\" role, personal access tokens for all members will be retrieved.
-try {
-    Tokens result = apiInstance.getTokens(showAll);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccessTokensApi#getTokens");
-    e.printStackTrace();
+    AccessTokensApi apiInstance = new AccessTokensApi(defaultClient);
+    Boolean showAll = true; // Boolean | If set to true, and the authentication access token has the 'Admin' role, personal access tokens for all members will be retrieved.
+    try {
+      Tokens result = apiInstance.getTokens(showAll);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AccessTokensApi#getTokens");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -155,7 +206,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **showAll** | **Boolean**| If set to true, and the authentication access token has the \&quot;Admin\&quot; role, personal access tokens for all members will be retrieved. | [optional]
+ **showAll** | **Boolean**| If set to true, and the authentication access token has the &#39;Admin&#39; role, personal access tokens for all members will be retrieved. | [optional]
 
 ### Return type
 
@@ -163,45 +214,64 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Access token response JSON |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**429** | Rate limited |  -  |
 
 <a name="patchToken"></a>
 # **patchToken**
-> Token patchToken(tokenId, patchDelta)
+> Token patchToken(id, patchOperation)
 
-Modify an access token by ID.
+Patch access token
+
+Update an access token&#39;s settings. The request should be a valid JSON Patch document describing the changes to be made to the access token.
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.AccessTokensApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AccessTokensApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-AccessTokensApi apiInstance = new AccessTokensApi();
-String tokenId = "tokenId_example"; // String | The access token ID.
-List<PatchOperation> patchDelta = Arrays.asList(new PatchOperation()); // List<PatchOperation> | Requires a JSON Patch representation of the desired changes to the project. 'http://jsonpatch.com/'
-try {
-    Token result = apiInstance.patchToken(tokenId, patchDelta);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccessTokensApi#patchToken");
-    e.printStackTrace();
+    AccessTokensApi apiInstance = new AccessTokensApi(defaultClient);
+    String id = "id_example"; // String | The ID of the access token to update
+    List<PatchOperation> patchOperation = Arrays.asList(); // List<PatchOperation> | 
+    try {
+      Token result = apiInstance.patchToken(id, patchOperation);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AccessTokensApi#patchToken");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -209,8 +279,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tokenId** | **String**| The access token ID. |
- **patchDelta** | [**List&lt;PatchOperation&gt;**](PatchOperation.md)| Requires a JSON Patch representation of the desired changes to the project. &#39;http://jsonpatch.com/&#39; |
+ **id** | **String**| The ID of the access token to update |
+ **patchOperation** | [**List&lt;PatchOperation&gt;**](PatchOperation.md)|  |
 
 ### Return type
 
@@ -218,44 +288,67 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Access token response JSON |  -  |
+**400** | Invalid request body |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**404** | Invalid resource identifier |  -  |
+**409** | Status conflict |  -  |
+**422** | Invalid patch content |  -  |
+**429** | Rate limited |  -  |
 
 <a name="postToken"></a>
 # **postToken**
-> Token postToken(tokenBody)
+> Token postToken(accessTokenPost)
 
-Create a new token.
+Create access token
+
+Create a new access token.
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.AccessTokensApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AccessTokensApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-AccessTokensApi apiInstance = new AccessTokensApi();
-TokenBody tokenBody = new TokenBody(); // TokenBody | Create a new access token.
-try {
-    Token result = apiInstance.postToken(tokenBody);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccessTokensApi#postToken");
-    e.printStackTrace();
+    AccessTokensApi apiInstance = new AccessTokensApi(defaultClient);
+    AccessTokenPost accessTokenPost = new AccessTokenPost(); // AccessTokenPost | 
+    try {
+      Token result = apiInstance.postToken(accessTokenPost);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AccessTokensApi#postToken");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -263,7 +356,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tokenBody** | [**TokenBody**](TokenBody.md)| Create a new access token. |
+ **accessTokenPost** | [**AccessTokenPost**](AccessTokenPost.md)|  |
 
 ### Return type
 
@@ -271,45 +364,65 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Access token response JSON |  -  |
+**400** | Invalid request body |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**429** | Rate limited |  -  |
+
 <a name="resetToken"></a>
 # **resetToken**
-> Token resetToken(tokenId, expiry)
+> Token resetToken(id, expiry)
+
+Reset access token
 
 Reset an access token&#39;s secret key with an optional expiry time for the old key.
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.AccessTokensApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AccessTokensApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-AccessTokensApi apiInstance = new AccessTokensApi();
-String tokenId = "tokenId_example"; // String | The access token ID.
-Long expiry = 789L; // Long | An expiration time for the old token key, expressed as a Unix epoch time in milliseconds. By default, the token will expire immediately.
-try {
-    Token result = apiInstance.resetToken(tokenId, expiry);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccessTokensApi#resetToken");
-    e.printStackTrace();
+    AccessTokensApi apiInstance = new AccessTokensApi(defaultClient);
+    String id = "id_example"; // String | The ID of the access token to update
+    Long expiry = 56L; // Long | An expiration time for the old token key, expressed as a Unix epoch time in milliseconds. By default, the token will expire immediately.
+    try {
+      Token result = apiInstance.resetToken(id, expiry);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AccessTokensApi#resetToken");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -317,7 +430,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tokenId** | **String**| The access token ID. |
+ **id** | **String**| The ID of the access token to update |
  **expiry** | **Long**| An expiration time for the old token key, expressed as a Unix epoch time in milliseconds. By default, the token will expire immediately. | [optional]
 
 ### Return type
@@ -326,10 +439,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Access token response JSON |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**404** | Invalid resource identifier |  -  |
+**429** | Rate limited |  -  |
 

@@ -1,23 +1,24 @@
 
+
 # Environment
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**links** | [**Links**](Links.md) |  |  [optional]
-**id** | **String** |  |  [optional]
-**key** | **String** | The key for the environment. |  [optional]
-**name** | **String** | The name of the environment. |  [optional]
-**apiKey** | **String** | The SDK key for backend LaunchDarkly SDKs. |  [optional]
-**mobileKey** | **String** | The SDK key for mobile LaunchDarkly SDKs. |  [optional]
-**color** | **String** | The swatch color for the environment. |  [optional]
-**defaultTtl** | [**BigDecimal**](BigDecimal.md) | The default TTL. |  [optional]
-**secureMode** | **Boolean** | Determines if this environment is in safe mode. |  [optional]
-**defaultTrackEvents** | **Boolean** | Set to true to send detailed event information for new flags. |  [optional]
-**tags** | **List&lt;String&gt;** | An array of tags for this environment. |  [optional]
-**requireComments** | **Boolean** | Determines if this environment requires comments for flag and segment changes. |  [optional]
-**confirmChanges** | **Boolean** | Determines if this environment requires confirmation for flag and segment changes. |  [optional]
-**approvalSettings** | [**EnvironmentApprovalSettings**](EnvironmentApprovalSettings.md) |  |  [optional]
+**links** | [**Map&lt;String, Link&gt;**](Link.md) | Links to related resources. | 
+**id** | **String** |  | 
+**key** | **String** | A project-unique key for the new environment. | 
+**name** | **String** | A human-friendly name for the new environment. | 
+**apiKey** | **String** | API key to use with client-side SDKs. | 
+**mobileKey** | **String** | API key to use with mobile SDKs. | 
+**color** | **String** | The color used to indicate this environment in the UI. | 
+**defaultTtl** | **Integer** | The default time (in minutes) that the PHP SDK can cache feature flag rules locally. | 
+**secureMode** | **Boolean** | Secure mode ensures that a user of the client-side SDK cannot impersonate another user. | 
+**defaultTrackEvents** | **Boolean** | Enables tracking detailed information for new flags by default. | 
+**tags** | **List&lt;String&gt;** |  | 
+**approvalSettings** | [**ApprovalSettings**](ApprovalSettings.md) |  |  [optional]
 
 
 

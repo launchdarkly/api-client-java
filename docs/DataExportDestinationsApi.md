@@ -1,48 +1,59 @@
 # DataExportDestinationsApi
 
-All URIs are relative to *https://app.launchdarkly.com/api/v2*
+All URIs are relative to *https://app.launchdarkly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteDestination**](DataExportDestinationsApi.md#deleteDestination) | **DELETE** /destinations/{projectKey}/{environmentKey}/{destinationId} | Get a single data export destination by ID
-[**getDestination**](DataExportDestinationsApi.md#getDestination) | **GET** /destinations/{projectKey}/{environmentKey}/{destinationId} | Get a single data export destination by ID
-[**getDestinations**](DataExportDestinationsApi.md#getDestinations) | **GET** /destinations | Returns a list of all data export destinations.
-[**patchDestination**](DataExportDestinationsApi.md#patchDestination) | **PATCH** /destinations/{projectKey}/{environmentKey}/{destinationId} | Perform a partial update to a data export destination.
-[**postDestination**](DataExportDestinationsApi.md#postDestination) | **POST** /destinations/{projectKey}/{environmentKey} | Create a new data export destination
+[**deleteDestination**](DataExportDestinationsApi.md#deleteDestination) | **DELETE** /api/v2/destinations/{projKey}/{envKey}/{id} | Delete Data Export destination
+[**getDestination**](DataExportDestinationsApi.md#getDestination) | **GET** /api/v2/destinations/{projKey}/{envKey}/{id} | Get destination
+[**getDestinations**](DataExportDestinationsApi.md#getDestinations) | **GET** /api/v2/destinations | List destinations
+[**patchDestination**](DataExportDestinationsApi.md#patchDestination) | **PATCH** /api/v2/destinations/{projKey}/{envKey}/{id} | Update Data Export destination
+[**postDestination**](DataExportDestinationsApi.md#postDestination) | **POST** /api/v2/destinations/{projKey}/{envKey} | Create data export destination
 
 
 <a name="deleteDestination"></a>
 # **deleteDestination**
-> deleteDestination(projectKey, environmentKey, destinationId)
+> deleteDestination(projKey, envKey, id)
 
-Get a single data export destination by ID
+Delete Data Export destination
+
+Delete Data Export destination by ID
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.DataExportDestinationsApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.DataExportDestinationsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-DataExportDestinationsApi apiInstance = new DataExportDestinationsApi();
-String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
-String destinationId = "destinationId_example"; // String | The data export destination ID.
-try {
-    apiInstance.deleteDestination(projectKey, environmentKey, destinationId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DataExportDestinationsApi#deleteDestination");
-    e.printStackTrace();
+    DataExportDestinationsApi apiInstance = new DataExportDestinationsApi(defaultClient);
+    String projKey = "projKey_example"; // String | The project key
+    String envKey = "envKey_example"; // String | The environment key
+    String id = "id_example"; // String | The Data Export destination ID
+    try {
+      apiInstance.deleteDestination(projKey, envKey, id);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DataExportDestinationsApi#deleteDestination");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -50,9 +61,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
- **destinationId** | **String**| The data export destination ID. |
+ **projKey** | **String**| The project key |
+ **envKey** | **String**| The environment key |
+ **id** | **String**| The Data Export destination ID |
 
 ### Return type
 
@@ -60,46 +71,66 @@ null (empty response body)
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Destination response |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**404** | Invalid resource specifier |  -  |
+**429** | Rate limited |  -  |
 
 <a name="getDestination"></a>
 # **getDestination**
-> Destination getDestination(projectKey, environmentKey, destinationId)
+> Destination getDestination(projKey, envKey, id)
 
-Get a single data export destination by ID
+Get destination
+
+Get a single Data Export destination by ID
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.DataExportDestinationsApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.DataExportDestinationsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-DataExportDestinationsApi apiInstance = new DataExportDestinationsApi();
-String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
-String destinationId = "destinationId_example"; // String | The data export destination ID.
-try {
-    Destination result = apiInstance.getDestination(projectKey, environmentKey, destinationId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DataExportDestinationsApi#getDestination");
-    e.printStackTrace();
+    DataExportDestinationsApi apiInstance = new DataExportDestinationsApi(defaultClient);
+    String projKey = "projKey_example"; // String | The project key
+    String envKey = "envKey_example"; // String | The environment key
+    String id = "id_example"; // String | The Data Export destination ID
+    try {
+      Destination result = apiInstance.getDestination(projKey, envKey, id);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DataExportDestinationsApi#getDestination");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -107,9 +138,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
- **destinationId** | **String**| The data export destination ID. |
+ **projKey** | **String**| The project key |
+ **envKey** | **String**| The environment key |
+ **id** | **String**| The Data Export destination ID |
 
 ### Return type
 
@@ -117,43 +148,63 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Destination response |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**404** | Invalid resource specifier |  -  |
+**429** | Rate limited |  -  |
 
 <a name="getDestinations"></a>
 # **getDestinations**
 > Destinations getDestinations()
 
-Returns a list of all data export destinations.
+List destinations
+
+Get a list of Data Export destinations configured across all projects and environments.
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.DataExportDestinationsApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.DataExportDestinationsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-DataExportDestinationsApi apiInstance = new DataExportDestinationsApi();
-try {
-    Destinations result = apiInstance.getDestinations();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DataExportDestinationsApi#getDestinations");
-    e.printStackTrace();
+    DataExportDestinationsApi apiInstance = new DataExportDestinationsApi(defaultClient);
+    try {
+      Destinations result = apiInstance.getDestinations();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DataExportDestinationsApi#getDestinations");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -166,47 +217,66 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Destination collection response |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**429** | Rate limited |  -  |
 
 <a name="patchDestination"></a>
 # **patchDestination**
-> Destination patchDestination(projectKey, environmentKey, destinationId, patchOnly)
+> Destination patchDestination(projKey, envKey, id, patchOperation)
 
-Perform a partial update to a data export destination.
+Update Data Export destination
+
+Update a Data Export destination. This requires a JSON Patch representation of the modified destination.
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.DataExportDestinationsApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.DataExportDestinationsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-DataExportDestinationsApi apiInstance = new DataExportDestinationsApi();
-String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
-String destinationId = "destinationId_example"; // String | The data export destination ID.
-List<PatchOperation> patchOnly = Arrays.asList(new PatchOperation()); // List<PatchOperation> | Requires a JSON Patch representation of the desired changes to the project. 'http://jsonpatch.com/' Feature flag patches also support JSON Merge Patch format. 'https://tools.ietf.org/html/rfc7386' The addition of comments is also supported.
-try {
-    Destination result = apiInstance.patchDestination(projectKey, environmentKey, destinationId, patchOnly);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DataExportDestinationsApi#patchDestination");
-    e.printStackTrace();
+    DataExportDestinationsApi apiInstance = new DataExportDestinationsApi(defaultClient);
+    String projKey = "projKey_example"; // String | The project key
+    String envKey = "envKey_example"; // String | The environment key
+    String id = "id_example"; // String | The Data Export destination ID
+    List<PatchOperation> patchOperation = Arrays.asList(); // List<PatchOperation> | 
+    try {
+      Destination result = apiInstance.patchDestination(projKey, envKey, id, patchOperation);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DataExportDestinationsApi#patchDestination");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -214,10 +284,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
- **destinationId** | **String**| The data export destination ID. |
- **patchOnly** | [**List&lt;PatchOperation&gt;**](PatchOperation.md)| Requires a JSON Patch representation of the desired changes to the project. &#39;http://jsonpatch.com/&#39; Feature flag patches also support JSON Merge Patch format. &#39;https://tools.ietf.org/html/rfc7386&#39; The addition of comments is also supported. |
+ **projKey** | **String**| The project key |
+ **envKey** | **String**| The environment key |
+ **id** | **String**| The Data Export destination ID |
+ **patchOperation** | [**List&lt;PatchOperation&gt;**](PatchOperation.md)|  |
 
 ### Return type
 
@@ -225,46 +295,68 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Destination response |  -  |
+**400** | Invalid request body |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**404** | Invalid resource specifier |  -  |
+**409** | Status conflict |  -  |
+**429** | Rate limited |  -  |
 
 <a name="postDestination"></a>
 # **postDestination**
-> Destination postDestination(projectKey, environmentKey, destinationBody)
+> Destination postDestination(projKey, envKey, destinationPost)
 
-Create a new data export destination
+Create data export destination
+
+Create a new destination. The &#x60;config&#x60; body parameter represents the configuration parameters required for a destination type.
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.DataExportDestinationsApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.DataExportDestinationsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-DataExportDestinationsApi apiInstance = new DataExportDestinationsApi();
-String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
-DestinationBody destinationBody = new DestinationBody(); // DestinationBody | Create a new data export destination.
-try {
-    Destination result = apiInstance.postDestination(projectKey, environmentKey, destinationBody);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DataExportDestinationsApi#postDestination");
-    e.printStackTrace();
+    DataExportDestinationsApi apiInstance = new DataExportDestinationsApi(defaultClient);
+    String projKey = "projKey_example"; // String | The project key
+    String envKey = "envKey_example"; // String | The environment key
+    DestinationPost destinationPost = new DestinationPost(); // DestinationPost | 
+    try {
+      Destination result = apiInstance.postDestination(projKey, envKey, destinationPost);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DataExportDestinationsApi#postDestination");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -272,9 +364,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
- **destinationBody** | [**DestinationBody**](DestinationBody.md)| Create a new data export destination. |
+ **projKey** | **String**| The project key |
+ **envKey** | **String**| The environment key |
+ **destinationPost** | [**DestinationPost**](DestinationPost.md)|  |
 
 ### Return type
 
@@ -282,10 +374,20 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Destination response |  -  |
+**400** | Invalid request body |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**409** | Status conflict |  -  |
+**429** | Rate limited |  -  |
 

@@ -1,21 +1,30 @@
 
+
 # UserSegment
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **String** | Unique identifier for the user segment. | 
-**name** | **String** | Name of the user segment. | 
-**description** | **String** | Description of the user segment. |  [optional]
-**tags** | **List&lt;String&gt;** | An array of tags for this user segment. |  [optional]
-**creationDate** | **Long** | A unix epoch time in milliseconds specifying the creation time of this flag. | 
-**included** | **List&lt;String&gt;** | An array of user keys that are included in this segment. |  [optional]
-**excluded** | **List&lt;String&gt;** | An array of user keys that should not be included in this segment, unless they are also listed in \&quot;included\&quot;. |  [optional]
-**rules** | [**List&lt;UserSegmentRule&gt;**](UserSegmentRule.md) | An array of rules that can cause a user to be included in this segment. |  [optional]
-**unbounded** | **Boolean** | Controls whether this is considered a \&quot;big segment\&quot; which can support an unlimited numbers of users. Include/exclude lists sent with this payload are not used in big segments. Contact your account manager for early access to this feature. |  [optional]
-**version** | **Integer** |  |  [optional]
-**links** | [**Links**](Links.md) |  |  [optional]
-**flags** | [**List&lt;FlagListItem&gt;**](FlagListItem.md) |  |  [optional]
+**name** | **String** | A human-friendly name for the segment | 
+**description** | **String** | A description of the segment&#39;s purpose |  [optional]
+**tags** | **List&lt;String&gt;** | Tags for the segment | 
+**creationDate** | **Long** |  | 
+**key** | **String** | A unique key used to reference the segment | 
+**included** | **List&lt;String&gt;** | Included users are always segment members, regardless of segment rules. For Big Segments this array is either empty or omitted entirely. |  [optional]
+**excluded** | **List&lt;String&gt;** | Segment rules bypass excluded users, so they will never be included based on rules. Excluded users may still be included explicitly. This value is omitted for Big Segments. |  [optional]
+**links** | [**Map&lt;String, Link&gt;**](Link.md) |  | 
+**rules** | [**List&lt;UserSegmentRule&gt;**](UserSegmentRule.md) |  | 
+**version** | **Integer** |  | 
+**deleted** | **Boolean** |  | 
+**access** | [**AccessRep**](AccessRep.md) |  |  [optional]
+**flags** | [**List&lt;FlagListingRep&gt;**](FlagListingRep.md) |  |  [optional]
+**unbounded** | **Boolean** |  |  [optional]
+**generation** | **Integer** |  | 
+**unboundedMetadata** | [**SegmentMetadata**](SegmentMetadata.md) |  |  [optional]
+**external** | **String** |  |  [optional]
+**externalLink** | **String** |  |  [optional]
 
 
 

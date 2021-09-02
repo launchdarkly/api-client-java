@@ -1,17 +1,20 @@
 
+
 # Project
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**links** | [**Links**](Links.md) |  |  [optional]
-**id** | **String** |  |  [optional]
-**key** | **String** |  |  [optional]
-**name** | **String** |  |  [optional]
-**includeInSnippetByDefault** | **Boolean** |  |  [optional]
-**environments** | [**List&lt;Environment&gt;**](Environment.md) |  |  [optional]
-**tags** | **List&lt;String&gt;** | An array of tags for this project. |  [optional]
+**links** | [**Map&lt;String, Link&gt;**](Link.md) |  | 
+**id** | **String** |  | 
+**key** | **String** |  | 
+**includeInSnippetByDefault** | **Boolean** |  | 
 **defaultClientSideAvailability** | [**ClientSideAvailability**](ClientSideAvailability.md) |  |  [optional]
+**name** | **String** |  | 
+**tags** | **List&lt;String&gt;** |  | 
+**environments** | [**List&lt;Environment&gt;**](Environment.md) |  | 
 
 
 

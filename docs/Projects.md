@@ -1,11 +1,14 @@
 
+
 # Projects
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**links** | [**Links**](Links.md) |  |  [optional]
-**items** | [**List&lt;Project&gt;**](Project.md) |  |  [optional]
+**links** | [**Map&lt;String, Link&gt;**](Link.md) | A link to this resource. | 
+**items** | [**List&lt;Project&gt;**](Project.md) | List of projects. | 
 
 
 

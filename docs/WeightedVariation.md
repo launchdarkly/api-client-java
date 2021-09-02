@@ -1,11 +1,15 @@
 
+
 # WeightedVariation
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**variation** | **Integer** |  |  [optional]
-**weight** | **Integer** |  |  [optional]
+**variation** | **Integer** |  | 
+**weight** | **Integer** |  | 
+**untracked** | **Boolean** |  |  [optional]
 
 
 

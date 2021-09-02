@@ -1,46 +1,57 @@
 # ProjectsApi
 
-All URIs are relative to *https://app.launchdarkly.com/api/v2*
+All URIs are relative to *https://app.launchdarkly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteProject**](ProjectsApi.md#deleteProject) | **DELETE** /projects/{projectKey} | Delete a project by key. Caution-- deleting a project will delete all associated environments and feature flags. You cannot delete the last project in an account.
-[**getProject**](ProjectsApi.md#getProject) | **GET** /projects/{projectKey} | Fetch a single project by key.
-[**getProjects**](ProjectsApi.md#getProjects) | **GET** /projects | Returns a list of all projects in the account.
-[**patchProject**](ProjectsApi.md#patchProject) | **PATCH** /projects/{projectKey} | Modify a project by ID.
-[**postProject**](ProjectsApi.md#postProject) | **POST** /projects | Create a new project with the given key and name.
+[**deleteProject**](ProjectsApi.md#deleteProject) | **DELETE** /api/v2/projects/{projectKey} | Delete project
+[**getProject**](ProjectsApi.md#getProject) | **GET** /api/v2/projects/{projectKey} | Get project
+[**getProjects**](ProjectsApi.md#getProjects) | **GET** /api/v2/projects | List projects
+[**patchProject**](ProjectsApi.md#patchProject) | **PATCH** /api/v2/projects/{projectKey} | Update project
+[**postProject**](ProjectsApi.md#postProject) | **POST** /api/v2/projects | Create project
 
 
 <a name="deleteProject"></a>
 # **deleteProject**
 > deleteProject(projectKey)
 
-Delete a project by key. Caution-- deleting a project will delete all associated environments and feature flags. You cannot delete the last project in an account.
+Delete project
+
+Delete a project by key. Caution: deleting a project will delete all associated environments and feature flags. You cannot delete the last project in an account.
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.ProjectsApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.ProjectsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-ProjectsApi apiInstance = new ProjectsApi();
-String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-try {
-    apiInstance.deleteProject(projectKey);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProjectsApi#deleteProject");
-    e.printStackTrace();
+    ProjectsApi apiInstance = new ProjectsApi(defaultClient);
+    String projectKey = "projectKey_example"; // String | The project key
+    try {
+      apiInstance.deleteProject(projectKey);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ProjectsApi#deleteProject");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -48,7 +59,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
+ **projectKey** | **String**| The project key |
 
 ### Return type
 
@@ -56,44 +67,65 @@ null (empty response body)
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Action completed successfully |  -  |
+**400** | Cannot delete last project in an account |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**404** | Unknown project key |  -  |
+**429** | Rate limited |  -  |
 
 <a name="getProject"></a>
 # **getProject**
 > Project getProject(projectKey)
 
-Fetch a single project by key.
+Get project
+
+Get a single project by key.
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.ProjectsApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.ProjectsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-ProjectsApi apiInstance = new ProjectsApi();
-String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-try {
-    Project result = apiInstance.getProject(projectKey);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProjectsApi#getProject");
-    e.printStackTrace();
+    ProjectsApi apiInstance = new ProjectsApi(defaultClient);
+    String projectKey = "projectKey_example"; // String | The project key
+    try {
+      Project result = apiInstance.getProject(projectKey);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ProjectsApi#getProject");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -101,7 +133,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
+ **projectKey** | **String**| The project key |
 
 ### Return type
 
@@ -109,43 +141,63 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Project response JSON |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**404** | Unknown project key |  -  |
+**429** | Rate limited |  -  |
 
 <a name="getProjects"></a>
 # **getProjects**
 > Projects getProjects()
 
-Returns a list of all projects in the account.
+List projects
+
+Get a list of all projects in the account.
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.ProjectsApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.ProjectsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-ProjectsApi apiInstance = new ProjectsApi();
-try {
-    Projects result = apiInstance.getProjects();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProjectsApi#getProjects");
-    e.printStackTrace();
+    ProjectsApi apiInstance = new ProjectsApi(defaultClient);
+    try {
+      Projects result = apiInstance.getProjects();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ProjectsApi#getProjects");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -158,45 +210,64 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Project collection response JSON |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**429** | Rate limited |  -  |
 
 <a name="patchProject"></a>
 # **patchProject**
-> Project patchProject(projectKey, patchDelta)
+> Project patchProject(projectKey, patchOperation)
 
-Modify a project by ID.
+Update project
+
+Update a project. Requires a [JSON Patch](http://tools.ietf.org/html/rfc6902) representation of the desired changes to the project.
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.ProjectsApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.ProjectsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-ProjectsApi apiInstance = new ProjectsApi();
-String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-List<PatchOperation> patchDelta = Arrays.asList(new PatchOperation()); // List<PatchOperation> | Requires a JSON Patch representation of the desired changes to the project. 'http://jsonpatch.com/'
-try {
-    Project result = apiInstance.patchProject(projectKey, patchDelta);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProjectsApi#patchProject");
-    e.printStackTrace();
+    ProjectsApi apiInstance = new ProjectsApi(defaultClient);
+    String projectKey = "projectKey_example"; // String | The project key
+    List<PatchOperation> patchOperation = Arrays.asList(); // List<PatchOperation> | 
+    try {
+      Project result = apiInstance.patchProject(projectKey, patchOperation);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ProjectsApi#patchProject");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -204,8 +275,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **patchDelta** | [**List&lt;PatchOperation&gt;**](PatchOperation.md)| Requires a JSON Patch representation of the desired changes to the project. &#39;http://jsonpatch.com/&#39; |
+ **projectKey** | **String**| The project key |
+ **patchOperation** | [**List&lt;PatchOperation&gt;**](PatchOperation.md)|  |
 
 ### Return type
 
@@ -213,44 +284,66 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Project response JSON |  -  |
+**400** | Invalid request body |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**404** | Unknown project key |  -  |
+**409** | Status conflict |  -  |
+**429** | Rate limited |  -  |
 
 <a name="postProject"></a>
 # **postProject**
-> Project postProject(projectBody)
+> Project postProject(projectPost)
 
-Create a new project with the given key and name.
+Create project
+
+Create a new project with the given key and name. Project keys must be unique within an account.
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.ProjectsApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.ProjectsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-ProjectsApi apiInstance = new ProjectsApi();
-ProjectBody projectBody = new ProjectBody(); // ProjectBody | Project keys must be unique within an account.
-try {
-    Project result = apiInstance.postProject(projectBody);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ProjectsApi#postProject");
-    e.printStackTrace();
+    ProjectsApi apiInstance = new ProjectsApi(defaultClient);
+    ProjectPost projectPost = new ProjectPost(); // ProjectPost | 
+    try {
+      Project result = apiInstance.postProject(projectPost);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ProjectsApi#postProject");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -258,7 +351,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectBody** | [**ProjectBody**](ProjectBody.md)| Project keys must be unique within an account. |
+ **projectPost** | [**ProjectPost**](ProjectPost.md)|  |
 
 ### Return type
 
@@ -266,10 +359,20 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Successful project response |  -  |
+**400** | Invalid request body |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**409** | Status conflict |  -  |
+**429** | Rate limited |  -  |
 

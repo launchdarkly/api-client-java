@@ -1,47 +1,58 @@
 # UsersApi
 
-All URIs are relative to *https://app.launchdarkly.com/api/v2*
+All URIs are relative to *https://app.launchdarkly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteUser**](UsersApi.md#deleteUser) | **DELETE** /users/{projectKey}/{environmentKey}/{userKey} | Delete a user by ID.
-[**getSearchUsers**](UsersApi.md#getSearchUsers) | **GET** /user-search/{projectKey}/{environmentKey} | Search users in LaunchDarkly based on their last active date, or a search query. It should not be used to enumerate all users in LaunchDarkly-- use the List users API resource.
-[**getUser**](UsersApi.md#getUser) | **GET** /users/{projectKey}/{environmentKey}/{userKey} | Get a user by key.
-[**getUsers**](UsersApi.md#getUsers) | **GET** /users/{projectKey}/{environmentKey} | List all users in the environment. Includes the total count of users. In each page, there will be up to &#39;limit&#39; users returned (default 20). This is useful for exporting all users in the system for further analysis. Paginated collections will include a next link containing a URL with the next set of elements in the collection.
+[**deleteUser**](UsersApi.md#deleteUser) | **DELETE** /api/v2/users/{projKey}/{envKey}/{key} | Delete user
+[**getSearchUsers**](UsersApi.md#getSearchUsers) | **GET** /api/v2/user-search/{projKey}/{envKey} | Find users
+[**getUser**](UsersApi.md#getUser) | **GET** /api/v2/users/{projKey}/{envKey}/{key} | Get user
+[**getUsers**](UsersApi.md#getUsers) | **GET** /api/v2/users/{projKey}/{envKey} | List users
 
 
 <a name="deleteUser"></a>
 # **deleteUser**
-> deleteUser(projectKey, environmentKey, userKey)
+> deleteUser(projKey, envKey, key)
 
-Delete a user by ID.
+Delete user
+
+Delete a user by key
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.UsersApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.UsersApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-UsersApi apiInstance = new UsersApi();
-String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
-String userKey = "userKey_example"; // String | The user's key.
-try {
-    apiInstance.deleteUser(projectKey, environmentKey, userKey);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#deleteUser");
-    e.printStackTrace();
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String projKey = "projKey_example"; // String | The project key
+    String envKey = "envKey_example"; // String | The environment key
+    String key = "key_example"; // String | The user key
+    try {
+      apiInstance.deleteUser(projKey, envKey, key);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#deleteUser");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -49,9 +60,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
- **userKey** | **String**| The user&#39;s key. |
+ **projKey** | **String**| The project key |
+ **envKey** | **String**| The environment key |
+ **key** | **String**| The user key |
 
 ### Return type
 
@@ -59,49 +70,71 @@ null (empty response body)
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Action completed successfully |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**404** | Invalid resource identifier |  -  |
+**409** | Status conflict |  -  |
+**429** | Rate limited |  -  |
 
 <a name="getSearchUsers"></a>
 # **getSearchUsers**
-> Users getSearchUsers(projectKey, environmentKey, q, limit, offset, after)
+> Users getSearchUsers(projKey, envKey, q, limit, offset, after, searchAfter)
 
-Search users in LaunchDarkly based on their last active date, or a search query. It should not be used to enumerate all users in LaunchDarkly-- use the List users API resource.
+Find users
+
+Search users in LaunchDarkly based on their last active date, or a search query. Do not use to enumerate all users in LaunchDarkly. Instead use the [List users](getUsers) API resource.  &gt; ### &#x60;offset&#x60; is deprecated &gt; &gt; &#x60;offset&#x60; is deprecated and will be removed in a future API version. You can still use &#x60;offset&#x60; and &#x60;limit&#x60; for pagination, but we recommend you use &#x60;sort&#x60; and &#x60;searchAfter&#x60; instead. &#x60;searchAfter&#x60; allows you to page through more than 10,000 users, but &#x60;offset&#x60; and &#x60;limit&#x60; do not. 
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.UsersApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.UsersApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-UsersApi apiInstance = new UsersApi();
-String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
-String q = "q_example"; // String | Search query.
-Integer limit = 56; // Integer | Pagination limit.
-Integer offset = 56; // Integer | Specifies the first item to return in the collection.
-Long after = 789L; // Long | A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned will have occurred after this timestamp.
-try {
-    Users result = apiInstance.getSearchUsers(projectKey, environmentKey, q, limit, offset, after);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#getSearchUsers");
-    e.printStackTrace();
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String projKey = "projKey_example"; // String | The project key
+    String envKey = "envKey_example"; // String | The environment key
+    String q = "q_example"; // String | Full-text search for users based on name, first name, last name, e-mail address, or key
+    Long limit = 56L; // Long | Specifies the maximum number of items in the collection to return (max: 50, default: 20)
+    Long offset = 56L; // Long | Specifies the first item to return in the collection
+    Long after = 56L; // Long | A unix epoch time in milliseconds specifying the maximum last time a user requested a feature flag from LaunchDarkly
+    String searchAfter = "searchAfter_example"; // String | Limits results to users with sort values after the value you specify. You can use this for pagination, but we recommend using the `next` link we provide instead.
+    try {
+      Users result = apiInstance.getSearchUsers(projKey, envKey, q, limit, offset, after, searchAfter);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#getSearchUsers");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -109,12 +142,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
- **q** | **String**| Search query. | [optional]
- **limit** | **Integer**| Pagination limit. | [optional]
- **offset** | **Integer**| Specifies the first item to return in the collection. | [optional]
- **after** | **Long**| A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned will have occurred after this timestamp. | [optional]
+ **projKey** | **String**| The project key |
+ **envKey** | **String**| The environment key |
+ **q** | **String**| Full-text search for users based on name, first name, last name, e-mail address, or key | [optional]
+ **limit** | **Long**| Specifies the maximum number of items in the collection to return (max: 50, default: 20) | [optional]
+ **offset** | **Long**| Specifies the first item to return in the collection | [optional]
+ **after** | **Long**| A unix epoch time in milliseconds specifying the maximum last time a user requested a feature flag from LaunchDarkly | [optional]
+ **searchAfter** | **String**| Limits results to users with sort values after the value you specify. You can use this for pagination, but we recommend using the &#x60;next&#x60; link we provide instead. | [optional]
 
 ### Return type
 
@@ -122,46 +156,67 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Users collection response |  -  |
+**400** | Bad request |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**404** | Invalid resource identifier |  -  |
+**429** | Rate limited |  -  |
 
 <a name="getUser"></a>
 # **getUser**
-> UserRecord getUser(projectKey, environmentKey, userKey)
+> User getUser(projKey, envKey, key)
 
-Get a user by key.
+Get user
+
+Get a user by key. The &#x60;user&#x60; object contains all attributes sent in &#x60;variation&#x60; calls for that key.
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.UsersApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.UsersApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-UsersApi apiInstance = new UsersApi();
-String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
-String userKey = "userKey_example"; // String | The user's key.
-try {
-    UserRecord result = apiInstance.getUser(projectKey, environmentKey, userKey);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#getUser");
-    e.printStackTrace();
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String projKey = "projKey_example"; // String | The project key
+    String envKey = "envKey_example"; // String | The environment key
+    String key = "key_example"; // String | The user key
+    try {
+      User result = apiInstance.getUser(projKey, envKey, key);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#getUser");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -169,58 +224,78 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
- **userKey** | **String**| The user&#39;s key. |
+ **projKey** | **String**| The project key |
+ **envKey** | **String**| The environment key |
+ **key** | **String**| The user key |
 
 ### Return type
 
-[**UserRecord**](UserRecord.md)
+[**User**](User.md)
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | User response |  -  |
+**400** | Bad request |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**404** | Invalid resource identifier |  -  |
+**429** | Rate limited |  -  |
 
 <a name="getUsers"></a>
 # **getUsers**
-> Users getUsers(projectKey, environmentKey, limit, h, scrollId)
+> Users getUsers(projKey, envKey, limit, searchAfter)
 
-List all users in the environment. Includes the total count of users. In each page, there will be up to &#39;limit&#39; users returned (default 20). This is useful for exporting all users in the system for further analysis. Paginated collections will include a next link containing a URL with the next set of elements in the collection.
+List users
+
+List all users in the environment. Includes the total count of users. In each page, there is up to &#x60;limit&#x60; users returned. The default is 20. This is useful for exporting all users in the system for further analysis. To paginate through, follow the &#x60;next&#x60; link in the &#x60;_links&#x60; object, as [described in Representations](/#section/Representations). 
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.UsersApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.UsersApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-UsersApi apiInstance = new UsersApi();
-String projectKey = "projectKey_example"; // String | The project key, used to tie the flags together under one project so they can be managed together.
-String environmentKey = "environmentKey_example"; // String | The environment key, used to tie together flag configuration and users under one environment so they can be managed together.
-Integer limit = 56; // Integer | Pagination limit.
-String h = "h_example"; // String | This parameter is required when following \"next\" links.
-String scrollId = "scrollId_example"; // String | This parameter is required when following \"next\" links.
-try {
-    Users result = apiInstance.getUsers(projectKey, environmentKey, limit, h, scrollId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#getUsers");
-    e.printStackTrace();
+    UsersApi apiInstance = new UsersApi(defaultClient);
+    String projKey = "projKey_example"; // String | The project key
+    String envKey = "envKey_example"; // String | The environment key
+    Long limit = 56L; // Long | The number of elements to return per page
+    String searchAfter = "searchAfter_example"; // String | Limits results to users with sort values after the value you specify. You can use this for pagination, but we recommend using the `next` link we provide instead.
+    try {
+      Users result = apiInstance.getUsers(projKey, envKey, limit, searchAfter);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsersApi#getUsers");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -228,11 +303,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key, used to tie the flags together under one project so they can be managed together. |
- **environmentKey** | **String**| The environment key, used to tie together flag configuration and users under one environment so they can be managed together. |
- **limit** | **Integer**| Pagination limit. | [optional]
- **h** | **String**| This parameter is required when following \&quot;next\&quot; links. | [optional]
- **scrollId** | **String**| This parameter is required when following \&quot;next\&quot; links. | [optional]
+ **projKey** | **String**| The project key |
+ **envKey** | **String**| The environment key |
+ **limit** | **Long**| The number of elements to return per page | [optional]
+ **searchAfter** | **String**| Limits results to users with sort values after the value you specify. You can use this for pagination, but we recommend using the &#x60;next&#x60; link we provide instead. | [optional]
 
 ### Return type
 
@@ -240,10 +314,20 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Users collection response |  -  |
+**400** | Bad request |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**404** | Invalid resource identifier |  -  |
+**429** | Rate limited |  -  |
 

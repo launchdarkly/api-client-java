@@ -1,11 +1,14 @@
 
+
 # UserSegments
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**links** | [**Links**](Links.md) |  |  [optional]
-**items** | [**List&lt;UserSegment&gt;**](UserSegment.md) |  |  [optional]
+**items** | [**List&lt;UserSegment&gt;**](UserSegment.md) |  | 
+**links** | [**Map&lt;String, Link&gt;**](Link.md) |  | 
 
 
 

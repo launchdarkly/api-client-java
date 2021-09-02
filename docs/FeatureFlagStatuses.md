@@ -1,11 +1,14 @@
 
+
 # FeatureFlagStatuses
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**links** | [**FeatureFlagStatusLinks**](FeatureFlagStatusLinks.md) |  |  [optional]
-**items** | [**List&lt;FeatureFlagStatus&gt;**](FeatureFlagStatus.md) |  |  [optional]
+**links** | [**Map&lt;String, Link&gt;**](Link.md) |  | 
+**items** | [**List&lt;FlagStatusRep&gt;**](FlagStatusRep.md) |  |  [optional]
 
 
 

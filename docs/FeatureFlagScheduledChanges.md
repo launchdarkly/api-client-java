@@ -1,11 +1,14 @@
 
+
 # FeatureFlagScheduledChanges
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**links** | [**Links**](Links.md) |  |  [optional]
-**items** | [**List&lt;FeatureFlagScheduledChange&gt;**](FeatureFlagScheduledChange.md) |  |  [optional]
+**items** | [**List&lt;FeatureFlagScheduledChange&gt;**](FeatureFlagScheduledChange.md) |  | 
+**links** | [**Map&lt;String, Link&gt;**](Link.md) |  |  [optional]
 
 
 

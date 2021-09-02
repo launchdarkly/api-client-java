@@ -1,12 +1,15 @@
 
+
 # FeatureFlagStatusAcrossEnvironments
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**links** | [**FeatureFlagStatusLinks**](FeatureFlagStatusLinks.md) |  |  [optional]
-**key** | **String** |  |  [optional]
-**environments** | [**Map&lt;String, FeatureFlagStatusForQueriedEnvironment&gt;**](FeatureFlagStatusForQueriedEnvironment.md) |  |  [optional]
+**environments** | [**Map&lt;String, FeatureFlagStatus&gt;**](FeatureFlagStatus.md) | Flag status for environment. |  [optional]
+**key** | **String** | feature flag key |  [optional]
+**links** | [**Map&lt;String, Link&gt;**](Link.md) |  |  [optional]
 
 
 

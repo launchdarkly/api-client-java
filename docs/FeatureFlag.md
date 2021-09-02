@@ -1,29 +1,43 @@
 
+
 # FeatureFlag
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **String** |  |  [optional]
-**name** | **String** | Name of the feature flag. |  [optional]
-**description** | **String** | Description of the feature flag. |  [optional]
-**kind** | **String** | Whether the feature flag is a boolean flag or multivariate. |  [optional]
-**creationDate** | **Long** | A unix epoch time in milliseconds specifying the creation time of this flag. |  [optional]
-**includeInSnippet** | **Boolean** |  |  [optional]
-**temporary** | **Boolean** | Whether or not this flag is temporary. |  [optional]
-**maintainerId** | **String** | The ID of the member that should maintain this flag. |  [optional]
-**tags** | **List&lt;String&gt;** | An array of tags for this feature flag. |  [optional]
-**variations** | [**List&lt;Variation&gt;**](Variation.md) | The variations for this feature flag. |  [optional]
-**goalIds** | **List&lt;String&gt;** | An array goals from all environments associated with this feature flag |  [optional]
-**version** | **Integer** |  |  [optional]
-**customProperties** | [**Map&lt;String, CustomProperty&gt;**](CustomProperty.md) | A mapping of keys to CustomProperty entries. |  [optional]
-**links** | [**Links**](Links.md) |  |  [optional]
-**maintainer** | [**Member**](Member.md) |  |  [optional]
-**environments** | [**Map&lt;String, FeatureFlagConfig&gt;**](FeatureFlagConfig.md) |  |  [optional]
-**archivedDate** | **Long** | A unix epoch time in milliseconds specifying the archived time of this flag. |  [optional]
-**archived** | **Boolean** | Whether or not this flag is archived. |  [optional]
+**name** | **String** | A human-friendly name for the feature flag | 
+**kind** | [**KindEnum**](#KindEnum) | Kind of feature flag | 
+**description** | **String** | Description of the feature flag |  [optional]
+**key** | **String** | A unique key used to reference the flag in your code | 
+**version** | **Integer** | Version of the feature flag | 
+**creationDate** | **Long** |  | 
+**includeInSnippet** | **Boolean** | Deprecated, use clientSideAvailability. Whether or not this flag should be made available to the client-side JavaScript SDK |  [optional]
 **clientSideAvailability** | [**ClientSideAvailability**](ClientSideAvailability.md) |  |  [optional]
+**variations** | [**List&lt;Variation&gt;**](Variation.md) | An array of possible variations for the flag | 
+**variationJsonSchema** | **Object** |  |  [optional]
+**temporary** | **Boolean** | Whether or not the flag is a temporary flag | 
+**tags** | **List&lt;String&gt;** | Tags for the feature flag | 
+**links** | [**Map&lt;String, Link&gt;**](Link.md) |  | 
+**maintainerId** | **String** | Associated maintainerId for the feature flag |  [optional]
+**maintainer** | [**MemberSummaryRep**](MemberSummaryRep.md) |  |  [optional]
+**goalIds** | **List&lt;String&gt;** |  |  [optional]
+**experiments** | [**ExperimentInfoRep**](ExperimentInfoRep.md) |  | 
+**customProperties** | [**Map&lt;String, CustomProperty&gt;**](CustomProperty.md) |  | 
+**archived** | **Boolean** | Boolean indicating if the feature flag is archived | 
+**archivedDate** | **Long** |  |  [optional]
 **defaults** | [**Defaults**](Defaults.md) |  |  [optional]
+**environments** | [**Map&lt;String, FeatureFlagConfig&gt;**](FeatureFlagConfig.md) |  | 
+
+
+
+## Enum: KindEnum
+
+Name | Value
+---- | -----
+BOOLEAN | &quot;boolean&quot;
+MULTIVARIATE | &quot;multivariate&quot;
 
 
 

@@ -1,46 +1,57 @@
 # WebhooksApi
 
-All URIs are relative to *https://app.launchdarkly.com/api/v2*
+All URIs are relative to *https://app.launchdarkly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteWebhook**](WebhooksApi.md#deleteWebhook) | **DELETE** /webhooks/{resourceId} | Delete a webhook by ID.
-[**getWebhook**](WebhooksApi.md#getWebhook) | **GET** /webhooks/{resourceId} | Get a webhook by ID.
-[**getWebhooks**](WebhooksApi.md#getWebhooks) | **GET** /webhooks | Fetch a list of all webhooks.
-[**patchWebhook**](WebhooksApi.md#patchWebhook) | **PATCH** /webhooks/{resourceId} | Modify a webhook by ID.
-[**postWebhook**](WebhooksApi.md#postWebhook) | **POST** /webhooks | Create a webhook.
+[**deleteWebhook**](WebhooksApi.md#deleteWebhook) | **DELETE** /api/v2/webhooks/{id} | Delete webhook
+[**getAllWebhooks**](WebhooksApi.md#getAllWebhooks) | **GET** /api/v2/webhooks | List webhooks
+[**getWebhook**](WebhooksApi.md#getWebhook) | **GET** /api/v2/webhooks/{id} | Get webhook
+[**patchWebhook**](WebhooksApi.md#patchWebhook) | **PATCH** /api/v2/webhooks/{id} | Update webhook
+[**postWebhook**](WebhooksApi.md#postWebhook) | **POST** /api/v2/webhooks | Creates a webhook
 
 
 <a name="deleteWebhook"></a>
 # **deleteWebhook**
-> deleteWebhook(resourceId)
+> deleteWebhook(id)
+
+Delete webhook
 
 Delete a webhook by ID.
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.WebhooksApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.WebhooksApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-WebhooksApi apiInstance = new WebhooksApi();
-String resourceId = "resourceId_example"; // String | The resource ID.
-try {
-    apiInstance.deleteWebhook(resourceId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling WebhooksApi#deleteWebhook");
-    e.printStackTrace();
+    WebhooksApi apiInstance = new WebhooksApi(defaultClient);
+    String id = "id_example"; // String | The ID of the webhook to delete
+    try {
+      apiInstance.deleteWebhook(id);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WebhooksApi#deleteWebhook");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -48,7 +59,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resourceId** | **String**| The resource ID. |
+ **id** | **String**| The ID of the webhook to delete |
 
 ### Return type
 
@@ -56,96 +67,63 @@ null (empty response body)
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
-<a name="getWebhook"></a>
-# **getWebhook**
-> Webhook getWebhook(resourceId)
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Action completed successfully |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**404** | Invalid resource identifier |  -  |
+**429** | Rate limited |  -  |
 
-Get a webhook by ID.
+<a name="getAllWebhooks"></a>
+# **getAllWebhooks**
+> Webhooks getAllWebhooks()
 
-### Example
-```java
-// Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.WebhooksApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-WebhooksApi apiInstance = new WebhooksApi();
-String resourceId = "resourceId_example"; // String | The resource ID.
-try {
-    Webhook result = apiInstance.getWebhook(resourceId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling WebhooksApi#getWebhook");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **resourceId** | **String**| The resource ID. |
-
-### Return type
-
-[**Webhook**](Webhook.md)
-
-### Authorization
-
-[Token](../README.md#Token)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="getWebhooks"></a>
-# **getWebhooks**
-> Webhooks getWebhooks()
+List webhooks
 
 Fetch a list of all webhooks.
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.WebhooksApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.WebhooksApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-WebhooksApi apiInstance = new WebhooksApi();
-try {
-    Webhooks result = apiInstance.getWebhooks();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling WebhooksApi#getWebhooks");
-    e.printStackTrace();
+    WebhooksApi apiInstance = new WebhooksApi(defaultClient);
+    try {
+      Webhooks result = apiInstance.getAllWebhooks();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WebhooksApi#getAllWebhooks");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -158,45 +136,137 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Webhooks response |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**429** | Rate limited |  -  |
+
+<a name="getWebhook"></a>
+# **getWebhook**
+> Webhook getWebhook(id)
+
+Get webhook
+
+Get a single webhook by ID.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.WebhooksApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    WebhooksApi apiInstance = new WebhooksApi(defaultClient);
+    String id = "id_example"; // String | The ID of the webhook
+    try {
+      Webhook result = apiInstance.getWebhook(id);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WebhooksApi#getWebhook");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| The ID of the webhook |
+
+### Return type
+
+[**Webhook**](Webhook.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Webhook response |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**404** | Invalid resource identifier |  -  |
+**429** | Rate limited |  -  |
 
 <a name="patchWebhook"></a>
 # **patchWebhook**
-> Webhook patchWebhook(resourceId, patchDelta)
+> Webhook patchWebhook(id, patchOperation)
 
-Modify a webhook by ID.
+Update webhook
+
+Update a webhook&#39;s settings. The request should be a valid JSON Patch document describing the changes to be made to the webhook.
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.WebhooksApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.WebhooksApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-WebhooksApi apiInstance = new WebhooksApi();
-String resourceId = "resourceId_example"; // String | The resource ID.
-List<PatchOperation> patchDelta = Arrays.asList(new PatchOperation()); // List<PatchOperation> | Requires a JSON Patch representation of the desired changes to the project. 'http://jsonpatch.com/'
-try {
-    Webhook result = apiInstance.patchWebhook(resourceId, patchDelta);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling WebhooksApi#patchWebhook");
-    e.printStackTrace();
+    WebhooksApi apiInstance = new WebhooksApi(defaultClient);
+    String id = "id_example"; // String | The ID of the webhook to update
+    List<PatchOperation> patchOperation = Arrays.asList(); // List<PatchOperation> | 
+    try {
+      Webhook result = apiInstance.patchWebhook(id, patchOperation);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WebhooksApi#patchWebhook");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -204,8 +274,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resourceId** | **String**| The resource ID. |
- **patchDelta** | [**List&lt;PatchOperation&gt;**](PatchOperation.md)| Requires a JSON Patch representation of the desired changes to the project. &#39;http://jsonpatch.com/&#39; |
+ **id** | **String**| The ID of the webhook to update |
+ **patchOperation** | [**List&lt;PatchOperation&gt;**](PatchOperation.md)|  |
 
 ### Return type
 
@@ -213,44 +283,65 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Webhook response |  -  |
+**400** | Invalid request body |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**404** | Invalid resource identifier |  -  |
+**429** | Rate limited |  -  |
 
 <a name="postWebhook"></a>
 # **postWebhook**
-> Webhook postWebhook(webhookBody)
+> Webhook postWebhook(webhookPost)
 
-Create a webhook.
+Creates a webhook
+
+Create a new webhook
 
 ### Example
 ```java
 // Import classes:
-//import com.launchdarkly.api.ApiClient;
-//import com.launchdarkly.api.ApiException;
-//import com.launchdarkly.api.Configuration;
-//import com.launchdarkly.api.auth.*;
-//import com.launchdarkly.api.api.WebhooksApi;
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.WebhooksApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
 
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-WebhooksApi apiInstance = new WebhooksApi();
-WebhookBody webhookBody = new WebhookBody(); // WebhookBody | New webhook.
-try {
-    Webhook result = apiInstance.postWebhook(webhookBody);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling WebhooksApi#postWebhook");
-    e.printStackTrace();
+    WebhooksApi apiInstance = new WebhooksApi(defaultClient);
+    WebhookPost webhookPost = new WebhookPost(); // WebhookPost | 
+    try {
+      Webhook result = apiInstance.postWebhook(webhookPost);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WebhooksApi#postWebhook");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -258,7 +349,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhookBody** | [**WebhookBody**](WebhookBody.md)| New webhook. |
+ **webhookPost** | [**WebhookPost**](WebhookPost.md)|  |
 
 ### Return type
 
@@ -266,10 +357,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Token](../README.md#Token)
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Webhook response |  -  |
+**400** | Invalid request body |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**429** | Rate limited |  -  |
 
