@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * ExperimentInfoRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-09-29T21:03:05.635217Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-09-29T21:56:46.364887Z[Etc/UTC]")
 public class ExperimentInfoRep {
   public static final String SERIALIZED_NAME_BASELINE_IDX = "baselineIdx";
   @SerializedName(SERIALIZED_NAME_BASELINE_IDX)
