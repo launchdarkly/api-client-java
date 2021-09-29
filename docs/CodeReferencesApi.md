@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**getExtinctions**](CodeReferencesApi.md#getExtinctions) | **GET** /api/v2/code-refs/extinctions | List extinctions
 [**getRepositories**](CodeReferencesApi.md#getRepositories) | **GET** /api/v2/code-refs/repositories | List repositories
 [**getRepository**](CodeReferencesApi.md#getRepository) | **GET** /api/v2/code-refs/repositories/{repo} | Get repository
-[**getRootStatistic**](CodeReferencesApi.md#getRootStatistic) | **GET** /api/v2/code-refs/statistics | Get number of code references for flags
+[**getRootStatistic**](CodeReferencesApi.md#getRootStatistic) | **GET** /api/v2/code-refs/statistics | Get links to code reference repositories for each project
 [**getStatistics**](CodeReferencesApi.md#getStatistics) | **GET** /api/v2/code-refs/statistics/{projKey} | Get number of code references for flags
 [**patchRepository**](CodeReferencesApi.md#patchRepository) | **PATCH** /api/v2/code-refs/repositories/{repo} | Update repository
 [**postExtinction**](CodeReferencesApi.md#postExtinction) | **POST** /api/v2/code-refs/repositories/{repo}/branches/{branch} | Create extinction
@@ -556,7 +556,7 @@ Name | Type | Description  | Notes
 # **getRootStatistic**
 > StatisticsRoot getRootStatistic()
 
-Get number of code references for flags
+Get links to code reference repositories for each project
 
 Get links for all projects that have Code References.
 

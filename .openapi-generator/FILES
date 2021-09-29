@@ -37,6 +37,8 @@ docs/CustomRolePost.md
 docs/CustomRolePostData.md
 docs/CustomRoles.md
 docs/CustomRolesApi.md
+docs/CustomWorkflowMeta.md
+docs/CustomWorkflowStageMeta.md
 docs/DataExportDestinationsApi.md
 docs/DefaultClientSideAvailabilityPost.md
 docs/Defaults.md
@@ -118,6 +120,8 @@ docs/PatchOperation.md
 docs/PatchSegmentInstruction.md
 docs/PatchSegmentRequest.md
 docs/PatchWithComment.md
+docs/PermissionGrantInput.md
+docs/PermissionGrantRep.md
 docs/PostApprovalRequestApplyRequest.md
 docs/PostApprovalRequestReviewRequest.md
 docs/PostFlagScheduledChangesInput.md
@@ -162,6 +166,11 @@ docs/StatisticsRoot.md
 docs/SubjectDataRep.md
 docs/Target.md
 docs/TargetResourceRep.md
+docs/TeamCollectionRep.md
+docs/TeamPatchInput.md
+docs/TeamPostInput.md
+docs/TeamRep.md
+docs/TeamsBetaApi.md
 docs/TitleRep.md
 docs/Token.md
 docs/TokenDataRep.md
@@ -230,6 +239,7 @@ src/main/java/com/launchdarkly/api/api/ProjectsApi.java
 src/main/java/com/launchdarkly/api/api/RelayProxyConfigurationsApi.java
 src/main/java/com/launchdarkly/api/api/ScheduledChangesApi.java
 src/main/java/com/launchdarkly/api/api/SegmentsApi.java
+src/main/java/com/launchdarkly/api/api/TeamsBetaApi.java
 src/main/java/com/launchdarkly/api/api/UserSettingsApi.java
 src/main/java/com/launchdarkly/api/api/UsersApi.java
 src/main/java/com/launchdarkly/api/api/UsersBetaApi.java
@@ -263,6 +273,8 @@ src/main/java/com/launchdarkly/api/model/CustomRole.java
 src/main/java/com/launchdarkly/api/model/CustomRolePost.java
 src/main/java/com/launchdarkly/api/model/CustomRolePostData.java
 src/main/java/com/launchdarkly/api/model/CustomRoles.java
+src/main/java/com/launchdarkly/api/model/CustomWorkflowMeta.java
+src/main/java/com/launchdarkly/api/model/CustomWorkflowStageMeta.java
 src/main/java/com/launchdarkly/api/model/DefaultClientSideAvailabilityPost.java
 src/main/java/com/launchdarkly/api/model/Defaults.java
 src/main/java/com/launchdarkly/api/model/DependentFlag.java
@@ -337,6 +349,8 @@ src/main/java/com/launchdarkly/api/model/PatchOperation.java
 src/main/java/com/launchdarkly/api/model/PatchSegmentInstruction.java
 src/main/java/com/launchdarkly/api/model/PatchSegmentRequest.java
 src/main/java/com/launchdarkly/api/model/PatchWithComment.java
+src/main/java/com/launchdarkly/api/model/PermissionGrantInput.java
+src/main/java/com/launchdarkly/api/model/PermissionGrantRep.java
 src/main/java/com/launchdarkly/api/model/PostApprovalRequestApplyRequest.java
 src/main/java/com/launchdarkly/api/model/PostApprovalRequestReviewRequest.java
 src/main/java/com/launchdarkly/api/model/PostFlagScheduledChangesInput.java
@@ -377,6 +391,10 @@ src/main/java/com/launchdarkly/api/model/StatisticsRoot.java
 src/main/java/com/launchdarkly/api/model/SubjectDataRep.java
 src/main/java/com/launchdarkly/api/model/Target.java
 src/main/java/com/launchdarkly/api/model/TargetResourceRep.java
+src/main/java/com/launchdarkly/api/model/TeamCollectionRep.java
+src/main/java/com/launchdarkly/api/model/TeamPatchInput.java
+src/main/java/com/launchdarkly/api/model/TeamPostInput.java
+src/main/java/com/launchdarkly/api/model/TeamRep.java
 src/main/java/com/launchdarkly/api/model/TitleRep.java
 src/main/java/com/launchdarkly/api/model/Token.java
 src/main/java/com/launchdarkly/api/model/TokenDataRep.java
@@ -419,6 +437,7 @@ src/test/java/com/launchdarkly/api/api/ProjectsApiTest.java
 src/test/java/com/launchdarkly/api/api/RelayProxyConfigurationsApiTest.java
 src/test/java/com/launchdarkly/api/api/ScheduledChangesApiTest.java
 src/test/java/com/launchdarkly/api/api/SegmentsApiTest.java
+src/test/java/com/launchdarkly/api/api/TeamsBetaApiTest.java
 src/test/java/com/launchdarkly/api/api/UserSettingsApiTest.java
 src/test/java/com/launchdarkly/api/api/UsersApiTest.java
 src/test/java/com/launchdarkly/api/api/UsersBetaApiTest.java
@@ -448,6 +467,8 @@ src/test/java/com/launchdarkly/api/model/CustomRolePostDataTest.java
 src/test/java/com/launchdarkly/api/model/CustomRolePostTest.java
 src/test/java/com/launchdarkly/api/model/CustomRoleTest.java
 src/test/java/com/launchdarkly/api/model/CustomRolesTest.java
+src/test/java/com/launchdarkly/api/model/CustomWorkflowMetaTest.java
+src/test/java/com/launchdarkly/api/model/CustomWorkflowStageMetaTest.java
 src/test/java/com/launchdarkly/api/model/DefaultClientSideAvailabilityPostTest.java
 src/test/java/com/launchdarkly/api/model/DefaultsTest.java
 src/test/java/com/launchdarkly/api/model/DependentFlagEnvironmentTest.java
@@ -522,6 +543,8 @@ src/test/java/com/launchdarkly/api/model/PatchOperationTest.java
 src/test/java/com/launchdarkly/api/model/PatchSegmentInstructionTest.java
 src/test/java/com/launchdarkly/api/model/PatchSegmentRequestTest.java
 src/test/java/com/launchdarkly/api/model/PatchWithCommentTest.java
+src/test/java/com/launchdarkly/api/model/PermissionGrantInputTest.java
+src/test/java/com/launchdarkly/api/model/PermissionGrantRepTest.java
 src/test/java/com/launchdarkly/api/model/PostApprovalRequestApplyRequestTest.java
 src/test/java/com/launchdarkly/api/model/PostApprovalRequestReviewRequestTest.java
 src/test/java/com/launchdarkly/api/model/PostFlagScheduledChangesInputTest.java
@@ -562,6 +585,10 @@ src/test/java/com/launchdarkly/api/model/StatisticsRootTest.java
 src/test/java/com/launchdarkly/api/model/SubjectDataRepTest.java
 src/test/java/com/launchdarkly/api/model/TargetResourceRepTest.java
 src/test/java/com/launchdarkly/api/model/TargetTest.java
+src/test/java/com/launchdarkly/api/model/TeamCollectionRepTest.java
+src/test/java/com/launchdarkly/api/model/TeamPatchInputTest.java
+src/test/java/com/launchdarkly/api/model/TeamPostInputTest.java
+src/test/java/com/launchdarkly/api/model/TeamRepTest.java
 src/test/java/com/launchdarkly/api/model/TitleRepTest.java
 src/test/java/com/launchdarkly/api/model/TokenDataRepTest.java
 src/test/java/com/launchdarkly/api/model/TokenTest.java

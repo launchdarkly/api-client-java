@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **operatingOnId** | **String** | ID of scheduled change to edit or delete |  [optional]
 **integrationMetadata** | [**IntegrationMetadata**](IntegrationMetadata.md) |  |  [optional]
 **source** | [**CopiedFromEnv**](CopiedFromEnv.md) |  |  [optional]
+**customWorkflowMetaData** | [**CustomWorkflowMeta**](CustomWorkflowMeta.md) |  |  [optional]
 
 
 
