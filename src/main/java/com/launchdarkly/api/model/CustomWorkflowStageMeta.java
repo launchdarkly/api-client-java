@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * CustomWorkflowStageMeta
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-01T17:55:32.927512Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-01T19:03:54.089510Z[Etc/UTC]")
 public class CustomWorkflowStageMeta {
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
