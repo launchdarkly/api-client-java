@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * ReferenceRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-01T19:03:54.089510Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-19T20:23:06.329570Z[Etc/UTC]")
 public class ReferenceRep {
   public static final String SERIALIZED_NAME_PATH = "path";
   @SerializedName(SERIALIZED_NAME_PATH)
@@ -42,7 +42,7 @@ public class ReferenceRep {
 
   public static final String SERIALIZED_NAME_HUNKS = "hunks";
   @SerializedName(SERIALIZED_NAME_HUNKS)
-  private List<HunkRep> hunks = null;
+  private List<HunkRep> hunks = new ArrayList<HunkRep>();
 
 
   public ReferenceRep path(String path) {
@@ -52,11 +52,11 @@ public class ReferenceRep {
   }
 
    /**
-   * Get path
+   * File path of the reference
    * @return path
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "/main/index.js", required = true, value = "File path of the reference")
 
   public String getPath() {
     return path;
@@ -75,11 +75,11 @@ public class ReferenceRep {
   }
 
    /**
-   * Get hint
+   * Programming language used in the file
    * @return hint
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "javascript", value = "Programming language used in the file")
 
   public String getHint() {
     return hint;
@@ -98,9 +98,6 @@ public class ReferenceRep {
   }
 
   public ReferenceRep addHunksItem(HunkRep hunksItem) {
-    if (this.hunks == null) {
-      this.hunks = new ArrayList<HunkRep>();
-    }
     this.hunks.add(hunksItem);
     return this;
   }
@@ -109,8 +106,8 @@ public class ReferenceRep {
    * Get hunks
    * @return hunks
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
   public List<HunkRep> getHunks() {
     return hunks;

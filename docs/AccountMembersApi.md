@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Delete account member
 
-Delete a single account member by ID
+Delete a single account member by ID. Requests to delete account members will not work if SCIM is enabled for the account.
 
 ### Example
 ```java
@@ -72,12 +72,12 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Action completed successfully |  -  |
+**204** | Action succeeded |  -  |
 **401** | Invalid access token |  -  |
 **403** | Forbidden |  -  |
 **404** | Invalid resource identifier |  -  |
@@ -189,7 +189,7 @@ public class Example {
     AccountMembersApi apiInstance = new AccountMembersApi(defaultClient);
     Long limit = 56L; // Long | The number of members to return in the response. Defaults to 20.
     Long offset = 56L; // Long | Where to start in the list. This is for use with pagination. For example, an offset of 10 would skip the first ten items and then return the next `limit` items.
-    String filter = "filter_example"; // String | A comma-separated list of filters. Each filter is of the form `field:value`. Supported fields are explained below.
+    String filter = "filter_example"; // String | A comma-separated list of filters. Each filter is of the form `field:value`. Supported fields are explained above.
     String sort = "sort_example"; // String | A comma-separated list of fields to sort by. Fields prefixed by a dash ( - ) sort in descending order.
     try {
       Members result = apiInstance.getMembers(limit, offset, filter, sort);
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Long**| The number of members to return in the response. Defaults to 20. | [optional]
  **offset** | **Long**| Where to start in the list. This is for use with pagination. For example, an offset of 10 would skip the first ten items and then return the next &#x60;limit&#x60; items. | [optional]
- **filter** | **String**| A comma-separated list of filters. Each filter is of the form &#x60;field:value&#x60;. Supported fields are explained below. | [optional]
+ **filter** | **String**| A comma-separated list of filters. Each filter is of the form &#x60;field:value&#x60;. Supported fields are explained above. | [optional]
  **sort** | **String**| A comma-separated list of fields to sort by. Fields prefixed by a dash ( - ) sort in descending order. | [optional]
 
 ### Return type
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 
 Modify an account member
 
-Update a single account member. The request should be a valid JSON Patch document describing the changes to be made to the member.
+Update a single account member. The request should be a valid JSON Patch document describing the changes to be made to the member. Requests to update account members will not work if SCIM is enabled for the account.
 
 ### Example
 ```java
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Member response JSON |  -  |
-**400** | Invalid request body |  -  |
+**400** | Invalid request |  -  |
 **401** | Invalid access token |  -  |
 **403** | Forbidden |  -  |
 **404** | Invalid resource identifier |  -  |
@@ -315,11 +315,11 @@ Name | Type | Description  | Notes
 
 <a name="postMembers"></a>
 # **postMembers**
-> Members postMembers(inlineObject1)
+> Members postMembers(newMemberForm)
 
 Invite new members
 
-&gt; ### Full use of this API resource is only available to accounts with paid subscriptions &gt; &gt; The ability to bulk invite members is a paid feature. Single members may be invited if not on a paid plan.  Invite one or more new members to join an account. Each member is sent an invitation. Members with \&quot;admin\&quot; or \&quot;owner\&quot; roles may create new members, as well as anyone with a \&quot;createMember\&quot; permission for \&quot;member/\\*\&quot;. If a member cannot be invited, the entire request is rejected and no members are invited from that request.  Each member _must_ have an &#x60;email&#x60; field and either a &#x60;role&#x60; or a &#x60;customRoles&#x60; field. If any of the fields are not populated correctly, the request is rejected with the reason specified in the \&quot;message\&quot; field of the response.  _No more than 50 members may be created per request._  A request may also fail because of conflicts with existing members. These conflicts are reported using the additional &#x60;code&#x60; and &#x60;invalid_emails&#x60; response fields with the following possible values for &#x60;code&#x60;:  - **email_already_exists_in_account**: A member with this email address already exists in this account. - **email_taken_in_different_account**: A member with this email address exists in another account. - **duplicate_email**s: This request contains two or more members with the same email address.  A request that fails for one of the above reasons returns an HTTP response code of 400 (Bad Request). 
+&gt; ### Full use of this API resource is only available to accounts with paid subscriptions &gt; &gt; The ability to bulk invite members is a paid feature. Single members may be invited if not on a paid plan.  Invite one or more new members to join an account. Each member is sent an invitation. Members with \&quot;admin\&quot; or \&quot;owner\&quot; roles may create new members, as well as anyone with a \&quot;createMember\&quot; permission for \&quot;member/\\*\&quot;. If a member cannot be invited, the entire request is rejected and no members are invited from that request.  Each member _must_ have an &#x60;email&#x60; field and either a &#x60;role&#x60; or a &#x60;customRoles&#x60; field. If any of the fields are not populated correctly, the request is rejected with the reason specified in the \&quot;message\&quot; field of the response.  Requests to create account members will not work if SCIM is enabled for the account.  _No more than 50 members may be created per request._  A request may also fail because of conflicts with existing members. These conflicts are reported using the additional &#x60;code&#x60; and &#x60;invalid_emails&#x60; response fields with the following possible values for &#x60;code&#x60;:  - **email_already_exists_in_account**: A member with this email address already exists in this account. - **email_taken_in_different_account**: A member with this email address exists in another account. - **duplicate_email**s: This request contains two or more members with the same email address.  A request that fails for one of the above reasons returns an HTTP response code of 400 (Bad Request). 
 
 ### Example
 ```java
@@ -343,9 +343,9 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AccountMembersApi apiInstance = new AccountMembersApi(defaultClient);
-    List<InlineObject1> inlineObject1 = Arrays.asList(); // List<InlineObject1> | 
+    List<NewMemberForm> newMemberForm = Arrays.asList(); // List<NewMemberForm> | 
     try {
-      Members result = apiInstance.postMembers(inlineObject1);
+      Members result = apiInstance.postMembers(newMemberForm);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AccountMembersApi#postMembers");
@@ -362,7 +362,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject1** | [**List&lt;InlineObject1&gt;**](InlineObject1.md)|  |
+ **newMemberForm** | [**List&lt;NewMemberForm&gt;**](NewMemberForm.md)|  |
 
 ### Return type
 
@@ -381,7 +381,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | Members response |  -  |
-**400** | Invalid request body |  -  |
+**400** | Invalid request |  -  |
 **401** | Invalid access token |  -  |
 **403** | Forbidden |  -  |
 **409** | Status conflict |  -  |

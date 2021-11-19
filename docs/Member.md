@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **integrationMetadata** | [**IntegrationMetadata**](IntegrationMetadata.md) |  |  [optional]
 **teams** | [**List&lt;MemberTeamSummaryRep&gt;**](MemberTeamSummaryRep.md) |  |  [optional]
 **permissionGrants** | [**List&lt;MemberPermissionGrantSummaryRep&gt;**](MemberPermissionGrantSummaryRep.md) |  |  [optional]
+**creationDate** | **Long** |  | 
 
 
 

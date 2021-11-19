@@ -18,8 +18,14 @@ import com.launchdarkly.api.model.CreateCopyFlagConfigApprovalRequestRequest;
 import com.launchdarkly.api.model.CreateFlagConfigApprovalRequestRequest;
 import com.launchdarkly.api.model.FlagConfigApprovalRequestResponse;
 import com.launchdarkly.api.model.FlagConfigApprovalRequestsResponse;
+import com.launchdarkly.api.model.ForbiddenErrorRep;
+import com.launchdarkly.api.model.InvalidRequestErrorRep;
+import com.launchdarkly.api.model.NotFoundErrorRep;
 import com.launchdarkly.api.model.PostApprovalRequestApplyRequest;
 import com.launchdarkly.api.model.PostApprovalRequestReviewRequest;
+import com.launchdarkly.api.model.RateLimitedErrorRep;
+import com.launchdarkly.api.model.StatusConflictErrorRep;
+import com.launchdarkly.api.model.UnauthorizedErrorRep;
 import org.junit.Test;
 import org.junit.Ignore;
 

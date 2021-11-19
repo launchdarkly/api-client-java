@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * TeamPostInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-01T19:03:54.089510Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-19T20:23:06.329570Z[Etc/UTC]")
 public class TeamPostInput {
   public static final String SERIALIZED_NAME_CUSTOM_ROLE_KEYS = "customRoleKeys";
   @SerializedName(SERIALIZED_NAME_CUSTOM_ROLE_KEYS)
@@ -72,11 +72,11 @@ public class TeamPostInput {
   }
 
    /**
-   * Get customRoleKeys
+   * List of custom role keys the team will access
    * @return customRoleKeys
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "List of custom role keys the team will access")
 
   public List<String> getCustomRoleKeys() {
     return customRoleKeys;
@@ -95,11 +95,11 @@ public class TeamPostInput {
   }
 
    /**
-   * Get description
+   * A description of the team
    * @return description
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "A description of the team")
 
   public String getDescription() {
     return description;
@@ -118,11 +118,11 @@ public class TeamPostInput {
   }
 
    /**
-   * Get key
+   * The team&#39;s key or ID
    * @return key
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "The team's key or ID")
 
   public String getKey() {
     return key;
@@ -149,11 +149,11 @@ public class TeamPostInput {
   }
 
    /**
-   * Get memberIDs
+   * A list of member IDs who belong to the team
    * @return memberIDs
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "A list of member IDs who belong to the team")
 
   public List<String> getMemberIDs() {
     return memberIDs;
@@ -172,11 +172,11 @@ public class TeamPostInput {
   }
 
    /**
-   * Get name
+   * A human-friendly name for the team
    * @return name
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "A human-friendly name for the team")
 
   public String getName() {
     return name;
@@ -203,11 +203,11 @@ public class TeamPostInput {
   }
 
    /**
-   * Get permissionGrants
+   * A list of permission grants to apply to the team. Can use \&quot;maintainTeam\&quot; to add team maintainers
    * @return permissionGrants
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "A list of permission grants to apply to the team. Can use \"maintainTeam\" to add team maintainers")
 
   public List<PermissionGrantInput> getPermissionGrants() {
     return permissionGrants;

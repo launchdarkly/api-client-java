@@ -203,11 +203,11 @@ public class FlagConfigApprovalRequestResponseTest {
     }
 
     /**
-     * Test the property 'customWorkflowMetaData'
+     * Test the property 'customWorkflowMetadata'
      */
     @Test
-    public void customWorkflowMetaDataTest() {
-        // TODO: test customWorkflowMetaData
+    public void customWorkflowMetadataTest() {
+        // TODO: test customWorkflowMetadata
     }
 
 }

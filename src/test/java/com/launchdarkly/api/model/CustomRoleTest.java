@@ -48,6 +48,14 @@ public class CustomRoleTest {
     }
 
     /**
+     * Test the property 'id'
+     */
+    @Test
+    public void idTest() {
+        // TODO: test id
+    }
+
+    /**
      * Test the property 'links'
      */
     @Test
@@ -56,19 +64,11 @@ public class CustomRoleTest {
     }
 
     /**
-     * Test the property 'name'
+     * Test the property 'access'
      */
     @Test
-    public void nameTest() {
-        // TODO: test name
-    }
-
-    /**
-     * Test the property 'key'
-     */
-    @Test
-    public void keyTest() {
-        // TODO: test key
+    public void accessTest() {
+        // TODO: test access
     }
 
     /**
@@ -80,11 +80,19 @@ public class CustomRoleTest {
     }
 
     /**
-     * Test the property 'id'
+     * Test the property 'key'
      */
     @Test
-    public void idTest() {
-        // TODO: test id
+    public void keyTest() {
+        // TODO: test key
+    }
+
+    /**
+     * Test the property 'name'
+     */
+    @Test
+    public void nameTest() {
+        // TODO: test name
     }
 
     /**
@@ -96,11 +104,11 @@ public class CustomRoleTest {
     }
 
     /**
-     * Test the property 'access'
+     * Test the property 'basePermissions'
      */
     @Test
-    public void accessTest() {
-        // TODO: test access
+    public void basePermissionsTest() {
+        // TODO: test basePermissions
     }
 
 }

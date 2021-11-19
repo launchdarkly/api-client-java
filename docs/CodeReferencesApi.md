@@ -14,7 +14,7 @@ Method | HTTP request | Description
 [**getRootStatistic**](CodeReferencesApi.md#getRootStatistic) | **GET** /api/v2/code-refs/statistics | Get links to code reference repositories for each project
 [**getStatistics**](CodeReferencesApi.md#getStatistics) | **GET** /api/v2/code-refs/statistics/{projKey} | Get number of code references for flags
 [**patchRepository**](CodeReferencesApi.md#patchRepository) | **PATCH** /api/v2/code-refs/repositories/{repo} | Update repository
-[**postExtinction**](CodeReferencesApi.md#postExtinction) | **POST** /api/v2/code-refs/repositories/{repo}/branches/{branch} | Create extinction
+[**postExtinction**](CodeReferencesApi.md#postExtinction) | **POST** /api/v2/code-refs/repositories/{repo}/branches/{branch}/extinction-events | Create extinction
 [**postRepository**](CodeReferencesApi.md#postRepository) | **POST** /api/v2/code-refs/repositories | Create repository
 [**putBranch**](CodeReferencesApi.md#putBranch) | **PUT** /api/v2/code-refs/repositories/{repo}/branches/{branch} | Upsert branch
 
@@ -82,13 +82,13 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Action completed successfully |  -  |
-**400** | Invalid request body |  -  |
+**200** | Action succeeded |  -  |
+**400** | Invalid request |  -  |
 **401** | Invalid access token |  -  |
 **403** | Forbidden |  -  |
 **404** | Invalid resource identifier |  -  |
@@ -155,12 +155,12 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Action completed successfully |  -  |
+**204** | Action succeeded |  -  |
 **400** | Invalid request |  -  |
 **401** | Invalid access token |  -  |
 **403** | Forbidden |  -  |
@@ -352,7 +352,7 @@ public class Example {
 
     CodeReferencesApi apiInstance = new CodeReferencesApi(defaultClient);
     String repoName = "repoName_example"; // String | Filter results to a specific repository
-    String branchName = "branchName_example"; // String | Filter results to a specific branch
+    String branchName = "branchName_example"; // String | Filter results to a specific branch. By default, only the default branch will be queried for extinctions.
     String projKey = "projKey_example"; // String | Filter results to a specific project
     String flagKey = "flagKey_example"; // String | Filter results to a specific flag key
     try {
@@ -374,7 +374,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **repoName** | **String**| Filter results to a specific repository | [optional]
- **branchName** | **String**| Filter results to a specific branch | [optional]
+ **branchName** | **String**| Filter results to a specific branch. By default, only the default branch will be queried for extinctions. | [optional]
  **projKey** | **String**| Filter results to a specific project | [optional]
  **flagKey** | **String**| Filter results to a specific flag key | [optional]
 
@@ -394,10 +394,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Branch response |  -  |
+**200** | Extinction collection response |  -  |
 **401** | Invalid access token |  -  |
 **403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
 **429** | Rate limited |  -  |
 
 <a name="getRepositories"></a>
@@ -766,7 +765,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Repository response |  -  |
-**400** | Invalid request body |  -  |
+**400** | Invalid request |  -  |
 **401** | Invalid access token |  -  |
 **403** | Forbidden |  -  |
 **404** | Invalid resource identifier |  -  |
@@ -774,7 +773,7 @@ Name | Type | Description  | Notes
 
 <a name="postExtinction"></a>
 # **postExtinction**
-> postExtinction(repo, branch, inlineObject)
+> postExtinction(repo, branch, extinctionRep)
 
 Create extinction
 
@@ -804,9 +803,9 @@ public class Example {
     CodeReferencesApi apiInstance = new CodeReferencesApi(defaultClient);
     String repo = "repo_example"; // String | The repository name
     String branch = "branch_example"; // String | The url-encoded branch name
-    List<InlineObject> inlineObject = Arrays.asList(); // List<InlineObject> | 
+    List<ExtinctionRep> extinctionRep = Arrays.asList(); // List<ExtinctionRep> | 
     try {
-      apiInstance.postExtinction(repo, branch, inlineObject);
+      apiInstance.postExtinction(repo, branch, extinctionRep);
     } catch (ApiException e) {
       System.err.println("Exception when calling CodeReferencesApi#postExtinction");
       System.err.println("Status code: " + e.getCode());
@@ -824,7 +823,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **repo** | **String**| The repository name |
  **branch** | **String**| The url-encoded branch name |
- **inlineObject** | [**List&lt;InlineObject&gt;**](InlineObject.md)|  |
+ **extinctionRep** | [**List&lt;ExtinctionRep&gt;**](ExtinctionRep.md)|  |
 
 ### Return type
 
@@ -837,13 +836,13 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Extinction response |  -  |
-**400** | Invalid request body |  -  |
+**200** | Action succeeded |  -  |
+**400** | Invalid request |  -  |
 **401** | Invalid access token |  -  |
 **403** | Forbidden |  -  |
 **404** | Invalid resource identifier |  -  |
@@ -851,7 +850,7 @@ null (empty response body)
 
 <a name="postRepository"></a>
 # **postRepository**
-> postRepository(repositoryPost)
+> RepositoryRep postRepository(repositoryPost)
 
 Create repository
 
@@ -881,7 +880,8 @@ public class Example {
     CodeReferencesApi apiInstance = new CodeReferencesApi(defaultClient);
     RepositoryPost repositoryPost = new RepositoryPost(); // RepositoryPost | 
     try {
-      apiInstance.postRepository(repositoryPost);
+      RepositoryRep result = apiInstance.postRepository(repositoryPost);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CodeReferencesApi#postRepository");
       System.err.println("Status code: " + e.getCode());
@@ -901,7 +901,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**RepositoryRep**](RepositoryRep.md)
 
 ### Authorization
 
@@ -910,20 +910,21 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Repository response |  -  |
-**400** | Invalid request body |  -  |
+**400** | Invalid request |  -  |
 **401** | Invalid access token |  -  |
 **403** | Forbidden |  -  |
+**409** | Status conflict |  -  |
 **429** | Rate limited |  -  |
 
 <a name="putBranch"></a>
 # **putBranch**
-> putBranch(repo, branch, branchRep)
+> putBranch(repo, branch, putBranch)
 
 Upsert branch
 
@@ -953,9 +954,9 @@ public class Example {
     CodeReferencesApi apiInstance = new CodeReferencesApi(defaultClient);
     String repo = "repo_example"; // String | The repository name
     String branch = "branch_example"; // String | The url-encoded branch name
-    BranchRep branchRep = new BranchRep(); // BranchRep | 
+    PutBranch putBranch = new PutBranch(); // PutBranch | 
     try {
-      apiInstance.putBranch(repo, branch, branchRep);
+      apiInstance.putBranch(repo, branch, putBranch);
     } catch (ApiException e) {
       System.err.println("Exception when calling CodeReferencesApi#putBranch");
       System.err.println("Status code: " + e.getCode());
@@ -973,7 +974,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **repo** | **String**| The repository name |
  **branch** | **String**| The url-encoded branch name |
- **branchRep** | [**BranchRep**](BranchRep.md)|  |
+ **putBranch** | [**PutBranch**](PutBranch.md)|  |
 
 ### Return type
 
@@ -986,15 +987,16 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Branch response |  -  |
-**400** | Invalid request body |  -  |
+**200** | Action succeeded |  -  |
+**400** | Invalid request |  -  |
 **401** | Invalid access token |  -  |
 **403** | Forbidden |  -  |
 **404** | Invalid resource identifier |  -  |
+**409** | Status conflict |  -  |
 **429** | Rate limited |  -  |
 

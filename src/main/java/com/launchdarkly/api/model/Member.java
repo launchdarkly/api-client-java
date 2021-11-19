@@ -36,7 +36,7 @@ import java.util.Map;
 /**
  * Member
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-01T19:03:54.089510Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-19T20:23:06.329570Z[Etc/UTC]")
 public class Member {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
@@ -105,6 +105,10 @@ public class Member {
   public static final String SERIALIZED_NAME_PERMISSION_GRANTS = "permissionGrants";
   @SerializedName(SERIALIZED_NAME_PERMISSION_GRANTS)
   private List<MemberPermissionGrantSummaryRep> permissionGrants = null;
+
+  public static final String SERIALIZED_NAME_CREATION_DATE = "creationDate";
+  @SerializedName(SERIALIZED_NAME_CREATION_DATE)
+  private Long creationDate;
 
 
   public Member links(Map<String, Link> links) {
@@ -529,6 +533,29 @@ public class Member {
   }
 
 
+  public Member creationDate(Long creationDate) {
+    
+    this.creationDate = creationDate;
+    return this;
+  }
+
+   /**
+   * Get creationDate
+   * @return creationDate
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
+
+  public Long getCreationDate() {
+    return creationDate;
+  }
+
+
+  public void setCreationDate(Long creationDate) {
+    this.creationDate = creationDate;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -554,12 +581,13 @@ public class Member {
         Objects.equals(this.lastSeenMetadata, member.lastSeenMetadata) &&
         Objects.equals(this.integrationMetadata, member.integrationMetadata) &&
         Objects.equals(this.teams, member.teams) &&
-        Objects.equals(this.permissionGrants, member.permissionGrants);
+        Objects.equals(this.permissionGrants, member.permissionGrants) &&
+        Objects.equals(this.creationDate, member.creationDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, firstName, lastName, role, email, pendingInvite, verified, pendingEmail, customRoles, mfa, excludedDashboards, lastSeen, lastSeenMetadata, integrationMetadata, teams, permissionGrants);
+    return Objects.hash(links, id, firstName, lastName, role, email, pendingInvite, verified, pendingEmail, customRoles, mfa, excludedDashboards, lastSeen, lastSeenMetadata, integrationMetadata, teams, permissionGrants, creationDate);
   }
 
   @Override
@@ -583,6 +611,7 @@ public class Member {
     sb.append("    integrationMetadata: ").append(toIndentedString(integrationMetadata)).append("\n");
     sb.append("    teams: ").append(toIndentedString(teams)).append("\n");
     sb.append("    permissionGrants: ").append(toIndentedString(permissionGrants)).append("\n");
+    sb.append("    creationDate: ").append(toIndentedString(creationDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

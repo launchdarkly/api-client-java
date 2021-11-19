@@ -17,13 +17,20 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.model.BranchCollectionRep;
 import com.launchdarkly.api.model.BranchRep;
 import com.launchdarkly.api.model.ExtinctionCollectionRep;
-import com.launchdarkly.api.model.InlineObject;
+import com.launchdarkly.api.model.ExtinctionRep;
+import com.launchdarkly.api.model.ForbiddenErrorRep;
+import com.launchdarkly.api.model.InvalidRequestErrorRep;
+import com.launchdarkly.api.model.NotFoundErrorRep;
 import com.launchdarkly.api.model.PatchOperation;
+import com.launchdarkly.api.model.PutBranch;
+import com.launchdarkly.api.model.RateLimitedErrorRep;
 import com.launchdarkly.api.model.RepositoryCollectionRep;
 import com.launchdarkly.api.model.RepositoryPost;
 import com.launchdarkly.api.model.RepositoryRep;
 import com.launchdarkly.api.model.StatisticCollectionRep;
 import com.launchdarkly.api.model.StatisticsRoot;
+import com.launchdarkly.api.model.StatusConflictErrorRep;
+import com.launchdarkly.api.model.UnauthorizedErrorRep;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -224,8 +231,8 @@ public class CodeReferencesApiTest {
     public void postExtinctionTest() throws ApiException {
         String repo = null;
         String branch = null;
-        List<InlineObject> inlineObject = null;
-        api.postExtinction(repo, branch, inlineObject);
+        List<ExtinctionRep> extinctionRep = null;
+        api.postExtinction(repo, branch, extinctionRep);
 
         // TODO: test validations
     }
@@ -241,7 +248,7 @@ public class CodeReferencesApiTest {
     @Test
     public void postRepositoryTest() throws ApiException {
         RepositoryPost repositoryPost = null;
-        api.postRepository(repositoryPost);
+        RepositoryRep response = api.postRepository(repositoryPost);
 
         // TODO: test validations
     }
@@ -258,8 +265,8 @@ public class CodeReferencesApiTest {
     public void putBranchTest() throws ApiException {
         String repo = null;
         String branch = null;
-        BranchRep branchRep = null;
-        api.putBranch(repo, branch, branchRep);
+        PutBranch putBranch = null;
+        api.putBranch(repo, branch, putBranch);
 
         // TODO: test validations
     }

@@ -14,10 +14,17 @@
 package com.launchdarkly.api.api;
 
 import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.model.ForbiddenErrorRep;
+import com.launchdarkly.api.model.InvalidRequestErrorRep;
+import com.launchdarkly.api.model.MethodNotAllowedErrorRep;
+import com.launchdarkly.api.model.NotFoundErrorRep;
+import com.launchdarkly.api.model.RateLimitedErrorRep;
+import com.launchdarkly.api.model.StatusConflictErrorRep;
 import com.launchdarkly.api.model.TeamCollectionRep;
 import com.launchdarkly.api.model.TeamPatchInput;
 import com.launchdarkly.api.model.TeamPostInput;
 import com.launchdarkly.api.model.TeamRep;
+import com.launchdarkly.api.model.UnauthorizedErrorRep;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -36,9 +43,9 @@ public class TeamsBetaApiTest {
 
     
     /**
-     * Delete team by key
+     * Delete team
      *
-     * Delete a team by key.
+     * Delete a team by key
      *
      * @throws ApiException
      *          if the Api call fails
@@ -52,9 +59,9 @@ public class TeamsBetaApiTest {
     }
     
     /**
-     * Get team by key
+     * Get team
      *
-     * Fetch a team by key.
+     * Fetch a team by key
      *
      * @throws ApiException
      *          if the Api call fails
@@ -68,24 +75,27 @@ public class TeamsBetaApiTest {
     }
     
     /**
-     * Get all teams
+     * List teams
      *
-     * Fetch all teams.
+     * Return a list of teams.  By default, this returns the first 20 teams. Page through this list with the &#x60;limit&#x60; parameter and by following the &#x60;first&#x60;, &#x60;prev&#x60;, &#x60;next&#x60;, and &#x60;last&#x60; links in the returned &#x60;_links&#x60; field. These links are not present if the pages they refer to don&#39;t exist. For example, the &#x60;first&#x60; and &#x60;prev&#x60; links will be missing from the response on the first page.  ### Filtering teams  LaunchDarkly supports the &#x60;query&#x60; field for filtering. &#x60;query&#x60; is a string that matches against the teams&#39; names and keys. It is not case sensitive. For example, the filter &#x60;query:abc&#x60; matches teams with the string &#x60;abc&#x60; in their name or key. 
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
     public void getTeamsTest() throws ApiException {
-        TeamCollectionRep response = api.getTeams();
+        Long limit = null;
+        Long offset = null;
+        String filter = null;
+        TeamCollectionRep response = api.getTeams(limit, offset, filter);
 
         // TODO: test validations
     }
     
     /**
-     * Patch team by key
+     * Update team
      *
-     * Perform a partial update to a team.  The body of a semantic patch request takes the following three properties:  1. comment &#x60;string&#x60;: (Optional) A description of the update. 1. environmentKey &#x60;string&#x60;: (Required) The key of the LaunchDarkly environment. 1. instructions &#x60;array&#x60;: (Required) The action or list of actions to be performed by the update. Each update action in the list must be an object/hash table with a &#x60;kind&#x60; property, although depending on the action, other properties may be necessary. Read below for more information on the specific supported semantic patch instructions.  If any instruction in the patch encounters an error, the error will be returned and the flag will not be changed. In general, instructions will silently do nothing if the flag is already in the state requested by the patch instruction. They will generally error if a parameter refers to something that does not exist. Other specific error conditions are noted in the instruction descriptions.  ### Instructions  #### &#x60;addCustomRoles&#x60;  Adds custom roles to the team. Team members will have these custom roles granted to them.  ##### Parameters  - &#x60;values&#x60;: list of custom role keys  #### &#x60;removeCustomRoles&#x60;  Removes the custom roles on the team. Team members will no longer have these custom roles granted to them.  ##### Parameters  - &#x60;values&#x60;: list of custom role keys  #### &#x60;addMembers&#x60;  Adds members to the team.  ##### Parameters  - &#x60;values&#x60;: list of member IDs  #### &#x60;removeMembers&#x60;  Removes members from the team.  ##### Parameters  - &#x60;values&#x60;: list of member IDs  #### &#x60;addPermissionGrants&#x60;  Adds permission grants to members for the team, allowing them to, for example, act as a team maintainer. A permission grant may have either an &#x60;actionSet&#x60; or a list of &#x60;actions&#x60; but not both at the same time. The members do not have to be team members to have a permission grant for the team.  ##### Parameters  - &#x60;actionSet&#x60;: name of the action set - &#x60;actions&#x60;: list of actions - &#x60;memberIDs&#x60;: list of member IDs  #### &#x60;removePermissionGrants&#x60;  Removes permission grants from members for the team. The &#x60;actionSet&#x60; and &#x60;actions&#x60; must match an existing permission grant.  ##### Parameters  - &#x60;actionSet&#x60;: name of the action set - &#x60;actions&#x60;: list of actions - &#x60;memberIDs&#x60;: list of member IDs  #### &#x60;updateDescription&#x60;  Updates the team&#39;s description.  ##### Parameters  - &#x60;value&#x60;: the team&#39;s new description  #### &#x60;updateName&#x60;  Updates the team&#39;s name.  ##### Parameters  - &#x60;value&#x60;: the team&#39;s new name 
+     * Perform a partial update to a team.  The body of a semantic patch request takes the following three properties:  1. comment &#x60;string&#x60;: (Optional) A description of the update. 1. instructions &#x60;array&#x60;: (Required) The action or list of actions to be performed by the update. Each update action in the list must be an object/hash table with a &#x60;kind&#x60; property, although depending on the action, other properties may be necessary. Read below for more information on the specific supported semantic patch instructions.  If any instruction in the patch encounters an error, the error will be returned and the flag will not be changed. In general, instructions will silently do nothing if the flag is already in the state requested by the patch instruction. They will generally error if a parameter refers to something that does not exist. Other specific error conditions are noted in the instruction descriptions.  ### Instructions  #### &#x60;addCustomRoles&#x60;  Adds custom roles to the team. Team members will have these custom roles granted to them.  ##### Parameters  - &#x60;values&#x60;: list of custom role keys  #### &#x60;removeCustomRoles&#x60;  Removes the custom roles on the team. Team members will no longer have these custom roles granted to them.  ##### Parameters  - &#x60;values&#x60;: list of custom role keys  #### &#x60;addMembers&#x60;  Adds members to the team.  ##### Parameters  - &#x60;values&#x60;: list of member IDs  #### &#x60;removeMembers&#x60;  Removes members from the team.  ##### Parameters  - &#x60;values&#x60;: list of member IDs  #### &#x60;addPermissionGrants&#x60;  Adds permission grants to members for the team, allowing them to, for example, act as a team maintainer. A permission grant may have either an &#x60;actionSet&#x60; or a list of &#x60;actions&#x60; but not both at the same time. The members do not have to be team members to have a permission grant for the team.  ##### Parameters  - &#x60;actionSet&#x60;: name of the action set - &#x60;actions&#x60;: list of actions - &#x60;memberIDs&#x60;: list of member IDs  #### &#x60;removePermissionGrants&#x60;  Removes permission grants from members for the team. The &#x60;actionSet&#x60; and &#x60;actions&#x60; must match an existing permission grant.  ##### Parameters  - &#x60;actionSet&#x60;: name of the action set - &#x60;actions&#x60;: list of actions - &#x60;memberIDs&#x60;: list of member IDs  #### &#x60;updateDescription&#x60;  Updates the team&#39;s description.  ##### Parameters  - &#x60;value&#x60;: the team&#39;s new description  #### &#x60;updateName&#x60;  Updates the team&#39;s name.  ##### Parameters  - &#x60;value&#x60;: the team&#39;s new name 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -102,7 +112,7 @@ public class TeamsBetaApiTest {
     /**
      * Create team
      *
-     * Create a team.
+     * Create a team
      *
      * @throws ApiException
      *          if the Api call fails

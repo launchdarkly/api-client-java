@@ -7,9 +7,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**path** | **String** |  |  [optional]
-**hint** | **String** |  |  [optional]
-**hunks** | [**List&lt;HunkRep&gt;**](HunkRep.md) |  |  [optional]
+**path** | **String** | File path of the reference | 
+**hint** | **String** | Programming language used in the file |  [optional]
+**hunks** | [**List&lt;HunkRep&gt;**](HunkRep.md) |  | 
 
 
 

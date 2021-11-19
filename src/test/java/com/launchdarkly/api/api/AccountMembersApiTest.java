@@ -14,10 +14,16 @@
 package com.launchdarkly.api.api;
 
 import com.launchdarkly.api.ApiException;
-import com.launchdarkly.api.model.InlineObject1;
+import com.launchdarkly.api.model.ForbiddenErrorRep;
+import com.launchdarkly.api.model.InvalidRequestErrorRep;
 import com.launchdarkly.api.model.Member;
 import com.launchdarkly.api.model.Members;
+import com.launchdarkly.api.model.NewMemberForm;
+import com.launchdarkly.api.model.NotFoundErrorRep;
 import com.launchdarkly.api.model.PatchOperation;
+import com.launchdarkly.api.model.RateLimitedErrorRep;
+import com.launchdarkly.api.model.StatusConflictErrorRep;
+import com.launchdarkly.api.model.UnauthorizedErrorRep;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -38,7 +44,7 @@ public class AccountMembersApiTest {
     /**
      * Delete account member
      *
-     * Delete a single account member by ID
+     * Delete a single account member by ID. Requests to delete account members will not work if SCIM is enabled for the account.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -89,7 +95,7 @@ public class AccountMembersApiTest {
     /**
      * Modify an account member
      *
-     * Update a single account member. The request should be a valid JSON Patch document describing the changes to be made to the member.
+     * Update a single account member. The request should be a valid JSON Patch document describing the changes to be made to the member. Requests to update account members will not work if SCIM is enabled for the account.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -106,15 +112,15 @@ public class AccountMembersApiTest {
     /**
      * Invite new members
      *
-     * &gt; ### Full use of this API resource is only available to accounts with paid subscriptions &gt; &gt; The ability to bulk invite members is a paid feature. Single members may be invited if not on a paid plan.  Invite one or more new members to join an account. Each member is sent an invitation. Members with \&quot;admin\&quot; or \&quot;owner\&quot; roles may create new members, as well as anyone with a \&quot;createMember\&quot; permission for \&quot;member/\\*\&quot;. If a member cannot be invited, the entire request is rejected and no members are invited from that request.  Each member _must_ have an &#x60;email&#x60; field and either a &#x60;role&#x60; or a &#x60;customRoles&#x60; field. If any of the fields are not populated correctly, the request is rejected with the reason specified in the \&quot;message\&quot; field of the response.  _No more than 50 members may be created per request._  A request may also fail because of conflicts with existing members. These conflicts are reported using the additional &#x60;code&#x60; and &#x60;invalid_emails&#x60; response fields with the following possible values for &#x60;code&#x60;:  - **email_already_exists_in_account**: A member with this email address already exists in this account. - **email_taken_in_different_account**: A member with this email address exists in another account. - **duplicate_email**s: This request contains two or more members with the same email address.  A request that fails for one of the above reasons returns an HTTP response code of 400 (Bad Request). 
+     * &gt; ### Full use of this API resource is only available to accounts with paid subscriptions &gt; &gt; The ability to bulk invite members is a paid feature. Single members may be invited if not on a paid plan.  Invite one or more new members to join an account. Each member is sent an invitation. Members with \&quot;admin\&quot; or \&quot;owner\&quot; roles may create new members, as well as anyone with a \&quot;createMember\&quot; permission for \&quot;member/\\*\&quot;. If a member cannot be invited, the entire request is rejected and no members are invited from that request.  Each member _must_ have an &#x60;email&#x60; field and either a &#x60;role&#x60; or a &#x60;customRoles&#x60; field. If any of the fields are not populated correctly, the request is rejected with the reason specified in the \&quot;message\&quot; field of the response.  Requests to create account members will not work if SCIM is enabled for the account.  _No more than 50 members may be created per request._  A request may also fail because of conflicts with existing members. These conflicts are reported using the additional &#x60;code&#x60; and &#x60;invalid_emails&#x60; response fields with the following possible values for &#x60;code&#x60;:  - **email_already_exists_in_account**: A member with this email address already exists in this account. - **email_taken_in_different_account**: A member with this email address exists in another account. - **duplicate_email**s: This request contains two or more members with the same email address.  A request that fails for one of the above reasons returns an HTTP response code of 400 (Bad Request). 
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
     public void postMembersTest() throws ApiException {
-        List<InlineObject1> inlineObject1 = null;
-        Members response = api.postMembers(inlineObject1);
+        List<NewMemberForm> newMemberForm = null;
+        Members response = api.postMembers(newMemberForm);
 
         // TODO: test validations
     }

@@ -28,7 +28,11 @@ import java.io.IOException;
 
 
 import com.launchdarkly.api.model.DependentFlagsByEnvironment;
+import com.launchdarkly.api.model.ForbiddenErrorRep;
 import com.launchdarkly.api.model.MultiEnvironmentDependentFlags;
+import com.launchdarkly.api.model.NotFoundErrorRep;
+import com.launchdarkly.api.model.RateLimitedErrorRep;
+import com.launchdarkly.api.model.UnauthorizedErrorRep;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

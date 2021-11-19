@@ -27,10 +27,17 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.launchdarkly.api.model.ForbiddenErrorRep;
+import com.launchdarkly.api.model.InvalidRequestErrorRep;
+import com.launchdarkly.api.model.NotFoundErrorRep;
+import com.launchdarkly.api.model.PatchFailedErrorRep;
 import com.launchdarkly.api.model.PatchWithComment;
+import com.launchdarkly.api.model.RateLimitedErrorRep;
 import com.launchdarkly.api.model.RelayAutoConfigCollectionRep;
 import com.launchdarkly.api.model.RelayAutoConfigPost;
 import com.launchdarkly.api.model.RelayAutoConfigRep;
+import com.launchdarkly.api.model.StatusConflictErrorRep;
+import com.launchdarkly.api.model.UnauthorizedErrorRep;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -66,7 +73,7 @@ public class RelayProxyConfigurationsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
@@ -87,7 +94,7 @@ public class RelayProxyConfigurationsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -126,7 +133,7 @@ public class RelayProxyConfigurationsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
@@ -146,7 +153,7 @@ public class RelayProxyConfigurationsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
@@ -168,7 +175,7 @@ public class RelayProxyConfigurationsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
@@ -434,7 +441,7 @@ public class RelayProxyConfigurationsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Relay auto config response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
@@ -503,7 +510,7 @@ public class RelayProxyConfigurationsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Relay auto config response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
@@ -527,7 +534,7 @@ public class RelayProxyConfigurationsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Relay auto config response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
@@ -553,7 +560,7 @@ public class RelayProxyConfigurationsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Relay auto config response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
@@ -578,7 +585,7 @@ public class RelayProxyConfigurationsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Relay auto config response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
@@ -637,7 +644,7 @@ public class RelayProxyConfigurationsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Relay auto config response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
@@ -657,7 +664,7 @@ public class RelayProxyConfigurationsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Relay auto config response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
@@ -679,7 +686,7 @@ public class RelayProxyConfigurationsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Relay auto config response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>

@@ -159,7 +159,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -167,6 +167,6 @@ null (empty response body)
 **204** | Experiment results reset successfully |  -  |
 **401** | Invalid access token |  -  |
 **403** | Forbidden |  -  |
-**404** | Unknown project, flag, environment or metric key |  -  |
+**404** | Invalid resource identifier |  -  |
 **429** | Rate limited |  -  |
 

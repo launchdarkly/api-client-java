@@ -14,6 +14,10 @@
 package com.launchdarkly.api.api;
 
 import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.model.ForbiddenErrorRep;
+import com.launchdarkly.api.model.InvalidRequestErrorRep;
+import com.launchdarkly.api.model.NotFoundErrorRep;
+import com.launchdarkly.api.model.UnauthorizedErrorRep;
 import com.launchdarkly.api.model.UserAttributeNamesRep;
 import org.junit.Test;
 import org.junit.Ignore;

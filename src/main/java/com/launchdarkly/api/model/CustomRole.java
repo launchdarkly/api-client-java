@@ -34,35 +34,62 @@ import java.util.Map;
 /**
  * CustomRole
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-01T19:03:54.089510Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-19T20:23:06.329570Z[Etc/UTC]")
 public class CustomRole {
+  public static final String SERIALIZED_NAME_ID = "_id";
+  @SerializedName(SERIALIZED_NAME_ID)
+  private String id;
+
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
   private Map<String, Link> links = new HashMap<String, Link>();
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
-
-  public static final String SERIALIZED_NAME_KEY = "key";
-  @SerializedName(SERIALIZED_NAME_KEY)
-  private String key;
+  public static final String SERIALIZED_NAME_ACCESS = "_access";
+  @SerializedName(SERIALIZED_NAME_ACCESS)
+  private AccessRep access;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description;
 
-  public static final String SERIALIZED_NAME_ID = "_id";
-  @SerializedName(SERIALIZED_NAME_ID)
-  private String id;
+  public static final String SERIALIZED_NAME_KEY = "key";
+  @SerializedName(SERIALIZED_NAME_KEY)
+  private String key;
+
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
 
   public static final String SERIALIZED_NAME_POLICY = "policy";
   @SerializedName(SERIALIZED_NAME_POLICY)
   private List<Statement> policy = new ArrayList<Statement>();
 
-  public static final String SERIALIZED_NAME_ACCESS = "_access";
-  @SerializedName(SERIALIZED_NAME_ACCESS)
-  private AccessRep access;
+  public static final String SERIALIZED_NAME_BASE_PERMISSIONS = "basePermissions";
+  @SerializedName(SERIALIZED_NAME_BASE_PERMISSIONS)
+  private String basePermissions;
+
+
+  public CustomRole id(String id) {
+    
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Get id
+   * @return id
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
+
+  public String getId() {
+    return id;
+  }
+
+
+  public void setId(String id) {
+    this.id = id;
+  }
 
 
   public CustomRole links(Map<String, Link> links) {
@@ -93,49 +120,26 @@ public class CustomRole {
   }
 
 
-  public CustomRole name(String name) {
+  public CustomRole access(AccessRep access) {
     
-    this.name = name;
+    this.access = access;
     return this;
   }
 
    /**
-   * Get name
-   * @return name
+   * Get access
+   * @return access
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
-  public String getName() {
-    return name;
+  public AccessRep getAccess() {
+    return access;
   }
 
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
-  public CustomRole key(String key) {
-    
-    this.key = key;
-    return this;
-  }
-
-   /**
-   * Get key
-   * @return key
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public String getKey() {
-    return key;
-  }
-
-
-  public void setKey(String key) {
-    this.key = key;
+  public void setAccess(AccessRep access) {
+    this.access = access;
   }
 
 
@@ -162,26 +166,49 @@ public class CustomRole {
   }
 
 
-  public CustomRole id(String id) {
+  public CustomRole key(String key) {
     
-    this.id = id;
+    this.key = key;
     return this;
   }
 
    /**
-   * Get id
-   * @return id
+   * Get key
+   * @return key
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public String getId() {
-    return id;
+  public String getKey() {
+    return key;
   }
 
 
-  public void setId(String id) {
-    this.id = id;
+  public void setKey(String key) {
+    this.key = key;
+  }
+
+
+  public CustomRole name(String name) {
+    
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Get name
+   * @return name
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
+
+  public String getName() {
+    return name;
+  }
+
+
+  public void setName(String name) {
+    this.name = name;
   }
 
 
@@ -213,26 +240,26 @@ public class CustomRole {
   }
 
 
-  public CustomRole access(AccessRep access) {
+  public CustomRole basePermissions(String basePermissions) {
     
-    this.access = access;
+    this.basePermissions = basePermissions;
     return this;
   }
 
    /**
-   * Get access
-   * @return access
+   * Get basePermissions
+   * @return basePermissions
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public AccessRep getAccess() {
-    return access;
+  public String getBasePermissions() {
+    return basePermissions;
   }
 
 
-  public void setAccess(AccessRep access) {
-    this.access = access;
+  public void setBasePermissions(String basePermissions) {
+    this.basePermissions = basePermissions;
   }
 
 
@@ -245,31 +272,33 @@ public class CustomRole {
       return false;
     }
     CustomRole customRole = (CustomRole) o;
-    return Objects.equals(this.links, customRole.links) &&
-        Objects.equals(this.name, customRole.name) &&
-        Objects.equals(this.key, customRole.key) &&
+    return Objects.equals(this.id, customRole.id) &&
+        Objects.equals(this.links, customRole.links) &&
+        Objects.equals(this.access, customRole.access) &&
         Objects.equals(this.description, customRole.description) &&
-        Objects.equals(this.id, customRole.id) &&
+        Objects.equals(this.key, customRole.key) &&
+        Objects.equals(this.name, customRole.name) &&
         Objects.equals(this.policy, customRole.policy) &&
-        Objects.equals(this.access, customRole.access);
+        Objects.equals(this.basePermissions, customRole.basePermissions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, name, key, description, id, policy, access);
+    return Objects.hash(id, links, access, description, key, name, policy, basePermissions);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CustomRole {\n");
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
+    sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    access: ").append(toIndentedString(access)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    key: ").append(toIndentedString(key)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
+    sb.append("    basePermissions: ").append(toIndentedString(basePermissions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

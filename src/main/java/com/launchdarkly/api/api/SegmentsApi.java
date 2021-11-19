@@ -30,10 +30,16 @@ import java.io.IOException;
 import com.launchdarkly.api.model.BigSegmentTarget;
 import com.launchdarkly.api.model.ExpiringUserTargetGetResponse;
 import com.launchdarkly.api.model.ExpiringUserTargetPatchResponse;
+import com.launchdarkly.api.model.ForbiddenErrorRep;
+import com.launchdarkly.api.model.InvalidRequestErrorRep;
+import com.launchdarkly.api.model.NotFoundErrorRep;
 import com.launchdarkly.api.model.PatchSegmentRequest;
 import com.launchdarkly.api.model.PatchWithComment;
+import com.launchdarkly.api.model.RateLimitedErrorRep;
 import com.launchdarkly.api.model.SegmentBody;
 import com.launchdarkly.api.model.SegmentUserState;
+import com.launchdarkly.api.model.StatusConflictErrorRep;
+import com.launchdarkly.api.model.UnauthorizedErrorRep;
 import com.launchdarkly.api.model.UserSegment;
 import com.launchdarkly.api.model.UserSegments;
 
@@ -73,9 +79,9 @@ public class SegmentsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
@@ -97,7 +103,7 @@ public class SegmentsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -148,9 +154,9 @@ public class SegmentsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
@@ -171,9 +177,9 @@ public class SegmentsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
@@ -196,9 +202,9 @@ public class SegmentsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
@@ -511,9 +517,9 @@ public class SegmentsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment membership for user response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid segment </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Unknown segment key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
@@ -593,9 +599,9 @@ public class SegmentsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment membership for user response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid segment </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Unknown segment key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
@@ -617,9 +623,9 @@ public class SegmentsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment membership for user response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid segment </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Unknown segment key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
@@ -643,9 +649,9 @@ public class SegmentsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment membership for user response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid segment </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Unknown segment key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
@@ -799,7 +805,7 @@ public class SegmentsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
@@ -882,7 +888,7 @@ public class SegmentsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
@@ -908,7 +914,7 @@ public class SegmentsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
@@ -936,7 +942,7 @@ public class SegmentsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
@@ -964,9 +970,9 @@ public class SegmentsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
@@ -1047,9 +1053,9 @@ public class SegmentsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
@@ -1073,9 +1079,9 @@ public class SegmentsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
@@ -1101,9 +1107,9 @@ public class SegmentsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
@@ -1128,9 +1134,9 @@ public class SegmentsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Segment response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
@@ -1203,9 +1209,9 @@ public class SegmentsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Segment response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
@@ -1227,9 +1233,9 @@ public class SegmentsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Segment response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
@@ -1253,9 +1259,9 @@ public class SegmentsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Segment response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
@@ -1279,8 +1285,8 @@ public class SegmentsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
@@ -1302,7 +1308,7 @@ public class SegmentsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -1359,8 +1365,8 @@ public class SegmentsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
@@ -1382,8 +1388,8 @@ public class SegmentsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
@@ -1407,8 +1413,8 @@ public class SegmentsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>

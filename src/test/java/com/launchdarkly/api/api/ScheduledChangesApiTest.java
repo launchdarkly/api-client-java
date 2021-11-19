@@ -17,7 +17,14 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.model.FeatureFlagScheduledChange;
 import com.launchdarkly.api.model.FeatureFlagScheduledChanges;
 import com.launchdarkly.api.model.FlagScheduledChangesInput;
+import com.launchdarkly.api.model.ForbiddenErrorRep;
+import com.launchdarkly.api.model.InvalidRequestErrorRep;
+import com.launchdarkly.api.model.MethodNotAllowedErrorRep;
+import com.launchdarkly.api.model.NotFoundErrorRep;
 import com.launchdarkly.api.model.PostFlagScheduledChangesInput;
+import com.launchdarkly.api.model.RateLimitedErrorRep;
+import com.launchdarkly.api.model.StatusConflictErrorRep;
+import com.launchdarkly.api.model.UnauthorizedErrorRep;
 import org.junit.Test;
 import org.junit.Ignore;
 

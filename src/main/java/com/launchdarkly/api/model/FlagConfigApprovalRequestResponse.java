@@ -37,7 +37,7 @@ import java.util.Map;
 /**
  * FlagConfigApprovalRequestResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-01T19:03:54.089510Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-19T20:23:06.329570Z[Etc/UTC]")
 public class FlagConfigApprovalRequestResponse {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -115,9 +115,9 @@ public class FlagConfigApprovalRequestResponse {
   @SerializedName(SERIALIZED_NAME_SOURCE)
   private CopiedFromEnv source;
 
-  public static final String SERIALIZED_NAME_CUSTOM_WORKFLOW_META_DATA = "customWorkflowMetaData";
-  @SerializedName(SERIALIZED_NAME_CUSTOM_WORKFLOW_META_DATA)
-  private CustomWorkflowMeta customWorkflowMetaData;
+  public static final String SERIALIZED_NAME_CUSTOM_WORKFLOW_METADATA = "customWorkflowMetadata";
+  @SerializedName(SERIALIZED_NAME_CUSTOM_WORKFLOW_METADATA)
+  private CustomWorkflowMeta customWorkflowMetadata;
 
 
   public FlagConfigApprovalRequestResponse id(String id) {
@@ -582,26 +582,26 @@ public class FlagConfigApprovalRequestResponse {
   }
 
 
-  public FlagConfigApprovalRequestResponse customWorkflowMetaData(CustomWorkflowMeta customWorkflowMetaData) {
+  public FlagConfigApprovalRequestResponse customWorkflowMetadata(CustomWorkflowMeta customWorkflowMetadata) {
     
-    this.customWorkflowMetaData = customWorkflowMetaData;
+    this.customWorkflowMetadata = customWorkflowMetadata;
     return this;
   }
 
    /**
-   * Get customWorkflowMetaData
-   * @return customWorkflowMetaData
+   * Get customWorkflowMetadata
+   * @return customWorkflowMetadata
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public CustomWorkflowMeta getCustomWorkflowMetaData() {
-    return customWorkflowMetaData;
+  public CustomWorkflowMeta getCustomWorkflowMetadata() {
+    return customWorkflowMetadata;
   }
 
 
-  public void setCustomWorkflowMetaData(CustomWorkflowMeta customWorkflowMetaData) {
-    this.customWorkflowMetaData = customWorkflowMetaData;
+  public void setCustomWorkflowMetadata(CustomWorkflowMeta customWorkflowMetadata) {
+    this.customWorkflowMetadata = customWorkflowMetadata;
   }
 
 
@@ -633,12 +633,12 @@ public class FlagConfigApprovalRequestResponse {
         Objects.equals(this.operatingOnId, flagConfigApprovalRequestResponse.operatingOnId) &&
         Objects.equals(this.integrationMetadata, flagConfigApprovalRequestResponse.integrationMetadata) &&
         Objects.equals(this.source, flagConfigApprovalRequestResponse.source) &&
-        Objects.equals(this.customWorkflowMetaData, flagConfigApprovalRequestResponse.customWorkflowMetaData);
+        Objects.equals(this.customWorkflowMetadata, flagConfigApprovalRequestResponse.customWorkflowMetadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, version, creationDate, serviceKind, requestorId, description, reviewStatus, allReviews, notifyMemberIds, appliedDate, appliedByMemberId, status, instructions, conflicts, links, executionDate, operatingOnId, integrationMetadata, source, customWorkflowMetaData);
+    return Objects.hash(id, version, creationDate, serviceKind, requestorId, description, reviewStatus, allReviews, notifyMemberIds, appliedDate, appliedByMemberId, status, instructions, conflicts, links, executionDate, operatingOnId, integrationMetadata, source, customWorkflowMetadata);
   }
 
   @Override
@@ -664,7 +664,7 @@ public class FlagConfigApprovalRequestResponse {
     sb.append("    operatingOnId: ").append(toIndentedString(operatingOnId)).append("\n");
     sb.append("    integrationMetadata: ").append(toIndentedString(integrationMetadata)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
-    sb.append("    customWorkflowMetaData: ").append(toIndentedString(customWorkflowMetaData)).append("\n");
+    sb.append("    customWorkflowMetadata: ").append(toIndentedString(customWorkflowMetadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

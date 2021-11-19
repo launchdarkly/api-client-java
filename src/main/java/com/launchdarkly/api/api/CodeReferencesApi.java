@@ -30,13 +30,20 @@ import java.io.IOException;
 import com.launchdarkly.api.model.BranchCollectionRep;
 import com.launchdarkly.api.model.BranchRep;
 import com.launchdarkly.api.model.ExtinctionCollectionRep;
-import com.launchdarkly.api.model.InlineObject;
+import com.launchdarkly.api.model.ExtinctionRep;
+import com.launchdarkly.api.model.ForbiddenErrorRep;
+import com.launchdarkly.api.model.InvalidRequestErrorRep;
+import com.launchdarkly.api.model.NotFoundErrorRep;
 import com.launchdarkly.api.model.PatchOperation;
+import com.launchdarkly.api.model.PutBranch;
+import com.launchdarkly.api.model.RateLimitedErrorRep;
 import com.launchdarkly.api.model.RepositoryCollectionRep;
 import com.launchdarkly.api.model.RepositoryPost;
 import com.launchdarkly.api.model.RepositoryRep;
 import com.launchdarkly.api.model.StatisticCollectionRep;
 import com.launchdarkly.api.model.StatisticsRoot;
+import com.launchdarkly.api.model.StatusConflictErrorRep;
+import com.launchdarkly.api.model.UnauthorizedErrorRep;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -73,8 +80,8 @@ public class CodeReferencesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
@@ -95,7 +102,7 @@ public class CodeReferencesApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -140,8 +147,8 @@ public class CodeReferencesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
@@ -162,8 +169,8 @@ public class CodeReferencesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
@@ -186,8 +193,8 @@ public class CodeReferencesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
@@ -209,7 +216,7 @@ public class CodeReferencesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
@@ -231,7 +238,7 @@ public class CodeReferencesApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -270,7 +277,7 @@ public class CodeReferencesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
@@ -291,7 +298,7 @@ public class CodeReferencesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
@@ -314,7 +321,7 @@ public class CodeReferencesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
@@ -621,7 +628,7 @@ public class CodeReferencesApi {
     /**
      * Build call for getExtinctions
      * @param repoName Filter results to a specific repository (optional)
-     * @param branchName Filter results to a specific branch (optional)
+     * @param branchName Filter results to a specific branch. By default, only the default branch will be queried for extinctions. (optional)
      * @param projKey Filter results to a specific project (optional)
      * @param flagKey Filter results to a specific flag key (optional)
      * @param _callback Callback for upload/download progress
@@ -630,10 +637,9 @@ public class CodeReferencesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Branch response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Extinction collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
@@ -696,7 +702,7 @@ public class CodeReferencesApi {
      * List extinctions
      * Get a list of all extinctions.
      * @param repoName Filter results to a specific repository (optional)
-     * @param branchName Filter results to a specific branch (optional)
+     * @param branchName Filter results to a specific branch. By default, only the default branch will be queried for extinctions. (optional)
      * @param projKey Filter results to a specific project (optional)
      * @param flagKey Filter results to a specific flag key (optional)
      * @return ExtinctionCollectionRep
@@ -704,10 +710,9 @@ public class CodeReferencesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Branch response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Extinction collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
@@ -720,7 +725,7 @@ public class CodeReferencesApi {
      * List extinctions
      * Get a list of all extinctions.
      * @param repoName Filter results to a specific repository (optional)
-     * @param branchName Filter results to a specific branch (optional)
+     * @param branchName Filter results to a specific branch. By default, only the default branch will be queried for extinctions. (optional)
      * @param projKey Filter results to a specific project (optional)
      * @param flagKey Filter results to a specific flag key (optional)
      * @return ApiResponse&lt;ExtinctionCollectionRep&gt;
@@ -728,10 +733,9 @@ public class CodeReferencesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Branch response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Extinction collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
@@ -745,7 +749,7 @@ public class CodeReferencesApi {
      * List extinctions (asynchronously)
      * Get a list of all extinctions.
      * @param repoName Filter results to a specific repository (optional)
-     * @param branchName Filter results to a specific branch (optional)
+     * @param branchName Filter results to a specific branch. By default, only the default branch will be queried for extinctions. (optional)
      * @param projKey Filter results to a specific project (optional)
      * @param flagKey Filter results to a specific flag key (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -754,10 +758,9 @@ public class CodeReferencesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Branch response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Extinction collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
@@ -1311,7 +1314,7 @@ public class CodeReferencesApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
@@ -1379,7 +1382,7 @@ public class CodeReferencesApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
@@ -1402,7 +1405,7 @@ public class CodeReferencesApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
@@ -1427,7 +1430,7 @@ public class CodeReferencesApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
@@ -1445,26 +1448,26 @@ public class CodeReferencesApi {
      * Build call for postExtinction
      * @param repo The repository name (required)
      * @param branch The url-encoded branch name (required)
-     * @param inlineObject  (required)
+     * @param extinctionRep  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Extinction response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postExtinctionCall(String repo, String branch, List<InlineObject> inlineObject, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = inlineObject;
+    public okhttp3.Call postExtinctionCall(String repo, String branch, List<ExtinctionRep> extinctionRep, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = extinctionRep;
 
         // create path and map variables
-        String localVarPath = "/api/v2/code-refs/repositories/{repo}/branches/{branch}"
+        String localVarPath = "/api/v2/code-refs/repositories/{repo}/branches/{branch}/extinction-events"
             .replaceAll("\\{" + "repo" + "\\}", localVarApiClient.escapeString(repo.toString()))
             .replaceAll("\\{" + "branch" + "\\}", localVarApiClient.escapeString(branch.toString()));
 
@@ -1475,7 +1478,7 @@ public class CodeReferencesApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -1493,7 +1496,7 @@ public class CodeReferencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postExtinctionValidateBeforeCall(String repo, String branch, List<InlineObject> inlineObject, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postExtinctionValidateBeforeCall(String repo, String branch, List<ExtinctionRep> extinctionRep, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'repo' is set
         if (repo == null) {
@@ -1505,13 +1508,13 @@ public class CodeReferencesApi {
             throw new ApiException("Missing the required parameter 'branch' when calling postExtinction(Async)");
         }
         
-        // verify the required parameter 'inlineObject' is set
-        if (inlineObject == null) {
-            throw new ApiException("Missing the required parameter 'inlineObject' when calling postExtinction(Async)");
+        // verify the required parameter 'extinctionRep' is set
+        if (extinctionRep == null) {
+            throw new ApiException("Missing the required parameter 'extinctionRep' when calling postExtinction(Async)");
         }
         
 
-        okhttp3.Call localVarCall = postExtinctionCall(repo, branch, inlineObject, _callback);
+        okhttp3.Call localVarCall = postExtinctionCall(repo, branch, extinctionRep, _callback);
         return localVarCall;
 
     }
@@ -1521,21 +1524,21 @@ public class CodeReferencesApi {
      * Create a new extinction
      * @param repo The repository name (required)
      * @param branch The url-encoded branch name (required)
-     * @param inlineObject  (required)
+     * @param extinctionRep  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Extinction response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void postExtinction(String repo, String branch, List<InlineObject> inlineObject) throws ApiException {
-        postExtinctionWithHttpInfo(repo, branch, inlineObject);
+    public void postExtinction(String repo, String branch, List<ExtinctionRep> extinctionRep) throws ApiException {
+        postExtinctionWithHttpInfo(repo, branch, extinctionRep);
     }
 
     /**
@@ -1543,22 +1546,22 @@ public class CodeReferencesApi {
      * Create a new extinction
      * @param repo The repository name (required)
      * @param branch The url-encoded branch name (required)
-     * @param inlineObject  (required)
+     * @param extinctionRep  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Extinction response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> postExtinctionWithHttpInfo(String repo, String branch, List<InlineObject> inlineObject) throws ApiException {
-        okhttp3.Call localVarCall = postExtinctionValidateBeforeCall(repo, branch, inlineObject, null);
+    public ApiResponse<Void> postExtinctionWithHttpInfo(String repo, String branch, List<ExtinctionRep> extinctionRep) throws ApiException {
+        okhttp3.Call localVarCall = postExtinctionValidateBeforeCall(repo, branch, extinctionRep, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -1567,24 +1570,24 @@ public class CodeReferencesApi {
      * Create a new extinction
      * @param repo The repository name (required)
      * @param branch The url-encoded branch name (required)
-     * @param inlineObject  (required)
+     * @param extinctionRep  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Extinction response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postExtinctionAsync(String repo, String branch, List<InlineObject> inlineObject, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call postExtinctionAsync(String repo, String branch, List<ExtinctionRep> extinctionRep, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = postExtinctionValidateBeforeCall(repo, branch, inlineObject, _callback);
+        okhttp3.Call localVarCall = postExtinctionValidateBeforeCall(repo, branch, extinctionRep, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
@@ -1598,9 +1601,10 @@ public class CodeReferencesApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
@@ -1617,7 +1621,7 @@ public class CodeReferencesApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -1652,40 +1656,45 @@ public class CodeReferencesApi {
      * Create repository
      * Create a repository with the specified name.
      * @param repositoryPost  (required)
+     * @return RepositoryRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void postRepository(RepositoryPost repositoryPost) throws ApiException {
-        postRepositoryWithHttpInfo(repositoryPost);
+    public RepositoryRep postRepository(RepositoryPost repositoryPost) throws ApiException {
+        ApiResponse<RepositoryRep> localVarResp = postRepositoryWithHttpInfo(repositoryPost);
+        return localVarResp.getData();
     }
 
     /**
      * Create repository
      * Create a repository with the specified name.
      * @param repositoryPost  (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;RepositoryRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> postRepositoryWithHttpInfo(RepositoryPost repositoryPost) throws ApiException {
+    public ApiResponse<RepositoryRep> postRepositoryWithHttpInfo(RepositoryPost repositoryPost) throws ApiException {
         okhttp3.Call localVarCall = postRepositoryValidateBeforeCall(repositoryPost, null);
-        return localVarApiClient.execute(localVarCall);
+        Type localVarReturnType = new TypeToken<RepositoryRep>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
@@ -1699,39 +1708,42 @@ public class CodeReferencesApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postRepositoryAsync(RepositoryPost repositoryPost, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call postRepositoryAsync(RepositoryPost repositoryPost, final ApiCallback<RepositoryRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postRepositoryValidateBeforeCall(repositoryPost, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        Type localVarReturnType = new TypeToken<RepositoryRep>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for putBranch
      * @param repo The repository name (required)
      * @param branch The url-encoded branch name (required)
-     * @param branchRep  (required)
+     * @param putBranch  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Branch response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putBranchCall(String repo, String branch, BranchRep branchRep, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = branchRep;
+    public okhttp3.Call putBranchCall(String repo, String branch, PutBranch putBranch, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = putBranch;
 
         // create path and map variables
         String localVarPath = "/api/v2/code-refs/repositories/{repo}/branches/{branch}"
@@ -1745,7 +1757,7 @@ public class CodeReferencesApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -1763,7 +1775,7 @@ public class CodeReferencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call putBranchValidateBeforeCall(String repo, String branch, BranchRep branchRep, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call putBranchValidateBeforeCall(String repo, String branch, PutBranch putBranch, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'repo' is set
         if (repo == null) {
@@ -1775,13 +1787,13 @@ public class CodeReferencesApi {
             throw new ApiException("Missing the required parameter 'branch' when calling putBranch(Async)");
         }
         
-        // verify the required parameter 'branchRep' is set
-        if (branchRep == null) {
-            throw new ApiException("Missing the required parameter 'branchRep' when calling putBranch(Async)");
+        // verify the required parameter 'putBranch' is set
+        if (putBranch == null) {
+            throw new ApiException("Missing the required parameter 'putBranch' when calling putBranch(Async)");
         }
         
 
-        okhttp3.Call localVarCall = putBranchCall(repo, branch, branchRep, _callback);
+        okhttp3.Call localVarCall = putBranchCall(repo, branch, putBranch, _callback);
         return localVarCall;
 
     }
@@ -1791,21 +1803,22 @@ public class CodeReferencesApi {
      * Create a new branch if it doesn&#39;t exist, or updates the branch if it already exists.
      * @param repo The repository name (required)
      * @param branch The url-encoded branch name (required)
-     * @param branchRep  (required)
+     * @param putBranch  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Branch response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void putBranch(String repo, String branch, BranchRep branchRep) throws ApiException {
-        putBranchWithHttpInfo(repo, branch, branchRep);
+    public void putBranch(String repo, String branch, PutBranch putBranch) throws ApiException {
+        putBranchWithHttpInfo(repo, branch, putBranch);
     }
 
     /**
@@ -1813,22 +1826,23 @@ public class CodeReferencesApi {
      * Create a new branch if it doesn&#39;t exist, or updates the branch if it already exists.
      * @param repo The repository name (required)
      * @param branch The url-encoded branch name (required)
-     * @param branchRep  (required)
+     * @param putBranch  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Branch response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> putBranchWithHttpInfo(String repo, String branch, BranchRep branchRep) throws ApiException {
-        okhttp3.Call localVarCall = putBranchValidateBeforeCall(repo, branch, branchRep, null);
+    public ApiResponse<Void> putBranchWithHttpInfo(String repo, String branch, PutBranch putBranch) throws ApiException {
+        okhttp3.Call localVarCall = putBranchValidateBeforeCall(repo, branch, putBranch, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -1837,24 +1851,25 @@ public class CodeReferencesApi {
      * Create a new branch if it doesn&#39;t exist, or updates the branch if it already exists.
      * @param repo The repository name (required)
      * @param branch The url-encoded branch name (required)
-     * @param branchRep  (required)
+     * @param putBranch  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Branch response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putBranchAsync(String repo, String branch, BranchRep branchRep, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call putBranchAsync(String repo, String branch, PutBranch putBranch, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = putBranchValidateBeforeCall(repo, branch, branchRep, _callback);
+        okhttp3.Call localVarCall = putBranchValidateBeforeCall(repo, branch, putBranch, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }

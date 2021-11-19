@@ -23,7 +23,14 @@ import com.launchdarkly.api.model.FeatureFlagStatuses;
 import com.launchdarkly.api.model.FeatureFlags;
 import com.launchdarkly.api.model.FlagCopyConfigPost;
 import com.launchdarkly.api.model.FlagStatusRep;
+import com.launchdarkly.api.model.ForbiddenErrorRep;
+import com.launchdarkly.api.model.InvalidRequestErrorRep;
+import com.launchdarkly.api.model.MethodNotAllowedErrorRep;
+import com.launchdarkly.api.model.NotFoundErrorRep;
 import com.launchdarkly.api.model.PatchWithComment;
+import com.launchdarkly.api.model.RateLimitedErrorRep;
+import com.launchdarkly.api.model.StatusConflictErrorRep;
+import com.launchdarkly.api.model.UnauthorizedErrorRep;
 import org.junit.Test;
 import org.junit.Ignore;
 

@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * CustomRolePost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-01T19:03:54.089510Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-19T20:23:06.329570Z[Etc/UTC]")
 public class CustomRolePost {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -47,6 +47,10 @@ public class CustomRolePost {
   public static final String SERIALIZED_NAME_POLICY = "policy";
   @SerializedName(SERIALIZED_NAME_POLICY)
   private List<StatementPost> policy = new ArrayList<StatementPost>();
+
+  public static final String SERIALIZED_NAME_BASE_PERMISSIONS = "basePermissions";
+  @SerializedName(SERIALIZED_NAME_BASE_PERMISSIONS)
+  private String basePermissions;
 
 
   public CustomRolePost name(String name) {
@@ -146,6 +150,29 @@ public class CustomRolePost {
   }
 
 
+  public CustomRolePost basePermissions(String basePermissions) {
+    
+    this.basePermissions = basePermissions;
+    return this;
+  }
+
+   /**
+   * Get basePermissions
+   * @return basePermissions
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getBasePermissions() {
+    return basePermissions;
+  }
+
+
+  public void setBasePermissions(String basePermissions) {
+    this.basePermissions = basePermissions;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -158,12 +185,13 @@ public class CustomRolePost {
     return Objects.equals(this.name, customRolePost.name) &&
         Objects.equals(this.key, customRolePost.key) &&
         Objects.equals(this.description, customRolePost.description) &&
-        Objects.equals(this.policy, customRolePost.policy);
+        Objects.equals(this.policy, customRolePost.policy) &&
+        Objects.equals(this.basePermissions, customRolePost.basePermissions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, key, description, policy);
+    return Objects.hash(name, key, description, policy, basePermissions);
   }
 
   @Override
@@ -174,6 +202,7 @@ public class CustomRolePost {
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
+    sb.append("    basePermissions: ").append(toIndentedString(basePermissions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

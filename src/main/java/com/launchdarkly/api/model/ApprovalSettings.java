@@ -31,9 +31,9 @@ import java.util.Map;
 /**
  * ApprovalSettings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-01T19:03:54.089510Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-19T20:23:06.329570Z[Etc/UTC]")
 public class ApprovalSettings {
-  public static final String SERIALIZED_NAME_REQUIRED = "Required";
+  public static final String SERIALIZED_NAME_REQUIRED = "required";
   @SerializedName(SERIALIZED_NAME_REQUIRED)
   private Boolean required;
 
@@ -169,7 +169,7 @@ public class ApprovalSettings {
    * @return canApplyDeclinedChanges
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "false", required = true, value = "Allow applying the change as long as at least one person has approved.")
+  @ApiModelProperty(example = "true", required = true, value = "Allow applying the change as long as at least one person has approved.")
 
   public Boolean getCanApplyDeclinedChanges() {
     return canApplyDeclinedChanges;

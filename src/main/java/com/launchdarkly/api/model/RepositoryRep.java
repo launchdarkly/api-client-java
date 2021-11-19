@@ -33,7 +33,7 @@ import java.util.Map;
 /**
  * RepositoryRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-01T19:03:54.089510Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-19T20:23:06.329570Z[Etc/UTC]")
 public class RepositoryRep {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -51,9 +51,58 @@ public class RepositoryRep {
   @SerializedName(SERIALIZED_NAME_HUNK_URL_TEMPLATE)
   private String hunkUrlTemplate;
 
+  /**
+   * The type of repository
+   */
+  @JsonAdapter(TypeEnum.Adapter.class)
+  public enum TypeEnum {
+    GITHUB("github"),
+    
+    BITBUCKET("bitbucket"),
+    
+    CUSTOM("custom");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static TypeEnum fromValue(String value) {
+      for (TypeEnum b : TypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<TypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public TypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return TypeEnum.fromValue(value);
+      }
+    }
+  }
+
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  private String type;
+  private TypeEnum type;
 
   public static final String SERIALIZED_NAME_DEFAULT_BRANCH = "defaultBranch";
   @SerializedName(SERIALIZED_NAME_DEFAULT_BRANCH)
@@ -87,11 +136,11 @@ public class RepositoryRep {
   }
 
    /**
-   * Get name
+   * The repository name
    * @return name
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "LaunchDarkly-Docs", required = true, value = "The repository name")
 
   public String getName() {
     return name;
@@ -110,11 +159,11 @@ public class RepositoryRep {
   }
 
    /**
-   * Get sourceLink
+   * A URL to access the repository
    * @return sourceLink
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "https://github.com/launchdarkly/LaunchDarkly-Docs", value = "A URL to access the repository")
 
   public String getSourceLink() {
     return sourceLink;
@@ -133,11 +182,11 @@ public class RepositoryRep {
   }
 
    /**
-   * Get commitUrlTemplate
+   * A template for constructing a valid URL to view the commit
    * @return commitUrlTemplate
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "/commit/${sha}", value = "A template for constructing a valid URL to view the commit")
 
   public String getCommitUrlTemplate() {
     return commitUrlTemplate;
@@ -156,11 +205,11 @@ public class RepositoryRep {
   }
 
    /**
-   * Get hunkUrlTemplate
+   * A template for constructing a valid URL to view the hunk
    * @return hunkUrlTemplate
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "/blob/${sha}/${filePath}#L${lineNumber}", value = "A template for constructing a valid URL to view the hunk")
 
   public String getHunkUrlTemplate() {
     return hunkUrlTemplate;
@@ -172,25 +221,25 @@ public class RepositoryRep {
   }
 
 
-  public RepositoryRep type(String type) {
+  public RepositoryRep type(TypeEnum type) {
     
     this.type = type;
     return this;
   }
 
    /**
-   * Get type
+   * The type of repository
    * @return type
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "github", required = true, value = "The type of repository")
 
-  public String getType() {
+  public TypeEnum getType() {
     return type;
   }
 
 
-  public void setType(String type) {
+  public void setType(TypeEnum type) {
     this.type = type;
   }
 
@@ -202,11 +251,11 @@ public class RepositoryRep {
   }
 
    /**
-   * Get defaultBranch
+   * The repository&#39;s default branch
    * @return defaultBranch
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "main", required = true, value = "The repository's default branch")
 
   public String getDefaultBranch() {
     return defaultBranch;
@@ -225,11 +274,11 @@ public class RepositoryRep {
   }
 
    /**
-   * Get enabled
+   * Whether or not a repository is enabled for code reference scanning
    * @return enabled
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "true", required = true, value = "Whether or not a repository is enabled for code reference scanning")
 
   public Boolean getEnabled() {
     return enabled;
@@ -248,11 +297,11 @@ public class RepositoryRep {
   }
 
    /**
-   * Get version
+   * The version of the repository&#39;s saved information
    * @return version
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "3", required = true, value = "The version of the repository's saved information")
 
   public Integer getVersion() {
     return version;
@@ -279,11 +328,11 @@ public class RepositoryRep {
   }
 
    /**
-   * Get branches
+   * An array of the repository&#39;s branches that have been scanned for code references
    * @return branches
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "An array of the repository's branches that have been scanned for code references")
 
   public List<BranchRep> getBranches() {
     return branches;

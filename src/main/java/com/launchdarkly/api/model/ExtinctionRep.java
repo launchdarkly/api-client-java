@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ExtinctionRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-01T19:03:54.089510Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-19T20:23:06.329570Z[Etc/UTC]")
 public class ExtinctionRep {
   public static final String SERIALIZED_NAME_REVISION = "revision";
   @SerializedName(SERIALIZED_NAME_REVISION)
@@ -57,11 +57,11 @@ public class ExtinctionRep {
   }
 
    /**
-   * Get revision
+   * The identifier for the revision where flag became extinct. For example, a commit SHA.
    * @return revision
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3", required = true, value = "The identifier for the revision where flag became extinct. For example, a commit SHA.")
 
   public String getRevision() {
     return revision;
@@ -80,11 +80,11 @@ public class ExtinctionRep {
   }
 
    /**
-   * Get message
+   * Description of the extinction. For example, the commit message for the revision.
    * @return message
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "Remove flag for launched feature", required = true, value = "Description of the extinction. For example, the commit message for the revision.")
 
   public String getMessage() {
     return message;
@@ -126,11 +126,11 @@ public class ExtinctionRep {
   }
 
    /**
-   * Get flagKey
+   * The feature flag key
    * @return flagKey
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "enable-feature", required = true, value = "The feature flag key")
 
   public String getFlagKey() {
     return flagKey;
@@ -149,11 +149,11 @@ public class ExtinctionRep {
   }
 
    /**
-   * Get projKey
+   * The project key
    * @return projKey
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "default", required = true, value = "The project key")
 
   public String getProjKey() {
     return projKey;

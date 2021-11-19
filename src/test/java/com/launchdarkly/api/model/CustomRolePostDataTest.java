@@ -75,4 +75,12 @@ public class CustomRolePostDataTest {
         // TODO: test policy
     }
 
+    /**
+     * Test the property 'basePermissions'
+     */
+    @Test
+    public void basePermissionsTest() {
+        // TODO: test basePermissions
+    }
+
 }

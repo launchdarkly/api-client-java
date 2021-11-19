@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **unboundedMetadata** | [**SegmentMetadata**](SegmentMetadata.md) |  |  [optional]
 **external** | **String** |  |  [optional]
 **externalLink** | **String** |  |  [optional]
+**importInProgress** | **Boolean** |  |  [optional]
 
 
 

@@ -80,14 +80,14 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Action completed successfully |  -  |
+**204** | Action succeeded |  -  |
 **401** | Invalid access token |  -  |
-**403** | Access to the requested resource was denied |  -  |
+**403** | Forbidden |  -  |
 **404** | Invalid resource identifier |  -  |
 **409** | Status conflict |  -  |
 **429** | Rate limited |  -  |
@@ -318,9 +318,9 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Segment membership for user response |  -  |
-**400** | Invalid segment |  -  |
+**400** | Invalid request |  -  |
 **401** | Invalid access token |  -  |
-**404** | Unknown segment key |  -  |
+**404** | Invalid resource identifier |  -  |
 **429** | Rate limited |  -  |
 
 <a name="getSegments"></a>
@@ -470,7 +470,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Expiring user target response. |  -  |
-**400** | Invalid request body |  -  |
+**400** | Invalid request |  -  |
 **401** | Invalid access token |  -  |
 **403** | Forbidden |  -  |
 **404** | Invalid resource identifier |  -  |
@@ -551,9 +551,9 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Segment response |  -  |
-**400** | Invalid request body |  -  |
+**400** | Invalid request |  -  |
 **401** | Invalid access token |  -  |
-**403** | Access to the requested resource was denied |  -  |
+**403** | Forbidden |  -  |
 **404** | Invalid resource identifier |  -  |
 **409** | Status conflict |  -  |
 **429** | Rate limited |  -  |
@@ -630,9 +630,9 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | Segment response |  -  |
-**400** | Invalid request body |  -  |
+**400** | Invalid request |  -  |
 **401** | Invalid access token |  -  |
-**403** | Access to the requested resource was denied |  -  |
+**403** | Forbidden |  -  |
 **404** | Invalid resource identifier |  -  |
 **429** | Rate limited |  -  |
 
@@ -703,13 +703,13 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Action completed successfully |  -  |
-**400** | Invalid request body |  -  |
+**204** | Action succeeded |  -  |
+**400** | Invalid request |  -  |
 **401** | Invalid access token |  -  |
 **404** | Invalid resource identifier |  -  |
 **429** | Rate limited |  -  |

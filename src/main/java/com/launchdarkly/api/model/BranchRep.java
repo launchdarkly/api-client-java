@@ -32,7 +32,7 @@ import java.util.Map;
 /**
  * BranchRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-01T19:03:54.089510Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-19T20:23:06.329570Z[Etc/UTC]")
 public class BranchRep {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -56,7 +56,7 @@ public class BranchRep {
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  private Map<String, Object> links = null;
+  private Map<String, Object> links = new HashMap<String, Object>();
 
 
   public BranchRep name(String name) {
@@ -66,11 +66,11 @@ public class BranchRep {
   }
 
    /**
-   * Get name
+   * The branch name
    * @return name
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "main", required = true, value = "The branch name")
 
   public String getName() {
     return name;
@@ -89,11 +89,11 @@ public class BranchRep {
   }
 
    /**
-   * Get head
+   * An ID representing the branch HEAD. For example, a commit SHA.
    * @return head
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3", required = true, value = "An ID representing the branch HEAD. For example, a commit SHA.")
 
   public String getHead() {
     return head;
@@ -112,11 +112,11 @@ public class BranchRep {
   }
 
    /**
-   * Get updateSequenceId
+   * An optional ID used to prevent older data from overwriting newer data
    * @return updateSequenceId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "25", value = "An optional ID used to prevent older data from overwriting newer data")
 
   public Long getUpdateSequenceId() {
     return updateSequenceId;
@@ -138,8 +138,8 @@ public class BranchRep {
    * Get syncTime
    * @return syncTime
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
   public Long getSyncTime() {
     return syncTime;
@@ -166,11 +166,11 @@ public class BranchRep {
   }
 
    /**
-   * Get references
+   * An array of flag references found on the branch
    * @return references
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "An array of flag references found on the branch")
 
   public List<ReferenceRep> getReferences() {
     return references;
@@ -189,9 +189,6 @@ public class BranchRep {
   }
 
   public BranchRep putLinksItem(String key, Object linksItem) {
-    if (this.links == null) {
-      this.links = new HashMap<String, Object>();
-    }
     this.links.put(key, linksItem);
     return this;
   }
@@ -200,8 +197,8 @@ public class BranchRep {
    * Get links
    * @return links
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
   public Map<String, Object> getLinks() {
     return links;

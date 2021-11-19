@@ -14,6 +14,12 @@
 package com.launchdarkly.api.api;
 
 import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.model.ForbiddenErrorRep;
+import com.launchdarkly.api.model.InvalidRequestErrorRep;
+import com.launchdarkly.api.model.NotFoundErrorRep;
+import com.launchdarkly.api.model.RateLimitedErrorRep;
+import com.launchdarkly.api.model.StatusConflictErrorRep;
+import com.launchdarkly.api.model.UnauthorizedErrorRep;
 import com.launchdarkly.api.model.User;
 import com.launchdarkly.api.model.Users;
 import org.junit.Test;
@@ -54,7 +60,7 @@ public class UsersApiTest {
     /**
      * Find users
      *
-     * Search users in LaunchDarkly based on their last active date, or a search query. Do not use to enumerate all users in LaunchDarkly. Instead use the [List users](getUsers) API resource.  &gt; ### &#x60;offset&#x60; is deprecated &gt; &gt; &#x60;offset&#x60; is deprecated and will be removed in a future API version. You can still use &#x60;offset&#x60; and &#x60;limit&#x60; for pagination, but we recommend you use &#x60;sort&#x60; and &#x60;searchAfter&#x60; instead. &#x60;searchAfter&#x60; allows you to page through more than 10,000 users, but &#x60;offset&#x60; and &#x60;limit&#x60; do not. 
+     * Search users in LaunchDarkly based on their last active date, a user attribute filter set, or a search query. Do not use to list all users in LaunchDarkly. Instead, use the [List users](getUsers) API resource.  An example user attribute filter set is &#x60;filter&#x3D;firstName:Anna,activeTrial:false&#x60;. This matches users that have the user attribute &#x60;firstName&#x60; set to &#x60;Anna&#x60;, that also have the attribute &#x60;activeTrial&#x60; set to &#x60;false&#x60;.  &gt; ### &#x60;offset&#x60; is deprecated &gt; &gt; &#x60;offset&#x60; is deprecated and will be removed in a future API version. You can still use &#x60;offset&#x60; and &#x60;limit&#x60; for pagination, but we recommend you use &#x60;sort&#x60; and &#x60;searchAfter&#x60; instead. &#x60;searchAfter&#x60; allows you to page through more than 10,000 users, but &#x60;offset&#x60; and &#x60;limit&#x60; do not. 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -67,8 +73,10 @@ public class UsersApiTest {
         Long limit = null;
         Long offset = null;
         Long after = null;
+        String sort = null;
         String searchAfter = null;
-        Users response = api.getSearchUsers(projKey, envKey, q, limit, offset, after, searchAfter);
+        String filter = null;
+        Users response = api.getSearchUsers(projKey, envKey, q, limit, offset, after, sort, searchAfter, filter);
 
         // TODO: test validations
     }

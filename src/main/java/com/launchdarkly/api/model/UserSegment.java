@@ -36,7 +36,7 @@ import java.util.Map;
 /**
  * UserSegment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-01T19:03:54.089510Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-19T20:23:06.329570Z[Etc/UTC]")
 public class UserSegment {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -109,6 +109,10 @@ public class UserSegment {
   public static final String SERIALIZED_NAME_EXTERNAL_LINK = "_externalLink";
   @SerializedName(SERIALIZED_NAME_EXTERNAL_LINK)
   private String externalLink;
+
+  public static final String SERIALIZED_NAME_IMPORT_IN_PROGRESS = "_importInProgress";
+  @SerializedName(SERIALIZED_NAME_IMPORT_IN_PROGRESS)
+  private Boolean importInProgress;
 
 
   public UserSegment name(String name) {
@@ -564,6 +568,29 @@ public class UserSegment {
   }
 
 
+  public UserSegment importInProgress(Boolean importInProgress) {
+    
+    this.importInProgress = importInProgress;
+    return this;
+  }
+
+   /**
+   * Get importInProgress
+   * @return importInProgress
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getImportInProgress() {
+    return importInProgress;
+  }
+
+
+  public void setImportInProgress(Boolean importInProgress) {
+    this.importInProgress = importInProgress;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -590,12 +617,13 @@ public class UserSegment {
         Objects.equals(this.generation, userSegment.generation) &&
         Objects.equals(this.unboundedMetadata, userSegment.unboundedMetadata) &&
         Objects.equals(this.external, userSegment.external) &&
-        Objects.equals(this.externalLink, userSegment.externalLink);
+        Objects.equals(this.externalLink, userSegment.externalLink) &&
+        Objects.equals(this.importInProgress, userSegment.importInProgress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, tags, creationDate, key, included, excluded, links, rules, version, deleted, access, flags, unbounded, generation, unboundedMetadata, external, externalLink);
+    return Objects.hash(name, description, tags, creationDate, key, included, excluded, links, rules, version, deleted, access, flags, unbounded, generation, unboundedMetadata, external, externalLink, importInProgress);
   }
 
   @Override
@@ -620,6 +648,7 @@ public class UserSegment {
     sb.append("    unboundedMetadata: ").append(toIndentedString(unboundedMetadata)).append("\n");
     sb.append("    external: ").append(toIndentedString(external)).append("\n");
     sb.append("    externalLink: ").append(toIndentedString(externalLink)).append("\n");
+    sb.append("    importInProgress: ").append(toIndentedString(importInProgress)).append("\n");
     sb.append("}");
     return sb.toString();
   }

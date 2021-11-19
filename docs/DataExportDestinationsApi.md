@@ -76,7 +76,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -84,7 +84,7 @@ null (empty response body)
 **204** | Destination response |  -  |
 **401** | Invalid access token |  -  |
 **403** | Forbidden |  -  |
-**404** | Invalid resource specifier |  -  |
+**404** | Invalid resource identifier |  -  |
 **429** | Rate limited |  -  |
 
 <a name="getDestination"></a>
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 **200** | Destination response |  -  |
 **401** | Invalid access token |  -  |
 **403** | Forbidden |  -  |
-**404** | Invalid resource specifier |  -  |
+**404** | Invalid resource identifier |  -  |
 **429** | Rate limited |  -  |
 
 <a name="getDestinations"></a>
@@ -306,10 +306,10 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Destination response |  -  |
-**400** | Invalid request body |  -  |
+**400** | Invalid request |  -  |
 **401** | Invalid access token |  -  |
 **403** | Forbidden |  -  |
-**404** | Invalid resource specifier |  -  |
+**404** | Invalid resource identifier |  -  |
 **409** | Status conflict |  -  |
 **429** | Rate limited |  -  |
 
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | Destination response |  -  |
-**400** | Invalid request body |  -  |
+**400** | Invalid request |  -  |
 **401** | Invalid access token |  -  |
 **403** | Forbidden |  -  |
 **409** | Status conflict |  -  |

@@ -185,4 +185,12 @@ public class MemberTest {
         // TODO: test permissionGrants
     }
 
+    /**
+     * Test the property 'creationDate'
+     */
+    @Test
+    public void creationDateTest() {
+        // TODO: test creationDate
+    }
+
 }

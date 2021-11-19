@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **key** | **String** | The custom role key | 
 **description** | **String** | Description of custom role |  [optional]
 **policy** | [**List&lt;StatementPost&gt;**](StatementPost.md) |  | 
+**basePermissions** | **String** |  |  [optional]
 
 
 

@@ -12,6 +12,10 @@ docs/AccessTokenPost.md
 docs/AccessTokensApi.md
 docs/AccountMembersApi.md
 docs/AccountUsageBetaApi.md
+docs/ActionInputRep.md
+docs/ActionOutputRep.md
+docs/ApprovalConditionInputRep.md
+docs/ApprovalConditionOutputRep.md
 docs/ApprovalSettings.md
 docs/ApprovalsApi.md
 docs/AuditLogApi.md
@@ -26,8 +30,12 @@ docs/Clause.md
 docs/ClientSideAvailability.md
 docs/ClientSideAvailabilityPost.md
 docs/CodeReferencesApi.md
+docs/ConditionBaseOutputRep.md
+docs/ConditionInputRep.md
+docs/ConditionOutputRep.md
 docs/ConfidenceIntervalRep.md
 docs/Conflict.md
+docs/ConflictOutputRep.md
 docs/CopiedFromEnv.md
 docs/CreateCopyFlagConfigApprovalRequestRequest.md
 docs/CreateFlagConfigApprovalRequestRequest.md
@@ -37,8 +45,11 @@ docs/CustomRolePost.md
 docs/CustomRolePostData.md
 docs/CustomRoles.md
 docs/CustomRolesApi.md
+docs/CustomWorkflowInputRep.md
 docs/CustomWorkflowMeta.md
+docs/CustomWorkflowOutputRep.md
 docs/CustomWorkflowStageMeta.md
+docs/CustomWorkflowsListingOutputRep.md
 docs/DataExportDestinationsApi.md
 docs/DefaultClientSideAvailabilityPost.md
 docs/Defaults.md
@@ -51,6 +62,7 @@ docs/Destinations.md
 docs/Environment.md
 docs/EnvironmentPost.md
 docs/EnvironmentsApi.md
+docs/ExecutionOutputRep.md
 docs/ExperimentAllocationRep.md
 docs/ExperimentEnabledPeriodRep.md
 docs/ExperimentEnvironmentSettingRep.md
@@ -67,7 +79,6 @@ docs/ExpiringUserTargetError.md
 docs/ExpiringUserTargetGetResponse.md
 docs/ExpiringUserTargetItem.md
 docs/ExpiringUserTargetPatchResponse.md
-docs/Extinction.md
 docs/ExtinctionCollectionRep.md
 docs/ExtinctionRep.md
 docs/FeatureFlag.md
@@ -90,12 +101,12 @@ docs/FlagListingRep.md
 docs/FlagScheduledChangesInput.md
 docs/FlagStatusRep.md
 docs/FlagSummary.md
+docs/ForbiddenErrorRep.md
 docs/HunkRep.md
-docs/InlineObject.md
-docs/InlineObject1.md
 docs/InlineResponse200.md
 docs/IntegrationMetadata.md
 docs/IntegrationStatus.md
+docs/InvalidRequestErrorRep.md
 docs/IpList.md
 docs/LastSeenMetadata.md
 docs/Link.md
@@ -105,6 +116,7 @@ docs/MemberPermissionGrantSummaryRep.md
 docs/MemberSummaryRep.md
 docs/MemberTeamSummaryRep.md
 docs/Members.md
+docs/MethodNotAllowedErrorRep.md
 docs/MetricCollectionRep.md
 docs/MetricListingRep.md
 docs/MetricPost.md
@@ -114,8 +126,10 @@ docs/Modification.md
 docs/MultiEnvironmentDependentFlag.md
 docs/MultiEnvironmentDependentFlags.md
 docs/NewMemberForm.md
+docs/NotFoundErrorRep.md
 docs/OtherApi.md
 docs/ParentResourceRep.md
+docs/PatchFailedErrorRep.md
 docs/PatchOperation.md
 docs/PatchSegmentInstruction.md
 docs/PatchSegmentRequest.md
@@ -132,6 +146,8 @@ docs/ProjectPost.md
 docs/Projects.md
 docs/ProjectsApi.md
 docs/PubNubDetailRep.md
+docs/PutBranch.md
+docs/RateLimitedErrorRep.md
 docs/ReferenceRep.md
 docs/RelayAutoConfigCollectionRep.md
 docs/RelayAutoConfigPost.md
@@ -142,9 +158,12 @@ docs/RepositoryPost.md
 docs/RepositoryRep.md
 docs/ResourceAccess.md
 docs/ResourceIDResponse.md
+docs/ReviewOutputRep.md
 docs/ReviewResponse.md
 docs/Rollout.md
 docs/Rule.md
+docs/ScheduleConditionInputRep.md
+docs/ScheduleConditionOutputRep.md
 docs/ScheduledChangesApi.md
 docs/SdkListRep.md
 docs/SdkVersionListRep.md
@@ -156,6 +175,8 @@ docs/SegmentUserState.md
 docs/SegmentsApi.md
 docs/SeriesListRep.md
 docs/SourceFlag.md
+docs/StageInputRep.md
+docs/StageOutputRep.md
 docs/Statement.md
 docs/StatementPost.md
 docs/StatementPostData.md
@@ -163,6 +184,7 @@ docs/StatementRep.md
 docs/StatisticCollectionRep.md
 docs/StatisticRep.md
 docs/StatisticsRoot.md
+docs/StatusConflictErrorRep.md
 docs/SubjectDataRep.md
 docs/Target.md
 docs/TargetResourceRep.md
@@ -175,6 +197,7 @@ docs/TitleRep.md
 docs/Token.md
 docs/TokenDataRep.md
 docs/Tokens.md
+docs/UnauthorizedErrorRep.md
 docs/UrlPost.md
 docs/User.md
 docs/UserAttributeNamesRep.md
@@ -199,6 +222,7 @@ docs/WebhookPost.md
 docs/Webhooks.md
 docs/WebhooksApi.md
 docs/WeightedVariation.md
+docs/WorkflowsBetaApi.md
 git_push.sh
 gradle.properties
 gradle/wrapper/gradle-wrapper.jar
@@ -244,6 +268,7 @@ src/main/java/com/launchdarkly/api/api/UserSettingsApi.java
 src/main/java/com/launchdarkly/api/api/UsersApi.java
 src/main/java/com/launchdarkly/api/api/UsersBetaApi.java
 src/main/java/com/launchdarkly/api/api/WebhooksApi.java
+src/main/java/com/launchdarkly/api/api/WorkflowsBetaApi.java
 src/main/java/com/launchdarkly/api/auth/ApiKeyAuth.java
 src/main/java/com/launchdarkly/api/auth/Authentication.java
 src/main/java/com/launchdarkly/api/auth/HttpBasicAuth.java
@@ -252,6 +277,10 @@ src/main/java/com/launchdarkly/api/model/AccessDeniedReasonRep.java
 src/main/java/com/launchdarkly/api/model/AccessDeniedRep.java
 src/main/java/com/launchdarkly/api/model/AccessRep.java
 src/main/java/com/launchdarkly/api/model/AccessTokenPost.java
+src/main/java/com/launchdarkly/api/model/ActionInputRep.java
+src/main/java/com/launchdarkly/api/model/ActionOutputRep.java
+src/main/java/com/launchdarkly/api/model/ApprovalConditionInputRep.java
+src/main/java/com/launchdarkly/api/model/ApprovalConditionOutputRep.java
 src/main/java/com/launchdarkly/api/model/ApprovalSettings.java
 src/main/java/com/launchdarkly/api/model/AuditLogEntryListingRep.java
 src/main/java/com/launchdarkly/api/model/AuditLogEntryListingRepCollection.java
@@ -263,8 +292,12 @@ src/main/java/com/launchdarkly/api/model/BranchRep.java
 src/main/java/com/launchdarkly/api/model/Clause.java
 src/main/java/com/launchdarkly/api/model/ClientSideAvailability.java
 src/main/java/com/launchdarkly/api/model/ClientSideAvailabilityPost.java
+src/main/java/com/launchdarkly/api/model/ConditionBaseOutputRep.java
+src/main/java/com/launchdarkly/api/model/ConditionInputRep.java
+src/main/java/com/launchdarkly/api/model/ConditionOutputRep.java
 src/main/java/com/launchdarkly/api/model/ConfidenceIntervalRep.java
 src/main/java/com/launchdarkly/api/model/Conflict.java
+src/main/java/com/launchdarkly/api/model/ConflictOutputRep.java
 src/main/java/com/launchdarkly/api/model/CopiedFromEnv.java
 src/main/java/com/launchdarkly/api/model/CreateCopyFlagConfigApprovalRequestRequest.java
 src/main/java/com/launchdarkly/api/model/CreateFlagConfigApprovalRequestRequest.java
@@ -273,8 +306,11 @@ src/main/java/com/launchdarkly/api/model/CustomRole.java
 src/main/java/com/launchdarkly/api/model/CustomRolePost.java
 src/main/java/com/launchdarkly/api/model/CustomRolePostData.java
 src/main/java/com/launchdarkly/api/model/CustomRoles.java
+src/main/java/com/launchdarkly/api/model/CustomWorkflowInputRep.java
 src/main/java/com/launchdarkly/api/model/CustomWorkflowMeta.java
+src/main/java/com/launchdarkly/api/model/CustomWorkflowOutputRep.java
 src/main/java/com/launchdarkly/api/model/CustomWorkflowStageMeta.java
+src/main/java/com/launchdarkly/api/model/CustomWorkflowsListingOutputRep.java
 src/main/java/com/launchdarkly/api/model/DefaultClientSideAvailabilityPost.java
 src/main/java/com/launchdarkly/api/model/Defaults.java
 src/main/java/com/launchdarkly/api/model/DependentFlag.java
@@ -285,6 +321,7 @@ src/main/java/com/launchdarkly/api/model/DestinationPost.java
 src/main/java/com/launchdarkly/api/model/Destinations.java
 src/main/java/com/launchdarkly/api/model/Environment.java
 src/main/java/com/launchdarkly/api/model/EnvironmentPost.java
+src/main/java/com/launchdarkly/api/model/ExecutionOutputRep.java
 src/main/java/com/launchdarkly/api/model/ExperimentAllocationRep.java
 src/main/java/com/launchdarkly/api/model/ExperimentEnabledPeriodRep.java
 src/main/java/com/launchdarkly/api/model/ExperimentEnvironmentSettingRep.java
@@ -300,7 +337,6 @@ src/main/java/com/launchdarkly/api/model/ExpiringUserTargetError.java
 src/main/java/com/launchdarkly/api/model/ExpiringUserTargetGetResponse.java
 src/main/java/com/launchdarkly/api/model/ExpiringUserTargetItem.java
 src/main/java/com/launchdarkly/api/model/ExpiringUserTargetPatchResponse.java
-src/main/java/com/launchdarkly/api/model/Extinction.java
 src/main/java/com/launchdarkly/api/model/ExtinctionCollectionRep.java
 src/main/java/com/launchdarkly/api/model/ExtinctionRep.java
 src/main/java/com/launchdarkly/api/model/FeatureFlag.java
@@ -321,12 +357,12 @@ src/main/java/com/launchdarkly/api/model/FlagListingRep.java
 src/main/java/com/launchdarkly/api/model/FlagScheduledChangesInput.java
 src/main/java/com/launchdarkly/api/model/FlagStatusRep.java
 src/main/java/com/launchdarkly/api/model/FlagSummary.java
+src/main/java/com/launchdarkly/api/model/ForbiddenErrorRep.java
 src/main/java/com/launchdarkly/api/model/HunkRep.java
-src/main/java/com/launchdarkly/api/model/InlineObject.java
-src/main/java/com/launchdarkly/api/model/InlineObject1.java
 src/main/java/com/launchdarkly/api/model/InlineResponse200.java
 src/main/java/com/launchdarkly/api/model/IntegrationMetadata.java
 src/main/java/com/launchdarkly/api/model/IntegrationStatus.java
+src/main/java/com/launchdarkly/api/model/InvalidRequestErrorRep.java
 src/main/java/com/launchdarkly/api/model/IpList.java
 src/main/java/com/launchdarkly/api/model/LastSeenMetadata.java
 src/main/java/com/launchdarkly/api/model/Link.java
@@ -336,6 +372,7 @@ src/main/java/com/launchdarkly/api/model/MemberPermissionGrantSummaryRep.java
 src/main/java/com/launchdarkly/api/model/MemberSummaryRep.java
 src/main/java/com/launchdarkly/api/model/MemberTeamSummaryRep.java
 src/main/java/com/launchdarkly/api/model/Members.java
+src/main/java/com/launchdarkly/api/model/MethodNotAllowedErrorRep.java
 src/main/java/com/launchdarkly/api/model/MetricCollectionRep.java
 src/main/java/com/launchdarkly/api/model/MetricListingRep.java
 src/main/java/com/launchdarkly/api/model/MetricPost.java
@@ -344,7 +381,9 @@ src/main/java/com/launchdarkly/api/model/Modification.java
 src/main/java/com/launchdarkly/api/model/MultiEnvironmentDependentFlag.java
 src/main/java/com/launchdarkly/api/model/MultiEnvironmentDependentFlags.java
 src/main/java/com/launchdarkly/api/model/NewMemberForm.java
+src/main/java/com/launchdarkly/api/model/NotFoundErrorRep.java
 src/main/java/com/launchdarkly/api/model/ParentResourceRep.java
+src/main/java/com/launchdarkly/api/model/PatchFailedErrorRep.java
 src/main/java/com/launchdarkly/api/model/PatchOperation.java
 src/main/java/com/launchdarkly/api/model/PatchSegmentInstruction.java
 src/main/java/com/launchdarkly/api/model/PatchSegmentRequest.java
@@ -360,6 +399,8 @@ src/main/java/com/launchdarkly/api/model/ProjectListingRep.java
 src/main/java/com/launchdarkly/api/model/ProjectPost.java
 src/main/java/com/launchdarkly/api/model/Projects.java
 src/main/java/com/launchdarkly/api/model/PubNubDetailRep.java
+src/main/java/com/launchdarkly/api/model/PutBranch.java
+src/main/java/com/launchdarkly/api/model/RateLimitedErrorRep.java
 src/main/java/com/launchdarkly/api/model/ReferenceRep.java
 src/main/java/com/launchdarkly/api/model/RelayAutoConfigCollectionRep.java
 src/main/java/com/launchdarkly/api/model/RelayAutoConfigPost.java
@@ -369,9 +410,12 @@ src/main/java/com/launchdarkly/api/model/RepositoryPost.java
 src/main/java/com/launchdarkly/api/model/RepositoryRep.java
 src/main/java/com/launchdarkly/api/model/ResourceAccess.java
 src/main/java/com/launchdarkly/api/model/ResourceIDResponse.java
+src/main/java/com/launchdarkly/api/model/ReviewOutputRep.java
 src/main/java/com/launchdarkly/api/model/ReviewResponse.java
 src/main/java/com/launchdarkly/api/model/Rollout.java
 src/main/java/com/launchdarkly/api/model/Rule.java
+src/main/java/com/launchdarkly/api/model/ScheduleConditionInputRep.java
+src/main/java/com/launchdarkly/api/model/ScheduleConditionOutputRep.java
 src/main/java/com/launchdarkly/api/model/SdkListRep.java
 src/main/java/com/launchdarkly/api/model/SdkVersionListRep.java
 src/main/java/com/launchdarkly/api/model/SdkVersionRep.java
@@ -381,6 +425,8 @@ src/main/java/com/launchdarkly/api/model/SegmentUserList.java
 src/main/java/com/launchdarkly/api/model/SegmentUserState.java
 src/main/java/com/launchdarkly/api/model/SeriesListRep.java
 src/main/java/com/launchdarkly/api/model/SourceFlag.java
+src/main/java/com/launchdarkly/api/model/StageInputRep.java
+src/main/java/com/launchdarkly/api/model/StageOutputRep.java
 src/main/java/com/launchdarkly/api/model/Statement.java
 src/main/java/com/launchdarkly/api/model/StatementPost.java
 src/main/java/com/launchdarkly/api/model/StatementPostData.java
@@ -388,6 +434,7 @@ src/main/java/com/launchdarkly/api/model/StatementRep.java
 src/main/java/com/launchdarkly/api/model/StatisticCollectionRep.java
 src/main/java/com/launchdarkly/api/model/StatisticRep.java
 src/main/java/com/launchdarkly/api/model/StatisticsRoot.java
+src/main/java/com/launchdarkly/api/model/StatusConflictErrorRep.java
 src/main/java/com/launchdarkly/api/model/SubjectDataRep.java
 src/main/java/com/launchdarkly/api/model/Target.java
 src/main/java/com/launchdarkly/api/model/TargetResourceRep.java
@@ -399,6 +446,7 @@ src/main/java/com/launchdarkly/api/model/TitleRep.java
 src/main/java/com/launchdarkly/api/model/Token.java
 src/main/java/com/launchdarkly/api/model/TokenDataRep.java
 src/main/java/com/launchdarkly/api/model/Tokens.java
+src/main/java/com/launchdarkly/api/model/UnauthorizedErrorRep.java
 src/main/java/com/launchdarkly/api/model/UrlPost.java
 src/main/java/com/launchdarkly/api/model/User.java
 src/main/java/com/launchdarkly/api/model/UserAttributeNamesRep.java
@@ -442,10 +490,15 @@ src/test/java/com/launchdarkly/api/api/UserSettingsApiTest.java
 src/test/java/com/launchdarkly/api/api/UsersApiTest.java
 src/test/java/com/launchdarkly/api/api/UsersBetaApiTest.java
 src/test/java/com/launchdarkly/api/api/WebhooksApiTest.java
+src/test/java/com/launchdarkly/api/api/WorkflowsBetaApiTest.java
 src/test/java/com/launchdarkly/api/model/AccessDeniedReasonRepTest.java
 src/test/java/com/launchdarkly/api/model/AccessDeniedRepTest.java
 src/test/java/com/launchdarkly/api/model/AccessRepTest.java
 src/test/java/com/launchdarkly/api/model/AccessTokenPostTest.java
+src/test/java/com/launchdarkly/api/model/ActionInputRepTest.java
+src/test/java/com/launchdarkly/api/model/ActionOutputRepTest.java
+src/test/java/com/launchdarkly/api/model/ApprovalConditionInputRepTest.java
+src/test/java/com/launchdarkly/api/model/ApprovalConditionOutputRepTest.java
 src/test/java/com/launchdarkly/api/model/ApprovalSettingsTest.java
 src/test/java/com/launchdarkly/api/model/AuditLogEntryListingRepCollectionTest.java
 src/test/java/com/launchdarkly/api/model/AuditLogEntryListingRepTest.java
@@ -457,7 +510,11 @@ src/test/java/com/launchdarkly/api/model/BranchRepTest.java
 src/test/java/com/launchdarkly/api/model/ClauseTest.java
 src/test/java/com/launchdarkly/api/model/ClientSideAvailabilityPostTest.java
 src/test/java/com/launchdarkly/api/model/ClientSideAvailabilityTest.java
+src/test/java/com/launchdarkly/api/model/ConditionBaseOutputRepTest.java
+src/test/java/com/launchdarkly/api/model/ConditionInputRepTest.java
+src/test/java/com/launchdarkly/api/model/ConditionOutputRepTest.java
 src/test/java/com/launchdarkly/api/model/ConfidenceIntervalRepTest.java
+src/test/java/com/launchdarkly/api/model/ConflictOutputRepTest.java
 src/test/java/com/launchdarkly/api/model/ConflictTest.java
 src/test/java/com/launchdarkly/api/model/CopiedFromEnvTest.java
 src/test/java/com/launchdarkly/api/model/CreateCopyFlagConfigApprovalRequestRequestTest.java
@@ -467,8 +524,11 @@ src/test/java/com/launchdarkly/api/model/CustomRolePostDataTest.java
 src/test/java/com/launchdarkly/api/model/CustomRolePostTest.java
 src/test/java/com/launchdarkly/api/model/CustomRoleTest.java
 src/test/java/com/launchdarkly/api/model/CustomRolesTest.java
+src/test/java/com/launchdarkly/api/model/CustomWorkflowInputRepTest.java
 src/test/java/com/launchdarkly/api/model/CustomWorkflowMetaTest.java
+src/test/java/com/launchdarkly/api/model/CustomWorkflowOutputRepTest.java
 src/test/java/com/launchdarkly/api/model/CustomWorkflowStageMetaTest.java
+src/test/java/com/launchdarkly/api/model/CustomWorkflowsListingOutputRepTest.java
 src/test/java/com/launchdarkly/api/model/DefaultClientSideAvailabilityPostTest.java
 src/test/java/com/launchdarkly/api/model/DefaultsTest.java
 src/test/java/com/launchdarkly/api/model/DependentFlagEnvironmentTest.java
@@ -479,6 +539,7 @@ src/test/java/com/launchdarkly/api/model/DestinationTest.java
 src/test/java/com/launchdarkly/api/model/DestinationsTest.java
 src/test/java/com/launchdarkly/api/model/EnvironmentPostTest.java
 src/test/java/com/launchdarkly/api/model/EnvironmentTest.java
+src/test/java/com/launchdarkly/api/model/ExecutionOutputRepTest.java
 src/test/java/com/launchdarkly/api/model/ExperimentAllocationRepTest.java
 src/test/java/com/launchdarkly/api/model/ExperimentEnabledPeriodRepTest.java
 src/test/java/com/launchdarkly/api/model/ExperimentEnvironmentSettingRepTest.java
@@ -496,7 +557,6 @@ src/test/java/com/launchdarkly/api/model/ExpiringUserTargetItemTest.java
 src/test/java/com/launchdarkly/api/model/ExpiringUserTargetPatchResponseTest.java
 src/test/java/com/launchdarkly/api/model/ExtinctionCollectionRepTest.java
 src/test/java/com/launchdarkly/api/model/ExtinctionRepTest.java
-src/test/java/com/launchdarkly/api/model/ExtinctionTest.java
 src/test/java/com/launchdarkly/api/model/FeatureFlagBodyTest.java
 src/test/java/com/launchdarkly/api/model/FeatureFlagConfigTest.java
 src/test/java/com/launchdarkly/api/model/FeatureFlagScheduledChangeTest.java
@@ -515,12 +575,12 @@ src/test/java/com/launchdarkly/api/model/FlagListingRepTest.java
 src/test/java/com/launchdarkly/api/model/FlagScheduledChangesInputTest.java
 src/test/java/com/launchdarkly/api/model/FlagStatusRepTest.java
 src/test/java/com/launchdarkly/api/model/FlagSummaryTest.java
+src/test/java/com/launchdarkly/api/model/ForbiddenErrorRepTest.java
 src/test/java/com/launchdarkly/api/model/HunkRepTest.java
-src/test/java/com/launchdarkly/api/model/InlineObject1Test.java
-src/test/java/com/launchdarkly/api/model/InlineObjectTest.java
 src/test/java/com/launchdarkly/api/model/InlineResponse200Test.java
 src/test/java/com/launchdarkly/api/model/IntegrationMetadataTest.java
 src/test/java/com/launchdarkly/api/model/IntegrationStatusTest.java
+src/test/java/com/launchdarkly/api/model/InvalidRequestErrorRepTest.java
 src/test/java/com/launchdarkly/api/model/IpListTest.java
 src/test/java/com/launchdarkly/api/model/LastSeenMetadataTest.java
 src/test/java/com/launchdarkly/api/model/LinkTest.java
@@ -530,6 +590,7 @@ src/test/java/com/launchdarkly/api/model/MemberSummaryRepTest.java
 src/test/java/com/launchdarkly/api/model/MemberTeamSummaryRepTest.java
 src/test/java/com/launchdarkly/api/model/MemberTest.java
 src/test/java/com/launchdarkly/api/model/MembersTest.java
+src/test/java/com/launchdarkly/api/model/MethodNotAllowedErrorRepTest.java
 src/test/java/com/launchdarkly/api/model/MetricCollectionRepTest.java
 src/test/java/com/launchdarkly/api/model/MetricListingRepTest.java
 src/test/java/com/launchdarkly/api/model/MetricPostTest.java
@@ -538,7 +599,9 @@ src/test/java/com/launchdarkly/api/model/ModificationTest.java
 src/test/java/com/launchdarkly/api/model/MultiEnvironmentDependentFlagTest.java
 src/test/java/com/launchdarkly/api/model/MultiEnvironmentDependentFlagsTest.java
 src/test/java/com/launchdarkly/api/model/NewMemberFormTest.java
+src/test/java/com/launchdarkly/api/model/NotFoundErrorRepTest.java
 src/test/java/com/launchdarkly/api/model/ParentResourceRepTest.java
+src/test/java/com/launchdarkly/api/model/PatchFailedErrorRepTest.java
 src/test/java/com/launchdarkly/api/model/PatchOperationTest.java
 src/test/java/com/launchdarkly/api/model/PatchSegmentInstructionTest.java
 src/test/java/com/launchdarkly/api/model/PatchSegmentRequestTest.java
@@ -554,6 +617,8 @@ src/test/java/com/launchdarkly/api/model/ProjectPostTest.java
 src/test/java/com/launchdarkly/api/model/ProjectTest.java
 src/test/java/com/launchdarkly/api/model/ProjectsTest.java
 src/test/java/com/launchdarkly/api/model/PubNubDetailRepTest.java
+src/test/java/com/launchdarkly/api/model/PutBranchTest.java
+src/test/java/com/launchdarkly/api/model/RateLimitedErrorRepTest.java
 src/test/java/com/launchdarkly/api/model/ReferenceRepTest.java
 src/test/java/com/launchdarkly/api/model/RelayAutoConfigCollectionRepTest.java
 src/test/java/com/launchdarkly/api/model/RelayAutoConfigPostTest.java
@@ -563,9 +628,12 @@ src/test/java/com/launchdarkly/api/model/RepositoryPostTest.java
 src/test/java/com/launchdarkly/api/model/RepositoryRepTest.java
 src/test/java/com/launchdarkly/api/model/ResourceAccessTest.java
 src/test/java/com/launchdarkly/api/model/ResourceIDResponseTest.java
+src/test/java/com/launchdarkly/api/model/ReviewOutputRepTest.java
 src/test/java/com/launchdarkly/api/model/ReviewResponseTest.java
 src/test/java/com/launchdarkly/api/model/RolloutTest.java
 src/test/java/com/launchdarkly/api/model/RuleTest.java
+src/test/java/com/launchdarkly/api/model/ScheduleConditionInputRepTest.java
+src/test/java/com/launchdarkly/api/model/ScheduleConditionOutputRepTest.java
 src/test/java/com/launchdarkly/api/model/SdkListRepTest.java
 src/test/java/com/launchdarkly/api/model/SdkVersionListRepTest.java
 src/test/java/com/launchdarkly/api/model/SdkVersionRepTest.java
@@ -575,6 +643,8 @@ src/test/java/com/launchdarkly/api/model/SegmentUserListTest.java
 src/test/java/com/launchdarkly/api/model/SegmentUserStateTest.java
 src/test/java/com/launchdarkly/api/model/SeriesListRepTest.java
 src/test/java/com/launchdarkly/api/model/SourceFlagTest.java
+src/test/java/com/launchdarkly/api/model/StageInputRepTest.java
+src/test/java/com/launchdarkly/api/model/StageOutputRepTest.java
 src/test/java/com/launchdarkly/api/model/StatementPostDataTest.java
 src/test/java/com/launchdarkly/api/model/StatementPostTest.java
 src/test/java/com/launchdarkly/api/model/StatementRepTest.java
@@ -582,6 +652,7 @@ src/test/java/com/launchdarkly/api/model/StatementTest.java
 src/test/java/com/launchdarkly/api/model/StatisticCollectionRepTest.java
 src/test/java/com/launchdarkly/api/model/StatisticRepTest.java
 src/test/java/com/launchdarkly/api/model/StatisticsRootTest.java
+src/test/java/com/launchdarkly/api/model/StatusConflictErrorRepTest.java
 src/test/java/com/launchdarkly/api/model/SubjectDataRepTest.java
 src/test/java/com/launchdarkly/api/model/TargetResourceRepTest.java
 src/test/java/com/launchdarkly/api/model/TargetTest.java
@@ -593,6 +664,7 @@ src/test/java/com/launchdarkly/api/model/TitleRepTest.java
 src/test/java/com/launchdarkly/api/model/TokenDataRepTest.java
 src/test/java/com/launchdarkly/api/model/TokenTest.java
 src/test/java/com/launchdarkly/api/model/TokensTest.java
+src/test/java/com/launchdarkly/api/model/UnauthorizedErrorRepTest.java
 src/test/java/com/launchdarkly/api/model/UrlPostTest.java
 src/test/java/com/launchdarkly/api/model/UserAttributeNamesRepTest.java
 src/test/java/com/launchdarkly/api/model/UserFlagSettingTest.java

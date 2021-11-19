@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * HunkRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-01T19:03:54.089510Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-19T20:23:06.329570Z[Etc/UTC]")
 public class HunkRep {
   public static final String SERIALIZED_NAME_STARTING_LINE_NUMBER = "startingLineNumber";
   @SerializedName(SERIALIZED_NAME_STARTING_LINE_NUMBER)
@@ -59,11 +59,11 @@ public class HunkRep {
   }
 
    /**
-   * Get startingLineNumber
+   * Line number of beginning of code reference hunk
    * @return startingLineNumber
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "45", required = true, value = "Line number of beginning of code reference hunk")
 
   public Integer getStartingLineNumber() {
     return startingLineNumber;
@@ -82,11 +82,11 @@ public class HunkRep {
   }
 
    /**
-   * Get lines
+   * Contextual lines of code that include the referenced feature flag
    * @return lines
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "var enableFeature = 'enable-feature';", value = "Contextual lines of code that include the referenced feature flag")
 
   public String getLines() {
     return lines;
@@ -105,11 +105,11 @@ public class HunkRep {
   }
 
    /**
-   * Get projKey
+   * The project key
    * @return projKey
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "default", value = "The project key")
 
   public String getProjKey() {
     return projKey;
@@ -128,11 +128,11 @@ public class HunkRep {
   }
 
    /**
-   * Get flagKey
+   * The feature flag key
    * @return flagKey
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "enable-feature", value = "The feature flag key")
 
   public String getFlagKey() {
     return flagKey;
@@ -159,11 +159,11 @@ public class HunkRep {
   }
 
    /**
-   * Get aliases
+   * An array of flag key aliases
    * @return aliases
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "[\"enableFeature\",\"EnableFeature\"]", value = "An array of flag key aliases")
 
   public List<String> getAliases() {
     return aliases;

@@ -17,8 +17,13 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.model.CustomRole;
 import com.launchdarkly.api.model.CustomRolePost;
 import com.launchdarkly.api.model.CustomRoles;
+import com.launchdarkly.api.model.ForbiddenErrorRep;
+import com.launchdarkly.api.model.InvalidRequestErrorRep;
+import com.launchdarkly.api.model.NotFoundErrorRep;
 import com.launchdarkly.api.model.PatchWithComment;
-import com.launchdarkly.api.model.StatementPost;
+import com.launchdarkly.api.model.RateLimitedErrorRep;
+import com.launchdarkly.api.model.StatusConflictErrorRep;
+import com.launchdarkly.api.model.UnauthorizedErrorRep;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -63,7 +68,7 @@ public class CustomRolesApiTest {
     @Test
     public void getCustomRoleTest() throws ApiException {
         String key = null;
-        CustomRolePost response = api.getCustomRole(key);
+        CustomRole response = api.getCustomRole(key);
 
         // TODO: test validations
     }
@@ -110,8 +115,8 @@ public class CustomRolesApiTest {
      */
     @Test
     public void postCustomRoleTest() throws ApiException {
-        List<StatementPost> statementPost = null;
-        CustomRole response = api.postCustomRole(statementPost);
+        CustomRolePost customRolePost = null;
+        CustomRole response = api.postCustomRole(customRolePost);
 
         // TODO: test validations
     }

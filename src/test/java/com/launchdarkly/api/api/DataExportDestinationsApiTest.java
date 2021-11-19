@@ -17,7 +17,13 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.model.Destination;
 import com.launchdarkly.api.model.DestinationPost;
 import com.launchdarkly.api.model.Destinations;
+import com.launchdarkly.api.model.ForbiddenErrorRep;
+import com.launchdarkly.api.model.InvalidRequestErrorRep;
+import com.launchdarkly.api.model.NotFoundErrorRep;
 import com.launchdarkly.api.model.PatchOperation;
+import com.launchdarkly.api.model.RateLimitedErrorRep;
+import com.launchdarkly.api.model.StatusConflictErrorRep;
+import com.launchdarkly.api.model.UnauthorizedErrorRep;
 import org.junit.Test;
 import org.junit.Ignore;
 

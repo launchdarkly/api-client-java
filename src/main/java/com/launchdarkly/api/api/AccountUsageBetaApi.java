@@ -27,9 +27,14 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.launchdarkly.api.model.ForbiddenErrorRep;
+import com.launchdarkly.api.model.InvalidRequestErrorRep;
+import com.launchdarkly.api.model.NotFoundErrorRep;
+import com.launchdarkly.api.model.RateLimitedErrorRep;
 import com.launchdarkly.api.model.SdkListRep;
 import com.launchdarkly.api.model.SdkVersionListRep;
 import com.launchdarkly.api.model.SeriesListRep;
+import com.launchdarkly.api.model.UnauthorizedErrorRep;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -244,7 +249,7 @@ public class AccountUsageBetaApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Inavlid request </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
@@ -316,7 +321,7 @@ public class AccountUsageBetaApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Inavlid request </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
@@ -340,7 +345,7 @@ public class AccountUsageBetaApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Inavlid request </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
@@ -366,7 +371,7 @@ public class AccountUsageBetaApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Inavlid request </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>

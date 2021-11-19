@@ -14,8 +14,11 @@
 package com.launchdarkly.api.api;
 
 import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.model.ForbiddenErrorRep;
 import com.launchdarkly.api.model.InlineResponse200;
 import com.launchdarkly.api.model.IpList;
+import com.launchdarkly.api.model.RateLimitedErrorRep;
+import com.launchdarkly.api.model.UnauthorizedErrorRep;
 import com.launchdarkly.api.model.VersionsRep;
 import org.junit.Test;
 import org.junit.Ignore;

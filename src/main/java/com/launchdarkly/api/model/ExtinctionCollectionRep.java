@@ -32,7 +32,7 @@ import java.util.Map;
 /**
  * ExtinctionCollectionRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-01T19:03:54.089510Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-19T20:23:06.329570Z[Etc/UTC]")
 public class ExtinctionCollectionRep {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
@@ -83,11 +83,11 @@ public class ExtinctionCollectionRep {
   }
 
    /**
-   * Get items
+   * An array of extinction events
    * @return items
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "An array of extinction events")
 
   public Map<String, List<ExtinctionRep>> getItems() {
     return items;

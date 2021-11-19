@@ -27,10 +27,17 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.launchdarkly.api.model.ForbiddenErrorRep;
+import com.launchdarkly.api.model.InvalidRequestErrorRep;
+import com.launchdarkly.api.model.MethodNotAllowedErrorRep;
+import com.launchdarkly.api.model.NotFoundErrorRep;
+import com.launchdarkly.api.model.RateLimitedErrorRep;
+import com.launchdarkly.api.model.StatusConflictErrorRep;
 import com.launchdarkly.api.model.TeamCollectionRep;
 import com.launchdarkly.api.model.TeamPatchInput;
 import com.launchdarkly.api.model.TeamPostInput;
 import com.launchdarkly.api.model.TeamRep;
+import com.launchdarkly.api.model.UnauthorizedErrorRep;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -66,9 +73,9 @@ public class TeamsBetaApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Unknown team key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
@@ -86,7 +93,7 @@ public class TeamsBetaApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -118,16 +125,16 @@ public class TeamsBetaApi {
     }
 
     /**
-     * Delete team by key
-     * Delete a team by key.
+     * Delete team
+     * Delete a team by key
      * @param key The team key (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Unknown team key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
@@ -136,17 +143,17 @@ public class TeamsBetaApi {
     }
 
     /**
-     * Delete team by key
-     * Delete a team by key.
+     * Delete team
+     * Delete a team by key
      * @param key The team key (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Unknown team key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
@@ -156,8 +163,8 @@ public class TeamsBetaApi {
     }
 
     /**
-     * Delete team by key (asynchronously)
-     * Delete a team by key.
+     * Delete team (asynchronously)
+     * Delete a team by key
      * @param key The team key (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -165,9 +172,9 @@ public class TeamsBetaApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Unknown team key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
@@ -187,9 +194,10 @@ public class TeamsBetaApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Team response JSON </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Unknown team key </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 405 </td><td> Method not allowed </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
@@ -240,8 +248,8 @@ public class TeamsBetaApi {
     }
 
     /**
-     * Get team by key
-     * Fetch a team by key.
+     * Get team
+     * Fetch a team by key
      * @param key The team key (required)
      * @return TeamRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -249,9 +257,10 @@ public class TeamsBetaApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Team response JSON </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Unknown team key </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 405 </td><td> Method not allowed </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
@@ -262,8 +271,8 @@ public class TeamsBetaApi {
     }
 
     /**
-     * Get team by key
-     * Fetch a team by key.
+     * Get team
+     * Fetch a team by key
      * @param key The team key (required)
      * @return ApiResponse&lt;TeamRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -271,9 +280,10 @@ public class TeamsBetaApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Team response JSON </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Unknown team key </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 405 </td><td> Method not allowed </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
@@ -285,8 +295,8 @@ public class TeamsBetaApi {
     }
 
     /**
-     * Get team by key (asynchronously)
-     * Fetch a team by key.
+     * Get team (asynchronously)
+     * Fetch a team by key
      * @param key The team key (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -295,9 +305,10 @@ public class TeamsBetaApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Team response JSON </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Unknown team key </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 405 </td><td> Method not allowed </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
@@ -311,6 +322,9 @@ public class TeamsBetaApi {
     }
     /**
      * Build call for getTeams
+     * @param limit The number of teams to return in the response. Defaults to 20. (optional)
+     * @param offset Where to start in the list. This is for use with pagination. For example, an offset of 10 would skip the first ten items and then return the next &#x60;limit&#x60; items. (optional)
+     * @param filter A comma-separated list of filters. Each filter is of the form &#x60;field:value&#x60;. Supported fields are explained above. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -323,7 +337,7 @@ public class TeamsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTeamsCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getTeamsCall(Long limit, Long offset, String filter, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -334,6 +348,18 @@ public class TeamsBetaApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        if (filter != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter", filter));
+        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -354,17 +380,20 @@ public class TeamsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTeamsValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getTeamsValidateBeforeCall(Long limit, Long offset, String filter, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = getTeamsCall(_callback);
+        okhttp3.Call localVarCall = getTeamsCall(limit, offset, filter, _callback);
         return localVarCall;
 
     }
 
     /**
-     * Get all teams
-     * Fetch all teams.
+     * List teams
+     * Return a list of teams.  By default, this returns the first 20 teams. Page through this list with the &#x60;limit&#x60; parameter and by following the &#x60;first&#x60;, &#x60;prev&#x60;, &#x60;next&#x60;, and &#x60;last&#x60; links in the returned &#x60;_links&#x60; field. These links are not present if the pages they refer to don&#39;t exist. For example, the &#x60;first&#x60; and &#x60;prev&#x60; links will be missing from the response on the first page.  ### Filtering teams  LaunchDarkly supports the &#x60;query&#x60; field for filtering. &#x60;query&#x60; is a string that matches against the teams&#39; names and keys. It is not case sensitive. For example, the filter &#x60;query:abc&#x60; matches teams with the string &#x60;abc&#x60; in their name or key. 
+     * @param limit The number of teams to return in the response. Defaults to 20. (optional)
+     * @param offset Where to start in the list. This is for use with pagination. For example, an offset of 10 would skip the first ten items and then return the next &#x60;limit&#x60; items. (optional)
+     * @param filter A comma-separated list of filters. Each filter is of the form &#x60;field:value&#x60;. Supported fields are explained above. (optional)
      * @return TeamCollectionRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -376,14 +405,17 @@ public class TeamsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public TeamCollectionRep getTeams() throws ApiException {
-        ApiResponse<TeamCollectionRep> localVarResp = getTeamsWithHttpInfo();
+    public TeamCollectionRep getTeams(Long limit, Long offset, String filter) throws ApiException {
+        ApiResponse<TeamCollectionRep> localVarResp = getTeamsWithHttpInfo(limit, offset, filter);
         return localVarResp.getData();
     }
 
     /**
-     * Get all teams
-     * Fetch all teams.
+     * List teams
+     * Return a list of teams.  By default, this returns the first 20 teams. Page through this list with the &#x60;limit&#x60; parameter and by following the &#x60;first&#x60;, &#x60;prev&#x60;, &#x60;next&#x60;, and &#x60;last&#x60; links in the returned &#x60;_links&#x60; field. These links are not present if the pages they refer to don&#39;t exist. For example, the &#x60;first&#x60; and &#x60;prev&#x60; links will be missing from the response on the first page.  ### Filtering teams  LaunchDarkly supports the &#x60;query&#x60; field for filtering. &#x60;query&#x60; is a string that matches against the teams&#39; names and keys. It is not case sensitive. For example, the filter &#x60;query:abc&#x60; matches teams with the string &#x60;abc&#x60; in their name or key. 
+     * @param limit The number of teams to return in the response. Defaults to 20. (optional)
+     * @param offset Where to start in the list. This is for use with pagination. For example, an offset of 10 would skip the first ten items and then return the next &#x60;limit&#x60; items. (optional)
+     * @param filter A comma-separated list of filters. Each filter is of the form &#x60;field:value&#x60;. Supported fields are explained above. (optional)
      * @return ApiResponse&lt;TeamCollectionRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -395,15 +427,18 @@ public class TeamsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TeamCollectionRep> getTeamsWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = getTeamsValidateBeforeCall(null);
+    public ApiResponse<TeamCollectionRep> getTeamsWithHttpInfo(Long limit, Long offset, String filter) throws ApiException {
+        okhttp3.Call localVarCall = getTeamsValidateBeforeCall(limit, offset, filter, null);
         Type localVarReturnType = new TypeToken<TeamCollectionRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Get all teams (asynchronously)
-     * Fetch all teams.
+     * List teams (asynchronously)
+     * Return a list of teams.  By default, this returns the first 20 teams. Page through this list with the &#x60;limit&#x60; parameter and by following the &#x60;first&#x60;, &#x60;prev&#x60;, &#x60;next&#x60;, and &#x60;last&#x60; links in the returned &#x60;_links&#x60; field. These links are not present if the pages they refer to don&#39;t exist. For example, the &#x60;first&#x60; and &#x60;prev&#x60; links will be missing from the response on the first page.  ### Filtering teams  LaunchDarkly supports the &#x60;query&#x60; field for filtering. &#x60;query&#x60; is a string that matches against the teams&#39; names and keys. It is not case sensitive. For example, the filter &#x60;query:abc&#x60; matches teams with the string &#x60;abc&#x60; in their name or key. 
+     * @param limit The number of teams to return in the response. Defaults to 20. (optional)
+     * @param offset Where to start in the list. This is for use with pagination. For example, an offset of 10 would skip the first ten items and then return the next &#x60;limit&#x60; items. (optional)
+     * @param filter A comma-separated list of filters. Each filter is of the form &#x60;field:value&#x60;. Supported fields are explained above. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -416,9 +451,9 @@ public class TeamsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTeamsAsync(final ApiCallback<TeamCollectionRep> _callback) throws ApiException {
+    public okhttp3.Call getTeamsAsync(Long limit, Long offset, String filter, final ApiCallback<TeamCollectionRep> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getTeamsValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = getTeamsValidateBeforeCall(limit, offset, filter, _callback);
         Type localVarReturnType = new TypeToken<TeamCollectionRep>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -434,9 +469,9 @@ public class TeamsBetaApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Teams collection response JSON </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Unknown team key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 405 </td><td> Method not allowed </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
@@ -493,8 +528,8 @@ public class TeamsBetaApi {
     }
 
     /**
-     * Patch team by key
-     * Perform a partial update to a team.  The body of a semantic patch request takes the following three properties:  1. comment &#x60;string&#x60;: (Optional) A description of the update. 1. environmentKey &#x60;string&#x60;: (Required) The key of the LaunchDarkly environment. 1. instructions &#x60;array&#x60;: (Required) The action or list of actions to be performed by the update. Each update action in the list must be an object/hash table with a &#x60;kind&#x60; property, although depending on the action, other properties may be necessary. Read below for more information on the specific supported semantic patch instructions.  If any instruction in the patch encounters an error, the error will be returned and the flag will not be changed. In general, instructions will silently do nothing if the flag is already in the state requested by the patch instruction. They will generally error if a parameter refers to something that does not exist. Other specific error conditions are noted in the instruction descriptions.  ### Instructions  #### &#x60;addCustomRoles&#x60;  Adds custom roles to the team. Team members will have these custom roles granted to them.  ##### Parameters  - &#x60;values&#x60;: list of custom role keys  #### &#x60;removeCustomRoles&#x60;  Removes the custom roles on the team. Team members will no longer have these custom roles granted to them.  ##### Parameters  - &#x60;values&#x60;: list of custom role keys  #### &#x60;addMembers&#x60;  Adds members to the team.  ##### Parameters  - &#x60;values&#x60;: list of member IDs  #### &#x60;removeMembers&#x60;  Removes members from the team.  ##### Parameters  - &#x60;values&#x60;: list of member IDs  #### &#x60;addPermissionGrants&#x60;  Adds permission grants to members for the team, allowing them to, for example, act as a team maintainer. A permission grant may have either an &#x60;actionSet&#x60; or a list of &#x60;actions&#x60; but not both at the same time. The members do not have to be team members to have a permission grant for the team.  ##### Parameters  - &#x60;actionSet&#x60;: name of the action set - &#x60;actions&#x60;: list of actions - &#x60;memberIDs&#x60;: list of member IDs  #### &#x60;removePermissionGrants&#x60;  Removes permission grants from members for the team. The &#x60;actionSet&#x60; and &#x60;actions&#x60; must match an existing permission grant.  ##### Parameters  - &#x60;actionSet&#x60;: name of the action set - &#x60;actions&#x60;: list of actions - &#x60;memberIDs&#x60;: list of member IDs  #### &#x60;updateDescription&#x60;  Updates the team&#39;s description.  ##### Parameters  - &#x60;value&#x60;: the team&#39;s new description  #### &#x60;updateName&#x60;  Updates the team&#39;s name.  ##### Parameters  - &#x60;value&#x60;: the team&#39;s new name 
+     * Update team
+     * Perform a partial update to a team.  The body of a semantic patch request takes the following three properties:  1. comment &#x60;string&#x60;: (Optional) A description of the update. 1. instructions &#x60;array&#x60;: (Required) The action or list of actions to be performed by the update. Each update action in the list must be an object/hash table with a &#x60;kind&#x60; property, although depending on the action, other properties may be necessary. Read below for more information on the specific supported semantic patch instructions.  If any instruction in the patch encounters an error, the error will be returned and the flag will not be changed. In general, instructions will silently do nothing if the flag is already in the state requested by the patch instruction. They will generally error if a parameter refers to something that does not exist. Other specific error conditions are noted in the instruction descriptions.  ### Instructions  #### &#x60;addCustomRoles&#x60;  Adds custom roles to the team. Team members will have these custom roles granted to them.  ##### Parameters  - &#x60;values&#x60;: list of custom role keys  #### &#x60;removeCustomRoles&#x60;  Removes the custom roles on the team. Team members will no longer have these custom roles granted to them.  ##### Parameters  - &#x60;values&#x60;: list of custom role keys  #### &#x60;addMembers&#x60;  Adds members to the team.  ##### Parameters  - &#x60;values&#x60;: list of member IDs  #### &#x60;removeMembers&#x60;  Removes members from the team.  ##### Parameters  - &#x60;values&#x60;: list of member IDs  #### &#x60;addPermissionGrants&#x60;  Adds permission grants to members for the team, allowing them to, for example, act as a team maintainer. A permission grant may have either an &#x60;actionSet&#x60; or a list of &#x60;actions&#x60; but not both at the same time. The members do not have to be team members to have a permission grant for the team.  ##### Parameters  - &#x60;actionSet&#x60;: name of the action set - &#x60;actions&#x60;: list of actions - &#x60;memberIDs&#x60;: list of member IDs  #### &#x60;removePermissionGrants&#x60;  Removes permission grants from members for the team. The &#x60;actionSet&#x60; and &#x60;actions&#x60; must match an existing permission grant.  ##### Parameters  - &#x60;actionSet&#x60;: name of the action set - &#x60;actions&#x60;: list of actions - &#x60;memberIDs&#x60;: list of member IDs  #### &#x60;updateDescription&#x60;  Updates the team&#39;s description.  ##### Parameters  - &#x60;value&#x60;: the team&#39;s new description  #### &#x60;updateName&#x60;  Updates the team&#39;s name.  ##### Parameters  - &#x60;value&#x60;: the team&#39;s new name 
      * @param key The team key (required)
      * @param teamPatchInput  (required)
      * @return TeamCollectionRep
@@ -503,9 +538,9 @@ public class TeamsBetaApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Teams collection response JSON </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Unknown team key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 405 </td><td> Method not allowed </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
@@ -517,8 +552,8 @@ public class TeamsBetaApi {
     }
 
     /**
-     * Patch team by key
-     * Perform a partial update to a team.  The body of a semantic patch request takes the following three properties:  1. comment &#x60;string&#x60;: (Optional) A description of the update. 1. environmentKey &#x60;string&#x60;: (Required) The key of the LaunchDarkly environment. 1. instructions &#x60;array&#x60;: (Required) The action or list of actions to be performed by the update. Each update action in the list must be an object/hash table with a &#x60;kind&#x60; property, although depending on the action, other properties may be necessary. Read below for more information on the specific supported semantic patch instructions.  If any instruction in the patch encounters an error, the error will be returned and the flag will not be changed. In general, instructions will silently do nothing if the flag is already in the state requested by the patch instruction. They will generally error if a parameter refers to something that does not exist. Other specific error conditions are noted in the instruction descriptions.  ### Instructions  #### &#x60;addCustomRoles&#x60;  Adds custom roles to the team. Team members will have these custom roles granted to them.  ##### Parameters  - &#x60;values&#x60;: list of custom role keys  #### &#x60;removeCustomRoles&#x60;  Removes the custom roles on the team. Team members will no longer have these custom roles granted to them.  ##### Parameters  - &#x60;values&#x60;: list of custom role keys  #### &#x60;addMembers&#x60;  Adds members to the team.  ##### Parameters  - &#x60;values&#x60;: list of member IDs  #### &#x60;removeMembers&#x60;  Removes members from the team.  ##### Parameters  - &#x60;values&#x60;: list of member IDs  #### &#x60;addPermissionGrants&#x60;  Adds permission grants to members for the team, allowing them to, for example, act as a team maintainer. A permission grant may have either an &#x60;actionSet&#x60; or a list of &#x60;actions&#x60; but not both at the same time. The members do not have to be team members to have a permission grant for the team.  ##### Parameters  - &#x60;actionSet&#x60;: name of the action set - &#x60;actions&#x60;: list of actions - &#x60;memberIDs&#x60;: list of member IDs  #### &#x60;removePermissionGrants&#x60;  Removes permission grants from members for the team. The &#x60;actionSet&#x60; and &#x60;actions&#x60; must match an existing permission grant.  ##### Parameters  - &#x60;actionSet&#x60;: name of the action set - &#x60;actions&#x60;: list of actions - &#x60;memberIDs&#x60;: list of member IDs  #### &#x60;updateDescription&#x60;  Updates the team&#39;s description.  ##### Parameters  - &#x60;value&#x60;: the team&#39;s new description  #### &#x60;updateName&#x60;  Updates the team&#39;s name.  ##### Parameters  - &#x60;value&#x60;: the team&#39;s new name 
+     * Update team
+     * Perform a partial update to a team.  The body of a semantic patch request takes the following three properties:  1. comment &#x60;string&#x60;: (Optional) A description of the update. 1. instructions &#x60;array&#x60;: (Required) The action or list of actions to be performed by the update. Each update action in the list must be an object/hash table with a &#x60;kind&#x60; property, although depending on the action, other properties may be necessary. Read below for more information on the specific supported semantic patch instructions.  If any instruction in the patch encounters an error, the error will be returned and the flag will not be changed. In general, instructions will silently do nothing if the flag is already in the state requested by the patch instruction. They will generally error if a parameter refers to something that does not exist. Other specific error conditions are noted in the instruction descriptions.  ### Instructions  #### &#x60;addCustomRoles&#x60;  Adds custom roles to the team. Team members will have these custom roles granted to them.  ##### Parameters  - &#x60;values&#x60;: list of custom role keys  #### &#x60;removeCustomRoles&#x60;  Removes the custom roles on the team. Team members will no longer have these custom roles granted to them.  ##### Parameters  - &#x60;values&#x60;: list of custom role keys  #### &#x60;addMembers&#x60;  Adds members to the team.  ##### Parameters  - &#x60;values&#x60;: list of member IDs  #### &#x60;removeMembers&#x60;  Removes members from the team.  ##### Parameters  - &#x60;values&#x60;: list of member IDs  #### &#x60;addPermissionGrants&#x60;  Adds permission grants to members for the team, allowing them to, for example, act as a team maintainer. A permission grant may have either an &#x60;actionSet&#x60; or a list of &#x60;actions&#x60; but not both at the same time. The members do not have to be team members to have a permission grant for the team.  ##### Parameters  - &#x60;actionSet&#x60;: name of the action set - &#x60;actions&#x60;: list of actions - &#x60;memberIDs&#x60;: list of member IDs  #### &#x60;removePermissionGrants&#x60;  Removes permission grants from members for the team. The &#x60;actionSet&#x60; and &#x60;actions&#x60; must match an existing permission grant.  ##### Parameters  - &#x60;actionSet&#x60;: name of the action set - &#x60;actions&#x60;: list of actions - &#x60;memberIDs&#x60;: list of member IDs  #### &#x60;updateDescription&#x60;  Updates the team&#39;s description.  ##### Parameters  - &#x60;value&#x60;: the team&#39;s new description  #### &#x60;updateName&#x60;  Updates the team&#39;s name.  ##### Parameters  - &#x60;value&#x60;: the team&#39;s new name 
      * @param key The team key (required)
      * @param teamPatchInput  (required)
      * @return ApiResponse&lt;TeamCollectionRep&gt;
@@ -527,9 +562,9 @@ public class TeamsBetaApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Teams collection response JSON </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Unknown team key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 405 </td><td> Method not allowed </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
@@ -542,8 +577,8 @@ public class TeamsBetaApi {
     }
 
     /**
-     * Patch team by key (asynchronously)
-     * Perform a partial update to a team.  The body of a semantic patch request takes the following three properties:  1. comment &#x60;string&#x60;: (Optional) A description of the update. 1. environmentKey &#x60;string&#x60;: (Required) The key of the LaunchDarkly environment. 1. instructions &#x60;array&#x60;: (Required) The action or list of actions to be performed by the update. Each update action in the list must be an object/hash table with a &#x60;kind&#x60; property, although depending on the action, other properties may be necessary. Read below for more information on the specific supported semantic patch instructions.  If any instruction in the patch encounters an error, the error will be returned and the flag will not be changed. In general, instructions will silently do nothing if the flag is already in the state requested by the patch instruction. They will generally error if a parameter refers to something that does not exist. Other specific error conditions are noted in the instruction descriptions.  ### Instructions  #### &#x60;addCustomRoles&#x60;  Adds custom roles to the team. Team members will have these custom roles granted to them.  ##### Parameters  - &#x60;values&#x60;: list of custom role keys  #### &#x60;removeCustomRoles&#x60;  Removes the custom roles on the team. Team members will no longer have these custom roles granted to them.  ##### Parameters  - &#x60;values&#x60;: list of custom role keys  #### &#x60;addMembers&#x60;  Adds members to the team.  ##### Parameters  - &#x60;values&#x60;: list of member IDs  #### &#x60;removeMembers&#x60;  Removes members from the team.  ##### Parameters  - &#x60;values&#x60;: list of member IDs  #### &#x60;addPermissionGrants&#x60;  Adds permission grants to members for the team, allowing them to, for example, act as a team maintainer. A permission grant may have either an &#x60;actionSet&#x60; or a list of &#x60;actions&#x60; but not both at the same time. The members do not have to be team members to have a permission grant for the team.  ##### Parameters  - &#x60;actionSet&#x60;: name of the action set - &#x60;actions&#x60;: list of actions - &#x60;memberIDs&#x60;: list of member IDs  #### &#x60;removePermissionGrants&#x60;  Removes permission grants from members for the team. The &#x60;actionSet&#x60; and &#x60;actions&#x60; must match an existing permission grant.  ##### Parameters  - &#x60;actionSet&#x60;: name of the action set - &#x60;actions&#x60;: list of actions - &#x60;memberIDs&#x60;: list of member IDs  #### &#x60;updateDescription&#x60;  Updates the team&#39;s description.  ##### Parameters  - &#x60;value&#x60;: the team&#39;s new description  #### &#x60;updateName&#x60;  Updates the team&#39;s name.  ##### Parameters  - &#x60;value&#x60;: the team&#39;s new name 
+     * Update team (asynchronously)
+     * Perform a partial update to a team.  The body of a semantic patch request takes the following three properties:  1. comment &#x60;string&#x60;: (Optional) A description of the update. 1. instructions &#x60;array&#x60;: (Required) The action or list of actions to be performed by the update. Each update action in the list must be an object/hash table with a &#x60;kind&#x60; property, although depending on the action, other properties may be necessary. Read below for more information on the specific supported semantic patch instructions.  If any instruction in the patch encounters an error, the error will be returned and the flag will not be changed. In general, instructions will silently do nothing if the flag is already in the state requested by the patch instruction. They will generally error if a parameter refers to something that does not exist. Other specific error conditions are noted in the instruction descriptions.  ### Instructions  #### &#x60;addCustomRoles&#x60;  Adds custom roles to the team. Team members will have these custom roles granted to them.  ##### Parameters  - &#x60;values&#x60;: list of custom role keys  #### &#x60;removeCustomRoles&#x60;  Removes the custom roles on the team. Team members will no longer have these custom roles granted to them.  ##### Parameters  - &#x60;values&#x60;: list of custom role keys  #### &#x60;addMembers&#x60;  Adds members to the team.  ##### Parameters  - &#x60;values&#x60;: list of member IDs  #### &#x60;removeMembers&#x60;  Removes members from the team.  ##### Parameters  - &#x60;values&#x60;: list of member IDs  #### &#x60;addPermissionGrants&#x60;  Adds permission grants to members for the team, allowing them to, for example, act as a team maintainer. A permission grant may have either an &#x60;actionSet&#x60; or a list of &#x60;actions&#x60; but not both at the same time. The members do not have to be team members to have a permission grant for the team.  ##### Parameters  - &#x60;actionSet&#x60;: name of the action set - &#x60;actions&#x60;: list of actions - &#x60;memberIDs&#x60;: list of member IDs  #### &#x60;removePermissionGrants&#x60;  Removes permission grants from members for the team. The &#x60;actionSet&#x60; and &#x60;actions&#x60; must match an existing permission grant.  ##### Parameters  - &#x60;actionSet&#x60;: name of the action set - &#x60;actions&#x60;: list of actions - &#x60;memberIDs&#x60;: list of member IDs  #### &#x60;updateDescription&#x60;  Updates the team&#39;s description.  ##### Parameters  - &#x60;value&#x60;: the team&#39;s new description  #### &#x60;updateName&#x60;  Updates the team&#39;s name.  ##### Parameters  - &#x60;value&#x60;: the team&#39;s new name 
      * @param key The team key (required)
      * @param teamPatchInput  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -553,9 +588,9 @@ public class TeamsBetaApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Teams collection response JSON </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Unknown team key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 405 </td><td> Method not allowed </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
@@ -578,7 +613,7 @@ public class TeamsBetaApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Successful teams response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 405 </td><td> Method not allowed </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
@@ -630,7 +665,7 @@ public class TeamsBetaApi {
 
     /**
      * Create team
-     * Create a team.
+     * Create a team
      * @param teamPostInput  (required)
      * @return TeamRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -638,7 +673,7 @@ public class TeamsBetaApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Successful teams response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 405 </td><td> Method not allowed </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
@@ -651,7 +686,7 @@ public class TeamsBetaApi {
 
     /**
      * Create team
-     * Create a team.
+     * Create a team
      * @param teamPostInput  (required)
      * @return ApiResponse&lt;TeamRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -659,7 +694,7 @@ public class TeamsBetaApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Successful teams response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 405 </td><td> Method not allowed </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
@@ -673,7 +708,7 @@ public class TeamsBetaApi {
 
     /**
      * Create team (asynchronously)
-     * Create a team.
+     * Create a team
      * @param teamPostInput  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -682,7 +717,7 @@ public class TeamsBetaApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Successful teams response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 405 </td><td> Method not allowed </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>

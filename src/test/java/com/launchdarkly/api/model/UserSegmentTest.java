@@ -193,4 +193,12 @@ public class UserSegmentTest {
         // TODO: test externalLink
     }
 
+    /**
+     * Test the property 'importInProgress'
+     */
+    @Test
+    public void importInProgressTest() {
+        // TODO: test importInProgress
+    }
+
 }

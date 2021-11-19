@@ -72,19 +72,19 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Action completed successfully |  -  |
+**204** | Action succeeded |  -  |
 **401** | Invalid access token |  -  |
-**404** | Invalid resource specifier |  -  |
+**404** | Invalid resource identifier |  -  |
 **429** | Rate limited |  -  |
 
 <a name="getCustomRole"></a>
 # **getCustomRole**
-> CustomRolePost getCustomRole(key)
+> CustomRole getCustomRole(key)
 
 Get custom role
 
@@ -114,7 +114,7 @@ public class Example {
     CustomRolesApi apiInstance = new CustomRolesApi(defaultClient);
     String key = "key_example"; // String | The custom role's key or ID
     try {
-      CustomRolePost result = apiInstance.getCustomRole(key);
+      CustomRole result = apiInstance.getCustomRole(key);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CustomRolesApi#getCustomRole");
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CustomRolePost**](CustomRolePost.md)
+[**CustomRole**](CustomRole.md)
 
 ### Authorization
 
@@ -151,8 +151,8 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Custom role response |  -  |
 **401** | Invalid access token |  -  |
-**403** | Access to the requested resource was denied |  -  |
-**404** | Invalid resource specifier |  -  |
+**403** | Forbidden |  -  |
+**404** | Invalid resource identifier |  -  |
 **429** | Rate limited |  -  |
 
 <a name="getCustomRoles"></a>
@@ -219,8 +219,8 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Custom roles collection response. |  -  |
-**401** | Invalid access token. |  -  |
-**403** | Access to the requested resource was denied |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
 **429** | Rate limited |  -  |
 
 <a name="patchCustomRole"></a>
@@ -293,15 +293,15 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Custom role response |  -  |
-**400** | Invalid request body |  -  |
+**400** | Invalid request |  -  |
 **401** | Invalid access token |  -  |
-**404** | Invalid resource specifier |  -  |
+**404** | Invalid resource identifier |  -  |
 **409** | Status conflict |  -  |
 **429** | Rate limited |  -  |
 
 <a name="postCustomRole"></a>
 # **postCustomRole**
-> CustomRole postCustomRole(statementPost)
+> CustomRole postCustomRole(customRolePost)
 
 Create custom role
 
@@ -329,9 +329,9 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     CustomRolesApi apiInstance = new CustomRolesApi(defaultClient);
-    List<StatementPost> statementPost = Arrays.asList(); // List<StatementPost> | 
+    CustomRolePost customRolePost = new CustomRolePost(); // CustomRolePost | 
     try {
-      CustomRole result = apiInstance.postCustomRole(statementPost);
+      CustomRole result = apiInstance.postCustomRole(customRolePost);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CustomRolesApi#postCustomRole");
@@ -348,7 +348,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **statementPost** | [**List&lt;StatementPost&gt;**](StatementPost.md)|  |
+ **customRolePost** | [**CustomRolePost**](CustomRolePost.md)|  |
 
 ### Return type
 
@@ -367,9 +367,9 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | Custom role response |  -  |
-**400** | Invalid request body |  -  |
+**400** | Invalid request |  -  |
 **401** | Invalid access token |  -  |
-**403** | Access to the requested resource was denied |  -  |
+**403** | Forbidden |  -  |
 **409** | Status conflict |  -  |
 **429** | Rate limited |  -  |
 

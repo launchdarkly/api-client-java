@@ -159,6 +159,6 @@ Name | Type | Description  | Notes
 **200** | Audit log entry response |  -  |
 **401** | Invalid access token |  -  |
 **403** | Forbidden |  -  |
-**404** | Invalid resource specifier |  -  |
+**404** | Invalid resource identifier |  -  |
 **429** | Rate limited |  -  |
 

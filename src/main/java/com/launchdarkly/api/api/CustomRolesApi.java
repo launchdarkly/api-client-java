@@ -30,8 +30,13 @@ import java.io.IOException;
 import com.launchdarkly.api.model.CustomRole;
 import com.launchdarkly.api.model.CustomRolePost;
 import com.launchdarkly.api.model.CustomRoles;
+import com.launchdarkly.api.model.ForbiddenErrorRep;
+import com.launchdarkly.api.model.InvalidRequestErrorRep;
+import com.launchdarkly.api.model.NotFoundErrorRep;
 import com.launchdarkly.api.model.PatchWithComment;
-import com.launchdarkly.api.model.StatementPost;
+import com.launchdarkly.api.model.RateLimitedErrorRep;
+import com.launchdarkly.api.model.StatusConflictErrorRep;
+import com.launchdarkly.api.model.UnauthorizedErrorRep;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -67,9 +72,9 @@ public class CustomRolesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource specifier </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
@@ -87,7 +92,7 @@ public class CustomRolesApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -126,9 +131,9 @@ public class CustomRolesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource specifier </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
@@ -145,9 +150,9 @@ public class CustomRolesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource specifier </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
@@ -166,9 +171,9 @@ public class CustomRolesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource specifier </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
@@ -189,8 +194,8 @@ public class CustomRolesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom role response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource specifier </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
@@ -243,20 +248,20 @@ public class CustomRolesApi {
      * Get custom role
      * Get a single custom role by key or ID
      * @param key The custom role&#39;s key or ID (required)
-     * @return CustomRolePost
+     * @return CustomRole
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom role response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource specifier </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public CustomRolePost getCustomRole(String key) throws ApiException {
-        ApiResponse<CustomRolePost> localVarResp = getCustomRoleWithHttpInfo(key);
+    public CustomRole getCustomRole(String key) throws ApiException {
+        ApiResponse<CustomRole> localVarResp = getCustomRoleWithHttpInfo(key);
         return localVarResp.getData();
     }
 
@@ -264,21 +269,21 @@ public class CustomRolesApi {
      * Get custom role
      * Get a single custom role by key or ID
      * @param key The custom role&#39;s key or ID (required)
-     * @return ApiResponse&lt;CustomRolePost&gt;
+     * @return ApiResponse&lt;CustomRole&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom role response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource specifier </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CustomRolePost> getCustomRoleWithHttpInfo(String key) throws ApiException {
+    public ApiResponse<CustomRole> getCustomRoleWithHttpInfo(String key) throws ApiException {
         okhttp3.Call localVarCall = getCustomRoleValidateBeforeCall(key, null);
-        Type localVarReturnType = new TypeToken<CustomRolePost>(){}.getType();
+        Type localVarReturnType = new TypeToken<CustomRole>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -294,15 +299,15 @@ public class CustomRolesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom role response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource specifier </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCustomRoleAsync(String key, final ApiCallback<CustomRolePost> _callback) throws ApiException {
+    public okhttp3.Call getCustomRoleAsync(String key, final ApiCallback<CustomRole> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCustomRoleValidateBeforeCall(key, _callback);
-        Type localVarReturnType = new TypeToken<CustomRolePost>(){}.getType();
+        Type localVarReturnType = new TypeToken<CustomRole>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -315,8 +320,8 @@ public class CustomRolesApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom roles collection response. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid access token. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
@@ -368,8 +373,8 @@ public class CustomRolesApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom roles collection response. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid access token. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
@@ -387,8 +392,8 @@ public class CustomRolesApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom roles collection response. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid access token. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
@@ -408,8 +413,8 @@ public class CustomRolesApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom roles collection response. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid access token. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
@@ -431,9 +436,9 @@ public class CustomRolesApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom role response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource specifier </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
@@ -499,9 +504,9 @@ public class CustomRolesApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom role response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource specifier </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
@@ -522,9 +527,9 @@ public class CustomRolesApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom role response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource specifier </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
@@ -547,9 +552,9 @@ public class CustomRolesApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom role response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource specifier </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
@@ -563,7 +568,7 @@ public class CustomRolesApi {
     }
     /**
      * Build call for postCustomRole
-     * @param statementPost  (required)
+     * @param customRolePost  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -571,15 +576,15 @@ public class CustomRolesApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Custom role response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postCustomRoleCall(List<StatementPost> statementPost, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = statementPost;
+    public okhttp3.Call postCustomRoleCall(CustomRolePost customRolePost, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = customRolePost;
 
         // create path and map variables
         String localVarPath = "/api/v2/roles";
@@ -609,15 +614,15 @@ public class CustomRolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postCustomRoleValidateBeforeCall(List<StatementPost> statementPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postCustomRoleValidateBeforeCall(CustomRolePost customRolePost, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'statementPost' is set
-        if (statementPost == null) {
-            throw new ApiException("Missing the required parameter 'statementPost' when calling postCustomRole(Async)");
+        // verify the required parameter 'customRolePost' is set
+        if (customRolePost == null) {
+            throw new ApiException("Missing the required parameter 'customRolePost' when calling postCustomRole(Async)");
         }
         
 
-        okhttp3.Call localVarCall = postCustomRoleCall(statementPost, _callback);
+        okhttp3.Call localVarCall = postCustomRoleCall(customRolePost, _callback);
         return localVarCall;
 
     }
@@ -625,44 +630,44 @@ public class CustomRolesApi {
     /**
      * Create custom role
      * Create a new custom role
-     * @param statementPost  (required)
+     * @param customRolePost  (required)
      * @return CustomRole
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Custom role response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public CustomRole postCustomRole(List<StatementPost> statementPost) throws ApiException {
-        ApiResponse<CustomRole> localVarResp = postCustomRoleWithHttpInfo(statementPost);
+    public CustomRole postCustomRole(CustomRolePost customRolePost) throws ApiException {
+        ApiResponse<CustomRole> localVarResp = postCustomRoleWithHttpInfo(customRolePost);
         return localVarResp.getData();
     }
 
     /**
      * Create custom role
      * Create a new custom role
-     * @param statementPost  (required)
+     * @param customRolePost  (required)
      * @return ApiResponse&lt;CustomRole&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Custom role response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CustomRole> postCustomRoleWithHttpInfo(List<StatementPost> statementPost) throws ApiException {
-        okhttp3.Call localVarCall = postCustomRoleValidateBeforeCall(statementPost, null);
+    public ApiResponse<CustomRole> postCustomRoleWithHttpInfo(CustomRolePost customRolePost) throws ApiException {
+        okhttp3.Call localVarCall = postCustomRoleValidateBeforeCall(customRolePost, null);
         Type localVarReturnType = new TypeToken<CustomRole>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -670,7 +675,7 @@ public class CustomRolesApi {
     /**
      * Create custom role (asynchronously)
      * Create a new custom role
-     * @param statementPost  (required)
+     * @param customRolePost  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -678,16 +683,16 @@ public class CustomRolesApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Custom role response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access to the requested resource was denied </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postCustomRoleAsync(List<StatementPost> statementPost, final ApiCallback<CustomRole> _callback) throws ApiException {
+    public okhttp3.Call postCustomRoleAsync(CustomRolePost customRolePost, final ApiCallback<CustomRole> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = postCustomRoleValidateBeforeCall(statementPost, _callback);
+        okhttp3.Call localVarCall = postCustomRoleValidateBeforeCall(customRolePost, _callback);
         Type localVarReturnType = new TypeToken<CustomRole>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

@@ -33,7 +33,7 @@ import java.util.Map;
 /**
  * RepositoryCollectionRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-01T19:03:54.089510Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-19T20:23:06.329570Z[Etc/UTC]")
 public class RepositoryCollectionRep {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
@@ -84,11 +84,11 @@ public class RepositoryCollectionRep {
   }
 
    /**
-   * Get items
+   * An array of repositories
    * @return items
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "An array of repositories")
 
   public List<RepositoryRep> getItems() {
     return items;

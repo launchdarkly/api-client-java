@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * RepositoryPost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-01T19:03:54.089510Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-19T20:23:06.329570Z[Etc/UTC]")
 public class RepositoryPost {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -114,7 +114,7 @@ public class RepositoryPost {
    * @return name
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "LaunchDarkly-Docs", required = true, value = "")
 
   public String getName() {
     return name;
@@ -137,7 +137,7 @@ public class RepositoryPost {
    * @return sourceLink
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "https://github.com/launchdarkly/LaunchDarkly-Docs", value = "")
 
   public String getSourceLink() {
     return sourceLink;
@@ -156,11 +156,11 @@ public class RepositoryPost {
   }
 
    /**
-   * Get commitUrlTemplate
+   * A template for constructing a valid URL to view the commit
    * @return commitUrlTemplate
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "/commit/${sha}", value = "A template for constructing a valid URL to view the commit")
 
   public String getCommitUrlTemplate() {
     return commitUrlTemplate;
@@ -179,11 +179,11 @@ public class RepositoryPost {
   }
 
    /**
-   * Get hunkUrlTemplate
+   * A template for constructing a valid URL to view the hunk
    * @return hunkUrlTemplate
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "/blob/${sha}/${filePath}#L${lineNumber}", value = "A template for constructing a valid URL to view the hunk")
 
   public String getHunkUrlTemplate() {
     return hunkUrlTemplate;
@@ -206,7 +206,7 @@ public class RepositoryPost {
    * @return type
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Optionally specify a repository type. The default value is <code>custom</code>")
+  @ApiModelProperty(example = "github", value = "Optionally specify a repository type. The default value is <code>custom</code>")
 
   public TypeEnum getType() {
     return type;
@@ -229,7 +229,7 @@ public class RepositoryPost {
    * @return defaultBranch
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The default branch, if not specified, is <code>master</code>")
+  @ApiModelProperty(example = "main", value = "The default branch, if not specified, is <code>master</code>")
 
   public String getDefaultBranch() {
     return defaultBranch;

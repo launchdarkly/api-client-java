@@ -36,7 +36,7 @@ def ossrhPassword = hasProperty('ossrhPassword') ? ossrhPassword : System.getenv
 
 allprojects {
     group = 'com.launchdarkly'
-    version = '6.0.1'
+    version = '6.0.2'
     archivesBaseName = 'api-client'
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
