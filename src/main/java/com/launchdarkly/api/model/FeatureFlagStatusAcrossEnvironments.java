@@ -32,7 +32,7 @@ import java.util.Map;
 /**
  * FeatureFlagStatusAcrossEnvironments
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-03T20:08:15.055980Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-03T20:58:35.619656Z[Etc/UTC]")
 public class FeatureFlagStatusAcrossEnvironments {
   public static final String SERIALIZED_NAME_ENVIRONMENTS = "environments";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENTS)

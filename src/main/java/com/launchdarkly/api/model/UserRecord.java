@@ -35,7 +35,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * UserRecord
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-03T20:08:15.055980Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-03T20:58:35.619656Z[Etc/UTC]")
 public class UserRecord {
   public static final String SERIALIZED_NAME_LAST_PING = "lastPing";
   @SerializedName(SERIALIZED_NAME_LAST_PING)

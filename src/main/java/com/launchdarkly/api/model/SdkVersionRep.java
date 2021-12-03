@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * SdkVersionRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-03T20:08:15.055980Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-03T20:58:35.619656Z[Etc/UTC]")
 public class SdkVersionRep {
   public static final String SERIALIZED_NAME_SDK = "sdk";
   @SerializedName(SERIALIZED_NAME_SDK)
