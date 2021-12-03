@@ -56,6 +56,7 @@ docs/Defaults.md
 docs/DependentFlag.md
 docs/DependentFlagEnvironment.md
 docs/DependentFlagsByEnvironment.md
+docs/DerivedAttribute.md
 docs/Destination.md
 docs/DestinationPost.md
 docs/Destinations.md
@@ -79,8 +80,8 @@ docs/ExpiringUserTargetError.md
 docs/ExpiringUserTargetGetResponse.md
 docs/ExpiringUserTargetItem.md
 docs/ExpiringUserTargetPatchResponse.md
+docs/Extinction.md
 docs/ExtinctionCollectionRep.md
-docs/ExtinctionRep.md
 docs/FeatureFlag.md
 docs/FeatureFlagBody.md
 docs/FeatureFlagConfig.md
@@ -103,7 +104,6 @@ docs/FlagStatusRep.md
 docs/FlagSummary.md
 docs/ForbiddenErrorRep.md
 docs/HunkRep.md
-docs/InlineResponse200.md
 docs/IntegrationMetadata.md
 docs/IntegrationStatus.md
 docs/InvalidRequestErrorRep.md
@@ -121,6 +121,7 @@ docs/MetricCollectionRep.md
 docs/MetricListingRep.md
 docs/MetricPost.md
 docs/MetricRep.md
+docs/MetricSeen.md
 docs/MetricsApi.md
 docs/Modification.md
 docs/MultiEnvironmentDependentFlag.md
@@ -204,6 +205,7 @@ docs/UserAttributeNamesRep.md
 docs/UserFlagSetting.md
 docs/UserFlagSettings.md
 docs/UserRecord.md
+docs/UserRecordRep.md
 docs/UserSegment.md
 docs/UserSegmentRule.md
 docs/UserSegments.md
@@ -212,7 +214,6 @@ docs/Users.md
 docs/UsersApi.md
 docs/UsersBetaApi.md
 docs/ValuePut.md
-docs/Variate.md
 docs/Variation.md
 docs/VariationOrRolloutRep.md
 docs/VariationSummary.md
@@ -316,6 +317,7 @@ src/main/java/com/launchdarkly/api/model/Defaults.java
 src/main/java/com/launchdarkly/api/model/DependentFlag.java
 src/main/java/com/launchdarkly/api/model/DependentFlagEnvironment.java
 src/main/java/com/launchdarkly/api/model/DependentFlagsByEnvironment.java
+src/main/java/com/launchdarkly/api/model/DerivedAttribute.java
 src/main/java/com/launchdarkly/api/model/Destination.java
 src/main/java/com/launchdarkly/api/model/DestinationPost.java
 src/main/java/com/launchdarkly/api/model/Destinations.java
@@ -337,8 +339,8 @@ src/main/java/com/launchdarkly/api/model/ExpiringUserTargetError.java
 src/main/java/com/launchdarkly/api/model/ExpiringUserTargetGetResponse.java
 src/main/java/com/launchdarkly/api/model/ExpiringUserTargetItem.java
 src/main/java/com/launchdarkly/api/model/ExpiringUserTargetPatchResponse.java
+src/main/java/com/launchdarkly/api/model/Extinction.java
 src/main/java/com/launchdarkly/api/model/ExtinctionCollectionRep.java
-src/main/java/com/launchdarkly/api/model/ExtinctionRep.java
 src/main/java/com/launchdarkly/api/model/FeatureFlag.java
 src/main/java/com/launchdarkly/api/model/FeatureFlagBody.java
 src/main/java/com/launchdarkly/api/model/FeatureFlagConfig.java
@@ -359,7 +361,6 @@ src/main/java/com/launchdarkly/api/model/FlagStatusRep.java
 src/main/java/com/launchdarkly/api/model/FlagSummary.java
 src/main/java/com/launchdarkly/api/model/ForbiddenErrorRep.java
 src/main/java/com/launchdarkly/api/model/HunkRep.java
-src/main/java/com/launchdarkly/api/model/InlineResponse200.java
 src/main/java/com/launchdarkly/api/model/IntegrationMetadata.java
 src/main/java/com/launchdarkly/api/model/IntegrationStatus.java
 src/main/java/com/launchdarkly/api/model/InvalidRequestErrorRep.java
@@ -377,6 +378,7 @@ src/main/java/com/launchdarkly/api/model/MetricCollectionRep.java
 src/main/java/com/launchdarkly/api/model/MetricListingRep.java
 src/main/java/com/launchdarkly/api/model/MetricPost.java
 src/main/java/com/launchdarkly/api/model/MetricRep.java
+src/main/java/com/launchdarkly/api/model/MetricSeen.java
 src/main/java/com/launchdarkly/api/model/Modification.java
 src/main/java/com/launchdarkly/api/model/MultiEnvironmentDependentFlag.java
 src/main/java/com/launchdarkly/api/model/MultiEnvironmentDependentFlags.java
@@ -453,12 +455,12 @@ src/main/java/com/launchdarkly/api/model/UserAttributeNamesRep.java
 src/main/java/com/launchdarkly/api/model/UserFlagSetting.java
 src/main/java/com/launchdarkly/api/model/UserFlagSettings.java
 src/main/java/com/launchdarkly/api/model/UserRecord.java
+src/main/java/com/launchdarkly/api/model/UserRecordRep.java
 src/main/java/com/launchdarkly/api/model/UserSegment.java
 src/main/java/com/launchdarkly/api/model/UserSegmentRule.java
 src/main/java/com/launchdarkly/api/model/UserSegments.java
 src/main/java/com/launchdarkly/api/model/Users.java
 src/main/java/com/launchdarkly/api/model/ValuePut.java
-src/main/java/com/launchdarkly/api/model/Variate.java
 src/main/java/com/launchdarkly/api/model/Variation.java
 src/main/java/com/launchdarkly/api/model/VariationOrRolloutRep.java
 src/main/java/com/launchdarkly/api/model/VariationSummary.java
@@ -534,6 +536,7 @@ src/test/java/com/launchdarkly/api/model/DefaultsTest.java
 src/test/java/com/launchdarkly/api/model/DependentFlagEnvironmentTest.java
 src/test/java/com/launchdarkly/api/model/DependentFlagTest.java
 src/test/java/com/launchdarkly/api/model/DependentFlagsByEnvironmentTest.java
+src/test/java/com/launchdarkly/api/model/DerivedAttributeTest.java
 src/test/java/com/launchdarkly/api/model/DestinationPostTest.java
 src/test/java/com/launchdarkly/api/model/DestinationTest.java
 src/test/java/com/launchdarkly/api/model/DestinationsTest.java
@@ -556,7 +559,7 @@ src/test/java/com/launchdarkly/api/model/ExpiringUserTargetGetResponseTest.java
 src/test/java/com/launchdarkly/api/model/ExpiringUserTargetItemTest.java
 src/test/java/com/launchdarkly/api/model/ExpiringUserTargetPatchResponseTest.java
 src/test/java/com/launchdarkly/api/model/ExtinctionCollectionRepTest.java
-src/test/java/com/launchdarkly/api/model/ExtinctionRepTest.java
+src/test/java/com/launchdarkly/api/model/ExtinctionTest.java
 src/test/java/com/launchdarkly/api/model/FeatureFlagBodyTest.java
 src/test/java/com/launchdarkly/api/model/FeatureFlagConfigTest.java
 src/test/java/com/launchdarkly/api/model/FeatureFlagScheduledChangeTest.java
@@ -577,7 +580,6 @@ src/test/java/com/launchdarkly/api/model/FlagStatusRepTest.java
 src/test/java/com/launchdarkly/api/model/FlagSummaryTest.java
 src/test/java/com/launchdarkly/api/model/ForbiddenErrorRepTest.java
 src/test/java/com/launchdarkly/api/model/HunkRepTest.java
-src/test/java/com/launchdarkly/api/model/InlineResponse200Test.java
 src/test/java/com/launchdarkly/api/model/IntegrationMetadataTest.java
 src/test/java/com/launchdarkly/api/model/IntegrationStatusTest.java
 src/test/java/com/launchdarkly/api/model/InvalidRequestErrorRepTest.java
@@ -595,6 +597,7 @@ src/test/java/com/launchdarkly/api/model/MetricCollectionRepTest.java
 src/test/java/com/launchdarkly/api/model/MetricListingRepTest.java
 src/test/java/com/launchdarkly/api/model/MetricPostTest.java
 src/test/java/com/launchdarkly/api/model/MetricRepTest.java
+src/test/java/com/launchdarkly/api/model/MetricSeenTest.java
 src/test/java/com/launchdarkly/api/model/ModificationTest.java
 src/test/java/com/launchdarkly/api/model/MultiEnvironmentDependentFlagTest.java
 src/test/java/com/launchdarkly/api/model/MultiEnvironmentDependentFlagsTest.java
@@ -669,6 +672,7 @@ src/test/java/com/launchdarkly/api/model/UrlPostTest.java
 src/test/java/com/launchdarkly/api/model/UserAttributeNamesRepTest.java
 src/test/java/com/launchdarkly/api/model/UserFlagSettingTest.java
 src/test/java/com/launchdarkly/api/model/UserFlagSettingsTest.java
+src/test/java/com/launchdarkly/api/model/UserRecordRepTest.java
 src/test/java/com/launchdarkly/api/model/UserRecordTest.java
 src/test/java/com/launchdarkly/api/model/UserSegmentRuleTest.java
 src/test/java/com/launchdarkly/api/model/UserSegmentTest.java
@@ -676,7 +680,6 @@ src/test/java/com/launchdarkly/api/model/UserSegmentsTest.java
 src/test/java/com/launchdarkly/api/model/UserTest.java
 src/test/java/com/launchdarkly/api/model/UsersTest.java
 src/test/java/com/launchdarkly/api/model/ValuePutTest.java
-src/test/java/com/launchdarkly/api/model/VariateTest.java
 src/test/java/com/launchdarkly/api/model/VariationOrRolloutRepTest.java
 src/test/java/com/launchdarkly/api/model/VariationSummaryTest.java
 src/test/java/com/launchdarkly/api/model/VariationTest.java

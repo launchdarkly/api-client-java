@@ -773,7 +773,7 @@ Name | Type | Description  | Notes
 
 <a name="postExtinction"></a>
 # **postExtinction**
-> postExtinction(repo, branch, extinctionRep)
+> postExtinction(repo, branch, extinction)
 
 Create extinction
 
@@ -803,9 +803,9 @@ public class Example {
     CodeReferencesApi apiInstance = new CodeReferencesApi(defaultClient);
     String repo = "repo_example"; // String | The repository name
     String branch = "branch_example"; // String | The url-encoded branch name
-    List<ExtinctionRep> extinctionRep = Arrays.asList(); // List<ExtinctionRep> | 
+    List<Extinction> extinction = Arrays.asList(); // List<Extinction> | 
     try {
-      apiInstance.postExtinction(repo, branch, extinctionRep);
+      apiInstance.postExtinction(repo, branch, extinction);
     } catch (ApiException e) {
       System.err.println("Exception when calling CodeReferencesApi#postExtinction");
       System.err.println("Status code: " + e.getCode());
@@ -823,7 +823,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **repo** | **String**| The repository name |
  **branch** | **String**| The url-encoded branch name |
- **extinctionRep** | [**List&lt;ExtinctionRep&gt;**](ExtinctionRep.md)|  |
+ **extinction** | [**List&lt;Extinction&gt;**](Extinction.md)|  |
 
 ### Return type
 

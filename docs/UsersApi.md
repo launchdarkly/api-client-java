@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 
 <a name="getUser"></a>
 # **getUser**
-> User getUser(projKey, envKey, key)
+> UserRecord getUser(projKey, envKey, key)
 
 Get user
 
@@ -211,7 +211,7 @@ public class Example {
     String envKey = "envKey_example"; // String | The environment key
     String key = "key_example"; // String | The user key
     try {
-      User result = apiInstance.getUser(projKey, envKey, key);
+      UserRecord result = apiInstance.getUser(projKey, envKey, key);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#getUser");
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**User**](User.md)
+[**UserRecord**](UserRecord.md)
 
 ### Authorization
 

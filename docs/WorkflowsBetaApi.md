@@ -5,6 +5,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteWorkflow**](WorkflowsBetaApi.md#deleteWorkflow) | **DELETE** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/workflows/{workflowId} | Delete workflow
+[**getCustomWorkflow**](WorkflowsBetaApi.md#getCustomWorkflow) | **GET** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/workflows/{workflowId} | Get custom workflow
 [**getWorkflows**](WorkflowsBetaApi.md#getWorkflows) | **GET** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/workflows | Get workflows
 [**postWorkflow**](WorkflowsBetaApi.md#postWorkflow) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/workflows | Create workflow
 
@@ -83,6 +84,85 @@ null (empty response body)
 |-------------|-------------|------------------|
 **204** | Action completed successfully |  -  |
 **400** | Invalid request |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**404** | Invalid resource identifier |  -  |
+**429** | Rate limited |  -  |
+
+<a name="getCustomWorkflow"></a>
+# **getCustomWorkflow**
+> CustomWorkflowOutputRep getCustomWorkflow(projectKey, featureFlagKey, environmentKey, workflowId)
+
+Get custom workflow
+
+Get a specific workflow by ID
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.WorkflowsBetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    WorkflowsBetaApi apiInstance = new WorkflowsBetaApi(defaultClient);
+    String projectKey = "projectKey_example"; // String | The project key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key
+    String environmentKey = "environmentKey_example"; // String | The environment key
+    String workflowId = "workflowId_example"; // String | The workflow ID
+    try {
+      CustomWorkflowOutputRep result = apiInstance.getCustomWorkflow(projectKey, featureFlagKey, environmentKey, workflowId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WorkflowsBetaApi#getCustomWorkflow");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectKey** | **String**| The project key |
+ **featureFlagKey** | **String**| The feature flag&#39;s key |
+ **environmentKey** | **String**| The environment key |
+ **workflowId** | **String**| The workflow ID |
+
+### Return type
+
+[**CustomWorkflowOutputRep**](CustomWorkflowOutputRep.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
 **401** | Invalid access token |  -  |
 **403** | Forbidden |  -  |
 **404** | Invalid resource identifier |  -  |

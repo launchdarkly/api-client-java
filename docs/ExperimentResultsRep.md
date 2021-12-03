@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **series** | [**List&lt;ExperimentTimeSeriesSlice&gt;**](ExperimentTimeSeriesSlice.md) |  |  [optional]
 **stats** | [**ExperimentStatsRep**](ExperimentStatsRep.md) |  |  [optional]
 **granularity** | **String** |  |  [optional]
+**metricSeen** | [**MetricSeen**](MetricSeen.md) |  |  [optional]
 
 
 

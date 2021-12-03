@@ -6,7 +6,7 @@ This REST API is for custom integrations, data export, or automating your featur
 
 LaunchDarkly REST API
 - API version: 2.0
-  - Build date: 2021-11-19T20:23:06.329570Z[Etc/UTC]
+  - Build date: 2021-12-03T20:08:15.055980Z[Etc/UTC]
 
 # Overview
 
@@ -103,11 +103,11 @@ Paginated collections include `first`, `last`, `next`, and `prev` links containi
 
 ## Updates
 
-Resources that accept partial updates use the `PATCH` verb, and support the [JSON Patch](http://tools.ietf.org/html/rfc6902) format. Some resources also support the [JSON Merge Patch](https://tools.ietf.org/html/rfc7386) format. In addition, some resources support optional comments that can be submitted with updates. Comments appear in outgoing webhooks, the audit log, and other integrations.
+Resources that accept partial updates use the `PATCH` verb, and support the [JSON Patch](https://datatracker.ietf.org/doc/html/rfc6902) format. Some resources also support the [JSON Merge Patch](https://datatracker.ietf.org/doc/html/rfc7386) format. In addition, some resources support optional comments that can be submitted with updates. Comments appear in outgoing webhooks, the audit log, and other integrations.
 
 ### Updates via JSON Patch
 
-[JSON Patch](http://tools.ietf.org/html/rfc6902) is a way to specify the modifications to perform on a resource. For example, in this feature flag representation:
+[JSON Patch](https://datatracker.ietf.org/doc/html/rfc6902) is a way to specify the modifications to perform on a resource. For example, in this feature flag representation:
 
 ```json
 {
@@ -139,7 +139,7 @@ Attributes that aren't editable, like a resource's `_links`, have names that sta
 
 ### Updates via JSON Merge Patch
 
-The API also supports the [JSON Merge Patch](https://tools.ietf.org/html/rfc7386) format, as well as the [Update feature flag](/tag/Feature-flags#operation/patchFeatureFlag) resource.
+The API also supports the [JSON Merge Patch](https://datatracker.ietf.org/doc/html/rfc7386) format, as well as the [Update feature flag](/tag/Feature-flags#operation/patchFeatureFlag) resource.
 
 JSON Merge Patch is less expressive than JSON Patch but in many cases, it is simpler to construct a merge patch document. For example, you can change a feature flag's description with the following merge patch document:
 
@@ -476,7 +476,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>6.0.2</version>
+  <version>7.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -486,7 +486,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:6.0.2"
+compile "com.launchdarkly:api-client:7.0.0"
 ```
 
 ### Others
@@ -499,7 +499,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-6.0.2.jar`
+* `target/api-client-7.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -676,6 +676,7 @@ Class | Method | HTTP request | Description
 *WebhooksApi* | [**patchWebhook**](docs/WebhooksApi.md#patchWebhook) | **PATCH** /api/v2/webhooks/{id} | Update webhook
 *WebhooksApi* | [**postWebhook**](docs/WebhooksApi.md#postWebhook) | **POST** /api/v2/webhooks | Creates a webhook
 *WorkflowsBetaApi* | [**deleteWorkflow**](docs/WorkflowsBetaApi.md#deleteWorkflow) | **DELETE** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/workflows/{workflowId} | Delete workflow
+*WorkflowsBetaApi* | [**getCustomWorkflow**](docs/WorkflowsBetaApi.md#getCustomWorkflow) | **GET** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/workflows/{workflowId} | Get custom workflow
 *WorkflowsBetaApi* | [**getWorkflows**](docs/WorkflowsBetaApi.md#getWorkflows) | **GET** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/workflows | Get workflows
 *WorkflowsBetaApi* | [**postWorkflow**](docs/WorkflowsBetaApi.md#postWorkflow) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/workflows | Create workflow
 
@@ -725,6 +726,7 @@ Class | Method | HTTP request | Description
  - [DependentFlag](docs/DependentFlag.md)
  - [DependentFlagEnvironment](docs/DependentFlagEnvironment.md)
  - [DependentFlagsByEnvironment](docs/DependentFlagsByEnvironment.md)
+ - [DerivedAttribute](docs/DerivedAttribute.md)
  - [Destination](docs/Destination.md)
  - [DestinationPost](docs/DestinationPost.md)
  - [Destinations](docs/Destinations.md)
@@ -746,8 +748,8 @@ Class | Method | HTTP request | Description
  - [ExpiringUserTargetGetResponse](docs/ExpiringUserTargetGetResponse.md)
  - [ExpiringUserTargetItem](docs/ExpiringUserTargetItem.md)
  - [ExpiringUserTargetPatchResponse](docs/ExpiringUserTargetPatchResponse.md)
+ - [Extinction](docs/Extinction.md)
  - [ExtinctionCollectionRep](docs/ExtinctionCollectionRep.md)
- - [ExtinctionRep](docs/ExtinctionRep.md)
  - [FeatureFlag](docs/FeatureFlag.md)
  - [FeatureFlagBody](docs/FeatureFlagBody.md)
  - [FeatureFlagConfig](docs/FeatureFlagConfig.md)
@@ -768,7 +770,6 @@ Class | Method | HTTP request | Description
  - [FlagSummary](docs/FlagSummary.md)
  - [ForbiddenErrorRep](docs/ForbiddenErrorRep.md)
  - [HunkRep](docs/HunkRep.md)
- - [InlineResponse200](docs/InlineResponse200.md)
  - [IntegrationMetadata](docs/IntegrationMetadata.md)
  - [IntegrationStatus](docs/IntegrationStatus.md)
  - [InvalidRequestErrorRep](docs/InvalidRequestErrorRep.md)
@@ -786,6 +787,7 @@ Class | Method | HTTP request | Description
  - [MetricListingRep](docs/MetricListingRep.md)
  - [MetricPost](docs/MetricPost.md)
  - [MetricRep](docs/MetricRep.md)
+ - [MetricSeen](docs/MetricSeen.md)
  - [Modification](docs/Modification.md)
  - [MultiEnvironmentDependentFlag](docs/MultiEnvironmentDependentFlag.md)
  - [MultiEnvironmentDependentFlags](docs/MultiEnvironmentDependentFlags.md)
@@ -862,12 +864,12 @@ Class | Method | HTTP request | Description
  - [UserFlagSetting](docs/UserFlagSetting.md)
  - [UserFlagSettings](docs/UserFlagSettings.md)
  - [UserRecord](docs/UserRecord.md)
+ - [UserRecordRep](docs/UserRecordRep.md)
  - [UserSegment](docs/UserSegment.md)
  - [UserSegmentRule](docs/UserSegmentRule.md)
  - [UserSegments](docs/UserSegments.md)
  - [Users](docs/Users.md)
  - [ValuePut](docs/ValuePut.md)
- - [Variate](docs/Variate.md)
  - [Variation](docs/Variation.md)
  - [VariationOrRolloutRep](docs/VariationOrRolloutRep.md)
  - [VariationSummary](docs/VariationSummary.md)

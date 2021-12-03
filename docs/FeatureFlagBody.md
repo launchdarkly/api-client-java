@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **description** | **String** | Description of the feature flag |  [optional]
 **includeInSnippet** | **Boolean** | Deprecated, use clientSideAvailability. Whether or not this flag should be made available to the client-side JavaScript SDK |  [optional]
 **clientSideAvailability** | [**ClientSideAvailabilityPost**](ClientSideAvailabilityPost.md) |  |  [optional]
-**variations** | [**List&lt;Variate&gt;**](Variate.md) | An array of possible variations for the flag |  [optional]
+**variations** | [**List&lt;Variation&gt;**](Variation.md) | An array of possible variations for the flag |  [optional]
 **variationJsonSchema** | **Object** |  |  [optional]
 **temporary** | **Boolean** | Whether or not the flag is a temporary flag |  [optional]
 **tags** | **List&lt;String&gt;** | Tags for the feature flag |  [optional]
