@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * ExperimentStatsRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-03T20:58:35.619656Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-06T23:47:01.381398Z[Etc/UTC]")
 public class ExperimentStatsRep {
   public static final String SERIALIZED_NAME_P_VALUE = "pValue";
   @SerializedName(SERIALIZED_NAME_P_VALUE)

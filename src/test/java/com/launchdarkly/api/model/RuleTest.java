@@ -92,4 +92,12 @@ public class RuleTest {
         // TODO: test description
     }
 
+    /**
+     * Test the property 'ref'
+     */
+    @Test
+    public void refTest() {
+        // TODO: test ref
+    }
+
 }

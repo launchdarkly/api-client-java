@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **updateSequenceId** | **Long** | An optional ID used to prevent older data from overwriting newer data. If no sequence ID is included, the newly submitted data will always be saved. |  [optional]
 **syncTime** | **Long** |  | 
 **references** | [**List&lt;ReferenceRep&gt;**](ReferenceRep.md) | An array of flag references found on the branch |  [optional]
+**commitTime** | **Long** |  |  [optional]
 
 
 

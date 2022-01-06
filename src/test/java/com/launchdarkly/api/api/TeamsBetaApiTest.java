@@ -14,6 +14,8 @@
 package com.launchdarkly.api.api;
 
 import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.model.ExpandedTeamRep;
+import java.io.File;
 import com.launchdarkly.api.model.ForbiddenErrorRep;
 import com.launchdarkly.api.model.InvalidRequestErrorRep;
 import com.launchdarkly.api.model.MethodNotAllowedErrorRep;
@@ -21,6 +23,7 @@ import com.launchdarkly.api.model.NotFoundErrorRep;
 import com.launchdarkly.api.model.RateLimitedErrorRep;
 import com.launchdarkly.api.model.StatusConflictErrorRep;
 import com.launchdarkly.api.model.TeamCollectionRep;
+import com.launchdarkly.api.model.TeamImportsRep;
 import com.launchdarkly.api.model.TeamPatchInput;
 import com.launchdarkly.api.model.TeamPostInput;
 import com.launchdarkly.api.model.TeamRep;
@@ -68,7 +71,7 @@ public class TeamsBetaApiTest {
     @Test
     public void getTeamTest() throws ApiException {
         String key = null;
-                TeamRep response = api.getTeam(key);
+                ExpandedTeamRep response = api.getTeam(key);
         // TODO: test validations
     }
     
@@ -101,7 +104,7 @@ public class TeamsBetaApiTest {
     public void patchTeamTest() throws ApiException {
         String key = null;
         TeamPatchInput teamPatchInput = null;
-                TeamCollectionRep response = api.patchTeam(key, teamPatchInput);
+                ExpandedTeamRep response = api.patchTeam(key, teamPatchInput);
         // TODO: test validations
     }
     
@@ -117,6 +120,22 @@ public class TeamsBetaApiTest {
     public void postTeamTest() throws ApiException {
         TeamPostInput teamPostInput = null;
                 TeamRep response = api.postTeam(teamPostInput);
+        // TODO: test validations
+    }
+    
+    /**
+     * Add members to team
+     *
+     * Add multiple members to an existing team by uploading a CSV file of member email addresses. Your CSV file must include email addresses in the first column. You can include data in additional columns, but LaunchDarkly ignores all data outside the first column. Headers are optional.  **Members are only added on a &#x60;201&#x60; response.** A &#x60;207&#x60; indicates the CSV file contains a combination of valid and invalid entries and will _not_ result in any members being added to the team.  On a &#x60;207&#x60; response, if an entry contains bad user input the &#x60;message&#x60; field will contain the row number as well as the reason for the error. The &#x60;message&#x60; field will be omitted if the entry is valid.  Example &#x60;207&#x60; response: &#x60;&#x60;&#x60;json {   \&quot;items\&quot;: [     {       \&quot;status\&quot;: \&quot;success\&quot;,       \&quot;value\&quot;: \&quot;a-valid-email@launchdarkly.com\&quot;     },     {       \&quot;message\&quot;: \&quot;Line 2: empty row\&quot;,       \&quot;status\&quot;: \&quot;error\&quot;,       \&quot;value\&quot;: \&quot;\&quot;     },     {       \&quot;message\&quot;: \&quot;Line 3: email already exists in the specified team\&quot;,       \&quot;status\&quot;: \&quot;error\&quot;,       \&quot;value\&quot;: \&quot;existing-team-member@launchdarkly.com\&quot;     },     {       \&quot;message\&quot;: \&quot;Line 4: invalid email formatting\&quot;,       \&quot;status\&quot;: \&quot;error\&quot;,       \&quot;value\&quot;: \&quot;invalid email format\&quot;     }   ] } &#x60;&#x60;&#x60;  Message | Resolution --- | --- Empty row | This line is blank. Add an email address and try again. Duplicate entry | This email address appears in the file twice. Remove the email from the file and try again. Email already exists in the specified team | This member is already on your team. Remove the email from the file and try again. Invalid formatting | This email address is not formatted correctly. Fix the formatting and try again. Email does not belong to a LaunchDarkly member | The email address doesn&#39;t belong to a LaunchDarkly account member. Invite them to LaunchDarkly, then re-add them to the team.  On a &#x60;400&#x60; response, the &#x60;message&#x60; field may contain errors specific to this endpoint.  Example &#x60;400&#x60; response: &#x60;&#x60;&#x60;json {   \&quot;code\&quot;: \&quot;invalid_request\&quot;,   \&quot;message\&quot;: \&quot;Unable to process file\&quot; } &#x60;&#x60;&#x60;  Message | Resolution --- | --- Unable to process file | LaunchDarkly could not process the file for an unspecified reason. Review your file for errors and try again. File exceeds 25mb | Break up your file into multiple files of less than 25mbs each. All emails have invalid formatting | None of the email addresses in the file are in the correct format. Fix the formatting and try again. All emails belong to existing team members | All listed members are already on this team. Populate the file with member emails that do not belong to the team and try again. File is empty | The CSV file does not contain any email addresses. Populate the file and try again. No emails belong to members of your LaunchDarkly organization | None of the email addresses belong to members of your LaunchDarkly account. Invite these members to LaunchDarkly, then re-add them to the team. 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postTeamMembersTest() throws ApiException {
+        String key = null;
+        File file = null;
+                TeamImportsRep response = api.postTeamMembers(key, file);
         // TODO: test validations
     }
     

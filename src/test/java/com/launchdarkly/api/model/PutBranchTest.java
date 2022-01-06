@@ -83,4 +83,12 @@ public class PutBranchTest {
         // TODO: test references
     }
 
+    /**
+     * Test the property 'commitTime'
+     */
+    @Test
+    public void commitTimeTest() {
+        // TODO: test commitTime
+    }
+
 }

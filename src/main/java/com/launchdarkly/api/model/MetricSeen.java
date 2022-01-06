@@ -27,15 +27,15 @@ import java.io.IOException;
 /**
  * MetricSeen
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-03T20:58:35.619656Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-06T23:47:01.381398Z[Etc/UTC]")
 public class MetricSeen {
   public static final String SERIALIZED_NAME_EVER = "ever";
   @SerializedName(SERIALIZED_NAME_EVER)
   private Boolean ever;
 
-  public static final String SERIALIZED_NAME_MINUTES_AGO = "minutesAgo";
-  @SerializedName(SERIALIZED_NAME_MINUTES_AGO)
-  private Long minutesAgo;
+  public static final String SERIALIZED_NAME_TIMESTAMP = "timestamp";
+  @SerializedName(SERIALIZED_NAME_TIMESTAMP)
+  private Long timestamp;
 
 
   public MetricSeen ever(Boolean ever) {
@@ -61,26 +61,26 @@ public class MetricSeen {
   }
 
 
-  public MetricSeen minutesAgo(Long minutesAgo) {
+  public MetricSeen timestamp(Long timestamp) {
     
-    this.minutesAgo = minutesAgo;
+    this.timestamp = timestamp;
     return this;
   }
 
    /**
-   * Get minutesAgo
-   * @return minutesAgo
+   * Get timestamp
+   * @return timestamp
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Long getMinutesAgo() {
-    return minutesAgo;
+  public Long getTimestamp() {
+    return timestamp;
   }
 
 
-  public void setMinutesAgo(Long minutesAgo) {
-    this.minutesAgo = minutesAgo;
+  public void setTimestamp(Long timestamp) {
+    this.timestamp = timestamp;
   }
 
 
@@ -94,12 +94,12 @@ public class MetricSeen {
     }
     MetricSeen metricSeen = (MetricSeen) o;
     return Objects.equals(this.ever, metricSeen.ever) &&
-        Objects.equals(this.minutesAgo, metricSeen.minutesAgo);
+        Objects.equals(this.timestamp, metricSeen.timestamp);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(ever, minutesAgo);
+    return Objects.hash(ever, timestamp);
   }
 
   @Override
@@ -107,7 +107,7 @@ public class MetricSeen {
     StringBuilder sb = new StringBuilder();
     sb.append("class MetricSeen {\n");
     sb.append("    ever: ").append(toIndentedString(ever)).append("\n");
-    sb.append("    minutesAgo: ").append(toIndentedString(minutesAgo)).append("\n");
+    sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * Rule
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-03T20:58:35.619656Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-06T23:47:01.381398Z[Etc/UTC]")
 public class Rule {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -56,6 +56,10 @@ public class Rule {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description;
+
+  public static final String SERIALIZED_NAME_REF = "ref";
+  @SerializedName(SERIALIZED_NAME_REF)
+  private String ref;
 
 
   public Rule id(String id) {
@@ -201,6 +205,29 @@ public class Rule {
   }
 
 
+  public Rule ref(String ref) {
+    
+    this.ref = ref;
+    return this;
+  }
+
+   /**
+   * Get ref
+   * @return ref
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getRef() {
+    return ref;
+  }
+
+
+  public void setRef(String ref) {
+    this.ref = ref;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -215,12 +242,13 @@ public class Rule {
         Objects.equals(this.rollout, rule.rollout) &&
         Objects.equals(this.clauses, rule.clauses) &&
         Objects.equals(this.trackEvents, rule.trackEvents) &&
-        Objects.equals(this.description, rule.description);
+        Objects.equals(this.description, rule.description) &&
+        Objects.equals(this.ref, rule.ref);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, variation, rollout, clauses, trackEvents, description);
+    return Objects.hash(id, variation, rollout, clauses, trackEvents, description, ref);
   }
 
   @Override
@@ -233,6 +261,7 @@ public class Rule {
     sb.append("    clauses: ").append(toIndentedString(clauses)).append("\n");
     sb.append("    trackEvents: ").append(toIndentedString(trackEvents)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    ref: ").append(toIndentedString(ref)).append("\n");
     sb.append("}");
     return sb.toString();
   }

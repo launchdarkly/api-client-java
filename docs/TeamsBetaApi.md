@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**getTeams**](TeamsBetaApi.md#getTeams) | **GET** /api/v2/teams | List teams
 [**patchTeam**](TeamsBetaApi.md#patchTeam) | **PATCH** /api/v2/teams/{key} | Update team
 [**postTeam**](TeamsBetaApi.md#postTeam) | **POST** /api/v2/teams | Create team
+[**postTeamMembers**](TeamsBetaApi.md#postTeamMembers) | **POST** /api/v2/teams/{key}/members | Add members to team
 
 
 <a name="deleteTeam"></a>
@@ -84,7 +85,7 @@ null (empty response body)
 
 <a name="getTeam"></a>
 # **getTeam**
-> TeamRep getTeam(key)
+> ExpandedTeamRep getTeam(key)
 
 Get team
 
@@ -114,7 +115,7 @@ public class Example {
     TeamsBetaApi apiInstance = new TeamsBetaApi(defaultClient);
     String key = "key_example"; // String | The team key
     try {
-      TeamRep result = apiInstance.getTeam(key);
+      ExpandedTeamRep result = apiInstance.getTeam(key);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsBetaApi#getTeam");
@@ -135,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TeamRep**](TeamRep.md)
+[**ExpandedTeamRep**](ExpandedTeamRep.md)
 
 ### Authorization
 
@@ -149,7 +150,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Team response JSON |  -  |
+**200** | Teams response JSON |  -  |
 **400** | Invalid request |  -  |
 **401** | Invalid access token |  -  |
 **403** | Forbidden |  -  |
@@ -235,7 +236,7 @@ Name | Type | Description  | Notes
 
 <a name="patchTeam"></a>
 # **patchTeam**
-> TeamCollectionRep patchTeam(key, teamPatchInput)
+> ExpandedTeamRep patchTeam(key, teamPatchInput)
 
 Update team
 
@@ -266,7 +267,7 @@ public class Example {
     String key = "key_example"; // String | The team key
     TeamPatchInput teamPatchInput = new TeamPatchInput(); // TeamPatchInput | 
     try {
-      TeamCollectionRep result = apiInstance.patchTeam(key, teamPatchInput);
+      ExpandedTeamRep result = apiInstance.patchTeam(key, teamPatchInput);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsBetaApi#patchTeam");
@@ -288,7 +289,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TeamCollectionRep**](TeamCollectionRep.md)
+[**ExpandedTeamRep**](ExpandedTeamRep.md)
 
 ### Authorization
 
@@ -302,7 +303,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Teams collection response JSON |  -  |
+**200** | Teams response JSON |  -  |
 **400** | Invalid request |  -  |
 **401** | Invalid access token |  -  |
 **404** | Invalid resource identifier |  -  |
@@ -378,6 +379,82 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | Successful teams response |  -  |
+**400** | Invalid request |  -  |
+**401** | Invalid access token |  -  |
+**405** | Method not allowed |  -  |
+**429** | Rate limited |  -  |
+
+<a name="postTeamMembers"></a>
+# **postTeamMembers**
+> TeamImportsRep postTeamMembers(key, file)
+
+Add members to team
+
+Add multiple members to an existing team by uploading a CSV file of member email addresses. Your CSV file must include email addresses in the first column. You can include data in additional columns, but LaunchDarkly ignores all data outside the first column. Headers are optional.  **Members are only added on a &#x60;201&#x60; response.** A &#x60;207&#x60; indicates the CSV file contains a combination of valid and invalid entries and will _not_ result in any members being added to the team.  On a &#x60;207&#x60; response, if an entry contains bad user input the &#x60;message&#x60; field will contain the row number as well as the reason for the error. The &#x60;message&#x60; field will be omitted if the entry is valid.  Example &#x60;207&#x60; response: &#x60;&#x60;&#x60;json {   \&quot;items\&quot;: [     {       \&quot;status\&quot;: \&quot;success\&quot;,       \&quot;value\&quot;: \&quot;a-valid-email@launchdarkly.com\&quot;     },     {       \&quot;message\&quot;: \&quot;Line 2: empty row\&quot;,       \&quot;status\&quot;: \&quot;error\&quot;,       \&quot;value\&quot;: \&quot;\&quot;     },     {       \&quot;message\&quot;: \&quot;Line 3: email already exists in the specified team\&quot;,       \&quot;status\&quot;: \&quot;error\&quot;,       \&quot;value\&quot;: \&quot;existing-team-member@launchdarkly.com\&quot;     },     {       \&quot;message\&quot;: \&quot;Line 4: invalid email formatting\&quot;,       \&quot;status\&quot;: \&quot;error\&quot;,       \&quot;value\&quot;: \&quot;invalid email format\&quot;     }   ] } &#x60;&#x60;&#x60;  Message | Resolution --- | --- Empty row | This line is blank. Add an email address and try again. Duplicate entry | This email address appears in the file twice. Remove the email from the file and try again. Email already exists in the specified team | This member is already on your team. Remove the email from the file and try again. Invalid formatting | This email address is not formatted correctly. Fix the formatting and try again. Email does not belong to a LaunchDarkly member | The email address doesn&#39;t belong to a LaunchDarkly account member. Invite them to LaunchDarkly, then re-add them to the team.  On a &#x60;400&#x60; response, the &#x60;message&#x60; field may contain errors specific to this endpoint.  Example &#x60;400&#x60; response: &#x60;&#x60;&#x60;json {   \&quot;code\&quot;: \&quot;invalid_request\&quot;,   \&quot;message\&quot;: \&quot;Unable to process file\&quot; } &#x60;&#x60;&#x60;  Message | Resolution --- | --- Unable to process file | LaunchDarkly could not process the file for an unspecified reason. Review your file for errors and try again. File exceeds 25mb | Break up your file into multiple files of less than 25mbs each. All emails have invalid formatting | None of the email addresses in the file are in the correct format. Fix the formatting and try again. All emails belong to existing team members | All listed members are already on this team. Populate the file with member emails that do not belong to the team and try again. File is empty | The CSV file does not contain any email addresses. Populate the file and try again. No emails belong to members of your LaunchDarkly organization | None of the email addresses belong to members of your LaunchDarkly account. Invite these members to LaunchDarkly, then re-add them to the team. 
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.TeamsBetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    TeamsBetaApi apiInstance = new TeamsBetaApi(defaultClient);
+    String key = "key_example"; // String | The team key
+    File file = new File("/path/to/file"); // File | CSV file containing email addresses
+    try {
+      TeamImportsRep result = apiInstance.postTeamMembers(key, file);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling TeamsBetaApi#postTeamMembers");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **key** | **String**| The team key |
+ **file** | **File**| CSV file containing email addresses | [optional]
+
+### Return type
+
+[**TeamImportsRep**](TeamImportsRep.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Team member imports response JSON |  -  |
+**207** | Partial Success |  -  |
 **400** | Invalid request |  -  |
 **401** | Invalid access token |  -  |
 **405** | Method not allowed |  -  |

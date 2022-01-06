@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 <a name="getExtinctions"></a>
 # **getExtinctions**
-> ExtinctionCollectionRep getExtinctions(repoName, branchName, projKey, flagKey)
+> ExtinctionCollectionRep getExtinctions(repoName, branchName, projKey, flagKey, from, to)
 
 List extinctions
 
@@ -355,8 +355,10 @@ public class Example {
     String branchName = "branchName_example"; // String | Filter results to a specific branch. By default, only the default branch will be queried for extinctions.
     String projKey = "projKey_example"; // String | Filter results to a specific project
     String flagKey = "flagKey_example"; // String | Filter results to a specific flag key
+    Long from = 56L; // Long | Filter results to a specific timeframe based on commit time, expressed as a Unix epoch time in milliseconds. Must be used with `to`.
+    Long to = 56L; // Long | Filter results to a specific timeframe based on commit time, expressed as a Unix epoch time in milliseconds. Must be used with `from`.
     try {
-      ExtinctionCollectionRep result = apiInstance.getExtinctions(repoName, branchName, projKey, flagKey);
+      ExtinctionCollectionRep result = apiInstance.getExtinctions(repoName, branchName, projKey, flagKey, from, to);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CodeReferencesApi#getExtinctions");
@@ -377,6 +379,8 @@ Name | Type | Description  | Notes
  **branchName** | **String**| Filter results to a specific branch. By default, only the default branch will be queried for extinctions. | [optional]
  **projKey** | **String**| Filter results to a specific project | [optional]
  **flagKey** | **String**| Filter results to a specific flag key | [optional]
+ **from** | **Long**| Filter results to a specific timeframe based on commit time, expressed as a Unix epoch time in milliseconds. Must be used with &#x60;to&#x60;. | [optional]
+ **to** | **Long**| Filter results to a specific timeframe based on commit time, expressed as a Unix epoch time in milliseconds. Must be used with &#x60;from&#x60;. | [optional]
 
 ### Return type
 

@@ -49,11 +49,11 @@ public class MetricSeenTest {
     }
 
     /**
-     * Test the property 'minutesAgo'
+     * Test the property 'timestamp'
      */
     @Test
-    public void minutesAgoTest() {
-        // TODO: test minutesAgo
+    public void timestampTest() {
+        // TODO: test timestamp
     }
 
 }

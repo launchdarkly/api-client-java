@@ -8,7 +8,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ever** | **Boolean** |  |  [optional]
-**minutesAgo** | **Long** |  |  [optional]
+**timestamp** | **Long** |  |  [optional]
 
 
 

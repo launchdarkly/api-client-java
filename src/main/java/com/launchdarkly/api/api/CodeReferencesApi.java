@@ -631,6 +631,8 @@ public class CodeReferencesApi {
      * @param branchName Filter results to a specific branch. By default, only the default branch will be queried for extinctions. (optional)
      * @param projKey Filter results to a specific project (optional)
      * @param flagKey Filter results to a specific flag key (optional)
+     * @param from Filter results to a specific timeframe based on commit time, expressed as a Unix epoch time in milliseconds. Must be used with &#x60;to&#x60;. (optional)
+     * @param to Filter results to a specific timeframe based on commit time, expressed as a Unix epoch time in milliseconds. Must be used with &#x60;from&#x60;. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -643,7 +645,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExtinctionsCall(String repoName, String branchName, String projKey, String flagKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getExtinctionsCall(String repoName, String branchName, String projKey, String flagKey, Long from, Long to, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -671,6 +673,14 @@ public class CodeReferencesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("flagKey", flagKey));
         }
 
+        if (from != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("from", from));
+        }
+
+        if (to != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("to", to));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -690,10 +700,10 @@ public class CodeReferencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getExtinctionsValidateBeforeCall(String repoName, String branchName, String projKey, String flagKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getExtinctionsValidateBeforeCall(String repoName, String branchName, String projKey, String flagKey, Long from, Long to, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = getExtinctionsCall(repoName, branchName, projKey, flagKey, _callback);
+        okhttp3.Call localVarCall = getExtinctionsCall(repoName, branchName, projKey, flagKey, from, to, _callback);
         return localVarCall;
 
     }
@@ -705,6 +715,8 @@ public class CodeReferencesApi {
      * @param branchName Filter results to a specific branch. By default, only the default branch will be queried for extinctions. (optional)
      * @param projKey Filter results to a specific project (optional)
      * @param flagKey Filter results to a specific flag key (optional)
+     * @param from Filter results to a specific timeframe based on commit time, expressed as a Unix epoch time in milliseconds. Must be used with &#x60;to&#x60;. (optional)
+     * @param to Filter results to a specific timeframe based on commit time, expressed as a Unix epoch time in milliseconds. Must be used with &#x60;from&#x60;. (optional)
      * @return ExtinctionCollectionRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -716,8 +728,8 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ExtinctionCollectionRep getExtinctions(String repoName, String branchName, String projKey, String flagKey) throws ApiException {
-        ApiResponse<ExtinctionCollectionRep> localVarResp = getExtinctionsWithHttpInfo(repoName, branchName, projKey, flagKey);
+    public ExtinctionCollectionRep getExtinctions(String repoName, String branchName, String projKey, String flagKey, Long from, Long to) throws ApiException {
+        ApiResponse<ExtinctionCollectionRep> localVarResp = getExtinctionsWithHttpInfo(repoName, branchName, projKey, flagKey, from, to);
         return localVarResp.getData();
     }
 
@@ -728,6 +740,8 @@ public class CodeReferencesApi {
      * @param branchName Filter results to a specific branch. By default, only the default branch will be queried for extinctions. (optional)
      * @param projKey Filter results to a specific project (optional)
      * @param flagKey Filter results to a specific flag key (optional)
+     * @param from Filter results to a specific timeframe based on commit time, expressed as a Unix epoch time in milliseconds. Must be used with &#x60;to&#x60;. (optional)
+     * @param to Filter results to a specific timeframe based on commit time, expressed as a Unix epoch time in milliseconds. Must be used with &#x60;from&#x60;. (optional)
      * @return ApiResponse&lt;ExtinctionCollectionRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -739,8 +753,8 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ExtinctionCollectionRep> getExtinctionsWithHttpInfo(String repoName, String branchName, String projKey, String flagKey) throws ApiException {
-        okhttp3.Call localVarCall = getExtinctionsValidateBeforeCall(repoName, branchName, projKey, flagKey, null);
+    public ApiResponse<ExtinctionCollectionRep> getExtinctionsWithHttpInfo(String repoName, String branchName, String projKey, String flagKey, Long from, Long to) throws ApiException {
+        okhttp3.Call localVarCall = getExtinctionsValidateBeforeCall(repoName, branchName, projKey, flagKey, from, to, null);
         Type localVarReturnType = new TypeToken<ExtinctionCollectionRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -752,6 +766,8 @@ public class CodeReferencesApi {
      * @param branchName Filter results to a specific branch. By default, only the default branch will be queried for extinctions. (optional)
      * @param projKey Filter results to a specific project (optional)
      * @param flagKey Filter results to a specific flag key (optional)
+     * @param from Filter results to a specific timeframe based on commit time, expressed as a Unix epoch time in milliseconds. Must be used with &#x60;to&#x60;. (optional)
+     * @param to Filter results to a specific timeframe based on commit time, expressed as a Unix epoch time in milliseconds. Must be used with &#x60;from&#x60;. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -764,9 +780,9 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExtinctionsAsync(String repoName, String branchName, String projKey, String flagKey, final ApiCallback<ExtinctionCollectionRep> _callback) throws ApiException {
+    public okhttp3.Call getExtinctionsAsync(String repoName, String branchName, String projKey, String flagKey, Long from, Long to, final ApiCallback<ExtinctionCollectionRep> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getExtinctionsValidateBeforeCall(repoName, branchName, projKey, flagKey, _callback);
+        okhttp3.Call localVarCall = getExtinctionsValidateBeforeCall(repoName, branchName, projKey, flagKey, from, to, _callback);
         Type localVarReturnType = new TypeToken<ExtinctionCollectionRep>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

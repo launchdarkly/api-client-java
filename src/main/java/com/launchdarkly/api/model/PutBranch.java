@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * PutBranch
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-03T20:58:35.619656Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-06T23:47:01.381398Z[Etc/UTC]")
 public class PutBranch {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -51,6 +51,10 @@ public class PutBranch {
   public static final String SERIALIZED_NAME_REFERENCES = "references";
   @SerializedName(SERIALIZED_NAME_REFERENCES)
   private List<ReferenceRep> references = null;
+
+  public static final String SERIALIZED_NAME_COMMIT_TIME = "commitTime";
+  @SerializedName(SERIALIZED_NAME_COMMIT_TIME)
+  private Long commitTime;
 
 
   public PutBranch name(String name) {
@@ -176,6 +180,29 @@ public class PutBranch {
   }
 
 
+  public PutBranch commitTime(Long commitTime) {
+    
+    this.commitTime = commitTime;
+    return this;
+  }
+
+   /**
+   * Get commitTime
+   * @return commitTime
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Long getCommitTime() {
+    return commitTime;
+  }
+
+
+  public void setCommitTime(Long commitTime) {
+    this.commitTime = commitTime;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -189,12 +216,13 @@ public class PutBranch {
         Objects.equals(this.head, putBranch.head) &&
         Objects.equals(this.updateSequenceId, putBranch.updateSequenceId) &&
         Objects.equals(this.syncTime, putBranch.syncTime) &&
-        Objects.equals(this.references, putBranch.references);
+        Objects.equals(this.references, putBranch.references) &&
+        Objects.equals(this.commitTime, putBranch.commitTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, head, updateSequenceId, syncTime, references);
+    return Objects.hash(name, head, updateSequenceId, syncTime, references, commitTime);
   }
 
   @Override
@@ -206,6 +234,7 @@ public class PutBranch {
     sb.append("    updateSequenceId: ").append(toIndentedString(updateSequenceId)).append("\n");
     sb.append("    syncTime: ").append(toIndentedString(syncTime)).append("\n");
     sb.append("    references: ").append(toIndentedString(references)).append("\n");
+    sb.append("    commitTime: ").append(toIndentedString(commitTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

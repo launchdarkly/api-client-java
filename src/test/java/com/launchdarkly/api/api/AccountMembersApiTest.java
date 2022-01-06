@@ -17,6 +17,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.model.ForbiddenErrorRep;
 import com.launchdarkly.api.model.InvalidRequestErrorRep;
 import com.launchdarkly.api.model.Member;
+import com.launchdarkly.api.model.MemberTeamsFormPost;
 import com.launchdarkly.api.model.Members;
 import com.launchdarkly.api.model.NewMemberForm;
 import com.launchdarkly.api.model.NotFoundErrorRep;
@@ -92,7 +93,7 @@ public class AccountMembersApiTest {
     /**
      * Modify an account member
      *
-     * Update a single account member. The request should be a valid JSON Patch document describing the changes to be made to the member. Requests to update account members will not work if SCIM is enabled for the account.
+     *  Update a single account member. The request should be a valid JSON Patch document describing the changes to be made to the member.  To update fields in the account member object that are arrays, set the &#x60;path&#x60; to the name of the field and then append &#x60;/&lt;array index&gt;&#x60;. Using &#x60;/0&#x60; appends to the beginning of the array. For example, to add a new custom role to a member, use the following request body:  &#x60;&#x60;&#x60;   [     {       \&quot;op\&quot;: \&quot;add\&quot;,       \&quot;path\&quot;: \&quot;/customRoles/0\&quot;,       \&quot;value\&quot;: \&quot;some-role-id\&quot;     }   ] &#x60;&#x60;&#x60;  Requests to update account members will not work if SCIM is enabled for the account. 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -102,6 +103,22 @@ public class AccountMembersApiTest {
         String id = null;
         List<PatchOperation> patchOperation = null;
                 Member response = api.patchMember(id, patchOperation);
+        // TODO: test validations
+    }
+    
+    /**
+     * Add member to teams
+     *
+     * Add member to team(s)
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postMemberTeamsTest() throws ApiException {
+        String id = null;
+        MemberTeamsFormPost memberTeamsFormPost = null;
+                Member response = api.postMemberTeams(id, memberTeamsFormPost);
         // TODO: test validations
     }
     

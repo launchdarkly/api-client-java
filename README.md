@@ -6,7 +6,7 @@ This REST API is for custom integrations, data export, or automating your featur
 
 LaunchDarkly REST API
 - API version: 2.0
-  - Build date: 2021-12-03T20:58:35.619656Z[Etc/UTC]
+  - Build date: 2022-01-06T23:47:01.381398Z[Etc/UTC]
 
 # Overview
 
@@ -476,7 +476,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>7.0.0</version>
+  <version>7.1.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -486,7 +486,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:7.0.0"
+compile "com.launchdarkly:api-client:7.1.0"
 ```
 
 ### Others
@@ -499,7 +499,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-7.0.0.jar`
+* `target/api-client-7.1.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -559,6 +559,7 @@ Class | Method | HTTP request | Description
 *AccountMembersApi* | [**getMember**](docs/AccountMembersApi.md#getMember) | **GET** /api/v2/members/{id} | Get account member
 *AccountMembersApi* | [**getMembers**](docs/AccountMembersApi.md#getMembers) | **GET** /api/v2/members | List account members
 *AccountMembersApi* | [**patchMember**](docs/AccountMembersApi.md#patchMember) | **PATCH** /api/v2/members/{id} | Modify an account member
+*AccountMembersApi* | [**postMemberTeams**](docs/AccountMembersApi.md#postMemberTeams) | **POST** /api/v2/members/{id}/teams | Add member to teams
 *AccountMembersApi* | [**postMembers**](docs/AccountMembersApi.md#postMembers) | **POST** /api/v2/members | Invite new members
 *AccountUsageBetaApi* | [**getEvaluationsUsage**](docs/AccountUsageBetaApi.md#getEvaluationsUsage) | **GET** /api/v2/usage/evaluations/{projKey}/{envKey}/{flagKey} | Get evaluations usage
 *AccountUsageBetaApi* | [**getEventsUsage**](docs/AccountUsageBetaApi.md#getEventsUsage) | **GET** /api/v2/usage/events/{type} | Get events usage
@@ -621,6 +622,16 @@ Class | Method | HTTP request | Description
 *FeatureFlagsApi* | [**postFeatureFlag**](docs/FeatureFlagsApi.md#postFeatureFlag) | **POST** /api/v2/flags/{projKey} | Create a feature flag
 *FeatureFlagsBetaApi* | [**getDependentFlags**](docs/FeatureFlagsBetaApi.md#getDependentFlags) | **GET** /api/v2/flags/{projKey}/{flagKey}/dependent-flags | List dependent feature flags
 *FeatureFlagsBetaApi* | [**getDependentFlagsByEnv**](docs/FeatureFlagsBetaApi.md#getDependentFlagsByEnv) | **GET** /api/v2/flags/{projKey}/{envKey}/{flagKey}/dependent-flags | List dependent feature flags by environment
+*FlagTriggersApi* | [**createTriggerWorkflow**](docs/FlagTriggersApi.md#createTriggerWorkflow) | **POST** /api/v2/flags/{projKey}/{flagKey}/triggers/{envKey} | Create flag trigger
+*FlagTriggersApi* | [**deleteTriggerWorkflow**](docs/FlagTriggersApi.md#deleteTriggerWorkflow) | **DELETE** /api/v2/flags/{projKey}/{flagKey}/triggers/{envKey}/{id} | Delete flag trigger
+*FlagTriggersApi* | [**getTriggerWorkflowById**](docs/FlagTriggersApi.md#getTriggerWorkflowById) | **GET** /api/v2/flags/{projKey}/{flagKey}/triggers/{envKey}/{id} | Get flag trigger by ID
+*FlagTriggersApi* | [**getTriggerWorkflows**](docs/FlagTriggersApi.md#getTriggerWorkflows) | **GET** /api/v2/flags/{projKey}/{flagKey}/triggers/{envKey} | List flag triggers
+*FlagTriggersApi* | [**patchTriggerWorkflow**](docs/FlagTriggersApi.md#patchTriggerWorkflow) | **PATCH** /api/v2/flags/{projKey}/{flagKey}/triggers/{envKey}/{id} | Update flag trigger
+*IntegrationAuditLogSubscriptionsApi* | [**createSubscription**](docs/IntegrationAuditLogSubscriptionsApi.md#createSubscription) | **POST** /api/v2/integrations/{integrationKey} | Create audit log subscription
+*IntegrationAuditLogSubscriptionsApi* | [**deleteSubscription**](docs/IntegrationAuditLogSubscriptionsApi.md#deleteSubscription) | **DELETE** /api/v2/integrations/{integrationKey}/{id} | Delete audit log subscription
+*IntegrationAuditLogSubscriptionsApi* | [**getSubscriptionByID**](docs/IntegrationAuditLogSubscriptionsApi.md#getSubscriptionByID) | **GET** /api/v2/integrations/{integrationKey}/{id} | Get audit log subscription by ID
+*IntegrationAuditLogSubscriptionsApi* | [**getSubscriptions**](docs/IntegrationAuditLogSubscriptionsApi.md#getSubscriptions) | **GET** /api/v2/integrations/{integrationKey} | Get audit log subscriptions by integration
+*IntegrationAuditLogSubscriptionsApi* | [**updateSubscription**](docs/IntegrationAuditLogSubscriptionsApi.md#updateSubscription) | **PATCH** /api/v2/integrations/{integrationKey}/{id} | Update audit log subscription
 *MetricsApi* | [**deleteMetric**](docs/MetricsApi.md#deleteMetric) | **DELETE** /api/v2/metrics/{projectKey}/{key} | Delete metric
 *MetricsApi* | [**getMetric**](docs/MetricsApi.md#getMetric) | **GET** /api/v2/metrics/{projectKey}/{key} | Get metric
 *MetricsApi* | [**getMetrics**](docs/MetricsApi.md#getMetrics) | **GET** /api/v2/metrics/{projectKey} | List metrics
@@ -660,6 +671,7 @@ Class | Method | HTTP request | Description
 *TeamsBetaApi* | [**getTeams**](docs/TeamsBetaApi.md#getTeams) | **GET** /api/v2/teams | List teams
 *TeamsBetaApi* | [**patchTeam**](docs/TeamsBetaApi.md#patchTeam) | **PATCH** /api/v2/teams/{key} | Update team
 *TeamsBetaApi* | [**postTeam**](docs/TeamsBetaApi.md#postTeam) | **POST** /api/v2/teams | Create team
+*TeamsBetaApi* | [**postTeamMembers**](docs/TeamsBetaApi.md#postTeamMembers) | **POST** /api/v2/teams/{key}/members | Add members to team
 *UserSettingsApi* | [**getExpiringFlagsForUser**](docs/UserSettingsApi.md#getExpiringFlagsForUser) | **GET** /api/v2/users/{projKey}/{userKey}/expiring-user-targets/{envKey} | Get expiring dates on flags for user
 *UserSettingsApi* | [**getUserFlagSetting**](docs/UserSettingsApi.md#getUserFlagSetting) | **GET** /api/v2/users/{projKey}/{envKey}/{key}/flags/{featureKey} | Get flag setting for user
 *UserSettingsApi* | [**getUserFlagSettings**](docs/UserSettingsApi.md#getUserFlagSettings) | **GET** /api/v2/users/{projKey}/{envKey}/{key}/flags | List flag settings for user
@@ -716,6 +728,7 @@ Class | Method | HTTP request | Description
  - [CustomRolePost](docs/CustomRolePost.md)
  - [CustomRolePostData](docs/CustomRolePostData.md)
  - [CustomRoles](docs/CustomRoles.md)
+ - [CustomRolesRep](docs/CustomRolesRep.md)
  - [CustomWorkflowInputRep](docs/CustomWorkflowInputRep.md)
  - [CustomWorkflowMeta](docs/CustomWorkflowMeta.md)
  - [CustomWorkflowOutputRep](docs/CustomWorkflowOutputRep.md)
@@ -733,6 +746,7 @@ Class | Method | HTTP request | Description
  - [Environment](docs/Environment.md)
  - [EnvironmentPost](docs/EnvironmentPost.md)
  - [ExecutionOutputRep](docs/ExecutionOutputRep.md)
+ - [ExpandedTeamRep](docs/ExpandedTeamRep.md)
  - [ExperimentAllocationRep](docs/ExperimentAllocationRep.md)
  - [ExperimentEnabledPeriodRep](docs/ExperimentEnabledPeriodRep.md)
  - [ExperimentEnvironmentSettingRep](docs/ExperimentEnvironmentSettingRep.md)
@@ -768,19 +782,26 @@ Class | Method | HTTP request | Description
  - [FlagScheduledChangesInput](docs/FlagScheduledChangesInput.md)
  - [FlagStatusRep](docs/FlagStatusRep.md)
  - [FlagSummary](docs/FlagSummary.md)
+ - [FlagTriggerInput](docs/FlagTriggerInput.md)
  - [ForbiddenErrorRep](docs/ForbiddenErrorRep.md)
  - [HunkRep](docs/HunkRep.md)
+ - [Integration](docs/Integration.md)
  - [IntegrationMetadata](docs/IntegrationMetadata.md)
  - [IntegrationStatus](docs/IntegrationStatus.md)
+ - [IntegrationStatusRep](docs/IntegrationStatusRep.md)
+ - [IntegrationSubscriptionStatusRep](docs/IntegrationSubscriptionStatusRep.md)
+ - [Integrations](docs/Integrations.md)
  - [InvalidRequestErrorRep](docs/InvalidRequestErrorRep.md)
  - [IpList](docs/IpList.md)
  - [LastSeenMetadata](docs/LastSeenMetadata.md)
  - [Link](docs/Link.md)
  - [Member](docs/Member.md)
  - [MemberDataRep](docs/MemberDataRep.md)
+ - [MemberImportItemRep](docs/MemberImportItemRep.md)
  - [MemberPermissionGrantSummaryRep](docs/MemberPermissionGrantSummaryRep.md)
  - [MemberSummaryRep](docs/MemberSummaryRep.md)
  - [MemberTeamSummaryRep](docs/MemberTeamSummaryRep.md)
+ - [MemberTeamsFormPost](docs/MemberTeamsFormPost.md)
  - [Members](docs/Members.md)
  - [MethodNotAllowedErrorRep](docs/MethodNotAllowedErrorRep.md)
  - [MetricCollectionRep](docs/MetricCollectionRep.md)
@@ -812,6 +833,7 @@ Class | Method | HTTP request | Description
  - [PubNubDetailRep](docs/PubNubDetailRep.md)
  - [PutBranch](docs/PutBranch.md)
  - [RateLimitedErrorRep](docs/RateLimitedErrorRep.md)
+ - [RecentTriggerBody](docs/RecentTriggerBody.md)
  - [ReferenceRep](docs/ReferenceRep.md)
  - [RelayAutoConfigCollectionRep](docs/RelayAutoConfigCollectionRep.md)
  - [RelayAutoConfigPost](docs/RelayAutoConfigPost.md)
@@ -847,9 +869,11 @@ Class | Method | HTTP request | Description
  - [StatisticsRoot](docs/StatisticsRoot.md)
  - [StatusConflictErrorRep](docs/StatusConflictErrorRep.md)
  - [SubjectDataRep](docs/SubjectDataRep.md)
+ - [SubscriptionPost](docs/SubscriptionPost.md)
  - [Target](docs/Target.md)
  - [TargetResourceRep](docs/TargetResourceRep.md)
  - [TeamCollectionRep](docs/TeamCollectionRep.md)
+ - [TeamImportsRep](docs/TeamImportsRep.md)
  - [TeamPatchInput](docs/TeamPatchInput.md)
  - [TeamPostInput](docs/TeamPostInput.md)
  - [TeamRep](docs/TeamRep.md)
@@ -857,6 +881,9 @@ Class | Method | HTTP request | Description
  - [Token](docs/Token.md)
  - [TokenDataRep](docs/TokenDataRep.md)
  - [Tokens](docs/Tokens.md)
+ - [TriggerPost](docs/TriggerPost.md)
+ - [TriggerWorkflowCollectionRep](docs/TriggerWorkflowCollectionRep.md)
+ - [TriggerWorkflowRep](docs/TriggerWorkflowRep.md)
  - [UnauthorizedErrorRep](docs/UnauthorizedErrorRep.md)
  - [UrlPost](docs/UrlPost.md)
  - [User](docs/User.md)

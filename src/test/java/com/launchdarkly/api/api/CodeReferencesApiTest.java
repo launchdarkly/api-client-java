@@ -126,7 +126,9 @@ public class CodeReferencesApiTest {
         String branchName = null;
         String projKey = null;
         String flagKey = null;
-                ExtinctionCollectionRep response = api.getExtinctions(repoName, branchName, projKey, flagKey);
+        Long from = null;
+        Long to = null;
+                ExtinctionCollectionRep response = api.getExtinctions(repoName, branchName, projKey, flagKey, from, to);
         // TODO: test validations
     }
     

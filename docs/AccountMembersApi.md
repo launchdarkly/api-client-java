@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**getMember**](AccountMembersApi.md#getMember) | **GET** /api/v2/members/{id} | Get account member
 [**getMembers**](AccountMembersApi.md#getMembers) | **GET** /api/v2/members | List account members
 [**patchMember**](AccountMembersApi.md#patchMember) | **PATCH** /api/v2/members/{id} | Modify an account member
+[**postMemberTeams**](AccountMembersApi.md#postMemberTeams) | **POST** /api/v2/members/{id}/teams | Add member to teams
 [**postMembers**](AccountMembersApi.md#postMembers) | **POST** /api/v2/members | Invite new members
 
 
@@ -242,7 +243,7 @@ Name | Type | Description  | Notes
 
 Modify an account member
 
-Update a single account member. The request should be a valid JSON Patch document describing the changes to be made to the member. Requests to update account members will not work if SCIM is enabled for the account.
+ Update a single account member. The request should be a valid JSON Patch document describing the changes to be made to the member.  To update fields in the account member object that are arrays, set the &#x60;path&#x60; to the name of the field and then append &#x60;/&lt;array index&gt;&#x60;. Using &#x60;/0&#x60; appends to the beginning of the array. For example, to add a new custom role to a member, use the following request body:  &#x60;&#x60;&#x60;   [     {       \&quot;op\&quot;: \&quot;add\&quot;,       \&quot;path\&quot;: \&quot;/customRoles/0\&quot;,       \&quot;value\&quot;: \&quot;some-role-id\&quot;     }   ] &#x60;&#x60;&#x60;  Requests to update account members will not work if SCIM is enabled for the account. 
 
 ### Example
 ```java
@@ -310,6 +311,82 @@ Name | Type | Description  | Notes
 **401** | Invalid access token |  -  |
 **403** | Forbidden |  -  |
 **404** | Invalid resource identifier |  -  |
+**409** | Status conflict |  -  |
+**429** | Rate limited |  -  |
+
+<a name="postMemberTeams"></a>
+# **postMemberTeams**
+> Member postMemberTeams(id, memberTeamsFormPost)
+
+Add member to teams
+
+Add member to team(s)
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AccountMembersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AccountMembersApi apiInstance = new AccountMembersApi(defaultClient);
+    String id = "id_example"; // String | The member ID
+    MemberTeamsFormPost memberTeamsFormPost = new MemberTeamsFormPost(); // MemberTeamsFormPost | 
+    try {
+      Member result = apiInstance.postMemberTeams(id, memberTeamsFormPost);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AccountMembersApi#postMemberTeams");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| The member ID |
+ **memberTeamsFormPost** | [**MemberTeamsFormPost**](MemberTeamsFormPost.md)|  |
+
+### Return type
+
+[**Member**](Member.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Member response JSON |  -  |
+**400** | Invalid request |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
 **409** | Status conflict |  -  |
 **429** | Rate limited |  -  |
 

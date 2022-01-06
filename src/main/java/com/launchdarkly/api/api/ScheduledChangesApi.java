@@ -626,7 +626,7 @@ public class ScheduledChangesApi {
 
     /**
      * Update scheduled changes workflow
-     * Update a scheduled change, overriding existing instructions with the new ones.&lt;br /&gt;&lt;br /&gt;Requires a semantic patch representation of the desired changes to the resource. To learn more about semantic patches, read [Updates](/#section/Updates/Updates-via-semantic-patches)
+     * Update a scheduled change, overriding existing instructions with the new ones.&lt;br /&gt;&lt;br /&gt;Requires a semantic patch representation of the desired changes to the resource. To learn more about semantic patches, read [Updates](/reference#updates-via-semantic-patches).
      * @param projectKey The project key (required)
      * @param featureFlagKey The feature flag&#39;s key (required)
      * @param environmentKey The environment key (required)
@@ -655,7 +655,7 @@ public class ScheduledChangesApi {
 
     /**
      * Update scheduled changes workflow
-     * Update a scheduled change, overriding existing instructions with the new ones.&lt;br /&gt;&lt;br /&gt;Requires a semantic patch representation of the desired changes to the resource. To learn more about semantic patches, read [Updates](/#section/Updates/Updates-via-semantic-patches)
+     * Update a scheduled change, overriding existing instructions with the new ones.&lt;br /&gt;&lt;br /&gt;Requires a semantic patch representation of the desired changes to the resource. To learn more about semantic patches, read [Updates](/reference#updates-via-semantic-patches).
      * @param projectKey The project key (required)
      * @param featureFlagKey The feature flag&#39;s key (required)
      * @param environmentKey The environment key (required)
@@ -685,7 +685,7 @@ public class ScheduledChangesApi {
 
     /**
      * Update scheduled changes workflow (asynchronously)
-     * Update a scheduled change, overriding existing instructions with the new ones.&lt;br /&gt;&lt;br /&gt;Requires a semantic patch representation of the desired changes to the resource. To learn more about semantic patches, read [Updates](/#section/Updates/Updates-via-semantic-patches)
+     * Update a scheduled change, overriding existing instructions with the new ones.&lt;br /&gt;&lt;br /&gt;Requires a semantic patch representation of the desired changes to the resource. To learn more about semantic patches, read [Updates](/reference#updates-via-semantic-patches).
      * @param projectKey The project key (required)
      * @param featureFlagKey The feature flag&#39;s key (required)
      * @param environmentKey The environment key (required)

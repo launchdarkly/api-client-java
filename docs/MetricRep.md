@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **maintainer** | [**MemberSummaryRep**](MemberSummaryRep.md) |  |  [optional]
 **description** | **String** |  |  [optional]
 **isNumeric** | **Boolean** |  |  [optional]
-**successCriteria** | **Integer** |  |  [optional]
+**successCriteria** | [**SuccessCriteriaEnum**](#SuccessCriteriaEnum) |  |  [optional]
 **unit** | **String** |  |  [optional]
 **eventKey** | **String** |  |  [optional]
 **isActive** | **Boolean** |  |  [optional]
@@ -40,6 +40,15 @@ Name | Value
 PAGEVIEW | &quot;pageview&quot;
 CLICK | &quot;click&quot;
 CUSTOM | &quot;custom&quot;
+
+
+
+## Enum: SuccessCriteriaEnum
+
+Name | Value
+---- | -----
+HIGHERTHANBASELINE | &quot;HigherThanBaseline&quot;
+LOWERTHANBASELINE | &quot;LowerThanBaseline&quot;
 
 
 

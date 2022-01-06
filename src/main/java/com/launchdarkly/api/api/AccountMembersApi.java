@@ -30,6 +30,7 @@ import java.io.IOException;
 import com.launchdarkly.api.model.ForbiddenErrorRep;
 import com.launchdarkly.api.model.InvalidRequestErrorRep;
 import com.launchdarkly.api.model.Member;
+import com.launchdarkly.api.model.MemberTeamsFormPost;
 import com.launchdarkly.api.model.Members;
 import com.launchdarkly.api.model.NewMemberForm;
 import com.launchdarkly.api.model.NotFoundErrorRep;
@@ -540,7 +541,7 @@ public class AccountMembersApi {
 
     /**
      * Modify an account member
-     * Update a single account member. The request should be a valid JSON Patch document describing the changes to be made to the member. Requests to update account members will not work if SCIM is enabled for the account.
+     *  Update a single account member. The request should be a valid JSON Patch document describing the changes to be made to the member.  To update fields in the account member object that are arrays, set the &#x60;path&#x60; to the name of the field and then append &#x60;/&lt;array index&gt;&#x60;. Using &#x60;/0&#x60; appends to the beginning of the array. For example, to add a new custom role to a member, use the following request body:  &#x60;&#x60;&#x60;   [     {       \&quot;op\&quot;: \&quot;add\&quot;,       \&quot;path\&quot;: \&quot;/customRoles/0\&quot;,       \&quot;value\&quot;: \&quot;some-role-id\&quot;     }   ] &#x60;&#x60;&#x60;  Requests to update account members will not work if SCIM is enabled for the account. 
      * @param id The member ID (required)
      * @param patchOperation  (required)
      * @return Member
@@ -564,7 +565,7 @@ public class AccountMembersApi {
 
     /**
      * Modify an account member
-     * Update a single account member. The request should be a valid JSON Patch document describing the changes to be made to the member. Requests to update account members will not work if SCIM is enabled for the account.
+     *  Update a single account member. The request should be a valid JSON Patch document describing the changes to be made to the member.  To update fields in the account member object that are arrays, set the &#x60;path&#x60; to the name of the field and then append &#x60;/&lt;array index&gt;&#x60;. Using &#x60;/0&#x60; appends to the beginning of the array. For example, to add a new custom role to a member, use the following request body:  &#x60;&#x60;&#x60;   [     {       \&quot;op\&quot;: \&quot;add\&quot;,       \&quot;path\&quot;: \&quot;/customRoles/0\&quot;,       \&quot;value\&quot;: \&quot;some-role-id\&quot;     }   ] &#x60;&#x60;&#x60;  Requests to update account members will not work if SCIM is enabled for the account. 
      * @param id The member ID (required)
      * @param patchOperation  (required)
      * @return ApiResponse&lt;Member&gt;
@@ -589,7 +590,7 @@ public class AccountMembersApi {
 
     /**
      * Modify an account member (asynchronously)
-     * Update a single account member. The request should be a valid JSON Patch document describing the changes to be made to the member. Requests to update account members will not work if SCIM is enabled for the account.
+     *  Update a single account member. The request should be a valid JSON Patch document describing the changes to be made to the member.  To update fields in the account member object that are arrays, set the &#x60;path&#x60; to the name of the field and then append &#x60;/&lt;array index&gt;&#x60;. Using &#x60;/0&#x60; appends to the beginning of the array. For example, to add a new custom role to a member, use the following request body:  &#x60;&#x60;&#x60;   [     {       \&quot;op\&quot;: \&quot;add\&quot;,       \&quot;path\&quot;: \&quot;/customRoles/0\&quot;,       \&quot;value\&quot;: \&quot;some-role-id\&quot;     }   ] &#x60;&#x60;&#x60;  Requests to update account members will not work if SCIM is enabled for the account. 
      * @param id The member ID (required)
      * @param patchOperation  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -610,6 +611,147 @@ public class AccountMembersApi {
     public okhttp3.Call patchMemberAsync(String id, List<PatchOperation> patchOperation, final ApiCallback<Member> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchMemberValidateBeforeCall(id, patchOperation, _callback);
+        Type localVarReturnType = new TypeToken<Member>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for postMemberTeams
+     * @param id The member ID (required)
+     * @param memberTeamsFormPost  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Member response JSON </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call postMemberTeamsCall(String id, MemberTeamsFormPost memberTeamsFormPost, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = memberTeamsFormPost;
+
+        // create path and map variables
+        String localVarPath = "/api/v2/members/{id}/teams"
+            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call postMemberTeamsValidateBeforeCall(String id, MemberTeamsFormPost memberTeamsFormPost, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling postMemberTeams(Async)");
+        }
+        
+        // verify the required parameter 'memberTeamsFormPost' is set
+        if (memberTeamsFormPost == null) {
+            throw new ApiException("Missing the required parameter 'memberTeamsFormPost' when calling postMemberTeams(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = postMemberTeamsCall(id, memberTeamsFormPost, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Add member to teams
+     * Add member to team(s)
+     * @param id The member ID (required)
+     * @param memberTeamsFormPost  (required)
+     * @return Member
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Member response JSON </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+     </table>
+     */
+    public Member postMemberTeams(String id, MemberTeamsFormPost memberTeamsFormPost) throws ApiException {
+        ApiResponse<Member> localVarResp = postMemberTeamsWithHttpInfo(id, memberTeamsFormPost);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Add member to teams
+     * Add member to team(s)
+     * @param id The member ID (required)
+     * @param memberTeamsFormPost  (required)
+     * @return ApiResponse&lt;Member&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Member response JSON </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Member> postMemberTeamsWithHttpInfo(String id, MemberTeamsFormPost memberTeamsFormPost) throws ApiException {
+        okhttp3.Call localVarCall = postMemberTeamsValidateBeforeCall(id, memberTeamsFormPost, null);
+        Type localVarReturnType = new TypeToken<Member>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Add member to teams (asynchronously)
+     * Add member to team(s)
+     * @param id The member ID (required)
+     * @param memberTeamsFormPost  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Member response JSON </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call postMemberTeamsAsync(String id, MemberTeamsFormPost memberTeamsFormPost, final ApiCallback<Member> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = postMemberTeamsValidateBeforeCall(id, memberTeamsFormPost, _callback);
         Type localVarReturnType = new TypeToken<Member>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

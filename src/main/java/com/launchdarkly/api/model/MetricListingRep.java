@@ -35,7 +35,7 @@ import java.util.Map;
 /**
  * MetricListingRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-03T20:58:35.619656Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-06T23:47:01.381398Z[Etc/UTC]")
 public class MetricListingRep {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -146,9 +146,56 @@ public class MetricListingRep {
   @SerializedName(SERIALIZED_NAME_IS_NUMERIC)
   private Boolean isNumeric;
 
+  /**
+   * Gets or Sets successCriteria
+   */
+  @JsonAdapter(SuccessCriteriaEnum.Adapter.class)
+  public enum SuccessCriteriaEnum {
+    HIGHERTHANBASELINE("HigherThanBaseline"),
+    
+    LOWERTHANBASELINE("LowerThanBaseline");
+
+    private String value;
+
+    SuccessCriteriaEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static SuccessCriteriaEnum fromValue(String value) {
+      for (SuccessCriteriaEnum b : SuccessCriteriaEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<SuccessCriteriaEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final SuccessCriteriaEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public SuccessCriteriaEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return SuccessCriteriaEnum.fromValue(value);
+      }
+    }
+  }
+
   public static final String SERIALIZED_NAME_SUCCESS_CRITERIA = "successCriteria";
   @SerializedName(SERIALIZED_NAME_SUCCESS_CRITERIA)
-  private Integer successCriteria;
+  private SuccessCriteriaEnum successCriteria;
 
   public static final String SERIALIZED_NAME_UNIT = "unit";
   @SerializedName(SERIALIZED_NAME_UNIT)
@@ -514,7 +561,7 @@ public class MetricListingRep {
   }
 
 
-  public MetricListingRep successCriteria(Integer successCriteria) {
+  public MetricListingRep successCriteria(SuccessCriteriaEnum successCriteria) {
     
     this.successCriteria = successCriteria;
     return this;
@@ -527,12 +574,12 @@ public class MetricListingRep {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Integer getSuccessCriteria() {
+  public SuccessCriteriaEnum getSuccessCriteria() {
     return successCriteria;
   }
 
 
-  public void setSuccessCriteria(Integer successCriteria) {
+  public void setSuccessCriteria(SuccessCriteriaEnum successCriteria) {
     this.successCriteria = successCriteria;
   }
 
