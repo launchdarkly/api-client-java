@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 
 <a name="postMemberTeams"></a>
 # **postMemberTeams**
-> Member postMemberTeams(id, memberTeamsFormPost)
+> Member postMemberTeams(id, memberTeamsPostInput)
 
 Add member to teams
 
@@ -345,9 +345,9 @@ public class Example {
 
     AccountMembersApi apiInstance = new AccountMembersApi(defaultClient);
     String id = "id_example"; // String | The member ID
-    MemberTeamsFormPost memberTeamsFormPost = new MemberTeamsFormPost(); // MemberTeamsFormPost | 
+    MemberTeamsPostInput memberTeamsPostInput = new MemberTeamsPostInput(); // MemberTeamsPostInput | 
     try {
-      Member result = apiInstance.postMemberTeams(id, memberTeamsFormPost);
+      Member result = apiInstance.postMemberTeams(id, memberTeamsPostInput);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AccountMembersApi#postMemberTeams");
@@ -365,7 +365,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The member ID |
- **memberTeamsFormPost** | [**MemberTeamsFormPost**](MemberTeamsFormPost.md)|  |
+ **memberTeamsPostInput** | [**MemberTeamsPostInput**](MemberTeamsPostInput.md)|  |
 
 ### Return type
 

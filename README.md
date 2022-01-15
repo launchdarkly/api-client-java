@@ -6,7 +6,7 @@ This REST API is for custom integrations, data export, or automating your featur
 
 LaunchDarkly REST API
 - API version: 2.0
-  - Build date: 2022-01-06T23:47:01.381398Z[Etc/UTC]
+  - Build date: 2022-01-15T00:48:54.370829Z[Etc/UTC]
 
 # Overview
 
@@ -476,7 +476,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>7.1.0</version>
+  <version>7.1.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -486,7 +486,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:7.1.0"
+compile "com.launchdarkly:api-client:7.1.1"
 ```
 
 ### Others
@@ -499,7 +499,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-7.1.0.jar`
+* `target/api-client-7.1.1.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -801,7 +801,7 @@ Class | Method | HTTP request | Description
  - [MemberPermissionGrantSummaryRep](docs/MemberPermissionGrantSummaryRep.md)
  - [MemberSummaryRep](docs/MemberSummaryRep.md)
  - [MemberTeamSummaryRep](docs/MemberTeamSummaryRep.md)
- - [MemberTeamsFormPost](docs/MemberTeamsFormPost.md)
+ - [MemberTeamsPostInput](docs/MemberTeamsPostInput.md)
  - [Members](docs/Members.md)
  - [MethodNotAllowedErrorRep](docs/MethodNotAllowedErrorRep.md)
  - [MetricCollectionRep](docs/MetricCollectionRep.md)

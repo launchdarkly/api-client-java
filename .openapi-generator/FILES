@@ -125,7 +125,7 @@ docs/MemberImportItemRep.md
 docs/MemberPermissionGrantSummaryRep.md
 docs/MemberSummaryRep.md
 docs/MemberTeamSummaryRep.md
-docs/MemberTeamsFormPost.md
+docs/MemberTeamsPostInput.md
 docs/Members.md
 docs/MethodNotAllowedErrorRep.md
 docs/MetricCollectionRep.md
@@ -399,7 +399,7 @@ src/main/java/com/launchdarkly/api/model/MemberImportItemRep.java
 src/main/java/com/launchdarkly/api/model/MemberPermissionGrantSummaryRep.java
 src/main/java/com/launchdarkly/api/model/MemberSummaryRep.java
 src/main/java/com/launchdarkly/api/model/MemberTeamSummaryRep.java
-src/main/java/com/launchdarkly/api/model/MemberTeamsFormPost.java
+src/main/java/com/launchdarkly/api/model/MemberTeamsPostInput.java
 src/main/java/com/launchdarkly/api/model/Members.java
 src/main/java/com/launchdarkly/api/model/MethodNotAllowedErrorRep.java
 src/main/java/com/launchdarkly/api/model/MetricCollectionRep.java
@@ -634,7 +634,7 @@ src/test/java/com/launchdarkly/api/model/MemberImportItemRepTest.java
 src/test/java/com/launchdarkly/api/model/MemberPermissionGrantSummaryRepTest.java
 src/test/java/com/launchdarkly/api/model/MemberSummaryRepTest.java
 src/test/java/com/launchdarkly/api/model/MemberTeamSummaryRepTest.java
-src/test/java/com/launchdarkly/api/model/MemberTeamsFormPostTest.java
+src/test/java/com/launchdarkly/api/model/MemberTeamsPostInputTest.java
 src/test/java/com/launchdarkly/api/model/MemberTest.java
 src/test/java/com/launchdarkly/api/model/MembersTest.java
 src/test/java/com/launchdarkly/api/model/MethodNotAllowedErrorRepTest.java

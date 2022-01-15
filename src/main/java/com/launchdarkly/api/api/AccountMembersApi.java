@@ -30,7 +30,7 @@ import java.io.IOException;
 import com.launchdarkly.api.model.ForbiddenErrorRep;
 import com.launchdarkly.api.model.InvalidRequestErrorRep;
 import com.launchdarkly.api.model.Member;
-import com.launchdarkly.api.model.MemberTeamsFormPost;
+import com.launchdarkly.api.model.MemberTeamsPostInput;
 import com.launchdarkly.api.model.Members;
 import com.launchdarkly.api.model.NewMemberForm;
 import com.launchdarkly.api.model.NotFoundErrorRep;
@@ -618,7 +618,7 @@ public class AccountMembersApi {
     /**
      * Build call for postMemberTeams
      * @param id The member ID (required)
-     * @param memberTeamsFormPost  (required)
+     * @param memberTeamsPostInput  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -633,8 +633,8 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postMemberTeamsCall(String id, MemberTeamsFormPost memberTeamsFormPost, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = memberTeamsFormPost;
+    public okhttp3.Call postMemberTeamsCall(String id, MemberTeamsPostInput memberTeamsPostInput, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = memberTeamsPostInput;
 
         // create path and map variables
         String localVarPath = "/api/v2/members/{id}/teams"
@@ -665,20 +665,20 @@ public class AccountMembersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postMemberTeamsValidateBeforeCall(String id, MemberTeamsFormPost memberTeamsFormPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postMemberTeamsValidateBeforeCall(String id, MemberTeamsPostInput memberTeamsPostInput, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling postMemberTeams(Async)");
         }
         
-        // verify the required parameter 'memberTeamsFormPost' is set
-        if (memberTeamsFormPost == null) {
-            throw new ApiException("Missing the required parameter 'memberTeamsFormPost' when calling postMemberTeams(Async)");
+        // verify the required parameter 'memberTeamsPostInput' is set
+        if (memberTeamsPostInput == null) {
+            throw new ApiException("Missing the required parameter 'memberTeamsPostInput' when calling postMemberTeams(Async)");
         }
         
 
-        okhttp3.Call localVarCall = postMemberTeamsCall(id, memberTeamsFormPost, _callback);
+        okhttp3.Call localVarCall = postMemberTeamsCall(id, memberTeamsPostInput, _callback);
         return localVarCall;
 
     }
@@ -687,7 +687,7 @@ public class AccountMembersApi {
      * Add member to teams
      * Add member to team(s)
      * @param id The member ID (required)
-     * @param memberTeamsFormPost  (required)
+     * @param memberTeamsPostInput  (required)
      * @return Member
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -701,8 +701,8 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Member postMemberTeams(String id, MemberTeamsFormPost memberTeamsFormPost) throws ApiException {
-        ApiResponse<Member> localVarResp = postMemberTeamsWithHttpInfo(id, memberTeamsFormPost);
+    public Member postMemberTeams(String id, MemberTeamsPostInput memberTeamsPostInput) throws ApiException {
+        ApiResponse<Member> localVarResp = postMemberTeamsWithHttpInfo(id, memberTeamsPostInput);
         return localVarResp.getData();
     }
 
@@ -710,7 +710,7 @@ public class AccountMembersApi {
      * Add member to teams
      * Add member to team(s)
      * @param id The member ID (required)
-     * @param memberTeamsFormPost  (required)
+     * @param memberTeamsPostInput  (required)
      * @return ApiResponse&lt;Member&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -724,8 +724,8 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Member> postMemberTeamsWithHttpInfo(String id, MemberTeamsFormPost memberTeamsFormPost) throws ApiException {
-        okhttp3.Call localVarCall = postMemberTeamsValidateBeforeCall(id, memberTeamsFormPost, null);
+    public ApiResponse<Member> postMemberTeamsWithHttpInfo(String id, MemberTeamsPostInput memberTeamsPostInput) throws ApiException {
+        okhttp3.Call localVarCall = postMemberTeamsValidateBeforeCall(id, memberTeamsPostInput, null);
         Type localVarReturnType = new TypeToken<Member>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -734,7 +734,7 @@ public class AccountMembersApi {
      * Add member to teams (asynchronously)
      * Add member to team(s)
      * @param id The member ID (required)
-     * @param memberTeamsFormPost  (required)
+     * @param memberTeamsPostInput  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -749,9 +749,9 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postMemberTeamsAsync(String id, MemberTeamsFormPost memberTeamsFormPost, final ApiCallback<Member> _callback) throws ApiException {
+    public okhttp3.Call postMemberTeamsAsync(String id, MemberTeamsPostInput memberTeamsPostInput, final ApiCallback<Member> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = postMemberTeamsValidateBeforeCall(id, memberTeamsFormPost, _callback);
+        okhttp3.Call localVarCall = postMemberTeamsValidateBeforeCall(id, memberTeamsPostInput, _callback);
         Type localVarReturnType = new TypeToken<Member>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

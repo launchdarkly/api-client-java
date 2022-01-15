@@ -17,7 +17,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.model.ForbiddenErrorRep;
 import com.launchdarkly.api.model.InvalidRequestErrorRep;
 import com.launchdarkly.api.model.Member;
-import com.launchdarkly.api.model.MemberTeamsFormPost;
+import com.launchdarkly.api.model.MemberTeamsPostInput;
 import com.launchdarkly.api.model.Members;
 import com.launchdarkly.api.model.NewMemberForm;
 import com.launchdarkly.api.model.NotFoundErrorRep;
@@ -117,8 +117,8 @@ public class AccountMembersApiTest {
     @Test
     public void postMemberTeamsTest() throws ApiException {
         String id = null;
-        MemberTeamsFormPost memberTeamsFormPost = null;
-                Member response = api.postMemberTeams(id, memberTeamsFormPost);
+        MemberTeamsPostInput memberTeamsPostInput = null;
+                Member response = api.postMemberTeams(id, memberTeamsPostInput);
         // TODO: test validations
     }
     

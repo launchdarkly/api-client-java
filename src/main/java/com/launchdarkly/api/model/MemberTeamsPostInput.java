@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.launchdarkly.api.model.DependentFlagEnvironment;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -28,94 +27,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * MultiEnvironmentDependentFlag
+ * MemberTeamsPostInput
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-15T00:48:54.370829Z[Etc/UTC]")
-public class MultiEnvironmentDependentFlag {
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
-
-  public static final String SERIALIZED_NAME_KEY = "key";
-  @SerializedName(SERIALIZED_NAME_KEY)
-  private String key;
-
-  public static final String SERIALIZED_NAME_ENVIRONMENTS = "environments";
-  @SerializedName(SERIALIZED_NAME_ENVIRONMENTS)
-  private List<DependentFlagEnvironment> environments = new ArrayList<DependentFlagEnvironment>();
+public class MemberTeamsPostInput {
+  public static final String SERIALIZED_NAME_TEAM_KEYS = "teamKeys";
+  @SerializedName(SERIALIZED_NAME_TEAM_KEYS)
+  private List<String> teamKeys = new ArrayList<String>();
 
 
-  public MultiEnvironmentDependentFlag name(String name) {
+  public MemberTeamsPostInput teamKeys(List<String> teamKeys) {
     
-    this.name = name;
+    this.teamKeys = teamKeys;
+    return this;
+  }
+
+  public MemberTeamsPostInput addTeamKeysItem(String teamKeysItem) {
+    this.teamKeys.add(teamKeysItem);
     return this;
   }
 
    /**
-   * Get name
-   * @return name
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getName() {
-    return name;
-  }
-
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
-  public MultiEnvironmentDependentFlag key(String key) {
-    
-    this.key = key;
-    return this;
-  }
-
-   /**
-   * Get key
-   * @return key
+   * List of team keys
+   * @return teamKeys
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "List of team keys")
 
-  public String getKey() {
-    return key;
+  public List<String> getTeamKeys() {
+    return teamKeys;
   }
 
 
-  public void setKey(String key) {
-    this.key = key;
-  }
-
-
-  public MultiEnvironmentDependentFlag environments(List<DependentFlagEnvironment> environments) {
-    
-    this.environments = environments;
-    return this;
-  }
-
-  public MultiEnvironmentDependentFlag addEnvironmentsItem(DependentFlagEnvironment environmentsItem) {
-    this.environments.add(environmentsItem);
-    return this;
-  }
-
-   /**
-   * Get environments
-   * @return environments
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public List<DependentFlagEnvironment> getEnvironments() {
-    return environments;
-  }
-
-
-  public void setEnvironments(List<DependentFlagEnvironment> environments) {
-    this.environments = environments;
+  public void setTeamKeys(List<String> teamKeys) {
+    this.teamKeys = teamKeys;
   }
 
 
@@ -127,24 +72,20 @@ public class MultiEnvironmentDependentFlag {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    MultiEnvironmentDependentFlag multiEnvironmentDependentFlag = (MultiEnvironmentDependentFlag) o;
-    return Objects.equals(this.name, multiEnvironmentDependentFlag.name) &&
-        Objects.equals(this.key, multiEnvironmentDependentFlag.key) &&
-        Objects.equals(this.environments, multiEnvironmentDependentFlag.environments);
+    MemberTeamsPostInput memberTeamsPostInput = (MemberTeamsPostInput) o;
+    return Objects.equals(this.teamKeys, memberTeamsPostInput.teamKeys);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, key, environments);
+    return Objects.hash(teamKeys);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class MultiEnvironmentDependentFlag {\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
-    sb.append("    environments: ").append(toIndentedString(environments)).append("\n");
+    sb.append("class MemberTeamsPostInput {\n");
+    sb.append("    teamKeys: ").append(toIndentedString(teamKeys)).append("\n");
     sb.append("}");
     return sb.toString();
   }

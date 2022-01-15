@@ -532,7 +532,7 @@ public class MetricsApi {
 
     /**
      * Update metric
-     * Patch a environment by key.
+     * Patch a metric by key.
      * @param projectKey The project key (required)
      * @param key The metric key (required)
      * @param patchOperation  (required)
@@ -556,7 +556,7 @@ public class MetricsApi {
 
     /**
      * Update metric
-     * Patch a environment by key.
+     * Patch a metric by key.
      * @param projectKey The project key (required)
      * @param key The metric key (required)
      * @param patchOperation  (required)
@@ -581,7 +581,7 @@ public class MetricsApi {
 
     /**
      * Update metric (asynchronously)
-     * Patch a environment by key.
+     * Patch a metric by key.
      * @param projectKey The project key (required)
      * @param key The metric key (required)
      * @param patchOperation  (required)

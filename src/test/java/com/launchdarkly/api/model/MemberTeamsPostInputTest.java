@@ -13,152 +13,41 @@
 
 package com.launchdarkly.api.model;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.launchdarkly.api.model.DependentFlagEnvironment;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
+
 
 /**
- * MultiEnvironmentDependentFlag
+ * Model tests for MemberTeamsPostInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-15T00:48:54.370829Z[Etc/UTC]")
-public class MultiEnvironmentDependentFlag {
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
+public class MemberTeamsPostInputTest {
+    private final MemberTeamsPostInput model = new MemberTeamsPostInput();
 
-  public static final String SERIALIZED_NAME_KEY = "key";
-  @SerializedName(SERIALIZED_NAME_KEY)
-  private String key;
-
-  public static final String SERIALIZED_NAME_ENVIRONMENTS = "environments";
-  @SerializedName(SERIALIZED_NAME_ENVIRONMENTS)
-  private List<DependentFlagEnvironment> environments = new ArrayList<DependentFlagEnvironment>();
-
-
-  public MultiEnvironmentDependentFlag name(String name) {
-    
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Get name
-   * @return name
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getName() {
-    return name;
-  }
-
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
-  public MultiEnvironmentDependentFlag key(String key) {
-    
-    this.key = key;
-    return this;
-  }
-
-   /**
-   * Get key
-   * @return key
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public String getKey() {
-    return key;
-  }
-
-
-  public void setKey(String key) {
-    this.key = key;
-  }
-
-
-  public MultiEnvironmentDependentFlag environments(List<DependentFlagEnvironment> environments) {
-    
-    this.environments = environments;
-    return this;
-  }
-
-  public MultiEnvironmentDependentFlag addEnvironmentsItem(DependentFlagEnvironment environmentsItem) {
-    this.environments.add(environmentsItem);
-    return this;
-  }
-
-   /**
-   * Get environments
-   * @return environments
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public List<DependentFlagEnvironment> getEnvironments() {
-    return environments;
-  }
-
-
-  public void setEnvironments(List<DependentFlagEnvironment> environments) {
-    this.environments = environments;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+    /**
+     * Model tests for MemberTeamsPostInput
+     */
+    @Test
+    public void testMemberTeamsPostInput() {
+        // TODO: test MemberTeamsPostInput
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    /**
+     * Test the property 'teamKeys'
+     */
+    @Test
+    public void teamKeysTest() {
+        // TODO: test teamKeys
     }
-    MultiEnvironmentDependentFlag multiEnvironmentDependentFlag = (MultiEnvironmentDependentFlag) o;
-    return Objects.equals(this.name, multiEnvironmentDependentFlag.name) &&
-        Objects.equals(this.key, multiEnvironmentDependentFlag.key) &&
-        Objects.equals(this.environments, multiEnvironmentDependentFlag.environments);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(name, key, environments);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class MultiEnvironmentDependentFlag {\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
-    sb.append("    environments: ").append(toIndentedString(environments)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
 
 }
-

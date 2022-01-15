@@ -91,7 +91,7 @@ public class MetricsApiTest {
     /**
      * Update metric
      *
-     * Patch a environment by key.
+     * Patch a metric by key.
      *
      * @throws ApiException
      *          if the Api call fails

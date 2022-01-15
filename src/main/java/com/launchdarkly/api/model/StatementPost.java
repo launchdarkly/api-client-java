@@ -29,11 +29,11 @@ import java.util.List;
 /**
  * StatementPost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-06T23:47:01.381398Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-15T00:48:54.370829Z[Etc/UTC]")
 public class StatementPost {
   public static final String SERIALIZED_NAME_RESOURCES = "resources";
   @SerializedName(SERIALIZED_NAME_RESOURCES)
-  private List<String> resources = new ArrayList<String>();
+  private List<String> resources = null;
 
   public static final String SERIALIZED_NAME_NOT_RESOURCES = "notResources";
   @SerializedName(SERIALIZED_NAME_NOT_RESOURCES)
@@ -41,7 +41,7 @@ public class StatementPost {
 
   public static final String SERIALIZED_NAME_ACTIONS = "actions";
   @SerializedName(SERIALIZED_NAME_ACTIONS)
-  private List<String> actions = new ArrayList<String>();
+  private List<String> actions = null;
 
   public static final String SERIALIZED_NAME_NOT_ACTIONS = "notActions";
   @SerializedName(SERIALIZED_NAME_NOT_ACTIONS)
@@ -59,6 +59,9 @@ public class StatementPost {
   }
 
   public StatementPost addResourcesItem(String resourcesItem) {
+    if (this.resources == null) {
+      this.resources = new ArrayList<String>();
+    }
     this.resources.add(resourcesItem);
     return this;
   }
@@ -67,8 +70,8 @@ public class StatementPost {
    * Resource specifier strings
    * @return resources
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Resource specifier strings")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Resource specifier strings")
 
   public List<String> getResources() {
     return resources;
@@ -118,6 +121,9 @@ public class StatementPost {
   }
 
   public StatementPost addActionsItem(String actionsItem) {
+    if (this.actions == null) {
+      this.actions = new ArrayList<String>();
+    }
     this.actions.add(actionsItem);
     return this;
   }
@@ -126,8 +132,8 @@ public class StatementPost {
    * Actions to perform on a resource
    * @return actions
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Actions to perform on a resource")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Actions to perform on a resource")
 
   public List<String> getActions() {
     return actions;
