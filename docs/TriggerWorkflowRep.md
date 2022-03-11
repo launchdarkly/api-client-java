@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **version** | **Integer** |  |  [optional]
 **creationDate** | **Long** |  |  [optional]
 **maintainerId** | **String** |  |  [optional]
-**maintainer** | [**MemberSummaryRep**](MemberSummaryRep.md) |  |  [optional]
+**maintainer** | [**MemberSummary**](MemberSummary.md) |  |  [optional]
 **enabled** | **Boolean** |  |  [optional]
 **integrationKey** | **String** |  |  [optional]
 **instructions** | **List&lt;Map&lt;String, Object&gt;&gt;** |  |  [optional]

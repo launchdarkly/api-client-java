@@ -4,13 +4,13 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getDependentFlags**](FeatureFlagsBetaApi.md#getDependentFlags) | **GET** /api/v2/flags/{projKey}/{flagKey}/dependent-flags | List dependent feature flags
-[**getDependentFlagsByEnv**](FeatureFlagsBetaApi.md#getDependentFlagsByEnv) | **GET** /api/v2/flags/{projKey}/{envKey}/{flagKey}/dependent-flags | List dependent feature flags by environment
+[**getDependentFlags**](FeatureFlagsBetaApi.md#getDependentFlags) | **GET** /api/v2/flags/{projectKey}/{featureFlagKey}/dependent-flags | List dependent feature flags
+[**getDependentFlagsByEnv**](FeatureFlagsBetaApi.md#getDependentFlagsByEnv) | **GET** /api/v2/flags/{projectKey}/{environmentKey}/{featureFlagKey}/dependent-flags | List dependent feature flags by environment
 
 
 <a name="getDependentFlags"></a>
 # **getDependentFlags**
-> MultiEnvironmentDependentFlags getDependentFlags(projKey, flagKey)
+> MultiEnvironmentDependentFlags getDependentFlags(projectKey, featureFlagKey)
 
 List dependent feature flags
 
@@ -38,10 +38,10 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     FeatureFlagsBetaApi apiInstance = new FeatureFlagsBetaApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key
-    String flagKey = "flagKey_example"; // String | The flag key
+    String projectKey = "projectKey_example"; // String | The project key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     try {
-      MultiEnvironmentDependentFlags result = apiInstance.getDependentFlags(projKey, flagKey);
+      MultiEnvironmentDependentFlags result = apiInstance.getDependentFlags(projectKey, featureFlagKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FeatureFlagsBetaApi#getDependentFlags");
@@ -58,8 +58,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key |
- **flagKey** | **String**| The flag key |
+ **projectKey** | **String**| The project key |
+ **featureFlagKey** | **String**| The feature flag key |
 
 ### Return type
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 <a name="getDependentFlagsByEnv"></a>
 # **getDependentFlagsByEnv**
-> DependentFlagsByEnvironment getDependentFlagsByEnv(projKey, envKey, flagKey)
+> DependentFlagsByEnvironment getDependentFlagsByEnv(projectKey, environmentKey, featureFlagKey)
 
 List dependent feature flags by environment
 
@@ -113,11 +113,11 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     FeatureFlagsBetaApi apiInstance = new FeatureFlagsBetaApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key
-    String envKey = "envKey_example"; // String | The environment key
-    String flagKey = "flagKey_example"; // String | The flag key
+    String projectKey = "projectKey_example"; // String | The project key
+    String environmentKey = "environmentKey_example"; // String | The environment key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     try {
-      DependentFlagsByEnvironment result = apiInstance.getDependentFlagsByEnv(projKey, envKey, flagKey);
+      DependentFlagsByEnvironment result = apiInstance.getDependentFlagsByEnv(projectKey, environmentKey, featureFlagKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FeatureFlagsBetaApi#getDependentFlagsByEnv");
@@ -134,9 +134,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key |
- **envKey** | **String**| The environment key |
- **flagKey** | **String**| The flag key |
+ **projectKey** | **String**| The project key |
+ **environmentKey** | **String**| The environment key |
+ **featureFlagKey** | **String**| The feature flag key |
 
 ### Return type
 

@@ -14,12 +14,12 @@ Name | Type | Description | Notes
 **attachedFlagCount** | **Integer** |  |  [optional]
 **links** | [**Map&lt;String, Link&gt;**](Link.md) |  | 
 **site** | [**Link**](Link.md) |  |  [optional]
-**access** | [**AccessRep**](AccessRep.md) |  |  [optional]
+**access** | [**Access**](Access.md) |  |  [optional]
 **tags** | **List&lt;String&gt;** |  | 
 **creationDate** | **Long** |  | 
 **lastModified** | [**Modification**](Modification.md) |  |  [optional]
 **maintainerId** | **String** |  |  [optional]
-**maintainer** | [**MemberSummaryRep**](MemberSummaryRep.md) |  |  [optional]
+**maintainer** | [**MemberSummary**](MemberSummary.md) |  |  [optional]
 **description** | **String** |  |  [optional]
 **isNumeric** | **Boolean** |  |  [optional]
 **successCriteria** | [**SuccessCriteriaEnum**](#SuccessCriteriaEnum) |  |  [optional]

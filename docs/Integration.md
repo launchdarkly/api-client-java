@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **statements** | [**List&lt;StatementRep&gt;**](StatementRep.md) |  |  [optional]
 **on** | **Boolean** |  |  [optional]
 **tags** | **List&lt;String&gt;** |  |  [optional]
-**access** | [**AccessRep**](AccessRep.md) |  |  [optional]
+**access** | [**Access**](Access.md) |  |  [optional]
 **status** | [**IntegrationSubscriptionStatusRep**](IntegrationSubscriptionStatusRep.md) |  |  [optional]
 **url** | **String** |  |  [optional]
 **apiKey** | **String** |  |  [optional]

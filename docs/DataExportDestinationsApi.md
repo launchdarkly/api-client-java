@@ -4,16 +4,16 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteDestination**](DataExportDestinationsApi.md#deleteDestination) | **DELETE** /api/v2/destinations/{projKey}/{envKey}/{id} | Delete Data Export destination
-[**getDestination**](DataExportDestinationsApi.md#getDestination) | **GET** /api/v2/destinations/{projKey}/{envKey}/{id} | Get destination
+[**deleteDestination**](DataExportDestinationsApi.md#deleteDestination) | **DELETE** /api/v2/destinations/{projectKey}/{environmentKey}/{id} | Delete Data Export destination
+[**getDestination**](DataExportDestinationsApi.md#getDestination) | **GET** /api/v2/destinations/{projectKey}/{environmentKey}/{id} | Get destination
 [**getDestinations**](DataExportDestinationsApi.md#getDestinations) | **GET** /api/v2/destinations | List destinations
-[**patchDestination**](DataExportDestinationsApi.md#patchDestination) | **PATCH** /api/v2/destinations/{projKey}/{envKey}/{id} | Update Data Export destination
-[**postDestination**](DataExportDestinationsApi.md#postDestination) | **POST** /api/v2/destinations/{projKey}/{envKey} | Create data export destination
+[**patchDestination**](DataExportDestinationsApi.md#patchDestination) | **PATCH** /api/v2/destinations/{projectKey}/{environmentKey}/{id} | Update Data Export destination
+[**postDestination**](DataExportDestinationsApi.md#postDestination) | **POST** /api/v2/destinations/{projectKey}/{environmentKey} | Create data export destination
 
 
 <a name="deleteDestination"></a>
 # **deleteDestination**
-> deleteDestination(projKey, envKey, id)
+> deleteDestination(projectKey, environmentKey, id)
 
 Delete Data Export destination
 
@@ -41,11 +41,11 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     DataExportDestinationsApi apiInstance = new DataExportDestinationsApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key
-    String envKey = "envKey_example"; // String | The environment key
+    String projectKey = "projectKey_example"; // String | The project key
+    String environmentKey = "environmentKey_example"; // String | The environment key
     String id = "id_example"; // String | The Data Export destination ID
     try {
-      apiInstance.deleteDestination(projKey, envKey, id);
+      apiInstance.deleteDestination(projectKey, environmentKey, id);
     } catch (ApiException e) {
       System.err.println("Exception when calling DataExportDestinationsApi#deleteDestination");
       System.err.println("Status code: " + e.getCode());
@@ -61,8 +61,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key |
- **envKey** | **String**| The environment key |
+ **projectKey** | **String**| The project key |
+ **environmentKey** | **String**| The environment key |
  **id** | **String**| The Data Export destination ID |
 
 ### Return type
@@ -89,7 +89,7 @@ null (empty response body)
 
 <a name="getDestination"></a>
 # **getDestination**
-> Destination getDestination(projKey, envKey, id)
+> Destination getDestination(projectKey, environmentKey, id)
 
 Get destination
 
@@ -117,11 +117,11 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     DataExportDestinationsApi apiInstance = new DataExportDestinationsApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key
-    String envKey = "envKey_example"; // String | The environment key
+    String projectKey = "projectKey_example"; // String | The project key
+    String environmentKey = "environmentKey_example"; // String | The environment key
     String id = "id_example"; // String | The Data Export destination ID
     try {
-      Destination result = apiInstance.getDestination(projKey, envKey, id);
+      Destination result = apiInstance.getDestination(projectKey, environmentKey, id);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DataExportDestinationsApi#getDestination");
@@ -138,8 +138,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key |
- **envKey** | **String**| The environment key |
+ **projectKey** | **String**| The project key |
+ **environmentKey** | **String**| The environment key |
  **id** | **String**| The Data Export destination ID |
 
 ### Return type
@@ -234,7 +234,7 @@ This endpoint does not need any parameter.
 
 <a name="patchDestination"></a>
 # **patchDestination**
-> Destination patchDestination(projKey, envKey, id, patchOperation)
+> Destination patchDestination(projectKey, environmentKey, id, patchOperation)
 
 Update Data Export destination
 
@@ -262,12 +262,12 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     DataExportDestinationsApi apiInstance = new DataExportDestinationsApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key
-    String envKey = "envKey_example"; // String | The environment key
+    String projectKey = "projectKey_example"; // String | The project key
+    String environmentKey = "environmentKey_example"; // String | The environment key
     String id = "id_example"; // String | The Data Export destination ID
     List<PatchOperation> patchOperation = Arrays.asList(); // List<PatchOperation> | 
     try {
-      Destination result = apiInstance.patchDestination(projKey, envKey, id, patchOperation);
+      Destination result = apiInstance.patchDestination(projectKey, environmentKey, id, patchOperation);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DataExportDestinationsApi#patchDestination");
@@ -284,8 +284,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key |
- **envKey** | **String**| The environment key |
+ **projectKey** | **String**| The project key |
+ **environmentKey** | **String**| The environment key |
  **id** | **String**| The Data Export destination ID |
  **patchOperation** | [**List&lt;PatchOperation&gt;**](PatchOperation.md)|  |
 
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 <a name="postDestination"></a>
 # **postDestination**
-> Destination postDestination(projKey, envKey, destinationPost)
+> Destination postDestination(projectKey, environmentKey, destinationPost)
 
 Create data export destination
 
@@ -343,11 +343,11 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     DataExportDestinationsApi apiInstance = new DataExportDestinationsApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key
-    String envKey = "envKey_example"; // String | The environment key
+    String projectKey = "projectKey_example"; // String | The project key
+    String environmentKey = "environmentKey_example"; // String | The environment key
     DestinationPost destinationPost = new DestinationPost(); // DestinationPost | 
     try {
-      Destination result = apiInstance.postDestination(projKey, envKey, destinationPost);
+      Destination result = apiInstance.postDestination(projectKey, environmentKey, destinationPost);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DataExportDestinationsApi#postDestination");
@@ -364,8 +364,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key |
- **envKey** | **String**| The environment key |
+ **projectKey** | **String**| The project key |
+ **environmentKey** | **String**| The environment key |
  **destinationPost** | [**DestinationPost**](DestinationPost.md)|  |
 
 ### Return type

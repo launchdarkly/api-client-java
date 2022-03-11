@@ -18,7 +18,6 @@ Name | Type | Description | Notes
 **name** | **String** |  |  [optional]
 **anonymous** | **Boolean** |  |  [optional]
 **custom** | **Map&lt;String, Object&gt;** |  |  [optional]
-**derived** | [**Map&lt;String, DerivedAttribute&gt;**](DerivedAttribute.md) |  |  [optional]
 **privateAttrs** | **List&lt;String&gt;** |  |  [optional]
 
 

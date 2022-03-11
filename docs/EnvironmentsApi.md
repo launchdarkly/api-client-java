@@ -8,8 +8,8 @@ Method | HTTP request | Description
 [**getEnvironment**](EnvironmentsApi.md#getEnvironment) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey} | Get environment
 [**patchEnvironment**](EnvironmentsApi.md#patchEnvironment) | **PATCH** /api/v2/projects/{projectKey}/environments/{environmentKey} | Update environment
 [**postEnvironment**](EnvironmentsApi.md#postEnvironment) | **POST** /api/v2/projects/{projectKey}/environments | Create environment
-[**resetEnvironmentMobileKey**](EnvironmentsApi.md#resetEnvironmentMobileKey) | **POST** /api/v2/projects/{projectKey}/environments/{envKey}/mobileKey | Reset environment mobile SDK key
-[**resetEnvironmentSDKKey**](EnvironmentsApi.md#resetEnvironmentSDKKey) | **POST** /api/v2/projects/{projectKey}/environments/{envKey}/apiKey | Reset environment SDK key
+[**resetEnvironmentMobileKey**](EnvironmentsApi.md#resetEnvironmentMobileKey) | **POST** /api/v2/projects/{projectKey}/environments/{environmentKey}/mobileKey | Reset environment mobile SDK key
+[**resetEnvironmentSDKKey**](EnvironmentsApi.md#resetEnvironmentSDKKey) | **POST** /api/v2/projects/{projectKey}/environments/{environmentKey}/apiKey | Reset environment SDK key
 
 
 <a name="deleteEnvironment"></a>
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 
 <a name="resetEnvironmentMobileKey"></a>
 # **resetEnvironmentMobileKey**
-> Environment resetEnvironmentMobileKey(projectKey, envKey)
+> Environment resetEnvironmentMobileKey(projectKey, environmentKey)
 
 Reset environment mobile SDK key
 
@@ -347,9 +347,9 @@ public class Example {
 
     EnvironmentsApi apiInstance = new EnvironmentsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
-    String envKey = "envKey_example"; // String | The environment key
+    String environmentKey = "environmentKey_example"; // String | The environment key
     try {
-      Environment result = apiInstance.resetEnvironmentMobileKey(projectKey, envKey);
+      Environment result = apiInstance.resetEnvironmentMobileKey(projectKey, environmentKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EnvironmentsApi#resetEnvironmentMobileKey");
@@ -367,7 +367,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key |
- **envKey** | **String**| The environment key |
+ **environmentKey** | **String**| The environment key |
 
 ### Return type
 
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 
 <a name="resetEnvironmentSDKKey"></a>
 # **resetEnvironmentSDKKey**
-> Environment resetEnvironmentSDKKey(projectKey, envKey, expiry)
+> Environment resetEnvironmentSDKKey(projectKey, environmentKey, expiry)
 
 Reset environment SDK key
 
@@ -423,10 +423,10 @@ public class Example {
 
     EnvironmentsApi apiInstance = new EnvironmentsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
-    String envKey = "envKey_example"; // String | The environment key
+    String environmentKey = "environmentKey_example"; // String | The environment key
     Long expiry = 56L; // Long | The time at which you want the old SDK key to expire, in UNIX milliseconds. By default, the key expires immediately.
     try {
-      Environment result = apiInstance.resetEnvironmentSDKKey(projectKey, envKey, expiry);
+      Environment result = apiInstance.resetEnvironmentSDKKey(projectKey, environmentKey, expiry);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EnvironmentsApi#resetEnvironmentSDKKey");
@@ -444,7 +444,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key |
- **envKey** | **String**| The environment key |
+ **environmentKey** | **String**| The environment key |
  **expiry** | **Long**| The time at which you want the old SDK key to expire, in UNIX milliseconds. By default, the key expires immediately. | [optional]
 
 ### Return type

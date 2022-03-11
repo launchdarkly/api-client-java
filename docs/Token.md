@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **id** | **String** |  | 
 **ownerId** | **String** |  | 
 **memberId** | **String** |  | 
-**member** | [**MemberSummaryRep**](MemberSummaryRep.md) |  |  [optional]
+**member** | [**MemberSummary**](MemberSummary.md) |  |  [optional]
 **name** | **String** |  |  [optional]
 **description** | **String** |  |  [optional]
 **creationDate** | **Long** |  | 

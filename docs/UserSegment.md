@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **rules** | [**List&lt;UserSegmentRule&gt;**](UserSegmentRule.md) |  | 
 **version** | **Integer** |  | 
 **deleted** | **Boolean** |  | 
-**access** | [**AccessRep**](AccessRep.md) |  |  [optional]
+**access** | [**Access**](Access.md) |  |  [optional]
 **flags** | [**List&lt;FlagListingRep&gt;**](FlagListingRep.md) |  |  [optional]
 **unbounded** | **Boolean** |  |  [optional]
 **generation** | **Integer** |  | 

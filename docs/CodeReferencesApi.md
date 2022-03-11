@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**getRepositories**](CodeReferencesApi.md#getRepositories) | **GET** /api/v2/code-refs/repositories | List repositories
 [**getRepository**](CodeReferencesApi.md#getRepository) | **GET** /api/v2/code-refs/repositories/{repo} | Get repository
 [**getRootStatistic**](CodeReferencesApi.md#getRootStatistic) | **GET** /api/v2/code-refs/statistics | Get links to code reference repositories for each project
-[**getStatistics**](CodeReferencesApi.md#getStatistics) | **GET** /api/v2/code-refs/statistics/{projKey} | Get number of code references for flags
+[**getStatistics**](CodeReferencesApi.md#getStatistics) | **GET** /api/v2/code-refs/statistics/{projectKey} | Get number of code references for flags
 [**patchRepository**](CodeReferencesApi.md#patchRepository) | **PATCH** /api/v2/code-refs/repositories/{repo} | Update repository
 [**postExtinction**](CodeReferencesApi.md#postExtinction) | **POST** /api/v2/code-refs/repositories/{repo}/branches/{branch}/extinction-events | Create extinction
 [**postRepository**](CodeReferencesApi.md#postRepository) | **POST** /api/v2/code-refs/repositories | Create repository
@@ -626,7 +626,7 @@ This endpoint does not need any parameter.
 
 <a name="getStatistics"></a>
 # **getStatistics**
-> StatisticCollectionRep getStatistics(projKey, flagKey)
+> StatisticCollectionRep getStatistics(projectKey, flagKey)
 
 Get number of code references for flags
 
@@ -654,10 +654,10 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     CodeReferencesApi apiInstance = new CodeReferencesApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key
+    String projectKey = "projectKey_example"; // String | The project key
     String flagKey = "flagKey_example"; // String | Filter results to a specific flag key
     try {
-      StatisticCollectionRep result = apiInstance.getStatistics(projKey, flagKey);
+      StatisticCollectionRep result = apiInstance.getStatistics(projectKey, flagKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CodeReferencesApi#getStatistics");
@@ -674,7 +674,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key |
+ **projectKey** | **String**| The project key |
  **flagKey** | **String**| Filter results to a specific flag key | [optional]
 
 ### Return type

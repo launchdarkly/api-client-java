@@ -41,7 +41,7 @@ public class Example {
 
     WorkflowsBetaApi apiInstance = new WorkflowsBetaApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
-    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String environmentKey = "environmentKey_example"; // String | The environment key
     String workflowId = "workflowId_example"; // String | The workflow id
     try {
@@ -62,7 +62,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag&#39;s key |
+ **featureFlagKey** | **String**| The feature flag key |
  **environmentKey** | **String**| The environment key |
  **workflowId** | **String**| The workflow id |
 
@@ -120,7 +120,7 @@ public class Example {
 
     WorkflowsBetaApi apiInstance = new WorkflowsBetaApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
-    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String environmentKey = "environmentKey_example"; // String | The environment key
     String workflowId = "workflowId_example"; // String | The workflow ID
     try {
@@ -142,7 +142,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag&#39;s key |
+ **featureFlagKey** | **String**| The feature flag key |
  **environmentKey** | **String**| The environment key |
  **workflowId** | **String**| The workflow ID |
 
@@ -199,7 +199,7 @@ public class Example {
 
     WorkflowsBetaApi apiInstance = new WorkflowsBetaApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
-    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String environmentKey = "environmentKey_example"; // String | The environment key
     try {
       CustomWorkflowsListingOutputRep result = apiInstance.getWorkflows(projectKey, featureFlagKey, environmentKey);
@@ -220,7 +220,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag&#39;s key |
+ **featureFlagKey** | **String**| The feature flag key |
  **environmentKey** | **String**| The environment key |
 
 ### Return type
@@ -276,7 +276,7 @@ public class Example {
 
     WorkflowsBetaApi apiInstance = new WorkflowsBetaApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
-    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String environmentKey = "environmentKey_example"; // String | The environment key
     CustomWorkflowInputRep customWorkflowInputRep = new CustomWorkflowInputRep(); // CustomWorkflowInputRep | 
     try {
@@ -298,7 +298,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag&#39;s key |
+ **featureFlagKey** | **String**| The feature flag key |
  **environmentKey** | **String**| The environment key |
  **customWorkflowInputRep** | [**CustomWorkflowInputRep**](CustomWorkflowInputRep.md)|  |
 

@@ -4,13 +4,13 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getExperiment**](ExperimentsBetaApi.md#getExperiment) | **GET** /api/v2/flags/{projKey}/{flagKey}/experiments/{envKey}/{metricKey} | Get experiment results
-[**resetExperiment**](ExperimentsBetaApi.md#resetExperiment) | **DELETE** /api/v2/flags/{projKey}/{flagKey}/experiments/{envKey}/{metricKey}/results | Reset experiment results
+[**getExperiment**](ExperimentsBetaApi.md#getExperiment) | **GET** /api/v2/flags/{projectKey}/{featureFlagKey}/experiments/{environmentKey}/{metricKey} | Get experiment results
+[**resetExperiment**](ExperimentsBetaApi.md#resetExperiment) | **DELETE** /api/v2/flags/{projectKey}/{featureFlagKey}/experiments/{environmentKey}/{metricKey}/results | Reset experiment results
 
 
 <a name="getExperiment"></a>
 # **getExperiment**
-> ExperimentResultsRep getExperiment(projKey, flagKey, envKey, metricKey, from, to)
+> ExperimentResultsRep getExperiment(projectKey, featureFlagKey, environmentKey, metricKey, from, to)
 
 Get experiment results
 
@@ -38,14 +38,14 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     ExperimentsBetaApi apiInstance = new ExperimentsBetaApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key
-    String flagKey = "flagKey_example"; // String | The flag key
-    String envKey = "envKey_example"; // String | The environment key
+    String projectKey = "projectKey_example"; // String | The project key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
+    String environmentKey = "environmentKey_example"; // String | The environment key
     String metricKey = "metricKey_example"; // String | The metric key
     Long from = 56L; // Long | A timestamp denoting the start of the data collection period, expressed as a Unix epoch time in milliseconds.
     Long to = 56L; // Long | A timestamp denoting the end of the data collection period, expressed as a Unix epoch time in milliseconds.
     try {
-      ExperimentResultsRep result = apiInstance.getExperiment(projKey, flagKey, envKey, metricKey, from, to);
+      ExperimentResultsRep result = apiInstance.getExperiment(projectKey, featureFlagKey, environmentKey, metricKey, from, to);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ExperimentsBetaApi#getExperiment");
@@ -62,9 +62,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key |
- **flagKey** | **String**| The flag key |
- **envKey** | **String**| The environment key |
+ **projectKey** | **String**| The project key |
+ **featureFlagKey** | **String**| The feature flag key |
+ **environmentKey** | **String**| The environment key |
  **metricKey** | **String**| The metric key |
  **from** | **Long**| A timestamp denoting the start of the data collection period, expressed as a Unix epoch time in milliseconds. | [optional]
  **to** | **Long**| A timestamp denoting the end of the data collection period, expressed as a Unix epoch time in milliseconds. | [optional]
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 <a name="resetExperiment"></a>
 # **resetExperiment**
-> resetExperiment(projKey, flagKey, envKey, metricKey)
+> resetExperiment(projectKey, featureFlagKey, environmentKey, metricKey)
 
 Reset experiment results
 
@@ -122,12 +122,12 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     ExperimentsBetaApi apiInstance = new ExperimentsBetaApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key
-    String flagKey = "flagKey_example"; // String | The feature flag's key
-    String envKey = "envKey_example"; // String | The environment key
+    String projectKey = "projectKey_example"; // String | The project key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
+    String environmentKey = "environmentKey_example"; // String | The environment key
     String metricKey = "metricKey_example"; // String | The metric's key
     try {
-      apiInstance.resetExperiment(projKey, flagKey, envKey, metricKey);
+      apiInstance.resetExperiment(projectKey, featureFlagKey, environmentKey, metricKey);
     } catch (ApiException e) {
       System.err.println("Exception when calling ExperimentsBetaApi#resetExperiment");
       System.err.println("Status code: " + e.getCode());
@@ -143,9 +143,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key |
- **flagKey** | **String**| The feature flag&#39;s key |
- **envKey** | **String**| The environment key |
+ **projectKey** | **String**| The project key |
+ **featureFlagKey** | **String**| The feature flag key |
+ **environmentKey** | **String**| The environment key |
  **metricKey** | **String**| The metric&#39;s key |
 
 ### Return type

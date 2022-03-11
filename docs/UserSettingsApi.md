@@ -4,16 +4,16 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getExpiringFlagsForUser**](UserSettingsApi.md#getExpiringFlagsForUser) | **GET** /api/v2/users/{projKey}/{userKey}/expiring-user-targets/{envKey} | Get expiring dates on flags for user
-[**getUserFlagSetting**](UserSettingsApi.md#getUserFlagSetting) | **GET** /api/v2/users/{projKey}/{envKey}/{key}/flags/{featureKey} | Get flag setting for user
-[**getUserFlagSettings**](UserSettingsApi.md#getUserFlagSettings) | **GET** /api/v2/users/{projKey}/{envKey}/{key}/flags | List flag settings for user
-[**patchExpiringFlagsForUser**](UserSettingsApi.md#patchExpiringFlagsForUser) | **PATCH** /api/v2/users/{projKey}/{userKey}/expiring-user-targets/{envKey} | Update expiring user target for flags
-[**putFlagSetting**](UserSettingsApi.md#putFlagSetting) | **PUT** /api/v2/users/{projKey}/{envKey}/{key}/flags/{featureKey} | Update flag settings for user
+[**getExpiringFlagsForUser**](UserSettingsApi.md#getExpiringFlagsForUser) | **GET** /api/v2/users/{projectKey}/{userKey}/expiring-user-targets/{environmentKey} | Get expiring dates on flags for user
+[**getUserFlagSetting**](UserSettingsApi.md#getUserFlagSetting) | **GET** /api/v2/users/{projectKey}/{environmentKey}/{userKey}/flags/{featureFlagKey} | Get flag setting for user
+[**getUserFlagSettings**](UserSettingsApi.md#getUserFlagSettings) | **GET** /api/v2/users/{projectKey}/{environmentKey}/{userKey}/flags | List flag settings for user
+[**patchExpiringFlagsForUser**](UserSettingsApi.md#patchExpiringFlagsForUser) | **PATCH** /api/v2/users/{projectKey}/{userKey}/expiring-user-targets/{environmentKey} | Update expiring user target for flags
+[**putFlagSetting**](UserSettingsApi.md#putFlagSetting) | **PUT** /api/v2/users/{projectKey}/{environmentKey}/{userKey}/flags/{featureFlagKey} | Update flag settings for user
 
 
 <a name="getExpiringFlagsForUser"></a>
 # **getExpiringFlagsForUser**
-> ExpiringUserTargetGetResponse getExpiringFlagsForUser(projKey, userKey, envKey)
+> ExpiringUserTargetGetResponse getExpiringFlagsForUser(projectKey, userKey, environmentKey)
 
 Get expiring dates on flags for user
 
@@ -41,11 +41,11 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     UserSettingsApi apiInstance = new UserSettingsApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key.
-    String userKey = "userKey_example"; // String | The user key.
-    String envKey = "envKey_example"; // String | The environment key.
+    String projectKey = "projectKey_example"; // String | The project key
+    String userKey = "userKey_example"; // String | The user key
+    String environmentKey = "environmentKey_example"; // String | The environment key
     try {
-      ExpiringUserTargetGetResponse result = apiInstance.getExpiringFlagsForUser(projKey, userKey, envKey);
+      ExpiringUserTargetGetResponse result = apiInstance.getExpiringFlagsForUser(projectKey, userKey, environmentKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserSettingsApi#getExpiringFlagsForUser");
@@ -62,9 +62,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key. |
- **userKey** | **String**| The user key. |
- **envKey** | **String**| The environment key. |
+ **projectKey** | **String**| The project key |
+ **userKey** | **String**| The user key |
+ **environmentKey** | **String**| The environment key |
 
 ### Return type
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 <a name="getUserFlagSetting"></a>
 # **getUserFlagSetting**
-> UserFlagSetting getUserFlagSetting(projKey, envKey, key, featureKey)
+> UserFlagSetting getUserFlagSetting(projectKey, environmentKey, userKey, featureFlagKey)
 
 Get flag setting for user
 
@@ -118,12 +118,12 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     UserSettingsApi apiInstance = new UserSettingsApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key
-    String envKey = "envKey_example"; // String | The environment key
-    String key = "key_example"; // String | The user key
-    String featureKey = "featureKey_example"; // String | The feature flag key
+    String projectKey = "projectKey_example"; // String | The project key
+    String environmentKey = "environmentKey_example"; // String | The environment key
+    String userKey = "userKey_example"; // String | The user key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     try {
-      UserFlagSetting result = apiInstance.getUserFlagSetting(projKey, envKey, key, featureKey);
+      UserFlagSetting result = apiInstance.getUserFlagSetting(projectKey, environmentKey, userKey, featureFlagKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserSettingsApi#getUserFlagSetting");
@@ -140,10 +140,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key |
- **envKey** | **String**| The environment key |
- **key** | **String**| The user key |
- **featureKey** | **String**| The feature flag key |
+ **projectKey** | **String**| The project key |
+ **environmentKey** | **String**| The environment key |
+ **userKey** | **String**| The user key |
+ **featureFlagKey** | **String**| The feature flag key |
 
 ### Return type
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 
 <a name="getUserFlagSettings"></a>
 # **getUserFlagSettings**
-> UserFlagSettings getUserFlagSettings(projKey, envKey, key)
+> UserFlagSettings getUserFlagSettings(projectKey, environmentKey, userKey)
 
 List flag settings for user
 
@@ -198,11 +198,11 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     UserSettingsApi apiInstance = new UserSettingsApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key
-    String envKey = "envKey_example"; // String | The environment key
-    String key = "key_example"; // String | The user key
+    String projectKey = "projectKey_example"; // String | The project key
+    String environmentKey = "environmentKey_example"; // String | The environment key
+    String userKey = "userKey_example"; // String | The user key
     try {
-      UserFlagSettings result = apiInstance.getUserFlagSettings(projKey, envKey, key);
+      UserFlagSettings result = apiInstance.getUserFlagSettings(projectKey, environmentKey, userKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserSettingsApi#getUserFlagSettings");
@@ -219,9 +219,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key |
- **envKey** | **String**| The environment key |
- **key** | **String**| The user key |
+ **projectKey** | **String**| The project key |
+ **environmentKey** | **String**| The environment key |
+ **userKey** | **String**| The user key |
 
 ### Return type
 
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 <a name="patchExpiringFlagsForUser"></a>
 # **patchExpiringFlagsForUser**
-> ExpiringUserTargetPatchResponse patchExpiringFlagsForUser(projKey, userKey, envKey, patchWithComment)
+> ExpiringUserTargetPatchResponse patchExpiringFlagsForUser(projectKey, userKey, environmentKey, patchWithComment)
 
 Update expiring user target for flags
 
@@ -276,12 +276,12 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     UserSettingsApi apiInstance = new UserSettingsApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key.
-    String userKey = "userKey_example"; // String | The user key.
-    String envKey = "envKey_example"; // String | The environment key.
+    String projectKey = "projectKey_example"; // String | The project key
+    String userKey = "userKey_example"; // String | The user key
+    String environmentKey = "environmentKey_example"; // String | The environment key
     PatchWithComment patchWithComment = new PatchWithComment(); // PatchWithComment | 
     try {
-      ExpiringUserTargetPatchResponse result = apiInstance.patchExpiringFlagsForUser(projKey, userKey, envKey, patchWithComment);
+      ExpiringUserTargetPatchResponse result = apiInstance.patchExpiringFlagsForUser(projectKey, userKey, environmentKey, patchWithComment);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserSettingsApi#patchExpiringFlagsForUser");
@@ -298,9 +298,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key. |
- **userKey** | **String**| The user key. |
- **envKey** | **String**| The environment key. |
+ **projectKey** | **String**| The project key |
+ **userKey** | **String**| The user key |
+ **environmentKey** | **String**| The environment key |
  **patchWithComment** | [**PatchWithComment**](PatchWithComment.md)|  |
 
 ### Return type
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 <a name="putFlagSetting"></a>
 # **putFlagSetting**
-> putFlagSetting(projKey, envKey, key, featureKey, valuePut)
+> putFlagSetting(projectKey, environmentKey, userKey, featureFlagKey, valuePut)
 
 Update flag settings for user
 
@@ -356,13 +356,13 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     UserSettingsApi apiInstance = new UserSettingsApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key
-    String envKey = "envKey_example"; // String | The environment key
-    String key = "key_example"; // String | The user key
-    String featureKey = "featureKey_example"; // String | The feature flag key
+    String projectKey = "projectKey_example"; // String | The project key
+    String environmentKey = "environmentKey_example"; // String | The environment key
+    String userKey = "userKey_example"; // String | The user key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     ValuePut valuePut = new ValuePut(); // ValuePut | 
     try {
-      apiInstance.putFlagSetting(projKey, envKey, key, featureKey, valuePut);
+      apiInstance.putFlagSetting(projectKey, environmentKey, userKey, featureFlagKey, valuePut);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserSettingsApi#putFlagSetting");
       System.err.println("Status code: " + e.getCode());
@@ -378,10 +378,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key |
- **envKey** | **String**| The environment key |
- **key** | **String**| The user key |
- **featureKey** | **String**| The feature flag key |
+ **projectKey** | **String**| The project key |
+ **environmentKey** | **String**| The environment key |
+ **userKey** | **String**| The user key |
+ **featureFlagKey** | **String**| The feature flag key |
  **valuePut** | [**ValuePut**](ValuePut.md)|  |
 
 ### Return type

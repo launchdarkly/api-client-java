@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **user** | [**User**](User.md) |  |  [optional]
 **sortValue** | **Object** |  |  [optional]
 **links** | [**Map&lt;String, Link&gt;**](Link.md) |  |  [optional]
-**access** | [**AccessRep**](AccessRep.md) |  |  [optional]
+**access** | [**Access**](Access.md) |  |  [optional]
 
 
 

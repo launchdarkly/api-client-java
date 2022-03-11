@@ -4,17 +4,19 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteTeam**](TeamsBetaApi.md#deleteTeam) | **DELETE** /api/v2/teams/{key} | Delete team
-[**getTeam**](TeamsBetaApi.md#getTeam) | **GET** /api/v2/teams/{key} | Get team
+[**deleteTeam**](TeamsBetaApi.md#deleteTeam) | **DELETE** /api/v2/teams/{teamKey} | Delete team
+[**getTeam**](TeamsBetaApi.md#getTeam) | **GET** /api/v2/teams/{teamKey} | Get team
+[**getTeamMaintainers**](TeamsBetaApi.md#getTeamMaintainers) | **GET** /api/v2/teams/{teamKey}/maintainers | Get team maintainers
+[**getTeamRoles**](TeamsBetaApi.md#getTeamRoles) | **GET** /api/v2/teams/{teamKey}/roles | Get team custom roles
 [**getTeams**](TeamsBetaApi.md#getTeams) | **GET** /api/v2/teams | List teams
-[**patchTeam**](TeamsBetaApi.md#patchTeam) | **PATCH** /api/v2/teams/{key} | Update team
+[**patchTeam**](TeamsBetaApi.md#patchTeam) | **PATCH** /api/v2/teams/{teamKey} | Update team
 [**postTeam**](TeamsBetaApi.md#postTeam) | **POST** /api/v2/teams | Create team
-[**postTeamMembers**](TeamsBetaApi.md#postTeamMembers) | **POST** /api/v2/teams/{key}/members | Add members to team
+[**postTeamMembers**](TeamsBetaApi.md#postTeamMembers) | **POST** /api/v2/teams/{teamKey}/members | Add members to team
 
 
 <a name="deleteTeam"></a>
 # **deleteTeam**
-> deleteTeam(key)
+> deleteTeam(teamKey)
 
 Delete team
 
@@ -42,9 +44,9 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     TeamsBetaApi apiInstance = new TeamsBetaApi(defaultClient);
-    String key = "key_example"; // String | The team key
+    String teamKey = "teamKey_example"; // String | The team key
     try {
-      apiInstance.deleteTeam(key);
+      apiInstance.deleteTeam(teamKey);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsBetaApi#deleteTeam");
       System.err.println("Status code: " + e.getCode());
@@ -60,7 +62,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **String**| The team key |
+ **teamKey** | **String**| The team key |
 
 ### Return type
 
@@ -85,7 +87,7 @@ null (empty response body)
 
 <a name="getTeam"></a>
 # **getTeam**
-> ExpandedTeamRep getTeam(key)
+> Team getTeam(teamKey)
 
 Get team
 
@@ -113,9 +115,9 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     TeamsBetaApi apiInstance = new TeamsBetaApi(defaultClient);
-    String key = "key_example"; // String | The team key
+    String teamKey = "teamKey_example"; // String | The team key
     try {
-      ExpandedTeamRep result = apiInstance.getTeam(key);
+      Team result = apiInstance.getTeam(teamKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsBetaApi#getTeam");
@@ -132,11 +134,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **String**| The team key |
+ **teamKey** | **String**| The team key |
 
 ### Return type
 
-[**ExpandedTeamRep**](ExpandedTeamRep.md)
+[**Team**](Team.md)
 
 ### Authorization
 
@@ -158,9 +160,167 @@ Name | Type | Description  | Notes
 **405** | Method not allowed |  -  |
 **429** | Rate limited |  -  |
 
+<a name="getTeamMaintainers"></a>
+# **getTeamMaintainers**
+> TeamMaintainers getTeamMaintainers(teamKey, limit, offset)
+
+Get team maintainers
+
+Fetch the maintainers that have been assigned to the team.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.TeamsBetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    TeamsBetaApi apiInstance = new TeamsBetaApi(defaultClient);
+    String teamKey = "teamKey_example"; // String | The team key
+    Long limit = 56L; // Long | The number of maintainers to return in the response. Defaults to 20.
+    Long offset = 56L; // Long | Where to start in the list. This is for use with pagination. For example, an offset of 10 would skip the first ten items and then return the next `limit` items.
+    try {
+      TeamMaintainers result = apiInstance.getTeamMaintainers(teamKey, limit, offset);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling TeamsBetaApi#getTeamMaintainers");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **teamKey** | **String**| The team key |
+ **limit** | **Long**| The number of maintainers to return in the response. Defaults to 20. | [optional]
+ **offset** | **Long**| Where to start in the list. This is for use with pagination. For example, an offset of 10 would skip the first ten items and then return the next &#x60;limit&#x60; items. | [optional]
+
+### Return type
+
+[**TeamMaintainers**](TeamMaintainers.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Team maintainers response JSON |  -  |
+**400** | Invalid request |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**404** | Invalid resource identifier |  -  |
+**405** | Method not allowed |  -  |
+**429** | Rate limited |  -  |
+
+<a name="getTeamRoles"></a>
+# **getTeamRoles**
+> TeamCustomRoles getTeamRoles(teamKey, limit, offset)
+
+Get team custom roles
+
+Fetch the custom roles that have been assigned to the team.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.TeamsBetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    TeamsBetaApi apiInstance = new TeamsBetaApi(defaultClient);
+    String teamKey = "teamKey_example"; // String | The team key
+    Long limit = 56L; // Long | The number of roles to return in the response. Defaults to 20.
+    Long offset = 56L; // Long | Where to start in the list. This is for use with pagination. For example, an offset of 10 would skip the first ten items and then return the next `limit` items.
+    try {
+      TeamCustomRoles result = apiInstance.getTeamRoles(teamKey, limit, offset);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling TeamsBetaApi#getTeamRoles");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **teamKey** | **String**| The team key |
+ **limit** | **Long**| The number of roles to return in the response. Defaults to 20. | [optional]
+ **offset** | **Long**| Where to start in the list. This is for use with pagination. For example, an offset of 10 would skip the first ten items and then return the next &#x60;limit&#x60; items. | [optional]
+
+### Return type
+
+[**TeamCustomRoles**](TeamCustomRoles.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Team roles response JSON |  -  |
+**400** | Invalid request |  -  |
+**401** | Invalid access token |  -  |
+**403** | Forbidden |  -  |
+**404** | Invalid resource identifier |  -  |
+**405** | Method not allowed |  -  |
+**429** | Rate limited |  -  |
+
 <a name="getTeams"></a>
 # **getTeams**
-> TeamCollectionRep getTeams(limit, offset, filter)
+> Teams getTeams(limit, offset, filter)
 
 List teams
 
@@ -192,7 +352,7 @@ public class Example {
     Long offset = 56L; // Long | Where to start in the list. This is for use with pagination. For example, an offset of 10 would skip the first ten items and then return the next `limit` items.
     String filter = "filter_example"; // String | A comma-separated list of filters. Each filter is of the form `field:value`. Supported fields are explained above.
     try {
-      TeamCollectionRep result = apiInstance.getTeams(limit, offset, filter);
+      Teams result = apiInstance.getTeams(limit, offset, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsBetaApi#getTeams");
@@ -215,7 +375,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TeamCollectionRep**](TeamCollectionRep.md)
+[**Teams**](Teams.md)
 
 ### Authorization
 
@@ -236,7 +396,7 @@ Name | Type | Description  | Notes
 
 <a name="patchTeam"></a>
 # **patchTeam**
-> ExpandedTeamRep patchTeam(key, teamPatchInput)
+> Team patchTeam(teamKey, teamPatchInput)
 
 Update team
 
@@ -264,10 +424,10 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     TeamsBetaApi apiInstance = new TeamsBetaApi(defaultClient);
-    String key = "key_example"; // String | The team key
+    String teamKey = "teamKey_example"; // String | The team key
     TeamPatchInput teamPatchInput = new TeamPatchInput(); // TeamPatchInput | 
     try {
-      ExpandedTeamRep result = apiInstance.patchTeam(key, teamPatchInput);
+      Team result = apiInstance.patchTeam(teamKey, teamPatchInput);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsBetaApi#patchTeam");
@@ -284,12 +444,12 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **String**| The team key |
+ **teamKey** | **String**| The team key |
  **teamPatchInput** | [**TeamPatchInput**](TeamPatchInput.md)|  |
 
 ### Return type
 
-[**ExpandedTeamRep**](ExpandedTeamRep.md)
+[**Team**](Team.md)
 
 ### Authorization
 
@@ -313,7 +473,7 @@ Name | Type | Description  | Notes
 
 <a name="postTeam"></a>
 # **postTeam**
-> TeamRep postTeam(teamPostInput)
+> Team postTeam(teamPostInput)
 
 Create team
 
@@ -343,7 +503,7 @@ public class Example {
     TeamsBetaApi apiInstance = new TeamsBetaApi(defaultClient);
     TeamPostInput teamPostInput = new TeamPostInput(); // TeamPostInput | 
     try {
-      TeamRep result = apiInstance.postTeam(teamPostInput);
+      Team result = apiInstance.postTeam(teamPostInput);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsBetaApi#postTeam");
@@ -364,7 +524,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TeamRep**](TeamRep.md)
+[**Team**](Team.md)
 
 ### Authorization
 
@@ -386,7 +546,7 @@ Name | Type | Description  | Notes
 
 <a name="postTeamMembers"></a>
 # **postTeamMembers**
-> TeamImportsRep postTeamMembers(key, file)
+> TeamImportsRep postTeamMembers(teamKey, file)
 
 Add members to team
 
@@ -414,10 +574,10 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     TeamsBetaApi apiInstance = new TeamsBetaApi(defaultClient);
-    String key = "key_example"; // String | The team key
+    String teamKey = "teamKey_example"; // String | The team key
     File file = new File("/path/to/file"); // File | CSV file containing email addresses
     try {
-      TeamImportsRep result = apiInstance.postTeamMembers(key, file);
+      TeamImportsRep result = apiInstance.postTeamMembers(teamKey, file);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsBetaApi#postTeamMembers");
@@ -434,7 +594,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **String**| The team key |
+ **teamKey** | **String**| The team key |
  **file** | **File**| CSV file containing email addresses | [optional]
 
 ### Return type

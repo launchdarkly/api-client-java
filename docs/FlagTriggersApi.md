@@ -4,16 +4,16 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createTriggerWorkflow**](FlagTriggersApi.md#createTriggerWorkflow) | **POST** /api/v2/flags/{projKey}/{flagKey}/triggers/{envKey} | Create flag trigger
-[**deleteTriggerWorkflow**](FlagTriggersApi.md#deleteTriggerWorkflow) | **DELETE** /api/v2/flags/{projKey}/{flagKey}/triggers/{envKey}/{id} | Delete flag trigger
-[**getTriggerWorkflowById**](FlagTriggersApi.md#getTriggerWorkflowById) | **GET** /api/v2/flags/{projKey}/{flagKey}/triggers/{envKey}/{id} | Get flag trigger by ID
-[**getTriggerWorkflows**](FlagTriggersApi.md#getTriggerWorkflows) | **GET** /api/v2/flags/{projKey}/{flagKey}/triggers/{envKey} | List flag triggers
-[**patchTriggerWorkflow**](FlagTriggersApi.md#patchTriggerWorkflow) | **PATCH** /api/v2/flags/{projKey}/{flagKey}/triggers/{envKey}/{id} | Update flag trigger
+[**createTriggerWorkflow**](FlagTriggersApi.md#createTriggerWorkflow) | **POST** /api/v2/flags/{projectKey}/{featureFlagKey}/triggers/{environmentKey} | Create flag trigger
+[**deleteTriggerWorkflow**](FlagTriggersApi.md#deleteTriggerWorkflow) | **DELETE** /api/v2/flags/{projectKey}/{featureFlagKey}/triggers/{environmentKey}/{id} | Delete flag trigger
+[**getTriggerWorkflowById**](FlagTriggersApi.md#getTriggerWorkflowById) | **GET** /api/v2/flags/{projectKey}/{featureFlagKey}/triggers/{environmentKey}/{id} | Get flag trigger by ID
+[**getTriggerWorkflows**](FlagTriggersApi.md#getTriggerWorkflows) | **GET** /api/v2/flags/{projectKey}/{featureFlagKey}/triggers/{environmentKey} | List flag triggers
+[**patchTriggerWorkflow**](FlagTriggersApi.md#patchTriggerWorkflow) | **PATCH** /api/v2/flags/{projectKey}/{featureFlagKey}/triggers/{environmentKey}/{id} | Update flag trigger
 
 
 <a name="createTriggerWorkflow"></a>
 # **createTriggerWorkflow**
-> TriggerWorkflowRep createTriggerWorkflow(projKey, envKey, flagKey, triggerPost)
+> TriggerWorkflowRep createTriggerWorkflow(projectKey, environmentKey, featureFlagKey, triggerPost)
 
 Create flag trigger
 
@@ -41,12 +41,12 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     FlagTriggersApi apiInstance = new FlagTriggersApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key
-    String envKey = "envKey_example"; // String | The environment key
-    String flagKey = "flagKey_example"; // String | The flag key
+    String projectKey = "projectKey_example"; // String | The project key
+    String environmentKey = "environmentKey_example"; // String | The environment key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     TriggerPost triggerPost = new TriggerPost(); // TriggerPost | 
     try {
-      TriggerWorkflowRep result = apiInstance.createTriggerWorkflow(projKey, envKey, flagKey, triggerPost);
+      TriggerWorkflowRep result = apiInstance.createTriggerWorkflow(projectKey, environmentKey, featureFlagKey, triggerPost);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FlagTriggersApi#createTriggerWorkflow");
@@ -63,9 +63,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key |
- **envKey** | **String**| The environment key |
- **flagKey** | **String**| The flag key |
+ **projectKey** | **String**| The project key |
+ **environmentKey** | **String**| The environment key |
+ **featureFlagKey** | **String**| The feature flag key |
  **triggerPost** | [**TriggerPost**](TriggerPost.md)|  |
 
 ### Return type
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteTriggerWorkflow"></a>
 # **deleteTriggerWorkflow**
-> deleteTriggerWorkflow(projKey, envKey, flagKey, id)
+> deleteTriggerWorkflow(projectKey, environmentKey, featureFlagKey, id)
 
 Delete flag trigger
 
@@ -121,12 +121,12 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     FlagTriggersApi apiInstance = new FlagTriggersApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key
-    String envKey = "envKey_example"; // String | The environment key
-    String flagKey = "flagKey_example"; // String | The flag key
+    String projectKey = "projectKey_example"; // String | The project key
+    String environmentKey = "environmentKey_example"; // String | The environment key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String id = "id_example"; // String | The flag trigger ID
     try {
-      apiInstance.deleteTriggerWorkflow(projKey, envKey, flagKey, id);
+      apiInstance.deleteTriggerWorkflow(projectKey, environmentKey, featureFlagKey, id);
     } catch (ApiException e) {
       System.err.println("Exception when calling FlagTriggersApi#deleteTriggerWorkflow");
       System.err.println("Status code: " + e.getCode());
@@ -142,9 +142,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key |
- **envKey** | **String**| The environment key |
- **flagKey** | **String**| The flag key |
+ **projectKey** | **String**| The project key |
+ **environmentKey** | **String**| The environment key |
+ **featureFlagKey** | **String**| The feature flag key |
  **id** | **String**| The flag trigger ID |
 
 ### Return type
@@ -172,7 +172,7 @@ null (empty response body)
 
 <a name="getTriggerWorkflowById"></a>
 # **getTriggerWorkflowById**
-> TriggerWorkflowRep getTriggerWorkflowById(projKey, flagKey, envKey, id)
+> TriggerWorkflowRep getTriggerWorkflowById(projectKey, featureFlagKey, environmentKey, id)
 
 Get flag trigger by ID
 
@@ -200,12 +200,12 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     FlagTriggersApi apiInstance = new FlagTriggersApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key
-    String flagKey = "flagKey_example"; // String | The flag key
-    String envKey = "envKey_example"; // String | The environment key
+    String projectKey = "projectKey_example"; // String | The project key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
+    String environmentKey = "environmentKey_example"; // String | The environment key
     String id = "id_example"; // String | The flag trigger ID
     try {
-      TriggerWorkflowRep result = apiInstance.getTriggerWorkflowById(projKey, flagKey, envKey, id);
+      TriggerWorkflowRep result = apiInstance.getTriggerWorkflowById(projectKey, featureFlagKey, environmentKey, id);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FlagTriggersApi#getTriggerWorkflowById");
@@ -222,9 +222,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key |
- **flagKey** | **String**| The flag key |
- **envKey** | **String**| The environment key |
+ **projectKey** | **String**| The project key |
+ **featureFlagKey** | **String**| The feature flag key |
+ **environmentKey** | **String**| The environment key |
  **id** | **String**| The flag trigger ID |
 
 ### Return type
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 
 <a name="getTriggerWorkflows"></a>
 # **getTriggerWorkflows**
-> TriggerWorkflowCollectionRep getTriggerWorkflows(projKey, envKey, flagKey)
+> TriggerWorkflowCollectionRep getTriggerWorkflows(projectKey, environmentKey, featureFlagKey)
 
 List flag triggers
 
@@ -279,11 +279,11 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     FlagTriggersApi apiInstance = new FlagTriggersApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key
-    String envKey = "envKey_example"; // String | The environment key
-    String flagKey = "flagKey_example"; // String | The flag key
+    String projectKey = "projectKey_example"; // String | The project key
+    String environmentKey = "environmentKey_example"; // String | The environment key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     try {
-      TriggerWorkflowCollectionRep result = apiInstance.getTriggerWorkflows(projKey, envKey, flagKey);
+      TriggerWorkflowCollectionRep result = apiInstance.getTriggerWorkflows(projectKey, environmentKey, featureFlagKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FlagTriggersApi#getTriggerWorkflows");
@@ -300,9 +300,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key |
- **envKey** | **String**| The environment key |
- **flagKey** | **String**| The flag key |
+ **projectKey** | **String**| The project key |
+ **environmentKey** | **String**| The environment key |
+ **featureFlagKey** | **String**| The feature flag key |
 
 ### Return type
 
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 
 <a name="patchTriggerWorkflow"></a>
 # **patchTriggerWorkflow**
-> TriggerWorkflowRep patchTriggerWorkflow(projKey, envKey, flagKey, id, flagTriggerInput)
+> TriggerWorkflowRep patchTriggerWorkflow(projectKey, environmentKey, featureFlagKey, id, flagTriggerInput)
 
 Update flag trigger
 
@@ -355,13 +355,13 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     FlagTriggersApi apiInstance = new FlagTriggersApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key
-    String envKey = "envKey_example"; // String | The environment key
-    String flagKey = "flagKey_example"; // String | The flag key
+    String projectKey = "projectKey_example"; // String | The project key
+    String environmentKey = "environmentKey_example"; // String | The environment key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String id = "id_example"; // String | The flag trigger ID
     FlagTriggerInput flagTriggerInput = new FlagTriggerInput(); // FlagTriggerInput | 
     try {
-      TriggerWorkflowRep result = apiInstance.patchTriggerWorkflow(projKey, envKey, flagKey, id, flagTriggerInput);
+      TriggerWorkflowRep result = apiInstance.patchTriggerWorkflow(projectKey, environmentKey, featureFlagKey, id, flagTriggerInput);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FlagTriggersApi#patchTriggerWorkflow");
@@ -378,9 +378,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key |
- **envKey** | **String**| The environment key |
- **flagKey** | **String**| The flag key |
+ **projectKey** | **String**| The project key |
+ **environmentKey** | **String**| The environment key |
+ **featureFlagKey** | **String**| The feature flag key |
  **id** | **String**| The flag trigger ID |
  **flagTriggerInput** | [**FlagTriggerInput**](FlagTriggerInput.md)|  |
 

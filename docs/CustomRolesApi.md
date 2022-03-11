@@ -4,16 +4,16 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteCustomRole**](CustomRolesApi.md#deleteCustomRole) | **DELETE** /api/v2/roles/{key} | Delete custom role
-[**getCustomRole**](CustomRolesApi.md#getCustomRole) | **GET** /api/v2/roles/{key} | Get custom role
+[**deleteCustomRole**](CustomRolesApi.md#deleteCustomRole) | **DELETE** /api/v2/roles/{customRoleKey} | Delete custom role
+[**getCustomRole**](CustomRolesApi.md#getCustomRole) | **GET** /api/v2/roles/{customRoleKey} | Get custom role
 [**getCustomRoles**](CustomRolesApi.md#getCustomRoles) | **GET** /api/v2/roles | List custom roles
-[**patchCustomRole**](CustomRolesApi.md#patchCustomRole) | **PATCH** /api/v2/roles/{key} | Update custom role
+[**patchCustomRole**](CustomRolesApi.md#patchCustomRole) | **PATCH** /api/v2/roles/{customRoleKey} | Update custom role
 [**postCustomRole**](CustomRolesApi.md#postCustomRole) | **POST** /api/v2/roles | Create custom role
 
 
 <a name="deleteCustomRole"></a>
 # **deleteCustomRole**
-> deleteCustomRole(key)
+> deleteCustomRole(customRoleKey)
 
 Delete custom role
 
@@ -41,9 +41,9 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     CustomRolesApi apiInstance = new CustomRolesApi(defaultClient);
-    String key = "key_example"; // String | The key of the custom role to delete
+    String customRoleKey = "customRoleKey_example"; // String | The custom role key
     try {
-      apiInstance.deleteCustomRole(key);
+      apiInstance.deleteCustomRole(customRoleKey);
     } catch (ApiException e) {
       System.err.println("Exception when calling CustomRolesApi#deleteCustomRole");
       System.err.println("Status code: " + e.getCode());
@@ -59,7 +59,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **String**| The key of the custom role to delete |
+ **customRoleKey** | **String**| The custom role key |
 
 ### Return type
 
@@ -84,7 +84,7 @@ null (empty response body)
 
 <a name="getCustomRole"></a>
 # **getCustomRole**
-> CustomRole getCustomRole(key)
+> CustomRole getCustomRole(customRoleKey)
 
 Get custom role
 
@@ -112,9 +112,9 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     CustomRolesApi apiInstance = new CustomRolesApi(defaultClient);
-    String key = "key_example"; // String | The custom role's key or ID
+    String customRoleKey = "customRoleKey_example"; // String | The custom role key or ID
     try {
-      CustomRole result = apiInstance.getCustomRole(key);
+      CustomRole result = apiInstance.getCustomRole(customRoleKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CustomRolesApi#getCustomRole");
@@ -131,7 +131,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **String**| The custom role&#39;s key or ID |
+ **customRoleKey** | **String**| The custom role key or ID |
 
 ### Return type
 
@@ -225,11 +225,11 @@ This endpoint does not need any parameter.
 
 <a name="patchCustomRole"></a>
 # **patchCustomRole**
-> CustomRole patchCustomRole(key, patchWithComment)
+> CustomRole patchCustomRole(customRoleKey, patchWithComment)
 
 Update custom role
 
-Update a single custom role. The request must be a valid JSON Patch document describing the changes to be made to the custom role.
+Update a single custom role. The request must be a valid JSON Patch document describing the changes to be made to the custom role. To add an element to the &#x60;policy&#x60; array, set the &#x60;path&#x60; to &#x60;/policy&#x60; and then append &#x60;/&lt;array index&gt;&#x60;. Using &#x60;/0&#x60; adds to the beginning of the array.
 
 ### Example
 ```java
@@ -253,10 +253,10 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     CustomRolesApi apiInstance = new CustomRolesApi(defaultClient);
-    String key = "key_example"; // String | The key of the custom role to update
+    String customRoleKey = "customRoleKey_example"; // String | The custom role key
     PatchWithComment patchWithComment = new PatchWithComment(); // PatchWithComment | 
     try {
-      CustomRole result = apiInstance.patchCustomRole(key, patchWithComment);
+      CustomRole result = apiInstance.patchCustomRole(customRoleKey, patchWithComment);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CustomRolesApi#patchCustomRole");
@@ -273,7 +273,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **String**| The key of the custom role to update |
+ **customRoleKey** | **String**| The custom role key |
  **patchWithComment** | [**PatchWithComment**](PatchWithComment.md)|  |
 
 ### Return type

@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**items** | [**List&lt;MemberImportItemRep&gt;**](MemberImportItemRep.md) |  |  [optional]
+**items** | [**List&lt;MemberImportItem&gt;**](MemberImportItem.md) |  |  [optional]
 
 
 

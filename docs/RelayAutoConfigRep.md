@@ -8,8 +8,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
-**creator** | [**MemberSummaryRep**](MemberSummaryRep.md) |  |  [optional]
-**access** | [**AccessRep**](AccessRep.md) |  |  [optional]
+**creator** | [**MemberSummary**](MemberSummary.md) |  |  [optional]
+**access** | [**Access**](Access.md) |  |  [optional]
 **name** | **String** |  | 
 **policy** | [**List&lt;StatementRep&gt;**](StatementRep.md) |  | 
 **fullKey** | **String** |  | 

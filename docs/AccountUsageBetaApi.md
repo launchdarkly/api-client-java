@@ -4,7 +4,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getEvaluationsUsage**](AccountUsageBetaApi.md#getEvaluationsUsage) | **GET** /api/v2/usage/evaluations/{projKey}/{envKey}/{flagKey} | Get evaluations usage
+[**getEvaluationsUsage**](AccountUsageBetaApi.md#getEvaluationsUsage) | **GET** /api/v2/usage/evaluations/{projectKey}/{environmentKey}/{featureFlagKey} | Get evaluations usage
 [**getEventsUsage**](AccountUsageBetaApi.md#getEventsUsage) | **GET** /api/v2/usage/events/{type} | Get events usage
 [**getMauSdksByType**](AccountUsageBetaApi.md#getMauSdksByType) | **GET** /api/v2/usage/mau/sdks | Get MAU SDKs by type
 [**getMauUsage**](AccountUsageBetaApi.md#getMauUsage) | **GET** /api/v2/usage/mau | Get MAU usage
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="getEvaluationsUsage"></a>
 # **getEvaluationsUsage**
-> SeriesListRep getEvaluationsUsage(projKey, envKey, flagKey, from, to, tz)
+> SeriesListRep getEvaluationsUsage(projectKey, environmentKey, featureFlagKey, from, to, tz)
 
 Get evaluations usage
 
@@ -44,14 +44,14 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key.
-    String envKey = "envKey_example"; // String | The environment key.
-    String flagKey = "flagKey_example"; // String | The feature flag's key.
+    String projectKey = "projectKey_example"; // String | The project key
+    String environmentKey = "environmentKey_example"; // String | The environment key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String from = "from_example"; // String | The series of data returned starts from this timestamp. Defaults to 30 days ago.
     String to = "to_example"; // String | The series of data returned ends at this timestamp. Defaults to the current time.
     String tz = "tz_example"; // String | The timezone to use for breaks between days when returning daily data.
     try {
-      SeriesListRep result = apiInstance.getEvaluationsUsage(projKey, envKey, flagKey, from, to, tz);
+      SeriesListRep result = apiInstance.getEvaluationsUsage(projectKey, environmentKey, featureFlagKey, from, to, tz);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AccountUsageBetaApi#getEvaluationsUsage");
@@ -68,9 +68,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key. |
- **envKey** | **String**| The environment key. |
- **flagKey** | **String**| The feature flag&#39;s key. |
+ **projectKey** | **String**| The project key |
+ **environmentKey** | **String**| The environment key |
+ **featureFlagKey** | **String**| The feature flag key |
  **from** | **String**| The series of data returned starts from this timestamp. Defaults to 30 days ago. | [optional]
  **to** | **String**| The series of data returned ends at this timestamp. Defaults to the current time. | [optional]
  **tz** | **String**| The timezone to use for breaks between days when returning daily data. | [optional]

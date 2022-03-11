@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **tags** | **List&lt;String&gt;** | Tags for the feature flag | 
 **links** | [**Map&lt;String, Link&gt;**](Link.md) |  | 
 **maintainerId** | **String** | Associated maintainerId for the feature flag |  [optional]
-**maintainer** | [**MemberSummaryRep**](MemberSummaryRep.md) |  |  [optional]
+**maintainer** | [**MemberSummary**](MemberSummary.md) |  |  [optional]
 **goalIds** | **List&lt;String&gt;** |  |  [optional]
 **experiments** | [**ExperimentInfoRep**](ExperimentInfoRep.md) |  | 
 **customProperties** | [**Map&lt;String, CustomProperty&gt;**](CustomProperty.md) |  | 

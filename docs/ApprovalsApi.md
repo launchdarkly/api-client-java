@@ -44,7 +44,7 @@ public class Example {
 
     ApprovalsApi apiInstance = new ApprovalsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
-    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String environmentKey = "environmentKey_example"; // String | The environment key
     String id = "id_example"; // String | The feature flag approval request ID
     try {
@@ -65,7 +65,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag&#39;s key |
+ **featureFlagKey** | **String**| The feature flag key |
  **environmentKey** | **String**| The environment key |
  **id** | **String**| The feature flag approval request ID |
 
@@ -122,7 +122,7 @@ public class Example {
 
     ApprovalsApi apiInstance = new ApprovalsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
-    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String environmentKey = "environmentKey_example"; // String | The environment key
     String id = "id_example"; // String | The feature flag approval request ID
     try {
@@ -144,7 +144,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag&#39;s key |
+ **featureFlagKey** | **String**| The feature flag key |
  **environmentKey** | **String**| The environment key |
  **id** | **String**| The feature flag approval request ID |
 
@@ -201,7 +201,7 @@ public class Example {
 
     ApprovalsApi apiInstance = new ApprovalsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
-    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String environmentKey = "environmentKey_example"; // String | The environment key
     try {
       FlagConfigApprovalRequestsResponse result = apiInstance.getApprovals(projectKey, featureFlagKey, environmentKey);
@@ -222,7 +222,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag&#39;s key |
+ **featureFlagKey** | **String**| The feature flag key |
  **environmentKey** | **String**| The environment key |
 
 ### Return type
@@ -278,7 +278,7 @@ public class Example {
 
     ApprovalsApi apiInstance = new ApprovalsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
-    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String environmentKey = "environmentKey_example"; // String | The environment key
     CreateFlagConfigApprovalRequestRequest createFlagConfigApprovalRequestRequest = new CreateFlagConfigApprovalRequestRequest(); // CreateFlagConfigApprovalRequestRequest | 
     try {
@@ -300,7 +300,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag&#39;s key |
+ **featureFlagKey** | **String**| The feature flag key |
  **environmentKey** | **String**| The environment key |
  **createFlagConfigApprovalRequestRequest** | [**CreateFlagConfigApprovalRequestRequest**](CreateFlagConfigApprovalRequestRequest.md)|  |
 
@@ -357,7 +357,7 @@ public class Example {
 
     ApprovalsApi apiInstance = new ApprovalsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
-    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String environmentKey = "environmentKey_example"; // String | The environment key
     String id = "id_example"; // String | The feature flag approval request ID
     PostApprovalRequestApplyRequest postApprovalRequestApplyRequest = new PostApprovalRequestApplyRequest(); // PostApprovalRequestApplyRequest | 
@@ -380,7 +380,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag&#39;s key |
+ **featureFlagKey** | **String**| The feature flag key |
  **environmentKey** | **String**| The environment key |
  **id** | **String**| The feature flag approval request ID |
  **postApprovalRequestApplyRequest** | [**PostApprovalRequestApplyRequest**](PostApprovalRequestApplyRequest.md)|  |
@@ -439,7 +439,7 @@ public class Example {
 
     ApprovalsApi apiInstance = new ApprovalsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
-    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String environmentKey = "environmentKey_example"; // String | The environment key
     String id = "id_example"; // String | The feature flag approval request ID
     PostApprovalRequestReviewRequest postApprovalRequestReviewRequest = new PostApprovalRequestReviewRequest(); // PostApprovalRequestReviewRequest | 
@@ -462,7 +462,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag&#39;s key |
+ **featureFlagKey** | **String**| The feature flag key |
  **environmentKey** | **String**| The environment key |
  **id** | **String**| The feature flag approval request ID |
  **postApprovalRequestReviewRequest** | [**PostApprovalRequestReviewRequest**](PostApprovalRequestReviewRequest.md)|  |
@@ -521,7 +521,7 @@ public class Example {
 
     ApprovalsApi apiInstance = new ApprovalsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
-    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String environmentKey = "environmentKey_example"; // String | The environment key
     CreateCopyFlagConfigApprovalRequestRequest createCopyFlagConfigApprovalRequestRequest = new CreateCopyFlagConfigApprovalRequestRequest(); // CreateCopyFlagConfigApprovalRequestRequest | 
     try {
@@ -543,7 +543,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag&#39;s key |
+ **featureFlagKey** | **String**| The feature flag key |
  **environmentKey** | **String**| The environment key |
  **createCopyFlagConfigApprovalRequestRequest** | [**CreateCopyFlagConfigApprovalRequestRequest**](CreateCopyFlagConfigApprovalRequestRequest.md)|  |
 

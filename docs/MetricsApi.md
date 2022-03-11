@@ -4,16 +4,16 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteMetric**](MetricsApi.md#deleteMetric) | **DELETE** /api/v2/metrics/{projectKey}/{key} | Delete metric
-[**getMetric**](MetricsApi.md#getMetric) | **GET** /api/v2/metrics/{projectKey}/{key} | Get metric
+[**deleteMetric**](MetricsApi.md#deleteMetric) | **DELETE** /api/v2/metrics/{projectKey}/{metricKey} | Delete metric
+[**getMetric**](MetricsApi.md#getMetric) | **GET** /api/v2/metrics/{projectKey}/{metricKey} | Get metric
 [**getMetrics**](MetricsApi.md#getMetrics) | **GET** /api/v2/metrics/{projectKey} | List metrics
-[**patchMetric**](MetricsApi.md#patchMetric) | **PATCH** /api/v2/metrics/{projectKey}/{key} | Update metric
+[**patchMetric**](MetricsApi.md#patchMetric) | **PATCH** /api/v2/metrics/{projectKey}/{metricKey} | Update metric
 [**postMetric**](MetricsApi.md#postMetric) | **POST** /api/v2/metrics/{projectKey} | Create metric
 
 
 <a name="deleteMetric"></a>
 # **deleteMetric**
-> deleteMetric(projectKey, key)
+> deleteMetric(projectKey, metricKey)
 
 Delete metric
 
@@ -42,9 +42,9 @@ public class Example {
 
     MetricsApi apiInstance = new MetricsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
-    String key = "key_example"; // String | The metric key
+    String metricKey = "metricKey_example"; // String | The metric key
     try {
-      apiInstance.deleteMetric(projectKey, key);
+      apiInstance.deleteMetric(projectKey, metricKey);
     } catch (ApiException e) {
       System.err.println("Exception when calling MetricsApi#deleteMetric");
       System.err.println("Status code: " + e.getCode());
@@ -61,7 +61,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key |
- **key** | **String**| The metric key |
+ **metricKey** | **String**| The metric key |
 
 ### Return type
 
@@ -87,7 +87,7 @@ null (empty response body)
 
 <a name="getMetric"></a>
 # **getMetric**
-> MetricRep getMetric(projectKey, key)
+> MetricRep getMetric(projectKey, metricKey)
 
 Get metric
 
@@ -116,9 +116,9 @@ public class Example {
 
     MetricsApi apiInstance = new MetricsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
-    String key = "key_example"; // String | The metric key
+    String metricKey = "metricKey_example"; // String | The metric key
     try {
-      MetricRep result = apiInstance.getMetric(projectKey, key);
+      MetricRep result = apiInstance.getMetric(projectKey, metricKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MetricsApi#getMetric");
@@ -136,7 +136,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key |
- **key** | **String**| The metric key |
+ **metricKey** | **String**| The metric key |
 
 ### Return type
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 <a name="patchMetric"></a>
 # **patchMetric**
-> MetricRep patchMetric(projectKey, key, patchOperation)
+> MetricRep patchMetric(projectKey, metricKey, patchOperation)
 
 Update metric
 
@@ -262,10 +262,10 @@ public class Example {
 
     MetricsApi apiInstance = new MetricsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
-    String key = "key_example"; // String | The metric key
+    String metricKey = "metricKey_example"; // String | The metric key
     List<PatchOperation> patchOperation = Arrays.asList(); // List<PatchOperation> | 
     try {
-      MetricRep result = apiInstance.patchMetric(projectKey, key, patchOperation);
+      MetricRep result = apiInstance.patchMetric(projectKey, metricKey, patchOperation);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MetricsApi#patchMetric");
@@ -283,7 +283,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key |
- **key** | **String**| The metric key |
+ **metricKey** | **String**| The metric key |
  **patchOperation** | [**List&lt;PatchOperation&gt;**](PatchOperation.md)|  |
 
 ### Return type

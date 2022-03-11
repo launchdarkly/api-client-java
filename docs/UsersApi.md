@@ -4,15 +4,15 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteUser**](UsersApi.md#deleteUser) | **DELETE** /api/v2/users/{projKey}/{envKey}/{key} | Delete user
-[**getSearchUsers**](UsersApi.md#getSearchUsers) | **GET** /api/v2/user-search/{projKey}/{envKey} | Find users
-[**getUser**](UsersApi.md#getUser) | **GET** /api/v2/users/{projKey}/{envKey}/{key} | Get user
-[**getUsers**](UsersApi.md#getUsers) | **GET** /api/v2/users/{projKey}/{envKey} | List users
+[**deleteUser**](UsersApi.md#deleteUser) | **DELETE** /api/v2/users/{projectKey}/{environmentKey}/{userKey} | Delete user
+[**getSearchUsers**](UsersApi.md#getSearchUsers) | **GET** /api/v2/user-search/{projectKey}/{environmentKey} | Find users
+[**getUser**](UsersApi.md#getUser) | **GET** /api/v2/users/{projectKey}/{environmentKey}/{userKey} | Get user
+[**getUsers**](UsersApi.md#getUsers) | **GET** /api/v2/users/{projectKey}/{environmentKey} | List users
 
 
 <a name="deleteUser"></a>
 # **deleteUser**
-> deleteUser(projKey, envKey, key)
+> deleteUser(projectKey, environmentKey, userKey)
 
 Delete user
 
@@ -40,11 +40,11 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     UsersApi apiInstance = new UsersApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key
-    String envKey = "envKey_example"; // String | The environment key
-    String key = "key_example"; // String | The user key
+    String projectKey = "projectKey_example"; // String | The project key
+    String environmentKey = "environmentKey_example"; // String | The environment key
+    String userKey = "userKey_example"; // String | The user key
     try {
-      apiInstance.deleteUser(projKey, envKey, key);
+      apiInstance.deleteUser(projectKey, environmentKey, userKey);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#deleteUser");
       System.err.println("Status code: " + e.getCode());
@@ -60,9 +60,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key |
- **envKey** | **String**| The environment key |
- **key** | **String**| The user key |
+ **projectKey** | **String**| The project key |
+ **environmentKey** | **String**| The environment key |
+ **userKey** | **String**| The user key |
 
 ### Return type
 
@@ -89,11 +89,11 @@ null (empty response body)
 
 <a name="getSearchUsers"></a>
 # **getSearchUsers**
-> Users getSearchUsers(projKey, envKey, q, limit, offset, after, sort, searchAfter, filter)
+> Users getSearchUsers(projectKey, environmentKey, q, limit, offset, after, sort, searchAfter, filter)
 
 Find users
 
-Search users in LaunchDarkly based on their last active date, a user attribute filter set, or a search query. Do not use to list all users in LaunchDarkly. Instead, use the [List users](getUsers) API resource.  An example user attribute filter set is &#x60;filter&#x3D;firstName:Anna,activeTrial:false&#x60;. This matches users that have the user attribute &#x60;firstName&#x60; set to &#x60;Anna&#x60;, that also have the attribute &#x60;activeTrial&#x60; set to &#x60;false&#x60;.  &gt; ### &#x60;offset&#x60; is deprecated &gt; &gt; &#x60;offset&#x60; is deprecated and will be removed in a future API version. You can still use &#x60;offset&#x60; and &#x60;limit&#x60; for pagination, but we recommend you use &#x60;sort&#x60; and &#x60;searchAfter&#x60; instead. &#x60;searchAfter&#x60; allows you to page through more than 10,000 users, but &#x60;offset&#x60; and &#x60;limit&#x60; do not. 
+Search users in LaunchDarkly based on their last active date, a user attribute filter set, or a search query.  An example user attribute filter set is &#x60;filter&#x3D;firstName:Anna,activeTrial:false&#x60;. This matches users that have the user attribute &#x60;firstName&#x60; set to &#x60;Anna&#x60;, that also have the attribute &#x60;activeTrial&#x60; set to &#x60;false&#x60;.  To paginate through results, follow the &#x60;next&#x60; link in the &#x60;_links&#x60; object. To learn more, read [Representations](/#section/Representations).  &gt; ### &#x60;offset&#x60; is deprecated &gt; &gt; &#x60;offset&#x60; is deprecated and will be removed in a future API version. You can still use &#x60;offset&#x60; and &#x60;limit&#x60; for pagination, but we recommend you use &#x60;sort&#x60; and &#x60;searchAfter&#x60; instead. &#x60;searchAfter&#x60; allows you to page through more than 10,000 users, but &#x60;offset&#x60; and &#x60;limit&#x60; do not. 
 
 ### Example
 ```java
@@ -117,8 +117,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     UsersApi apiInstance = new UsersApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key
-    String envKey = "envKey_example"; // String | The environment key
+    String projectKey = "projectKey_example"; // String | The project key
+    String environmentKey = "environmentKey_example"; // String | The environment key
     String q = "q_example"; // String | Full-text search for users based on name, first name, last name, e-mail address, or key
     Long limit = 56L; // Long | Specifies the maximum number of items in the collection to return (max: 50, default: 20)
     Long offset = 56L; // Long | Specifies the first item to return in the collection
@@ -127,7 +127,7 @@ public class Example {
     String searchAfter = "searchAfter_example"; // String | Limits results to users with sort values after the value you specify. You can use this for pagination, but we recommend using the `next` link we provide instead.
     String filter = "filter_example"; // String | A comma-separated list of user attribute filters. Each filter is in the form of attributeKey:attributeValue
     try {
-      Users result = apiInstance.getSearchUsers(projKey, envKey, q, limit, offset, after, sort, searchAfter, filter);
+      Users result = apiInstance.getSearchUsers(projectKey, environmentKey, q, limit, offset, after, sort, searchAfter, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#getSearchUsers");
@@ -144,8 +144,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key |
- **envKey** | **String**| The environment key |
+ **projectKey** | **String**| The project key |
+ **environmentKey** | **String**| The environment key |
  **q** | **String**| Full-text search for users based on name, first name, last name, e-mail address, or key | [optional]
  **limit** | **Long**| Specifies the maximum number of items in the collection to return (max: 50, default: 20) | [optional]
  **offset** | **Long**| Specifies the first item to return in the collection | [optional]
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 
 <a name="getUser"></a>
 # **getUser**
-> UserRecord getUser(projKey, envKey, key)
+> UserRecord getUser(projectKey, environmentKey, userKey)
 
 Get user
 
@@ -207,11 +207,11 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     UsersApi apiInstance = new UsersApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key
-    String envKey = "envKey_example"; // String | The environment key
-    String key = "key_example"; // String | The user key
+    String projectKey = "projectKey_example"; // String | The project key
+    String environmentKey = "environmentKey_example"; // String | The environment key
+    String userKey = "userKey_example"; // String | The user key
     try {
-      UserRecord result = apiInstance.getUser(projKey, envKey, key);
+      UserRecord result = apiInstance.getUser(projectKey, environmentKey, userKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#getUser");
@@ -228,9 +228,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key |
- **envKey** | **String**| The environment key |
- **key** | **String**| The user key |
+ **projectKey** | **String**| The project key |
+ **environmentKey** | **String**| The environment key |
+ **userKey** | **String**| The user key |
 
 ### Return type
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 <a name="getUsers"></a>
 # **getUsers**
-> Users getUsers(projKey, envKey, limit, searchAfter)
+> Users getUsers(projectKey, environmentKey, limit, searchAfter)
 
 List users
 
@@ -285,12 +285,12 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     UsersApi apiInstance = new UsersApi(defaultClient);
-    String projKey = "projKey_example"; // String | The project key
-    String envKey = "envKey_example"; // String | The environment key
+    String projectKey = "projectKey_example"; // String | The project key
+    String environmentKey = "environmentKey_example"; // String | The environment key
     Long limit = 56L; // Long | The number of elements to return per page
     String searchAfter = "searchAfter_example"; // String | Limits results to users with sort values after the value you specify. You can use this for pagination, but we recommend using the `next` link we provide instead.
     try {
-      Users result = apiInstance.getUsers(projKey, envKey, limit, searchAfter);
+      Users result = apiInstance.getUsers(projectKey, environmentKey, limit, searchAfter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#getUsers");
@@ -307,8 +307,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projKey** | **String**| The project key |
- **envKey** | **String**| The environment key |
+ **projectKey** | **String**| The project key |
+ **environmentKey** | **String**| The environment key |
  **limit** | **Long**| The number of elements to return per page | [optional]
  **searchAfter** | **String**| Limits results to users with sort values after the value you specify. You can use this for pagination, but we recommend using the &#x60;next&#x60; link we provide instead. | [optional]
 

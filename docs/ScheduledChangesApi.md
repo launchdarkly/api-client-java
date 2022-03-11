@@ -42,7 +42,7 @@ public class Example {
 
     ScheduledChangesApi apiInstance = new ScheduledChangesApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
-    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String environmentKey = "environmentKey_example"; // String | The environment key
     String id = "id_example"; // String | The scheduled change id
     try {
@@ -63,7 +63,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag&#39;s key |
+ **featureFlagKey** | **String**| The feature flag key |
  **environmentKey** | **String**| The environment key |
  **id** | **String**| The scheduled change id |
 
@@ -122,7 +122,7 @@ public class Example {
 
     ScheduledChangesApi apiInstance = new ScheduledChangesApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
-    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String environmentKey = "environmentKey_example"; // String | The environment key
     String id = "id_example"; // String | The scheduled change id
     try {
@@ -144,7 +144,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag&#39;s key |
+ **featureFlagKey** | **String**| The feature flag key |
  **environmentKey** | **String**| The environment key |
  **id** | **String**| The scheduled change id |
 
@@ -200,7 +200,7 @@ public class Example {
 
     ScheduledChangesApi apiInstance = new ScheduledChangesApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
-    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String environmentKey = "environmentKey_example"; // String | The environment key
     try {
       FeatureFlagScheduledChanges result = apiInstance.getFlagConfigScheduledChanges(projectKey, featureFlagKey, environmentKey);
@@ -221,7 +221,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag&#39;s key |
+ **featureFlagKey** | **String**| The feature flag key |
  **environmentKey** | **String**| The environment key |
 
 ### Return type
@@ -277,7 +277,7 @@ public class Example {
 
     ScheduledChangesApi apiInstance = new ScheduledChangesApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
-    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String environmentKey = "environmentKey_example"; // String | The environment key
     String id = "id_example"; // String | The scheduled change ID
     FlagScheduledChangesInput flagScheduledChangesInput = new FlagScheduledChangesInput(); // FlagScheduledChangesInput | 
@@ -301,7 +301,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag&#39;s key |
+ **featureFlagKey** | **String**| The feature flag key |
  **environmentKey** | **String**| The environment key |
  **id** | **String**| The scheduled change ID |
  **flagScheduledChangesInput** | [**FlagScheduledChangesInput**](FlagScheduledChangesInput.md)|  |
@@ -363,7 +363,7 @@ public class Example {
 
     ScheduledChangesApi apiInstance = new ScheduledChangesApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
-    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag's key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String environmentKey = "environmentKey_example"; // String | The environment key
     PostFlagScheduledChangesInput postFlagScheduledChangesInput = new PostFlagScheduledChangesInput(); // PostFlagScheduledChangesInput | 
     Boolean ignoreConflicts = true; // Boolean | Whether or not to succeed or fail when the new instructions conflict with existing scheduled changes
@@ -386,7 +386,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag&#39;s key |
+ **featureFlagKey** | **String**| The feature flag key |
  **environmentKey** | **String**| The environment key |
  **postFlagScheduledChangesInput** | [**PostFlagScheduledChangesInput**](PostFlagScheduledChangesInput.md)|  |
  **ignoreConflicts** | **Boolean**| Whether or not to succeed or fail when the new instructions conflict with existing scheduled changes | [optional]
