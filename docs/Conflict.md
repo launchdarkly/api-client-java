@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**instruction** | **Map&lt;String, Object&gt;** |  |  [optional]
+**instruction** | **Object** |  |  [optional]
 **reason** | **String** | Reason why the conflict exists |  [optional]
 
 

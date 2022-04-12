@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **appliedDate** | **Long** |  |  [optional]
 **appliedByMemberId** | **String** |  |  [optional]
 **status** | **String** |  | 
-**instructions** | **List&lt;Map&lt;String, Object&gt;&gt;** |  | 
+**instructions** | **List&lt;Object&gt;** |  | 
 **conflicts** | [**List&lt;Conflict&gt;**](Conflict.md) |  | 
 **links** | [**Map&lt;String, Link&gt;**](Link.md) |  | 
 **executionDate** | **Long** |  |  [optional]

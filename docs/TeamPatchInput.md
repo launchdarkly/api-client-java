@@ -8,7 +8,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **comment** | **String** |  |  [optional]
-**instructions** | **List&lt;Map&lt;String, Object&gt;&gt;** |  |  [optional]
+**instructions** | **List&lt;Object&gt;** |  |  [optional]
 
 
 

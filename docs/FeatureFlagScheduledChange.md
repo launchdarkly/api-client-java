@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **maintainerId** | **String** |  | 
 **version** | **Integer** |  | 
 **executionDate** | **Long** |  | 
-**instructions** | **List&lt;Map&lt;String, Object&gt;&gt;** |  | 
+**instructions** | **List&lt;Object&gt;** |  | 
 **conflicts** | **Object** |  |  [optional]
 **links** | [**Map&lt;String, Link&gt;**](Link.md) |  |  [optional]
 

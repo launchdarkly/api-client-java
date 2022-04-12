@@ -6,7 +6,7 @@ This REST API is for custom integrations, data export, or automating your featur
 
 LaunchDarkly REST API
 - API version: 2.0
-  - Build date: 2022-03-11T16:36:03.019051Z[Etc/UTC]
+  - Build date: 2022-04-12T21:37:48.604008Z[Etc/UTC]
 
 # Overview
 
@@ -63,9 +63,11 @@ In addition, request bodies for `PUT`, `POST`, `REPORT` and `PATCH` requests mus
 
 ### Summary and detailed representations
 
-When you fetch a list of resources, the response includes only the most important attributes of each resource. This is a _summary representation_ of the resource. When you fetch an individual resource (for example, a single feature flag), you receive a _detailed representation_ containing all of the attributes of the resource.
+When you fetch a list of resources, the response includes only the most important attributes of each resource. This is a _summary representation_ of the resource. When you fetch an individual resource, such as a single feature flag, you receive a _detailed representation_ of the resource.
 
 The best way to find a detailed representation is to follow links. Every summary representation includes a link to its detailed representation.
+
+In most cases, the detailed representation contains all of the attributes of the resource. In a few cases, the detailed representation contains many, but not all, of the attributes of the resource. Typically this happens when an attribute of the requested resource is itself paginated. You can request that the response include a particular attribute by using the `expand` request parameter.
 
 ### Links and addressability
 
@@ -100,6 +102,12 @@ From this, you can navigate to the parent collection of features by following th
 Collections are always represented as a JSON object with an `items` attribute containing an array of representations. Like all other representations, collections have `_links` defined at the top level.
 
 Paginated collections include `first`, `last`, `next`, and `prev` links containing a URL with the respective set of elements in the collection.
+
+### Expanding responses
+
+Sometimes the detailed representation of a resource does not include all of the attributes of the resource by default. If this is the case, the request method will clearly document this and describe which attributes you can include in an expanded response.
+
+To include the additional attributes, append the `expand` request parameter to your request and add a comma-separated list of the attributes to include. For example, when you append `?expand=members,roles` to the [Get team](/tag/Teams-(beta)#operation/getTeam) endpoint, the expanded response includes both of these attributes.
 
 ## Updates
 
@@ -398,7 +406,7 @@ We mark beta resources with a \"Beta\" callout in our documentation, pictured be
 
 > ### This feature is in beta
 >
-> To use this feature, pass in a header including the `LD-API-Version` key with value set to `beta`. Use this header with each call. To learn more, read [Beta resources](/#section/Beta-resources).
+> To use this feature, pass in a header including the `LD-API-Version` key with value set to `beta`. Use this header with each call. To learn more, read [Beta resources](/#section/Overview/Beta-resources).
 
 ### Using beta resources
 
@@ -484,7 +492,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>8.0.0</version>
+  <version>9.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -494,7 +502,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:8.0.0"
+compile "com.launchdarkly:api-client:9.0.0"
 ```
 
 ### Others
@@ -507,7 +515,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-8.0.0.jar`
+* `target/api-client-9.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -615,7 +623,13 @@ Class | Method | HTTP request | Description
 *EnvironmentsApi* | [**postEnvironment**](docs/EnvironmentsApi.md#postEnvironment) | **POST** /api/v2/projects/{projectKey}/environments | Create environment
 *EnvironmentsApi* | [**resetEnvironmentMobileKey**](docs/EnvironmentsApi.md#resetEnvironmentMobileKey) | **POST** /api/v2/projects/{projectKey}/environments/{environmentKey}/mobileKey | Reset environment mobile SDK key
 *EnvironmentsApi* | [**resetEnvironmentSDKKey**](docs/EnvironmentsApi.md#resetEnvironmentSDKKey) | **POST** /api/v2/projects/{projectKey}/environments/{environmentKey}/apiKey | Reset environment SDK key
-*ExperimentsBetaApi* | [**getExperiment**](docs/ExperimentsBetaApi.md#getExperiment) | **GET** /api/v2/flags/{projectKey}/{featureFlagKey}/experiments/{environmentKey}/{metricKey} | Get experiment results
+*ExperimentsBetaApi* | [**createExperiment**](docs/ExperimentsBetaApi.md#createExperiment) | **POST** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments | Create experiment
+*ExperimentsBetaApi* | [**createIteration**](docs/ExperimentsBetaApi.md#createIteration) | **POST** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments/{experimentKey}/iterations | Create iteration
+*ExperimentsBetaApi* | [**getExperiment**](docs/ExperimentsBetaApi.md#getExperiment) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments/{experimentKey} | Get experiment
+*ExperimentsBetaApi* | [**getExperimentResults**](docs/ExperimentsBetaApi.md#getExperimentResults) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments/{experimentKey}/metrics/{metricKey}/results | Get experiment results
+*ExperimentsBetaApi* | [**getExperiments**](docs/ExperimentsBetaApi.md#getExperiments) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments | Get experiments
+*ExperimentsBetaApi* | [**getLegacyExperimentResults**](docs/ExperimentsBetaApi.md#getLegacyExperimentResults) | **GET** /api/v2/flags/{projectKey}/{featureFlagKey}/experiments/{environmentKey}/{metricKey} | Get legacy experiment results (deprecated)
+*ExperimentsBetaApi* | [**patchExperiment**](docs/ExperimentsBetaApi.md#patchExperiment) | **PATCH** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments/{experimentKey} | Patch experiment
 *ExperimentsBetaApi* | [**resetExperiment**](docs/ExperimentsBetaApi.md#resetExperiment) | **DELETE** /api/v2/flags/{projectKey}/{featureFlagKey}/experiments/{environmentKey}/{metricKey}/results | Reset experiment results
 *FeatureFlagsApi* | [**copyFeatureFlag**](docs/FeatureFlagsApi.md#copyFeatureFlag) | **POST** /api/v2/flags/{projectKey}/{featureFlagKey}/copy | Copy feature flag
 *FeatureFlagsApi* | [**deleteFeatureFlag**](docs/FeatureFlagsApi.md#deleteFeatureFlag) | **DELETE** /api/v2/flags/{projectKey}/{featureFlagKey} | Delete feature flag
@@ -761,6 +775,7 @@ Class | Method | HTTP request | Description
  - [CustomWorkflowOutputRep](docs/CustomWorkflowOutputRep.md)
  - [CustomWorkflowStageMeta](docs/CustomWorkflowStageMeta.md)
  - [CustomWorkflowsListingOutputRep](docs/CustomWorkflowsListingOutputRep.md)
+ - [Decimal](docs/Decimal.md)
  - [DefaultClientSideAvailabilityPost](docs/DefaultClientSideAvailabilityPost.md)
  - [Defaults](docs/Defaults.md)
  - [DependentFlag](docs/DependentFlag.md)
@@ -771,14 +786,18 @@ Class | Method | HTTP request | Description
  - [Destinations](docs/Destinations.md)
  - [Environment](docs/Environment.md)
  - [EnvironmentPost](docs/EnvironmentPost.md)
+ - [EvaluationReason](docs/EvaluationReason.md)
  - [ExecutionOutputRep](docs/ExecutionOutputRep.md)
  - [ExperimentAllocationRep](docs/ExperimentAllocationRep.md)
+ - [ExperimentCollectionRep](docs/ExperimentCollectionRep.md)
  - [ExperimentEnabledPeriodRep](docs/ExperimentEnabledPeriodRep.md)
  - [ExperimentEnvironmentSettingRep](docs/ExperimentEnvironmentSettingRep.md)
  - [ExperimentInfoRep](docs/ExperimentInfoRep.md)
  - [ExperimentMetadataRep](docs/ExperimentMetadataRep.md)
+ - [ExperimentPatchInput](docs/ExperimentPatchInput.md)
+ - [ExperimentPost](docs/ExperimentPost.md)
  - [ExperimentRep](docs/ExperimentRep.md)
- - [ExperimentResultsRep](docs/ExperimentResultsRep.md)
+ - [ExperimentResults](docs/ExperimentResults.md)
  - [ExperimentStatsRep](docs/ExperimentStatsRep.md)
  - [ExperimentTimeSeriesSlice](docs/ExperimentTimeSeriesSlice.md)
  - [ExperimentTimeSeriesVariationSlice](docs/ExperimentTimeSeriesVariationSlice.md)
@@ -805,11 +824,13 @@ Class | Method | HTTP request | Description
  - [FlagCopyConfigEnvironment](docs/FlagCopyConfigEnvironment.md)
  - [FlagCopyConfigPost](docs/FlagCopyConfigPost.md)
  - [FlagGlobalAttributesRep](docs/FlagGlobalAttributesRep.md)
+ - [FlagInput](docs/FlagInput.md)
  - [FlagLinkCollectionRep](docs/FlagLinkCollectionRep.md)
  - [FlagLinkMember](docs/FlagLinkMember.md)
  - [FlagLinkPost](docs/FlagLinkPost.md)
  - [FlagLinkRep](docs/FlagLinkRep.md)
  - [FlagListingRep](docs/FlagListingRep.md)
+ - [FlagRep](docs/FlagRep.md)
  - [FlagScheduledChangesInput](docs/FlagScheduledChangesInput.md)
  - [FlagStatusRep](docs/FlagStatusRep.md)
  - [FlagSummary](docs/FlagSummary.md)
@@ -831,6 +852,9 @@ Class | Method | HTTP request | Description
  - [Integrations](docs/Integrations.md)
  - [InvalidRequestErrorRep](docs/InvalidRequestErrorRep.md)
  - [IpList](docs/IpList.md)
+ - [IterationExpandableProperties](docs/IterationExpandableProperties.md)
+ - [IterationInput](docs/IterationInput.md)
+ - [IterationRep](docs/IterationRep.md)
  - [LastSeenMetadata](docs/LastSeenMetadata.md)
  - [Link](docs/Link.md)
  - [Member](docs/Member.md)
@@ -843,6 +867,7 @@ Class | Method | HTTP request | Description
  - [Members](docs/Members.md)
  - [MethodNotAllowedErrorRep](docs/MethodNotAllowedErrorRep.md)
  - [MetricCollectionRep](docs/MetricCollectionRep.md)
+ - [MetricInput](docs/MetricInput.md)
  - [MetricListingRep](docs/MetricListingRep.md)
  - [MetricPost](docs/MetricPost.md)
  - [MetricRep](docs/MetricRep.md)
@@ -853,6 +878,8 @@ Class | Method | HTTP request | Description
  - [MultiEnvironmentDependentFlags](docs/MultiEnvironmentDependentFlags.md)
  - [NewMemberForm](docs/NewMemberForm.md)
  - [NotFoundErrorRep](docs/NotFoundErrorRep.md)
+ - [NullDecimal](docs/NullDecimal.md)
+ - [ParameterRep](docs/ParameterRep.md)
  - [ParentResourceRep](docs/ParentResourceRep.md)
  - [PatchFailedErrorRep](docs/PatchFailedErrorRep.md)
  - [PatchOperation](docs/PatchOperation.md)
@@ -932,6 +959,9 @@ Class | Method | HTTP request | Description
  - [Token](docs/Token.md)
  - [TokenDataRep](docs/TokenDataRep.md)
  - [Tokens](docs/Tokens.md)
+ - [TreatmentInput](docs/TreatmentInput.md)
+ - [TreatmentParameterInput](docs/TreatmentParameterInput.md)
+ - [TreatmentRep](docs/TreatmentRep.md)
  - [TriggerPost](docs/TriggerPost.md)
  - [TriggerWorkflowCollectionRep](docs/TriggerWorkflowCollectionRep.md)
  - [TriggerWorkflowRep](docs/TriggerWorkflowRep.md)

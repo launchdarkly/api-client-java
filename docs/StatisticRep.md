@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **enabled** | **Boolean** |  | 
 **version** | **Integer** |  | 
 **hunkCount** | **Integer** |  | 
+**fileCount** | **Integer** |  | 
 **links** | [**Map&lt;String, Link&gt;**](Link.md) |  | 
 
 

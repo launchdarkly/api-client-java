@@ -88,7 +88,7 @@ null (empty response body)
 
 <a name="createBigSegmentImport"></a>
 # **createBigSegmentImport**
-> createBigSegmentImport(projectKey, environmentKey, segmentKey)
+> createBigSegmentImport(projectKey, environmentKey, segmentKey, file, mode)
 
 Create Big Segment import
 
@@ -119,8 +119,10 @@ public class Example {
     String projectKey = "projectKey_example"; // String | The project key
     String environmentKey = "environmentKey_example"; // String | The environment key
     String segmentKey = "segmentKey_example"; // String | The segment key
+    File file = new File("/path/to/file"); // File | CSV file containing keys
+    String mode = "mode_example"; // String | Import mode. Use either `merge` or `replace`
     try {
-      apiInstance.createBigSegmentImport(projectKey, environmentKey, segmentKey);
+      apiInstance.createBigSegmentImport(projectKey, environmentKey, segmentKey, file, mode);
     } catch (ApiException e) {
       System.err.println("Exception when calling SegmentsBetaApi#createBigSegmentImport");
       System.err.println("Status code: " + e.getCode());
@@ -139,6 +141,8 @@ Name | Type | Description  | Notes
  **projectKey** | **String**| The project key |
  **environmentKey** | **String**| The environment key |
  **segmentKey** | **String**| The segment key |
+ **file** | **File**| CSV file containing keys | [optional]
+ **mode** | **String**| Import mode. Use either &#x60;merge&#x60; or &#x60;replace&#x60; | [optional]
 
 ### Return type
 
@@ -150,13 +154,13 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Action succeeded |  -  |
+**204** | Import request submitted successfully |  -  |
 **400** | Invalid request |  -  |
 **401** | Invalid access token |  -  |
 **404** | Invalid resource identifier |  -  |
