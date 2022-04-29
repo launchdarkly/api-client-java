@@ -30,7 +30,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * UserRecordRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-12T21:37:48.604008Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-29T20:20:42.888981Z[Etc/UTC]")
 public class UserRecordRep {
   public static final String SERIALIZED_NAME_LAST_PING = "lastPing";
   @SerializedName(SERIALIZED_NAME_LAST_PING)

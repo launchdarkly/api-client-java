@@ -35,7 +35,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * UserRecord
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-12T21:37:48.604008Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-29T20:20:42.888981Z[Etc/UTC]")
 public class UserRecord {
   public static final String SERIALIZED_NAME_LAST_PING = "lastPing";
   @SerializedName(SERIALIZED_NAME_LAST_PING)
@@ -200,7 +200,7 @@ public class UserRecord {
    * @return links
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "{\"parent\":{\"href\":\"/api/v2/users/my-project/my-environment\",\"type\":\"application/json\"},\"self\":{\"href\":\"/api/v2/users/my-project/my-environment/my-user\",\"type\":\"application/json\"},\"settings\":{\"href\":\"/api/v2/users/my-project/my-environment/my-user/flags\",\"type\":\"text/html\"},\"site\":{\"href\":\"/my-project/my-environment/users/my-user\",\"type\":\"text/html\"}}", value = "")
 
   public Map<String, Link> getLinks() {
     return links;

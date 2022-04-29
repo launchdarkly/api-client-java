@@ -20,10 +20,15 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.launchdarkly.api.model.Access;
+import com.launchdarkly.api.model.FlagListingRep;
 import com.launchdarkly.api.model.Link;
+import com.launchdarkly.api.model.MemberSummary;
+import com.launchdarkly.api.model.Modification;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,8 +36,12 @@ import java.util.Map;
 /**
  * MetricRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-12T21:37:48.604008Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-29T20:20:42.888981Z[Etc/UTC]")
 public class MetricRep {
+  public static final String SERIALIZED_NAME_ID = "_id";
+  @SerializedName(SERIALIZED_NAME_ID)
+  private String id;
+
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
   private String key;
@@ -41,9 +50,204 @@ public class MetricRep {
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
+  /**
+   * Gets or Sets kind
+   */
+  @JsonAdapter(KindEnum.Adapter.class)
+  public enum KindEnum {
+    PAGEVIEW("pageview"),
+    
+    CLICK("click"),
+    
+    CUSTOM("custom");
+
+    private String value;
+
+    KindEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static KindEnum fromValue(String value) {
+      for (KindEnum b : KindEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<KindEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final KindEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public KindEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return KindEnum.fromValue(value);
+      }
+    }
+  }
+
+  public static final String SERIALIZED_NAME_KIND = "kind";
+  @SerializedName(SERIALIZED_NAME_KIND)
+  private KindEnum kind;
+
+  public static final String SERIALIZED_NAME_ATTACHED_FLAG_COUNT = "_attachedFlagCount";
+  @SerializedName(SERIALIZED_NAME_ATTACHED_FLAG_COUNT)
+  private Integer attachedFlagCount;
+
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
   private Map<String, Link> links = new HashMap<String, Link>();
+
+  public static final String SERIALIZED_NAME_SITE = "_site";
+  @SerializedName(SERIALIZED_NAME_SITE)
+  private Link site;
+
+  public static final String SERIALIZED_NAME_ACCESS = "_access";
+  @SerializedName(SERIALIZED_NAME_ACCESS)
+  private Access access;
+
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
+  private List<String> tags = new ArrayList<String>();
+
+  public static final String SERIALIZED_NAME_CREATION_DATE = "_creationDate";
+  @SerializedName(SERIALIZED_NAME_CREATION_DATE)
+  private Long creationDate;
+
+  public static final String SERIALIZED_NAME_LAST_MODIFIED = "lastModified";
+  @SerializedName(SERIALIZED_NAME_LAST_MODIFIED)
+  private Modification lastModified;
+
+  public static final String SERIALIZED_NAME_MAINTAINER_ID = "maintainerId";
+  @SerializedName(SERIALIZED_NAME_MAINTAINER_ID)
+  private String maintainerId;
+
+  public static final String SERIALIZED_NAME_MAINTAINER = "_maintainer";
+  @SerializedName(SERIALIZED_NAME_MAINTAINER)
+  private MemberSummary maintainer;
+
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  private String description;
+
+  public static final String SERIALIZED_NAME_IS_NUMERIC = "isNumeric";
+  @SerializedName(SERIALIZED_NAME_IS_NUMERIC)
+  private Boolean isNumeric;
+
+  /**
+   * Gets or Sets successCriteria
+   */
+  @JsonAdapter(SuccessCriteriaEnum.Adapter.class)
+  public enum SuccessCriteriaEnum {
+    HIGHERTHANBASELINE("HigherThanBaseline"),
+    
+    LOWERTHANBASELINE("LowerThanBaseline");
+
+    private String value;
+
+    SuccessCriteriaEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static SuccessCriteriaEnum fromValue(String value) {
+      for (SuccessCriteriaEnum b : SuccessCriteriaEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<SuccessCriteriaEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final SuccessCriteriaEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public SuccessCriteriaEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return SuccessCriteriaEnum.fromValue(value);
+      }
+    }
+  }
+
+  public static final String SERIALIZED_NAME_SUCCESS_CRITERIA = "successCriteria";
+  @SerializedName(SERIALIZED_NAME_SUCCESS_CRITERIA)
+  private SuccessCriteriaEnum successCriteria;
+
+  public static final String SERIALIZED_NAME_UNIT = "unit";
+  @SerializedName(SERIALIZED_NAME_UNIT)
+  private String unit;
+
+  public static final String SERIALIZED_NAME_EVENT_KEY = "eventKey";
+  @SerializedName(SERIALIZED_NAME_EVENT_KEY)
+  private String eventKey;
+
+  public static final String SERIALIZED_NAME_IS_ACTIVE = "isActive";
+  @SerializedName(SERIALIZED_NAME_IS_ACTIVE)
+  private Boolean isActive;
+
+  public static final String SERIALIZED_NAME_ATTACHED_FEATURES = "_attachedFeatures";
+  @SerializedName(SERIALIZED_NAME_ATTACHED_FEATURES)
+  private List<FlagListingRep> attachedFeatures = null;
+
+  public static final String SERIALIZED_NAME_VERSION = "_version";
+  @SerializedName(SERIALIZED_NAME_VERSION)
+  private Integer version;
+
+  public static final String SERIALIZED_NAME_SELECTOR = "selector";
+  @SerializedName(SERIALIZED_NAME_SELECTOR)
+  private String selector;
+
+  public static final String SERIALIZED_NAME_URLS = "urls";
+  @SerializedName(SERIALIZED_NAME_URLS)
+  private List<Object> urls = null;
+
+
+  public MetricRep id(String id) {
+    
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Get id
+   * @return id
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "5902deadbeef667524a01290", required = true, value = "")
+
+  public String getId() {
+    return id;
+  }
+
+
+  public void setId(String id) {
+    this.id = id;
+  }
 
 
   public MetricRep key(String key) {
@@ -57,7 +261,7 @@ public class MetricRep {
    * @return key
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "my-metric", required = true, value = "")
 
   public String getKey() {
     return key;
@@ -80,7 +284,7 @@ public class MetricRep {
    * @return name
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "my-metric", required = true, value = "")
 
   public String getName() {
     return name;
@@ -89,6 +293,52 @@ public class MetricRep {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  public MetricRep kind(KindEnum kind) {
+    
+    this.kind = kind;
+    return this;
+  }
+
+   /**
+   * Get kind
+   * @return kind
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
+
+  public KindEnum getKind() {
+    return kind;
+  }
+
+
+  public void setKind(KindEnum kind) {
+    this.kind = kind;
+  }
+
+
+  public MetricRep attachedFlagCount(Integer attachedFlagCount) {
+    
+    this.attachedFlagCount = attachedFlagCount;
+    return this;
+  }
+
+   /**
+   * Get attachedFlagCount
+   * @return attachedFlagCount
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "0", value = "")
+
+  public Integer getAttachedFlagCount() {
+    return attachedFlagCount;
+  }
+
+
+  public void setAttachedFlagCount(Integer attachedFlagCount) {
+    this.attachedFlagCount = attachedFlagCount;
   }
 
 
@@ -108,7 +358,7 @@ public class MetricRep {
    * @return links
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "{\"self\":{\"href\":\"/api/v2/metrics/my-project/my-metric\",\"type\":\"application/json\"}}", required = true, value = "")
+  @ApiModelProperty(example = "{\"parent\":{\"href\":\"/api/v2/metrics/my-project\",\"type\":\"application/json\"},\"self\":{\"href\":\"/api/v2/metrics/my-project/my-metric\",\"type\":\"application/json\"}}", required = true, value = "")
 
   public Map<String, Link> getLinks() {
     return links;
@@ -117,6 +367,418 @@ public class MetricRep {
 
   public void setLinks(Map<String, Link> links) {
     this.links = links;
+  }
+
+
+  public MetricRep site(Link site) {
+    
+    this.site = site;
+    return this;
+  }
+
+   /**
+   * Get site
+   * @return site
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Link getSite() {
+    return site;
+  }
+
+
+  public void setSite(Link site) {
+    this.site = site;
+  }
+
+
+  public MetricRep access(Access access) {
+    
+    this.access = access;
+    return this;
+  }
+
+   /**
+   * Get access
+   * @return access
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Access getAccess() {
+    return access;
+  }
+
+
+  public void setAccess(Access access) {
+    this.access = access;
+  }
+
+
+  public MetricRep tags(List<String> tags) {
+    
+    this.tags = tags;
+    return this;
+  }
+
+  public MetricRep addTagsItem(String tagsItem) {
+    this.tags.add(tagsItem);
+    return this;
+  }
+
+   /**
+   * Get tags
+   * @return tags
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "[]", required = true, value = "")
+
+  public List<String> getTags() {
+    return tags;
+  }
+
+
+  public void setTags(List<String> tags) {
+    this.tags = tags;
+  }
+
+
+  public MetricRep creationDate(Long creationDate) {
+    
+    this.creationDate = creationDate;
+    return this;
+  }
+
+   /**
+   * Get creationDate
+   * @return creationDate
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
+
+  public Long getCreationDate() {
+    return creationDate;
+  }
+
+
+  public void setCreationDate(Long creationDate) {
+    this.creationDate = creationDate;
+  }
+
+
+  public MetricRep lastModified(Modification lastModified) {
+    
+    this.lastModified = lastModified;
+    return this;
+  }
+
+   /**
+   * Get lastModified
+   * @return lastModified
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Modification getLastModified() {
+    return lastModified;
+  }
+
+
+  public void setLastModified(Modification lastModified) {
+    this.lastModified = lastModified;
+  }
+
+
+  public MetricRep maintainerId(String maintainerId) {
+    
+    this.maintainerId = maintainerId;
+    return this;
+  }
+
+   /**
+   * Get maintainerId
+   * @return maintainerId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "569fdeadbeef1644facecafe", value = "")
+
+  public String getMaintainerId() {
+    return maintainerId;
+  }
+
+
+  public void setMaintainerId(String maintainerId) {
+    this.maintainerId = maintainerId;
+  }
+
+
+  public MetricRep maintainer(MemberSummary maintainer) {
+    
+    this.maintainer = maintainer;
+    return this;
+  }
+
+   /**
+   * Get maintainer
+   * @return maintainer
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public MemberSummary getMaintainer() {
+    return maintainer;
+  }
+
+
+  public void setMaintainer(MemberSummary maintainer) {
+    this.maintainer = maintainer;
+  }
+
+
+  public MetricRep description(String description) {
+    
+    this.description = description;
+    return this;
+  }
+
+   /**
+   * Get description
+   * @return description
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getDescription() {
+    return description;
+  }
+
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+
+  public MetricRep isNumeric(Boolean isNumeric) {
+    
+    this.isNumeric = isNumeric;
+    return this;
+  }
+
+   /**
+   * Get isNumeric
+   * @return isNumeric
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getIsNumeric() {
+    return isNumeric;
+  }
+
+
+  public void setIsNumeric(Boolean isNumeric) {
+    this.isNumeric = isNumeric;
+  }
+
+
+  public MetricRep successCriteria(SuccessCriteriaEnum successCriteria) {
+    
+    this.successCriteria = successCriteria;
+    return this;
+  }
+
+   /**
+   * Get successCriteria
+   * @return successCriteria
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public SuccessCriteriaEnum getSuccessCriteria() {
+    return successCriteria;
+  }
+
+
+  public void setSuccessCriteria(SuccessCriteriaEnum successCriteria) {
+    this.successCriteria = successCriteria;
+  }
+
+
+  public MetricRep unit(String unit) {
+    
+    this.unit = unit;
+    return this;
+  }
+
+   /**
+   * Get unit
+   * @return unit
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getUnit() {
+    return unit;
+  }
+
+
+  public void setUnit(String unit) {
+    this.unit = unit;
+  }
+
+
+  public MetricRep eventKey(String eventKey) {
+    
+    this.eventKey = eventKey;
+    return this;
+  }
+
+   /**
+   * Get eventKey
+   * @return eventKey
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getEventKey() {
+    return eventKey;
+  }
+
+
+  public void setEventKey(String eventKey) {
+    this.eventKey = eventKey;
+  }
+
+
+  public MetricRep isActive(Boolean isActive) {
+    
+    this.isActive = isActive;
+    return this;
+  }
+
+   /**
+   * Get isActive
+   * @return isActive
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getIsActive() {
+    return isActive;
+  }
+
+
+  public void setIsActive(Boolean isActive) {
+    this.isActive = isActive;
+  }
+
+
+  public MetricRep attachedFeatures(List<FlagListingRep> attachedFeatures) {
+    
+    this.attachedFeatures = attachedFeatures;
+    return this;
+  }
+
+  public MetricRep addAttachedFeaturesItem(FlagListingRep attachedFeaturesItem) {
+    if (this.attachedFeatures == null) {
+      this.attachedFeatures = new ArrayList<FlagListingRep>();
+    }
+    this.attachedFeatures.add(attachedFeaturesItem);
+    return this;
+  }
+
+   /**
+   * Get attachedFeatures
+   * @return attachedFeatures
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<FlagListingRep> getAttachedFeatures() {
+    return attachedFeatures;
+  }
+
+
+  public void setAttachedFeatures(List<FlagListingRep> attachedFeatures) {
+    this.attachedFeatures = attachedFeatures;
+  }
+
+
+  public MetricRep version(Integer version) {
+    
+    this.version = version;
+    return this;
+  }
+
+   /**
+   * Get version
+   * @return version
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Integer getVersion() {
+    return version;
+  }
+
+
+  public void setVersion(Integer version) {
+    this.version = version;
+  }
+
+
+  public MetricRep selector(String selector) {
+    
+    this.selector = selector;
+    return this;
+  }
+
+   /**
+   * Get selector
+   * @return selector
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getSelector() {
+    return selector;
+  }
+
+
+  public void setSelector(String selector) {
+    this.selector = selector;
+  }
+
+
+  public MetricRep urls(List<Object> urls) {
+    
+    this.urls = urls;
+    return this;
+  }
+
+  public MetricRep addUrlsItem(Object urlsItem) {
+    if (this.urls == null) {
+      this.urls = new ArrayList<Object>();
+    }
+    this.urls.add(urlsItem);
+    return this;
+  }
+
+   /**
+   * Get urls
+   * @return urls
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<Object> getUrls() {
+    return urls;
+  }
+
+
+  public void setUrls(List<Object> urls) {
+    this.urls = urls;
   }
 
 
@@ -129,23 +791,63 @@ public class MetricRep {
       return false;
     }
     MetricRep metricRep = (MetricRep) o;
-    return Objects.equals(this.key, metricRep.key) &&
+    return Objects.equals(this.id, metricRep.id) &&
+        Objects.equals(this.key, metricRep.key) &&
         Objects.equals(this.name, metricRep.name) &&
-        Objects.equals(this.links, metricRep.links);
+        Objects.equals(this.kind, metricRep.kind) &&
+        Objects.equals(this.attachedFlagCount, metricRep.attachedFlagCount) &&
+        Objects.equals(this.links, metricRep.links) &&
+        Objects.equals(this.site, metricRep.site) &&
+        Objects.equals(this.access, metricRep.access) &&
+        Objects.equals(this.tags, metricRep.tags) &&
+        Objects.equals(this.creationDate, metricRep.creationDate) &&
+        Objects.equals(this.lastModified, metricRep.lastModified) &&
+        Objects.equals(this.maintainerId, metricRep.maintainerId) &&
+        Objects.equals(this.maintainer, metricRep.maintainer) &&
+        Objects.equals(this.description, metricRep.description) &&
+        Objects.equals(this.isNumeric, metricRep.isNumeric) &&
+        Objects.equals(this.successCriteria, metricRep.successCriteria) &&
+        Objects.equals(this.unit, metricRep.unit) &&
+        Objects.equals(this.eventKey, metricRep.eventKey) &&
+        Objects.equals(this.isActive, metricRep.isActive) &&
+        Objects.equals(this.attachedFeatures, metricRep.attachedFeatures) &&
+        Objects.equals(this.version, metricRep.version) &&
+        Objects.equals(this.selector, metricRep.selector) &&
+        Objects.equals(this.urls, metricRep.urls);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, name, links);
+    return Objects.hash(id, key, name, kind, attachedFlagCount, links, site, access, tags, creationDate, lastModified, maintainerId, maintainer, description, isNumeric, successCriteria, unit, eventKey, isActive, attachedFeatures, version, selector, urls);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class MetricRep {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
+    sb.append("    attachedFlagCount: ").append(toIndentedString(attachedFlagCount)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    sb.append("    site: ").append(toIndentedString(site)).append("\n");
+    sb.append("    access: ").append(toIndentedString(access)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+    sb.append("    creationDate: ").append(toIndentedString(creationDate)).append("\n");
+    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
+    sb.append("    maintainerId: ").append(toIndentedString(maintainerId)).append("\n");
+    sb.append("    maintainer: ").append(toIndentedString(maintainer)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    isNumeric: ").append(toIndentedString(isNumeric)).append("\n");
+    sb.append("    successCriteria: ").append(toIndentedString(successCriteria)).append("\n");
+    sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
+    sb.append("    eventKey: ").append(toIndentedString(eventKey)).append("\n");
+    sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
+    sb.append("    attachedFeatures: ").append(toIndentedString(attachedFeatures)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    selector: ").append(toIndentedString(selector)).append("\n");
+    sb.append("    urls: ").append(toIndentedString(urls)).append("\n");
     sb.append("}");
     return sb.toString();
   }

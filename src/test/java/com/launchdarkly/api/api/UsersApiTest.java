@@ -22,6 +22,7 @@ import com.launchdarkly.api.model.StatusConflictErrorRep;
 import com.launchdarkly.api.model.UnauthorizedErrorRep;
 import com.launchdarkly.api.model.UserRecord;
 import com.launchdarkly.api.model.Users;
+import com.launchdarkly.api.model.UsersRep;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -110,7 +111,7 @@ public class UsersApiTest {
         String environmentKey = null;
         Long limit = null;
         String searchAfter = null;
-                Users response = api.getUsers(projectKey, environmentKey, limit, searchAfter);
+                UsersRep response = api.getUsers(projectKey, environmentKey, limit, searchAfter);
         // TODO: test validations
     }
     

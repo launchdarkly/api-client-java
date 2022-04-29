@@ -6,7 +6,7 @@ This REST API is for custom integrations, data export, or automating your featur
 
 LaunchDarkly REST API
 - API version: 2.0
-  - Build date: 2022-04-12T21:37:48.604008Z[Etc/UTC]
+  - Build date: 2022-04-29T20:20:42.888981Z[Etc/UTC]
 
 # Overview
 
@@ -492,7 +492,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>9.0.0</version>
+  <version>9.0.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -502,7 +502,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.launchdarkly:api-client:9.0.0"
+compile "com.launchdarkly:api-client:9.0.1"
 ```
 
 ### Others
@@ -515,7 +515,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-9.0.0.jar`
+* `target/api-client-9.0.1.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -575,7 +575,7 @@ Class | Method | HTTP request | Description
 *AccountMembersApi* | [**getMember**](docs/AccountMembersApi.md#getMember) | **GET** /api/v2/members/{id} | Get account member
 *AccountMembersApi* | [**getMembers**](docs/AccountMembersApi.md#getMembers) | **GET** /api/v2/members | List account members
 *AccountMembersApi* | [**patchMember**](docs/AccountMembersApi.md#patchMember) | **PATCH** /api/v2/members/{id} | Modify an account member
-*AccountMembersApi* | [**postMemberTeams**](docs/AccountMembersApi.md#postMemberTeams) | **POST** /api/v2/members/{id}/teams | Add member to teams
+*AccountMembersApi* | [**postMemberTeams**](docs/AccountMembersApi.md#postMemberTeams) | **POST** /api/v2/members/{id}/teams | Add a member to teams
 *AccountMembersApi* | [**postMembers**](docs/AccountMembersApi.md#postMembers) | **POST** /api/v2/members | Invite new members
 *AccountUsageBetaApi* | [**getEvaluationsUsage**](docs/AccountUsageBetaApi.md#getEvaluationsUsage) | **GET** /api/v2/usage/evaluations/{projectKey}/{environmentKey}/{featureFlagKey} | Get evaluations usage
 *AccountUsageBetaApi* | [**getEventsUsage**](docs/AccountUsageBetaApi.md#getEventsUsage) | **GET** /api/v2/usage/events/{type} | Get events usage
@@ -711,7 +711,7 @@ Class | Method | HTTP request | Description
 *TeamsBetaApi* | [**getTeams**](docs/TeamsBetaApi.md#getTeams) | **GET** /api/v2/teams | List teams
 *TeamsBetaApi* | [**patchTeam**](docs/TeamsBetaApi.md#patchTeam) | **PATCH** /api/v2/teams/{teamKey} | Update team
 *TeamsBetaApi* | [**postTeam**](docs/TeamsBetaApi.md#postTeam) | **POST** /api/v2/teams | Create team
-*TeamsBetaApi* | [**postTeamMembers**](docs/TeamsBetaApi.md#postTeamMembers) | **POST** /api/v2/teams/{teamKey}/members | Add members to team
+*TeamsBetaApi* | [**postTeamMembers**](docs/TeamsBetaApi.md#postTeamMembers) | **POST** /api/v2/teams/{teamKey}/members | Add multiple members to team
 *UserSettingsApi* | [**getExpiringFlagsForUser**](docs/UserSettingsApi.md#getExpiringFlagsForUser) | **GET** /api/v2/users/{projectKey}/{userKey}/expiring-user-targets/{environmentKey} | Get expiring dates on flags for user
 *UserSettingsApi* | [**getUserFlagSetting**](docs/UserSettingsApi.md#getUserFlagSetting) | **GET** /api/v2/users/{projectKey}/{environmentKey}/{userKey}/flags/{featureFlagKey} | Get flag setting for user
 *UserSettingsApi* | [**getUserFlagSettings**](docs/UserSettingsApi.md#getUserFlagSettings) | **GET** /api/v2/users/{projectKey}/{environmentKey}/{userKey}/flags | List flag settings for user
@@ -775,7 +775,6 @@ Class | Method | HTTP request | Description
  - [CustomWorkflowOutputRep](docs/CustomWorkflowOutputRep.md)
  - [CustomWorkflowStageMeta](docs/CustomWorkflowStageMeta.md)
  - [CustomWorkflowsListingOutputRep](docs/CustomWorkflowsListingOutputRep.md)
- - [Decimal](docs/Decimal.md)
  - [DefaultClientSideAvailabilityPost](docs/DefaultClientSideAvailabilityPost.md)
  - [Defaults](docs/Defaults.md)
  - [DependentFlag](docs/DependentFlag.md)
@@ -788,15 +787,16 @@ Class | Method | HTTP request | Description
  - [EnvironmentPost](docs/EnvironmentPost.md)
  - [EvaluationReason](docs/EvaluationReason.md)
  - [ExecutionOutputRep](docs/ExecutionOutputRep.md)
+ - [Experiment](docs/Experiment.md)
  - [ExperimentAllocationRep](docs/ExperimentAllocationRep.md)
  - [ExperimentCollectionRep](docs/ExperimentCollectionRep.md)
  - [ExperimentEnabledPeriodRep](docs/ExperimentEnabledPeriodRep.md)
  - [ExperimentEnvironmentSettingRep](docs/ExperimentEnvironmentSettingRep.md)
+ - [ExperimentExpandableProperties](docs/ExperimentExpandableProperties.md)
  - [ExperimentInfoRep](docs/ExperimentInfoRep.md)
  - [ExperimentMetadataRep](docs/ExperimentMetadataRep.md)
  - [ExperimentPatchInput](docs/ExperimentPatchInput.md)
  - [ExperimentPost](docs/ExperimentPost.md)
- - [ExperimentRep](docs/ExperimentRep.md)
  - [ExperimentResults](docs/ExperimentResults.md)
  - [ExperimentStatsRep](docs/ExperimentStatsRep.md)
  - [ExperimentTimeSeriesSlice](docs/ExperimentTimeSeriesSlice.md)
@@ -856,6 +856,7 @@ Class | Method | HTTP request | Description
  - [IterationInput](docs/IterationInput.md)
  - [IterationRep](docs/IterationRep.md)
  - [LastSeenMetadata](docs/LastSeenMetadata.md)
+ - [LegacyExperimentRep](docs/LegacyExperimentRep.md)
  - [Link](docs/Link.md)
  - [Member](docs/Member.md)
  - [MemberDataRep](docs/MemberDataRep.md)
@@ -872,13 +873,13 @@ Class | Method | HTTP request | Description
  - [MetricPost](docs/MetricPost.md)
  - [MetricRep](docs/MetricRep.md)
  - [MetricSeen](docs/MetricSeen.md)
+ - [MetricV2Rep](docs/MetricV2Rep.md)
  - [ModelImport](docs/ModelImport.md)
  - [Modification](docs/Modification.md)
  - [MultiEnvironmentDependentFlag](docs/MultiEnvironmentDependentFlag.md)
  - [MultiEnvironmentDependentFlags](docs/MultiEnvironmentDependentFlags.md)
  - [NewMemberForm](docs/NewMemberForm.md)
  - [NotFoundErrorRep](docs/NotFoundErrorRep.md)
- - [NullDecimal](docs/NullDecimal.md)
  - [ParameterRep](docs/ParameterRep.md)
  - [ParentResourceRep](docs/ParentResourceRep.md)
  - [PatchFailedErrorRep](docs/PatchFailedErrorRep.md)
@@ -938,6 +939,7 @@ Class | Method | HTTP request | Description
  - [StatementRep](docs/StatementRep.md)
  - [StatisticCollectionRep](docs/StatisticCollectionRep.md)
  - [StatisticRep](docs/StatisticRep.md)
+ - [StatisticsRep](docs/StatisticsRep.md)
  - [StatisticsRoot](docs/StatisticsRoot.md)
  - [StatusConflictErrorRep](docs/StatusConflictErrorRep.md)
  - [SubjectDataRep](docs/SubjectDataRep.md)
@@ -977,6 +979,7 @@ Class | Method | HTTP request | Description
  - [UserSegmentRule](docs/UserSegmentRule.md)
  - [UserSegments](docs/UserSegments.md)
  - [Users](docs/Users.md)
+ - [UsersRep](docs/UsersRep.md)
  - [ValuePut](docs/ValuePut.md)
  - [Variation](docs/Variation.md)
  - [VariationOrRolloutRep](docs/VariationOrRolloutRep.md)

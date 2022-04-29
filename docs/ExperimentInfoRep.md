@@ -8,7 +8,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **baselineIdx** | **Integer** |  | 
-**items** | [**List&lt;ExperimentRep&gt;**](ExperimentRep.md) |  | 
+**items** | [**List&lt;LegacyExperimentRep&gt;**](LegacyExperimentRep.md) |  | 
 
 
 

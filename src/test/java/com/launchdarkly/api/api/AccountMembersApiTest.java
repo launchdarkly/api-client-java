@@ -60,7 +60,7 @@ public class AccountMembersApiTest {
     /**
      * Get account member
      *
-     * Get a single account member by ID
+     * Get a single account member by ID.  &#x60;me&#x60; is a reserved value for the &#x60;id&#x60; parameter and returns the caller&#39;s member information. 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -107,9 +107,9 @@ public class AccountMembersApiTest {
     }
     
     /**
-     * Add member to teams
+     * Add a member to teams
      *
-     * Add member to team(s)
+     * Add one member to one or more teams.
      *
      * @throws ApiException
      *          if the Api call fails

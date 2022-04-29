@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.launchdarkly.api.model.NullDecimal;
 import com.launchdarkly.api.model.ParameterRep;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -31,7 +30,7 @@ import java.util.List;
 /**
  * TreatmentRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-12T21:37:48.604008Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-29T20:20:42.888981Z[Etc/UTC]")
 public class TreatmentRep {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -43,7 +42,7 @@ public class TreatmentRep {
 
   public static final String SERIALIZED_NAME_ALLOCATION_PERCENT = "allocationPercent";
   @SerializedName(SERIALIZED_NAME_ALLOCATION_PERCENT)
-  private NullDecimal allocationPercent;
+  private String allocationPercent;
 
   public static final String SERIALIZED_NAME_BASELINE = "baseline";
   @SerializedName(SERIALIZED_NAME_BASELINE)
@@ -100,7 +99,7 @@ public class TreatmentRep {
   }
 
 
-  public TreatmentRep allocationPercent(NullDecimal allocationPercent) {
+  public TreatmentRep allocationPercent(String allocationPercent) {
     
     this.allocationPercent = allocationPercent;
     return this;
@@ -113,12 +112,12 @@ public class TreatmentRep {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public NullDecimal getAllocationPercent() {
+  public String getAllocationPercent() {
     return allocationPercent;
   }
 
 
-  public void setAllocationPercent(NullDecimal allocationPercent) {
+  public void setAllocationPercent(String allocationPercent) {
     this.allocationPercent = allocationPercent;
   }
 

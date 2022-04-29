@@ -19,7 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.launchdarkly.api.model.FlagRep;
-import com.launchdarkly.api.model.MetricRep;
+import com.launchdarkly.api.model.MetricV2Rep;
 import com.launchdarkly.api.model.TreatmentRep;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -93,6 +93,14 @@ public class IterationRepTest {
     @Test
     public void winningTreatmentIdTest() {
         // TODO: test winningTreatmentId
+    }
+
+    /**
+     * Test the property 'winningReason'
+     */
+    @Test
+    public void winningReasonTest() {
+        // TODO: test winningReason
     }
 
     /**

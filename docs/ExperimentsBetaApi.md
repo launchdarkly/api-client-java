@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="createExperiment"></a>
 # **createExperiment**
-> ExperimentRep createExperiment(projectKey, environmentKey, experimentPost)
+> Experiment createExperiment(projectKey, environmentKey, experimentPost)
 
 Create experiment
 
@@ -48,7 +48,7 @@ public class Example {
     String environmentKey = "environmentKey_example"; // String | The environment key
     ExperimentPost experimentPost = new ExperimentPost(); // ExperimentPost | 
     try {
-      ExperimentRep result = apiInstance.createExperiment(projectKey, environmentKey, experimentPost);
+      Experiment result = apiInstance.createExperiment(projectKey, environmentKey, experimentPost);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ExperimentsBetaApi#createExperiment");
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExperimentRep**](ExperimentRep.md)
+[**Experiment**](Experiment.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 <a name="getExperiment"></a>
 # **getExperiment**
-> ExperimentRep getExperiment(projectKey, environmentKey, experimentKey)
+> Experiment getExperiment(projectKey, environmentKey, experimentKey)
 
 Get experiment
 
@@ -206,7 +206,7 @@ public class Example {
     String environmentKey = "environmentKey_example"; // String | The environment key
     String experimentKey = "experimentKey_example"; // String | The experiment key
     try {
-      ExperimentRep result = apiInstance.getExperiment(projectKey, environmentKey, experimentKey);
+      Experiment result = apiInstance.getExperiment(projectKey, environmentKey, experimentKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ExperimentsBetaApi#getExperiment");
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExperimentRep**](ExperimentRep.md)
+[**Experiment**](Experiment.md)
 
 ### Authorization
 
@@ -494,7 +494,7 @@ Name | Type | Description  | Notes
 
 <a name="patchExperiment"></a>
 # **patchExperiment**
-> ExperimentRep patchExperiment(projectKey, environmentKey, experimentKey, experimentPatchInput)
+> Experiment patchExperiment(projectKey, environmentKey, experimentKey, experimentPatchInput)
 
 Patch experiment
 
@@ -527,7 +527,7 @@ public class Example {
     String experimentKey = "experimentKey_example"; // String | The experiment key
     ExperimentPatchInput experimentPatchInput = new ExperimentPatchInput(); // ExperimentPatchInput | 
     try {
-      ExperimentRep result = apiInstance.patchExperiment(projectKey, environmentKey, experimentKey, experimentPatchInput);
+      Experiment result = apiInstance.patchExperiment(projectKey, environmentKey, experimentKey, experimentPatchInput);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ExperimentsBetaApi#patchExperiment");
@@ -551,7 +551,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExperimentRep**](ExperimentRep.md)
+[**Experiment**](Experiment.md)
 
 ### Authorization
 

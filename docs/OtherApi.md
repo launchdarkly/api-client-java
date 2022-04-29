@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Gets the public IP list
 
-Get a list of IP ranges the LaunchDarkly service uses. You can use this list to allow LaunchDarkly through your firewall.&lt;br /&gt;&lt;br /&gt;This endpoint returns a JSON object with two attributes: &#x60;addresses&#x60; and &#x60;outboundAddresses&#x60;. The &#x60;addresses&#x60; element contains the IP addresses LaunchDarkly&#39;s service uses. The &#x60;outboundAddresses&#x60; element contains the IP addresses outgoing webhook notifications use.&lt;br /&gt;&lt;br /&gt;We post upcoming changes to this list in advance on our [status page](https://status.launchdarkly.com/).
+Get a list of IP ranges the LaunchDarkly service uses. You can use this list to allow LaunchDarkly through your firewall.&lt;br /&gt;&lt;br /&gt;This endpoint returns a JSON object with two attributes: &#x60;addresses&#x60; and &#x60;outboundAddresses&#x60;. The &#x60;addresses&#x60; element contains the IP addresses LaunchDarkly&#39;s service uses. The &#x60;outboundAddresses&#x60; element contains the IP addresses outgoing webhook notifications use. To learn more, read [Public IP list](https://docs.launchdarkly.com/home/advanced/public-ip-list).&lt;br /&gt;&lt;br /&gt;We post upcoming changes to this list in advance on our [status page](https://status.launchdarkly.com/).
 
 ### Example
 ```java

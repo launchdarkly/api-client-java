@@ -35,6 +35,7 @@ import com.launchdarkly.api.model.StatusConflictErrorRep;
 import com.launchdarkly.api.model.UnauthorizedErrorRep;
 import com.launchdarkly.api.model.UserRecord;
 import com.launchdarkly.api.model.Users;
+import com.launchdarkly.api.model.UsersRep;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -645,7 +646,7 @@ public class UsersApi {
      * @param environmentKey The environment key (required)
      * @param limit The number of elements to return per page (optional)
      * @param searchAfter Limits results to users with sort values after the value you specify. You can use this for pagination, but we recommend using the &#x60;next&#x60; link we provide instead. (optional)
-     * @return Users
+     * @return UsersRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -658,8 +659,8 @@ public class UsersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Users getUsers(String projectKey, String environmentKey, Long limit, String searchAfter) throws ApiException {
-        ApiResponse<Users> localVarResp = getUsersWithHttpInfo(projectKey, environmentKey, limit, searchAfter);
+    public UsersRep getUsers(String projectKey, String environmentKey, Long limit, String searchAfter) throws ApiException {
+        ApiResponse<UsersRep> localVarResp = getUsersWithHttpInfo(projectKey, environmentKey, limit, searchAfter);
         return localVarResp.getData();
     }
 
@@ -670,7 +671,7 @@ public class UsersApi {
      * @param environmentKey The environment key (required)
      * @param limit The number of elements to return per page (optional)
      * @param searchAfter Limits results to users with sort values after the value you specify. You can use this for pagination, but we recommend using the &#x60;next&#x60; link we provide instead. (optional)
-     * @return ApiResponse&lt;Users&gt;
+     * @return ApiResponse&lt;UsersRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -683,9 +684,9 @@ public class UsersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Users> getUsersWithHttpInfo(String projectKey, String environmentKey, Long limit, String searchAfter) throws ApiException {
+    public ApiResponse<UsersRep> getUsersWithHttpInfo(String projectKey, String environmentKey, Long limit, String searchAfter) throws ApiException {
         okhttp3.Call localVarCall = getUsersValidateBeforeCall(projectKey, environmentKey, limit, searchAfter, null);
-        Type localVarReturnType = new TypeToken<Users>(){}.getType();
+        Type localVarReturnType = new TypeToken<UsersRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -710,10 +711,10 @@ public class UsersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getUsersAsync(String projectKey, String environmentKey, Long limit, String searchAfter, final ApiCallback<Users> _callback) throws ApiException {
+    public okhttp3.Call getUsersAsync(String projectKey, String environmentKey, Long limit, String searchAfter, final ApiCallback<UsersRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getUsersValidateBeforeCall(projectKey, environmentKey, limit, searchAfter, _callback);
-        Type localVarReturnType = new TypeToken<Users>(){}.getType();
+        Type localVarReturnType = new TypeToken<UsersRep>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

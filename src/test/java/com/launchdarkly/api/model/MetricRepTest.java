@@ -18,10 +18,15 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.launchdarkly.api.model.Access;
+import com.launchdarkly.api.model.FlagListingRep;
 import com.launchdarkly.api.model.Link;
+import com.launchdarkly.api.model.MemberSummary;
+import com.launchdarkly.api.model.Modification;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -45,6 +50,14 @@ public class MetricRepTest {
     }
 
     /**
+     * Test the property 'id'
+     */
+    @Test
+    public void idTest() {
+        // TODO: test id
+    }
+
+    /**
      * Test the property 'key'
      */
     @Test
@@ -61,11 +74,163 @@ public class MetricRepTest {
     }
 
     /**
+     * Test the property 'kind'
+     */
+    @Test
+    public void kindTest() {
+        // TODO: test kind
+    }
+
+    /**
+     * Test the property 'attachedFlagCount'
+     */
+    @Test
+    public void attachedFlagCountTest() {
+        // TODO: test attachedFlagCount
+    }
+
+    /**
      * Test the property 'links'
      */
     @Test
     public void linksTest() {
         // TODO: test links
+    }
+
+    /**
+     * Test the property 'site'
+     */
+    @Test
+    public void siteTest() {
+        // TODO: test site
+    }
+
+    /**
+     * Test the property 'access'
+     */
+    @Test
+    public void accessTest() {
+        // TODO: test access
+    }
+
+    /**
+     * Test the property 'tags'
+     */
+    @Test
+    public void tagsTest() {
+        // TODO: test tags
+    }
+
+    /**
+     * Test the property 'creationDate'
+     */
+    @Test
+    public void creationDateTest() {
+        // TODO: test creationDate
+    }
+
+    /**
+     * Test the property 'lastModified'
+     */
+    @Test
+    public void lastModifiedTest() {
+        // TODO: test lastModified
+    }
+
+    /**
+     * Test the property 'maintainerId'
+     */
+    @Test
+    public void maintainerIdTest() {
+        // TODO: test maintainerId
+    }
+
+    /**
+     * Test the property 'maintainer'
+     */
+    @Test
+    public void maintainerTest() {
+        // TODO: test maintainer
+    }
+
+    /**
+     * Test the property 'description'
+     */
+    @Test
+    public void descriptionTest() {
+        // TODO: test description
+    }
+
+    /**
+     * Test the property 'isNumeric'
+     */
+    @Test
+    public void isNumericTest() {
+        // TODO: test isNumeric
+    }
+
+    /**
+     * Test the property 'successCriteria'
+     */
+    @Test
+    public void successCriteriaTest() {
+        // TODO: test successCriteria
+    }
+
+    /**
+     * Test the property 'unit'
+     */
+    @Test
+    public void unitTest() {
+        // TODO: test unit
+    }
+
+    /**
+     * Test the property 'eventKey'
+     */
+    @Test
+    public void eventKeyTest() {
+        // TODO: test eventKey
+    }
+
+    /**
+     * Test the property 'isActive'
+     */
+    @Test
+    public void isActiveTest() {
+        // TODO: test isActive
+    }
+
+    /**
+     * Test the property 'attachedFeatures'
+     */
+    @Test
+    public void attachedFeaturesTest() {
+        // TODO: test attachedFeatures
+    }
+
+    /**
+     * Test the property 'version'
+     */
+    @Test
+    public void versionTest() {
+        // TODO: test version
+    }
+
+    /**
+     * Test the property 'selector'
+     */
+    @Test
+    public void selectorTest() {
+        // TODO: test selector
+    }
+
+    /**
+     * Test the property 'urls'
+     */
+    @Test
+    public void urlsTest() {
+        // TODO: test urls
     }
 
 }

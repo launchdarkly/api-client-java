@@ -18,7 +18,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.launchdarkly.api.model.NullDecimal;
 import com.launchdarkly.api.model.ParameterRep;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

@@ -20,7 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.launchdarkly.api.model.ExperimentRep;
+import com.launchdarkly.api.model.LegacyExperimentRep;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * ExperimentInfoRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-12T21:37:48.604008Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-29T20:20:42.888981Z[Etc/UTC]")
 public class ExperimentInfoRep {
   public static final String SERIALIZED_NAME_BASELINE_IDX = "baselineIdx";
   @SerializedName(SERIALIZED_NAME_BASELINE_IDX)
@@ -38,7 +38,7 @@ public class ExperimentInfoRep {
 
   public static final String SERIALIZED_NAME_ITEMS = "items";
   @SerializedName(SERIALIZED_NAME_ITEMS)
-  private List<ExperimentRep> items = new ArrayList<ExperimentRep>();
+  private List<LegacyExperimentRep> items = new ArrayList<LegacyExperimentRep>();
 
 
   public ExperimentInfoRep baselineIdx(Integer baselineIdx) {
@@ -64,13 +64,13 @@ public class ExperimentInfoRep {
   }
 
 
-  public ExperimentInfoRep items(List<ExperimentRep> items) {
+  public ExperimentInfoRep items(List<LegacyExperimentRep> items) {
     
     this.items = items;
     return this;
   }
 
-  public ExperimentInfoRep addItemsItem(ExperimentRep itemsItem) {
+  public ExperimentInfoRep addItemsItem(LegacyExperimentRep itemsItem) {
     this.items.add(itemsItem);
     return this;
   }
@@ -82,12 +82,12 @@ public class ExperimentInfoRep {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public List<ExperimentRep> getItems() {
+  public List<LegacyExperimentRep> getItems() {
     return items;
   }
 
 
-  public void setItems(List<ExperimentRep> items) {
+  public void setItems(List<LegacyExperimentRep> items) {
     this.items = items;
   }
 

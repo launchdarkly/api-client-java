@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 <a name="getUsers"></a>
 # **getUsers**
-> Users getUsers(projectKey, environmentKey, limit, searchAfter)
+> UsersRep getUsers(projectKey, environmentKey, limit, searchAfter)
 
 List users
 
@@ -290,7 +290,7 @@ public class Example {
     Long limit = 56L; // Long | The number of elements to return per page
     String searchAfter = "searchAfter_example"; // String | Limits results to users with sort values after the value you specify. You can use this for pagination, but we recommend using the `next` link we provide instead.
     try {
-      Users result = apiInstance.getUsers(projectKey, environmentKey, limit, searchAfter);
+      UsersRep result = apiInstance.getUsers(projectKey, environmentKey, limit, searchAfter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UsersApi#getUsers");
@@ -314,7 +314,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Users**](Users.md)
+[**UsersRep**](UsersRep.md)
 
 ### Authorization
 

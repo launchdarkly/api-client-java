@@ -14,10 +14,10 @@
 package com.launchdarkly.api.api;
 
 import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.model.Experiment;
 import com.launchdarkly.api.model.ExperimentCollectionRep;
 import com.launchdarkly.api.model.ExperimentPatchInput;
 import com.launchdarkly.api.model.ExperimentPost;
-import com.launchdarkly.api.model.ExperimentRep;
 import com.launchdarkly.api.model.ExperimentResults;
 import com.launchdarkly.api.model.ForbiddenErrorRep;
 import com.launchdarkly.api.model.InvalidRequestErrorRep;
@@ -57,7 +57,7 @@ public class ExperimentsBetaApiTest {
         String projectKey = null;
         String environmentKey = null;
         ExperimentPost experimentPost = null;
-                ExperimentRep response = api.createExperiment(projectKey, environmentKey, experimentPost);
+                Experiment response = api.createExperiment(projectKey, environmentKey, experimentPost);
         // TODO: test validations
     }
     
@@ -92,7 +92,7 @@ public class ExperimentsBetaApiTest {
         String projectKey = null;
         String environmentKey = null;
         String experimentKey = null;
-                ExperimentRep response = api.getExperiment(projectKey, environmentKey, experimentKey);
+                Experiment response = api.getExperiment(projectKey, environmentKey, experimentKey);
         // TODO: test validations
     }
     
@@ -164,7 +164,7 @@ public class ExperimentsBetaApiTest {
         String environmentKey = null;
         String experimentKey = null;
         ExperimentPatchInput experimentPatchInput = null;
-                ExperimentRep response = api.patchExperiment(projectKey, environmentKey, experimentKey, experimentPatchInput);
+                Experiment response = api.patchExperiment(projectKey, environmentKey, experimentKey, experimentPatchInput);
         // TODO: test validations
     }
     

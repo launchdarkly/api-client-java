@@ -18,7 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.launchdarkly.api.model.MetricRep;
+import com.launchdarkly.api.model.MetricV2Rep;
 import com.launchdarkly.api.model.TreatmentRep;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

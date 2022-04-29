@@ -255,7 +255,7 @@ public class AccountMembersApi {
 
     /**
      * Get account member
-     * Get a single account member by ID
+     * Get a single account member by ID.  &#x60;me&#x60; is a reserved value for the &#x60;id&#x60; parameter and returns the caller&#39;s member information. 
      * @param id The member ID (required)
      * @return Member
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -276,7 +276,7 @@ public class AccountMembersApi {
 
     /**
      * Get account member
-     * Get a single account member by ID
+     * Get a single account member by ID.  &#x60;me&#x60; is a reserved value for the &#x60;id&#x60; parameter and returns the caller&#39;s member information. 
      * @param id The member ID (required)
      * @return ApiResponse&lt;Member&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -298,7 +298,7 @@ public class AccountMembersApi {
 
     /**
      * Get account member (asynchronously)
-     * Get a single account member by ID
+     * Get a single account member by ID.  &#x60;me&#x60; is a reserved value for the &#x60;id&#x60; parameter and returns the caller&#39;s member information. 
      * @param id The member ID (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -684,8 +684,8 @@ public class AccountMembersApi {
     }
 
     /**
-     * Add member to teams
-     * Add member to team(s)
+     * Add a member to teams
+     * Add one member to one or more teams.
      * @param id The member ID (required)
      * @param memberTeamsPostInput  (required)
      * @return Member
@@ -707,8 +707,8 @@ public class AccountMembersApi {
     }
 
     /**
-     * Add member to teams
-     * Add member to team(s)
+     * Add a member to teams
+     * Add one member to one or more teams.
      * @param id The member ID (required)
      * @param memberTeamsPostInput  (required)
      * @return ApiResponse&lt;Member&gt;
@@ -731,8 +731,8 @@ public class AccountMembersApi {
     }
 
     /**
-     * Add member to teams (asynchronously)
-     * Add member to team(s)
+     * Add a member to teams (asynchronously)
+     * Add one member to one or more teams.
      * @param id The member ID (required)
      * @param memberTeamsPostInput  (required)
      * @param _callback The callback to be executed when the API call finishes

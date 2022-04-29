@@ -53,7 +53,6 @@ docs/CustomWorkflowOutputRep.md
 docs/CustomWorkflowStageMeta.md
 docs/CustomWorkflowsListingOutputRep.md
 docs/DataExportDestinationsApi.md
-docs/Decimal.md
 docs/DefaultClientSideAvailabilityPost.md
 docs/Defaults.md
 docs/DependentFlag.md
@@ -67,15 +66,16 @@ docs/EnvironmentPost.md
 docs/EnvironmentsApi.md
 docs/EvaluationReason.md
 docs/ExecutionOutputRep.md
+docs/Experiment.md
 docs/ExperimentAllocationRep.md
 docs/ExperimentCollectionRep.md
 docs/ExperimentEnabledPeriodRep.md
 docs/ExperimentEnvironmentSettingRep.md
+docs/ExperimentExpandableProperties.md
 docs/ExperimentInfoRep.md
 docs/ExperimentMetadataRep.md
 docs/ExperimentPatchInput.md
 docs/ExperimentPost.md
-docs/ExperimentRep.md
 docs/ExperimentResults.md
 docs/ExperimentStatsRep.md
 docs/ExperimentTimeSeriesSlice.md
@@ -142,6 +142,7 @@ docs/IterationExpandableProperties.md
 docs/IterationInput.md
 docs/IterationRep.md
 docs/LastSeenMetadata.md
+docs/LegacyExperimentRep.md
 docs/Link.md
 docs/Member.md
 docs/MemberDataRep.md
@@ -158,6 +159,7 @@ docs/MetricListingRep.md
 docs/MetricPost.md
 docs/MetricRep.md
 docs/MetricSeen.md
+docs/MetricV2Rep.md
 docs/MetricsApi.md
 docs/ModelImport.md
 docs/Modification.md
@@ -165,7 +167,6 @@ docs/MultiEnvironmentDependentFlag.md
 docs/MultiEnvironmentDependentFlags.md
 docs/NewMemberForm.md
 docs/NotFoundErrorRep.md
-docs/NullDecimal.md
 docs/OtherApi.md
 docs/ParameterRep.md
 docs/ParentResourceRep.md
@@ -231,6 +232,7 @@ docs/StatementPostData.md
 docs/StatementRep.md
 docs/StatisticCollectionRep.md
 docs/StatisticRep.md
+docs/StatisticsRep.md
 docs/StatisticsRoot.md
 docs/StatusConflictErrorRep.md
 docs/SubjectDataRep.md
@@ -275,6 +277,7 @@ docs/UserSettingsApi.md
 docs/Users.md
 docs/UsersApi.md
 docs/UsersBetaApi.md
+docs/UsersRep.md
 docs/ValuePut.md
 docs/Variation.md
 docs/VariationOrRolloutRep.md
@@ -382,7 +385,6 @@ src/main/java/com/launchdarkly/api/model/CustomWorkflowMeta.java
 src/main/java/com/launchdarkly/api/model/CustomWorkflowOutputRep.java
 src/main/java/com/launchdarkly/api/model/CustomWorkflowStageMeta.java
 src/main/java/com/launchdarkly/api/model/CustomWorkflowsListingOutputRep.java
-src/main/java/com/launchdarkly/api/model/Decimal.java
 src/main/java/com/launchdarkly/api/model/DefaultClientSideAvailabilityPost.java
 src/main/java/com/launchdarkly/api/model/Defaults.java
 src/main/java/com/launchdarkly/api/model/DependentFlag.java
@@ -395,15 +397,16 @@ src/main/java/com/launchdarkly/api/model/Environment.java
 src/main/java/com/launchdarkly/api/model/EnvironmentPost.java
 src/main/java/com/launchdarkly/api/model/EvaluationReason.java
 src/main/java/com/launchdarkly/api/model/ExecutionOutputRep.java
+src/main/java/com/launchdarkly/api/model/Experiment.java
 src/main/java/com/launchdarkly/api/model/ExperimentAllocationRep.java
 src/main/java/com/launchdarkly/api/model/ExperimentCollectionRep.java
 src/main/java/com/launchdarkly/api/model/ExperimentEnabledPeriodRep.java
 src/main/java/com/launchdarkly/api/model/ExperimentEnvironmentSettingRep.java
+src/main/java/com/launchdarkly/api/model/ExperimentExpandableProperties.java
 src/main/java/com/launchdarkly/api/model/ExperimentInfoRep.java
 src/main/java/com/launchdarkly/api/model/ExperimentMetadataRep.java
 src/main/java/com/launchdarkly/api/model/ExperimentPatchInput.java
 src/main/java/com/launchdarkly/api/model/ExperimentPost.java
-src/main/java/com/launchdarkly/api/model/ExperimentRep.java
 src/main/java/com/launchdarkly/api/model/ExperimentResults.java
 src/main/java/com/launchdarkly/api/model/ExperimentStatsRep.java
 src/main/java/com/launchdarkly/api/model/ExperimentTimeSeriesSlice.java
@@ -463,6 +466,7 @@ src/main/java/com/launchdarkly/api/model/IterationExpandableProperties.java
 src/main/java/com/launchdarkly/api/model/IterationInput.java
 src/main/java/com/launchdarkly/api/model/IterationRep.java
 src/main/java/com/launchdarkly/api/model/LastSeenMetadata.java
+src/main/java/com/launchdarkly/api/model/LegacyExperimentRep.java
 src/main/java/com/launchdarkly/api/model/Link.java
 src/main/java/com/launchdarkly/api/model/Member.java
 src/main/java/com/launchdarkly/api/model/MemberDataRep.java
@@ -479,13 +483,13 @@ src/main/java/com/launchdarkly/api/model/MetricListingRep.java
 src/main/java/com/launchdarkly/api/model/MetricPost.java
 src/main/java/com/launchdarkly/api/model/MetricRep.java
 src/main/java/com/launchdarkly/api/model/MetricSeen.java
+src/main/java/com/launchdarkly/api/model/MetricV2Rep.java
 src/main/java/com/launchdarkly/api/model/ModelImport.java
 src/main/java/com/launchdarkly/api/model/Modification.java
 src/main/java/com/launchdarkly/api/model/MultiEnvironmentDependentFlag.java
 src/main/java/com/launchdarkly/api/model/MultiEnvironmentDependentFlags.java
 src/main/java/com/launchdarkly/api/model/NewMemberForm.java
 src/main/java/com/launchdarkly/api/model/NotFoundErrorRep.java
-src/main/java/com/launchdarkly/api/model/NullDecimal.java
 src/main/java/com/launchdarkly/api/model/ParameterRep.java
 src/main/java/com/launchdarkly/api/model/ParentResourceRep.java
 src/main/java/com/launchdarkly/api/model/PatchFailedErrorRep.java
@@ -545,6 +549,7 @@ src/main/java/com/launchdarkly/api/model/StatementPostData.java
 src/main/java/com/launchdarkly/api/model/StatementRep.java
 src/main/java/com/launchdarkly/api/model/StatisticCollectionRep.java
 src/main/java/com/launchdarkly/api/model/StatisticRep.java
+src/main/java/com/launchdarkly/api/model/StatisticsRep.java
 src/main/java/com/launchdarkly/api/model/StatisticsRoot.java
 src/main/java/com/launchdarkly/api/model/StatusConflictErrorRep.java
 src/main/java/com/launchdarkly/api/model/SubjectDataRep.java
@@ -584,6 +589,7 @@ src/main/java/com/launchdarkly/api/model/UserSegment.java
 src/main/java/com/launchdarkly/api/model/UserSegmentRule.java
 src/main/java/com/launchdarkly/api/model/UserSegments.java
 src/main/java/com/launchdarkly/api/model/Users.java
+src/main/java/com/launchdarkly/api/model/UsersRep.java
 src/main/java/com/launchdarkly/api/model/ValuePut.java
 src/main/java/com/launchdarkly/api/model/Variation.java
 src/main/java/com/launchdarkly/api/model/VariationOrRolloutRep.java
@@ -663,7 +669,6 @@ src/test/java/com/launchdarkly/api/model/CustomWorkflowMetaTest.java
 src/test/java/com/launchdarkly/api/model/CustomWorkflowOutputRepTest.java
 src/test/java/com/launchdarkly/api/model/CustomWorkflowStageMetaTest.java
 src/test/java/com/launchdarkly/api/model/CustomWorkflowsListingOutputRepTest.java
-src/test/java/com/launchdarkly/api/model/DecimalTest.java
 src/test/java/com/launchdarkly/api/model/DefaultClientSideAvailabilityPostTest.java
 src/test/java/com/launchdarkly/api/model/DefaultsTest.java
 src/test/java/com/launchdarkly/api/model/DependentFlagEnvironmentTest.java
@@ -680,13 +685,14 @@ src/test/java/com/launchdarkly/api/model/ExperimentAllocationRepTest.java
 src/test/java/com/launchdarkly/api/model/ExperimentCollectionRepTest.java
 src/test/java/com/launchdarkly/api/model/ExperimentEnabledPeriodRepTest.java
 src/test/java/com/launchdarkly/api/model/ExperimentEnvironmentSettingRepTest.java
+src/test/java/com/launchdarkly/api/model/ExperimentExpandablePropertiesTest.java
 src/test/java/com/launchdarkly/api/model/ExperimentInfoRepTest.java
 src/test/java/com/launchdarkly/api/model/ExperimentMetadataRepTest.java
 src/test/java/com/launchdarkly/api/model/ExperimentPatchInputTest.java
 src/test/java/com/launchdarkly/api/model/ExperimentPostTest.java
-src/test/java/com/launchdarkly/api/model/ExperimentRepTest.java
 src/test/java/com/launchdarkly/api/model/ExperimentResultsTest.java
 src/test/java/com/launchdarkly/api/model/ExperimentStatsRepTest.java
+src/test/java/com/launchdarkly/api/model/ExperimentTest.java
 src/test/java/com/launchdarkly/api/model/ExperimentTimeSeriesSliceTest.java
 src/test/java/com/launchdarkly/api/model/ExperimentTimeSeriesVariationSliceTest.java
 src/test/java/com/launchdarkly/api/model/ExperimentTotalsRepTest.java
@@ -744,6 +750,7 @@ src/test/java/com/launchdarkly/api/model/IterationExpandablePropertiesTest.java
 src/test/java/com/launchdarkly/api/model/IterationInputTest.java
 src/test/java/com/launchdarkly/api/model/IterationRepTest.java
 src/test/java/com/launchdarkly/api/model/LastSeenMetadataTest.java
+src/test/java/com/launchdarkly/api/model/LegacyExperimentRepTest.java
 src/test/java/com/launchdarkly/api/model/LinkTest.java
 src/test/java/com/launchdarkly/api/model/MemberDataRepTest.java
 src/test/java/com/launchdarkly/api/model/MemberImportItemTest.java
@@ -760,13 +767,13 @@ src/test/java/com/launchdarkly/api/model/MetricListingRepTest.java
 src/test/java/com/launchdarkly/api/model/MetricPostTest.java
 src/test/java/com/launchdarkly/api/model/MetricRepTest.java
 src/test/java/com/launchdarkly/api/model/MetricSeenTest.java
+src/test/java/com/launchdarkly/api/model/MetricV2RepTest.java
 src/test/java/com/launchdarkly/api/model/ModelImportTest.java
 src/test/java/com/launchdarkly/api/model/ModificationTest.java
 src/test/java/com/launchdarkly/api/model/MultiEnvironmentDependentFlagTest.java
 src/test/java/com/launchdarkly/api/model/MultiEnvironmentDependentFlagsTest.java
 src/test/java/com/launchdarkly/api/model/NewMemberFormTest.java
 src/test/java/com/launchdarkly/api/model/NotFoundErrorRepTest.java
-src/test/java/com/launchdarkly/api/model/NullDecimalTest.java
 src/test/java/com/launchdarkly/api/model/ParameterRepTest.java
 src/test/java/com/launchdarkly/api/model/ParentResourceRepTest.java
 src/test/java/com/launchdarkly/api/model/PatchFailedErrorRepTest.java
@@ -826,6 +833,7 @@ src/test/java/com/launchdarkly/api/model/StatementRepTest.java
 src/test/java/com/launchdarkly/api/model/StatementTest.java
 src/test/java/com/launchdarkly/api/model/StatisticCollectionRepTest.java
 src/test/java/com/launchdarkly/api/model/StatisticRepTest.java
+src/test/java/com/launchdarkly/api/model/StatisticsRepTest.java
 src/test/java/com/launchdarkly/api/model/StatisticsRootTest.java
 src/test/java/com/launchdarkly/api/model/StatusConflictErrorRepTest.java
 src/test/java/com/launchdarkly/api/model/SubjectDataRepTest.java
@@ -864,6 +872,7 @@ src/test/java/com/launchdarkly/api/model/UserSegmentRuleTest.java
 src/test/java/com/launchdarkly/api/model/UserSegmentTest.java
 src/test/java/com/launchdarkly/api/model/UserSegmentsTest.java
 src/test/java/com/launchdarkly/api/model/UserTest.java
+src/test/java/com/launchdarkly/api/model/UsersRepTest.java
 src/test/java/com/launchdarkly/api/model/UsersTest.java
 src/test/java/com/launchdarkly/api/model/ValuePutTest.java
 src/test/java/com/launchdarkly/api/model/VariationOrRolloutRepTest.java

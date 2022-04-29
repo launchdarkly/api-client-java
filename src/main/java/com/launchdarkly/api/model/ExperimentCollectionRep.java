@@ -20,7 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.launchdarkly.api.model.ExperimentRep;
+import com.launchdarkly.api.model.Experiment;
 import com.launchdarkly.api.model.Link;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -33,11 +33,11 @@ import java.util.Map;
 /**
  * ExperimentCollectionRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-12T21:37:48.604008Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-29T20:20:42.888981Z[Etc/UTC]")
 public class ExperimentCollectionRep {
   public static final String SERIALIZED_NAME_ITEMS = "items";
   @SerializedName(SERIALIZED_NAME_ITEMS)
-  private List<ExperimentRep> items = null;
+  private List<Experiment> items = null;
 
   public static final String SERIALIZED_NAME_TOTAL_COUNT = "total_count";
   @SerializedName(SERIALIZED_NAME_TOTAL_COUNT)
@@ -48,15 +48,15 @@ public class ExperimentCollectionRep {
   private Map<String, Link> links = null;
 
 
-  public ExperimentCollectionRep items(List<ExperimentRep> items) {
+  public ExperimentCollectionRep items(List<Experiment> items) {
     
     this.items = items;
     return this;
   }
 
-  public ExperimentCollectionRep addItemsItem(ExperimentRep itemsItem) {
+  public ExperimentCollectionRep addItemsItem(Experiment itemsItem) {
     if (this.items == null) {
-      this.items = new ArrayList<ExperimentRep>();
+      this.items = new ArrayList<Experiment>();
     }
     this.items.add(itemsItem);
     return this;
@@ -69,12 +69,12 @@ public class ExperimentCollectionRep {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<ExperimentRep> getItems() {
+  public List<Experiment> getItems() {
     return items;
   }
 
 
-  public void setItems(List<ExperimentRep> items) {
+  public void setItems(List<Experiment> items) {
     this.items = items;
   }
 

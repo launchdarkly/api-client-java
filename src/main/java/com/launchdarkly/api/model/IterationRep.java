@@ -21,7 +21,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.launchdarkly.api.model.FlagRep;
-import com.launchdarkly.api.model.MetricRep;
+import com.launchdarkly.api.model.MetricV2Rep;
 import com.launchdarkly.api.model.TreatmentRep;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -34,7 +34,7 @@ import java.util.Map;
 /**
  * IterationRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-12T21:37:48.604008Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-29T20:20:42.888981Z[Etc/UTC]")
 public class IterationRep {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -60,6 +60,10 @@ public class IterationRep {
   @SerializedName(SERIALIZED_NAME_WINNING_TREATMENT_ID)
   private String winningTreatmentId;
 
+  public static final String SERIALIZED_NAME_WINNING_REASON = "winningReason";
+  @SerializedName(SERIALIZED_NAME_WINNING_REASON)
+  private String winningReason;
+
   public static final String SERIALIZED_NAME_CAN_RESHUFFLE_TRAFFIC = "canReshuffleTraffic";
   @SerializedName(SERIALIZED_NAME_CAN_RESHUFFLE_TRAFFIC)
   private Boolean canReshuffleTraffic;
@@ -70,7 +74,7 @@ public class IterationRep {
 
   public static final String SERIALIZED_NAME_PRIMARY_METRIC = "primaryMetric";
   @SerializedName(SERIALIZED_NAME_PRIMARY_METRIC)
-  private MetricRep primaryMetric;
+  private MetricV2Rep primaryMetric;
 
   public static final String SERIALIZED_NAME_TREATMENTS = "treatments";
   @SerializedName(SERIALIZED_NAME_TREATMENTS)
@@ -78,7 +82,7 @@ public class IterationRep {
 
   public static final String SERIALIZED_NAME_SECONDARY_METRICS = "secondaryMetrics";
   @SerializedName(SERIALIZED_NAME_SECONDARY_METRICS)
-  private List<MetricRep> secondaryMetrics = null;
+  private List<MetricV2Rep> secondaryMetrics = null;
 
 
   public IterationRep id(String id) {
@@ -219,6 +223,29 @@ public class IterationRep {
   }
 
 
+  public IterationRep winningReason(String winningReason) {
+    
+    this.winningReason = winningReason;
+    return this;
+  }
+
+   /**
+   * Get winningReason
+   * @return winningReason
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getWinningReason() {
+    return winningReason;
+  }
+
+
+  public void setWinningReason(String winningReason) {
+    this.winningReason = winningReason;
+  }
+
+
   public IterationRep canReshuffleTraffic(Boolean canReshuffleTraffic) {
     
     this.canReshuffleTraffic = canReshuffleTraffic;
@@ -273,7 +300,7 @@ public class IterationRep {
   }
 
 
-  public IterationRep primaryMetric(MetricRep primaryMetric) {
+  public IterationRep primaryMetric(MetricV2Rep primaryMetric) {
     
     this.primaryMetric = primaryMetric;
     return this;
@@ -286,12 +313,12 @@ public class IterationRep {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public MetricRep getPrimaryMetric() {
+  public MetricV2Rep getPrimaryMetric() {
     return primaryMetric;
   }
 
 
-  public void setPrimaryMetric(MetricRep primaryMetric) {
+  public void setPrimaryMetric(MetricV2Rep primaryMetric) {
     this.primaryMetric = primaryMetric;
   }
 
@@ -327,15 +354,15 @@ public class IterationRep {
   }
 
 
-  public IterationRep secondaryMetrics(List<MetricRep> secondaryMetrics) {
+  public IterationRep secondaryMetrics(List<MetricV2Rep> secondaryMetrics) {
     
     this.secondaryMetrics = secondaryMetrics;
     return this;
   }
 
-  public IterationRep addSecondaryMetricsItem(MetricRep secondaryMetricsItem) {
+  public IterationRep addSecondaryMetricsItem(MetricV2Rep secondaryMetricsItem) {
     if (this.secondaryMetrics == null) {
-      this.secondaryMetrics = new ArrayList<MetricRep>();
+      this.secondaryMetrics = new ArrayList<MetricV2Rep>();
     }
     this.secondaryMetrics.add(secondaryMetricsItem);
     return this;
@@ -348,12 +375,12 @@ public class IterationRep {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<MetricRep> getSecondaryMetrics() {
+  public List<MetricV2Rep> getSecondaryMetrics() {
     return secondaryMetrics;
   }
 
 
-  public void setSecondaryMetrics(List<MetricRep> secondaryMetrics) {
+  public void setSecondaryMetrics(List<MetricV2Rep> secondaryMetrics) {
     this.secondaryMetrics = secondaryMetrics;
   }
 
@@ -373,6 +400,7 @@ public class IterationRep {
         Objects.equals(this.startedAt, iterationRep.startedAt) &&
         Objects.equals(this.endedAt, iterationRep.endedAt) &&
         Objects.equals(this.winningTreatmentId, iterationRep.winningTreatmentId) &&
+        Objects.equals(this.winningReason, iterationRep.winningReason) &&
         Objects.equals(this.canReshuffleTraffic, iterationRep.canReshuffleTraffic) &&
         Objects.equals(this.flags, iterationRep.flags) &&
         Objects.equals(this.primaryMetric, iterationRep.primaryMetric) &&
@@ -382,7 +410,7 @@ public class IterationRep {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, hypothesis, status, startedAt, endedAt, winningTreatmentId, canReshuffleTraffic, flags, primaryMetric, treatments, secondaryMetrics);
+    return Objects.hash(id, hypothesis, status, startedAt, endedAt, winningTreatmentId, winningReason, canReshuffleTraffic, flags, primaryMetric, treatments, secondaryMetrics);
   }
 
   @Override
@@ -395,6 +423,7 @@ public class IterationRep {
     sb.append("    startedAt: ").append(toIndentedString(startedAt)).append("\n");
     sb.append("    endedAt: ").append(toIndentedString(endedAt)).append("\n");
     sb.append("    winningTreatmentId: ").append(toIndentedString(winningTreatmentId)).append("\n");
+    sb.append("    winningReason: ").append(toIndentedString(winningReason)).append("\n");
     sb.append("    canReshuffleTraffic: ").append(toIndentedString(canReshuffleTraffic)).append("\n");
     sb.append("    flags: ").append(toIndentedString(flags)).append("\n");
     sb.append("    primaryMetric: ").append(toIndentedString(primaryMetric)).append("\n");

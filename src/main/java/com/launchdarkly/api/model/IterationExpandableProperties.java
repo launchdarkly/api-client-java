@@ -20,7 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.launchdarkly.api.model.MetricRep;
+import com.launchdarkly.api.model.MetricV2Rep;
 import com.launchdarkly.api.model.TreatmentRep;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * IterationExpandableProperties
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-12T21:37:48.604008Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-29T20:20:42.888981Z[Etc/UTC]")
 public class IterationExpandableProperties {
   public static final String SERIALIZED_NAME_TREATMENTS = "treatments";
   @SerializedName(SERIALIZED_NAME_TREATMENTS)
@@ -39,7 +39,7 @@ public class IterationExpandableProperties {
 
   public static final String SERIALIZED_NAME_SECONDARY_METRICS = "secondaryMetrics";
   @SerializedName(SERIALIZED_NAME_SECONDARY_METRICS)
-  private List<MetricRep> secondaryMetrics = null;
+  private List<MetricV2Rep> secondaryMetrics = null;
 
 
   public IterationExpandableProperties treatments(List<TreatmentRep> treatments) {
@@ -73,15 +73,15 @@ public class IterationExpandableProperties {
   }
 
 
-  public IterationExpandableProperties secondaryMetrics(List<MetricRep> secondaryMetrics) {
+  public IterationExpandableProperties secondaryMetrics(List<MetricV2Rep> secondaryMetrics) {
     
     this.secondaryMetrics = secondaryMetrics;
     return this;
   }
 
-  public IterationExpandableProperties addSecondaryMetricsItem(MetricRep secondaryMetricsItem) {
+  public IterationExpandableProperties addSecondaryMetricsItem(MetricV2Rep secondaryMetricsItem) {
     if (this.secondaryMetrics == null) {
-      this.secondaryMetrics = new ArrayList<MetricRep>();
+      this.secondaryMetrics = new ArrayList<MetricV2Rep>();
     }
     this.secondaryMetrics.add(secondaryMetricsItem);
     return this;
@@ -94,12 +94,12 @@ public class IterationExpandableProperties {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<MetricRep> getSecondaryMetrics() {
+  public List<MetricV2Rep> getSecondaryMetrics() {
     return secondaryMetrics;
   }
 
 
-  public void setSecondaryMetrics(List<MetricRep> secondaryMetrics) {
+  public void setSecondaryMetrics(List<MetricV2Rep> secondaryMetrics) {
     this.secondaryMetrics = secondaryMetrics;
   }
 

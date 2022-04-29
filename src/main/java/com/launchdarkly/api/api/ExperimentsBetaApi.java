@@ -27,10 +27,10 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.launchdarkly.api.model.Experiment;
 import com.launchdarkly.api.model.ExperimentCollectionRep;
 import com.launchdarkly.api.model.ExperimentPatchInput;
 import com.launchdarkly.api.model.ExperimentPost;
-import com.launchdarkly.api.model.ExperimentRep;
 import com.launchdarkly.api.model.ExperimentResults;
 import com.launchdarkly.api.model.ForbiddenErrorRep;
 import com.launchdarkly.api.model.InvalidRequestErrorRep;
@@ -147,7 +147,7 @@ public class ExperimentsBetaApi {
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
      * @param experimentPost  (required)
-     * @return ExperimentRep
+     * @return Experiment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -160,8 +160,8 @@ public class ExperimentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ExperimentRep createExperiment(String projectKey, String environmentKey, ExperimentPost experimentPost) throws ApiException {
-        ApiResponse<ExperimentRep> localVarResp = createExperimentWithHttpInfo(projectKey, environmentKey, experimentPost);
+    public Experiment createExperiment(String projectKey, String environmentKey, ExperimentPost experimentPost) throws ApiException {
+        ApiResponse<Experiment> localVarResp = createExperimentWithHttpInfo(projectKey, environmentKey, experimentPost);
         return localVarResp.getData();
     }
 
@@ -171,7 +171,7 @@ public class ExperimentsBetaApi {
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
      * @param experimentPost  (required)
-     * @return ApiResponse&lt;ExperimentRep&gt;
+     * @return ApiResponse&lt;Experiment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -184,9 +184,9 @@ public class ExperimentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ExperimentRep> createExperimentWithHttpInfo(String projectKey, String environmentKey, ExperimentPost experimentPost) throws ApiException {
+    public ApiResponse<Experiment> createExperimentWithHttpInfo(String projectKey, String environmentKey, ExperimentPost experimentPost) throws ApiException {
         okhttp3.Call localVarCall = createExperimentValidateBeforeCall(projectKey, environmentKey, experimentPost, null);
-        Type localVarReturnType = new TypeToken<ExperimentRep>(){}.getType();
+        Type localVarReturnType = new TypeToken<Experiment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -210,10 +210,10 @@ public class ExperimentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createExperimentAsync(String projectKey, String environmentKey, ExperimentPost experimentPost, final ApiCallback<ExperimentRep> _callback) throws ApiException {
+    public okhttp3.Call createExperimentAsync(String projectKey, String environmentKey, ExperimentPost experimentPost, final ApiCallback<Experiment> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createExperimentValidateBeforeCall(projectKey, environmentKey, experimentPost, _callback);
-        Type localVarReturnType = new TypeToken<ExperimentRep>(){}.getType();
+        Type localVarReturnType = new TypeToken<Experiment>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -461,7 +461,7 @@ public class ExperimentsBetaApi {
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
      * @param experimentKey The experiment key (required)
-     * @return ExperimentRep
+     * @return Experiment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -475,8 +475,8 @@ public class ExperimentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ExperimentRep getExperiment(String projectKey, String environmentKey, String experimentKey) throws ApiException {
-        ApiResponse<ExperimentRep> localVarResp = getExperimentWithHttpInfo(projectKey, environmentKey, experimentKey);
+    public Experiment getExperiment(String projectKey, String environmentKey, String experimentKey) throws ApiException {
+        ApiResponse<Experiment> localVarResp = getExperimentWithHttpInfo(projectKey, environmentKey, experimentKey);
         return localVarResp.getData();
     }
 
@@ -486,7 +486,7 @@ public class ExperimentsBetaApi {
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
      * @param experimentKey The experiment key (required)
-     * @return ApiResponse&lt;ExperimentRep&gt;
+     * @return ApiResponse&lt;Experiment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -500,9 +500,9 @@ public class ExperimentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ExperimentRep> getExperimentWithHttpInfo(String projectKey, String environmentKey, String experimentKey) throws ApiException {
+    public ApiResponse<Experiment> getExperimentWithHttpInfo(String projectKey, String environmentKey, String experimentKey) throws ApiException {
         okhttp3.Call localVarCall = getExperimentValidateBeforeCall(projectKey, environmentKey, experimentKey, null);
-        Type localVarReturnType = new TypeToken<ExperimentRep>(){}.getType();
+        Type localVarReturnType = new TypeToken<Experiment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -527,10 +527,10 @@ public class ExperimentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExperimentAsync(String projectKey, String environmentKey, String experimentKey, final ApiCallback<ExperimentRep> _callback) throws ApiException {
+    public okhttp3.Call getExperimentAsync(String projectKey, String environmentKey, String experimentKey, final ApiCallback<Experiment> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getExperimentValidateBeforeCall(projectKey, environmentKey, experimentKey, _callback);
-        Type localVarReturnType = new TypeToken<ExperimentRep>(){}.getType();
+        Type localVarReturnType = new TypeToken<Experiment>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1109,7 +1109,7 @@ public class ExperimentsBetaApi {
      * @param environmentKey The environment key (required)
      * @param experimentKey The experiment key (required)
      * @param experimentPatchInput  (required)
-     * @return ExperimentRep
+     * @return Experiment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1122,8 +1122,8 @@ public class ExperimentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ExperimentRep patchExperiment(String projectKey, String environmentKey, String experimentKey, ExperimentPatchInput experimentPatchInput) throws ApiException {
-        ApiResponse<ExperimentRep> localVarResp = patchExperimentWithHttpInfo(projectKey, environmentKey, experimentKey, experimentPatchInput);
+    public Experiment patchExperiment(String projectKey, String environmentKey, String experimentKey, ExperimentPatchInput experimentPatchInput) throws ApiException {
+        ApiResponse<Experiment> localVarResp = patchExperimentWithHttpInfo(projectKey, environmentKey, experimentKey, experimentPatchInput);
         return localVarResp.getData();
     }
 
@@ -1134,7 +1134,7 @@ public class ExperimentsBetaApi {
      * @param environmentKey The environment key (required)
      * @param experimentKey The experiment key (required)
      * @param experimentPatchInput  (required)
-     * @return ApiResponse&lt;ExperimentRep&gt;
+     * @return ApiResponse&lt;Experiment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1147,9 +1147,9 @@ public class ExperimentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ExperimentRep> patchExperimentWithHttpInfo(String projectKey, String environmentKey, String experimentKey, ExperimentPatchInput experimentPatchInput) throws ApiException {
+    public ApiResponse<Experiment> patchExperimentWithHttpInfo(String projectKey, String environmentKey, String experimentKey, ExperimentPatchInput experimentPatchInput) throws ApiException {
         okhttp3.Call localVarCall = patchExperimentValidateBeforeCall(projectKey, environmentKey, experimentKey, experimentPatchInput, null);
-        Type localVarReturnType = new TypeToken<ExperimentRep>(){}.getType();
+        Type localVarReturnType = new TypeToken<Experiment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1174,10 +1174,10 @@ public class ExperimentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchExperimentAsync(String projectKey, String environmentKey, String experimentKey, ExperimentPatchInput experimentPatchInput, final ApiCallback<ExperimentRep> _callback) throws ApiException {
+    public okhttp3.Call patchExperimentAsync(String projectKey, String environmentKey, String experimentKey, ExperimentPatchInput experimentPatchInput, final ApiCallback<Experiment> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchExperimentValidateBeforeCall(projectKey, environmentKey, experimentKey, experimentPatchInput, _callback);
-        Type localVarReturnType = new TypeToken<ExperimentRep>(){}.getType();
+        Type localVarReturnType = new TypeToken<Experiment>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
