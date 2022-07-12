@@ -5,10 +5,10 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**items** | [**Map&lt;String, UserFlagSetting&gt;**](UserFlagSetting.md) |  | 
-**links** | [**Map&lt;String, Link&gt;**](Link.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**items** | [**Map&lt;String, UserFlagSetting&gt;**](UserFlagSetting.md) | An array of flag settings for the user. |  |
+|**links** | [**Map&lt;String, Link&gt;**](Link.md) |  |  |
 
 
 

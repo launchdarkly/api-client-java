@@ -2,13 +2,13 @@
 
 All URIs are relative to *https://app.launchdarkly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createSubscription**](IntegrationAuditLogSubscriptionsApi.md#createSubscription) | **POST** /api/v2/integrations/{integrationKey} | Create audit log subscription
-[**deleteSubscription**](IntegrationAuditLogSubscriptionsApi.md#deleteSubscription) | **DELETE** /api/v2/integrations/{integrationKey}/{id} | Delete audit log subscription
-[**getSubscriptionByID**](IntegrationAuditLogSubscriptionsApi.md#getSubscriptionByID) | **GET** /api/v2/integrations/{integrationKey}/{id} | Get audit log subscription by ID
-[**getSubscriptions**](IntegrationAuditLogSubscriptionsApi.md#getSubscriptions) | **GET** /api/v2/integrations/{integrationKey} | Get audit log subscriptions by integration
-[**updateSubscription**](IntegrationAuditLogSubscriptionsApi.md#updateSubscription) | **PATCH** /api/v2/integrations/{integrationKey}/{id} | Update audit log subscription
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createSubscription**](IntegrationAuditLogSubscriptionsApi.md#createSubscription) | **POST** /api/v2/integrations/{integrationKey} | Create audit log subscription |
+| [**deleteSubscription**](IntegrationAuditLogSubscriptionsApi.md#deleteSubscription) | **DELETE** /api/v2/integrations/{integrationKey}/{id} | Delete audit log subscription |
+| [**getSubscriptionByID**](IntegrationAuditLogSubscriptionsApi.md#getSubscriptionByID) | **GET** /api/v2/integrations/{integrationKey}/{id} | Get audit log subscription by ID |
+| [**getSubscriptions**](IntegrationAuditLogSubscriptionsApi.md#getSubscriptions) | **GET** /api/v2/integrations/{integrationKey} | Get audit log subscriptions by integration |
+| [**updateSubscription**](IntegrationAuditLogSubscriptionsApi.md#updateSubscription) | **PATCH** /api/v2/integrations/{integrationKey}/{id} | Update audit log subscription |
 
 
 <a name="createSubscription"></a>
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Create audit log subscription
 
-Create an audit log subscription.
+Create an audit log subscription.&lt;br /&gt;&lt;br /&gt;For each subscription, you must specify the set of resources you wish to subscribe to audit log notifications for. You can describe these resources using a custom role policy. To learn more, read [Custom role concepts](https://docs.launchdarkly.com/home/members/role-concepts).
 
 ### Example
 ```java
@@ -59,10 +59,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **integrationKey** | **String**| The integration key |
- **subscriptionPost** | [**SubscriptionPost**](SubscriptionPost.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **integrationKey** | **String**| The integration key | |
+| **subscriptionPost** | [**SubscriptionPost**](SubscriptionPost.md)|  | |
 
 ### Return type
 
@@ -80,12 +80,12 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Successful integration |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **201** | Integration response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="deleteSubscription"></a>
 # **deleteSubscription**
@@ -134,10 +134,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **integrationKey** | **String**| The integration key |
- **id** | **String**| The subscription ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **integrationKey** | **String**| The integration key | |
+| **id** | **String**| The subscription ID | |
 
 ### Return type
 
@@ -155,11 +155,11 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Action succeeded |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **204** | Action succeeded |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getSubscriptionByID"></a>
 # **getSubscriptionByID**
@@ -209,10 +209,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **integrationKey** | **String**| The integration key |
- **id** | **String**| The subscription ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **integrationKey** | **String**| The integration key | |
+| **id** | **String**| The subscription ID | |
 
 ### Return type
 
@@ -230,11 +230,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful integrations response |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Integration response |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getSubscriptions"></a>
 # **getSubscriptions**
@@ -283,9 +283,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **integrationKey** | **String**| The integration key |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **integrationKey** | **String**| The integration key | |
 
 ### Return type
 
@@ -303,11 +303,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful integrations response |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Integrations response |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="updateSubscription"></a>
 # **updateSubscription**
@@ -358,11 +358,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **integrationKey** | **String**| The integration key |
- **id** | **String**| The ID of the audit log subscription |
- **patchOperation** | [**List&lt;PatchOperation&gt;**](PatchOperation.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **integrationKey** | **String**| The integration key | |
+| **id** | **String**| The ID of the audit log subscription | |
+| **patchOperation** | [**List&lt;PatchOperation&gt;**](PatchOperation.md)|  | |
 
 ### Return type
 
@@ -380,10 +380,10 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful |  -  |
-**400** | Invalid request |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**409** | Status conflict |  -  |
-**429** | Rate limited |  -  |
+| **200** | Successful |  -  |
+| **400** | Invalid request |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **409** | Status conflict |  -  |
+| **429** | Rate limited |  -  |
 

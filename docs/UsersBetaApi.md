@@ -2,9 +2,9 @@
 
 All URIs are relative to *https://app.launchdarkly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getUserAttributeNames**](UsersBetaApi.md#getUserAttributeNames) | **GET** /api/v2/user-attributes/{projectKey}/{environmentKey} | Get user attribute names
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**getUserAttributeNames**](UsersBetaApi.md#getUserAttributeNames) | **GET** /api/v2/user-attributes/{projectKey}/{environmentKey} | Get user attribute names |
 
 
 <a name="getUserAttributeNames"></a>
@@ -55,10 +55,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **environmentKey** | **String**| The environment key |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **environmentKey** | **String**| The environment key | |
 
 ### Return type
 
@@ -76,9 +76,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | User attribute names response |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
+| **200** | User attribute names response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
 

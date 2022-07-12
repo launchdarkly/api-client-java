@@ -2,12 +2,12 @@
 
 All URIs are relative to *https://app.launchdarkly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createBigSegmentExport**](SegmentsBetaApi.md#createBigSegmentExport) | **POST** /api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}/exports | Create Big Segment export
-[**createBigSegmentImport**](SegmentsBetaApi.md#createBigSegmentImport) | **POST** /api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}/imports | Create Big Segment import
-[**getBigSegmentExport**](SegmentsBetaApi.md#getBigSegmentExport) | **GET** /api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}/exports/{exportID} | Get Big Segment export
-[**getBigSegmentImport**](SegmentsBetaApi.md#getBigSegmentImport) | **GET** /api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}/imports/{importID} | Get Big Segment import
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createBigSegmentExport**](SegmentsBetaApi.md#createBigSegmentExport) | **POST** /api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}/exports | Create Big Segment export |
+| [**createBigSegmentImport**](SegmentsBetaApi.md#createBigSegmentImport) | **POST** /api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}/imports | Create Big Segment import |
+| [**getBigSegmentExport**](SegmentsBetaApi.md#getBigSegmentExport) | **GET** /api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}/exports/{exportID} | Get Big Segment export |
+| [**getBigSegmentImport**](SegmentsBetaApi.md#getBigSegmentImport) | **GET** /api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}/imports/{importID} | Get Big Segment import |
 
 
 <a name="createBigSegmentExport"></a>
@@ -58,11 +58,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **environmentKey** | **String**| The environment key |
- **segmentKey** | **String**| The segment key |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **environmentKey** | **String**| The environment key | |
+| **segmentKey** | **String**| The segment key | |
 
 ### Return type
 
@@ -80,19 +80,19 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Action succeeded |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Action succeeded |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="createBigSegmentImport"></a>
 # **createBigSegmentImport**
-> createBigSegmentImport(projectKey, environmentKey, segmentKey, file, mode)
+> createBigSegmentImport(projectKey, environmentKey, segmentKey, _file, mode)
 
 Create Big Segment import
 
-Starts a new import process for a Big Segment
+Start a new import process for a Big Segment.
 
 ### Example
 ```java
@@ -119,10 +119,10 @@ public class Example {
     String projectKey = "projectKey_example"; // String | The project key
     String environmentKey = "environmentKey_example"; // String | The environment key
     String segmentKey = "segmentKey_example"; // String | The segment key
-    File file = new File("/path/to/file"); // File | CSV file containing keys
+    File _file = new File("/path/to/file"); // File | CSV file containing keys
     String mode = "mode_example"; // String | Import mode. Use either `merge` or `replace`
     try {
-      apiInstance.createBigSegmentImport(projectKey, environmentKey, segmentKey, file, mode);
+      apiInstance.createBigSegmentImport(projectKey, environmentKey, segmentKey, _file, mode);
     } catch (ApiException e) {
       System.err.println("Exception when calling SegmentsBetaApi#createBigSegmentImport");
       System.err.println("Status code: " + e.getCode());
@@ -136,13 +136,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **environmentKey** | **String**| The environment key |
- **segmentKey** | **String**| The segment key |
- **file** | **File**| CSV file containing keys | [optional]
- **mode** | **String**| Import mode. Use either &#x60;merge&#x60; or &#x60;replace&#x60; | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **environmentKey** | **String**| The environment key | |
+| **segmentKey** | **String**| The segment key | |
+| **_file** | **File**| CSV file containing keys | [optional] |
+| **mode** | **String**| Import mode. Use either &#x60;merge&#x60; or &#x60;replace&#x60; | [optional] |
 
 ### Return type
 
@@ -160,12 +160,12 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Import request submitted successfully |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**404** | Invalid resource identifier |  -  |
-**409** | Conflicting process |  -  |
-**429** | Rate limited |  -  |
+| **204** | Import request submitted successfully |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **409** | Conflicting process |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getBigSegmentExport"></a>
 # **getBigSegmentExport**
@@ -217,12 +217,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **environmentKey** | **String**| The environment key |
- **segmentKey** | **String**| The segment key |
- **exportID** | **String**| The export ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **environmentKey** | **String**| The environment key | |
+| **segmentKey** | **String**| The segment key | |
+| **exportID** | **String**| The export ID | |
 
 ### Return type
 
@@ -240,10 +240,10 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Segment export response |  -  |
-**400** | Invalid request |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Segment export response |  -  |
+| **400** | Invalid request |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getBigSegmentImport"></a>
 # **getBigSegmentImport**
@@ -295,12 +295,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **environmentKey** | **String**| The environment key |
- **segmentKey** | **String**| The segment key |
- **importID** | **String**| The import ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **environmentKey** | **String**| The environment key | |
+| **segmentKey** | **String**| The segment key | |
+| **importID** | **String**| The import ID | |
 
 ### Return type
 
@@ -318,8 +318,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Segment import response |  -  |
-**400** | Invalid request |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Segment import response |  -  |
+| **400** | Invalid request |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 

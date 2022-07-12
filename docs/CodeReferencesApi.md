@@ -2,21 +2,21 @@
 
 All URIs are relative to *https://app.launchdarkly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteBranches**](CodeReferencesApi.md#deleteBranches) | **POST** /api/v2/code-refs/repositories/{repo}/branch-delete-tasks | Delete branches
-[**deleteRepository**](CodeReferencesApi.md#deleteRepository) | **DELETE** /api/v2/code-refs/repositories/{repo} | Delete repository
-[**getBranch**](CodeReferencesApi.md#getBranch) | **GET** /api/v2/code-refs/repositories/{repo}/branches/{branch} | Get branch
-[**getBranches**](CodeReferencesApi.md#getBranches) | **GET** /api/v2/code-refs/repositories/{repo}/branches | List branches
-[**getExtinctions**](CodeReferencesApi.md#getExtinctions) | **GET** /api/v2/code-refs/extinctions | List extinctions
-[**getRepositories**](CodeReferencesApi.md#getRepositories) | **GET** /api/v2/code-refs/repositories | List repositories
-[**getRepository**](CodeReferencesApi.md#getRepository) | **GET** /api/v2/code-refs/repositories/{repo} | Get repository
-[**getRootStatistic**](CodeReferencesApi.md#getRootStatistic) | **GET** /api/v2/code-refs/statistics | Get links to code reference repositories for each project
-[**getStatistics**](CodeReferencesApi.md#getStatistics) | **GET** /api/v2/code-refs/statistics/{projectKey} | Get number of code references for flags
-[**patchRepository**](CodeReferencesApi.md#patchRepository) | **PATCH** /api/v2/code-refs/repositories/{repo} | Update repository
-[**postExtinction**](CodeReferencesApi.md#postExtinction) | **POST** /api/v2/code-refs/repositories/{repo}/branches/{branch}/extinction-events | Create extinction
-[**postRepository**](CodeReferencesApi.md#postRepository) | **POST** /api/v2/code-refs/repositories | Create repository
-[**putBranch**](CodeReferencesApi.md#putBranch) | **PUT** /api/v2/code-refs/repositories/{repo}/branches/{branch} | Upsert branch
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**deleteBranches**](CodeReferencesApi.md#deleteBranches) | **POST** /api/v2/code-refs/repositories/{repo}/branch-delete-tasks | Delete branches |
+| [**deleteRepository**](CodeReferencesApi.md#deleteRepository) | **DELETE** /api/v2/code-refs/repositories/{repo} | Delete repository |
+| [**getBranch**](CodeReferencesApi.md#getBranch) | **GET** /api/v2/code-refs/repositories/{repo}/branches/{branch} | Get branch |
+| [**getBranches**](CodeReferencesApi.md#getBranches) | **GET** /api/v2/code-refs/repositories/{repo}/branches | List branches |
+| [**getExtinctions**](CodeReferencesApi.md#getExtinctions) | **GET** /api/v2/code-refs/extinctions | List extinctions |
+| [**getRepositories**](CodeReferencesApi.md#getRepositories) | **GET** /api/v2/code-refs/repositories | List repositories |
+| [**getRepository**](CodeReferencesApi.md#getRepository) | **GET** /api/v2/code-refs/repositories/{repo} | Get repository |
+| [**getRootStatistic**](CodeReferencesApi.md#getRootStatistic) | **GET** /api/v2/code-refs/statistics | Get links to code reference repositories for each project |
+| [**getStatistics**](CodeReferencesApi.md#getStatistics) | **GET** /api/v2/code-refs/statistics/{projectKey} | Get code references statistics for flags |
+| [**patchRepository**](CodeReferencesApi.md#patchRepository) | **PATCH** /api/v2/code-refs/repositories/{repo} | Update repository |
+| [**postExtinction**](CodeReferencesApi.md#postExtinction) | **POST** /api/v2/code-refs/repositories/{repo}/branches/{branch}/extinction-events | Create extinction |
+| [**postRepository**](CodeReferencesApi.md#postRepository) | **POST** /api/v2/code-refs/repositories | Create repository |
+| [**putBranch**](CodeReferencesApi.md#putBranch) | **PUT** /api/v2/code-refs/repositories/{repo}/branches/{branch} | Upsert branch |
 
 
 <a name="deleteBranches"></a>
@@ -50,7 +50,7 @@ public class Example {
 
     CodeReferencesApi apiInstance = new CodeReferencesApi(defaultClient);
     String repo = "repo_example"; // String | The repository name to delete branches for.
-    List<String> requestBody = Arrays.asList(); // List<String> | 
+    List<String> requestBody = ["branch-to-be-deleted","another-branch-to-be-deleted"]; // List<String> | 
     try {
       apiInstance.deleteBranches(repo, requestBody);
     } catch (ApiException e) {
@@ -66,10 +66,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **repo** | **String**| The repository name to delete branches for. |
- **requestBody** | [**List&lt;String&gt;**](String.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **repo** | **String**| The repository name to delete branches for. | |
+| **requestBody** | [**List&lt;String&gt;**](String.md)|  | |
 
 ### Return type
 
@@ -87,12 +87,12 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Action succeeded |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Action succeeded |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="deleteRepository"></a>
 # **deleteRepository**
@@ -100,7 +100,7 @@ null (empty response body)
 
 Delete repository
 
-Delete a repository with the specified name
+Delete a repository with the specified name.
 
 ### Example
 ```java
@@ -140,9 +140,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **repo** | **String**| The repository name |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **repo** | **String**| The repository name | |
 
 ### Return type
 
@@ -160,12 +160,12 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Action succeeded |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **204** | Action succeeded |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getBranch"></a>
 # **getBranch**
@@ -173,7 +173,7 @@ null (empty response body)
 
 Get branch
 
-Get a specific branch in a repository
+Get a specific branch in a repository.
 
 ### Example
 ```java
@@ -217,12 +217,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **repo** | **String**| The repository name |
- **branch** | **String**| The url-encoded branch name |
- **projKey** | **String**| Filter results to a specific project | [optional]
- **flagKey** | **String**| Filter results to a specific flag key | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **repo** | **String**| The repository name | |
+| **branch** | **String**| The url-encoded branch name | |
+| **projKey** | **String**| Filter results to a specific project | [optional] |
+| **flagKey** | **String**| Filter results to a specific flag key | [optional] |
 
 ### Return type
 
@@ -240,12 +240,12 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Branch response |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Branch response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getBranches"></a>
 # **getBranches**
@@ -294,9 +294,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **repo** | **String**| The repository name |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **repo** | **String**| The repository name | |
 
 ### Return type
 
@@ -314,12 +314,12 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Branch collection response |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Branch collection response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getExtinctions"></a>
 # **getExtinctions**
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 
 List extinctions
 
-Get a list of all extinctions.
+Get a list of all extinctions. LaunchDarkly creates an extinction event after you remove all code references to a flag. To learn more, read [Understanding extinction events](https://docs.launchdarkly.com/home/code/code-references#understanding-extinction-events).
 
 ### Example
 ```java
@@ -373,14 +373,14 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **repoName** | **String**| Filter results to a specific repository | [optional]
- **branchName** | **String**| Filter results to a specific branch. By default, only the default branch will be queried for extinctions. | [optional]
- **projKey** | **String**| Filter results to a specific project | [optional]
- **flagKey** | **String**| Filter results to a specific flag key | [optional]
- **from** | **Long**| Filter results to a specific timeframe based on commit time, expressed as a Unix epoch time in milliseconds. Must be used with &#x60;to&#x60;. | [optional]
- **to** | **Long**| Filter results to a specific timeframe based on commit time, expressed as a Unix epoch time in milliseconds. Must be used with &#x60;from&#x60;. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **repoName** | **String**| Filter results to a specific repository | [optional] |
+| **branchName** | **String**| Filter results to a specific branch. By default, only the default branch will be queried for extinctions. | [optional] |
+| **projKey** | **String**| Filter results to a specific project | [optional] |
+| **flagKey** | **String**| Filter results to a specific flag key | [optional] |
+| **from** | **Long**| Filter results to a specific timeframe based on commit time, expressed as a Unix epoch time in milliseconds. Must be used with &#x60;to&#x60;. | [optional] |
+| **to** | **Long**| Filter results to a specific timeframe based on commit time, expressed as a Unix epoch time in milliseconds. Must be used with &#x60;from&#x60;. | [optional] |
 
 ### Return type
 
@@ -398,10 +398,10 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Extinction collection response |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**429** | Rate limited |  -  |
+| **200** | Extinction collection response |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getRepositories"></a>
 # **getRepositories**
@@ -453,12 +453,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **withBranches** | **String**| If set to any value, the endpoint returns repositories with associated branch data | [optional]
- **withReferencesForDefaultBranch** | **String**| If set to any value, the endpoint returns repositories with associated branch data, as well as code references for the default git branch | [optional]
- **projKey** | **String**| A LaunchDarkly project key. If provided, this filters code reference results to the specified project. | [optional]
- **flagKey** | **String**| If set to any value, the endpoint returns repositories with associated branch data, as well as code references for the default git branch | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **withBranches** | **String**| If set to any value, the endpoint returns repositories with associated branch data | [optional] |
+| **withReferencesForDefaultBranch** | **String**| If set to any value, the endpoint returns repositories with associated branch data, as well as code references for the default git branch | [optional] |
+| **projKey** | **String**| A LaunchDarkly project key. If provided, this filters code reference results to the specified project. | [optional] |
+| **flagKey** | **String**| If set to any value, the endpoint returns repositories with associated branch data, as well as code references for the default git branch | [optional] |
 
 ### Return type
 
@@ -476,10 +476,10 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Repository collection response |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**429** | Rate limited |  -  |
+| **200** | Repository collection response |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getRepository"></a>
 # **getRepository**
@@ -528,9 +528,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **repo** | **String**| The repository name |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **repo** | **String**| The repository name | |
 
 ### Return type
 
@@ -548,12 +548,12 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Repository response |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Repository response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getRootStatistic"></a>
 # **getRootStatistic**
@@ -561,7 +561,7 @@ Name | Type | Description  | Notes
 
 Get links to code reference repositories for each project
 
-Get links for all projects that have Code References.
+Get links for all projects that have code references.
 
 ### Example
 ```java
@@ -618,19 +618,19 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Statistic root response |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Statistic root response |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getStatistics"></a>
 # **getStatistics**
 > StatisticCollectionRep getStatistics(projectKey, flagKey)
 
-Get number of code references for flags
+Get code references statistics for flags
 
-Get the number of code references across repositories for all flags in your project that have code references in the default branch (for example: master). You can optionally include the &#x60;flagKey&#x60; query parameter to get the number of code references across repositories for a single flag. This endpoint returns the number of times your flag keys are referenced in your repositories. You can filter to a single flag with by passing in a flag key.
+Get statistics about all the code references across repositories for all flags in your project that have code references in the default branch, for example, &#x60;main&#x60;. Optionally, you can include the &#x60;flagKey&#x60; query parameter to limit your request to statistics about code references for a single flag. This endpoint returns the number of references to your flag keys in your repositories, as well as a link to each repository.
 
 ### Example
 ```java
@@ -672,10 +672,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **flagKey** | **String**| Filter results to a specific flag key | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **flagKey** | **String**| Filter results to a specific flag key | [optional] |
 
 ### Return type
 
@@ -693,11 +693,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Statistic collection response |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Statistic collection response |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="patchRepository"></a>
 # **patchRepository**
@@ -747,10 +747,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **repo** | **String**| The repository name |
- **patchOperation** | [**List&lt;PatchOperation&gt;**](PatchOperation.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **repo** | **String**| The repository name | |
+| **patchOperation** | [**List&lt;PatchOperation&gt;**](PatchOperation.md)|  | |
 
 ### Return type
 
@@ -768,12 +768,12 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Repository response |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Repository response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="postExtinction"></a>
 # **postExtinction**
@@ -781,7 +781,7 @@ Name | Type | Description  | Notes
 
 Create extinction
 
-Create a new extinction
+Create a new extinction.
 
 ### Example
 ```java
@@ -806,7 +806,7 @@ public class Example {
 
     CodeReferencesApi apiInstance = new CodeReferencesApi(defaultClient);
     String repo = "repo_example"; // String | The repository name
-    String branch = "branch_example"; // String | The url-encoded branch name
+    String branch = "branch_example"; // String | The URL-encoded branch name
     List<Extinction> extinction = Arrays.asList(); // List<Extinction> | 
     try {
       apiInstance.postExtinction(repo, branch, extinction);
@@ -823,11 +823,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **repo** | **String**| The repository name |
- **branch** | **String**| The url-encoded branch name |
- **extinction** | [**List&lt;Extinction&gt;**](Extinction.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **repo** | **String**| The repository name | |
+| **branch** | **String**| The URL-encoded branch name | |
+| **extinction** | [**List&lt;Extinction&gt;**](Extinction.md)|  | |
 
 ### Return type
 
@@ -845,12 +845,12 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Action succeeded |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Action succeeded |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="postRepository"></a>
 # **postRepository**
@@ -899,9 +899,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **repositoryPost** | [**RepositoryPost**](RepositoryPost.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **repositoryPost** | [**RepositoryPost**](RepositoryPost.md)|  | |
 
 ### Return type
 
@@ -919,12 +919,12 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Repository response |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**409** | Status conflict |  -  |
-**429** | Rate limited |  -  |
+| **200** | Repository response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **409** | Status conflict |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="putBranch"></a>
 # **putBranch**
@@ -932,7 +932,7 @@ Name | Type | Description  | Notes
 
 Upsert branch
 
-Create a new branch if it doesn&#39;t exist, or updates the branch if it already exists.
+Create a new branch if it doesn&#39;t exist, or update the branch if it already exists.
 
 ### Example
 ```java
@@ -957,7 +957,7 @@ public class Example {
 
     CodeReferencesApi apiInstance = new CodeReferencesApi(defaultClient);
     String repo = "repo_example"; // String | The repository name
-    String branch = "branch_example"; // String | The url-encoded branch name
+    String branch = "branch_example"; // String | The URL-encoded branch name
     PutBranch putBranch = new PutBranch(); // PutBranch | 
     try {
       apiInstance.putBranch(repo, branch, putBranch);
@@ -974,11 +974,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **repo** | **String**| The repository name |
- **branch** | **String**| The url-encoded branch name |
- **putBranch** | [**PutBranch**](PutBranch.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **repo** | **String**| The repository name | |
+| **branch** | **String**| The URL-encoded branch name | |
+| **putBranch** | [**PutBranch**](PutBranch.md)|  | |
 
 ### Return type
 
@@ -996,11 +996,11 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Action succeeded |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**409** | Status conflict |  -  |
-**429** | Rate limited |  -  |
+| **200** | Action succeeded |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **409** | Status conflict |  -  |
+| **429** | Rate limited |  -  |
 

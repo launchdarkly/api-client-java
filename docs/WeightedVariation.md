@@ -5,11 +5,11 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**variation** | **Integer** |  | 
-**weight** | **Integer** |  | 
-**untracked** | **Boolean** |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**variation** | **Integer** |  |  |
+|**weight** | **Integer** |  |  |
+|**untracked** | **Boolean** |  |  [optional] |
 
 
 

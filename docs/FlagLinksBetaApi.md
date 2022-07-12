@@ -2,12 +2,12 @@
 
 All URIs are relative to *https://app.launchdarkly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createFlagLink**](FlagLinksBetaApi.md#createFlagLink) | **POST** /api/v2/flag-links/projects/{projectKey}/flags/{featureFlagKey} | Create flag link
-[**deleteFlagLink**](FlagLinksBetaApi.md#deleteFlagLink) | **DELETE** /api/v2/flag-links/projects/{projectKey}/flags/{featureFlagKey}/{id} | Delete flag link
-[**getFlagLinks**](FlagLinksBetaApi.md#getFlagLinks) | **GET** /api/v2/flag-links/projects/{projectKey}/flags/{featureFlagKey} | List flag links
-[**updateFlagLink**](FlagLinksBetaApi.md#updateFlagLink) | **PATCH** /api/v2/flag-links/projects/{projectKey}/flags/{featureFlagKey}/{id} | Update flag link
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createFlagLink**](FlagLinksBetaApi.md#createFlagLink) | **POST** /api/v2/flag-links/projects/{projectKey}/flags/{featureFlagKey} | Create flag link |
+| [**deleteFlagLink**](FlagLinksBetaApi.md#deleteFlagLink) | **DELETE** /api/v2/flag-links/projects/{projectKey}/flags/{featureFlagKey}/{id} | Delete flag link |
+| [**getFlagLinks**](FlagLinksBetaApi.md#getFlagLinks) | **GET** /api/v2/flag-links/projects/{projectKey}/flags/{featureFlagKey} | List flag links |
+| [**updateFlagLink**](FlagLinksBetaApi.md#updateFlagLink) | **PATCH** /api/v2/flag-links/projects/{projectKey}/flags/{featureFlagKey}/{id} | Update flag link |
 
 
 <a name="createFlagLink"></a>
@@ -59,11 +59,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag key |
- **flagLinkPost** | [**FlagLinkPost**](FlagLinkPost.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **featureFlagKey** | **String**| The feature flag key | |
+| **flagLinkPost** | [**FlagLinkPost**](FlagLinkPost.md)|  | |
 
 ### Return type
 
@@ -81,12 +81,12 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Successful flag link response |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **201** | Successful flag link response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="deleteFlagLink"></a>
 # **deleteFlagLink**
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 Delete flag link
 
-Delete a flag link by ID or Key.
+Delete a flag link by ID or key.
 
 ### Example
 ```java
@@ -136,11 +136,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag key |
- **id** | **String**| The flag link ID or Key |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **featureFlagKey** | **String**| The feature flag key | |
+| **id** | **String**| The flag link ID or Key | |
 
 ### Return type
 
@@ -158,12 +158,12 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Action succeeded |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **204** | Action succeeded |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getFlagLinks"></a>
 # **getFlagLinks**
@@ -213,10 +213,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag key |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **featureFlagKey** | **String**| The feature flag key | |
 
 ### Return type
 
@@ -234,10 +234,10 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Flag link collection response JSON |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**429** | Rate limited |  -  |
+| **200** | Flag link collection response JSON |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="updateFlagLink"></a>
 # **updateFlagLink**
@@ -289,12 +289,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag key |
- **id** | **String**| The flag link ID |
- **patchOperation** | [**List&lt;PatchOperation&gt;**](PatchOperation.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **featureFlagKey** | **String**| The feature flag key | |
+| **id** | **String**| The flag link ID | |
+| **patchOperation** | [**List&lt;PatchOperation&gt;**](PatchOperation.md)|  | |
 
 ### Return type
 
@@ -312,11 +312,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Flag link response |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**409** | Status conflict |  -  |
-**429** | Rate limited |  -  |
+| **200** | Flag link response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **409** | Status conflict |  -  |
+| **429** | Rate limited |  -  |
 

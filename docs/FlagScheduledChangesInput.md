@@ -5,10 +5,10 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**comment** | **String** |  |  [optional]
-**instructions** | **List&lt;Object&gt;** |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**comment** | **String** | Optional comment describing the update to the scheduled changes |  [optional] |
+|**instructions** | **List&lt;Map&lt;String, Object&gt;&gt;** |  |  |
 
 
 

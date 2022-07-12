@@ -2,13 +2,13 @@
 
 All URIs are relative to *https://app.launchdarkly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteMetric**](MetricsApi.md#deleteMetric) | **DELETE** /api/v2/metrics/{projectKey}/{metricKey} | Delete metric
-[**getMetric**](MetricsApi.md#getMetric) | **GET** /api/v2/metrics/{projectKey}/{metricKey} | Get metric
-[**getMetrics**](MetricsApi.md#getMetrics) | **GET** /api/v2/metrics/{projectKey} | List metrics
-[**patchMetric**](MetricsApi.md#patchMetric) | **PATCH** /api/v2/metrics/{projectKey}/{metricKey} | Update metric
-[**postMetric**](MetricsApi.md#postMetric) | **POST** /api/v2/metrics/{projectKey} | Create metric
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**deleteMetric**](MetricsApi.md#deleteMetric) | **DELETE** /api/v2/metrics/{projectKey}/{metricKey} | Delete metric |
+| [**getMetric**](MetricsApi.md#getMetric) | **GET** /api/v2/metrics/{projectKey}/{metricKey} | Get metric |
+| [**getMetrics**](MetricsApi.md#getMetrics) | **GET** /api/v2/metrics/{projectKey} | List metrics |
+| [**patchMetric**](MetricsApi.md#patchMetric) | **PATCH** /api/v2/metrics/{projectKey}/{metricKey} | Update metric |
+| [**postMetric**](MetricsApi.md#postMetric) | **POST** /api/v2/metrics/{projectKey} | Create metric |
 
 
 <a name="deleteMetric"></a>
@@ -58,10 +58,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **metricKey** | **String**| The metric key |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **metricKey** | **String**| The metric key | |
 
 ### Return type
 
@@ -79,11 +79,11 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Action succeeded |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **204** | Action succeeded |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getMetric"></a>
 # **getMetric**
@@ -133,10 +133,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **metricKey** | **String**| The metric key |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **metricKey** | **String**| The metric key | |
 
 ### Return type
 
@@ -154,11 +154,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Metric response JSON |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Metric response JSON |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getMetrics"></a>
 # **getMetrics**
@@ -207,9 +207,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
 
 ### Return type
 
@@ -227,9 +227,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Metrics response JSON |  -  |
-**401** | Invalid access token |  -  |
-**404** | Invalid resource identifier |  -  |
+| **200** | Metrics response JSON |  -  |
+| **401** | Invalid access token |  -  |
+| **404** | Invalid resource identifier |  -  |
 
 <a name="patchMetric"></a>
 # **patchMetric**
@@ -280,11 +280,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **metricKey** | **String**| The metric key |
- **patchOperation** | [**List&lt;PatchOperation&gt;**](PatchOperation.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **metricKey** | **String**| The metric key | |
+| **patchOperation** | [**List&lt;PatchOperation&gt;**](PatchOperation.md)|  | |
 
 ### Return type
 
@@ -302,12 +302,12 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Metric response JSON |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**404** | Invalid resource identifier |  -  |
-**409** | Status conflict |  -  |
-**429** | Rate limited |  -  |
+| **200** | Metric response JSON |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **409** | Status conflict |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="postMetric"></a>
 # **postMetric**
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 Create metric
 
-Create a new metric in the specified project. Note that the expected POST body differs depending on the specified kind property.
+Create a new metric in the specified project. The expected &#x60;POST&#x60; body differs depending on the specified &#x60;kind&#x60; property.
 
 ### Example
 ```java
@@ -357,10 +357,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **metricPost** | [**MetricPost**](MetricPost.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **metricPost** | [**MetricPost**](MetricPost.md)|  | |
 
 ### Return type
 
@@ -378,11 +378,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Successful metric response |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**409** | Status conflict |  -  |
-**429** | Rate limited |  -  |
+| **201** | Successful metric response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **409** | Status conflict |  -  |
+| **429** | Rate limited |  -  |
 

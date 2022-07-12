@@ -5,10 +5,10 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**code** | **String** |  |  [optional]
-**message** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**code** | **String** | Specific error code encountered |  [optional] |
+|**message** | **String** | Description of the error |  [optional] |
 
 
 

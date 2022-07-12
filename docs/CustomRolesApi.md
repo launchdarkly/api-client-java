@@ -2,13 +2,13 @@
 
 All URIs are relative to *https://app.launchdarkly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteCustomRole**](CustomRolesApi.md#deleteCustomRole) | **DELETE** /api/v2/roles/{customRoleKey} | Delete custom role
-[**getCustomRole**](CustomRolesApi.md#getCustomRole) | **GET** /api/v2/roles/{customRoleKey} | Get custom role
-[**getCustomRoles**](CustomRolesApi.md#getCustomRoles) | **GET** /api/v2/roles | List custom roles
-[**patchCustomRole**](CustomRolesApi.md#patchCustomRole) | **PATCH** /api/v2/roles/{customRoleKey} | Update custom role
-[**postCustomRole**](CustomRolesApi.md#postCustomRole) | **POST** /api/v2/roles | Create custom role
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**deleteCustomRole**](CustomRolesApi.md#deleteCustomRole) | **DELETE** /api/v2/roles/{customRoleKey} | Delete custom role |
+| [**getCustomRole**](CustomRolesApi.md#getCustomRole) | **GET** /api/v2/roles/{customRoleKey} | Get custom role |
+| [**getCustomRoles**](CustomRolesApi.md#getCustomRoles) | **GET** /api/v2/roles | List custom roles |
+| [**patchCustomRole**](CustomRolesApi.md#patchCustomRole) | **PATCH** /api/v2/roles/{customRoleKey} | Update custom role |
+| [**postCustomRole**](CustomRolesApi.md#postCustomRole) | **POST** /api/v2/roles | Create custom role |
 
 
 <a name="deleteCustomRole"></a>
@@ -57,9 +57,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customRoleKey** | **String**| The custom role key |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **customRoleKey** | **String**| The custom role key | |
 
 ### Return type
 
@@ -77,10 +77,10 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Action succeeded |  -  |
-**401** | Invalid access token |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **204** | Action succeeded |  -  |
+| **401** | Invalid access token |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getCustomRole"></a>
 # **getCustomRole**
@@ -129,9 +129,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customRoleKey** | **String**| The custom role key or ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **customRoleKey** | **String**| The custom role key or ID | |
 
 ### Return type
 
@@ -149,11 +149,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Custom role response |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Custom role response |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getCustomRoles"></a>
 # **getCustomRoles**
@@ -218,10 +218,10 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Custom roles collection response. |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**429** | Rate limited |  -  |
+| **200** | Custom roles collection response. |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="patchCustomRole"></a>
 # **patchCustomRole**
@@ -271,10 +271,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customRoleKey** | **String**| The custom role key |
- **patchWithComment** | [**PatchWithComment**](PatchWithComment.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **customRoleKey** | **String**| The custom role key | |
+| **patchWithComment** | [**PatchWithComment**](PatchWithComment.md)|  | |
 
 ### Return type
 
@@ -292,12 +292,12 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Custom role response |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**404** | Invalid resource identifier |  -  |
-**409** | Status conflict |  -  |
-**429** | Rate limited |  -  |
+| **200** | Custom role response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **409** | Status conflict |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="postCustomRole"></a>
 # **postCustomRole**
@@ -346,9 +346,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customRolePost** | [**CustomRolePost**](CustomRolePost.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **customRolePost** | [**CustomRolePost**](CustomRolePost.md)|  | |
 
 ### Return type
 
@@ -366,10 +366,10 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Custom role response |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**409** | Status conflict |  -  |
-**429** | Rate limited |  -  |
+| **201** | Custom role response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **409** | Status conflict |  -  |
+| **429** | Rate limited |  -  |
 

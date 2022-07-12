@@ -5,10 +5,10 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**items** | [**List&lt;FlagConfigApprovalRequestResponse&gt;**](FlagConfigApprovalRequestResponse.md) | An array of approval requests | 
-**links** | [**Map&lt;String, Link&gt;**](Link.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**items** | [**List&lt;FlagConfigApprovalRequestResponse&gt;**](FlagConfigApprovalRequestResponse.md) | An array of approval requests |  |
+|**links** | [**Map&lt;String, Link&gt;**](Link.md) |  |  |
 
 
 

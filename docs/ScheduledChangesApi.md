@@ -2,13 +2,13 @@
 
 All URIs are relative to *https://app.launchdarkly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteFlagConfigScheduledChanges**](ScheduledChangesApi.md#deleteFlagConfigScheduledChanges) | **DELETE** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes/{id} | Delete scheduled changes workflow
-[**getFeatureFlagScheduledChange**](ScheduledChangesApi.md#getFeatureFlagScheduledChange) | **GET** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes/{id} | Get a scheduled change
-[**getFlagConfigScheduledChanges**](ScheduledChangesApi.md#getFlagConfigScheduledChanges) | **GET** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes | List scheduled changes
-[**patchFlagConfigScheduledChange**](ScheduledChangesApi.md#patchFlagConfigScheduledChange) | **PATCH** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes/{id} | Update scheduled changes workflow
-[**postFlagConfigScheduledChanges**](ScheduledChangesApi.md#postFlagConfigScheduledChanges) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes | Create scheduled changes workflow
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**deleteFlagConfigScheduledChanges**](ScheduledChangesApi.md#deleteFlagConfigScheduledChanges) | **DELETE** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes/{id} | Delete scheduled changes workflow |
+| [**getFeatureFlagScheduledChange**](ScheduledChangesApi.md#getFeatureFlagScheduledChange) | **GET** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes/{id} | Get a scheduled change |
+| [**getFlagConfigScheduledChanges**](ScheduledChangesApi.md#getFlagConfigScheduledChanges) | **GET** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes | List scheduled changes |
+| [**patchFlagConfigScheduledChange**](ScheduledChangesApi.md#patchFlagConfigScheduledChange) | **PATCH** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes/{id} | Update scheduled changes workflow |
+| [**postFlagConfigScheduledChanges**](ScheduledChangesApi.md#postFlagConfigScheduledChanges) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes | Create scheduled changes workflow |
 
 
 <a name="deleteFlagConfigScheduledChanges"></a>
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Delete scheduled changes workflow
 
-Delete a scheduled changes workflow
+Delete a scheduled changes workflow.
 
 ### Example
 ```java
@@ -60,12 +60,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag key |
- **environmentKey** | **String**| The environment key |
- **id** | **String**| The scheduled change id |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **featureFlagKey** | **String**| The feature flag key | |
+| **environmentKey** | **String**| The environment key | |
+| **id** | **String**| The scheduled change id | |
 
 ### Return type
 
@@ -83,13 +83,13 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Action succeeded |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**405** | Method not allowed |  -  |
-**409** | Status conflict |  -  |
-**429** | Rate limited |  -  |
+| **204** | Action succeeded |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **405** | Method not allowed |  -  |
+| **409** | Status conflict |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getFeatureFlagScheduledChange"></a>
 # **getFeatureFlagScheduledChange**
@@ -97,7 +97,7 @@ null (empty response body)
 
 Get a scheduled change
 
-Get a scheduled change that will be applied to the feature flag by ID
+Get a scheduled change that will be applied to the feature flag by ID.
 
 ### Example
 ```java
@@ -141,12 +141,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag key |
- **environmentKey** | **String**| The environment key |
- **id** | **String**| The scheduled change id |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **featureFlagKey** | **String**| The feature flag key | |
+| **environmentKey** | **String**| The environment key | |
+| **id** | **String**| The scheduled change id | |
 
 ### Return type
 
@@ -164,10 +164,10 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Scheduled change response |  -  |
-**401** | Invalid access token |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Scheduled changes response |  -  |
+| **401** | Invalid access token |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getFlagConfigScheduledChanges"></a>
 # **getFlagConfigScheduledChanges**
@@ -218,11 +218,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag key |
- **environmentKey** | **String**| The environment key |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **featureFlagKey** | **String**| The feature flag key | |
+| **environmentKey** | **String**| The environment key | |
 
 ### Return type
 
@@ -240,11 +240,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Scheduled changes collection response |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
+| **200** | Scheduled changes collection response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
 
 <a name="patchFlagConfigScheduledChange"></a>
 # **patchFlagConfigScheduledChange**
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 
 Update scheduled changes workflow
 
-Update a scheduled change, overriding existing instructions with the new ones.&lt;br /&gt;&lt;br /&gt;Requires a semantic patch representation of the desired changes to the resource. To learn more about semantic patches, read [Updates](/reference#updates-via-semantic-patches).
+ Update a scheduled change, overriding existing instructions with the new ones. Updating a scheduled change uses the semantic patch format.  To make a semantic patch request, you must append &#x60;domain-model&#x3D;launchdarkly.semanticpatch&#x60; to your &#x60;Content-Type&#x60; header. To learn more, read [Updates using semantic patch](/reference#updates-using-semantic-patch).  ### Instructions  Semantic patch requests support the following &#x60;kind&#x60; instructions for updating scheduled changes.  #### deleteScheduledChange  Removes the scheduled change.  #### replaceScheduledChangesInstructions  Removes the existing scheduled changes and replaces them with the new instructions.  ##### Parameters  - &#x60;value&#x60;: An array of the new actions to perform when the execution date for these scheduled changes arrives. Supported scheduled actions are &#x60;turnFlagOn&#x60; and &#x60;turnFlagOff&#x60;.  For example, to replace the scheduled changes, use this request body:  &#x60;&#x60;&#x60;json {   \&quot;comment\&quot;: \&quot;optional comment\&quot;,   \&quot;instructions\&quot;: [     {       \&quot;kind\&quot;: \&quot;replaceScheduledChangesInstructions\&quot;,       \&quot;value\&quot;: [ {\&quot;kind\&quot;: \&quot;turnFlagOff\&quot;} ]     }   ] } &#x60;&#x60;&#x60;  #### updateScheduledChangesExecutionDate  Updates the execution date for the scheduled changes.  ##### Parameters  - &#x60;value&#x60;: the new execution date, in Unix milliseconds. 
 
 ### Example
 ```java
@@ -281,7 +281,7 @@ public class Example {
     String environmentKey = "environmentKey_example"; // String | The environment key
     String id = "id_example"; // String | The scheduled change ID
     FlagScheduledChangesInput flagScheduledChangesInput = new FlagScheduledChangesInput(); // FlagScheduledChangesInput | 
-    Boolean ignoreConflicts = true; // Boolean | Whether or not to succeed or fail when the new instructions conflict with existing scheduled changes
+    Boolean ignoreConflicts = true; // Boolean | Whether to succeed (`true`) or fail (`false`) when these new instructions conflict with existing scheduled changes
     try {
       FeatureFlagScheduledChange result = apiInstance.patchFlagConfigScheduledChange(projectKey, featureFlagKey, environmentKey, id, flagScheduledChangesInput, ignoreConflicts);
       System.out.println(result);
@@ -298,14 +298,14 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag key |
- **environmentKey** | **String**| The environment key |
- **id** | **String**| The scheduled change ID |
- **flagScheduledChangesInput** | [**FlagScheduledChangesInput**](FlagScheduledChangesInput.md)|  |
- **ignoreConflicts** | **Boolean**| Whether or not to succeed or fail when the new instructions conflict with existing scheduled changes | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **featureFlagKey** | **String**| The feature flag key | |
+| **environmentKey** | **String**| The environment key | |
+| **id** | **String**| The scheduled change ID | |
+| **flagScheduledChangesInput** | [**FlagScheduledChangesInput**](FlagScheduledChangesInput.md)|  | |
+| **ignoreConflicts** | **Boolean**| Whether to succeed (&#x60;true&#x60;) or fail (&#x60;false&#x60;) when these new instructions conflict with existing scheduled changes | [optional] |
 
 ### Return type
 
@@ -323,14 +323,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful scheduled changes response |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**405** | Method not allowed |  -  |
-**409** | Status conflict |  -  |
-**429** | Rate limited |  -  |
+| **200** | Scheduled changes response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **405** | Method not allowed |  -  |
+| **409** | Status conflict |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="postFlagConfigScheduledChanges"></a>
 # **postFlagConfigScheduledChanges**
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 Create scheduled changes workflow
 
-Create scheduled changes for a feature flag. If the ignoreConficts query parameter is false and the new instructions would conflict with the current state of the feature flag or any existing scheduled changes, the request will fail. If the parameter is true and there are conflicts, the request will succeed as normal.
+Create scheduled changes for a feature flag. If the &#x60;ignoreConficts&#x60; query parameter is false and there are conflicts between these instructions and existing scheduled changes, the request will fail. If the parameter is true and there are conflicts, the request will succeed.
 
 ### Example
 ```java
@@ -366,7 +366,7 @@ public class Example {
     String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String environmentKey = "environmentKey_example"; // String | The environment key
     PostFlagScheduledChangesInput postFlagScheduledChangesInput = new PostFlagScheduledChangesInput(); // PostFlagScheduledChangesInput | 
-    Boolean ignoreConflicts = true; // Boolean | Whether or not to succeed or fail when the new instructions conflict with existing scheduled changes
+    Boolean ignoreConflicts = true; // Boolean | Whether to succeed (`true`) or fail (`false`) when these instructions conflict with existing scheduled changes
     try {
       FeatureFlagScheduledChange result = apiInstance.postFlagConfigScheduledChanges(projectKey, featureFlagKey, environmentKey, postFlagScheduledChangesInput, ignoreConflicts);
       System.out.println(result);
@@ -383,13 +383,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag key |
- **environmentKey** | **String**| The environment key |
- **postFlagScheduledChangesInput** | [**PostFlagScheduledChangesInput**](PostFlagScheduledChangesInput.md)|  |
- **ignoreConflicts** | **Boolean**| Whether or not to succeed or fail when the new instructions conflict with existing scheduled changes | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **featureFlagKey** | **String**| The feature flag key | |
+| **environmentKey** | **String**| The environment key | |
+| **postFlagScheduledChangesInput** | [**PostFlagScheduledChangesInput**](PostFlagScheduledChangesInput.md)|  | |
+| **ignoreConflicts** | **Boolean**| Whether to succeed (&#x60;true&#x60;) or fail (&#x60;false&#x60;) when these instructions conflict with existing scheduled changes | [optional] |
 
 ### Return type
 
@@ -407,12 +407,12 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Successful scheduled changes response |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**405** | Method not allowed |  -  |
-**409** | Status conflict |  -  |
-**429** | Rate limited |  -  |
+| **201** | Scheduled changes response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **405** | Method not allowed |  -  |
+| **409** | Status conflict |  -  |
+| **429** | Rate limited |  -  |
 

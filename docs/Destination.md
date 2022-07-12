@@ -5,28 +5,28 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **String** |  |  [optional]
-**links** | [**Map&lt;String, Link&gt;**](Link.md) |  |  [optional]
-**name** | **String** |  |  [optional]
-**kind** | [**KindEnum**](#KindEnum) |  |  [optional]
-**version** | **BigDecimal** |  |  [optional]
-**config** | **Object** |  |  [optional]
-**on** | **Boolean** |  |  [optional]
-**access** | [**Access**](Access.md) |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**id** | **String** | The ID of this Data Export destination |  [optional] |
+|**links** | [**Map&lt;String, Link&gt;**](Link.md) | Links to other resources within the API. Includes the URL and content type of those resources. |  [optional] |
+|**name** | **String** | A human-readable name for your Data Export destination |  [optional] |
+|**kind** | [**KindEnum**](#KindEnum) | The type of Data Export destination |  [optional] |
+|**version** | **BigDecimal** |  |  [optional] |
+|**config** | **Object** | An object with the configuration parameters required for the destination type |  [optional] |
+|**on** | **Boolean** | Whether the export is on, that is, the status of the integration |  [optional] |
+|**access** | [**Access**](Access.md) |  |  [optional] |
 
 
 
 ## Enum: KindEnum
 
-Name | Value
----- | -----
-GOOGLE_PUBSUB | &quot;google-pubsub&quot;
-KINESIS | &quot;kinesis&quot;
-MPARTICLE | &quot;mparticle&quot;
-SEGMENT | &quot;segment&quot;
-AZURE_EVENT_HUBS | &quot;azure-event-hubs&quot;
+| Name | Value |
+|---- | -----|
+| GOOGLE_PUBSUB | &quot;google-pubsub&quot; |
+| KINESIS | &quot;kinesis&quot; |
+| MPARTICLE | &quot;mparticle&quot; |
+| SEGMENT | &quot;segment&quot; |
+| AZURE_EVENT_HUBS | &quot;azure-event-hubs&quot; |
 
 
 

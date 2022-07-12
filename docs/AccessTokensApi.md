@@ -2,14 +2,14 @@
 
 All URIs are relative to *https://app.launchdarkly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteToken**](AccessTokensApi.md#deleteToken) | **DELETE** /api/v2/tokens/{id} | Delete access token
-[**getToken**](AccessTokensApi.md#getToken) | **GET** /api/v2/tokens/{id} | Get access token
-[**getTokens**](AccessTokensApi.md#getTokens) | **GET** /api/v2/tokens | List access tokens
-[**patchToken**](AccessTokensApi.md#patchToken) | **PATCH** /api/v2/tokens/{id} | Patch access token
-[**postToken**](AccessTokensApi.md#postToken) | **POST** /api/v2/tokens | Create access token
-[**resetToken**](AccessTokensApi.md#resetToken) | **POST** /api/v2/tokens/{id}/reset | Reset access token
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**deleteToken**](AccessTokensApi.md#deleteToken) | **DELETE** /api/v2/tokens/{id} | Delete access token |
+| [**getToken**](AccessTokensApi.md#getToken) | **GET** /api/v2/tokens/{id} | Get access token |
+| [**getTokens**](AccessTokensApi.md#getTokens) | **GET** /api/v2/tokens | List access tokens |
+| [**patchToken**](AccessTokensApi.md#patchToken) | **PATCH** /api/v2/tokens/{id} | Patch access token |
+| [**postToken**](AccessTokensApi.md#postToken) | **POST** /api/v2/tokens | Create access token |
+| [**resetToken**](AccessTokensApi.md#resetToken) | **POST** /api/v2/tokens/{id}/reset | Reset access token |
 
 
 <a name="deleteToken"></a>
@@ -58,9 +58,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| The ID of the access token to update |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**| The ID of the access token to update | |
 
 ### Return type
 
@@ -78,11 +78,11 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Action succeeded |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **204** | Action succeeded |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getToken"></a>
 # **getToken**
@@ -131,9 +131,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| The ID of the access token |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**| The ID of the access token | |
 
 ### Return type
 
@@ -151,11 +151,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Access token response JSON |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Access token response JSON |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getTokens"></a>
 # **getTokens**
@@ -204,9 +204,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **showAll** | **Boolean**| If set to true, and the authentication access token has the &#39;Admin&#39; role, personal access tokens for all members will be retrieved. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **showAll** | **Boolean**| If set to true, and the authentication access token has the &#39;Admin&#39; role, personal access tokens for all members will be retrieved. | [optional] |
 
 ### Return type
 
@@ -224,10 +224,10 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Access token response JSON |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**429** | Rate limited |  -  |
+| **200** | Access token response JSON |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="patchToken"></a>
 # **patchToken**
@@ -277,10 +277,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| The ID of the access token to update |
- **patchOperation** | [**List&lt;PatchOperation&gt;**](PatchOperation.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**| The ID of the access token to update | |
+| **patchOperation** | [**List&lt;PatchOperation&gt;**](PatchOperation.md)|  | |
 
 ### Return type
 
@@ -298,14 +298,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Access token response JSON |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**409** | Status conflict |  -  |
-**422** | Invalid patch content |  -  |
-**429** | Rate limited |  -  |
+| **200** | Access token response JSON |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **409** | Status conflict |  -  |
+| **422** | Invalid patch content |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="postToken"></a>
 # **postToken**
@@ -354,9 +354,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accessTokenPost** | [**AccessTokenPost**](AccessTokenPost.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **accessTokenPost** | [**AccessTokenPost**](AccessTokenPost.md)|  | |
 
 ### Return type
 
@@ -374,11 +374,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Access token response JSON |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**429** | Rate limited |  -  |
+| **201** | Access token response JSON |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="resetToken"></a>
 # **resetToken**
@@ -428,10 +428,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| The ID of the access token to update |
- **expiry** | **Long**| An expiration time for the old token key, expressed as a Unix epoch time in milliseconds. By default, the token will expire immediately. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**| The ID of the access token to update | |
+| **expiry** | **Long**| An expiration time for the old token key, expressed as a Unix epoch time in milliseconds. By default, the token will expire immediately. | [optional] |
 
 ### Return type
 
@@ -449,9 +449,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Access token response JSON |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Access token response JSON |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 

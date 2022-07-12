@@ -2,15 +2,15 @@
 
 All URIs are relative to *https://app.launchdarkly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteApprovalRequest**](ApprovalsApi.md#deleteApprovalRequest) | **DELETE** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id} | Delete approval request
-[**getApproval**](ApprovalsApi.md#getApproval) | **GET** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id} | Get approval request
-[**getApprovals**](ApprovalsApi.md#getApprovals) | **GET** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests | List all approval requests
-[**postApprovalRequest**](ApprovalsApi.md#postApprovalRequest) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests | Create approval request
-[**postApprovalRequestApplyRequest**](ApprovalsApi.md#postApprovalRequestApplyRequest) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id}/apply | Apply approval request
-[**postApprovalRequestReview**](ApprovalsApi.md#postApprovalRequestReview) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id}/reviews | Review approval request
-[**postFlagCopyConfigApprovalRequest**](ApprovalsApi.md#postFlagCopyConfigApprovalRequest) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests-flag-copy | Create approval request to copy flag configurations across environments
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**deleteApprovalRequest**](ApprovalsApi.md#deleteApprovalRequest) | **DELETE** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id} | Delete approval request |
+| [**getApproval**](ApprovalsApi.md#getApproval) | **GET** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id} | Get approval request |
+| [**getApprovals**](ApprovalsApi.md#getApprovals) | **GET** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests | List all approval requests |
+| [**postApprovalRequest**](ApprovalsApi.md#postApprovalRequest) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests | Create approval request |
+| [**postApprovalRequestApplyRequest**](ApprovalsApi.md#postApprovalRequestApplyRequest) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id}/apply | Apply approval request |
+| [**postApprovalRequestReview**](ApprovalsApi.md#postApprovalRequestReview) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id}/reviews | Review approval request |
+| [**postFlagCopyConfigApprovalRequest**](ApprovalsApi.md#postFlagCopyConfigApprovalRequest) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests-flag-copy | Create approval request to copy flag configurations across environments |
 
 
 <a name="deleteApprovalRequest"></a>
@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 Delete approval request
 
-Delete an approval request for a feature flag
+Delete an approval request for a feature flag.
 
 ### Example
 ```java
@@ -62,12 +62,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag key |
- **environmentKey** | **String**| The environment key |
- **id** | **String**| The feature flag approval request ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **featureFlagKey** | **String**| The feature flag key | |
+| **environmentKey** | **String**| The environment key | |
+| **id** | **String**| The feature flag approval request ID | |
 
 ### Return type
 
@@ -85,11 +85,11 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Action succeeded |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **204** | Action succeeded |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getApproval"></a>
 # **getApproval**
@@ -97,7 +97,7 @@ null (empty response body)
 
 Get approval request
 
-Get a single approval request for a feature flag
+Get a single approval request for a feature flag.
 
 ### Example
 ```java
@@ -141,12 +141,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag key |
- **environmentKey** | **String**| The environment key |
- **id** | **String**| The feature flag approval request ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **featureFlagKey** | **String**| The feature flag key | |
+| **environmentKey** | **String**| The environment key | |
+| **id** | **String**| The feature flag approval request ID | |
 
 ### Return type
 
@@ -164,11 +164,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful approval request response |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Approval request response |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getApprovals"></a>
 # **getApprovals**
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 List all approval requests
 
-Get all approval requests for a feature flag
+Get all approval requests for a feature flag.
 
 ### Example
 ```java
@@ -219,11 +219,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag key |
- **environmentKey** | **String**| The environment key |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **featureFlagKey** | **String**| The feature flag key | |
+| **environmentKey** | **String**| The environment key | |
 
 ### Return type
 
@@ -241,11 +241,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful approval request response |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Approval request collection response |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="postApprovalRequest"></a>
 # **postApprovalRequest**
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 Create approval request
 
-Create an approval request for a feature flag
+Create an approval request for a feature flag.
 
 ### Example
 ```java
@@ -297,12 +297,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag key |
- **environmentKey** | **String**| The environment key |
- **createFlagConfigApprovalRequestRequest** | [**CreateFlagConfigApprovalRequestRequest**](CreateFlagConfigApprovalRequestRequest.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **featureFlagKey** | **String**| The feature flag key | |
+| **environmentKey** | **String**| The environment key | |
+| **createFlagConfigApprovalRequestRequest** | [**CreateFlagConfigApprovalRequestRequest**](CreateFlagConfigApprovalRequestRequest.md)|  | |
 
 ### Return type
 
@@ -320,11 +320,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Successful approval request response |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**429** | Rate limited |  -  |
+| **201** | Approval request response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="postApprovalRequestApplyRequest"></a>
 # **postApprovalRequestApplyRequest**
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 Apply approval request
 
-Apply approval request by either approving or declining changes.
+Apply an approval request that has been approved.
 
 ### Example
 ```java
@@ -377,13 +377,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag key |
- **environmentKey** | **String**| The environment key |
- **id** | **String**| The feature flag approval request ID |
- **postApprovalRequestApplyRequest** | [**PostApprovalRequestApplyRequest**](PostApprovalRequestApplyRequest.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **featureFlagKey** | **String**| The feature flag key | |
+| **environmentKey** | **String**| The environment key | |
+| **id** | **String**| The feature flag approval request ID | |
+| **postApprovalRequestApplyRequest** | [**PostApprovalRequestApplyRequest**](PostApprovalRequestApplyRequest.md)|  | |
 
 ### Return type
 
@@ -401,12 +401,12 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful approval request apply response |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Approval request apply response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="postApprovalRequestReview"></a>
 # **postApprovalRequestReview**
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 
 Review approval request
 
-Review approval request by either approving or declining changes.
+Review an approval request by approving or denying changes.
 
 ### Example
 ```java
@@ -459,13 +459,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag key |
- **environmentKey** | **String**| The environment key |
- **id** | **String**| The feature flag approval request ID |
- **postApprovalRequestReviewRequest** | [**PostApprovalRequestReviewRequest**](PostApprovalRequestReviewRequest.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **featureFlagKey** | **String**| The feature flag key | |
+| **environmentKey** | **String**| The environment key | |
+| **id** | **String**| The feature flag approval request ID | |
+| **postApprovalRequestReviewRequest** | [**PostApprovalRequestReviewRequest**](PostApprovalRequestReviewRequest.md)|  | |
 
 ### Return type
 
@@ -483,12 +483,12 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful approval request review response |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Approval request review response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="postFlagCopyConfigApprovalRequest"></a>
 # **postFlagCopyConfigApprovalRequest**
@@ -522,7 +522,7 @@ public class Example {
     ApprovalsApi apiInstance = new ApprovalsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
     String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
-    String environmentKey = "environmentKey_example"; // String | The environment key
+    String environmentKey = "environmentKey_example"; // String | The environment key for the target environment
     CreateCopyFlagConfigApprovalRequestRequest createCopyFlagConfigApprovalRequestRequest = new CreateCopyFlagConfigApprovalRequestRequest(); // CreateCopyFlagConfigApprovalRequestRequest | 
     try {
       FlagConfigApprovalRequestResponse result = apiInstance.postFlagCopyConfigApprovalRequest(projectKey, featureFlagKey, environmentKey, createCopyFlagConfigApprovalRequestRequest);
@@ -540,12 +540,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectKey** | **String**| The project key |
- **featureFlagKey** | **String**| The feature flag key |
- **environmentKey** | **String**| The environment key |
- **createCopyFlagConfigApprovalRequestRequest** | [**CreateCopyFlagConfigApprovalRequestRequest**](CreateCopyFlagConfigApprovalRequestRequest.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **featureFlagKey** | **String**| The feature flag key | |
+| **environmentKey** | **String**| The environment key for the target environment | |
+| **createCopyFlagConfigApprovalRequestRequest** | [**CreateCopyFlagConfigApprovalRequestRequest**](CreateCopyFlagConfigApprovalRequestRequest.md)|  | |
 
 ### Return type
 
@@ -563,10 +563,10 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Successful approval request response |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**409** | Status conflict |  -  |
-**429** | Rate limited |  -  |
+| **201** | Approval request response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **409** | Status conflict |  -  |
+| **429** | Rate limited |  -  |
 

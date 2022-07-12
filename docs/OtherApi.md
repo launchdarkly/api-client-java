@@ -2,12 +2,12 @@
 
 All URIs are relative to *https://app.launchdarkly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getIps**](OtherApi.md#getIps) | **GET** /api/v2/public-ip-list | Gets the public IP list
-[**getOpenapiSpec**](OtherApi.md#getOpenapiSpec) | **GET** /api/v2/openapi.json | Gets the OpenAPI spec in json
-[**getRoot**](OtherApi.md#getRoot) | **GET** /api/v2 | Root resource
-[**getVersions**](OtherApi.md#getVersions) | **GET** /api/v2/versions | Get version information
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**getIps**](OtherApi.md#getIps) | **GET** /api/v2/public-ip-list | Gets the public IP list |
+| [**getOpenapiSpec**](OtherApi.md#getOpenapiSpec) | **GET** /api/v2/openapi.json | Gets the OpenAPI spec in json |
+| [**getRoot**](OtherApi.md#getRoot) | **GET** /api/v2 | Root resource |
+| [**getVersions**](OtherApi.md#getVersions) | **GET** /api/v2/versions | Get version information |
 
 
 <a name="getIps"></a>
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Gets the public IP list
 
-Get a list of IP ranges the LaunchDarkly service uses. You can use this list to allow LaunchDarkly through your firewall.&lt;br /&gt;&lt;br /&gt;This endpoint returns a JSON object with two attributes: &#x60;addresses&#x60; and &#x60;outboundAddresses&#x60;. The &#x60;addresses&#x60; element contains the IP addresses LaunchDarkly&#39;s service uses. The &#x60;outboundAddresses&#x60; element contains the IP addresses outgoing webhook notifications use. To learn more, read [Public IP list](https://docs.launchdarkly.com/home/advanced/public-ip-list).&lt;br /&gt;&lt;br /&gt;We post upcoming changes to this list in advance on our [status page](https://status.launchdarkly.com/).
+Get a list of IP ranges the LaunchDarkly service uses. You can use this list to allow LaunchDarkly through your firewall. &lt;br /&gt;&lt;br /&gt;This endpoint returns a JSON object with two attributes: &#x60;addresses&#x60; and &#x60;outboundAddresses&#x60;. The &#x60;addresses&#x60; element contains the IP addresses LaunchDarkly&#39;s service uses. The &#x60;outboundAddresses&#x60; element contains the IP addresses outgoing webhook notifications use.&lt;br /&gt;&lt;br /&gt;We post upcoming changes to this list in advance on our [status page](https://status.launchdarkly.com/). &lt;br /&gt;&lt;br /&gt;In the sandbox, click &#39;Try it&#39; and enter any string in the &#39;Authorization&#39; field to test this endpoint.
 
 ### Example
 ```java
@@ -73,7 +73,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Public IP response |  -  |
+| **200** | Public IP response |  -  |
 
 <a name="getOpenapiSpec"></a>
 # **getOpenapiSpec**
@@ -81,7 +81,7 @@ This endpoint does not need any parameter.
 
 Gets the OpenAPI spec in json
 
-The OpenAPI spec endpoint serves the latest version of the OpenAPI specification for LaunchDarkly&#39;s API in json format.
+Get the latest version of the OpenAPI specification for LaunchDarkly&#39;s API in JSON format. In the sandbox, click &#39;Try it&#39; and enter any string in the &#39;Authorization&#39; field to test this endpoint.
 
 ### Example
 ```java
@@ -137,7 +137,7 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OpenAPI Spec |  -  |
+| **200** | OpenAPI Spec |  -  |
 
 <a name="getRoot"></a>
 # **getRoot**
@@ -145,7 +145,7 @@ null (empty response body)
 
 Root resource
 
-Issue a &#x60;GET&#x60; request to the root resource to find all of the resource categories supported by the API
+Get all of the resource categories the API supports. In the sandbox, click &#39;Try it&#39; and enter any string in the &#39;Authorization&#39; field to test this endpoint.
 
 ### Example
 ```java
@@ -202,7 +202,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Root response |  -  |
+| **200** | Root response |  -  |
 
 <a name="getVersions"></a>
 # **getVersions**
@@ -267,8 +267,8 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Versions information response |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**429** | Rate limited |  -  |
+| **200** | Versions information response |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **429** | Rate limited |  -  |
 

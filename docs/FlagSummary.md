@@ -5,9 +5,10 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**prerequisites** | **Integer** |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**variations** | [**Map&lt;String, VariationSummary&gt;**](VariationSummary.md) |  |  |
+|**prerequisites** | **Integer** |  |  |
 
 
 

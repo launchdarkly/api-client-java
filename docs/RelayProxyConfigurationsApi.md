@@ -2,14 +2,14 @@
 
 All URIs are relative to *https://app.launchdarkly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteRelayAutoConfig**](RelayProxyConfigurationsApi.md#deleteRelayAutoConfig) | **DELETE** /api/v2/account/relay-auto-configs/{id} | Delete Relay Proxy config by ID
-[**getRelayProxyConfig**](RelayProxyConfigurationsApi.md#getRelayProxyConfig) | **GET** /api/v2/account/relay-auto-configs/{id} | Get Relay Proxy config
-[**getRelayProxyConfigs**](RelayProxyConfigurationsApi.md#getRelayProxyConfigs) | **GET** /api/v2/account/relay-auto-configs | List Relay Proxy configs
-[**patchRelayAutoConfig**](RelayProxyConfigurationsApi.md#patchRelayAutoConfig) | **PATCH** /api/v2/account/relay-auto-configs/{id} | Update a Relay Proxy config
-[**postRelayAutoConfig**](RelayProxyConfigurationsApi.md#postRelayAutoConfig) | **POST** /api/v2/account/relay-auto-configs | Create a new Relay Proxy config
-[**resetRelayAutoConfig**](RelayProxyConfigurationsApi.md#resetRelayAutoConfig) | **POST** /api/v2/account/relay-auto-configs/{id}/reset | Reset Relay Proxy configuration key
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**deleteRelayAutoConfig**](RelayProxyConfigurationsApi.md#deleteRelayAutoConfig) | **DELETE** /api/v2/account/relay-auto-configs/{id} | Delete Relay Proxy config by ID |
+| [**getRelayProxyConfig**](RelayProxyConfigurationsApi.md#getRelayProxyConfig) | **GET** /api/v2/account/relay-auto-configs/{id} | Get Relay Proxy config |
+| [**getRelayProxyConfigs**](RelayProxyConfigurationsApi.md#getRelayProxyConfigs) | **GET** /api/v2/account/relay-auto-configs | List Relay Proxy configs |
+| [**patchRelayAutoConfig**](RelayProxyConfigurationsApi.md#patchRelayAutoConfig) | **PATCH** /api/v2/account/relay-auto-configs/{id} | Update a Relay Proxy config |
+| [**postRelayAutoConfig**](RelayProxyConfigurationsApi.md#postRelayAutoConfig) | **POST** /api/v2/account/relay-auto-configs | Create a new Relay Proxy config |
+| [**resetRelayAutoConfig**](RelayProxyConfigurationsApi.md#resetRelayAutoConfig) | **POST** /api/v2/account/relay-auto-configs/{id}/reset | Reset Relay Proxy configuration key |
 
 
 <a name="deleteRelayAutoConfig"></a>
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 Delete Relay Proxy config by ID
 
-Delete a Relay Proxy config
+Delete a Relay Proxy config.
 
 ### Example
 ```java
@@ -58,9 +58,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| The relay auto config id |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**| The relay auto config id | |
 
 ### Return type
 
@@ -78,11 +78,11 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Action succeeded |  -  |
-**401** | Invalid access token |  -  |
-**404** | Invalid resource identifier |  -  |
-**409** | Status conflict |  -  |
-**429** | Rate limited |  -  |
+| **204** | Action succeeded |  -  |
+| **401** | Invalid access token |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **409** | Status conflict |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getRelayProxyConfig"></a>
 # **getRelayProxyConfig**
@@ -90,7 +90,7 @@ null (empty response body)
 
 Get Relay Proxy config
 
-Get a single Relay Proxy Auto Config by ID
+Get a single Relay Proxy auto config by ID.
 
 ### Example
 ```java
@@ -131,9 +131,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| The relay auto config id |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**| The relay auto config id | |
 
 ### Return type
 
@@ -151,11 +151,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Relay auto config response |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Relay auto config response |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getRelayProxyConfigs"></a>
 # **getRelayProxyConfigs**
@@ -220,10 +220,10 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Relay auto config response |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**429** | Rate limited |  -  |
+| **200** | Relay auto config response |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="patchRelayAutoConfig"></a>
 # **patchRelayAutoConfig**
@@ -231,7 +231,7 @@ This endpoint does not need any parameter.
 
 Update a Relay Proxy config
 
-Update a Relay Proxy config.
+Update a Relay Proxy config using the JSON patch format.
 
 ### Example
 ```java
@@ -273,10 +273,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| The relay auto config id |
- **patchWithComment** | [**PatchWithComment**](PatchWithComment.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**| The relay auto config id | |
+| **patchWithComment** | [**PatchWithComment**](PatchWithComment.md)|  | |
 
 ### Return type
 
@@ -294,13 +294,13 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Relay auto config response |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**404** | Invalid resource identifier |  -  |
-**409** | Status conflict |  -  |
-**422** | Invalid patch content |  -  |
-**429** | Rate limited |  -  |
+| **200** | Relay auto config response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **409** | Status conflict |  -  |
+| **422** | Invalid patch content |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="postRelayAutoConfig"></a>
 # **postRelayAutoConfig**
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 Create a new Relay Proxy config
 
-Create a Relay Proxy config
+Create a Relay Proxy config.
 
 ### Example
 ```java
@@ -349,9 +349,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **relayAutoConfigPost** | [**RelayAutoConfigPost**](RelayAutoConfigPost.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **relayAutoConfigPost** | [**RelayAutoConfigPost**](RelayAutoConfigPost.md)|  | |
 
 ### Return type
 
@@ -369,10 +369,10 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Relay auto config response |  -  |
-**400** | Invalid request |  -  |
-**401** | Invalid access token |  -  |
-**429** | Rate limited |  -  |
+| **201** | Relay auto config response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="resetRelayAutoConfig"></a>
 # **resetRelayAutoConfig**
@@ -422,10 +422,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| The Relay Proxy configuration ID |
- **expiry** | **Long**| An expiration time for the old Relay Proxy configuration key, expressed as a Unix epoch time in milliseconds. By default, the Relay Proxy configuration will expire immediately. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**| The Relay Proxy configuration ID | |
+| **expiry** | **Long**| An expiration time for the old Relay Proxy configuration key, expressed as a Unix epoch time in milliseconds. By default, the Relay Proxy configuration will expire immediately. | [optional] |
 
 ### Return type
 
@@ -443,9 +443,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Relay auto config response |  -  |
-**401** | Invalid access token |  -  |
-**403** | Forbidden |  -  |
-**404** | Invalid resource identifier |  -  |
-**429** | Rate limited |  -  |
+| **200** | Relay auto config response |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 

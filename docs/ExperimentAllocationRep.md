@@ -5,10 +5,10 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**defaultVariation** | **Integer** |  | 
-**canReshuffle** | **Boolean** |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**defaultVariation** | **Integer** |  |  |
+|**canReshuffle** | **Boolean** |  |  |
 
 
 

@@ -5,10 +5,10 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**sdk** | **String** |  | 
-**version** | **String** |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**sdk** | **String** |  |  |
+|**version** | **String** |  |  |
 
 
 

@@ -5,16 +5,20 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**description** | **String** |  |  [optional]
-**key** | **String** |  |  [optional]
-**name** | **String** |  |  [optional]
-**access** | [**Access**](Access.md) |  |  [optional]
-**creationDate** | **Long** |  |  [optional]
-**links** | [**Map&lt;String, Link&gt;**](Link.md) |  |  [optional]
-**lastModified** | **Long** |  |  [optional]
-**version** | **Integer** |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**description** | **String** |  |  [optional] |
+|**key** | **String** |  |  [optional] |
+|**name** | **String** |  |  [optional] |
+|**access** | [**Access**](Access.md) |  |  [optional] |
+|**creationDate** | **Long** |  |  [optional] |
+|**links** | [**Map&lt;String, Link&gt;**](Link.md) |  |  [optional] |
+|**lastModified** | **Long** |  |  [optional] |
+|**version** | **Integer** |  |  [optional] |
+|**roles** | [**TeamCustomRoles**](TeamCustomRoles.md) |  |  [optional] |
+|**members** | [**TeamMembers**](TeamMembers.md) |  |  [optional] |
+|**projects** | [**TeamProjects**](TeamProjects.md) |  |  [optional] |
+|**maintainers** | [**TeamMaintainers**](TeamMaintainers.md) |  |  [optional] |
 
 
 

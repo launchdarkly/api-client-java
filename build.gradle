@@ -36,7 +36,7 @@ def ossrhPassword = hasProperty('ossrhPassword') ? ossrhPassword : System.getenv
 
 allprojects {
     group = 'com.launchdarkly'
-    version = '9.0.1'
+    version = '10.0.0'
     archivesBaseName = 'api-client'
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
@@ -52,6 +52,7 @@ dependencies {
     implementation 'org.openapitools:jackson-databind-nullable:0.2.1'
     implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.10'
     implementation 'org.threeten:threetenbp:1.4.3'
+    implementation 'javax.ws.rs:javax.ws.rs-api:2.1.1'
     implementation 'javax.annotation:javax.annotation-api:1.3.2'
     testImplementation 'junit:junit:4.13.1'
 }

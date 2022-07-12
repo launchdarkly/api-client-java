@@ -5,12 +5,12 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **String** |  |  [optional]
-**value** | **Object** |  | 
-**description** | **String** | Description of the variation |  [optional]
-**name** | **String** | A human-friendly name for the variation |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**id** | **String** |  |  [optional] |
+|**value** | **Object** | The value of the variation. For boolean flags, this must be &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt;. For multivariate flags, this may be a string, number, or JSON object. |  |
+|**description** | **String** | Description of the variation |  [optional] |
+|**name** | **String** | A human-friendly name for the variation |  [optional] |
 
 
 

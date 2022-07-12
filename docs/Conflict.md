@@ -5,10 +5,10 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**instruction** | **Object** |  |  [optional]
-**reason** | **String** | Reason why the conflict exists |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**instruction** | **Map&lt;String, Object&gt;** |  |  [optional] |
+|**reason** | **String** | Reason why the conflict exists |  [optional] |
 
 
 
