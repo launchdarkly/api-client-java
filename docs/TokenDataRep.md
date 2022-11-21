@@ -9,9 +9,9 @@
 |------------ | ------------- | ------------- | -------------|
 |**links** | [**Map&lt;String, Link&gt;**](Link.md) |  |  [optional] |
 |**id** | **String** |  |  [optional] |
-|**name** | **String** |  |  [optional] |
-|**ending** | **String** |  |  [optional] |
-|**serviceToken** | **Boolean** |  |  [optional] |
+|**name** | **String** | The name of the token |  [optional] |
+|**ending** | **String** | The last few characters of the token |  [optional] |
+|**serviceToken** | **Boolean** | Whether this is a service token |  [optional] |
 
 
 

@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**name** | **String** |  |  [optional] |
-|**key** | **String** |  |  |
-|**links** | [**Map&lt;String, Link&gt;**](Link.md) |  |  |
+|**name** | **String** | The environment name |  [optional] |
+|**key** | **String** | The environment key |  |
+|**links** | [**Map&lt;String, Link&gt;**](Link.md) | The location and content type of related resources |  |
 |**site** | [**Link**](Link.md) |  |  |
 
 

@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**upper** | **BigDecimal** |  |  [optional] |
-|**lower** | **BigDecimal** |  |  [optional] |
+|**upper** | **BigDecimal** | The upper bound |  [optional] |
+|**lower** | **BigDecimal** | The lower bound |  [optional] |
 
 
 

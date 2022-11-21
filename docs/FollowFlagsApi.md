@@ -234,7 +234,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Flag followers response |  -  |
+| **200** | Flags and flag followers response |  -  |
 | **400** | Invalid request |  -  |
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |

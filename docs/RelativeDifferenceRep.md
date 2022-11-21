@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**upper** | **BigDecimal** |  |  [optional] |
-|**lower** | **BigDecimal** |  |  [optional] |
-|**fromTreatmentId** | **String** |  |  [optional] |
+|**upper** | **BigDecimal** | The upper bound |  [optional] |
+|**lower** | **BigDecimal** | The lower bound |  [optional] |
+|**fromTreatmentId** | **String** | The treatment ID |  [optional] |
 
 
 

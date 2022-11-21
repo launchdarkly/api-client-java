@@ -241,7 +241,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Integration delivery configuration response |  -  |
+| **200** | Integration delivery configuration collection response |  -  |
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
@@ -482,7 +482,7 @@ public class Example {
 
 Validate delivery configuration
 
-Validate the saved delivery configuration.
+Validate the saved delivery configuration, using the &#x60;validationRequest&#x60; in the integration&#39;s &#x60;manifest.json&#x60; file.
 
 ### Example
 ```java
@@ -549,7 +549,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Integration delivery configuration response |  -  |
+| **200** | Integration delivery configuration validation response |  -  |
 | **400** | Invalid request |  -  |
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |

@@ -91,7 +91,7 @@ null (empty response body)
 
 <a name="getCustomWorkflow"></a>
 # **getCustomWorkflow**
-> CustomWorkflowOutputRep getCustomWorkflow(projectKey, featureFlagKey, environmentKey, workflowId)
+> CustomWorkflowOutput getCustomWorkflow(projectKey, featureFlagKey, environmentKey, workflowId)
 
 Get custom workflow
 
@@ -124,7 +124,7 @@ public class Example {
     String environmentKey = "environmentKey_example"; // String | The environment key
     String workflowId = "workflowId_example"; // String | The workflow ID
     try {
-      CustomWorkflowOutputRep result = apiInstance.getCustomWorkflow(projectKey, featureFlagKey, environmentKey, workflowId);
+      CustomWorkflowOutput result = apiInstance.getCustomWorkflow(projectKey, featureFlagKey, environmentKey, workflowId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WorkflowsBetaApi#getCustomWorkflow");
@@ -148,7 +148,7 @@ public class Example {
 
 ### Return type
 
-[**CustomWorkflowOutputRep**](CustomWorkflowOutputRep.md)
+[**CustomWorkflowOutput**](CustomWorkflowOutput.md)
 
 ### Authorization
 
@@ -162,7 +162,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** |  |  -  |
+| **200** | Workflow response |  -  |
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
@@ -170,7 +170,7 @@ public class Example {
 
 <a name="getWorkflows"></a>
 # **getWorkflows**
-> CustomWorkflowsListingOutputRep getWorkflows(projectKey, featureFlagKey, environmentKey)
+> CustomWorkflowsListingOutput getWorkflows(projectKey, featureFlagKey, environmentKey)
 
 Get workflows
 
@@ -202,7 +202,7 @@ public class Example {
     String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String environmentKey = "environmentKey_example"; // String | The environment key
     try {
-      CustomWorkflowsListingOutputRep result = apiInstance.getWorkflows(projectKey, featureFlagKey, environmentKey);
+      CustomWorkflowsListingOutput result = apiInstance.getWorkflows(projectKey, featureFlagKey, environmentKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WorkflowsBetaApi#getWorkflows");
@@ -225,7 +225,7 @@ public class Example {
 
 ### Return type
 
-[**CustomWorkflowsListingOutputRep**](CustomWorkflowsListingOutputRep.md)
+[**CustomWorkflowsListingOutput**](CustomWorkflowsListingOutput.md)
 
 ### Authorization
 
@@ -239,7 +239,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** |  |  -  |
+| **200** | Workflows collection response |  -  |
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
@@ -247,11 +247,11 @@ public class Example {
 
 <a name="postWorkflow"></a>
 # **postWorkflow**
-> CustomWorkflowOutputRep postWorkflow(projectKey, featureFlagKey, environmentKey, customWorkflowInputRep)
+> CustomWorkflowOutput postWorkflow(projectKey, featureFlagKey, environmentKey, customWorkflowInput, templateKey)
 
 Create workflow
 
-Create a workflow for a feature flag.
+Create a workflow for a feature flag. You can create a workflow directly, or you can apply a template to create a new workflow.  ### Creating a workflow  You can use the create workflow endpoint to create a workflow directly by adding a &#x60;stages&#x60; array to the request body.  _Example request body_ &#x60;&#x60;&#x60;json {   \&quot;name\&quot;: \&quot;Progressive rollout starting in two days\&quot;,   \&quot;description\&quot;: \&quot;Turn flag on for 10% of users each day\&quot;,   \&quot;stages\&quot;: [     {       \&quot;name\&quot;: \&quot;10% rollout on day 1\&quot;,       \&quot;conditions\&quot;: [         {           \&quot;kind\&quot;: \&quot;schedule\&quot;,           \&quot;scheduleKind\&quot;: \&quot;relative\&quot;,           \&quot;waitDuration\&quot;: 2,           \&quot;waitDurationUnit\&quot;: \&quot;calendarDay\&quot;         }       ],       \&quot;action\&quot;: {         \&quot;instructions\&quot;: [           {             \&quot;kind\&quot;: \&quot;turnFlagOn\&quot;           },           {             \&quot;kind\&quot;: \&quot;updateFallthroughVariationOrRollout\&quot;,             \&quot;rolloutWeights\&quot;: {               \&quot;452f5fb5-7320-4ba3-81a1-8f4324f79d49\&quot;: 90000,               \&quot;fc15f6a4-05d3-4aa4-a997-446be461345d\&quot;: 10000             }           }         ]       }     }   ] } &#x60;&#x60;&#x60;  ### Creating a workflow by applying a workflow template  You can also create a workflow by applying a workflow template. If you pass a valid workflow template key as the &#x60;templateKey&#x60; query parameter with the request, the API will attempt to create a new workflow with the stages defined in the workflow template with the corresponding key.  #### Applicability of stages Templates are created in the context of a particular flag in a particular environment in a particular project. However, because workflows created from a template can be applied to any project, environment, and flag, some steps of the workflow may need to be updated in order to be applicable for the target resource.  You can pass a &#x60;dry-run&#x60; query parameter to tell the API to return a report of which steps of the workflow template are applicable in the target project/environment/flag, and which will need to be updated. When the &#x60;dry-run&#x60; query parameter is present the response body includes a &#x60;meta&#x60; property that holds a list of parameters that could potentially be inapplicable for the target resource. Each of these parameters will include a &#x60;valid&#x60; field. You will need to update any invalid parameters in order to create the new workflow. You can do this using the &#x60;parameters&#x60; property, which overrides the workflow template parameters.  #### Overriding template parameters You can use the &#x60;parameters&#x60; property in the request body to tell the API to override the specified workflow template parameters with new values that are specific to your target project/environment/flag.  _Example request body_ &#x60;&#x60;&#x60;json {  \&quot;name\&quot;: \&quot;workflow created from my-template\&quot;,  \&quot;description\&quot;: \&quot;description of my workflow\&quot;,  \&quot;parameters\&quot;: [   {    \&quot;_id\&quot;: \&quot;62cf2bc4cadbeb7697943f3b\&quot;,    \&quot;path\&quot;: \&quot;/clauses/0/values\&quot;,    \&quot;default\&quot;: {     \&quot;value\&quot;: [\&quot;updated-segment\&quot;]    }   },   {    \&quot;_id\&quot;: \&quot;62cf2bc4cadbeb7697943f3d\&quot;,    \&quot;path\&quot;: \&quot;/variationId\&quot;,    \&quot;default\&quot;: {     \&quot;value\&quot;: \&quot;abcd1234-abcd-1234-abcd-1234abcd12\&quot;    }   }  ] } &#x60;&#x60;&#x60;  If there are any steps in the template that are not applicable to the target resource, the workflow will not be created, and the &#x60;meta&#x60; property will be included in the response body detailing which parameters need to be updated. 
 
 ### Example
 ```java
@@ -278,9 +278,10 @@ public class Example {
     String projectKey = "projectKey_example"; // String | The project key
     String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String environmentKey = "environmentKey_example"; // String | The environment key
-    CustomWorkflowInputRep customWorkflowInputRep = new CustomWorkflowInputRep(); // CustomWorkflowInputRep | 
+    CustomWorkflowInput customWorkflowInput = new CustomWorkflowInput(); // CustomWorkflowInput | 
+    String templateKey = "templateKey_example"; // String | The template key to apply as a starting point for the new workflow
     try {
-      CustomWorkflowOutputRep result = apiInstance.postWorkflow(projectKey, featureFlagKey, environmentKey, customWorkflowInputRep);
+      CustomWorkflowOutput result = apiInstance.postWorkflow(projectKey, featureFlagKey, environmentKey, customWorkflowInput, templateKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WorkflowsBetaApi#postWorkflow");
@@ -300,11 +301,12 @@ public class Example {
 | **projectKey** | **String**| The project key | |
 | **featureFlagKey** | **String**| The feature flag key | |
 | **environmentKey** | **String**| The environment key | |
-| **customWorkflowInputRep** | [**CustomWorkflowInputRep**](CustomWorkflowInputRep.md)|  | |
+| **customWorkflowInput** | [**CustomWorkflowInput**](CustomWorkflowInput.md)|  | |
+| **templateKey** | **String**| The template key to apply as a starting point for the new workflow | [optional] |
 
 ### Return type
 
-[**CustomWorkflowOutputRep**](CustomWorkflowOutputRep.md)
+[**CustomWorkflowOutput**](CustomWorkflowOutput.md)
 
 ### Authorization
 
@@ -318,7 +320,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Successful workflow response |  -  |
+| **201** | Workflow response |  -  |
 | **400** | Invalid request |  -  |
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |

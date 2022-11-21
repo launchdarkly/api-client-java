@@ -220,7 +220,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Relay auto config response |  -  |
+| **200** | Relay auto configs collection response |  -  |
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |

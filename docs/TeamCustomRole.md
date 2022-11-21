@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**key** | **String** |  |  [optional] |
-|**name** | **String** |  |  [optional] |
+|**key** | **String** | The key of the custom role |  [optional] |
+|**name** | **String** | The name of the custom role |  [optional] |
 |**projects** | [**TeamProjects**](TeamProjects.md) |  |  [optional] |
 |**appliedOn** | **Long** |  |  [optional] |
 

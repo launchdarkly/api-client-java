@@ -25,9 +25,10 @@
 
 | Name | Value |
 |---- | -----|
-| GITHUB | &quot;github&quot; |
 | BITBUCKET | &quot;bitbucket&quot; |
 | CUSTOM | &quot;custom&quot; |
+| GITHUB | &quot;github&quot; |
+| GITLAB | &quot;gitlab&quot; |
 
 
 

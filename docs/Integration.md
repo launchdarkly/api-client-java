@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**links** | [**Map&lt;String, Link&gt;**](Link.md) | Links to other resources within the API. Includes the URL and content type of those resources. |  [optional] |
+|**links** | [**Map&lt;String, Link&gt;**](Link.md) | The location and content type of related resources |  [optional] |
 |**id** | **String** | The ID for this integration audit log subscription |  [optional] |
 |**kind** | **String** | The type of integration |  [optional] |
 |**name** | **String** | A human-friendly name for the integration |  [optional] |

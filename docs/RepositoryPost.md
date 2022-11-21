@@ -12,7 +12,7 @@
 |**commitUrlTemplate** | **String** | A template for constructing a valid URL to view the commit |  [optional] |
 |**hunkUrlTemplate** | **String** | A template for constructing a valid URL to view the hunk |  [optional] |
 |**type** | [**TypeEnum**](#TypeEnum) | The type of repository. If not specified, the default value is &lt;code&gt;custom&lt;/code&gt;. |  [optional] |
-|**defaultBranch** | **String** | The repository&#39;s default branch. If not specified, the default value is &lt;code&gt;master&lt;/code&gt;. |  [optional] |
+|**defaultBranch** | **String** | The repository&#39;s default branch. If not specified, the default value is &lt;code&gt;main&lt;/code&gt;. |  [optional] |
 
 
 
@@ -20,9 +20,10 @@
 
 | Name | Value |
 |---- | -----|
-| GITHUB | &quot;github&quot; |
 | BITBUCKET | &quot;bitbucket&quot; |
 | CUSTOM | &quot;custom&quot; |
+| GITHUB | &quot;github&quot; |
+| GITLAB | &quot;gitlab&quot; |
 
 
 

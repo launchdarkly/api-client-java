@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**filename** | **String** |  |  [optional] |
-|**status** | **String** |  |  [optional] |
+|**filename** | **String** | The imported file name, including the extension |  [optional] |
+|**status** | **String** | The imported file status |  [optional] |
 
 
 

@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**name** | **String** |  |  [optional] |
-|**key** | **String** |  |  |
-|**environments** | [**List&lt;DependentFlagEnvironment&gt;**](DependentFlagEnvironment.md) |  |  |
+|**name** | **String** | The flag name |  [optional] |
+|**key** | **String** | The flag key |  |
+|**environments** | [**List&lt;DependentFlagEnvironment&gt;**](DependentFlagEnvironment.md) | A list of environments in which the dependent flag appears |  |
 
 
 

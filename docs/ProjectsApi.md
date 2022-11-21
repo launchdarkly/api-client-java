@@ -5,10 +5,13 @@ All URIs are relative to *https://app.launchdarkly.com*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**deleteProject**](ProjectsApi.md#deleteProject) | **DELETE** /api/v2/projects/{projectKey} | Delete project |
+| [**getFlagDefaultsByProject**](ProjectsApi.md#getFlagDefaultsByProject) | **GET** /api/v2/projects/{projectKey}/flag-defaults | Get flag defaults for project |
 | [**getProject**](ProjectsApi.md#getProject) | **GET** /api/v2/projects/{projectKey} | Get project |
 | [**getProjects**](ProjectsApi.md#getProjects) | **GET** /api/v2/projects | List projects |
+| [**patchFlagDefaultsByProject**](ProjectsApi.md#patchFlagDefaultsByProject) | **PATCH** /api/v2/projects/{projectKey}/flag-defaults | Update flag default for project |
 | [**patchProject**](ProjectsApi.md#patchProject) | **PATCH** /api/v2/projects/{projectKey} | Update project |
 | [**postProject**](ProjectsApi.md#postProject) | **POST** /api/v2/projects | Create project |
+| [**putFlagDefaultsByProject**](ProjectsApi.md#putFlagDefaultsByProject) | **PUT** /api/v2/projects/{projectKey}/flag-defaults | Create or update flag defaults for project |
 
 
 <a name="deleteProject"></a>
@@ -84,6 +87,78 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
+<a name="getFlagDefaultsByProject"></a>
+# **getFlagDefaultsByProject**
+> FlagDefaultsRep getFlagDefaultsByProject(projectKey)
+
+Get flag defaults for project
+
+Get the flag defaults for a specific project.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.ProjectsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    ProjectsApi apiInstance = new ProjectsApi(defaultClient);
+    String projectKey = "projectKey_example"; // String | The project key
+    try {
+      FlagDefaultsRep result = apiInstance.getFlagDefaultsByProject(projectKey);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ProjectsApi#getFlagDefaultsByProject");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+
+### Return type
+
+[**FlagDefaultsRep**](FlagDefaultsRep.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Flag defaults response |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+
 <a name="getProject"></a>
 # **getProject**
 > Project getProject(projectKey, expand)
@@ -153,7 +228,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Project response JSON |  -  |
+| **200** | Project response |  -  |
 | **400** | Invalid request |  -  |
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |
@@ -162,7 +237,7 @@ public class Example {
 
 <a name="getProjects"></a>
 # **getProjects**
-> Projects getProjects(limit, offset, filter, expand)
+> Projects getProjects(limit, offset, filter, sort, expand)
 
 List projects
 
@@ -193,9 +268,10 @@ public class Example {
     Long limit = 56L; // Long | The number of projects to return in the response. Defaults to 20.
     Long offset = 56L; // Long | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and returns the next `limit` items.
     String filter = "filter_example"; // String | A comma-separated list of filters. Each filter is constructed as `field:value`.
+    String sort = "sort_example"; // String | A comma-separated list of fields to sort by. Fields prefixed by a dash ( - ) sort in descending order.
     String expand = "expand_example"; // String | A comma-separated list of properties that can reveal additional information in the response.
     try {
-      Projects result = apiInstance.getProjects(limit, offset, filter, expand);
+      Projects result = apiInstance.getProjects(limit, offset, filter, sort, expand);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectsApi#getProjects");
@@ -215,6 +291,7 @@ public class Example {
 | **limit** | **Long**| The number of projects to return in the response. Defaults to 20. | [optional] |
 | **offset** | **Long**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and returns the next &#x60;limit&#x60; items. | [optional] |
 | **filter** | **String**| A comma-separated list of filters. Each filter is constructed as &#x60;field:value&#x60;. | [optional] |
+| **sort** | **String**| A comma-separated list of fields to sort by. Fields prefixed by a dash ( - ) sort in descending order. | [optional] |
 | **expand** | **String**| A comma-separated list of properties that can reveal additional information in the response. | [optional] |
 
 ### Return type
@@ -233,10 +310,87 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Project collection response JSON |  -  |
+| **200** | Project collection response |  -  |
 | **400** | Invalid request |  -  |
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |
+| **429** | Rate limited |  -  |
+
+<a name="patchFlagDefaultsByProject"></a>
+# **patchFlagDefaultsByProject**
+> UpsertPayloadRep patchFlagDefaultsByProject(projectKey, patchOperation)
+
+Update flag default for project
+
+Update a flag default. Requires a [JSON Patch](https://datatracker.ietf.org/doc/html/rfc6902) representation of the desired changes to the flag default.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.ProjectsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    ProjectsApi apiInstance = new ProjectsApi(defaultClient);
+    String projectKey = "projectKey_example"; // String | The project key
+    List<PatchOperation> patchOperation = Arrays.asList(); // List<PatchOperation> | 
+    try {
+      UpsertPayloadRep result = apiInstance.patchFlagDefaultsByProject(projectKey, patchOperation);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ProjectsApi#patchFlagDefaultsByProject");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **patchOperation** | [**List&lt;PatchOperation&gt;**](PatchOperation.md)|  | |
+
+### Return type
+
+[**UpsertPayloadRep**](UpsertPayloadRep.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Flag default response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
 <a name="patchProject"></a>
@@ -308,7 +462,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Project response JSON |  -  |
+| **200** | Project response |  -  |
 | **400** | Invalid request |  -  |
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |
@@ -383,10 +537,87 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Successful project response |  -  |
+| **201** | Project response |  -  |
 | **400** | Invalid request |  -  |
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |
+| **409** | Status conflict |  -  |
+| **429** | Rate limited |  -  |
+
+<a name="putFlagDefaultsByProject"></a>
+# **putFlagDefaultsByProject**
+> UpsertPayloadRep putFlagDefaultsByProject(projectKey, upsertFlagDefaultsPayload)
+
+Create or update flag defaults for project
+
+Create or update flag defaults for a project.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.ProjectsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    ProjectsApi apiInstance = new ProjectsApi(defaultClient);
+    String projectKey = "projectKey_example"; // String | The project key
+    UpsertFlagDefaultsPayload upsertFlagDefaultsPayload = new UpsertFlagDefaultsPayload(); // UpsertFlagDefaultsPayload | 
+    try {
+      UpsertPayloadRep result = apiInstance.putFlagDefaultsByProject(projectKey, upsertFlagDefaultsPayload);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ProjectsApi#putFlagDefaultsByProject");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **upsertFlagDefaultsPayload** | [**UpsertFlagDefaultsPayload**](UpsertFlagDefaultsPayload.md)|  | |
+
+### Return type
+
+[**UpsertPayloadRep**](UpsertPayloadRep.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Flag default response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 

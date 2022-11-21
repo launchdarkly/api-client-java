@@ -5,8 +5,8 @@ All URIs are relative to *https://app.launchdarkly.com*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**deleteApprovalRequest**](ApprovalsApi.md#deleteApprovalRequest) | **DELETE** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id} | Delete approval request |
-| [**getApproval**](ApprovalsApi.md#getApproval) | **GET** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id} | Get approval request |
-| [**getApprovals**](ApprovalsApi.md#getApprovals) | **GET** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests | List all approval requests |
+| [**getApprovalForFlag**](ApprovalsApi.md#getApprovalForFlag) | **GET** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id} | Get approval request for a flag |
+| [**getApprovalsForFlag**](ApprovalsApi.md#getApprovalsForFlag) | **GET** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests | List approval requests for a flag |
 | [**postApprovalRequest**](ApprovalsApi.md#postApprovalRequest) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests | Create approval request |
 | [**postApprovalRequestApplyRequest**](ApprovalsApi.md#postApprovalRequestApplyRequest) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id}/apply | Apply approval request |
 | [**postApprovalRequestReview**](ApprovalsApi.md#postApprovalRequestReview) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id}/reviews | Review approval request |
@@ -91,11 +91,11 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getApproval"></a>
-# **getApproval**
-> FlagConfigApprovalRequestResponse getApproval(projectKey, featureFlagKey, environmentKey, id)
+<a name="getApprovalForFlag"></a>
+# **getApprovalForFlag**
+> FlagConfigApprovalRequestResponse getApprovalForFlag(projectKey, featureFlagKey, environmentKey, id)
 
-Get approval request
+Get approval request for a flag
 
 Get a single approval request for a feature flag.
 
@@ -126,10 +126,10 @@ public class Example {
     String environmentKey = "environmentKey_example"; // String | The environment key
     String id = "id_example"; // String | The feature flag approval request ID
     try {
-      FlagConfigApprovalRequestResponse result = apiInstance.getApproval(projectKey, featureFlagKey, environmentKey, id);
+      FlagConfigApprovalRequestResponse result = apiInstance.getApprovalForFlag(projectKey, featureFlagKey, environmentKey, id);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ApprovalsApi#getApproval");
+      System.err.println("Exception when calling ApprovalsApi#getApprovalForFlag");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -170,11 +170,11 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getApprovals"></a>
-# **getApprovals**
-> FlagConfigApprovalRequestsResponse getApprovals(projectKey, featureFlagKey, environmentKey)
+<a name="getApprovalsForFlag"></a>
+# **getApprovalsForFlag**
+> FlagConfigApprovalRequestsResponse getApprovalsForFlag(projectKey, featureFlagKey, environmentKey)
 
-List all approval requests
+List approval requests for a flag
 
 Get all approval requests for a feature flag.
 
@@ -204,10 +204,10 @@ public class Example {
     String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String environmentKey = "environmentKey_example"; // String | The environment key
     try {
-      FlagConfigApprovalRequestsResponse result = apiInstance.getApprovals(projectKey, featureFlagKey, environmentKey);
+      FlagConfigApprovalRequestsResponse result = apiInstance.getApprovalsForFlag(projectKey, featureFlagKey, environmentKey);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ApprovalsApi#getApprovals");
+      System.err.println("Exception when calling ApprovalsApi#getApprovalsForFlag");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

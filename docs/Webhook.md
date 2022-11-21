@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**links** | [**Map&lt;String, Link&gt;**](Link.md) | Links to other resources within the API. Includes the URL and content type of those resources. |  |
+|**links** | [**Map&lt;String, Link&gt;**](Link.md) | The location and content type of related resources |  |
 |**id** | **String** | The ID of this webhook |  |
 |**name** | **String** | A human-readable name for this webhook |  [optional] |
 |**url** | **String** | The URL to which LaunchDarkly sends an HTTP POST payload for this webhook |  |

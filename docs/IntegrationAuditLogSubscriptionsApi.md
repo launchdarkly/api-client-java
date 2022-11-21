@@ -303,7 +303,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Integrations response |  -  |
+| **200** | Integrations collection response |  -  |
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
@@ -380,7 +380,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful |  -  |
+| **200** | Integration response |  -  |
 | **400** | Invalid request |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
