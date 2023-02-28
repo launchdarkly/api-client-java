@@ -4,20 +4,20 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**deleteApprovalRequest**](ApprovalsApi.md#deleteApprovalRequest) | **DELETE** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id} | Delete approval request |
+| [**deleteApprovalRequestForFlag**](ApprovalsApi.md#deleteApprovalRequestForFlag) | **DELETE** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id} | Delete approval request for a flag |
 | [**getApprovalForFlag**](ApprovalsApi.md#getApprovalForFlag) | **GET** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id} | Get approval request for a flag |
 | [**getApprovalsForFlag**](ApprovalsApi.md#getApprovalsForFlag) | **GET** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests | List approval requests for a flag |
-| [**postApprovalRequest**](ApprovalsApi.md#postApprovalRequest) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests | Create approval request |
-| [**postApprovalRequestApplyRequest**](ApprovalsApi.md#postApprovalRequestApplyRequest) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id}/apply | Apply approval request |
-| [**postApprovalRequestReview**](ApprovalsApi.md#postApprovalRequestReview) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id}/reviews | Review approval request |
+| [**postApprovalRequestApplyForFlag**](ApprovalsApi.md#postApprovalRequestApplyForFlag) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id}/apply | Apply approval request for a flag |
+| [**postApprovalRequestForFlag**](ApprovalsApi.md#postApprovalRequestForFlag) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests | Create approval request for a flag |
+| [**postApprovalRequestReviewForFlag**](ApprovalsApi.md#postApprovalRequestReviewForFlag) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id}/reviews | Review approval request for a flag |
 | [**postFlagCopyConfigApprovalRequest**](ApprovalsApi.md#postFlagCopyConfigApprovalRequest) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests-flag-copy | Create approval request to copy flag configurations across environments |
 
 
-<a name="deleteApprovalRequest"></a>
-# **deleteApprovalRequest**
-> deleteApprovalRequest(projectKey, featureFlagKey, environmentKey, id)
+<a name="deleteApprovalRequestForFlag"></a>
+# **deleteApprovalRequestForFlag**
+> deleteApprovalRequestForFlag(projectKey, featureFlagKey, environmentKey, id)
 
-Delete approval request
+Delete approval request for a flag
 
 Delete an approval request for a feature flag.
 
@@ -48,9 +48,9 @@ public class Example {
     String environmentKey = "environmentKey_example"; // String | The environment key
     String id = "id_example"; // String | The feature flag approval request ID
     try {
-      apiInstance.deleteApprovalRequest(projectKey, featureFlagKey, environmentKey, id);
+      apiInstance.deleteApprovalRequestForFlag(projectKey, featureFlagKey, environmentKey, id);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ApprovalsApi#deleteApprovalRequest");
+      System.err.println("Exception when calling ApprovalsApi#deleteApprovalRequestForFlag");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -247,90 +247,11 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postApprovalRequest"></a>
-# **postApprovalRequest**
-> FlagConfigApprovalRequestResponse postApprovalRequest(projectKey, featureFlagKey, environmentKey, createFlagConfigApprovalRequestRequest)
+<a name="postApprovalRequestApplyForFlag"></a>
+# **postApprovalRequestApplyForFlag**
+> FlagConfigApprovalRequestResponse postApprovalRequestApplyForFlag(projectKey, featureFlagKey, environmentKey, id, postApprovalRequestApplyRequest)
 
-Create approval request
-
-Create an approval request for a feature flag.
-
-### Example
-```java
-// Import classes:
-import com.launchdarkly.api.ApiClient;
-import com.launchdarkly.api.ApiException;
-import com.launchdarkly.api.Configuration;
-import com.launchdarkly.api.auth.*;
-import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.ApprovalsApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://app.launchdarkly.com");
-    
-    // Configure API key authorization: ApiKey
-    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
-    ApiKey.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKey.setApiKeyPrefix("Token");
-
-    ApprovalsApi apiInstance = new ApprovalsApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | The project key
-    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
-    String environmentKey = "environmentKey_example"; // String | The environment key
-    CreateFlagConfigApprovalRequestRequest createFlagConfigApprovalRequestRequest = new CreateFlagConfigApprovalRequestRequest(); // CreateFlagConfigApprovalRequestRequest | 
-    try {
-      FlagConfigApprovalRequestResponse result = apiInstance.postApprovalRequest(projectKey, featureFlagKey, environmentKey, createFlagConfigApprovalRequestRequest);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling ApprovalsApi#postApprovalRequest");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**| The project key | |
-| **featureFlagKey** | **String**| The feature flag key | |
-| **environmentKey** | **String**| The environment key | |
-| **createFlagConfigApprovalRequestRequest** | [**CreateFlagConfigApprovalRequestRequest**](CreateFlagConfigApprovalRequestRequest.md)|  | |
-
-### Return type
-
-[**FlagConfigApprovalRequestResponse**](FlagConfigApprovalRequestResponse.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **201** | Approval request response |  -  |
-| **400** | Invalid request |  -  |
-| **401** | Invalid access token |  -  |
-| **403** | Forbidden |  -  |
-| **429** | Rate limited |  -  |
-
-<a name="postApprovalRequestApplyRequest"></a>
-# **postApprovalRequestApplyRequest**
-> FlagConfigApprovalRequestResponse postApprovalRequestApplyRequest(projectKey, featureFlagKey, environmentKey, id, postApprovalRequestApplyRequest)
-
-Apply approval request
+Apply approval request for a flag
 
 Apply an approval request that has been approved.
 
@@ -362,10 +283,10 @@ public class Example {
     String id = "id_example"; // String | The feature flag approval request ID
     PostApprovalRequestApplyRequest postApprovalRequestApplyRequest = new PostApprovalRequestApplyRequest(); // PostApprovalRequestApplyRequest | 
     try {
-      FlagConfigApprovalRequestResponse result = apiInstance.postApprovalRequestApplyRequest(projectKey, featureFlagKey, environmentKey, id, postApprovalRequestApplyRequest);
+      FlagConfigApprovalRequestResponse result = apiInstance.postApprovalRequestApplyForFlag(projectKey, featureFlagKey, environmentKey, id, postApprovalRequestApplyRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ApprovalsApi#postApprovalRequestApplyRequest");
+      System.err.println("Exception when calling ApprovalsApi#postApprovalRequestApplyForFlag");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -408,11 +329,90 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postApprovalRequestReview"></a>
-# **postApprovalRequestReview**
-> FlagConfigApprovalRequestResponse postApprovalRequestReview(projectKey, featureFlagKey, environmentKey, id, postApprovalRequestReviewRequest)
+<a name="postApprovalRequestForFlag"></a>
+# **postApprovalRequestForFlag**
+> FlagConfigApprovalRequestResponse postApprovalRequestForFlag(projectKey, featureFlagKey, environmentKey, createFlagConfigApprovalRequestRequest)
 
-Review approval request
+Create approval request for a flag
+
+Create an approval request for a feature flag.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.ApprovalsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    ApprovalsApi apiInstance = new ApprovalsApi(defaultClient);
+    String projectKey = "projectKey_example"; // String | The project key
+    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
+    String environmentKey = "environmentKey_example"; // String | The environment key
+    CreateFlagConfigApprovalRequestRequest createFlagConfigApprovalRequestRequest = new CreateFlagConfigApprovalRequestRequest(); // CreateFlagConfigApprovalRequestRequest | 
+    try {
+      FlagConfigApprovalRequestResponse result = apiInstance.postApprovalRequestForFlag(projectKey, featureFlagKey, environmentKey, createFlagConfigApprovalRequestRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ApprovalsApi#postApprovalRequestForFlag");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **featureFlagKey** | **String**| The feature flag key | |
+| **environmentKey** | **String**| The environment key | |
+| **createFlagConfigApprovalRequestRequest** | [**CreateFlagConfigApprovalRequestRequest**](CreateFlagConfigApprovalRequestRequest.md)|  | |
+
+### Return type
+
+[**FlagConfigApprovalRequestResponse**](FlagConfigApprovalRequestResponse.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Approval request response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **429** | Rate limited |  -  |
+
+<a name="postApprovalRequestReviewForFlag"></a>
+# **postApprovalRequestReviewForFlag**
+> FlagConfigApprovalRequestResponse postApprovalRequestReviewForFlag(projectKey, featureFlagKey, environmentKey, id, postApprovalRequestReviewRequest)
+
+Review approval request for a flag
 
 Review an approval request by approving or denying changes.
 
@@ -444,10 +444,10 @@ public class Example {
     String id = "id_example"; // String | The feature flag approval request ID
     PostApprovalRequestReviewRequest postApprovalRequestReviewRequest = new PostApprovalRequestReviewRequest(); // PostApprovalRequestReviewRequest | 
     try {
-      FlagConfigApprovalRequestResponse result = apiInstance.postApprovalRequestReview(projectKey, featureFlagKey, environmentKey, id, postApprovalRequestReviewRequest);
+      FlagConfigApprovalRequestResponse result = apiInstance.postApprovalRequestReviewForFlag(projectKey, featureFlagKey, environmentKey, id, postApprovalRequestReviewRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ApprovalsApi#postApprovalRequestReview");
+      System.err.println("Exception when calling ApprovalsApi#postApprovalRequestReviewForFlag");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

@@ -21,7 +21,7 @@
 |**status** | [**StatusEnum**](#StatusEnum) | Current status of the approval request |  |
 |**instructions** | **List&lt;Map&lt;String, Object&gt;&gt;** |  |  |
 |**conflicts** | [**List&lt;Conflict&gt;**](Conflict.md) | Details on any conflicting approval requests |  |
-|**links** | [**Map&lt;String, Link&gt;**](Link.md) | The location and content type of related resources |  |
+|**links** | **Map&lt;String, Object&gt;** | The location and content type of related resources |  |
 |**executionDate** | **Long** |  |  [optional] |
 |**operatingOnId** | **String** | ID of scheduled change to edit or delete |  [optional] |
 |**integrationMetadata** | [**IntegrationMetadata**](IntegrationMetadata.md) |  |  [optional] |

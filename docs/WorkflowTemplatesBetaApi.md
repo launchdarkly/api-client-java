@@ -157,7 +157,7 @@ null (empty response body)
 
 <a name="getWorkflowTemplates"></a>
 # **getWorkflowTemplates**
-> WorkflowTemplatesListingOutputRep getWorkflowTemplates(search)
+> WorkflowTemplatesListingOutputRep getWorkflowTemplates(summary, search)
 
 Get workflow templates
 
@@ -185,9 +185,10 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     WorkflowTemplatesBetaApi apiInstance = new WorkflowTemplatesBetaApi(defaultClient);
+    Boolean summary = true; // Boolean | Whether the entire template object or just a summary should be returned
     String search = "search_example"; // String | The substring in either the name or description of a template
     try {
-      WorkflowTemplatesListingOutputRep result = apiInstance.getWorkflowTemplates(search);
+      WorkflowTemplatesListingOutputRep result = apiInstance.getWorkflowTemplates(summary, search);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WorkflowTemplatesBetaApi#getWorkflowTemplates");
@@ -204,6 +205,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
+| **summary** | **Boolean**| Whether the entire template object or just a summary should be returned | [optional] |
 | **search** | **String**| The substring in either the name or description of a template | [optional] |
 
 ### Return type
@@ -224,7 +226,6 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Workflow templates list response JSON |  -  |
 | **401** | Invalid access token |  -  |
-| **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 

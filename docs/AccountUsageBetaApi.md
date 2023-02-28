@@ -6,6 +6,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 |------------- | ------------- | -------------|
 | [**getEvaluationsUsage**](AccountUsageBetaApi.md#getEvaluationsUsage) | **GET** /api/v2/usage/evaluations/{projectKey}/{environmentKey}/{featureFlagKey} | Get evaluations usage |
 | [**getEventsUsage**](AccountUsageBetaApi.md#getEventsUsage) | **GET** /api/v2/usage/events/{type} | Get events usage |
+| [**getExperimentationKeysUsage**](AccountUsageBetaApi.md#getExperimentationKeysUsage) | **GET** /api/v2/usage/experimentation-keys | Get experimentation keys usage |
 | [**getMauSdksByType**](AccountUsageBetaApi.md#getMauSdksByType) | **GET** /api/v2/usage/mau/sdks | Get MAU SDKs by type |
 | [**getMauUsage**](AccountUsageBetaApi.md#getMauUsage) | **GET** /api/v2/usage/mau | Get MAU usage |
 | [**getMauUsageByCategory**](AccountUsageBetaApi.md#getMauUsageByCategory) | **GET** /api/v2/usage/mau/bycategory | Get MAU usage by category |
@@ -176,13 +177,89 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
+<a name="getExperimentationKeysUsage"></a>
+# **getExperimentationKeysUsage**
+> SeriesIntervalsRep getExperimentationKeysUsage(from, to)
+
+Get experimentation keys usage
+
+Get a time-series array of the number of monthly experimentation keys from your account. The granularity is always daily, with a max of 31 days.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AccountUsageBetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
+    String from = "from_example"; // String | The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month.
+    String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time.
+    try {
+      SeriesIntervalsRep result = apiInstance.getExperimentationKeysUsage(from, to);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AccountUsageBetaApi#getExperimentationKeysUsage");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **from** | **String**| The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. | [optional] |
+| **to** | **String**| The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. | [optional] |
+
+### Return type
+
+[**SeriesIntervalsRep**](SeriesIntervalsRep.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Usage response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **429** | Rate limited |  -  |
+| **503** | Service unavailable |  -  |
+
 <a name="getMauSdksByType"></a>
 # **getMauSdksByType**
 > SdkListRep getMauSdksByType(from, to, sdktype)
 
 Get MAU SDKs by type
 
-Get a list of SDKs. These are all of the SDKs that have connected to LaunchDarkly by monthly active users (MAU) in the requested time period.
+Get a list of SDKs. These are all of the SDKs that have connected to LaunchDarkly by monthly active users (MAU) in the requested time period.&lt;br/&gt;&lt;br/&gt;Endpoints for retrieving monthly active users (MAU) do not return information about active context instances. After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should not rely on this endpoint. Use [Get client-side monthly context instances uage](/tag/Account-usage-(beta)#operation/getCMCIUsage) instead. To learn more, read [Account usage metrics](https://docs.launchdarkly.com/home/billing/usage-metrics).
 
 ### Example
 ```java
@@ -259,7 +336,7 @@ public class Example {
 
 Get MAU usage
 
-Get a time-series array of the number of monthly active users (MAU) seen by LaunchDarkly from your account. The granularity is always daily.
+Get a time-series array of the number of monthly active users (MAU) seen by LaunchDarkly from your account. The granularity is always daily.&lt;br/&gt;&lt;br/&gt;Endpoints for retrieving monthly active users (MAU) do not return information about active context instances. After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should not rely on this endpoint. Use [Get client-side monthly context instances uage](/tag/Account-usage-(beta)#operation/getCMCIUsage) instead. To learn more, read [Account usage metrics](https://docs.launchdarkly.com/home/billing/usage-metrics).
 
 ### Example
 ```java
@@ -346,7 +423,7 @@ public class Example {
 
 Get MAU usage by category
 
-Get time-series arrays of the number of monthly active users (MAU) seen by LaunchDarkly from your account, broken down by the category of users. The category is either &#x60;browser&#x60;, &#x60;mobile&#x60;, or &#x60;backend&#x60;.
+Get time-series arrays of the number of monthly active users (MAU) seen by LaunchDarkly from your account, broken down by the category of users. The category is either &#x60;browser&#x60;, &#x60;mobile&#x60;, or &#x60;backend&#x60;.&lt;br/&gt;&lt;br/&gt;Endpoints for retrieving monthly active users (MAU) do not return information about active context instances. After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should not rely on this endpoint. Use [Get client-side monthly context instances uage](/tag/Account-usage-(beta)#operation/getCMCIUsage) instead. To learn more, read [Account usage metrics](https://docs.launchdarkly.com/home/billing/usage-metrics).
 
 ### Example
 ```java

@@ -9,7 +9,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 <a name="getTags"></a>
 # **getTags**
-> TagCollection getTags(kind, pre)
+> TagCollection getTags(kind, pre, archived)
 
 List tags
 
@@ -39,8 +39,9 @@ public class Example {
     TagsApi apiInstance = new TagsApi(defaultClient);
     String kind = "kind_example"; // String | Fetch tags associated with the specified resource type. Options are `flag`, `project`, `environment`, `segment`. Returns all types by default.
     String pre = "pre_example"; // String | Return tags with the specified prefix
+    Boolean archived = true; // Boolean | Whether or not to return archived flags
     try {
-      TagCollection result = apiInstance.getTags(kind, pre);
+      TagCollection result = apiInstance.getTags(kind, pre, archived);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TagsApi#getTags");
@@ -59,6 +60,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **kind** | **String**| Fetch tags associated with the specified resource type. Options are &#x60;flag&#x60;, &#x60;project&#x60;, &#x60;environment&#x60;, &#x60;segment&#x60;. Returns all types by default. | [optional] |
 | **pre** | **String**| Return tags with the specified prefix | [optional] |
+| **archived** | **Boolean**| Whether or not to return archived flags | [optional] |
 
 ### Return type
 
