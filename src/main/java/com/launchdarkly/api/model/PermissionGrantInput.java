@@ -49,7 +49,7 @@ import com.launchdarkly.api.JSON;
 /**
  * PermissionGrantInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-13T14:16:05.843450Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-13T14:30:17.073017Z[Etc/UTC]")
 public class PermissionGrantInput {
   /**
    * A group of related actions to allow. Specify either &lt;code&gt;actionSet&lt;/code&gt; or &lt;code&gt;actions&lt;/code&gt;. Use &lt;code&gt;maintainTeam&lt;/code&gt; to add team maintainers.

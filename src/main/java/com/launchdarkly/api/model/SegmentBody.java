@@ -49,7 +49,7 @@ import com.launchdarkly.api.JSON;
 /**
  * SegmentBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-13T14:16:05.843450Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-13T14:30:17.073017Z[Etc/UTC]")
 public class SegmentBody {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
