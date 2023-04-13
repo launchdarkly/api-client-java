@@ -474,6 +474,7 @@ public class Example {
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
+| **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
 <a name="resetEnvironmentSDKKey"></a>
@@ -552,5 +553,6 @@ public class Example {
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
+| **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 

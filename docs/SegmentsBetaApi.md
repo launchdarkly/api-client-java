@@ -356,7 +356,7 @@ public class Example {
     SegmentsBetaApi apiInstance = new SegmentsBetaApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
     String environmentKey = "environmentKey_example"; // String | The environment key
-    Map<String, Object> requestBody = {"key":"someuser","kind":"user","moreComplex":{"morethanone":[1,2,3],"yes":"please"},"name":"Some User","something":true}; // Map<String, Object> | 
+    Map<String, Object> requestBody = {"key":"context-key-123abc","kind":"user","moreComplex":{"morethanone":[1,2,3],"yes":"please"},"name":"Some User","something":true}; // Map<String, Object> | 
     try {
       ContextInstanceSegmentMemberships result = apiInstance.getContextInstanceSegmentsMembershipByEnv(projectKey, environmentKey, requestBody);
       System.out.println(result);

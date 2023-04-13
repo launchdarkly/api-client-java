@@ -43,7 +43,7 @@ public class Example {
     String projectKey = "projectKey_example"; // String | The project key
     String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String environmentKey = "environmentKey_example"; // String | The environment key
-    String memberId = "memberId_example"; // String | The memberId of the member to remove as a follower of the flag
+    String memberId = "memberId_example"; // String | The memberId of the member to remove as a follower of the flag. Reader roles can only remove themselves.
     try {
       apiInstance.deleteFlagFollowers(projectKey, featureFlagKey, environmentKey, memberId);
     } catch (ApiException e) {
@@ -64,7 +64,7 @@ public class Example {
 | **projectKey** | **String**| The project key | |
 | **featureFlagKey** | **String**| The feature flag key | |
 | **environmentKey** | **String**| The environment key | |
-| **memberId** | **String**| The memberId of the member to remove as a follower of the flag | |
+| **memberId** | **String**| The memberId of the member to remove as a follower of the flag. Reader roles can only remove themselves. | |
 
 ### Return type
 
@@ -273,7 +273,7 @@ public class Example {
     String projectKey = "projectKey_example"; // String | The project key
     String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String environmentKey = "environmentKey_example"; // String | The environment key
-    String memberId = "memberId_example"; // String | The memberId of the member to add as a follower of the flag
+    String memberId = "memberId_example"; // String | The memberId of the member to add as a follower of the flag. Reader roles can only add themselves.
     try {
       apiInstance.putFlagFollowers(projectKey, featureFlagKey, environmentKey, memberId);
     } catch (ApiException e) {
@@ -294,7 +294,7 @@ public class Example {
 | **projectKey** | **String**| The project key | |
 | **featureFlagKey** | **String**| The feature flag key | |
 | **environmentKey** | **String**| The environment key | |
-| **memberId** | **String**| The memberId of the member to add as a follower of the flag | |
+| **memberId** | **String**| The memberId of the member to add as a follower of the flag. Reader roles can only add themselves. | |
 
 ### Return type
 

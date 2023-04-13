@@ -8,7 +8,7 @@ This client library is only compatible with the latest version of our REST API, 
 
 LaunchDarkly REST API
 - API version: 2.0
-  - Build date: 2023-02-28T02:08:46.393880Z[Etc/UTC]
+  - Build date: 2023-04-13T14:16:05.843450Z[Etc/UTC]
 
 # Overview
 
@@ -277,7 +277,7 @@ We use several rate limiting strategies to ensure the availability of our APIs. 
 
 ### Global rate limits
 
-Authenticated requests are subject to a global limit. This is the maximum number of calls that your account can make to the API per ten seconds. All personal access tokens on the account share this limit, so exceeding the limit with one access token will impact other tokens. Calls that are subject to global rate limits return the headers below:
+Authenticated requests are subject to a global limit. This is the maximum number of calls that your account can make to the API per ten seconds. All personal access tokens on the account share this limit, so exceeding the limit with one access token will impact other tokens. Calls that are subject to global rate limits may return the headers below:
 
 | Header name                    | Description                                                                      |
 | ------------------------------ | -------------------------------------------------------------------------------- |
@@ -344,6 +344,14 @@ Use this header:
 ```
 LD-API-Version: beta
 ```
+
+## Federal environments
+
+The version of LaunchDarkly that is available on domains controlled by the United States government is different from the version of LaunchDarkly available to the general public. If you are an employee or contractor for a United States federal agency and use LaunchDarkly in your work, you likely use the federal instance of LaunchDarkly.
+
+If you are working in the federal instance of LaunchDarkly, the base URI for each request is `https://app.launchdarkly.us`. In the \"Try it\" sandbox for each request, click the request path to view the complete resource path for the federal environment.
+
+To learn more, read [LaunchDarkly in federal environments](https://docs.launchdarkly.com/home/advanced/federal).
 
 ## Versioning
 
@@ -420,7 +428,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>12.0.0</version>
+  <version>12.1.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -436,7 +444,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.launchdarkly:api-client:12.0.0"
+     implementation "com.launchdarkly:api-client:12.1.0"
   }
 ```
 
@@ -450,7 +458,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-12.0.0.jar`
+* `target/api-client-12.1.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -529,8 +537,12 @@ Class | Method | HTTP request | Description
 *ApprovalsApi* | [**postApprovalRequestForFlag**](docs/ApprovalsApi.md#postApprovalRequestForFlag) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests | Create approval request for a flag
 *ApprovalsApi* | [**postApprovalRequestReviewForFlag**](docs/ApprovalsApi.md#postApprovalRequestReviewForFlag) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id}/reviews | Review approval request for a flag
 *ApprovalsApi* | [**postFlagCopyConfigApprovalRequest**](docs/ApprovalsApi.md#postFlagCopyConfigApprovalRequest) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests-flag-copy | Create approval request to copy flag configurations across environments
+*ApprovalsBetaApi* | [**deleteApprovalRequest**](docs/ApprovalsBetaApi.md#deleteApprovalRequest) | **DELETE** /api/v2/approval-requests/{id} | Delete approval request
 *ApprovalsBetaApi* | [**getApprovalRequest**](docs/ApprovalsBetaApi.md#getApprovalRequest) | **GET** /api/v2/approval-requests/{id} | Get approval request
 *ApprovalsBetaApi* | [**getApprovalRequests**](docs/ApprovalsBetaApi.md#getApprovalRequests) | **GET** /api/v2/approval-requests | List approval requests
+*ApprovalsBetaApi* | [**postApprovalRequest**](docs/ApprovalsBetaApi.md#postApprovalRequest) | **POST** /api/v2/approval-requests | Create approval request
+*ApprovalsBetaApi* | [**postApprovalRequestApply**](docs/ApprovalsBetaApi.md#postApprovalRequestApply) | **POST** /api/v2/approval-requests/{id}/apply | Apply approval request
+*ApprovalsBetaApi* | [**postApprovalRequestReview**](docs/ApprovalsBetaApi.md#postApprovalRequestReview) | **POST** /api/v2/approval-requests/{id}/reviews | Review approval request
 *AuditLogApi* | [**getAuditLogEntries**](docs/AuditLogApi.md#getAuditLogEntries) | **GET** /api/v2/auditlog | List audit log entries
 *AuditLogApi* | [**getAuditLogEntry**](docs/AuditLogApi.md#getAuditLogEntry) | **GET** /api/v2/auditlog/{id} | Get audit log entry
 *CodeReferencesApi* | [**deleteBranches**](docs/CodeReferencesApi.md#deleteBranches) | **POST** /api/v2/code-refs/repositories/{repo}/branch-delete-tasks | Delete branches
@@ -766,6 +778,7 @@ Class | Method | HTTP request | Description
  - [ContextSearch](docs/ContextSearch.md)
  - [Contexts](docs/Contexts.md)
  - [CopiedFromEnv](docs/CopiedFromEnv.md)
+ - [CreateApprovalRequestRequest](docs/CreateApprovalRequestRequest.md)
  - [CreateCopyFlagConfigApprovalRequestRequest](docs/CreateCopyFlagConfigApprovalRequestRequest.md)
  - [CreateFlagConfigApprovalRequestRequest](docs/CreateFlagConfigApprovalRequestRequest.md)
  - [CreateWorkflowTemplateInput](docs/CreateWorkflowTemplateInput.md)
@@ -774,6 +787,7 @@ Class | Method | HTTP request | Description
  - [CustomRole](docs/CustomRole.md)
  - [CustomRolePost](docs/CustomRolePost.md)
  - [CustomRolePostData](docs/CustomRolePostData.md)
+ - [CustomRoleSummary](docs/CustomRoleSummary.md)
  - [CustomRoles](docs/CustomRoles.md)
  - [CustomWorkflowInput](docs/CustomWorkflowInput.md)
  - [CustomWorkflowMeta](docs/CustomWorkflowMeta.md)

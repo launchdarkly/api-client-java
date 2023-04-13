@@ -71,6 +71,7 @@ docs/ContextSettingsBetaApi.md
 docs/Contexts.md
 docs/ContextsBetaApi.md
 docs/CopiedFromEnv.md
+docs/CreateApprovalRequestRequest.md
 docs/CreateCopyFlagConfigApprovalRequestRequest.md
 docs/CreateFlagConfigApprovalRequestRequest.md
 docs/CreateWorkflowTemplateInput.md
@@ -79,6 +80,7 @@ docs/CustomProperty.md
 docs/CustomRole.md
 docs/CustomRolePost.md
 docs/CustomRolePostData.md
+docs/CustomRoleSummary.md
 docs/CustomRoles.md
 docs/CustomRolesApi.md
 docs/CustomWorkflowInput.md
@@ -504,6 +506,7 @@ src/main/java/com/launchdarkly/api/model/ContextRecord.java
 src/main/java/com/launchdarkly/api/model/ContextSearch.java
 src/main/java/com/launchdarkly/api/model/Contexts.java
 src/main/java/com/launchdarkly/api/model/CopiedFromEnv.java
+src/main/java/com/launchdarkly/api/model/CreateApprovalRequestRequest.java
 src/main/java/com/launchdarkly/api/model/CreateCopyFlagConfigApprovalRequestRequest.java
 src/main/java/com/launchdarkly/api/model/CreateFlagConfigApprovalRequestRequest.java
 src/main/java/com/launchdarkly/api/model/CreateWorkflowTemplateInput.java
@@ -512,6 +515,7 @@ src/main/java/com/launchdarkly/api/model/CustomProperty.java
 src/main/java/com/launchdarkly/api/model/CustomRole.java
 src/main/java/com/launchdarkly/api/model/CustomRolePost.java
 src/main/java/com/launchdarkly/api/model/CustomRolePostData.java
+src/main/java/com/launchdarkly/api/model/CustomRoleSummary.java
 src/main/java/com/launchdarkly/api/model/CustomRoles.java
 src/main/java/com/launchdarkly/api/model/CustomWorkflowInput.java
 src/main/java/com/launchdarkly/api/model/CustomWorkflowMeta.java
@@ -882,6 +886,7 @@ src/test/java/com/launchdarkly/api/model/ContextRecordTest.java
 src/test/java/com/launchdarkly/api/model/ContextSearchTest.java
 src/test/java/com/launchdarkly/api/model/ContextsTest.java
 src/test/java/com/launchdarkly/api/model/CopiedFromEnvTest.java
+src/test/java/com/launchdarkly/api/model/CreateApprovalRequestRequestTest.java
 src/test/java/com/launchdarkly/api/model/CreateCopyFlagConfigApprovalRequestRequestTest.java
 src/test/java/com/launchdarkly/api/model/CreateFlagConfigApprovalRequestRequestTest.java
 src/test/java/com/launchdarkly/api/model/CreateWorkflowTemplateInputTest.java
@@ -889,6 +894,7 @@ src/test/java/com/launchdarkly/api/model/CredibleIntervalRepTest.java
 src/test/java/com/launchdarkly/api/model/CustomPropertyTest.java
 src/test/java/com/launchdarkly/api/model/CustomRolePostDataTest.java
 src/test/java/com/launchdarkly/api/model/CustomRolePostTest.java
+src/test/java/com/launchdarkly/api/model/CustomRoleSummaryTest.java
 src/test/java/com/launchdarkly/api/model/CustomRoleTest.java
 src/test/java/com/launchdarkly/api/model/CustomRolesTest.java
 src/test/java/com/launchdarkly/api/model/CustomWorkflowInputTest.java

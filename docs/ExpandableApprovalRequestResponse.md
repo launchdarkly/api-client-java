@@ -30,7 +30,7 @@
 |**resourceId** | **String** | String representation of a resource |  [optional] |
 |**approvalSettings** | [**ApprovalSettings**](ApprovalSettings.md) |  |  [optional] |
 |**project** | [**Project**](Project.md) |  |  [optional] |
-|**environment** | [**Environment**](Environment.md) |  |  [optional] |
+|**environments** | [**List&lt;Environment&gt;**](Environment.md) | List of environments the approval impacts |  [optional] |
 |**flag** | [**ExpandedFlagRep**](ExpandedFlagRep.md) |  |  [optional] |
 
 
