@@ -14,18 +14,10 @@
 package com.launchdarkly.api.api;
 
 import com.launchdarkly.api.ApiException;
-import com.launchdarkly.api.model.ContextAttributeNamesCollection;
-import com.launchdarkly.api.model.ContextAttributeValuesCollection;
-import com.launchdarkly.api.model.ContextInstanceEvaluations;
-import com.launchdarkly.api.model.ContextInstanceSearch;
-import com.launchdarkly.api.model.ContextInstances;
 import com.launchdarkly.api.model.ContextKindsCollectionRep;
-import com.launchdarkly.api.model.ContextSearch;
-import com.launchdarkly.api.model.Contexts;
 import com.launchdarkly.api.model.ForbiddenErrorRep;
 import com.launchdarkly.api.model.InvalidRequestErrorRep;
 import com.launchdarkly.api.model.NotFoundErrorRep;
-import com.launchdarkly.api.model.RateLimitedErrorRep;
 import com.launchdarkly.api.model.UnauthorizedErrorRep;
 import com.launchdarkly.api.model.UpsertContextKindPayload;
 import com.launchdarkly.api.model.UpsertResponseRep;
@@ -46,96 +38,6 @@ public class ContextsBetaApiTest {
     private final ContextsBetaApi api = new ContextsBetaApi();
 
     /**
-     * Delete context instances
-     *
-     * Delete context instances by ID.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void deleteContextInstancesTest() throws ApiException {
-        String projectKey = null;
-        String environmentKey = null;
-        String id = null;
-        api.deleteContextInstances(projectKey, environmentKey, id);
-        // TODO: test validations
-    }
-
-    /**
-     * Evaluate flags for context instance
-     *
-     * Evaluate flags for a context instance, for example, to determine the expected flag variation. **Do not use this API instead of an SDK.** The LaunchDarkly SDKs are specialized for the tasks of evaluating feature flags in your application at scale and generating analytics events based on those evaluations. This API is not designed for that use case. Any evaluations you perform with this API will not be reflected in features such as flag statuses and flag insights. Context instances evaluated by this API will not appear in the Contexts list. To learn more, read [Comparing LaunchDarkly&#39;s SDKs and REST API](https://docs.launchdarkly.com/guide/api/comparing-sdk-rest-api).
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void evaluateContextInstanceTest() throws ApiException {
-        String projectKey = null;
-        String environmentKey = null;
-        Map<String, Object> requestBody = null;
-        Long limit = null;
-        Long offset = null;
-        String sort = null;
-        String filter = null;
-        ContextInstanceEvaluations response = api.evaluateContextInstance(projectKey, environmentKey, requestBody, limit, offset, sort, filter);
-        // TODO: test validations
-    }
-
-    /**
-     * Get context attribute names
-     *
-     * Get context attribute names.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getContextAttributeNamesTest() throws ApiException {
-        String projectKey = null;
-        String environmentKey = null;
-        String filter = null;
-        ContextAttributeNamesCollection response = api.getContextAttributeNames(projectKey, environmentKey, filter);
-        // TODO: test validations
-    }
-
-    /**
-     * Get context attribute values
-     *
-     * Get context attribute values.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getContextAttributeValuesTest() throws ApiException {
-        String projectKey = null;
-        String environmentKey = null;
-        String attributeName = null;
-        String filter = null;
-        ContextAttributeValuesCollection response = api.getContextAttributeValues(projectKey, environmentKey, attributeName, filter);
-        // TODO: test validations
-    }
-
-    /**
-     * Get context instances
-     *
-     * Get context instances by ID.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getContextInstancesTest() throws ApiException {
-        String projectKey = null;
-        String environmentKey = null;
-        String id = null;
-        Long limit = null;
-        String continuationToken = null;
-        String sort = null;
-        String filter = null;
-        Boolean includeTotalCount = null;
-        ContextInstances response = api.getContextInstances(projectKey, environmentKey, id, limit, continuationToken, sort, filter, includeTotalCount);
-        // TODO: test validations
-    }
-
-    /**
      * Get context kinds
      *
      * Get all context kinds for a given project.
@@ -146,28 +48,6 @@ public class ContextsBetaApiTest {
     public void getContextKindsByProjectKeyTest() throws ApiException {
         String projectKey = null;
         ContextKindsCollectionRep response = api.getContextKindsByProjectKey(projectKey);
-        // TODO: test validations
-    }
-
-    /**
-     * Get contexts
-     *
-     * Get contexts based on kind and key.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getContextsTest() throws ApiException {
-        String projectKey = null;
-        String environmentKey = null;
-        String kind = null;
-        String key = null;
-        Long limit = null;
-        String continuationToken = null;
-        String sort = null;
-        String filter = null;
-        Boolean includeTotalCount = null;
-        Contexts response = api.getContexts(projectKey, environmentKey, kind, key, limit, continuationToken, sort, filter, includeTotalCount);
         // TODO: test validations
     }
 
@@ -184,48 +64,6 @@ public class ContextsBetaApiTest {
         String key = null;
         UpsertContextKindPayload upsertContextKindPayload = null;
         UpsertResponseRep response = api.putContextKind(projectKey, key, upsertContextKindPayload);
-        // TODO: test validations
-    }
-
-    /**
-     * Search for context instances
-     *
-     *  Search for context instances.  You can use either the query parameters or the request body parameters. If both are provided, there is an error.  To learn more about the filter syntax, read [Filtering contexts and context instances](/tag/Contexts-(beta)#filtering-contexts-and-context-instances). To learn more about context instances, read [Understanding context instances](https://docs.launchdarkly.com/home/contexts#understanding-context-instances). 
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void searchContextInstancesTest() throws ApiException {
-        String projectKey = null;
-        String environmentKey = null;
-        ContextInstanceSearch contextInstanceSearch = null;
-        Long limit = null;
-        String continuationToken = null;
-        String sort = null;
-        String filter = null;
-        Boolean includeTotalCount = null;
-        ContextInstances response = api.searchContextInstances(projectKey, environmentKey, contextInstanceSearch, limit, continuationToken, sort, filter, includeTotalCount);
-        // TODO: test validations
-    }
-
-    /**
-     * Search for contexts
-     *
-     *  Search for contexts.  You can use either the query parameters or the request body parameters. If both are provided, there is an error.  To learn more about the filter syntax, read [Filtering contexts and context instances](/tag/Contexts-(beta)#filtering-contexts-and-context-instances). To learn more about contexts, read [Understanding contexts and context kinds](https://docs.launchdarkly.com/home/contexts#understanding-contexts-and-context-kinds). 
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void searchContextsTest() throws ApiException {
-        String projectKey = null;
-        String environmentKey = null;
-        ContextSearch contextSearch = null;
-        Long limit = null;
-        String continuationToken = null;
-        String sort = null;
-        String filter = null;
-        Boolean includeTotalCount = null;
-        Contexts response = api.searchContexts(projectKey, environmentKey, contextSearch, limit, continuationToken, sort, filter, includeTotalCount);
         // TODO: test validations
     }
 

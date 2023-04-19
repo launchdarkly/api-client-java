@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import com.launchdarkly.api.model.BigSegmentTarget;
+import com.launchdarkly.api.model.ContextInstanceSegmentMemberships;
 import com.launchdarkly.api.model.ExpiringTargetGetResponse;
 import com.launchdarkly.api.model.ExpiringTargetPatchResponse;
 import com.launchdarkly.api.model.ExpiringUserTargetGetResponse;
@@ -250,6 +251,164 @@ public class SegmentsApi {
 
         okhttp3.Call localVarCall = deleteSegmentValidateBeforeCall(projectKey, environmentKey, segmentKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getContextInstanceSegmentsMembershipByEnv
+     * @param projectKey The project key (required)
+     * @param environmentKey The environment key (required)
+     * @param requestBody  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Context instance segment membership collection response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getContextInstanceSegmentsMembershipByEnvCall(String projectKey, String environmentKey, Map<String, Object> requestBody, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = requestBody;
+
+        // create path and map variables
+        String localVarPath = "/api/v2/projects/{projectKey}/environments/{environmentKey}/segments/evaluate"
+            .replaceAll("\\{" + "projectKey" + "\\}", localVarApiClient.escapeString(projectKey.toString()))
+            .replaceAll("\\{" + "environmentKey" + "\\}", localVarApiClient.escapeString(environmentKey.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getContextInstanceSegmentsMembershipByEnvValidateBeforeCall(String projectKey, String environmentKey, Map<String, Object> requestBody, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'projectKey' is set
+        if (projectKey == null) {
+            throw new ApiException("Missing the required parameter 'projectKey' when calling getContextInstanceSegmentsMembershipByEnv(Async)");
+        }
+        
+        // verify the required parameter 'environmentKey' is set
+        if (environmentKey == null) {
+            throw new ApiException("Missing the required parameter 'environmentKey' when calling getContextInstanceSegmentsMembershipByEnv(Async)");
+        }
+        
+        // verify the required parameter 'requestBody' is set
+        if (requestBody == null) {
+            throw new ApiException("Missing the required parameter 'requestBody' when calling getContextInstanceSegmentsMembershipByEnv(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = getContextInstanceSegmentsMembershipByEnvCall(projectKey, environmentKey, requestBody, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * List segment memberships for context instance
+     * For a given context instance with attributes, get membership details for all segments
+     * @param projectKey The project key (required)
+     * @param environmentKey The environment key (required)
+     * @param requestBody  (required)
+     * @return ContextInstanceSegmentMemberships
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Context instance segment membership collection response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
+     </table>
+     */
+    public ContextInstanceSegmentMemberships getContextInstanceSegmentsMembershipByEnv(String projectKey, String environmentKey, Map<String, Object> requestBody) throws ApiException {
+        ApiResponse<ContextInstanceSegmentMemberships> localVarResp = getContextInstanceSegmentsMembershipByEnvWithHttpInfo(projectKey, environmentKey, requestBody);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List segment memberships for context instance
+     * For a given context instance with attributes, get membership details for all segments
+     * @param projectKey The project key (required)
+     * @param environmentKey The environment key (required)
+     * @param requestBody  (required)
+     * @return ApiResponse&lt;ContextInstanceSegmentMemberships&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Context instance segment membership collection response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ContextInstanceSegmentMemberships> getContextInstanceSegmentsMembershipByEnvWithHttpInfo(String projectKey, String environmentKey, Map<String, Object> requestBody) throws ApiException {
+        okhttp3.Call localVarCall = getContextInstanceSegmentsMembershipByEnvValidateBeforeCall(projectKey, environmentKey, requestBody, null);
+        Type localVarReturnType = new TypeToken<ContextInstanceSegmentMemberships>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List segment memberships for context instance (asynchronously)
+     * For a given context instance with attributes, get membership details for all segments
+     * @param projectKey The project key (required)
+     * @param environmentKey The environment key (required)
+     * @param requestBody  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Context instance segment membership collection response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getContextInstanceSegmentsMembershipByEnvAsync(String projectKey, String environmentKey, Map<String, Object> requestBody, final ApiCallback<ContextInstanceSegmentMemberships> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getContextInstanceSegmentsMembershipByEnvValidateBeforeCall(projectKey, environmentKey, requestBody, _callback);
+        Type localVarReturnType = new TypeToken<ContextInstanceSegmentMemberships>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**

@@ -29,12 +29,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for ContextSettingsBetaApi
+ * API tests for ContextSettingsApi
  */
 @Disabled
-public class ContextSettingsBetaApiTest {
+public class ContextSettingsApiTest {
 
-    private final ContextSettingsBetaApi api = new ContextSettingsBetaApi();
+    private final ContextSettingsApi api = new ContextSettingsApi();
 
     /**
      * Update flag settings for context

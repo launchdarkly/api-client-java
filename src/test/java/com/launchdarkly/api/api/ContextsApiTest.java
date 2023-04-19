@@ -13,261 +13,187 @@
 
 package com.launchdarkly.api.api;
 
-import com.launchdarkly.api.ApiCallback;
-import com.launchdarkly.api.ApiClient;
 import com.launchdarkly.api.ApiException;
-import com.launchdarkly.api.ApiResponse;
-import com.launchdarkly.api.Configuration;
-import com.launchdarkly.api.Pair;
-import com.launchdarkly.api.ProgressRequestBody;
-import com.launchdarkly.api.ProgressResponseBody;
-
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
+import com.launchdarkly.api.model.ContextAttributeNamesCollection;
+import com.launchdarkly.api.model.ContextAttributeValuesCollection;
+import com.launchdarkly.api.model.ContextInstanceEvaluations;
+import com.launchdarkly.api.model.ContextInstanceSearch;
+import com.launchdarkly.api.model.ContextInstances;
+import com.launchdarkly.api.model.ContextSearch;
+import com.launchdarkly.api.model.Contexts;
 import com.launchdarkly.api.model.ForbiddenErrorRep;
 import com.launchdarkly.api.model.InvalidRequestErrorRep;
 import com.launchdarkly.api.model.NotFoundErrorRep;
 import com.launchdarkly.api.model.RateLimitedErrorRep;
 import com.launchdarkly.api.model.UnauthorizedErrorRep;
-import com.launchdarkly.api.model.ValuePut;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
-public class ContextSettingsBetaApi {
-    private ApiClient localVarApiClient;
-    private int localHostIndex;
-    private String localCustomBaseUrl;
+/**
+ * API tests for ContextsApi
+ */
+@Disabled
+public class ContextsApiTest {
 
-    public ContextSettingsBetaApi() {
-        this(Configuration.getDefaultApiClient());
-    }
+    private final ContextsApi api = new ContextsApi();
 
-    public ContextSettingsBetaApi(ApiClient apiClient) {
-        this.localVarApiClient = apiClient;
-    }
-
-    public ApiClient getApiClient() {
-        return localVarApiClient;
-    }
-
-    public void setApiClient(ApiClient apiClient) {
-        this.localVarApiClient = apiClient;
-    }
-
-    public int getHostIndex() {
-        return localHostIndex;
-    }
-
-    public void setHostIndex(int hostIndex) {
-        this.localHostIndex = hostIndex;
-    }
-
-    public String getCustomBaseUrl() {
-        return localCustomBaseUrl;
-    }
-
-    public void setCustomBaseUrl(String customBaseUrl) {
-        this.localCustomBaseUrl = customBaseUrl;
+    /**
+     * Delete context instances
+     *
+     * Delete context instances by ID.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void deleteContextInstancesTest() throws ApiException {
+        String projectKey = null;
+        String environmentKey = null;
+        String id = null;
+        api.deleteContextInstances(projectKey, environmentKey, id);
+        // TODO: test validations
     }
 
     /**
-     * Build call for putContextFlagSetting
-     * @param projectKey The project key (required)
-     * @param environmentKey The environment key (required)
-     * @param contextKind The context kind (required)
-     * @param contextKey The context key (required)
-     * @param featureFlagKey The feature flag key (required)
-     * @param valuePut  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
-     </table>
+     * Evaluate flags for context instance
+     *
+     * Evaluate flags for a context instance, for example, to determine the expected flag variation. **Do not use this API instead of an SDK.** The LaunchDarkly SDKs are specialized for the tasks of evaluating feature flags in your application at scale and generating analytics events based on those evaluations. This API is not designed for that use case. Any evaluations you perform with this API will not be reflected in features such as flag statuses and flag insights. Context instances evaluated by this API will not appear in the Contexts list. To learn more, read [Comparing LaunchDarkly&#39;s SDKs and REST API](https://docs.launchdarkly.com/guide/api/comparing-sdk-rest-api).
+     *
+     * @throws ApiException if the Api call fails
      */
-    public okhttp3.Call putContextFlagSettingCall(String projectKey, String environmentKey, String contextKind, String contextKey, String featureFlagKey, ValuePut valuePut, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = valuePut;
-
-        // create path and map variables
-        String localVarPath = "/api/v2/projects/{projectKey}/environments/{environmentKey}/contexts/{contextKind}/{contextKey}/flags/{featureFlagKey}"
-            .replaceAll("\\{" + "projectKey" + "\\}", localVarApiClient.escapeString(projectKey.toString()))
-            .replaceAll("\\{" + "environmentKey" + "\\}", localVarApiClient.escapeString(environmentKey.toString()))
-            .replaceAll("\\{" + "contextKind" + "\\}", localVarApiClient.escapeString(contextKind.toString()))
-            .replaceAll("\\{" + "contextKey" + "\\}", localVarApiClient.escapeString(contextKey.toString()))
-            .replaceAll("\\{" + "featureFlagKey" + "\\}", localVarApiClient.escapeString(featureFlagKey.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call putContextFlagSettingValidateBeforeCall(String projectKey, String environmentKey, String contextKind, String contextKey, String featureFlagKey, ValuePut valuePut, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'projectKey' is set
-        if (projectKey == null) {
-            throw new ApiException("Missing the required parameter 'projectKey' when calling putContextFlagSetting(Async)");
-        }
-        
-        // verify the required parameter 'environmentKey' is set
-        if (environmentKey == null) {
-            throw new ApiException("Missing the required parameter 'environmentKey' when calling putContextFlagSetting(Async)");
-        }
-        
-        // verify the required parameter 'contextKind' is set
-        if (contextKind == null) {
-            throw new ApiException("Missing the required parameter 'contextKind' when calling putContextFlagSetting(Async)");
-        }
-        
-        // verify the required parameter 'contextKey' is set
-        if (contextKey == null) {
-            throw new ApiException("Missing the required parameter 'contextKey' when calling putContextFlagSetting(Async)");
-        }
-        
-        // verify the required parameter 'featureFlagKey' is set
-        if (featureFlagKey == null) {
-            throw new ApiException("Missing the required parameter 'featureFlagKey' when calling putContextFlagSetting(Async)");
-        }
-        
-        // verify the required parameter 'valuePut' is set
-        if (valuePut == null) {
-            throw new ApiException("Missing the required parameter 'valuePut' when calling putContextFlagSetting(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = putContextFlagSettingCall(projectKey, environmentKey, contextKind, contextKey, featureFlagKey, valuePut, _callback);
-        return localVarCall;
-
+    @Test
+    public void evaluateContextInstanceTest() throws ApiException {
+        String projectKey = null;
+        String environmentKey = null;
+        Map<String, Object> requestBody = null;
+        Long limit = null;
+        Long offset = null;
+        String sort = null;
+        String filter = null;
+        ContextInstanceEvaluations response = api.evaluateContextInstance(projectKey, environmentKey, requestBody, limit, offset, sort, filter);
+        // TODO: test validations
     }
 
     /**
-     * Update flag settings for context
-     *  Enable or disable a feature flag for a context based on its context kind and key.  Omitting the &#x60;setting&#x60; attribute from the request body, or including a &#x60;setting&#x60; of &#x60;null&#x60;, erases the current setting for a context.  If you previously patched the flag, and the patch included the context&#39;s data, LaunchDarkly continues to use that data. If LaunchDarkly has never encountered the combination of the context&#39;s key and kind before, it calculates the flag values based on the context kind and key. 
-     * @param projectKey The project key (required)
-     * @param environmentKey The environment key (required)
-     * @param contextKind The context kind (required)
-     * @param contextKey The context key (required)
-     * @param featureFlagKey The feature flag key (required)
-     * @param valuePut  (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
-     </table>
+     * Get context attribute names
+     *
+     * Get context attribute names.
+     *
+     * @throws ApiException if the Api call fails
      */
-    public void putContextFlagSetting(String projectKey, String environmentKey, String contextKind, String contextKey, String featureFlagKey, ValuePut valuePut) throws ApiException {
-        putContextFlagSettingWithHttpInfo(projectKey, environmentKey, contextKind, contextKey, featureFlagKey, valuePut);
+    @Test
+    public void getContextAttributeNamesTest() throws ApiException {
+        String projectKey = null;
+        String environmentKey = null;
+        String filter = null;
+        ContextAttributeNamesCollection response = api.getContextAttributeNames(projectKey, environmentKey, filter);
+        // TODO: test validations
     }
 
     /**
-     * Update flag settings for context
-     *  Enable or disable a feature flag for a context based on its context kind and key.  Omitting the &#x60;setting&#x60; attribute from the request body, or including a &#x60;setting&#x60; of &#x60;null&#x60;, erases the current setting for a context.  If you previously patched the flag, and the patch included the context&#39;s data, LaunchDarkly continues to use that data. If LaunchDarkly has never encountered the combination of the context&#39;s key and kind before, it calculates the flag values based on the context kind and key. 
-     * @param projectKey The project key (required)
-     * @param environmentKey The environment key (required)
-     * @param contextKind The context kind (required)
-     * @param contextKey The context key (required)
-     * @param featureFlagKey The feature flag key (required)
-     * @param valuePut  (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
-     </table>
+     * Get context attribute values
+     *
+     * Get context attribute values.
+     *
+     * @throws ApiException if the Api call fails
      */
-    public ApiResponse<Void> putContextFlagSettingWithHttpInfo(String projectKey, String environmentKey, String contextKind, String contextKey, String featureFlagKey, ValuePut valuePut) throws ApiException {
-        okhttp3.Call localVarCall = putContextFlagSettingValidateBeforeCall(projectKey, environmentKey, contextKind, contextKey, featureFlagKey, valuePut, null);
-        return localVarApiClient.execute(localVarCall);
+    @Test
+    public void getContextAttributeValuesTest() throws ApiException {
+        String projectKey = null;
+        String environmentKey = null;
+        String attributeName = null;
+        String filter = null;
+        ContextAttributeValuesCollection response = api.getContextAttributeValues(projectKey, environmentKey, attributeName, filter);
+        // TODO: test validations
     }
 
     /**
-     * Update flag settings for context (asynchronously)
-     *  Enable or disable a feature flag for a context based on its context kind and key.  Omitting the &#x60;setting&#x60; attribute from the request body, or including a &#x60;setting&#x60; of &#x60;null&#x60;, erases the current setting for a context.  If you previously patched the flag, and the patch included the context&#39;s data, LaunchDarkly continues to use that data. If LaunchDarkly has never encountered the combination of the context&#39;s key and kind before, it calculates the flag values based on the context kind and key. 
-     * @param projectKey The project key (required)
-     * @param environmentKey The environment key (required)
-     * @param contextKind The context kind (required)
-     * @param contextKey The context key (required)
-     * @param featureFlagKey The feature flag key (required)
-     * @param valuePut  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
-     </table>
+     * Get context instances
+     *
+     * Get context instances by ID.
+     *
+     * @throws ApiException if the Api call fails
      */
-    public okhttp3.Call putContextFlagSettingAsync(String projectKey, String environmentKey, String contextKind, String contextKey, String featureFlagKey, ValuePut valuePut, final ApiCallback<Void> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = putContextFlagSettingValidateBeforeCall(projectKey, environmentKey, contextKind, contextKey, featureFlagKey, valuePut, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
-        return localVarCall;
+    @Test
+    public void getContextInstancesTest() throws ApiException {
+        String projectKey = null;
+        String environmentKey = null;
+        String id = null;
+        Long limit = null;
+        String continuationToken = null;
+        String sort = null;
+        String filter = null;
+        Boolean includeTotalCount = null;
+        ContextInstances response = api.getContextInstances(projectKey, environmentKey, id, limit, continuationToken, sort, filter, includeTotalCount);
+        // TODO: test validations
     }
+
+    /**
+     * Get contexts
+     *
+     * Get contexts based on kind and key.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getContextsTest() throws ApiException {
+        String projectKey = null;
+        String environmentKey = null;
+        String kind = null;
+        String key = null;
+        Long limit = null;
+        String continuationToken = null;
+        String sort = null;
+        String filter = null;
+        Boolean includeTotalCount = null;
+        Contexts response = api.getContexts(projectKey, environmentKey, kind, key, limit, continuationToken, sort, filter, includeTotalCount);
+        // TODO: test validations
+    }
+
+    /**
+     * Search for context instances
+     *
+     *  Search for context instances.  You can use either the query parameters or the request body parameters. If both are provided, there is an error.  To learn more about the filter syntax, read [Filtering contexts and context instances](/tag/Contexts-(beta)#filtering-contexts-and-context-instances). To learn more about context instances, read [Understanding context instances](https://docs.launchdarkly.com/home/contexts#understanding-context-instances). 
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void searchContextInstancesTest() throws ApiException {
+        String projectKey = null;
+        String environmentKey = null;
+        ContextInstanceSearch contextInstanceSearch = null;
+        Long limit = null;
+        String continuationToken = null;
+        String sort = null;
+        String filter = null;
+        Boolean includeTotalCount = null;
+        ContextInstances response = api.searchContextInstances(projectKey, environmentKey, contextInstanceSearch, limit, continuationToken, sort, filter, includeTotalCount);
+        // TODO: test validations
+    }
+
+    /**
+     * Search for contexts
+     *
+     *  Search for contexts.  You can use either the query parameters or the request body parameters. If both are provided, there is an error.  To learn more about the filter syntax, read [Filtering contexts and context instances](/tag/Contexts-(beta)#filtering-contexts-and-context-instances). To learn more about contexts, read [Understanding contexts and context kinds](https://docs.launchdarkly.com/home/contexts#understanding-contexts-and-context-kinds). 
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void searchContextsTest() throws ApiException {
+        String projectKey = null;
+        String environmentKey = null;
+        ContextSearch contextSearch = null;
+        Long limit = null;
+        String continuationToken = null;
+        String sort = null;
+        String filter = null;
+        Boolean includeTotalCount = null;
+        Contexts response = api.searchContexts(projectKey, environmentKey, contextSearch, limit, continuationToken, sort, filter, includeTotalCount);
+        // TODO: test validations
+    }
+
 }

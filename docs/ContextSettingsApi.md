@@ -1,10 +1,10 @@
-# ContextSettingsBetaApi
+# ContextSettingsApi
 
 All URIs are relative to *https://app.launchdarkly.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**putContextFlagSetting**](ContextSettingsBetaApi.md#putContextFlagSetting) | **PUT** /api/v2/projects/{projectKey}/environments/{environmentKey}/contexts/{contextKind}/{contextKey}/flags/{featureFlagKey} | Update flag settings for context |
+| [**putContextFlagSetting**](ContextSettingsApi.md#putContextFlagSetting) | **PUT** /api/v2/projects/{projectKey}/environments/{environmentKey}/contexts/{contextKind}/{contextKey}/flags/{featureFlagKey} | Update flag settings for context |
 
 
 <a name="putContextFlagSetting"></a>
@@ -23,7 +23,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.ContextSettingsBetaApi;
+import com.launchdarkly.api.api.ContextSettingsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -36,7 +36,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    ContextSettingsBetaApi apiInstance = new ContextSettingsBetaApi(defaultClient);
+    ContextSettingsApi apiInstance = new ContextSettingsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
     String environmentKey = "environmentKey_example"; // String | The environment key
     String contextKind = "contextKind_example"; // String | The context kind
@@ -46,7 +46,7 @@ public class Example {
     try {
       apiInstance.putContextFlagSetting(projectKey, environmentKey, contextKind, contextKey, featureFlagKey, valuePut);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ContextSettingsBetaApi#putContextFlagSetting");
+      System.err.println("Exception when calling ContextSettingsApi#putContextFlagSetting");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

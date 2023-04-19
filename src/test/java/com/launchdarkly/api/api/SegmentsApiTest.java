@@ -15,6 +15,7 @@ package com.launchdarkly.api.api;
 
 import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.model.BigSegmentTarget;
+import com.launchdarkly.api.model.ContextInstanceSegmentMemberships;
 import com.launchdarkly.api.model.ExpiringTargetGetResponse;
 import com.launchdarkly.api.model.ExpiringTargetPatchResponse;
 import com.launchdarkly.api.model.ExpiringUserTargetGetResponse;
@@ -60,6 +61,22 @@ public class SegmentsApiTest {
         String environmentKey = null;
         String segmentKey = null;
         api.deleteSegment(projectKey, environmentKey, segmentKey);
+        // TODO: test validations
+    }
+
+    /**
+     * List segment memberships for context instance
+     *
+     * For a given context instance with attributes, get membership details for all segments
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getContextInstanceSegmentsMembershipByEnvTest() throws ApiException {
+        String projectKey = null;
+        String environmentKey = null;
+        Map<String, Object> requestBody = null;
+        ContextInstanceSegmentMemberships response = api.getContextInstanceSegmentsMembershipByEnv(projectKey, environmentKey, requestBody);
         // TODO: test validations
     }
 

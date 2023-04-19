@@ -50,7 +50,7 @@ import com.launchdarkly.api.JSON;
 /**
  * CreateCopyFlagConfigApprovalRequestRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-13T14:30:17.073017Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-19T22:24:20.163470Z[Etc/UTC]")
 public class CreateCopyFlagConfigApprovalRequestRequest {
   public static final String SERIALIZED_NAME_COMMENT = "comment";
   @SerializedName(SERIALIZED_NAME_COMMENT)

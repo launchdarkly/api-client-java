@@ -67,8 +67,9 @@ docs/ContextKindRep.md
 docs/ContextKindsCollectionRep.md
 docs/ContextRecord.md
 docs/ContextSearch.md
-docs/ContextSettingsBetaApi.md
+docs/ContextSettingsApi.md
 docs/Contexts.md
+docs/ContextsApi.md
 docs/ContextsBetaApi.md
 docs/CopiedFromEnv.md
 docs/CreateApprovalRequestRequest.md
@@ -416,7 +417,8 @@ src/main/java/com/launchdarkly/api/api/ApprovalsApi.java
 src/main/java/com/launchdarkly/api/api/ApprovalsBetaApi.java
 src/main/java/com/launchdarkly/api/api/AuditLogApi.java
 src/main/java/com/launchdarkly/api/api/CodeReferencesApi.java
-src/main/java/com/launchdarkly/api/api/ContextSettingsBetaApi.java
+src/main/java/com/launchdarkly/api/api/ContextSettingsApi.java
+src/main/java/com/launchdarkly/api/api/ContextsApi.java
 src/main/java/com/launchdarkly/api/api/ContextsBetaApi.java
 src/main/java/com/launchdarkly/api/api/CustomRolesApi.java
 src/main/java/com/launchdarkly/api/api/DataExportDestinationsApi.java
@@ -801,7 +803,8 @@ src/test/java/com/launchdarkly/api/api/ApprovalsApiTest.java
 src/test/java/com/launchdarkly/api/api/ApprovalsBetaApiTest.java
 src/test/java/com/launchdarkly/api/api/AuditLogApiTest.java
 src/test/java/com/launchdarkly/api/api/CodeReferencesApiTest.java
-src/test/java/com/launchdarkly/api/api/ContextSettingsBetaApiTest.java
+src/test/java/com/launchdarkly/api/api/ContextSettingsApiTest.java
+src/test/java/com/launchdarkly/api/api/ContextsApiTest.java
 src/test/java/com/launchdarkly/api/api/ContextsBetaApiTest.java
 src/test/java/com/launchdarkly/api/api/CustomRolesApiTest.java
 src/test/java/com/launchdarkly/api/api/DataExportDestinationsApiTest.java
