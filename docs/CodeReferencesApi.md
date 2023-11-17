@@ -705,7 +705,7 @@ public class Example {
 
 Update repository
 
-Update a repository&#39;s settings. The request must be a valid JSON Patch document describing the changes to be made to the repository.
+Update a repository&#39;s settings. Updating repository settings uses a [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) or [JSON merge patch](https://datatracker.ietf.org/doc/html/rfc7386) representation of the desired changes. To learn more, read [Updates](/#section/Overview/Updates).
 
 ### Example
 ```java

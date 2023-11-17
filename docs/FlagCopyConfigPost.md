@@ -25,6 +25,7 @@
 | UPDATEOFFVARIATION | &quot;updateOffVariation&quot; |
 | UPDATEPREREQUISITES | &quot;updatePrerequisites&quot; |
 | UPDATETARGETS | &quot;updateTargets&quot; |
+| UPDATEFLAGCONFIGMIGRATIONSETTINGS | &quot;updateFlagConfigMigrationSettings&quot; |
 
 
 
@@ -38,6 +39,7 @@
 | UPDATEOFFVARIATION | &quot;updateOffVariation&quot; |
 | UPDATEPREREQUISITES | &quot;updatePrerequisites&quot; |
 | UPDATETARGETS | &quot;updateTargets&quot; |
+| UPDATEFLAGCONFIGMIGRATIONSETTINGS | &quot;updateFlagConfigMigrationSettings&quot; |
 
 
 

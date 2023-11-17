@@ -40,7 +40,7 @@ public class Example {
     AuditLogApi apiInstance = new AuditLogApi(defaultClient);
     Long before = 56L; // Long | A timestamp filter, expressed as a Unix epoch time in milliseconds.  All entries this returns occurred before the timestamp.
     Long after = 56L; // Long | A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries this returns occurred after the timestamp.
-    String q = "q_example"; // String | Text to search for. You can search for the full or partial name of the resource, or full or partial email address of the member who made a change.
+    String q = "q_example"; // String | Text to search for. You can search for the full or partial name of the resource.
     Long limit = 56L; // Long | A limit on the number of audit log entries that return. Set between 1 and 20. The default is 10.
     String spec = "spec_example"; // String | A resource specifier that lets you filter audit log listings by resource
     try {
@@ -63,7 +63,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **before** | **Long**| A timestamp filter, expressed as a Unix epoch time in milliseconds.  All entries this returns occurred before the timestamp. | [optional] |
 | **after** | **Long**| A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries this returns occurred after the timestamp. | [optional] |
-| **q** | **String**| Text to search for. You can search for the full or partial name of the resource, or full or partial email address of the member who made a change. | [optional] |
+| **q** | **String**| Text to search for. You can search for the full or partial name of the resource. | [optional] |
 | **limit** | **Long**| A limit on the number of audit log entries that return. Set between 1 and 20. The default is 10. | [optional] |
 | **spec** | **String**| A resource specifier that lets you filter audit log listings by resource | [optional] |
 

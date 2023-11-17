@@ -17,6 +17,16 @@
 |**tags** | **List&lt;String&gt;** | Tags for the feature flag. Defaults to an empty array. |  [optional] |
 |**customProperties** | [**Map&lt;String, CustomProperty&gt;**](CustomProperty.md) |  |  [optional] |
 |**defaults** | [**Defaults**](Defaults.md) |  |  [optional] |
+|**purpose** | [**PurposeEnum**](#PurposeEnum) | Purpose of the flag |  [optional] |
+|**migrationSettings** | [**MigrationSettingsPost**](MigrationSettingsPost.md) |  |  [optional] |
+
+
+
+## Enum: PurposeEnum
+
+| Name | Value |
+|---- | -----|
+| MIGRATION | &quot;migration&quot; |
 
 
 

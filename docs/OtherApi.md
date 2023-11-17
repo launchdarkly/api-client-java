@@ -141,7 +141,7 @@ null (empty response body)
 
 <a name="getRoot"></a>
 # **getRoot**
-> Map&lt;String, Link&gt; getRoot()
+> RootResponse getRoot()
 
 Root resource
 
@@ -170,7 +170,7 @@ public class Example {
 
     OtherApi apiInstance = new OtherApi(defaultClient);
     try {
-      Map<String, Link> result = apiInstance.getRoot();
+      RootResponse result = apiInstance.getRoot();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OtherApi#getRoot");
@@ -188,7 +188,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Map&lt;String, Link&gt;**](Link.md)
+[**RootResponse**](RootResponse.md)
 
 ### Authorization
 

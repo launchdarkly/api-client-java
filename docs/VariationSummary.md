@@ -10,7 +10,7 @@
 |**rules** | **Integer** |  |  |
 |**nullRules** | **Integer** |  |  |
 |**targets** | **Integer** |  |  |
-|**contextTargets** | **Integer** |  |  [optional] |
+|**contextTargets** | **Integer** |  |  |
 |**isFallthrough** | **Boolean** |  |  [optional] |
 |**isOff** | **Boolean** |  |  [optional] |
 |**rollout** | **Integer** |  |  [optional] |

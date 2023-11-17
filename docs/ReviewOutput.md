@@ -12,6 +12,7 @@
 |**creationDate** | **Long** |  |  [optional] |
 |**comment** | **String** |  |  [optional] |
 |**memberId** | **String** |  |  [optional] |
+|**serviceTokenId** | **String** |  |  [optional] |
 
 
 

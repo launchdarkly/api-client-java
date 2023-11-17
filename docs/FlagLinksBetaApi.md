@@ -245,7 +245,7 @@ public class Example {
 
 Update flag link
 
-Update a flag link. The request body must be a valid JSON patch document. To learn more, read [Updates](/#section/Overview/Updates).
+Update a flag link. Updating a flag link uses a [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) representation of the desired changes. To learn more, read [Updates](/#section/Overview/Updates).
 
 ### Example
 ```java

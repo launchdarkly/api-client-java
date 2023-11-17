@@ -27,6 +27,7 @@
 |**debugEventsUntilDate** | **Long** |  |  [optional] |
 |**summary** | [**FlagSummary**](FlagSummary.md) |  |  [optional] |
 |**evaluation** | [**FlagConfigEvaluation**](FlagConfigEvaluation.md) |  |  [optional] |
+|**migrationSettings** | [**FlagConfigMigrationSettingsRep**](FlagConfigMigrationSettingsRep.md) |  |  [optional] |
 
 
 

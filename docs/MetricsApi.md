@@ -241,7 +241,7 @@ public class Example {
 
 Update metric
 
-Patch a metric by key.
+Patch a metric by key. Updating a metric uses a [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) representation of the desired changes. To learn more, read [Updates](/#section/Overview/Updates).
 
 ### Example
 ```java

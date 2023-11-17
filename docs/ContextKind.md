@@ -15,6 +15,8 @@
 |**lastModified** | **Long** |  |  |
 |**lastSeen** | **Long** |  |  [optional] |
 |**createdFrom** | **String** |  |  |
+|**hideInTargeting** | **Boolean** | Alias for archived. |  [optional] |
+|**archived** | **Boolean** | Whether the context kind is archived. Archived context kinds are unavailable for targeting. |  [optional] |
 
 
 

@@ -18,6 +18,7 @@
 |**notifyMemberIds** | **List&lt;String&gt;** | An array of member IDs. These members are notified to review the approval request. |  |
 |**appliedDate** | **Long** |  |  [optional] |
 |**appliedByMemberId** | **String** | The member ID of the member who applied the approval request |  [optional] |
+|**appliedByServiceTokenId** | **String** | The service token ID of the service token which applied the approval request |  [optional] |
 |**status** | [**StatusEnum**](#StatusEnum) | Current status of the approval request |  |
 |**instructions** | **List&lt;Map&lt;String, Object&gt;&gt;** |  |  |
 |**conflicts** | [**List&lt;Conflict&gt;**](Conflict.md) | Details on any conflicting approval requests |  |

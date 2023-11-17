@@ -315,7 +315,7 @@ public class Example {
 
 Update audit log subscription
 
-Update an audit log subscription configuration. Requires a [JSON Patch](https://datatracker.ietf.org/doc/html/rfc6902) representation of the desired changes to the audit log subscription.
+Update an audit log subscription configuration. Updating an audit log subscription uses a [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) representation of the desired changes. To learn more, read [Updates](/#section/Overview/Updates).
 
 ### Example
 ```java
