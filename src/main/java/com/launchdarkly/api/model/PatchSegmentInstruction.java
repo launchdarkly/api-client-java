@@ -47,7 +47,7 @@ import com.launchdarkly.api.JSON;
 /**
  * PatchSegmentInstruction
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-16T23:57:26.096741Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T00:09:54.325770Z[Etc/UTC]")
 public class PatchSegmentInstruction {
   /**
    * The type of change to make to the user&#39;s removal date from this segment

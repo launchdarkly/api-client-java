@@ -50,7 +50,7 @@ import com.launchdarkly.api.JSON;
 /**
  * ResolvedTitle
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-16T23:57:26.096741Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T00:09:54.325770Z[Etc/UTC]")
 public class ResolvedTitle {
   public static final String SERIALIZED_NAME_ELEMENTS = "elements";
   @SerializedName(SERIALIZED_NAME_ELEMENTS)
