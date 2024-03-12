@@ -21,6 +21,7 @@
 |**confirmChanges** | **Boolean** | Whether members who modify flags and segments through the LaunchDarkly user interface are required to confirm those changes |  |
 |**tags** | **List&lt;String&gt;** | A list of tags for this environment |  |
 |**approvalSettings** | [**ApprovalSettings**](ApprovalSettings.md) |  |  [optional] |
+|**critical** | **Boolean** | Whether the environment is critical |  |
 
 
 

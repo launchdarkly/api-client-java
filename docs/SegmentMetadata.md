@@ -12,6 +12,7 @@
 |**version** | **Integer** |  |  [optional] |
 |**includedCount** | **Integer** |  |  [optional] |
 |**excludedCount** | **Integer** |  |  [optional] |
+|**lastModified** | **Long** |  |  [optional] |
 |**deleted** | **Boolean** |  |  [optional] |
 
 

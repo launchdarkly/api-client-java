@@ -74,6 +74,7 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Public IP response |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getOpenapiSpec"></a>
 # **getOpenapiSpec**
@@ -132,12 +133,13 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OpenAPI Spec |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getRoot"></a>
 # **getRoot**
@@ -203,6 +205,7 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Root response |  -  |
+| **429** | Rate limited |  -  |
 
 <a name="getVersions"></a>
 # **getVersions**

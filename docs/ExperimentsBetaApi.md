@@ -14,7 +14,6 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**getLegacyExperimentResults**](ExperimentsBetaApi.md#getLegacyExperimentResults) | **GET** /api/v2/flags/{projectKey}/{featureFlagKey}/experiments/{environmentKey}/{metricKey} | Get legacy experiment results (deprecated) |
 | [**patchExperiment**](ExperimentsBetaApi.md#patchExperiment) | **PATCH** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments/{experimentKey} | Patch experiment |
 | [**putExperimentationSettings**](ExperimentsBetaApi.md#putExperimentationSettings) | **PUT** /api/v2/projects/{projectKey}/experimentation-settings | Update experimentation settings |
-| [**resetExperiment**](ExperimentsBetaApi.md#resetExperiment) | **DELETE** /api/v2/flags/{projectKey}/{featureFlagKey}/experiments/{environmentKey}/{metricKey}/results | Reset experiment results |
 
 
 <a name="createExperiment"></a>
@@ -258,11 +257,11 @@ public class Example {
 
 <a name="getExperimentResults"></a>
 # **getExperimentResults**
-> ExperimentBayesianResultsRep getExperimentResults(projectKey, environmentKey, experimentKey, metricKey, iterationId)
+> ExperimentBayesianResultsRep getExperimentResults(projectKey, environmentKey, experimentKey, metricKey, iterationId, expand)
 
 Get experiment results
 
-Get results from an experiment for a particular metric.
+Get results from an experiment for a particular metric.  LaunchDarkly supports one field for expanding the \&quot;Get experiment results\&quot; response. By default, this field is **not** included in the response.  To expand the response, append the &#x60;expand&#x60; query parameter with the following field: * &#x60;traffic&#x60; includes the total count of units for each treatment.  For example, &#x60;expand&#x3D;traffic&#x60; includes the &#x60;traffic&#x60; field for the project in the response. 
 
 ### Example
 ```java
@@ -291,8 +290,9 @@ public class Example {
     String experimentKey = "experimentKey_example"; // String | The experiment key
     String metricKey = "metricKey_example"; // String | The metric key
     String iterationId = "iterationId_example"; // String | The iteration ID
+    String expand = "expand_example"; // String | A comma-separated list of fields to expand in the response. Supported fields are explained above.
     try {
-      ExperimentBayesianResultsRep result = apiInstance.getExperimentResults(projectKey, environmentKey, experimentKey, metricKey, iterationId);
+      ExperimentBayesianResultsRep result = apiInstance.getExperimentResults(projectKey, environmentKey, experimentKey, metricKey, iterationId, expand);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ExperimentsBetaApi#getExperimentResults");
@@ -314,6 +314,7 @@ public class Example {
 | **experimentKey** | **String**| The experiment key | |
 | **metricKey** | **String**| The metric key | |
 | **iterationId** | **String**| The iteration ID | [optional] |
+| **expand** | **String**| A comma-separated list of fields to expand in the response. Supported fields are explained above. | [optional] |
 
 ### Return type
 
@@ -422,7 +423,7 @@ public class Example {
 
 <a name="getExperimentationSettings"></a>
 # **getExperimentationSettings**
-> ExperimentationSettingsRep getExperimentationSettings(projectKey)
+> RandomizationSettingsRep getExperimentationSettings(projectKey)
 
 Get experimentation settings
 
@@ -452,7 +453,7 @@ public class Example {
     ExperimentsBetaApi apiInstance = new ExperimentsBetaApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
     try {
-      ExperimentationSettingsRep result = apiInstance.getExperimentationSettings(projectKey);
+      RandomizationSettingsRep result = apiInstance.getExperimentationSettings(projectKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ExperimentsBetaApi#getExperimentationSettings");
@@ -473,7 +474,7 @@ public class Example {
 
 ### Return type
 
-[**ExperimentationSettingsRep**](ExperimentationSettingsRep.md)
+[**RandomizationSettingsRep**](RandomizationSettingsRep.md)
 
 ### Authorization
 
@@ -748,7 +749,7 @@ public class Example {
 
 <a name="putExperimentationSettings"></a>
 # **putExperimentationSettings**
-> ExperimentationSettingsRep putExperimentationSettings(projectKey, experimentationSettingsPut)
+> RandomizationSettingsRep putExperimentationSettings(projectKey, randomizationSettingsPut)
 
 Update experimentation settings
 
@@ -777,9 +778,9 @@ public class Example {
 
     ExperimentsBetaApi apiInstance = new ExperimentsBetaApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
-    ExperimentationSettingsPut experimentationSettingsPut = new ExperimentationSettingsPut(); // ExperimentationSettingsPut | 
+    RandomizationSettingsPut randomizationSettingsPut = new RandomizationSettingsPut(); // RandomizationSettingsPut | 
     try {
-      ExperimentationSettingsRep result = apiInstance.putExperimentationSettings(projectKey, experimentationSettingsPut);
+      RandomizationSettingsRep result = apiInstance.putExperimentationSettings(projectKey, randomizationSettingsPut);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ExperimentsBetaApi#putExperimentationSettings");
@@ -797,11 +798,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectKey** | **String**| The project key | |
-| **experimentationSettingsPut** | [**ExperimentationSettingsPut**](ExperimentationSettingsPut.md)|  | |
+| **randomizationSettingsPut** | [**RandomizationSettingsPut**](RandomizationSettingsPut.md)|  | |
 
 ### Return type
 
-[**ExperimentationSettingsRep**](ExperimentationSettingsRep.md)
+[**RandomizationSettingsRep**](RandomizationSettingsRep.md)
 
 ### Authorization
 
@@ -821,83 +822,5 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
 | **405** | Method not allowed |  -  |
-| **429** | Rate limited |  -  |
-
-<a name="resetExperiment"></a>
-# **resetExperiment**
-> resetExperiment(projectKey, featureFlagKey, environmentKey, metricKey)
-
-Reset experiment results
-
-Reset all experiment results by deleting all existing data for an experiment.
-
-### Example
-```java
-// Import classes:
-import com.launchdarkly.api.ApiClient;
-import com.launchdarkly.api.ApiException;
-import com.launchdarkly.api.Configuration;
-import com.launchdarkly.api.auth.*;
-import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.ExperimentsBetaApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://app.launchdarkly.com");
-    
-    // Configure API key authorization: ApiKey
-    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
-    ApiKey.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKey.setApiKeyPrefix("Token");
-
-    ExperimentsBetaApi apiInstance = new ExperimentsBetaApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | The project key
-    String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
-    String environmentKey = "environmentKey_example"; // String | The environment key
-    String metricKey = "metricKey_example"; // String | The metric's key
-    try {
-      apiInstance.resetExperiment(projectKey, featureFlagKey, environmentKey, metricKey);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling ExperimentsBetaApi#resetExperiment");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**| The project key | |
-| **featureFlagKey** | **String**| The feature flag key | |
-| **environmentKey** | **String**| The environment key | |
-| **metricKey** | **String**| The metric&#39;s key | |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **204** | Experiment results reset successfully |  -  |
-| **401** | Invalid access token |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 

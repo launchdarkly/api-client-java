@@ -159,7 +159,7 @@ public class Example {
 
 <a name="getTokens"></a>
 # **getTokens**
-> Tokens getTokens(showAll)
+> Tokens getTokens(showAll, limit, offset)
 
 List access tokens
 
@@ -188,8 +188,10 @@ public class Example {
 
     AccessTokensApi apiInstance = new AccessTokensApi(defaultClient);
     Boolean showAll = true; // Boolean | If set to true, and the authentication access token has the 'Admin' role, personal access tokens for all members will be retrieved.
+    Long limit = 56L; // Long | The number of access tokens to return in the response. Defaults to 25.
+    Long offset = 56L; // Long | Where to start in the list. This is for use with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
     try {
-      Tokens result = apiInstance.getTokens(showAll);
+      Tokens result = apiInstance.getTokens(showAll, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AccessTokensApi#getTokens");
@@ -207,6 +209,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **showAll** | **Boolean**| If set to true, and the authentication access token has the &#39;Admin&#39; role, personal access tokens for all members will be retrieved. | [optional] |
+| **limit** | **Long**| The number of access tokens to return in the response. Defaults to 25. | [optional] |
+| **offset** | **Long**| Where to start in the list. This is for use with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
 
 ### Return type
 

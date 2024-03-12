@@ -87,11 +87,11 @@ null (empty response body)
 
 <a name="getMetric"></a>
 # **getMetric**
-> MetricRep getMetric(projectKey, metricKey, expand)
+> MetricRep getMetric(projectKey, metricKey, expand, versionId)
 
 Get metric
 
-Get information for a single metric from the specific project.  ### Expanding the metric response LaunchDarkly supports two fields for expanding the \&quot;Get metric\&quot; response. By default, these fields are **not** included in the response.  To expand the response, append the &#x60;expand&#x60; query parameter and add a comma-separated list with any of the following fields:  - &#x60;experiments&#x60; includes all experiments from the specific project that use the metric - &#x60;experimentCount&#x60; includes the number of experiments from the specific project that use the metric  For example, &#x60;expand&#x3D;experiments&#x60; includes the &#x60;experiments&#x60; field in the response. 
+Get information for a single metric from the specific project.  ### Expanding the metric response LaunchDarkly supports four fields for expanding the \&quot;Get metric\&quot; response. By default, these fields are **not** included in the response.  To expand the response, append the &#x60;expand&#x60; query parameter and add a comma-separated list with any of the following fields:  - &#x60;experiments&#x60; includes all experiments from the specific project that use the metric - &#x60;experimentCount&#x60; includes the number of experiments from the specific project that use the metric - &#x60;metricGroups&#x60; includes all metric groups from the specific project that use the metric - &#x60;metricGroupCount&#x60; includes the number of metric groups from the specific project that use the metric  For example, &#x60;expand&#x3D;experiments&#x60; includes the &#x60;experiments&#x60; field in the response. 
 
 ### Example
 ```java
@@ -118,8 +118,9 @@ public class Example {
     String projectKey = "projectKey_example"; // String | The project key
     String metricKey = "metricKey_example"; // String | The metric key
     String expand = "expand_example"; // String | A comma-separated list of properties that can reveal additional information in the response.
+    String versionId = "versionId_example"; // String | The specific version ID of the metric
     try {
-      MetricRep result = apiInstance.getMetric(projectKey, metricKey, expand);
+      MetricRep result = apiInstance.getMetric(projectKey, metricKey, expand, versionId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MetricsApi#getMetric");
@@ -139,6 +140,7 @@ public class Example {
 | **projectKey** | **String**| The project key | |
 | **metricKey** | **String**| The metric key | |
 | **expand** | **String**| A comma-separated list of properties that can reveal additional information in the response. | [optional] |
+| **versionId** | **String**| The specific version ID of the metric | [optional] |
 
 ### Return type
 

@@ -17,7 +17,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 Delete release pipeline
 
-Delete a release pipeline
+Deletes a release pipeline.  You cannot delete the default release pipeline.  If you want to delete a release pipeline that is currently the default, create a second release pipeline and set it as the default. Then delete the first release pipeline. To change the default release pipeline, use the [Update project](/tag/Projects#operation/patchProject) API to set the &#x60;defaultReleasePipelineKey&#x60;. 
 
 ### Example
 ```java
@@ -85,11 +85,11 @@ null (empty response body)
 
 <a name="getAllReleasePipelines"></a>
 # **getAllReleasePipelines**
-> ReleasePipelineCollection getAllReleasePipelines(projectKey)
+> ReleasePipelineCollection getAllReleasePipelines(projectKey, filter, limit, offset)
 
 Get all release pipelines
 
-Get all release pipelines for a project
+Get all release pipelines for a project.  ### Filtering release pipelines  LaunchDarkly supports the following fields for filters:  - &#x60;query&#x60; is a string that matches against the release pipeline &#x60;key&#x60;, &#x60;name&#x60;, and &#x60;description&#x60;. It is not case sensitive. For example: &#x60;?filter&#x3D;query:examplePipeline&#x60;. 
 
 ### Example
 ```java
@@ -114,8 +114,11 @@ public class Example {
 
     ReleasePipelinesBetaApi apiInstance = new ReleasePipelinesBetaApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
+    String filter = "filter_example"; // String | A comma-separated list of filters. Each filter is of the form field:value. Read the endpoint description for a full list of available filter fields.
+    Long limit = 56L; // Long | The maximum number of items to return. Defaults to 20.
+    Long offset = 56L; // Long | Where to start in the list. Defaults to 0. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
     try {
-      ReleasePipelineCollection result = apiInstance.getAllReleasePipelines(projectKey);
+      ReleasePipelineCollection result = apiInstance.getAllReleasePipelines(projectKey, filter, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReleasePipelinesBetaApi#getAllReleasePipelines");
@@ -133,6 +136,9 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectKey** | **String**| The project key | |
+| **filter** | **String**| A comma-separated list of filters. Each filter is of the form field:value. Read the endpoint description for a full list of available filter fields. | [optional] |
+| **limit** | **Long**| The maximum number of items to return. Defaults to 20. | [optional] |
+| **offset** | **Long**| Where to start in the list. Defaults to 0. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
 
 ### Return type
 
@@ -305,7 +311,7 @@ public class Example {
 
 Create a release pipeline
 
-Creates a new release pipeline
+Creates a new release pipeline.  The first release pipeline you create is automatically set as the default release pipeline for your project. To change the default release pipeline, use the [Update project](/tag/Projects#operation/patchProject) API to set the &#x60;defaultReleasePipelineKey&#x60;.  You can create up to 20 release pipelines per project. 
 
 ### Example
 ```java

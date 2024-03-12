@@ -82,7 +82,7 @@ public class Example {
 
 <a name="patchReleaseByFlagKey"></a>
 # **patchReleaseByFlagKey**
-> patchReleaseByFlagKey(projectKey, flagKey, patchOperation)
+> Release patchReleaseByFlagKey(projectKey, flagKey, patchOperation)
 
 Patch release for flag
 
@@ -114,7 +114,8 @@ public class Example {
     String flagKey = "flagKey_example"; // String | The flag key
     List<PatchOperation> patchOperation = Arrays.asList(); // List<PatchOperation> | 
     try {
-      apiInstance.patchReleaseByFlagKey(projectKey, flagKey, patchOperation);
+      Release result = apiInstance.patchReleaseByFlagKey(projectKey, flagKey, patchOperation);
+      System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ReleasesBetaApi#patchReleaseByFlagKey");
       System.err.println("Status code: " + e.getCode());
@@ -136,7 +137,7 @@ public class Example {
 
 ### Return type
 
-null (empty response body)
+[**Release**](Release.md)
 
 ### Authorization
 
@@ -145,6 +146,15 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Release response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
 

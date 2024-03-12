@@ -8,7 +8,9 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**experimentCount** | **Integer** | The number of experiments using this metric |  [optional] |
+|**metricGroupCount** | **Integer** | The number of metric groups using this metric |  [optional] |
 |**id** | **String** | The ID of this metric |  |
+|**versionId** | **String** | The version ID of the metric |  |
 |**key** | **String** | A unique key to reference the metric |  |
 |**name** | **String** | A human-friendly name for the metric |  |
 |**kind** | [**KindEnum**](#KindEnum) | The kind of event the metric tracks |  |
@@ -32,6 +34,7 @@
 |**percentileValue** | **Integer** | The percentile, an integer denoting the target percentile between 0 and 100. Only present when &lt;code&gt;analysisType&lt;/code&gt; is &lt;code&gt;percentile&lt;/code&gt;. |  [optional] |
 |**eventDefault** | [**MetricEventDefaultRep**](MetricEventDefaultRep.md) |  |  [optional] |
 |**experiments** | [**List&lt;DependentExperimentRep&gt;**](DependentExperimentRep.md) |  |  [optional] |
+|**metricGroups** | [**List&lt;DependentMetricGroupRep&gt;**](DependentMetricGroupRep.md) | Metric groups that use this metric |  [optional] |
 |**isActive** | **Boolean** | Whether the metric is active |  [optional] |
 |**attachedFeatures** | [**List&lt;FlagListingRep&gt;**](FlagListingRep.md) | Details on the flags attached to this metric |  [optional] |
 |**version** | **Integer** | Version of the metric |  [optional] |

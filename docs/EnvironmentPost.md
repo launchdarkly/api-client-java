@@ -17,6 +17,7 @@
 |**requireComments** | **Boolean** | Requires comments for all flag and segment changes via the UI in this environment |  [optional] |
 |**tags** | **List&lt;String&gt;** | Tags to apply to the new environment |  [optional] |
 |**source** | [**SourceEnv**](SourceEnv.md) |  |  [optional] |
+|**critical** | **Boolean** | Whether the environment is critical |  [optional] |
 
 
 

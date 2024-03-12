@@ -863,6 +863,8 @@ public class Example {
 | **400** | Invalid request |  -  |
 | **401** | Invalid access token |  -  |
 | **404** | Invalid resource identifier |  -  |
+| **405** | Method not allowed |  -  |
+| **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
 <a name="postApprovalRequestReviewForFlag"></a>

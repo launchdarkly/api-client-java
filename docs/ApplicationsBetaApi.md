@@ -4,7 +4,6 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createApplication**](ApplicationsBetaApi.md#createApplication) | **POST** /api/v2/applications | Post application |
 | [**deleteApplication**](ApplicationsBetaApi.md#deleteApplication) | **DELETE** /api/v2/applications/{applicationKey} | Delete application |
 | [**deleteApplicationVersion**](ApplicationsBetaApi.md#deleteApplicationVersion) | **DELETE** /api/v2/applications/{applicationKey}/versions/{versionKey} | Delete application version |
 | [**getApplication**](ApplicationsBetaApi.md#getApplication) | **GET** /api/v2/applications/{applicationKey} | Get application by key |
@@ -12,81 +11,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**getApplications**](ApplicationsBetaApi.md#getApplications) | **GET** /api/v2/applications | Get applications |
 | [**patchApplication**](ApplicationsBetaApi.md#patchApplication) | **PATCH** /api/v2/applications/{applicationKey} | Update application |
 | [**patchApplicationVersion**](ApplicationsBetaApi.md#patchApplicationVersion) | **PATCH** /api/v2/applications/{applicationKey}/versions/{versionKey} | Update application version |
-| [**postApplicationVersion**](ApplicationsBetaApi.md#postApplicationVersion) | **POST** /api/v2/applications/{applicationKey}/versions | Post application version |
 
-
-<a name="createApplication"></a>
-# **createApplication**
-> ApplicationRep createApplication(createApplicationInput)
-
-Post application
-
-Create a new application
-
-### Example
-```java
-// Import classes:
-import com.launchdarkly.api.ApiClient;
-import com.launchdarkly.api.ApiException;
-import com.launchdarkly.api.Configuration;
-import com.launchdarkly.api.auth.*;
-import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.ApplicationsBetaApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://app.launchdarkly.com");
-    
-    // Configure API key authorization: ApiKey
-    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
-    ApiKey.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKey.setApiKeyPrefix("Token");
-
-    ApplicationsBetaApi apiInstance = new ApplicationsBetaApi(defaultClient);
-    CreateApplicationInput createApplicationInput = new CreateApplicationInput(); // CreateApplicationInput | 
-    try {
-      ApplicationRep result = apiInstance.createApplication(createApplicationInput);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling ApplicationsBetaApi#createApplication");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **createApplicationInput** | [**CreateApplicationInput**](CreateApplicationInput.md)|  | |
-
-### Return type
-
-[**ApplicationRep**](ApplicationRep.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Application response |  -  |
-| **400** | Invalid request |  -  |
-| **401** | Invalid access token |  -  |
-| **403** | Forbidden |  -  |
-| **429** | Rate limited |  -  |
 
 <a name="deleteApplication"></a>
 # **deleteApplication**
@@ -626,80 +551,5 @@ public class Example {
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
-| **429** | Rate limited |  -  |
-
-<a name="postApplicationVersion"></a>
-# **postApplicationVersion**
-> ApplicationVersionRep postApplicationVersion(applicationKey, createApplicationVersionInput)
-
-Post application version
-
-Create an application version
-
-### Example
-```java
-// Import classes:
-import com.launchdarkly.api.ApiClient;
-import com.launchdarkly.api.ApiException;
-import com.launchdarkly.api.Configuration;
-import com.launchdarkly.api.auth.*;
-import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.ApplicationsBetaApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://app.launchdarkly.com");
-    
-    // Configure API key authorization: ApiKey
-    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
-    ApiKey.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKey.setApiKeyPrefix("Token");
-
-    ApplicationsBetaApi apiInstance = new ApplicationsBetaApi(defaultClient);
-    String applicationKey = "applicationKey_example"; // String | The application key
-    CreateApplicationVersionInput createApplicationVersionInput = new CreateApplicationVersionInput(); // CreateApplicationVersionInput | 
-    try {
-      ApplicationVersionRep result = apiInstance.postApplicationVersion(applicationKey, createApplicationVersionInput);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling ApplicationsBetaApi#postApplicationVersion");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **applicationKey** | **String**| The application key | |
-| **createApplicationVersionInput** | [**CreateApplicationVersionInput**](CreateApplicationVersionInput.md)|  | |
-
-### Return type
-
-[**ApplicationVersionRep**](ApplicationVersionRep.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Application version response |  -  |
-| **400** | Invalid request |  -  |
-| **401** | Invalid access token |  -  |
-| **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
