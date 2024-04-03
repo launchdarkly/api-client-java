@@ -20,6 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.launchdarkly.api.model.Access;
 import com.launchdarkly.api.model.ClientSideAvailability;
 import com.launchdarkly.api.model.Environment;
 import com.launchdarkly.api.model.Link;
@@ -54,7 +55,7 @@ import com.launchdarkly.api.JSON;
 /**
  * ProjectRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-12T18:43:52.431775Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-03T23:27:37.555894Z[Etc/UTC]")
 public class ProjectRep {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
@@ -79,6 +80,10 @@ public class ProjectRep {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
+
+  public static final String SERIALIZED_NAME_ACCESS = "_access";
+  @SerializedName(SERIALIZED_NAME_ACCESS)
+  private Access access;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
@@ -238,6 +243,29 @@ public class ProjectRep {
   }
 
 
+  public ProjectRep access(Access access) {
+    
+    this.access = access;
+    return this;
+  }
+
+   /**
+   * Get access
+   * @return access
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Access getAccess() {
+    return access;
+  }
+
+
+  public void setAccess(Access access) {
+    this.access = access;
+  }
+
+
   public ProjectRep tags(List<String> tags) {
     
     this.tags = tags;
@@ -368,6 +396,7 @@ public class ProjectRep {
         Objects.equals(this.includeInSnippetByDefault, projectRep.includeInSnippetByDefault) &&
         Objects.equals(this.defaultClientSideAvailability, projectRep.defaultClientSideAvailability) &&
         Objects.equals(this.name, projectRep.name) &&
+        Objects.equals(this.access, projectRep.access) &&
         Objects.equals(this.tags, projectRep.tags) &&
         Objects.equals(this.defaultReleasePipelineKey, projectRep.defaultReleasePipelineKey) &&
         Objects.equals(this.environments, projectRep.environments)&&
@@ -376,7 +405,7 @@ public class ProjectRep {
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, key, includeInSnippetByDefault, defaultClientSideAvailability, name, tags, defaultReleasePipelineKey, environments, additionalProperties);
+    return Objects.hash(links, id, key, includeInSnippetByDefault, defaultClientSideAvailability, name, access, tags, defaultReleasePipelineKey, environments, additionalProperties);
   }
 
   @Override
@@ -389,6 +418,7 @@ public class ProjectRep {
     sb.append("    includeInSnippetByDefault: ").append(toIndentedString(includeInSnippetByDefault)).append("\n");
     sb.append("    defaultClientSideAvailability: ").append(toIndentedString(defaultClientSideAvailability)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    access: ").append(toIndentedString(access)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    defaultReleasePipelineKey: ").append(toIndentedString(defaultReleasePipelineKey)).append("\n");
     sb.append("    environments: ").append(toIndentedString(environments)).append("\n");
@@ -421,6 +451,7 @@ public class ProjectRep {
     openapiFields.add("includeInSnippetByDefault");
     openapiFields.add("defaultClientSideAvailability");
     openapiFields.add("name");
+    openapiFields.add("_access");
     openapiFields.add("tags");
     openapiFields.add("defaultReleasePipelineKey");
     openapiFields.add("environments");
@@ -469,6 +500,10 @@ public class ProjectRep {
       }
       if (jsonObj.get("name") != null && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      // validate the optional field `_access`
+      if (jsonObj.getAsJsonObject("_access") != null) {
+        Access.validateJsonObject(jsonObj.getAsJsonObject("_access"));
       }
       // ensure the json data is an array
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonArray()) {

@@ -56,7 +56,7 @@ import com.launchdarkly.api.JSON;
 /**
  * MetricListingRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-12T18:43:52.431775Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-03T23:27:37.555894Z[Etc/UTC]")
 public class MetricListingRep {
   public static final String SERIALIZED_NAME_EXPERIMENT_COUNT = "experimentCount";
   @SerializedName(SERIALIZED_NAME_EXPERIMENT_COUNT)
@@ -243,7 +243,7 @@ public class MetricListingRep {
   private List<String> randomizationUnits = null;
 
   /**
-   * The method in which multiple unit event values are aggregated
+   * The method by which multiple unit event values are aggregated
    */
   @JsonAdapter(UnitAggregationTypeEnum.Adapter.class)
   public enum UnitAggregationTypeEnum {
@@ -294,7 +294,7 @@ public class MetricListingRep {
   private UnitAggregationTypeEnum unitAggregationType;
 
   /**
-   * The strategy for analyzing metric events
+   * The method for analyzing metric events
    */
   @JsonAdapter(AnalysisTypeEnum.Adapter.class)
   public enum AnalysisTypeEnum {
@@ -886,11 +886,11 @@ public class MetricListingRep {
   }
 
    /**
-   * The method in which multiple unit event values are aggregated
+   * The method by which multiple unit event values are aggregated
    * @return unitAggregationType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "average", value = "The method in which multiple unit event values are aggregated")
+  @ApiModelProperty(example = "average", value = "The method by which multiple unit event values are aggregated")
 
   public UnitAggregationTypeEnum getUnitAggregationType() {
     return unitAggregationType;
@@ -909,11 +909,11 @@ public class MetricListingRep {
   }
 
    /**
-   * The strategy for analyzing metric events
+   * The method for analyzing metric events
    * @return analysisType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "mean", value = "The strategy for analyzing metric events")
+  @ApiModelProperty(example = "mean", value = "The method for analyzing metric events")
 
   public AnalysisTypeEnum getAnalysisType() {
     return analysisType;
@@ -932,11 +932,11 @@ public class MetricListingRep {
   }
 
    /**
-   * The percentile, an integer denoting the target percentile between 0 and 100. Only present when &lt;code&gt;analysisType&lt;/code&gt; is &lt;code&gt;percentile&lt;/code&gt;.
+   * The percentile for the analysis method. An integer denoting the target percentile between 0 and 100. Required when &lt;code&gt;analysisType&lt;/code&gt; is &lt;code&gt;percentile&lt;/code&gt;.
    * @return percentileValue
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "95", value = "The percentile, an integer denoting the target percentile between 0 and 100. Only present when <code>analysisType</code> is <code>percentile</code>.")
+  @ApiModelProperty(example = "95", value = "The percentile for the analysis method. An integer denoting the target percentile between 0 and 100. Required when <code>analysisType</code> is <code>percentile</code>.")
 
   public Integer getPercentileValue() {
     return percentileValue;

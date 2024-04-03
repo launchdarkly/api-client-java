@@ -98,7 +98,7 @@ public class InsightsChartsBetaApiTest {
     }
 
     /**
-     * Get replease frequency chart data
+     * Get release frequency chart data
      *
      * Get release frequency chart data. Engineering insights displays release frequency data in the [release frequency metric view](https://docs.launchdarkly.com/home/engineering-insights/metrics/release).
      *

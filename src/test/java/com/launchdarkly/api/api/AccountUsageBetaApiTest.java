@@ -41,6 +41,21 @@ public class AccountUsageBetaApiTest {
     private final AccountUsageBetaApi api = new AccountUsageBetaApi();
 
     /**
+     * Get data export events usage
+     *
+     * Get a time-series array of the number of monthly data export events from your account. The granularity is always daily, with a maximum of 31 days.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getDataExportEventsUsageTest() throws ApiException {
+        String from = null;
+        String to = null;
+        SeriesIntervalsRep response = api.getDataExportEventsUsage(from, to);
+        // TODO: test validations
+    }
+
+    /**
      * Get evaluations usage
      *
      * Get time-series arrays of the number of times a flag is evaluated, broken down by the variation that resulted from that evaluation. The granularity of the data depends on the age of the data requested. If the requested range is within the past two hours, minutely data is returned. If it is within the last two days, hourly data is returned. Otherwise, daily data is returned.
@@ -154,6 +169,21 @@ public class AccountUsageBetaApiTest {
         String from = null;
         String to = null;
         SeriesListRep response = api.getMauUsageByCategory(from, to);
+        // TODO: test validations
+    }
+
+    /**
+     * Get service connection usage
+     *
+     * Get a time-series array of the number of monthly service connections from your account. The granularity is always daily, with a maximum of 31 days.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getServiceConnectionUsageTest() throws ApiException {
+        String from = null;
+        String to = null;
+        SeriesIntervalsRep response = api.getServiceConnectionUsage(from, to);
         // TODO: test validations
     }
 

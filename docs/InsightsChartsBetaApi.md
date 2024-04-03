@@ -7,7 +7,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**getDeploymentFrequencyChart**](InsightsChartsBetaApi.md#getDeploymentFrequencyChart) | **GET** /api/v2/engineering-insights/charts/deployments/frequency | Get deployment frequency chart data |
 | [**getFlagStatusChart**](InsightsChartsBetaApi.md#getFlagStatusChart) | **GET** /api/v2/engineering-insights/charts/flags/status | Get flag status chart data |
 | [**getLeadTimeChart**](InsightsChartsBetaApi.md#getLeadTimeChart) | **GET** /api/v2/engineering-insights/charts/lead-time | Get lead time chart data |
-| [**getReleaseFrequencyChart**](InsightsChartsBetaApi.md#getReleaseFrequencyChart) | **GET** /api/v2/engineering-insights/charts/releases/frequency | Get replease frequency chart data |
+| [**getReleaseFrequencyChart**](InsightsChartsBetaApi.md#getReleaseFrequencyChart) | **GET** /api/v2/engineering-insights/charts/releases/frequency | Get release frequency chart data |
 | [**getStaleFlagsChart**](InsightsChartsBetaApi.md#getStaleFlagsChart) | **GET** /api/v2/engineering-insights/charts/flags/stale | Get stale flags chart data |
 
 
@@ -273,7 +273,7 @@ public class Example {
 # **getReleaseFrequencyChart**
 > InsightsChart getReleaseFrequencyChart(projectKey, environmentKey, applicationKey, hasExperiments, global, groupBy, from, to, bucketType, bucketMs, expand)
 
-Get replease frequency chart data
+Get release frequency chart data
 
 Get release frequency chart data. Engineering insights displays release frequency data in the [release frequency metric view](https://docs.launchdarkly.com/home/engineering-insights/metrics/release).
 
@@ -302,7 +302,7 @@ public class Example {
     String projectKey = "projectKey_example"; // String | The project key
     String environmentKey = "environmentKey_example"; // String | The environment key
     String applicationKey = "applicationKey_example"; // String | Comma separated list of application keys
-    Boolean hasExperiments = true; // Boolean | Filter events to those associated with an experiment
+    Boolean hasExperiments = true; // Boolean | Filter events to those associated with an experiment (`true`) or without an experiment (`false`)
     String global = "global_example"; // String | Filter to include or exclude global events. Default value is `include`. Options: `include`, `exclude`
     String groupBy = "groupBy_example"; // String | Property to group results by. Options: `impact`
     OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | Unix timestamp in milliseconds. Default value is 7 days ago.
@@ -331,7 +331,7 @@ public class Example {
 | **projectKey** | **String**| The project key | |
 | **environmentKey** | **String**| The environment key | |
 | **applicationKey** | **String**| Comma separated list of application keys | [optional] |
-| **hasExperiments** | **Boolean**| Filter events to those associated with an experiment | [optional] |
+| **hasExperiments** | **Boolean**| Filter events to those associated with an experiment (&#x60;true&#x60;) or without an experiment (&#x60;false&#x60;) | [optional] |
 | **global** | **String**| Filter to include or exclude global events. Default value is &#x60;include&#x60;. Options: &#x60;include&#x60;, &#x60;exclude&#x60; | [optional] |
 | **groupBy** | **String**| Property to group results by. Options: &#x60;impact&#x60; | [optional] |
 | **from** | **OffsetDateTime**| Unix timestamp in milliseconds. Default value is 7 days ago. | [optional] |

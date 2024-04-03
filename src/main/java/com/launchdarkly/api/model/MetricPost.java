@@ -20,6 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.launchdarkly.api.model.MetricEventDefaultRep;
 import com.launchdarkly.api.model.UrlPost;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -50,7 +51,7 @@ import com.launchdarkly.api.JSON;
 /**
  * MetricPost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-12T18:43:52.431775Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-03T23:27:37.555894Z[Etc/UTC]")
 public class MetricPost {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
@@ -201,7 +202,7 @@ public class MetricPost {
   private List<String> randomizationUnits = null;
 
   /**
-   * The method in which multiple unit event values are aggregated
+   * The method by which multiple unit event values are aggregated
    */
   @JsonAdapter(UnitAggregationTypeEnum.Adapter.class)
   public enum UnitAggregationTypeEnum {
@@ -250,6 +251,18 @@ public class MetricPost {
   public static final String SERIALIZED_NAME_UNIT_AGGREGATION_TYPE = "unitAggregationType";
   @SerializedName(SERIALIZED_NAME_UNIT_AGGREGATION_TYPE)
   private UnitAggregationTypeEnum unitAggregationType;
+
+  public static final String SERIALIZED_NAME_ANALYSIS_TYPE = "analysisType";
+  @SerializedName(SERIALIZED_NAME_ANALYSIS_TYPE)
+  private String analysisType;
+
+  public static final String SERIALIZED_NAME_PERCENTILE_VALUE = "percentileValue";
+  @SerializedName(SERIALIZED_NAME_PERCENTILE_VALUE)
+  private Integer percentileValue;
+
+  public static final String SERIALIZED_NAME_EVENT_DEFAULT = "eventDefault";
+  @SerializedName(SERIALIZED_NAME_EVENT_DEFAULT)
+  private MetricEventDefaultRep eventDefault;
 
   public MetricPost() { 
   }
@@ -584,11 +597,11 @@ public class MetricPost {
   }
 
    /**
-   * The method in which multiple unit event values are aggregated
+   * The method by which multiple unit event values are aggregated
    * @return unitAggregationType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "average", value = "The method in which multiple unit event values are aggregated")
+  @ApiModelProperty(example = "average", value = "The method by which multiple unit event values are aggregated")
 
   public UnitAggregationTypeEnum getUnitAggregationType() {
     return unitAggregationType;
@@ -597,6 +610,75 @@ public class MetricPost {
 
   public void setUnitAggregationType(UnitAggregationTypeEnum unitAggregationType) {
     this.unitAggregationType = unitAggregationType;
+  }
+
+
+  public MetricPost analysisType(String analysisType) {
+    
+    this.analysisType = analysisType;
+    return this;
+  }
+
+   /**
+   * The method for analyzing metric events
+   * @return analysisType
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "mean", value = "The method for analyzing metric events")
+
+  public String getAnalysisType() {
+    return analysisType;
+  }
+
+
+  public void setAnalysisType(String analysisType) {
+    this.analysisType = analysisType;
+  }
+
+
+  public MetricPost percentileValue(Integer percentileValue) {
+    
+    this.percentileValue = percentileValue;
+    return this;
+  }
+
+   /**
+   * The percentile for the analysis method. An integer denoting the target percentile between 0 and 100. Required when &lt;code&gt;analysisType&lt;/code&gt; is &lt;code&gt;percentile&lt;/code&gt;.
+   * @return percentileValue
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "95", value = "The percentile for the analysis method. An integer denoting the target percentile between 0 and 100. Required when <code>analysisType</code> is <code>percentile</code>.")
+
+  public Integer getPercentileValue() {
+    return percentileValue;
+  }
+
+
+  public void setPercentileValue(Integer percentileValue) {
+    this.percentileValue = percentileValue;
+  }
+
+
+  public MetricPost eventDefault(MetricEventDefaultRep eventDefault) {
+    
+    this.eventDefault = eventDefault;
+    return this;
+  }
+
+   /**
+   * Get eventDefault
+   * @return eventDefault
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public MetricEventDefaultRep getEventDefault() {
+    return eventDefault;
+  }
+
+
+  public void setEventDefault(MetricEventDefaultRep eventDefault) {
+    this.eventDefault = eventDefault;
   }
 
   /**
@@ -658,13 +740,16 @@ public class MetricPost {
         Objects.equals(this.successCriteria, metricPost.successCriteria) &&
         Objects.equals(this.tags, metricPost.tags) &&
         Objects.equals(this.randomizationUnits, metricPost.randomizationUnits) &&
-        Objects.equals(this.unitAggregationType, metricPost.unitAggregationType)&&
+        Objects.equals(this.unitAggregationType, metricPost.unitAggregationType) &&
+        Objects.equals(this.analysisType, metricPost.analysisType) &&
+        Objects.equals(this.percentileValue, metricPost.percentileValue) &&
+        Objects.equals(this.eventDefault, metricPost.eventDefault)&&
         Objects.equals(this.additionalProperties, metricPost.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, name, description, kind, selector, urls, isActive, isNumeric, unit, eventKey, successCriteria, tags, randomizationUnits, unitAggregationType, additionalProperties);
+    return Objects.hash(key, name, description, kind, selector, urls, isActive, isNumeric, unit, eventKey, successCriteria, tags, randomizationUnits, unitAggregationType, analysisType, percentileValue, eventDefault, additionalProperties);
   }
 
   @Override
@@ -685,6 +770,9 @@ public class MetricPost {
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    randomizationUnits: ").append(toIndentedString(randomizationUnits)).append("\n");
     sb.append("    unitAggregationType: ").append(toIndentedString(unitAggregationType)).append("\n");
+    sb.append("    analysisType: ").append(toIndentedString(analysisType)).append("\n");
+    sb.append("    percentileValue: ").append(toIndentedString(percentileValue)).append("\n");
+    sb.append("    eventDefault: ").append(toIndentedString(eventDefault)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -722,6 +810,9 @@ public class MetricPost {
     openapiFields.add("tags");
     openapiFields.add("randomizationUnits");
     openapiFields.add("unitAggregationType");
+    openapiFields.add("analysisType");
+    openapiFields.add("percentileValue");
+    openapiFields.add("eventDefault");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -796,6 +887,13 @@ public class MetricPost {
       }
       if (jsonObj.get("unitAggregationType") != null && !jsonObj.get("unitAggregationType").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `unitAggregationType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unitAggregationType").toString()));
+      }
+      if (jsonObj.get("analysisType") != null && !jsonObj.get("analysisType").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `analysisType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("analysisType").toString()));
+      }
+      // validate the optional field `eventDefault`
+      if (jsonObj.getAsJsonObject("eventDefault") != null) {
+        MetricEventDefaultRep.validateJsonObject(jsonObj.getAsJsonObject("eventDefault"));
       }
   }
 

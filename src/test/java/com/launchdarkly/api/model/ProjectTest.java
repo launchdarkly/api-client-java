@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.launchdarkly.api.model.Access;
 import com.launchdarkly.api.model.ClientSideAvailability;
 import com.launchdarkly.api.model.Environments;
 import com.launchdarkly.api.model.Link;
@@ -92,6 +93,14 @@ public class ProjectTest {
     @Test
     public void nameTest() {
         // TODO: test name
+    }
+
+    /**
+     * Test the property 'access'
+     */
+    @Test
+    public void accessTest() {
+        // TODO: test access
     }
 
     /**

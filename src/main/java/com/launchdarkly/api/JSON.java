@@ -394,6 +394,7 @@ public class JSON {
             .registerTypeAdapterFactory(new com.launchdarkly.api.model.RelayAutoConfigPost.CustomTypeAdapterFactory())
             .registerTypeAdapterFactory(new com.launchdarkly.api.model.RelayAutoConfigRep.CustomTypeAdapterFactory())
             .registerTypeAdapterFactory(new com.launchdarkly.api.model.Release.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new com.launchdarkly.api.model.ReleaseAudience.CustomTypeAdapterFactory())
             .registerTypeAdapterFactory(new com.launchdarkly.api.model.ReleasePhase.CustomTypeAdapterFactory())
             .registerTypeAdapterFactory(new com.launchdarkly.api.model.ReleasePipeline.CustomTypeAdapterFactory())
             .registerTypeAdapterFactory(new com.launchdarkly.api.model.ReleasePipelineCollection.CustomTypeAdapterFactory())

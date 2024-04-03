@@ -13,7 +13,7 @@
 |**creationDate** | **Long** |  |  |
 |**completionDate** | **Long** |  |  [optional] |
 |**completedBy** | [**CompletedBy**](CompletedBy.md) |  |  [optional] |
-|**audiences** | [**List&lt;Audience&gt;**](Audience.md) | A logical grouping of one or more environments that share attributes for rolling out changes |  |
+|**audiences** | [**List&lt;ReleaseAudience&gt;**](ReleaseAudience.md) | A logical grouping of one or more environments that share attributes for rolling out changes |  |
 
 
 

@@ -50,7 +50,7 @@ import com.launchdarkly.api.JSON;
 /**
  * BigSegmentStoreStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-12T18:43:52.431775Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-03T23:27:37.555894Z[Etc/UTC]")
 public class BigSegmentStoreStatus {
   public static final String SERIALIZED_NAME_AVAILABLE = "available";
   @SerializedName(SERIALIZED_NAME_AVAILABLE)

@@ -42,7 +42,7 @@ public class Example {
     String applicationKey = "applicationKey_example"; // String | Comma separated list of application keys
     String query = "query_example"; // String | Filter events by flag key
     String impactSize = "impactSize_example"; // String | Filter events by impact size. A small impact created a less than 20% change in the proportion of end users receiving one or more flag variations. A medium impact created between a 20%-80% change. A large impact created a more than 80% change. Options: `none`, `small`, `medium`, `large`
-    Boolean hasExperiments = true; // Boolean | Filter events to those associated with an experiment
+    Boolean hasExperiments = true; // Boolean | Filter events to those associated with an experiment (`true`) or without an experiment (`false`)
     String global = "global_example"; // String | Filter to include or exclude global events. Default value is `include`. Options: `include`, `exclude`
     String expand = "expand_example"; // String | Expand properties in response. Options: `experiments`
     Long limit = 56L; // Long | The number of deployments to return. Default is 20. Maximum allowed is 100.
@@ -73,7 +73,7 @@ public class Example {
 | **applicationKey** | **String**| Comma separated list of application keys | [optional] |
 | **query** | **String**| Filter events by flag key | [optional] |
 | **impactSize** | **String**| Filter events by impact size. A small impact created a less than 20% change in the proportion of end users receiving one or more flag variations. A medium impact created between a 20%-80% change. A large impact created a more than 80% change. Options: &#x60;none&#x60;, &#x60;small&#x60;, &#x60;medium&#x60;, &#x60;large&#x60; | [optional] |
-| **hasExperiments** | **Boolean**| Filter events to those associated with an experiment | [optional] |
+| **hasExperiments** | **Boolean**| Filter events to those associated with an experiment (&#x60;true&#x60;) or without an experiment (&#x60;false&#x60;) | [optional] |
 | **global** | **String**| Filter to include or exclude global events. Default value is &#x60;include&#x60;. Options: &#x60;include&#x60;, &#x60;exclude&#x60; | [optional] |
 | **expand** | **String**| Expand properties in response. Options: &#x60;experiments&#x60; | [optional] |
 | **limit** | **Long**| The number of deployments to return. Default is 20. Maximum allowed is 100. | [optional] |

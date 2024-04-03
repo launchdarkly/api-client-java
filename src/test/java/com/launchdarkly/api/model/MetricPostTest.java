@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.launchdarkly.api.model.MetricEventDefaultRep;
 import com.launchdarkly.api.model.UrlPost;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -152,6 +153,30 @@ public class MetricPostTest {
     @Test
     public void unitAggregationTypeTest() {
         // TODO: test unitAggregationType
+    }
+
+    /**
+     * Test the property 'analysisType'
+     */
+    @Test
+    public void analysisTypeTest() {
+        // TODO: test analysisType
+    }
+
+    /**
+     * Test the property 'percentileValue'
+     */
+    @Test
+    public void percentileValueTest() {
+        // TODO: test percentileValue
+    }
+
+    /**
+     * Test the property 'eventDefault'
+     */
+    @Test
+    public void eventDefaultTest() {
+        // TODO: test eventDefault
     }
 
 }

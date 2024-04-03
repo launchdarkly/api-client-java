@@ -341,6 +341,7 @@ docs/RelayAutoConfigPost.md
 docs/RelayAutoConfigRep.md
 docs/RelayProxyConfigurationsApi.md
 docs/Release.md
+docs/ReleaseAudience.md
 docs/ReleasePhase.md
 docs/ReleasePipeline.md
 docs/ReleasePipelineCollection.md
@@ -828,6 +829,7 @@ src/main/java/com/launchdarkly/api/model/RelayAutoConfigCollectionRep.java
 src/main/java/com/launchdarkly/api/model/RelayAutoConfigPost.java
 src/main/java/com/launchdarkly/api/model/RelayAutoConfigRep.java
 src/main/java/com/launchdarkly/api/model/Release.java
+src/main/java/com/launchdarkly/api/model/ReleaseAudience.java
 src/main/java/com/launchdarkly/api/model/ReleasePhase.java
 src/main/java/com/launchdarkly/api/model/ReleasePipeline.java
 src/main/java/com/launchdarkly/api/model/ReleasePipelineCollection.java
@@ -1273,6 +1275,7 @@ src/test/java/com/launchdarkly/api/model/RelativeDifferenceRepTest.java
 src/test/java/com/launchdarkly/api/model/RelayAutoConfigCollectionRepTest.java
 src/test/java/com/launchdarkly/api/model/RelayAutoConfigPostTest.java
 src/test/java/com/launchdarkly/api/model/RelayAutoConfigRepTest.java
+src/test/java/com/launchdarkly/api/model/ReleaseAudienceTest.java
 src/test/java/com/launchdarkly/api/model/ReleasePhaseTest.java
 src/test/java/com/launchdarkly/api/model/ReleasePipelineCollectionTest.java
 src/test/java/com/launchdarkly/api/model/ReleasePipelineTest.java

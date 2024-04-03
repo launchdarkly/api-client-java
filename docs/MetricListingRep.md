@@ -29,9 +29,9 @@
 |**unit** | **String** | For numeric custom metrics, the unit of measure |  [optional] |
 |**eventKey** | **String** | For custom metrics, the event key to use in your code |  [optional] |
 |**randomizationUnits** | **List&lt;String&gt;** | An array of randomization units allowed for this metric |  [optional] |
-|**unitAggregationType** | [**UnitAggregationTypeEnum**](#UnitAggregationTypeEnum) | The method in which multiple unit event values are aggregated |  [optional] |
-|**analysisType** | [**AnalysisTypeEnum**](#AnalysisTypeEnum) | The strategy for analyzing metric events |  [optional] |
-|**percentileValue** | **Integer** | The percentile, an integer denoting the target percentile between 0 and 100. Only present when &lt;code&gt;analysisType&lt;/code&gt; is &lt;code&gt;percentile&lt;/code&gt;. |  [optional] |
+|**unitAggregationType** | [**UnitAggregationTypeEnum**](#UnitAggregationTypeEnum) | The method by which multiple unit event values are aggregated |  [optional] |
+|**analysisType** | [**AnalysisTypeEnum**](#AnalysisTypeEnum) | The method for analyzing metric events |  [optional] |
+|**percentileValue** | **Integer** | The percentile for the analysis method. An integer denoting the target percentile between 0 and 100. Required when &lt;code&gt;analysisType&lt;/code&gt; is &lt;code&gt;percentile&lt;/code&gt;. |  [optional] |
 |**eventDefault** | [**MetricEventDefaultRep**](MetricEventDefaultRep.md) |  |  [optional] |
 
 

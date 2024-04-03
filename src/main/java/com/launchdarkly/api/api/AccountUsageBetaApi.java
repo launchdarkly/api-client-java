@@ -83,6 +83,159 @@ public class AccountUsageBetaApi {
     }
 
     /**
+     * Build call for getDataExportEventsUsage
+     * @param from The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getDataExportEventsUsageCall(String from, String to, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v2/usage/data-export-events";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (from != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("from", from));
+        }
+
+        if (to != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("to", to));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getDataExportEventsUsageValidateBeforeCall(String from, String to, final ApiCallback _callback) throws ApiException {
+        
+
+        okhttp3.Call localVarCall = getDataExportEventsUsageCall(from, to, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Get data export events usage
+     * Get a time-series array of the number of monthly data export events from your account. The granularity is always daily, with a maximum of 31 days.
+     * @param from The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. (optional)
+     * @return SeriesIntervalsRep
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
+     </table>
+     */
+    public SeriesIntervalsRep getDataExportEventsUsage(String from, String to) throws ApiException {
+        ApiResponse<SeriesIntervalsRep> localVarResp = getDataExportEventsUsageWithHttpInfo(from, to);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get data export events usage
+     * Get a time-series array of the number of monthly data export events from your account. The granularity is always daily, with a maximum of 31 days.
+     * @param from The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. (optional)
+     * @return ApiResponse&lt;SeriesIntervalsRep&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<SeriesIntervalsRep> getDataExportEventsUsageWithHttpInfo(String from, String to) throws ApiException {
+        okhttp3.Call localVarCall = getDataExportEventsUsageValidateBeforeCall(from, to, null);
+        Type localVarReturnType = new TypeToken<SeriesIntervalsRep>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get data export events usage (asynchronously)
+     * Get a time-series array of the number of monthly data export events from your account. The granularity is always daily, with a maximum of 31 days.
+     * @param from The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getDataExportEventsUsageAsync(String from, String to, final ApiCallback<SeriesIntervalsRep> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getDataExportEventsUsageValidateBeforeCall(from, to, _callback);
+        Type localVarReturnType = new TypeToken<SeriesIntervalsRep>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for getEvaluationsUsage
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
@@ -1246,6 +1399,159 @@ public class AccountUsageBetaApi {
 
         okhttp3.Call localVarCall = getMauUsageByCategoryValidateBeforeCall(from, to, _callback);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getServiceConnectionUsage
+     * @param from The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getServiceConnectionUsageCall(String from, String to, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v2/usage/service-connections";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (from != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("from", from));
+        }
+
+        if (to != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("to", to));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getServiceConnectionUsageValidateBeforeCall(String from, String to, final ApiCallback _callback) throws ApiException {
+        
+
+        okhttp3.Call localVarCall = getServiceConnectionUsageCall(from, to, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Get service connection usage
+     * Get a time-series array of the number of monthly service connections from your account. The granularity is always daily, with a maximum of 31 days.
+     * @param from The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. (optional)
+     * @return SeriesIntervalsRep
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
+     </table>
+     */
+    public SeriesIntervalsRep getServiceConnectionUsage(String from, String to) throws ApiException {
+        ApiResponse<SeriesIntervalsRep> localVarResp = getServiceConnectionUsageWithHttpInfo(from, to);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get service connection usage
+     * Get a time-series array of the number of monthly service connections from your account. The granularity is always daily, with a maximum of 31 days.
+     * @param from The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. (optional)
+     * @return ApiResponse&lt;SeriesIntervalsRep&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<SeriesIntervalsRep> getServiceConnectionUsageWithHttpInfo(String from, String to) throws ApiException {
+        okhttp3.Call localVarCall = getServiceConnectionUsageValidateBeforeCall(from, to, null);
+        Type localVarReturnType = new TypeToken<SeriesIntervalsRep>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get service connection usage (asynchronously)
+     * Get a time-series array of the number of monthly service connections from your account. The granularity is always daily, with a maximum of 31 days.
+     * @param from The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getServiceConnectionUsageAsync(String from, String to, final ApiCallback<SeriesIntervalsRep> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getServiceConnectionUsageValidateBeforeCall(from, to, _callback);
+        Type localVarReturnType = new TypeToken<SeriesIntervalsRep>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

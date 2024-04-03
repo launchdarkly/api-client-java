@@ -19,6 +19,8 @@
 |**defaults** | [**Defaults**](Defaults.md) |  |  [optional] |
 |**purpose** | [**PurposeEnum**](#PurposeEnum) | Purpose of the flag |  [optional] |
 |**migrationSettings** | [**MigrationSettingsPost**](MigrationSettingsPost.md) |  |  [optional] |
+|**maintainerId** | **String** | The ID of the member who maintains this feature flag |  [optional] |
+|**maintainerTeamKey** | **String** | The key of the team that maintains this feature flag |  [optional] |
 
 
 

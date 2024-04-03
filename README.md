@@ -8,7 +8,7 @@ This client library is only compatible with the latest version of our REST API, 
 
 LaunchDarkly REST API
 - API version: 2.0
-  - Build date: 2024-03-12T18:43:52.431775Z[Etc/UTC]
+  - Build date: 2024-04-03T23:27:37.555894Z[Etc/UTC]
 
 # Overview
 
@@ -430,7 +430,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>15.0.0</version>
+  <version>15.1.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -446,7 +446,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.launchdarkly:api-client:15.0.0"
+     implementation "com.launchdarkly:api-client:15.1.0"
   }
 ```
 
@@ -460,7 +460,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-15.0.0.jar`
+* `target/api-client-15.1.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -523,6 +523,7 @@ Class | Method | HTTP request | Description
 *AccountMembersApi* | [**postMemberTeams**](docs/AccountMembersApi.md#postMemberTeams) | **POST** /api/v2/members/{id}/teams | Add a member to teams
 *AccountMembersApi* | [**postMembers**](docs/AccountMembersApi.md#postMembers) | **POST** /api/v2/members | Invite new members
 *AccountMembersBetaApi* | [**patchMembers**](docs/AccountMembersBetaApi.md#patchMembers) | **PATCH** /api/v2/members | Modify account members
+*AccountUsageBetaApi* | [**getDataExportEventsUsage**](docs/AccountUsageBetaApi.md#getDataExportEventsUsage) | **GET** /api/v2/usage/data-export-events | Get data export events usage
 *AccountUsageBetaApi* | [**getEvaluationsUsage**](docs/AccountUsageBetaApi.md#getEvaluationsUsage) | **GET** /api/v2/usage/evaluations/{projectKey}/{environmentKey}/{featureFlagKey} | Get evaluations usage
 *AccountUsageBetaApi* | [**getEventsUsage**](docs/AccountUsageBetaApi.md#getEventsUsage) | **GET** /api/v2/usage/events/{type} | Get events usage
 *AccountUsageBetaApi* | [**getExperimentationKeysUsage**](docs/AccountUsageBetaApi.md#getExperimentationKeysUsage) | **GET** /api/v2/usage/experimentation-keys | Get experimentation keys usage
@@ -530,6 +531,7 @@ Class | Method | HTTP request | Description
 *AccountUsageBetaApi* | [**getMauSdksByType**](docs/AccountUsageBetaApi.md#getMauSdksByType) | **GET** /api/v2/usage/mau/sdks | Get MAU SDKs by type
 *AccountUsageBetaApi* | [**getMauUsage**](docs/AccountUsageBetaApi.md#getMauUsage) | **GET** /api/v2/usage/mau | Get MAU usage
 *AccountUsageBetaApi* | [**getMauUsageByCategory**](docs/AccountUsageBetaApi.md#getMauUsageByCategory) | **GET** /api/v2/usage/mau/bycategory | Get MAU usage by category
+*AccountUsageBetaApi* | [**getServiceConnectionUsage**](docs/AccountUsageBetaApi.md#getServiceConnectionUsage) | **GET** /api/v2/usage/service-connections | Get service connection usage
 *AccountUsageBetaApi* | [**getStreamUsage**](docs/AccountUsageBetaApi.md#getStreamUsage) | **GET** /api/v2/usage/streams/{source} | Get stream usage
 *AccountUsageBetaApi* | [**getStreamUsageBySdkVersion**](docs/AccountUsageBetaApi.md#getStreamUsageBySdkVersion) | **GET** /api/v2/usage/streams/{source}/bysdkversion | Get stream usage by SDK version
 *AccountUsageBetaApi* | [**getStreamUsageSdkversion**](docs/AccountUsageBetaApi.md#getStreamUsageSdkversion) | **GET** /api/v2/usage/streams/{source}/sdkversions | Get stream usage SDK versions
@@ -638,7 +640,7 @@ Class | Method | HTTP request | Description
 *InsightsChartsBetaApi* | [**getDeploymentFrequencyChart**](docs/InsightsChartsBetaApi.md#getDeploymentFrequencyChart) | **GET** /api/v2/engineering-insights/charts/deployments/frequency | Get deployment frequency chart data
 *InsightsChartsBetaApi* | [**getFlagStatusChart**](docs/InsightsChartsBetaApi.md#getFlagStatusChart) | **GET** /api/v2/engineering-insights/charts/flags/status | Get flag status chart data
 *InsightsChartsBetaApi* | [**getLeadTimeChart**](docs/InsightsChartsBetaApi.md#getLeadTimeChart) | **GET** /api/v2/engineering-insights/charts/lead-time | Get lead time chart data
-*InsightsChartsBetaApi* | [**getReleaseFrequencyChart**](docs/InsightsChartsBetaApi.md#getReleaseFrequencyChart) | **GET** /api/v2/engineering-insights/charts/releases/frequency | Get replease frequency chart data
+*InsightsChartsBetaApi* | [**getReleaseFrequencyChart**](docs/InsightsChartsBetaApi.md#getReleaseFrequencyChart) | **GET** /api/v2/engineering-insights/charts/releases/frequency | Get release frequency chart data
 *InsightsChartsBetaApi* | [**getStaleFlagsChart**](docs/InsightsChartsBetaApi.md#getStaleFlagsChart) | **GET** /api/v2/engineering-insights/charts/flags/stale | Get stale flags chart data
 *InsightsDeploymentsBetaApi* | [**createDeploymentEvent**](docs/InsightsDeploymentsBetaApi.md#createDeploymentEvent) | **POST** /api/v2/engineering-insights/deployment-events | Create deployment event
 *InsightsDeploymentsBetaApi* | [**getDeployment**](docs/InsightsDeploymentsBetaApi.md#getDeployment) | **GET** /api/v2/engineering-insights/deployments/{deploymentID} | Get deployment
@@ -1072,6 +1074,7 @@ Class | Method | HTTP request | Description
  - [RelayAutoConfigPost](docs/RelayAutoConfigPost.md)
  - [RelayAutoConfigRep](docs/RelayAutoConfigRep.md)
  - [Release](docs/Release.md)
+ - [ReleaseAudience](docs/ReleaseAudience.md)
  - [ReleasePhase](docs/ReleasePhase.md)
  - [ReleasePipeline](docs/ReleasePipeline.md)
  - [ReleasePipelineCollection](docs/ReleasePipelineCollection.md)

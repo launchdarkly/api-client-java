@@ -678,7 +678,7 @@ public class InsightsChartsBetaApi {
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
      * @param applicationKey Comma separated list of application keys (optional)
-     * @param hasExperiments Filter events to those associated with an experiment (optional)
+     * @param hasExperiments Filter events to those associated with an experiment (&#x60;true&#x60;) or without an experiment (&#x60;false&#x60;) (optional)
      * @param global Filter to include or exclude global events. Default value is &#x60;include&#x60;. Options: &#x60;include&#x60;, &#x60;exclude&#x60; (optional)
      * @param groupBy Property to group results by. Options: &#x60;impact&#x60; (optional)
      * @param from Unix timestamp in milliseconds. Default value is 7 days ago. (optional)
@@ -809,12 +809,12 @@ public class InsightsChartsBetaApi {
     }
 
     /**
-     * Get replease frequency chart data
+     * Get release frequency chart data
      * Get release frequency chart data. Engineering insights displays release frequency data in the [release frequency metric view](https://docs.launchdarkly.com/home/engineering-insights/metrics/release).
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
      * @param applicationKey Comma separated list of application keys (optional)
-     * @param hasExperiments Filter events to those associated with an experiment (optional)
+     * @param hasExperiments Filter events to those associated with an experiment (&#x60;true&#x60;) or without an experiment (&#x60;false&#x60;) (optional)
      * @param global Filter to include or exclude global events. Default value is &#x60;include&#x60;. Options: &#x60;include&#x60;, &#x60;exclude&#x60; (optional)
      * @param groupBy Property to group results by. Options: &#x60;impact&#x60; (optional)
      * @param from Unix timestamp in milliseconds. Default value is 7 days ago. (optional)
@@ -841,12 +841,12 @@ public class InsightsChartsBetaApi {
     }
 
     /**
-     * Get replease frequency chart data
+     * Get release frequency chart data
      * Get release frequency chart data. Engineering insights displays release frequency data in the [release frequency metric view](https://docs.launchdarkly.com/home/engineering-insights/metrics/release).
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
      * @param applicationKey Comma separated list of application keys (optional)
-     * @param hasExperiments Filter events to those associated with an experiment (optional)
+     * @param hasExperiments Filter events to those associated with an experiment (&#x60;true&#x60;) or without an experiment (&#x60;false&#x60;) (optional)
      * @param global Filter to include or exclude global events. Default value is &#x60;include&#x60;. Options: &#x60;include&#x60;, &#x60;exclude&#x60; (optional)
      * @param groupBy Property to group results by. Options: &#x60;impact&#x60; (optional)
      * @param from Unix timestamp in milliseconds. Default value is 7 days ago. (optional)
@@ -874,12 +874,12 @@ public class InsightsChartsBetaApi {
     }
 
     /**
-     * Get replease frequency chart data (asynchronously)
+     * Get release frequency chart data (asynchronously)
      * Get release frequency chart data. Engineering insights displays release frequency data in the [release frequency metric view](https://docs.launchdarkly.com/home/engineering-insights/metrics/release).
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
      * @param applicationKey Comma separated list of application keys (optional)
-     * @param hasExperiments Filter events to those associated with an experiment (optional)
+     * @param hasExperiments Filter events to those associated with an experiment (&#x60;true&#x60;) or without an experiment (&#x60;false&#x60;) (optional)
      * @param global Filter to include or exclude global events. Default value is &#x60;include&#x60;. Options: &#x60;include&#x60;, &#x60;exclude&#x60; (optional)
      * @param groupBy Property to group results by. Options: &#x60;impact&#x60; (optional)
      * @param from Unix timestamp in milliseconds. Default value is 7 days ago. (optional)

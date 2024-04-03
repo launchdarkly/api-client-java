@@ -56,7 +56,7 @@ import com.launchdarkly.api.JSON;
 /**
  * FeatureFlagBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-12T18:43:52.431775Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-03T23:27:37.555894Z[Etc/UTC]")
 public class FeatureFlagBody {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -150,6 +150,14 @@ public class FeatureFlagBody {
   public static final String SERIALIZED_NAME_MIGRATION_SETTINGS = "migrationSettings";
   @SerializedName(SERIALIZED_NAME_MIGRATION_SETTINGS)
   private MigrationSettingsPost migrationSettings;
+
+  public static final String SERIALIZED_NAME_MAINTAINER_ID = "maintainerId";
+  @SerializedName(SERIALIZED_NAME_MAINTAINER_ID)
+  private String maintainerId;
+
+  public static final String SERIALIZED_NAME_MAINTAINER_TEAM_KEY = "maintainerTeamKey";
+  @SerializedName(SERIALIZED_NAME_MAINTAINER_TEAM_KEY)
+  private String maintainerTeamKey;
 
   public FeatureFlagBody() { 
   }
@@ -455,6 +463,52 @@ public class FeatureFlagBody {
     this.migrationSettings = migrationSettings;
   }
 
+
+  public FeatureFlagBody maintainerId(String maintainerId) {
+    
+    this.maintainerId = maintainerId;
+    return this;
+  }
+
+   /**
+   * The ID of the member who maintains this feature flag
+   * @return maintainerId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "12ab3c45de678910fgh12345", value = "The ID of the member who maintains this feature flag")
+
+  public String getMaintainerId() {
+    return maintainerId;
+  }
+
+
+  public void setMaintainerId(String maintainerId) {
+    this.maintainerId = maintainerId;
+  }
+
+
+  public FeatureFlagBody maintainerTeamKey(String maintainerTeamKey) {
+    
+    this.maintainerTeamKey = maintainerTeamKey;
+    return this;
+  }
+
+   /**
+   * The key of the team that maintains this feature flag
+   * @return maintainerTeamKey
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "team-1", value = "The key of the team that maintains this feature flag")
+
+  public String getMaintainerTeamKey() {
+    return maintainerTeamKey;
+  }
+
+
+  public void setMaintainerTeamKey(String maintainerTeamKey) {
+    this.maintainerTeamKey = maintainerTeamKey;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -512,13 +566,15 @@ public class FeatureFlagBody {
         Objects.equals(this.customProperties, featureFlagBody.customProperties) &&
         Objects.equals(this.defaults, featureFlagBody.defaults) &&
         Objects.equals(this.purpose, featureFlagBody.purpose) &&
-        Objects.equals(this.migrationSettings, featureFlagBody.migrationSettings)&&
+        Objects.equals(this.migrationSettings, featureFlagBody.migrationSettings) &&
+        Objects.equals(this.maintainerId, featureFlagBody.maintainerId) &&
+        Objects.equals(this.maintainerTeamKey, featureFlagBody.maintainerTeamKey)&&
         Objects.equals(this.additionalProperties, featureFlagBody.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, key, description, includeInSnippet, clientSideAvailability, variations, temporary, tags, customProperties, defaults, purpose, migrationSettings, additionalProperties);
+    return Objects.hash(name, key, description, includeInSnippet, clientSideAvailability, variations, temporary, tags, customProperties, defaults, purpose, migrationSettings, maintainerId, maintainerTeamKey, additionalProperties);
   }
 
   @Override
@@ -537,6 +593,8 @@ public class FeatureFlagBody {
     sb.append("    defaults: ").append(toIndentedString(defaults)).append("\n");
     sb.append("    purpose: ").append(toIndentedString(purpose)).append("\n");
     sb.append("    migrationSettings: ").append(toIndentedString(migrationSettings)).append("\n");
+    sb.append("    maintainerId: ").append(toIndentedString(maintainerId)).append("\n");
+    sb.append("    maintainerTeamKey: ").append(toIndentedString(maintainerTeamKey)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -572,6 +630,8 @@ public class FeatureFlagBody {
     openapiFields.add("defaults");
     openapiFields.add("purpose");
     openapiFields.add("migrationSettings");
+    openapiFields.add("maintainerId");
+    openapiFields.add("maintainerTeamKey");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -639,6 +699,12 @@ public class FeatureFlagBody {
       // validate the optional field `migrationSettings`
       if (jsonObj.getAsJsonObject("migrationSettings") != null) {
         MigrationSettingsPost.validateJsonObject(jsonObj.getAsJsonObject("migrationSettings"));
+      }
+      if (jsonObj.get("maintainerId") != null && !jsonObj.get("maintainerId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerId").toString()));
+      }
+      if (jsonObj.get("maintainerTeamKey") != null && !jsonObj.get("maintainerTeamKey").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `maintainerTeamKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerTeamKey").toString()));
       }
   }
 

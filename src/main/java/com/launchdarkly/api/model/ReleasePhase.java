@@ -20,8 +20,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.launchdarkly.api.model.Audience;
 import com.launchdarkly.api.model.CompletedBy;
+import com.launchdarkly.api.model.ReleaseAudience;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -51,7 +51,7 @@ import com.launchdarkly.api.JSON;
 /**
  * ReleasePhase
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-12T18:43:52.431775Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-04-03T23:27:37.555894Z[Etc/UTC]")
 public class ReleasePhase {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -79,7 +79,7 @@ public class ReleasePhase {
 
   public static final String SERIALIZED_NAME_AUDIENCES = "_audiences";
   @SerializedName(SERIALIZED_NAME_AUDIENCES)
-  private List<Audience> audiences = new ArrayList<>();
+  private List<ReleaseAudience> audiences = new ArrayList<>();
 
   public ReleasePhase() { 
   }
@@ -222,13 +222,13 @@ public class ReleasePhase {
   }
 
 
-  public ReleasePhase audiences(List<Audience> audiences) {
+  public ReleasePhase audiences(List<ReleaseAudience> audiences) {
     
     this.audiences = audiences;
     return this;
   }
 
-  public ReleasePhase addAudiencesItem(Audience audiencesItem) {
+  public ReleasePhase addAudiencesItem(ReleaseAudience audiencesItem) {
     this.audiences.add(audiencesItem);
     return this;
   }
@@ -240,12 +240,12 @@ public class ReleasePhase {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "A logical grouping of one or more environments that share attributes for rolling out changes")
 
-  public List<Audience> getAudiences() {
+  public List<ReleaseAudience> getAudiences() {
     return audiences;
   }
 
 
-  public void setAudiences(List<Audience> audiences) {
+  public void setAudiences(List<ReleaseAudience> audiences) {
     this.audiences = audiences;
   }
 
@@ -401,7 +401,7 @@ public class ReleasePhase {
 
         // validate the optional field `_audiences` (array)
         for (int i = 0; i < jsonArrayaudiences.size(); i++) {
-          Audience.validateJsonObject(jsonArrayaudiences.get(i).getAsJsonObject());
+          ReleaseAudience.validateJsonObject(jsonArrayaudiences.get(i).getAsJsonObject());
         };
       }
   }

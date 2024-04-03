@@ -4571,31 +4571,31 @@ paths:
         \ case, which also have the tags `beta` and `test`.\n\nThe `filter` query\
         \ parameter supports the following arguments:\n\n| Filter argument       |\
         \ Description | Example              |\n|-----------------------|-------------|----------------------|\n\
-        | `archived`              | A boolean value. It filters the list to archived\
-        \ flags. Setting the value to `true` returns only archived flags. When this\
-        \ is absent, only unarchived flags are returned. | `filter=archived:true`\
-        \ |\n| `contextKindsEvaluated` | A `+`-separated list of context kind keys.\
-        \ It filters the list to flags which have been evaluated in the past 30 days\
-        \ for all of the context kinds in the list. | `filter=contextKindsEvaluated:user+application`\
-        \ |\n| `contextKindTargeted`   | A string. It filters the list to flags that\
-        \ are targeting the given context kind key. | `filter=contextKindTargeted:user`\
-        \ |\n| `codeReferences.max`    | An integer value. Use `0` to return flags\
-        \ that do not have code references. | `filter=codeReferences.max:0` |\n| `codeReferences.min`\
-        \    | An integer value. Use `1` to return flags that do have code references.\
-        \ | `filter=codeReferences.min:1` |\n| `creationDate`          | An object\
-        \ with an optional `before` field whose value is Unix time in milliseconds.\
-        \ It filters the list to flags created before the date. | `filter=creationDate:{\"\
-        before\":1690527600000}` |\n| `evaluated`             | An object that contains\
-        \ a key of `after` and a value in Unix time in milliseconds. It filters the\
-        \ list to all flags that have been evaluated since the time you specify, in\
-        \ the environment provided. This filter requires the `filterEnv` filter. |\
-        \ `filter=evaluation:{\"after\":1690527600000}` |\n| `filterEnv`         \
-        \    | A string with the key of a valid environment. You must use this field\
-        \ for filters that are environment-specific. If there are multiple environment-specific\
-        \ filters, you only need to include this field once. | `filter=evaluated:{\"\
-        after\": 1590768455282},filterEnv:production,status:active` |\n| `followerId`\
-        \            | A valid member ID. It filters the list to flags that are being\
-        \ followed by this member. |  `filter=followerId:12ab3c45de678910abc12345`\
+        | `applicationEvaluated`  | A string. It filters the list to flags that are\
+        \ evaluated in the application with the given key. | `filter=applicationEvaluated:com.launchdarkly.cafe`\
+        \ |\n| `archived`              | (deprecated) A boolean value. It filters\
+        \ the list to archived flags. | Use `filter=state:archived` instead |\n| `contextKindsEvaluated`\
+        \ | A `+`-separated list of context kind keys. It filters the list to flags\
+        \ which have been evaluated in the past 30 days for all of the context kinds\
+        \ in the list. | `filter=contextKindsEvaluated:user+application` |\n| `contextKindTargeted`\
+        \   | A string. It filters the list to flags that are targeting the given\
+        \ context kind key. | `filter=contextKindTargeted:user` |\n| `codeReferences.max`\
+        \    | An integer value. Use `0` to return flags that do not have code references.\
+        \ | `filter=codeReferences.max:0` |\n| `codeReferences.min`    | An integer\
+        \ value. Use `1` to return flags that do have code references. | `filter=codeReferences.min:1`\
+        \ |\n| `creationDate`          | An object with an optional `before` field\
+        \ whose value is Unix time in milliseconds. It filters the list to flags created\
+        \ before the date. | `filter=creationDate:{\"before\":1690527600000}` |\n\
+        | `evaluated`             | An object that contains a key of `after` and a\
+        \ value in Unix time in milliseconds. It filters the list to all flags that\
+        \ have been evaluated since the time you specify, in the environment provided.\
+        \ This filter requires the `filterEnv` filter. | `filter=evaluation:{\"after\"\
+        :1690527600000}` |\n| `filterEnv`             | A string with the key of a\
+        \ valid environment. You must use this field for filters that are environment-specific.\
+        \ If there are multiple environment-specific filters, you only need to include\
+        \ this field once. | `filter=evaluated:{\"after\": 1590768455282},filterEnv:production,status:active`\
+        \ |\n| `followerId`            | A valid member ID. It filters the list to\
+        \ flags that are being followed by this member. |  `filter=followerId:12ab3c45de678910abc12345`\
         \ |\n| `hasDataExport`         | A boolean value. It filters the list to flags\
         \ that are exporting data in the specified environment. This includes flags\
         \ that are exporting data from Experimentation. This filter requires the `filterEnv`\
@@ -4608,6 +4608,8 @@ paths:
         \ team with this key. | `filter=maintainerTeamKey:example-team-key` |\n| `query`\
         \                 | A string. It filters the list to flags that include the\
         \ specified string in their key or name. It is not case sensitive. | `filter=query:example`\
+        \ |\n| `state`                 | A string, either `live`, `deprecated`, or\
+        \ `archived`. It filters the list to flags in this state. | `filter=state:archived`\
         \ |\n| `sdkAvailability`       | A string, one of `client`, `mobile`, `anyClient`,\
         \ `server`. Using `client` filters the list to flags whose client-side SDK\
         \ availability is set to use the client-side ID. Using `mobile` filters to\
@@ -4836,15 +4838,18 @@ paths:
       x-accepts: application/json
     post:
       description: "Create a feature flag with the given name, key, and variations.\n\
-        \n### Creating a migration flag\n\nWhen you create a migration flag, the variations\
-        \ are pre-determined based on the number of stages in the migration.\nTo create\
-        \ a migration flag, omit the `variations` and `defaults` information. Instead,\
-        \ provide a `purpose` of `migration`, and `migrationSettings`. If you create\
-        \ a migration flag with six stages, `contextKind` is required. Otherwise,\
-        \ it should be omitted.\n\nHere's an example:\n\n```json\n{\n  \"key\": \"\
-        flag-key-123\",\n  \"purpose\": \"migration\",\n  \"migrationSettings\": {\n\
-        \    \"stageCount\": 6,\n    \"contextKind\": \"account\"\n  }\n}\n```\n\n\
-        To learn more, read [Migration Flags](https://docs.launchdarkly.com/home/flag-types/migration-flags).\n"
+        \n<details>\n<summary>Click to expand instructions for <strong>creating a\
+        \ migration flag</strong></summary>\n\n### Creating a migration flag\n\nWhen\
+        \ you create a migration flag, the variations are pre-determined based on\
+        \ the number of stages in the migration.\n\nTo create a migration flag, omit\
+        \ the `variations` and `defaults` information. Instead, provide a `purpose`\
+        \ of `migration`, and `migrationSettings`. If you create a migration flag\
+        \ with six stages, `contextKind` is required. Otherwise, it should be omitted.\n\
+        \nHere's an example:\n\n```json\n{\n  \"key\": \"flag-key-123\",\n  \"purpose\"\
+        : \"migration\",\n  \"migrationSettings\": {\n    \"stageCount\": 6,\n   \
+        \ \"contextKind\": \"account\"\n  }\n}\n```\n\nTo learn more, read [Migration\
+        \ Flags](https://docs.launchdarkly.com/home/flag-types/migration-flags).\n\
+        \n</details>\n"
       operationId: postFeatureFlag
       parameters:
       - description: The project key
@@ -18308,6 +18313,78 @@ paths:
       tags:
       - Access tokens
       x-accepts: application/json
+  /api/v2/usage/data-export-events:
+    get:
+      description: "Get a time-series array of the number of monthly data export events\
+        \ from your account. The granularity is always daily, with a maximum of 31\
+        \ days."
+      operationId: getDataExportEventsUsage
+      parameters:
+      - description: The series of data returned starts from this timestamp (Unix
+          seconds). Defaults to the beginning of the current month.
+        explode: true
+        in: query
+        name: from
+        required: false
+        schema:
+          description: The series of data returned starts from this timestamp (Unix
+            seconds). Defaults to the beginning of the current month.
+          format: string
+          type: string
+        style: form
+      - description: The series of data returned ends at this timestamp (Unix seconds).
+          Defaults to the current time.
+        explode: true
+        in: query
+        name: to
+        required: false
+        schema:
+          description: The series of data returned ends at this timestamp (Unix seconds).
+            Defaults to the current time.
+          format: string
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SeriesIntervalsRep'
+          description: Usage response
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidRequestErrorRep'
+          description: Invalid request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedErrorRep'
+          description: Invalid access token
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenErrorRep'
+          description: Forbidden
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RateLimitedErrorRep'
+          description: Rate limited
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusServiceUnavailable'
+          description: Service unavailable
+      summary: Get data export events usage
+      tags:
+      - Account usage (beta)
+      x-accepts: application/json
   /api/v2/usage/evaluations/{projectKey}/{environmentKey}/{featureFlagKey}:
     get:
       description: "Get time-series arrays of the number of times a flag is evaluated,\
@@ -18959,6 +19036,78 @@ paths:
                 $ref: '#/components/schemas/RateLimitedErrorRep'
           description: Rate limited
       summary: Get MAU SDKs by type
+      tags:
+      - Account usage (beta)
+      x-accepts: application/json
+  /api/v2/usage/service-connections:
+    get:
+      description: "Get a time-series array of the number of monthly service connections\
+        \ from your account. The granularity is always daily, with a maximum of 31\
+        \ days."
+      operationId: getServiceConnectionUsage
+      parameters:
+      - description: The series of data returned starts from this timestamp (Unix
+          seconds). Defaults to the beginning of the current month.
+        explode: true
+        in: query
+        name: from
+        required: false
+        schema:
+          description: The series of data returned starts from this timestamp (Unix
+            seconds). Defaults to the beginning of the current month.
+          format: string
+          type: string
+        style: form
+      - description: The series of data returned ends at this timestamp (Unix seconds).
+          Defaults to the current time.
+        explode: true
+        in: query
+        name: to
+        required: false
+        schema:
+          description: The series of data returned ends at this timestamp (Unix seconds).
+            Defaults to the current time.
+          format: string
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SeriesIntervalsRep'
+          description: Usage response
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidRequestErrorRep'
+          description: Invalid request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedErrorRep'
+          description: Invalid access token
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenErrorRep'
+          description: Forbidden
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RateLimitedErrorRep'
+          description: Rate limited
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusServiceUnavailable'
+          description: Service unavailable
+      summary: Get service connection usage
       tags:
       - Account usage (beta)
       x-accepts: application/json
@@ -20976,13 +21125,15 @@ paths:
           format: string
           type: string
         style: form
-      - description: Filter events to those associated with an experiment
+      - description: Filter events to those associated with an experiment (`true`)
+          or without an experiment (`false`)
         explode: true
         in: query
         name: hasExperiments
         required: false
         schema:
-          description: Filter events to those associated with an experiment
+          description: Filter events to those associated with an experiment (`true`)
+            or without an experiment (`false`)
           format: boolean
           type: boolean
         style: form
@@ -21097,7 +21248,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/RateLimitedErrorRep'
           description: Rate limited
-      summary: Get replease frequency chart data
+      summary: Get release frequency chart data
       tags:
       - Insights charts (beta)
       x-accepts: application/json
@@ -21528,13 +21679,15 @@ paths:
           format: string
           type: string
         style: form
-      - description: Filter events to those associated with an experiment
+      - description: Filter events to those associated with an experiment (`true`)
+          or without an experiment (`false`)
         explode: true
         in: query
         name: hasExperiments
         required: false
         schema:
-          description: Filter events to those associated with an experiment
+          description: Filter events to those associated with an experiment (`true`)
+            or without an experiment (`false`)
           format: boolean
           type: boolean
         style: form
@@ -28998,6 +29151,65 @@ components:
         description: "example: request approval from someone"
         project:
           includeInSnippetByDefault: true
+          _access:
+            allowed:
+            - reason:
+                role_name: role_name
+                notActions:
+                - null
+                - null
+                notResources:
+                - notResources
+                - notResources
+                effect: allow
+                resources:
+                - proj/*:env/*;qa_*:/flag/*
+                actions:
+                - '*'
+              action: action
+            - reason:
+                role_name: role_name
+                notActions:
+                - null
+                - null
+                notResources:
+                - notResources
+                - notResources
+                effect: allow
+                resources:
+                - proj/*:env/*;qa_*:/flag/*
+                actions:
+                - '*'
+              action: action
+            denied:
+            - reason:
+                role_name: role_name
+                notActions:
+                - null
+                - null
+                notResources:
+                - notResources
+                - notResources
+                effect: allow
+                resources:
+                - proj/*:env/*;qa_*:/flag/*
+                actions:
+                - '*'
+              action: action
+            - reason:
+                role_name: role_name
+                notActions:
+                - null
+                - null
+                notResources:
+                - notResources
+                - notResources
+                effect: allow
+                resources:
+                - proj/*:env/*;qa_*:/flag/*
+                actions:
+                - '*'
+              action: action
           _links:
             environments:
               href: /api/v2/projects/my-project/environments
@@ -29375,6 +29587,65 @@ components:
           description: "example: request approval from someone"
           project:
             includeInSnippetByDefault: true
+            _access:
+              allowed:
+              - reason:
+                  role_name: role_name
+                  notActions:
+                  - null
+                  - null
+                  notResources:
+                  - notResources
+                  - notResources
+                  effect: allow
+                  resources:
+                  - proj/*:env/*;qa_*:/flag/*
+                  actions:
+                  - '*'
+                action: action
+              - reason:
+                  role_name: role_name
+                  notActions:
+                  - null
+                  - null
+                  notResources:
+                  - notResources
+                  - notResources
+                  effect: allow
+                  resources:
+                  - proj/*:env/*;qa_*:/flag/*
+                  actions:
+                  - '*'
+                action: action
+              denied:
+              - reason:
+                  role_name: role_name
+                  notActions:
+                  - null
+                  - null
+                  notResources:
+                  - notResources
+                  - notResources
+                  effect: allow
+                  resources:
+                  - proj/*:env/*;qa_*:/flag/*
+                  actions:
+                  - '*'
+                action: action
+              - reason:
+                  role_name: role_name
+                  notActions:
+                  - null
+                  - null
+                  notResources:
+                  - notResources
+                  - notResources
+                  effect: allow
+                  resources:
+                  - proj/*:env/*;qa_*:/flag/*
+                  actions:
+                  - '*'
+                action: action
             _links:
               environments:
                 href: /api/v2/projects/my-project/environments
@@ -29627,6 +29898,65 @@ components:
           description: "example: request approval from someone"
           project:
             includeInSnippetByDefault: true
+            _access:
+              allowed:
+              - reason:
+                  role_name: role_name
+                  notActions:
+                  - null
+                  - null
+                  notResources:
+                  - notResources
+                  - notResources
+                  effect: allow
+                  resources:
+                  - proj/*:env/*;qa_*:/flag/*
+                  actions:
+                  - '*'
+                action: action
+              - reason:
+                  role_name: role_name
+                  notActions:
+                  - null
+                  - null
+                  notResources:
+                  - notResources
+                  - notResources
+                  effect: allow
+                  resources:
+                  - proj/*:env/*;qa_*:/flag/*
+                  actions:
+                  - '*'
+                action: action
+              denied:
+              - reason:
+                  role_name: role_name
+                  notActions:
+                  - null
+                  - null
+                  notResources:
+                  - notResources
+                  - notResources
+                  effect: allow
+                  resources:
+                  - proj/*:env/*;qa_*:/flag/*
+                  actions:
+                  - '*'
+                action: action
+              - reason:
+                  role_name: role_name
+                  notActions:
+                  - null
+                  - null
+                  notResources:
+                  - notResources
+                  - notResources
+                  effect: allow
+                  resources:
+                  - proj/*:env/*;qa_*:/flag/*
+                  actions:
+                  - '*'
+                action: action
             _links:
               environments:
                 href: /api/v2/projects/my-project/environments
@@ -34417,32 +34747,34 @@ components:
       type: object
     FeatureFlagBody:
       example:
+        temporary: false
+        clientSideAvailability:
+          usingEnvironmentId: true
+          usingMobileKey: true
+        purpose: migration
+        maintainerTeamKey: team-1
+        description: This flag controls the example widgets
+        tags:
+        - example-tag
         migrationSettings:
           stageCount: 0
           contextKind: contextKind
-        temporary: false
         includeInSnippet: true
+        maintainerId: 12ab3c45de678910fgh12345
         customProperties:
           key:
             name: Jira issues
             value:
             - is-123
             - is-456
-        clientSideAvailability:
-          usingEnvironmentId: true
-          usingMobileKey: true
         defaults:
           onVariation: 0
           offVariation: 1
-        purpose: migration
         variations:
         - value: true
         - value: false
         name: My flag
-        description: This flag controls the example widgets
         key: flag-key-123abc
-        tags:
-        - example-tag
       properties:
         name:
           description: A human-friendly name for the feature flag
@@ -34499,6 +34831,14 @@ components:
           type: string
         migrationSettings:
           $ref: '#/components/schemas/MigrationSettingsPost'
+        maintainerId:
+          description: The ID of the member who maintains this feature flag
+          example: 12ab3c45de678910fgh12345
+          type: string
+        maintainerTeamKey:
+          description: The key of the team that maintains this feature flag
+          example: team-1
+          type: string
       required:
       - key
       - name
@@ -40222,22 +40562,23 @@ components:
             type: string
           type: array
         unitAggregationType:
-          description: The method in which multiple unit event values are aggregated
+          description: The method by which multiple unit event values are aggregated
           enum:
           - average
           - sum
           example: average
           type: string
         analysisType:
-          description: The strategy for analyzing metric events
+          description: The method for analyzing metric events
           enum:
           - mean
           - percentile
           example: mean
           type: string
         percentileValue:
-          description: "The percentile, an integer denoting the target percentile\
-            \ between 0 and 100. Only present when <code>analysisType</code> is <code>percentile</code>."
+          description: The percentile for the analysis method. An integer denoting
+            the target percentile between 0 and 100. Required when <code>analysisType</code>
+            is <code>percentile</code>.
           example: 95
           type: integer
         eventDefault:
@@ -40254,6 +40595,7 @@ components:
       type: object
     MetricPost:
       example:
+        percentileValue: 95
         kind: custom
         description: optional description
         isActive: true
@@ -40261,6 +40603,9 @@ components:
         - user
         tags:
         - example-tag
+        eventDefault:
+          disabled: true
+          value: 5.962133916683182
         urls: invalid example
         unit: orders
         successCriteria: HigherThanBaseline
@@ -40269,6 +40614,7 @@ components:
         name: Example metric
         selector: .dropdown-toggle
         unitAggregationType: average
+        analysisType: mean
         key: metric-key-123abc
       properties:
         key:
@@ -40346,12 +40692,24 @@ components:
             type: string
           type: array
         unitAggregationType:
-          description: The method in which multiple unit event values are aggregated
+          description: The method by which multiple unit event values are aggregated
           enum:
           - average
           - sum
           example: average
           type: string
+        analysisType:
+          description: The method for analyzing metric events
+          example: mean
+          type: string
+        percentileValue:
+          description: The percentile for the analysis method. An integer denoting
+            the target percentile between 0 and 100. Required when <code>analysisType</code>
+            is <code>percentile</code>.
+          example: 95
+          type: integer
+        eventDefault:
+          $ref: '#/components/schemas/MetricEventDefaultRep'
       required:
       - key
       - kind
@@ -40635,22 +40993,23 @@ components:
             type: string
           type: array
         unitAggregationType:
-          description: The method in which multiple unit event values are aggregated
+          description: The method by which multiple unit event values are aggregated
           enum:
           - average
           - sum
           example: average
           type: string
         analysisType:
-          description: The strategy for analyzing metric events
+          description: The method for analyzing metric events
           enum:
           - mean
           - percentile
           example: mean
           type: string
         percentileValue:
-          description: "The percentile, an integer denoting the target percentile\
-            \ between 0 and 100. Only present when <code>analysisType</code> is <code>percentile</code>."
+          description: The percentile for the analysis method. An integer denoting
+            the target percentile between 0 and 100. Required when <code>analysisType</code>
+            is <code>percentile</code>.
           example: 95
           type: integer
         eventDefault:
@@ -41195,6 +41554,65 @@ components:
     Project:
       example:
         includeInSnippetByDefault: true
+        _access:
+          allowed:
+          - reason:
+              role_name: role_name
+              notActions:
+              - null
+              - null
+              notResources:
+              - notResources
+              - notResources
+              effect: allow
+              resources:
+              - proj/*:env/*;qa_*:/flag/*
+              actions:
+              - '*'
+            action: action
+          - reason:
+              role_name: role_name
+              notActions:
+              - null
+              - null
+              notResources:
+              - notResources
+              - notResources
+              effect: allow
+              resources:
+              - proj/*:env/*;qa_*:/flag/*
+              actions:
+              - '*'
+            action: action
+          denied:
+          - reason:
+              role_name: role_name
+              notActions:
+              - null
+              - null
+              notResources:
+              - notResources
+              - notResources
+              effect: allow
+              resources:
+              - proj/*:env/*;qa_*:/flag/*
+              actions:
+              - '*'
+            action: action
+          - reason:
+              role_name: role_name
+              notActions:
+              - null
+              - null
+              notResources:
+              - notResources
+              - notResources
+              effect: allow
+              resources:
+              - proj/*:env/*;qa_*:/flag/*
+              actions:
+              - '*'
+            action: action
         _links:
           environments:
             href: /api/v2/projects/my-project/environments
@@ -41306,6 +41724,8 @@ components:
           description: A human-friendly name for the project
           example: My Project
           type: string
+        _access:
+          $ref: '#/components/schemas/Access'
         tags:
           description: A list of tags for the project
           example:
@@ -41401,6 +41821,65 @@ components:
     ProjectRep:
       example:
         includeInSnippetByDefault: true
+        _access:
+          allowed:
+          - reason:
+              role_name: role_name
+              notActions:
+              - null
+              - null
+              notResources:
+              - notResources
+              - notResources
+              effect: allow
+              resources:
+              - proj/*:env/*;qa_*:/flag/*
+              actions:
+              - '*'
+            action: action
+          - reason:
+              role_name: role_name
+              notActions:
+              - null
+              - null
+              notResources:
+              - notResources
+              - notResources
+              effect: allow
+              resources:
+              - proj/*:env/*;qa_*:/flag/*
+              actions:
+              - '*'
+            action: action
+          denied:
+          - reason:
+              role_name: role_name
+              notActions:
+              - null
+              - null
+              notResources:
+              - notResources
+              - notResources
+              effect: allow
+              resources:
+              - proj/*:env/*;qa_*:/flag/*
+              actions:
+              - '*'
+            action: action
+          - reason:
+              role_name: role_name
+              notActions:
+              - null
+              - null
+              notResources:
+              - notResources
+              - notResources
+              effect: allow
+              resources:
+              - proj/*:env/*;qa_*:/flag/*
+              actions:
+              - '*'
+            action: action
         _links:
           environments:
             href: /api/v2/projects/my-project/environments
@@ -41506,6 +41985,8 @@ components:
           description: A human-friendly name for the project
           example: My Project
           type: string
+        _access:
+          $ref: '#/components/schemas/Access'
         tags:
           description: A list of tags for the project
           example:
@@ -41582,6 +42063,65 @@ components:
         totalCount: 0
         items:
         - includeInSnippetByDefault: true
+          _access:
+            allowed:
+            - reason:
+                role_name: role_name
+                notActions:
+                - null
+                - null
+                notResources:
+                - notResources
+                - notResources
+                effect: allow
+                resources:
+                - proj/*:env/*;qa_*:/flag/*
+                actions:
+                - '*'
+              action: action
+            - reason:
+                role_name: role_name
+                notActions:
+                - null
+                - null
+                notResources:
+                - notResources
+                - notResources
+                effect: allow
+                resources:
+                - proj/*:env/*;qa_*:/flag/*
+                actions:
+                - '*'
+              action: action
+            denied:
+            - reason:
+                role_name: role_name
+                notActions:
+                - null
+                - null
+                notResources:
+                - notResources
+                - notResources
+                effect: allow
+                resources:
+                - proj/*:env/*;qa_*:/flag/*
+                actions:
+                - '*'
+              action: action
+            - reason:
+                role_name: role_name
+                notActions:
+                - null
+                - null
+                notResources:
+                - notResources
+                - notResources
+                effect: allow
+                resources:
+                - proj/*:env/*;qa_*:/flag/*
+                actions:
+                - '*'
+              action: action
           _links:
             environments:
               href: /api/v2/projects/my-project/environments
@@ -41662,6 +42202,65 @@ components:
           tags:
           - ops
         - includeInSnippetByDefault: true
+          _access:
+            allowed:
+            - reason:
+                role_name: role_name
+                notActions:
+                - null
+                - null
+                notResources:
+                - notResources
+                - notResources
+                effect: allow
+                resources:
+                - proj/*:env/*;qa_*:/flag/*
+                actions:
+                - '*'
+              action: action
+            - reason:
+                role_name: role_name
+                notActions:
+                - null
+                - null
+                notResources:
+                - notResources
+                - notResources
+                effect: allow
+                resources:
+                - proj/*:env/*;qa_*:/flag/*
+                actions:
+                - '*'
+              action: action
+            denied:
+            - reason:
+                role_name: role_name
+                notActions:
+                - null
+                - null
+                notResources:
+                - notResources
+                - notResources
+                effect: allow
+                resources:
+                - proj/*:env/*;qa_*:/flag/*
+                actions:
+                - '*'
+              action: action
+            - reason:
+                role_name: role_name
+                notActions:
+                - null
+                - null
+                notResources:
+                - notResources
+                - notResources
+                effect: allow
+                resources:
+                - proj/*:env/*;qa_*:/flag/*
+                actions:
+                - '*'
+              action: action
           _links:
             environments:
               href: /api/v2/projects/my-project/environments
@@ -42489,6 +43088,28 @@ components:
       - releasePipelineDescription
       - releasePipelineKey
       type: object
+    ReleaseAudience:
+      example:
+        environment:
+          color: F5A623
+          _links:
+            self:
+              href: /api/v2/projects/my-project/environments/my-environment
+              type: application/json
+          name: My Environment
+          key: environment-key-123abc
+        name: Phase 1 - Testing
+      properties:
+        environment:
+          $ref: '#/components/schemas/EnvironmentSummary'
+        name:
+          description: The release phase name
+          example: Phase 1 - Testing
+          type: string
+      required:
+      - environment
+      - name
+      type: object
     ReleasePhase:
       example:
         _name: Phase 1 - Testing
@@ -42560,7 +43181,7 @@ components:
           description: A logical grouping of one or more environments that share attributes
             for rolling out changes
           items:
-            $ref: '#/components/schemas/Audience'
+            $ref: '#/components/schemas/ReleaseAudience'
           type: array
       required:
       - _audiences
