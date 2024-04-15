@@ -170,7 +170,7 @@ public class Example {
 
 <a name="getWorkflows"></a>
 # **getWorkflows**
-> CustomWorkflowsListingOutput getWorkflows(projectKey, featureFlagKey, environmentKey, status, sort)
+> CustomWorkflowsListingOutput getWorkflows(projectKey, featureFlagKey, environmentKey, status, sort, limit, offset)
 
 Get workflows
 
@@ -203,8 +203,10 @@ public class Example {
     String environmentKey = "environmentKey_example"; // String | The environment key
     String status = "status_example"; // String | Filter results by workflow status. Valid status filters are `active`, `completed`, and `failed`.
     String sort = "sort_example"; // String | A field to sort the items by. Prefix field by a dash ( - ) to sort in descending order. This endpoint supports sorting by `creationDate` or `stopDate`.
+    Long limit = 56L; // Long | The maximum number of workflows to return. Defaults to 20.
+    Long offset = 56L; // Long | Where to start in the list. Defaults to 0. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
     try {
-      CustomWorkflowsListingOutput result = apiInstance.getWorkflows(projectKey, featureFlagKey, environmentKey, status, sort);
+      CustomWorkflowsListingOutput result = apiInstance.getWorkflows(projectKey, featureFlagKey, environmentKey, status, sort, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WorkflowsApi#getWorkflows");
@@ -226,6 +228,8 @@ public class Example {
 | **environmentKey** | **String**| The environment key | |
 | **status** | **String**| Filter results by workflow status. Valid status filters are &#x60;active&#x60;, &#x60;completed&#x60;, and &#x60;failed&#x60;. | [optional] |
 | **sort** | **String**| A field to sort the items by. Prefix field by a dash ( - ) to sort in descending order. This endpoint supports sorting by &#x60;creationDate&#x60; or &#x60;stopDate&#x60;. | [optional] |
+| **limit** | **Long**| The maximum number of workflows to return. Defaults to 20. | [optional] |
+| **offset** | **Long**| Where to start in the list. Defaults to 0. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
 
 ### Return type
 

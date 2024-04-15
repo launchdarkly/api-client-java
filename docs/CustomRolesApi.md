@@ -157,7 +157,7 @@ public class Example {
 
 <a name="getCustomRoles"></a>
 # **getCustomRoles**
-> CustomRoles getCustomRoles()
+> CustomRoles getCustomRoles(limit, offset)
 
 List custom roles
 
@@ -185,8 +185,10 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     CustomRolesApi apiInstance = new CustomRolesApi(defaultClient);
+    Long limit = 56L; // Long | The maximum number of custom roles to return. Defaults to 20.
+    Long offset = 56L; // Long | Where to start in the list. Defaults to 0. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
     try {
-      CustomRoles result = apiInstance.getCustomRoles();
+      CustomRoles result = apiInstance.getCustomRoles(limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CustomRolesApi#getCustomRoles");
@@ -200,7 +202,11 @@ public class Example {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **limit** | **Long**| The maximum number of custom roles to return. Defaults to 20. | [optional] |
+| **offset** | **Long**| Where to start in the list. Defaults to 0. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
 
 ### Return type
 

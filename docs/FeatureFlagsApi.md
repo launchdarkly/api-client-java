@@ -17,6 +17,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**patchExpiringUserTargets**](FeatureFlagsApi.md#patchExpiringUserTargets) | **PATCH** /api/v2/flags/{projectKey}/{featureFlagKey}/expiring-user-targets/{environmentKey} | Update expiring user targets on feature flag |
 | [**patchFeatureFlag**](FeatureFlagsApi.md#patchFeatureFlag) | **PATCH** /api/v2/flags/{projectKey}/{featureFlagKey} | Update feature flag |
 | [**postFeatureFlag**](FeatureFlagsApi.md#postFeatureFlag) | **POST** /api/v2/flags/{projectKey} | Create a feature flag |
+| [**postMigrationSafetyIssues**](FeatureFlagsApi.md#postMigrationSafetyIssues) | **POST** /api/v2/projects/{projectKey}/flags/{flagKey}/environments/{environmentKey}/migration-safety-issues | Get migration safety issues |
 
 
 <a name="copyFeatureFlag"></a>
@@ -639,7 +640,7 @@ public class Example {
 
 List feature flags
 
-Get a list of all feature flags in the given project. By default, each flag includes configurations for each environment. You can filter environments with the &#x60;env&#x60; query parameter. For example, setting &#x60;env&#x3D;production&#x60; restricts the returned configurations to just your production environment. You can also filter feature flags by tag with the &#x60;tag&#x60; query parameter.  &gt; #### Recommended use &gt; &gt; This endpoint can return a large amount of information. We recommend using some or all of these query parameters to decrease response time and overall payload size: &#x60;limit&#x60;, &#x60;env&#x60;, &#x60;query&#x60;, and &#x60;filter&#x3D;creationDate&#x60;.  ### Filtering flags  You can filter on certain fields using the &#x60;filter&#x60; query parameter. For example, setting &#x60;filter&#x3D;query:dark-mode,tags:beta+test&#x60; matches flags with the string &#x60;dark-mode&#x60; in their key or name, ignoring case, which also have the tags &#x60;beta&#x60; and &#x60;test&#x60;.  The &#x60;filter&#x60; query parameter supports the following arguments:  | Filter argument       | Description | Example              | |-----------------------|-------------|----------------------| | &#x60;applicationEvaluated&#x60;  | A string. It filters the list to flags that are evaluated in the application with the given key. | &#x60;filter&#x3D;applicationEvaluated:com.launchdarkly.cafe&#x60; | | &#x60;archived&#x60;              | (deprecated) A boolean value. It filters the list to archived flags. | Use &#x60;filter&#x3D;state:archived&#x60; instead | | &#x60;contextKindsEvaluated&#x60; | A &#x60;+&#x60;-separated list of context kind keys. It filters the list to flags which have been evaluated in the past 30 days for all of the context kinds in the list. | &#x60;filter&#x3D;contextKindsEvaluated:user+application&#x60; | | &#x60;contextKindTargeted&#x60;   | A string. It filters the list to flags that are targeting the given context kind key. | &#x60;filter&#x3D;contextKindTargeted:user&#x60; | | &#x60;codeReferences.max&#x60;    | An integer value. Use &#x60;0&#x60; to return flags that do not have code references. | &#x60;filter&#x3D;codeReferences.max:0&#x60; | | &#x60;codeReferences.min&#x60;    | An integer value. Use &#x60;1&#x60; to return flags that do have code references. | &#x60;filter&#x3D;codeReferences.min:1&#x60; | | &#x60;creationDate&#x60;          | An object with an optional &#x60;before&#x60; field whose value is Unix time in milliseconds. It filters the list to flags created before the date. | &#x60;filter&#x3D;creationDate:{\&quot;before\&quot;:1690527600000}&#x60; | | &#x60;evaluated&#x60;             | An object that contains a key of &#x60;after&#x60; and a value in Unix time in milliseconds. It filters the list to all flags that have been evaluated since the time you specify, in the environment provided. This filter requires the &#x60;filterEnv&#x60; filter. | &#x60;filter&#x3D;evaluation:{\&quot;after\&quot;:1690527600000}&#x60; | | &#x60;filterEnv&#x60;             | A string with the key of a valid environment. You must use this field for filters that are environment-specific. If there are multiple environment-specific filters, you only need to include this field once. | &#x60;filter&#x3D;evaluated:{\&quot;after\&quot;: 1590768455282},filterEnv:production,status:active&#x60; | | &#x60;followerId&#x60;            | A valid member ID. It filters the list to flags that are being followed by this member. |  &#x60;filter&#x3D;followerId:12ab3c45de678910abc12345&#x60; | | &#x60;hasDataExport&#x60;         | A boolean value. It filters the list to flags that are exporting data in the specified environment. This includes flags that are exporting data from Experimentation. This filter requires the &#x60;filterEnv&#x60; filter. | &#x60;filter&#x3D;hasDataExport:true,filterEnv:production&#x60; | | &#x60;hasExperiment&#x60;         | A boolean value. It filters the list to flags that are used in an experiment. | &#x60;filter&#x3D;hasExperiment:true&#x60; | | &#x60;maintainerId&#x60;          | A valid member ID. It filters the list to flags that are maintained by this member. | &#x60;filter&#x3D;maintainerId:12ab3c45de678910abc12345&#x60; | | &#x60;maintainerTeamKey&#x60;     | A string. It filters the list to flags that are maintained by the team with this key. | &#x60;filter&#x3D;maintainerTeamKey:example-team-key&#x60; | | &#x60;query&#x60;                 | A string. It filters the list to flags that include the specified string in their key or name. It is not case sensitive. | &#x60;filter&#x3D;query:example&#x60; | | &#x60;state&#x60;                 | A string, either &#x60;live&#x60;, &#x60;deprecated&#x60;, or &#x60;archived&#x60;. It filters the list to flags in this state. | &#x60;filter&#x3D;state:archived&#x60; | | &#x60;sdkAvailability&#x60;       | A string, one of &#x60;client&#x60;, &#x60;mobile&#x60;, &#x60;anyClient&#x60;, &#x60;server&#x60;. Using &#x60;client&#x60; filters the list to flags whose client-side SDK availability is set to use the client-side ID. Using &#x60;mobile&#x60; filters to flags set to use the mobile key. Using &#x60;anyClient&#x60; filters to flags set to use either the client-side ID or the mobile key. Using &#x60;server&#x60; filters to flags set to use neither, that is, to flags only available in server-side SDKs.  | &#x60;filter&#x3D;sdkAvailability:client&#x60; | | &#x60;segmentTargeted&#x60;       | A string. It filters the list to flags that target the segment with this key. This filter requires the &#x60;filterEnv&#x60; filter. | &#x60;filter&#x3D;segmentTargeted:example-segment-key,filterEnv:production&#x60; | | &#x60;status&#x60;                | A string, either &#x60;new&#x60;, &#x60;inactive&#x60;, &#x60;active&#x60;, or &#x60;launched&#x60;. It filters the list to flags with the specified status in the specified environment. This filter requires the &#x60;filterEnv&#x60; filter. | &#x60;filter&#x3D;status:active,filterEnv:production&#x60; | | &#x60;tags&#x60;                  | A &#x60;+&#x60;-separated list of tags. It filters the list to flags that have all of the tags in the list. | &#x60;filter&#x3D;tags:beta+test&#x60; | | &#x60;type&#x60;                  | A string, either &#x60;temporary&#x60; or &#x60;permanent&#x60;. It filters the list to flags with the specified type. | &#x60;filter&#x3D;type:permanent&#x60; |  The documented values for the &#x60;filter&#x60; query are prior to URL encoding. For example, the &#x60;+&#x60; in &#x60;filter&#x3D;tags:beta+test&#x60; must be encoded to &#x60;%2B&#x60;.  By default, this endpoint returns all flags. You can page through the list with the &#x60;limit&#x60; parameter and by following the &#x60;first&#x60;, &#x60;prev&#x60;, &#x60;next&#x60;, and &#x60;last&#x60; links in the returned &#x60;_links&#x60; field. These links will not be present if the pages they refer to don&#39;t exist. For example, the &#x60;first&#x60; and &#x60;prev&#x60; links will be missing from the response on the first page.  ### Sorting flags  You can sort flags based on the following fields:  - &#x60;creationDate&#x60; sorts by the creation date of the flag. - &#x60;key&#x60; sorts by the key of the flag. - &#x60;maintainerId&#x60; sorts by the flag maintainer. - &#x60;name&#x60; sorts by flag name. - &#x60;tags&#x60; sorts by tags. - &#x60;targetingModifiedDate&#x60; sorts by the date that the flag&#39;s targeting rules were last modified in a given environment. It must be used with &#x60;env&#x60; parameter and it can not be combined with any other sort. If multiple &#x60;env&#x60; values are provided, it will perform sort using the first one. For example, &#x60;sort&#x3D;-targetingModifiedDate&amp;env&#x3D;production&amp;env&#x3D;staging&#x60; returns results sorted by &#x60;targetingModifiedDate&#x60; for the &#x60;production&#x60; environment. - &#x60;type&#x60; sorts by flag type  All fields are sorted in ascending order by default. To sort in descending order, prefix the field with a dash ( - ). For example, &#x60;sort&#x3D;-name&#x60; sorts the response by flag name in descending order.  ### Expanding response  LaunchDarkly supports the &#x60;expand&#x60; query param to include additional fields in the response, with the following fields:  - &#x60;codeReferences&#x60; includes code references for the feature flag - &#x60;evaluation&#x60; includes evaluation information within returned environments, including which context kinds the flag has been evaluated for in the past 30 days - &#x60;migrationSettings&#x60; includes migration settings information within the flag and within returned environments. These settings are only included for migration flags, that is, where &#x60;purpose&#x60; is &#x60;migration&#x60;.  For example, &#x60;expand&#x3D;evaluation&#x60; includes the &#x60;evaluation&#x60; field in the response.  ### Migration flags For migration flags, the cohort information is included in the &#x60;rules&#x60; property of a flag&#39;s response, and default cohort information is included in the &#x60;fallthrough&#x60; property of a flag&#39;s response. To learn more, read [Migration Flags](https://docs.launchdarkly.com/home/flag-types/migration-flags). 
+Get a list of all feature flags in the given project. By default, each flag includes configurations for each environment. You can filter environments with the &#x60;env&#x60; query parameter. For example, setting &#x60;env&#x3D;production&#x60; restricts the returned configurations to just your production environment. You can also filter feature flags by tag with the &#x60;tag&#x60; query parameter.  &gt; #### Recommended use &gt; &gt; This endpoint can return a large amount of information. We recommend using some or all of these query parameters to decrease response time and overall payload size: &#x60;limit&#x60;, &#x60;env&#x60;, &#x60;query&#x60;, and &#x60;filter&#x3D;creationDate&#x60;.  ### Filtering flags  You can filter on certain fields using the &#x60;filter&#x60; query parameter. For example, setting &#x60;filter&#x3D;query:dark-mode,tags:beta+test&#x60; matches flags with the string &#x60;dark-mode&#x60; in their key or name, ignoring case, which also have the tags &#x60;beta&#x60; and &#x60;test&#x60;.  The &#x60;filter&#x60; query parameter supports the following arguments:  | Filter argument       | Description | Example              | |-----------------------|-------------|----------------------| | &#x60;applicationEvaluated&#x60;  | A string. It filters the list to flags that are evaluated in the application with the given key. | &#x60;filter&#x3D;applicationEvaluated:com.launchdarkly.cafe&#x60; | | &#x60;archived&#x60;              | (deprecated) A boolean value. It filters the list to archived flags. | Use &#x60;filter&#x3D;state:archived&#x60; instead | | &#x60;contextKindsEvaluated&#x60; | A &#x60;+&#x60;-separated list of context kind keys. It filters the list to flags which have been evaluated in the past 30 days for all of the context kinds in the list. | &#x60;filter&#x3D;contextKindsEvaluated:user+application&#x60; | | &#x60;codeReferences.max&#x60;    | An integer value. Use &#x60;0&#x60; to return flags that do not have code references. | &#x60;filter&#x3D;codeReferences.max:0&#x60; | | &#x60;codeReferences.min&#x60;    | An integer value. Use &#x60;1&#x60; to return flags that do have code references. | &#x60;filter&#x3D;codeReferences.min:1&#x60; | | &#x60;creationDate&#x60;          | An object with an optional &#x60;before&#x60; field whose value is Unix time in milliseconds. It filters the list to flags created before the date. | &#x60;filter&#x3D;creationDate:{\&quot;before\&quot;:1690527600000}&#x60; | | &#x60;evaluated&#x60;             | An object that contains a key of &#x60;after&#x60; and a value in Unix time in milliseconds. It filters the list to all flags that have been evaluated since the time you specify, in the environment provided. This filter requires the &#x60;filterEnv&#x60; filter. | &#x60;filter&#x3D;evaluation:{\&quot;after\&quot;:1690527600000}&#x60; | | &#x60;filterEnv&#x60;             | A string with a list of comma-separated keys of valid environments. You must use this field for filters that are environment-specific. If there are multiple environment-specific filters, you only need to include this field once. You can filter for a maximum of three environments. | &#x60;filter&#x3D;evaluated:{\&quot;after\&quot;: 1590768455282},filterEnv:production,status:active&#x60; | | &#x60;hasExperiment&#x60;         | A boolean value. It filters the list to flags that are used in an experiment. | &#x60;filter&#x3D;hasExperiment:true&#x60; | | &#x60;maintainerId&#x60;          | A valid member ID. It filters the list to flags that are maintained by this member. | &#x60;filter&#x3D;maintainerId:12ab3c45de678910abc12345&#x60; | | &#x60;maintainerTeamKey&#x60;     | A string. It filters the list to flags that are maintained by the team with this key. | &#x60;filter&#x3D;maintainerTeamKey:example-team-key&#x60; | | &#x60;query&#x60;                 | A string. It filters the list to flags that include the specified string in their key or name. It is not case sensitive. | &#x60;filter&#x3D;query:example&#x60; | | &#x60;state&#x60;                 | A string, either &#x60;live&#x60;, &#x60;deprecated&#x60;, or &#x60;archived&#x60;. It filters the list to flags in this state. | &#x60;filter&#x3D;state:archived&#x60; | | &#x60;sdkAvailability&#x60;       | A string, one of &#x60;client&#x60;, &#x60;mobile&#x60;, &#x60;anyClient&#x60;, &#x60;server&#x60;. Using &#x60;client&#x60; filters the list to flags whose client-side SDK availability is set to use the client-side ID. Using &#x60;mobile&#x60; filters to flags set to use the mobile key. Using &#x60;anyClient&#x60; filters to flags set to use either the client-side ID or the mobile key. Using &#x60;server&#x60; filters to flags set to use neither, that is, to flags only available in server-side SDKs.  | &#x60;filter&#x3D;sdkAvailability:client&#x60; | | &#x60;tags&#x60;                  | A &#x60;+&#x60;-separated list of tags. It filters the list to flags that have all of the tags in the list. | &#x60;filter&#x3D;tags:beta+test&#x60; | | &#x60;type&#x60;                  | A string, either &#x60;temporary&#x60; or &#x60;permanent&#x60;. It filters the list to flags with the specified type. | &#x60;filter&#x3D;type:permanent&#x60; |  The documented values for the &#x60;filter&#x60; query are prior to URL encoding. For example, the &#x60;+&#x60; in &#x60;filter&#x3D;tags:beta+test&#x60; must be encoded to &#x60;%2B&#x60;.  By default, this endpoint returns all flags. You can page through the list with the &#x60;limit&#x60; parameter and by following the &#x60;first&#x60;, &#x60;prev&#x60;, &#x60;next&#x60;, and &#x60;last&#x60; links in the returned &#x60;_links&#x60; field. These links will not be present if the pages they refer to don&#39;t exist. For example, the &#x60;first&#x60; and &#x60;prev&#x60; links will be missing from the response on the first page.  ### Sorting flags  You can sort flags based on the following fields:  - &#x60;creationDate&#x60; sorts by the creation date of the flag. - &#x60;key&#x60; sorts by the key of the flag. - &#x60;maintainerId&#x60; sorts by the flag maintainer. - &#x60;name&#x60; sorts by flag name. - &#x60;tags&#x60; sorts by tags. - &#x60;targetingModifiedDate&#x60; sorts by the date that the flag&#39;s targeting rules were last modified in a given environment. It must be used with &#x60;env&#x60; parameter and it can not be combined with any other sort. If multiple &#x60;env&#x60; values are provided, it will perform sort using the first one. For example, &#x60;sort&#x3D;-targetingModifiedDate&amp;env&#x3D;production&amp;env&#x3D;staging&#x60; returns results sorted by &#x60;targetingModifiedDate&#x60; for the &#x60;production&#x60; environment. - &#x60;type&#x60; sorts by flag type  All fields are sorted in ascending order by default. To sort in descending order, prefix the field with a dash ( - ). For example, &#x60;sort&#x3D;-name&#x60; sorts the response by flag name in descending order.  ### Expanding response  LaunchDarkly supports the &#x60;expand&#x60; query param to include additional fields in the response, with the following fields:  - &#x60;codeReferences&#x60; includes code references for the feature flag - &#x60;evaluation&#x60; includes evaluation information within returned environments, including which context kinds the flag has been evaluated for in the past 30 days - &#x60;migrationSettings&#x60; includes migration settings information within the flag and within returned environments. These settings are only included for migration flags, that is, where &#x60;purpose&#x60; is &#x60;migration&#x60;.  For example, &#x60;expand&#x3D;evaluation&#x60; includes the &#x60;evaluation&#x60; field in the response.  ### Migration flags For migration flags, the cohort information is included in the &#x60;rules&#x60; property of a flag&#39;s response, and default cohort information is included in the &#x60;fallthrough&#x60; property of a flag&#39;s response. To learn more, read [Migration Flags](https://docs.launchdarkly.com/home/flag-types/migration-flags). 
 
 ### Example
 ```java
@@ -666,7 +667,7 @@ public class Example {
     String projectKey = "projectKey_example"; // String | The project key
     String env = "env_example"; // String | Filter configurations by environment
     String tag = "tag_example"; // String | Filter feature flags by tag
-    Long limit = 56L; // Long | The number of feature flags to return. Defaults to -1, which returns all flags
+    Long limit = 56L; // Long | The number of feature flags to return. Defaults to 20.
     Long offset = 56L; // Long | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
     Boolean archived = true; // Boolean | Deprecated, use `filter=archived:true` instead. A boolean to filter the list to archived flags. When this is absent, only unarchived flags will be returned
     Boolean summary = true; // Boolean | By default, flags do _not_ include their lists of prerequisites, targets, or rules for each environment. Set `summary=0` to include these fields for each flag returned.
@@ -695,7 +696,7 @@ public class Example {
 | **projectKey** | **String**| The project key | |
 | **env** | **String**| Filter configurations by environment | [optional] |
 | **tag** | **String**| Filter feature flags by tag | [optional] |
-| **limit** | **Long**| The number of feature flags to return. Defaults to -1, which returns all flags | [optional] |
+| **limit** | **Long**| The number of feature flags to return. Defaults to 20. | [optional] |
 | **offset** | **Long**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
 | **archived** | **Boolean**| Deprecated, use &#x60;filter&#x3D;archived:true&#x60; instead. A boolean to filter the list to archived flags. When this is absent, only unarchived flags will be returned | [optional] |
 | **summary** | **Boolean**| By default, flags do _not_ include their lists of prerequisites, targets, or rules for each environment. Set &#x60;summary&#x3D;0&#x60; to include these fields for each flag returned. | [optional] |
@@ -1042,4 +1043,86 @@ public class Example {
 | **401** | Invalid access token |  -  |
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
+
+<a name="postMigrationSafetyIssues"></a>
+# **postMigrationSafetyIssues**
+> List&lt;MigrationSafetyIssueRep&gt; postMigrationSafetyIssues(projectKey, flagKey, environmentKey, flagSempatch)
+
+Get migration safety issues
+
+Returns the migration safety issues that are associated with the POSTed flag patch. The patch must use the semantic patch format for updating feature flags.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.FeatureFlagsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    FeatureFlagsApi apiInstance = new FeatureFlagsApi(defaultClient);
+    String projectKey = "projectKey_example"; // String | The project key
+    String flagKey = "flagKey_example"; // String | The migration flag key
+    String environmentKey = "environmentKey_example"; // String | The environment key
+    FlagSempatch flagSempatch = new FlagSempatch(); // FlagSempatch | 
+    try {
+      List<MigrationSafetyIssueRep> result = apiInstance.postMigrationSafetyIssues(projectKey, flagKey, environmentKey, flagSempatch);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FeatureFlagsApi#postMigrationSafetyIssues");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **flagKey** | **String**| The migration flag key | |
+| **environmentKey** | **String**| The environment key | |
+| **flagSempatch** | [**FlagSempatch**](FlagSempatch.md)|  | |
+
+### Return type
+
+[**List&lt;MigrationSafetyIssueRep&gt;**](MigrationSafetyIssueRep.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Migration safety issues found |  -  |
+| **204** | No safety issues found |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
+| **503** | Service unavailable |  -  |
 

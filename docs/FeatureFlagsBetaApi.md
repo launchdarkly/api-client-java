@@ -6,7 +6,6 @@ All URIs are relative to *https://app.launchdarkly.com*
 |------------- | ------------- | -------------|
 | [**getDependentFlags**](FeatureFlagsBetaApi.md#getDependentFlags) | **GET** /api/v2/flags/{projectKey}/{featureFlagKey}/dependent-flags | List dependent feature flags |
 | [**getDependentFlagsByEnv**](FeatureFlagsBetaApi.md#getDependentFlagsByEnv) | **GET** /api/v2/flags/{projectKey}/{environmentKey}/{featureFlagKey}/dependent-flags | List dependent feature flags by environment |
-| [**postMigrationSafetyIssues**](FeatureFlagsBetaApi.md#postMigrationSafetyIssues) | **POST** /api/v2/projects/{projectKey}/flags/{flagKey}/environments/{environmentKey}/migration-safety-issues | Get migration safety issues |
 
 
 <a name="getDependentFlags"></a>
@@ -160,86 +159,4 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
-
-<a name="postMigrationSafetyIssues"></a>
-# **postMigrationSafetyIssues**
-> List&lt;MigrationSafetyIssueRep&gt; postMigrationSafetyIssues(projectKey, flagKey, environmentKey, flagSempatch)
-
-Get migration safety issues
-
-Returns the migration safety issues that are associated with the POSTed flag patch. The patch must use the semantic patch format for updating feature flags.
-
-### Example
-```java
-// Import classes:
-import com.launchdarkly.api.ApiClient;
-import com.launchdarkly.api.ApiException;
-import com.launchdarkly.api.Configuration;
-import com.launchdarkly.api.auth.*;
-import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.FeatureFlagsBetaApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://app.launchdarkly.com");
-    
-    // Configure API key authorization: ApiKey
-    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
-    ApiKey.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKey.setApiKeyPrefix("Token");
-
-    FeatureFlagsBetaApi apiInstance = new FeatureFlagsBetaApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | The project key
-    String flagKey = "flagKey_example"; // String | The migration flag key
-    String environmentKey = "environmentKey_example"; // String | The environment key
-    FlagSempatch flagSempatch = new FlagSempatch(); // FlagSempatch | 
-    try {
-      List<MigrationSafetyIssueRep> result = apiInstance.postMigrationSafetyIssues(projectKey, flagKey, environmentKey, flagSempatch);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling FeatureFlagsBetaApi#postMigrationSafetyIssues");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**| The project key | |
-| **flagKey** | **String**| The migration flag key | |
-| **environmentKey** | **String**| The environment key | |
-| **flagSempatch** | [**FlagSempatch**](FlagSempatch.md)|  | |
-
-### Return type
-
-[**List&lt;MigrationSafetyIssueRep&gt;**](MigrationSafetyIssueRep.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Migration safety issues found |  -  |
-| **204** | No safety issues found |  -  |
-| **400** | Invalid request |  -  |
-| **401** | Invalid access token |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Invalid resource identifier |  -  |
-| **429** | Rate limited |  -  |
-| **503** | Service unavailable |  -  |
 
