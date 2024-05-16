@@ -47,7 +47,7 @@ import com.launchdarkly.api.JSON;
 /**
  * ExpiringTargetError
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-16T10:10:58.275115Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-16T11:29:12.794018Z[Etc/UTC]")
 public class ExpiringTargetError {
   public static final String SERIALIZED_NAME_INSTRUCTION_INDEX = "instructionIndex";
   @SerializedName(SERIALIZED_NAME_INSTRUCTION_INDEX)

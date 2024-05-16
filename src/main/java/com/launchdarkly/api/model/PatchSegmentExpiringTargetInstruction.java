@@ -47,7 +47,7 @@ import com.launchdarkly.api.JSON;
 /**
  * PatchSegmentExpiringTargetInstruction
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-16T10:10:58.275115Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-16T11:29:12.794018Z[Etc/UTC]")
 public class PatchSegmentExpiringTargetInstruction {
   /**
    * The type of change to make to the context&#39;s removal date from this segment

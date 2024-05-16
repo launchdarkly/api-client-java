@@ -8,7 +8,7 @@ This client library is only compatible with the latest version of our REST API, 
 
 LaunchDarkly REST API
 - API version: 2.0
-  - Build date: 2024-05-16T10:10:58.275115Z[Etc/UTC]
+  - Build date: 2024-05-16T11:29:12.794018Z[Etc/UTC]
 
 # Overview
 
@@ -433,7 +433,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>16.1.0</version>
+  <version>16.1.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -449,7 +449,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.launchdarkly:api-client:16.1.0"
+     implementation "com.launchdarkly:api-client:16.1.1"
   }
 ```
 
@@ -463,7 +463,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-16.1.0.jar`
+* `target/api-client-16.1.1.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
