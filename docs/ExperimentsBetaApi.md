@@ -22,7 +22,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 Create experiment
 
-Create an experiment.  To run this experiment, you&#39;ll need to [create an iteration](/tag/Experiments-(beta)#operation/createIteration) and then [update the experiment](/tag/Experiments-(beta)#operation/patchExperiment) with the &#x60;startIteration&#x60; instruction.  To learn more, read [Creating experiments](https://docs.launchdarkly.com/home/creating-experiments). 
+Create an experiment.  To run this experiment, you&#39;ll need to [create an iteration](/tag/Experiments-(beta)#operation/createIteration) and then [update the experiment](/tag/Experiments-(beta)#operation/patchExperiment) with the &#x60;startIteration&#x60; instruction.  To learn more, read [Creating experiments](https://docs.launchdarkly.com/home/experimentation/create). 
 
 ### Example
 ```java
@@ -100,7 +100,7 @@ public class Example {
 
 Create iteration
 
-Create an experiment iteration.  Experiment iterations let you record experiments in individual blocks of time. Initially, iterations are created with a status of &#x60;not_started&#x60; and appear in the &#x60;draftIteration&#x60; field of an experiment. To start or stop an iteration, [update the experiment](/tag/Experiments-(beta)#operation/patchExperiment) with the &#x60;startIteration&#x60; or &#x60;stopIteration&#x60; instruction.   To learn more, read [Starting experiment iterations](https://docs.launchdarkly.com/home/creating-experiments#starting-experiment-iterations). 
+Create an experiment iteration.  Experiment iterations let you record experiments in individual blocks of time. Initially, iterations are created with a status of &#x60;not_started&#x60; and appear in the &#x60;draftIteration&#x60; field of an experiment. To start or stop an iteration, [update the experiment](/tag/Experiments-(beta)#operation/patchExperiment) with the &#x60;startIteration&#x60; or &#x60;stopIteration&#x60; instruction.   To learn more, read [Start experiment iterations](https://docs.launchdarkly.com/home/experimentation/feature#start-experiment-iterations). 
 
 ### Example
 ```java
@@ -745,6 +745,7 @@ public class Example {
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
+| **409** | Conflict |  -  |
 | **429** | Rate limited |  -  |
 
 <a name="putExperimentationSettings"></a>

@@ -14,7 +14,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 List dependent feature flags
 
-&gt; ### Flag prerequisites is an Enterprise feature &gt; &gt; Flag prerequisites is available to customers on an Enterprise plan. To learn more, [read about our pricing](https://launchdarkly.com/pricing/). To upgrade your plan, [contact Sales](https://launchdarkly.com/contact-sales/).  List dependent flags across all environments for the flag specified in the path parameters. A dependent flag is a flag that uses another flag as a prerequisite. To learn more, read [Flag prerequisites](https://docs.launchdarkly.com/home/targeting-flags/prerequisites). 
+&gt; ### Flag prerequisites is an Enterprise feature &gt; &gt; Flag prerequisites is available to customers on an Enterprise plan. To learn more, [read about our pricing](https://launchdarkly.com/pricing/). To upgrade your plan, [contact Sales](https://launchdarkly.com/contact-sales/).  List dependent flags across all environments for the flag specified in the path parameters. A dependent flag is a flag that uses another flag as a prerequisite. To learn more, read [Flag prerequisites](https://docs.launchdarkly.com/home/flags/prereqs). 
 
 ### Example
 ```java
@@ -89,7 +89,7 @@ public class Example {
 
 List dependent feature flags by environment
 
-&gt; ### Flag prerequisites is an Enterprise feature &gt; &gt; Flag prerequisites is available to customers on an Enterprise plan. To learn more, [read about our pricing](https://launchdarkly.com/pricing/). To upgrade your plan, [contact Sales](https://launchdarkly.com/contact-sales/).  List dependent flags across all environments for the flag specified in the path parameters. A dependent flag is a flag that uses another flag as a prerequisite. To learn more, read [Flag prerequisites](https://docs.launchdarkly.com/home/targeting-flags/prerequisites). 
+&gt; ### Flag prerequisites is an Enterprise feature &gt; &gt; Flag prerequisites is available to customers on an Enterprise plan. To learn more, [read about our pricing](https://launchdarkly.com/pricing/). To upgrade your plan, [contact Sales](https://launchdarkly.com/contact-sales/).  List dependent flags across all environments for the flag specified in the path parameters. A dependent flag is a flag that uses another flag as a prerequisite. To learn more, read [Flag prerequisites](https://docs.launchdarkly.com/home/flags/prereqs). 
 
 ### Example
 ```java

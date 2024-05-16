@@ -17,7 +17,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 Create audit log subscription
 
-Create an audit log subscription.&lt;br /&gt;&lt;br /&gt;For each subscription, you must specify the set of resources you wish to subscribe to audit log notifications for. You can describe these resources using a custom role policy. To learn more, read [Custom role concepts](https://docs.launchdarkly.com/home/members/role-concepts).
+Create an audit log subscription.&lt;br /&gt;&lt;br /&gt;For each subscription, you must specify the set of resources you wish to subscribe to audit log notifications for. You can describe these resources using a custom role policy. To learn more, read [Custom role concepts](https://docs.launchdarkly.com/home/account/role-concepts).
 
 ### Example
 ```java
