@@ -166,11 +166,11 @@ public class Example {
 
 <a name="getMetrics"></a>
 # **getMetrics**
-> MetricCollectionRep getMetrics(projectKey, expand)
+> MetricCollectionRep getMetrics(projectKey, expand, limit, offset, sort, filter)
 
 List metrics
 
-Get a list of all metrics for the specified project.  ### Expanding the metric list response LaunchDarkly supports expanding the \&quot;List metrics\&quot; response. By default, the expandable field is **not** included in the response.  To expand the response, append the &#x60;expand&#x60; query parameter and add the following supported field:  - &#x60;experimentCount&#x60; includes the number of experiments from the specific project that use the metric  For example, &#x60;expand&#x3D;experimentCount&#x60; includes the &#x60;experimentCount&#x60; field for each metric in the response. 
+Get a list of all metrics for the specified project.  ### Filtering metrics  The &#x60;filter&#x60; parameter supports the following operators: &#x60;contains&#x60;.  #### Supported fields and operators  You can only filter certain fields in metrics when using the &#x60;filter&#x60; parameter. Additionally, you can only filter some fields with certain operators.  When you search for metrics, the &#x60;filter&#x60; parameter supports the following fields and operators:  |&lt;div style&#x3D;\&quot;width:120px\&quot;&gt;Field&lt;/div&gt; |Description |Supported operators | |---|---|---| | &#x60;tags&#x60; | The metric tags. | &#x60;contains&#x60; |  For example, the filter &#x60;?filter&#x3D;tags contains [\&quot;tag1\&quot;, \&quot;tag2\&quot;, \&quot;tag3\&quot;]&#x60; matches metrics that have all three tags.  The documented values for &#x60;filter&#x60; query parameters are prior to URL encoding. For example, the &#x60;[&#x60; in &#x60;?filter&#x3D;tags contains [\&quot;tag1\&quot;, \&quot;tag2\&quot;, \&quot;tag3\&quot;]&#x60; must be encoded to &#x60;%5B&#x60;.  ### Expanding the metric list response  LaunchDarkly supports expanding the \&quot;List metrics\&quot; response. By default, the expandable field is **not** included in the response.  To expand the response, append the &#x60;expand&#x60; query parameter and add the following supported field:  - &#x60;experimentCount&#x60; includes the number of experiments from the specific project that use the metric  For example, &#x60;expand&#x3D;experimentCount&#x60; includes the &#x60;experimentCount&#x60; field for each metric in the response. 
 
 ### Example
 ```java
@@ -196,8 +196,12 @@ public class Example {
     MetricsApi apiInstance = new MetricsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
     String expand = "expand_example"; // String | A comma-separated list of properties that can reveal additional information in the response.
+    Long limit = 56L; // Long | The number of metrics to return in the response. Defaults to 20. Maximum limit is 50.
+    Long offset = 56L; // Long | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and returns the next `limit` items.
+    String sort = "sort_example"; // String | A field to sort the items by. Prefix field by a dash ( - ) to sort in descending order. This endpoint supports sorting by `createdAt` or `name`.
+    String filter = "filter_example"; // String | A comma-separated list of filters. This endpoint only accepts filtering by `tags`. To learn more about the filter syntax, read the 'Filtering metrics' section above.
     try {
-      MetricCollectionRep result = apiInstance.getMetrics(projectKey, expand);
+      MetricCollectionRep result = apiInstance.getMetrics(projectKey, expand, limit, offset, sort, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MetricsApi#getMetrics");
@@ -216,6 +220,10 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **projectKey** | **String**| The project key | |
 | **expand** | **String**| A comma-separated list of properties that can reveal additional information in the response. | [optional] |
+| **limit** | **Long**| The number of metrics to return in the response. Defaults to 20. Maximum limit is 50. | [optional] |
+| **offset** | **Long**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and returns the next &#x60;limit&#x60; items. | [optional] |
+| **sort** | **String**| A field to sort the items by. Prefix field by a dash ( - ) to sort in descending order. This endpoint supports sorting by &#x60;createdAt&#x60; or &#x60;name&#x60;. | [optional] |
+| **filter** | **String**| A comma-separated list of filters. This endpoint only accepts filtering by &#x60;tags&#x60;. To learn more about the filter syntax, read the &#39;Filtering metrics&#39; section above. | [optional] |
 
 ### Return type
 

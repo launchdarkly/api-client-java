@@ -28,7 +28,7 @@
 |**customProperties** | [**Map&lt;String, CustomProperty&gt;**](CustomProperty.md) |  |  |
 |**archived** | **Boolean** | Boolean indicating if the feature flag is archived |  |
 |**archivedDate** | **Long** |  |  [optional] |
-|**deprecated** | **Boolean** | Boolean indicating if the feature flag is deprecated |  |
+|**deprecated** | **Boolean** | Boolean indicating if the feature flag is deprecated |  [optional] |
 |**deprecatedDate** | **Long** |  |  [optional] |
 |**defaults** | [**Defaults**](Defaults.md) |  |  [optional] |
 |**purpose** | **String** |  |  [optional] |

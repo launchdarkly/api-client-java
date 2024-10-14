@@ -87,7 +87,7 @@ null (empty response body)
 
 <a name="getMember"></a>
 # **getMember**
-> Member getMember(id)
+> Member getMember(id, expand)
 
 Get account member
 
@@ -116,8 +116,9 @@ public class Example {
 
     AccountMembersApi apiInstance = new AccountMembersApi(defaultClient);
     String id = "id_example"; // String | The member ID
+    String expand = "expand_example"; // String | A comma-separated list of properties that can reveal additional information in the response.
     try {
-      Member result = apiInstance.getMember(id);
+      Member result = apiInstance.getMember(id, expand);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AccountMembersApi#getMember");
@@ -135,6 +136,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **String**| The member ID | |
+| **expand** | **String**| A comma-separated list of properties that can reveal additional information in the response. | [optional] |
 
 ### Return type
 
@@ -160,11 +162,11 @@ public class Example {
 
 <a name="getMembers"></a>
 # **getMembers**
-> Members getMembers(limit, offset, filter, sort)
+> Members getMembers(limit, offset, filter, expand, sort)
 
 List account members
 
-Return a list of account members.  By default, this returns the first 20 members. Page through this list with the &#x60;limit&#x60; parameter and by following the &#x60;first&#x60;, &#x60;prev&#x60;, &#x60;next&#x60;, and &#x60;last&#x60; links in the returned &#x60;_links&#x60; field. These links are not present if the pages they refer to don&#39;t exist. For example, the &#x60;first&#x60; and &#x60;prev&#x60; links will be missing from the response on the first page.  ### Filtering members  LaunchDarkly supports the following fields for filters:  - &#x60;query&#x60; is a string that matches against the members&#39; emails and names. It is not case sensitive. - &#x60;role&#x60; is a &#x60;|&#x60; separated list of roles and custom roles. It filters the list to members who have any of the roles in the list. For the purposes of this filtering, &#x60;Owner&#x60; counts as &#x60;Admin&#x60;. - &#x60;team&#x60; is a string that matches against the key of the teams the members belong to. It is not case sensitive. - &#x60;noteam&#x60; is a boolean that filters the list of members who are not on a team if true and members on a team if false. - &#x60;lastSeen&#x60; is a JSON object in one of the following formats:   - &#x60;{\&quot;never\&quot;: true}&#x60; - Members that have never been active, such as those who have not accepted their invitation to LaunchDarkly, or have not logged in after being provisioned via SCIM.   - &#x60;{\&quot;noData\&quot;: true}&#x60; - Members that have not been active since LaunchDarkly began recording last seen timestamps.   - &#x60;{\&quot;before\&quot;: 1608672063611}&#x60; - Members that have not been active since the provided value, which should be a timestamp in Unix epoch milliseconds. - &#x60;accessCheck&#x60; is a string that represents a specific action on a specific resource and is in the format &#x60;&lt;ActionSpecifier&gt;:&lt;ResourceSpecifier&gt;&#x60;. It filters the list to members who have the ability to perform that action on that resource. Note: &#x60;accessCheck&#x60; is only supported in API version &#x60;20220603&#x60; and earlier. To learn more, read [Versioning](https://apidocs.launchdarkly.com/#section/Overview/Versioning).   - For example, the filter &#x60;accessCheck:createApprovalRequest:proj/default:env/test:flag/alternate-page&#x60; matches members with the ability to create an approval request for the &#x60;alternate-page&#x60; flag in the &#x60;test&#x60; environment of the &#x60;default&#x60; project.   - Wildcard and tag filters are not supported when filtering for access.  For example, the filter &#x60;query:abc,role:admin|customrole&#x60; matches members with the string &#x60;abc&#x60; in their email or name, ignoring case, who also are either an &#x60;Owner&#x60; or &#x60;Admin&#x60; or have the custom role &#x60;customrole&#x60;.  ### Sorting members  LaunchDarkly supports two fields for sorting: &#x60;displayName&#x60; and &#x60;lastSeen&#x60;:  - &#x60;displayName&#x60; sorts by first + last name, using the member&#39;s email if no name is set. - &#x60;lastSeen&#x60; sorts by the &#x60;_lastSeen&#x60; property. LaunchDarkly considers members that have never been seen or have no data the oldest. 
+Return a list of account members.  By default, this returns the first 20 members. Page through this list with the &#x60;limit&#x60; parameter and by following the &#x60;first&#x60;, &#x60;prev&#x60;, &#x60;next&#x60;, and &#x60;last&#x60; links in the returned &#x60;_links&#x60; field. These links are not present if the pages they refer to don&#39;t exist. For example, the &#x60;first&#x60; and &#x60;prev&#x60; links will be missing from the response on the first page.  ### Filtering members  LaunchDarkly supports the following fields for filters:  - &#x60;query&#x60; is a string that matches against the members&#39; emails and names. It is not case sensitive. - &#x60;role&#x60; is a &#x60;|&#x60; separated list of roles and custom roles. It filters the list to members who have any of the roles in the list. For the purposes of this filtering, &#x60;Owner&#x60; counts as &#x60;Admin&#x60;. - &#x60;id&#x60; is a &#x60;|&#x60; separated list of member IDs. It filters the list to members who match any of the IDs in the list. - &#x60;email&#x60; is a &#x60;|&#x60; separated list of member emails. It filters the list to members who match any of the emails in the list. - &#x60;team&#x60; is a string that matches against the key of the teams the members belong to. It is not case sensitive. - &#x60;noteam&#x60; is a boolean that filters the list of members who are not on a team if true and members on a team if false. - &#x60;lastSeen&#x60; is a JSON object in one of the following formats:   - &#x60;{\&quot;never\&quot;: true}&#x60; - Members that have never been active, such as those who have not accepted their invitation to LaunchDarkly, or have not logged in after being provisioned via SCIM.   - &#x60;{\&quot;noData\&quot;: true}&#x60; - Members that have not been active since LaunchDarkly began recording last seen timestamps.   - &#x60;{\&quot;before\&quot;: 1608672063611}&#x60; - Members that have not been active since the provided value, which should be a timestamp in Unix epoch milliseconds. - &#x60;accessCheck&#x60; is a string that represents a specific action on a specific resource and is in the format &#x60;&lt;ActionSpecifier&gt;:&lt;ResourceSpecifier&gt;&#x60;. It filters the list to members who have the ability to perform that action on that resource. Note: &#x60;accessCheck&#x60; is only supported in API version &#x60;20220603&#x60; and earlier. To learn more, read [Versioning](https://apidocs.launchdarkly.com/#section/Overview/Versioning).   - For example, the filter &#x60;accessCheck:createApprovalRequest:proj/default:env/test:flag/alternate-page&#x60; matches members with the ability to create an approval request for the &#x60;alternate-page&#x60; flag in the &#x60;test&#x60; environment of the &#x60;default&#x60; project.   - Wildcard and tag filters are not supported when filtering for access.  For example, the filter &#x60;query:abc,role:admin|customrole&#x60; matches members with the string &#x60;abc&#x60; in their email or name, ignoring case, who also are either an &#x60;Owner&#x60; or &#x60;Admin&#x60; or have the custom role &#x60;customrole&#x60;.  ### Sorting members  LaunchDarkly supports two fields for sorting: &#x60;displayName&#x60; and &#x60;lastSeen&#x60;:  - &#x60;displayName&#x60; sorts by first + last name, using the member&#39;s email if no name is set. - &#x60;lastSeen&#x60; sorts by the &#x60;_lastSeen&#x60; property. LaunchDarkly considers members that have never been seen or have no data the oldest. 
 
 ### Example
 ```java
@@ -191,9 +193,10 @@ public class Example {
     Long limit = 56L; // Long | The number of members to return in the response. Defaults to 20.
     Long offset = 56L; // Long | Where to start in the list. This is for use with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
     String filter = "filter_example"; // String | A comma-separated list of filters. Each filter is of the form `field:value`. Supported fields are explained above.
+    String expand = "expand_example"; // String | A comma-separated list of properties that can reveal additional information in the response.
     String sort = "sort_example"; // String | A comma-separated list of fields to sort by. Fields prefixed by a dash ( - ) sort in descending order.
     try {
-      Members result = apiInstance.getMembers(limit, offset, filter, sort);
+      Members result = apiInstance.getMembers(limit, offset, filter, expand, sort);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AccountMembersApi#getMembers");
@@ -213,6 +216,7 @@ public class Example {
 | **limit** | **Long**| The number of members to return in the response. Defaults to 20. | [optional] |
 | **offset** | **Long**| Where to start in the list. This is for use with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
 | **filter** | **String**| A comma-separated list of filters. Each filter is of the form &#x60;field:value&#x60;. Supported fields are explained above. | [optional] |
+| **expand** | **String**| A comma-separated list of properties that can reveal additional information in the response. | [optional] |
 | **sort** | **String**| A comma-separated list of fields to sort by. Fields prefixed by a dash ( - ) sort in descending order. | [optional] |
 
 ### Return type

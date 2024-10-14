@@ -245,11 +245,11 @@ public class Example {
 
 <a name="getMetricGroups"></a>
 # **getMetricGroups**
-> MetricGroupCollectionRep getMetricGroups(projectKey, expand)
+> MetricGroupCollectionRep getMetricGroups(projectKey, filter, expand, limit, offset)
 
 List metric groups
 
-Get a list of all metric groups for the specified project.  ### Expanding the metric groups response LaunchDarkly supports one field for expanding the \&quot;Get metric groups\&quot; response. By default, these fields are **not** included in the response.  To expand the response, append the &#x60;expand&#x60; query parameter and add a comma-separated list with the following field:  - &#x60;experiments&#x60; includes all experiments from the specific project that use the metric group  For example, &#x60;expand&#x3D;experiments&#x60; includes the &#x60;experiments&#x60; field in the response. 
+Get a list of all metric groups for the specified project.  ### Expanding the metric groups response LaunchDarkly supports one field for expanding the \&quot;Get metric groups\&quot; response. By default, these fields are **not** included in the response.  To expand the response, append the &#x60;expand&#x60; query parameter and add a comma-separated list with the following field:  - &#x60;experiments&#x60; includes all experiments from the specific project that use the metric group  For example, &#x60;expand&#x3D;experiments&#x60; includes the &#x60;experiments&#x60; field in the response.  ### Filtering metric groups  The &#x60;filter&#x60; parameter supports the &#x60;equals&#x60; operator on the following fields: &#x60;experimentStatus&#x60;, &#x60;query&#x60;.  The &#x60;experimentStatus&#x60; field supports the following values: &#x60;not_started&#x60;, &#x60;running&#x60;, &#x60;stopped&#x60;, and &#x60;started&#x60;. The &#x60;query&#x60; field is a search query that is compared against the metric group name and key.   #### Sample query  &#x60;filter&#x3D;experimentStatus equals &#39;not_started&#39; and query equals &#39;metric name&#39;&#x60; 
 
 ### Example
 ```java
@@ -274,9 +274,12 @@ public class Example {
 
     MetricsBetaApi apiInstance = new MetricsBetaApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
+    String filter = "filter_example"; // String | Accepts filter by `experimentStatus` and `query`. Example: `filter=experimentStatus equals 'running' and query equals 'test'`.
     String expand = "expand_example"; // String | A comma-separated list of properties that can reveal additional information in the response.
+    Long limit = 56L; // Long | The number of metric groups to return in the response. Defaults to 20. Maximum limit is 50.
+    Long offset = 56L; // Long | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and returns the next `limit` items.
     try {
-      MetricGroupCollectionRep result = apiInstance.getMetricGroups(projectKey, expand);
+      MetricGroupCollectionRep result = apiInstance.getMetricGroups(projectKey, filter, expand, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MetricsBetaApi#getMetricGroups");
@@ -294,7 +297,10 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectKey** | **String**| The project key | |
+| **filter** | **String**| Accepts filter by &#x60;experimentStatus&#x60; and &#x60;query&#x60;. Example: &#x60;filter&#x3D;experimentStatus equals &#39;running&#39; and query equals &#39;test&#39;&#x60;. | [optional] |
 | **expand** | **String**| A comma-separated list of properties that can reveal additional information in the response. | [optional] |
+| **limit** | **Long**| The number of metric groups to return in the response. Defaults to 20. Maximum limit is 50. | [optional] |
+| **offset** | **Long**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and returns the next &#x60;limit&#x60; items. | [optional] |
 
 ### Return type
 

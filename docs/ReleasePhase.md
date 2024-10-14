@@ -14,6 +14,10 @@
 |**completionDate** | **Long** |  |  [optional] |
 |**completedBy** | [**CompletedBy**](CompletedBy.md) |  |  [optional] |
 |**audiences** | [**List&lt;ReleaseAudience&gt;**](ReleaseAudience.md) | A logical grouping of one or more environments that share attributes for rolling out changes |  |
+|**status** | **String** |  |  [optional] |
+|**started** | **Boolean** | Whether or not this phase has started |  [optional] |
+|**startedDate** | **Long** |  |  [optional] |
+|**_configuration** | [**PhaseConfiguration**](PhaseConfiguration.md) |  |  [optional] |
 
 
 

@@ -6,6 +6,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 |------------- | ------------- | -------------|
 | [**getAuditLogEntries**](AuditLogApi.md#getAuditLogEntries) | **GET** /api/v2/auditlog | List audit log entries |
 | [**getAuditLogEntry**](AuditLogApi.md#getAuditLogEntry) | **GET** /api/v2/auditlog/{id} | Get audit log entry |
+| [**postAuditLogEntries**](AuditLogApi.md#postAuditLogEntries) | **POST** /api/v2/auditlog | Search audit log entries |
 
 
 <a name="getAuditLogEntries"></a>
@@ -160,5 +161,86 @@ public class Example {
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
+
+<a name="postAuditLogEntries"></a>
+# **postAuditLogEntries**
+> AuditLogEntryListingRepCollection postAuditLogEntries(before, after, q, limit, statementPost)
+
+Search audit log entries
+
+Search your audit log entries. The query parameters let you restrict the results that return by date ranges, or a full-text search query. The request body lets you restrict the results that return by resource specifiers.  LaunchDarkly uses a resource specifier syntax to name resources or collections of resources. To learn more, read [About the resource specifier syntax](https://docs.launchdarkly.com/home/account/role-resources#about-the-resource-specifier-syntax). 
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AuditLogApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AuditLogApi apiInstance = new AuditLogApi(defaultClient);
+    Long before = 56L; // Long | A timestamp filter, expressed as a Unix epoch time in milliseconds.  All entries returned occurred before the timestamp.
+    Long after = 56L; // Long | A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned occurred after the timestamp.
+    String q = "q_example"; // String | Text to search for. You can search for the full or partial name of the resource.
+    Long limit = 56L; // Long | A limit on the number of audit log entries that return. Set between 1 and 20. The default is 10.
+    List<StatementPost> statementPost = Arrays.asList(); // List<StatementPost> | 
+    try {
+      AuditLogEntryListingRepCollection result = apiInstance.postAuditLogEntries(before, after, q, limit, statementPost);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuditLogApi#postAuditLogEntries");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **before** | **Long**| A timestamp filter, expressed as a Unix epoch time in milliseconds.  All entries returned occurred before the timestamp. | [optional] |
+| **after** | **Long**| A timestamp filter, expressed as a Unix epoch time in milliseconds. All entries returned occurred after the timestamp. | [optional] |
+| **q** | **String**| Text to search for. You can search for the full or partial name of the resource. | [optional] |
+| **limit** | **Long**| A limit on the number of audit log entries that return. Set between 1 and 20. The default is 10. | [optional] |
+| **statementPost** | [**List&lt;StatementPost&gt;**](StatementPost.md)|  | [optional] |
+
+### Return type
+
+[**AuditLogEntryListingRepCollection**](AuditLogEntryListingRepCollection.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Audit log entries response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 

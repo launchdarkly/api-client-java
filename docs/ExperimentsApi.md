@@ -1,19 +1,19 @@
-# ExperimentsBetaApi
+# ExperimentsApi
 
 All URIs are relative to *https://app.launchdarkly.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createExperiment**](ExperimentsBetaApi.md#createExperiment) | **POST** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments | Create experiment |
-| [**createIteration**](ExperimentsBetaApi.md#createIteration) | **POST** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments/{experimentKey}/iterations | Create iteration |
-| [**getExperiment**](ExperimentsBetaApi.md#getExperiment) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments/{experimentKey} | Get experiment |
-| [**getExperimentResults**](ExperimentsBetaApi.md#getExperimentResults) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments/{experimentKey}/metrics/{metricKey}/results | Get experiment results |
-| [**getExperimentResultsForMetricGroup**](ExperimentsBetaApi.md#getExperimentResultsForMetricGroup) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments/{experimentKey}/metric-groups/{metricGroupKey}/results | Get experiment results for metric group |
-| [**getExperimentationSettings**](ExperimentsBetaApi.md#getExperimentationSettings) | **GET** /api/v2/projects/{projectKey}/experimentation-settings | Get experimentation settings |
-| [**getExperiments**](ExperimentsBetaApi.md#getExperiments) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments | Get experiments |
-| [**getLegacyExperimentResults**](ExperimentsBetaApi.md#getLegacyExperimentResults) | **GET** /api/v2/flags/{projectKey}/{featureFlagKey}/experiments/{environmentKey}/{metricKey} | Get legacy experiment results (deprecated) |
-| [**patchExperiment**](ExperimentsBetaApi.md#patchExperiment) | **PATCH** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments/{experimentKey} | Patch experiment |
-| [**putExperimentationSettings**](ExperimentsBetaApi.md#putExperimentationSettings) | **PUT** /api/v2/projects/{projectKey}/experimentation-settings | Update experimentation settings |
+| [**createExperiment**](ExperimentsApi.md#createExperiment) | **POST** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments | Create experiment |
+| [**createIteration**](ExperimentsApi.md#createIteration) | **POST** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments/{experimentKey}/iterations | Create iteration |
+| [**getExperiment**](ExperimentsApi.md#getExperiment) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments/{experimentKey} | Get experiment |
+| [**getExperimentResults**](ExperimentsApi.md#getExperimentResults) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments/{experimentKey}/metrics/{metricKey}/results | Get experiment results |
+| [**getExperimentResultsForMetricGroup**](ExperimentsApi.md#getExperimentResultsForMetricGroup) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments/{experimentKey}/metric-groups/{metricGroupKey}/results | Get experiment results for metric group |
+| [**getExperimentationSettings**](ExperimentsApi.md#getExperimentationSettings) | **GET** /api/v2/projects/{projectKey}/experimentation-settings | Get experimentation settings |
+| [**getExperiments**](ExperimentsApi.md#getExperiments) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments | Get experiments |
+| [**getLegacyExperimentResults**](ExperimentsApi.md#getLegacyExperimentResults) | **GET** /api/v2/flags/{projectKey}/{featureFlagKey}/experiments/{environmentKey}/{metricKey} | Get legacy experiment results (deprecated) |
+| [**patchExperiment**](ExperimentsApi.md#patchExperiment) | **PATCH** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments/{experimentKey} | Patch experiment |
+| [**putExperimentationSettings**](ExperimentsApi.md#putExperimentationSettings) | **PUT** /api/v2/projects/{projectKey}/experimentation-settings | Update experimentation settings |
 
 
 <a name="createExperiment"></a>
@@ -32,7 +32,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.ExperimentsBetaApi;
+import com.launchdarkly.api.api.ExperimentsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -45,7 +45,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    ExperimentsBetaApi apiInstance = new ExperimentsBetaApi(defaultClient);
+    ExperimentsApi apiInstance = new ExperimentsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
     String environmentKey = "environmentKey_example"; // String | The environment key
     ExperimentPost experimentPost = new ExperimentPost(); // ExperimentPost | 
@@ -53,7 +53,7 @@ public class Example {
       Experiment result = apiInstance.createExperiment(projectKey, environmentKey, experimentPost);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ExperimentsBetaApi#createExperiment");
+      System.err.println("Exception when calling ExperimentsApi#createExperiment");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -110,7 +110,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.ExperimentsBetaApi;
+import com.launchdarkly.api.api.ExperimentsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -123,7 +123,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    ExperimentsBetaApi apiInstance = new ExperimentsBetaApi(defaultClient);
+    ExperimentsApi apiInstance = new ExperimentsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
     String environmentKey = "environmentKey_example"; // String | The environment key
     String experimentKey = "experimentKey_example"; // String | The experiment key
@@ -132,7 +132,7 @@ public class Example {
       IterationRep result = apiInstance.createIteration(projectKey, environmentKey, experimentKey, iterationInput);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ExperimentsBetaApi#createIteration");
+      System.err.println("Exception when calling ExperimentsApi#createIteration");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -190,7 +190,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.ExperimentsBetaApi;
+import com.launchdarkly.api.api.ExperimentsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -203,7 +203,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    ExperimentsBetaApi apiInstance = new ExperimentsBetaApi(defaultClient);
+    ExperimentsApi apiInstance = new ExperimentsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
     String environmentKey = "environmentKey_example"; // String | The environment key
     String experimentKey = "experimentKey_example"; // String | The experiment key
@@ -212,7 +212,7 @@ public class Example {
       Experiment result = apiInstance.getExperiment(projectKey, environmentKey, experimentKey, expand);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ExperimentsBetaApi#getExperiment");
+      System.err.println("Exception when calling ExperimentsApi#getExperiment");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -271,7 +271,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.ExperimentsBetaApi;
+import com.launchdarkly.api.api.ExperimentsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -284,7 +284,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    ExperimentsBetaApi apiInstance = new ExperimentsBetaApi(defaultClient);
+    ExperimentsApi apiInstance = new ExperimentsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
     String environmentKey = "environmentKey_example"; // String | The environment key
     String experimentKey = "experimentKey_example"; // String | The experiment key
@@ -295,7 +295,7 @@ public class Example {
       ExperimentBayesianResultsRep result = apiInstance.getExperimentResults(projectKey, environmentKey, experimentKey, metricKey, iterationId, expand);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ExperimentsBetaApi#getExperimentResults");
+      System.err.println("Exception when calling ExperimentsApi#getExperimentResults");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -355,7 +355,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.ExperimentsBetaApi;
+import com.launchdarkly.api.api.ExperimentsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -368,7 +368,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    ExperimentsBetaApi apiInstance = new ExperimentsBetaApi(defaultClient);
+    ExperimentsApi apiInstance = new ExperimentsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
     String environmentKey = "environmentKey_example"; // String | The environment key
     String experimentKey = "experimentKey_example"; // String | The experiment key
@@ -378,7 +378,7 @@ public class Example {
       MetricGroupResultsRep result = apiInstance.getExperimentResultsForMetricGroup(projectKey, environmentKey, experimentKey, metricGroupKey, iterationId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ExperimentsBetaApi#getExperimentResultsForMetricGroup");
+      System.err.println("Exception when calling ExperimentsApi#getExperimentResultsForMetricGroup");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -437,7 +437,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.ExperimentsBetaApi;
+import com.launchdarkly.api.api.ExperimentsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -450,13 +450,13 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    ExperimentsBetaApi apiInstance = new ExperimentsBetaApi(defaultClient);
+    ExperimentsApi apiInstance = new ExperimentsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
     try {
       RandomizationSettingsRep result = apiInstance.getExperimentationSettings(projectKey);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ExperimentsBetaApi#getExperimentationSettings");
+      System.err.println("Exception when calling ExperimentsApi#getExperimentationSettings");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -512,7 +512,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.ExperimentsBetaApi;
+import com.launchdarkly.api.api.ExperimentsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -525,7 +525,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    ExperimentsBetaApi apiInstance = new ExperimentsBetaApi(defaultClient);
+    ExperimentsApi apiInstance = new ExperimentsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
     String environmentKey = "environmentKey_example"; // String | The environment key
     Long limit = 56L; // Long | The maximum number of experiments to return. Defaults to 20.
@@ -537,7 +537,7 @@ public class Example {
       ExperimentCollectionRep result = apiInstance.getExperiments(projectKey, environmentKey, limit, offset, filter, expand, lifecycleState);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ExperimentsBetaApi#getExperiments");
+      System.err.println("Exception when calling ExperimentsApi#getExperiments");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -599,7 +599,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.ExperimentsBetaApi;
+import com.launchdarkly.api.api.ExperimentsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -612,7 +612,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    ExperimentsBetaApi apiInstance = new ExperimentsBetaApi(defaultClient);
+    ExperimentsApi apiInstance = new ExperimentsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
     String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key
     String environmentKey = "environmentKey_example"; // String | The environment key
@@ -623,7 +623,7 @@ public class Example {
       ExperimentResults result = apiInstance.getLegacyExperimentResults(projectKey, featureFlagKey, environmentKey, metricKey, from, to);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ExperimentsBetaApi#getLegacyExperimentResults");
+      System.err.println("Exception when calling ExperimentsApi#getLegacyExperimentResults");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -683,7 +683,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.ExperimentsBetaApi;
+import com.launchdarkly.api.api.ExperimentsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -696,7 +696,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    ExperimentsBetaApi apiInstance = new ExperimentsBetaApi(defaultClient);
+    ExperimentsApi apiInstance = new ExperimentsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
     String environmentKey = "environmentKey_example"; // String | The environment key
     String experimentKey = "experimentKey_example"; // String | The experiment key
@@ -705,7 +705,7 @@ public class Example {
       Experiment result = apiInstance.patchExperiment(projectKey, environmentKey, experimentKey, experimentPatchInput);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ExperimentsBetaApi#patchExperiment");
+      System.err.println("Exception when calling ExperimentsApi#patchExperiment");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -764,7 +764,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.ExperimentsBetaApi;
+import com.launchdarkly.api.api.ExperimentsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -777,14 +777,14 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    ExperimentsBetaApi apiInstance = new ExperimentsBetaApi(defaultClient);
+    ExperimentsApi apiInstance = new ExperimentsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
     RandomizationSettingsPut randomizationSettingsPut = new RandomizationSettingsPut(); // RandomizationSettingsPut | 
     try {
       RandomizationSettingsRep result = apiInstance.putExperimentationSettings(projectKey, randomizationSettingsPut);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ExperimentsBetaApi#putExperimentationSettings");
+      System.err.println("Exception when calling ExperimentsApi#putExperimentationSettings");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

@@ -4,15 +4,15 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**deleteFlagFollowers**](FollowFlagsApi.md#deleteFlagFollowers) | **DELETE** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/followers/{memberId} | Remove a member as a follower of a flag in a project and environment |
+| [**deleteFlagFollower**](FollowFlagsApi.md#deleteFlagFollower) | **DELETE** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/followers/{memberId} | Remove a member as a follower of a flag in a project and environment |
 | [**getFlagFollowers**](FollowFlagsApi.md#getFlagFollowers) | **GET** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/followers | Get followers of a flag in a project and environment |
 | [**getFollowersByProjEnv**](FollowFlagsApi.md#getFollowersByProjEnv) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/followers | Get followers of all flags in a given project and environment |
-| [**putFlagFollowers**](FollowFlagsApi.md#putFlagFollowers) | **PUT** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/followers/{memberId} | Add a member as a follower of a flag in a project and environment |
+| [**putFlagFollower**](FollowFlagsApi.md#putFlagFollower) | **PUT** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/followers/{memberId} | Add a member as a follower of a flag in a project and environment |
 
 
-<a name="deleteFlagFollowers"></a>
-# **deleteFlagFollowers**
-> deleteFlagFollowers(projectKey, featureFlagKey, environmentKey, memberId)
+<a name="deleteFlagFollower"></a>
+# **deleteFlagFollower**
+> deleteFlagFollower(projectKey, featureFlagKey, environmentKey, memberId)
 
 Remove a member as a follower of a flag in a project and environment
 
@@ -45,9 +45,9 @@ public class Example {
     String environmentKey = "environmentKey_example"; // String | The environment key
     String memberId = "memberId_example"; // String | The memberId of the member to remove as a follower of the flag. Reader roles can only remove themselves.
     try {
-      apiInstance.deleteFlagFollowers(projectKey, featureFlagKey, environmentKey, memberId);
+      apiInstance.deleteFlagFollower(projectKey, featureFlagKey, environmentKey, memberId);
     } catch (ApiException e) {
-      System.err.println("Exception when calling FollowFlagsApi#deleteFlagFollowers");
+      System.err.println("Exception when calling FollowFlagsApi#deleteFlagFollower");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -240,9 +240,9 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
 
-<a name="putFlagFollowers"></a>
-# **putFlagFollowers**
-> putFlagFollowers(projectKey, featureFlagKey, environmentKey, memberId)
+<a name="putFlagFollower"></a>
+# **putFlagFollower**
+> putFlagFollower(projectKey, featureFlagKey, environmentKey, memberId)
 
 Add a member as a follower of a flag in a project and environment
 
@@ -275,9 +275,9 @@ public class Example {
     String environmentKey = "environmentKey_example"; // String | The environment key
     String memberId = "memberId_example"; // String | The memberId of the member to add as a follower of the flag. Reader roles can only add themselves.
     try {
-      apiInstance.putFlagFollowers(projectKey, featureFlagKey, environmentKey, memberId);
+      apiInstance.putFlagFollower(projectKey, featureFlagKey, environmentKey, memberId);
     } catch (ApiException e) {
-      System.err.println("Exception when calling FollowFlagsApi#putFlagFollowers");
+      System.err.println("Exception when calling FollowFlagsApi#putFlagFollower");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

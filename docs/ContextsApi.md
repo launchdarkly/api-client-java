@@ -181,11 +181,11 @@ public class Example {
 
 <a name="getContextAttributeNames"></a>
 # **getContextAttributeNames**
-> ContextAttributeNamesCollection getContextAttributeNames(projectKey, environmentKey, filter)
+> ContextAttributeNamesCollection getContextAttributeNames(projectKey, environmentKey, filter, limit)
 
 Get context attribute names
 
-Get context attribute names. Returns only the first 100 attribute names per context.
+Get context attribute names.
 
 ### Example
 ```java
@@ -212,8 +212,9 @@ public class Example {
     String projectKey = "projectKey_example"; // String | The project key
     String environmentKey = "environmentKey_example"; // String | The environment key
     String filter = "filter_example"; // String | A comma-separated list of context filters. This endpoint only accepts `kind` filters, with the `equals` operator, and `name` filters, with the `startsWith` operator. To learn more about the filter syntax, read [Filtering contexts and context instances](/tag/Contexts#filtering-contexts-and-context-instances).
+    Long limit = 56L; // Long | Specifies the maximum number of items in the collection to return (max: 100, default: 100)
     try {
-      ContextAttributeNamesCollection result = apiInstance.getContextAttributeNames(projectKey, environmentKey, filter);
+      ContextAttributeNamesCollection result = apiInstance.getContextAttributeNames(projectKey, environmentKey, filter, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ContextsApi#getContextAttributeNames");
@@ -233,6 +234,7 @@ public class Example {
 | **projectKey** | **String**| The project key | |
 | **environmentKey** | **String**| The environment key | |
 | **filter** | **String**| A comma-separated list of context filters. This endpoint only accepts &#x60;kind&#x60; filters, with the &#x60;equals&#x60; operator, and &#x60;name&#x60; filters, with the &#x60;startsWith&#x60; operator. To learn more about the filter syntax, read [Filtering contexts and context instances](/tag/Contexts#filtering-contexts-and-context-instances). | [optional] |
+| **limit** | **Long**| Specifies the maximum number of items in the collection to return (max: 100, default: 100) | [optional] |
 
 ### Return type
 
@@ -258,7 +260,7 @@ public class Example {
 
 <a name="getContextAttributeValues"></a>
 # **getContextAttributeValues**
-> ContextAttributeValuesCollection getContextAttributeValues(projectKey, environmentKey, attributeName, filter)
+> ContextAttributeValuesCollection getContextAttributeValues(projectKey, environmentKey, attributeName, filter, limit)
 
 Get context attribute values
 
@@ -290,8 +292,9 @@ public class Example {
     String environmentKey = "environmentKey_example"; // String | The environment key
     String attributeName = "attributeName_example"; // String | The attribute name
     String filter = "filter_example"; // String | A comma-separated list of context filters. This endpoint only accepts `kind` filters, with the `equals` operator, and `value` filters, with the `startsWith` operator. To learn more about the filter syntax, read [Filtering contexts and context instances](/tag/Contexts#filtering-contexts-and-context-instances).
+    Long limit = 56L; // Long | Specifies the maximum number of items in the collection to return (max: 100, default: 50)
     try {
-      ContextAttributeValuesCollection result = apiInstance.getContextAttributeValues(projectKey, environmentKey, attributeName, filter);
+      ContextAttributeValuesCollection result = apiInstance.getContextAttributeValues(projectKey, environmentKey, attributeName, filter, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ContextsApi#getContextAttributeValues");
@@ -312,6 +315,7 @@ public class Example {
 | **environmentKey** | **String**| The environment key | |
 | **attributeName** | **String**| The attribute name | |
 | **filter** | **String**| A comma-separated list of context filters. This endpoint only accepts &#x60;kind&#x60; filters, with the &#x60;equals&#x60; operator, and &#x60;value&#x60; filters, with the &#x60;startsWith&#x60; operator. To learn more about the filter syntax, read [Filtering contexts and context instances](/tag/Contexts#filtering-contexts-and-context-instances). | [optional] |
+| **limit** | **Long**| Specifies the maximum number of items in the collection to return (max: 100, default: 50) | [optional] |
 
 ### Return type
 

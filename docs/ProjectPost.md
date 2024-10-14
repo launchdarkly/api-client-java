@@ -13,6 +13,7 @@
 |**defaultClientSideAvailability** | [**DefaultClientSideAvailabilityPost**](DefaultClientSideAvailabilityPost.md) |  |  [optional] |
 |**tags** | **List&lt;String&gt;** | Tags for the project |  [optional] |
 |**environments** | [**List&lt;EnvironmentPost&gt;**](EnvironmentPost.md) | Creates the provided environments for this project. If omitted default environments will be created instead. |  [optional] |
+|**namingConvention** | [**NamingConvention**](NamingConvention.md) |  |  [optional] |
 
 
 

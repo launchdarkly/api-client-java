@@ -20,6 +20,7 @@
 | Name | Value |
 |---- | -----|
 | FUNNEL | &quot;funnel&quot; |
+| STANDARD | &quot;standard&quot; |
 
 
 

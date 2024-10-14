@@ -15,6 +15,8 @@
 |**tags** | **List&lt;String&gt;** | A list of the release pipeline&#39;s tags |  [optional] |
 |**version** | **Integer** | The release pipeline version |  [optional] |
 |**access** | [**Access**](Access.md) |  |  [optional] |
+|**isProjectDefault** | **Boolean** | Whether this release pipeline is the default pipeline for the project |  [optional] |
+|**isLegacy** | **Boolean** | Whether this release pipeline is a legacy pipeline |  [optional] |
 
 
 

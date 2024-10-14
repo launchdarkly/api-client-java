@@ -16,6 +16,7 @@
 |**hunkCount** | **Integer** | The number of code reference hunks in which the flag appears in this repository |  |
 |**fileCount** | **Integer** | The number of files in which the flag appears in this repository |  |
 |**links** | [**Map&lt;String, Link&gt;**](Link.md) | The location and content type of related resources |  |
+|**latestCommitTime** | **Long** |  |  [optional] |
 
 
 

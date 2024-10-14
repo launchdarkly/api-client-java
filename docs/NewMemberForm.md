@@ -14,6 +14,7 @@
 |**role** | [**RoleEnum**](#RoleEnum) | The member&#39;s built-in role |  [optional] |
 |**customRoles** | **List&lt;String&gt;** | An array of the member&#39;s custom roles |  [optional] |
 |**teamKeys** | **List&lt;String&gt;** | An array of the member&#39;s teams |  [optional] |
+|**roleAttributes** | **Map&lt;String, List&lt;String&gt;&gt;** |  |  [optional] |
 
 
 

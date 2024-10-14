@@ -9,6 +9,8 @@
 |------------ | ------------- | ------------- | -------------|
 |**environment** | [**EnvironmentSummary**](EnvironmentSummary.md) |  |  |
 |**name** | **String** | The release phase name |  |
+|**_configuration** | [**AudienceConfiguration**](AudienceConfiguration.md) |  |  [optional] |
+|**segmentKeys** | **List&lt;String&gt;** | A list of segment keys |  [optional] |
 
 
 

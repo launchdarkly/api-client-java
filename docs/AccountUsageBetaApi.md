@@ -20,7 +20,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 <a name="getDataExportEventsUsage"></a>
 # **getDataExportEventsUsage**
-> SeriesIntervalsRep getDataExportEventsUsage(from, to)
+> SeriesIntervalsRep getDataExportEventsUsage(from, to, projectKey, environmentKey)
 
 Get data export events usage
 
@@ -50,8 +50,10 @@ public class Example {
     AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
     String from = "from_example"; // String | The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month.
     String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time.
+    String projectKey = "projectKey_example"; // String | A project key. If specified, `environmentKey` is required and results apply to the corresponding environment in this project.
+    String environmentKey = "environmentKey_example"; // String | An environment key. If specified, `projectKey` is required and results apply to the corresponding environment in this project.
     try {
-      SeriesIntervalsRep result = apiInstance.getDataExportEventsUsage(from, to);
+      SeriesIntervalsRep result = apiInstance.getDataExportEventsUsage(from, to, projectKey, environmentKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AccountUsageBetaApi#getDataExportEventsUsage");
@@ -70,6 +72,8 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **from** | **String**| The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. | [optional] |
 | **to** | **String**| The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. | [optional] |
+| **projectKey** | **String**| A project key. If specified, &#x60;environmentKey&#x60; is required and results apply to the corresponding environment in this project. | [optional] |
+| **environmentKey** | **String**| An environment key. If specified, &#x60;projectKey&#x60; is required and results apply to the corresponding environment in this project. | [optional] |
 
 ### Return type
 
@@ -258,7 +262,7 @@ public class Example {
 
 <a name="getExperimentationKeysUsage"></a>
 # **getExperimentationKeysUsage**
-> SeriesIntervalsRep getExperimentationKeysUsage(from, to)
+> SeriesIntervalsRep getExperimentationKeysUsage(from, to, projectKey, environmentKey)
 
 Get experimentation keys usage
 
@@ -288,8 +292,10 @@ public class Example {
     AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
     String from = "from_example"; // String | The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month.
     String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time.
+    String projectKey = "projectKey_example"; // String | A project key. If specified, `environmentKey` is required and results apply to the corresponding environment in this project.
+    String environmentKey = "environmentKey_example"; // String | An environment key. If specified, `projectKey` is required and results apply to the corresponding environment in this project.
     try {
-      SeriesIntervalsRep result = apiInstance.getExperimentationKeysUsage(from, to);
+      SeriesIntervalsRep result = apiInstance.getExperimentationKeysUsage(from, to, projectKey, environmentKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AccountUsageBetaApi#getExperimentationKeysUsage");
@@ -308,6 +314,8 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **from** | **String**| The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. | [optional] |
 | **to** | **String**| The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. | [optional] |
+| **projectKey** | **String**| A project key. If specified, &#x60;environmentKey&#x60; is required and results apply to the corresponding environment in this project. | [optional] |
+| **environmentKey** | **String**| An environment key. If specified, &#x60;projectKey&#x60; is required and results apply to the corresponding environment in this project. | [optional] |
 
 ### Return type
 
@@ -334,7 +342,7 @@ public class Example {
 
 <a name="getExperimentationUnitsUsage"></a>
 # **getExperimentationUnitsUsage**
-> SeriesIntervalsRep getExperimentationUnitsUsage(from, to)
+> SeriesIntervalsRep getExperimentationUnitsUsage(from, to, projectKey, environmentKey)
 
 Get experimentation units usage
 
@@ -364,8 +372,10 @@ public class Example {
     AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
     String from = "from_example"; // String | The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month.
     String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time.
+    String projectKey = "projectKey_example"; // String | A project key. If specified, `environmentKey` is required and results apply to the corresponding environment in this project.
+    String environmentKey = "environmentKey_example"; // String | An environment key. If specified, `projectKey` is required and results apply to the corresponding environment in this project.
     try {
-      SeriesIntervalsRep result = apiInstance.getExperimentationUnitsUsage(from, to);
+      SeriesIntervalsRep result = apiInstance.getExperimentationUnitsUsage(from, to, projectKey, environmentKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AccountUsageBetaApi#getExperimentationUnitsUsage");
@@ -384,6 +394,8 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **from** | **String**| The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. | [optional] |
 | **to** | **String**| The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. | [optional] |
+| **projectKey** | **String**| A project key. If specified, &#x60;environmentKey&#x60; is required and results apply to the corresponding environment in this project. | [optional] |
+| **environmentKey** | **String**| An environment key. If specified, &#x60;projectKey&#x60; is required and results apply to the corresponding environment in this project. | [optional] |
 
 ### Return type
 
@@ -650,7 +662,7 @@ public class Example {
 
 <a name="getServiceConnectionUsage"></a>
 # **getServiceConnectionUsage**
-> SeriesIntervalsRep getServiceConnectionUsage(from, to)
+> SeriesIntervalsRep getServiceConnectionUsage(from, to, projectKey, environmentKey)
 
 Get service connection usage
 
@@ -680,8 +692,10 @@ public class Example {
     AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
     String from = "from_example"; // String | The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month.
     String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time.
+    String projectKey = "projectKey_example"; // String | A project key. If specified, `environmentKey` is required and results apply to the corresponding environment in this project.
+    String environmentKey = "environmentKey_example"; // String | An environment key. If specified, `projectKey` is required and results apply to the corresponding environment in this project.
     try {
-      SeriesIntervalsRep result = apiInstance.getServiceConnectionUsage(from, to);
+      SeriesIntervalsRep result = apiInstance.getServiceConnectionUsage(from, to, projectKey, environmentKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AccountUsageBetaApi#getServiceConnectionUsage");
@@ -700,6 +714,8 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **from** | **String**| The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. | [optional] |
 | **to** | **String**| The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. | [optional] |
+| **projectKey** | **String**| A project key. If specified, &#x60;environmentKey&#x60; is required and results apply to the corresponding environment in this project. | [optional] |
+| **environmentKey** | **String**| An environment key. If specified, &#x60;projectKey&#x60; is required and results apply to the corresponding environment in this project. | [optional] |
 
 ### Return type
 

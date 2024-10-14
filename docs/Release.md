@@ -13,6 +13,8 @@
 |**releasePipelineDescription** | **String** | The release pipeline description |  |
 |**phases** | [**List&lt;ReleasePhase&gt;**](ReleasePhase.md) | An ordered list of the release pipeline phases |  |
 |**version** | **Integer** | The release version |  |
+|**releaseVariationId** | **String** | The chosen release variation ID to use across all phases of a release |  [optional] |
+|**canceledAt** | **Long** |  |  [optional] |
 
 
 

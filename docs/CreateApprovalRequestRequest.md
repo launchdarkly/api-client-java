@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**resourceId** | **String** | String representation of a resource |  |
+|**resourceId** | **String** | String representation of the resource specifier |  |
 |**comment** | **String** | Optional comment describing the approval request |  [optional] |
 |**description** | **String** | A brief description of the changes you&#39;re requesting |  |
 |**instructions** | **List&lt;Map&lt;String, Object&gt;&gt;** |  |  |

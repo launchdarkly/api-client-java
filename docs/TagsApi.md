@@ -9,7 +9,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 <a name="getTags"></a>
 # **getTags**
-> TagCollection getTags(kind, pre, archived)
+> TagsCollection getTags(kind, pre, archived, limit, offset, asOf)
 
 List tags
 
@@ -37,11 +37,14 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     TagsApi apiInstance = new TagsApi(defaultClient);
-    String kind = "kind_example"; // String | Fetch tags associated with the specified resource type. Options are `flag`, `project`, `environment`, `segment`. Returns all types by default.
+    List<String> kind = Arrays.asList(); // List<String> | Fetch tags associated with the specified resource type. Options are `flag`, `project`, `environment`, `segment`. Returns all types by default.
     String pre = "pre_example"; // String | Return tags with the specified prefix
     Boolean archived = true; // Boolean | Whether or not to return archived flags
+    Integer limit = 56; // Integer | The number of tags to return. Maximum is 1000.
+    Integer offset = 56; // Integer | The index of the first tag to return. Default is 0.
+    String asOf = "asOf_example"; // String | The time to retrieve tags as of. Default is the current time.
     try {
-      TagCollection result = apiInstance.getTags(kind, pre, archived);
+      TagsCollection result = apiInstance.getTags(kind, pre, archived, limit, offset, asOf);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TagsApi#getTags");
@@ -58,13 +61,16 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **kind** | **String**| Fetch tags associated with the specified resource type. Options are &#x60;flag&#x60;, &#x60;project&#x60;, &#x60;environment&#x60;, &#x60;segment&#x60;. Returns all types by default. | [optional] |
+| **kind** | [**List&lt;String&gt;**](String.md)| Fetch tags associated with the specified resource type. Options are &#x60;flag&#x60;, &#x60;project&#x60;, &#x60;environment&#x60;, &#x60;segment&#x60;. Returns all types by default. | [optional] |
 | **pre** | **String**| Return tags with the specified prefix | [optional] |
 | **archived** | **Boolean**| Whether or not to return archived flags | [optional] |
+| **limit** | **Integer**| The number of tags to return. Maximum is 1000. | [optional] |
+| **offset** | **Integer**| The index of the first tag to return. Default is 0. | [optional] |
+| **asOf** | **String**| The time to retrieve tags as of. Default is the current time. | [optional] |
 
 ### Return type
 
-[**TagCollection**](TagCollection.md)
+[**TagsCollection**](TagsCollection.md)
 
 ### Authorization
 
@@ -79,8 +85,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Tag collection response |  -  |
-| **400** | Invalid request |  -  |
+| **400** | Bad request |  -  |
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |
-| **429** | Rate limited |  -  |
+| **429** | Rate Limited |  -  |
+| **500** | Internal server error |  -  |
 
