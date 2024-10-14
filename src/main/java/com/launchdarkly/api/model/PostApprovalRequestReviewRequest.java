@@ -47,7 +47,7 @@ import com.launchdarkly.api.JSON;
 /**
  * PostApprovalRequestReviewRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-14T10:20:37.590037Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-14T10:32:25.406590Z[Etc/UTC]")
 public class PostApprovalRequestReviewRequest {
   /**
    * The type of review for this approval request

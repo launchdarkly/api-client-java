@@ -50,7 +50,7 @@ import com.launchdarkly.api.JSON;
 /**
  * ExperimentTimeSeriesSlice
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-14T10:20:37.590037Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-14T10:32:25.406590Z[Etc/UTC]")
 public class ExperimentTimeSeriesSlice {
   public static final String SERIALIZED_NAME_TIME = "Time";
   @SerializedName(SERIALIZED_NAME_TIME)

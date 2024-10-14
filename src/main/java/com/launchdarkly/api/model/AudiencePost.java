@@ -50,7 +50,7 @@ import com.launchdarkly.api.JSON;
 /**
  * AudiencePost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-14T10:20:37.590037Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-14T10:32:25.406590Z[Etc/UTC]")
 public class AudiencePost {
   public static final String SERIALIZED_NAME_ENVIRONMENT_KEY = "environmentKey";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_KEY)

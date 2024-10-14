@@ -47,7 +47,7 @@ import com.launchdarkly.api.JSON;
 /**
  * BigSegmentTarget
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-14T10:20:37.590037Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-14T10:32:25.406590Z[Etc/UTC]")
 public class BigSegmentTarget {
   public static final String SERIALIZED_NAME_USER_KEY = "userKey";
   @SerializedName(SERIALIZED_NAME_USER_KEY)

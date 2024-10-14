@@ -47,7 +47,7 @@ import com.launchdarkly.api.JSON;
 /**
  * ParameterRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-14T10:20:37.590037Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-14T10:32:25.406590Z[Etc/UTC]")
 public class ParameterRep {
   public static final String SERIALIZED_NAME_VARIATION_ID = "variationId";
   @SerializedName(SERIALIZED_NAME_VARIATION_ID)
