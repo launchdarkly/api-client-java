@@ -16,6 +16,7 @@
 |**lastModified** | **Long** |  |  [optional] |
 |**version** | **Integer** | The team version |  [optional] |
 |**idpSynced** | **Boolean** | Whether the team has been synced with an external identity provider (IdP). Team sync is available to customers on an Enterprise plan. |  [optional] |
+|**roleAttributes** | **Map&lt;String, List&lt;String&gt;&gt;** |  |  [optional] |
 |**roles** | [**TeamCustomRoles**](TeamCustomRoles.md) |  |  [optional] |
 |**members** | [**TeamMembers**](TeamMembers.md) |  |  [optional] |
 |**projects** | [**TeamProjects**](TeamProjects.md) |  |  [optional] |

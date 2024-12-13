@@ -13,6 +13,7 @@
 |**memberIDs** | **List&lt;String&gt;** | A list of member IDs who belong to the team |  [optional] |
 |**name** | **String** | A human-friendly name for the team |  |
 |**permissionGrants** | [**List&lt;PermissionGrantInput&gt;**](PermissionGrantInput.md) | A list of permission grants. Permission grants allow access to a specific action, without having to create or update a custom role. |  [optional] |
+|**roleAttributes** | **Map&lt;String, List&lt;String&gt;&gt;** |  |  [optional] |
 
 
 

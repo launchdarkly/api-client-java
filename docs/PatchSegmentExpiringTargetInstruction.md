@@ -11,7 +11,7 @@
 |**contextKey** | **String** | A unique key used to represent the context |  |
 |**contextKind** | **String** | The kind of context |  |
 |**targetType** | [**TargetTypeEnum**](#TargetTypeEnum) | The segment&#39;s target type |  |
-|**value** | **Integer** | The time, in Unix milliseconds, when the context should be removed from this segment. Required if &lt;code&gt;kind&lt;/code&gt; is &lt;code&gt;addExpiringTarget&lt;/code&gt; or &lt;code&gt;updateExpiringTarget&lt;/code&gt;. |  [optional] |
+|**value** | **Long** | The time, in Unix milliseconds, when the context should be removed from this segment. Required if &lt;code&gt;kind&lt;/code&gt; is &lt;code&gt;addExpiringTarget&lt;/code&gt; or &lt;code&gt;updateExpiringTarget&lt;/code&gt;. |  [optional] |
 |**version** | **Integer** | The version of the expiring target to update. Optional and only used if &lt;code&gt;kind&lt;/code&gt; is &lt;code&gt;updateExpiringTarget&lt;/code&gt;. If included, update will fail if version doesn&#39;t match current version of the expiring target. |  [optional] |
 
 

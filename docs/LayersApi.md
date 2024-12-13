@@ -1,12 +1,12 @@
-# LayersBetaApi
+# LayersApi
 
 All URIs are relative to *https://app.launchdarkly.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createLayer**](LayersBetaApi.md#createLayer) | **POST** /api/v2/projects/{projectKey}/layers | Create layer |
-| [**getLayers**](LayersBetaApi.md#getLayers) | **GET** /api/v2/projects/{projectKey}/layers | Get layers |
-| [**updateLayer**](LayersBetaApi.md#updateLayer) | **PATCH** /api/v2/projects/{projectKey}/layers/{layerKey} | Update layer |
+| [**createLayer**](LayersApi.md#createLayer) | **POST** /api/v2/projects/{projectKey}/layers | Create layer |
+| [**getLayers**](LayersApi.md#getLayers) | **GET** /api/v2/projects/{projectKey}/layers | Get layers |
+| [**updateLayer**](LayersApi.md#updateLayer) | **PATCH** /api/v2/projects/{projectKey}/layers/{layerKey} | Update layer |
 
 
 <a name="createLayer"></a>
@@ -25,7 +25,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.LayersBetaApi;
+import com.launchdarkly.api.api.LayersApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -38,14 +38,14 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    LayersBetaApi apiInstance = new LayersBetaApi(defaultClient);
+    LayersApi apiInstance = new LayersApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
     LayerPost layerPost = new LayerPost(); // LayerPost | 
     try {
       LayerRep result = apiInstance.createLayer(projectKey, layerPost);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling LayersBetaApi#createLayer");
+      System.err.println("Exception when calling LayersApi#createLayer");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -100,7 +100,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.LayersBetaApi;
+import com.launchdarkly.api.api.LayersApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -113,14 +113,14 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    LayersBetaApi apiInstance = new LayersBetaApi(defaultClient);
+    LayersApi apiInstance = new LayersApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
     String filter = "filter_example"; // String | A comma-separated list of filters. This endpoint only accepts filtering by `experimentKey`. The filter returns layers which include that experiment for the selected environment(s). For example: `filter=reservations.experimentKey contains expKey`.
     try {
       LayerCollectionRep result = apiInstance.getLayers(projectKey, filter);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling LayersBetaApi#getLayers");
+      System.err.println("Exception when calling LayersApi#getLayers");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -175,7 +175,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.LayersBetaApi;
+import com.launchdarkly.api.api.LayersApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -188,7 +188,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    LayersBetaApi apiInstance = new LayersBetaApi(defaultClient);
+    LayersApi apiInstance = new LayersApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
     String layerKey = "layerKey_example"; // String | The layer key
     LayerPatchInput layerPatchInput = new LayerPatchInput(); // LayerPatchInput | 
@@ -196,7 +196,7 @@ public class Example {
       LayerRep result = apiInstance.updateLayer(projectKey, layerKey, layerPatchInput);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling LayersBetaApi#updateLayer");
+      System.err.println("Exception when calling LayersApi#updateLayer");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

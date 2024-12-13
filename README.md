@@ -8,7 +8,7 @@ This client library is only compatible with the latest version of our REST API, 
 
 LaunchDarkly REST API
 - API version: 2.0
-  - Build date: 2024-10-14T10:32:25.406590Z[Etc/UTC]
+  - Build date: 2024-12-13T22:24:24.922463Z[Etc/UTC]
 
 # Overview
 
@@ -196,7 +196,7 @@ For example:
 }
 ```
 
-If any instruction in the patch encounters an error, the endpoint returns an error and will not change the resource. In general, each instruction silently does nothing if the resource is already in the state you request.
+Semantic patches are not applied partially; either all of the instructions are applied or none of them are. If **any** instruction is invalid, the endpoint returns an error and will not change the resource. If all instructions are valid, the request succeeds and the resources are updated if necessary, or left unchanged if they are already in the state you request.
 
 ### Updates with comments
 
@@ -433,7 +433,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>17.0.0</version>
+  <version>17.1.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -449,7 +449,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.launchdarkly:api-client:17.0.0"
+     implementation "com.launchdarkly:api-client:17.1.0"
   }
 ```
 
@@ -463,7 +463,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-17.0.0.jar`
+* `target/api-client-17.1.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -558,7 +558,8 @@ Class | Method | HTTP request | Description
 *ApprovalsApi* | [**postApprovalRequestReview**](docs/ApprovalsApi.md#postApprovalRequestReview) | **POST** /api/v2/approval-requests/{id}/reviews | Review approval request
 *ApprovalsApi* | [**postApprovalRequestReviewForFlag**](docs/ApprovalsApi.md#postApprovalRequestReviewForFlag) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id}/reviews | Review approval request for a flag
 *ApprovalsApi* | [**postFlagCopyConfigApprovalRequest**](docs/ApprovalsApi.md#postFlagCopyConfigApprovalRequest) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests-flag-copy | Create approval request to copy flag configurations across environments
-*ApprovalsBetaApi* | [**patchApprovalRequest**](docs/ApprovalsBetaApi.md#patchApprovalRequest) | **PATCH** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id} | Update approval request
+*ApprovalsBetaApi* | [**patchApprovalRequest**](docs/ApprovalsBetaApi.md#patchApprovalRequest) | **PATCH** /api/v2/approval-requests/{id} | Update approval request
+*ApprovalsBetaApi* | [**patchFlagConfigApprovalRequest**](docs/ApprovalsBetaApi.md#patchFlagConfigApprovalRequest) | **PATCH** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id} | Update flag approval request
 *AuditLogApi* | [**getAuditLogEntries**](docs/AuditLogApi.md#getAuditLogEntries) | **GET** /api/v2/auditlog | List audit log entries
 *AuditLogApi* | [**getAuditLogEntry**](docs/AuditLogApi.md#getAuditLogEntry) | **GET** /api/v2/auditlog/{id} | Get audit log entry
 *AuditLogApi* | [**postAuditLogEntries**](docs/AuditLogApi.md#postAuditLogEntries) | **POST** /api/v2/auditlog | Search audit log entries
@@ -629,6 +630,12 @@ Class | Method | HTTP request | Description
 *FeatureFlagsApi* | [**postMigrationSafetyIssues**](docs/FeatureFlagsApi.md#postMigrationSafetyIssues) | **POST** /api/v2/projects/{projectKey}/flags/{flagKey}/environments/{environmentKey}/migration-safety-issues | Get migration safety issues
 *FeatureFlagsBetaApi* | [**getDependentFlags**](docs/FeatureFlagsBetaApi.md#getDependentFlags) | **GET** /api/v2/flags/{projectKey}/{featureFlagKey}/dependent-flags | List dependent feature flags
 *FeatureFlagsBetaApi* | [**getDependentFlagsByEnv**](docs/FeatureFlagsBetaApi.md#getDependentFlagsByEnv) | **GET** /api/v2/flags/{projectKey}/{environmentKey}/{featureFlagKey}/dependent-flags | List dependent feature flags by environment
+*FlagImportConfigurationsBetaApi* | [**createFlagImportConfiguration**](docs/FlagImportConfigurationsBetaApi.md#createFlagImportConfiguration) | **POST** /api/v2/integration-capabilities/flag-import/{projectKey}/{integrationKey} | Create a flag import configuration
+*FlagImportConfigurationsBetaApi* | [**deleteFlagImportConfiguration**](docs/FlagImportConfigurationsBetaApi.md#deleteFlagImportConfiguration) | **DELETE** /api/v2/integration-capabilities/flag-import/{projectKey}/{integrationKey}/{integrationId} | Delete a flag import configuration
+*FlagImportConfigurationsBetaApi* | [**getFlagImportConfiguration**](docs/FlagImportConfigurationsBetaApi.md#getFlagImportConfiguration) | **GET** /api/v2/integration-capabilities/flag-import/{projectKey}/{integrationKey}/{integrationId} | Get a single flag import configuration
+*FlagImportConfigurationsBetaApi* | [**getFlagImportConfigurations**](docs/FlagImportConfigurationsBetaApi.md#getFlagImportConfigurations) | **GET** /api/v2/integration-capabilities/flag-import | List all flag import configurations
+*FlagImportConfigurationsBetaApi* | [**patchFlagImportConfiguration**](docs/FlagImportConfigurationsBetaApi.md#patchFlagImportConfiguration) | **PATCH** /api/v2/integration-capabilities/flag-import/{projectKey}/{integrationKey}/{integrationId} | Update a flag import configuration
+*FlagImportConfigurationsBetaApi* | [**triggerFlagImportJob**](docs/FlagImportConfigurationsBetaApi.md#triggerFlagImportJob) | **POST** /api/v2/integration-capabilities/flag-import/{projectKey}/{integrationKey}/{integrationId}/trigger | Trigger a single flag import run
 *FlagLinksBetaApi* | [**createFlagLink**](docs/FlagLinksBetaApi.md#createFlagLink) | **POST** /api/v2/flag-links/projects/{projectKey}/flags/{featureFlagKey} | Create flag link
 *FlagLinksBetaApi* | [**deleteFlagLink**](docs/FlagLinksBetaApi.md#deleteFlagLink) | **DELETE** /api/v2/flag-links/projects/{projectKey}/flags/{featureFlagKey}/{id} | Delete flag link
 *FlagLinksBetaApi* | [**getFlagLinks**](docs/FlagLinksBetaApi.md#getFlagLinks) | **GET** /api/v2/flag-links/projects/{projectKey}/flags/{featureFlagKey} | List flag links
@@ -679,20 +686,14 @@ Class | Method | HTTP request | Description
 *IntegrationDeliveryConfigurationsBetaApi* | [**getIntegrationDeliveryConfigurations**](docs/IntegrationDeliveryConfigurationsBetaApi.md#getIntegrationDeliveryConfigurations) | **GET** /api/v2/integration-capabilities/featureStore | List all delivery configurations
 *IntegrationDeliveryConfigurationsBetaApi* | [**patchIntegrationDeliveryConfiguration**](docs/IntegrationDeliveryConfigurationsBetaApi.md#patchIntegrationDeliveryConfiguration) | **PATCH** /api/v2/integration-capabilities/featureStore/{projectKey}/{environmentKey}/{integrationKey}/{id} | Update delivery configuration
 *IntegrationDeliveryConfigurationsBetaApi* | [**validateIntegrationDeliveryConfiguration**](docs/IntegrationDeliveryConfigurationsBetaApi.md#validateIntegrationDeliveryConfiguration) | **POST** /api/v2/integration-capabilities/featureStore/{projectKey}/{environmentKey}/{integrationKey}/{id}/validate | Validate delivery configuration
-*IntegrationsBetaApi* | [**createBigSegmentStoreIntegration**](docs/IntegrationsBetaApi.md#createBigSegmentStoreIntegration) | **POST** /api/v2/integration-capabilities/big-segment-store/{projectKey}/{environmentKey}/{integrationKey} | Create big segment store integration
-*IntegrationsBetaApi* | [**createFlagImportConfiguration**](docs/IntegrationsBetaApi.md#createFlagImportConfiguration) | **POST** /api/v2/integration-capabilities/flag-import/{projectKey}/{integrationKey} | Create a flag import configuration
-*IntegrationsBetaApi* | [**deleteBigSegmentStoreIntegration**](docs/IntegrationsBetaApi.md#deleteBigSegmentStoreIntegration) | **DELETE** /api/v2/integration-capabilities/big-segment-store/{projectKey}/{environmentKey}/{integrationKey}/{integrationId} | Delete big segment store integration
-*IntegrationsBetaApi* | [**deleteFlagImportConfiguration**](docs/IntegrationsBetaApi.md#deleteFlagImportConfiguration) | **DELETE** /api/v2/integration-capabilities/flag-import/{projectKey}/{integrationKey}/{integrationId} | Delete a flag import configuration
-*IntegrationsBetaApi* | [**getBigSegmentStoreIntegration**](docs/IntegrationsBetaApi.md#getBigSegmentStoreIntegration) | **GET** /api/v2/integration-capabilities/big-segment-store/{projectKey}/{environmentKey}/{integrationKey}/{integrationId} | Get big segment store integration by ID
-*IntegrationsBetaApi* | [**getBigSegmentStoreIntegrations**](docs/IntegrationsBetaApi.md#getBigSegmentStoreIntegrations) | **GET** /api/v2/integration-capabilities/big-segment-store | List all big segment store integrations
-*IntegrationsBetaApi* | [**getFlagImportConfiguration**](docs/IntegrationsBetaApi.md#getFlagImportConfiguration) | **GET** /api/v2/integration-capabilities/flag-import/{projectKey}/{integrationKey}/{integrationId} | Get a single flag import configuration
-*IntegrationsBetaApi* | [**getFlagImportConfigurations**](docs/IntegrationsBetaApi.md#getFlagImportConfigurations) | **GET** /api/v2/integration-capabilities/flag-import | List all flag import configurations
-*IntegrationsBetaApi* | [**patchBigSegmentStoreIntegration**](docs/IntegrationsBetaApi.md#patchBigSegmentStoreIntegration) | **PATCH** /api/v2/integration-capabilities/big-segment-store/{projectKey}/{environmentKey}/{integrationKey}/{integrationId} | Update big segment store integration
-*IntegrationsBetaApi* | [**patchFlagImportConfiguration**](docs/IntegrationsBetaApi.md#patchFlagImportConfiguration) | **PATCH** /api/v2/integration-capabilities/flag-import/{projectKey}/{integrationKey}/{integrationId} | Update a flag import configuration
-*IntegrationsBetaApi* | [**triggerFlagImportJob**](docs/IntegrationsBetaApi.md#triggerFlagImportJob) | **POST** /api/v2/integration-capabilities/flag-import/{projectKey}/{integrationKey}/{integrationId}/trigger | Trigger a single flag import run
-*LayersBetaApi* | [**createLayer**](docs/LayersBetaApi.md#createLayer) | **POST** /api/v2/projects/{projectKey}/layers | Create layer
-*LayersBetaApi* | [**getLayers**](docs/LayersBetaApi.md#getLayers) | **GET** /api/v2/projects/{projectKey}/layers | Get layers
-*LayersBetaApi* | [**updateLayer**](docs/LayersBetaApi.md#updateLayer) | **PATCH** /api/v2/projects/{projectKey}/layers/{layerKey} | Update layer
+*IntegrationsBetaApi* | [**createIntegrationConfiguration**](docs/IntegrationsBetaApi.md#createIntegrationConfiguration) | **POST** /api/v2/integration-configurations/keys/{integrationKey} | Create integration configuration
+*IntegrationsBetaApi* | [**deleteIntegrationConfiguration**](docs/IntegrationsBetaApi.md#deleteIntegrationConfiguration) | **DELETE** /api/v2/integration-configurations/{integrationConfigurationId} | Delete integration configuration
+*IntegrationsBetaApi* | [**getAllIntegrationConfigurations**](docs/IntegrationsBetaApi.md#getAllIntegrationConfigurations) | **GET** /api/v2/integration-configurations/keys/{integrationKey} | Get all configurations for the integration
+*IntegrationsBetaApi* | [**getIntegrationConfiguration**](docs/IntegrationsBetaApi.md#getIntegrationConfiguration) | **GET** /api/v2/integration-configurations/{integrationConfigurationId} | Get an integration configuration
+*IntegrationsBetaApi* | [**updateIntegrationConfiguration**](docs/IntegrationsBetaApi.md#updateIntegrationConfiguration) | **PATCH** /api/v2/integration-configurations/{integrationConfigurationId} | Update integration configuration
+*LayersApi* | [**createLayer**](docs/LayersApi.md#createLayer) | **POST** /api/v2/projects/{projectKey}/layers | Create layer
+*LayersApi* | [**getLayers**](docs/LayersApi.md#getLayers) | **GET** /api/v2/projects/{projectKey}/layers | Get layers
+*LayersApi* | [**updateLayer**](docs/LayersApi.md#updateLayer) | **PATCH** /api/v2/projects/{projectKey}/layers/{layerKey} | Update layer
 *MetricsApi* | [**deleteMetric**](docs/MetricsApi.md#deleteMetric) | **DELETE** /api/v2/metrics/{projectKey}/{metricKey} | Delete metric
 *MetricsApi* | [**getMetric**](docs/MetricsApi.md#getMetric) | **GET** /api/v2/metrics/{projectKey}/{metricKey} | Get metric
 *MetricsApi* | [**getMetrics**](docs/MetricsApi.md#getMetrics) | **GET** /api/v2/metrics/{projectKey} | List metrics
@@ -713,6 +714,11 @@ Class | Method | HTTP request | Description
 *OtherApi* | [**getOpenapiSpec**](docs/OtherApi.md#getOpenapiSpec) | **GET** /api/v2/openapi.json | Gets the OpenAPI spec in json
 *OtherApi* | [**getRoot**](docs/OtherApi.md#getRoot) | **GET** /api/v2 | Root resource
 *OtherApi* | [**getVersions**](docs/OtherApi.md#getVersions) | **GET** /api/v2/versions | Get version information
+*PersistentStoreIntegrationsBetaApi* | [**createBigSegmentStoreIntegration**](docs/PersistentStoreIntegrationsBetaApi.md#createBigSegmentStoreIntegration) | **POST** /api/v2/integration-capabilities/big-segment-store/{projectKey}/{environmentKey}/{integrationKey} | Create big segment store integration
+*PersistentStoreIntegrationsBetaApi* | [**deleteBigSegmentStoreIntegration**](docs/PersistentStoreIntegrationsBetaApi.md#deleteBigSegmentStoreIntegration) | **DELETE** /api/v2/integration-capabilities/big-segment-store/{projectKey}/{environmentKey}/{integrationKey}/{integrationId} | Delete big segment store integration
+*PersistentStoreIntegrationsBetaApi* | [**getBigSegmentStoreIntegration**](docs/PersistentStoreIntegrationsBetaApi.md#getBigSegmentStoreIntegration) | **GET** /api/v2/integration-capabilities/big-segment-store/{projectKey}/{environmentKey}/{integrationKey}/{integrationId} | Get big segment store integration by ID
+*PersistentStoreIntegrationsBetaApi* | [**getBigSegmentStoreIntegrations**](docs/PersistentStoreIntegrationsBetaApi.md#getBigSegmentStoreIntegrations) | **GET** /api/v2/integration-capabilities/big-segment-store | List all big segment store integrations
+*PersistentStoreIntegrationsBetaApi* | [**patchBigSegmentStoreIntegration**](docs/PersistentStoreIntegrationsBetaApi.md#patchBigSegmentStoreIntegration) | **PATCH** /api/v2/integration-capabilities/big-segment-store/{projectKey}/{environmentKey}/{integrationKey}/{integrationId} | Update big segment store integration
 *ProjectsApi* | [**deleteProject**](docs/ProjectsApi.md#deleteProject) | **DELETE** /api/v2/projects/{projectKey} | Delete project
 *ProjectsApi* | [**getFlagDefaultsByProject**](docs/ProjectsApi.md#getFlagDefaultsByProject) | **GET** /api/v2/projects/{projectKey}/flag-defaults | Get flag defaults for project
 *ProjectsApi* | [**getProject**](docs/ProjectsApi.md#getProject) | **GET** /api/v2/projects/{projectKey} | Get project
@@ -731,8 +737,8 @@ Class | Method | HTTP request | Description
 *ReleasePipelinesBetaApi* | [**getAllReleasePipelines**](docs/ReleasePipelinesBetaApi.md#getAllReleasePipelines) | **GET** /api/v2/projects/{projectKey}/release-pipelines | Get all release pipelines
 *ReleasePipelinesBetaApi* | [**getAllReleaseProgressionsForReleasePipeline**](docs/ReleasePipelinesBetaApi.md#getAllReleaseProgressionsForReleasePipeline) | **GET** /api/v2/projects/{projectKey}/release-pipelines/{pipelineKey}/releases | Get release progressions for release pipeline
 *ReleasePipelinesBetaApi* | [**getReleasePipelineByKey**](docs/ReleasePipelinesBetaApi.md#getReleasePipelineByKey) | **GET** /api/v2/projects/{projectKey}/release-pipelines/{pipelineKey} | Get release pipeline by key
-*ReleasePipelinesBetaApi* | [**patchReleasePipeline**](docs/ReleasePipelinesBetaApi.md#patchReleasePipeline) | **PATCH** /api/v2/projects/{projectKey}/release-pipelines/{pipelineKey} | Update a release pipeline
 *ReleasePipelinesBetaApi* | [**postReleasePipeline**](docs/ReleasePipelinesBetaApi.md#postReleasePipeline) | **POST** /api/v2/projects/{projectKey}/release-pipelines | Create a release pipeline
+*ReleasePipelinesBetaApi* | [**putReleasePipeline**](docs/ReleasePipelinesBetaApi.md#putReleasePipeline) | **PUT** /api/v2/projects/{projectKey}/release-pipelines/{pipelineKey} | Update a release pipeline
 *ReleasesBetaApi* | [**createReleaseForFlag**](docs/ReleasesBetaApi.md#createReleaseForFlag) | **PUT** /api/v2/projects/{projectKey}/flags/{flagKey}/release | Create a new release for flag
 *ReleasesBetaApi* | [**deleteReleaseByFlagKey**](docs/ReleasesBetaApi.md#deleteReleaseByFlagKey) | **DELETE** /api/v2/flags/{projectKey}/{flagKey}/release | Delete a release for flag
 *ReleasesBetaApi* | [**getReleaseByFlagKey**](docs/ReleasesBetaApi.md#getReleaseByFlagKey) | **GET** /api/v2/flags/{projectKey}/{flagKey}/release | Get release for flag
@@ -812,12 +818,15 @@ Class | Method | HTTP request | Description
  - [ApplicationVersionsCollectionRep](docs/ApplicationVersionsCollectionRep.md)
  - [ApprovalRequestResponse](docs/ApprovalRequestResponse.md)
  - [ApprovalSettings](docs/ApprovalSettings.md)
+ - [ApprovalsCapabilityConfig](docs/ApprovalsCapabilityConfig.md)
  - [Audience](docs/Audience.md)
  - [AudienceConfiguration](docs/AudienceConfiguration.md)
  - [AudiencePost](docs/AudiencePost.md)
  - [AuditLogEntryListingRep](docs/AuditLogEntryListingRep.md)
  - [AuditLogEntryListingRepCollection](docs/AuditLogEntryListingRepCollection.md)
  - [AuditLogEntryRep](docs/AuditLogEntryRep.md)
+ - [AuditLogEventsHookCapabilityConfigPost](docs/AuditLogEventsHookCapabilityConfigPost.md)
+ - [AuditLogEventsHookCapabilityConfigRep](docs/AuditLogEventsHookCapabilityConfigRep.md)
  - [AuthorizedAppDataRep](docs/AuthorizedAppDataRep.md)
  - [BayesianBetaBinomialStatsRep](docs/BayesianBetaBinomialStatsRep.md)
  - [BayesianNormalStatsRep](docs/BayesianNormalStatsRep.md)
@@ -834,6 +843,8 @@ Class | Method | HTTP request | Description
  - [BulkEditMembersRep](docs/BulkEditMembersRep.md)
  - [BulkEditTeamsRep](docs/BulkEditTeamsRep.md)
  - [CallerIdentityRep](docs/CallerIdentityRep.md)
+ - [CapabilityConfigPost](docs/CapabilityConfigPost.md)
+ - [CapabilityConfigRep](docs/CapabilityConfigRep.md)
  - [Clause](docs/Clause.md)
  - [Client](docs/Client.md)
  - [ClientCollection](docs/ClientCollection.md)
@@ -898,6 +909,9 @@ Class | Method | HTTP request | Description
  - [DestinationPost](docs/DestinationPost.md)
  - [Destinations](docs/Destinations.md)
  - [Distribution](docs/Distribution.md)
+ - [DynamicOptions](docs/DynamicOptions.md)
+ - [DynamicOptionsParser](docs/DynamicOptionsParser.md)
+ - [Endpoint](docs/Endpoint.md)
  - [Environment](docs/Environment.md)
  - [EnvironmentPost](docs/EnvironmentPost.md)
  - [EnvironmentSummary](docs/EnvironmentSummary.md)
@@ -909,6 +923,7 @@ Class | Method | HTTP request | Description
  - [ExpandableApprovalRequestResponse](docs/ExpandableApprovalRequestResponse.md)
  - [ExpandableApprovalRequestsResponse](docs/ExpandableApprovalRequestsResponse.md)
  - [ExpandedFlagRep](docs/ExpandedFlagRep.md)
+ - [ExpandedResourceRep](docs/ExpandedResourceRep.md)
  - [Experiment](docs/Experiment.md)
  - [ExperimentAllocationRep](docs/ExperimentAllocationRep.md)
  - [ExperimentBayesianResultsRep](docs/ExperimentBayesianResultsRep.md)
@@ -986,6 +1001,9 @@ Class | Method | HTTP request | Description
  - [FollowFlagMember](docs/FollowFlagMember.md)
  - [FollowersPerFlag](docs/FollowersPerFlag.md)
  - [ForbiddenErrorRep](docs/ForbiddenErrorRep.md)
+ - [FormVariable](docs/FormVariable.md)
+ - [HMACSignature](docs/HMACSignature.md)
+ - [HeaderItems](docs/HeaderItems.md)
  - [HoldoutDetailRep](docs/HoldoutDetailRep.md)
  - [HoldoutPatchInput](docs/HoldoutPatchInput.md)
  - [HoldoutPostRequest](docs/HoldoutPostRequest.md)
@@ -1019,6 +1037,9 @@ Class | Method | HTTP request | Description
  - [InsightsRepositoryProjectMappings](docs/InsightsRepositoryProjectMappings.md)
  - [InstructionUserRequest](docs/InstructionUserRequest.md)
  - [Integration](docs/Integration.md)
+ - [IntegrationConfigurationCollectionRep](docs/IntegrationConfigurationCollectionRep.md)
+ - [IntegrationConfigurationPost](docs/IntegrationConfigurationPost.md)
+ - [IntegrationConfigurationsRep](docs/IntegrationConfigurationsRep.md)
  - [IntegrationDeliveryConfiguration](docs/IntegrationDeliveryConfiguration.md)
  - [IntegrationDeliveryConfigurationCollection](docs/IntegrationDeliveryConfigurationCollection.md)
  - [IntegrationDeliveryConfigurationCollectionLinks](docs/IntegrationDeliveryConfigurationCollectionLinks.md)
@@ -1083,6 +1104,7 @@ Class | Method | HTTP request | Description
  - [NewMemberForm](docs/NewMemberForm.md)
  - [NotFoundErrorRep](docs/NotFoundErrorRep.md)
  - [OauthClientPost](docs/OauthClientPost.md)
+ - [OptionsArray](docs/OptionsArray.md)
  - [ParameterDefault](docs/ParameterDefault.md)
  - [ParameterRep](docs/ParameterRep.md)
  - [ParentResourceRep](docs/ParentResourceRep.md)
@@ -1097,7 +1119,6 @@ Class | Method | HTTP request | Description
  - [PatchWithComment](docs/PatchWithComment.md)
  - [PermissionGrantInput](docs/PermissionGrantInput.md)
  - [Phase](docs/Phase.md)
- - [PhaseConfiguration](docs/PhaseConfiguration.md)
  - [PhaseInfo](docs/PhaseInfo.md)
  - [PostApprovalRequestApplyRequest](docs/PostApprovalRequestApplyRequest.md)
  - [PostApprovalRequestReviewRequest](docs/PostApprovalRequestReviewRequest.md)
@@ -1205,6 +1226,7 @@ Class | Method | HTTP request | Description
  - [TriggerWorkflowRep](docs/TriggerWorkflowRep.md)
  - [UnauthorizedErrorRep](docs/UnauthorizedErrorRep.md)
  - [UpdatePhaseStatusInput](docs/UpdatePhaseStatusInput.md)
+ - [UpdateReleasePipelineInput](docs/UpdateReleasePipelineInput.md)
  - [UpsertContextKindPayload](docs/UpsertContextKindPayload.md)
  - [UpsertFlagDefaultsPayload](docs/UpsertFlagDefaultsPayload.md)
  - [UpsertPayloadRep](docs/UpsertPayloadRep.md)
