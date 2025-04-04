@@ -16,6 +16,7 @@
 |**primarymetrickey** | **String** | The key of the primary metric for this holdout |  [optional] |
 |**metrics** | [**List&lt;MetricInput&gt;**](MetricInput.md) | Details on the metrics for this experiment |  [optional] |
 |**prerequisiteflagkey** | **String** | The key of the flag that the holdout is dependent on |  [optional] |
+|**maintainerId** | **String** | Maintainer id |  [optional] |
 
 
 

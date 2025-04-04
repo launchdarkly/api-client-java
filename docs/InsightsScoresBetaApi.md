@@ -242,7 +242,7 @@ public class Example {
 
 List insight groups
 
-List groups for which you are collecting insights  ### Expanding the insight groups collection response  LaunchDarkly supports expanding the insight groups collection response to include additional fields.  To expand the response, append the &#x60;expand&#x60; query parameter and include the following:  * &#x60;scores&#x60; includes details on all of the scores used in the engineering insights metrics views for each group * &#x60;environment&#x60; includes details on each environment associated with each group * &#x60;metadata&#x60; includes counts of the number of insight groups with particular indicators, such as \&quot;execellent,\&quot; \&quot;good,\&quot; \&quot;fair,\&quot; and so on.  For example, use &#x60;?expand&#x3D;scores&#x60; to include the &#x60;scores&#x60; field in the response. By default, this field is **not** included in the response. 
+List groups for which you are collecting insights  ### Expanding the insight groups collection response  LaunchDarkly supports expanding the insight groups collection response to include additional fields.  To expand the response, append the &#x60;expand&#x60; query parameter and include the following:  * &#x60;scores&#x60; includes details on all of the scores used in the engineering insights metrics views for each group * &#x60;environment&#x60; includes details on each environment associated with each group * &#x60;metadata&#x60; includes counts of the number of insight groups with particular indicators, such as \&quot;excellent,\&quot; \&quot;good,\&quot; \&quot;fair,\&quot; and so on.  For example, use &#x60;?expand&#x3D;scores&#x60; to include the &#x60;scores&#x60; field in the response. By default, this field is **not** included in the response. 
 
 ### Example
 ```java
@@ -400,7 +400,7 @@ public class Example {
 
 Patch insight group
 
-Update an insight group. Updating an insight group uses a [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) representation of the desired changes. To learn more, read [Updates](/#section/Overview/Updates).
+Update an insight group. Updating an insight group uses a [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) representation of the desired changes. To learn more, read [Updates](https://launchdarkly.com/docs/api#updates).
 
 ### Example
 ```java

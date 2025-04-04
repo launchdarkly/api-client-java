@@ -17,7 +17,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 Create integration configuration
 
-Create a new integration configuration. (Excludes [persistent store](/tag/Persistent-store-integrations-(beta)) and [flag import configurations](/tag/Flag-import-configurations-(beta)).)
+Create a new integration configuration. (Excludes [persistent store](https://launchdarkly.com/docs/api/persistent-store-integrations-beta) and [flag import configurations](https://launchdarkly.com/docs/api/flag-import-configurations-beta).)
 
 ### Example
 ```java
@@ -94,7 +94,7 @@ public class Example {
 
 Delete integration configuration
 
-Delete an integration configuration by ID. (Excludes [persistent store](/tag/Persistent-store-integrations-(beta)) and [flag import configurations](/tag/Flag-import-configurations-(beta)).)
+Delete an integration configuration by ID. (Excludes [persistent store](https://launchdarkly.com/docs/api/persistent-store-integrations-beta) and [flag import configurations](https://launchdarkly.com/docs/api/flag-import-configurations-beta).)
 
 ### Example
 ```java
@@ -167,7 +167,7 @@ null (empty response body)
 
 Get all configurations for the integration
 
-Get all integration configurations with the specified integration key. (Excludes [persistent store](/tag/Persistent-store-integrations-(beta)) and [flag import configurations](/tag/Flag-import-configurations-(beta))).
+Get all integration configurations with the specified integration key. (Excludes [persistent store](https://launchdarkly.com/docs/api/persistent-store-integrations-beta) and [flag import configurations](https://launchdarkly.com/docs/api/flag-import-configurations-beta).).
 
 ### Example
 ```java
@@ -241,7 +241,7 @@ public class Example {
 
 Get an integration configuration
 
-Get integration configuration with the specified ID. (Excludes [persistent store](/tag/Persistent-store-integrations-(beta)) and [flag import configurations](/tag/Flag-import-configurations-(beta)).)
+Get integration configuration with the specified ID. (Excludes [persistent store](https://launchdarkly.com/docs/api/persistent-store-integrations-beta) and [flag import configurations](https://launchdarkly.com/docs/api/flag-import-configurations-beta).)
 
 ### Example
 ```java
@@ -315,7 +315,7 @@ public class Example {
 
 Update integration configuration
 
-Update an integration configuration. Updating an integration configuration uses a [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) representation of the desired changes. To learn more, read [Updates](/#section/Overview/Updates).
+Update an integration configuration. Updating an integration configuration uses a [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) representation of the desired changes. To learn more, read [Updates](https://launchdarkly.com/docs/api#updates).
 
 ### Example
 ```java

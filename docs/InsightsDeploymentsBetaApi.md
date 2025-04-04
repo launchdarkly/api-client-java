@@ -89,7 +89,7 @@ null (empty response body)
 
 Get deployment
 
-Get a deployment by ID.  The deployment ID is returned as part of the [List deployments](#operation/getDeployments) response. It is the &#x60;id&#x60; field of each element in the &#x60;items&#x60; array.  ### Expanding the deployment response  LaunchDarkly supports expanding the deployment response to include additional fields.  To expand the response, append the &#x60;expand&#x60; query parameter and include the following:  * &#x60;pullRequests&#x60; includes details on all of the pull requests associated with each deployment * &#x60;flagReferences&#x60; includes details on all of the references to flags in each deployment  For example, use &#x60;?expand&#x3D;pullRequests&#x60; to include the &#x60;pullRequests&#x60; field in the response. By default, this field is **not** included in the response. 
+Get a deployment by ID.  The deployment ID is returned as part of the [List deployments](https://launchdarkly.com/docs/api/insights-deployments-beta/get-deployments) response. It is the &#x60;id&#x60; field of each element in the &#x60;items&#x60; array.  ### Expanding the deployment response  LaunchDarkly supports expanding the deployment response to include additional fields.  To expand the response, append the &#x60;expand&#x60; query parameter and include the following:  * &#x60;pullRequests&#x60; includes details on all of the pull requests associated with each deployment * &#x60;flagReferences&#x60; includes details on all of the references to flags in each deployment  For example, use &#x60;?expand&#x3D;pullRequests&#x60; to include the &#x60;pullRequests&#x60; field in the response. By default, this field is **not** included in the response. 
 
 ### Example
 ```java
@@ -259,7 +259,7 @@ public class Example {
 
 Update deployment
 
-Update a deployment by ID. Updating a deployment uses a [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) representation of the desired changes. To learn more, read [Updates](/#section/Overview/Updates).&lt;br/&gt;&lt;br/&gt;The deployment ID is returned as part of the [List deployments](#operation/getDeployments) response. It is the &#x60;id&#x60; field of each element in the &#x60;items&#x60; array.
+Update a deployment by ID. Updating a deployment uses a [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) representation of the desired changes. To learn more, read [Updates](https://launchdarkly.com/docs/api#updates).&lt;br/&gt;&lt;br/&gt;The deployment ID is returned as part of the [List deployments](https://launchdarkly.com/docs/api/insights-deployments-beta/get-deployments) response. It is the &#x60;id&#x60; field of each element in the &#x60;items&#x60; array.
 
 ### Example
 ```java

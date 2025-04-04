@@ -17,6 +17,7 @@
 |**serviceConfig** | **Map&lt;String, Object&gt;** |  |  |
 |**requiredApprovalTags** | **List&lt;String&gt;** | Require approval only on flags with the provided tags. Otherwise all flags will require approval. |  |
 |**serviceKindConfigurationId** | **String** | Optional field for integration configuration ID of a custom approval integration. This is an Enterprise-only feature. |  [optional] |
+|**resourceKind** | **String** | The kind of resource for which the approval settings apply, for example, flag or segment |  [optional] |
 
 
 

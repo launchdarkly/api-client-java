@@ -23,6 +23,7 @@
 | MPARTICLE | &quot;mparticle&quot; |
 | SEGMENT | &quot;segment&quot; |
 | AZURE_EVENT_HUBS | &quot;azure-event-hubs&quot; |
+| SNOWFLAKE_V2 | &quot;snowflake-v2&quot; |
 
 
 

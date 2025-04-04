@@ -33,7 +33,7 @@
 |**defaults** | [**Defaults**](Defaults.md) |  |  [optional] |
 |**purpose** | **String** |  |  [optional] |
 |**migrationSettings** | [**FlagMigrationSettingsRep**](FlagMigrationSettingsRep.md) |  |  [optional] |
-|**environments** | [**Map&lt;String, FeatureFlagConfig&gt;**](FeatureFlagConfig.md) | Details on the environments for this flag. Only returned if the request is filtered by environment, using the &lt;code&gt;filterEnv&lt;/code&gt; query parameter. |  |
+|**environments** | [**Map&lt;String, FeatureFlagConfig&gt;**](FeatureFlagConfig.md) | Details on the environments for this flag. Only returned if the request is filtered by environment, using the &lt;code&gt;filterEnv&lt;/code&gt; query parameter. |  [optional] |
 
 
 

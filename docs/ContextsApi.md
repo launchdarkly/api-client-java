@@ -99,7 +99,7 @@ null (empty response body)
 
 Evaluate flags for context instance
 
-Evaluate flags for a context instance, for example, to determine the expected flag variation. **Do not use this API instead of an SDK.** The LaunchDarkly SDKs are specialized for the tasks of evaluating feature flags in your application at scale and generating analytics events based on those evaluations. This API is not designed for that use case. Any evaluations you perform with this API will not be reflected in features such as flag statuses and flag insights. Context instances evaluated by this API will not appear in the Contexts list. To learn more, read [Comparing LaunchDarkly&#39;s SDKs and REST API](https://docs.launchdarkly.com/guide/api/comparing-sdk-rest-api).  ### Filtering   LaunchDarkly supports the &#x60;filter&#x60; query param for filtering, with the following fields:  - &#x60;query&#x60; filters for a string that matches against the flags&#39; keys and names. It is not case sensitive. For example: &#x60;filter&#x3D;query equals dark-mode&#x60;. - &#x60;tags&#x60; filters the list to flags that have all of the tags in the list. For example: &#x60;filter&#x3D;tags contains [\&quot;beta\&quot;,\&quot;q1\&quot;]&#x60;.  You can also apply multiple filters at once. For example, setting &#x60;filter&#x3D;query equals dark-mode, tags contains [\&quot;beta\&quot;,\&quot;q1\&quot;]&#x60; matches flags which match the key or name &#x60;dark-mode&#x60; and are tagged &#x60;beta&#x60; and &#x60;q1&#x60;. 
+Evaluate flags for a context instance, for example, to determine the expected flag variation. **Do not use this API instead of an SDK.** The LaunchDarkly SDKs are specialized for the tasks of evaluating feature flags in your application at scale and generating analytics events based on those evaluations. This API is not designed for that use case. Any evaluations you perform with this API will not be reflected in features such as flag statuses and flag insights. Context instances evaluated by this API will not appear in the Contexts list. To learn more, read [Comparing LaunchDarkly&#39;s SDKs and REST API](https://launchdarkly.com/docs/guides/api/comparing-sdk-rest-api).  ### Filtering  LaunchDarkly supports the &#x60;filter&#x60; query param for filtering, with the following fields:  - &#x60;query&#x60; filters for a string that matches against the flags&#39; keys and names. It is not case sensitive. For example: &#x60;filter&#x3D;query equals dark-mode&#x60;. - &#x60;tags&#x60; filters the list to flags that have all of the tags in the list. For example: &#x60;filter&#x3D;tags contains [\&quot;beta\&quot;,\&quot;q1\&quot;]&#x60;.  You can also apply multiple filters at once. For example, setting &#x60;filter&#x3D;query equals dark-mode, tags contains [\&quot;beta\&quot;,\&quot;q1\&quot;]&#x60; matches flags which match the key or name &#x60;dark-mode&#x60; and are tagged &#x60;beta&#x60; and &#x60;q1&#x60;. 
 
 ### Example
 ```java
@@ -211,7 +211,7 @@ public class Example {
     ContextsApi apiInstance = new ContextsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
     String environmentKey = "environmentKey_example"; // String | The environment key
-    String filter = "filter_example"; // String | A comma-separated list of context filters. This endpoint only accepts `kind` filters, with the `equals` operator, and `name` filters, with the `startsWith` operator. To learn more about the filter syntax, read [Filtering contexts and context instances](/tag/Contexts#filtering-contexts-and-context-instances).
+    String filter = "filter_example"; // String | A comma-separated list of context filters. This endpoint only accepts `kind` filters, with the `equals` operator, and `name` filters, with the `startsWith` operator. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances).
     Long limit = 56L; // Long | Specifies the maximum number of items in the collection to return (max: 100, default: 100)
     try {
       ContextAttributeNamesCollection result = apiInstance.getContextAttributeNames(projectKey, environmentKey, filter, limit);
@@ -233,7 +233,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **projectKey** | **String**| The project key | |
 | **environmentKey** | **String**| The environment key | |
-| **filter** | **String**| A comma-separated list of context filters. This endpoint only accepts &#x60;kind&#x60; filters, with the &#x60;equals&#x60; operator, and &#x60;name&#x60; filters, with the &#x60;startsWith&#x60; operator. To learn more about the filter syntax, read [Filtering contexts and context instances](/tag/Contexts#filtering-contexts-and-context-instances). | [optional] |
+| **filter** | **String**| A comma-separated list of context filters. This endpoint only accepts &#x60;kind&#x60; filters, with the &#x60;equals&#x60; operator, and &#x60;name&#x60; filters, with the &#x60;startsWith&#x60; operator. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). | [optional] |
 | **limit** | **Long**| Specifies the maximum number of items in the collection to return (max: 100, default: 100) | [optional] |
 
 ### Return type
@@ -291,7 +291,7 @@ public class Example {
     String projectKey = "projectKey_example"; // String | The project key
     String environmentKey = "environmentKey_example"; // String | The environment key
     String attributeName = "attributeName_example"; // String | The attribute name
-    String filter = "filter_example"; // String | A comma-separated list of context filters. This endpoint only accepts `kind` filters, with the `equals` operator, and `value` filters, with the `startsWith` operator. To learn more about the filter syntax, read [Filtering contexts and context instances](/tag/Contexts#filtering-contexts-and-context-instances).
+    String filter = "filter_example"; // String | A comma-separated list of context filters. This endpoint only accepts `kind` filters, with the `equals` operator, and `value` filters, with the `startsWith` operator. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances).
     Long limit = 56L; // Long | Specifies the maximum number of items in the collection to return (max: 100, default: 50)
     try {
       ContextAttributeValuesCollection result = apiInstance.getContextAttributeValues(projectKey, environmentKey, attributeName, filter, limit);
@@ -314,7 +314,7 @@ public class Example {
 | **projectKey** | **String**| The project key | |
 | **environmentKey** | **String**| The environment key | |
 | **attributeName** | **String**| The attribute name | |
-| **filter** | **String**| A comma-separated list of context filters. This endpoint only accepts &#x60;kind&#x60; filters, with the &#x60;equals&#x60; operator, and &#x60;value&#x60; filters, with the &#x60;startsWith&#x60; operator. To learn more about the filter syntax, read [Filtering contexts and context instances](/tag/Contexts#filtering-contexts-and-context-instances). | [optional] |
+| **filter** | **String**| A comma-separated list of context filters. This endpoint only accepts &#x60;kind&#x60; filters, with the &#x60;equals&#x60; operator, and &#x60;value&#x60; filters, with the &#x60;startsWith&#x60; operator. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). | [optional] |
 | **limit** | **Long**| Specifies the maximum number of items in the collection to return (max: 100, default: 50) | [optional] |
 
 ### Return type
@@ -375,7 +375,7 @@ public class Example {
     Long limit = 56L; // Long | Specifies the maximum number of context instances to return (max: 50, default: 20)
     String continuationToken = "continuationToken_example"; // String | Limits results to context instances with sort values after the value specified. You can use this for pagination, however, we recommend using the `next` link we provide instead.
     String sort = "sort_example"; // String | Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying `ts` for this value, or descending order by specifying `-ts`.
-    String filter = "filter_example"; // String | A comma-separated list of context filters. This endpoint only accepts an `applicationId` filter. To learn more about the filter syntax, read [Filtering contexts and context instances](/tag/Contexts#filtering-contexts-and-context-instances).
+    String filter = "filter_example"; // String | A comma-separated list of context filters. This endpoint only accepts an `applicationId` filter. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances).
     Boolean includeTotalCount = true; // Boolean | Specifies whether to include or omit the total count of matching context instances. Defaults to true.
     try {
       ContextInstances result = apiInstance.getContextInstances(projectKey, environmentKey, id, limit, continuationToken, sort, filter, includeTotalCount);
@@ -401,7 +401,7 @@ public class Example {
 | **limit** | **Long**| Specifies the maximum number of context instances to return (max: 50, default: 20) | [optional] |
 | **continuationToken** | **String**| Limits results to context instances with sort values after the value specified. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. | [optional] |
 | **sort** | **String**| Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying &#x60;ts&#x60; for this value, or descending order by specifying &#x60;-ts&#x60;. | [optional] |
-| **filter** | **String**| A comma-separated list of context filters. This endpoint only accepts an &#x60;applicationId&#x60; filter. To learn more about the filter syntax, read [Filtering contexts and context instances](/tag/Contexts#filtering-contexts-and-context-instances). | [optional] |
+| **filter** | **String**| A comma-separated list of context filters. This endpoint only accepts an &#x60;applicationId&#x60; filter. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). | [optional] |
 | **includeTotalCount** | **Boolean**| Specifies whether to include or omit the total count of matching context instances. Defaults to true. | [optional] |
 
 ### Return type
@@ -535,7 +535,7 @@ public class Example {
     Long limit = 56L; // Long | Specifies the maximum number of items in the collection to return (max: 50, default: 20)
     String continuationToken = "continuationToken_example"; // String | Limits results to contexts with sort values after the value specified. You can use this for pagination, however, we recommend using the `next` link we provide instead.
     String sort = "sort_example"; // String | Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying `ts` for this value, or descending order by specifying `-ts`.
-    String filter = "filter_example"; // String | A comma-separated list of context filters. This endpoint only accepts an `applicationId` filter. To learn more about the filter syntax, read [Filtering contexts and context instances](/tag/Contexts#filtering-contexts-and-context-instances).
+    String filter = "filter_example"; // String | A comma-separated list of context filters. This endpoint only accepts an `applicationId` filter. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances).
     Boolean includeTotalCount = true; // Boolean | Specifies whether to include or omit the total count of matching contexts. Defaults to true.
     try {
       Contexts result = apiInstance.getContexts(projectKey, environmentKey, kind, key, limit, continuationToken, sort, filter, includeTotalCount);
@@ -562,7 +562,7 @@ public class Example {
 | **limit** | **Long**| Specifies the maximum number of items in the collection to return (max: 50, default: 20) | [optional] |
 | **continuationToken** | **String**| Limits results to contexts with sort values after the value specified. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. | [optional] |
 | **sort** | **String**| Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying &#x60;ts&#x60; for this value, or descending order by specifying &#x60;-ts&#x60;. | [optional] |
-| **filter** | **String**| A comma-separated list of context filters. This endpoint only accepts an &#x60;applicationId&#x60; filter. To learn more about the filter syntax, read [Filtering contexts and context instances](/tag/Contexts#filtering-contexts-and-context-instances). | [optional] |
+| **filter** | **String**| A comma-separated list of context filters. This endpoint only accepts an &#x60;applicationId&#x60; filter. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). | [optional] |
 | **includeTotalCount** | **Boolean**| Specifies whether to include or omit the total count of matching contexts. Defaults to true. | [optional] |
 
 ### Return type
@@ -670,7 +670,7 @@ public class Example {
 
 Search for context instances
 
- Search for context instances.  You can use either the query parameters or the request body parameters. If both are provided, there is an error.  To learn more about the filter syntax, read [Filtering contexts and context instances](/tag/Contexts#filtering-contexts-and-context-instances). To learn more about context instances, read [Context instances](https://docs.launchdarkly.com/home/observability/multi-contexts#context-instances). 
+ Search for context instances.  You can use either the query parameters or the request body parameters. If both are provided, there is an error.  To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). To learn more about context instances, read [Context instances](https://launchdarkly.com/docs/home/observability/multi-contexts#context-instances). 
 
 ### Example
 ```java
@@ -700,7 +700,7 @@ public class Example {
     Long limit = 56L; // Long | Specifies the maximum number of items in the collection to return (max: 50, default: 20)
     String continuationToken = "continuationToken_example"; // String | Limits results to context instances with sort values after the value specified. You can use this for pagination, however, we recommend using the `next` link we provide instead.
     String sort = "sort_example"; // String | Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying `ts` for this value, or descending order by specifying `-ts`.
-    String filter = "filter_example"; // String | A comma-separated list of context filters. This endpoint only accepts an `applicationId` filter. To learn more about the filter syntax, read [Filtering contexts and context instances](/tag/Contexts#filtering-contexts-and-context-instances).
+    String filter = "filter_example"; // String | A comma-separated list of context filters. This endpoint only accepts an `applicationId` filter. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances).
     Boolean includeTotalCount = true; // Boolean | Specifies whether to include or omit the total count of matching context instances. Defaults to true.
     try {
       ContextInstances result = apiInstance.searchContextInstances(projectKey, environmentKey, contextInstanceSearch, limit, continuationToken, sort, filter, includeTotalCount);
@@ -726,7 +726,7 @@ public class Example {
 | **limit** | **Long**| Specifies the maximum number of items in the collection to return (max: 50, default: 20) | [optional] |
 | **continuationToken** | **String**| Limits results to context instances with sort values after the value specified. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. | [optional] |
 | **sort** | **String**| Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying &#x60;ts&#x60; for this value, or descending order by specifying &#x60;-ts&#x60;. | [optional] |
-| **filter** | **String**| A comma-separated list of context filters. This endpoint only accepts an &#x60;applicationId&#x60; filter. To learn more about the filter syntax, read [Filtering contexts and context instances](/tag/Contexts#filtering-contexts-and-context-instances). | [optional] |
+| **filter** | **String**| A comma-separated list of context filters. This endpoint only accepts an &#x60;applicationId&#x60; filter. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). | [optional] |
 | **includeTotalCount** | **Boolean**| Specifies whether to include or omit the total count of matching context instances. Defaults to true. | [optional] |
 
 ### Return type
@@ -757,7 +757,7 @@ public class Example {
 
 Search for contexts
 
- Search for contexts.  You can use either the query parameters or the request body parameters. If both are provided, there is an error.  To learn more about the filter syntax, read [Filtering contexts and context instances](/tag/Contexts#filtering-contexts-and-context-instances). To learn more about contexts, read [Contexts and context kinds](https://docs.launchdarkly.com/home/observability/contexts#contexts-and-context-kinds). 
+ Search for contexts.  You can use either the query parameters or the request body parameters. If both are provided, there is an error.  To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). To learn more about contexts, read [Contexts and context kinds](https://launchdarkly.com/docs/home/observability/contexts#contexts-and-context-kinds). 
 
 ### Example
 ```java
@@ -787,7 +787,7 @@ public class Example {
     Long limit = 56L; // Long | Specifies the maximum number of items in the collection to return (max: 50, default: 20)
     String continuationToken = "continuationToken_example"; // String | Limits results to contexts with sort values after the value specified. You can use this for pagination, however, we recommend using the `next` link we provide instead.
     String sort = "sort_example"; // String | Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying `ts` for this value, or descending order by specifying `-ts`.
-    String filter = "filter_example"; // String | A comma-separated list of context filters. To learn more about the filter syntax, read [Filtering contexts and context instances](/tag/Contexts#filtering-contexts-and-context-instances).
+    String filter = "filter_example"; // String | A comma-separated list of context filters. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances).
     Boolean includeTotalCount = true; // Boolean | Specifies whether to include or omit the total count of matching contexts. Defaults to true.
     try {
       Contexts result = apiInstance.searchContexts(projectKey, environmentKey, contextSearch, limit, continuationToken, sort, filter, includeTotalCount);
@@ -813,7 +813,7 @@ public class Example {
 | **limit** | **Long**| Specifies the maximum number of items in the collection to return (max: 50, default: 20) | [optional] |
 | **continuationToken** | **String**| Limits results to contexts with sort values after the value specified. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. | [optional] |
 | **sort** | **String**| Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying &#x60;ts&#x60; for this value, or descending order by specifying &#x60;-ts&#x60;. | [optional] |
-| **filter** | **String**| A comma-separated list of context filters. To learn more about the filter syntax, read [Filtering contexts and context instances](/tag/Contexts#filtering-contexts-and-context-instances). | [optional] |
+| **filter** | **String**| A comma-separated list of context filters. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). | [optional] |
 | **includeTotalCount** | **Boolean**| Specifies whether to include or omit the total count of matching contexts. Defaults to true. | [optional] |
 
 ### Return type

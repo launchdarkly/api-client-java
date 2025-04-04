@@ -24,6 +24,7 @@
 |**maintainerId** | **String** | The ID of the member who maintains this metric |  [optional] |
 |**maintainer** | [**MemberSummary**](MemberSummary.md) |  |  [optional] |
 |**description** | **String** | Description of the metric |  [optional] |
+|**category** | **String** | The category of the metric |  [optional] |
 |**isNumeric** | **Boolean** | For custom metrics, whether to track numeric changes in value against a baseline (&lt;code&gt;true&lt;/code&gt;) or to track a conversion when an end user takes an action (&lt;code&gt;false&lt;/code&gt;). |  [optional] |
 |**successCriteria** | [**SuccessCriteriaEnum**](#SuccessCriteriaEnum) | For custom metrics, the success criteria |  [optional] |
 |**unit** | **String** | For numeric custom metrics, the unit of measure |  [optional] |

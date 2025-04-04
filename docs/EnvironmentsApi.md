@@ -93,7 +93,7 @@ null (empty response body)
 
 Get environment
 
-&gt; ### Approval settings &gt; &gt; The &#x60;approvalSettings&#x60; key is only returned when the Flag Approvals feature is enabled.  Get an environment given a project and key. 
+&gt; ### Approval settings &gt; &gt; The &#x60;approvalSettings&#x60; key is only returned when [approvals](https://launchdarkly.com/docs/home/releases/approvals) for flags or segments are enabled.  Get an environment given a project and key. 
 
 ### Example
 ```java
@@ -251,7 +251,7 @@ public class Example {
 
 Update environment
 
- Update an environment. Updating an environment uses a [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) representation of the desired changes. To learn more, read [Updates](/#section/Overview/Updates).  To update fields in the environment object that are arrays, set the &#x60;path&#x60; to the name of the field and then append &#x60;/&lt;array index&gt;&#x60;. Using &#x60;/0&#x60; appends to the beginning of the array.  ### Approval settings  This request only returns the &#x60;approvalSettings&#x60; key if the [flag approvals](https://docs.launchdarkly.com/home/releases/approvals/) feature is enabled.  Only the &#x60;canReviewOwnRequest&#x60;, &#x60;canApplyDeclinedChanges&#x60;, &#x60;minNumApprovals&#x60;, &#x60;required&#x60; and &#x60;requiredApprovalTagsfields&#x60; are editable.  If you try to patch the environment by setting both &#x60;required&#x60; and &#x60;requiredApprovalTags&#x60;, the request fails and an error appears. You can specify either required approvals for all flags in an environment or those with specific tags, but not both. 
+ Update an environment. Updating an environment uses a [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) representation of the desired changes. To learn more, read [Updates](https://launchdarkly.com/docs/api#updates).  To update fields in the environment object that are arrays, set the &#x60;path&#x60; to the name of the field and then append &#x60;/&lt;array index&gt;&#x60;. Using &#x60;/0&#x60; appends to the beginning of the array.  ### Approval settings  This request only returns the &#x60;approvalSettings&#x60; key if the [approvals](https://launchdarkly.com/docs/home/releases/approvals/) feature is enabled.  Only the &#x60;canReviewOwnRequest&#x60;, &#x60;canApplyDeclinedChanges&#x60;, &#x60;minNumApprovals&#x60;, &#x60;required&#x60; and &#x60;requiredApprovalTagsfields&#x60; are editable.  If you try to patch the environment by setting both &#x60;required&#x60; and &#x60;requiredApprovalTags&#x60;, the request fails and an error appears. You can specify either required approvals for all flags in an environment or those with specific tags, but not both. 
 
 ### Example
 ```java
@@ -329,7 +329,7 @@ public class Example {
 
 Create environment
 
-&gt; ### Approval settings &gt; &gt; The &#x60;approvalSettings&#x60; key is only returned when the [flag approvals](https://docs.launchdarkly.com/home/releases/approvals/) feature is enabled. &gt; &gt; You cannot update approval settings when creating new environments. Update approval settings with the [Update environment API](/tag/Environments#operation/patchEnvironment).  Create a new environment in a specified project with a given name, key, swatch color, and default TTL. 
+&gt; ### Approval settings &gt; &gt; The &#x60;approvalSettings&#x60; key is only returned when the [approvals](https://launchdarkly.com/docs/home/releases/approvals/) feature is enabled. &gt; &gt; You cannot update approval settings when creating new environments. Update approval settings with the [https://launchdarkly.com/docs/api/environments/patch-environment).  Create a new environment in a specified project with a given name, key, swatch color, and default TTL. 
 
 ### Example
 ```java
