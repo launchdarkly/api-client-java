@@ -47,7 +47,7 @@ import com.launchdarkly.api.JSON;
 /**
  * InstructionUserRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-04T17:38:47.617920Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-04T21:33:11.424117Z[Etc/UTC]")
 public class InstructionUserRequest {
   /**
    * The type of change to make to the removal date for this user from individual targeting for this flag.

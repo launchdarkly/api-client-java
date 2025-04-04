@@ -8,7 +8,7 @@ This client library is only compatible with the latest version of our REST API. 
 
 LaunchDarkly REST API
 - API version: 2.0
-  - Build date: 2025-04-04T17:38:47.617920Z[Etc/UTC]
+  - Build date: 2025-04-04T21:33:11.424117Z[Etc/UTC]
 
 This documentation describes LaunchDarkly's REST API.
 

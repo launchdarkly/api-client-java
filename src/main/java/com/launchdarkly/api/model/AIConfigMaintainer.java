@@ -59,7 +59,7 @@ import com.google.gson.JsonParseException;
 
 import com.launchdarkly.api.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-04T17:38:47.617920Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-04-04T21:33:11.424117Z[Etc/UTC]")
 public class AIConfigMaintainer extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(AIConfigMaintainer.class.getName());
 
