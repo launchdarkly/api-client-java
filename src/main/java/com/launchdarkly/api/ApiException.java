@@ -160,7 +160,8 @@ public class ApiException extends Exception {
      * @return The exception message
      */
     public String getMessage() {
+        final String headers = getResponseHeaders() == null ? "" : this.getResponseHeaders().toString();
         return String.format("Message: %s%nHTTP response code: %s%nHTTP response body: %s%nHTTP response headers: %s",
-                super.getMessage(), this.getCode(), this.getResponseBody(), this.getResponseHeaders().toString());
+                super.getMessage(), this.getCode(), this.getResponseBody(), headers);
     }
 }
