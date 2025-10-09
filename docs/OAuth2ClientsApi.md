@@ -11,7 +11,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**patchOAuthClient**](OAuth2ClientsApi.md#patchOAuthClient) | **PATCH** /api/v2/oauth/clients/{clientId} | Patch client by ID |
 
 
-<a name="createOAuth2Client"></a>
+<a id="createOAuth2Client"></a>
 # **createOAuth2Client**
 > Client createOAuth2Client(oauthClientPost)
 
@@ -83,7 +83,7 @@ public class Example {
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |
 
-<a name="deleteOAuthClient"></a>
+<a id="deleteOAuthClient"></a>
 # **deleteOAuthClient**
 > deleteOAuthClient(clientId)
 
@@ -155,7 +155,7 @@ null (empty response body)
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
 
-<a name="getOAuthClientById"></a>
+<a id="getOAuthClientById"></a>
 # **getOAuthClientById**
 > Client getOAuthClientById(clientId)
 
@@ -228,7 +228,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
 
-<a name="getOAuthClients"></a>
+<a id="getOAuthClients"></a>
 # **getOAuthClients**
 > ClientCollection getOAuthClients()
 
@@ -296,7 +296,7 @@ This endpoint does not need any parameter.
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |
 
-<a name="patchOAuthClient"></a>
+<a id="patchOAuthClient"></a>
 # **patchOAuthClient**
 > Client patchOAuthClient(clientId, patchOperation)
 

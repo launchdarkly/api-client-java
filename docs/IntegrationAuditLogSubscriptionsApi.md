@@ -11,7 +11,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**updateSubscription**](IntegrationAuditLogSubscriptionsApi.md#updateSubscription) | **PATCH** /api/v2/integrations/{integrationKey}/{id} | Update audit log subscription |
 
 
-<a name="createSubscription"></a>
+<a id="createSubscription"></a>
 # **createSubscription**
 > Integration createSubscription(integrationKey, subscriptionPost)
 
@@ -87,7 +87,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="deleteSubscription"></a>
+<a id="deleteSubscription"></a>
 # **deleteSubscription**
 > deleteSubscription(integrationKey, id)
 
@@ -161,7 +161,7 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getSubscriptionByID"></a>
+<a id="getSubscriptionByID"></a>
 # **getSubscriptionByID**
 > Integration getSubscriptionByID(integrationKey, id)
 
@@ -236,7 +236,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getSubscriptions"></a>
+<a id="getSubscriptions"></a>
 # **getSubscriptions**
 > Integrations getSubscriptions(integrationKey)
 
@@ -309,7 +309,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="updateSubscription"></a>
+<a id="updateSubscription"></a>
 # **updateSubscription**
 > Integration updateSubscription(integrationKey, id, patchOperation)
 

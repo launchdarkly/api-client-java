@@ -10,7 +10,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**updateAnnouncementPublic**](AnnouncementsApi.md#updateAnnouncementPublic) | **PATCH** /api/v2/announcements/{announcementId} | Update an announcement |
 
 
-<a name="createAnnouncementPublic"></a>
+<a id="createAnnouncementPublic"></a>
 # **createAnnouncementPublic**
 > AnnouncementResponse createAnnouncementPublic(createAnnouncementBody)
 
@@ -84,7 +84,7 @@ public class Example {
 | **409** | Conflict |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="deleteAnnouncementPublic"></a>
+<a id="deleteAnnouncementPublic"></a>
 # **deleteAnnouncementPublic**
 > deleteAnnouncementPublic(announcementId)
 
@@ -154,7 +154,7 @@ null (empty response body)
 | **404** | Not found |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="getAnnouncementsPublic"></a>
+<a id="getAnnouncementsPublic"></a>
 # **getAnnouncementsPublic**
 > GetAnnouncementsPublic200Response getAnnouncementsPublic(status, limit, offset)
 
@@ -232,7 +232,7 @@ public class Example {
 | **429** | Rate limit exceeded |  -  |
 | **500** | Internal server error |  -  |
 
-<a name="updateAnnouncementPublic"></a>
+<a id="updateAnnouncementPublic"></a>
 # **updateAnnouncementPublic**
 > AnnouncementResponse updateAnnouncementPublic(announcementId, announcementPatchOperation)
 

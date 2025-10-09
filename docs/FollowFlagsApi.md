@@ -10,7 +10,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**putFlagFollower**](FollowFlagsApi.md#putFlagFollower) | **PUT** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/followers/{memberId} | Add a member as a follower of a flag in a project and environment |
 
 
-<a name="deleteFlagFollower"></a>
+<a id="deleteFlagFollower"></a>
 # **deleteFlagFollower**
 > deleteFlagFollower(projectKey, featureFlagKey, environmentKey, memberId)
 
@@ -88,7 +88,7 @@ null (empty response body)
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
 
-<a name="getFlagFollowers"></a>
+<a id="getFlagFollowers"></a>
 # **getFlagFollowers**
 > FlagFollowersGetRep getFlagFollowers(projectKey, featureFlagKey, environmentKey)
 
@@ -165,7 +165,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
 
-<a name="getFollowersByProjEnv"></a>
+<a id="getFollowersByProjEnv"></a>
 # **getFollowersByProjEnv**
 > FlagFollowersByProjEnvGetRep getFollowersByProjEnv(projectKey, environmentKey)
 
@@ -240,7 +240,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
 
-<a name="putFlagFollower"></a>
+<a id="putFlagFollower"></a>
 # **putFlagFollower**
 > putFlagFollower(projectKey, featureFlagKey, environmentKey, memberId)
 

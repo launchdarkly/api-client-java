@@ -9,7 +9,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**postAuditLogEntries**](AuditLogApi.md#postAuditLogEntries) | **POST** /api/v2/auditlog | Search audit log entries |
 
 
-<a name="getAuditLogEntries"></a>
+<a id="getAuditLogEntries"></a>
 # **getAuditLogEntries**
 > AuditLogEntryListingRepCollection getAuditLogEntries(before, after, q, limit, spec)
 
@@ -90,13 +90,13 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getAuditLogEntry"></a>
+<a id="getAuditLogEntry"></a>
 # **getAuditLogEntry**
 > AuditLogEntryRep getAuditLogEntry(id)
 
 Get audit log entry
 
-Fetch a detailed audit log entry representation. The detailed representation includes several fields that are not present in the summary representation, including:  - &#x60;delta&#x60;: the JSON patch body that was used in the request to update the entity - &#x60;previousVersion&#x60;: a JSON representation of the previous version of the entity - &#x60;currentVersion&#x60;: a JSON representation of the current version of the entity 
+Fetch a detailed audit log entry representation. The detailed representation includes several fields that are not present in the summary representation, including:  - &#x60;previousVersion&#x60;: a JSON representation of the previous version of the entity. - &#x60;currentVersion&#x60;: a JSON representation of the current version of the entity. - &#x60;delta&#x60;: the JSON patch body that was used in the request to update the entity. This is only included if the update was made through a [JSON patch](https://launchdarkly.com/docs/api#updates-using-json-patch). It is null when the update was made using [semantic patch](https://launchdarkly.com/docs/api#updates-using-semantic-patch). Because most [flag updates](https://launchdarkly.com/docs/api/feature-flags/patch-feature-flag) are made using semantic patch, this field is rarely returned. 
 
 ### Example
 ```java
@@ -163,7 +163,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postAuditLogEntries"></a>
+<a id="postAuditLogEntries"></a>
 # **postAuditLogEntries**
 > AuditLogEntryListingRepCollection postAuditLogEntries(before, after, q, limit, statementPost)
 

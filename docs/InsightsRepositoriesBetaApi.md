@@ -9,7 +9,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**getInsightsRepositories**](InsightsRepositoriesBetaApi.md#getInsightsRepositories) | **GET** /api/v2/engineering-insights/repositories | List repositories |
 
 
-<a name="associateRepositoriesAndProjects"></a>
+<a id="associateRepositoriesAndProjects"></a>
 # **associateRepositoriesAndProjects**
 > InsightsRepositoryProjectCollection associateRepositoriesAndProjects(insightsRepositoryProjectMappings)
 
@@ -83,7 +83,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="deleteRepositoryProject"></a>
+<a id="deleteRepositoryProject"></a>
 # **deleteRepositoryProject**
 > deleteRepositoryProject(repositoryKey, projectKey)
 
@@ -158,7 +158,7 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getInsightsRepositories"></a>
+<a id="getInsightsRepositories"></a>
 # **getInsightsRepositories**
 > InsightsRepositoryCollection getInsightsRepositories(expand)
 

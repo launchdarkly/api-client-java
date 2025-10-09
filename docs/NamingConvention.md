@@ -16,7 +16,6 @@
 
 | Name | Value |
 |---- | -----|
-| NONE | &quot;none&quot; |
 | CAMELCASE | &quot;camelCase&quot; |
 | UPPERCAMELCASE | &quot;upperCamelCase&quot; |
 | SNAKECASE | &quot;snakeCase&quot; |

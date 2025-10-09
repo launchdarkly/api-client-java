@@ -22,6 +22,7 @@
 |**maintainerId** | **String** | The ID of the member who maintains this feature flag |  [optional] |
 |**maintainerTeamKey** | **String** | The key of the team that maintains this feature flag |  [optional] |
 |**initialPrerequisites** | [**List&lt;FlagPrerequisitePost&gt;**](FlagPrerequisitePost.md) | Initial set of prerequisite flags for all environments |  [optional] |
+|**isFlagOn** | **Boolean** | Whether to automatically turn the flag on across all environments at creation. Defaults to &lt;code&gt;false&lt;/code&gt;. |  [optional] |
 
 
 

@@ -11,7 +11,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**getStaleFlagsChart**](InsightsChartsBetaApi.md#getStaleFlagsChart) | **GET** /api/v2/engineering-insights/charts/flags/stale | Get stale flags chart data |
 
 
-<a name="getDeploymentFrequencyChart"></a>
+<a id="getDeploymentFrequencyChart"></a>
 # **getDeploymentFrequencyChart**
 > InsightsChart getDeploymentFrequencyChart(projectKey, environmentKey, applicationKey, from, to, bucketType, bucketMs, groupBy, expand)
 
@@ -101,7 +101,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getFlagStatusChart"></a>
+<a id="getFlagStatusChart"></a>
 # **getFlagStatusChart**
 > InsightsChart getFlagStatusChart(projectKey, environmentKey, applicationKey)
 
@@ -179,7 +179,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getLeadTimeChart"></a>
+<a id="getLeadTimeChart"></a>
 # **getLeadTimeChart**
 > InsightsChart getLeadTimeChart(projectKey, environmentKey, applicationKey, from, to, bucketType, bucketMs, groupBy, expand)
 
@@ -269,7 +269,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getReleaseFrequencyChart"></a>
+<a id="getReleaseFrequencyChart"></a>
 # **getReleaseFrequencyChart**
 > InsightsChart getReleaseFrequencyChart(projectKey, environmentKey, applicationKey, hasExperiments, global, groupBy, from, to, bucketType, bucketMs, expand)
 
@@ -363,7 +363,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getStaleFlagsChart"></a>
+<a id="getStaleFlagsChart"></a>
 # **getStaleFlagsChart**
 > InsightsChart getStaleFlagsChart(projectKey, environmentKey, applicationKey, groupBy, maintainerId, maintainerTeamKey, expand)
 

@@ -24,7 +24,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**updateBigSegmentTargets**](SegmentsApi.md#updateBigSegmentTargets) | **POST** /api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}/users | Update user context targets on a big segment |
 
 
-<a name="createBigSegmentExport"></a>
+<a id="createBigSegmentExport"></a>
 # **createBigSegmentExport**
 > createBigSegmentExport(projectKey, environmentKey, segmentKey)
 
@@ -100,7 +100,7 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="createBigSegmentImport"></a>
+<a id="createBigSegmentImport"></a>
 # **createBigSegmentImport**
 > createBigSegmentImport(projectKey, environmentKey, segmentKey, _file, mode, waitOnApprovals)
 
@@ -183,7 +183,7 @@ null (empty response body)
 | **409** | Conflicting process |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="deleteSegment"></a>
+<a id="deleteSegment"></a>
 # **deleteSegment**
 > deleteSegment(projectKey, environmentKey, segmentKey)
 
@@ -260,7 +260,7 @@ null (empty response body)
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getBigSegmentExport"></a>
+<a id="getBigSegmentExport"></a>
 # **getBigSegmentExport**
 > Export getBigSegmentExport(projectKey, environmentKey, segmentKey, exportID)
 
@@ -338,7 +338,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getBigSegmentImport"></a>
+<a id="getBigSegmentImport"></a>
 # **getBigSegmentImport**
 > ModelImport getBigSegmentImport(projectKey, environmentKey, segmentKey, importID)
 
@@ -416,7 +416,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getContextInstanceSegmentsMembershipByEnv"></a>
+<a id="getContextInstanceSegmentsMembershipByEnv"></a>
 # **getContextInstanceSegmentsMembershipByEnv**
 > ContextInstanceSegmentMemberships getContextInstanceSegmentsMembershipByEnv(projectKey, environmentKey, requestBody)
 
@@ -492,7 +492,7 @@ public class Example {
 | **401** | Invalid access token |  -  |
 | **404** | Invalid resource identifier |  -  |
 
-<a name="getExpiringTargetsForSegment"></a>
+<a id="getExpiringTargetsForSegment"></a>
 # **getExpiringTargetsForSegment**
 > ExpiringTargetGetResponse getExpiringTargetsForSegment(projectKey, environmentKey, segmentKey)
 
@@ -568,13 +568,13 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getExpiringUserTargetsForSegment"></a>
+<a id="getExpiringUserTargetsForSegment"></a>
 # **getExpiringUserTargetsForSegment**
 > ExpiringUserTargetGetResponse getExpiringUserTargetsForSegment(projectKey, environmentKey, segmentKey)
 
 Get expiring user targets for segment
 
-&gt; ### Contexts are now available &gt; &gt; After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should use [Get expiring targets for segment](https://launchdarkly.com/docs/ld-docs/api/segments/get-expiring-targets-for-segment) instead of this endpoint. To learn more, read [Contexts](https://launchdarkly.com/docs/home/observability/contexts).  Get a list of a segment&#39;s user targets that are scheduled for removal. 
+&gt; ### Contexts are now available &gt; &gt; After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should use [Get expiring targets for segment](https://launchdarkly.com/docs/api/segments/get-expiring-targets-for-segment) instead of this endpoint. To learn more, read [Contexts](https://launchdarkly.com/docs/home/observability/contexts).  Get a list of a segment&#39;s user targets that are scheduled for removal. 
 
 ### Example
 ```java
@@ -644,7 +644,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getSegment"></a>
+<a id="getSegment"></a>
 # **getSegment**
 > UserSegment getSegment(projectKey, environmentKey, segmentKey)
 
@@ -720,7 +720,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getSegmentMembershipForContext"></a>
+<a id="getSegmentMembershipForContext"></a>
 # **getSegmentMembershipForContext**
 > BigSegmentTarget getSegmentMembershipForContext(projectKey, environmentKey, segmentKey, contextKey)
 
@@ -799,13 +799,13 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getSegmentMembershipForUser"></a>
+<a id="getSegmentMembershipForUser"></a>
 # **getSegmentMembershipForUser**
 > BigSegmentTarget getSegmentMembershipForUser(projectKey, environmentKey, segmentKey, userKey)
 
 Get big segment membership for user
 
-&gt; ### Contexts are now available &gt; &gt; After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should use [Get expiring targets for segment](https://launchdarkly.com/docs/ld-docs/api/segments/get-expiring-targets-for-segment) instead of this endpoint. To learn more, read [Contexts](https://launchdarkly.com/docs/home/observability/contexts).  Get the membership status (included/excluded) for a given user in this big segment. This operation does not support standard segments. 
+&gt; ### Contexts are now available &gt; &gt; After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should use [Get expiring targets for segment](https://launchdarkly.com/docs/api/segments/get-expiring-targets-for-segment) instead of this endpoint. To learn more, read [Contexts](https://launchdarkly.com/docs/home/observability/contexts).  Get the membership status (included/excluded) for a given user in this big segment. This operation does not support standard segments. 
 
 ### Example
 ```java
@@ -878,7 +878,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getSegments"></a>
+<a id="getSegments"></a>
 # **getSegments**
 > UserSegments getSegments(projectKey, environmentKey, limit, offset, sort, filter)
 
@@ -913,7 +913,7 @@ public class Example {
     Long limit = 56L; // Long | The number of segments to return. Defaults to 20.
     Long offset = 56L; // Long | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
     String sort = "sort_example"; // String | Accepts sorting order and fields. Fields can be comma separated. Possible fields are 'creationDate', 'name', 'lastModified'. Example: `sort=name` sort by names ascending or `sort=-name,creationDate` sort by names descending and creationDate ascending.
-    String filter = "filter_example"; // String | Accepts filter by `excludedKeys`, `external`, `includedKeys`, `query`, `tags`, `unbounded`. To learn more about the filter syntax, read the  'Filtering segments' section above.
+    String filter = "filter_example"; // String | Accepts filter by `excludedKeys`, `external`, `includedKeys`, `query`, `tags`, `unbounded`, `view`. To learn more about the filter syntax, read the  'Filtering segments' section above.
     try {
       UserSegments result = apiInstance.getSegments(projectKey, environmentKey, limit, offset, sort, filter);
       System.out.println(result);
@@ -937,7 +937,7 @@ public class Example {
 | **limit** | **Long**| The number of segments to return. Defaults to 20. | [optional] |
 | **offset** | **Long**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
 | **sort** | **String**| Accepts sorting order and fields. Fields can be comma separated. Possible fields are &#39;creationDate&#39;, &#39;name&#39;, &#39;lastModified&#39;. Example: &#x60;sort&#x3D;name&#x60; sort by names ascending or &#x60;sort&#x3D;-name,creationDate&#x60; sort by names descending and creationDate ascending. | [optional] |
-| **filter** | **String**| Accepts filter by &#x60;excludedKeys&#x60;, &#x60;external&#x60;, &#x60;includedKeys&#x60;, &#x60;query&#x60;, &#x60;tags&#x60;, &#x60;unbounded&#x60;. To learn more about the filter syntax, read the  &#39;Filtering segments&#39; section above. | [optional] |
+| **filter** | **String**| Accepts filter by &#x60;excludedKeys&#x60;, &#x60;external&#x60;, &#x60;includedKeys&#x60;, &#x60;query&#x60;, &#x60;tags&#x60;, &#x60;unbounded&#x60;, &#x60;view&#x60;. To learn more about the filter syntax, read the  &#39;Filtering segments&#39; section above. | [optional] |
 
 ### Return type
 
@@ -959,7 +959,7 @@ public class Example {
 | **401** | Invalid access token |  -  |
 | **404** | Invalid resource identifier |  -  |
 
-<a name="patchExpiringTargetsForSegment"></a>
+<a id="patchExpiringTargetsForSegment"></a>
 # **patchExpiringTargetsForSegment**
 > ExpiringTargetPatchResponse patchExpiringTargetsForSegment(projectKey, environmentKey, segmentKey, patchSegmentExpiringTargetInputRep)
 
@@ -1040,13 +1040,13 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="patchExpiringUserTargetsForSegment"></a>
+<a id="patchExpiringUserTargetsForSegment"></a>
 # **patchExpiringUserTargetsForSegment**
 > ExpiringUserTargetPatchResponse patchExpiringUserTargetsForSegment(projectKey, environmentKey, segmentKey, patchSegmentRequest)
 
 Update expiring user targets for segment
 
- &gt; ### Contexts are now available &gt; &gt; After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should use [Update expiring targets for segment](https://launchdarkly.com/docs/ld-docs/api/segments/patch-expiring-targets-for-segment) instead of this endpoint. To learn more, read [Contexts](https://launchdarkly.com/docs/home/observability/contexts).  Update expiring user targets for a segment. Updating a user target expiration uses the semantic patch format.  To make a semantic patch request, you must append &#x60;domain-model&#x3D;launchdarkly.semanticpatch&#x60; to your &#x60;Content-Type&#x60; header. To learn more, read [Updates using semantic patch](https://launchdarkly.com/docs/api#updates-using-semantic-patch).  If the request is well-formed but any of its instructions failed to process, this operation returns status code &#x60;200&#x60;. In this case, the response &#x60;errors&#x60; array will be non-empty.  ### Instructions  Semantic patch requests support the following &#x60;kind&#x60; instructions for updating expiring user targets.  &lt;details&gt; &lt;summary&gt;Click to expand instructions for &lt;strong&gt;updating expiring user targets&lt;/strong&gt;&lt;/summary&gt;  #### addExpireUserTargetDate  Schedules a date and time when LaunchDarkly will remove a user from segment targeting.  ##### Parameters  - &#x60;targetType&#x60;: A segment&#39;s target type, must be either &#x60;included&#x60; or &#x60;excluded&#x60;. - &#x60;userKey&#x60;: The user key. - &#x60;value&#x60;: The date when the user should expire from the segment targeting, in Unix milliseconds.  #### updateExpireUserTargetDate  Updates the date and time when LaunchDarkly will remove a user from segment targeting.  ##### Parameters  - &#x60;targetType&#x60;: A segment&#39;s target type, must be either &#x60;included&#x60; or &#x60;excluded&#x60;. - &#x60;userKey&#x60;: The user key. - &#x60;value&#x60;: The new date when the user should expire from the segment targeting, in Unix milliseconds. - &#x60;version&#x60;: The segment version.  #### removeExpireUserTargetDate  Removes the scheduled expiration for the user in the segment.  ##### Parameters  - &#x60;targetType&#x60;: A segment&#39;s target type, must be either &#x60;included&#x60; or &#x60;excluded&#x60;. - &#x60;userKey&#x60;: The user key.  &lt;/details&gt; 
+ &gt; ### Contexts are now available &gt; &gt; After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should use [Update expiring targets for segment](https://launchdarkly.com/docs/api/segments/patch-expiring-targets-for-segment) instead of this endpoint. To learn more, read [Contexts](https://launchdarkly.com/docs/home/observability/contexts).  Update expiring user targets for a segment. Updating a user target expiration uses the semantic patch format.  To make a semantic patch request, you must append &#x60;domain-model&#x3D;launchdarkly.semanticpatch&#x60; to your &#x60;Content-Type&#x60; header. To learn more, read [Updates using semantic patch](https://launchdarkly.com/docs/api#updates-using-semantic-patch).  If the request is well-formed but any of its instructions failed to process, this operation returns status code &#x60;200&#x60;. In this case, the response &#x60;errors&#x60; array will be non-empty.  ### Instructions  Semantic patch requests support the following &#x60;kind&#x60; instructions for updating expiring user targets.  &lt;details&gt; &lt;summary&gt;Click to expand instructions for &lt;strong&gt;updating expiring user targets&lt;/strong&gt;&lt;/summary&gt;  #### addExpireUserTargetDate  Schedules a date and time when LaunchDarkly will remove a user from segment targeting.  ##### Parameters  - &#x60;targetType&#x60;: A segment&#39;s target type, must be either &#x60;included&#x60; or &#x60;excluded&#x60;. - &#x60;userKey&#x60;: The user key. - &#x60;value&#x60;: The date when the user should expire from the segment targeting, in Unix milliseconds.  #### updateExpireUserTargetDate  Updates the date and time when LaunchDarkly will remove a user from segment targeting.  ##### Parameters  - &#x60;targetType&#x60;: A segment&#39;s target type, must be either &#x60;included&#x60; or &#x60;excluded&#x60;. - &#x60;userKey&#x60;: The user key. - &#x60;value&#x60;: The new date when the user should expire from the segment targeting, in Unix milliseconds. - &#x60;version&#x60;: The segment version.  #### removeExpireUserTargetDate  Removes the scheduled expiration for the user in the segment.  ##### Parameters  - &#x60;targetType&#x60;: A segment&#39;s target type, must be either &#x60;included&#x60; or &#x60;excluded&#x60;. - &#x60;userKey&#x60;: The user key.  &lt;/details&gt; 
 
 ### Example
 ```java
@@ -1121,7 +1121,7 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="patchSegment"></a>
+<a id="patchSegment"></a>
 # **patchSegment**
 > UserSegment patchSegment(projectKey, environmentKey, segmentKey, patchWithComment)
 
@@ -1202,7 +1202,7 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postSegment"></a>
+<a id="postSegment"></a>
 # **postSegment**
 > UserSegment postSegment(projectKey, environmentKey, segmentBody)
 
@@ -1280,7 +1280,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="updateBigSegmentContextTargets"></a>
+<a id="updateBigSegmentContextTargets"></a>
 # **updateBigSegmentContextTargets**
 > updateBigSegmentContextTargets(projectKey, environmentKey, segmentKey, segmentUserState)
 
@@ -1358,7 +1358,7 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="updateBigSegmentTargets"></a>
+<a id="updateBigSegmentTargets"></a>
 # **updateBigSegmentTargets**
 > updateBigSegmentTargets(projectKey, environmentKey, segmentKey, segmentUserState)
 

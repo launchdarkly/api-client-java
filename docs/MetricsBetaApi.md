@@ -11,7 +11,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**patchMetricGroup**](MetricsBetaApi.md#patchMetricGroup) | **PATCH** /api/v2/projects/{projectKey}/metric-groups/{metricGroupKey} | Patch metric group |
 
 
-<a name="createMetricGroup"></a>
+<a id="createMetricGroup"></a>
 # **createMetricGroup**
 > MetricGroupRep createMetricGroup(projectKey, metricGroupPost)
 
@@ -88,7 +88,7 @@ public class Example {
 | **405** | Method not allowed |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="deleteMetricGroup"></a>
+<a id="deleteMetricGroup"></a>
 # **deleteMetricGroup**
 > deleteMetricGroup(projectKey, metricGroupKey)
 
@@ -164,7 +164,7 @@ null (empty response body)
 | **405** | Method not allowed |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getMetricGroup"></a>
+<a id="getMetricGroup"></a>
 # **getMetricGroup**
 > MetricGroupRep getMetricGroup(projectKey, metricGroupKey, expand)
 
@@ -243,7 +243,7 @@ public class Example {
 | **405** | Method not allowed |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getMetricGroups"></a>
+<a id="getMetricGroups"></a>
 # **getMetricGroups**
 > MetricGroupCollectionRep getMetricGroups(projectKey, filter, sort, expand, limit, offset)
 
@@ -328,7 +328,7 @@ public class Example {
 | **405** | Method not allowed |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="patchMetricGroup"></a>
+<a id="patchMetricGroup"></a>
 # **patchMetricGroup**
 > MetricGroupRep patchMetricGroup(projectKey, metricGroupKey, patchOperation)
 

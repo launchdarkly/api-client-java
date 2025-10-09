@@ -13,7 +13,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**resetEnvironmentSDKKey**](EnvironmentsApi.md#resetEnvironmentSDKKey) | **POST** /api/v2/projects/{projectKey}/environments/{environmentKey}/apiKey | Reset environment SDK key |
 
 
-<a name="deleteEnvironment"></a>
+<a id="deleteEnvironment"></a>
 # **deleteEnvironment**
 > deleteEnvironment(projectKey, environmentKey)
 
@@ -87,7 +87,7 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getEnvironment"></a>
+<a id="getEnvironment"></a>
 # **getEnvironment**
 > Environment getEnvironment(projectKey, environmentKey)
 
@@ -162,7 +162,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getEnvironmentsByProject"></a>
+<a id="getEnvironmentsByProject"></a>
 # **getEnvironmentsByProject**
 > Environments getEnvironmentsByProject(projectKey, limit, offset, filter, sort)
 
@@ -245,7 +245,7 @@ public class Example {
 | **405** | Method not allowed |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="patchEnvironment"></a>
+<a id="patchEnvironment"></a>
 # **patchEnvironment**
 > Environment patchEnvironment(projectKey, environmentKey, patchOperation)
 
@@ -323,7 +323,7 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postEnvironment"></a>
+<a id="postEnvironment"></a>
 # **postEnvironment**
 > Environment postEnvironment(projectKey, environmentPost)
 
@@ -400,7 +400,7 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="resetEnvironmentMobileKey"></a>
+<a id="resetEnvironmentMobileKey"></a>
 # **resetEnvironmentMobileKey**
 > Environment resetEnvironmentMobileKey(projectKey, environmentKey)
 
@@ -477,7 +477,7 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="resetEnvironmentSDKKey"></a>
+<a id="resetEnvironmentSDKKey"></a>
 # **resetEnvironmentSDKKey**
 > Environment resetEnvironmentSDKKey(projectKey, environmentKey, expiry)
 

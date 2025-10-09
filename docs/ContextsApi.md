@@ -16,7 +16,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**searchContexts**](ContextsApi.md#searchContexts) | **POST** /api/v2/projects/{projectKey}/environments/{environmentKey}/contexts/search | Search for contexts |
 
 
-<a name="deleteContextInstances"></a>
+<a id="deleteContextInstances"></a>
 # **deleteContextInstances**
 > deleteContextInstances(projectKey, environmentKey, id)
 
@@ -93,7 +93,7 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="evaluateContextInstance"></a>
+<a id="evaluateContextInstance"></a>
 # **evaluateContextInstance**
 > ContextInstanceEvaluations evaluateContextInstance(projectKey, environmentKey, requestBody, limit, offset, sort, filter)
 
@@ -179,7 +179,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getContextAttributeNames"></a>
+<a id="getContextAttributeNames"></a>
 # **getContextAttributeNames**
 > ContextAttributeNamesCollection getContextAttributeNames(projectKey, environmentKey, filter, limit)
 
@@ -258,7 +258,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getContextAttributeValues"></a>
+<a id="getContextAttributeValues"></a>
 # **getContextAttributeValues**
 > ContextAttributeValuesCollection getContextAttributeValues(projectKey, environmentKey, attributeName, filter, limit)
 
@@ -339,7 +339,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getContextInstances"></a>
+<a id="getContextInstances"></a>
 # **getContextInstances**
 > ContextInstances getContextInstances(projectKey, environmentKey, id, limit, continuationToken, sort, filter, includeTotalCount)
 
@@ -426,7 +426,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getContextKindsByProjectKey"></a>
+<a id="getContextKindsByProjectKey"></a>
 # **getContextKindsByProjectKey**
 > ContextKindsCollectionRep getContextKindsByProjectKey(projectKey)
 
@@ -498,7 +498,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
 
-<a name="getContexts"></a>
+<a id="getContexts"></a>
 # **getContexts**
 > Contexts getContexts(projectKey, environmentKey, kind, key, limit, continuationToken, sort, filter, includeTotalCount)
 
@@ -587,7 +587,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="putContextKind"></a>
+<a id="putContextKind"></a>
 # **putContextKind**
 > UpsertResponseRep putContextKind(projectKey, key, upsertContextKindPayload)
 
@@ -664,13 +664,13 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
 
-<a name="searchContextInstances"></a>
+<a id="searchContextInstances"></a>
 # **searchContextInstances**
 > ContextInstances searchContextInstances(projectKey, environmentKey, contextInstanceSearch, limit, continuationToken, sort, filter, includeTotalCount)
 
 Search for context instances
 
- Search for context instances.  You can use either the query parameters or the request body parameters. If both are provided, there is an error.  To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). To learn more about context instances, read [Context instances](https://launchdarkly.com/docs/home/observability/multi-contexts#context-instances). 
+ Search for context instances.  You can use either the query parameters or the request body parameters. If both are provided, there is an error.  To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/api/contexts#filtering-contexts-and-context-instances). To learn more about context instances, read [Context instances](https://launchdarkly.com/docs/home/observability/multi-contexts#context-instances). 
 
 ### Example
 ```java
@@ -751,13 +751,13 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="searchContexts"></a>
+<a id="searchContexts"></a>
 # **searchContexts**
 > Contexts searchContexts(projectKey, environmentKey, contextSearch, limit, continuationToken, sort, filter, includeTotalCount)
 
 Search for contexts
 
- Search for contexts.  You can use either the query parameters or the request body parameters. If both are provided, there is an error.  To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). To learn more about contexts, read [Contexts and context kinds](https://launchdarkly.com/docs/home/observability/contexts#contexts-and-context-kinds). 
+ Search for contexts.  You can use either the query parameters or the request body parameters. If both are provided, there is an error.  To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/api/contexts#filtering-contexts-and-context-instances). To learn more about contexts, read [Contexts and context kinds](https://launchdarkly.com/docs/home/observability/contexts#contexts-and-context-kinds). 
 
 ### Example
 ```java

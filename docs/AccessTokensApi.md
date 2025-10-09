@@ -12,7 +12,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**resetToken**](AccessTokensApi.md#resetToken) | **POST** /api/v2/tokens/{id}/reset | Reset access token |
 
 
-<a name="deleteToken"></a>
+<a id="deleteToken"></a>
 # **deleteToken**
 > deleteToken(id)
 
@@ -84,7 +84,7 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getToken"></a>
+<a id="getToken"></a>
 # **getToken**
 > Token getToken(id)
 
@@ -157,7 +157,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getTokens"></a>
+<a id="getTokens"></a>
 # **getTokens**
 > Tokens getTokens(showAll, limit, offset)
 
@@ -233,7 +233,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="patchToken"></a>
+<a id="patchToken"></a>
 # **patchToken**
 > Token patchToken(id, patchOperation)
 
@@ -311,7 +311,7 @@ public class Example {
 | **422** | Invalid patch content |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postToken"></a>
+<a id="postToken"></a>
 # **postToken**
 > Token postToken(accessTokenPost)
 
@@ -384,7 +384,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="resetToken"></a>
+<a id="resetToken"></a>
 # **resetToken**
 > Token resetToken(id, expiry)
 

@@ -12,7 +12,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**resetRelayAutoConfig**](RelayProxyConfigurationsApi.md#resetRelayAutoConfig) | **POST** /api/v2/account/relay-auto-configs/{id}/reset | Reset Relay Proxy configuration key |
 
 
-<a name="deleteRelayAutoConfig"></a>
+<a id="deleteRelayAutoConfig"></a>
 # **deleteRelayAutoConfig**
 > deleteRelayAutoConfig(id)
 
@@ -84,7 +84,7 @@ null (empty response body)
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getRelayProxyConfig"></a>
+<a id="getRelayProxyConfig"></a>
 # **getRelayProxyConfig**
 > RelayAutoConfigRep getRelayProxyConfig(id)
 
@@ -157,7 +157,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getRelayProxyConfigs"></a>
+<a id="getRelayProxyConfigs"></a>
 # **getRelayProxyConfigs**
 > RelayAutoConfigCollectionRep getRelayProxyConfigs()
 
@@ -225,7 +225,7 @@ This endpoint does not need any parameter.
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="patchRelayAutoConfig"></a>
+<a id="patchRelayAutoConfig"></a>
 # **patchRelayAutoConfig**
 > RelayAutoConfigRep patchRelayAutoConfig(id, patchWithComment)
 
@@ -302,7 +302,7 @@ public class Example {
 | **422** | Invalid patch content |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postRelayAutoConfig"></a>
+<a id="postRelayAutoConfig"></a>
 # **postRelayAutoConfig**
 > RelayAutoConfigRep postRelayAutoConfig(relayAutoConfigPost)
 
@@ -374,7 +374,7 @@ public class Example {
 | **401** | Invalid access token |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="resetRelayAutoConfig"></a>
+<a id="resetRelayAutoConfig"></a>
 # **resetRelayAutoConfig**
 > RelayAutoConfigRep resetRelayAutoConfig(id, expiry)
 

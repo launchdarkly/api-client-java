@@ -4,27 +4,126 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**getContextsClientsideUsage**](AccountUsageBetaApi.md#getContextsClientsideUsage) | **GET** /api/v2/usage/clientside-contexts | Get contexts clientside usage |
+| [**getContextsServersideUsage**](AccountUsageBetaApi.md#getContextsServersideUsage) | **GET** /api/v2/usage/serverside-contexts | Get contexts serverside usage |
+| [**getContextsTotalUsage**](AccountUsageBetaApi.md#getContextsTotalUsage) | **GET** /api/v2/usage/total-contexts | Get contexts total usage |
 | [**getDataExportEventsUsage**](AccountUsageBetaApi.md#getDataExportEventsUsage) | **GET** /api/v2/usage/data-export-events | Get data export events usage |
 | [**getEvaluationsUsage**](AccountUsageBetaApi.md#getEvaluationsUsage) | **GET** /api/v2/usage/evaluations/{projectKey}/{environmentKey}/{featureFlagKey} | Get evaluations usage |
 | [**getEventsUsage**](AccountUsageBetaApi.md#getEventsUsage) | **GET** /api/v2/usage/events/{type} | Get events usage |
+| [**getExperimentationEventsUsage**](AccountUsageBetaApi.md#getExperimentationEventsUsage) | **GET** /api/v2/usage/experimentation-events | Get experimentation events usage |
 | [**getExperimentationKeysUsage**](AccountUsageBetaApi.md#getExperimentationKeysUsage) | **GET** /api/v2/usage/experimentation-keys | Get experimentation keys usage |
-| [**getExperimentationUnitsUsage**](AccountUsageBetaApi.md#getExperimentationUnitsUsage) | **GET** /api/v2/usage/experimentation-units | Get experimentation units usage |
 | [**getMauSdksByType**](AccountUsageBetaApi.md#getMauSdksByType) | **GET** /api/v2/usage/mau/sdks | Get MAU SDKs by type |
 | [**getMauUsage**](AccountUsageBetaApi.md#getMauUsage) | **GET** /api/v2/usage/mau | Get MAU usage |
 | [**getMauUsageByCategory**](AccountUsageBetaApi.md#getMauUsageByCategory) | **GET** /api/v2/usage/mau/bycategory | Get MAU usage by category |
-| [**getServiceConnectionUsage**](AccountUsageBetaApi.md#getServiceConnectionUsage) | **GET** /api/v2/usage/service-connections | Get service connection usage |
+| [**getObservabilityErrorsUsage**](AccountUsageBetaApi.md#getObservabilityErrorsUsage) | **GET** /api/v2/usage/observability/errors | Get observability errors usage |
+| [**getObservabilityLogsUsage**](AccountUsageBetaApi.md#getObservabilityLogsUsage) | **GET** /api/v2/usage/observability/logs | Get observability logs usage |
+| [**getObservabilitySessionsUsage**](AccountUsageBetaApi.md#getObservabilitySessionsUsage) | **GET** /api/v2/usage/observability/sessions | Get observability sessions usage |
+| [**getObservabilityTracesUsage**](AccountUsageBetaApi.md#getObservabilityTracesUsage) | **GET** /api/v2/usage/observability/traces | Get observability traces usage |
+| [**getServiceConnectionsUsage**](AccountUsageBetaApi.md#getServiceConnectionsUsage) | **GET** /api/v2/usage/service-connections | Get service connections usage |
 | [**getStreamUsage**](AccountUsageBetaApi.md#getStreamUsage) | **GET** /api/v2/usage/streams/{source} | Get stream usage |
 | [**getStreamUsageBySdkVersion**](AccountUsageBetaApi.md#getStreamUsageBySdkVersion) | **GET** /api/v2/usage/streams/{source}/bysdkversion | Get stream usage by SDK version |
 | [**getStreamUsageSdkversion**](AccountUsageBetaApi.md#getStreamUsageSdkversion) | **GET** /api/v2/usage/streams/{source}/sdkversions | Get stream usage SDK versions |
 
 
-<a name="getDataExportEventsUsage"></a>
-# **getDataExportEventsUsage**
-> SeriesIntervalsRep getDataExportEventsUsage(from, to, projectKey, environmentKey)
+<a id="getContextsClientsideUsage"></a>
+# **getContextsClientsideUsage**
+> SeriesListRep getContextsClientsideUsage(from, to, projectKey, environmentKey, contextKind, sdkName, anonymous, groupBy, aggregationType, granularity)
 
-Get data export events usage
+Get contexts clientside usage
 
-Get a time-series array of the number of monthly data export events from your account. The granularity is always daily, with a maximum of 31 days.
+Get a detailed time series of the number of context key usages observed by LaunchDarkly in your account, including non-primary context kinds. Use this for breakdowns that go beyond the primary-only aggregation of MAU endpoints. The counts reflect data reported by client-side SDKs.&lt;br/&gt;&lt;br/&gt;The supported granularity varies by aggregation type. The maximum time range is 365 days.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AccountUsageBetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
+    String from = "from_example"; // String | The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month.
+    String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time.
+    String projectKey = "projectKey_example"; // String | A project key to filter results by. Can be specified multiple times, one query parameter per project key.
+    String environmentKey = "environmentKey_example"; // String | An environment key to filter results by. If specified, exactly one `projectKey` must be provided. Can be specified multiple times, one query parameter per environment key.
+    String contextKind = "contextKind_example"; // String | A context kind to filter results by. Can be specified multiple times, one query parameter per context kind.
+    String sdkName = "sdkName_example"; // String | An SDK name to filter results by. Can be specified multiple times, one query parameter per SDK name.
+    String anonymous = "anonymous_example"; // String | An anonymous value to filter results by. Can be specified multiple times, one query parameter per anonymous value.<br/>Valid values: `true`, `false`.
+    String groupBy = "groupBy_example"; // String | If specified, returns data for each distinct value of the given field. `contextKind` is always included as a grouping dimension. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.<br/>Valid values: `projectId`, `environmentId`, `sdkName`, `sdkAppId`, `anonymousV2`.
+    String aggregationType = "aggregationType_example"; // String | Specifies the aggregation method. Defaults to `month_to_date`.<br/>Valid values: `month_to_date`, `incremental`, `rolling_30d`.
+    String granularity = "granularity_example"; // String | Specifies the data granularity. Defaults to `daily`. Valid values depend on `aggregationType`: **month_to_date** supports `daily` and `monthly`; **incremental** and **rolling_30d** support `daily` only.
+    try {
+      SeriesListRep result = apiInstance.getContextsClientsideUsage(from, to, projectKey, environmentKey, contextKind, sdkName, anonymous, groupBy, aggregationType, granularity);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AccountUsageBetaApi#getContextsClientsideUsage");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **from** | **String**| The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month. | [optional] |
+| **to** | **String**| The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time. | [optional] |
+| **projectKey** | **String**| A project key to filter results by. Can be specified multiple times, one query parameter per project key. | [optional] |
+| **environmentKey** | **String**| An environment key to filter results by. If specified, exactly one &#x60;projectKey&#x60; must be provided. Can be specified multiple times, one query parameter per environment key. | [optional] |
+| **contextKind** | **String**| A context kind to filter results by. Can be specified multiple times, one query parameter per context kind. | [optional] |
+| **sdkName** | **String**| An SDK name to filter results by. Can be specified multiple times, one query parameter per SDK name. | [optional] |
+| **anonymous** | **String**| An anonymous value to filter results by. Can be specified multiple times, one query parameter per anonymous value.&lt;br/&gt;Valid values: &#x60;true&#x60;, &#x60;false&#x60;. | [optional] |
+| **groupBy** | **String**| If specified, returns data for each distinct value of the given field. &#x60;contextKind&#x60; is always included as a grouping dimension. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: &#x60;projectId&#x60;, &#x60;environmentId&#x60;, &#x60;sdkName&#x60;, &#x60;sdkAppId&#x60;, &#x60;anonymousV2&#x60;. | [optional] |
+| **aggregationType** | **String**| Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. | [optional] |
+| **granularity** | **String**| Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. | [optional] |
+
+### Return type
+
+[**SeriesListRep**](SeriesListRep.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Usage response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **429** | Rate limited |  -  |
+| **503** | Service unavailable |  -  |
+
+<a id="getContextsServersideUsage"></a>
+# **getContextsServersideUsage**
+> SeriesListRep getContextsServersideUsage(from, to, projectKey, environmentKey, contextKind, sdkName, anonymous, groupBy, aggregationType, granularity)
+
+Get contexts serverside usage
+
+Get a detailed time series of the number of context key usages observed by LaunchDarkly in your account, including non-primary context kinds. Use this for breakdowns that go beyond the primary-only aggregation of MAU endpoints. The counts reflect data reported by server-side SDKs.&lt;br/&gt;&lt;br/&gt;The supported granularity varies by aggregation type. The maximum time range is 365 days.
 
 ### Example
 ```java
@@ -50,13 +149,19 @@ public class Example {
     AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
     String from = "from_example"; // String | The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month.
     String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time.
-    String projectKey = "projectKey_example"; // String | A project key. If specified, `environmentKey` is required and results apply to the corresponding environment in this project.
-    String environmentKey = "environmentKey_example"; // String | An environment key. If specified, `projectKey` is required and results apply to the corresponding environment in this project.
+    String projectKey = "projectKey_example"; // String | A project key to filter results by. Can be specified multiple times, one query parameter per project key.
+    String environmentKey = "environmentKey_example"; // String | An environment key to filter results by. If specified, exactly one `projectKey` must be provided. Can be specified multiple times, one query parameter per environment key.
+    String contextKind = "contextKind_example"; // String | A context kind to filter results by. Can be specified multiple times, one query parameter per context kind.
+    String sdkName = "sdkName_example"; // String | An SDK name to filter results by. Can be specified multiple times, one query parameter per SDK name.
+    String anonymous = "anonymous_example"; // String | An anonymous value to filter results by. Can be specified multiple times, one query parameter per anonymous value.<br/>Valid values: `true`, `false`.
+    String groupBy = "groupBy_example"; // String | If specified, returns data for each distinct value of the given field. `contextKind` is always included as a grouping dimension. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.<br/>Valid values: `projectId`, `environmentId`, `sdkName`, `sdkAppId`, `anonymousV2`.
+    String aggregationType = "aggregationType_example"; // String | Specifies the aggregation method. Defaults to `month_to_date`.<br/>Valid values: `month_to_date`, `incremental`, `rolling_30d`.
+    String granularity = "granularity_example"; // String | Specifies the data granularity. Defaults to `daily`. Valid values depend on `aggregationType`: **month_to_date** supports `daily` and `monthly`; **incremental** and **rolling_30d** support `daily` only.
     try {
-      SeriesIntervalsRep result = apiInstance.getDataExportEventsUsage(from, to, projectKey, environmentKey);
+      SeriesListRep result = apiInstance.getContextsServersideUsage(from, to, projectKey, environmentKey, contextKind, sdkName, anonymous, groupBy, aggregationType, granularity);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AccountUsageBetaApi#getDataExportEventsUsage");
+      System.err.println("Exception when calling AccountUsageBetaApi#getContextsServersideUsage");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -72,12 +177,18 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **from** | **String**| The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. | [optional] |
 | **to** | **String**| The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. | [optional] |
-| **projectKey** | **String**| A project key. If specified, &#x60;environmentKey&#x60; is required and results apply to the corresponding environment in this project. | [optional] |
-| **environmentKey** | **String**| An environment key. If specified, &#x60;projectKey&#x60; is required and results apply to the corresponding environment in this project. | [optional] |
+| **projectKey** | **String**| A project key to filter results by. Can be specified multiple times, one query parameter per project key. | [optional] |
+| **environmentKey** | **String**| An environment key to filter results by. If specified, exactly one &#x60;projectKey&#x60; must be provided. Can be specified multiple times, one query parameter per environment key. | [optional] |
+| **contextKind** | **String**| A context kind to filter results by. Can be specified multiple times, one query parameter per context kind. | [optional] |
+| **sdkName** | **String**| An SDK name to filter results by. Can be specified multiple times, one query parameter per SDK name. | [optional] |
+| **anonymous** | **String**| An anonymous value to filter results by. Can be specified multiple times, one query parameter per anonymous value.&lt;br/&gt;Valid values: &#x60;true&#x60;, &#x60;false&#x60;. | [optional] |
+| **groupBy** | **String**| If specified, returns data for each distinct value of the given field. &#x60;contextKind&#x60; is always included as a grouping dimension. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: &#x60;projectId&#x60;, &#x60;environmentId&#x60;, &#x60;sdkName&#x60;, &#x60;sdkAppId&#x60;, &#x60;anonymousV2&#x60;. | [optional] |
+| **aggregationType** | **String**| Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. | [optional] |
+| **granularity** | **String**| Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. | [optional] |
 
 ### Return type
 
-[**SeriesIntervalsRep**](SeriesIntervalsRep.md)
+[**SeriesListRep**](SeriesListRep.md)
 
 ### Authorization
 
@@ -98,7 +209,189 @@ public class Example {
 | **429** | Rate limited |  -  |
 | **503** | Service unavailable |  -  |
 
-<a name="getEvaluationsUsage"></a>
+<a id="getContextsTotalUsage"></a>
+# **getContextsTotalUsage**
+> SeriesListRep getContextsTotalUsage(from, to, projectKey, environmentKey, contextKind, sdkName, sdkType, anonymous, groupBy, aggregationType, granularity)
+
+Get contexts total usage
+
+Get a detailed time series of the number of context key usages observed by LaunchDarkly in your account, including non-primary context kinds. Use this for breakdowns that go beyond the primary-only aggregation of MAU endpoints.&lt;br/&gt;&lt;br/&gt;The supported granularity varies by aggregation type. The maximum time range is 365 days.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AccountUsageBetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
+    String from = "from_example"; // String | The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month.
+    String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time.
+    String projectKey = "projectKey_example"; // String | A project key to filter results by. Can be specified multiple times, one query parameter per project key.
+    String environmentKey = "environmentKey_example"; // String | An environment key to filter results by. If specified, exactly one `projectKey` must be provided. Can be specified multiple times, one query parameter per environment key.
+    String contextKind = "contextKind_example"; // String | A context kind to filter results by. Can be specified multiple times, one query parameter per context kind.
+    String sdkName = "sdkName_example"; // String | An SDK name to filter results by. Can be specified multiple times, one query parameter per SDK name.
+    String sdkType = "sdkType_example"; // String | An SDK type to filter results by. Can be specified multiple times, one query parameter per SDK type.
+    String anonymous = "anonymous_example"; // String | An anonymous value to filter results by. Can be specified multiple times, one query parameter per anonymous value.<br/>Valid values: `true`, `false`.
+    String groupBy = "groupBy_example"; // String | If specified, returns data for each distinct value of the given field. `contextKind` is always included as a grouping dimension. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.<br/>Valid values: `projectId`, `environmentId`, `sdkName`, `sdkType`, `sdkAppId`, `anonymousV2`.
+    String aggregationType = "aggregationType_example"; // String | Specifies the aggregation method. Defaults to `month_to_date`.<br/>Valid values: `month_to_date`, `incremental`, `rolling_30d`.
+    String granularity = "granularity_example"; // String | Specifies the data granularity. Defaults to `daily`. Valid values depend on `aggregationType`: **month_to_date** supports `daily` and `monthly`; **incremental** and **rolling_30d** support `daily` only.
+    try {
+      SeriesListRep result = apiInstance.getContextsTotalUsage(from, to, projectKey, environmentKey, contextKind, sdkName, sdkType, anonymous, groupBy, aggregationType, granularity);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AccountUsageBetaApi#getContextsTotalUsage");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **from** | **String**| The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month. | [optional] |
+| **to** | **String**| The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time. | [optional] |
+| **projectKey** | **String**| A project key to filter results by. Can be specified multiple times, one query parameter per project key. | [optional] |
+| **environmentKey** | **String**| An environment key to filter results by. If specified, exactly one &#x60;projectKey&#x60; must be provided. Can be specified multiple times, one query parameter per environment key. | [optional] |
+| **contextKind** | **String**| A context kind to filter results by. Can be specified multiple times, one query parameter per context kind. | [optional] |
+| **sdkName** | **String**| An SDK name to filter results by. Can be specified multiple times, one query parameter per SDK name. | [optional] |
+| **sdkType** | **String**| An SDK type to filter results by. Can be specified multiple times, one query parameter per SDK type. | [optional] |
+| **anonymous** | **String**| An anonymous value to filter results by. Can be specified multiple times, one query parameter per anonymous value.&lt;br/&gt;Valid values: &#x60;true&#x60;, &#x60;false&#x60;. | [optional] |
+| **groupBy** | **String**| If specified, returns data for each distinct value of the given field. &#x60;contextKind&#x60; is always included as a grouping dimension. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: &#x60;projectId&#x60;, &#x60;environmentId&#x60;, &#x60;sdkName&#x60;, &#x60;sdkType&#x60;, &#x60;sdkAppId&#x60;, &#x60;anonymousV2&#x60;. | [optional] |
+| **aggregationType** | **String**| Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. | [optional] |
+| **granularity** | **String**| Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. | [optional] |
+
+### Return type
+
+[**SeriesListRep**](SeriesListRep.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Usage response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **429** | Rate limited |  -  |
+| **503** | Service unavailable |  -  |
+
+<a id="getDataExportEventsUsage"></a>
+# **getDataExportEventsUsage**
+> SeriesListRep getDataExportEventsUsage(from, to, projectKey, environmentKey, eventKind, groupBy, aggregationType, granularity)
+
+Get data export events usage
+
+Get a time series array showing the number of data export events from your account. The supported granularity varies by aggregation type. The maximum time range is 365 days.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AccountUsageBetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
+    String from = "from_example"; // String | The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month.
+    String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time.
+    String projectKey = "projectKey_example"; // String | A project key to filter results by. Can be specified multiple times, one query parameter per project key.
+    String environmentKey = "environmentKey_example"; // String | An environment key to filter results by. If specified, exactly one `projectKey` must be provided. Can be specified multiple times, one query parameter per environment key.
+    String eventKind = "eventKind_example"; // String | An event kind to filter results by. Can be specified multiple times, one query parameter per event kind.
+    String groupBy = "groupBy_example"; // String | If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.<br/>Valid values: `environmentId`, `eventKind`.
+    String aggregationType = "aggregationType_example"; // String | Specifies the aggregation method. Defaults to `month_to_date`.<br/>Valid values: `month_to_date`, `incremental`.
+    String granularity = "granularity_example"; // String | Specifies the data granularity. Defaults to `daily`. `monthly` granularity is only supported with the **month_to_date** aggregation type.<br/>Valid values: `daily`, `hourly`, `monthly`.
+    try {
+      SeriesListRep result = apiInstance.getDataExportEventsUsage(from, to, projectKey, environmentKey, eventKind, groupBy, aggregationType, granularity);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AccountUsageBetaApi#getDataExportEventsUsage");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **from** | **String**| The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month. | [optional] |
+| **to** | **String**| The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time. | [optional] |
+| **projectKey** | **String**| A project key to filter results by. Can be specified multiple times, one query parameter per project key. | [optional] |
+| **environmentKey** | **String**| An environment key to filter results by. If specified, exactly one &#x60;projectKey&#x60; must be provided. Can be specified multiple times, one query parameter per environment key. | [optional] |
+| **eventKind** | **String**| An event kind to filter results by. Can be specified multiple times, one query parameter per event kind. | [optional] |
+| **groupBy** | **String**| If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: &#x60;environmentId&#x60;, &#x60;eventKind&#x60;. | [optional] |
+| **aggregationType** | **String**| Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;. | [optional] |
+| **granularity** | **String**| Specifies the data granularity. Defaults to &#x60;daily&#x60;. &#x60;monthly&#x60; granularity is only supported with the **month_to_date** aggregation type.&lt;br/&gt;Valid values: &#x60;daily&#x60;, &#x60;hourly&#x60;, &#x60;monthly&#x60;. | [optional] |
+
+### Return type
+
+[**SeriesListRep**](SeriesListRep.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Usage response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **429** | Rate limited |  -  |
+| **503** | Service unavailable |  -  |
+
+<a id="getEvaluationsUsage"></a>
 # **getEvaluationsUsage**
 > SeriesListRep getEvaluationsUsage(projectKey, environmentKey, featureFlagKey, from, to, tz)
 
@@ -182,7 +475,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getEventsUsage"></a>
+<a id="getEventsUsage"></a>
 # **getEventsUsage**
 > SeriesListRep getEventsUsage(type, from, to)
 
@@ -260,13 +553,13 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getExperimentationKeysUsage"></a>
-# **getExperimentationKeysUsage**
-> SeriesIntervalsRep getExperimentationKeysUsage(from, to, projectKey, environmentKey)
+<a id="getExperimentationEventsUsage"></a>
+# **getExperimentationEventsUsage**
+> SeriesListRep getExperimentationEventsUsage(from, to, projectKey, environmentKey, eventKey, eventKind, groupBy, aggregationType, granularity)
 
-Get experimentation keys usage
+Get experimentation events usage
 
-Get a time-series array of the number of monthly experimentation keys from your account. The granularity is always daily, with a maximum of 31 days.
+Get a time series array showing the number of experimentation events from your account. The supported granularity varies by aggregation type. The maximum time range is 365 days.
 
 ### Example
 ```java
@@ -290,12 +583,106 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
-    String from = "from_example"; // String | The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month.
-    String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time.
-    String projectKey = "projectKey_example"; // String | A project key. If specified, `environmentKey` is required and results apply to the corresponding environment in this project.
-    String environmentKey = "environmentKey_example"; // String | An environment key. If specified, `projectKey` is required and results apply to the corresponding environment in this project.
+    String from = "from_example"; // String | The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month.
+    String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time.
+    String projectKey = "projectKey_example"; // String | A project key to filter results by. Can be specified multiple times, one query parameter per project key.
+    String environmentKey = "environmentKey_example"; // String | An environment key to filter results by. If specified, exactly one `projectKey` must be provided. Can be specified multiple times, one query parameter per environment key.
+    String eventKey = "eventKey_example"; // String | An event key to filter results by. Can be specified multiple times, one query parameter per event key.
+    String eventKind = "eventKind_example"; // String | An event kind to filter results by. Can be specified multiple times, one query parameter per event kind.
+    String groupBy = "groupBy_example"; // String | If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.<br/>Valid values: `environmentId`, `eventKey`, `eventKind`.
+    String aggregationType = "aggregationType_example"; // String | Specifies the aggregation method. Defaults to `month_to_date`.<br/>Valid values: `month_to_date`, `incremental`.
+    String granularity = "granularity_example"; // String | Specifies the data granularity. Defaults to `daily`. `monthly` granularity is only supported with the **month_to_date** aggregation type.<br/>Valid values: `daily`, `hourly`, `monthly`.
     try {
-      SeriesIntervalsRep result = apiInstance.getExperimentationKeysUsage(from, to, projectKey, environmentKey);
+      SeriesListRep result = apiInstance.getExperimentationEventsUsage(from, to, projectKey, environmentKey, eventKey, eventKind, groupBy, aggregationType, granularity);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AccountUsageBetaApi#getExperimentationEventsUsage");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **from** | **String**| The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month. | [optional] |
+| **to** | **String**| The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time. | [optional] |
+| **projectKey** | **String**| A project key to filter results by. Can be specified multiple times, one query parameter per project key. | [optional] |
+| **environmentKey** | **String**| An environment key to filter results by. If specified, exactly one &#x60;projectKey&#x60; must be provided. Can be specified multiple times, one query parameter per environment key. | [optional] |
+| **eventKey** | **String**| An event key to filter results by. Can be specified multiple times, one query parameter per event key. | [optional] |
+| **eventKind** | **String**| An event kind to filter results by. Can be specified multiple times, one query parameter per event kind. | [optional] |
+| **groupBy** | **String**| If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: &#x60;environmentId&#x60;, &#x60;eventKey&#x60;, &#x60;eventKind&#x60;. | [optional] |
+| **aggregationType** | **String**| Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;. | [optional] |
+| **granularity** | **String**| Specifies the data granularity. Defaults to &#x60;daily&#x60;. &#x60;monthly&#x60; granularity is only supported with the **month_to_date** aggregation type.&lt;br/&gt;Valid values: &#x60;daily&#x60;, &#x60;hourly&#x60;, &#x60;monthly&#x60;. | [optional] |
+
+### Return type
+
+[**SeriesListRep**](SeriesListRep.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Usage response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **429** | Rate limited |  -  |
+| **503** | Service unavailable |  -  |
+
+<a id="getExperimentationKeysUsage"></a>
+# **getExperimentationKeysUsage**
+> SeriesListRep getExperimentationKeysUsage(from, to, projectKey, environmentKey, experimentId, groupBy, aggregationType, granularity)
+
+Get experimentation keys usage
+
+Get a time series array showing the number of experimentation keys from your account. The supported granularity varies by aggregation type. The maximum time range is 365 days.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AccountUsageBetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
+    String from = "from_example"; // String | The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month.
+    String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time.
+    String projectKey = "projectKey_example"; // String | A project key to filter results by. Can be specified multiple times, one query parameter per project key.
+    String environmentKey = "environmentKey_example"; // String | An environment key to filter results by. If specified, exactly one `projectKey` must be provided. Can be specified multiple times, one query parameter per environment key.
+    String experimentId = "experimentId_example"; // String | An experiment ID to filter results by. Can be specified multiple times, one query parameter per experiment ID.
+    String groupBy = "groupBy_example"; // String | If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.<br/>Valid values: `projectId`, `environmentId`, `experimentId`.
+    String aggregationType = "aggregationType_example"; // String | Specifies the aggregation method. Defaults to `month_to_date`.<br/>Valid values: `month_to_date`, `incremental`.
+    String granularity = "granularity_example"; // String | Specifies the data granularity. Defaults to `daily`. `monthly` granularity is only supported with the **month_to_date** aggregation type.<br/>Valid values: `daily`, `hourly`, `monthly`.
+    try {
+      SeriesListRep result = apiInstance.getExperimentationKeysUsage(from, to, projectKey, environmentKey, experimentId, groupBy, aggregationType, granularity);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AccountUsageBetaApi#getExperimentationKeysUsage");
@@ -312,14 +699,18 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **from** | **String**| The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. | [optional] |
-| **to** | **String**| The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. | [optional] |
-| **projectKey** | **String**| A project key. If specified, &#x60;environmentKey&#x60; is required and results apply to the corresponding environment in this project. | [optional] |
-| **environmentKey** | **String**| An environment key. If specified, &#x60;projectKey&#x60; is required and results apply to the corresponding environment in this project. | [optional] |
+| **from** | **String**| The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month. | [optional] |
+| **to** | **String**| The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time. | [optional] |
+| **projectKey** | **String**| A project key to filter results by. Can be specified multiple times, one query parameter per project key. | [optional] |
+| **environmentKey** | **String**| An environment key to filter results by. If specified, exactly one &#x60;projectKey&#x60; must be provided. Can be specified multiple times, one query parameter per environment key. | [optional] |
+| **experimentId** | **String**| An experiment ID to filter results by. Can be specified multiple times, one query parameter per experiment ID. | [optional] |
+| **groupBy** | **String**| If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: &#x60;projectId&#x60;, &#x60;environmentId&#x60;, &#x60;experimentId&#x60;. | [optional] |
+| **aggregationType** | **String**| Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;. | [optional] |
+| **granularity** | **String**| Specifies the data granularity. Defaults to &#x60;daily&#x60;. &#x60;monthly&#x60; granularity is only supported with the **month_to_date** aggregation type.&lt;br/&gt;Valid values: &#x60;daily&#x60;, &#x60;hourly&#x60;, &#x60;monthly&#x60;. | [optional] |
 
 ### Return type
 
-[**SeriesIntervalsRep**](SeriesIntervalsRep.md)
+[**SeriesListRep**](SeriesListRep.md)
 
 ### Authorization
 
@@ -340,87 +731,7 @@ public class Example {
 | **429** | Rate limited |  -  |
 | **503** | Service unavailable |  -  |
 
-<a name="getExperimentationUnitsUsage"></a>
-# **getExperimentationUnitsUsage**
-> SeriesIntervalsRep getExperimentationUnitsUsage(from, to, projectKey, environmentKey)
-
-Get experimentation units usage
-
-Get a time-series array of the number of monthly experimentation units from your account. The granularity is always daily, with a maximum of 31 days.
-
-### Example
-```java
-// Import classes:
-import com.launchdarkly.api.ApiClient;
-import com.launchdarkly.api.ApiException;
-import com.launchdarkly.api.Configuration;
-import com.launchdarkly.api.auth.*;
-import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AccountUsageBetaApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://app.launchdarkly.com");
-    
-    // Configure API key authorization: ApiKey
-    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
-    ApiKey.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKey.setApiKeyPrefix("Token");
-
-    AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
-    String from = "from_example"; // String | The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month.
-    String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time.
-    String projectKey = "projectKey_example"; // String | A project key. If specified, `environmentKey` is required and results apply to the corresponding environment in this project.
-    String environmentKey = "environmentKey_example"; // String | An environment key. If specified, `projectKey` is required and results apply to the corresponding environment in this project.
-    try {
-      SeriesIntervalsRep result = apiInstance.getExperimentationUnitsUsage(from, to, projectKey, environmentKey);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling AccountUsageBetaApi#getExperimentationUnitsUsage");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **from** | **String**| The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. | [optional] |
-| **to** | **String**| The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. | [optional] |
-| **projectKey** | **String**| A project key. If specified, &#x60;environmentKey&#x60; is required and results apply to the corresponding environment in this project. | [optional] |
-| **environmentKey** | **String**| An environment key. If specified, &#x60;projectKey&#x60; is required and results apply to the corresponding environment in this project. | [optional] |
-
-### Return type
-
-[**SeriesIntervalsRep**](SeriesIntervalsRep.md)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Usage response |  -  |
-| **400** | Invalid request |  -  |
-| **401** | Invalid access token |  -  |
-| **403** | Forbidden |  -  |
-| **429** | Rate limited |  -  |
-| **503** | Service unavailable |  -  |
-
-<a name="getMauSdksByType"></a>
+<a id="getMauSdksByType"></a>
 # **getMauSdksByType**
 > SdkListRep getMauSdksByType(from, to, sdktype)
 
@@ -497,7 +808,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getMauUsage"></a>
+<a id="getMauUsage"></a>
 # **getMauUsage**
 > SeriesListRep getMauUsage(from, to, project, environment, sdktype, sdk, anonymous, groupby, aggregationType, contextKind)
 
@@ -588,7 +899,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getMauUsageByCategory"></a>
+<a id="getMauUsageByCategory"></a>
 # **getMauUsageByCategory**
 > SeriesListRep getMauUsageByCategory(from, to)
 
@@ -664,13 +975,13 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getServiceConnectionUsage"></a>
-# **getServiceConnectionUsage**
-> SeriesIntervalsRep getServiceConnectionUsage(from, to, projectKey, environmentKey)
+<a id="getObservabilityErrorsUsage"></a>
+# **getObservabilityErrorsUsage**
+> SeriesListRep getObservabilityErrorsUsage(from, to, projectKey, granularity, aggregationType)
 
-Get service connection usage
+Get observability errors usage
 
-Get a time-series array of the number of monthly service connections from your account. The granularity is always daily, with a maximum of 31 days.
+Get time-series arrays of the number of observability errors. Supports &#x60;daily&#x60; and &#x60;monthly&#x60; granularity.
 
 ### Example
 ```java
@@ -696,13 +1007,14 @@ public class Example {
     AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
     String from = "from_example"; // String | The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month.
     String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time.
-    String projectKey = "projectKey_example"; // String | A project key. If specified, `environmentKey` is required and results apply to the corresponding environment in this project.
-    String environmentKey = "environmentKey_example"; // String | An environment key. If specified, `projectKey` is required and results apply to the corresponding environment in this project.
+    String projectKey = "projectKey_example"; // String | A project key to filter results by. Can be specified multiple times, one query parameter per project key.
+    String granularity = "granularity_example"; // String | Specifies the data granularity. Defaults to `daily`. Valid values depend on `aggregationType`: **month_to_date** supports `daily` and `monthly`; **incremental** and **rolling_30d** support `daily` only.
+    String aggregationType = "aggregationType_example"; // String | Specifies the aggregation method. Defaults to `month_to_date`.<br/>Valid values: `month_to_date`, `incremental`, `rolling_30d`.
     try {
-      SeriesIntervalsRep result = apiInstance.getServiceConnectionUsage(from, to, projectKey, environmentKey);
+      SeriesListRep result = apiInstance.getObservabilityErrorsUsage(from, to, projectKey, granularity, aggregationType);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AccountUsageBetaApi#getServiceConnectionUsage");
+      System.err.println("Exception when calling AccountUsageBetaApi#getObservabilityErrorsUsage");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -718,12 +1030,355 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **from** | **String**| The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. | [optional] |
 | **to** | **String**| The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. | [optional] |
-| **projectKey** | **String**| A project key. If specified, &#x60;environmentKey&#x60; is required and results apply to the corresponding environment in this project. | [optional] |
-| **environmentKey** | **String**| An environment key. If specified, &#x60;projectKey&#x60; is required and results apply to the corresponding environment in this project. | [optional] |
+| **projectKey** | **String**| A project key to filter results by. Can be specified multiple times, one query parameter per project key. | [optional] |
+| **granularity** | **String**| Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. | [optional] |
+| **aggregationType** | **String**| Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. | [optional] |
 
 ### Return type
 
-[**SeriesIntervalsRep**](SeriesIntervalsRep.md)
+[**SeriesListRep**](SeriesListRep.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Usage response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
+
+<a id="getObservabilityLogsUsage"></a>
+# **getObservabilityLogsUsage**
+> SeriesListRep getObservabilityLogsUsage(from, to, projectKey, granularity, aggregationType)
+
+Get observability logs usage
+
+Get time-series arrays of the number of observability logs. Supports &#x60;daily&#x60; and &#x60;monthly&#x60; granularity.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AccountUsageBetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
+    String from = "from_example"; // String | The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month.
+    String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time.
+    String projectKey = "projectKey_example"; // String | A project key to filter results by. Can be specified multiple times, one query parameter per project key.
+    String granularity = "granularity_example"; // String | Specifies the data granularity. Defaults to `daily`. Valid values depend on `aggregationType`: **month_to_date** supports `daily` and `monthly`; **incremental** and **rolling_30d** support `daily` only.
+    String aggregationType = "aggregationType_example"; // String | Specifies the aggregation method. Defaults to `month_to_date`.<br/>Valid values: `month_to_date`, `incremental`, `rolling_30d`.
+    try {
+      SeriesListRep result = apiInstance.getObservabilityLogsUsage(from, to, projectKey, granularity, aggregationType);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AccountUsageBetaApi#getObservabilityLogsUsage");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **from** | **String**| The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. | [optional] |
+| **to** | **String**| The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. | [optional] |
+| **projectKey** | **String**| A project key to filter results by. Can be specified multiple times, one query parameter per project key. | [optional] |
+| **granularity** | **String**| Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. | [optional] |
+| **aggregationType** | **String**| Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. | [optional] |
+
+### Return type
+
+[**SeriesListRep**](SeriesListRep.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Usage response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
+
+<a id="getObservabilitySessionsUsage"></a>
+# **getObservabilitySessionsUsage**
+> SeriesListRep getObservabilitySessionsUsage(from, to, projectKey, granularity, aggregationType)
+
+Get observability sessions usage
+
+Get time-series arrays of the number of observability sessions. Supports &#x60;daily&#x60; and &#x60;monthly&#x60; granularity.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AccountUsageBetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
+    String from = "from_example"; // String | The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month.
+    String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time.
+    String projectKey = "projectKey_example"; // String | A project key to filter results by. Can be specified multiple times, one query parameter per project key.
+    String granularity = "granularity_example"; // String | Specifies the data granularity. Defaults to `daily`. Valid values depend on `aggregationType`: **month_to_date** supports `daily` and `monthly`; **incremental** and **rolling_30d** support `daily` only.
+    String aggregationType = "aggregationType_example"; // String | Specifies the aggregation method. Defaults to `month_to_date`.<br/>Valid values: `month_to_date`, `incremental`, `rolling_30d`.
+    try {
+      SeriesListRep result = apiInstance.getObservabilitySessionsUsage(from, to, projectKey, granularity, aggregationType);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AccountUsageBetaApi#getObservabilitySessionsUsage");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **from** | **String**| The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. | [optional] |
+| **to** | **String**| The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. | [optional] |
+| **projectKey** | **String**| A project key to filter results by. Can be specified multiple times, one query parameter per project key. | [optional] |
+| **granularity** | **String**| Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. | [optional] |
+| **aggregationType** | **String**| Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. | [optional] |
+
+### Return type
+
+[**SeriesListRep**](SeriesListRep.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Usage response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
+
+<a id="getObservabilityTracesUsage"></a>
+# **getObservabilityTracesUsage**
+> SeriesListRep getObservabilityTracesUsage(from, to, projectKey, granularity, aggregationType)
+
+Get observability traces usage
+
+Get time-series arrays of the number of observability traces. Supports &#x60;daily&#x60; and &#x60;monthly&#x60; granularity.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AccountUsageBetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
+    String from = "from_example"; // String | The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month.
+    String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time.
+    String projectKey = "projectKey_example"; // String | A project key to filter results by. Can be specified multiple times, one query parameter per project key.
+    String granularity = "granularity_example"; // String | Specifies the data granularity. Defaults to `daily`. Valid values depend on `aggregationType`: **month_to_date** supports `daily` and `monthly`; **incremental** and **rolling_30d** support `daily` only.
+    String aggregationType = "aggregationType_example"; // String | Specifies the aggregation method. Defaults to `month_to_date`.<br/>Valid values: `month_to_date`, `incremental`, `rolling_30d`.
+    try {
+      SeriesListRep result = apiInstance.getObservabilityTracesUsage(from, to, projectKey, granularity, aggregationType);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AccountUsageBetaApi#getObservabilityTracesUsage");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **from** | **String**| The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. | [optional] |
+| **to** | **String**| The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. | [optional] |
+| **projectKey** | **String**| A project key to filter results by. Can be specified multiple times, one query parameter per project key. | [optional] |
+| **granularity** | **String**| Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. | [optional] |
+| **aggregationType** | **String**| Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. | [optional] |
+
+### Return type
+
+[**SeriesListRep**](SeriesListRep.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Usage response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
+
+<a id="getServiceConnectionsUsage"></a>
+# **getServiceConnectionsUsage**
+> SeriesListRepFloat getServiceConnectionsUsage(from, to, projectKey, environmentKey, connectionType, relayVersion, sdkName, sdkVersion, sdkType, groupBy, aggregationType, granularity)
+
+Get service connections usage
+
+Get a time series array showing the number of service connection minutes from your account. The supported granularity varies by aggregation type. The maximum time range is 365 days.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AccountUsageBetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
+    String from = "from_example"; // String | The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month.
+    String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time.
+    String projectKey = "projectKey_example"; // String | A project key to filter results by. Can be specified multiple times, one query parameter per project key.
+    String environmentKey = "environmentKey_example"; // String | An environment key to filter results by. If specified, exactly one `projectKey` must be provided. Can be specified multiple times, one query parameter per environment key.
+    String connectionType = "connectionType_example"; // String | A connection type to filter results by. Can be specified multiple times, one query parameter per connection type.
+    String relayVersion = "relayVersion_example"; // String | A relay version to filter results by. Can be specified multiple times, one query parameter per relay version.
+    String sdkName = "sdkName_example"; // String | An SDK name to filter results by. Can be specified multiple times, one query parameter per SDK name.
+    String sdkVersion = "sdkVersion_example"; // String | An SDK version to filter results by. Can be specified multiple times, one query parameter per SDK version.
+    String sdkType = "sdkType_example"; // String | An SDK type to filter results by. Can be specified multiple times, one query parameter per SDK type.
+    String groupBy = "groupBy_example"; // String | If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.<br/>Valid values: `projectId`, `environmentId`, `connectionType`, `relayVersion`, `sdkName`, `sdkVersion`, `sdkType`.
+    String aggregationType = "aggregationType_example"; // String | Specifies the aggregation method. Defaults to `month_to_date`.<br/>Valid values: `month_to_date`, `incremental`.
+    String granularity = "granularity_example"; // String | Specifies the data granularity. Defaults to `daily`. `monthly` granularity is only supported with the **month_to_date** aggregation type.<br/>Valid values: `daily`, `hourly`, `monthly`.
+    try {
+      SeriesListRepFloat result = apiInstance.getServiceConnectionsUsage(from, to, projectKey, environmentKey, connectionType, relayVersion, sdkName, sdkVersion, sdkType, groupBy, aggregationType, granularity);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AccountUsageBetaApi#getServiceConnectionsUsage");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **from** | **String**| The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month. | [optional] |
+| **to** | **String**| The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time. | [optional] |
+| **projectKey** | **String**| A project key to filter results by. Can be specified multiple times, one query parameter per project key. | [optional] |
+| **environmentKey** | **String**| An environment key to filter results by. If specified, exactly one &#x60;projectKey&#x60; must be provided. Can be specified multiple times, one query parameter per environment key. | [optional] |
+| **connectionType** | **String**| A connection type to filter results by. Can be specified multiple times, one query parameter per connection type. | [optional] |
+| **relayVersion** | **String**| A relay version to filter results by. Can be specified multiple times, one query parameter per relay version. | [optional] |
+| **sdkName** | **String**| An SDK name to filter results by. Can be specified multiple times, one query parameter per SDK name. | [optional] |
+| **sdkVersion** | **String**| An SDK version to filter results by. Can be specified multiple times, one query parameter per SDK version. | [optional] |
+| **sdkType** | **String**| An SDK type to filter results by. Can be specified multiple times, one query parameter per SDK type. | [optional] |
+| **groupBy** | **String**| If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: &#x60;projectId&#x60;, &#x60;environmentId&#x60;, &#x60;connectionType&#x60;, &#x60;relayVersion&#x60;, &#x60;sdkName&#x60;, &#x60;sdkVersion&#x60;, &#x60;sdkType&#x60;. | [optional] |
+| **aggregationType** | **String**| Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;. | [optional] |
+| **granularity** | **String**| Specifies the data granularity. Defaults to &#x60;daily&#x60;. &#x60;monthly&#x60; granularity is only supported with the **month_to_date** aggregation type.&lt;br/&gt;Valid values: &#x60;daily&#x60;, &#x60;hourly&#x60;, &#x60;monthly&#x60;. | [optional] |
+
+### Return type
+
+[**SeriesListRepFloat**](SeriesListRepFloat.md)
 
 ### Authorization
 
@@ -744,7 +1399,7 @@ public class Example {
 | **429** | Rate limited |  -  |
 | **503** | Service unavailable |  -  |
 
-<a name="getStreamUsage"></a>
+<a id="getStreamUsage"></a>
 # **getStreamUsage**
 > SeriesListRep getStreamUsage(source, from, to, tz)
 
@@ -824,7 +1479,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getStreamUsageBySdkVersion"></a>
+<a id="getStreamUsageBySdkVersion"></a>
 # **getStreamUsageBySdkVersion**
 > SeriesListRep getStreamUsageBySdkVersion(source, from, to, tz, sdk, version)
 
@@ -908,7 +1563,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getStreamUsageSdkversion"></a>
+<a id="getStreamUsageSdkversion"></a>
 # **getStreamUsageSdkversion**
 > SdkVersionListRep getStreamUsageSdkversion(source)
 

@@ -14,7 +14,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**putFlagDefaultsByProject**](ProjectsApi.md#putFlagDefaultsByProject) | **PUT** /api/v2/projects/{projectKey}/flag-defaults | Create or update flag defaults for project |
 
 
-<a name="deleteProject"></a>
+<a id="deleteProject"></a>
 # **deleteProject**
 > deleteProject(projectKey)
 
@@ -87,7 +87,7 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getFlagDefaultsByProject"></a>
+<a id="getFlagDefaultsByProject"></a>
 # **getFlagDefaultsByProject**
 > FlagDefaultsRep getFlagDefaultsByProject(projectKey)
 
@@ -159,7 +159,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
 
-<a name="getProject"></a>
+<a id="getProject"></a>
 # **getProject**
 > Project getProject(projectKey, expand)
 
@@ -235,7 +235,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getProjects"></a>
+<a id="getProjects"></a>
 # **getProjects**
 > Projects getProjects(limit, offset, filter, sort, expand)
 
@@ -316,7 +316,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="patchFlagDefaultsByProject"></a>
+<a id="patchFlagDefaultsByProject"></a>
 # **patchFlagDefaultsByProject**
 > UpsertPayloadRep patchFlagDefaultsByProject(projectKey, patchOperation)
 
@@ -393,7 +393,7 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="patchProject"></a>
+<a id="patchProject"></a>
 # **patchProject**
 > ProjectRep patchProject(projectKey, patchOperation)
 
@@ -470,7 +470,7 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postProject"></a>
+<a id="postProject"></a>
 # **postProject**
 > ProjectRep postProject(projectPost)
 
@@ -544,7 +544,7 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="putFlagDefaultsByProject"></a>
+<a id="putFlagDefaultsByProject"></a>
 # **putFlagDefaultsByProject**
 > UpsertPayloadRep putFlagDefaultsByProject(projectKey, upsertFlagDefaultsPayload)
 

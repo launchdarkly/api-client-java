@@ -12,7 +12,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**postMembers**](AccountMembersApi.md#postMembers) | **POST** /api/v2/members | Invite new members |
 
 
-<a name="deleteMember"></a>
+<a id="deleteMember"></a>
 # **deleteMember**
 > deleteMember(id)
 
@@ -85,7 +85,7 @@ null (empty response body)
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getMember"></a>
+<a id="getMember"></a>
 # **getMember**
 > Member getMember(id, expand)
 
@@ -160,7 +160,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getMembers"></a>
+<a id="getMembers"></a>
 # **getMembers**
 > Members getMembers(limit, offset, filter, expand, sort)
 
@@ -241,7 +241,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="patchMember"></a>
+<a id="patchMember"></a>
 # **patchMember**
 > Member patchMember(id, patchOperation)
 
@@ -318,7 +318,7 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postMemberTeams"></a>
+<a id="postMemberTeams"></a>
 # **postMemberTeams**
 > Member postMemberTeams(id, memberTeamsPostInput)
 
@@ -395,13 +395,13 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postMembers"></a>
+<a id="postMembers"></a>
 # **postMembers**
 > Members postMembers(newMemberForm)
 
 Invite new members
 
-Invite one or more new members to join an account. Each member is sent an invitation. Members with \&quot;admin\&quot; or \&quot;owner\&quot; roles may create new members, as well as anyone with a \&quot;createMember\&quot; permission for \&quot;member/\\*\&quot;. If a member cannot be invited, the entire request is rejected and no members are invited from that request.  Each member _must_ have an &#x60;email&#x60; field and either a &#x60;role&#x60; or a &#x60;customRoles&#x60; field. If any of the fields are not populated correctly, the request is rejected with the reason specified in the \&quot;message\&quot; field of the response.  Requests to create account members will not work if SCIM is enabled for the account.  _No more than 50 members may be created per request._  A request may also fail because of conflicts with existing members. These conflicts are reported using the additional &#x60;code&#x60; and &#x60;invalid_emails&#x60; response fields with the following possible values for &#x60;code&#x60;:  - **email_already_exists_in_account**: A member with this email address already exists in this account. - **email_taken_in_different_account**: A member with this email address exists in another account. - **duplicate_email**s: This request contains two or more members with the same email address.  A request that fails for one of the above reasons returns an HTTP response code of 400 (Bad Request). 
+Invite one or more new members to join an account. Each member is sent an invitation. Members with Admin or Owner roles may create new members, as well as anyone with a &#x60;createMember&#x60; permission for \&quot;member/\\*\&quot;. If a member cannot be invited, the entire request is rejected and no members are invited from that request.  Each member _must_ have an &#x60;email&#x60; field and either a &#x60;role&#x60; or a &#x60;customRoles&#x60; field. If any of the fields are not populated correctly, the request is rejected with the reason specified in the \&quot;message\&quot; field of the response.  Valid base role names that you can provide for the &#x60;role&#x60; field include &#x60;reader&#x60;, &#x60;writer&#x60;, &#x60;admin&#x60;, &#x60;owner/admin&#x60;, and &#x60;no_access&#x60;. To learn more about base roles, read [Organization roles](https://launchdarkly.com/docs/home/account/roles/organization-roles).  If you are using the &#x60;customRoles&#x60; field instead, you can provide the key for any role that you have created, or for any preset [organization role](https://launchdarkly.com/docs/home/account/roles/organization-roles) or [project role](https://launchdarkly.com/docs/home/account/roles/project-roles) provided by LaunchDarkly. Some preset roles additionally require that you specify &#x60;roleAttributes&#x60;. To learn more, read [Using role scope](https://launchdarkly.com/docs/home/account/roles/role-scope).  Requests to create account members will not work if SCIM is enabled for the account.  _No more than 50 members may be created per request._  A request may also fail because of conflicts with existing members. These conflicts are reported using the additional &#x60;code&#x60; and &#x60;invalid_emails&#x60; response fields with the following possible values for &#x60;code&#x60;:  - **email_already_exists_in_account**: A member with this email address already exists in this account. - **email_taken_in_different_account**: A member with this email address exists in another account. - **duplicate_email**s: This request contains two or more members with the same email address.  A request that fails for one of the above reasons returns an HTTP response code of 400 (Bad Request). 
 
 ### Example
 ```java

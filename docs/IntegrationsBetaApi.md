@@ -11,7 +11,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**updateIntegrationConfiguration**](IntegrationsBetaApi.md#updateIntegrationConfiguration) | **PATCH** /api/v2/integration-configurations/{integrationConfigurationId} | Update integration configuration |
 
 
-<a name="createIntegrationConfiguration"></a>
+<a id="createIntegrationConfiguration"></a>
 # **createIntegrationConfiguration**
 > IntegrationConfigurationsRep createIntegrationConfiguration(integrationKey, integrationConfigurationPost)
 
@@ -88,7 +88,7 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="deleteIntegrationConfiguration"></a>
+<a id="deleteIntegrationConfiguration"></a>
 # **deleteIntegrationConfiguration**
 > deleteIntegrationConfiguration(integrationConfigurationId)
 
@@ -161,7 +161,7 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getAllIntegrationConfigurations"></a>
+<a id="getAllIntegrationConfigurations"></a>
 # **getAllIntegrationConfigurations**
 > IntegrationConfigurationCollectionRep getAllIntegrationConfigurations(integrationKey)
 
@@ -235,7 +235,7 @@ public class Example {
 | **404** | Integration key not found |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getIntegrationConfiguration"></a>
+<a id="getIntegrationConfiguration"></a>
 # **getIntegrationConfiguration**
 > IntegrationConfigurationsRep getIntegrationConfiguration(integrationConfigurationId)
 
@@ -309,7 +309,7 @@ public class Example {
 | **404** | Integration ID not found |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="updateIntegrationConfiguration"></a>
+<a id="updateIntegrationConfiguration"></a>
 # **updateIntegrationConfiguration**
 > IntegrationConfigurationsRep updateIntegrationConfiguration(integrationConfigurationId, patchOperation)
 

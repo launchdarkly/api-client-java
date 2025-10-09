@@ -12,6 +12,7 @@
 |**name** | **String** | A human-friendly name for the metric or metric group |  |
 |**kind** | [**KindEnum**](#KindEnum) | If this is a metric, then it represents the kind of event the metric tracks. If this is a metric group, then it represents the group type |  |
 |**isNumeric** | **Boolean** | For custom metrics, whether to track numeric changes in value against a baseline (&lt;code&gt;true&lt;/code&gt;) or to track a conversion when an end user takes an action (&lt;code&gt;false&lt;/code&gt;). |  [optional] |
+|**eventKey** | **String** | The event key sent with the metric. Only relevant for custom metrics. |  [optional] |
 |**links** | [**Map&lt;String, Link&gt;**](Link.md) | The location and content type of related resources |  |
 |**isGroup** | **Boolean** | Whether this is a metric group or a metric |  |
 |**metrics** | [**List&lt;MetricInGroupRep&gt;**](MetricInGroupRep.md) | An ordered list of the metrics in this metric group |  [optional] |
@@ -27,6 +28,7 @@
 | CUSTOM | &quot;custom&quot; |
 | FUNNEL | &quot;funnel&quot; |
 | STANDARD | &quot;standard&quot; |
+| GUARDRAIL | &quot;guardrail&quot; |
 
 
 

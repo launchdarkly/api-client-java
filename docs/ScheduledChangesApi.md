@@ -11,7 +11,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**postFlagConfigScheduledChanges**](ScheduledChangesApi.md#postFlagConfigScheduledChanges) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes | Create scheduled changes workflow |
 
 
-<a name="deleteFlagConfigScheduledChanges"></a>
+<a id="deleteFlagConfigScheduledChanges"></a>
 # **deleteFlagConfigScheduledChanges**
 > deleteFlagConfigScheduledChanges(projectKey, featureFlagKey, environmentKey, id)
 
@@ -91,7 +91,7 @@ null (empty response body)
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getFeatureFlagScheduledChange"></a>
+<a id="getFeatureFlagScheduledChange"></a>
 # **getFeatureFlagScheduledChange**
 > FeatureFlagScheduledChange getFeatureFlagScheduledChange(projectKey, featureFlagKey, environmentKey, id)
 
@@ -169,7 +169,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getFlagConfigScheduledChanges"></a>
+<a id="getFlagConfigScheduledChanges"></a>
 # **getFlagConfigScheduledChanges**
 > FeatureFlagScheduledChanges getFlagConfigScheduledChanges(projectKey, featureFlagKey, environmentKey)
 
@@ -246,7 +246,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
 
-<a name="patchFlagConfigScheduledChange"></a>
+<a id="patchFlagConfigScheduledChange"></a>
 # **patchFlagConfigScheduledChange**
 > FeatureFlagScheduledChange patchFlagConfigScheduledChange(projectKey, featureFlagKey, environmentKey, id, flagScheduledChangesInput, ignoreConflicts)
 
@@ -332,13 +332,13 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postFlagConfigScheduledChanges"></a>
+<a id="postFlagConfigScheduledChanges"></a>
 # **postFlagConfigScheduledChanges**
 > FeatureFlagScheduledChange postFlagConfigScheduledChanges(projectKey, featureFlagKey, environmentKey, postFlagScheduledChangesInput, ignoreConflicts)
 
 Create scheduled changes workflow
 
-Create scheduled changes for a feature flag. If the &#x60;ignoreConficts&#x60; query parameter is false and there are conflicts between these instructions and existing scheduled changes, the request will fail. If the parameter is true and there are conflicts, the request will succeed.
+Create scheduled changes for a feature flag. The changes you schedule may include any semantic patch instructions available when [updating a feature flag](https://launchdarkly.com/docs/api/feature-flags/patch-feature-flag#using-semantic-patches-on-a-feature-flag). If the &#x60;ignoreConficts&#x60; query parameter is false and there are conflicts between these instructions and existing scheduled changes, the request will fail. If the parameter is true and there are conflicts, the request will succeed.
 
 ### Example
 ```java

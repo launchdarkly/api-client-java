@@ -11,12 +11,12 @@
 |**id** | **String** | The member&#39;s ID |  |
 |**firstName** | **String** | The member&#39;s first name |  [optional] |
 |**lastName** | **String** | The member&#39;s last name |  [optional] |
-|**role** | **String** | The member&#39;s built-in role. If the member has no custom roles, this role will be in effect. |  |
+|**role** | **String** | The member&#39;s base role. If the member has no additional roles, this role will be in effect. |  |
 |**email** | **String** | The member&#39;s email address |  |
 |**pendingInvite** | **Boolean** | Whether the member has a pending invitation |  |
 |**verified** | **Boolean** | Whether the member&#39;s email address has been verified |  |
 |**pendingEmail** | **String** | The member&#39;s email address before it has been verified, for accounts where email verification is required |  [optional] |
-|**customRoles** | **List&lt;String&gt;** | The set of custom roles (as keys) assigned to the member |  |
+|**customRoles** | **List&lt;String&gt;** | The set of additional roles, besides the base role, assigned to the member |  |
 |**mfa** | **String** | Whether multi-factor authentication is enabled for this member |  |
 |**excludedDashboards** | **List&lt;String&gt;** | Default dashboards that the member has chosen to ignore |  [optional] |
 |**lastSeen** | **Long** |  |  |

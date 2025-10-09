@@ -8,7 +8,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**getDependentFlagsByEnv**](FeatureFlagsBetaApi.md#getDependentFlagsByEnv) | **GET** /api/v2/flags/{projectKey}/{environmentKey}/{featureFlagKey}/dependent-flags | List dependent feature flags by environment |
 
 
-<a name="getDependentFlags"></a>
+<a id="getDependentFlags"></a>
 # **getDependentFlags**
 > MultiEnvironmentDependentFlags getDependentFlags(projectKey, featureFlagKey)
 
@@ -83,7 +83,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getDependentFlagsByEnv"></a>
+<a id="getDependentFlagsByEnv"></a>
 # **getDependentFlagsByEnv**
 > DependentFlagsByEnvironment getDependentFlagsByEnv(projectKey, environmentKey, featureFlagKey)
 

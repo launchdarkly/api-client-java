@@ -7,7 +7,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**getFlagEvents**](InsightsFlagEventsBetaApi.md#getFlagEvents) | **GET** /api/v2/engineering-insights/flag-events | List flag events |
 
 
-<a name="getFlagEvents"></a>
+<a id="getFlagEvents"></a>
 # **getFlagEvents**
 > FlagEventCollectionRep getFlagEvents(projectKey, environmentKey, applicationKey, query, impactSize, hasExperiments, global, expand, limit, from, to, after, before)
 

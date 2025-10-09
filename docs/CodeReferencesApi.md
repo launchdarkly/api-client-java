@@ -19,7 +19,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**putBranch**](CodeReferencesApi.md#putBranch) | **PUT** /api/v2/code-refs/repositories/{repo}/branches/{branch} | Upsert branch |
 
 
-<a name="deleteBranches"></a>
+<a id="deleteBranches"></a>
 # **deleteBranches**
 > deleteBranches(repo, requestBody)
 
@@ -94,7 +94,7 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="deleteRepository"></a>
+<a id="deleteRepository"></a>
 # **deleteRepository**
 > deleteRepository(repo)
 
@@ -167,7 +167,7 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getBranch"></a>
+<a id="getBranch"></a>
 # **getBranch**
 > BranchRep getBranch(repo, branch, projKey, flagKey)
 
@@ -247,7 +247,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getBranches"></a>
+<a id="getBranches"></a>
 # **getBranches**
 > BranchCollectionRep getBranches(repo)
 
@@ -321,7 +321,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getExtinctions"></a>
+<a id="getExtinctions"></a>
 # **getExtinctions**
 > ExtinctionCollectionRep getExtinctions(repoName, branchName, projKey, flagKey, from, to)
 
@@ -403,7 +403,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getRepositories"></a>
+<a id="getRepositories"></a>
 # **getRepositories**
 > RepositoryCollectionRep getRepositories(withBranches, withReferencesForDefaultBranch, projKey, flagKey)
 
@@ -481,7 +481,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getRepository"></a>
+<a id="getRepository"></a>
 # **getRepository**
 > RepositoryRep getRepository(repo)
 
@@ -555,7 +555,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getRootStatistic"></a>
+<a id="getRootStatistic"></a>
 # **getRootStatistic**
 > StatisticsRoot getRootStatistic()
 
@@ -624,7 +624,7 @@ This endpoint does not need any parameter.
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getStatistics"></a>
+<a id="getStatistics"></a>
 # **getStatistics**
 > StatisticCollectionRep getStatistics(projectKey, flagKey)
 
@@ -699,7 +699,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="patchRepository"></a>
+<a id="patchRepository"></a>
 # **patchRepository**
 > RepositoryRep patchRepository(repo, patchOperation)
 
@@ -775,7 +775,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postExtinction"></a>
+<a id="postExtinction"></a>
 # **postExtinction**
 > postExtinction(repo, branch, extinction)
 
@@ -852,7 +852,7 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postRepository"></a>
+<a id="postRepository"></a>
 # **postRepository**
 > RepositoryRep postRepository(repositoryPost)
 
@@ -926,7 +926,7 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="putBranch"></a>
+<a id="putBranch"></a>
 # **putBranch**
 > putBranch(repo, branch, putBranch)
 

@@ -13,7 +13,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**patchApplicationVersion**](ApplicationsBetaApi.md#patchApplicationVersion) | **PATCH** /api/v2/applications/{applicationKey}/versions/{versionKey} | Update application version |
 
 
-<a name="deleteApplication"></a>
+<a id="deleteApplication"></a>
 # **deleteApplication**
 > deleteApplication(applicationKey)
 
@@ -85,7 +85,7 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="deleteApplicationVersion"></a>
+<a id="deleteApplicationVersion"></a>
 # **deleteApplicationVersion**
 > deleteApplicationVersion(applicationKey, versionKey)
 
@@ -159,7 +159,7 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getApplication"></a>
+<a id="getApplication"></a>
 # **getApplication**
 > ApplicationRep getApplication(applicationKey, expand)
 
@@ -235,7 +235,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getApplicationVersions"></a>
+<a id="getApplicationVersions"></a>
 # **getApplicationVersions**
 > ApplicationVersionsCollectionRep getApplicationVersions(applicationKey, filter, limit, offset, sort)
 
@@ -317,7 +317,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getApplications"></a>
+<a id="getApplications"></a>
 # **getApplications**
 > ApplicationCollectionRep getApplications(filter, limit, offset, sort, expand)
 
@@ -399,7 +399,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="patchApplication"></a>
+<a id="patchApplication"></a>
 # **patchApplication**
 > ApplicationRep patchApplication(applicationKey, patchOperation)
 
@@ -475,7 +475,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="patchApplicationVersion"></a>
+<a id="patchApplicationVersion"></a>
 # **patchApplicationVersion**
 > ApplicationVersionRep patchApplicationVersion(applicationKey, versionKey, patchOperation)
 

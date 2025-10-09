@@ -13,7 +13,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**validateIntegrationDeliveryConfiguration**](IntegrationDeliveryConfigurationsBetaApi.md#validateIntegrationDeliveryConfiguration) | **POST** /api/v2/integration-capabilities/featureStore/{projectKey}/{environmentKey}/{integrationKey}/{id}/validate | Validate delivery configuration |
 
 
-<a name="createIntegrationDeliveryConfiguration"></a>
+<a id="createIntegrationDeliveryConfiguration"></a>
 # **createIntegrationDeliveryConfiguration**
 > IntegrationDeliveryConfiguration createIntegrationDeliveryConfiguration(projectKey, environmentKey, integrationKey, integrationDeliveryConfigurationPost)
 
@@ -93,7 +93,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="deleteIntegrationDeliveryConfiguration"></a>
+<a id="deleteIntegrationDeliveryConfiguration"></a>
 # **deleteIntegrationDeliveryConfiguration**
 > deleteIntegrationDeliveryConfiguration(projectKey, environmentKey, integrationKey, id)
 
@@ -172,7 +172,7 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getIntegrationDeliveryConfigurationByEnvironment"></a>
+<a id="getIntegrationDeliveryConfigurationByEnvironment"></a>
 # **getIntegrationDeliveryConfigurationByEnvironment**
 > IntegrationDeliveryConfigurationCollection getIntegrationDeliveryConfigurationByEnvironment(projectKey, environmentKey)
 
@@ -247,7 +247,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getIntegrationDeliveryConfigurationById"></a>
+<a id="getIntegrationDeliveryConfigurationById"></a>
 # **getIntegrationDeliveryConfigurationById**
 > IntegrationDeliveryConfiguration getIntegrationDeliveryConfigurationById(projectKey, environmentKey, integrationKey, id)
 
@@ -324,7 +324,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getIntegrationDeliveryConfigurations"></a>
+<a id="getIntegrationDeliveryConfigurations"></a>
 # **getIntegrationDeliveryConfigurations**
 > IntegrationDeliveryConfigurationCollection getIntegrationDeliveryConfigurations()
 
@@ -393,7 +393,7 @@ This endpoint does not need any parameter.
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="patchIntegrationDeliveryConfiguration"></a>
+<a id="patchIntegrationDeliveryConfiguration"></a>
 # **patchIntegrationDeliveryConfiguration**
 > IntegrationDeliveryConfiguration patchIntegrationDeliveryConfiguration(projectKey, environmentKey, integrationKey, id, patchOperation)
 
@@ -476,7 +476,7 @@ public class Example {
 | **422** | Invalid patch content |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="validateIntegrationDeliveryConfiguration"></a>
+<a id="validateIntegrationDeliveryConfiguration"></a>
 # **validateIntegrationDeliveryConfiguration**
 > IntegrationDeliveryConfigurationResponse validateIntegrationDeliveryConfiguration(projectKey, environmentKey, integrationKey, id)
 

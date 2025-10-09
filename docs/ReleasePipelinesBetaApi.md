@@ -12,13 +12,13 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**putReleasePipeline**](ReleasePipelinesBetaApi.md#putReleasePipeline) | **PUT** /api/v2/projects/{projectKey}/release-pipelines/{pipelineKey} | Update a release pipeline |
 
 
-<a name="deleteReleasePipeline"></a>
+<a id="deleteReleasePipeline"></a>
 # **deleteReleasePipeline**
 > deleteReleasePipeline(projectKey, pipelineKey)
 
 Delete release pipeline
 
-Deletes a release pipeline.  You cannot delete the default release pipeline.  If you want to delete a release pipeline that is currently the default, create a second release pipeline and set it as the default. Then delete the first release pipeline. To change the default release pipeline, use the [Update project](https://launchdarkly.com/docs/ld-docs/api/projects/patch-project) API to set the &#x60;defaultReleasePipelineKey&#x60;. 
+Deletes a release pipeline.  You cannot delete the default release pipeline.  If you want to delete a release pipeline that is currently the default, create a second release pipeline and set it as the default. Then delete the first release pipeline. To change the default release pipeline, use the [Update project](https://launchdarkly.com/docs/api/projects/patch-project) API to set the &#x60;defaultReleasePipelineKey&#x60;. 
 
 ### Example
 ```java
@@ -84,7 +84,7 @@ null (empty response body)
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
 
-<a name="getAllReleasePipelines"></a>
+<a id="getAllReleasePipelines"></a>
 # **getAllReleasePipelines**
 > ReleasePipelineCollection getAllReleasePipelines(projectKey, filter, limit, offset)
 
@@ -160,7 +160,7 @@ public class Example {
 | **200** | Release pipeline collection |  -  |
 | **404** | Invalid resource identifier |  -  |
 
-<a name="getAllReleaseProgressionsForReleasePipeline"></a>
+<a id="getAllReleaseProgressionsForReleasePipeline"></a>
 # **getAllReleaseProgressionsForReleasePipeline**
 > ReleaseProgressionCollection getAllReleaseProgressionsForReleasePipeline(projectKey, pipelineKey, filter, limit, offset)
 
@@ -238,7 +238,7 @@ public class Example {
 | **200** | Release progression collection |  -  |
 | **404** | Invalid resource identifier |  -  |
 
-<a name="getReleasePipelineByKey"></a>
+<a id="getReleasePipelineByKey"></a>
 # **getReleasePipelineByKey**
 > ReleasePipeline getReleasePipelineByKey(projectKey, pipelineKey)
 
@@ -310,13 +310,13 @@ public class Example {
 | **200** | Release pipeline response |  -  |
 | **404** | Invalid resource identifier |  -  |
 
-<a name="postReleasePipeline"></a>
+<a id="postReleasePipeline"></a>
 # **postReleasePipeline**
 > ReleasePipeline postReleasePipeline(projectKey, createReleasePipelineInput)
 
 Create a release pipeline
 
-Creates a new release pipeline.  The first release pipeline you create is automatically set as the default release pipeline for your project. To change the default release pipeline, use the [Update project](https://launchdarkly.com/docs/ld-docs/api/projects/patch-project) API to set the &#x60;defaultReleasePipelineKey&#x60;.  You can create up to 20 release pipelines per project. 
+Creates a new release pipeline.  The first release pipeline you create is automatically set as the default release pipeline for your project. To change the default release pipeline, use the [Update project](https://launchdarkly.com/docs/api/projects/patch-project) API to set the &#x60;defaultReleasePipelineKey&#x60;.  You can create up to 20 release pipelines per project. 
 
 ### Example
 ```java
@@ -385,7 +385,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **409** | Status conflict |  -  |
 
-<a name="putReleasePipeline"></a>
+<a id="putReleasePipeline"></a>
 # **putReleasePipeline**
 > ReleasePipeline putReleasePipeline(projectKey, pipelineKey, updateReleasePipelineInput)
 

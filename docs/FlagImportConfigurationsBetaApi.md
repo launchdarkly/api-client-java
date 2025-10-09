@@ -12,7 +12,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**triggerFlagImportJob**](FlagImportConfigurationsBetaApi.md#triggerFlagImportJob) | **POST** /api/v2/integration-capabilities/flag-import/{projectKey}/{integrationKey}/{integrationId}/trigger | Trigger a single flag import run |
 
 
-<a name="createFlagImportConfiguration"></a>
+<a id="createFlagImportConfiguration"></a>
 # **createFlagImportConfiguration**
 > FlagImportIntegration createFlagImportConfiguration(projectKey, integrationKey, flagImportConfigurationPost)
 
@@ -91,7 +91,7 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="deleteFlagImportConfiguration"></a>
+<a id="deleteFlagImportConfiguration"></a>
 # **deleteFlagImportConfiguration**
 > deleteFlagImportConfiguration(projectKey, integrationKey, integrationId)
 
@@ -168,7 +168,7 @@ null (empty response body)
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getFlagImportConfiguration"></a>
+<a id="getFlagImportConfiguration"></a>
 # **getFlagImportConfiguration**
 > FlagImportIntegration getFlagImportConfiguration(projectKey, integrationKey, integrationId)
 
@@ -247,7 +247,7 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getFlagImportConfigurations"></a>
+<a id="getFlagImportConfigurations"></a>
 # **getFlagImportConfigurations**
 > FlagImportIntegrationCollection getFlagImportConfigurations()
 
@@ -318,7 +318,7 @@ This endpoint does not need any parameter.
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="patchFlagImportConfiguration"></a>
+<a id="patchFlagImportConfiguration"></a>
 # **patchFlagImportConfiguration**
 > FlagImportIntegration patchFlagImportConfiguration(projectKey, integrationKey, integrationId, patchOperation)
 
@@ -399,7 +399,7 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="triggerFlagImportJob"></a>
+<a id="triggerFlagImportJob"></a>
 # **triggerFlagImportJob**
 > triggerFlagImportJob(projectKey, integrationKey, integrationId)
 

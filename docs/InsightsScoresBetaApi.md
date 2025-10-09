@@ -12,7 +12,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**patchInsightGroup**](InsightsScoresBetaApi.md#patchInsightGroup) | **PATCH** /api/v2/engineering-insights/insights/groups/{insightGroupKey} | Patch insight group |
 
 
-<a name="createInsightGroup"></a>
+<a id="createInsightGroup"></a>
 # **createInsightGroup**
 > InsightGroup createInsightGroup(postInsightGroupParams)
 
@@ -87,7 +87,7 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="deleteInsightGroup"></a>
+<a id="deleteInsightGroup"></a>
 # **deleteInsightGroup**
 > deleteInsightGroup(insightGroupKey)
 
@@ -160,7 +160,7 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getInsightGroup"></a>
+<a id="getInsightGroup"></a>
 # **getInsightGroup**
 > InsightGroup getInsightGroup(insightGroupKey, expand)
 
@@ -236,7 +236,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getInsightGroups"></a>
+<a id="getInsightGroups"></a>
 # **getInsightGroups**
 > InsightGroupCollection getInsightGroups(limit, offset, sort, query, expand)
 
@@ -317,7 +317,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getInsightsScores"></a>
+<a id="getInsightsScores"></a>
 # **getInsightsScores**
 > InsightScores getInsightsScores(projectKey, environmentKey, applicationKey)
 
@@ -394,7 +394,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="patchInsightGroup"></a>
+<a id="patchInsightGroup"></a>
 # **patchInsightGroup**
 > InsightGroup patchInsightGroup(insightGroupKey, patchOperation)
 

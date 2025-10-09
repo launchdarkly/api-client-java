@@ -19,6 +19,7 @@
 |**allReviews** | [**List&lt;ReviewOutput&gt;**](ReviewOutput.md) |  |  |
 |**reviewStatus** | **String** |  |  |
 |**appliedDate** | **Long** |  |  [optional] |
+|**creationConfig** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 
 

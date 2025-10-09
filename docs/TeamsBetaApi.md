@@ -7,7 +7,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**patchTeams**](TeamsBetaApi.md#patchTeams) | **PATCH** /api/v2/teams | Update teams |
 
 
-<a name="patchTeams"></a>
+<a id="patchTeams"></a>
 # **patchTeams**
 > BulkEditTeamsRep patchTeams(teamsPatchInput)
 

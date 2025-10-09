@@ -11,7 +11,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**postHoldout**](HoldoutsBetaApi.md#postHoldout) | **POST** /api/v2/projects/{projectKey}/environments/{environmentKey}/holdouts | Create holdout |
 
 
-<a name="getAllHoldouts"></a>
+<a id="getAllHoldouts"></a>
 # **getAllHoldouts**
 > HoldoutsCollectionRep getAllHoldouts(projectKey, environmentKey, limit, offset)
 
@@ -88,7 +88,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getHoldout"></a>
+<a id="getHoldout"></a>
 # **getHoldout**
 > HoldoutDetailRep getHoldout(projectKey, environmentKey, holdoutKey, expand)
 
@@ -168,7 +168,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getHoldoutById"></a>
+<a id="getHoldoutById"></a>
 # **getHoldoutById**
 > HoldoutRep getHoldoutById(projectKey, environmentKey, holdoutId)
 
@@ -244,7 +244,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="patchHoldout"></a>
+<a id="patchHoldout"></a>
 # **patchHoldout**
 > HoldoutRep patchHoldout(projectKey, environmentKey, holdoutKey, holdoutPatchInput)
 
@@ -324,7 +324,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postHoldout"></a>
+<a id="postHoldout"></a>
 # **postHoldout**
 > HoldoutRep postHoldout(projectKey, environmentKey, holdoutPostRequest)
 

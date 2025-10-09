@@ -12,7 +12,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**postGenerateWarehouseDestinationKeyPair**](DataExportDestinationsApi.md#postGenerateWarehouseDestinationKeyPair) | **POST** /api/v2/destinations/generate-warehouse-destination-key-pair | Generate Snowflake destination key pair |
 
 
-<a name="deleteDestination"></a>
+<a id="deleteDestination"></a>
 # **deleteDestination**
 > deleteDestination(projectKey, environmentKey, id)
 
@@ -88,7 +88,7 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getDestination"></a>
+<a id="getDestination"></a>
 # **getDestination**
 > Destination getDestination(projectKey, environmentKey, id)
 
@@ -165,7 +165,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getDestinations"></a>
+<a id="getDestinations"></a>
 # **getDestinations**
 > Destinations getDestinations()
 
@@ -233,7 +233,7 @@ This endpoint does not need any parameter.
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="patchDestination"></a>
+<a id="patchDestination"></a>
 # **patchDestination**
 > Destination patchDestination(projectKey, environmentKey, id, patchOperation)
 
@@ -314,7 +314,7 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postDestination"></a>
+<a id="postDestination"></a>
 # **postDestination**
 > Destination postDestination(projectKey, environmentKey, destinationPost)
 
@@ -392,7 +392,7 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postGenerateWarehouseDestinationKeyPair"></a>
+<a id="postGenerateWarehouseDestinationKeyPair"></a>
 # **postGenerateWarehouseDestinationKeyPair**
 > GenerateWarehouseDestinationKeyPairPostRep postGenerateWarehouseDestinationKeyPair()
 

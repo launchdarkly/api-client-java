@@ -11,7 +11,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**patchBigSegmentStoreIntegration**](PersistentStoreIntegrationsBetaApi.md#patchBigSegmentStoreIntegration) | **PATCH** /api/v2/integration-capabilities/big-segment-store/{projectKey}/{environmentKey}/{integrationKey}/{integrationId} | Update big segment store integration |
 
 
-<a name="createBigSegmentStoreIntegration"></a>
+<a id="createBigSegmentStoreIntegration"></a>
 # **createBigSegmentStoreIntegration**
 > BigSegmentStoreIntegration createBigSegmentStoreIntegration(projectKey, environmentKey, integrationKey, integrationDeliveryConfigurationPost)
 
@@ -92,7 +92,7 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="deleteBigSegmentStoreIntegration"></a>
+<a id="deleteBigSegmentStoreIntegration"></a>
 # **deleteBigSegmentStoreIntegration**
 > deleteBigSegmentStoreIntegration(projectKey, environmentKey, integrationKey, integrationId)
 
@@ -171,7 +171,7 @@ null (empty response body)
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getBigSegmentStoreIntegration"></a>
+<a id="getBigSegmentStoreIntegration"></a>
 # **getBigSegmentStoreIntegration**
 > BigSegmentStoreIntegration getBigSegmentStoreIntegration(projectKey, environmentKey, integrationKey, integrationId)
 
@@ -250,7 +250,7 @@ public class Example {
 | **404** | Environment or project not found |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getBigSegmentStoreIntegrations"></a>
+<a id="getBigSegmentStoreIntegrations"></a>
 # **getBigSegmentStoreIntegrations**
 > BigSegmentStoreIntegrationCollection getBigSegmentStoreIntegrations()
 
@@ -319,7 +319,7 @@ This endpoint does not need any parameter.
 | **404** | Environment or project not found |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="patchBigSegmentStoreIntegration"></a>
+<a id="patchBigSegmentStoreIntegration"></a>
 # **patchBigSegmentStoreIntegration**
 > BigSegmentStoreIntegration patchBigSegmentStoreIntegration(projectKey, environmentKey, integrationKey, integrationId, patchOperation)
 

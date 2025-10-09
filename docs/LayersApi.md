@@ -9,7 +9,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**updateLayer**](LayersApi.md#updateLayer) | **PATCH** /api/v2/projects/{projectKey}/layers/{layerKey} | Update layer |
 
 
-<a name="createLayer"></a>
+<a id="createLayer"></a>
 # **createLayer**
 > LayerRep createLayer(projectKey, layerPost)
 
@@ -84,7 +84,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getLayers"></a>
+<a id="getLayers"></a>
 # **getLayers**
 > LayerCollectionRep getLayers(projectKey, filter)
 
@@ -159,7 +159,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="updateLayer"></a>
+<a id="updateLayer"></a>
 # **updateLayer**
 > LayerRep updateLayer(projectKey, layerKey, layerPatchInput)
 

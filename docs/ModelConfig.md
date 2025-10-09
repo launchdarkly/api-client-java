@@ -20,6 +20,7 @@
 |**version** | **Integer** |  |  |
 |**costPerInputToken** | **Double** | Cost per input token in USD |  [optional] |
 |**costPerOutputToken** | **Double** | Cost per output token in USD |  [optional] |
+|**isRestricted** | **Boolean** | Whether the model is restricted |  |
 
 
 

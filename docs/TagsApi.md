@@ -7,7 +7,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**getTags**](TagsApi.md#getTags) | **GET** /api/v2/tags | List tags |
 
 
-<a name="getTags"></a>
+<a id="getTags"></a>
 # **getTags**
 > TagsCollection getTags(kind, pre, archived, limit, offset, asOf)
 
@@ -37,7 +37,7 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     TagsApi apiInstance = new TagsApi(defaultClient);
-    List<String> kind = Arrays.asList(); // List<String> | Fetch tags associated with the specified resource type. Options are `flag`, `project`, `environment`, `segment`, `metric`. Returns all types by default.
+    List<String> kind = Arrays.asList(); // List<String> | Fetch tags associated with the specified resource type. Options are `flag`, `project`, `environment`, `segment`, `metric`, `aiconfig`, and `view`. Returns all types by default.
     String pre = "pre_example"; // String | Return tags with the specified prefix
     Boolean archived = true; // Boolean | Whether or not to return archived flags
     Integer limit = 56; // Integer | The number of tags to return. Maximum is 1000.
@@ -61,7 +61,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **kind** | [**List&lt;String&gt;**](String.md)| Fetch tags associated with the specified resource type. Options are &#x60;flag&#x60;, &#x60;project&#x60;, &#x60;environment&#x60;, &#x60;segment&#x60;, &#x60;metric&#x60;. Returns all types by default. | [optional] |
+| **kind** | [**List&lt;String&gt;**](String.md)| Fetch tags associated with the specified resource type. Options are &#x60;flag&#x60;, &#x60;project&#x60;, &#x60;environment&#x60;, &#x60;segment&#x60;, &#x60;metric&#x60;, &#x60;aiconfig&#x60;, and &#x60;view&#x60;. Returns all types by default. | [optional] |
 | **pre** | **String**| Return tags with the specified prefix | [optional] |
 | **archived** | **Boolean**| Whether or not to return archived flags | [optional] |
 | **limit** | **Integer**| The number of tags to return. Maximum is 1000. | [optional] |

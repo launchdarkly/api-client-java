@@ -7,7 +7,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**getPullRequests**](InsightsPullRequestsBetaApi.md#getPullRequests) | **GET** /api/v2/engineering-insights/pull-requests | List pull requests |
 
 
-<a name="getPullRequests"></a>
+<a id="getPullRequests"></a>
 # **getPullRequests**
 > PullRequestCollectionRep getPullRequests(projectKey, environmentKey, applicationKey, status, query, limit, expand, sort, from, to, after, before)
 

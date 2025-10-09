@@ -10,7 +10,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**updateFlagLink**](FlagLinksBetaApi.md#updateFlagLink) | **PATCH** /api/v2/flag-links/projects/{projectKey}/flags/{featureFlagKey}/{id} | Update flag link |
 
 
-<a name="createFlagLink"></a>
+<a id="createFlagLink"></a>
 # **createFlagLink**
 > FlagLinkRep createFlagLink(projectKey, featureFlagKey, flagLinkPost)
 
@@ -88,7 +88,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="deleteFlagLink"></a>
+<a id="deleteFlagLink"></a>
 # **deleteFlagLink**
 > deleteFlagLink(projectKey, featureFlagKey, id)
 
@@ -165,7 +165,7 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getFlagLinks"></a>
+<a id="getFlagLinks"></a>
 # **getFlagLinks**
 > FlagLinkCollectionRep getFlagLinks(projectKey, featureFlagKey)
 
@@ -239,7 +239,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="updateFlagLink"></a>
+<a id="updateFlagLink"></a>
 # **updateFlagLink**
 > FlagLinkRep updateFlagLink(projectKey, featureFlagKey, id, patchOperation)
 

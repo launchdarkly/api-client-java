@@ -11,7 +11,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**putFlagSetting**](UserSettingsApi.md#putFlagSetting) | **PUT** /api/v2/users/{projectKey}/{environmentKey}/{userKey}/flags/{featureFlagKey} | Update flag settings for user |
 
 
-<a name="getExpiringFlagsForUser"></a>
+<a id="getExpiringFlagsForUser"></a>
 # **getExpiringFlagsForUser**
 > ExpiringUserTargetGetResponse getExpiringFlagsForUser(projectKey, userKey, environmentKey)
 
@@ -88,7 +88,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getUserFlagSetting"></a>
+<a id="getUserFlagSetting"></a>
 # **getUserFlagSetting**
 > UserFlagSetting getUserFlagSetting(projectKey, environmentKey, userKey, featureFlagKey)
 
@@ -168,7 +168,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getUserFlagSettings"></a>
+<a id="getUserFlagSettings"></a>
 # **getUserFlagSettings**
 > UserFlagSettings getUserFlagSettings(projectKey, environmentKey, userKey)
 
@@ -246,7 +246,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="patchExpiringFlagsForUser"></a>
+<a id="patchExpiringFlagsForUser"></a>
 # **patchExpiringFlagsForUser**
 > ExpiringUserTargetPatchResponse patchExpiringFlagsForUser(projectKey, userKey, environmentKey, patchUsersRequest)
 
@@ -326,7 +326,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="putFlagSetting"></a>
+<a id="putFlagSetting"></a>
 # **putFlagSetting**
 > putFlagSetting(projectKey, environmentKey, userKey, featureFlagKey, valuePut)
 

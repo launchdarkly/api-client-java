@@ -9,13 +9,13 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**getWorkflowTemplates**](WorkflowTemplatesApi.md#getWorkflowTemplates) | **GET** /api/v2/templates | Get workflow templates |
 
 
-<a name="createWorkflowTemplate"></a>
+<a id="createWorkflowTemplate"></a>
 # **createWorkflowTemplate**
 > WorkflowTemplateOutput createWorkflowTemplate(createWorkflowTemplateInput)
 
 Create workflow template
 
-Create a template for a feature flag workflow
+&gt; ### Workflows are in maintenance mode &gt; &gt; The workflows feature is in maintenance mode, and is planned for future deprecation at a date not yet specified. We will work with existing customers using workflows to migrate to a replacement solution when deprecation occurs.  Create a template for a feature flag workflow. 
 
 ### Example
 ```java
@@ -82,7 +82,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="deleteWorkflowTemplate"></a>
+<a id="deleteWorkflowTemplate"></a>
 # **deleteWorkflowTemplate**
 > deleteWorkflowTemplate(templateKey)
 
@@ -155,7 +155,7 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getWorkflowTemplates"></a>
+<a id="getWorkflowTemplates"></a>
 # **getWorkflowTemplates**
 > WorkflowTemplatesListingOutputRep getWorkflowTemplates(summary, search)
 

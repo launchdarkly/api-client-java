@@ -11,7 +11,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**postCustomRole**](CustomRolesApi.md#postCustomRole) | **POST** /api/v2/roles | Create custom role |
 
 
-<a name="deleteCustomRole"></a>
+<a id="deleteCustomRole"></a>
 # **deleteCustomRole**
 > deleteCustomRole(customRoleKey)
 
@@ -82,7 +82,7 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getCustomRole"></a>
+<a id="getCustomRole"></a>
 # **getCustomRole**
 > CustomRole getCustomRole(customRoleKey)
 
@@ -155,13 +155,13 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getCustomRoles"></a>
+<a id="getCustomRoles"></a>
 # **getCustomRoles**
 > CustomRoles getCustomRoles(limit, offset)
 
 List custom roles
 
-Get a complete list of custom roles. Custom roles let you create flexible policies providing fine-grained access control to everything in LaunchDarkly, from feature flags to goals, environments, and teams. With custom roles, it&#39;s possible to enforce access policies that meet your exact workflow needs. Custom roles are available to customers on our enterprise plans. If you&#39;re interested in learning more about our enterprise plans, contact sales@launchdarkly.com.
+Get a complete list of custom roles. This includes project and organization roles that you create, or that are provided as presets by LaunchDarkly. It does not include base roles.
 
 ### Example
 ```java
@@ -229,7 +229,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="patchCustomRole"></a>
+<a id="patchCustomRole"></a>
 # **patchCustomRole**
 > CustomRole patchCustomRole(customRoleKey, patchWithComment)
 
@@ -305,7 +305,7 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postCustomRole"></a>
+<a id="postCustomRole"></a>
 # **postCustomRole**
 > CustomRole postCustomRole(customRolePost)
 

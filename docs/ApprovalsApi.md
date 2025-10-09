@@ -19,7 +19,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**postFlagCopyConfigApprovalRequest**](ApprovalsApi.md#postFlagCopyConfigApprovalRequest) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests-flag-copy | Create approval request to copy flag configurations across environments |
 
 
-<a name="deleteApprovalRequest"></a>
+<a id="deleteApprovalRequest"></a>
 # **deleteApprovalRequest**
 > deleteApprovalRequest(id)
 
@@ -91,7 +91,7 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="deleteApprovalRequestForFlag"></a>
+<a id="deleteApprovalRequestForFlag"></a>
 # **deleteApprovalRequestForFlag**
 > deleteApprovalRequestForFlag(projectKey, featureFlagKey, environmentKey, id)
 
@@ -169,7 +169,7 @@ null (empty response body)
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getApprovalForFlag"></a>
+<a id="getApprovalForFlag"></a>
 # **getApprovalForFlag**
 > FlagConfigApprovalRequestResponse getApprovalForFlag(projectKey, featureFlagKey, environmentKey, id)
 
@@ -248,7 +248,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getApprovalRequest"></a>
+<a id="getApprovalRequest"></a>
 # **getApprovalRequest**
 > ExpandableApprovalRequestResponse getApprovalRequest(id, expand)
 
@@ -324,13 +324,13 @@ public class Example {
 | **404** | Unable to find approval request |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getApprovalRequests"></a>
+<a id="getApprovalRequests"></a>
 # **getApprovalRequests**
 > ExpandableApprovalRequestsResponse getApprovalRequests(filter, expand, limit, offset)
 
 List approval requests
 
-Get all approval requests.  ### Filtering approvals  LaunchDarkly supports the &#x60;filter&#x60; query param for filtering, with the following fields:  - &#x60;notifyMemberIds&#x60; filters for only approvals that are assigned to a member in the specified list. For example: &#x60;filter&#x3D;notifyMemberIds anyOf [\&quot;memberId1\&quot;, \&quot;memberId2\&quot;]&#x60;. - &#x60;requestorId&#x60; filters for only approvals that correspond to the ID of the member who requested the approval. For example: &#x60;filter&#x3D;requestorId equals 457034721476302714390214&#x60;. - &#x60;resourceId&#x60; filters for only approvals that correspond to the the specified resource identifier. For example: &#x60;filter&#x3D;resourceId equals proj/my-project:env/my-environment:flag/my-flag&#x60;. - &#x60;resourceKind&#x60; filters for only approvals that correspond to the specified resource kind. For example: &#x60;filter&#x3D;resourceKind equals flag&#x60;. Currently, &#x60;flag&#x60; and &#x60;segment&#x60; resource kinds are supported. - &#x60;reviewStatus&#x60; filters for only approvals which correspond to the review status in the specified list. The possible values are &#x60;approved&#x60;, &#x60;declined&#x60;, and &#x60;pending&#x60;. For example: &#x60;filter&#x3D;reviewStatus anyOf [\&quot;pending\&quot;, \&quot;approved\&quot;]&#x60;. - &#x60;status&#x60; filters for only approvals which correspond to the status in the specified list. The possible values are &#x60;pending&#x60;, &#x60;scheduled&#x60;, &#x60;failed&#x60;, and &#x60;completed&#x60;. For example: &#x60;filter&#x3D;status anyOf [\&quot;pending\&quot;, \&quot;scheduled\&quot;]&#x60;.  You can also apply multiple filters at once. For example, setting &#x60;filter&#x3D;projectKey equals my-project, reviewStatus anyOf [\&quot;pending\&quot;,\&quot;approved\&quot;]&#x60; matches approval requests which correspond to the &#x60;my-project&#x60; project key, and a review status of either &#x60;pending&#x60; or &#x60;approved&#x60;.  ### Expanding approval response  LaunchDarkly supports the &#x60;expand&#x60; query param to include additional fields in the response, with the following fields:  - &#x60;flag&#x60; includes the flag the approval request belongs to - &#x60;project&#x60; includes the project the approval request belongs to - &#x60;environments&#x60; includes the environments the approval request relates to  For example, &#x60;expand&#x3D;project,flag&#x60; includes the &#x60;project&#x60; and &#x60;flag&#x60; fields in the response. 
+Get all approval requests.  ### Filtering approvals  LaunchDarkly supports the &#x60;filter&#x60; query param for filtering, with the following fields:  - &#x60;notifyMemberIds&#x60; filters for only approvals that are assigned to a member in the specified list. For example: &#x60;filter&#x3D;notifyMemberIds anyOf [\&quot;memberId1\&quot;, \&quot;memberId2\&quot;]&#x60;. - &#x60;requestorId&#x60; filters for only approvals that correspond to the ID of the member who requested the approval. For example: &#x60;filter&#x3D;requestorId equals 457034721476302714390214&#x60;. - &#x60;resourceId&#x60; filters for only approvals that correspond to the the specified resource identifier. For example: &#x60;filter&#x3D;resourceId equals proj/my-project:env/my-environment:flag/my-flag&#x60;. - &#x60;resourceKind&#x60; filters for only approvals that correspond to the specified resource kind. For example: &#x60;filter&#x3D;resourceKind equals flag&#x60;. Currently, &#x60;flag&#x60;, &#x60;segment&#x60;, and &#x60;aiConfig&#x60; resource kinds are supported. - &#x60;reviewStatus&#x60; filters for only approvals which correspond to the review status in the specified list. The possible values are &#x60;approved&#x60;, &#x60;declined&#x60;, and &#x60;pending&#x60;. For example: &#x60;filter&#x3D;reviewStatus anyOf [\&quot;pending\&quot;, \&quot;approved\&quot;]&#x60;. - &#x60;status&#x60; filters for only approvals which correspond to the status in the specified list. The possible values are &#x60;pending&#x60;, &#x60;scheduled&#x60;, &#x60;failed&#x60;, and &#x60;completed&#x60;. For example: &#x60;filter&#x3D;status anyOf [\&quot;pending\&quot;, \&quot;scheduled\&quot;]&#x60;.  You can also apply multiple filters at once. For example, setting &#x60;filter&#x3D;projectKey equals my-project, reviewStatus anyOf [\&quot;pending\&quot;,\&quot;approved\&quot;]&#x60; matches approval requests which correspond to the &#x60;my-project&#x60; project key, and a review status of either &#x60;pending&#x60; or &#x60;approved&#x60;.  ### Expanding approval response  LaunchDarkly supports the &#x60;expand&#x60; query param to include additional fields in the response, with the following fields:  - &#x60;flag&#x60; includes the flag the approval request belongs to - &#x60;project&#x60; includes the project the approval request belongs to - &#x60;environments&#x60; includes the environments the approval request relates to  For example, &#x60;expand&#x3D;project,flag&#x60; includes the &#x60;project&#x60; and &#x60;flag&#x60; fields in the response. 
 
 ### Example
 ```java
@@ -403,7 +403,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getApprovalsForFlag"></a>
+<a id="getApprovalsForFlag"></a>
 # **getApprovalsForFlag**
 > FlagConfigApprovalRequestsResponse getApprovalsForFlag(projectKey, featureFlagKey, environmentKey)
 
@@ -480,13 +480,13 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postApprovalRequest"></a>
+<a id="postApprovalRequest"></a>
 # **postApprovalRequest**
 > ApprovalRequestResponse postApprovalRequest(createApprovalRequestRequest)
 
 Create approval request
 
-Create an approval request.  This endpoint requires a list of &#x60;instructions&#x60;, in semantic patch format, that will be applied when the approval request is approved and applied.  If you are creating an approval request for a flag, you can use the following &#x60;instructions&#x60;:  - &#x60;addVariation&#x60; - &#x60;removeVariation&#x60; - &#x60;updateVariation&#x60; - &#x60;updateDefaultVariation&#x60;  For details on using these instructions, read [Update feature flag](https://launchdarkly.com/docs/api/feature-flags/patch-feature-flag).  To create an approval for a flag specific to an environment, use [Create approval request for a flag](https://launchdarkly.com/docs/api/approvals/post-approval-request-for-flag).  If you are creating an approval request for a segment, you can use the following read [Patch segment](https://launchdarkly.com/docs/api/segments/patch-segment) for details on the available &#x60;instructions&#x60;. 
+Create an approval request.  This endpoint requires a list of &#x60;instructions&#x60;, in semantic patch format, that will be applied when the approval request is approved and applied.  ### Flags  If you are creating an approval request for a flag, you can use the following &#x60;instructions&#x60;:  - &#x60;addVariation&#x60; - &#x60;removeVariation&#x60; - &#x60;updateVariation&#x60; - &#x60;updateDefaultVariation&#x60;  For details on using these instructions, read [Update feature flag](https://launchdarkly.com/docs/api/feature-flags/patch-feature-flag).  To create an approval for a flag specific to an environment, use [Create approval request for a flag](https://launchdarkly.com/docs/api/approvals/post-approval-request-for-flag).  ### AI Configs  If you are creating an approval request for an AI Config, you can use the semantic patch instructions listed under [Update AI Config targeting](https://launchdarkly.com/docs/api/ai-configs-beta/patch-ai-config-targeting).  ### Segments  If you are creating an approval request for a segment, you can use the semantic patch instructions listed under [Patch segment](https://launchdarkly.com/docs/api/segments/patch-segment). 
 
 ### Example
 ```java
@@ -553,13 +553,13 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postApprovalRequestApply"></a>
+<a id="postApprovalRequestApply"></a>
 # **postApprovalRequestApply**
 > ApprovalRequestResponse postApprovalRequestApply(id, postApprovalRequestApplyRequest)
 
 Apply approval request
 
-Apply an approval request that has been approved. This endpoint works with approval requests for either flag or segment changes.
+Apply an approval request that has been approved. This endpoint works with any approval requests.
 
 ### Example
 ```java
@@ -629,7 +629,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postApprovalRequestApplyForFlag"></a>
+<a id="postApprovalRequestApplyForFlag"></a>
 # **postApprovalRequestApplyForFlag**
 > FlagConfigApprovalRequestResponse postApprovalRequestApplyForFlag(projectKey, featureFlagKey, environmentKey, id, postApprovalRequestApplyRequest)
 
@@ -711,7 +711,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postApprovalRequestForFlag"></a>
+<a id="postApprovalRequestForFlag"></a>
 # **postApprovalRequestForFlag**
 > FlagConfigApprovalRequestResponse postApprovalRequestForFlag(projectKey, featureFlagKey, environmentKey, createFlagConfigApprovalRequestRequest)
 
@@ -790,7 +790,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postApprovalRequestReview"></a>
+<a id="postApprovalRequestReview"></a>
 # **postApprovalRequestReview**
 > ApprovalRequestResponse postApprovalRequestReview(id, postApprovalRequestReviewRequest)
 
@@ -867,7 +867,7 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postApprovalRequestReviewForFlag"></a>
+<a id="postApprovalRequestReviewForFlag"></a>
 # **postApprovalRequestReviewForFlag**
 > FlagConfigApprovalRequestResponse postApprovalRequestReviewForFlag(projectKey, featureFlagKey, environmentKey, id, postApprovalRequestReviewRequest)
 
@@ -949,7 +949,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="postFlagCopyConfigApprovalRequest"></a>
+<a id="postFlagCopyConfigApprovalRequest"></a>
 # **postFlagCopyConfigApprovalRequest**
 > FlagConfigApprovalRequestResponse postFlagCopyConfigApprovalRequest(projectKey, featureFlagKey, environmentKey, createCopyFlagConfigApprovalRequestRequest)
 

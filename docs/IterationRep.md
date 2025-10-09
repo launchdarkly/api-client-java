@@ -17,6 +17,8 @@
 |**winningReason** | **String** | The reason you stopped the experiment |  [optional] |
 |**canReshuffleTraffic** | **Boolean** | Whether the experiment may reassign traffic to different variations when the experiment audience changes (true) or must keep all traffic assigned to its initial variation (false). |  [optional] |
 |**flags** | [**Map&lt;String, FlagRep&gt;**](FlagRep.md) | Details on the flag used in this experiment |  [optional] |
+|**reallocationFrequencyMillis** | **Integer** | The cadence (in milliseconds) to update the allocation. Only present for multi-armed bandits. |  [optional] |
+|**version** | **Integer** | The current version that the iteration is on |  [optional] |
 |**primaryMetric** | [**DependentMetricOrMetricGroupRep**](DependentMetricOrMetricGroupRep.md) |  |  [optional] |
 |**primarySingleMetric** | [**MetricV2Rep**](MetricV2Rep.md) |  |  [optional] |
 |**primaryFunnel** | [**DependentMetricGroupRepWithMetrics**](DependentMetricGroupRepWithMetrics.md) |  |  [optional] |

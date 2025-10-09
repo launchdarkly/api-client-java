@@ -7,13 +7,13 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**getUserAttributeNames**](UsersBetaApi.md#getUserAttributeNames) | **GET** /api/v2/user-attributes/{projectKey}/{environmentKey} | Get user attribute names |
 
 
-<a name="getUserAttributeNames"></a>
+<a id="getUserAttributeNames"></a>
 # **getUserAttributeNames**
 > UserAttributeNamesRep getUserAttributeNames(projectKey, environmentKey)
 
 Get user attribute names
 
-&gt; ### Use contexts instead &gt; &gt; After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should use [Get context attribute names ](https://launchdarkly.com/docs/ld-docs/api/contexts/get-context-attribute-names) instead of this endpoint.  Get all in-use user attributes in the specified environment. The set of in-use attributes typically consists of all attributes seen within the past 30 days. 
+&gt; ### Use contexts instead &gt; &gt; After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should use [Get context attribute names ](https://launchdarkly.com/docs/api/contexts/get-context-attribute-names) instead of this endpoint.  Get all in-use user attributes in the specified environment. The set of in-use attributes typically consists of all attributes seen within the past 30 days. 
 
 ### Example
 ```java

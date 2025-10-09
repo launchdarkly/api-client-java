@@ -11,7 +11,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**getVersions**](OtherApi.md#getVersions) | **GET** /api/v2/versions | Get version information |
 
 
-<a name="getCallerIdentity"></a>
+<a id="getCallerIdentity"></a>
 # **getCallerIdentity**
 > CallerIdentityRep getCallerIdentity()
 
@@ -78,7 +78,7 @@ This endpoint does not need any parameter.
 | **401** | Invalid access token |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getIps"></a>
+<a id="getIps"></a>
 # **getIps**
 > IpList getIps()
 
@@ -144,7 +144,7 @@ This endpoint does not need any parameter.
 | **200** | Public IP response |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getOpenapiSpec"></a>
+<a id="getOpenapiSpec"></a>
 # **getOpenapiSpec**
 > getOpenapiSpec()
 
@@ -209,7 +209,7 @@ null (empty response body)
 | **200** | OpenAPI Spec |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getRoot"></a>
+<a id="getRoot"></a>
 # **getRoot**
 > RootResponse getRoot()
 
@@ -275,7 +275,7 @@ This endpoint does not need any parameter.
 | **200** | Root response |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="getVersions"></a>
+<a id="getVersions"></a>
 # **getVersions**
 > VersionsRep getVersions()
 

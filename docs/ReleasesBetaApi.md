@@ -11,7 +11,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**updatePhaseStatus**](ReleasesBetaApi.md#updatePhaseStatus) | **PUT** /api/v2/projects/{projectKey}/flags/{flagKey}/release/phases/{phaseId} | Update phase status for release |
 
 
-<a name="createReleaseForFlag"></a>
+<a id="createReleaseForFlag"></a>
 # **createReleaseForFlag**
 > Release createReleaseForFlag(projectKey, flagKey, createReleaseInput)
 
@@ -88,7 +88,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limit exceeded |  -  |
 
-<a name="deleteReleaseByFlagKey"></a>
+<a id="deleteReleaseByFlagKey"></a>
 # **deleteReleaseByFlagKey**
 > deleteReleaseByFlagKey(projectKey, flagKey)
 
@@ -160,7 +160,7 @@ null (empty response body)
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
 
-<a name="getReleaseByFlagKey"></a>
+<a id="getReleaseByFlagKey"></a>
 # **getReleaseByFlagKey**
 > Release getReleaseByFlagKey(projectKey, flagKey)
 
@@ -232,13 +232,13 @@ public class Example {
 | **200** | Release response |  -  |
 | **404** | Invalid resource identifier |  -  |
 
-<a name="patchReleaseByFlagKey"></a>
+<a id="patchReleaseByFlagKey"></a>
 # **patchReleaseByFlagKey**
 > Release patchReleaseByFlagKey(projectKey, flagKey, patchOperation)
 
 Patch release for flag
 
-This endpoint is only available for releases that are part of a legacy release pipeline. Releases for new release pipelines should use the [Update phase status for release](https://launchdarkly.com/docs/api/releases-beta/update-phase-status) endpoint. To learn more about migrating from legacy release pipelines to fully automated release pipelines, read the [Release pipeline migration guide](https://launchdarkly.com/docs/guides/flags/release-pipeline-migration).  Update currently active release for a flag. Updating releases requires the [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) format. To learn more, read [Updates](https://launchdarkly.com/docs/api#updates).  You can only use this endpoint to mark a release phase complete or incomplete. To indicate which phase to update, use the array index in the &#x60;path&#x60;. For example, to mark the first phase of a release as complete, use the following request body:  &#x60;&#x60;&#x60;   [     {       \&quot;op\&quot;: \&quot;replace\&quot;,       \&quot;path\&quot;: \&quot;/phase/0/complete\&quot;,       \&quot;value\&quot;: true     }   ] &#x60;&#x60;&#x60; 
+This endpoint is only available for releases that are part of a legacy release pipeline. Releases for new release pipelines should use the [Update phase status for release](https://launchdarkly.com/docs/api/releases-beta/update-phase-status) endpoint.  Update currently active release for a flag. Updating releases requires the [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) format. To learn more, read [Updates](https://launchdarkly.com/docs/api#updates).  You can only use this endpoint to mark a release phase complete or incomplete. To indicate which phase to update, use the array index in the &#x60;path&#x60;. For example, to mark the first phase of a release as complete, use the following request body:  &#x60;&#x60;&#x60;   [     {       \&quot;op\&quot;: \&quot;replace\&quot;,       \&quot;path\&quot;: \&quot;/phase/0/complete\&quot;,       \&quot;value\&quot;: true     }   ] &#x60;&#x60;&#x60; 
 
 ### Example
 ```java
@@ -310,7 +310,7 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
-<a name="updatePhaseStatus"></a>
+<a id="updatePhaseStatus"></a>
 # **updatePhaseStatus**
 > Release updatePhaseStatus(projectKey, flagKey, phaseId, updatePhaseStatusInput)
 
