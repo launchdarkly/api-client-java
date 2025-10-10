@@ -83,7 +83,8 @@ public class AnnouncementsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created announcement </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -93,7 +94,7 @@ public class AnnouncementsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createAnnouncementPublicCall(CreateAnnouncementBody createAnnouncementBody, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createAnnouncementPublicCall(@javax.annotation.Nonnull CreateAnnouncementBody createAnnouncementBody, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -139,7 +140,7 @@ public class AnnouncementsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createAnnouncementPublicValidateBeforeCall(CreateAnnouncementBody createAnnouncementBody, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createAnnouncementPublicValidateBeforeCall(@javax.annotation.Nonnull CreateAnnouncementBody createAnnouncementBody, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'createAnnouncementBody' is set
         if (createAnnouncementBody == null) {
             throw new ApiException("Missing the required parameter 'createAnnouncementBody' when calling createAnnouncementPublic(Async)");
@@ -156,7 +157,8 @@ public class AnnouncementsApi {
      * @return AnnouncementResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created announcement </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -166,7 +168,7 @@ public class AnnouncementsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public AnnouncementResponse createAnnouncementPublic(CreateAnnouncementBody createAnnouncementBody) throws ApiException {
+    public AnnouncementResponse createAnnouncementPublic(@javax.annotation.Nonnull CreateAnnouncementBody createAnnouncementBody) throws ApiException {
         ApiResponse<AnnouncementResponse> localVarResp = createAnnouncementPublicWithHttpInfo(createAnnouncementBody);
         return localVarResp.getData();
     }
@@ -178,7 +180,8 @@ public class AnnouncementsApi {
      * @return ApiResponse&lt;AnnouncementResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created announcement </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -188,7 +191,7 @@ public class AnnouncementsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AnnouncementResponse> createAnnouncementPublicWithHttpInfo(CreateAnnouncementBody createAnnouncementBody) throws ApiException {
+    public ApiResponse<AnnouncementResponse> createAnnouncementPublicWithHttpInfo(@javax.annotation.Nonnull CreateAnnouncementBody createAnnouncementBody) throws ApiException {
         okhttp3.Call localVarCall = createAnnouncementPublicValidateBeforeCall(createAnnouncementBody, null);
         Type localVarReturnType = new TypeToken<AnnouncementResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -202,7 +205,8 @@ public class AnnouncementsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created announcement </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -212,7 +216,7 @@ public class AnnouncementsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createAnnouncementPublicAsync(CreateAnnouncementBody createAnnouncementBody, final ApiCallback<AnnouncementResponse> _callback) throws ApiException {
+    public okhttp3.Call createAnnouncementPublicAsync(@javax.annotation.Nonnull CreateAnnouncementBody createAnnouncementBody, final ApiCallback<AnnouncementResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createAnnouncementPublicValidateBeforeCall(createAnnouncementBody, _callback);
         Type localVarReturnType = new TypeToken<AnnouncementResponse>(){}.getType();
@@ -226,14 +230,15 @@ public class AnnouncementsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAnnouncementPublicCall(String announcementId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteAnnouncementPublicCall(@javax.annotation.Nonnull String announcementId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -279,7 +284,7 @@ public class AnnouncementsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteAnnouncementPublicValidateBeforeCall(String announcementId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteAnnouncementPublicValidateBeforeCall(@javax.annotation.Nonnull String announcementId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'announcementId' is set
         if (announcementId == null) {
             throw new ApiException("Missing the required parameter 'announcementId' when calling deleteAnnouncementPublic(Async)");
@@ -295,14 +300,15 @@ public class AnnouncementsApi {
      * @param announcementId  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteAnnouncementPublic(String announcementId) throws ApiException {
+    public void deleteAnnouncementPublic(@javax.annotation.Nonnull String announcementId) throws ApiException {
         deleteAnnouncementPublicWithHttpInfo(announcementId);
     }
 
@@ -313,14 +319,15 @@ public class AnnouncementsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteAnnouncementPublicWithHttpInfo(String announcementId) throws ApiException {
+    public ApiResponse<Void> deleteAnnouncementPublicWithHttpInfo(@javax.annotation.Nonnull String announcementId) throws ApiException {
         okhttp3.Call localVarCall = deleteAnnouncementPublicValidateBeforeCall(announcementId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -333,14 +340,15 @@ public class AnnouncementsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAnnouncementPublicAsync(String announcementId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteAnnouncementPublicAsync(@javax.annotation.Nonnull String announcementId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteAnnouncementPublicValidateBeforeCall(announcementId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -355,7 +363,8 @@ public class AnnouncementsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Announcement response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -365,7 +374,7 @@ public class AnnouncementsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAnnouncementsPublicCall(String status, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAnnouncementsPublicCall(@javax.annotation.Nullable String status, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -422,7 +431,7 @@ public class AnnouncementsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAnnouncementsPublicValidateBeforeCall(String status, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAnnouncementsPublicValidateBeforeCall(@javax.annotation.Nullable String status, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         return getAnnouncementsPublicCall(status, limit, offset, _callback);
 
     }
@@ -436,7 +445,8 @@ public class AnnouncementsApi {
      * @return GetAnnouncementsPublic200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Announcement response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -446,7 +456,7 @@ public class AnnouncementsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public GetAnnouncementsPublic200Response getAnnouncementsPublic(String status, Integer limit, Integer offset) throws ApiException {
+    public GetAnnouncementsPublic200Response getAnnouncementsPublic(@javax.annotation.Nullable String status, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         ApiResponse<GetAnnouncementsPublic200Response> localVarResp = getAnnouncementsPublicWithHttpInfo(status, limit, offset);
         return localVarResp.getData();
     }
@@ -460,7 +470,8 @@ public class AnnouncementsApi {
      * @return ApiResponse&lt;GetAnnouncementsPublic200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Announcement response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -470,7 +481,7 @@ public class AnnouncementsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetAnnouncementsPublic200Response> getAnnouncementsPublicWithHttpInfo(String status, Integer limit, Integer offset) throws ApiException {
+    public ApiResponse<GetAnnouncementsPublic200Response> getAnnouncementsPublicWithHttpInfo(@javax.annotation.Nullable String status, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         okhttp3.Call localVarCall = getAnnouncementsPublicValidateBeforeCall(status, limit, offset, null);
         Type localVarReturnType = new TypeToken<GetAnnouncementsPublic200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -486,7 +497,8 @@ public class AnnouncementsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Announcement response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -496,7 +508,7 @@ public class AnnouncementsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAnnouncementsPublicAsync(String status, Integer limit, Integer offset, final ApiCallback<GetAnnouncementsPublic200Response> _callback) throws ApiException {
+    public okhttp3.Call getAnnouncementsPublicAsync(@javax.annotation.Nullable String status, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<GetAnnouncementsPublic200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAnnouncementsPublicValidateBeforeCall(status, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<GetAnnouncementsPublic200Response>(){}.getType();
@@ -511,7 +523,8 @@ public class AnnouncementsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Updated announcement </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -521,7 +534,7 @@ public class AnnouncementsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateAnnouncementPublicCall(String announcementId, List<AnnouncementPatchOperation> announcementPatchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateAnnouncementPublicCall(@javax.annotation.Nonnull String announcementId, @javax.annotation.Nonnull List<AnnouncementPatchOperation> announcementPatchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -568,7 +581,7 @@ public class AnnouncementsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateAnnouncementPublicValidateBeforeCall(String announcementId, List<AnnouncementPatchOperation> announcementPatchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateAnnouncementPublicValidateBeforeCall(@javax.annotation.Nonnull String announcementId, @javax.annotation.Nonnull List<AnnouncementPatchOperation> announcementPatchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'announcementId' is set
         if (announcementId == null) {
             throw new ApiException("Missing the required parameter 'announcementId' when calling updateAnnouncementPublic(Async)");
@@ -591,7 +604,8 @@ public class AnnouncementsApi {
      * @return AnnouncementResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Updated announcement </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -601,7 +615,7 @@ public class AnnouncementsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public AnnouncementResponse updateAnnouncementPublic(String announcementId, List<AnnouncementPatchOperation> announcementPatchOperation) throws ApiException {
+    public AnnouncementResponse updateAnnouncementPublic(@javax.annotation.Nonnull String announcementId, @javax.annotation.Nonnull List<AnnouncementPatchOperation> announcementPatchOperation) throws ApiException {
         ApiResponse<AnnouncementResponse> localVarResp = updateAnnouncementPublicWithHttpInfo(announcementId, announcementPatchOperation);
         return localVarResp.getData();
     }
@@ -614,7 +628,8 @@ public class AnnouncementsApi {
      * @return ApiResponse&lt;AnnouncementResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Updated announcement </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -624,7 +639,7 @@ public class AnnouncementsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AnnouncementResponse> updateAnnouncementPublicWithHttpInfo(String announcementId, List<AnnouncementPatchOperation> announcementPatchOperation) throws ApiException {
+    public ApiResponse<AnnouncementResponse> updateAnnouncementPublicWithHttpInfo(@javax.annotation.Nonnull String announcementId, @javax.annotation.Nonnull List<AnnouncementPatchOperation> announcementPatchOperation) throws ApiException {
         okhttp3.Call localVarCall = updateAnnouncementPublicValidateBeforeCall(announcementId, announcementPatchOperation, null);
         Type localVarReturnType = new TypeToken<AnnouncementResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -639,7 +654,8 @@ public class AnnouncementsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Updated announcement </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -649,7 +665,7 @@ public class AnnouncementsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateAnnouncementPublicAsync(String announcementId, List<AnnouncementPatchOperation> announcementPatchOperation, final ApiCallback<AnnouncementResponse> _callback) throws ApiException {
+    public okhttp3.Call updateAnnouncementPublicAsync(@javax.annotation.Nonnull String announcementId, @javax.annotation.Nonnull List<AnnouncementPatchOperation> announcementPatchOperation, final ApiCallback<AnnouncementResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateAnnouncementPublicValidateBeforeCall(announcementId, announcementPatchOperation, _callback);
         Type localVarReturnType = new TypeToken<AnnouncementResponse>(){}.getType();

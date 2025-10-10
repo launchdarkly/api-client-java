@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,134 +38,139 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * UpsertContextKindPayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class UpsertContextKindPayload {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_HIDE_IN_TARGETING = "hideInTargeting";
   @SerializedName(SERIALIZED_NAME_HIDE_IN_TARGETING)
+  @javax.annotation.Nullable
   private Boolean hideInTargeting;
 
   public static final String SERIALIZED_NAME_ARCHIVED = "archived";
   @SerializedName(SERIALIZED_NAME_ARCHIVED)
+  @javax.annotation.Nullable
   private Boolean archived;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
   private Integer version;
 
   public UpsertContextKindPayload() {
   }
 
-  public UpsertContextKindPayload name(String name) {
+  public UpsertContextKindPayload name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The context kind name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public UpsertContextKindPayload description(String description) {
+  public UpsertContextKindPayload description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * The context kind description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpsertContextKindPayload hideInTargeting(Boolean hideInTargeting) {
+  public UpsertContextKindPayload hideInTargeting(@javax.annotation.Nullable Boolean hideInTargeting) {
     this.hideInTargeting = hideInTargeting;
     return this;
   }
 
-   /**
+  /**
    * Alias for archived.
    * @return hideInTargeting
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getHideInTargeting() {
     return hideInTargeting;
   }
 
-  public void setHideInTargeting(Boolean hideInTargeting) {
+  public void setHideInTargeting(@javax.annotation.Nullable Boolean hideInTargeting) {
     this.hideInTargeting = hideInTargeting;
   }
 
 
-  public UpsertContextKindPayload archived(Boolean archived) {
+  public UpsertContextKindPayload archived(@javax.annotation.Nullable Boolean archived) {
     this.archived = archived;
     return this;
   }
 
-   /**
+  /**
    * Whether the context kind is archived. Archived context kinds are unavailable for targeting.
    * @return archived
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getArchived() {
     return archived;
   }
 
-  public void setArchived(Boolean archived) {
+  public void setArchived(@javax.annotation.Nullable Boolean archived) {
     this.archived = archived;
   }
 
 
-  public UpsertContextKindPayload version(Integer version) {
+  public UpsertContextKindPayload version(@javax.annotation.Nullable Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * The context kind version. If not specified when the context kind is created, defaults to 1.
    * @return version
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nullable Integer version) {
     this.version = version;
   }
 
@@ -267,43 +273,37 @@ public class UpsertContextKindPayload {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("description");
-    openapiFields.add("hideInTargeting");
-    openapiFields.add("archived");
-    openapiFields.add("version");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "description", "hideInTargeting", "archived", "version"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to UpsertContextKindPayload
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to UpsertContextKindPayload
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UpsertContextKindPayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpsertContextKindPayload is not found in the empty JSON string", UpsertContextKindPayload.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in UpsertContextKindPayload is not found in the empty JSON string", UpsertContextKindPayload.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : UpsertContextKindPayload.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
   }
 
@@ -364,7 +364,7 @@ public class UpsertContextKindPayload {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -379,22 +379,22 @@ public class UpsertContextKindPayload {
     }
   }
 
- /**
-  * Create an instance of UpsertContextKindPayload given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UpsertContextKindPayload
-  * @throws IOException if the JSON string is invalid with respect to UpsertContextKindPayload
-  */
+  /**
+   * Create an instance of UpsertContextKindPayload given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of UpsertContextKindPayload
+   * @throws IOException if the JSON string is invalid with respect to UpsertContextKindPayload
+   */
   public static UpsertContextKindPayload fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, UpsertContextKindPayload.class);
   }
 
- /**
-  * Convert an instance of UpsertContextKindPayload to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of UpsertContextKindPayload to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -86,7 +86,8 @@ public class OAuth2ClientsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> OAuth 2.0 client response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -94,7 +95,7 @@ public class OAuth2ClientsApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createOAuth2ClientCall(OauthClientPost oauthClientPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createOAuth2ClientCall(@javax.annotation.Nonnull OauthClientPost oauthClientPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -140,7 +141,7 @@ public class OAuth2ClientsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createOAuth2ClientValidateBeforeCall(OauthClientPost oauthClientPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createOAuth2ClientValidateBeforeCall(@javax.annotation.Nonnull OauthClientPost oauthClientPost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'oauthClientPost' is set
         if (oauthClientPost == null) {
             throw new ApiException("Missing the required parameter 'oauthClientPost' when calling createOAuth2Client(Async)");
@@ -157,7 +158,8 @@ public class OAuth2ClientsApi {
      * @return Client
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> OAuth 2.0 client response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -165,7 +167,7 @@ public class OAuth2ClientsApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public Client createOAuth2Client(OauthClientPost oauthClientPost) throws ApiException {
+    public Client createOAuth2Client(@javax.annotation.Nonnull OauthClientPost oauthClientPost) throws ApiException {
         ApiResponse<Client> localVarResp = createOAuth2ClientWithHttpInfo(oauthClientPost);
         return localVarResp.getData();
     }
@@ -177,7 +179,8 @@ public class OAuth2ClientsApi {
      * @return ApiResponse&lt;Client&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> OAuth 2.0 client response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -185,7 +188,7 @@ public class OAuth2ClientsApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Client> createOAuth2ClientWithHttpInfo(OauthClientPost oauthClientPost) throws ApiException {
+    public ApiResponse<Client> createOAuth2ClientWithHttpInfo(@javax.annotation.Nonnull OauthClientPost oauthClientPost) throws ApiException {
         okhttp3.Call localVarCall = createOAuth2ClientValidateBeforeCall(oauthClientPost, null);
         Type localVarReturnType = new TypeToken<Client>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -199,7 +202,8 @@ public class OAuth2ClientsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> OAuth 2.0 client response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -207,7 +211,7 @@ public class OAuth2ClientsApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createOAuth2ClientAsync(OauthClientPost oauthClientPost, final ApiCallback<Client> _callback) throws ApiException {
+    public okhttp3.Call createOAuth2ClientAsync(@javax.annotation.Nonnull OauthClientPost oauthClientPost, final ApiCallback<Client> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createOAuth2ClientValidateBeforeCall(oauthClientPost, _callback);
         Type localVarReturnType = new TypeToken<Client>(){}.getType();
@@ -221,7 +225,8 @@ public class OAuth2ClientsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -230,7 +235,7 @@ public class OAuth2ClientsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteOAuthClientCall(String clientId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteOAuthClientCall(@javax.annotation.Nonnull String clientId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -276,7 +281,7 @@ public class OAuth2ClientsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteOAuthClientValidateBeforeCall(String clientId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteOAuthClientValidateBeforeCall(@javax.annotation.Nonnull String clientId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'clientId' is set
         if (clientId == null) {
             throw new ApiException("Missing the required parameter 'clientId' when calling deleteOAuthClient(Async)");
@@ -292,7 +297,8 @@ public class OAuth2ClientsApi {
      * @param clientId The client ID (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -301,7 +307,7 @@ public class OAuth2ClientsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteOAuthClient(String clientId) throws ApiException {
+    public void deleteOAuthClient(@javax.annotation.Nonnull String clientId) throws ApiException {
         deleteOAuthClientWithHttpInfo(clientId);
     }
 
@@ -312,7 +318,8 @@ public class OAuth2ClientsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -321,7 +328,7 @@ public class OAuth2ClientsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteOAuthClientWithHttpInfo(String clientId) throws ApiException {
+    public ApiResponse<Void> deleteOAuthClientWithHttpInfo(@javax.annotation.Nonnull String clientId) throws ApiException {
         okhttp3.Call localVarCall = deleteOAuthClientValidateBeforeCall(clientId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -334,7 +341,8 @@ public class OAuth2ClientsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -343,7 +351,7 @@ public class OAuth2ClientsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteOAuthClientAsync(String clientId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteOAuthClientAsync(@javax.annotation.Nonnull String clientId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteOAuthClientValidateBeforeCall(clientId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -356,7 +364,8 @@ public class OAuth2ClientsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OAuth 2.0 client response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -365,7 +374,7 @@ public class OAuth2ClientsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOAuthClientByIdCall(String clientId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getOAuthClientByIdCall(@javax.annotation.Nonnull String clientId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -411,7 +420,7 @@ public class OAuth2ClientsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getOAuthClientByIdValidateBeforeCall(String clientId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getOAuthClientByIdValidateBeforeCall(@javax.annotation.Nonnull String clientId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'clientId' is set
         if (clientId == null) {
             throw new ApiException("Missing the required parameter 'clientId' when calling getOAuthClientById(Async)");
@@ -428,7 +437,8 @@ public class OAuth2ClientsApi {
      * @return Client
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OAuth 2.0 client response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -437,7 +447,7 @@ public class OAuth2ClientsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public Client getOAuthClientById(String clientId) throws ApiException {
+    public Client getOAuthClientById(@javax.annotation.Nonnull String clientId) throws ApiException {
         ApiResponse<Client> localVarResp = getOAuthClientByIdWithHttpInfo(clientId);
         return localVarResp.getData();
     }
@@ -449,7 +459,8 @@ public class OAuth2ClientsApi {
      * @return ApiResponse&lt;Client&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OAuth 2.0 client response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -458,7 +469,7 @@ public class OAuth2ClientsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Client> getOAuthClientByIdWithHttpInfo(String clientId) throws ApiException {
+    public ApiResponse<Client> getOAuthClientByIdWithHttpInfo(@javax.annotation.Nonnull String clientId) throws ApiException {
         okhttp3.Call localVarCall = getOAuthClientByIdValidateBeforeCall(clientId, null);
         Type localVarReturnType = new TypeToken<Client>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -472,7 +483,8 @@ public class OAuth2ClientsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OAuth 2.0 client response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -481,7 +493,7 @@ public class OAuth2ClientsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOAuthClientByIdAsync(String clientId, final ApiCallback<Client> _callback) throws ApiException {
+    public okhttp3.Call getOAuthClientByIdAsync(@javax.annotation.Nonnull String clientId, final ApiCallback<Client> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getOAuthClientByIdValidateBeforeCall(clientId, _callback);
         Type localVarReturnType = new TypeToken<Client>(){}.getType();
@@ -494,7 +506,8 @@ public class OAuth2ClientsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OAuth 2.0 client collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -558,7 +571,8 @@ public class OAuth2ClientsApi {
      * @return ClientCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OAuth 2.0 client collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -577,7 +591,8 @@ public class OAuth2ClientsApi {
      * @return ApiResponse&lt;ClientCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OAuth 2.0 client collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -598,7 +613,8 @@ public class OAuth2ClientsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OAuth 2.0 client collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -621,7 +637,8 @@ public class OAuth2ClientsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OAuth 2.0 client response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -630,7 +647,7 @@ public class OAuth2ClientsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchOAuthClientCall(String clientId, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchOAuthClientCall(@javax.annotation.Nonnull String clientId, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -677,7 +694,7 @@ public class OAuth2ClientsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchOAuthClientValidateBeforeCall(String clientId, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchOAuthClientValidateBeforeCall(@javax.annotation.Nonnull String clientId, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'clientId' is set
         if (clientId == null) {
             throw new ApiException("Missing the required parameter 'clientId' when calling patchOAuthClient(Async)");
@@ -700,7 +717,8 @@ public class OAuth2ClientsApi {
      * @return Client
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OAuth 2.0 client response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -709,7 +727,7 @@ public class OAuth2ClientsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public Client patchOAuthClient(String clientId, List<PatchOperation> patchOperation) throws ApiException {
+    public Client patchOAuthClient(@javax.annotation.Nonnull String clientId, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         ApiResponse<Client> localVarResp = patchOAuthClientWithHttpInfo(clientId, patchOperation);
         return localVarResp.getData();
     }
@@ -722,7 +740,8 @@ public class OAuth2ClientsApi {
      * @return ApiResponse&lt;Client&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OAuth 2.0 client response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -731,7 +750,7 @@ public class OAuth2ClientsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Client> patchOAuthClientWithHttpInfo(String clientId, List<PatchOperation> patchOperation) throws ApiException {
+    public ApiResponse<Client> patchOAuthClientWithHttpInfo(@javax.annotation.Nonnull String clientId, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         okhttp3.Call localVarCall = patchOAuthClientValidateBeforeCall(clientId, patchOperation, null);
         Type localVarReturnType = new TypeToken<Client>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -746,7 +765,8 @@ public class OAuth2ClientsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OAuth 2.0 client response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -755,7 +775,7 @@ public class OAuth2ClientsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchOAuthClientAsync(String clientId, List<PatchOperation> patchOperation, final ApiCallback<Client> _callback) throws ApiException {
+    public okhttp3.Call patchOAuthClientAsync(@javax.annotation.Nonnull String clientId, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback<Client> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchOAuthClientValidateBeforeCall(clientId, patchOperation, _callback);
         Type localVarReturnType = new TypeToken<Client>(){}.getType();

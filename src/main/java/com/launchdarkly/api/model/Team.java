@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -46,175 +47,189 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * Team
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class Team {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nullable
   private String key;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_ACCESS = "_access";
   @SerializedName(SERIALIZED_NAME_ACCESS)
+  @javax.annotation.Nullable
   private Access access;
 
   public static final String SERIALIZED_NAME_CREATION_DATE = "_creationDate";
   @SerializedName(SERIALIZED_NAME_CREATION_DATE)
+  @javax.annotation.Nullable
   private Long creationDate;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_LAST_MODIFIED = "_lastModified";
   @SerializedName(SERIALIZED_NAME_LAST_MODIFIED)
+  @javax.annotation.Nullable
   private Long lastModified;
 
   public static final String SERIALIZED_NAME_VERSION = "_version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
   private Integer version;
 
   public static final String SERIALIZED_NAME_IDP_SYNCED = "_idpSynced";
   @SerializedName(SERIALIZED_NAME_IDP_SYNCED)
+  @javax.annotation.Nullable
   private Boolean idpSynced;
 
   public static final String SERIALIZED_NAME_ROLE_ATTRIBUTES = "roleAttributes";
   @SerializedName(SERIALIZED_NAME_ROLE_ATTRIBUTES)
+  @javax.annotation.Nullable
   private Map<String, List<String>> roleAttributes = new HashMap<>();
 
   public static final String SERIALIZED_NAME_ROLES = "roles";
   @SerializedName(SERIALIZED_NAME_ROLES)
+  @javax.annotation.Nullable
   private TeamCustomRoles roles;
 
   public static final String SERIALIZED_NAME_MEMBERS = "members";
   @SerializedName(SERIALIZED_NAME_MEMBERS)
+  @javax.annotation.Nullable
   private TeamMembers members;
 
   public static final String SERIALIZED_NAME_PROJECTS = "projects";
   @SerializedName(SERIALIZED_NAME_PROJECTS)
+  @javax.annotation.Nullable
   private TeamProjects projects;
 
   public static final String SERIALIZED_NAME_MAINTAINERS = "maintainers";
   @SerializedName(SERIALIZED_NAME_MAINTAINERS)
+  @javax.annotation.Nullable
   private TeamMaintainers maintainers;
 
   public Team() {
   }
 
-  public Team description(String description) {
+  public Team description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * A description of the team
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public Team key(String key) {
+  public Team key(@javax.annotation.Nullable String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * The team key
    * @return key
-  **/
+   */
   @javax.annotation.Nullable
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nullable String key) {
     this.key = key;
   }
 
 
-  public Team name(String name) {
+  public Team name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for the team
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public Team access(Access access) {
+  public Team access(@javax.annotation.Nullable Access access) {
     this.access = access;
     return this;
   }
 
-   /**
+  /**
    * Get access
    * @return access
-  **/
+   */
   @javax.annotation.Nullable
   public Access getAccess() {
     return access;
   }
 
-  public void setAccess(Access access) {
+  public void setAccess(@javax.annotation.Nullable Access access) {
     this.access = access;
   }
 
 
-  public Team creationDate(Long creationDate) {
+  public Team creationDate(@javax.annotation.Nullable Long creationDate) {
     this.creationDate = creationDate;
     return this;
   }
 
-   /**
+  /**
    * Get creationDate
    * @return creationDate
-  **/
+   */
   @javax.annotation.Nullable
   public Long getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate(Long creationDate) {
+  public void setCreationDate(@javax.annotation.Nullable Long creationDate) {
     this.creationDate = creationDate;
   }
 
 
-  public Team links(Map<String, Link> links) {
+  public Team links(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -227,78 +242,78 @@ public class Team {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public Team lastModified(Long lastModified) {
+  public Team lastModified(@javax.annotation.Nullable Long lastModified) {
     this.lastModified = lastModified;
     return this;
   }
 
-   /**
+  /**
    * Get lastModified
    * @return lastModified
-  **/
+   */
   @javax.annotation.Nullable
   public Long getLastModified() {
     return lastModified;
   }
 
-  public void setLastModified(Long lastModified) {
+  public void setLastModified(@javax.annotation.Nullable Long lastModified) {
     this.lastModified = lastModified;
   }
 
 
-  public Team version(Integer version) {
+  public Team version(@javax.annotation.Nullable Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * The team version
    * @return version
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nullable Integer version) {
     this.version = version;
   }
 
 
-  public Team idpSynced(Boolean idpSynced) {
+  public Team idpSynced(@javax.annotation.Nullable Boolean idpSynced) {
     this.idpSynced = idpSynced;
     return this;
   }
 
-   /**
+  /**
    * Whether the team has been synced with an external identity provider (IdP). Team sync is available to customers on an Enterprise plan.
    * @return idpSynced
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIdpSynced() {
     return idpSynced;
   }
 
-  public void setIdpSynced(Boolean idpSynced) {
+  public void setIdpSynced(@javax.annotation.Nullable Boolean idpSynced) {
     this.idpSynced = idpSynced;
   }
 
 
-  public Team roleAttributes(Map<String, List<String>> roleAttributes) {
+  public Team roleAttributes(@javax.annotation.Nullable Map<String, List<String>> roleAttributes) {
     this.roleAttributes = roleAttributes;
     return this;
   }
@@ -311,92 +326,92 @@ public class Team {
     return this;
   }
 
-   /**
+  /**
    * Get roleAttributes
    * @return roleAttributes
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, List<String>> getRoleAttributes() {
     return roleAttributes;
   }
 
-  public void setRoleAttributes(Map<String, List<String>> roleAttributes) {
+  public void setRoleAttributes(@javax.annotation.Nullable Map<String, List<String>> roleAttributes) {
     this.roleAttributes = roleAttributes;
   }
 
 
-  public Team roles(TeamCustomRoles roles) {
+  public Team roles(@javax.annotation.Nullable TeamCustomRoles roles) {
     this.roles = roles;
     return this;
   }
 
-   /**
+  /**
    * Get roles
    * @return roles
-  **/
+   */
   @javax.annotation.Nullable
   public TeamCustomRoles getRoles() {
     return roles;
   }
 
-  public void setRoles(TeamCustomRoles roles) {
+  public void setRoles(@javax.annotation.Nullable TeamCustomRoles roles) {
     this.roles = roles;
   }
 
 
-  public Team members(TeamMembers members) {
+  public Team members(@javax.annotation.Nullable TeamMembers members) {
     this.members = members;
     return this;
   }
 
-   /**
+  /**
    * Get members
    * @return members
-  **/
+   */
   @javax.annotation.Nullable
   public TeamMembers getMembers() {
     return members;
   }
 
-  public void setMembers(TeamMembers members) {
+  public void setMembers(@javax.annotation.Nullable TeamMembers members) {
     this.members = members;
   }
 
 
-  public Team projects(TeamProjects projects) {
+  public Team projects(@javax.annotation.Nullable TeamProjects projects) {
     this.projects = projects;
     return this;
   }
 
-   /**
+  /**
    * Get projects
    * @return projects
-  **/
+   */
   @javax.annotation.Nullable
   public TeamProjects getProjects() {
     return projects;
   }
 
-  public void setProjects(TeamProjects projects) {
+  public void setProjects(@javax.annotation.Nullable TeamProjects projects) {
     this.projects = projects;
   }
 
 
-  public Team maintainers(TeamMaintainers maintainers) {
+  public Team maintainers(@javax.annotation.Nullable TeamMaintainers maintainers) {
     this.maintainers = maintainers;
     return this;
   }
 
-   /**
+  /**
    * Get maintainers
    * @return maintainers
-  **/
+   */
   @javax.annotation.Nullable
   public TeamMaintainers getMaintainers() {
     return maintainers;
   }
 
-  public void setMaintainers(TeamMaintainers maintainers) {
+  public void setMaintainers(@javax.annotation.Nullable TeamMaintainers maintainers) {
     this.maintainers = maintainers;
   }
 
@@ -517,47 +532,33 @@ public class Team {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("description");
-    openapiFields.add("key");
-    openapiFields.add("name");
-    openapiFields.add("_access");
-    openapiFields.add("_creationDate");
-    openapiFields.add("_links");
-    openapiFields.add("_lastModified");
-    openapiFields.add("_version");
-    openapiFields.add("_idpSynced");
-    openapiFields.add("roleAttributes");
-    openapiFields.add("roles");
-    openapiFields.add("members");
-    openapiFields.add("projects");
-    openapiFields.add("maintainers");
+    openapiFields = new HashSet<String>(Arrays.asList("description", "key", "name", "_access", "_creationDate", "_links", "_lastModified", "_version", "_idpSynced", "roleAttributes", "roles", "members", "projects", "maintainers"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Team
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Team
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Team.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Team is not found in the empty JSON string", Team.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Team is not found in the empty JSON string", Team.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // validate the optional field `_access`
       if (jsonObj.get("_access") != null && !jsonObj.get("_access").isJsonNull()) {
@@ -638,7 +639,7 @@ public class Team {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -653,22 +654,22 @@ public class Team {
     }
   }
 
- /**
-  * Create an instance of Team given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Team
-  * @throws IOException if the JSON string is invalid with respect to Team
-  */
+  /**
+   * Create an instance of Team given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Team
+   * @throws IOException if the JSON string is invalid with respect to Team
+   */
   public static Team fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Team.class);
   }
 
- /**
-  * Convert an instance of Team to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Team to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

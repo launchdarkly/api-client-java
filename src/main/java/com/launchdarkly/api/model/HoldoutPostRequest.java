@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,140 +41,150 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * HoldoutPostRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class HoldoutPostRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nullable
   private String key;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_RANDOMIZATIONUNIT = "randomizationunit";
   @SerializedName(SERIALIZED_NAME_RANDOMIZATIONUNIT)
+  @javax.annotation.Nullable
   private String randomizationunit;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
+  @javax.annotation.Nullable
   private List<String> attributes = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_HOLDOUTAMOUNT = "holdoutamount";
   @SerializedName(SERIALIZED_NAME_HOLDOUTAMOUNT)
+  @javax.annotation.Nullable
   private String holdoutamount;
 
   public static final String SERIALIZED_NAME_PRIMARYMETRICKEY = "primarymetrickey";
   @SerializedName(SERIALIZED_NAME_PRIMARYMETRICKEY)
+  @javax.annotation.Nullable
   private String primarymetrickey;
 
   public static final String SERIALIZED_NAME_METRICS = "metrics";
   @SerializedName(SERIALIZED_NAME_METRICS)
+  @javax.annotation.Nullable
   private List<MetricInput> metrics = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PREREQUISITEFLAGKEY = "prerequisiteflagkey";
   @SerializedName(SERIALIZED_NAME_PREREQUISITEFLAGKEY)
+  @javax.annotation.Nullable
   private String prerequisiteflagkey;
 
   public static final String SERIALIZED_NAME_MAINTAINER_ID = "maintainerId";
   @SerializedName(SERIALIZED_NAME_MAINTAINER_ID)
+  @javax.annotation.Nullable
   private String maintainerId;
 
   public HoldoutPostRequest() {
   }
 
-  public HoldoutPostRequest name(String name) {
+  public HoldoutPostRequest name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for the holdout
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public HoldoutPostRequest key(String key) {
+  public HoldoutPostRequest key(@javax.annotation.Nullable String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * A key that identifies the holdout
    * @return key
-  **/
+   */
   @javax.annotation.Nullable
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nullable String key) {
     this.key = key;
   }
 
 
-  public HoldoutPostRequest description(String description) {
+  public HoldoutPostRequest description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Description of the holdout
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public HoldoutPostRequest randomizationunit(String randomizationunit) {
+  public HoldoutPostRequest randomizationunit(@javax.annotation.Nullable String randomizationunit) {
     this.randomizationunit = randomizationunit;
     return this;
   }
 
-   /**
+  /**
    * The chosen randomization unit for the holdout base experiment
    * @return randomizationunit
-  **/
+   */
   @javax.annotation.Nullable
   public String getRandomizationunit() {
     return randomizationunit;
   }
 
-  public void setRandomizationunit(String randomizationunit) {
+  public void setRandomizationunit(@javax.annotation.Nullable String randomizationunit) {
     this.randomizationunit = randomizationunit;
   }
 
 
-  public HoldoutPostRequest attributes(List<String> attributes) {
+  public HoldoutPostRequest attributes(@javax.annotation.Nullable List<String> attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -186,59 +197,59 @@ public class HoldoutPostRequest {
     return this;
   }
 
-   /**
+  /**
    * The attributes that the holdout iteration&#39;s results can be sliced by
    * @return attributes
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(List<String> attributes) {
+  public void setAttributes(@javax.annotation.Nullable List<String> attributes) {
     this.attributes = attributes;
   }
 
 
-  public HoldoutPostRequest holdoutamount(String holdoutamount) {
+  public HoldoutPostRequest holdoutamount(@javax.annotation.Nullable String holdoutamount) {
     this.holdoutamount = holdoutamount;
     return this;
   }
 
-   /**
+  /**
    * Audience allocation for the holdout
    * @return holdoutamount
-  **/
+   */
   @javax.annotation.Nullable
   public String getHoldoutamount() {
     return holdoutamount;
   }
 
-  public void setHoldoutamount(String holdoutamount) {
+  public void setHoldoutamount(@javax.annotation.Nullable String holdoutamount) {
     this.holdoutamount = holdoutamount;
   }
 
 
-  public HoldoutPostRequest primarymetrickey(String primarymetrickey) {
+  public HoldoutPostRequest primarymetrickey(@javax.annotation.Nullable String primarymetrickey) {
     this.primarymetrickey = primarymetrickey;
     return this;
   }
 
-   /**
+  /**
    * The key of the primary metric for this holdout
    * @return primarymetrickey
-  **/
+   */
   @javax.annotation.Nullable
   public String getPrimarymetrickey() {
     return primarymetrickey;
   }
 
-  public void setPrimarymetrickey(String primarymetrickey) {
+  public void setPrimarymetrickey(@javax.annotation.Nullable String primarymetrickey) {
     this.primarymetrickey = primarymetrickey;
   }
 
 
-  public HoldoutPostRequest metrics(List<MetricInput> metrics) {
+  public HoldoutPostRequest metrics(@javax.annotation.Nullable List<MetricInput> metrics) {
     this.metrics = metrics;
     return this;
   }
@@ -251,54 +262,54 @@ public class HoldoutPostRequest {
     return this;
   }
 
-   /**
+  /**
    * Details on the metrics for this experiment
    * @return metrics
-  **/
+   */
   @javax.annotation.Nullable
   public List<MetricInput> getMetrics() {
     return metrics;
   }
 
-  public void setMetrics(List<MetricInput> metrics) {
+  public void setMetrics(@javax.annotation.Nullable List<MetricInput> metrics) {
     this.metrics = metrics;
   }
 
 
-  public HoldoutPostRequest prerequisiteflagkey(String prerequisiteflagkey) {
+  public HoldoutPostRequest prerequisiteflagkey(@javax.annotation.Nullable String prerequisiteflagkey) {
     this.prerequisiteflagkey = prerequisiteflagkey;
     return this;
   }
 
-   /**
+  /**
    * The key of the flag that the holdout is dependent on
    * @return prerequisiteflagkey
-  **/
+   */
   @javax.annotation.Nullable
   public String getPrerequisiteflagkey() {
     return prerequisiteflagkey;
   }
 
-  public void setPrerequisiteflagkey(String prerequisiteflagkey) {
+  public void setPrerequisiteflagkey(@javax.annotation.Nullable String prerequisiteflagkey) {
     this.prerequisiteflagkey = prerequisiteflagkey;
   }
 
 
-  public HoldoutPostRequest maintainerId(String maintainerId) {
+  public HoldoutPostRequest maintainerId(@javax.annotation.Nullable String maintainerId) {
     this.maintainerId = maintainerId;
     return this;
   }
 
-   /**
+  /**
    * Maintainer id
    * @return maintainerId
-  **/
+   */
   @javax.annotation.Nullable
   public String getMaintainerId() {
     return maintainerId;
   }
 
-  public void setMaintainerId(String maintainerId) {
+  public void setMaintainerId(@javax.annotation.Nullable String maintainerId) {
     this.maintainerId = maintainerId;
   }
 
@@ -411,63 +422,53 @@ public class HoldoutPostRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("key");
-    openapiFields.add("description");
-    openapiFields.add("randomizationunit");
-    openapiFields.add("attributes");
-    openapiFields.add("holdoutamount");
-    openapiFields.add("primarymetrickey");
-    openapiFields.add("metrics");
-    openapiFields.add("prerequisiteflagkey");
-    openapiFields.add("maintainerId");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "key", "description", "randomizationunit", "attributes", "holdoutamount", "primarymetrickey", "metrics", "prerequisiteflagkey", "maintainerId"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to HoldoutPostRequest
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to HoldoutPostRequest
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!HoldoutPostRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in HoldoutPostRequest is not found in the empty JSON string", HoldoutPostRequest.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in HoldoutPostRequest is not found in the empty JSON string", HoldoutPostRequest.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if ((jsonObj.get("randomizationunit") != null && !jsonObj.get("randomizationunit").isJsonNull()) && !jsonObj.get("randomizationunit").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `randomizationunit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("randomizationunit").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `randomizationunit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("randomizationunit").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("attributes") != null && !jsonObj.get("attributes").isJsonNull() && !jsonObj.get("attributes").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `attributes` to be an array in the JSON string but got `%s`", jsonObj.get("attributes").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `attributes` to be an array in the JSON string but got `%s`", jsonObj.get("attributes").toString()));
       }
       if ((jsonObj.get("holdoutamount") != null && !jsonObj.get("holdoutamount").isJsonNull()) && !jsonObj.get("holdoutamount").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `holdoutamount` to be a primitive type in the JSON string but got `%s`", jsonObj.get("holdoutamount").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `holdoutamount` to be a primitive type in the JSON string but got `%s`", jsonObj.get("holdoutamount").toString()));
       }
       if ((jsonObj.get("primarymetrickey") != null && !jsonObj.get("primarymetrickey").isJsonNull()) && !jsonObj.get("primarymetrickey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `primarymetrickey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("primarymetrickey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `primarymetrickey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("primarymetrickey").toString()));
       }
       if (jsonObj.get("metrics") != null && !jsonObj.get("metrics").isJsonNull()) {
         JsonArray jsonArraymetrics = jsonObj.getAsJsonArray("metrics");
         if (jsonArraymetrics != null) {
           // ensure the json data is an array
           if (!jsonObj.get("metrics").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `metrics` to be an array in the JSON string but got `%s`", jsonObj.get("metrics").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `metrics` to be an array in the JSON string but got `%s`", jsonObj.get("metrics").toString()));
           }
 
           // validate the optional field `metrics` (array)
@@ -477,10 +478,10 @@ public class HoldoutPostRequest {
         }
       }
       if ((jsonObj.get("prerequisiteflagkey") != null && !jsonObj.get("prerequisiteflagkey").isJsonNull()) && !jsonObj.get("prerequisiteflagkey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `prerequisiteflagkey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prerequisiteflagkey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `prerequisiteflagkey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prerequisiteflagkey").toString()));
       }
       if ((jsonObj.get("maintainerId") != null && !jsonObj.get("maintainerId").isJsonNull()) && !jsonObj.get("maintainerId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerId").toString()));
       }
   }
 
@@ -541,7 +542,7 @@ public class HoldoutPostRequest {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -556,22 +557,22 @@ public class HoldoutPostRequest {
     }
   }
 
- /**
-  * Create an instance of HoldoutPostRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of HoldoutPostRequest
-  * @throws IOException if the JSON string is invalid with respect to HoldoutPostRequest
-  */
+  /**
+   * Create an instance of HoldoutPostRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of HoldoutPostRequest
+   * @throws IOException if the JSON string is invalid with respect to HoldoutPostRequest
+   */
   public static HoldoutPostRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, HoldoutPostRequest.class);
   }
 
- /**
-  * Convert an instance of HoldoutPostRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of HoldoutPostRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

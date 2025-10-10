@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,65 +38,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * FailureReasonRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class FailureReasonRep {
   public static final String SERIALIZED_NAME_ATTRIBUTE = "attribute";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTE)
+  @javax.annotation.Nonnull
   private String attribute;
 
   public static final String SERIALIZED_NAME_REASON = "reason";
   @SerializedName(SERIALIZED_NAME_REASON)
+  @javax.annotation.Nonnull
   private String reason;
 
   public FailureReasonRep() {
   }
 
-  public FailureReasonRep attribute(String attribute) {
+  public FailureReasonRep attribute(@javax.annotation.Nonnull String attribute) {
     this.attribute = attribute;
     return this;
   }
 
-   /**
+  /**
    * The attribute that failed validation
    * @return attribute
-  **/
+   */
   @javax.annotation.Nonnull
   public String getAttribute() {
     return attribute;
   }
 
-  public void setAttribute(String attribute) {
+  public void setAttribute(@javax.annotation.Nonnull String attribute) {
     this.attribute = attribute;
   }
 
 
-  public FailureReasonRep reason(String reason) {
+  public FailureReasonRep reason(@javax.annotation.Nonnull String reason) {
     this.reason = reason;
     return this;
   }
 
-   /**
+  /**
    * The reason the attribute failed validation
    * @return reason
-  **/
+   */
   @javax.annotation.Nonnull
   public String getReason() {
     return reason;
   }
 
-  public void setReason(String reason) {
+  public void setReason(@javax.annotation.Nonnull String reason) {
     this.reason = reason;
   }
 
@@ -192,41 +195,37 @@ public class FailureReasonRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("attribute");
-    openapiFields.add("reason");
+    openapiFields = new HashSet<String>(Arrays.asList("attribute", "reason"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("attribute");
-    openapiRequiredFields.add("reason");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("attribute", "reason"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FailureReasonRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FailureReasonRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FailureReasonRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FailureReasonRep is not found in the empty JSON string", FailureReasonRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FailureReasonRep is not found in the empty JSON string", FailureReasonRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : FailureReasonRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("attribute").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `attribute` to be a primitive type in the JSON string but got `%s`", jsonObj.get("attribute").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `attribute` to be a primitive type in the JSON string but got `%s`", jsonObj.get("attribute").toString()));
       }
       if (!jsonObj.get("reason").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `reason` to be a primitive type in the JSON string but got `%s`", jsonObj.get("reason").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `reason` to be a primitive type in the JSON string but got `%s`", jsonObj.get("reason").toString()));
       }
   }
 
@@ -287,7 +286,7 @@ public class FailureReasonRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -302,22 +301,22 @@ public class FailureReasonRep {
     }
   }
 
- /**
-  * Create an instance of FailureReasonRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FailureReasonRep
-  * @throws IOException if the JSON string is invalid with respect to FailureReasonRep
-  */
+  /**
+   * Create an instance of FailureReasonRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FailureReasonRep
+   * @throws IOException if the JSON string is invalid with respect to FailureReasonRep
+   */
   public static FailureReasonRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FailureReasonRep.class);
   }
 
- /**
-  * Convert an instance of FailureReasonRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FailureReasonRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

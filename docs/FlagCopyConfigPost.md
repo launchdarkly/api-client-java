@@ -19,13 +19,13 @@
 
 | Name | Value |
 |---- | -----|
-| UPDATEON | &quot;updateOn&quot; |
-| UPDATERULES | &quot;updateRules&quot; |
-| UPDATEFALLTHROUGH | &quot;updateFallthrough&quot; |
-| UPDATEOFFVARIATION | &quot;updateOffVariation&quot; |
-| UPDATEPREREQUISITES | &quot;updatePrerequisites&quot; |
-| UPDATETARGETS | &quot;updateTargets&quot; |
-| UPDATEFLAGCONFIGMIGRATIONSETTINGS | &quot;updateFlagConfigMigrationSettings&quot; |
+| UPDATE_ON | &quot;updateOn&quot; |
+| UPDATE_RULES | &quot;updateRules&quot; |
+| UPDATE_FALLTHROUGH | &quot;updateFallthrough&quot; |
+| UPDATE_OFF_VARIATION | &quot;updateOffVariation&quot; |
+| UPDATE_PREREQUISITES | &quot;updatePrerequisites&quot; |
+| UPDATE_TARGETS | &quot;updateTargets&quot; |
+| UPDATE_FLAG_CONFIG_MIGRATION_SETTINGS | &quot;updateFlagConfigMigrationSettings&quot; |
 
 
 
@@ -33,13 +33,13 @@
 
 | Name | Value |
 |---- | -----|
-| UPDATEON | &quot;updateOn&quot; |
-| UPDATERULES | &quot;updateRules&quot; |
-| UPDATEFALLTHROUGH | &quot;updateFallthrough&quot; |
-| UPDATEOFFVARIATION | &quot;updateOffVariation&quot; |
-| UPDATEPREREQUISITES | &quot;updatePrerequisites&quot; |
-| UPDATETARGETS | &quot;updateTargets&quot; |
-| UPDATEFLAGCONFIGMIGRATIONSETTINGS | &quot;updateFlagConfigMigrationSettings&quot; |
+| UPDATE_ON | &quot;updateOn&quot; |
+| UPDATE_RULES | &quot;updateRules&quot; |
+| UPDATE_FALLTHROUGH | &quot;updateFallthrough&quot; |
+| UPDATE_OFF_VARIATION | &quot;updateOffVariation&quot; |
+| UPDATE_PREREQUISITES | &quot;updatePrerequisites&quot; |
+| UPDATE_TARGETS | &quot;updateTargets&quot; |
+| UPDATE_FLAG_CONFIG_MIGRATION_SETTINGS | &quot;updateFlagConfigMigrationSettings&quot; |
 
 
 

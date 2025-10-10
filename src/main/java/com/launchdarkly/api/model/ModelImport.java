@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,34 +44,38 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ModelImport
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ModelImport {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_SEGMENT_KEY = "segmentKey";
   @SerializedName(SERIALIZED_NAME_SEGMENT_KEY)
+  @javax.annotation.Nonnull
   private String segmentKey;
 
   public static final String SERIALIZED_NAME_CREATION_TIME = "creationTime";
   @SerializedName(SERIALIZED_NAME_CREATION_TIME)
+  @javax.annotation.Nonnull
   private Long creationTime;
 
   public static final String SERIALIZED_NAME_MODE = "mode";
   @SerializedName(SERIALIZED_NAME_MODE)
+  @javax.annotation.Nonnull
   private String mode;
 
   /**
@@ -135,115 +140,118 @@ public class ModelImport {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nonnull
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_FILES = "files";
   @SerializedName(SERIALIZED_NAME_FILES)
+  @javax.annotation.Nullable
   private List<FileRep> files = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public ModelImport() {
   }
 
-  public ModelImport id(String id) {
+  public ModelImport id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The import ID
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public ModelImport segmentKey(String segmentKey) {
+  public ModelImport segmentKey(@javax.annotation.Nonnull String segmentKey) {
     this.segmentKey = segmentKey;
     return this;
   }
 
-   /**
+  /**
    * The segment key
    * @return segmentKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getSegmentKey() {
     return segmentKey;
   }
 
-  public void setSegmentKey(String segmentKey) {
+  public void setSegmentKey(@javax.annotation.Nonnull String segmentKey) {
     this.segmentKey = segmentKey;
   }
 
 
-  public ModelImport creationTime(Long creationTime) {
+  public ModelImport creationTime(@javax.annotation.Nonnull Long creationTime) {
     this.creationTime = creationTime;
     return this;
   }
 
-   /**
+  /**
    * Get creationTime
    * @return creationTime
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreationTime() {
     return creationTime;
   }
 
-  public void setCreationTime(Long creationTime) {
+  public void setCreationTime(@javax.annotation.Nonnull Long creationTime) {
     this.creationTime = creationTime;
   }
 
 
-  public ModelImport mode(String mode) {
+  public ModelImport mode(@javax.annotation.Nonnull String mode) {
     this.mode = mode;
     return this;
   }
 
-   /**
+  /**
    * The import mode used, either &lt;code&gt;merge&lt;/code&gt; or &lt;code&gt;replace&lt;/code&gt;
    * @return mode
-  **/
+   */
   @javax.annotation.Nonnull
   public String getMode() {
     return mode;
   }
 
-  public void setMode(String mode) {
+  public void setMode(@javax.annotation.Nonnull String mode) {
     this.mode = mode;
   }
 
 
-  public ModelImport status(StatusEnum status) {
+  public ModelImport status(@javax.annotation.Nonnull StatusEnum status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * The import status
    * @return status
-  **/
+   */
   @javax.annotation.Nonnull
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(@javax.annotation.Nonnull StatusEnum status) {
     this.status = status;
   }
 
 
-  public ModelImport files(List<FileRep> files) {
+  public ModelImport files(@javax.annotation.Nullable List<FileRep> files) {
     this.files = files;
     return this;
   }
@@ -256,21 +264,21 @@ public class ModelImport {
     return this;
   }
 
-   /**
+  /**
    * The imported files and their status
    * @return files
-  **/
+   */
   @javax.annotation.Nullable
   public List<FileRep> getFiles() {
     return files;
   }
 
-  public void setFiles(List<FileRep> files) {
+  public void setFiles(@javax.annotation.Nullable List<FileRep> files) {
     this.files = files;
   }
 
 
-  public ModelImport links(Map<String, Link> links) {
+  public ModelImport links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -283,16 +291,16 @@ public class ModelImport {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
@@ -399,56 +407,43 @@ public class ModelImport {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("segmentKey");
-    openapiFields.add("creationTime");
-    openapiFields.add("mode");
-    openapiFields.add("status");
-    openapiFields.add("files");
-    openapiFields.add("_links");
+    openapiFields = new HashSet<String>(Arrays.asList("id", "segmentKey", "creationTime", "mode", "status", "files", "_links"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("id");
-    openapiRequiredFields.add("segmentKey");
-    openapiRequiredFields.add("creationTime");
-    openapiRequiredFields.add("mode");
-    openapiRequiredFields.add("status");
-    openapiRequiredFields.add("_links");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("id", "segmentKey", "creationTime", "mode", "status", "_links"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ModelImport
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ModelImport
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ModelImport.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ModelImport is not found in the empty JSON string", ModelImport.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ModelImport is not found in the empty JSON string", ModelImport.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ModelImport.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
       if (!jsonObj.get("segmentKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `segmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("segmentKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `segmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("segmentKey").toString()));
       }
       if (!jsonObj.get("mode").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `mode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mode").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `mode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mode").toString()));
       }
       if (!jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
       // validate the required field `status`
       StatusEnum.validateJsonElement(jsonObj.get("status"));
@@ -457,7 +452,7 @@ public class ModelImport {
         if (jsonArrayfiles != null) {
           // ensure the json data is an array
           if (!jsonObj.get("files").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `files` to be an array in the JSON string but got `%s`", jsonObj.get("files").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `files` to be an array in the JSON string but got `%s`", jsonObj.get("files").toString()));
           }
 
           // validate the optional field `files` (array)
@@ -525,7 +520,7 @@ public class ModelImport {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -540,22 +535,22 @@ public class ModelImport {
     }
   }
 
- /**
-  * Create an instance of ModelImport given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ModelImport
-  * @throws IOException if the JSON string is invalid with respect to ModelImport
-  */
+  /**
+   * Create an instance of ModelImport given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ModelImport
+   * @throws IOException if the JSON string is invalid with respect to ModelImport
+   */
   public static ModelImport fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ModelImport.class);
   }
 
- /**
-  * Convert an instance of ModelImport to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ModelImport to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

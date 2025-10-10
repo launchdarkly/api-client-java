@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,226 +42,235 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ReleasePolicy
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ReleasePolicy {
   public static final String SERIALIZED_NAME_ACCESS = "_access";
   @SerializedName(SERIALIZED_NAME_ACCESS)
+  @javax.annotation.Nullable
   private ReleasePoliciesAccessRep access;
 
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_SCOPE = "scope";
   @SerializedName(SERIALIZED_NAME_SCOPE)
+  @javax.annotation.Nullable
   private ReleasePolicyScope scope;
 
   public static final String SERIALIZED_NAME_RANK = "rank";
   @SerializedName(SERIALIZED_NAME_RANK)
+  @javax.annotation.Nonnull
   private Integer rank;
 
   public static final String SERIALIZED_NAME_RELEASE_METHOD = "releaseMethod";
   @SerializedName(SERIALIZED_NAME_RELEASE_METHOD)
+  @javax.annotation.Nonnull
   private ReleaseMethod releaseMethod;
 
   public static final String SERIALIZED_NAME_GUARDED_RELEASE_CONFIG = "guardedReleaseConfig";
   @SerializedName(SERIALIZED_NAME_GUARDED_RELEASE_CONFIG)
+  @javax.annotation.Nullable
   private GuardedReleaseConfig guardedReleaseConfig;
 
   public static final String SERIALIZED_NAME_PROGRESSIVE_RELEASE_CONFIG = "progressiveReleaseConfig";
   @SerializedName(SERIALIZED_NAME_PROGRESSIVE_RELEASE_CONFIG)
+  @javax.annotation.Nullable
   private Object progressiveReleaseConfig;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public ReleasePolicy() {
   }
 
-  public ReleasePolicy access(ReleasePoliciesAccessRep access) {
+  public ReleasePolicy access(@javax.annotation.Nullable ReleasePoliciesAccessRep access) {
     this.access = access;
     return this;
   }
 
-   /**
+  /**
    * Get access
    * @return access
-  **/
+   */
   @javax.annotation.Nullable
   public ReleasePoliciesAccessRep getAccess() {
     return access;
   }
 
-  public void setAccess(ReleasePoliciesAccessRep access) {
+  public void setAccess(@javax.annotation.Nullable ReleasePoliciesAccessRep access) {
     this.access = access;
   }
 
 
-  public ReleasePolicy id(String id) {
+  public ReleasePolicy id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The unique identifier of the release policy
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public ReleasePolicy scope(ReleasePolicyScope scope) {
+  public ReleasePolicy scope(@javax.annotation.Nullable ReleasePolicyScope scope) {
     this.scope = scope;
     return this;
   }
 
-   /**
+  /**
    * Get scope
    * @return scope
-  **/
+   */
   @javax.annotation.Nullable
   public ReleasePolicyScope getScope() {
     return scope;
   }
 
-  public void setScope(ReleasePolicyScope scope) {
+  public void setScope(@javax.annotation.Nullable ReleasePolicyScope scope) {
     this.scope = scope;
   }
 
 
-  public ReleasePolicy rank(Integer rank) {
+  public ReleasePolicy rank(@javax.annotation.Nonnull Integer rank) {
     this.rank = rank;
     return this;
   }
 
-   /**
+  /**
    * The rank/priority of the release policy
    * @return rank
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getRank() {
     return rank;
   }
 
-  public void setRank(Integer rank) {
+  public void setRank(@javax.annotation.Nonnull Integer rank) {
     this.rank = rank;
   }
 
 
-  public ReleasePolicy releaseMethod(ReleaseMethod releaseMethod) {
+  public ReleasePolicy releaseMethod(@javax.annotation.Nonnull ReleaseMethod releaseMethod) {
     this.releaseMethod = releaseMethod;
     return this;
   }
 
-   /**
+  /**
    * Get releaseMethod
    * @return releaseMethod
-  **/
+   */
   @javax.annotation.Nonnull
   public ReleaseMethod getReleaseMethod() {
     return releaseMethod;
   }
 
-  public void setReleaseMethod(ReleaseMethod releaseMethod) {
+  public void setReleaseMethod(@javax.annotation.Nonnull ReleaseMethod releaseMethod) {
     this.releaseMethod = releaseMethod;
   }
 
 
-  public ReleasePolicy guardedReleaseConfig(GuardedReleaseConfig guardedReleaseConfig) {
+  public ReleasePolicy guardedReleaseConfig(@javax.annotation.Nullable GuardedReleaseConfig guardedReleaseConfig) {
     this.guardedReleaseConfig = guardedReleaseConfig;
     return this;
   }
 
-   /**
+  /**
    * Get guardedReleaseConfig
    * @return guardedReleaseConfig
-  **/
+   */
   @javax.annotation.Nullable
   public GuardedReleaseConfig getGuardedReleaseConfig() {
     return guardedReleaseConfig;
   }
 
-  public void setGuardedReleaseConfig(GuardedReleaseConfig guardedReleaseConfig) {
+  public void setGuardedReleaseConfig(@javax.annotation.Nullable GuardedReleaseConfig guardedReleaseConfig) {
     this.guardedReleaseConfig = guardedReleaseConfig;
   }
 
 
-  public ReleasePolicy progressiveReleaseConfig(Object progressiveReleaseConfig) {
+  public ReleasePolicy progressiveReleaseConfig(@javax.annotation.Nullable Object progressiveReleaseConfig) {
     this.progressiveReleaseConfig = progressiveReleaseConfig;
     return this;
   }
 
-   /**
+  /**
    * Configuration for progressive releases
    * @return progressiveReleaseConfig
-  **/
+   */
   @javax.annotation.Nullable
   public Object getProgressiveReleaseConfig() {
     return progressiveReleaseConfig;
   }
 
-  public void setProgressiveReleaseConfig(Object progressiveReleaseConfig) {
+  public void setProgressiveReleaseConfig(@javax.annotation.Nullable Object progressiveReleaseConfig) {
     this.progressiveReleaseConfig = progressiveReleaseConfig;
   }
 
 
-  public ReleasePolicy name(String name) {
+  public ReleasePolicy name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The name of the release policy
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public ReleasePolicy key(String key) {
+  public ReleasePolicy key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * The human-readable key of the release policy
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
@@ -371,43 +381,29 @@ public class ReleasePolicy {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_access");
-    openapiFields.add("_id");
-    openapiFields.add("scope");
-    openapiFields.add("rank");
-    openapiFields.add("releaseMethod");
-    openapiFields.add("guardedReleaseConfig");
-    openapiFields.add("progressiveReleaseConfig");
-    openapiFields.add("name");
-    openapiFields.add("key");
+    openapiFields = new HashSet<String>(Arrays.asList("_access", "_id", "scope", "rank", "releaseMethod", "guardedReleaseConfig", "progressiveReleaseConfig", "name", "key"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("rank");
-    openapiRequiredFields.add("releaseMethod");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("key");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "rank", "releaseMethod", "name", "key"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ReleasePolicy
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ReleasePolicy
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ReleasePolicy.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ReleasePolicy is not found in the empty JSON string", ReleasePolicy.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ReleasePolicy is not found in the empty JSON string", ReleasePolicy.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ReleasePolicy.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -416,7 +412,7 @@ public class ReleasePolicy {
         ReleasePoliciesAccessRep.validateJsonElement(jsonObj.get("_access"));
       }
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       // validate the optional field `scope`
       if (jsonObj.get("scope") != null && !jsonObj.get("scope").isJsonNull()) {
@@ -429,10 +425,10 @@ public class ReleasePolicy {
         GuardedReleaseConfig.validateJsonElement(jsonObj.get("guardedReleaseConfig"));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
   }
 
@@ -493,7 +489,7 @@ public class ReleasePolicy {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -508,22 +504,22 @@ public class ReleasePolicy {
     }
   }
 
- /**
-  * Create an instance of ReleasePolicy given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ReleasePolicy
-  * @throws IOException if the JSON string is invalid with respect to ReleasePolicy
-  */
+  /**
+   * Create an instance of ReleasePolicy given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ReleasePolicy
+   * @throws IOException if the JSON string is invalid with respect to ReleasePolicy
+   */
   public static ReleasePolicy fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ReleasePolicy.class);
   }
 
- /**
-  * Convert an instance of ReleasePolicy to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ReleasePolicy to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

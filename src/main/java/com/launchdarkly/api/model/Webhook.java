@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,60 +45,69 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * Webhook
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class Webhook {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
+  @javax.annotation.Nonnull
   private String url;
 
   public static final String SERIALIZED_NAME_SECRET = "secret";
   @SerializedName(SERIALIZED_NAME_SECRET)
+  @javax.annotation.Nullable
   private String secret;
 
   public static final String SERIALIZED_NAME_STATEMENTS = "statements";
   @SerializedName(SERIALIZED_NAME_STATEMENTS)
+  @javax.annotation.Nullable
   private List<Statement> statements = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ON = "on";
   @SerializedName(SERIALIZED_NAME_ON)
+  @javax.annotation.Nonnull
   private Boolean on;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nonnull
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ACCESS = "_access";
   @SerializedName(SERIALIZED_NAME_ACCESS)
+  @javax.annotation.Nullable
   private Access access;
 
   public Webhook() {
   }
 
-  public Webhook links(Map<String, Link> links) {
+  public Webhook links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -110,97 +120,97 @@ public class Webhook {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public Webhook id(String id) {
+  public Webhook id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The ID of this webhook
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public Webhook name(String name) {
+  public Webhook name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-readable name for this webhook
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public Webhook url(String url) {
+  public Webhook url(@javax.annotation.Nonnull String url) {
     this.url = url;
     return this;
   }
 
-   /**
+  /**
    * The URL to which LaunchDarkly sends an HTTP POST payload for this webhook
    * @return url
-  **/
+   */
   @javax.annotation.Nonnull
   public String getUrl() {
     return url;
   }
 
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nonnull String url) {
     this.url = url;
   }
 
 
-  public Webhook secret(String secret) {
+  public Webhook secret(@javax.annotation.Nullable String secret) {
     this.secret = secret;
     return this;
   }
 
-   /**
+  /**
    * The secret for this webhook
    * @return secret
-  **/
+   */
   @javax.annotation.Nullable
   public String getSecret() {
     return secret;
   }
 
-  public void setSecret(String secret) {
+  public void setSecret(@javax.annotation.Nullable String secret) {
     this.secret = secret;
   }
 
 
-  public Webhook statements(List<Statement> statements) {
+  public Webhook statements(@javax.annotation.Nullable List<Statement> statements) {
     this.statements = statements;
     return this;
   }
@@ -213,40 +223,40 @@ public class Webhook {
     return this;
   }
 
-   /**
+  /**
    * Represents a Custom role policy, defining a resource kinds filter the webhook responds to.
    * @return statements
-  **/
+   */
   @javax.annotation.Nullable
   public List<Statement> getStatements() {
     return statements;
   }
 
-  public void setStatements(List<Statement> statements) {
+  public void setStatements(@javax.annotation.Nullable List<Statement> statements) {
     this.statements = statements;
   }
 
 
-  public Webhook on(Boolean on) {
+  public Webhook on(@javax.annotation.Nonnull Boolean on) {
     this.on = on;
     return this;
   }
 
-   /**
+  /**
    * Whether or not this webhook is enabled
    * @return on
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getOn() {
     return on;
   }
 
-  public void setOn(Boolean on) {
+  public void setOn(@javax.annotation.Nonnull Boolean on) {
     this.on = on;
   }
 
 
-  public Webhook tags(List<String> tags) {
+  public Webhook tags(@javax.annotation.Nonnull List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -259,35 +269,35 @@ public class Webhook {
     return this;
   }
 
-   /**
+  /**
    * List of tags for this webhook
    * @return tags
-  **/
+   */
   @javax.annotation.Nonnull
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nonnull List<String> tags) {
     this.tags = tags;
   }
 
 
-  public Webhook access(Access access) {
+  public Webhook access(@javax.annotation.Nullable Access access) {
     this.access = access;
     return this;
   }
 
-   /**
+  /**
    * Get access
    * @return access
-  **/
+   */
   @javax.annotation.Nullable
   public Access getAccess() {
     return access;
   }
 
-  public void setAccess(Access access) {
+  public void setAccess(@javax.annotation.Nullable Access access) {
     this.access = access;
   }
 
@@ -398,64 +408,50 @@ public class Webhook {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_links");
-    openapiFields.add("_id");
-    openapiFields.add("name");
-    openapiFields.add("url");
-    openapiFields.add("secret");
-    openapiFields.add("statements");
-    openapiFields.add("on");
-    openapiFields.add("tags");
-    openapiFields.add("_access");
+    openapiFields = new HashSet<String>(Arrays.asList("_links", "_id", "name", "url", "secret", "statements", "on", "tags", "_access"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_links");
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("url");
-    openapiRequiredFields.add("on");
-    openapiRequiredFields.add("tags");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_links", "_id", "url", "on", "tags"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Webhook
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Webhook
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Webhook.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Webhook is not found in the empty JSON string", Webhook.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Webhook is not found in the empty JSON string", Webhook.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : Webhook.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
       }
       if ((jsonObj.get("secret") != null && !jsonObj.get("secret").isJsonNull()) && !jsonObj.get("secret").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `secret` to be a primitive type in the JSON string but got `%s`", jsonObj.get("secret").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `secret` to be a primitive type in the JSON string but got `%s`", jsonObj.get("secret").toString()));
       }
       if (jsonObj.get("statements") != null && !jsonObj.get("statements").isJsonNull()) {
         JsonArray jsonArraystatements = jsonObj.getAsJsonArray("statements");
         if (jsonArraystatements != null) {
           // ensure the json data is an array
           if (!jsonObj.get("statements").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `statements` to be an array in the JSON string but got `%s`", jsonObj.get("statements").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `statements` to be an array in the JSON string but got `%s`", jsonObj.get("statements").toString()));
           }
 
           // validate the optional field `statements` (array)
@@ -468,7 +464,7 @@ public class Webhook {
       if (jsonObj.get("tags") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       // validate the optional field `_access`
       if (jsonObj.get("_access") != null && !jsonObj.get("_access").isJsonNull()) {
@@ -533,7 +529,7 @@ public class Webhook {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -548,22 +544,22 @@ public class Webhook {
     }
   }
 
- /**
-  * Create an instance of Webhook given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Webhook
-  * @throws IOException if the JSON string is invalid with respect to Webhook
-  */
+  /**
+   * Create an instance of Webhook given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Webhook
+   * @throws IOException if the JSON string is invalid with respect to Webhook
+   */
   public static Webhook fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Webhook.class);
   }
 
- /**
-  * Convert an instance of Webhook to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Webhook to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

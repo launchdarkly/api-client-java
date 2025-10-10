@@ -84,7 +84,8 @@ public class UsersBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> User attribute names response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -95,7 +96,7 @@ public class UsersBetaApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getUserAttributeNamesCall(String projectKey, String environmentKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getUserAttributeNamesCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -143,7 +144,7 @@ public class UsersBetaApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getUserAttributeNamesValidateBeforeCall(String projectKey, String environmentKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getUserAttributeNamesValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getUserAttributeNames(Async)");
@@ -166,7 +167,8 @@ public class UsersBetaApi {
      * @return UserAttributeNamesRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> User attribute names response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -177,7 +179,7 @@ public class UsersBetaApi {
      * @deprecated
      */
     @Deprecated
-    public UserAttributeNamesRep getUserAttributeNames(String projectKey, String environmentKey) throws ApiException {
+    public UserAttributeNamesRep getUserAttributeNames(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey) throws ApiException {
         ApiResponse<UserAttributeNamesRep> localVarResp = getUserAttributeNamesWithHttpInfo(projectKey, environmentKey);
         return localVarResp.getData();
     }
@@ -190,7 +192,8 @@ public class UsersBetaApi {
      * @return ApiResponse&lt;UserAttributeNamesRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> User attribute names response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -201,7 +204,7 @@ public class UsersBetaApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<UserAttributeNamesRep> getUserAttributeNamesWithHttpInfo(String projectKey, String environmentKey) throws ApiException {
+    public ApiResponse<UserAttributeNamesRep> getUserAttributeNamesWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey) throws ApiException {
         okhttp3.Call localVarCall = getUserAttributeNamesValidateBeforeCall(projectKey, environmentKey, null);
         Type localVarReturnType = new TypeToken<UserAttributeNamesRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -216,7 +219,8 @@ public class UsersBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> User attribute names response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -227,7 +231,7 @@ public class UsersBetaApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getUserAttributeNamesAsync(String projectKey, String environmentKey, final ApiCallback<UserAttributeNamesRep> _callback) throws ApiException {
+    public okhttp3.Call getUserAttributeNamesAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback<UserAttributeNamesRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getUserAttributeNamesValidateBeforeCall(projectKey, environmentKey, _callback);
         Type localVarReturnType = new TypeToken<UserAttributeNamesRep>(){}.getType();

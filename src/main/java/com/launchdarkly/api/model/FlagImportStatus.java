@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,19 +41,19 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * FlagImportStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class FlagImportStatus {
   /**
    * The current status of the import integrations related import job
@@ -114,81 +115,85 @@ public class FlagImportStatus {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_LAST_IMPORT = "lastImport";
   @SerializedName(SERIALIZED_NAME_LAST_IMPORT)
+  @javax.annotation.Nullable
   private Long lastImport;
 
   public static final String SERIALIZED_NAME_LAST_ERROR = "lastError";
   @SerializedName(SERIALIZED_NAME_LAST_ERROR)
+  @javax.annotation.Nullable
   private Long lastError;
 
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
+  @javax.annotation.Nullable
   private List<StatusResponse> errors = new ArrayList<>();
 
   public FlagImportStatus() {
   }
 
-  public FlagImportStatus status(StatusEnum status) {
+  public FlagImportStatus status(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * The current status of the import integrations related import job
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 
 
-  public FlagImportStatus lastImport(Long lastImport) {
+  public FlagImportStatus lastImport(@javax.annotation.Nullable Long lastImport) {
     this.lastImport = lastImport;
     return this;
   }
 
-   /**
+  /**
    * Get lastImport
    * @return lastImport
-  **/
+   */
   @javax.annotation.Nullable
   public Long getLastImport() {
     return lastImport;
   }
 
-  public void setLastImport(Long lastImport) {
+  public void setLastImport(@javax.annotation.Nullable Long lastImport) {
     this.lastImport = lastImport;
   }
 
 
-  public FlagImportStatus lastError(Long lastError) {
+  public FlagImportStatus lastError(@javax.annotation.Nullable Long lastError) {
     this.lastError = lastError;
     return this;
   }
 
-   /**
+  /**
    * Get lastError
    * @return lastError
-  **/
+   */
   @javax.annotation.Nullable
   public Long getLastError() {
     return lastError;
   }
 
-  public void setLastError(Long lastError) {
+  public void setLastError(@javax.annotation.Nullable Long lastError) {
     this.lastError = lastError;
   }
 
 
-  public FlagImportStatus errors(List<StatusResponse> errors) {
+  public FlagImportStatus errors(@javax.annotation.Nullable List<StatusResponse> errors) {
     this.errors = errors;
     return this;
   }
@@ -201,16 +206,16 @@ public class FlagImportStatus {
     return this;
   }
 
-   /**
+  /**
    * Get errors
    * @return errors
-  **/
+   */
   @javax.annotation.Nullable
   public List<StatusResponse> getErrors() {
     return errors;
   }
 
-  public void setErrors(List<StatusResponse> errors) {
+  public void setErrors(@javax.annotation.Nullable List<StatusResponse> errors) {
     this.errors = errors;
   }
 
@@ -311,31 +316,27 @@ public class FlagImportStatus {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("status");
-    openapiFields.add("lastImport");
-    openapiFields.add("lastError");
-    openapiFields.add("errors");
+    openapiFields = new HashSet<String>(Arrays.asList("status", "lastImport", "lastError", "errors"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FlagImportStatus
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FlagImportStatus
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FlagImportStatus.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FlagImportStatus is not found in the empty JSON string", FlagImportStatus.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FlagImportStatus is not found in the empty JSON string", FlagImportStatus.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
       // validate the optional field `status`
       if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
@@ -346,7 +347,7 @@ public class FlagImportStatus {
         if (jsonArrayerrors != null) {
           // ensure the json data is an array
           if (!jsonObj.get("errors").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `errors` to be an array in the JSON string but got `%s`", jsonObj.get("errors").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `errors` to be an array in the JSON string but got `%s`", jsonObj.get("errors").toString()));
           }
 
           // validate the optional field `errors` (array)
@@ -414,7 +415,7 @@ public class FlagImportStatus {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -429,22 +430,22 @@ public class FlagImportStatus {
     }
   }
 
- /**
-  * Create an instance of FlagImportStatus given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FlagImportStatus
-  * @throws IOException if the JSON string is invalid with respect to FlagImportStatus
-  */
+  /**
+   * Create an instance of FlagImportStatus given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FlagImportStatus
+   * @throws IOException if the JSON string is invalid with respect to FlagImportStatus
+   */
   public static FlagImportStatus fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FlagImportStatus.class);
   }
 
- /**
-  * Convert an instance of FlagImportStatus to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FlagImportStatus to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

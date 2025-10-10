@@ -90,7 +90,8 @@ public class ApprovalsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -99,7 +100,7 @@ public class ApprovalsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getApprovalRequestSettingsCall(String ldAPIVersion, String projectKey, String environmentKey, String resourceKind, String expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getApprovalRequestSettingsCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String resourceKind, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -137,10 +138,6 @@ public class ApprovalsBetaApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("expand", expand));
         }
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -156,12 +153,17 @@ public class ApprovalsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getApprovalRequestSettingsValidateBeforeCall(String ldAPIVersion, String projectKey, String environmentKey, String resourceKind, String expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getApprovalRequestSettingsValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String resourceKind, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling getApprovalRequestSettings(Async)");
@@ -187,7 +189,8 @@ public class ApprovalsBetaApi {
      * @return Map&lt;String, ApprovalRequestSettingWithEnvs&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -196,7 +199,7 @@ public class ApprovalsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, ApprovalRequestSettingWithEnvs> getApprovalRequestSettings(String ldAPIVersion, String projectKey, String environmentKey, String resourceKind, String expand) throws ApiException {
+    public Map<String, ApprovalRequestSettingWithEnvs> getApprovalRequestSettings(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String resourceKind, @javax.annotation.Nullable String expand) throws ApiException {
         ApiResponse<Map<String, ApprovalRequestSettingWithEnvs>> localVarResp = getApprovalRequestSettingsWithHttpInfo(ldAPIVersion, projectKey, environmentKey, resourceKind, expand);
         return localVarResp.getData();
     }
@@ -212,7 +215,8 @@ public class ApprovalsBetaApi {
      * @return ApiResponse&lt;Map&lt;String, ApprovalRequestSettingWithEnvs&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -221,7 +225,7 @@ public class ApprovalsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, ApprovalRequestSettingWithEnvs>> getApprovalRequestSettingsWithHttpInfo(String ldAPIVersion, String projectKey, String environmentKey, String resourceKind, String expand) throws ApiException {
+    public ApiResponse<Map<String, ApprovalRequestSettingWithEnvs>> getApprovalRequestSettingsWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String resourceKind, @javax.annotation.Nullable String expand) throws ApiException {
         okhttp3.Call localVarCall = getApprovalRequestSettingsValidateBeforeCall(ldAPIVersion, projectKey, environmentKey, resourceKind, expand, null);
         Type localVarReturnType = new TypeToken<Map<String, ApprovalRequestSettingWithEnvs>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -239,7 +243,8 @@ public class ApprovalsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -248,7 +253,7 @@ public class ApprovalsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getApprovalRequestSettingsAsync(String ldAPIVersion, String projectKey, String environmentKey, String resourceKind, String expand, final ApiCallback<Map<String, ApprovalRequestSettingWithEnvs>> _callback) throws ApiException {
+    public okhttp3.Call getApprovalRequestSettingsAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String resourceKind, @javax.annotation.Nullable String expand, final ApiCallback<Map<String, ApprovalRequestSettingWithEnvs>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getApprovalRequestSettingsValidateBeforeCall(ldAPIVersion, projectKey, environmentKey, resourceKind, expand, _callback);
         Type localVarReturnType = new TypeToken<Map<String, ApprovalRequestSettingWithEnvs>>(){}.getType();
@@ -262,7 +267,8 @@ public class ApprovalsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Approval request response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -271,7 +277,7 @@ public class ApprovalsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchApprovalRequestCall(String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchApprovalRequestCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -317,7 +323,7 @@ public class ApprovalsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchApprovalRequestValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchApprovalRequestValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling patchApprovalRequest(Async)");
@@ -334,7 +340,8 @@ public class ApprovalsBetaApi {
      * @return FlagConfigApprovalRequestResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Approval request response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -343,7 +350,7 @@ public class ApprovalsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public FlagConfigApprovalRequestResponse patchApprovalRequest(String id) throws ApiException {
+    public FlagConfigApprovalRequestResponse patchApprovalRequest(@javax.annotation.Nonnull String id) throws ApiException {
         ApiResponse<FlagConfigApprovalRequestResponse> localVarResp = patchApprovalRequestWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -355,7 +362,8 @@ public class ApprovalsBetaApi {
      * @return ApiResponse&lt;FlagConfigApprovalRequestResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Approval request response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -364,7 +372,7 @@ public class ApprovalsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FlagConfigApprovalRequestResponse> patchApprovalRequestWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<FlagConfigApprovalRequestResponse> patchApprovalRequestWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = patchApprovalRequestValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<FlagConfigApprovalRequestResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -378,7 +386,8 @@ public class ApprovalsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Approval request response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -387,7 +396,7 @@ public class ApprovalsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchApprovalRequestAsync(String id, final ApiCallback<FlagConfigApprovalRequestResponse> _callback) throws ApiException {
+    public okhttp3.Call patchApprovalRequestAsync(@javax.annotation.Nonnull String id, final ApiCallback<FlagConfigApprovalRequestResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchApprovalRequestValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<FlagConfigApprovalRequestResponse>(){}.getType();
@@ -403,7 +412,8 @@ public class ApprovalsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -412,7 +422,7 @@ public class ApprovalsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchApprovalRequestSettingsCall(String ldAPIVersion, String projectKey, ApprovalRequestSettingsPatch approvalRequestSettingsPatch, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchApprovalRequestSettingsCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable ApprovalRequestSettingsPatch approvalRequestSettingsPatch, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -438,10 +448,6 @@ public class ApprovalsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -458,12 +464,17 @@ public class ApprovalsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchApprovalRequestSettingsValidateBeforeCall(String ldAPIVersion, String projectKey, ApprovalRequestSettingsPatch approvalRequestSettingsPatch, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchApprovalRequestSettingsValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable ApprovalRequestSettingsPatch approvalRequestSettingsPatch, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling patchApprovalRequestSettings(Async)");
@@ -487,7 +498,8 @@ public class ApprovalsBetaApi {
      * @return Map&lt;String, ApprovalRequestSettingWithEnvs&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -496,7 +508,7 @@ public class ApprovalsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, ApprovalRequestSettingWithEnvs> patchApprovalRequestSettings(String ldAPIVersion, String projectKey, ApprovalRequestSettingsPatch approvalRequestSettingsPatch) throws ApiException {
+    public Map<String, ApprovalRequestSettingWithEnvs> patchApprovalRequestSettings(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable ApprovalRequestSettingsPatch approvalRequestSettingsPatch) throws ApiException {
         ApiResponse<Map<String, ApprovalRequestSettingWithEnvs>> localVarResp = patchApprovalRequestSettingsWithHttpInfo(ldAPIVersion, projectKey, approvalRequestSettingsPatch);
         return localVarResp.getData();
     }
@@ -510,7 +522,8 @@ public class ApprovalsBetaApi {
      * @return ApiResponse&lt;Map&lt;String, ApprovalRequestSettingWithEnvs&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -519,7 +532,7 @@ public class ApprovalsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, ApprovalRequestSettingWithEnvs>> patchApprovalRequestSettingsWithHttpInfo(String ldAPIVersion, String projectKey, ApprovalRequestSettingsPatch approvalRequestSettingsPatch) throws ApiException {
+    public ApiResponse<Map<String, ApprovalRequestSettingWithEnvs>> patchApprovalRequestSettingsWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable ApprovalRequestSettingsPatch approvalRequestSettingsPatch) throws ApiException {
         okhttp3.Call localVarCall = patchApprovalRequestSettingsValidateBeforeCall(ldAPIVersion, projectKey, approvalRequestSettingsPatch, null);
         Type localVarReturnType = new TypeToken<Map<String, ApprovalRequestSettingWithEnvs>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -535,7 +548,8 @@ public class ApprovalsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -544,7 +558,7 @@ public class ApprovalsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchApprovalRequestSettingsAsync(String ldAPIVersion, String projectKey, ApprovalRequestSettingsPatch approvalRequestSettingsPatch, final ApiCallback<Map<String, ApprovalRequestSettingWithEnvs>> _callback) throws ApiException {
+    public okhttp3.Call patchApprovalRequestSettingsAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable ApprovalRequestSettingsPatch approvalRequestSettingsPatch, final ApiCallback<Map<String, ApprovalRequestSettingWithEnvs>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchApprovalRequestSettingsValidateBeforeCall(ldAPIVersion, projectKey, approvalRequestSettingsPatch, _callback);
         Type localVarReturnType = new TypeToken<Map<String, ApprovalRequestSettingWithEnvs>>(){}.getType();
@@ -561,7 +575,8 @@ public class ApprovalsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Approval request response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -570,7 +585,7 @@ public class ApprovalsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchFlagConfigApprovalRequestCall(String projectKey, String featureFlagKey, String environmentKey, String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchFlagConfigApprovalRequestCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -619,7 +634,7 @@ public class ApprovalsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchFlagConfigApprovalRequestValidateBeforeCall(String projectKey, String featureFlagKey, String environmentKey, String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchFlagConfigApprovalRequestValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling patchFlagConfigApprovalRequest(Async)");
@@ -654,7 +669,8 @@ public class ApprovalsBetaApi {
      * @return FlagConfigApprovalRequestResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Approval request response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -663,7 +679,7 @@ public class ApprovalsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public FlagConfigApprovalRequestResponse patchFlagConfigApprovalRequest(String projectKey, String featureFlagKey, String environmentKey, String id) throws ApiException {
+    public FlagConfigApprovalRequestResponse patchFlagConfigApprovalRequest(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id) throws ApiException {
         ApiResponse<FlagConfigApprovalRequestResponse> localVarResp = patchFlagConfigApprovalRequestWithHttpInfo(projectKey, featureFlagKey, environmentKey, id);
         return localVarResp.getData();
     }
@@ -678,7 +694,8 @@ public class ApprovalsBetaApi {
      * @return ApiResponse&lt;FlagConfigApprovalRequestResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Approval request response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -687,7 +704,7 @@ public class ApprovalsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FlagConfigApprovalRequestResponse> patchFlagConfigApprovalRequestWithHttpInfo(String projectKey, String featureFlagKey, String environmentKey, String id) throws ApiException {
+    public ApiResponse<FlagConfigApprovalRequestResponse> patchFlagConfigApprovalRequestWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = patchFlagConfigApprovalRequestValidateBeforeCall(projectKey, featureFlagKey, environmentKey, id, null);
         Type localVarReturnType = new TypeToken<FlagConfigApprovalRequestResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -704,7 +721,8 @@ public class ApprovalsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Approval request response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -713,7 +731,7 @@ public class ApprovalsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchFlagConfigApprovalRequestAsync(String projectKey, String featureFlagKey, String environmentKey, String id, final ApiCallback<FlagConfigApprovalRequestResponse> _callback) throws ApiException {
+    public okhttp3.Call patchFlagConfigApprovalRequestAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback<FlagConfigApprovalRequestResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchFlagConfigApprovalRequestValidateBeforeCall(projectKey, featureFlagKey, environmentKey, id, _callback);
         Type localVarReturnType = new TypeToken<FlagConfigApprovalRequestResponse>(){}.getType();

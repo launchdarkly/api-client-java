@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,34 +40,38 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ViewLinkedResource
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ViewLinkedResource {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private ParentAndSelfLinks links;
 
   public static final String SERIALIZED_NAME_RESOURCE_KEY = "resourceKey";
   @SerializedName(SERIALIZED_NAME_RESOURCE_KEY)
+  @javax.annotation.Nonnull
   private String resourceKey;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_ID = "environmentId";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ID)
+  @javax.annotation.Nullable
   private String environmentId;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_KEY = "environmentKey";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_KEY)
+  @javax.annotation.Nullable
   private String environmentKey;
 
   /**
@@ -80,7 +85,7 @@ public class ViewLinkedResource {
     
     METRIC("metric"),
     
-    AICONFIG("aiConfig");
+    AI_CONFIG("aiConfig");
 
     private String value;
 
@@ -127,148 +132,151 @@ public class ViewLinkedResource {
 
   public static final String SERIALIZED_NAME_RESOURCE_TYPE = "resourceType";
   @SerializedName(SERIALIZED_NAME_RESOURCE_TYPE)
+  @javax.annotation.Nonnull
   private ResourceTypeEnum resourceType;
 
   public static final String SERIALIZED_NAME_LINKED_AT = "linkedAt";
   @SerializedName(SERIALIZED_NAME_LINKED_AT)
+  @javax.annotation.Nonnull
   private Long linkedAt;
 
   public static final String SERIALIZED_NAME_RESOURCE_DETAILS = "resourceDetails";
   @SerializedName(SERIALIZED_NAME_RESOURCE_DETAILS)
+  @javax.annotation.Nullable
   private ViewLinkedResourceDetails resourceDetails;
 
   public ViewLinkedResource() {
   }
 
-  public ViewLinkedResource links(ParentAndSelfLinks links) {
+  public ViewLinkedResource links(@javax.annotation.Nonnull ParentAndSelfLinks links) {
     this.links = links;
     return this;
   }
 
-   /**
+  /**
    * Get links
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public ParentAndSelfLinks getLinks() {
     return links;
   }
 
-  public void setLinks(ParentAndSelfLinks links) {
+  public void setLinks(@javax.annotation.Nonnull ParentAndSelfLinks links) {
     this.links = links;
   }
 
 
-  public ViewLinkedResource resourceKey(String resourceKey) {
+  public ViewLinkedResource resourceKey(@javax.annotation.Nonnull String resourceKey) {
     this.resourceKey = resourceKey;
     return this;
   }
 
-   /**
+  /**
    * Key of the resource (flag, segment, AI config or metric)
    * @return resourceKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getResourceKey() {
     return resourceKey;
   }
 
-  public void setResourceKey(String resourceKey) {
+  public void setResourceKey(@javax.annotation.Nonnull String resourceKey) {
     this.resourceKey = resourceKey;
   }
 
 
-  public ViewLinkedResource environmentId(String environmentId) {
+  public ViewLinkedResource environmentId(@javax.annotation.Nullable String environmentId) {
     this.environmentId = environmentId;
     return this;
   }
 
-   /**
+  /**
    * Environment ID of the resource (only present for segments)
    * @return environmentId
-  **/
+   */
   @javax.annotation.Nullable
   public String getEnvironmentId() {
     return environmentId;
   }
 
-  public void setEnvironmentId(String environmentId) {
+  public void setEnvironmentId(@javax.annotation.Nullable String environmentId) {
     this.environmentId = environmentId;
   }
 
 
-  public ViewLinkedResource environmentKey(String environmentKey) {
+  public ViewLinkedResource environmentKey(@javax.annotation.Nullable String environmentKey) {
     this.environmentKey = environmentKey;
     return this;
   }
 
-   /**
+  /**
    * Environment Key of the resource (only present for segments)
    * @return environmentKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getEnvironmentKey() {
     return environmentKey;
   }
 
-  public void setEnvironmentKey(String environmentKey) {
+  public void setEnvironmentKey(@javax.annotation.Nullable String environmentKey) {
     this.environmentKey = environmentKey;
   }
 
 
-  public ViewLinkedResource resourceType(ResourceTypeEnum resourceType) {
+  public ViewLinkedResource resourceType(@javax.annotation.Nonnull ResourceTypeEnum resourceType) {
     this.resourceType = resourceType;
     return this;
   }
 
-   /**
+  /**
    * Get resourceType
    * @return resourceType
-  **/
+   */
   @javax.annotation.Nonnull
   public ResourceTypeEnum getResourceType() {
     return resourceType;
   }
 
-  public void setResourceType(ResourceTypeEnum resourceType) {
+  public void setResourceType(@javax.annotation.Nonnull ResourceTypeEnum resourceType) {
     this.resourceType = resourceType;
   }
 
 
-  public ViewLinkedResource linkedAt(Long linkedAt) {
+  public ViewLinkedResource linkedAt(@javax.annotation.Nonnull Long linkedAt) {
     this.linkedAt = linkedAt;
     return this;
   }
 
-   /**
+  /**
    * Get linkedAt
    * @return linkedAt
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getLinkedAt() {
     return linkedAt;
   }
 
-  public void setLinkedAt(Long linkedAt) {
+  public void setLinkedAt(@javax.annotation.Nonnull Long linkedAt) {
     this.linkedAt = linkedAt;
   }
 
 
-  public ViewLinkedResource resourceDetails(ViewLinkedResourceDetails resourceDetails) {
+  public ViewLinkedResource resourceDetails(@javax.annotation.Nullable ViewLinkedResourceDetails resourceDetails) {
     this.resourceDetails = resourceDetails;
     return this;
   }
 
-   /**
+  /**
    * Get resourceDetails
    * @return resourceDetails
-  **/
+   */
   @javax.annotation.Nullable
   public ViewLinkedResourceDetails getResourceDetails() {
     return resourceDetails;
   }
 
-  public void setResourceDetails(ViewLinkedResourceDetails resourceDetails) {
+  public void setResourceDetails(@javax.annotation.Nullable ViewLinkedResourceDetails resourceDetails) {
     this.resourceDetails = resourceDetails;
   }
 
@@ -375,56 +383,45 @@ public class ViewLinkedResource {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_links");
-    openapiFields.add("resourceKey");
-    openapiFields.add("environmentId");
-    openapiFields.add("environmentKey");
-    openapiFields.add("resourceType");
-    openapiFields.add("linkedAt");
-    openapiFields.add("resourceDetails");
+    openapiFields = new HashSet<String>(Arrays.asList("_links", "resourceKey", "environmentId", "environmentKey", "resourceType", "linkedAt", "resourceDetails"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_links");
-    openapiRequiredFields.add("resourceKey");
-    openapiRequiredFields.add("resourceType");
-    openapiRequiredFields.add("linkedAt");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_links", "resourceKey", "resourceType", "linkedAt"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ViewLinkedResource
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ViewLinkedResource
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ViewLinkedResource.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ViewLinkedResource is not found in the empty JSON string", ViewLinkedResource.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ViewLinkedResource is not found in the empty JSON string", ViewLinkedResource.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ViewLinkedResource.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the required field `_links`
       ParentAndSelfLinks.validateJsonElement(jsonObj.get("_links"));
       if (!jsonObj.get("resourceKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `resourceKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resourceKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `resourceKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resourceKey").toString()));
       }
       if ((jsonObj.get("environmentId") != null && !jsonObj.get("environmentId").isJsonNull()) && !jsonObj.get("environmentId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
       }
       if ((jsonObj.get("environmentKey") != null && !jsonObj.get("environmentKey").isJsonNull()) && !jsonObj.get("environmentKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
       }
       if (!jsonObj.get("resourceType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `resourceType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resourceType").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `resourceType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resourceType").toString()));
       }
       // validate the required field `resourceType`
       ResourceTypeEnum.validateJsonElement(jsonObj.get("resourceType"));
@@ -491,7 +488,7 @@ public class ViewLinkedResource {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -506,22 +503,22 @@ public class ViewLinkedResource {
     }
   }
 
- /**
-  * Create an instance of ViewLinkedResource given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ViewLinkedResource
-  * @throws IOException if the JSON string is invalid with respect to ViewLinkedResource
-  */
+  /**
+   * Create an instance of ViewLinkedResource given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ViewLinkedResource
+   * @throws IOException if the JSON string is invalid with respect to ViewLinkedResource
+   */
   public static ViewLinkedResource fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ViewLinkedResource.class);
   }
 
- /**
-  * Convert an instance of ViewLinkedResource to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ViewLinkedResource to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

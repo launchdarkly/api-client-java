@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,36 +41,39 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ApprovalRequestSettingWithEnvs
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ApprovalRequestSettingWithEnvs {
   public static final String SERIALIZED_NAME_ENVIRONMENTS = "environments";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENTS)
+  @javax.annotation.Nullable
   private Map<String, ApprovalRequestSetting> environments = new HashMap<>();
 
   public static final String SERIALIZED_NAME_DEFAULT = "_default";
   @SerializedName(SERIALIZED_NAME_DEFAULT)
+  @javax.annotation.Nullable
   private ApprovalRequestSetting _default;
 
   public static final String SERIALIZED_NAME_STRICT = "_strict";
   @SerializedName(SERIALIZED_NAME_STRICT)
+  @javax.annotation.Nullable
   private ApprovalRequestSetting strict;
 
   public ApprovalRequestSettingWithEnvs() {
   }
 
-  public ApprovalRequestSettingWithEnvs environments(Map<String, ApprovalRequestSetting> environments) {
+  public ApprovalRequestSettingWithEnvs environments(@javax.annotation.Nullable Map<String, ApprovalRequestSetting> environments) {
     this.environments = environments;
     return this;
   }
@@ -82,54 +86,54 @@ public class ApprovalRequestSettingWithEnvs {
     return this;
   }
 
-   /**
+  /**
    * Environment-specific overrides.
    * @return environments
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, ApprovalRequestSetting> getEnvironments() {
     return environments;
   }
 
-  public void setEnvironments(Map<String, ApprovalRequestSetting> environments) {
+  public void setEnvironments(@javax.annotation.Nullable Map<String, ApprovalRequestSetting> environments) {
     this.environments = environments;
   }
 
 
-  public ApprovalRequestSettingWithEnvs _default(ApprovalRequestSetting _default) {
+  public ApprovalRequestSettingWithEnvs _default(@javax.annotation.Nullable ApprovalRequestSetting _default) {
     this._default = _default;
     return this;
   }
 
-   /**
+  /**
    * Get _default
    * @return _default
-  **/
+   */
   @javax.annotation.Nullable
   public ApprovalRequestSetting getDefault() {
     return _default;
   }
 
-  public void setDefault(ApprovalRequestSetting _default) {
+  public void setDefault(@javax.annotation.Nullable ApprovalRequestSetting _default) {
     this._default = _default;
   }
 
 
-  public ApprovalRequestSettingWithEnvs strict(ApprovalRequestSetting strict) {
+  public ApprovalRequestSettingWithEnvs strict(@javax.annotation.Nullable ApprovalRequestSetting strict) {
     this.strict = strict;
     return this;
   }
 
-   /**
+  /**
    * Get strict
    * @return strict
-  **/
+   */
   @javax.annotation.Nullable
   public ApprovalRequestSetting getStrict() {
     return strict;
   }
 
-  public void setStrict(ApprovalRequestSetting strict) {
+  public void setStrict(@javax.annotation.Nullable ApprovalRequestSetting strict) {
     this.strict = strict;
   }
 
@@ -228,25 +232,22 @@ public class ApprovalRequestSettingWithEnvs {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("environments");
-    openapiFields.add("_default");
-    openapiFields.add("_strict");
+    openapiFields = new HashSet<String>(Arrays.asList("environments", "_default", "_strict"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ApprovalRequestSettingWithEnvs
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApprovalRequestSettingWithEnvs
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApprovalRequestSettingWithEnvs.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ApprovalRequestSettingWithEnvs is not found in the empty JSON string", ApprovalRequestSettingWithEnvs.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ApprovalRequestSettingWithEnvs is not found in the empty JSON string", ApprovalRequestSettingWithEnvs.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -317,7 +318,7 @@ public class ApprovalRequestSettingWithEnvs {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -332,22 +333,22 @@ public class ApprovalRequestSettingWithEnvs {
     }
   }
 
- /**
-  * Create an instance of ApprovalRequestSettingWithEnvs given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApprovalRequestSettingWithEnvs
-  * @throws IOException if the JSON string is invalid with respect to ApprovalRequestSettingWithEnvs
-  */
+  /**
+   * Create an instance of ApprovalRequestSettingWithEnvs given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApprovalRequestSettingWithEnvs
+   * @throws IOException if the JSON string is invalid with respect to ApprovalRequestSettingWithEnvs
+   */
   public static ApprovalRequestSettingWithEnvs fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApprovalRequestSettingWithEnvs.class);
   }
 
- /**
-  * Convert an instance of ApprovalRequestSettingWithEnvs to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApprovalRequestSettingWithEnvs to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

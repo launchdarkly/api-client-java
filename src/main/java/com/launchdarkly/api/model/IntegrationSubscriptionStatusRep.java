@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,120 +41,125 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * IntegrationSubscriptionStatusRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class IntegrationSubscriptionStatusRep {
   public static final String SERIALIZED_NAME_SUCCESS_COUNT = "successCount";
   @SerializedName(SERIALIZED_NAME_SUCCESS_COUNT)
+  @javax.annotation.Nullable
   private Integer successCount;
 
   public static final String SERIALIZED_NAME_LAST_SUCCESS = "lastSuccess";
   @SerializedName(SERIALIZED_NAME_LAST_SUCCESS)
+  @javax.annotation.Nullable
   private Long lastSuccess;
 
   public static final String SERIALIZED_NAME_LAST_ERROR = "lastError";
   @SerializedName(SERIALIZED_NAME_LAST_ERROR)
+  @javax.annotation.Nullable
   private Long lastError;
 
   public static final String SERIALIZED_NAME_ERROR_COUNT = "errorCount";
   @SerializedName(SERIALIZED_NAME_ERROR_COUNT)
+  @javax.annotation.Nullable
   private Integer errorCount;
 
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
+  @javax.annotation.Nullable
   private List<IntegrationStatusRep> errors = new ArrayList<>();
 
   public IntegrationSubscriptionStatusRep() {
   }
 
-  public IntegrationSubscriptionStatusRep successCount(Integer successCount) {
+  public IntegrationSubscriptionStatusRep successCount(@javax.annotation.Nullable Integer successCount) {
     this.successCount = successCount;
     return this;
   }
 
-   /**
+  /**
    * Get successCount
    * @return successCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getSuccessCount() {
     return successCount;
   }
 
-  public void setSuccessCount(Integer successCount) {
+  public void setSuccessCount(@javax.annotation.Nullable Integer successCount) {
     this.successCount = successCount;
   }
 
 
-  public IntegrationSubscriptionStatusRep lastSuccess(Long lastSuccess) {
+  public IntegrationSubscriptionStatusRep lastSuccess(@javax.annotation.Nullable Long lastSuccess) {
     this.lastSuccess = lastSuccess;
     return this;
   }
 
-   /**
+  /**
    * Get lastSuccess
    * @return lastSuccess
-  **/
+   */
   @javax.annotation.Nullable
   public Long getLastSuccess() {
     return lastSuccess;
   }
 
-  public void setLastSuccess(Long lastSuccess) {
+  public void setLastSuccess(@javax.annotation.Nullable Long lastSuccess) {
     this.lastSuccess = lastSuccess;
   }
 
 
-  public IntegrationSubscriptionStatusRep lastError(Long lastError) {
+  public IntegrationSubscriptionStatusRep lastError(@javax.annotation.Nullable Long lastError) {
     this.lastError = lastError;
     return this;
   }
 
-   /**
+  /**
    * Get lastError
    * @return lastError
-  **/
+   */
   @javax.annotation.Nullable
   public Long getLastError() {
     return lastError;
   }
 
-  public void setLastError(Long lastError) {
+  public void setLastError(@javax.annotation.Nullable Long lastError) {
     this.lastError = lastError;
   }
 
 
-  public IntegrationSubscriptionStatusRep errorCount(Integer errorCount) {
+  public IntegrationSubscriptionStatusRep errorCount(@javax.annotation.Nullable Integer errorCount) {
     this.errorCount = errorCount;
     return this;
   }
 
-   /**
+  /**
    * Get errorCount
    * @return errorCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getErrorCount() {
     return errorCount;
   }
 
-  public void setErrorCount(Integer errorCount) {
+  public void setErrorCount(@javax.annotation.Nullable Integer errorCount) {
     this.errorCount = errorCount;
   }
 
 
-  public IntegrationSubscriptionStatusRep errors(List<IntegrationStatusRep> errors) {
+  public IntegrationSubscriptionStatusRep errors(@javax.annotation.Nullable List<IntegrationStatusRep> errors) {
     this.errors = errors;
     return this;
   }
@@ -166,16 +172,16 @@ public class IntegrationSubscriptionStatusRep {
     return this;
   }
 
-   /**
+  /**
    * Get errors
    * @return errors
-  **/
+   */
   @javax.annotation.Nullable
   public List<IntegrationStatusRep> getErrors() {
     return errors;
   }
 
-  public void setErrors(List<IntegrationStatusRep> errors) {
+  public void setErrors(@javax.annotation.Nullable List<IntegrationStatusRep> errors) {
     this.errors = errors;
   }
 
@@ -278,27 +284,22 @@ public class IntegrationSubscriptionStatusRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("successCount");
-    openapiFields.add("lastSuccess");
-    openapiFields.add("lastError");
-    openapiFields.add("errorCount");
-    openapiFields.add("errors");
+    openapiFields = new HashSet<String>(Arrays.asList("successCount", "lastSuccess", "lastError", "errorCount", "errors"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to IntegrationSubscriptionStatusRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to IntegrationSubscriptionStatusRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IntegrationSubscriptionStatusRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in IntegrationSubscriptionStatusRep is not found in the empty JSON string", IntegrationSubscriptionStatusRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in IntegrationSubscriptionStatusRep is not found in the empty JSON string", IntegrationSubscriptionStatusRep.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -307,7 +308,7 @@ public class IntegrationSubscriptionStatusRep {
         if (jsonArrayerrors != null) {
           // ensure the json data is an array
           if (!jsonObj.get("errors").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `errors` to be an array in the JSON string but got `%s`", jsonObj.get("errors").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `errors` to be an array in the JSON string but got `%s`", jsonObj.get("errors").toString()));
           }
 
           // validate the optional field `errors` (array)
@@ -375,7 +376,7 @@ public class IntegrationSubscriptionStatusRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -390,22 +391,22 @@ public class IntegrationSubscriptionStatusRep {
     }
   }
 
- /**
-  * Create an instance of IntegrationSubscriptionStatusRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of IntegrationSubscriptionStatusRep
-  * @throws IOException if the JSON string is invalid with respect to IntegrationSubscriptionStatusRep
-  */
+  /**
+   * Create an instance of IntegrationSubscriptionStatusRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of IntegrationSubscriptionStatusRep
+   * @throws IOException if the JSON string is invalid with respect to IntegrationSubscriptionStatusRep
+   */
   public static IntegrationSubscriptionStatusRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, IntegrationSubscriptionStatusRep.class);
   }
 
- /**
-  * Convert an instance of IntegrationSubscriptionStatusRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of IntegrationSubscriptionStatusRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -87,7 +87,8 @@ public class WebhooksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -96,7 +97,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWebhookCall(String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteWebhookCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -142,7 +143,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteWebhookValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteWebhookValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteWebhook(Async)");
@@ -158,7 +159,8 @@ public class WebhooksApi {
      * @param id The ID of the webhook to delete (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -167,7 +169,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteWebhook(String id) throws ApiException {
+    public void deleteWebhook(@javax.annotation.Nonnull String id) throws ApiException {
         deleteWebhookWithHttpInfo(id);
     }
 
@@ -178,7 +180,8 @@ public class WebhooksApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -187,7 +190,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteWebhookWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<Void> deleteWebhookWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteWebhookValidateBeforeCall(id, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -200,7 +203,8 @@ public class WebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -209,7 +213,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWebhookAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteWebhookAsync(@javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteWebhookValidateBeforeCall(id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -221,7 +225,8 @@ public class WebhooksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Webhooks response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -285,7 +290,8 @@ public class WebhooksApi {
      * @return Webhooks
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Webhooks response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -304,7 +310,8 @@ public class WebhooksApi {
      * @return ApiResponse&lt;Webhooks&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Webhooks response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -325,7 +332,8 @@ public class WebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Webhooks response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -347,7 +355,8 @@ public class WebhooksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Webhook response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -356,7 +365,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhookCall(String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getWebhookCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -402,7 +411,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWebhookValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getWebhookValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getWebhook(Async)");
@@ -419,7 +428,8 @@ public class WebhooksApi {
      * @return Webhook
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Webhook response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -428,7 +438,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Webhook getWebhook(String id) throws ApiException {
+    public Webhook getWebhook(@javax.annotation.Nonnull String id) throws ApiException {
         ApiResponse<Webhook> localVarResp = getWebhookWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -440,7 +450,8 @@ public class WebhooksApi {
      * @return ApiResponse&lt;Webhook&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Webhook response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -449,7 +460,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Webhook> getWebhookWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<Webhook> getWebhookWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getWebhookValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<Webhook>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -463,7 +474,8 @@ public class WebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Webhook response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -472,7 +484,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhookAsync(String id, final ApiCallback<Webhook> _callback) throws ApiException {
+    public okhttp3.Call getWebhookAsync(@javax.annotation.Nonnull String id, final ApiCallback<Webhook> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getWebhookValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<Webhook>(){}.getType();
@@ -487,7 +499,8 @@ public class WebhooksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Webhook response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -497,7 +510,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchWebhookCall(String id, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchWebhookCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -544,7 +557,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchWebhookValidateBeforeCall(String id, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchWebhookValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling patchWebhook(Async)");
@@ -567,7 +580,8 @@ public class WebhooksApi {
      * @return Webhook
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Webhook response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -577,7 +591,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Webhook patchWebhook(String id, List<PatchOperation> patchOperation) throws ApiException {
+    public Webhook patchWebhook(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         ApiResponse<Webhook> localVarResp = patchWebhookWithHttpInfo(id, patchOperation);
         return localVarResp.getData();
     }
@@ -590,7 +604,8 @@ public class WebhooksApi {
      * @return ApiResponse&lt;Webhook&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Webhook response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -600,7 +615,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Webhook> patchWebhookWithHttpInfo(String id, List<PatchOperation> patchOperation) throws ApiException {
+    public ApiResponse<Webhook> patchWebhookWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         okhttp3.Call localVarCall = patchWebhookValidateBeforeCall(id, patchOperation, null);
         Type localVarReturnType = new TypeToken<Webhook>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -615,7 +630,8 @@ public class WebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Webhook response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -625,7 +641,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchWebhookAsync(String id, List<PatchOperation> patchOperation, final ApiCallback<Webhook> _callback) throws ApiException {
+    public okhttp3.Call patchWebhookAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback<Webhook> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchWebhookValidateBeforeCall(id, patchOperation, _callback);
         Type localVarReturnType = new TypeToken<Webhook>(){}.getType();
@@ -639,7 +655,8 @@ public class WebhooksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Webhook response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -648,7 +665,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postWebhookCall(WebhookPost webhookPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postWebhookCall(@javax.annotation.Nonnull WebhookPost webhookPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -694,7 +711,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postWebhookValidateBeforeCall(WebhookPost webhookPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postWebhookValidateBeforeCall(@javax.annotation.Nonnull WebhookPost webhookPost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'webhookPost' is set
         if (webhookPost == null) {
             throw new ApiException("Missing the required parameter 'webhookPost' when calling postWebhook(Async)");
@@ -711,7 +728,8 @@ public class WebhooksApi {
      * @return Webhook
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Webhook response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -720,7 +738,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Webhook postWebhook(WebhookPost webhookPost) throws ApiException {
+    public Webhook postWebhook(@javax.annotation.Nonnull WebhookPost webhookPost) throws ApiException {
         ApiResponse<Webhook> localVarResp = postWebhookWithHttpInfo(webhookPost);
         return localVarResp.getData();
     }
@@ -732,7 +750,8 @@ public class WebhooksApi {
      * @return ApiResponse&lt;Webhook&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Webhook response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -741,7 +760,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Webhook> postWebhookWithHttpInfo(WebhookPost webhookPost) throws ApiException {
+    public ApiResponse<Webhook> postWebhookWithHttpInfo(@javax.annotation.Nonnull WebhookPost webhookPost) throws ApiException {
         okhttp3.Call localVarCall = postWebhookValidateBeforeCall(webhookPost, null);
         Type localVarReturnType = new TypeToken<Webhook>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -755,7 +774,8 @@ public class WebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Webhook response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -764,7 +784,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postWebhookAsync(WebhookPost webhookPost, final ApiCallback<Webhook> _callback) throws ApiException {
+    public okhttp3.Call postWebhookAsync(@javax.annotation.Nonnull WebhookPost webhookPost, final ApiCallback<Webhook> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postWebhookValidateBeforeCall(webhookPost, _callback);
         Type localVarReturnType = new TypeToken<Webhook>(){}.getType();

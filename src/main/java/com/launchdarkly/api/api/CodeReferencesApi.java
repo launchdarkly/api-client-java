@@ -96,7 +96,8 @@ public class CodeReferencesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -106,7 +107,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteBranchesCall(String repo, List<String> requestBody, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteBranchesCall(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull List<String> requestBody, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -153,7 +154,7 @@ public class CodeReferencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteBranchesValidateBeforeCall(String repo, List<String> requestBody, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteBranchesValidateBeforeCall(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull List<String> requestBody, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'repo' is set
         if (repo == null) {
             throw new ApiException("Missing the required parameter 'repo' when calling deleteBranches(Async)");
@@ -175,7 +176,8 @@ public class CodeReferencesApi {
      * @param requestBody  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -185,7 +187,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteBranches(String repo, List<String> requestBody) throws ApiException {
+    public void deleteBranches(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull List<String> requestBody) throws ApiException {
         deleteBranchesWithHttpInfo(repo, requestBody);
     }
 
@@ -197,7 +199,8 @@ public class CodeReferencesApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -207,7 +210,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteBranchesWithHttpInfo(String repo, List<String> requestBody) throws ApiException {
+    public ApiResponse<Void> deleteBranchesWithHttpInfo(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull List<String> requestBody) throws ApiException {
         okhttp3.Call localVarCall = deleteBranchesValidateBeforeCall(repo, requestBody, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -221,7 +224,8 @@ public class CodeReferencesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -231,7 +235,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteBranchesAsync(String repo, List<String> requestBody, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteBranchesAsync(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull List<String> requestBody, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteBranchesValidateBeforeCall(repo, requestBody, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -244,7 +248,8 @@ public class CodeReferencesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -254,7 +259,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteRepositoryCall(String repo, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteRepositoryCall(@javax.annotation.Nonnull String repo, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -300,7 +305,7 @@ public class CodeReferencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteRepositoryValidateBeforeCall(String repo, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteRepositoryValidateBeforeCall(@javax.annotation.Nonnull String repo, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'repo' is set
         if (repo == null) {
             throw new ApiException("Missing the required parameter 'repo' when calling deleteRepository(Async)");
@@ -316,7 +321,8 @@ public class CodeReferencesApi {
      * @param repo The repository name (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -326,7 +332,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteRepository(String repo) throws ApiException {
+    public void deleteRepository(@javax.annotation.Nonnull String repo) throws ApiException {
         deleteRepositoryWithHttpInfo(repo);
     }
 
@@ -337,7 +343,8 @@ public class CodeReferencesApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -347,7 +354,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteRepositoryWithHttpInfo(String repo) throws ApiException {
+    public ApiResponse<Void> deleteRepositoryWithHttpInfo(@javax.annotation.Nonnull String repo) throws ApiException {
         okhttp3.Call localVarCall = deleteRepositoryValidateBeforeCall(repo, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -360,7 +367,8 @@ public class CodeReferencesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -370,7 +378,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteRepositoryAsync(String repo, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteRepositoryAsync(@javax.annotation.Nonnull String repo, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteRepositoryValidateBeforeCall(repo, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -386,7 +394,8 @@ public class CodeReferencesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Branch response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -396,7 +405,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getBranchCall(String repo, String branch, String projKey, String flagKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getBranchCall(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull String branch, @javax.annotation.Nullable String projKey, @javax.annotation.Nullable String flagKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -451,7 +460,7 @@ public class CodeReferencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getBranchValidateBeforeCall(String repo, String branch, String projKey, String flagKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getBranchValidateBeforeCall(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull String branch, @javax.annotation.Nullable String projKey, @javax.annotation.Nullable String flagKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'repo' is set
         if (repo == null) {
             throw new ApiException("Missing the required parameter 'repo' when calling getBranch(Async)");
@@ -476,7 +485,8 @@ public class CodeReferencesApi {
      * @return BranchRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Branch response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -486,7 +496,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public BranchRep getBranch(String repo, String branch, String projKey, String flagKey) throws ApiException {
+    public BranchRep getBranch(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull String branch, @javax.annotation.Nullable String projKey, @javax.annotation.Nullable String flagKey) throws ApiException {
         ApiResponse<BranchRep> localVarResp = getBranchWithHttpInfo(repo, branch, projKey, flagKey);
         return localVarResp.getData();
     }
@@ -501,7 +511,8 @@ public class CodeReferencesApi {
      * @return ApiResponse&lt;BranchRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Branch response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -511,7 +522,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BranchRep> getBranchWithHttpInfo(String repo, String branch, String projKey, String flagKey) throws ApiException {
+    public ApiResponse<BranchRep> getBranchWithHttpInfo(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull String branch, @javax.annotation.Nullable String projKey, @javax.annotation.Nullable String flagKey) throws ApiException {
         okhttp3.Call localVarCall = getBranchValidateBeforeCall(repo, branch, projKey, flagKey, null);
         Type localVarReturnType = new TypeToken<BranchRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -528,7 +539,8 @@ public class CodeReferencesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Branch response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -538,7 +550,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getBranchAsync(String repo, String branch, String projKey, String flagKey, final ApiCallback<BranchRep> _callback) throws ApiException {
+    public okhttp3.Call getBranchAsync(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull String branch, @javax.annotation.Nullable String projKey, @javax.annotation.Nullable String flagKey, final ApiCallback<BranchRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getBranchValidateBeforeCall(repo, branch, projKey, flagKey, _callback);
         Type localVarReturnType = new TypeToken<BranchRep>(){}.getType();
@@ -552,7 +564,8 @@ public class CodeReferencesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Branch collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -562,7 +575,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getBranchesCall(String repo, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getBranchesCall(@javax.annotation.Nonnull String repo, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -608,7 +621,7 @@ public class CodeReferencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getBranchesValidateBeforeCall(String repo, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getBranchesValidateBeforeCall(@javax.annotation.Nonnull String repo, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'repo' is set
         if (repo == null) {
             throw new ApiException("Missing the required parameter 'repo' when calling getBranches(Async)");
@@ -625,7 +638,8 @@ public class CodeReferencesApi {
      * @return BranchCollectionRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Branch collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -635,7 +649,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public BranchCollectionRep getBranches(String repo) throws ApiException {
+    public BranchCollectionRep getBranches(@javax.annotation.Nonnull String repo) throws ApiException {
         ApiResponse<BranchCollectionRep> localVarResp = getBranchesWithHttpInfo(repo);
         return localVarResp.getData();
     }
@@ -647,7 +661,8 @@ public class CodeReferencesApi {
      * @return ApiResponse&lt;BranchCollectionRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Branch collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -657,7 +672,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BranchCollectionRep> getBranchesWithHttpInfo(String repo) throws ApiException {
+    public ApiResponse<BranchCollectionRep> getBranchesWithHttpInfo(@javax.annotation.Nonnull String repo) throws ApiException {
         okhttp3.Call localVarCall = getBranchesValidateBeforeCall(repo, null);
         Type localVarReturnType = new TypeToken<BranchCollectionRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -671,7 +686,8 @@ public class CodeReferencesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Branch collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -681,7 +697,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getBranchesAsync(String repo, final ApiCallback<BranchCollectionRep> _callback) throws ApiException {
+    public okhttp3.Call getBranchesAsync(@javax.annotation.Nonnull String repo, final ApiCallback<BranchCollectionRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getBranchesValidateBeforeCall(repo, _callback);
         Type localVarReturnType = new TypeToken<BranchCollectionRep>(){}.getType();
@@ -700,7 +716,8 @@ public class CodeReferencesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Extinction collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -708,7 +725,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExtinctionsCall(String repoName, String branchName, String projKey, String flagKey, Long from, Long to, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getExtinctionsCall(@javax.annotation.Nullable String repoName, @javax.annotation.Nullable String branchName, @javax.annotation.Nullable String projKey, @javax.annotation.Nullable String flagKey, @javax.annotation.Nullable Long from, @javax.annotation.Nullable Long to, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -777,7 +794,7 @@ public class CodeReferencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getExtinctionsValidateBeforeCall(String repoName, String branchName, String projKey, String flagKey, Long from, Long to, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getExtinctionsValidateBeforeCall(@javax.annotation.Nullable String repoName, @javax.annotation.Nullable String branchName, @javax.annotation.Nullable String projKey, @javax.annotation.Nullable String flagKey, @javax.annotation.Nullable Long from, @javax.annotation.Nullable Long to, final ApiCallback _callback) throws ApiException {
         return getExtinctionsCall(repoName, branchName, projKey, flagKey, from, to, _callback);
 
     }
@@ -794,7 +811,8 @@ public class CodeReferencesApi {
      * @return ExtinctionCollectionRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Extinction collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -802,7 +820,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ExtinctionCollectionRep getExtinctions(String repoName, String branchName, String projKey, String flagKey, Long from, Long to) throws ApiException {
+    public ExtinctionCollectionRep getExtinctions(@javax.annotation.Nullable String repoName, @javax.annotation.Nullable String branchName, @javax.annotation.Nullable String projKey, @javax.annotation.Nullable String flagKey, @javax.annotation.Nullable Long from, @javax.annotation.Nullable Long to) throws ApiException {
         ApiResponse<ExtinctionCollectionRep> localVarResp = getExtinctionsWithHttpInfo(repoName, branchName, projKey, flagKey, from, to);
         return localVarResp.getData();
     }
@@ -819,7 +837,8 @@ public class CodeReferencesApi {
      * @return ApiResponse&lt;ExtinctionCollectionRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Extinction collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -827,7 +846,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ExtinctionCollectionRep> getExtinctionsWithHttpInfo(String repoName, String branchName, String projKey, String flagKey, Long from, Long to) throws ApiException {
+    public ApiResponse<ExtinctionCollectionRep> getExtinctionsWithHttpInfo(@javax.annotation.Nullable String repoName, @javax.annotation.Nullable String branchName, @javax.annotation.Nullable String projKey, @javax.annotation.Nullable String flagKey, @javax.annotation.Nullable Long from, @javax.annotation.Nullable Long to) throws ApiException {
         okhttp3.Call localVarCall = getExtinctionsValidateBeforeCall(repoName, branchName, projKey, flagKey, from, to, null);
         Type localVarReturnType = new TypeToken<ExtinctionCollectionRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -846,7 +865,8 @@ public class CodeReferencesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Extinction collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -854,7 +874,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExtinctionsAsync(String repoName, String branchName, String projKey, String flagKey, Long from, Long to, final ApiCallback<ExtinctionCollectionRep> _callback) throws ApiException {
+    public okhttp3.Call getExtinctionsAsync(@javax.annotation.Nullable String repoName, @javax.annotation.Nullable String branchName, @javax.annotation.Nullable String projKey, @javax.annotation.Nullable String flagKey, @javax.annotation.Nullable Long from, @javax.annotation.Nullable Long to, final ApiCallback<ExtinctionCollectionRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getExtinctionsValidateBeforeCall(repoName, branchName, projKey, flagKey, from, to, _callback);
         Type localVarReturnType = new TypeToken<ExtinctionCollectionRep>(){}.getType();
@@ -871,7 +891,8 @@ public class CodeReferencesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -879,7 +900,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRepositoriesCall(String withBranches, String withReferencesForDefaultBranch, String projKey, String flagKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRepositoriesCall(@javax.annotation.Nullable String withBranches, @javax.annotation.Nullable String withReferencesForDefaultBranch, @javax.annotation.Nullable String projKey, @javax.annotation.Nullable String flagKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -940,7 +961,7 @@ public class CodeReferencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRepositoriesValidateBeforeCall(String withBranches, String withReferencesForDefaultBranch, String projKey, String flagKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRepositoriesValidateBeforeCall(@javax.annotation.Nullable String withBranches, @javax.annotation.Nullable String withReferencesForDefaultBranch, @javax.annotation.Nullable String projKey, @javax.annotation.Nullable String flagKey, final ApiCallback _callback) throws ApiException {
         return getRepositoriesCall(withBranches, withReferencesForDefaultBranch, projKey, flagKey, _callback);
 
     }
@@ -955,7 +976,8 @@ public class CodeReferencesApi {
      * @return RepositoryCollectionRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -963,7 +985,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public RepositoryCollectionRep getRepositories(String withBranches, String withReferencesForDefaultBranch, String projKey, String flagKey) throws ApiException {
+    public RepositoryCollectionRep getRepositories(@javax.annotation.Nullable String withBranches, @javax.annotation.Nullable String withReferencesForDefaultBranch, @javax.annotation.Nullable String projKey, @javax.annotation.Nullable String flagKey) throws ApiException {
         ApiResponse<RepositoryCollectionRep> localVarResp = getRepositoriesWithHttpInfo(withBranches, withReferencesForDefaultBranch, projKey, flagKey);
         return localVarResp.getData();
     }
@@ -978,7 +1000,8 @@ public class CodeReferencesApi {
      * @return ApiResponse&lt;RepositoryCollectionRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -986,7 +1009,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RepositoryCollectionRep> getRepositoriesWithHttpInfo(String withBranches, String withReferencesForDefaultBranch, String projKey, String flagKey) throws ApiException {
+    public ApiResponse<RepositoryCollectionRep> getRepositoriesWithHttpInfo(@javax.annotation.Nullable String withBranches, @javax.annotation.Nullable String withReferencesForDefaultBranch, @javax.annotation.Nullable String projKey, @javax.annotation.Nullable String flagKey) throws ApiException {
         okhttp3.Call localVarCall = getRepositoriesValidateBeforeCall(withBranches, withReferencesForDefaultBranch, projKey, flagKey, null);
         Type localVarReturnType = new TypeToken<RepositoryCollectionRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1003,7 +1026,8 @@ public class CodeReferencesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1011,7 +1035,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRepositoriesAsync(String withBranches, String withReferencesForDefaultBranch, String projKey, String flagKey, final ApiCallback<RepositoryCollectionRep> _callback) throws ApiException {
+    public okhttp3.Call getRepositoriesAsync(@javax.annotation.Nullable String withBranches, @javax.annotation.Nullable String withReferencesForDefaultBranch, @javax.annotation.Nullable String projKey, @javax.annotation.Nullable String flagKey, final ApiCallback<RepositoryCollectionRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRepositoriesValidateBeforeCall(withBranches, withReferencesForDefaultBranch, projKey, flagKey, _callback);
         Type localVarReturnType = new TypeToken<RepositoryCollectionRep>(){}.getType();
@@ -1025,7 +1049,8 @@ public class CodeReferencesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1035,7 +1060,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRepositoryCall(String repo, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRepositoryCall(@javax.annotation.Nonnull String repo, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1081,7 +1106,7 @@ public class CodeReferencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRepositoryValidateBeforeCall(String repo, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRepositoryValidateBeforeCall(@javax.annotation.Nonnull String repo, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'repo' is set
         if (repo == null) {
             throw new ApiException("Missing the required parameter 'repo' when calling getRepository(Async)");
@@ -1098,7 +1123,8 @@ public class CodeReferencesApi {
      * @return RepositoryRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1108,7 +1134,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public RepositoryRep getRepository(String repo) throws ApiException {
+    public RepositoryRep getRepository(@javax.annotation.Nonnull String repo) throws ApiException {
         ApiResponse<RepositoryRep> localVarResp = getRepositoryWithHttpInfo(repo);
         return localVarResp.getData();
     }
@@ -1120,7 +1146,8 @@ public class CodeReferencesApi {
      * @return ApiResponse&lt;RepositoryRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1130,7 +1157,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RepositoryRep> getRepositoryWithHttpInfo(String repo) throws ApiException {
+    public ApiResponse<RepositoryRep> getRepositoryWithHttpInfo(@javax.annotation.Nonnull String repo) throws ApiException {
         okhttp3.Call localVarCall = getRepositoryValidateBeforeCall(repo, null);
         Type localVarReturnType = new TypeToken<RepositoryRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1144,7 +1171,8 @@ public class CodeReferencesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1154,7 +1182,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRepositoryAsync(String repo, final ApiCallback<RepositoryRep> _callback) throws ApiException {
+    public okhttp3.Call getRepositoryAsync(@javax.annotation.Nonnull String repo, final ApiCallback<RepositoryRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRepositoryValidateBeforeCall(repo, _callback);
         Type localVarReturnType = new TypeToken<RepositoryRep>(){}.getType();
@@ -1167,7 +1195,8 @@ public class CodeReferencesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Statistic root response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1232,7 +1261,8 @@ public class CodeReferencesApi {
      * @return StatisticsRoot
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Statistic root response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1252,7 +1282,8 @@ public class CodeReferencesApi {
      * @return ApiResponse&lt;StatisticsRoot&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Statistic root response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1274,7 +1305,8 @@ public class CodeReferencesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Statistic root response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1298,7 +1330,8 @@ public class CodeReferencesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Statistic collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1307,7 +1340,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStatisticsCall(String projectKey, String flagKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getStatisticsCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String flagKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1357,7 +1390,7 @@ public class CodeReferencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getStatisticsValidateBeforeCall(String projectKey, String flagKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getStatisticsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String flagKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getStatistics(Async)");
@@ -1375,7 +1408,8 @@ public class CodeReferencesApi {
      * @return StatisticCollectionRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Statistic collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1384,7 +1418,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public StatisticCollectionRep getStatistics(String projectKey, String flagKey) throws ApiException {
+    public StatisticCollectionRep getStatistics(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String flagKey) throws ApiException {
         ApiResponse<StatisticCollectionRep> localVarResp = getStatisticsWithHttpInfo(projectKey, flagKey);
         return localVarResp.getData();
     }
@@ -1397,7 +1431,8 @@ public class CodeReferencesApi {
      * @return ApiResponse&lt;StatisticCollectionRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Statistic collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1406,7 +1441,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StatisticCollectionRep> getStatisticsWithHttpInfo(String projectKey, String flagKey) throws ApiException {
+    public ApiResponse<StatisticCollectionRep> getStatisticsWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String flagKey) throws ApiException {
         okhttp3.Call localVarCall = getStatisticsValidateBeforeCall(projectKey, flagKey, null);
         Type localVarReturnType = new TypeToken<StatisticCollectionRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1421,7 +1456,8 @@ public class CodeReferencesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Statistic collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1430,7 +1466,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStatisticsAsync(String projectKey, String flagKey, final ApiCallback<StatisticCollectionRep> _callback) throws ApiException {
+    public okhttp3.Call getStatisticsAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String flagKey, final ApiCallback<StatisticCollectionRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStatisticsValidateBeforeCall(projectKey, flagKey, _callback);
         Type localVarReturnType = new TypeToken<StatisticCollectionRep>(){}.getType();
@@ -1445,7 +1481,8 @@ public class CodeReferencesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1455,7 +1492,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchRepositoryCall(String repo, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchRepositoryCall(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1502,7 +1539,7 @@ public class CodeReferencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchRepositoryValidateBeforeCall(String repo, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchRepositoryValidateBeforeCall(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'repo' is set
         if (repo == null) {
             throw new ApiException("Missing the required parameter 'repo' when calling patchRepository(Async)");
@@ -1525,7 +1562,8 @@ public class CodeReferencesApi {
      * @return RepositoryRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1535,7 +1573,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public RepositoryRep patchRepository(String repo, List<PatchOperation> patchOperation) throws ApiException {
+    public RepositoryRep patchRepository(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         ApiResponse<RepositoryRep> localVarResp = patchRepositoryWithHttpInfo(repo, patchOperation);
         return localVarResp.getData();
     }
@@ -1548,7 +1586,8 @@ public class CodeReferencesApi {
      * @return ApiResponse&lt;RepositoryRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1558,7 +1597,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RepositoryRep> patchRepositoryWithHttpInfo(String repo, List<PatchOperation> patchOperation) throws ApiException {
+    public ApiResponse<RepositoryRep> patchRepositoryWithHttpInfo(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         okhttp3.Call localVarCall = patchRepositoryValidateBeforeCall(repo, patchOperation, null);
         Type localVarReturnType = new TypeToken<RepositoryRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1573,7 +1612,8 @@ public class CodeReferencesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1583,7 +1623,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchRepositoryAsync(String repo, List<PatchOperation> patchOperation, final ApiCallback<RepositoryRep> _callback) throws ApiException {
+    public okhttp3.Call patchRepositoryAsync(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback<RepositoryRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchRepositoryValidateBeforeCall(repo, patchOperation, _callback);
         Type localVarReturnType = new TypeToken<RepositoryRep>(){}.getType();
@@ -1599,7 +1639,8 @@ public class CodeReferencesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1609,7 +1650,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postExtinctionCall(String repo, String branch, List<Extinction> extinction, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postExtinctionCall(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull String branch, @javax.annotation.Nonnull List<Extinction> extinction, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1657,7 +1698,7 @@ public class CodeReferencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postExtinctionValidateBeforeCall(String repo, String branch, List<Extinction> extinction, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postExtinctionValidateBeforeCall(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull String branch, @javax.annotation.Nonnull List<Extinction> extinction, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'repo' is set
         if (repo == null) {
             throw new ApiException("Missing the required parameter 'repo' when calling postExtinction(Async)");
@@ -1685,7 +1726,8 @@ public class CodeReferencesApi {
      * @param extinction  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1695,7 +1737,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void postExtinction(String repo, String branch, List<Extinction> extinction) throws ApiException {
+    public void postExtinction(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull String branch, @javax.annotation.Nonnull List<Extinction> extinction) throws ApiException {
         postExtinctionWithHttpInfo(repo, branch, extinction);
     }
 
@@ -1708,7 +1750,8 @@ public class CodeReferencesApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1718,7 +1761,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> postExtinctionWithHttpInfo(String repo, String branch, List<Extinction> extinction) throws ApiException {
+    public ApiResponse<Void> postExtinctionWithHttpInfo(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull String branch, @javax.annotation.Nonnull List<Extinction> extinction) throws ApiException {
         okhttp3.Call localVarCall = postExtinctionValidateBeforeCall(repo, branch, extinction, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -1733,7 +1776,8 @@ public class CodeReferencesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1743,7 +1787,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postExtinctionAsync(String repo, String branch, List<Extinction> extinction, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call postExtinctionAsync(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull String branch, @javax.annotation.Nonnull List<Extinction> extinction, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postExtinctionValidateBeforeCall(repo, branch, extinction, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -1756,7 +1800,8 @@ public class CodeReferencesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1766,7 +1811,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postRepositoryCall(RepositoryPost repositoryPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postRepositoryCall(@javax.annotation.Nonnull RepositoryPost repositoryPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1812,7 +1857,7 @@ public class CodeReferencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postRepositoryValidateBeforeCall(RepositoryPost repositoryPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postRepositoryValidateBeforeCall(@javax.annotation.Nonnull RepositoryPost repositoryPost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'repositoryPost' is set
         if (repositoryPost == null) {
             throw new ApiException("Missing the required parameter 'repositoryPost' when calling postRepository(Async)");
@@ -1829,7 +1874,8 @@ public class CodeReferencesApi {
      * @return RepositoryRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1839,7 +1885,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public RepositoryRep postRepository(RepositoryPost repositoryPost) throws ApiException {
+    public RepositoryRep postRepository(@javax.annotation.Nonnull RepositoryPost repositoryPost) throws ApiException {
         ApiResponse<RepositoryRep> localVarResp = postRepositoryWithHttpInfo(repositoryPost);
         return localVarResp.getData();
     }
@@ -1851,7 +1897,8 @@ public class CodeReferencesApi {
      * @return ApiResponse&lt;RepositoryRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1861,7 +1908,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RepositoryRep> postRepositoryWithHttpInfo(RepositoryPost repositoryPost) throws ApiException {
+    public ApiResponse<RepositoryRep> postRepositoryWithHttpInfo(@javax.annotation.Nonnull RepositoryPost repositoryPost) throws ApiException {
         okhttp3.Call localVarCall = postRepositoryValidateBeforeCall(repositoryPost, null);
         Type localVarReturnType = new TypeToken<RepositoryRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1875,7 +1922,8 @@ public class CodeReferencesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1885,7 +1933,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postRepositoryAsync(RepositoryPost repositoryPost, final ApiCallback<RepositoryRep> _callback) throws ApiException {
+    public okhttp3.Call postRepositoryAsync(@javax.annotation.Nonnull RepositoryPost repositoryPost, final ApiCallback<RepositoryRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postRepositoryValidateBeforeCall(repositoryPost, _callback);
         Type localVarReturnType = new TypeToken<RepositoryRep>(){}.getType();
@@ -1901,7 +1949,8 @@ public class CodeReferencesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1912,7 +1961,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putBranchCall(String repo, String branch, PutBranch putBranch, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call putBranchCall(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull String branch, @javax.annotation.Nonnull PutBranch putBranch, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1960,7 +2009,7 @@ public class CodeReferencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call putBranchValidateBeforeCall(String repo, String branch, PutBranch putBranch, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call putBranchValidateBeforeCall(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull String branch, @javax.annotation.Nonnull PutBranch putBranch, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'repo' is set
         if (repo == null) {
             throw new ApiException("Missing the required parameter 'repo' when calling putBranch(Async)");
@@ -1988,7 +2037,8 @@ public class CodeReferencesApi {
      * @param putBranch  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1999,7 +2049,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void putBranch(String repo, String branch, PutBranch putBranch) throws ApiException {
+    public void putBranch(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull String branch, @javax.annotation.Nonnull PutBranch putBranch) throws ApiException {
         putBranchWithHttpInfo(repo, branch, putBranch);
     }
 
@@ -2012,7 +2062,8 @@ public class CodeReferencesApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2023,7 +2074,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> putBranchWithHttpInfo(String repo, String branch, PutBranch putBranch) throws ApiException {
+    public ApiResponse<Void> putBranchWithHttpInfo(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull String branch, @javax.annotation.Nonnull PutBranch putBranch) throws ApiException {
         okhttp3.Call localVarCall = putBranchValidateBeforeCall(repo, branch, putBranch, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -2038,7 +2089,8 @@ public class CodeReferencesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2049,7 +2101,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putBranchAsync(String repo, String branch, PutBranch putBranch, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call putBranchAsync(@javax.annotation.Nonnull String repo, @javax.annotation.Nonnull String branch, @javax.annotation.Nonnull PutBranch putBranch, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putBranchValidateBeforeCall(repo, branch, putBranch, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);

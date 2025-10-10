@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,193 +42,202 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * FormVariable
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class FormVariable {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nullable
   private String key;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private String type;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_PLACEHOLDER = "placeholder";
   @SerializedName(SERIALIZED_NAME_PLACEHOLDER)
+  @javax.annotation.Nullable
   private String placeholder;
 
   public static final String SERIALIZED_NAME_IS_OPTIONAL = "isOptional";
   @SerializedName(SERIALIZED_NAME_IS_OPTIONAL)
+  @javax.annotation.Nullable
   private Boolean isOptional;
 
   public static final String SERIALIZED_NAME_DEFAULT_VALUE = "defaultValue";
   @SerializedName(SERIALIZED_NAME_DEFAULT_VALUE)
+  @javax.annotation.Nullable
   private Object defaultValue = null;
 
   public static final String SERIALIZED_NAME_ALLOWED_VALUES = "allowedValues";
   @SerializedName(SERIALIZED_NAME_ALLOWED_VALUES)
+  @javax.annotation.Nullable
   private List<String> allowedValues = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DYNAMIC_OPTIONS = "dynamicOptions";
   @SerializedName(SERIALIZED_NAME_DYNAMIC_OPTIONS)
+  @javax.annotation.Nullable
   private DynamicOptions dynamicOptions;
 
   public FormVariable() {
   }
 
-  public FormVariable key(String key) {
+  public FormVariable key(@javax.annotation.Nullable String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * Get key
    * @return key
-  **/
+   */
   @javax.annotation.Nullable
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nullable String key) {
     this.key = key;
   }
 
 
-  public FormVariable name(String name) {
+  public FormVariable name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public FormVariable type(String type) {
+  public FormVariable type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
   public String getType() {
     return type;
   }
 
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 
 
-  public FormVariable description(String description) {
+  public FormVariable description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Get description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public FormVariable placeholder(String placeholder) {
+  public FormVariable placeholder(@javax.annotation.Nullable String placeholder) {
     this.placeholder = placeholder;
     return this;
   }
 
-   /**
+  /**
    * Get placeholder
    * @return placeholder
-  **/
+   */
   @javax.annotation.Nullable
   public String getPlaceholder() {
     return placeholder;
   }
 
-  public void setPlaceholder(String placeholder) {
+  public void setPlaceholder(@javax.annotation.Nullable String placeholder) {
     this.placeholder = placeholder;
   }
 
 
-  public FormVariable isOptional(Boolean isOptional) {
+  public FormVariable isOptional(@javax.annotation.Nullable Boolean isOptional) {
     this.isOptional = isOptional;
     return this;
   }
 
-   /**
+  /**
    * Get isOptional
    * @return isOptional
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsOptional() {
     return isOptional;
   }
 
-  public void setIsOptional(Boolean isOptional) {
+  public void setIsOptional(@javax.annotation.Nullable Boolean isOptional) {
     this.isOptional = isOptional;
   }
 
 
-  public FormVariable defaultValue(Object defaultValue) {
+  public FormVariable defaultValue(@javax.annotation.Nullable Object defaultValue) {
     this.defaultValue = defaultValue;
     return this;
   }
 
-   /**
+  /**
    * Get defaultValue
    * @return defaultValue
-  **/
+   */
   @javax.annotation.Nullable
   public Object getDefaultValue() {
     return defaultValue;
   }
 
-  public void setDefaultValue(Object defaultValue) {
+  public void setDefaultValue(@javax.annotation.Nullable Object defaultValue) {
     this.defaultValue = defaultValue;
   }
 
 
-  public FormVariable allowedValues(List<String> allowedValues) {
+  public FormVariable allowedValues(@javax.annotation.Nullable List<String> allowedValues) {
     this.allowedValues = allowedValues;
     return this;
   }
@@ -240,35 +250,35 @@ public class FormVariable {
     return this;
   }
 
-   /**
+  /**
    * Get allowedValues
    * @return allowedValues
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getAllowedValues() {
     return allowedValues;
   }
 
-  public void setAllowedValues(List<String> allowedValues) {
+  public void setAllowedValues(@javax.annotation.Nullable List<String> allowedValues) {
     this.allowedValues = allowedValues;
   }
 
 
-  public FormVariable dynamicOptions(DynamicOptions dynamicOptions) {
+  public FormVariable dynamicOptions(@javax.annotation.Nullable DynamicOptions dynamicOptions) {
     this.dynamicOptions = dynamicOptions;
     return this;
   }
 
-   /**
+  /**
    * Get dynamicOptions
    * @return dynamicOptions
-  **/
+   */
   @javax.annotation.Nullable
   public DynamicOptions getDynamicOptions() {
     return dynamicOptions;
   }
 
-  public void setDynamicOptions(DynamicOptions dynamicOptions) {
+  public void setDynamicOptions(@javax.annotation.Nullable DynamicOptions dynamicOptions) {
     this.dynamicOptions = dynamicOptions;
   }
 
@@ -390,52 +400,43 @@ public class FormVariable {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("key");
-    openapiFields.add("name");
-    openapiFields.add("type");
-    openapiFields.add("description");
-    openapiFields.add("placeholder");
-    openapiFields.add("isOptional");
-    openapiFields.add("defaultValue");
-    openapiFields.add("allowedValues");
-    openapiFields.add("dynamicOptions");
+    openapiFields = new HashSet<String>(Arrays.asList("key", "name", "type", "description", "placeholder", "isOptional", "defaultValue", "allowedValues", "dynamicOptions"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FormVariable
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FormVariable
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FormVariable.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FormVariable is not found in the empty JSON string", FormVariable.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FormVariable is not found in the empty JSON string", FormVariable.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if ((jsonObj.get("placeholder") != null && !jsonObj.get("placeholder").isJsonNull()) && !jsonObj.get("placeholder").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `placeholder` to be a primitive type in the JSON string but got `%s`", jsonObj.get("placeholder").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `placeholder` to be a primitive type in the JSON string but got `%s`", jsonObj.get("placeholder").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("allowedValues") != null && !jsonObj.get("allowedValues").isJsonNull() && !jsonObj.get("allowedValues").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `allowedValues` to be an array in the JSON string but got `%s`", jsonObj.get("allowedValues").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `allowedValues` to be an array in the JSON string but got `%s`", jsonObj.get("allowedValues").toString()));
       }
       // validate the optional field `dynamicOptions`
       if (jsonObj.get("dynamicOptions") != null && !jsonObj.get("dynamicOptions").isJsonNull()) {
@@ -500,7 +501,7 @@ public class FormVariable {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -515,22 +516,22 @@ public class FormVariable {
     }
   }
 
- /**
-  * Create an instance of FormVariable given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FormVariable
-  * @throws IOException if the JSON string is invalid with respect to FormVariable
-  */
+  /**
+   * Create an instance of FormVariable given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FormVariable
+   * @throws IOException if the JSON string is invalid with respect to FormVariable
+   */
   public static FormVariable fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FormVariable.class);
   }
 
- /**
-  * Convert an instance of FormVariable to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FormVariable to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

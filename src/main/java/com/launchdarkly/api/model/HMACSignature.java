@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,65 +38,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * HMACSignature
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class HMACSignature {
   public static final String SERIALIZED_NAME_HEADER_NAME = "headerName";
   @SerializedName(SERIALIZED_NAME_HEADER_NAME)
+  @javax.annotation.Nullable
   private String headerName;
 
   public static final String SERIALIZED_NAME_HMAC_SECRET_FORM_VARIABLE_KEY = "hmacSecretFormVariableKey";
   @SerializedName(SERIALIZED_NAME_HMAC_SECRET_FORM_VARIABLE_KEY)
+  @javax.annotation.Nullable
   private String hmacSecretFormVariableKey;
 
   public HMACSignature() {
   }
 
-  public HMACSignature headerName(String headerName) {
+  public HMACSignature headerName(@javax.annotation.Nullable String headerName) {
     this.headerName = headerName;
     return this;
   }
 
-   /**
+  /**
    * Get headerName
    * @return headerName
-  **/
+   */
   @javax.annotation.Nullable
   public String getHeaderName() {
     return headerName;
   }
 
-  public void setHeaderName(String headerName) {
+  public void setHeaderName(@javax.annotation.Nullable String headerName) {
     this.headerName = headerName;
   }
 
 
-  public HMACSignature hmacSecretFormVariableKey(String hmacSecretFormVariableKey) {
+  public HMACSignature hmacSecretFormVariableKey(@javax.annotation.Nullable String hmacSecretFormVariableKey) {
     this.hmacSecretFormVariableKey = hmacSecretFormVariableKey;
     return this;
   }
 
-   /**
+  /**
    * Get hmacSecretFormVariableKey
    * @return hmacSecretFormVariableKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getHmacSecretFormVariableKey() {
     return hmacSecretFormVariableKey;
   }
 
-  public void setHmacSecretFormVariableKey(String hmacSecretFormVariableKey) {
+  public void setHmacSecretFormVariableKey(@javax.annotation.Nullable String hmacSecretFormVariableKey) {
     this.hmacSecretFormVariableKey = hmacSecretFormVariableKey;
   }
 
@@ -192,32 +195,30 @@ public class HMACSignature {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("headerName");
-    openapiFields.add("hmacSecretFormVariableKey");
+    openapiFields = new HashSet<String>(Arrays.asList("headerName", "hmacSecretFormVariableKey"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to HMACSignature
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to HMACSignature
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!HMACSignature.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in HMACSignature is not found in the empty JSON string", HMACSignature.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in HMACSignature is not found in the empty JSON string", HMACSignature.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("headerName") != null && !jsonObj.get("headerName").isJsonNull()) && !jsonObj.get("headerName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `headerName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("headerName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `headerName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("headerName").toString()));
       }
       if ((jsonObj.get("hmacSecretFormVariableKey") != null && !jsonObj.get("hmacSecretFormVariableKey").isJsonNull()) && !jsonObj.get("hmacSecretFormVariableKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `hmacSecretFormVariableKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hmacSecretFormVariableKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `hmacSecretFormVariableKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hmacSecretFormVariableKey").toString()));
       }
   }
 
@@ -278,7 +279,7 @@ public class HMACSignature {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -293,22 +294,22 @@ public class HMACSignature {
     }
   }
 
- /**
-  * Create an instance of HMACSignature given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of HMACSignature
-  * @throws IOException if the JSON string is invalid with respect to HMACSignature
-  */
+  /**
+   * Create an instance of HMACSignature given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of HMACSignature
+   * @throws IOException if the JSON string is invalid with respect to HMACSignature
+   */
   public static HMACSignature fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, HMACSignature.class);
   }
 
- /**
-  * Convert an instance of HMACSignature to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of HMACSignature to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

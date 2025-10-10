@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,32 +44,34 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * FeatureFlagStatuses
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class FeatureFlagStatuses {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_ITEMS = "items";
   @SerializedName(SERIALIZED_NAME_ITEMS)
+  @javax.annotation.Nullable
   private List<FlagStatusRep> items = new ArrayList<>();
 
   public FeatureFlagStatuses() {
   }
 
-  public FeatureFlagStatuses links(Map<String, Link> links) {
+  public FeatureFlagStatuses links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -81,21 +84,21 @@ public class FeatureFlagStatuses {
     return this;
   }
 
-   /**
+  /**
    * Get links
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public FeatureFlagStatuses items(List<FlagStatusRep> items) {
+  public FeatureFlagStatuses items(@javax.annotation.Nullable List<FlagStatusRep> items) {
     this.items = items;
     return this;
   }
@@ -108,16 +111,16 @@ public class FeatureFlagStatuses {
     return this;
   }
 
-   /**
+  /**
    * Get items
    * @return items
-  **/
+   */
   @javax.annotation.Nullable
   public List<FlagStatusRep> getItems() {
     return items;
   }
 
-  public void setItems(List<FlagStatusRep> items) {
+  public void setItems(@javax.annotation.Nullable List<FlagStatusRep> items) {
     this.items = items;
   }
 
@@ -214,32 +217,29 @@ public class FeatureFlagStatuses {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_links");
-    openapiFields.add("items");
+    openapiFields = new HashSet<String>(Arrays.asList("_links", "items"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_links");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_links"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FeatureFlagStatuses
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FeatureFlagStatuses
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FeatureFlagStatuses.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FeatureFlagStatuses is not found in the empty JSON string", FeatureFlagStatuses.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FeatureFlagStatuses is not found in the empty JSON string", FeatureFlagStatuses.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : FeatureFlagStatuses.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -248,7 +248,7 @@ public class FeatureFlagStatuses {
         if (jsonArrayitems != null) {
           // ensure the json data is an array
           if (!jsonObj.get("items").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
           }
 
           // validate the optional field `items` (array)
@@ -316,7 +316,7 @@ public class FeatureFlagStatuses {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -331,22 +331,22 @@ public class FeatureFlagStatuses {
     }
   }
 
- /**
-  * Create an instance of FeatureFlagStatuses given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FeatureFlagStatuses
-  * @throws IOException if the JSON string is invalid with respect to FeatureFlagStatuses
-  */
+  /**
+   * Create an instance of FeatureFlagStatuses given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FeatureFlagStatuses
+   * @throws IOException if the JSON string is invalid with respect to FeatureFlagStatuses
+   */
   public static FeatureFlagStatuses fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FeatureFlagStatuses.class);
   }
 
- /**
-  * Convert an instance of FeatureFlagStatuses to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FeatureFlagStatuses to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

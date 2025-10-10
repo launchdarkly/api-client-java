@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,111 +38,115 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ReleaseGuardianConfigurationInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ReleaseGuardianConfigurationInput {
   public static final String SERIALIZED_NAME_MONITORING_WINDOW_MILLISECONDS = "monitoringWindowMilliseconds";
   @SerializedName(SERIALIZED_NAME_MONITORING_WINDOW_MILLISECONDS)
+  @javax.annotation.Nullable
   private Long monitoringWindowMilliseconds;
 
   public static final String SERIALIZED_NAME_ROLLOUT_WEIGHT = "rolloutWeight";
   @SerializedName(SERIALIZED_NAME_ROLLOUT_WEIGHT)
+  @javax.annotation.Nullable
   private Integer rolloutWeight;
 
   public static final String SERIALIZED_NAME_ROLLBACK_ON_REGRESSION = "rollbackOnRegression";
   @SerializedName(SERIALIZED_NAME_ROLLBACK_ON_REGRESSION)
+  @javax.annotation.Nullable
   private Boolean rollbackOnRegression;
 
   public static final String SERIALIZED_NAME_RANDOMIZATION_UNIT = "randomizationUnit";
   @SerializedName(SERIALIZED_NAME_RANDOMIZATION_UNIT)
+  @javax.annotation.Nullable
   private String randomizationUnit;
 
   public ReleaseGuardianConfigurationInput() {
   }
 
-  public ReleaseGuardianConfigurationInput monitoringWindowMilliseconds(Long monitoringWindowMilliseconds) {
+  public ReleaseGuardianConfigurationInput monitoringWindowMilliseconds(@javax.annotation.Nullable Long monitoringWindowMilliseconds) {
     this.monitoringWindowMilliseconds = monitoringWindowMilliseconds;
     return this;
   }
 
-   /**
+  /**
    * The monitoring window in milliseconds
    * @return monitoringWindowMilliseconds
-  **/
+   */
   @javax.annotation.Nullable
   public Long getMonitoringWindowMilliseconds() {
     return monitoringWindowMilliseconds;
   }
 
-  public void setMonitoringWindowMilliseconds(Long monitoringWindowMilliseconds) {
+  public void setMonitoringWindowMilliseconds(@javax.annotation.Nullable Long monitoringWindowMilliseconds) {
     this.monitoringWindowMilliseconds = monitoringWindowMilliseconds;
   }
 
 
-  public ReleaseGuardianConfigurationInput rolloutWeight(Integer rolloutWeight) {
+  public ReleaseGuardianConfigurationInput rolloutWeight(@javax.annotation.Nullable Integer rolloutWeight) {
     this.rolloutWeight = rolloutWeight;
     return this;
   }
 
-   /**
+  /**
    * The rollout weight
    * @return rolloutWeight
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getRolloutWeight() {
     return rolloutWeight;
   }
 
-  public void setRolloutWeight(Integer rolloutWeight) {
+  public void setRolloutWeight(@javax.annotation.Nullable Integer rolloutWeight) {
     this.rolloutWeight = rolloutWeight;
   }
 
 
-  public ReleaseGuardianConfigurationInput rollbackOnRegression(Boolean rollbackOnRegression) {
+  public ReleaseGuardianConfigurationInput rollbackOnRegression(@javax.annotation.Nullable Boolean rollbackOnRegression) {
     this.rollbackOnRegression = rollbackOnRegression;
     return this;
   }
 
-   /**
+  /**
    * Whether or not to rollback on regression
    * @return rollbackOnRegression
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getRollbackOnRegression() {
     return rollbackOnRegression;
   }
 
-  public void setRollbackOnRegression(Boolean rollbackOnRegression) {
+  public void setRollbackOnRegression(@javax.annotation.Nullable Boolean rollbackOnRegression) {
     this.rollbackOnRegression = rollbackOnRegression;
   }
 
 
-  public ReleaseGuardianConfigurationInput randomizationUnit(String randomizationUnit) {
+  public ReleaseGuardianConfigurationInput randomizationUnit(@javax.annotation.Nullable String randomizationUnit) {
     this.randomizationUnit = randomizationUnit;
     return this;
   }
 
-   /**
+  /**
    * The randomization unit for the measured rollout
    * @return randomizationUnit
-  **/
+   */
   @javax.annotation.Nullable
   public String getRandomizationUnit() {
     return randomizationUnit;
   }
 
-  public void setRandomizationUnit(String randomizationUnit) {
+  public void setRandomizationUnit(@javax.annotation.Nullable String randomizationUnit) {
     this.randomizationUnit = randomizationUnit;
   }
 
@@ -242,31 +247,27 @@ public class ReleaseGuardianConfigurationInput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("monitoringWindowMilliseconds");
-    openapiFields.add("rolloutWeight");
-    openapiFields.add("rollbackOnRegression");
-    openapiFields.add("randomizationUnit");
+    openapiFields = new HashSet<String>(Arrays.asList("monitoringWindowMilliseconds", "rolloutWeight", "rollbackOnRegression", "randomizationUnit"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ReleaseGuardianConfigurationInput
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ReleaseGuardianConfigurationInput
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ReleaseGuardianConfigurationInput.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ReleaseGuardianConfigurationInput is not found in the empty JSON string", ReleaseGuardianConfigurationInput.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ReleaseGuardianConfigurationInput is not found in the empty JSON string", ReleaseGuardianConfigurationInput.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("randomizationUnit") != null && !jsonObj.get("randomizationUnit").isJsonNull()) && !jsonObj.get("randomizationUnit").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `randomizationUnit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("randomizationUnit").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `randomizationUnit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("randomizationUnit").toString()));
       }
   }
 
@@ -327,7 +328,7 @@ public class ReleaseGuardianConfigurationInput {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -342,22 +343,22 @@ public class ReleaseGuardianConfigurationInput {
     }
   }
 
- /**
-  * Create an instance of ReleaseGuardianConfigurationInput given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ReleaseGuardianConfigurationInput
-  * @throws IOException if the JSON string is invalid with respect to ReleaseGuardianConfigurationInput
-  */
+  /**
+   * Create an instance of ReleaseGuardianConfigurationInput given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ReleaseGuardianConfigurationInput
+   * @throws IOException if the JSON string is invalid with respect to ReleaseGuardianConfigurationInput
+   */
   public static ReleaseGuardianConfigurationInput fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ReleaseGuardianConfigurationInput.class);
   }
 
- /**
-  * Convert an instance of ReleaseGuardianConfigurationInput to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ReleaseGuardianConfigurationInput to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

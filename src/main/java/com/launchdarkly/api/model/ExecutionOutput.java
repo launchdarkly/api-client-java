@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,65 +38,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ExecutionOutput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ExecutionOutput {
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nonnull
   private String status;
 
   public static final String SERIALIZED_NAME_STOP_DATE = "stopDate";
   @SerializedName(SERIALIZED_NAME_STOP_DATE)
+  @javax.annotation.Nullable
   private Long stopDate;
 
   public ExecutionOutput() {
   }
 
-  public ExecutionOutput status(String status) {
+  public ExecutionOutput status(@javax.annotation.Nonnull String status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * The status of the execution of this workflow stage
    * @return status
-  **/
+   */
   @javax.annotation.Nonnull
   public String getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(@javax.annotation.Nonnull String status) {
     this.status = status;
   }
 
 
-  public ExecutionOutput stopDate(Long stopDate) {
+  public ExecutionOutput stopDate(@javax.annotation.Nullable Long stopDate) {
     this.stopDate = stopDate;
     return this;
   }
 
-   /**
+  /**
    * Get stopDate
    * @return stopDate
-  **/
+   */
   @javax.annotation.Nullable
   public Long getStopDate() {
     return stopDate;
   }
 
-  public void setStopDate(Long stopDate) {
+  public void setStopDate(@javax.annotation.Nullable Long stopDate) {
     this.stopDate = stopDate;
   }
 
@@ -192,37 +195,34 @@ public class ExecutionOutput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("status");
-    openapiFields.add("stopDate");
+    openapiFields = new HashSet<String>(Arrays.asList("status", "stopDate"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("status");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("status"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ExecutionOutput
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ExecutionOutput
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ExecutionOutput.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ExecutionOutput is not found in the empty JSON string", ExecutionOutput.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ExecutionOutput is not found in the empty JSON string", ExecutionOutput.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ExecutionOutput.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
   }
 
@@ -283,7 +283,7 @@ public class ExecutionOutput {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -298,22 +298,22 @@ public class ExecutionOutput {
     }
   }
 
- /**
-  * Create an instance of ExecutionOutput given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ExecutionOutput
-  * @throws IOException if the JSON string is invalid with respect to ExecutionOutput
-  */
+  /**
+   * Create an instance of ExecutionOutput given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ExecutionOutput
+   * @throws IOException if the JSON string is invalid with respect to ExecutionOutput
+   */
   public static ExecutionOutput fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ExecutionOutput.class);
   }
 
- /**
-  * Convert an instance of ExecutionOutput to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ExecutionOutput to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

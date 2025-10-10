@@ -89,7 +89,8 @@ public class IntegrationAuditLogSubscriptionsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Integration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -99,7 +100,7 @@ public class IntegrationAuditLogSubscriptionsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createSubscriptionCall(String integrationKey, SubscriptionPost subscriptionPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createSubscriptionCall(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull SubscriptionPost subscriptionPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -146,7 +147,7 @@ public class IntegrationAuditLogSubscriptionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createSubscriptionValidateBeforeCall(String integrationKey, SubscriptionPost subscriptionPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createSubscriptionValidateBeforeCall(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull SubscriptionPost subscriptionPost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'integrationKey' is set
         if (integrationKey == null) {
             throw new ApiException("Missing the required parameter 'integrationKey' when calling createSubscription(Async)");
@@ -169,7 +170,8 @@ public class IntegrationAuditLogSubscriptionsApi {
      * @return Integration
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Integration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -179,7 +181,7 @@ public class IntegrationAuditLogSubscriptionsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Integration createSubscription(String integrationKey, SubscriptionPost subscriptionPost) throws ApiException {
+    public Integration createSubscription(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull SubscriptionPost subscriptionPost) throws ApiException {
         ApiResponse<Integration> localVarResp = createSubscriptionWithHttpInfo(integrationKey, subscriptionPost);
         return localVarResp.getData();
     }
@@ -192,7 +194,8 @@ public class IntegrationAuditLogSubscriptionsApi {
      * @return ApiResponse&lt;Integration&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Integration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -202,7 +205,7 @@ public class IntegrationAuditLogSubscriptionsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Integration> createSubscriptionWithHttpInfo(String integrationKey, SubscriptionPost subscriptionPost) throws ApiException {
+    public ApiResponse<Integration> createSubscriptionWithHttpInfo(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull SubscriptionPost subscriptionPost) throws ApiException {
         okhttp3.Call localVarCall = createSubscriptionValidateBeforeCall(integrationKey, subscriptionPost, null);
         Type localVarReturnType = new TypeToken<Integration>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -217,7 +220,8 @@ public class IntegrationAuditLogSubscriptionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Integration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -227,7 +231,7 @@ public class IntegrationAuditLogSubscriptionsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createSubscriptionAsync(String integrationKey, SubscriptionPost subscriptionPost, final ApiCallback<Integration> _callback) throws ApiException {
+    public okhttp3.Call createSubscriptionAsync(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull SubscriptionPost subscriptionPost, final ApiCallback<Integration> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createSubscriptionValidateBeforeCall(integrationKey, subscriptionPost, _callback);
         Type localVarReturnType = new TypeToken<Integration>(){}.getType();
@@ -242,7 +246,8 @@ public class IntegrationAuditLogSubscriptionsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -251,7 +256,7 @@ public class IntegrationAuditLogSubscriptionsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteSubscriptionCall(String integrationKey, String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteSubscriptionCall(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -298,7 +303,7 @@ public class IntegrationAuditLogSubscriptionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteSubscriptionValidateBeforeCall(String integrationKey, String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteSubscriptionValidateBeforeCall(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'integrationKey' is set
         if (integrationKey == null) {
             throw new ApiException("Missing the required parameter 'integrationKey' when calling deleteSubscription(Async)");
@@ -320,7 +325,8 @@ public class IntegrationAuditLogSubscriptionsApi {
      * @param id The subscription ID (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -329,7 +335,7 @@ public class IntegrationAuditLogSubscriptionsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteSubscription(String integrationKey, String id) throws ApiException {
+    public void deleteSubscription(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id) throws ApiException {
         deleteSubscriptionWithHttpInfo(integrationKey, id);
     }
 
@@ -341,7 +347,8 @@ public class IntegrationAuditLogSubscriptionsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -350,7 +357,7 @@ public class IntegrationAuditLogSubscriptionsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteSubscriptionWithHttpInfo(String integrationKey, String id) throws ApiException {
+    public ApiResponse<Void> deleteSubscriptionWithHttpInfo(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteSubscriptionValidateBeforeCall(integrationKey, id, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -364,7 +371,8 @@ public class IntegrationAuditLogSubscriptionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -373,7 +381,7 @@ public class IntegrationAuditLogSubscriptionsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteSubscriptionAsync(String integrationKey, String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteSubscriptionAsync(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteSubscriptionValidateBeforeCall(integrationKey, id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -387,7 +395,8 @@ public class IntegrationAuditLogSubscriptionsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -396,7 +405,7 @@ public class IntegrationAuditLogSubscriptionsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSubscriptionByIDCall(String integrationKey, String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSubscriptionByIDCall(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -443,7 +452,7 @@ public class IntegrationAuditLogSubscriptionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSubscriptionByIDValidateBeforeCall(String integrationKey, String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSubscriptionByIDValidateBeforeCall(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'integrationKey' is set
         if (integrationKey == null) {
             throw new ApiException("Missing the required parameter 'integrationKey' when calling getSubscriptionByID(Async)");
@@ -466,7 +475,8 @@ public class IntegrationAuditLogSubscriptionsApi {
      * @return Integration
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -475,7 +485,7 @@ public class IntegrationAuditLogSubscriptionsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Integration getSubscriptionByID(String integrationKey, String id) throws ApiException {
+    public Integration getSubscriptionByID(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id) throws ApiException {
         ApiResponse<Integration> localVarResp = getSubscriptionByIDWithHttpInfo(integrationKey, id);
         return localVarResp.getData();
     }
@@ -488,7 +498,8 @@ public class IntegrationAuditLogSubscriptionsApi {
      * @return ApiResponse&lt;Integration&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -497,7 +508,7 @@ public class IntegrationAuditLogSubscriptionsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Integration> getSubscriptionByIDWithHttpInfo(String integrationKey, String id) throws ApiException {
+    public ApiResponse<Integration> getSubscriptionByIDWithHttpInfo(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getSubscriptionByIDValidateBeforeCall(integrationKey, id, null);
         Type localVarReturnType = new TypeToken<Integration>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -512,7 +523,8 @@ public class IntegrationAuditLogSubscriptionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -521,7 +533,7 @@ public class IntegrationAuditLogSubscriptionsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSubscriptionByIDAsync(String integrationKey, String id, final ApiCallback<Integration> _callback) throws ApiException {
+    public okhttp3.Call getSubscriptionByIDAsync(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, final ApiCallback<Integration> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSubscriptionByIDValidateBeforeCall(integrationKey, id, _callback);
         Type localVarReturnType = new TypeToken<Integration>(){}.getType();
@@ -535,7 +547,8 @@ public class IntegrationAuditLogSubscriptionsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integrations collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -544,7 +557,7 @@ public class IntegrationAuditLogSubscriptionsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSubscriptionsCall(String integrationKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSubscriptionsCall(@javax.annotation.Nonnull String integrationKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -590,7 +603,7 @@ public class IntegrationAuditLogSubscriptionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSubscriptionsValidateBeforeCall(String integrationKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSubscriptionsValidateBeforeCall(@javax.annotation.Nonnull String integrationKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'integrationKey' is set
         if (integrationKey == null) {
             throw new ApiException("Missing the required parameter 'integrationKey' when calling getSubscriptions(Async)");
@@ -607,7 +620,8 @@ public class IntegrationAuditLogSubscriptionsApi {
      * @return Integrations
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integrations collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -616,7 +630,7 @@ public class IntegrationAuditLogSubscriptionsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Integrations getSubscriptions(String integrationKey) throws ApiException {
+    public Integrations getSubscriptions(@javax.annotation.Nonnull String integrationKey) throws ApiException {
         ApiResponse<Integrations> localVarResp = getSubscriptionsWithHttpInfo(integrationKey);
         return localVarResp.getData();
     }
@@ -628,7 +642,8 @@ public class IntegrationAuditLogSubscriptionsApi {
      * @return ApiResponse&lt;Integrations&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integrations collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -637,7 +652,7 @@ public class IntegrationAuditLogSubscriptionsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Integrations> getSubscriptionsWithHttpInfo(String integrationKey) throws ApiException {
+    public ApiResponse<Integrations> getSubscriptionsWithHttpInfo(@javax.annotation.Nonnull String integrationKey) throws ApiException {
         okhttp3.Call localVarCall = getSubscriptionsValidateBeforeCall(integrationKey, null);
         Type localVarReturnType = new TypeToken<Integrations>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -651,7 +666,8 @@ public class IntegrationAuditLogSubscriptionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integrations collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -660,7 +676,7 @@ public class IntegrationAuditLogSubscriptionsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSubscriptionsAsync(String integrationKey, final ApiCallback<Integrations> _callback) throws ApiException {
+    public okhttp3.Call getSubscriptionsAsync(@javax.annotation.Nonnull String integrationKey, final ApiCallback<Integrations> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSubscriptionsValidateBeforeCall(integrationKey, _callback);
         Type localVarReturnType = new TypeToken<Integrations>(){}.getType();
@@ -676,7 +692,8 @@ public class IntegrationAuditLogSubscriptionsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -686,7 +703,7 @@ public class IntegrationAuditLogSubscriptionsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSubscriptionCall(String integrationKey, String id, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateSubscriptionCall(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -734,7 +751,7 @@ public class IntegrationAuditLogSubscriptionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateSubscriptionValidateBeforeCall(String integrationKey, String id, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateSubscriptionValidateBeforeCall(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'integrationKey' is set
         if (integrationKey == null) {
             throw new ApiException("Missing the required parameter 'integrationKey' when calling updateSubscription(Async)");
@@ -763,7 +780,8 @@ public class IntegrationAuditLogSubscriptionsApi {
      * @return Integration
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -773,7 +791,7 @@ public class IntegrationAuditLogSubscriptionsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Integration updateSubscription(String integrationKey, String id, List<PatchOperation> patchOperation) throws ApiException {
+    public Integration updateSubscription(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         ApiResponse<Integration> localVarResp = updateSubscriptionWithHttpInfo(integrationKey, id, patchOperation);
         return localVarResp.getData();
     }
@@ -787,7 +805,8 @@ public class IntegrationAuditLogSubscriptionsApi {
      * @return ApiResponse&lt;Integration&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -797,7 +816,7 @@ public class IntegrationAuditLogSubscriptionsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Integration> updateSubscriptionWithHttpInfo(String integrationKey, String id, List<PatchOperation> patchOperation) throws ApiException {
+    public ApiResponse<Integration> updateSubscriptionWithHttpInfo(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         okhttp3.Call localVarCall = updateSubscriptionValidateBeforeCall(integrationKey, id, patchOperation, null);
         Type localVarReturnType = new TypeToken<Integration>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -813,7 +832,8 @@ public class IntegrationAuditLogSubscriptionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -823,7 +843,7 @@ public class IntegrationAuditLogSubscriptionsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSubscriptionAsync(String integrationKey, String id, List<PatchOperation> patchOperation, final ApiCallback<Integration> _callback) throws ApiException {
+    public okhttp3.Call updateSubscriptionAsync(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback<Integration> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateSubscriptionValidateBeforeCall(integrationKey, id, patchOperation, _callback);
         Type localVarReturnType = new TypeToken<Integration>(){}.getType();

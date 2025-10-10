@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,65 +39,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * AIConfigTargetingEnvironmentFallthrough
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AIConfigTargetingEnvironmentFallthrough {
   public static final String SERIALIZED_NAME_VARIATION = "variation";
   @SerializedName(SERIALIZED_NAME_VARIATION)
+  @javax.annotation.Nullable
   private Integer variation;
 
   public static final String SERIALIZED_NAME_ROLLOUT = "rollout";
   @SerializedName(SERIALIZED_NAME_ROLLOUT)
+  @javax.annotation.Nullable
   private AIConfigTargetingEnvironmentFallthroughRollout rollout;
 
   public AIConfigTargetingEnvironmentFallthrough() {
   }
 
-  public AIConfigTargetingEnvironmentFallthrough variation(Integer variation) {
+  public AIConfigTargetingEnvironmentFallthrough variation(@javax.annotation.Nullable Integer variation) {
     this.variation = variation;
     return this;
   }
 
-   /**
+  /**
    * Get variation
    * @return variation
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getVariation() {
     return variation;
   }
 
-  public void setVariation(Integer variation) {
+  public void setVariation(@javax.annotation.Nullable Integer variation) {
     this.variation = variation;
   }
 
 
-  public AIConfigTargetingEnvironmentFallthrough rollout(AIConfigTargetingEnvironmentFallthroughRollout rollout) {
+  public AIConfigTargetingEnvironmentFallthrough rollout(@javax.annotation.Nullable AIConfigTargetingEnvironmentFallthroughRollout rollout) {
     this.rollout = rollout;
     return this;
   }
 
-   /**
+  /**
    * Get rollout
    * @return rollout
-  **/
+   */
   @javax.annotation.Nullable
   public AIConfigTargetingEnvironmentFallthroughRollout getRollout() {
     return rollout;
   }
 
-  public void setRollout(AIConfigTargetingEnvironmentFallthroughRollout rollout) {
+  public void setRollout(@javax.annotation.Nullable AIConfigTargetingEnvironmentFallthroughRollout rollout) {
     this.rollout = rollout;
   }
 
@@ -193,24 +196,22 @@ public class AIConfigTargetingEnvironmentFallthrough {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("variation");
-    openapiFields.add("rollout");
+    openapiFields = new HashSet<String>(Arrays.asList("variation", "rollout"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to AIConfigTargetingEnvironmentFallthrough
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AIConfigTargetingEnvironmentFallthrough
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AIConfigTargetingEnvironmentFallthrough.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AIConfigTargetingEnvironmentFallthrough is not found in the empty JSON string", AIConfigTargetingEnvironmentFallthrough.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AIConfigTargetingEnvironmentFallthrough is not found in the empty JSON string", AIConfigTargetingEnvironmentFallthrough.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -277,7 +278,7 @@ public class AIConfigTargetingEnvironmentFallthrough {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -292,22 +293,22 @@ public class AIConfigTargetingEnvironmentFallthrough {
     }
   }
 
- /**
-  * Create an instance of AIConfigTargetingEnvironmentFallthrough given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AIConfigTargetingEnvironmentFallthrough
-  * @throws IOException if the JSON string is invalid with respect to AIConfigTargetingEnvironmentFallthrough
-  */
+  /**
+   * Create an instance of AIConfigTargetingEnvironmentFallthrough given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AIConfigTargetingEnvironmentFallthrough
+   * @throws IOException if the JSON string is invalid with respect to AIConfigTargetingEnvironmentFallthrough
+   */
   public static AIConfigTargetingEnvironmentFallthrough fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AIConfigTargetingEnvironmentFallthrough.class);
   }
 
- /**
-  * Convert an instance of AIConfigTargetingEnvironmentFallthrough to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AIConfigTargetingEnvironmentFallthrough to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

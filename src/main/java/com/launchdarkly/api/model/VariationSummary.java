@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,203 +38,211 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * VariationSummary
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class VariationSummary {
   public static final String SERIALIZED_NAME_RULES = "rules";
   @SerializedName(SERIALIZED_NAME_RULES)
+  @javax.annotation.Nonnull
   private Integer rules;
 
   public static final String SERIALIZED_NAME_NULL_RULES = "nullRules";
   @SerializedName(SERIALIZED_NAME_NULL_RULES)
+  @javax.annotation.Nonnull
   private Integer nullRules;
 
   public static final String SERIALIZED_NAME_TARGETS = "targets";
   @SerializedName(SERIALIZED_NAME_TARGETS)
+  @javax.annotation.Nonnull
   private Integer targets;
 
   public static final String SERIALIZED_NAME_CONTEXT_TARGETS = "contextTargets";
   @SerializedName(SERIALIZED_NAME_CONTEXT_TARGETS)
+  @javax.annotation.Nonnull
   private Integer contextTargets;
 
   public static final String SERIALIZED_NAME_IS_FALLTHROUGH = "isFallthrough";
   @SerializedName(SERIALIZED_NAME_IS_FALLTHROUGH)
+  @javax.annotation.Nullable
   private Boolean isFallthrough;
 
   public static final String SERIALIZED_NAME_IS_OFF = "isOff";
   @SerializedName(SERIALIZED_NAME_IS_OFF)
+  @javax.annotation.Nullable
   private Boolean isOff;
 
   public static final String SERIALIZED_NAME_ROLLOUT = "rollout";
   @SerializedName(SERIALIZED_NAME_ROLLOUT)
+  @javax.annotation.Nullable
   private Integer rollout;
 
   public static final String SERIALIZED_NAME_BUCKET_BY = "bucketBy";
   @SerializedName(SERIALIZED_NAME_BUCKET_BY)
+  @javax.annotation.Nullable
   private String bucketBy;
 
   public VariationSummary() {
   }
 
-  public VariationSummary rules(Integer rules) {
+  public VariationSummary rules(@javax.annotation.Nonnull Integer rules) {
     this.rules = rules;
     return this;
   }
 
-   /**
+  /**
    * Get rules
    * @return rules
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getRules() {
     return rules;
   }
 
-  public void setRules(Integer rules) {
+  public void setRules(@javax.annotation.Nonnull Integer rules) {
     this.rules = rules;
   }
 
 
-  public VariationSummary nullRules(Integer nullRules) {
+  public VariationSummary nullRules(@javax.annotation.Nonnull Integer nullRules) {
     this.nullRules = nullRules;
     return this;
   }
 
-   /**
+  /**
    * Get nullRules
    * @return nullRules
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getNullRules() {
     return nullRules;
   }
 
-  public void setNullRules(Integer nullRules) {
+  public void setNullRules(@javax.annotation.Nonnull Integer nullRules) {
     this.nullRules = nullRules;
   }
 
 
-  public VariationSummary targets(Integer targets) {
+  public VariationSummary targets(@javax.annotation.Nonnull Integer targets) {
     this.targets = targets;
     return this;
   }
 
-   /**
+  /**
    * Get targets
    * @return targets
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getTargets() {
     return targets;
   }
 
-  public void setTargets(Integer targets) {
+  public void setTargets(@javax.annotation.Nonnull Integer targets) {
     this.targets = targets;
   }
 
 
-  public VariationSummary contextTargets(Integer contextTargets) {
+  public VariationSummary contextTargets(@javax.annotation.Nonnull Integer contextTargets) {
     this.contextTargets = contextTargets;
     return this;
   }
 
-   /**
+  /**
    * Get contextTargets
    * @return contextTargets
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getContextTargets() {
     return contextTargets;
   }
 
-  public void setContextTargets(Integer contextTargets) {
+  public void setContextTargets(@javax.annotation.Nonnull Integer contextTargets) {
     this.contextTargets = contextTargets;
   }
 
 
-  public VariationSummary isFallthrough(Boolean isFallthrough) {
+  public VariationSummary isFallthrough(@javax.annotation.Nullable Boolean isFallthrough) {
     this.isFallthrough = isFallthrough;
     return this;
   }
 
-   /**
+  /**
    * Get isFallthrough
    * @return isFallthrough
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsFallthrough() {
     return isFallthrough;
   }
 
-  public void setIsFallthrough(Boolean isFallthrough) {
+  public void setIsFallthrough(@javax.annotation.Nullable Boolean isFallthrough) {
     this.isFallthrough = isFallthrough;
   }
 
 
-  public VariationSummary isOff(Boolean isOff) {
+  public VariationSummary isOff(@javax.annotation.Nullable Boolean isOff) {
     this.isOff = isOff;
     return this;
   }
 
-   /**
+  /**
    * Get isOff
    * @return isOff
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsOff() {
     return isOff;
   }
 
-  public void setIsOff(Boolean isOff) {
+  public void setIsOff(@javax.annotation.Nullable Boolean isOff) {
     this.isOff = isOff;
   }
 
 
-  public VariationSummary rollout(Integer rollout) {
+  public VariationSummary rollout(@javax.annotation.Nullable Integer rollout) {
     this.rollout = rollout;
     return this;
   }
 
-   /**
+  /**
    * Get rollout
    * @return rollout
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getRollout() {
     return rollout;
   }
 
-  public void setRollout(Integer rollout) {
+  public void setRollout(@javax.annotation.Nullable Integer rollout) {
     this.rollout = rollout;
   }
 
 
-  public VariationSummary bucketBy(String bucketBy) {
+  public VariationSummary bucketBy(@javax.annotation.Nullable String bucketBy) {
     this.bucketBy = bucketBy;
     return this;
   }
 
-   /**
+  /**
    * Get bucketBy
    * @return bucketBy
-  **/
+   */
   @javax.annotation.Nullable
   public String getBucketBy() {
     return bucketBy;
   }
 
-  public void setBucketBy(String bucketBy) {
+  public void setBucketBy(@javax.annotation.Nullable String bucketBy) {
     this.bucketBy = bucketBy;
   }
 
@@ -342,46 +351,34 @@ public class VariationSummary {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("rules");
-    openapiFields.add("nullRules");
-    openapiFields.add("targets");
-    openapiFields.add("contextTargets");
-    openapiFields.add("isFallthrough");
-    openapiFields.add("isOff");
-    openapiFields.add("rollout");
-    openapiFields.add("bucketBy");
+    openapiFields = new HashSet<String>(Arrays.asList("rules", "nullRules", "targets", "contextTargets", "isFallthrough", "isOff", "rollout", "bucketBy"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("rules");
-    openapiRequiredFields.add("nullRules");
-    openapiRequiredFields.add("targets");
-    openapiRequiredFields.add("contextTargets");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("rules", "nullRules", "targets", "contextTargets"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to VariationSummary
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to VariationSummary
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!VariationSummary.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in VariationSummary is not found in the empty JSON string", VariationSummary.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in VariationSummary is not found in the empty JSON string", VariationSummary.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : VariationSummary.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("bucketBy") != null && !jsonObj.get("bucketBy").isJsonNull()) && !jsonObj.get("bucketBy").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `bucketBy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucketBy").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `bucketBy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucketBy").toString()));
       }
   }
 
@@ -442,7 +439,7 @@ public class VariationSummary {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -457,22 +454,22 @@ public class VariationSummary {
     }
   }
 
- /**
-  * Create an instance of VariationSummary given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of VariationSummary
-  * @throws IOException if the JSON string is invalid with respect to VariationSummary
-  */
+  /**
+   * Create an instance of VariationSummary given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of VariationSummary
+   * @throws IOException if the JSON string is invalid with respect to VariationSummary
+   */
   public static VariationSummary fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, VariationSummary.class);
   }
 
- /**
-  * Convert an instance of VariationSummary to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of VariationSummary to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

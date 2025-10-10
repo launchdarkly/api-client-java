@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,78 +41,82 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * FlagListingRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class FlagListingRep {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_SITE = "_site";
   @SerializedName(SERIALIZED_NAME_SITE)
+  @javax.annotation.Nullable
   private Link site;
 
   public FlagListingRep() {
   }
 
-  public FlagListingRep name(String name) {
+  public FlagListingRep name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The flag name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public FlagListingRep key(String key) {
+  public FlagListingRep key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * The flag key
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public FlagListingRep links(Map<String, Link> links) {
+  public FlagListingRep links(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -124,35 +129,35 @@ public class FlagListingRep {
     return this;
   }
 
-   /**
+  /**
    * Get links
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public FlagListingRep site(Link site) {
+  public FlagListingRep site(@javax.annotation.Nullable Link site) {
     this.site = site;
     return this;
   }
 
-   /**
+  /**
    * Get site
    * @return site
-  **/
+   */
   @javax.annotation.Nullable
   public Link getSite() {
     return site;
   }
 
-  public void setSite(Link site) {
+  public void setSite(@javax.annotation.Nullable Link site) {
     this.site = site;
   }
 
@@ -253,43 +258,37 @@ public class FlagListingRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("key");
-    openapiFields.add("_links");
-    openapiFields.add("_site");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "key", "_links", "_site"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("key");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name", "key"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FlagListingRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FlagListingRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FlagListingRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FlagListingRep is not found in the empty JSON string", FlagListingRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FlagListingRep is not found in the empty JSON string", FlagListingRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : FlagListingRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       // validate the optional field `_site`
       if (jsonObj.get("_site") != null && !jsonObj.get("_site").isJsonNull()) {
@@ -354,7 +353,7 @@ public class FlagListingRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -369,22 +368,22 @@ public class FlagListingRep {
     }
   }
 
- /**
-  * Create an instance of FlagListingRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FlagListingRep
-  * @throws IOException if the JSON string is invalid with respect to FlagListingRep
-  */
+  /**
+   * Create an instance of FlagListingRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FlagListingRep
+   * @throws IOException if the JSON string is invalid with respect to FlagListingRep
+   */
   public static FlagListingRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FlagListingRep.class);
   }
 
- /**
-  * Convert an instance of FlagListingRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FlagListingRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

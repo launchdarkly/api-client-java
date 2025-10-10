@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,51 +42,53 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * IntegrationDeliveryConfigurationCollection
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class IntegrationDeliveryConfigurationCollection {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private IntegrationDeliveryConfigurationCollectionLinks links;
 
   public static final String SERIALIZED_NAME_ITEMS = "items";
   @SerializedName(SERIALIZED_NAME_ITEMS)
+  @javax.annotation.Nonnull
   private List<IntegrationDeliveryConfiguration> items = new ArrayList<>();
 
   public IntegrationDeliveryConfigurationCollection() {
   }
 
-  public IntegrationDeliveryConfigurationCollection links(IntegrationDeliveryConfigurationCollectionLinks links) {
+  public IntegrationDeliveryConfigurationCollection links(@javax.annotation.Nonnull IntegrationDeliveryConfigurationCollectionLinks links) {
     this.links = links;
     return this;
   }
 
-   /**
+  /**
    * Get links
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public IntegrationDeliveryConfigurationCollectionLinks getLinks() {
     return links;
   }
 
-  public void setLinks(IntegrationDeliveryConfigurationCollectionLinks links) {
+  public void setLinks(@javax.annotation.Nonnull IntegrationDeliveryConfigurationCollectionLinks links) {
     this.links = links;
   }
 
 
-  public IntegrationDeliveryConfigurationCollection items(List<IntegrationDeliveryConfiguration> items) {
+  public IntegrationDeliveryConfigurationCollection items(@javax.annotation.Nonnull List<IntegrationDeliveryConfiguration> items) {
     this.items = items;
     return this;
   }
@@ -98,16 +101,16 @@ public class IntegrationDeliveryConfigurationCollection {
     return this;
   }
 
-   /**
+  /**
    * An array of integration delivery configurations
    * @return items
-  **/
+   */
   @javax.annotation.Nonnull
   public List<IntegrationDeliveryConfiguration> getItems() {
     return items;
   }
 
-  public void setItems(List<IntegrationDeliveryConfiguration> items) {
+  public void setItems(@javax.annotation.Nonnull List<IntegrationDeliveryConfiguration> items) {
     this.items = items;
   }
 
@@ -204,33 +207,29 @@ public class IntegrationDeliveryConfigurationCollection {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_links");
-    openapiFields.add("items");
+    openapiFields = new HashSet<String>(Arrays.asList("_links", "items"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_links");
-    openapiRequiredFields.add("items");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_links", "items"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to IntegrationDeliveryConfigurationCollection
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to IntegrationDeliveryConfigurationCollection
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IntegrationDeliveryConfigurationCollection.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in IntegrationDeliveryConfigurationCollection is not found in the empty JSON string", IntegrationDeliveryConfigurationCollection.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in IntegrationDeliveryConfigurationCollection is not found in the empty JSON string", IntegrationDeliveryConfigurationCollection.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : IntegrationDeliveryConfigurationCollection.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -238,7 +237,7 @@ public class IntegrationDeliveryConfigurationCollection {
       IntegrationDeliveryConfigurationCollectionLinks.validateJsonElement(jsonObj.get("_links"));
       // ensure the json data is an array
       if (!jsonObj.get("items").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
       }
 
       JsonArray jsonArrayitems = jsonObj.getAsJsonArray("items");
@@ -305,7 +304,7 @@ public class IntegrationDeliveryConfigurationCollection {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -320,22 +319,22 @@ public class IntegrationDeliveryConfigurationCollection {
     }
   }
 
- /**
-  * Create an instance of IntegrationDeliveryConfigurationCollection given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of IntegrationDeliveryConfigurationCollection
-  * @throws IOException if the JSON string is invalid with respect to IntegrationDeliveryConfigurationCollection
-  */
+  /**
+   * Create an instance of IntegrationDeliveryConfigurationCollection given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of IntegrationDeliveryConfigurationCollection
+   * @throws IOException if the JSON string is invalid with respect to IntegrationDeliveryConfigurationCollection
+   */
   public static IntegrationDeliveryConfigurationCollection fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, IntegrationDeliveryConfigurationCollection.class);
   }
 
- /**
-  * Convert an instance of IntegrationDeliveryConfigurationCollection to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of IntegrationDeliveryConfigurationCollection to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

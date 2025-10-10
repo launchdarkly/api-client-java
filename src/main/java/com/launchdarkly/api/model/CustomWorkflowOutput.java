@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -46,114 +47,127 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * CustomWorkflowOutput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class CustomWorkflowOutput {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_VERSION = "_version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nonnull
   private Integer version;
 
   public static final String SERIALIZED_NAME_CONFLICTS = "_conflicts";
   @SerializedName(SERIALIZED_NAME_CONFLICTS)
+  @javax.annotation.Nonnull
   private List<ConflictOutput> conflicts = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATION_DATE = "_creationDate";
   @SerializedName(SERIALIZED_NAME_CREATION_DATE)
+  @javax.annotation.Nonnull
   private Long creationDate;
 
   public static final String SERIALIZED_NAME_MAINTAINER_ID = "_maintainerId";
   @SerializedName(SERIALIZED_NAME_MAINTAINER_ID)
+  @javax.annotation.Nonnull
   private String maintainerId;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
+  @javax.annotation.Nullable
   private String kind;
 
   public static final String SERIALIZED_NAME_STAGES = "stages";
   @SerializedName(SERIALIZED_NAME_STAGES)
+  @javax.annotation.Nullable
   private List<StageOutput> stages = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_EXECUTION = "_execution";
   @SerializedName(SERIALIZED_NAME_EXECUTION)
+  @javax.annotation.Nonnull
   private ExecutionOutput execution;
 
   public static final String SERIALIZED_NAME_META = "meta";
   @SerializedName(SERIALIZED_NAME_META)
+  @javax.annotation.Nullable
   private WorkflowTemplateMetadata meta;
 
   public static final String SERIALIZED_NAME_TEMPLATE_KEY = "templateKey";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_KEY)
+  @javax.annotation.Nullable
   private String templateKey;
 
   public CustomWorkflowOutput() {
   }
 
-  public CustomWorkflowOutput id(String id) {
+  public CustomWorkflowOutput id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The ID of the workflow
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public CustomWorkflowOutput version(Integer version) {
+  public CustomWorkflowOutput version(@javax.annotation.Nonnull Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * The version of the workflow
    * @return version
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nonnull Integer version) {
     this.version = version;
   }
 
 
-  public CustomWorkflowOutput conflicts(List<ConflictOutput> conflicts) {
+  public CustomWorkflowOutput conflicts(@javax.annotation.Nonnull List<ConflictOutput> conflicts) {
     this.conflicts = conflicts;
     return this;
   }
@@ -166,59 +180,59 @@ public class CustomWorkflowOutput {
     return this;
   }
 
-   /**
+  /**
    * Any conflicts that are present in the workflow stages
    * @return conflicts
-  **/
+   */
   @javax.annotation.Nonnull
   public List<ConflictOutput> getConflicts() {
     return conflicts;
   }
 
-  public void setConflicts(List<ConflictOutput> conflicts) {
+  public void setConflicts(@javax.annotation.Nonnull List<ConflictOutput> conflicts) {
     this.conflicts = conflicts;
   }
 
 
-  public CustomWorkflowOutput creationDate(Long creationDate) {
+  public CustomWorkflowOutput creationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
     return this;
   }
 
-   /**
+  /**
    * Get creationDate
    * @return creationDate
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate(Long creationDate) {
+  public void setCreationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
   }
 
 
-  public CustomWorkflowOutput maintainerId(String maintainerId) {
+  public CustomWorkflowOutput maintainerId(@javax.annotation.Nonnull String maintainerId) {
     this.maintainerId = maintainerId;
     return this;
   }
 
-   /**
+  /**
    * The member ID of the maintainer of the workflow. Defaults to the workflow creator.
    * @return maintainerId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getMaintainerId() {
     return maintainerId;
   }
 
-  public void setMaintainerId(String maintainerId) {
+  public void setMaintainerId(@javax.annotation.Nonnull String maintainerId) {
     this.maintainerId = maintainerId;
   }
 
 
-  public CustomWorkflowOutput links(Map<String, Link> links) {
+  public CustomWorkflowOutput links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -231,78 +245,78 @@ public class CustomWorkflowOutput {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public CustomWorkflowOutput name(String name) {
+  public CustomWorkflowOutput name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The name of the workflow
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public CustomWorkflowOutput description(String description) {
+  public CustomWorkflowOutput description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * A brief description of the workflow
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CustomWorkflowOutput kind(String kind) {
+  public CustomWorkflowOutput kind(@javax.annotation.Nullable String kind) {
     this.kind = kind;
     return this;
   }
 
-   /**
+  /**
    * The kind of workflow
    * @return kind
-  **/
+   */
   @javax.annotation.Nullable
   public String getKind() {
     return kind;
   }
 
-  public void setKind(String kind) {
+  public void setKind(@javax.annotation.Nullable String kind) {
     this.kind = kind;
   }
 
 
-  public CustomWorkflowOutput stages(List<StageOutput> stages) {
+  public CustomWorkflowOutput stages(@javax.annotation.Nullable List<StageOutput> stages) {
     this.stages = stages;
     return this;
   }
@@ -315,73 +329,73 @@ public class CustomWorkflowOutput {
     return this;
   }
 
-   /**
+  /**
    * The stages that make up the workflow. Each stage contains conditions and actions.
    * @return stages
-  **/
+   */
   @javax.annotation.Nullable
   public List<StageOutput> getStages() {
     return stages;
   }
 
-  public void setStages(List<StageOutput> stages) {
+  public void setStages(@javax.annotation.Nullable List<StageOutput> stages) {
     this.stages = stages;
   }
 
 
-  public CustomWorkflowOutput execution(ExecutionOutput execution) {
+  public CustomWorkflowOutput execution(@javax.annotation.Nonnull ExecutionOutput execution) {
     this.execution = execution;
     return this;
   }
 
-   /**
+  /**
    * Get execution
    * @return execution
-  **/
+   */
   @javax.annotation.Nonnull
   public ExecutionOutput getExecution() {
     return execution;
   }
 
-  public void setExecution(ExecutionOutput execution) {
+  public void setExecution(@javax.annotation.Nonnull ExecutionOutput execution) {
     this.execution = execution;
   }
 
 
-  public CustomWorkflowOutput meta(WorkflowTemplateMetadata meta) {
+  public CustomWorkflowOutput meta(@javax.annotation.Nullable WorkflowTemplateMetadata meta) {
     this.meta = meta;
     return this;
   }
 
-   /**
+  /**
    * Get meta
    * @return meta
-  **/
+   */
   @javax.annotation.Nullable
   public WorkflowTemplateMetadata getMeta() {
     return meta;
   }
 
-  public void setMeta(WorkflowTemplateMetadata meta) {
+  public void setMeta(@javax.annotation.Nullable WorkflowTemplateMetadata meta) {
     this.meta = meta;
   }
 
 
-  public CustomWorkflowOutput templateKey(String templateKey) {
+  public CustomWorkflowOutput templateKey(@javax.annotation.Nullable String templateKey) {
     this.templateKey = templateKey;
     return this;
   }
 
-   /**
+  /**
    * For workflows being created from a workflow template, this value is the template&#39;s key
    * @return templateKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getTemplateKey() {
     return templateKey;
   }
 
-  public void setTemplateKey(String templateKey) {
+  public void setTemplateKey(@javax.annotation.Nullable String templateKey) {
     this.templateKey = templateKey;
   }
 
@@ -500,59 +514,38 @@ public class CustomWorkflowOutput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_id");
-    openapiFields.add("_version");
-    openapiFields.add("_conflicts");
-    openapiFields.add("_creationDate");
-    openapiFields.add("_maintainerId");
-    openapiFields.add("_links");
-    openapiFields.add("name");
-    openapiFields.add("description");
-    openapiFields.add("kind");
-    openapiFields.add("stages");
-    openapiFields.add("_execution");
-    openapiFields.add("meta");
-    openapiFields.add("templateKey");
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "_version", "_conflicts", "_creationDate", "_maintainerId", "_links", "name", "description", "kind", "stages", "_execution", "meta", "templateKey"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("_version");
-    openapiRequiredFields.add("_conflicts");
-    openapiRequiredFields.add("_creationDate");
-    openapiRequiredFields.add("_maintainerId");
-    openapiRequiredFields.add("_links");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("_execution");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "_version", "_conflicts", "_creationDate", "_maintainerId", "_links", "name", "_execution"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to CustomWorkflowOutput
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CustomWorkflowOutput
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CustomWorkflowOutput.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CustomWorkflowOutput is not found in the empty JSON string", CustomWorkflowOutput.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in CustomWorkflowOutput is not found in the empty JSON string", CustomWorkflowOutput.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : CustomWorkflowOutput.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       // ensure the json data is an array
       if (!jsonObj.get("_conflicts").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_conflicts` to be an array in the JSON string but got `%s`", jsonObj.get("_conflicts").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_conflicts` to be an array in the JSON string but got `%s`", jsonObj.get("_conflicts").toString()));
       }
 
       JsonArray jsonArrayconflicts = jsonObj.getAsJsonArray("_conflicts");
@@ -561,23 +554,23 @@ public class CustomWorkflowOutput {
         ConflictOutput.validateJsonElement(jsonArrayconflicts.get(i));
       };
       if (!jsonObj.get("_maintainerId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_maintainerId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_maintainerId").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if ((jsonObj.get("kind") != null && !jsonObj.get("kind").isJsonNull()) && !jsonObj.get("kind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
       if (jsonObj.get("stages") != null && !jsonObj.get("stages").isJsonNull()) {
         JsonArray jsonArraystages = jsonObj.getAsJsonArray("stages");
         if (jsonArraystages != null) {
           // ensure the json data is an array
           if (!jsonObj.get("stages").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `stages` to be an array in the JSON string but got `%s`", jsonObj.get("stages").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `stages` to be an array in the JSON string but got `%s`", jsonObj.get("stages").toString()));
           }
 
           // validate the optional field `stages` (array)
@@ -593,7 +586,7 @@ public class CustomWorkflowOutput {
         WorkflowTemplateMetadata.validateJsonElement(jsonObj.get("meta"));
       }
       if ((jsonObj.get("templateKey") != null && !jsonObj.get("templateKey").isJsonNull()) && !jsonObj.get("templateKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `templateKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("templateKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `templateKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("templateKey").toString()));
       }
   }
 
@@ -654,7 +647,7 @@ public class CustomWorkflowOutput {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -669,22 +662,22 @@ public class CustomWorkflowOutput {
     }
   }
 
- /**
-  * Create an instance of CustomWorkflowOutput given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CustomWorkflowOutput
-  * @throws IOException if the JSON string is invalid with respect to CustomWorkflowOutput
-  */
+  /**
+   * Create an instance of CustomWorkflowOutput given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CustomWorkflowOutput
+   * @throws IOException if the JSON string is invalid with respect to CustomWorkflowOutput
+   */
   public static CustomWorkflowOutput fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CustomWorkflowOutput.class);
   }
 
- /**
-  * Convert an instance of CustomWorkflowOutput to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CustomWorkflowOutput to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

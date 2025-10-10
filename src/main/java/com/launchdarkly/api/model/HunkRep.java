@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,120 +40,125 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * HunkRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class HunkRep {
   public static final String SERIALIZED_NAME_STARTING_LINE_NUMBER = "startingLineNumber";
   @SerializedName(SERIALIZED_NAME_STARTING_LINE_NUMBER)
+  @javax.annotation.Nonnull
   private Integer startingLineNumber;
 
   public static final String SERIALIZED_NAME_LINES = "lines";
   @SerializedName(SERIALIZED_NAME_LINES)
+  @javax.annotation.Nullable
   private String lines;
 
   public static final String SERIALIZED_NAME_PROJ_KEY = "projKey";
   @SerializedName(SERIALIZED_NAME_PROJ_KEY)
+  @javax.annotation.Nullable
   private String projKey;
 
   public static final String SERIALIZED_NAME_FLAG_KEY = "flagKey";
   @SerializedName(SERIALIZED_NAME_FLAG_KEY)
+  @javax.annotation.Nullable
   private String flagKey;
 
   public static final String SERIALIZED_NAME_ALIASES = "aliases";
   @SerializedName(SERIALIZED_NAME_ALIASES)
+  @javax.annotation.Nullable
   private List<String> aliases = new ArrayList<>();
 
   public HunkRep() {
   }
 
-  public HunkRep startingLineNumber(Integer startingLineNumber) {
+  public HunkRep startingLineNumber(@javax.annotation.Nonnull Integer startingLineNumber) {
     this.startingLineNumber = startingLineNumber;
     return this;
   }
 
-   /**
+  /**
    * Line number of beginning of code reference hunk
    * @return startingLineNumber
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getStartingLineNumber() {
     return startingLineNumber;
   }
 
-  public void setStartingLineNumber(Integer startingLineNumber) {
+  public void setStartingLineNumber(@javax.annotation.Nonnull Integer startingLineNumber) {
     this.startingLineNumber = startingLineNumber;
   }
 
 
-  public HunkRep lines(String lines) {
+  public HunkRep lines(@javax.annotation.Nullable String lines) {
     this.lines = lines;
     return this;
   }
 
-   /**
+  /**
    * Contextual lines of code that include the referenced feature flag
    * @return lines
-  **/
+   */
   @javax.annotation.Nullable
   public String getLines() {
     return lines;
   }
 
-  public void setLines(String lines) {
+  public void setLines(@javax.annotation.Nullable String lines) {
     this.lines = lines;
   }
 
 
-  public HunkRep projKey(String projKey) {
+  public HunkRep projKey(@javax.annotation.Nullable String projKey) {
     this.projKey = projKey;
     return this;
   }
 
-   /**
+  /**
    * The project key
    * @return projKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getProjKey() {
     return projKey;
   }
 
-  public void setProjKey(String projKey) {
+  public void setProjKey(@javax.annotation.Nullable String projKey) {
     this.projKey = projKey;
   }
 
 
-  public HunkRep flagKey(String flagKey) {
+  public HunkRep flagKey(@javax.annotation.Nullable String flagKey) {
     this.flagKey = flagKey;
     return this;
   }
 
-   /**
+  /**
    * The feature flag key
    * @return flagKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getFlagKey() {
     return flagKey;
   }
 
-  public void setFlagKey(String flagKey) {
+  public void setFlagKey(@javax.annotation.Nullable String flagKey) {
     this.flagKey = flagKey;
   }
 
 
-  public HunkRep aliases(List<String> aliases) {
+  public HunkRep aliases(@javax.annotation.Nullable List<String> aliases) {
     this.aliases = aliases;
     return this;
   }
@@ -165,16 +171,16 @@ public class HunkRep {
     return this;
   }
 
-   /**
+  /**
    * An array of flag key aliases
    * @return aliases
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getAliases() {
     return aliases;
   }
 
-  public void setAliases(List<String> aliases) {
+  public void setAliases(@javax.annotation.Nullable List<String> aliases) {
     this.aliases = aliases;
   }
 
@@ -277,50 +283,44 @@ public class HunkRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("startingLineNumber");
-    openapiFields.add("lines");
-    openapiFields.add("projKey");
-    openapiFields.add("flagKey");
-    openapiFields.add("aliases");
+    openapiFields = new HashSet<String>(Arrays.asList("startingLineNumber", "lines", "projKey", "flagKey", "aliases"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("startingLineNumber");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("startingLineNumber"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to HunkRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to HunkRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!HunkRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in HunkRep is not found in the empty JSON string", HunkRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in HunkRep is not found in the empty JSON string", HunkRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : HunkRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("lines") != null && !jsonObj.get("lines").isJsonNull()) && !jsonObj.get("lines").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `lines` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lines").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `lines` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lines").toString()));
       }
       if ((jsonObj.get("projKey") != null && !jsonObj.get("projKey").isJsonNull()) && !jsonObj.get("projKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `projKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `projKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projKey").toString()));
       }
       if ((jsonObj.get("flagKey") != null && !jsonObj.get("flagKey").isJsonNull()) && !jsonObj.get("flagKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `flagKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("flagKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `flagKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("flagKey").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("aliases") != null && !jsonObj.get("aliases").isJsonNull() && !jsonObj.get("aliases").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `aliases` to be an array in the JSON string but got `%s`", jsonObj.get("aliases").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `aliases` to be an array in the JSON string but got `%s`", jsonObj.get("aliases").toString()));
       }
   }
 
@@ -381,7 +381,7 @@ public class HunkRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -396,22 +396,22 @@ public class HunkRep {
     }
   }
 
- /**
-  * Create an instance of HunkRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of HunkRep
-  * @throws IOException if the JSON string is invalid with respect to HunkRep
-  */
+  /**
+   * Create an instance of HunkRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of HunkRep
+   * @throws IOException if the JSON string is invalid with respect to HunkRep
+   */
   public static HunkRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, HunkRep.class);
   }
 
- /**
-  * Convert an instance of HunkRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of HunkRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

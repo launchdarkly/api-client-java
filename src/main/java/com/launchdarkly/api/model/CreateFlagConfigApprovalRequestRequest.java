@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,94 +42,102 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * CreateFlagConfigApprovalRequestRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class CreateFlagConfigApprovalRequestRequest {
   public static final String SERIALIZED_NAME_COMMENT = "comment";
   @SerializedName(SERIALIZED_NAME_COMMENT)
+  @javax.annotation.Nullable
   private String comment;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nonnull
   private String description;
 
   public static final String SERIALIZED_NAME_INSTRUCTIONS = "instructions";
   @SerializedName(SERIALIZED_NAME_INSTRUCTIONS)
+  @javax.annotation.Nonnull
   private List<Map<String, Object>> instructions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NOTIFY_MEMBER_IDS = "notifyMemberIds";
   @SerializedName(SERIALIZED_NAME_NOTIFY_MEMBER_IDS)
+  @javax.annotation.Nullable
   private List<String> notifyMemberIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NOTIFY_TEAM_KEYS = "notifyTeamKeys";
   @SerializedName(SERIALIZED_NAME_NOTIFY_TEAM_KEYS)
+  @javax.annotation.Nullable
   private List<String> notifyTeamKeys = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_EXECUTION_DATE = "executionDate";
   @SerializedName(SERIALIZED_NAME_EXECUTION_DATE)
+  @javax.annotation.Nullable
   private Long executionDate;
 
   public static final String SERIALIZED_NAME_OPERATING_ON_ID = "operatingOnId";
   @SerializedName(SERIALIZED_NAME_OPERATING_ON_ID)
+  @javax.annotation.Nullable
   private String operatingOnId;
 
   public static final String SERIALIZED_NAME_INTEGRATION_CONFIG = "integrationConfig";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_CONFIG)
+  @javax.annotation.Nullable
   private Map<String, Object> integrationConfig = new HashMap<>();
 
   public CreateFlagConfigApprovalRequestRequest() {
   }
 
-  public CreateFlagConfigApprovalRequestRequest comment(String comment) {
+  public CreateFlagConfigApprovalRequestRequest comment(@javax.annotation.Nullable String comment) {
     this.comment = comment;
     return this;
   }
 
-   /**
+  /**
    * Optional comment describing the approval request
    * @return comment
-  **/
+   */
   @javax.annotation.Nullable
   public String getComment() {
     return comment;
   }
 
-  public void setComment(String comment) {
+  public void setComment(@javax.annotation.Nullable String comment) {
     this.comment = comment;
   }
 
 
-  public CreateFlagConfigApprovalRequestRequest description(String description) {
+  public CreateFlagConfigApprovalRequestRequest description(@javax.annotation.Nonnull String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * A brief description of the changes you&#39;re requesting
    * @return description
-  **/
+   */
   @javax.annotation.Nonnull
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nonnull String description) {
     this.description = description;
   }
 
 
-  public CreateFlagConfigApprovalRequestRequest instructions(List<Map<String, Object>> instructions) {
+  public CreateFlagConfigApprovalRequestRequest instructions(@javax.annotation.Nonnull List<Map<String, Object>> instructions) {
     this.instructions = instructions;
     return this;
   }
@@ -141,21 +150,21 @@ public class CreateFlagConfigApprovalRequestRequest {
     return this;
   }
 
-   /**
+  /**
    * Get instructions
    * @return instructions
-  **/
+   */
   @javax.annotation.Nonnull
   public List<Map<String, Object>> getInstructions() {
     return instructions;
   }
 
-  public void setInstructions(List<Map<String, Object>> instructions) {
+  public void setInstructions(@javax.annotation.Nonnull List<Map<String, Object>> instructions) {
     this.instructions = instructions;
   }
 
 
-  public CreateFlagConfigApprovalRequestRequest notifyMemberIds(List<String> notifyMemberIds) {
+  public CreateFlagConfigApprovalRequestRequest notifyMemberIds(@javax.annotation.Nullable List<String> notifyMemberIds) {
     this.notifyMemberIds = notifyMemberIds;
     return this;
   }
@@ -168,21 +177,21 @@ public class CreateFlagConfigApprovalRequestRequest {
     return this;
   }
 
-   /**
+  /**
    * An array of member IDs. These members are notified to review the approval request.
    * @return notifyMemberIds
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getNotifyMemberIds() {
     return notifyMemberIds;
   }
 
-  public void setNotifyMemberIds(List<String> notifyMemberIds) {
+  public void setNotifyMemberIds(@javax.annotation.Nullable List<String> notifyMemberIds) {
     this.notifyMemberIds = notifyMemberIds;
   }
 
 
-  public CreateFlagConfigApprovalRequestRequest notifyTeamKeys(List<String> notifyTeamKeys) {
+  public CreateFlagConfigApprovalRequestRequest notifyTeamKeys(@javax.annotation.Nullable List<String> notifyTeamKeys) {
     this.notifyTeamKeys = notifyTeamKeys;
     return this;
   }
@@ -195,59 +204,59 @@ public class CreateFlagConfigApprovalRequestRequest {
     return this;
   }
 
-   /**
+  /**
    * An array of team keys. The members of these teams are notified to review the approval request.
    * @return notifyTeamKeys
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getNotifyTeamKeys() {
     return notifyTeamKeys;
   }
 
-  public void setNotifyTeamKeys(List<String> notifyTeamKeys) {
+  public void setNotifyTeamKeys(@javax.annotation.Nullable List<String> notifyTeamKeys) {
     this.notifyTeamKeys = notifyTeamKeys;
   }
 
 
-  public CreateFlagConfigApprovalRequestRequest executionDate(Long executionDate) {
+  public CreateFlagConfigApprovalRequestRequest executionDate(@javax.annotation.Nullable Long executionDate) {
     this.executionDate = executionDate;
     return this;
   }
 
-   /**
+  /**
    * Get executionDate
    * @return executionDate
-  **/
+   */
   @javax.annotation.Nullable
   public Long getExecutionDate() {
     return executionDate;
   }
 
-  public void setExecutionDate(Long executionDate) {
+  public void setExecutionDate(@javax.annotation.Nullable Long executionDate) {
     this.executionDate = executionDate;
   }
 
 
-  public CreateFlagConfigApprovalRequestRequest operatingOnId(String operatingOnId) {
+  public CreateFlagConfigApprovalRequestRequest operatingOnId(@javax.annotation.Nullable String operatingOnId) {
     this.operatingOnId = operatingOnId;
     return this;
   }
 
-   /**
+  /**
    * The ID of a scheduled change. Include this if your &lt;code&gt;instructions&lt;/code&gt; include editing or deleting a scheduled change.
    * @return operatingOnId
-  **/
+   */
   @javax.annotation.Nullable
   public String getOperatingOnId() {
     return operatingOnId;
   }
 
-  public void setOperatingOnId(String operatingOnId) {
+  public void setOperatingOnId(@javax.annotation.Nullable String operatingOnId) {
     this.operatingOnId = operatingOnId;
   }
 
 
-  public CreateFlagConfigApprovalRequestRequest integrationConfig(Map<String, Object> integrationConfig) {
+  public CreateFlagConfigApprovalRequestRequest integrationConfig(@javax.annotation.Nullable Map<String, Object> integrationConfig) {
     this.integrationConfig = integrationConfig;
     return this;
   }
@@ -260,16 +269,16 @@ public class CreateFlagConfigApprovalRequestRequest {
     return this;
   }
 
-   /**
+  /**
    * Get integrationConfig
    * @return integrationConfig
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Object> getIntegrationConfig() {
     return integrationConfig;
   }
 
-  public void setIntegrationConfig(Map<String, Object> integrationConfig) {
+  public void setIntegrationConfig(@javax.annotation.Nullable Map<String, Object> integrationConfig) {
     this.integrationConfig = integrationConfig;
   }
 
@@ -378,64 +387,54 @@ public class CreateFlagConfigApprovalRequestRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("comment");
-    openapiFields.add("description");
-    openapiFields.add("instructions");
-    openapiFields.add("notifyMemberIds");
-    openapiFields.add("notifyTeamKeys");
-    openapiFields.add("executionDate");
-    openapiFields.add("operatingOnId");
-    openapiFields.add("integrationConfig");
+    openapiFields = new HashSet<String>(Arrays.asList("comment", "description", "instructions", "notifyMemberIds", "notifyTeamKeys", "executionDate", "operatingOnId", "integrationConfig"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("description");
-    openapiRequiredFields.add("instructions");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("description", "instructions"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to CreateFlagConfigApprovalRequestRequest
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CreateFlagConfigApprovalRequestRequest
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CreateFlagConfigApprovalRequestRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CreateFlagConfigApprovalRequestRequest is not found in the empty JSON string", CreateFlagConfigApprovalRequestRequest.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in CreateFlagConfigApprovalRequestRequest is not found in the empty JSON string", CreateFlagConfigApprovalRequestRequest.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : CreateFlagConfigApprovalRequestRequest.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("comment") != null && !jsonObj.get("comment").isJsonNull()) && !jsonObj.get("comment").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `comment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comment").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `comment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comment").toString()));
       }
       if (!jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("instructions") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("instructions").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `instructions` to be an array in the JSON string but got `%s`", jsonObj.get("instructions").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `instructions` to be an array in the JSON string but got `%s`", jsonObj.get("instructions").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("notifyMemberIds") != null && !jsonObj.get("notifyMemberIds").isJsonNull() && !jsonObj.get("notifyMemberIds").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `notifyMemberIds` to be an array in the JSON string but got `%s`", jsonObj.get("notifyMemberIds").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifyMemberIds` to be an array in the JSON string but got `%s`", jsonObj.get("notifyMemberIds").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("notifyTeamKeys") != null && !jsonObj.get("notifyTeamKeys").isJsonNull() && !jsonObj.get("notifyTeamKeys").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `notifyTeamKeys` to be an array in the JSON string but got `%s`", jsonObj.get("notifyTeamKeys").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifyTeamKeys` to be an array in the JSON string but got `%s`", jsonObj.get("notifyTeamKeys").toString()));
       }
       if ((jsonObj.get("operatingOnId") != null && !jsonObj.get("operatingOnId").isJsonNull()) && !jsonObj.get("operatingOnId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `operatingOnId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("operatingOnId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `operatingOnId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("operatingOnId").toString()));
       }
   }
 
@@ -496,7 +495,7 @@ public class CreateFlagConfigApprovalRequestRequest {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -511,22 +510,22 @@ public class CreateFlagConfigApprovalRequestRequest {
     }
   }
 
- /**
-  * Create an instance of CreateFlagConfigApprovalRequestRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CreateFlagConfigApprovalRequestRequest
-  * @throws IOException if the JSON string is invalid with respect to CreateFlagConfigApprovalRequestRequest
-  */
+  /**
+   * Create an instance of CreateFlagConfigApprovalRequestRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CreateFlagConfigApprovalRequestRequest
+   * @throws IOException if the JSON string is invalid with respect to CreateFlagConfigApprovalRequestRequest
+   */
   public static CreateFlagConfigApprovalRequestRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CreateFlagConfigApprovalRequestRequest.class);
   }
 
- /**
-  * Convert an instance of CreateFlagConfigApprovalRequestRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CreateFlagConfigApprovalRequestRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,65 +38,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * GenerateWarehouseDestinationKeyPairPostRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class GenerateWarehouseDestinationKeyPairPostRep {
   public static final String SERIALIZED_NAME_PUBLIC_KEY = "public_key";
   @SerializedName(SERIALIZED_NAME_PUBLIC_KEY)
+  @javax.annotation.Nullable
   private String publicKey;
 
   public static final String SERIALIZED_NAME_PUBLIC_KEY_PKCS8 = "public_key_pkcs8";
   @SerializedName(SERIALIZED_NAME_PUBLIC_KEY_PKCS8)
+  @javax.annotation.Nullable
   private String publicKeyPkcs8;
 
   public GenerateWarehouseDestinationKeyPairPostRep() {
   }
 
-  public GenerateWarehouseDestinationKeyPairPostRep publicKey(String publicKey) {
+  public GenerateWarehouseDestinationKeyPairPostRep publicKey(@javax.annotation.Nullable String publicKey) {
     this.publicKey = publicKey;
     return this;
   }
 
-   /**
+  /**
    * The public key used by LaunchDarkly
    * @return publicKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getPublicKey() {
     return publicKey;
   }
 
-  public void setPublicKey(String publicKey) {
+  public void setPublicKey(@javax.annotation.Nullable String publicKey) {
     this.publicKey = publicKey;
   }
 
 
-  public GenerateWarehouseDestinationKeyPairPostRep publicKeyPkcs8(String publicKeyPkcs8) {
+  public GenerateWarehouseDestinationKeyPairPostRep publicKeyPkcs8(@javax.annotation.Nullable String publicKeyPkcs8) {
     this.publicKeyPkcs8 = publicKeyPkcs8;
     return this;
   }
 
-   /**
+  /**
    * The public key to assign in your Snowflake worksheet
    * @return publicKeyPkcs8
-  **/
+   */
   @javax.annotation.Nullable
   public String getPublicKeyPkcs8() {
     return publicKeyPkcs8;
   }
 
-  public void setPublicKeyPkcs8(String publicKeyPkcs8) {
+  public void setPublicKeyPkcs8(@javax.annotation.Nullable String publicKeyPkcs8) {
     this.publicKeyPkcs8 = publicKeyPkcs8;
   }
 
@@ -192,32 +195,30 @@ public class GenerateWarehouseDestinationKeyPairPostRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("public_key");
-    openapiFields.add("public_key_pkcs8");
+    openapiFields = new HashSet<String>(Arrays.asList("public_key", "public_key_pkcs8"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to GenerateWarehouseDestinationKeyPairPostRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to GenerateWarehouseDestinationKeyPairPostRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!GenerateWarehouseDestinationKeyPairPostRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in GenerateWarehouseDestinationKeyPairPostRep is not found in the empty JSON string", GenerateWarehouseDestinationKeyPairPostRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in GenerateWarehouseDestinationKeyPairPostRep is not found in the empty JSON string", GenerateWarehouseDestinationKeyPairPostRep.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("public_key") != null && !jsonObj.get("public_key").isJsonNull()) && !jsonObj.get("public_key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `public_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("public_key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `public_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("public_key").toString()));
       }
       if ((jsonObj.get("public_key_pkcs8") != null && !jsonObj.get("public_key_pkcs8").isJsonNull()) && !jsonObj.get("public_key_pkcs8").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `public_key_pkcs8` to be a primitive type in the JSON string but got `%s`", jsonObj.get("public_key_pkcs8").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `public_key_pkcs8` to be a primitive type in the JSON string but got `%s`", jsonObj.get("public_key_pkcs8").toString()));
       }
   }
 
@@ -278,7 +279,7 @@ public class GenerateWarehouseDestinationKeyPairPostRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -293,22 +294,22 @@ public class GenerateWarehouseDestinationKeyPairPostRep {
     }
   }
 
- /**
-  * Create an instance of GenerateWarehouseDestinationKeyPairPostRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of GenerateWarehouseDestinationKeyPairPostRep
-  * @throws IOException if the JSON string is invalid with respect to GenerateWarehouseDestinationKeyPairPostRep
-  */
+  /**
+   * Create an instance of GenerateWarehouseDestinationKeyPairPostRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of GenerateWarehouseDestinationKeyPairPostRep
+   * @throws IOException if the JSON string is invalid with respect to GenerateWarehouseDestinationKeyPairPostRep
+   */
   public static GenerateWarehouseDestinationKeyPairPostRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, GenerateWarehouseDestinationKeyPairPostRep.class);
   }
 
- /**
-  * Convert an instance of GenerateWarehouseDestinationKeyPairPostRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of GenerateWarehouseDestinationKeyPairPostRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

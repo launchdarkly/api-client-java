@@ -92,7 +92,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Integration delivery configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -102,7 +103,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createIntegrationDeliveryConfigurationCall(String projectKey, String environmentKey, String integrationKey, IntegrationDeliveryConfigurationPost integrationDeliveryConfigurationPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createIntegrationDeliveryConfigurationCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull IntegrationDeliveryConfigurationPost integrationDeliveryConfigurationPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -151,7 +152,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createIntegrationDeliveryConfigurationValidateBeforeCall(String projectKey, String environmentKey, String integrationKey, IntegrationDeliveryConfigurationPost integrationDeliveryConfigurationPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createIntegrationDeliveryConfigurationValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull IntegrationDeliveryConfigurationPost integrationDeliveryConfigurationPost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling createIntegrationDeliveryConfiguration(Async)");
@@ -186,7 +187,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return IntegrationDeliveryConfiguration
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Integration delivery configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -196,7 +198,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public IntegrationDeliveryConfiguration createIntegrationDeliveryConfiguration(String projectKey, String environmentKey, String integrationKey, IntegrationDeliveryConfigurationPost integrationDeliveryConfigurationPost) throws ApiException {
+    public IntegrationDeliveryConfiguration createIntegrationDeliveryConfiguration(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull IntegrationDeliveryConfigurationPost integrationDeliveryConfigurationPost) throws ApiException {
         ApiResponse<IntegrationDeliveryConfiguration> localVarResp = createIntegrationDeliveryConfigurationWithHttpInfo(projectKey, environmentKey, integrationKey, integrationDeliveryConfigurationPost);
         return localVarResp.getData();
     }
@@ -211,7 +213,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return ApiResponse&lt;IntegrationDeliveryConfiguration&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Integration delivery configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -221,7 +224,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IntegrationDeliveryConfiguration> createIntegrationDeliveryConfigurationWithHttpInfo(String projectKey, String environmentKey, String integrationKey, IntegrationDeliveryConfigurationPost integrationDeliveryConfigurationPost) throws ApiException {
+    public ApiResponse<IntegrationDeliveryConfiguration> createIntegrationDeliveryConfigurationWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull IntegrationDeliveryConfigurationPost integrationDeliveryConfigurationPost) throws ApiException {
         okhttp3.Call localVarCall = createIntegrationDeliveryConfigurationValidateBeforeCall(projectKey, environmentKey, integrationKey, integrationDeliveryConfigurationPost, null);
         Type localVarReturnType = new TypeToken<IntegrationDeliveryConfiguration>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -238,7 +241,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Integration delivery configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -248,7 +252,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createIntegrationDeliveryConfigurationAsync(String projectKey, String environmentKey, String integrationKey, IntegrationDeliveryConfigurationPost integrationDeliveryConfigurationPost, final ApiCallback<IntegrationDeliveryConfiguration> _callback) throws ApiException {
+    public okhttp3.Call createIntegrationDeliveryConfigurationAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull IntegrationDeliveryConfigurationPost integrationDeliveryConfigurationPost, final ApiCallback<IntegrationDeliveryConfiguration> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createIntegrationDeliveryConfigurationValidateBeforeCall(projectKey, environmentKey, integrationKey, integrationDeliveryConfigurationPost, _callback);
         Type localVarReturnType = new TypeToken<IntegrationDeliveryConfiguration>(){}.getType();
@@ -265,7 +269,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -275,7 +280,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteIntegrationDeliveryConfigurationCall(String projectKey, String environmentKey, String integrationKey, String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteIntegrationDeliveryConfigurationCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -324,7 +329,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteIntegrationDeliveryConfigurationValidateBeforeCall(String projectKey, String environmentKey, String integrationKey, String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteIntegrationDeliveryConfigurationValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling deleteIntegrationDeliveryConfiguration(Async)");
@@ -358,7 +363,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @param id The configuration ID (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -368,7 +374,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteIntegrationDeliveryConfiguration(String projectKey, String environmentKey, String integrationKey, String id) throws ApiException {
+    public void deleteIntegrationDeliveryConfiguration(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id) throws ApiException {
         deleteIntegrationDeliveryConfigurationWithHttpInfo(projectKey, environmentKey, integrationKey, id);
     }
 
@@ -382,7 +388,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -392,7 +399,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteIntegrationDeliveryConfigurationWithHttpInfo(String projectKey, String environmentKey, String integrationKey, String id) throws ApiException {
+    public ApiResponse<Void> deleteIntegrationDeliveryConfigurationWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteIntegrationDeliveryConfigurationValidateBeforeCall(projectKey, environmentKey, integrationKey, id, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -408,7 +415,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -418,7 +426,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteIntegrationDeliveryConfigurationAsync(String projectKey, String environmentKey, String integrationKey, String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteIntegrationDeliveryConfigurationAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteIntegrationDeliveryConfigurationValidateBeforeCall(projectKey, environmentKey, integrationKey, id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -432,7 +440,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration delivery configuration collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -441,7 +450,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getIntegrationDeliveryConfigurationByEnvironmentCall(String projectKey, String environmentKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getIntegrationDeliveryConfigurationByEnvironmentCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -488,7 +497,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getIntegrationDeliveryConfigurationByEnvironmentValidateBeforeCall(String projectKey, String environmentKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getIntegrationDeliveryConfigurationByEnvironmentValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getIntegrationDeliveryConfigurationByEnvironment(Async)");
@@ -511,7 +520,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return IntegrationDeliveryConfigurationCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration delivery configuration collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -520,7 +530,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public IntegrationDeliveryConfigurationCollection getIntegrationDeliveryConfigurationByEnvironment(String projectKey, String environmentKey) throws ApiException {
+    public IntegrationDeliveryConfigurationCollection getIntegrationDeliveryConfigurationByEnvironment(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey) throws ApiException {
         ApiResponse<IntegrationDeliveryConfigurationCollection> localVarResp = getIntegrationDeliveryConfigurationByEnvironmentWithHttpInfo(projectKey, environmentKey);
         return localVarResp.getData();
     }
@@ -533,7 +543,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return ApiResponse&lt;IntegrationDeliveryConfigurationCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration delivery configuration collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -542,7 +553,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IntegrationDeliveryConfigurationCollection> getIntegrationDeliveryConfigurationByEnvironmentWithHttpInfo(String projectKey, String environmentKey) throws ApiException {
+    public ApiResponse<IntegrationDeliveryConfigurationCollection> getIntegrationDeliveryConfigurationByEnvironmentWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey) throws ApiException {
         okhttp3.Call localVarCall = getIntegrationDeliveryConfigurationByEnvironmentValidateBeforeCall(projectKey, environmentKey, null);
         Type localVarReturnType = new TypeToken<IntegrationDeliveryConfigurationCollection>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -557,7 +568,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration delivery configuration collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -566,7 +578,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getIntegrationDeliveryConfigurationByEnvironmentAsync(String projectKey, String environmentKey, final ApiCallback<IntegrationDeliveryConfigurationCollection> _callback) throws ApiException {
+    public okhttp3.Call getIntegrationDeliveryConfigurationByEnvironmentAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback<IntegrationDeliveryConfigurationCollection> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getIntegrationDeliveryConfigurationByEnvironmentValidateBeforeCall(projectKey, environmentKey, _callback);
         Type localVarReturnType = new TypeToken<IntegrationDeliveryConfigurationCollection>(){}.getType();
@@ -583,14 +595,15 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration delivery configuration response </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getIntegrationDeliveryConfigurationByIdCall(String projectKey, String environmentKey, String integrationKey, String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getIntegrationDeliveryConfigurationByIdCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -639,7 +652,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getIntegrationDeliveryConfigurationByIdValidateBeforeCall(String projectKey, String environmentKey, String integrationKey, String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getIntegrationDeliveryConfigurationByIdValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getIntegrationDeliveryConfigurationById(Async)");
@@ -674,14 +687,15 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return IntegrationDeliveryConfiguration
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration delivery configuration response </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public IntegrationDeliveryConfiguration getIntegrationDeliveryConfigurationById(String projectKey, String environmentKey, String integrationKey, String id) throws ApiException {
+    public IntegrationDeliveryConfiguration getIntegrationDeliveryConfigurationById(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id) throws ApiException {
         ApiResponse<IntegrationDeliveryConfiguration> localVarResp = getIntegrationDeliveryConfigurationByIdWithHttpInfo(projectKey, environmentKey, integrationKey, id);
         return localVarResp.getData();
     }
@@ -696,14 +710,15 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return ApiResponse&lt;IntegrationDeliveryConfiguration&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration delivery configuration response </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IntegrationDeliveryConfiguration> getIntegrationDeliveryConfigurationByIdWithHttpInfo(String projectKey, String environmentKey, String integrationKey, String id) throws ApiException {
+    public ApiResponse<IntegrationDeliveryConfiguration> getIntegrationDeliveryConfigurationByIdWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getIntegrationDeliveryConfigurationByIdValidateBeforeCall(projectKey, environmentKey, integrationKey, id, null);
         Type localVarReturnType = new TypeToken<IntegrationDeliveryConfiguration>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -720,14 +735,15 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration delivery configuration response </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getIntegrationDeliveryConfigurationByIdAsync(String projectKey, String environmentKey, String integrationKey, String id, final ApiCallback<IntegrationDeliveryConfiguration> _callback) throws ApiException {
+    public okhttp3.Call getIntegrationDeliveryConfigurationByIdAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, final ApiCallback<IntegrationDeliveryConfiguration> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getIntegrationDeliveryConfigurationByIdValidateBeforeCall(projectKey, environmentKey, integrationKey, id, _callback);
         Type localVarReturnType = new TypeToken<IntegrationDeliveryConfiguration>(){}.getType();
@@ -740,7 +756,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration delivery configuration collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -805,7 +822,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return IntegrationDeliveryConfigurationCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration delivery configuration collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -825,7 +843,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return ApiResponse&lt;IntegrationDeliveryConfigurationCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration delivery configuration collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -847,7 +866,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration delivery configuration collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -874,7 +894,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration delivery configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -885,7 +906,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchIntegrationDeliveryConfigurationCall(String projectKey, String environmentKey, String integrationKey, String id, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchIntegrationDeliveryConfigurationCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -935,7 +956,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchIntegrationDeliveryConfigurationValidateBeforeCall(String projectKey, String environmentKey, String integrationKey, String id, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchIntegrationDeliveryConfigurationValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling patchIntegrationDeliveryConfiguration(Async)");
@@ -976,7 +997,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return IntegrationDeliveryConfiguration
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration delivery configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -987,7 +1009,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public IntegrationDeliveryConfiguration patchIntegrationDeliveryConfiguration(String projectKey, String environmentKey, String integrationKey, String id, List<PatchOperation> patchOperation) throws ApiException {
+    public IntegrationDeliveryConfiguration patchIntegrationDeliveryConfiguration(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         ApiResponse<IntegrationDeliveryConfiguration> localVarResp = patchIntegrationDeliveryConfigurationWithHttpInfo(projectKey, environmentKey, integrationKey, id, patchOperation);
         return localVarResp.getData();
     }
@@ -1003,7 +1025,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return ApiResponse&lt;IntegrationDeliveryConfiguration&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration delivery configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1014,7 +1037,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IntegrationDeliveryConfiguration> patchIntegrationDeliveryConfigurationWithHttpInfo(String projectKey, String environmentKey, String integrationKey, String id, List<PatchOperation> patchOperation) throws ApiException {
+    public ApiResponse<IntegrationDeliveryConfiguration> patchIntegrationDeliveryConfigurationWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         okhttp3.Call localVarCall = patchIntegrationDeliveryConfigurationValidateBeforeCall(projectKey, environmentKey, integrationKey, id, patchOperation, null);
         Type localVarReturnType = new TypeToken<IntegrationDeliveryConfiguration>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1032,7 +1055,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration delivery configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1043,7 +1067,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchIntegrationDeliveryConfigurationAsync(String projectKey, String environmentKey, String integrationKey, String id, List<PatchOperation> patchOperation, final ApiCallback<IntegrationDeliveryConfiguration> _callback) throws ApiException {
+    public okhttp3.Call patchIntegrationDeliveryConfigurationAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback<IntegrationDeliveryConfiguration> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchIntegrationDeliveryConfigurationValidateBeforeCall(projectKey, environmentKey, integrationKey, id, patchOperation, _callback);
         Type localVarReturnType = new TypeToken<IntegrationDeliveryConfiguration>(){}.getType();
@@ -1060,7 +1084,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration delivery configuration validation response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1070,7 +1095,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call validateIntegrationDeliveryConfigurationCall(String projectKey, String environmentKey, String integrationKey, String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call validateIntegrationDeliveryConfigurationCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1119,7 +1144,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call validateIntegrationDeliveryConfigurationValidateBeforeCall(String projectKey, String environmentKey, String integrationKey, String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call validateIntegrationDeliveryConfigurationValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling validateIntegrationDeliveryConfiguration(Async)");
@@ -1154,7 +1179,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return IntegrationDeliveryConfigurationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration delivery configuration validation response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1164,7 +1190,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public IntegrationDeliveryConfigurationResponse validateIntegrationDeliveryConfiguration(String projectKey, String environmentKey, String integrationKey, String id) throws ApiException {
+    public IntegrationDeliveryConfigurationResponse validateIntegrationDeliveryConfiguration(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id) throws ApiException {
         ApiResponse<IntegrationDeliveryConfigurationResponse> localVarResp = validateIntegrationDeliveryConfigurationWithHttpInfo(projectKey, environmentKey, integrationKey, id);
         return localVarResp.getData();
     }
@@ -1179,7 +1205,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return ApiResponse&lt;IntegrationDeliveryConfigurationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration delivery configuration validation response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1189,7 +1216,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IntegrationDeliveryConfigurationResponse> validateIntegrationDeliveryConfigurationWithHttpInfo(String projectKey, String environmentKey, String integrationKey, String id) throws ApiException {
+    public ApiResponse<IntegrationDeliveryConfigurationResponse> validateIntegrationDeliveryConfigurationWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = validateIntegrationDeliveryConfigurationValidateBeforeCall(projectKey, environmentKey, integrationKey, id, null);
         Type localVarReturnType = new TypeToken<IntegrationDeliveryConfigurationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1206,7 +1233,8 @@ public class IntegrationDeliveryConfigurationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration delivery configuration validation response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1216,7 +1244,7 @@ public class IntegrationDeliveryConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call validateIntegrationDeliveryConfigurationAsync(String projectKey, String environmentKey, String integrationKey, String id, final ApiCallback<IntegrationDeliveryConfigurationResponse> _callback) throws ApiException {
+    public okhttp3.Call validateIntegrationDeliveryConfigurationAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String id, final ApiCallback<IntegrationDeliveryConfigurationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = validateIntegrationDeliveryConfigurationValidateBeforeCall(projectKey, environmentKey, integrationKey, id, _callback);
         Type localVarReturnType = new TypeToken<IntegrationDeliveryConfigurationResponse>(){}.getType();

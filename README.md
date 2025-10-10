@@ -8,8 +8,8 @@ This client library is only compatible with the latest version of our REST API. 
 
 LaunchDarkly REST API
 - API version: 2.0
-  - Build date: 2025-10-09T16:56:19.516161Z[Etc/UTC]
-  - Generator version: 7.5.0
+  - Build date: 2025-10-10T14:31:47.006820Z[Etc/UTC]
+  - Generator version: 7.16.0
 
 This documentation describes LaunchDarkly's REST API. To access the complete OpenAPI spec directly, use [Get OpenAPI spec](https://launchdarkly.com/docs/api/other/get-openapi-spec).
 
@@ -527,7 +527,7 @@ import com.launchdarkly.api.ApiClient;
 import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
-import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.model.*;
 import com.launchdarkly.api.api.AccessTokensApi;
 
 public class Example {

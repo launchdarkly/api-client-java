@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,74 +41,77 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ValidationFailedErrorRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ValidationFailedErrorRep {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
+  @javax.annotation.Nonnull
   private String code;
 
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
+  @javax.annotation.Nonnull
   private String message;
 
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
+  @javax.annotation.Nonnull
   private List<FailureReasonRep> errors = new ArrayList<>();
 
   public ValidationFailedErrorRep() {
   }
 
-  public ValidationFailedErrorRep code(String code) {
+  public ValidationFailedErrorRep code(@javax.annotation.Nonnull String code) {
     this.code = code;
     return this;
   }
 
-   /**
+  /**
    * Specific error code encountered
    * @return code
-  **/
+   */
   @javax.annotation.Nonnull
   public String getCode() {
     return code;
   }
 
-  public void setCode(String code) {
+  public void setCode(@javax.annotation.Nonnull String code) {
     this.code = code;
   }
 
 
-  public ValidationFailedErrorRep message(String message) {
+  public ValidationFailedErrorRep message(@javax.annotation.Nonnull String message) {
     this.message = message;
     return this;
   }
 
-   /**
+  /**
    * Description of the error
    * @return message
-  **/
+   */
   @javax.annotation.Nonnull
   public String getMessage() {
     return message;
   }
 
-  public void setMessage(String message) {
+  public void setMessage(@javax.annotation.Nonnull String message) {
     this.message = message;
   }
 
 
-  public ValidationFailedErrorRep errors(List<FailureReasonRep> errors) {
+  public ValidationFailedErrorRep errors(@javax.annotation.Nonnull List<FailureReasonRep> errors) {
     this.errors = errors;
     return this;
   }
@@ -120,16 +124,16 @@ public class ValidationFailedErrorRep {
     return this;
   }
 
-   /**
+  /**
    * List of validation errors
    * @return errors
-  **/
+   */
   @javax.annotation.Nonnull
   public List<FailureReasonRep> getErrors() {
     return errors;
   }
 
-  public void setErrors(List<FailureReasonRep> errors) {
+  public void setErrors(@javax.annotation.Nonnull List<FailureReasonRep> errors) {
     this.errors = errors;
   }
 
@@ -228,47 +232,41 @@ public class ValidationFailedErrorRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("code");
-    openapiFields.add("message");
-    openapiFields.add("errors");
+    openapiFields = new HashSet<String>(Arrays.asList("code", "message", "errors"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("code");
-    openapiRequiredFields.add("message");
-    openapiRequiredFields.add("errors");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("code", "message", "errors"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ValidationFailedErrorRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ValidationFailedErrorRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ValidationFailedErrorRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ValidationFailedErrorRep is not found in the empty JSON string", ValidationFailedErrorRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ValidationFailedErrorRep is not found in the empty JSON string", ValidationFailedErrorRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ValidationFailedErrorRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("code").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("code").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("code").toString()));
       }
       if (!jsonObj.get("message").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
       }
       // ensure the json data is an array
       if (!jsonObj.get("errors").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `errors` to be an array in the JSON string but got `%s`", jsonObj.get("errors").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `errors` to be an array in the JSON string but got `%s`", jsonObj.get("errors").toString()));
       }
 
       JsonArray jsonArrayerrors = jsonObj.getAsJsonArray("errors");
@@ -335,7 +333,7 @@ public class ValidationFailedErrorRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -350,22 +348,22 @@ public class ValidationFailedErrorRep {
     }
   }
 
- /**
-  * Create an instance of ValidationFailedErrorRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ValidationFailedErrorRep
-  * @throws IOException if the JSON string is invalid with respect to ValidationFailedErrorRep
-  */
+  /**
+   * Create an instance of ValidationFailedErrorRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ValidationFailedErrorRep
+   * @throws IOException if the JSON string is invalid with respect to ValidationFailedErrorRep
+   */
   public static ValidationFailedErrorRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ValidationFailedErrorRep.class);
   }
 
- /**
-  * Convert an instance of ValidationFailedErrorRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ValidationFailedErrorRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

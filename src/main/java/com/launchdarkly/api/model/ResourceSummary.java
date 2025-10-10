@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,134 +38,139 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ResourceSummary
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ResourceSummary {
   public static final String SERIALIZED_NAME_FLAG_COUNT = "flagCount";
   @SerializedName(SERIALIZED_NAME_FLAG_COUNT)
+  @javax.annotation.Nonnull
   private Integer flagCount;
 
   public static final String SERIALIZED_NAME_SEGMENT_COUNT = "segmentCount";
   @SerializedName(SERIALIZED_NAME_SEGMENT_COUNT)
+  @javax.annotation.Nullable
   private Integer segmentCount;
 
   public static final String SERIALIZED_NAME_METRIC_COUNT = "metricCount";
   @SerializedName(SERIALIZED_NAME_METRIC_COUNT)
+  @javax.annotation.Nullable
   private Integer metricCount;
 
   public static final String SERIALIZED_NAME_AI_CONFIG_COUNT = "aiConfigCount";
   @SerializedName(SERIALIZED_NAME_AI_CONFIG_COUNT)
+  @javax.annotation.Nullable
   private Integer aiConfigCount;
 
   public static final String SERIALIZED_NAME_TOTAL_COUNT = "totalCount";
   @SerializedName(SERIALIZED_NAME_TOTAL_COUNT)
+  @javax.annotation.Nonnull
   private Integer totalCount;
 
   public ResourceSummary() {
   }
 
-  public ResourceSummary flagCount(Integer flagCount) {
+  public ResourceSummary flagCount(@javax.annotation.Nonnull Integer flagCount) {
     this.flagCount = flagCount;
     return this;
   }
 
-   /**
+  /**
    * Get flagCount
    * @return flagCount
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getFlagCount() {
     return flagCount;
   }
 
-  public void setFlagCount(Integer flagCount) {
+  public void setFlagCount(@javax.annotation.Nonnull Integer flagCount) {
     this.flagCount = flagCount;
   }
 
 
-  public ResourceSummary segmentCount(Integer segmentCount) {
+  public ResourceSummary segmentCount(@javax.annotation.Nullable Integer segmentCount) {
     this.segmentCount = segmentCount;
     return this;
   }
 
-   /**
+  /**
    * Get segmentCount
    * @return segmentCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getSegmentCount() {
     return segmentCount;
   }
 
-  public void setSegmentCount(Integer segmentCount) {
+  public void setSegmentCount(@javax.annotation.Nullable Integer segmentCount) {
     this.segmentCount = segmentCount;
   }
 
 
-  public ResourceSummary metricCount(Integer metricCount) {
+  public ResourceSummary metricCount(@javax.annotation.Nullable Integer metricCount) {
     this.metricCount = metricCount;
     return this;
   }
 
-   /**
+  /**
    * Get metricCount
    * @return metricCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getMetricCount() {
     return metricCount;
   }
 
-  public void setMetricCount(Integer metricCount) {
+  public void setMetricCount(@javax.annotation.Nullable Integer metricCount) {
     this.metricCount = metricCount;
   }
 
 
-  public ResourceSummary aiConfigCount(Integer aiConfigCount) {
+  public ResourceSummary aiConfigCount(@javax.annotation.Nullable Integer aiConfigCount) {
     this.aiConfigCount = aiConfigCount;
     return this;
   }
 
-   /**
+  /**
    * Get aiConfigCount
    * @return aiConfigCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getAiConfigCount() {
     return aiConfigCount;
   }
 
-  public void setAiConfigCount(Integer aiConfigCount) {
+  public void setAiConfigCount(@javax.annotation.Nullable Integer aiConfigCount) {
     this.aiConfigCount = aiConfigCount;
   }
 
 
-  public ResourceSummary totalCount(Integer totalCount) {
+  public ResourceSummary totalCount(@javax.annotation.Nonnull Integer totalCount) {
     this.totalCount = totalCount;
     return this;
   }
 
-   /**
+  /**
    * Get totalCount
    * @return totalCount
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getTotalCount() {
     return totalCount;
   }
 
-  public void setTotalCount(Integer totalCount) {
+  public void setTotalCount(@javax.annotation.Nonnull Integer totalCount) {
     this.totalCount = totalCount;
   }
 
@@ -267,36 +273,29 @@ public class ResourceSummary {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("flagCount");
-    openapiFields.add("segmentCount");
-    openapiFields.add("metricCount");
-    openapiFields.add("aiConfigCount");
-    openapiFields.add("totalCount");
+    openapiFields = new HashSet<String>(Arrays.asList("flagCount", "segmentCount", "metricCount", "aiConfigCount", "totalCount"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("flagCount");
-    openapiRequiredFields.add("totalCount");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("flagCount", "totalCount"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ResourceSummary
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ResourceSummary
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ResourceSummary.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ResourceSummary is not found in the empty JSON string", ResourceSummary.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ResourceSummary is not found in the empty JSON string", ResourceSummary.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ResourceSummary.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -359,7 +358,7 @@ public class ResourceSummary {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -374,22 +373,22 @@ public class ResourceSummary {
     }
   }
 
- /**
-  * Create an instance of ResourceSummary given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ResourceSummary
-  * @throws IOException if the JSON string is invalid with respect to ResourceSummary
-  */
+  /**
+   * Create an instance of ResourceSummary given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ResourceSummary
+   * @throws IOException if the JSON string is invalid with respect to ResourceSummary
+   */
   public static ResourceSummary fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ResourceSummary.class);
   }
 
- /**
-  * Convert an instance of ResourceSummary to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ResourceSummary to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

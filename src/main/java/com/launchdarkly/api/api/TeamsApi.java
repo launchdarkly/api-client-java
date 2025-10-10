@@ -93,7 +93,8 @@ public class TeamsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -101,7 +102,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteTeamCall(String teamKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteTeamCall(@javax.annotation.Nonnull String teamKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -147,7 +148,7 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteTeamValidateBeforeCall(String teamKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteTeamValidateBeforeCall(@javax.annotation.Nonnull String teamKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'teamKey' is set
         if (teamKey == null) {
             throw new ApiException("Missing the required parameter 'teamKey' when calling deleteTeam(Async)");
@@ -163,7 +164,8 @@ public class TeamsApi {
      * @param teamKey The team key (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -171,7 +173,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteTeam(String teamKey) throws ApiException {
+    public void deleteTeam(@javax.annotation.Nonnull String teamKey) throws ApiException {
         deleteTeamWithHttpInfo(teamKey);
     }
 
@@ -182,7 +184,8 @@ public class TeamsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -190,7 +193,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteTeamWithHttpInfo(String teamKey) throws ApiException {
+    public ApiResponse<Void> deleteTeamWithHttpInfo(@javax.annotation.Nonnull String teamKey) throws ApiException {
         okhttp3.Call localVarCall = deleteTeamValidateBeforeCall(teamKey, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -203,7 +206,8 @@ public class TeamsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -211,7 +215,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteTeamAsync(String teamKey, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteTeamAsync(@javax.annotation.Nonnull String teamKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteTeamValidateBeforeCall(teamKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -225,7 +229,8 @@ public class TeamsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Teams response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -236,7 +241,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTeamCall(String teamKey, String expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getTeamCall(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -286,7 +291,7 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTeamValidateBeforeCall(String teamKey, String expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getTeamValidateBeforeCall(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'teamKey' is set
         if (teamKey == null) {
             throw new ApiException("Missing the required parameter 'teamKey' when calling getTeam(Async)");
@@ -304,7 +309,8 @@ public class TeamsApi {
      * @return Team
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Teams response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -315,7 +321,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Team getTeam(String teamKey, String expand) throws ApiException {
+    public Team getTeam(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nullable String expand) throws ApiException {
         ApiResponse<Team> localVarResp = getTeamWithHttpInfo(teamKey, expand);
         return localVarResp.getData();
     }
@@ -328,7 +334,8 @@ public class TeamsApi {
      * @return ApiResponse&lt;Team&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Teams response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -339,7 +346,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Team> getTeamWithHttpInfo(String teamKey, String expand) throws ApiException {
+    public ApiResponse<Team> getTeamWithHttpInfo(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nullable String expand) throws ApiException {
         okhttp3.Call localVarCall = getTeamValidateBeforeCall(teamKey, expand, null);
         Type localVarReturnType = new TypeToken<Team>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -354,7 +361,8 @@ public class TeamsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Teams response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -365,7 +373,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTeamAsync(String teamKey, String expand, final ApiCallback<Team> _callback) throws ApiException {
+    public okhttp3.Call getTeamAsync(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nullable String expand, final ApiCallback<Team> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getTeamValidateBeforeCall(teamKey, expand, _callback);
         Type localVarReturnType = new TypeToken<Team>(){}.getType();
@@ -381,7 +389,8 @@ public class TeamsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Team maintainers response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -392,7 +401,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTeamMaintainersCall(String teamKey, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getTeamMaintainersCall(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -446,7 +455,7 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTeamMaintainersValidateBeforeCall(String teamKey, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getTeamMaintainersValidateBeforeCall(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'teamKey' is set
         if (teamKey == null) {
             throw new ApiException("Missing the required parameter 'teamKey' when calling getTeamMaintainers(Async)");
@@ -465,7 +474,8 @@ public class TeamsApi {
      * @return TeamMaintainers
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Team maintainers response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -476,7 +486,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public TeamMaintainers getTeamMaintainers(String teamKey, Long limit, Long offset) throws ApiException {
+    public TeamMaintainers getTeamMaintainers(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset) throws ApiException {
         ApiResponse<TeamMaintainers> localVarResp = getTeamMaintainersWithHttpInfo(teamKey, limit, offset);
         return localVarResp.getData();
     }
@@ -490,7 +500,8 @@ public class TeamsApi {
      * @return ApiResponse&lt;TeamMaintainers&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Team maintainers response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -501,7 +512,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TeamMaintainers> getTeamMaintainersWithHttpInfo(String teamKey, Long limit, Long offset) throws ApiException {
+    public ApiResponse<TeamMaintainers> getTeamMaintainersWithHttpInfo(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset) throws ApiException {
         okhttp3.Call localVarCall = getTeamMaintainersValidateBeforeCall(teamKey, limit, offset, null);
         Type localVarReturnType = new TypeToken<TeamMaintainers>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -517,7 +528,8 @@ public class TeamsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Team maintainers response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -528,7 +540,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTeamMaintainersAsync(String teamKey, Long limit, Long offset, final ApiCallback<TeamMaintainers> _callback) throws ApiException {
+    public okhttp3.Call getTeamMaintainersAsync(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, final ApiCallback<TeamMaintainers> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getTeamMaintainersValidateBeforeCall(teamKey, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<TeamMaintainers>(){}.getType();
@@ -544,7 +556,8 @@ public class TeamsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Team roles response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -555,7 +568,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTeamRolesCall(String teamKey, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getTeamRolesCall(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -609,7 +622,7 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTeamRolesValidateBeforeCall(String teamKey, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getTeamRolesValidateBeforeCall(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'teamKey' is set
         if (teamKey == null) {
             throw new ApiException("Missing the required parameter 'teamKey' when calling getTeamRoles(Async)");
@@ -628,7 +641,8 @@ public class TeamsApi {
      * @return TeamCustomRoles
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Team roles response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -639,7 +653,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public TeamCustomRoles getTeamRoles(String teamKey, Long limit, Long offset) throws ApiException {
+    public TeamCustomRoles getTeamRoles(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset) throws ApiException {
         ApiResponse<TeamCustomRoles> localVarResp = getTeamRolesWithHttpInfo(teamKey, limit, offset);
         return localVarResp.getData();
     }
@@ -653,7 +667,8 @@ public class TeamsApi {
      * @return ApiResponse&lt;TeamCustomRoles&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Team roles response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -664,7 +679,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TeamCustomRoles> getTeamRolesWithHttpInfo(String teamKey, Long limit, Long offset) throws ApiException {
+    public ApiResponse<TeamCustomRoles> getTeamRolesWithHttpInfo(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset) throws ApiException {
         okhttp3.Call localVarCall = getTeamRolesValidateBeforeCall(teamKey, limit, offset, null);
         Type localVarReturnType = new TypeToken<TeamCustomRoles>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -680,7 +695,8 @@ public class TeamsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Team roles response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -691,7 +707,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTeamRolesAsync(String teamKey, Long limit, Long offset, final ApiCallback<TeamCustomRoles> _callback) throws ApiException {
+    public okhttp3.Call getTeamRolesAsync(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, final ApiCallback<TeamCustomRoles> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getTeamRolesValidateBeforeCall(teamKey, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<TeamCustomRoles>(){}.getType();
@@ -708,7 +724,8 @@ public class TeamsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Teams collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -716,7 +733,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTeamsCall(Long limit, Long offset, String filter, String expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getTeamsCall(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -777,7 +794,7 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTeamsValidateBeforeCall(Long limit, Long offset, String filter, String expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getTeamsValidateBeforeCall(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         return getTeamsCall(limit, offset, filter, expand, _callback);
 
     }
@@ -792,7 +809,8 @@ public class TeamsApi {
      * @return Teams
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Teams collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -800,7 +818,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Teams getTeams(Long limit, Long offset, String filter, String expand) throws ApiException {
+    public Teams getTeams(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand) throws ApiException {
         ApiResponse<Teams> localVarResp = getTeamsWithHttpInfo(limit, offset, filter, expand);
         return localVarResp.getData();
     }
@@ -815,7 +833,8 @@ public class TeamsApi {
      * @return ApiResponse&lt;Teams&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Teams collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -823,7 +842,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Teams> getTeamsWithHttpInfo(Long limit, Long offset, String filter, String expand) throws ApiException {
+    public ApiResponse<Teams> getTeamsWithHttpInfo(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand) throws ApiException {
         okhttp3.Call localVarCall = getTeamsValidateBeforeCall(limit, offset, filter, expand, null);
         Type localVarReturnType = new TypeToken<Teams>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -840,7 +859,8 @@ public class TeamsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Teams collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -848,7 +868,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTeamsAsync(Long limit, Long offset, String filter, String expand, final ApiCallback<Teams> _callback) throws ApiException {
+    public okhttp3.Call getTeamsAsync(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, final ApiCallback<Teams> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getTeamsValidateBeforeCall(limit, offset, filter, expand, _callback);
         Type localVarReturnType = new TypeToken<Teams>(){}.getType();
@@ -864,7 +884,8 @@ public class TeamsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Teams response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -875,7 +896,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchTeamCall(String teamKey, TeamPatchInput teamPatchInput, String expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchTeamCall(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nonnull TeamPatchInput teamPatchInput, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -926,7 +947,7 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchTeamValidateBeforeCall(String teamKey, TeamPatchInput teamPatchInput, String expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchTeamValidateBeforeCall(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nonnull TeamPatchInput teamPatchInput, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'teamKey' is set
         if (teamKey == null) {
             throw new ApiException("Missing the required parameter 'teamKey' when calling patchTeam(Async)");
@@ -950,7 +971,8 @@ public class TeamsApi {
      * @return Team
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Teams response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -961,7 +983,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Team patchTeam(String teamKey, TeamPatchInput teamPatchInput, String expand) throws ApiException {
+    public Team patchTeam(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nonnull TeamPatchInput teamPatchInput, @javax.annotation.Nullable String expand) throws ApiException {
         ApiResponse<Team> localVarResp = patchTeamWithHttpInfo(teamKey, teamPatchInput, expand);
         return localVarResp.getData();
     }
@@ -975,7 +997,8 @@ public class TeamsApi {
      * @return ApiResponse&lt;Team&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Teams response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -986,7 +1009,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Team> patchTeamWithHttpInfo(String teamKey, TeamPatchInput teamPatchInput, String expand) throws ApiException {
+    public ApiResponse<Team> patchTeamWithHttpInfo(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nonnull TeamPatchInput teamPatchInput, @javax.annotation.Nullable String expand) throws ApiException {
         okhttp3.Call localVarCall = patchTeamValidateBeforeCall(teamKey, teamPatchInput, expand, null);
         Type localVarReturnType = new TypeToken<Team>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1002,7 +1025,8 @@ public class TeamsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Teams response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1013,7 +1037,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchTeamAsync(String teamKey, TeamPatchInput teamPatchInput, String expand, final ApiCallback<Team> _callback) throws ApiException {
+    public okhttp3.Call patchTeamAsync(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nonnull TeamPatchInput teamPatchInput, @javax.annotation.Nullable String expand, final ApiCallback<Team> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchTeamValidateBeforeCall(teamKey, teamPatchInput, expand, _callback);
         Type localVarReturnType = new TypeToken<Team>(){}.getType();
@@ -1028,7 +1052,8 @@ public class TeamsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Teams response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1037,7 +1062,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postTeamCall(TeamPostInput teamPostInput, String expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postTeamCall(@javax.annotation.Nonnull TeamPostInput teamPostInput, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1087,7 +1112,7 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postTeamValidateBeforeCall(TeamPostInput teamPostInput, String expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postTeamValidateBeforeCall(@javax.annotation.Nonnull TeamPostInput teamPostInput, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'teamPostInput' is set
         if (teamPostInput == null) {
             throw new ApiException("Missing the required parameter 'teamPostInput' when calling postTeam(Async)");
@@ -1105,7 +1130,8 @@ public class TeamsApi {
      * @return Team
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Teams response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1114,7 +1140,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Team postTeam(TeamPostInput teamPostInput, String expand) throws ApiException {
+    public Team postTeam(@javax.annotation.Nonnull TeamPostInput teamPostInput, @javax.annotation.Nullable String expand) throws ApiException {
         ApiResponse<Team> localVarResp = postTeamWithHttpInfo(teamPostInput, expand);
         return localVarResp.getData();
     }
@@ -1127,7 +1153,8 @@ public class TeamsApi {
      * @return ApiResponse&lt;Team&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Teams response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1136,7 +1163,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Team> postTeamWithHttpInfo(TeamPostInput teamPostInput, String expand) throws ApiException {
+    public ApiResponse<Team> postTeamWithHttpInfo(@javax.annotation.Nonnull TeamPostInput teamPostInput, @javax.annotation.Nullable String expand) throws ApiException {
         okhttp3.Call localVarCall = postTeamValidateBeforeCall(teamPostInput, expand, null);
         Type localVarReturnType = new TypeToken<Team>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1151,7 +1178,8 @@ public class TeamsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Teams response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1160,7 +1188,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postTeamAsync(TeamPostInput teamPostInput, String expand, final ApiCallback<Team> _callback) throws ApiException {
+    public okhttp3.Call postTeamAsync(@javax.annotation.Nonnull TeamPostInput teamPostInput, @javax.annotation.Nullable String expand, final ApiCallback<Team> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postTeamValidateBeforeCall(teamPostInput, expand, _callback);
         Type localVarReturnType = new TypeToken<Team>(){}.getType();
@@ -1175,7 +1203,8 @@ public class TeamsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Team member imports response </td><td>  -  </td></tr>
         <tr><td> 207 </td><td> Partial Success </td><td>  -  </td></tr>
@@ -1185,7 +1214,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postTeamMembersCall(String teamKey, File _file, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postTeamMembersCall(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nullable File _file, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1236,7 +1265,7 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postTeamMembersValidateBeforeCall(String teamKey, File _file, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postTeamMembersValidateBeforeCall(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nullable File _file, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'teamKey' is set
         if (teamKey == null) {
             throw new ApiException("Missing the required parameter 'teamKey' when calling postTeamMembers(Async)");
@@ -1254,7 +1283,8 @@ public class TeamsApi {
      * @return TeamImportsRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Team member imports response </td><td>  -  </td></tr>
         <tr><td> 207 </td><td> Partial Success </td><td>  -  </td></tr>
@@ -1264,7 +1294,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public TeamImportsRep postTeamMembers(String teamKey, File _file) throws ApiException {
+    public TeamImportsRep postTeamMembers(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nullable File _file) throws ApiException {
         ApiResponse<TeamImportsRep> localVarResp = postTeamMembersWithHttpInfo(teamKey, _file);
         return localVarResp.getData();
     }
@@ -1277,7 +1307,8 @@ public class TeamsApi {
      * @return ApiResponse&lt;TeamImportsRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Team member imports response </td><td>  -  </td></tr>
         <tr><td> 207 </td><td> Partial Success </td><td>  -  </td></tr>
@@ -1287,7 +1318,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TeamImportsRep> postTeamMembersWithHttpInfo(String teamKey, File _file) throws ApiException {
+    public ApiResponse<TeamImportsRep> postTeamMembersWithHttpInfo(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nullable File _file) throws ApiException {
         okhttp3.Call localVarCall = postTeamMembersValidateBeforeCall(teamKey, _file, null);
         Type localVarReturnType = new TypeToken<TeamImportsRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1302,7 +1333,8 @@ public class TeamsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Team member imports response </td><td>  -  </td></tr>
         <tr><td> 207 </td><td> Partial Success </td><td>  -  </td></tr>
@@ -1312,7 +1344,7 @@ public class TeamsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postTeamMembersAsync(String teamKey, File _file, final ApiCallback<TeamImportsRep> _callback) throws ApiException {
+    public okhttp3.Call postTeamMembersAsync(@javax.annotation.Nonnull String teamKey, @javax.annotation.Nullable File _file, final ApiCallback<TeamImportsRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postTeamMembersValidateBeforeCall(teamKey, _file, _callback);
         Type localVarReturnType = new TypeToken<TeamImportsRep>(){}.getType();

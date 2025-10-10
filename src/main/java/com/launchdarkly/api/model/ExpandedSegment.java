@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,228 +41,241 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * Segment representation for Views API - contains only fields actually used by the Views service
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ExpandedSegment {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_ID = "environmentId";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ID)
+  @javax.annotation.Nullable
   private String environmentId;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_KEY = "environmentKey";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_KEY)
+  @javax.annotation.Nullable
   private String environmentKey;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_CREATION_DATE = "creationDate";
   @SerializedName(SERIALIZED_NAME_CREATION_DATE)
+  @javax.annotation.Nullable
   private Long creationDate;
 
   public static final String SERIALIZED_NAME_LAST_MODIFIED_DATE = "lastModifiedDate";
   @SerializedName(SERIALIZED_NAME_LAST_MODIFIED_DATE)
+  @javax.annotation.Nullable
   private Long lastModifiedDate;
 
   public static final String SERIALIZED_NAME_DELETED = "deleted";
   @SerializedName(SERIALIZED_NAME_DELETED)
+  @javax.annotation.Nullable
   private Boolean deleted;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_UNBOUNDED = "unbounded";
   @SerializedName(SERIALIZED_NAME_UNBOUNDED)
+  @javax.annotation.Nullable
   private Boolean unbounded;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
   private Integer version;
 
   public static final String SERIALIZED_NAME_GENERATION = "generation";
   @SerializedName(SERIALIZED_NAME_GENERATION)
+  @javax.annotation.Nullable
   private Integer generation;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private ParentAndSelfLinks links;
 
   public ExpandedSegment() {
   }
 
-  public ExpandedSegment key(String key) {
+  public ExpandedSegment key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * A unique key used to reference the segment
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public ExpandedSegment name(String name) {
+  public ExpandedSegment name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for the segment
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public ExpandedSegment environmentId(String environmentId) {
+  public ExpandedSegment environmentId(@javax.annotation.Nullable String environmentId) {
     this.environmentId = environmentId;
     return this;
   }
 
-   /**
+  /**
    * Environment ID of the segment
    * @return environmentId
-  **/
+   */
   @javax.annotation.Nullable
   public String getEnvironmentId() {
     return environmentId;
   }
 
-  public void setEnvironmentId(String environmentId) {
+  public void setEnvironmentId(@javax.annotation.Nullable String environmentId) {
     this.environmentId = environmentId;
   }
 
 
-  public ExpandedSegment environmentKey(String environmentKey) {
+  public ExpandedSegment environmentKey(@javax.annotation.Nullable String environmentKey) {
     this.environmentKey = environmentKey;
     return this;
   }
 
-   /**
+  /**
    * Environment key of the segment
    * @return environmentKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getEnvironmentKey() {
     return environmentKey;
   }
 
-  public void setEnvironmentKey(String environmentKey) {
+  public void setEnvironmentKey(@javax.annotation.Nullable String environmentKey) {
     this.environmentKey = environmentKey;
   }
 
 
-  public ExpandedSegment description(String description) {
+  public ExpandedSegment description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Description of the segment
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public ExpandedSegment creationDate(Long creationDate) {
+  public ExpandedSegment creationDate(@javax.annotation.Nullable Long creationDate) {
     this.creationDate = creationDate;
     return this;
   }
 
-   /**
+  /**
    * Creation date in milliseconds
    * @return creationDate
-  **/
+   */
   @javax.annotation.Nullable
   public Long getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate(Long creationDate) {
+  public void setCreationDate(@javax.annotation.Nullable Long creationDate) {
     this.creationDate = creationDate;
   }
 
 
-  public ExpandedSegment lastModifiedDate(Long lastModifiedDate) {
+  public ExpandedSegment lastModifiedDate(@javax.annotation.Nullable Long lastModifiedDate) {
     this.lastModifiedDate = lastModifiedDate;
     return this;
   }
 
-   /**
+  /**
    * Last modification date in milliseconds
    * @return lastModifiedDate
-  **/
+   */
   @javax.annotation.Nullable
   public Long getLastModifiedDate() {
     return lastModifiedDate;
   }
 
-  public void setLastModifiedDate(Long lastModifiedDate) {
+  public void setLastModifiedDate(@javax.annotation.Nullable Long lastModifiedDate) {
     this.lastModifiedDate = lastModifiedDate;
   }
 
 
-  public ExpandedSegment deleted(Boolean deleted) {
+  public ExpandedSegment deleted(@javax.annotation.Nullable Boolean deleted) {
     this.deleted = deleted;
     return this;
   }
 
-   /**
+  /**
    * Whether the segment is deleted
    * @return deleted
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getDeleted() {
     return deleted;
   }
 
-  public void setDeleted(Boolean deleted) {
+  public void setDeleted(@javax.annotation.Nullable Boolean deleted) {
     this.deleted = deleted;
   }
 
 
-  public ExpandedSegment tags(List<String> tags) {
+  public ExpandedSegment tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -274,92 +288,92 @@ public class ExpandedSegment {
     return this;
   }
 
-   /**
+  /**
    * Tags for the segment
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
 
-  public ExpandedSegment unbounded(Boolean unbounded) {
+  public ExpandedSegment unbounded(@javax.annotation.Nullable Boolean unbounded) {
     this.unbounded = unbounded;
     return this;
   }
 
-   /**
+  /**
    * Whether the segment is unbounded
    * @return unbounded
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getUnbounded() {
     return unbounded;
   }
 
-  public void setUnbounded(Boolean unbounded) {
+  public void setUnbounded(@javax.annotation.Nullable Boolean unbounded) {
     this.unbounded = unbounded;
   }
 
 
-  public ExpandedSegment version(Integer version) {
+  public ExpandedSegment version(@javax.annotation.Nullable Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * Version of the segment
    * @return version
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nullable Integer version) {
     this.version = version;
   }
 
 
-  public ExpandedSegment generation(Integer generation) {
+  public ExpandedSegment generation(@javax.annotation.Nullable Integer generation) {
     this.generation = generation;
     return this;
   }
 
-   /**
+  /**
    * Generation of the segment
    * @return generation
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getGeneration() {
     return generation;
   }
 
-  public void setGeneration(Integer generation) {
+  public void setGeneration(@javax.annotation.Nullable Integer generation) {
     this.generation = generation;
   }
 
 
-  public ExpandedSegment links(ParentAndSelfLinks links) {
+  public ExpandedSegment links(@javax.annotation.Nullable ParentAndSelfLinks links) {
     this.links = links;
     return this;
   }
 
-   /**
+  /**
    * Get links
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public ParentAndSelfLinks getLinks() {
     return links;
   }
 
-  public void setLinks(ParentAndSelfLinks links) {
+  public void setLinks(@javax.annotation.Nullable ParentAndSelfLinks links) {
     this.links = links;
   }
 
@@ -478,65 +492,50 @@ public class ExpandedSegment {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("key");
-    openapiFields.add("name");
-    openapiFields.add("environmentId");
-    openapiFields.add("environmentKey");
-    openapiFields.add("description");
-    openapiFields.add("creationDate");
-    openapiFields.add("lastModifiedDate");
-    openapiFields.add("deleted");
-    openapiFields.add("tags");
-    openapiFields.add("unbounded");
-    openapiFields.add("version");
-    openapiFields.add("generation");
-    openapiFields.add("_links");
+    openapiFields = new HashSet<String>(Arrays.asList("key", "name", "environmentId", "environmentKey", "description", "creationDate", "lastModifiedDate", "deleted", "tags", "unbounded", "version", "generation", "_links"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("name");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("key", "name"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ExpandedSegment
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ExpandedSegment
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ExpandedSegment.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ExpandedSegment is not found in the empty JSON string", ExpandedSegment.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ExpandedSegment is not found in the empty JSON string", ExpandedSegment.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ExpandedSegment.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("environmentId") != null && !jsonObj.get("environmentId").isJsonNull()) && !jsonObj.get("environmentId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
       }
       if ((jsonObj.get("environmentKey") != null && !jsonObj.get("environmentKey").isJsonNull()) && !jsonObj.get("environmentKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       // validate the optional field `_links`
       if (jsonObj.get("_links") != null && !jsonObj.get("_links").isJsonNull()) {
@@ -601,7 +600,7 @@ public class ExpandedSegment {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -616,22 +615,22 @@ public class ExpandedSegment {
     }
   }
 
- /**
-  * Create an instance of ExpandedSegment given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ExpandedSegment
-  * @throws IOException if the JSON string is invalid with respect to ExpandedSegment
-  */
+  /**
+   * Create an instance of ExpandedSegment given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ExpandedSegment
+   * @throws IOException if the JSON string is invalid with respect to ExpandedSegment
+   */
   public static ExpandedSegment fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ExpandedSegment.class);
   }
 
- /**
-  * Convert an instance of ExpandedSegment to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ExpandedSegment to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

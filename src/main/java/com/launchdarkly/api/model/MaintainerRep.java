@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,65 +40,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * MaintainerRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class MaintainerRep {
   public static final String SERIALIZED_NAME_MEMBER = "member";
   @SerializedName(SERIALIZED_NAME_MEMBER)
+  @javax.annotation.Nullable
   private MemberSummary member;
 
   public static final String SERIALIZED_NAME_TEAM = "team";
   @SerializedName(SERIALIZED_NAME_TEAM)
+  @javax.annotation.Nullable
   private MemberTeamSummaryRep team;
 
   public MaintainerRep() {
   }
 
-  public MaintainerRep member(MemberSummary member) {
+  public MaintainerRep member(@javax.annotation.Nullable MemberSummary member) {
     this.member = member;
     return this;
   }
 
-   /**
+  /**
    * Get member
    * @return member
-  **/
+   */
   @javax.annotation.Nullable
   public MemberSummary getMember() {
     return member;
   }
 
-  public void setMember(MemberSummary member) {
+  public void setMember(@javax.annotation.Nullable MemberSummary member) {
     this.member = member;
   }
 
 
-  public MaintainerRep team(MemberTeamSummaryRep team) {
+  public MaintainerRep team(@javax.annotation.Nullable MemberTeamSummaryRep team) {
     this.team = team;
     return this;
   }
 
-   /**
+  /**
    * Get team
    * @return team
-  **/
+   */
   @javax.annotation.Nullable
   public MemberTeamSummaryRep getTeam() {
     return team;
   }
 
-  public void setTeam(MemberTeamSummaryRep team) {
+  public void setTeam(@javax.annotation.Nullable MemberTeamSummaryRep team) {
     this.team = team;
   }
 
@@ -194,24 +197,22 @@ public class MaintainerRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("member");
-    openapiFields.add("team");
+    openapiFields = new HashSet<String>(Arrays.asList("member", "team"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to MaintainerRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to MaintainerRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!MaintainerRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in MaintainerRep is not found in the empty JSON string", MaintainerRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in MaintainerRep is not found in the empty JSON string", MaintainerRep.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -282,7 +283,7 @@ public class MaintainerRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -297,22 +298,22 @@ public class MaintainerRep {
     }
   }
 
- /**
-  * Create an instance of MaintainerRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of MaintainerRep
-  * @throws IOException if the JSON string is invalid with respect to MaintainerRep
-  */
+  /**
+   * Create an instance of MaintainerRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of MaintainerRep
+   * @throws IOException if the JSON string is invalid with respect to MaintainerRep
+   */
   public static MaintainerRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, MaintainerRep.class);
   }
 
- /**
-  * Convert an instance of MaintainerRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of MaintainerRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

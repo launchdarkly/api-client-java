@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,120 +41,125 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * TreatmentRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class TreatmentRep {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_ALLOCATION_PERCENT = "allocationPercent";
   @SerializedName(SERIALIZED_NAME_ALLOCATION_PERCENT)
+  @javax.annotation.Nonnull
   private String allocationPercent;
 
   public static final String SERIALIZED_NAME_BASELINE = "baseline";
   @SerializedName(SERIALIZED_NAME_BASELINE)
+  @javax.annotation.Nullable
   private Boolean baseline;
 
   public static final String SERIALIZED_NAME_PARAMETERS = "parameters";
   @SerializedName(SERIALIZED_NAME_PARAMETERS)
+  @javax.annotation.Nullable
   private List<ParameterRep> parameters = new ArrayList<>();
 
   public TreatmentRep() {
   }
 
-  public TreatmentRep id(String id) {
+  public TreatmentRep id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The treatment ID. This is the variation ID from the flag.
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public TreatmentRep name(String name) {
+  public TreatmentRep name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The treatment name. This is the variation name from the flag.
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public TreatmentRep allocationPercent(String allocationPercent) {
+  public TreatmentRep allocationPercent(@javax.annotation.Nonnull String allocationPercent) {
     this.allocationPercent = allocationPercent;
     return this;
   }
 
-   /**
+  /**
    * The percentage of traffic allocated to this treatment during the iteration
    * @return allocationPercent
-  **/
+   */
   @javax.annotation.Nonnull
   public String getAllocationPercent() {
     return allocationPercent;
   }
 
-  public void setAllocationPercent(String allocationPercent) {
+  public void setAllocationPercent(@javax.annotation.Nonnull String allocationPercent) {
     this.allocationPercent = allocationPercent;
   }
 
 
-  public TreatmentRep baseline(Boolean baseline) {
+  public TreatmentRep baseline(@javax.annotation.Nullable Boolean baseline) {
     this.baseline = baseline;
     return this;
   }
 
-   /**
+  /**
    * Whether this treatment is the baseline to compare other treatments against
    * @return baseline
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getBaseline() {
     return baseline;
   }
 
-  public void setBaseline(Boolean baseline) {
+  public void setBaseline(@javax.annotation.Nullable Boolean baseline) {
     this.baseline = baseline;
   }
 
 
-  public TreatmentRep parameters(List<ParameterRep> parameters) {
+  public TreatmentRep parameters(@javax.annotation.Nullable List<ParameterRep> parameters) {
     this.parameters = parameters;
     return this;
   }
@@ -166,16 +172,16 @@ public class TreatmentRep {
     return this;
   }
 
-   /**
+  /**
    * Details on the flag and variation used for this treatment
    * @return parameters
-  **/
+   */
   @javax.annotation.Nullable
   public List<ParameterRep> getParameters() {
     return parameters;
   }
 
-  public void setParameters(List<ParameterRep> parameters) {
+  public void setParameters(@javax.annotation.Nullable List<ParameterRep> parameters) {
     this.parameters = parameters;
   }
 
@@ -278,54 +284,47 @@ public class TreatmentRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_id");
-    openapiFields.add("name");
-    openapiFields.add("allocationPercent");
-    openapiFields.add("baseline");
-    openapiFields.add("parameters");
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "name", "allocationPercent", "baseline", "parameters"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("allocationPercent");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name", "allocationPercent"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to TreatmentRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to TreatmentRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!TreatmentRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in TreatmentRep is not found in the empty JSON string", TreatmentRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in TreatmentRep is not found in the empty JSON string", TreatmentRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : TreatmentRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("_id") != null && !jsonObj.get("_id").isJsonNull()) && !jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("allocationPercent").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `allocationPercent` to be a primitive type in the JSON string but got `%s`", jsonObj.get("allocationPercent").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `allocationPercent` to be a primitive type in the JSON string but got `%s`", jsonObj.get("allocationPercent").toString()));
       }
       if (jsonObj.get("parameters") != null && !jsonObj.get("parameters").isJsonNull()) {
         JsonArray jsonArrayparameters = jsonObj.getAsJsonArray("parameters");
         if (jsonArrayparameters != null) {
           // ensure the json data is an array
           if (!jsonObj.get("parameters").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `parameters` to be an array in the JSON string but got `%s`", jsonObj.get("parameters").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `parameters` to be an array in the JSON string but got `%s`", jsonObj.get("parameters").toString()));
           }
 
           // validate the optional field `parameters` (array)
@@ -393,7 +392,7 @@ public class TreatmentRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -408,22 +407,22 @@ public class TreatmentRep {
     }
   }
 
- /**
-  * Create an instance of TreatmentRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of TreatmentRep
-  * @throws IOException if the JSON string is invalid with respect to TreatmentRep
-  */
+  /**
+   * Create an instance of TreatmentRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of TreatmentRep
+   * @throws IOException if the JSON string is invalid with respect to TreatmentRep
+   */
   public static TreatmentRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, TreatmentRep.class);
   }
 
- /**
-  * Convert an instance of TreatmentRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of TreatmentRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

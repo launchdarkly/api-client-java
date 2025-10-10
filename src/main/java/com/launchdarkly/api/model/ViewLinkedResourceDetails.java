@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,134 +43,139 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ViewLinkedResourceDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ViewLinkedResourceDetails {
   public static final String SERIALIZED_NAME_VIEW = "view";
   @SerializedName(SERIALIZED_NAME_VIEW)
+  @javax.annotation.Nullable
   private View view;
 
   public static final String SERIALIZED_NAME_FLAG = "flag";
   @SerializedName(SERIALIZED_NAME_FLAG)
+  @javax.annotation.Nullable
   private ExpandedFlag flag;
 
   public static final String SERIALIZED_NAME_SEGMENT = "segment";
   @SerializedName(SERIALIZED_NAME_SEGMENT)
+  @javax.annotation.Nullable
   private ExpandedSegment segment;
 
   public static final String SERIALIZED_NAME_AI_CONFIG = "aiConfig";
   @SerializedName(SERIALIZED_NAME_AI_CONFIG)
+  @javax.annotation.Nullable
   private ExpandedAIConfig aiConfig;
 
   public static final String SERIALIZED_NAME_METRIC = "metric";
   @SerializedName(SERIALIZED_NAME_METRIC)
+  @javax.annotation.Nullable
   private ExpandedMetric metric;
 
   public ViewLinkedResourceDetails() {
   }
 
-  public ViewLinkedResourceDetails view(View view) {
+  public ViewLinkedResourceDetails view(@javax.annotation.Nullable View view) {
     this.view = view;
     return this;
   }
 
-   /**
+  /**
    * Get view
    * @return view
-  **/
+   */
   @javax.annotation.Nullable
   public View getView() {
     return view;
   }
 
-  public void setView(View view) {
+  public void setView(@javax.annotation.Nullable View view) {
     this.view = view;
   }
 
 
-  public ViewLinkedResourceDetails flag(ExpandedFlag flag) {
+  public ViewLinkedResourceDetails flag(@javax.annotation.Nullable ExpandedFlag flag) {
     this.flag = flag;
     return this;
   }
 
-   /**
+  /**
    * Get flag
    * @return flag
-  **/
+   */
   @javax.annotation.Nullable
   public ExpandedFlag getFlag() {
     return flag;
   }
 
-  public void setFlag(ExpandedFlag flag) {
+  public void setFlag(@javax.annotation.Nullable ExpandedFlag flag) {
     this.flag = flag;
   }
 
 
-  public ViewLinkedResourceDetails segment(ExpandedSegment segment) {
+  public ViewLinkedResourceDetails segment(@javax.annotation.Nullable ExpandedSegment segment) {
     this.segment = segment;
     return this;
   }
 
-   /**
+  /**
    * Get segment
    * @return segment
-  **/
+   */
   @javax.annotation.Nullable
   public ExpandedSegment getSegment() {
     return segment;
   }
 
-  public void setSegment(ExpandedSegment segment) {
+  public void setSegment(@javax.annotation.Nullable ExpandedSegment segment) {
     this.segment = segment;
   }
 
 
-  public ViewLinkedResourceDetails aiConfig(ExpandedAIConfig aiConfig) {
+  public ViewLinkedResourceDetails aiConfig(@javax.annotation.Nullable ExpandedAIConfig aiConfig) {
     this.aiConfig = aiConfig;
     return this;
   }
 
-   /**
+  /**
    * Get aiConfig
    * @return aiConfig
-  **/
+   */
   @javax.annotation.Nullable
   public ExpandedAIConfig getAiConfig() {
     return aiConfig;
   }
 
-  public void setAiConfig(ExpandedAIConfig aiConfig) {
+  public void setAiConfig(@javax.annotation.Nullable ExpandedAIConfig aiConfig) {
     this.aiConfig = aiConfig;
   }
 
 
-  public ViewLinkedResourceDetails metric(ExpandedMetric metric) {
+  public ViewLinkedResourceDetails metric(@javax.annotation.Nullable ExpandedMetric metric) {
     this.metric = metric;
     return this;
   }
 
-   /**
+  /**
    * Get metric
    * @return metric
-  **/
+   */
   @javax.annotation.Nullable
   public ExpandedMetric getMetric() {
     return metric;
   }
 
-  public void setMetric(ExpandedMetric metric) {
+  public void setMetric(@javax.annotation.Nullable ExpandedMetric metric) {
     this.metric = metric;
   }
 
@@ -272,27 +278,22 @@ public class ViewLinkedResourceDetails {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("view");
-    openapiFields.add("flag");
-    openapiFields.add("segment");
-    openapiFields.add("aiConfig");
-    openapiFields.add("metric");
+    openapiFields = new HashSet<String>(Arrays.asList("view", "flag", "segment", "aiConfig", "metric"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ViewLinkedResourceDetails
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ViewLinkedResourceDetails
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ViewLinkedResourceDetails.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ViewLinkedResourceDetails is not found in the empty JSON string", ViewLinkedResourceDetails.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ViewLinkedResourceDetails is not found in the empty JSON string", ViewLinkedResourceDetails.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -375,7 +376,7 @@ public class ViewLinkedResourceDetails {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -390,22 +391,22 @@ public class ViewLinkedResourceDetails {
     }
   }
 
- /**
-  * Create an instance of ViewLinkedResourceDetails given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ViewLinkedResourceDetails
-  * @throws IOException if the JSON string is invalid with respect to ViewLinkedResourceDetails
-  */
+  /**
+   * Create an instance of ViewLinkedResourceDetails given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ViewLinkedResourceDetails
+   * @throws IOException if the JSON string is invalid with respect to ViewLinkedResourceDetails
+   */
   public static ViewLinkedResourceDetails fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ViewLinkedResourceDetails.class);
   }
 
- /**
-  * Convert an instance of ViewLinkedResourceDetails to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ViewLinkedResourceDetails to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

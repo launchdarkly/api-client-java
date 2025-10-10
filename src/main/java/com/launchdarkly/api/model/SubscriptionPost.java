@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,71 +43,78 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * SubscriptionPost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class SubscriptionPost {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_STATEMENTS = "statements";
   @SerializedName(SERIALIZED_NAME_STATEMENTS)
+  @javax.annotation.Nullable
   private List<StatementPost> statements = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ON = "on";
   @SerializedName(SERIALIZED_NAME_ON)
+  @javax.annotation.Nullable
   private Boolean on;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
+  @javax.annotation.Nonnull
   private Map<String, Object> config = new HashMap<>();
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
+  @javax.annotation.Nullable
   private String url;
 
   public static final String SERIALIZED_NAME_API_KEY = "apiKey";
   @SerializedName(SERIALIZED_NAME_API_KEY)
+  @javax.annotation.Nullable
   private String apiKey;
 
   public SubscriptionPost() {
   }
 
-  public SubscriptionPost name(String name) {
+  public SubscriptionPost name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for your audit log subscription.
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public SubscriptionPost statements(List<StatementPost> statements) {
+  public SubscriptionPost statements(@javax.annotation.Nullable List<StatementPost> statements) {
     this.statements = statements;
     return this;
   }
@@ -119,40 +127,40 @@ public class SubscriptionPost {
     return this;
   }
 
-   /**
+  /**
    * Get statements
    * @return statements
-  **/
+   */
   @javax.annotation.Nullable
   public List<StatementPost> getStatements() {
     return statements;
   }
 
-  public void setStatements(List<StatementPost> statements) {
+  public void setStatements(@javax.annotation.Nullable List<StatementPost> statements) {
     this.statements = statements;
   }
 
 
-  public SubscriptionPost on(Boolean on) {
+  public SubscriptionPost on(@javax.annotation.Nullable Boolean on) {
     this.on = on;
     return this;
   }
 
-   /**
+  /**
    * Whether or not you want your subscription to actively send events.
    * @return on
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getOn() {
     return on;
   }
 
-  public void setOn(Boolean on) {
+  public void setOn(@javax.annotation.Nullable Boolean on) {
     this.on = on;
   }
 
 
-  public SubscriptionPost tags(List<String> tags) {
+  public SubscriptionPost tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -165,21 +173,21 @@ public class SubscriptionPost {
     return this;
   }
 
-   /**
+  /**
    * An array of tags for this subscription.
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
 
-  public SubscriptionPost config(Map<String, Object> config) {
+  public SubscriptionPost config(@javax.annotation.Nonnull Map<String, Object> config) {
     this.config = config;
     return this;
   }
@@ -192,54 +200,54 @@ public class SubscriptionPost {
     return this;
   }
 
-   /**
+  /**
    * The unique set of fields required to configure an audit log subscription integration of this type. Refer to the &lt;code&gt;formVariables&lt;/code&gt; field in the corresponding &lt;code&gt;manifest.json&lt;/code&gt; at https://github.com/launchdarkly/integration-framework/tree/main/integrations for a full list of fields for the integration you wish to configure.
    * @return config
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Object> getConfig() {
     return config;
   }
 
-  public void setConfig(Map<String, Object> config) {
+  public void setConfig(@javax.annotation.Nonnull Map<String, Object> config) {
     this.config = config;
   }
 
 
-  public SubscriptionPost url(String url) {
+  public SubscriptionPost url(@javax.annotation.Nullable String url) {
     this.url = url;
     return this;
   }
 
-   /**
+  /**
    * Slack webhook receiver URL. Only necessary for legacy Slack webhook integrations.
    * @return url
-  **/
+   */
   @javax.annotation.Nullable
   public String getUrl() {
     return url;
   }
 
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nullable String url) {
     this.url = url;
   }
 
 
-  public SubscriptionPost apiKey(String apiKey) {
+  public SubscriptionPost apiKey(@javax.annotation.Nullable String apiKey) {
     this.apiKey = apiKey;
     return this;
   }
 
-   /**
+  /**
    * Datadog API key. Only necessary for legacy Datadog webhook integrations.
    * @return apiKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getApiKey() {
     return apiKey;
   }
 
-  public void setApiKey(String apiKey) {
+  public void setApiKey(@javax.annotation.Nullable String apiKey) {
     this.apiKey = apiKey;
   }
 
@@ -346,50 +354,41 @@ public class SubscriptionPost {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("statements");
-    openapiFields.add("on");
-    openapiFields.add("tags");
-    openapiFields.add("config");
-    openapiFields.add("url");
-    openapiFields.add("apiKey");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "statements", "on", "tags", "config", "url", "apiKey"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("config");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name", "config"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to SubscriptionPost
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SubscriptionPost
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SubscriptionPost.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SubscriptionPost is not found in the empty JSON string", SubscriptionPost.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in SubscriptionPost is not found in the empty JSON string", SubscriptionPost.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : SubscriptionPost.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (jsonObj.get("statements") != null && !jsonObj.get("statements").isJsonNull()) {
         JsonArray jsonArraystatements = jsonObj.getAsJsonArray("statements");
         if (jsonArraystatements != null) {
           // ensure the json data is an array
           if (!jsonObj.get("statements").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `statements` to be an array in the JSON string but got `%s`", jsonObj.get("statements").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `statements` to be an array in the JSON string but got `%s`", jsonObj.get("statements").toString()));
           }
 
           // validate the optional field `statements` (array)
@@ -400,13 +399,13 @@ public class SubscriptionPost {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull()) && !jsonObj.get("url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
       }
       if ((jsonObj.get("apiKey") != null && !jsonObj.get("apiKey").isJsonNull()) && !jsonObj.get("apiKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `apiKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("apiKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `apiKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("apiKey").toString()));
       }
   }
 
@@ -467,7 +466,7 @@ public class SubscriptionPost {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -482,22 +481,22 @@ public class SubscriptionPost {
     }
   }
 
- /**
-  * Create an instance of SubscriptionPost given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SubscriptionPost
-  * @throws IOException if the JSON string is invalid with respect to SubscriptionPost
-  */
+  /**
+   * Create an instance of SubscriptionPost given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SubscriptionPost
+   * @throws IOException if the JSON string is invalid with respect to SubscriptionPost
+   */
   public static SubscriptionPost fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SubscriptionPost.class);
   }
 
- /**
-  * Convert an instance of SubscriptionPost to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SubscriptionPost to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

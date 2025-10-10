@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,178 +42,188 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ConditionInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ConditionInput {
   public static final String SERIALIZED_NAME_SCHEDULE_KIND = "scheduleKind";
   @SerializedName(SERIALIZED_NAME_SCHEDULE_KIND)
+  @javax.annotation.Nullable
   private String scheduleKind;
 
   public static final String SERIALIZED_NAME_EXECUTION_DATE = "executionDate";
   @SerializedName(SERIALIZED_NAME_EXECUTION_DATE)
+  @javax.annotation.Nullable
   private Long executionDate;
 
   public static final String SERIALIZED_NAME_WAIT_DURATION = "waitDuration";
   @SerializedName(SERIALIZED_NAME_WAIT_DURATION)
+  @javax.annotation.Nullable
   private Integer waitDuration;
 
   public static final String SERIALIZED_NAME_WAIT_DURATION_UNIT = "waitDurationUnit";
   @SerializedName(SERIALIZED_NAME_WAIT_DURATION_UNIT)
+  @javax.annotation.Nullable
   private String waitDurationUnit;
 
   public static final String SERIALIZED_NAME_EXECUTE_NOW = "executeNow";
   @SerializedName(SERIALIZED_NAME_EXECUTE_NOW)
+  @javax.annotation.Nullable
   private Boolean executeNow;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_NOTIFY_MEMBER_IDS = "notifyMemberIds";
   @SerializedName(SERIALIZED_NAME_NOTIFY_MEMBER_IDS)
+  @javax.annotation.Nullable
   private List<String> notifyMemberIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NOTIFY_TEAM_KEYS = "notifyTeamKeys";
   @SerializedName(SERIALIZED_NAME_NOTIFY_TEAM_KEYS)
+  @javax.annotation.Nullable
   private List<String> notifyTeamKeys = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_INTEGRATION_CONFIG = "integrationConfig";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_CONFIG)
+  @javax.annotation.Nullable
   private Map<String, Object> integrationConfig = new HashMap<>();
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
+  @javax.annotation.Nullable
   private String kind;
 
   public ConditionInput() {
   }
 
-  public ConditionInput scheduleKind(String scheduleKind) {
+  public ConditionInput scheduleKind(@javax.annotation.Nullable String scheduleKind) {
     this.scheduleKind = scheduleKind;
     return this;
   }
 
-   /**
+  /**
    * Get scheduleKind
    * @return scheduleKind
-  **/
+   */
   @javax.annotation.Nullable
   public String getScheduleKind() {
     return scheduleKind;
   }
 
-  public void setScheduleKind(String scheduleKind) {
+  public void setScheduleKind(@javax.annotation.Nullable String scheduleKind) {
     this.scheduleKind = scheduleKind;
   }
 
 
-  public ConditionInput executionDate(Long executionDate) {
+  public ConditionInput executionDate(@javax.annotation.Nullable Long executionDate) {
     this.executionDate = executionDate;
     return this;
   }
 
-   /**
+  /**
    * Get executionDate
    * @return executionDate
-  **/
+   */
   @javax.annotation.Nullable
   public Long getExecutionDate() {
     return executionDate;
   }
 
-  public void setExecutionDate(Long executionDate) {
+  public void setExecutionDate(@javax.annotation.Nullable Long executionDate) {
     this.executionDate = executionDate;
   }
 
 
-  public ConditionInput waitDuration(Integer waitDuration) {
+  public ConditionInput waitDuration(@javax.annotation.Nullable Integer waitDuration) {
     this.waitDuration = waitDuration;
     return this;
   }
 
-   /**
+  /**
    * For workflow stages whose scheduled execution is relative, how far in the future the stage should start.
    * @return waitDuration
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getWaitDuration() {
     return waitDuration;
   }
 
-  public void setWaitDuration(Integer waitDuration) {
+  public void setWaitDuration(@javax.annotation.Nullable Integer waitDuration) {
     this.waitDuration = waitDuration;
   }
 
 
-  public ConditionInput waitDurationUnit(String waitDurationUnit) {
+  public ConditionInput waitDurationUnit(@javax.annotation.Nullable String waitDurationUnit) {
     this.waitDurationUnit = waitDurationUnit;
     return this;
   }
 
-   /**
+  /**
    * Get waitDurationUnit
    * @return waitDurationUnit
-  **/
+   */
   @javax.annotation.Nullable
   public String getWaitDurationUnit() {
     return waitDurationUnit;
   }
 
-  public void setWaitDurationUnit(String waitDurationUnit) {
+  public void setWaitDurationUnit(@javax.annotation.Nullable String waitDurationUnit) {
     this.waitDurationUnit = waitDurationUnit;
   }
 
 
-  public ConditionInput executeNow(Boolean executeNow) {
+  public ConditionInput executeNow(@javax.annotation.Nullable Boolean executeNow) {
     this.executeNow = executeNow;
     return this;
   }
 
-   /**
+  /**
    * Whether the workflow stage should be executed immediately
    * @return executeNow
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getExecuteNow() {
     return executeNow;
   }
 
-  public void setExecuteNow(Boolean executeNow) {
+  public void setExecuteNow(@javax.annotation.Nullable Boolean executeNow) {
     this.executeNow = executeNow;
   }
 
 
-  public ConditionInput description(String description) {
+  public ConditionInput description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * A description of the approval required for this stage
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public ConditionInput notifyMemberIds(List<String> notifyMemberIds) {
+  public ConditionInput notifyMemberIds(@javax.annotation.Nullable List<String> notifyMemberIds) {
     this.notifyMemberIds = notifyMemberIds;
     return this;
   }
@@ -225,21 +236,21 @@ public class ConditionInput {
     return this;
   }
 
-   /**
+  /**
    * A list of member IDs for the members to request approval from for this stage
    * @return notifyMemberIds
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getNotifyMemberIds() {
     return notifyMemberIds;
   }
 
-  public void setNotifyMemberIds(List<String> notifyMemberIds) {
+  public void setNotifyMemberIds(@javax.annotation.Nullable List<String> notifyMemberIds) {
     this.notifyMemberIds = notifyMemberIds;
   }
 
 
-  public ConditionInput notifyTeamKeys(List<String> notifyTeamKeys) {
+  public ConditionInput notifyTeamKeys(@javax.annotation.Nullable List<String> notifyTeamKeys) {
     this.notifyTeamKeys = notifyTeamKeys;
     return this;
   }
@@ -252,21 +263,21 @@ public class ConditionInput {
     return this;
   }
 
-   /**
+  /**
    * A list of team keys for the teams to request approval from for this stage
    * @return notifyTeamKeys
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getNotifyTeamKeys() {
     return notifyTeamKeys;
   }
 
-  public void setNotifyTeamKeys(List<String> notifyTeamKeys) {
+  public void setNotifyTeamKeys(@javax.annotation.Nullable List<String> notifyTeamKeys) {
     this.notifyTeamKeys = notifyTeamKeys;
   }
 
 
-  public ConditionInput integrationConfig(Map<String, Object> integrationConfig) {
+  public ConditionInput integrationConfig(@javax.annotation.Nullable Map<String, Object> integrationConfig) {
     this.integrationConfig = integrationConfig;
     return this;
   }
@@ -279,35 +290,35 @@ public class ConditionInput {
     return this;
   }
 
-   /**
+  /**
    * Get integrationConfig
    * @return integrationConfig
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Object> getIntegrationConfig() {
     return integrationConfig;
   }
 
-  public void setIntegrationConfig(Map<String, Object> integrationConfig) {
+  public void setIntegrationConfig(@javax.annotation.Nullable Map<String, Object> integrationConfig) {
     this.integrationConfig = integrationConfig;
   }
 
 
-  public ConditionInput kind(String kind) {
+  public ConditionInput kind(@javax.annotation.Nullable String kind) {
     this.kind = kind;
     return this;
   }
 
-   /**
+  /**
    * Get kind
    * @return kind
-  **/
+   */
   @javax.annotation.Nullable
   public String getKind() {
     return kind;
   }
 
-  public void setKind(String kind) {
+  public void setKind(@javax.annotation.Nullable String kind) {
     this.kind = kind;
   }
 
@@ -420,54 +431,44 @@ public class ConditionInput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("scheduleKind");
-    openapiFields.add("executionDate");
-    openapiFields.add("waitDuration");
-    openapiFields.add("waitDurationUnit");
-    openapiFields.add("executeNow");
-    openapiFields.add("description");
-    openapiFields.add("notifyMemberIds");
-    openapiFields.add("notifyTeamKeys");
-    openapiFields.add("integrationConfig");
-    openapiFields.add("kind");
+    openapiFields = new HashSet<String>(Arrays.asList("scheduleKind", "executionDate", "waitDuration", "waitDurationUnit", "executeNow", "description", "notifyMemberIds", "notifyTeamKeys", "integrationConfig", "kind"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ConditionInput
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ConditionInput
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ConditionInput.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ConditionInput is not found in the empty JSON string", ConditionInput.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ConditionInput is not found in the empty JSON string", ConditionInput.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("scheduleKind") != null && !jsonObj.get("scheduleKind").isJsonNull()) && !jsonObj.get("scheduleKind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `scheduleKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("scheduleKind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `scheduleKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("scheduleKind").toString()));
       }
       if ((jsonObj.get("waitDurationUnit") != null && !jsonObj.get("waitDurationUnit").isJsonNull()) && !jsonObj.get("waitDurationUnit").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `waitDurationUnit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("waitDurationUnit").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `waitDurationUnit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("waitDurationUnit").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("notifyMemberIds") != null && !jsonObj.get("notifyMemberIds").isJsonNull() && !jsonObj.get("notifyMemberIds").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `notifyMemberIds` to be an array in the JSON string but got `%s`", jsonObj.get("notifyMemberIds").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifyMemberIds` to be an array in the JSON string but got `%s`", jsonObj.get("notifyMemberIds").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("notifyTeamKeys") != null && !jsonObj.get("notifyTeamKeys").isJsonNull() && !jsonObj.get("notifyTeamKeys").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `notifyTeamKeys` to be an array in the JSON string but got `%s`", jsonObj.get("notifyTeamKeys").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifyTeamKeys` to be an array in the JSON string but got `%s`", jsonObj.get("notifyTeamKeys").toString()));
       }
       if ((jsonObj.get("kind") != null && !jsonObj.get("kind").isJsonNull()) && !jsonObj.get("kind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
   }
 
@@ -528,7 +529,7 @@ public class ConditionInput {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -543,22 +544,22 @@ public class ConditionInput {
     }
   }
 
- /**
-  * Create an instance of ConditionInput given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ConditionInput
-  * @throws IOException if the JSON string is invalid with respect to ConditionInput
-  */
+  /**
+   * Create an instance of ConditionInput given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ConditionInput
+   * @throws IOException if the JSON string is invalid with respect to ConditionInput
+   */
   public static ConditionInput fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ConditionInput.class);
   }
 
- /**
-  * Convert an instance of ConditionInput to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ConditionInput to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

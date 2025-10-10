@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,22 +41,23 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * HoldoutDetailRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class HoldoutDetailRep {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   /**
@@ -116,192 +118,200 @@ public class HoldoutDetailRep {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nonnull
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_HOLDOUT_AMOUNT = "holdoutAmount";
   @SerializedName(SERIALIZED_NAME_HOLDOUT_AMOUNT)
+  @javax.annotation.Nonnull
   private String holdoutAmount;
 
   public static final String SERIALIZED_NAME_IS_DIRTY = "isDirty";
   @SerializedName(SERIALIZED_NAME_IS_DIRTY)
+  @javax.annotation.Nullable
   private Boolean isDirty;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "createdAt";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nonnull
   private Long createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updatedAt";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  @javax.annotation.Nonnull
   private Long updatedAt;
 
   public static final String SERIALIZED_NAME_BASE_EXPERIMENT = "baseExperiment";
   @SerializedName(SERIALIZED_NAME_BASE_EXPERIMENT)
+  @javax.annotation.Nonnull
   private Experiment baseExperiment;
 
   public static final String SERIALIZED_NAME_RELATED_EXPERIMENTS = "relatedExperiments";
   @SerializedName(SERIALIZED_NAME_RELATED_EXPERIMENTS)
+  @javax.annotation.Nullable
   private List<Experiment> relatedExperiments = new ArrayList<>();
 
   public HoldoutDetailRep() {
   }
 
-  public HoldoutDetailRep id(String id) {
+  public HoldoutDetailRep id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public HoldoutDetailRep status(StatusEnum status) {
+  public HoldoutDetailRep status(@javax.annotation.Nonnull StatusEnum status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nonnull
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(@javax.annotation.Nonnull StatusEnum status) {
     this.status = status;
   }
 
 
-  public HoldoutDetailRep description(String description) {
+  public HoldoutDetailRep description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Get description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public HoldoutDetailRep holdoutAmount(String holdoutAmount) {
+  public HoldoutDetailRep holdoutAmount(@javax.annotation.Nonnull String holdoutAmount) {
     this.holdoutAmount = holdoutAmount;
     return this;
   }
 
-   /**
+  /**
    * The percentage of traffic allocated to this holdout.
    * @return holdoutAmount
-  **/
+   */
   @javax.annotation.Nonnull
   public String getHoldoutAmount() {
     return holdoutAmount;
   }
 
-  public void setHoldoutAmount(String holdoutAmount) {
+  public void setHoldoutAmount(@javax.annotation.Nonnull String holdoutAmount) {
     this.holdoutAmount = holdoutAmount;
   }
 
 
-  public HoldoutDetailRep isDirty(Boolean isDirty) {
+  public HoldoutDetailRep isDirty(@javax.annotation.Nullable Boolean isDirty) {
     this.isDirty = isDirty;
     return this;
   }
 
-   /**
+  /**
    * Indicates if the holdout experiment is running and if any related experiments are running.
    * @return isDirty
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsDirty() {
     return isDirty;
   }
 
-  public void setIsDirty(Boolean isDirty) {
+  public void setIsDirty(@javax.annotation.Nullable Boolean isDirty) {
     this.isDirty = isDirty;
   }
 
 
-  public HoldoutDetailRep createdAt(Long createdAt) {
+  public HoldoutDetailRep createdAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Get createdAt
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public HoldoutDetailRep updatedAt(Long updatedAt) {
+  public HoldoutDetailRep updatedAt(@javax.annotation.Nonnull Long updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
 
-   /**
+  /**
    * Get updatedAt
    * @return updatedAt
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(Long updatedAt) {
+  public void setUpdatedAt(@javax.annotation.Nonnull Long updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
-  public HoldoutDetailRep baseExperiment(Experiment baseExperiment) {
+  public HoldoutDetailRep baseExperiment(@javax.annotation.Nonnull Experiment baseExperiment) {
     this.baseExperiment = baseExperiment;
     return this;
   }
 
-   /**
+  /**
    * Get baseExperiment
    * @return baseExperiment
-  **/
+   */
   @javax.annotation.Nonnull
   public Experiment getBaseExperiment() {
     return baseExperiment;
   }
 
-  public void setBaseExperiment(Experiment baseExperiment) {
+  public void setBaseExperiment(@javax.annotation.Nonnull Experiment baseExperiment) {
     this.baseExperiment = baseExperiment;
   }
 
 
-  public HoldoutDetailRep relatedExperiments(List<Experiment> relatedExperiments) {
+  public HoldoutDetailRep relatedExperiments(@javax.annotation.Nullable List<Experiment> relatedExperiments) {
     this.relatedExperiments = relatedExperiments;
     return this;
   }
@@ -314,16 +324,16 @@ public class HoldoutDetailRep {
     return this;
   }
 
-   /**
+  /**
    * Get relatedExperiments
    * @return relatedExperiments
-  **/
+   */
   @javax.annotation.Nullable
   public List<Experiment> getRelatedExperiments() {
     return relatedExperiments;
   }
 
-  public void setRelatedExperiments(List<Experiment> relatedExperiments) {
+  public void setRelatedExperiments(@javax.annotation.Nullable List<Experiment> relatedExperiments) {
     this.relatedExperiments = relatedExperiments;
   }
 
@@ -434,60 +444,45 @@ public class HoldoutDetailRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_id");
-    openapiFields.add("status");
-    openapiFields.add("description");
-    openapiFields.add("holdoutAmount");
-    openapiFields.add("isDirty");
-    openapiFields.add("createdAt");
-    openapiFields.add("updatedAt");
-    openapiFields.add("baseExperiment");
-    openapiFields.add("relatedExperiments");
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "status", "description", "holdoutAmount", "isDirty", "createdAt", "updatedAt", "baseExperiment", "relatedExperiments"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("status");
-    openapiRequiredFields.add("holdoutAmount");
-    openapiRequiredFields.add("createdAt");
-    openapiRequiredFields.add("updatedAt");
-    openapiRequiredFields.add("baseExperiment");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "status", "holdoutAmount", "createdAt", "updatedAt", "baseExperiment"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to HoldoutDetailRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to HoldoutDetailRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!HoldoutDetailRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in HoldoutDetailRep is not found in the empty JSON string", HoldoutDetailRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in HoldoutDetailRep is not found in the empty JSON string", HoldoutDetailRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : HoldoutDetailRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if (!jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
       // validate the required field `status`
       StatusEnum.validateJsonElement(jsonObj.get("status"));
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if (!jsonObj.get("holdoutAmount").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `holdoutAmount` to be a primitive type in the JSON string but got `%s`", jsonObj.get("holdoutAmount").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `holdoutAmount` to be a primitive type in the JSON string but got `%s`", jsonObj.get("holdoutAmount").toString()));
       }
       // validate the required field `baseExperiment`
       Experiment.validateJsonElement(jsonObj.get("baseExperiment"));
@@ -496,7 +491,7 @@ public class HoldoutDetailRep {
         if (jsonArrayrelatedExperiments != null) {
           // ensure the json data is an array
           if (!jsonObj.get("relatedExperiments").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `relatedExperiments` to be an array in the JSON string but got `%s`", jsonObj.get("relatedExperiments").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `relatedExperiments` to be an array in the JSON string but got `%s`", jsonObj.get("relatedExperiments").toString()));
           }
 
           // validate the optional field `relatedExperiments` (array)
@@ -564,7 +559,7 @@ public class HoldoutDetailRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -579,22 +574,22 @@ public class HoldoutDetailRep {
     }
   }
 
- /**
-  * Create an instance of HoldoutDetailRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of HoldoutDetailRep
-  * @throws IOException if the JSON string is invalid with respect to HoldoutDetailRep
-  */
+  /**
+   * Create an instance of HoldoutDetailRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of HoldoutDetailRep
+   * @throws IOException if the JSON string is invalid with respect to HoldoutDetailRep
+   */
   public static HoldoutDetailRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, HoldoutDetailRep.class);
   }
 
- /**
-  * Convert an instance of HoldoutDetailRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of HoldoutDetailRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

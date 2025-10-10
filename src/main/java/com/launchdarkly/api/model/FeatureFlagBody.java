@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -47,59 +48,69 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * FeatureFlagBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class FeatureFlagBody {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_INCLUDE_IN_SNIPPET = "includeInSnippet";
   @Deprecated
   @SerializedName(SERIALIZED_NAME_INCLUDE_IN_SNIPPET)
+  @javax.annotation.Nullable
   private Boolean includeInSnippet;
 
   public static final String SERIALIZED_NAME_CLIENT_SIDE_AVAILABILITY = "clientSideAvailability";
   @SerializedName(SERIALIZED_NAME_CLIENT_SIDE_AVAILABILITY)
+  @javax.annotation.Nullable
   private ClientSideAvailabilityPost clientSideAvailability;
 
   public static final String SERIALIZED_NAME_VARIATIONS = "variations";
   @SerializedName(SERIALIZED_NAME_VARIATIONS)
+  @javax.annotation.Nullable
   private List<Variation> variations = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TEMPORARY = "temporary";
   @SerializedName(SERIALIZED_NAME_TEMPORARY)
+  @javax.annotation.Nullable
   private Boolean temporary;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CUSTOM_PROPERTIES = "customProperties";
   @SerializedName(SERIALIZED_NAME_CUSTOM_PROPERTIES)
+  @javax.annotation.Nullable
   private Map<String, CustomProperty> customProperties = new HashMap<>();
 
   public static final String SERIALIZED_NAME_DEFAULTS = "defaults";
   @SerializedName(SERIALIZED_NAME_DEFAULTS)
+  @javax.annotation.Nullable
   private Defaults defaults;
 
   /**
@@ -156,99 +167,105 @@ public class FeatureFlagBody {
 
   public static final String SERIALIZED_NAME_PURPOSE = "purpose";
   @SerializedName(SERIALIZED_NAME_PURPOSE)
+  @javax.annotation.Nullable
   private PurposeEnum purpose;
 
   public static final String SERIALIZED_NAME_MIGRATION_SETTINGS = "migrationSettings";
   @SerializedName(SERIALIZED_NAME_MIGRATION_SETTINGS)
+  @javax.annotation.Nullable
   private MigrationSettingsPost migrationSettings;
 
   public static final String SERIALIZED_NAME_MAINTAINER_ID = "maintainerId";
   @SerializedName(SERIALIZED_NAME_MAINTAINER_ID)
+  @javax.annotation.Nullable
   private String maintainerId;
 
   public static final String SERIALIZED_NAME_MAINTAINER_TEAM_KEY = "maintainerTeamKey";
   @SerializedName(SERIALIZED_NAME_MAINTAINER_TEAM_KEY)
+  @javax.annotation.Nullable
   private String maintainerTeamKey;
 
   public static final String SERIALIZED_NAME_INITIAL_PREREQUISITES = "initialPrerequisites";
   @SerializedName(SERIALIZED_NAME_INITIAL_PREREQUISITES)
+  @javax.annotation.Nullable
   private List<FlagPrerequisitePost> initialPrerequisites = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_IS_FLAG_ON = "isFlagOn";
   @SerializedName(SERIALIZED_NAME_IS_FLAG_ON)
+  @javax.annotation.Nullable
   private Boolean isFlagOn;
 
   public FeatureFlagBody() {
   }
 
-  public FeatureFlagBody name(String name) {
+  public FeatureFlagBody name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for the feature flag
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public FeatureFlagBody key(String key) {
+  public FeatureFlagBody key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * A unique key used to reference the flag in your code
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public FeatureFlagBody description(String description) {
+  public FeatureFlagBody description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Description of the feature flag. Defaults to an empty string.
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
   @Deprecated
-  public FeatureFlagBody includeInSnippet(Boolean includeInSnippet) {
+  public FeatureFlagBody includeInSnippet(@javax.annotation.Nullable Boolean includeInSnippet) {
     this.includeInSnippet = includeInSnippet;
     return this;
   }
 
-   /**
+  /**
    * Deprecated, use &lt;code&gt;clientSideAvailability&lt;/code&gt;. Whether this flag should be made available to the client-side JavaScript SDK. Defaults to &lt;code&gt;false&lt;/code&gt;.
    * @return includeInSnippet
    * @deprecated
-  **/
+   */
   @Deprecated
   @javax.annotation.Nullable
   public Boolean getIncludeInSnippet() {
@@ -256,31 +273,31 @@ public class FeatureFlagBody {
   }
 
   @Deprecated
-  public void setIncludeInSnippet(Boolean includeInSnippet) {
+  public void setIncludeInSnippet(@javax.annotation.Nullable Boolean includeInSnippet) {
     this.includeInSnippet = includeInSnippet;
   }
 
 
-  public FeatureFlagBody clientSideAvailability(ClientSideAvailabilityPost clientSideAvailability) {
+  public FeatureFlagBody clientSideAvailability(@javax.annotation.Nullable ClientSideAvailabilityPost clientSideAvailability) {
     this.clientSideAvailability = clientSideAvailability;
     return this;
   }
 
-   /**
+  /**
    * Get clientSideAvailability
    * @return clientSideAvailability
-  **/
+   */
   @javax.annotation.Nullable
   public ClientSideAvailabilityPost getClientSideAvailability() {
     return clientSideAvailability;
   }
 
-  public void setClientSideAvailability(ClientSideAvailabilityPost clientSideAvailability) {
+  public void setClientSideAvailability(@javax.annotation.Nullable ClientSideAvailabilityPost clientSideAvailability) {
     this.clientSideAvailability = clientSideAvailability;
   }
 
 
-  public FeatureFlagBody variations(List<Variation> variations) {
+  public FeatureFlagBody variations(@javax.annotation.Nullable List<Variation> variations) {
     this.variations = variations;
     return this;
   }
@@ -293,40 +310,40 @@ public class FeatureFlagBody {
     return this;
   }
 
-   /**
+  /**
    * An array of possible variations for the flag. The variation values must be unique. If omitted, two boolean variations of &lt;code&gt;true&lt;/code&gt; and &lt;code&gt;false&lt;/code&gt; will be used.
    * @return variations
-  **/
+   */
   @javax.annotation.Nullable
   public List<Variation> getVariations() {
     return variations;
   }
 
-  public void setVariations(List<Variation> variations) {
+  public void setVariations(@javax.annotation.Nullable List<Variation> variations) {
     this.variations = variations;
   }
 
 
-  public FeatureFlagBody temporary(Boolean temporary) {
+  public FeatureFlagBody temporary(@javax.annotation.Nullable Boolean temporary) {
     this.temporary = temporary;
     return this;
   }
 
-   /**
+  /**
    * Whether the flag is a temporary flag. Defaults to &lt;code&gt;true&lt;/code&gt;.
    * @return temporary
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getTemporary() {
     return temporary;
   }
 
-  public void setTemporary(Boolean temporary) {
+  public void setTemporary(@javax.annotation.Nullable Boolean temporary) {
     this.temporary = temporary;
   }
 
 
-  public FeatureFlagBody tags(List<String> tags) {
+  public FeatureFlagBody tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -339,21 +356,21 @@ public class FeatureFlagBody {
     return this;
   }
 
-   /**
+  /**
    * Tags for the feature flag. Defaults to an empty array.
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
 
-  public FeatureFlagBody customProperties(Map<String, CustomProperty> customProperties) {
+  public FeatureFlagBody customProperties(@javax.annotation.Nullable Map<String, CustomProperty> customProperties) {
     this.customProperties = customProperties;
     return this;
   }
@@ -366,116 +383,116 @@ public class FeatureFlagBody {
     return this;
   }
 
-   /**
+  /**
    * Get customProperties
    * @return customProperties
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, CustomProperty> getCustomProperties() {
     return customProperties;
   }
 
-  public void setCustomProperties(Map<String, CustomProperty> customProperties) {
+  public void setCustomProperties(@javax.annotation.Nullable Map<String, CustomProperty> customProperties) {
     this.customProperties = customProperties;
   }
 
 
-  public FeatureFlagBody defaults(Defaults defaults) {
+  public FeatureFlagBody defaults(@javax.annotation.Nullable Defaults defaults) {
     this.defaults = defaults;
     return this;
   }
 
-   /**
+  /**
    * Get defaults
    * @return defaults
-  **/
+   */
   @javax.annotation.Nullable
   public Defaults getDefaults() {
     return defaults;
   }
 
-  public void setDefaults(Defaults defaults) {
+  public void setDefaults(@javax.annotation.Nullable Defaults defaults) {
     this.defaults = defaults;
   }
 
 
-  public FeatureFlagBody purpose(PurposeEnum purpose) {
+  public FeatureFlagBody purpose(@javax.annotation.Nullable PurposeEnum purpose) {
     this.purpose = purpose;
     return this;
   }
 
-   /**
+  /**
    * Purpose of the flag
    * @return purpose
-  **/
+   */
   @javax.annotation.Nullable
   public PurposeEnum getPurpose() {
     return purpose;
   }
 
-  public void setPurpose(PurposeEnum purpose) {
+  public void setPurpose(@javax.annotation.Nullable PurposeEnum purpose) {
     this.purpose = purpose;
   }
 
 
-  public FeatureFlagBody migrationSettings(MigrationSettingsPost migrationSettings) {
+  public FeatureFlagBody migrationSettings(@javax.annotation.Nullable MigrationSettingsPost migrationSettings) {
     this.migrationSettings = migrationSettings;
     return this;
   }
 
-   /**
+  /**
    * Get migrationSettings
    * @return migrationSettings
-  **/
+   */
   @javax.annotation.Nullable
   public MigrationSettingsPost getMigrationSettings() {
     return migrationSettings;
   }
 
-  public void setMigrationSettings(MigrationSettingsPost migrationSettings) {
+  public void setMigrationSettings(@javax.annotation.Nullable MigrationSettingsPost migrationSettings) {
     this.migrationSettings = migrationSettings;
   }
 
 
-  public FeatureFlagBody maintainerId(String maintainerId) {
+  public FeatureFlagBody maintainerId(@javax.annotation.Nullable String maintainerId) {
     this.maintainerId = maintainerId;
     return this;
   }
 
-   /**
+  /**
    * The ID of the member who maintains this feature flag
    * @return maintainerId
-  **/
+   */
   @javax.annotation.Nullable
   public String getMaintainerId() {
     return maintainerId;
   }
 
-  public void setMaintainerId(String maintainerId) {
+  public void setMaintainerId(@javax.annotation.Nullable String maintainerId) {
     this.maintainerId = maintainerId;
   }
 
 
-  public FeatureFlagBody maintainerTeamKey(String maintainerTeamKey) {
+  public FeatureFlagBody maintainerTeamKey(@javax.annotation.Nullable String maintainerTeamKey) {
     this.maintainerTeamKey = maintainerTeamKey;
     return this;
   }
 
-   /**
+  /**
    * The key of the team that maintains this feature flag
    * @return maintainerTeamKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getMaintainerTeamKey() {
     return maintainerTeamKey;
   }
 
-  public void setMaintainerTeamKey(String maintainerTeamKey) {
+  public void setMaintainerTeamKey(@javax.annotation.Nullable String maintainerTeamKey) {
     this.maintainerTeamKey = maintainerTeamKey;
   }
 
 
-  public FeatureFlagBody initialPrerequisites(List<FlagPrerequisitePost> initialPrerequisites) {
+  public FeatureFlagBody initialPrerequisites(@javax.annotation.Nullable List<FlagPrerequisitePost> initialPrerequisites) {
     this.initialPrerequisites = initialPrerequisites;
     return this;
   }
@@ -488,35 +505,35 @@ public class FeatureFlagBody {
     return this;
   }
 
-   /**
+  /**
    * Initial set of prerequisite flags for all environments
    * @return initialPrerequisites
-  **/
+   */
   @javax.annotation.Nullable
   public List<FlagPrerequisitePost> getInitialPrerequisites() {
     return initialPrerequisites;
   }
 
-  public void setInitialPrerequisites(List<FlagPrerequisitePost> initialPrerequisites) {
+  public void setInitialPrerequisites(@javax.annotation.Nullable List<FlagPrerequisitePost> initialPrerequisites) {
     this.initialPrerequisites = initialPrerequisites;
   }
 
 
-  public FeatureFlagBody isFlagOn(Boolean isFlagOn) {
+  public FeatureFlagBody isFlagOn(@javax.annotation.Nullable Boolean isFlagOn) {
     this.isFlagOn = isFlagOn;
     return this;
   }
 
-   /**
+  /**
    * Whether to automatically turn the flag on across all environments at creation. Defaults to &lt;code&gt;false&lt;/code&gt;.
    * @return isFlagOn
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsFlagOn() {
     return isFlagOn;
   }
 
-  public void setIsFlagOn(Boolean isFlagOn) {
+  public void setIsFlagOn(@javax.annotation.Nullable Boolean isFlagOn) {
     this.isFlagOn = isFlagOn;
   }
 
@@ -641,58 +658,40 @@ public class FeatureFlagBody {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("key");
-    openapiFields.add("description");
-    openapiFields.add("includeInSnippet");
-    openapiFields.add("clientSideAvailability");
-    openapiFields.add("variations");
-    openapiFields.add("temporary");
-    openapiFields.add("tags");
-    openapiFields.add("customProperties");
-    openapiFields.add("defaults");
-    openapiFields.add("purpose");
-    openapiFields.add("migrationSettings");
-    openapiFields.add("maintainerId");
-    openapiFields.add("maintainerTeamKey");
-    openapiFields.add("initialPrerequisites");
-    openapiFields.add("isFlagOn");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "key", "description", "includeInSnippet", "clientSideAvailability", "variations", "temporary", "tags", "customProperties", "defaults", "purpose", "migrationSettings", "maintainerId", "maintainerTeamKey", "initialPrerequisites", "isFlagOn"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("key");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name", "key"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FeatureFlagBody
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FeatureFlagBody
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FeatureFlagBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FeatureFlagBody is not found in the empty JSON string", FeatureFlagBody.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FeatureFlagBody is not found in the empty JSON string", FeatureFlagBody.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : FeatureFlagBody.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       // validate the optional field `clientSideAvailability`
       if (jsonObj.get("clientSideAvailability") != null && !jsonObj.get("clientSideAvailability").isJsonNull()) {
@@ -703,7 +702,7 @@ public class FeatureFlagBody {
         if (jsonArrayvariations != null) {
           // ensure the json data is an array
           if (!jsonObj.get("variations").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `variations` to be an array in the JSON string but got `%s`", jsonObj.get("variations").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `variations` to be an array in the JSON string but got `%s`", jsonObj.get("variations").toString()));
           }
 
           // validate the optional field `variations` (array)
@@ -714,14 +713,14 @@ public class FeatureFlagBody {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       // validate the optional field `defaults`
       if (jsonObj.get("defaults") != null && !jsonObj.get("defaults").isJsonNull()) {
         Defaults.validateJsonElement(jsonObj.get("defaults"));
       }
       if ((jsonObj.get("purpose") != null && !jsonObj.get("purpose").isJsonNull()) && !jsonObj.get("purpose").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `purpose` to be a primitive type in the JSON string but got `%s`", jsonObj.get("purpose").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `purpose` to be a primitive type in the JSON string but got `%s`", jsonObj.get("purpose").toString()));
       }
       // validate the optional field `purpose`
       if (jsonObj.get("purpose") != null && !jsonObj.get("purpose").isJsonNull()) {
@@ -732,17 +731,17 @@ public class FeatureFlagBody {
         MigrationSettingsPost.validateJsonElement(jsonObj.get("migrationSettings"));
       }
       if ((jsonObj.get("maintainerId") != null && !jsonObj.get("maintainerId").isJsonNull()) && !jsonObj.get("maintainerId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerId").toString()));
       }
       if ((jsonObj.get("maintainerTeamKey") != null && !jsonObj.get("maintainerTeamKey").isJsonNull()) && !jsonObj.get("maintainerTeamKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `maintainerTeamKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerTeamKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `maintainerTeamKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerTeamKey").toString()));
       }
       if (jsonObj.get("initialPrerequisites") != null && !jsonObj.get("initialPrerequisites").isJsonNull()) {
         JsonArray jsonArrayinitialPrerequisites = jsonObj.getAsJsonArray("initialPrerequisites");
         if (jsonArrayinitialPrerequisites != null) {
           // ensure the json data is an array
           if (!jsonObj.get("initialPrerequisites").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `initialPrerequisites` to be an array in the JSON string but got `%s`", jsonObj.get("initialPrerequisites").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `initialPrerequisites` to be an array in the JSON string but got `%s`", jsonObj.get("initialPrerequisites").toString()));
           }
 
           // validate the optional field `initialPrerequisites` (array)
@@ -810,7 +809,7 @@ public class FeatureFlagBody {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -825,22 +824,22 @@ public class FeatureFlagBody {
     }
   }
 
- /**
-  * Create an instance of FeatureFlagBody given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FeatureFlagBody
-  * @throws IOException if the JSON string is invalid with respect to FeatureFlagBody
-  */
+  /**
+   * Create an instance of FeatureFlagBody given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FeatureFlagBody
+   * @throws IOException if the JSON string is invalid with respect to FeatureFlagBody
+   */
   public static FeatureFlagBody fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FeatureFlagBody.class);
   }
 
- /**
-  * Convert an instance of FeatureFlagBody to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FeatureFlagBody to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

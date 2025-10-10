@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,32 +42,34 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ViewsAccess
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ViewsAccess {
   public static final String SERIALIZED_NAME_DENIED = "denied";
   @SerializedName(SERIALIZED_NAME_DENIED)
+  @javax.annotation.Nonnull
   private List<ViewsAccessDenied> denied = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ALLOWED = "allowed";
   @SerializedName(SERIALIZED_NAME_ALLOWED)
+  @javax.annotation.Nonnull
   private List<ViewsAccessAllowedRep> allowed = new ArrayList<>();
 
   public ViewsAccess() {
   }
 
-  public ViewsAccess denied(List<ViewsAccessDenied> denied) {
+  public ViewsAccess denied(@javax.annotation.Nonnull List<ViewsAccessDenied> denied) {
     this.denied = denied;
     return this;
   }
@@ -79,21 +82,21 @@ public class ViewsAccess {
     return this;
   }
 
-   /**
+  /**
    * Get denied
    * @return denied
-  **/
+   */
   @javax.annotation.Nonnull
   public List<ViewsAccessDenied> getDenied() {
     return denied;
   }
 
-  public void setDenied(List<ViewsAccessDenied> denied) {
+  public void setDenied(@javax.annotation.Nonnull List<ViewsAccessDenied> denied) {
     this.denied = denied;
   }
 
 
-  public ViewsAccess allowed(List<ViewsAccessAllowedRep> allowed) {
+  public ViewsAccess allowed(@javax.annotation.Nonnull List<ViewsAccessAllowedRep> allowed) {
     this.allowed = allowed;
     return this;
   }
@@ -106,16 +109,16 @@ public class ViewsAccess {
     return this;
   }
 
-   /**
+  /**
    * Get allowed
    * @return allowed
-  **/
+   */
   @javax.annotation.Nonnull
   public List<ViewsAccessAllowedRep> getAllowed() {
     return allowed;
   }
 
-  public void setAllowed(List<ViewsAccessAllowedRep> allowed) {
+  public void setAllowed(@javax.annotation.Nonnull List<ViewsAccessAllowedRep> allowed) {
     this.allowed = allowed;
   }
 
@@ -212,39 +215,35 @@ public class ViewsAccess {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("denied");
-    openapiFields.add("allowed");
+    openapiFields = new HashSet<String>(Arrays.asList("denied", "allowed"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("denied");
-    openapiRequiredFields.add("allowed");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("denied", "allowed"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ViewsAccess
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ViewsAccess
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ViewsAccess.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ViewsAccess is not found in the empty JSON string", ViewsAccess.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ViewsAccess is not found in the empty JSON string", ViewsAccess.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ViewsAccess.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the json data is an array
       if (!jsonObj.get("denied").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `denied` to be an array in the JSON string but got `%s`", jsonObj.get("denied").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `denied` to be an array in the JSON string but got `%s`", jsonObj.get("denied").toString()));
       }
 
       JsonArray jsonArraydenied = jsonObj.getAsJsonArray("denied");
@@ -254,7 +253,7 @@ public class ViewsAccess {
       };
       // ensure the json data is an array
       if (!jsonObj.get("allowed").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `allowed` to be an array in the JSON string but got `%s`", jsonObj.get("allowed").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `allowed` to be an array in the JSON string but got `%s`", jsonObj.get("allowed").toString()));
       }
 
       JsonArray jsonArrayallowed = jsonObj.getAsJsonArray("allowed");
@@ -321,7 +320,7 @@ public class ViewsAccess {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -336,22 +335,22 @@ public class ViewsAccess {
     }
   }
 
- /**
-  * Create an instance of ViewsAccess given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ViewsAccess
-  * @throws IOException if the JSON string is invalid with respect to ViewsAccess
-  */
+  /**
+   * Create an instance of ViewsAccess given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ViewsAccess
+   * @throws IOException if the JSON string is invalid with respect to ViewsAccess
+   */
   public static ViewsAccess fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ViewsAccess.class);
   }
 
- /**
-  * Convert an instance of ViewsAccess to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ViewsAccess to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

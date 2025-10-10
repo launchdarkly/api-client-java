@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,262 +42,274 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * User
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class User {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nullable
   private String key;
 
   public static final String SERIALIZED_NAME_SECONDARY = "secondary";
   @SerializedName(SERIALIZED_NAME_SECONDARY)
+  @javax.annotation.Nullable
   private String secondary;
 
   public static final String SERIALIZED_NAME_IP = "ip";
   @SerializedName(SERIALIZED_NAME_IP)
+  @javax.annotation.Nullable
   private String ip;
 
   public static final String SERIALIZED_NAME_COUNTRY = "country";
   @SerializedName(SERIALIZED_NAME_COUNTRY)
+  @javax.annotation.Nullable
   private String country;
 
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
+  @javax.annotation.Nullable
   private String email;
 
   public static final String SERIALIZED_NAME_FIRST_NAME = "firstName";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
+  @javax.annotation.Nullable
   private String firstName;
 
   public static final String SERIALIZED_NAME_LAST_NAME = "lastName";
   @SerializedName(SERIALIZED_NAME_LAST_NAME)
+  @javax.annotation.Nullable
   private String lastName;
 
   public static final String SERIALIZED_NAME_AVATAR = "avatar";
   @SerializedName(SERIALIZED_NAME_AVATAR)
+  @javax.annotation.Nullable
   private String avatar;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_ANONYMOUS = "anonymous";
   @SerializedName(SERIALIZED_NAME_ANONYMOUS)
+  @javax.annotation.Nullable
   private Boolean anonymous;
 
   public static final String SERIALIZED_NAME_CUSTOM = "custom";
   @SerializedName(SERIALIZED_NAME_CUSTOM)
+  @javax.annotation.Nullable
   private Map<String, Object> custom = new HashMap<>();
 
   public static final String SERIALIZED_NAME_PRIVATE_ATTRS = "privateAttrs";
   @SerializedName(SERIALIZED_NAME_PRIVATE_ATTRS)
+  @javax.annotation.Nullable
   private List<String> privateAttrs = new ArrayList<>();
 
   public User() {
   }
 
-  public User key(String key) {
+  public User key(@javax.annotation.Nullable String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * The user key. This is the only mandatory user attribute.
    * @return key
-  **/
+   */
   @javax.annotation.Nullable
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nullable String key) {
     this.key = key;
   }
 
 
-  public User secondary(String secondary) {
+  public User secondary(@javax.annotation.Nullable String secondary) {
     this.secondary = secondary;
     return this;
   }
 
-   /**
+  /**
    * If provided, used with the user key to generate a variation in percentage rollouts
    * @return secondary
-  **/
+   */
   @javax.annotation.Nullable
   public String getSecondary() {
     return secondary;
   }
 
-  public void setSecondary(String secondary) {
+  public void setSecondary(@javax.annotation.Nullable String secondary) {
     this.secondary = secondary;
   }
 
 
-  public User ip(String ip) {
+  public User ip(@javax.annotation.Nullable String ip) {
     this.ip = ip;
     return this;
   }
 
-   /**
+  /**
    * The user&#39;s IP address
    * @return ip
-  **/
+   */
   @javax.annotation.Nullable
   public String getIp() {
     return ip;
   }
 
-  public void setIp(String ip) {
+  public void setIp(@javax.annotation.Nullable String ip) {
     this.ip = ip;
   }
 
 
-  public User country(String country) {
+  public User country(@javax.annotation.Nullable String country) {
     this.country = country;
     return this;
   }
 
-   /**
+  /**
    * The user&#39;s country
    * @return country
-  **/
+   */
   @javax.annotation.Nullable
   public String getCountry() {
     return country;
   }
 
-  public void setCountry(String country) {
+  public void setCountry(@javax.annotation.Nullable String country) {
     this.country = country;
   }
 
 
-  public User email(String email) {
+  public User email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
 
-   /**
+  /**
    * The user&#39;s email
    * @return email
-  **/
+   */
   @javax.annotation.Nullable
   public String getEmail() {
     return email;
   }
 
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public User firstName(String firstName) {
+  public User firstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
     return this;
   }
 
-   /**
+  /**
    * The user&#39;s first name
    * @return firstName
-  **/
+   */
   @javax.annotation.Nullable
   public String getFirstName() {
     return firstName;
   }
 
-  public void setFirstName(String firstName) {
+  public void setFirstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
   }
 
 
-  public User lastName(String lastName) {
+  public User lastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
     return this;
   }
 
-   /**
+  /**
    * The user&#39;s last name
    * @return lastName
-  **/
+   */
   @javax.annotation.Nullable
   public String getLastName() {
     return lastName;
   }
 
-  public void setLastName(String lastName) {
+  public void setLastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
   }
 
 
-  public User avatar(String avatar) {
+  public User avatar(@javax.annotation.Nullable String avatar) {
     this.avatar = avatar;
     return this;
   }
 
-   /**
+  /**
    * An absolute URL to an avatar image.
    * @return avatar
-  **/
+   */
   @javax.annotation.Nullable
   public String getAvatar() {
     return avatar;
   }
 
-  public void setAvatar(String avatar) {
+  public void setAvatar(@javax.annotation.Nullable String avatar) {
     this.avatar = avatar;
   }
 
 
-  public User name(String name) {
+  public User name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The user&#39;s full name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public User anonymous(Boolean anonymous) {
+  public User anonymous(@javax.annotation.Nullable Boolean anonymous) {
     this.anonymous = anonymous;
     return this;
   }
 
-   /**
+  /**
    * Whether the user is anonymous. If true, this user does not appear on the Contexts list in the LaunchDarkly user interface.
    * @return anonymous
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getAnonymous() {
     return anonymous;
   }
 
-  public void setAnonymous(Boolean anonymous) {
+  public void setAnonymous(@javax.annotation.Nullable Boolean anonymous) {
     this.anonymous = anonymous;
   }
 
 
-  public User custom(Map<String, Object> custom) {
+  public User custom(@javax.annotation.Nullable Map<String, Object> custom) {
     this.custom = custom;
     return this;
   }
@@ -309,21 +322,21 @@ public class User {
     return this;
   }
 
-   /**
+  /**
    * Any other custom attributes for this user. Custom attributes contain any other user data that you would like to use to conditionally target your users.
    * @return custom
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Object> getCustom() {
     return custom;
   }
 
-  public void setCustom(Map<String, Object> custom) {
+  public void setCustom(@javax.annotation.Nullable Map<String, Object> custom) {
     this.custom = custom;
   }
 
 
-  public User privateAttrs(List<String> privateAttrs) {
+  public User privateAttrs(@javax.annotation.Nullable List<String> privateAttrs) {
     this.privateAttrs = privateAttrs;
     return this;
   }
@@ -336,16 +349,16 @@ public class User {
     return this;
   }
 
-   /**
+  /**
    * A list of attribute names that are marked as private. You can use these attributes in targeting rules and segments. If you are using a server-side SDK, the SDK will not send the private attribute back to LaunchDarkly. If you are using a client-side SDK, the SDK will send the private attribute back to LaunchDarkly for evaluation. However, the SDK won&#39;t send the attribute to LaunchDarkly in events data, LaunchDarkly won&#39;t store the private attribute, and the private attribute will not appear on the Contexts list.
    * @return privateAttrs
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getPrivateAttrs() {
     return privateAttrs;
   }
 
-  public void setPrivateAttrs(List<String> privateAttrs) {
+  public void setPrivateAttrs(@javax.annotation.Nullable List<String> privateAttrs) {
     this.privateAttrs = privateAttrs;
   }
 
@@ -462,67 +475,55 @@ public class User {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("key");
-    openapiFields.add("secondary");
-    openapiFields.add("ip");
-    openapiFields.add("country");
-    openapiFields.add("email");
-    openapiFields.add("firstName");
-    openapiFields.add("lastName");
-    openapiFields.add("avatar");
-    openapiFields.add("name");
-    openapiFields.add("anonymous");
-    openapiFields.add("custom");
-    openapiFields.add("privateAttrs");
+    openapiFields = new HashSet<String>(Arrays.asList("key", "secondary", "ip", "country", "email", "firstName", "lastName", "avatar", "name", "anonymous", "custom", "privateAttrs"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to User
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to User
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!User.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in User is not found in the empty JSON string", User.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in User is not found in the empty JSON string", User.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if ((jsonObj.get("secondary") != null && !jsonObj.get("secondary").isJsonNull()) && !jsonObj.get("secondary").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `secondary` to be a primitive type in the JSON string but got `%s`", jsonObj.get("secondary").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `secondary` to be a primitive type in the JSON string but got `%s`", jsonObj.get("secondary").toString()));
       }
       if ((jsonObj.get("ip") != null && !jsonObj.get("ip").isJsonNull()) && !jsonObj.get("ip").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ip` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ip").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `ip` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ip").toString()));
       }
       if ((jsonObj.get("country") != null && !jsonObj.get("country").isJsonNull()) && !jsonObj.get("country").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `country` to be a primitive type in the JSON string but got `%s`", jsonObj.get("country").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `country` to be a primitive type in the JSON string but got `%s`", jsonObj.get("country").toString()));
       }
       if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
       }
       if ((jsonObj.get("firstName") != null && !jsonObj.get("firstName").isJsonNull()) && !jsonObj.get("firstName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `firstName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("firstName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `firstName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("firstName").toString()));
       }
       if ((jsonObj.get("lastName") != null && !jsonObj.get("lastName").isJsonNull()) && !jsonObj.get("lastName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `lastName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `lastName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastName").toString()));
       }
       if ((jsonObj.get("avatar") != null && !jsonObj.get("avatar").isJsonNull()) && !jsonObj.get("avatar").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `avatar` to be a primitive type in the JSON string but got `%s`", jsonObj.get("avatar").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `avatar` to be a primitive type in the JSON string but got `%s`", jsonObj.get("avatar").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("privateAttrs") != null && !jsonObj.get("privateAttrs").isJsonNull() && !jsonObj.get("privateAttrs").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `privateAttrs` to be an array in the JSON string but got `%s`", jsonObj.get("privateAttrs").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `privateAttrs` to be an array in the JSON string but got `%s`", jsonObj.get("privateAttrs").toString()));
       }
   }
 
@@ -583,7 +584,7 @@ public class User {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -598,22 +599,22 @@ public class User {
     }
   }
 
- /**
-  * Create an instance of User given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of User
-  * @throws IOException if the JSON string is invalid with respect to User
-  */
+  /**
+   * Create an instance of User given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of User
+   * @throws IOException if the JSON string is invalid with respect to User
+   */
   public static User fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, User.class);
   }
 
- /**
-  * Convert an instance of User to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of User to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

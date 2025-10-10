@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,36 +44,39 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * MetricGroupCollectionRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class MetricGroupCollectionRep {
   public static final String SERIALIZED_NAME_ITEMS = "items";
   @SerializedName(SERIALIZED_NAME_ITEMS)
+  @javax.annotation.Nonnull
   private List<MetricGroupRep> items = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_TOTAL_COUNT = "totalCount";
   @SerializedName(SERIALIZED_NAME_TOTAL_COUNT)
+  @javax.annotation.Nullable
   private Integer totalCount;
 
   public MetricGroupCollectionRep() {
   }
 
-  public MetricGroupCollectionRep items(List<MetricGroupRep> items) {
+  public MetricGroupCollectionRep items(@javax.annotation.Nonnull List<MetricGroupRep> items) {
     this.items = items;
     return this;
   }
@@ -85,21 +89,21 @@ public class MetricGroupCollectionRep {
     return this;
   }
 
-   /**
+  /**
    * An array of metric groups
    * @return items
-  **/
+   */
   @javax.annotation.Nonnull
   public List<MetricGroupRep> getItems() {
     return items;
   }
 
-  public void setItems(List<MetricGroupRep> items) {
+  public void setItems(@javax.annotation.Nonnull List<MetricGroupRep> items) {
     this.items = items;
   }
 
 
-  public MetricGroupCollectionRep links(Map<String, Link> links) {
+  public MetricGroupCollectionRep links(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -112,35 +116,35 @@ public class MetricGroupCollectionRep {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public MetricGroupCollectionRep totalCount(Integer totalCount) {
+  public MetricGroupCollectionRep totalCount(@javax.annotation.Nullable Integer totalCount) {
     this.totalCount = totalCount;
     return this;
   }
 
-   /**
+  /**
    * Get totalCount
    * @return totalCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getTotalCount() {
     return totalCount;
   }
 
-  public void setTotalCount(Integer totalCount) {
+  public void setTotalCount(@javax.annotation.Nullable Integer totalCount) {
     this.totalCount = totalCount;
   }
 
@@ -239,39 +243,35 @@ public class MetricGroupCollectionRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("items");
-    openapiFields.add("_links");
-    openapiFields.add("totalCount");
+    openapiFields = new HashSet<String>(Arrays.asList("items", "_links", "totalCount"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("items");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("items"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to MetricGroupCollectionRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to MetricGroupCollectionRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!MetricGroupCollectionRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in MetricGroupCollectionRep is not found in the empty JSON string", MetricGroupCollectionRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in MetricGroupCollectionRep is not found in the empty JSON string", MetricGroupCollectionRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : MetricGroupCollectionRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the json data is an array
       if (!jsonObj.get("items").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
       }
 
       JsonArray jsonArrayitems = jsonObj.getAsJsonArray("items");
@@ -338,7 +338,7 @@ public class MetricGroupCollectionRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -353,22 +353,22 @@ public class MetricGroupCollectionRep {
     }
   }
 
- /**
-  * Create an instance of MetricGroupCollectionRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of MetricGroupCollectionRep
-  * @throws IOException if the JSON string is invalid with respect to MetricGroupCollectionRep
-  */
+  /**
+   * Create an instance of MetricGroupCollectionRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of MetricGroupCollectionRep
+   * @throws IOException if the JSON string is invalid with respect to MetricGroupCollectionRep
+   */
   public static MetricGroupCollectionRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, MetricGroupCollectionRep.class);
   }
 
- /**
-  * Convert an instance of MetricGroupCollectionRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of MetricGroupCollectionRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -89,7 +89,8 @@ public class ViewsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -98,7 +99,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createViewCall(String ldAPIVersion, String projectKey, ViewPost viewPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createViewCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull ViewPost viewPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -124,10 +125,6 @@ public class ViewsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -144,12 +141,17 @@ public class ViewsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createViewValidateBeforeCall(String ldAPIVersion, String projectKey, ViewPost viewPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createViewValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull ViewPost viewPost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling createView(Async)");
@@ -178,7 +180,8 @@ public class ViewsBetaApi {
      * @return View
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -187,7 +190,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public View createView(String ldAPIVersion, String projectKey, ViewPost viewPost) throws ApiException {
+    public View createView(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull ViewPost viewPost) throws ApiException {
         ApiResponse<View> localVarResp = createViewWithHttpInfo(ldAPIVersion, projectKey, viewPost);
         return localVarResp.getData();
     }
@@ -201,7 +204,8 @@ public class ViewsBetaApi {
      * @return ApiResponse&lt;View&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -210,7 +214,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<View> createViewWithHttpInfo(String ldAPIVersion, String projectKey, ViewPost viewPost) throws ApiException {
+    public ApiResponse<View> createViewWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull ViewPost viewPost) throws ApiException {
         okhttp3.Call localVarCall = createViewValidateBeforeCall(ldAPIVersion, projectKey, viewPost, null);
         Type localVarReturnType = new TypeToken<View>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -226,7 +230,8 @@ public class ViewsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -235,7 +240,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createViewAsync(String ldAPIVersion, String projectKey, ViewPost viewPost, final ApiCallback<View> _callback) throws ApiException {
+    public okhttp3.Call createViewAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull ViewPost viewPost, final ApiCallback<View> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createViewValidateBeforeCall(ldAPIVersion, projectKey, viewPost, _callback);
         Type localVarReturnType = new TypeToken<View>(){}.getType();
@@ -251,7 +256,8 @@ public class ViewsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
@@ -259,7 +265,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteViewCall(String ldAPIVersion, String projectKey, String viewKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteViewCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -286,10 +292,6 @@ public class ViewsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -305,12 +307,17 @@ public class ViewsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteViewValidateBeforeCall(String ldAPIVersion, String projectKey, String viewKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteViewValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling deleteView(Async)");
@@ -338,7 +345,8 @@ public class ViewsBetaApi {
      * @param viewKey  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
@@ -346,7 +354,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteView(String ldAPIVersion, String projectKey, String viewKey) throws ApiException {
+    public void deleteView(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey) throws ApiException {
         deleteViewWithHttpInfo(ldAPIVersion, projectKey, viewKey);
     }
 
@@ -359,7 +367,8 @@ public class ViewsBetaApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
@@ -367,7 +376,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteViewWithHttpInfo(String ldAPIVersion, String projectKey, String viewKey) throws ApiException {
+    public ApiResponse<Void> deleteViewWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey) throws ApiException {
         okhttp3.Call localVarCall = deleteViewValidateBeforeCall(ldAPIVersion, projectKey, viewKey, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -382,7 +391,8 @@ public class ViewsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
@@ -390,7 +400,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteViewAsync(String ldAPIVersion, String projectKey, String viewKey, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteViewAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteViewValidateBeforeCall(ldAPIVersion, projectKey, viewKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -409,7 +419,8 @@ public class ViewsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -418,7 +429,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getLinkedResourcesCall(String ldAPIVersion, String projectKey, String viewKey, String resourceType, Integer limit, Integer offset, String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getLinkedResourcesCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -458,10 +469,6 @@ public class ViewsBetaApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
         }
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -477,12 +484,17 @@ public class ViewsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getLinkedResourcesValidateBeforeCall(String ldAPIVersion, String projectKey, String viewKey, String resourceType, Integer limit, Integer offset, String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getLinkedResourcesValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling getLinkedResources(Async)");
@@ -520,7 +532,8 @@ public class ViewsBetaApi {
      * @return ViewLinkedResources
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -529,7 +542,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ViewLinkedResources getLinkedResources(String ldAPIVersion, String projectKey, String viewKey, String resourceType, Integer limit, Integer offset, String sort) throws ApiException {
+    public ViewLinkedResources getLinkedResources(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort) throws ApiException {
         ApiResponse<ViewLinkedResources> localVarResp = getLinkedResourcesWithHttpInfo(ldAPIVersion, projectKey, viewKey, resourceType, limit, offset, sort);
         return localVarResp.getData();
     }
@@ -547,7 +560,8 @@ public class ViewsBetaApi {
      * @return ApiResponse&lt;ViewLinkedResources&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -556,7 +570,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ViewLinkedResources> getLinkedResourcesWithHttpInfo(String ldAPIVersion, String projectKey, String viewKey, String resourceType, Integer limit, Integer offset, String sort) throws ApiException {
+    public ApiResponse<ViewLinkedResources> getLinkedResourcesWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = getLinkedResourcesValidateBeforeCall(ldAPIVersion, projectKey, viewKey, resourceType, limit, offset, sort, null);
         Type localVarReturnType = new TypeToken<ViewLinkedResources>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -576,7 +590,8 @@ public class ViewsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -585,7 +600,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getLinkedResourcesAsync(String ldAPIVersion, String projectKey, String viewKey, String resourceType, Integer limit, Integer offset, String sort, final ApiCallback<ViewLinkedResources> _callback) throws ApiException {
+    public okhttp3.Call getLinkedResourcesAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort, final ApiCallback<ViewLinkedResources> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getLinkedResourcesValidateBeforeCall(ldAPIVersion, projectKey, viewKey, resourceType, limit, offset, sort, _callback);
         Type localVarReturnType = new TypeToken<ViewLinkedResources>(){}.getType();
@@ -605,7 +620,8 @@ public class ViewsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -614,7 +630,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getLinkedViewsCall(String ldAPIVersion, String projectKey, String resourceType, String resourceKey, String environmentId, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getLinkedViewsCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceKey, @javax.annotation.Nullable String environmentId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -654,10 +670,6 @@ public class ViewsBetaApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
         }
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -673,12 +685,17 @@ public class ViewsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getLinkedViewsValidateBeforeCall(String ldAPIVersion, String projectKey, String resourceType, String resourceKey, String environmentId, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getLinkedViewsValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceKey, @javax.annotation.Nullable String environmentId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling getLinkedViews(Async)");
@@ -716,7 +733,8 @@ public class ViewsBetaApi {
      * @return Views
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -725,7 +743,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public Views getLinkedViews(String ldAPIVersion, String projectKey, String resourceType, String resourceKey, String environmentId, Integer limit, Integer offset) throws ApiException {
+    public Views getLinkedViews(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceKey, @javax.annotation.Nullable String environmentId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         ApiResponse<Views> localVarResp = getLinkedViewsWithHttpInfo(ldAPIVersion, projectKey, resourceType, resourceKey, environmentId, limit, offset);
         return localVarResp.getData();
     }
@@ -743,7 +761,8 @@ public class ViewsBetaApi {
      * @return ApiResponse&lt;Views&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -752,7 +771,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Views> getLinkedViewsWithHttpInfo(String ldAPIVersion, String projectKey, String resourceType, String resourceKey, String environmentId, Integer limit, Integer offset) throws ApiException {
+    public ApiResponse<Views> getLinkedViewsWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceKey, @javax.annotation.Nullable String environmentId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         okhttp3.Call localVarCall = getLinkedViewsValidateBeforeCall(ldAPIVersion, projectKey, resourceType, resourceKey, environmentId, limit, offset, null);
         Type localVarReturnType = new TypeToken<Views>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -772,7 +791,8 @@ public class ViewsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -781,7 +801,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getLinkedViewsAsync(String ldAPIVersion, String projectKey, String resourceType, String resourceKey, String environmentId, Integer limit, Integer offset, final ApiCallback<Views> _callback) throws ApiException {
+    public okhttp3.Call getLinkedViewsAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceKey, @javax.annotation.Nullable String environmentId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<Views> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getLinkedViewsValidateBeforeCall(ldAPIVersion, projectKey, resourceType, resourceKey, environmentId, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<Views>(){}.getType();
@@ -802,7 +822,8 @@ public class ViewsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -811,7 +832,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getViewCall(String ldAPIVersion, String projectKey, String viewKey, String sort, Integer limit, Integer offset, String filter, List<String> expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getViewCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable List<String> expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -858,10 +879,6 @@ public class ViewsBetaApi {
             localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "expand", expand));
         }
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -877,12 +894,17 @@ public class ViewsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getViewValidateBeforeCall(String ldAPIVersion, String projectKey, String viewKey, String sort, Integer limit, Integer offset, String filter, List<String> expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getViewValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable List<String> expand, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling getView(Async)");
@@ -916,7 +938,8 @@ public class ViewsBetaApi {
      * @return View
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -925,7 +948,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public View getView(String ldAPIVersion, String projectKey, String viewKey, String sort, Integer limit, Integer offset, String filter, List<String> expand) throws ApiException {
+    public View getView(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable List<String> expand) throws ApiException {
         ApiResponse<View> localVarResp = getViewWithHttpInfo(ldAPIVersion, projectKey, viewKey, sort, limit, offset, filter, expand);
         return localVarResp.getData();
     }
@@ -944,7 +967,8 @@ public class ViewsBetaApi {
      * @return ApiResponse&lt;View&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -953,7 +977,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<View> getViewWithHttpInfo(String ldAPIVersion, String projectKey, String viewKey, String sort, Integer limit, Integer offset, String filter, List<String> expand) throws ApiException {
+    public ApiResponse<View> getViewWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable List<String> expand) throws ApiException {
         okhttp3.Call localVarCall = getViewValidateBeforeCall(ldAPIVersion, projectKey, viewKey, sort, limit, offset, filter, expand, null);
         Type localVarReturnType = new TypeToken<View>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -974,7 +998,8 @@ public class ViewsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -983,7 +1008,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getViewAsync(String ldAPIVersion, String projectKey, String viewKey, String sort, Integer limit, Integer offset, String filter, List<String> expand, final ApiCallback<View> _callback) throws ApiException {
+    public okhttp3.Call getViewAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable List<String> expand, final ApiCallback<View> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getViewValidateBeforeCall(ldAPIVersion, projectKey, viewKey, sort, limit, offset, filter, expand, _callback);
         Type localVarReturnType = new TypeToken<View>(){}.getType();
@@ -1003,7 +1028,8 @@ public class ViewsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1012,7 +1038,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getViewsCall(String ldAPIVersion, String projectKey, String sort, Integer limit, Integer offset, String filter, List<String> expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getViewsCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable List<String> expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1058,10 +1084,6 @@ public class ViewsBetaApi {
             localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("csv", "expand", expand));
         }
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1077,12 +1099,17 @@ public class ViewsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getViewsValidateBeforeCall(String ldAPIVersion, String projectKey, String sort, Integer limit, Integer offset, String filter, List<String> expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getViewsValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable List<String> expand, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling getViews(Async)");
@@ -1110,7 +1137,8 @@ public class ViewsBetaApi {
      * @return Views
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1119,7 +1147,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public Views getViews(String ldAPIVersion, String projectKey, String sort, Integer limit, Integer offset, String filter, List<String> expand) throws ApiException {
+    public Views getViews(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable List<String> expand) throws ApiException {
         ApiResponse<Views> localVarResp = getViewsWithHttpInfo(ldAPIVersion, projectKey, sort, limit, offset, filter, expand);
         return localVarResp.getData();
     }
@@ -1137,7 +1165,8 @@ public class ViewsBetaApi {
      * @return ApiResponse&lt;Views&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1146,7 +1175,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Views> getViewsWithHttpInfo(String ldAPIVersion, String projectKey, String sort, Integer limit, Integer offset, String filter, List<String> expand) throws ApiException {
+    public ApiResponse<Views> getViewsWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable List<String> expand) throws ApiException {
         okhttp3.Call localVarCall = getViewsValidateBeforeCall(ldAPIVersion, projectKey, sort, limit, offset, filter, expand, null);
         Type localVarReturnType = new TypeToken<Views>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1166,7 +1195,8 @@ public class ViewsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1175,7 +1205,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getViewsAsync(String ldAPIVersion, String projectKey, String sort, Integer limit, Integer offset, String filter, List<String> expand, final ApiCallback<Views> _callback) throws ApiException {
+    public okhttp3.Call getViewsAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable List<String> expand, final ApiCallback<Views> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getViewsValidateBeforeCall(ldAPIVersion, projectKey, sort, limit, offset, filter, expand, _callback);
         Type localVarReturnType = new TypeToken<Views>(){}.getType();
@@ -1193,7 +1223,8 @@ public class ViewsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1202,7 +1233,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call linkResourceCall(String ldAPIVersion, String projectKey, String viewKey, String resourceType, ViewLinkRequest viewLinkRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call linkResourceCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull ViewLinkRequest viewLinkRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1230,10 +1261,6 @@ public class ViewsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1250,12 +1277,17 @@ public class ViewsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call linkResourceValidateBeforeCall(String ldAPIVersion, String projectKey, String viewKey, String resourceType, ViewLinkRequest viewLinkRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call linkResourceValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull ViewLinkRequest viewLinkRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling linkResource(Async)");
@@ -1296,7 +1328,8 @@ public class ViewsBetaApi {
      * @return LinkResourceSuccessResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1305,7 +1338,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public LinkResourceSuccessResponse linkResource(String ldAPIVersion, String projectKey, String viewKey, String resourceType, ViewLinkRequest viewLinkRequest) throws ApiException {
+    public LinkResourceSuccessResponse linkResource(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull ViewLinkRequest viewLinkRequest) throws ApiException {
         ApiResponse<LinkResourceSuccessResponse> localVarResp = linkResourceWithHttpInfo(ldAPIVersion, projectKey, viewKey, resourceType, viewLinkRequest);
         return localVarResp.getData();
     }
@@ -1321,7 +1354,8 @@ public class ViewsBetaApi {
      * @return ApiResponse&lt;LinkResourceSuccessResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1330,7 +1364,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<LinkResourceSuccessResponse> linkResourceWithHttpInfo(String ldAPIVersion, String projectKey, String viewKey, String resourceType, ViewLinkRequest viewLinkRequest) throws ApiException {
+    public ApiResponse<LinkResourceSuccessResponse> linkResourceWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull ViewLinkRequest viewLinkRequest) throws ApiException {
         okhttp3.Call localVarCall = linkResourceValidateBeforeCall(ldAPIVersion, projectKey, viewKey, resourceType, viewLinkRequest, null);
         Type localVarReturnType = new TypeToken<LinkResourceSuccessResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1348,7 +1382,8 @@ public class ViewsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1357,7 +1392,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call linkResourceAsync(String ldAPIVersion, String projectKey, String viewKey, String resourceType, ViewLinkRequest viewLinkRequest, final ApiCallback<LinkResourceSuccessResponse> _callback) throws ApiException {
+    public okhttp3.Call linkResourceAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull ViewLinkRequest viewLinkRequest, final ApiCallback<LinkResourceSuccessResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = linkResourceValidateBeforeCall(ldAPIVersion, projectKey, viewKey, resourceType, viewLinkRequest, _callback);
         Type localVarReturnType = new TypeToken<LinkResourceSuccessResponse>(){}.getType();
@@ -1375,7 +1410,8 @@ public class ViewsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response with unlink details </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1384,7 +1420,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call unlinkResourceCall(String ldAPIVersion, String projectKey, String viewKey, String resourceType, ViewLinkRequest viewLinkRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call unlinkResourceCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull ViewLinkRequest viewLinkRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1412,10 +1448,6 @@ public class ViewsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1432,12 +1464,17 @@ public class ViewsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call unlinkResourceValidateBeforeCall(String ldAPIVersion, String projectKey, String viewKey, String resourceType, ViewLinkRequest viewLinkRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call unlinkResourceValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull ViewLinkRequest viewLinkRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling unlinkResource(Async)");
@@ -1478,7 +1515,8 @@ public class ViewsBetaApi {
      * @return UnlinkResourceSuccessResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response with unlink details </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1487,7 +1525,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public UnlinkResourceSuccessResponse unlinkResource(String ldAPIVersion, String projectKey, String viewKey, String resourceType, ViewLinkRequest viewLinkRequest) throws ApiException {
+    public UnlinkResourceSuccessResponse unlinkResource(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull ViewLinkRequest viewLinkRequest) throws ApiException {
         ApiResponse<UnlinkResourceSuccessResponse> localVarResp = unlinkResourceWithHttpInfo(ldAPIVersion, projectKey, viewKey, resourceType, viewLinkRequest);
         return localVarResp.getData();
     }
@@ -1503,7 +1541,8 @@ public class ViewsBetaApi {
      * @return ApiResponse&lt;UnlinkResourceSuccessResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response with unlink details </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1512,7 +1551,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UnlinkResourceSuccessResponse> unlinkResourceWithHttpInfo(String ldAPIVersion, String projectKey, String viewKey, String resourceType, ViewLinkRequest viewLinkRequest) throws ApiException {
+    public ApiResponse<UnlinkResourceSuccessResponse> unlinkResourceWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull ViewLinkRequest viewLinkRequest) throws ApiException {
         okhttp3.Call localVarCall = unlinkResourceValidateBeforeCall(ldAPIVersion, projectKey, viewKey, resourceType, viewLinkRequest, null);
         Type localVarReturnType = new TypeToken<UnlinkResourceSuccessResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1530,7 +1569,8 @@ public class ViewsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response with unlink details </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1539,7 +1579,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call unlinkResourceAsync(String ldAPIVersion, String projectKey, String viewKey, String resourceType, ViewLinkRequest viewLinkRequest, final ApiCallback<UnlinkResourceSuccessResponse> _callback) throws ApiException {
+    public okhttp3.Call unlinkResourceAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull ViewLinkRequest viewLinkRequest, final ApiCallback<UnlinkResourceSuccessResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = unlinkResourceValidateBeforeCall(ldAPIVersion, projectKey, viewKey, resourceType, viewLinkRequest, _callback);
         Type localVarReturnType = new TypeToken<UnlinkResourceSuccessResponse>(){}.getType();
@@ -1556,7 +1596,8 @@ public class ViewsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1565,7 +1606,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateViewCall(String ldAPIVersion, String projectKey, String viewKey, ViewPatch viewPatch, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateViewCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull ViewPatch viewPatch, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1592,10 +1633,6 @@ public class ViewsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1612,12 +1649,17 @@ public class ViewsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateViewValidateBeforeCall(String ldAPIVersion, String projectKey, String viewKey, ViewPatch viewPatch, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateViewValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull ViewPatch viewPatch, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling updateView(Async)");
@@ -1652,7 +1694,8 @@ public class ViewsBetaApi {
      * @return View
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1661,7 +1704,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public View updateView(String ldAPIVersion, String projectKey, String viewKey, ViewPatch viewPatch) throws ApiException {
+    public View updateView(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull ViewPatch viewPatch) throws ApiException {
         ApiResponse<View> localVarResp = updateViewWithHttpInfo(ldAPIVersion, projectKey, viewKey, viewPatch);
         return localVarResp.getData();
     }
@@ -1676,7 +1719,8 @@ public class ViewsBetaApi {
      * @return ApiResponse&lt;View&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1685,7 +1729,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<View> updateViewWithHttpInfo(String ldAPIVersion, String projectKey, String viewKey, ViewPatch viewPatch) throws ApiException {
+    public ApiResponse<View> updateViewWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull ViewPatch viewPatch) throws ApiException {
         okhttp3.Call localVarCall = updateViewValidateBeforeCall(ldAPIVersion, projectKey, viewKey, viewPatch, null);
         Type localVarReturnType = new TypeToken<View>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1702,7 +1746,8 @@ public class ViewsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1711,7 +1756,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateViewAsync(String ldAPIVersion, String projectKey, String viewKey, ViewPatch viewPatch, final ApiCallback<View> _callback) throws ApiException {
+    public okhttp3.Call updateViewAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull ViewPatch viewPatch, final ApiCallback<View> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateViewValidateBeforeCall(ldAPIVersion, projectKey, viewKey, viewPatch, _callback);
         Type localVarReturnType = new TypeToken<View>(){}.getType();

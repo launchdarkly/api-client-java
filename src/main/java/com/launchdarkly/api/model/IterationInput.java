@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,98 +45,107 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * IterationInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class IterationInput {
   public static final String SERIALIZED_NAME_HYPOTHESIS = "hypothesis";
   @SerializedName(SERIALIZED_NAME_HYPOTHESIS)
+  @javax.annotation.Nonnull
   private String hypothesis;
 
   public static final String SERIALIZED_NAME_CAN_RESHUFFLE_TRAFFIC = "canReshuffleTraffic";
   @SerializedName(SERIALIZED_NAME_CAN_RESHUFFLE_TRAFFIC)
+  @javax.annotation.Nullable
   private Boolean canReshuffleTraffic;
 
   public static final String SERIALIZED_NAME_METRICS = "metrics";
   @SerializedName(SERIALIZED_NAME_METRICS)
+  @javax.annotation.Nonnull
   private List<MetricInput> metrics = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PRIMARY_SINGLE_METRIC_KEY = "primarySingleMetricKey";
   @SerializedName(SERIALIZED_NAME_PRIMARY_SINGLE_METRIC_KEY)
+  @javax.annotation.Nullable
   private String primarySingleMetricKey;
 
   public static final String SERIALIZED_NAME_PRIMARY_FUNNEL_KEY = "primaryFunnelKey";
   @SerializedName(SERIALIZED_NAME_PRIMARY_FUNNEL_KEY)
+  @javax.annotation.Nullable
   private String primaryFunnelKey;
 
   public static final String SERIALIZED_NAME_TREATMENTS = "treatments";
   @SerializedName(SERIALIZED_NAME_TREATMENTS)
+  @javax.annotation.Nonnull
   private List<TreatmentInput> treatments = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_FLAGS = "flags";
   @SerializedName(SERIALIZED_NAME_FLAGS)
+  @javax.annotation.Nonnull
   private Map<String, FlagInput> flags = new HashMap<>();
 
   public static final String SERIALIZED_NAME_RANDOMIZATION_UNIT = "randomizationUnit";
   @SerializedName(SERIALIZED_NAME_RANDOMIZATION_UNIT)
+  @javax.annotation.Nullable
   private String randomizationUnit;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
+  @javax.annotation.Nullable
   private List<String> attributes = new ArrayList<>();
 
   public IterationInput() {
   }
 
-  public IterationInput hypothesis(String hypothesis) {
+  public IterationInput hypothesis(@javax.annotation.Nonnull String hypothesis) {
     this.hypothesis = hypothesis;
     return this;
   }
 
-   /**
+  /**
    * The expected outcome of this experiment
    * @return hypothesis
-  **/
+   */
   @javax.annotation.Nonnull
   public String getHypothesis() {
     return hypothesis;
   }
 
-  public void setHypothesis(String hypothesis) {
+  public void setHypothesis(@javax.annotation.Nonnull String hypothesis) {
     this.hypothesis = hypothesis;
   }
 
 
-  public IterationInput canReshuffleTraffic(Boolean canReshuffleTraffic) {
+  public IterationInput canReshuffleTraffic(@javax.annotation.Nullable Boolean canReshuffleTraffic) {
     this.canReshuffleTraffic = canReshuffleTraffic;
     return this;
   }
 
-   /**
+  /**
    * Whether to allow the experiment to reassign traffic to different variations when you increase or decrease the traffic in your experiment audience (true) or keep all traffic assigned to its initial variation (false). Defaults to true.
    * @return canReshuffleTraffic
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getCanReshuffleTraffic() {
     return canReshuffleTraffic;
   }
 
-  public void setCanReshuffleTraffic(Boolean canReshuffleTraffic) {
+  public void setCanReshuffleTraffic(@javax.annotation.Nullable Boolean canReshuffleTraffic) {
     this.canReshuffleTraffic = canReshuffleTraffic;
   }
 
 
-  public IterationInput metrics(List<MetricInput> metrics) {
+  public IterationInput metrics(@javax.annotation.Nonnull List<MetricInput> metrics) {
     this.metrics = metrics;
     return this;
   }
@@ -148,59 +158,59 @@ public class IterationInput {
     return this;
   }
 
-   /**
+  /**
    * Get metrics
    * @return metrics
-  **/
+   */
   @javax.annotation.Nonnull
   public List<MetricInput> getMetrics() {
     return metrics;
   }
 
-  public void setMetrics(List<MetricInput> metrics) {
+  public void setMetrics(@javax.annotation.Nonnull List<MetricInput> metrics) {
     this.metrics = metrics;
   }
 
 
-  public IterationInput primarySingleMetricKey(String primarySingleMetricKey) {
+  public IterationInput primarySingleMetricKey(@javax.annotation.Nullable String primarySingleMetricKey) {
     this.primarySingleMetricKey = primarySingleMetricKey;
     return this;
   }
 
-   /**
+  /**
    * The key of the primary metric for this experiment. Either &lt;code&gt;primarySingleMetricKey&lt;/code&gt; or &lt;code&gt;primaryFunnelKey&lt;/code&gt; must be present.
    * @return primarySingleMetricKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getPrimarySingleMetricKey() {
     return primarySingleMetricKey;
   }
 
-  public void setPrimarySingleMetricKey(String primarySingleMetricKey) {
+  public void setPrimarySingleMetricKey(@javax.annotation.Nullable String primarySingleMetricKey) {
     this.primarySingleMetricKey = primarySingleMetricKey;
   }
 
 
-  public IterationInput primaryFunnelKey(String primaryFunnelKey) {
+  public IterationInput primaryFunnelKey(@javax.annotation.Nullable String primaryFunnelKey) {
     this.primaryFunnelKey = primaryFunnelKey;
     return this;
   }
 
-   /**
+  /**
    * The key of the primary funnel group for this experiment. Either &lt;code&gt;primarySingleMetricKey&lt;/code&gt; or &lt;code&gt;primaryFunnelKey&lt;/code&gt; must be present.
    * @return primaryFunnelKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getPrimaryFunnelKey() {
     return primaryFunnelKey;
   }
 
-  public void setPrimaryFunnelKey(String primaryFunnelKey) {
+  public void setPrimaryFunnelKey(@javax.annotation.Nullable String primaryFunnelKey) {
     this.primaryFunnelKey = primaryFunnelKey;
   }
 
 
-  public IterationInput treatments(List<TreatmentInput> treatments) {
+  public IterationInput treatments(@javax.annotation.Nonnull List<TreatmentInput> treatments) {
     this.treatments = treatments;
     return this;
   }
@@ -213,21 +223,21 @@ public class IterationInput {
     return this;
   }
 
-   /**
+  /**
    * Get treatments
    * @return treatments
-  **/
+   */
   @javax.annotation.Nonnull
   public List<TreatmentInput> getTreatments() {
     return treatments;
   }
 
-  public void setTreatments(List<TreatmentInput> treatments) {
+  public void setTreatments(@javax.annotation.Nonnull List<TreatmentInput> treatments) {
     this.treatments = treatments;
   }
 
 
-  public IterationInput flags(Map<String, FlagInput> flags) {
+  public IterationInput flags(@javax.annotation.Nonnull Map<String, FlagInput> flags) {
     this.flags = flags;
     return this;
   }
@@ -240,40 +250,40 @@ public class IterationInput {
     return this;
   }
 
-   /**
+  /**
    * Get flags
    * @return flags
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, FlagInput> getFlags() {
     return flags;
   }
 
-  public void setFlags(Map<String, FlagInput> flags) {
+  public void setFlags(@javax.annotation.Nonnull Map<String, FlagInput> flags) {
     this.flags = flags;
   }
 
 
-  public IterationInput randomizationUnit(String randomizationUnit) {
+  public IterationInput randomizationUnit(@javax.annotation.Nullable String randomizationUnit) {
     this.randomizationUnit = randomizationUnit;
     return this;
   }
 
-   /**
+  /**
    * The unit of randomization for this iteration. Defaults to user.
    * @return randomizationUnit
-  **/
+   */
   @javax.annotation.Nullable
   public String getRandomizationUnit() {
     return randomizationUnit;
   }
 
-  public void setRandomizationUnit(String randomizationUnit) {
+  public void setRandomizationUnit(@javax.annotation.Nullable String randomizationUnit) {
     this.randomizationUnit = randomizationUnit;
   }
 
 
-  public IterationInput attributes(List<String> attributes) {
+  public IterationInput attributes(@javax.annotation.Nullable List<String> attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -286,16 +296,16 @@ public class IterationInput {
     return this;
   }
 
-   /**
+  /**
    * The attributes that this iteration&#39;s results can be sliced by
    * @return attributes
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(List<String> attributes) {
+  public void setAttributes(@javax.annotation.Nullable List<String> attributes) {
     this.attributes = attributes;
   }
 
@@ -406,51 +416,38 @@ public class IterationInput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("hypothesis");
-    openapiFields.add("canReshuffleTraffic");
-    openapiFields.add("metrics");
-    openapiFields.add("primarySingleMetricKey");
-    openapiFields.add("primaryFunnelKey");
-    openapiFields.add("treatments");
-    openapiFields.add("flags");
-    openapiFields.add("randomizationUnit");
-    openapiFields.add("attributes");
+    openapiFields = new HashSet<String>(Arrays.asList("hypothesis", "canReshuffleTraffic", "metrics", "primarySingleMetricKey", "primaryFunnelKey", "treatments", "flags", "randomizationUnit", "attributes"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("hypothesis");
-    openapiRequiredFields.add("metrics");
-    openapiRequiredFields.add("treatments");
-    openapiRequiredFields.add("flags");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("hypothesis", "metrics", "treatments", "flags"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to IterationInput
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to IterationInput
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IterationInput.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in IterationInput is not found in the empty JSON string", IterationInput.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in IterationInput is not found in the empty JSON string", IterationInput.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : IterationInput.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("hypothesis").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `hypothesis` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hypothesis").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `hypothesis` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hypothesis").toString()));
       }
       // ensure the json data is an array
       if (!jsonObj.get("metrics").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `metrics` to be an array in the JSON string but got `%s`", jsonObj.get("metrics").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `metrics` to be an array in the JSON string but got `%s`", jsonObj.get("metrics").toString()));
       }
 
       JsonArray jsonArraymetrics = jsonObj.getAsJsonArray("metrics");
@@ -459,14 +456,14 @@ public class IterationInput {
         MetricInput.validateJsonElement(jsonArraymetrics.get(i));
       };
       if ((jsonObj.get("primarySingleMetricKey") != null && !jsonObj.get("primarySingleMetricKey").isJsonNull()) && !jsonObj.get("primarySingleMetricKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `primarySingleMetricKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("primarySingleMetricKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `primarySingleMetricKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("primarySingleMetricKey").toString()));
       }
       if ((jsonObj.get("primaryFunnelKey") != null && !jsonObj.get("primaryFunnelKey").isJsonNull()) && !jsonObj.get("primaryFunnelKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `primaryFunnelKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("primaryFunnelKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `primaryFunnelKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("primaryFunnelKey").toString()));
       }
       // ensure the json data is an array
       if (!jsonObj.get("treatments").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `treatments` to be an array in the JSON string but got `%s`", jsonObj.get("treatments").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `treatments` to be an array in the JSON string but got `%s`", jsonObj.get("treatments").toString()));
       }
 
       JsonArray jsonArraytreatments = jsonObj.getAsJsonArray("treatments");
@@ -475,11 +472,11 @@ public class IterationInput {
         TreatmentInput.validateJsonElement(jsonArraytreatments.get(i));
       };
       if ((jsonObj.get("randomizationUnit") != null && !jsonObj.get("randomizationUnit").isJsonNull()) && !jsonObj.get("randomizationUnit").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `randomizationUnit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("randomizationUnit").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `randomizationUnit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("randomizationUnit").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("attributes") != null && !jsonObj.get("attributes").isJsonNull() && !jsonObj.get("attributes").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `attributes` to be an array in the JSON string but got `%s`", jsonObj.get("attributes").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `attributes` to be an array in the JSON string but got `%s`", jsonObj.get("attributes").toString()));
       }
   }
 
@@ -540,7 +537,7 @@ public class IterationInput {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -555,22 +552,22 @@ public class IterationInput {
     }
   }
 
- /**
-  * Create an instance of IterationInput given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of IterationInput
-  * @throws IOException if the JSON string is invalid with respect to IterationInput
-  */
+  /**
+   * Create an instance of IterationInput given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of IterationInput
+   * @throws IOException if the JSON string is invalid with respect to IterationInput
+   */
   public static IterationInput fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, IterationInput.class);
   }
 
- /**
-  * Convert an instance of IterationInput to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of IterationInput to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

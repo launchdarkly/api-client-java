@@ -89,7 +89,8 @@ public class IntegrationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Integration Configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -100,7 +101,7 @@ public class IntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createIntegrationConfigurationCall(String integrationKey, IntegrationConfigurationPost integrationConfigurationPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createIntegrationConfigurationCall(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull IntegrationConfigurationPost integrationConfigurationPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -147,7 +148,7 @@ public class IntegrationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createIntegrationConfigurationValidateBeforeCall(String integrationKey, IntegrationConfigurationPost integrationConfigurationPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createIntegrationConfigurationValidateBeforeCall(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull IntegrationConfigurationPost integrationConfigurationPost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'integrationKey' is set
         if (integrationKey == null) {
             throw new ApiException("Missing the required parameter 'integrationKey' when calling createIntegrationConfiguration(Async)");
@@ -170,7 +171,8 @@ public class IntegrationsBetaApi {
      * @return IntegrationConfigurationsRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Integration Configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -181,7 +183,7 @@ public class IntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public IntegrationConfigurationsRep createIntegrationConfiguration(String integrationKey, IntegrationConfigurationPost integrationConfigurationPost) throws ApiException {
+    public IntegrationConfigurationsRep createIntegrationConfiguration(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull IntegrationConfigurationPost integrationConfigurationPost) throws ApiException {
         ApiResponse<IntegrationConfigurationsRep> localVarResp = createIntegrationConfigurationWithHttpInfo(integrationKey, integrationConfigurationPost);
         return localVarResp.getData();
     }
@@ -194,7 +196,8 @@ public class IntegrationsBetaApi {
      * @return ApiResponse&lt;IntegrationConfigurationsRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Integration Configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -205,7 +208,7 @@ public class IntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IntegrationConfigurationsRep> createIntegrationConfigurationWithHttpInfo(String integrationKey, IntegrationConfigurationPost integrationConfigurationPost) throws ApiException {
+    public ApiResponse<IntegrationConfigurationsRep> createIntegrationConfigurationWithHttpInfo(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull IntegrationConfigurationPost integrationConfigurationPost) throws ApiException {
         okhttp3.Call localVarCall = createIntegrationConfigurationValidateBeforeCall(integrationKey, integrationConfigurationPost, null);
         Type localVarReturnType = new TypeToken<IntegrationConfigurationsRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -220,7 +223,8 @@ public class IntegrationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Integration Configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -231,7 +235,7 @@ public class IntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createIntegrationConfigurationAsync(String integrationKey, IntegrationConfigurationPost integrationConfigurationPost, final ApiCallback<IntegrationConfigurationsRep> _callback) throws ApiException {
+    public okhttp3.Call createIntegrationConfigurationAsync(@javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull IntegrationConfigurationPost integrationConfigurationPost, final ApiCallback<IntegrationConfigurationsRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createIntegrationConfigurationValidateBeforeCall(integrationKey, integrationConfigurationPost, _callback);
         Type localVarReturnType = new TypeToken<IntegrationConfigurationsRep>(){}.getType();
@@ -245,7 +249,8 @@ public class IntegrationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -255,7 +260,7 @@ public class IntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteIntegrationConfigurationCall(String integrationConfigurationId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteIntegrationConfigurationCall(@javax.annotation.Nonnull String integrationConfigurationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -301,7 +306,7 @@ public class IntegrationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteIntegrationConfigurationValidateBeforeCall(String integrationConfigurationId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteIntegrationConfigurationValidateBeforeCall(@javax.annotation.Nonnull String integrationConfigurationId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'integrationConfigurationId' is set
         if (integrationConfigurationId == null) {
             throw new ApiException("Missing the required parameter 'integrationConfigurationId' when calling deleteIntegrationConfiguration(Async)");
@@ -317,7 +322,8 @@ public class IntegrationsBetaApi {
      * @param integrationConfigurationId The ID of the integration configuration to be deleted (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -327,7 +333,7 @@ public class IntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteIntegrationConfiguration(String integrationConfigurationId) throws ApiException {
+    public void deleteIntegrationConfiguration(@javax.annotation.Nonnull String integrationConfigurationId) throws ApiException {
         deleteIntegrationConfigurationWithHttpInfo(integrationConfigurationId);
     }
 
@@ -338,7 +344,8 @@ public class IntegrationsBetaApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -348,7 +355,7 @@ public class IntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteIntegrationConfigurationWithHttpInfo(String integrationConfigurationId) throws ApiException {
+    public ApiResponse<Void> deleteIntegrationConfigurationWithHttpInfo(@javax.annotation.Nonnull String integrationConfigurationId) throws ApiException {
         okhttp3.Call localVarCall = deleteIntegrationConfigurationValidateBeforeCall(integrationConfigurationId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -361,7 +368,8 @@ public class IntegrationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -371,7 +379,7 @@ public class IntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteIntegrationConfigurationAsync(String integrationConfigurationId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteIntegrationConfigurationAsync(@javax.annotation.Nonnull String integrationConfigurationId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteIntegrationConfigurationValidateBeforeCall(integrationConfigurationId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -384,7 +392,8 @@ public class IntegrationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of Integration Configurations </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -394,7 +403,7 @@ public class IntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllIntegrationConfigurationsCall(String integrationKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAllIntegrationConfigurationsCall(@javax.annotation.Nonnull String integrationKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -440,7 +449,7 @@ public class IntegrationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAllIntegrationConfigurationsValidateBeforeCall(String integrationKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAllIntegrationConfigurationsValidateBeforeCall(@javax.annotation.Nonnull String integrationKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'integrationKey' is set
         if (integrationKey == null) {
             throw new ApiException("Missing the required parameter 'integrationKey' when calling getAllIntegrationConfigurations(Async)");
@@ -457,7 +466,8 @@ public class IntegrationsBetaApi {
      * @return IntegrationConfigurationCollectionRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of Integration Configurations </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -467,7 +477,7 @@ public class IntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public IntegrationConfigurationCollectionRep getAllIntegrationConfigurations(String integrationKey) throws ApiException {
+    public IntegrationConfigurationCollectionRep getAllIntegrationConfigurations(@javax.annotation.Nonnull String integrationKey) throws ApiException {
         ApiResponse<IntegrationConfigurationCollectionRep> localVarResp = getAllIntegrationConfigurationsWithHttpInfo(integrationKey);
         return localVarResp.getData();
     }
@@ -479,7 +489,8 @@ public class IntegrationsBetaApi {
      * @return ApiResponse&lt;IntegrationConfigurationCollectionRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of Integration Configurations </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -489,7 +500,7 @@ public class IntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IntegrationConfigurationCollectionRep> getAllIntegrationConfigurationsWithHttpInfo(String integrationKey) throws ApiException {
+    public ApiResponse<IntegrationConfigurationCollectionRep> getAllIntegrationConfigurationsWithHttpInfo(@javax.annotation.Nonnull String integrationKey) throws ApiException {
         okhttp3.Call localVarCall = getAllIntegrationConfigurationsValidateBeforeCall(integrationKey, null);
         Type localVarReturnType = new TypeToken<IntegrationConfigurationCollectionRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -503,7 +514,8 @@ public class IntegrationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of Integration Configurations </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -513,7 +525,7 @@ public class IntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllIntegrationConfigurationsAsync(String integrationKey, final ApiCallback<IntegrationConfigurationCollectionRep> _callback) throws ApiException {
+    public okhttp3.Call getAllIntegrationConfigurationsAsync(@javax.annotation.Nonnull String integrationKey, final ApiCallback<IntegrationConfigurationCollectionRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAllIntegrationConfigurationsValidateBeforeCall(integrationKey, _callback);
         Type localVarReturnType = new TypeToken<IntegrationConfigurationCollectionRep>(){}.getType();
@@ -527,7 +539,8 @@ public class IntegrationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration Configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -537,7 +550,7 @@ public class IntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getIntegrationConfigurationCall(String integrationConfigurationId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getIntegrationConfigurationCall(@javax.annotation.Nonnull String integrationConfigurationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -583,7 +596,7 @@ public class IntegrationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getIntegrationConfigurationValidateBeforeCall(String integrationConfigurationId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getIntegrationConfigurationValidateBeforeCall(@javax.annotation.Nonnull String integrationConfigurationId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'integrationConfigurationId' is set
         if (integrationConfigurationId == null) {
             throw new ApiException("Missing the required parameter 'integrationConfigurationId' when calling getIntegrationConfiguration(Async)");
@@ -600,7 +613,8 @@ public class IntegrationsBetaApi {
      * @return IntegrationConfigurationsRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration Configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -610,7 +624,7 @@ public class IntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public IntegrationConfigurationsRep getIntegrationConfiguration(String integrationConfigurationId) throws ApiException {
+    public IntegrationConfigurationsRep getIntegrationConfiguration(@javax.annotation.Nonnull String integrationConfigurationId) throws ApiException {
         ApiResponse<IntegrationConfigurationsRep> localVarResp = getIntegrationConfigurationWithHttpInfo(integrationConfigurationId);
         return localVarResp.getData();
     }
@@ -622,7 +636,8 @@ public class IntegrationsBetaApi {
      * @return ApiResponse&lt;IntegrationConfigurationsRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration Configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -632,7 +647,7 @@ public class IntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IntegrationConfigurationsRep> getIntegrationConfigurationWithHttpInfo(String integrationConfigurationId) throws ApiException {
+    public ApiResponse<IntegrationConfigurationsRep> getIntegrationConfigurationWithHttpInfo(@javax.annotation.Nonnull String integrationConfigurationId) throws ApiException {
         okhttp3.Call localVarCall = getIntegrationConfigurationValidateBeforeCall(integrationConfigurationId, null);
         Type localVarReturnType = new TypeToken<IntegrationConfigurationsRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -646,7 +661,8 @@ public class IntegrationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration Configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -656,7 +672,7 @@ public class IntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getIntegrationConfigurationAsync(String integrationConfigurationId, final ApiCallback<IntegrationConfigurationsRep> _callback) throws ApiException {
+    public okhttp3.Call getIntegrationConfigurationAsync(@javax.annotation.Nonnull String integrationConfigurationId, final ApiCallback<IntegrationConfigurationsRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getIntegrationConfigurationValidateBeforeCall(integrationConfigurationId, _callback);
         Type localVarReturnType = new TypeToken<IntegrationConfigurationsRep>(){}.getType();
@@ -671,7 +687,8 @@ public class IntegrationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -681,7 +698,7 @@ public class IntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateIntegrationConfigurationCall(String integrationConfigurationId, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateIntegrationConfigurationCall(@javax.annotation.Nonnull String integrationConfigurationId, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -728,7 +745,7 @@ public class IntegrationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateIntegrationConfigurationValidateBeforeCall(String integrationConfigurationId, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateIntegrationConfigurationValidateBeforeCall(@javax.annotation.Nonnull String integrationConfigurationId, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'integrationConfigurationId' is set
         if (integrationConfigurationId == null) {
             throw new ApiException("Missing the required parameter 'integrationConfigurationId' when calling updateIntegrationConfiguration(Async)");
@@ -751,7 +768,8 @@ public class IntegrationsBetaApi {
      * @return IntegrationConfigurationsRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -761,7 +779,7 @@ public class IntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public IntegrationConfigurationsRep updateIntegrationConfiguration(String integrationConfigurationId, List<PatchOperation> patchOperation) throws ApiException {
+    public IntegrationConfigurationsRep updateIntegrationConfiguration(@javax.annotation.Nonnull String integrationConfigurationId, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         ApiResponse<IntegrationConfigurationsRep> localVarResp = updateIntegrationConfigurationWithHttpInfo(integrationConfigurationId, patchOperation);
         return localVarResp.getData();
     }
@@ -774,7 +792,8 @@ public class IntegrationsBetaApi {
      * @return ApiResponse&lt;IntegrationConfigurationsRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -784,7 +803,7 @@ public class IntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IntegrationConfigurationsRep> updateIntegrationConfigurationWithHttpInfo(String integrationConfigurationId, List<PatchOperation> patchOperation) throws ApiException {
+    public ApiResponse<IntegrationConfigurationsRep> updateIntegrationConfigurationWithHttpInfo(@javax.annotation.Nonnull String integrationConfigurationId, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         okhttp3.Call localVarCall = updateIntegrationConfigurationValidateBeforeCall(integrationConfigurationId, patchOperation, null);
         Type localVarReturnType = new TypeToken<IntegrationConfigurationsRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -799,7 +818,8 @@ public class IntegrationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Integration configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -809,7 +829,7 @@ public class IntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateIntegrationConfigurationAsync(String integrationConfigurationId, List<PatchOperation> patchOperation, final ApiCallback<IntegrationConfigurationsRep> _callback) throws ApiException {
+    public okhttp3.Call updateIntegrationConfigurationAsync(@javax.annotation.Nonnull String integrationConfigurationId, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback<IntegrationConfigurationsRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateIntegrationConfigurationValidateBeforeCall(integrationConfigurationId, patchOperation, _callback);
         Type localVarReturnType = new TypeToken<IntegrationConfigurationsRep>(){}.getType();

@@ -96,7 +96,8 @@ public class InsightsPullRequestsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pull request collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -106,7 +107,7 @@ public class InsightsPullRequestsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPullRequestsCall(String projectKey, String environmentKey, String applicationKey, String status, String query, Long limit, String expand, String sort, OffsetDateTime from, OffsetDateTime to, String after, String before, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getPullRequestsCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable String status, @javax.annotation.Nullable String query, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String sort, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String after, @javax.annotation.Nullable String before, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -199,7 +200,7 @@ public class InsightsPullRequestsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPullRequestsValidateBeforeCall(String projectKey, String environmentKey, String applicationKey, String status, String query, Long limit, String expand, String sort, OffsetDateTime from, OffsetDateTime to, String after, String before, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getPullRequestsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable String status, @javax.annotation.Nullable String query, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String sort, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String after, @javax.annotation.Nullable String before, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getPullRequests(Async)");
@@ -227,7 +228,8 @@ public class InsightsPullRequestsBetaApi {
      * @return PullRequestCollectionRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pull request collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -237,7 +239,7 @@ public class InsightsPullRequestsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public PullRequestCollectionRep getPullRequests(String projectKey, String environmentKey, String applicationKey, String status, String query, Long limit, String expand, String sort, OffsetDateTime from, OffsetDateTime to, String after, String before) throws ApiException {
+    public PullRequestCollectionRep getPullRequests(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable String status, @javax.annotation.Nullable String query, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String sort, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String after, @javax.annotation.Nullable String before) throws ApiException {
         ApiResponse<PullRequestCollectionRep> localVarResp = getPullRequestsWithHttpInfo(projectKey, environmentKey, applicationKey, status, query, limit, expand, sort, from, to, after, before);
         return localVarResp.getData();
     }
@@ -260,7 +262,8 @@ public class InsightsPullRequestsBetaApi {
      * @return ApiResponse&lt;PullRequestCollectionRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pull request collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -270,7 +273,7 @@ public class InsightsPullRequestsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PullRequestCollectionRep> getPullRequestsWithHttpInfo(String projectKey, String environmentKey, String applicationKey, String status, String query, Long limit, String expand, String sort, OffsetDateTime from, OffsetDateTime to, String after, String before) throws ApiException {
+    public ApiResponse<PullRequestCollectionRep> getPullRequestsWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable String status, @javax.annotation.Nullable String query, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String sort, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String after, @javax.annotation.Nullable String before) throws ApiException {
         okhttp3.Call localVarCall = getPullRequestsValidateBeforeCall(projectKey, environmentKey, applicationKey, status, query, limit, expand, sort, from, to, after, before, null);
         Type localVarReturnType = new TypeToken<PullRequestCollectionRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -295,7 +298,8 @@ public class InsightsPullRequestsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pull request collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -305,7 +309,7 @@ public class InsightsPullRequestsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPullRequestsAsync(String projectKey, String environmentKey, String applicationKey, String status, String query, Long limit, String expand, String sort, OffsetDateTime from, OffsetDateTime to, String after, String before, final ApiCallback<PullRequestCollectionRep> _callback) throws ApiException {
+    public okhttp3.Call getPullRequestsAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable String status, @javax.annotation.Nullable String query, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String sort, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String after, @javax.annotation.Nullable String before, final ApiCallback<PullRequestCollectionRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getPullRequestsValidateBeforeCall(projectKey, environmentKey, applicationKey, status, query, limit, expand, sort, from, to, after, before, _callback);
         Type localVarReturnType = new TypeToken<PullRequestCollectionRep>(){}.getType();

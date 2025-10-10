@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,111 +42,115 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ExpandedLinkedResourcesItems
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ExpandedLinkedResourcesItems {
   public static final String SERIALIZED_NAME_FLAGS = "flags";
   @SerializedName(SERIALIZED_NAME_FLAGS)
+  @javax.annotation.Nonnull
   private ExpandedLinkedResourcesFlags flags;
 
   public static final String SERIALIZED_NAME_SEGMENTS = "segments";
   @SerializedName(SERIALIZED_NAME_SEGMENTS)
+  @javax.annotation.Nullable
   private ExpandedLinkedResourcesSegments segments;
 
   public static final String SERIALIZED_NAME_AI_CONFIGS = "aiConfigs";
   @SerializedName(SERIALIZED_NAME_AI_CONFIGS)
+  @javax.annotation.Nullable
   private ExpandedLinkedResourcesAIConfigs aiConfigs;
 
   public static final String SERIALIZED_NAME_METRICS = "metrics";
   @SerializedName(SERIALIZED_NAME_METRICS)
+  @javax.annotation.Nullable
   private ExpandedLinkedResourcesMetrics metrics;
 
   public ExpandedLinkedResourcesItems() {
   }
 
-  public ExpandedLinkedResourcesItems flags(ExpandedLinkedResourcesFlags flags) {
+  public ExpandedLinkedResourcesItems flags(@javax.annotation.Nonnull ExpandedLinkedResourcesFlags flags) {
     this.flags = flags;
     return this;
   }
 
-   /**
+  /**
    * Get flags
    * @return flags
-  **/
+   */
   @javax.annotation.Nonnull
   public ExpandedLinkedResourcesFlags getFlags() {
     return flags;
   }
 
-  public void setFlags(ExpandedLinkedResourcesFlags flags) {
+  public void setFlags(@javax.annotation.Nonnull ExpandedLinkedResourcesFlags flags) {
     this.flags = flags;
   }
 
 
-  public ExpandedLinkedResourcesItems segments(ExpandedLinkedResourcesSegments segments) {
+  public ExpandedLinkedResourcesItems segments(@javax.annotation.Nullable ExpandedLinkedResourcesSegments segments) {
     this.segments = segments;
     return this;
   }
 
-   /**
+  /**
    * Get segments
    * @return segments
-  **/
+   */
   @javax.annotation.Nullable
   public ExpandedLinkedResourcesSegments getSegments() {
     return segments;
   }
 
-  public void setSegments(ExpandedLinkedResourcesSegments segments) {
+  public void setSegments(@javax.annotation.Nullable ExpandedLinkedResourcesSegments segments) {
     this.segments = segments;
   }
 
 
-  public ExpandedLinkedResourcesItems aiConfigs(ExpandedLinkedResourcesAIConfigs aiConfigs) {
+  public ExpandedLinkedResourcesItems aiConfigs(@javax.annotation.Nullable ExpandedLinkedResourcesAIConfigs aiConfigs) {
     this.aiConfigs = aiConfigs;
     return this;
   }
 
-   /**
+  /**
    * Get aiConfigs
    * @return aiConfigs
-  **/
+   */
   @javax.annotation.Nullable
   public ExpandedLinkedResourcesAIConfigs getAiConfigs() {
     return aiConfigs;
   }
 
-  public void setAiConfigs(ExpandedLinkedResourcesAIConfigs aiConfigs) {
+  public void setAiConfigs(@javax.annotation.Nullable ExpandedLinkedResourcesAIConfigs aiConfigs) {
     this.aiConfigs = aiConfigs;
   }
 
 
-  public ExpandedLinkedResourcesItems metrics(ExpandedLinkedResourcesMetrics metrics) {
+  public ExpandedLinkedResourcesItems metrics(@javax.annotation.Nullable ExpandedLinkedResourcesMetrics metrics) {
     this.metrics = metrics;
     return this;
   }
 
-   /**
+  /**
    * Get metrics
    * @return metrics
-  **/
+   */
   @javax.annotation.Nullable
   public ExpandedLinkedResourcesMetrics getMetrics() {
     return metrics;
   }
 
-  public void setMetrics(ExpandedLinkedResourcesMetrics metrics) {
+  public void setMetrics(@javax.annotation.Nullable ExpandedLinkedResourcesMetrics metrics) {
     this.metrics = metrics;
   }
 
@@ -246,34 +251,29 @@ public class ExpandedLinkedResourcesItems {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("flags");
-    openapiFields.add("segments");
-    openapiFields.add("aiConfigs");
-    openapiFields.add("metrics");
+    openapiFields = new HashSet<String>(Arrays.asList("flags", "segments", "aiConfigs", "metrics"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("flags");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("flags"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ExpandedLinkedResourcesItems
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ExpandedLinkedResourcesItems
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ExpandedLinkedResourcesItems.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ExpandedLinkedResourcesItems is not found in the empty JSON string", ExpandedLinkedResourcesItems.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ExpandedLinkedResourcesItems is not found in the empty JSON string", ExpandedLinkedResourcesItems.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ExpandedLinkedResourcesItems.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -350,7 +350,7 @@ public class ExpandedLinkedResourcesItems {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -365,22 +365,22 @@ public class ExpandedLinkedResourcesItems {
     }
   }
 
- /**
-  * Create an instance of ExpandedLinkedResourcesItems given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ExpandedLinkedResourcesItems
-  * @throws IOException if the JSON string is invalid with respect to ExpandedLinkedResourcesItems
-  */
+  /**
+   * Create an instance of ExpandedLinkedResourcesItems given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ExpandedLinkedResourcesItems
+   * @throws IOException if the JSON string is invalid with respect to ExpandedLinkedResourcesItems
+   */
   public static ExpandedLinkedResourcesItems fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ExpandedLinkedResourcesItems.class);
   }
 
- /**
-  * Convert an instance of ExpandedLinkedResourcesItems to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ExpandedLinkedResourcesItems to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

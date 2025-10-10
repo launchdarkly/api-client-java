@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,88 +38,91 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * RandomizationUnitInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class RandomizationUnitInput {
   public static final String SERIALIZED_NAME_RANDOMIZATION_UNIT = "randomizationUnit";
   @SerializedName(SERIALIZED_NAME_RANDOMIZATION_UNIT)
+  @javax.annotation.Nonnull
   private String randomizationUnit;
 
   public static final String SERIALIZED_NAME_DEFAULT = "default";
   @SerializedName(SERIALIZED_NAME_DEFAULT)
+  @javax.annotation.Nullable
   private Boolean _default;
 
   public static final String SERIALIZED_NAME_STANDARD_RANDOMIZATION_UNIT = "standardRandomizationUnit";
   @SerializedName(SERIALIZED_NAME_STANDARD_RANDOMIZATION_UNIT)
+  @javax.annotation.Nullable
   private String standardRandomizationUnit;
 
   public RandomizationUnitInput() {
   }
 
-  public RandomizationUnitInput randomizationUnit(String randomizationUnit) {
+  public RandomizationUnitInput randomizationUnit(@javax.annotation.Nonnull String randomizationUnit) {
     this.randomizationUnit = randomizationUnit;
     return this;
   }
 
-   /**
+  /**
    * The unit of randomization. Must match the key of an existing context kind in this project.
    * @return randomizationUnit
-  **/
+   */
   @javax.annotation.Nonnull
   public String getRandomizationUnit() {
     return randomizationUnit;
   }
 
-  public void setRandomizationUnit(String randomizationUnit) {
+  public void setRandomizationUnit(@javax.annotation.Nonnull String randomizationUnit) {
     this.randomizationUnit = randomizationUnit;
   }
 
 
-  public RandomizationUnitInput _default(Boolean _default) {
+  public RandomizationUnitInput _default(@javax.annotation.Nullable Boolean _default) {
     this._default = _default;
     return this;
   }
 
-   /**
+  /**
    * If true, any experiment iterations created within this project will default to using this randomization unit. A project can only have one default randomization unit.
    * @return _default
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getDefault() {
     return _default;
   }
 
-  public void setDefault(Boolean _default) {
+  public void setDefault(@javax.annotation.Nullable Boolean _default) {
     this._default = _default;
   }
 
 
-  public RandomizationUnitInput standardRandomizationUnit(String standardRandomizationUnit) {
+  public RandomizationUnitInput standardRandomizationUnit(@javax.annotation.Nullable String standardRandomizationUnit) {
     this.standardRandomizationUnit = standardRandomizationUnit;
     return this;
   }
 
-   /**
+  /**
    * (deprecated) This field is deprecated and will be removed. Use randomizationUnit instead.
    * @return standardRandomizationUnit
-  **/
+   */
   @javax.annotation.Nullable
   public String getStandardRandomizationUnit() {
     return standardRandomizationUnit;
   }
 
-  public void setStandardRandomizationUnit(String standardRandomizationUnit) {
+  public void setStandardRandomizationUnit(@javax.annotation.Nullable String standardRandomizationUnit) {
     this.standardRandomizationUnit = standardRandomizationUnit;
   }
 
@@ -217,41 +221,37 @@ public class RandomizationUnitInput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("randomizationUnit");
-    openapiFields.add("default");
-    openapiFields.add("standardRandomizationUnit");
+    openapiFields = new HashSet<String>(Arrays.asList("randomizationUnit", "default", "standardRandomizationUnit"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("randomizationUnit");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("randomizationUnit"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to RandomizationUnitInput
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to RandomizationUnitInput
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RandomizationUnitInput.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in RandomizationUnitInput is not found in the empty JSON string", RandomizationUnitInput.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in RandomizationUnitInput is not found in the empty JSON string", RandomizationUnitInput.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : RandomizationUnitInput.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("randomizationUnit").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `randomizationUnit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("randomizationUnit").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `randomizationUnit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("randomizationUnit").toString()));
       }
       if ((jsonObj.get("standardRandomizationUnit") != null && !jsonObj.get("standardRandomizationUnit").isJsonNull()) && !jsonObj.get("standardRandomizationUnit").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `standardRandomizationUnit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("standardRandomizationUnit").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `standardRandomizationUnit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("standardRandomizationUnit").toString()));
       }
   }
 
@@ -312,7 +312,7 @@ public class RandomizationUnitInput {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -327,22 +327,22 @@ public class RandomizationUnitInput {
     }
   }
 
- /**
-  * Create an instance of RandomizationUnitInput given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RandomizationUnitInput
-  * @throws IOException if the JSON string is invalid with respect to RandomizationUnitInput
-  */
+  /**
+   * Create an instance of RandomizationUnitInput given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of RandomizationUnitInput
+   * @throws IOException if the JSON string is invalid with respect to RandomizationUnitInput
+   */
   public static RandomizationUnitInput fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, RandomizationUnitInput.class);
   }
 
- /**
-  * Convert an instance of RandomizationUnitInput to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of RandomizationUnitInput to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,65 +38,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ExperimentAllocationRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ExperimentAllocationRep {
   public static final String SERIALIZED_NAME_DEFAULT_VARIATION = "defaultVariation";
   @SerializedName(SERIALIZED_NAME_DEFAULT_VARIATION)
+  @javax.annotation.Nonnull
   private Integer defaultVariation;
 
   public static final String SERIALIZED_NAME_CAN_RESHUFFLE = "canReshuffle";
   @SerializedName(SERIALIZED_NAME_CAN_RESHUFFLE)
+  @javax.annotation.Nonnull
   private Boolean canReshuffle;
 
   public ExperimentAllocationRep() {
   }
 
-  public ExperimentAllocationRep defaultVariation(Integer defaultVariation) {
+  public ExperimentAllocationRep defaultVariation(@javax.annotation.Nonnull Integer defaultVariation) {
     this.defaultVariation = defaultVariation;
     return this;
   }
 
-   /**
+  /**
    * Get defaultVariation
    * @return defaultVariation
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getDefaultVariation() {
     return defaultVariation;
   }
 
-  public void setDefaultVariation(Integer defaultVariation) {
+  public void setDefaultVariation(@javax.annotation.Nonnull Integer defaultVariation) {
     this.defaultVariation = defaultVariation;
   }
 
 
-  public ExperimentAllocationRep canReshuffle(Boolean canReshuffle) {
+  public ExperimentAllocationRep canReshuffle(@javax.annotation.Nonnull Boolean canReshuffle) {
     this.canReshuffle = canReshuffle;
     return this;
   }
 
-   /**
+  /**
    * Get canReshuffle
    * @return canReshuffle
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getCanReshuffle() {
     return canReshuffle;
   }
 
-  public void setCanReshuffle(Boolean canReshuffle) {
+  public void setCanReshuffle(@javax.annotation.Nonnull Boolean canReshuffle) {
     this.canReshuffle = canReshuffle;
   }
 
@@ -192,33 +195,29 @@ public class ExperimentAllocationRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("defaultVariation");
-    openapiFields.add("canReshuffle");
+    openapiFields = new HashSet<String>(Arrays.asList("defaultVariation", "canReshuffle"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("defaultVariation");
-    openapiRequiredFields.add("canReshuffle");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("defaultVariation", "canReshuffle"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ExperimentAllocationRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ExperimentAllocationRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ExperimentAllocationRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ExperimentAllocationRep is not found in the empty JSON string", ExperimentAllocationRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ExperimentAllocationRep is not found in the empty JSON string", ExperimentAllocationRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ExperimentAllocationRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -281,7 +280,7 @@ public class ExperimentAllocationRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -296,22 +295,22 @@ public class ExperimentAllocationRep {
     }
   }
 
- /**
-  * Create an instance of ExperimentAllocationRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ExperimentAllocationRep
-  * @throws IOException if the JSON string is invalid with respect to ExperimentAllocationRep
-  */
+  /**
+   * Create an instance of ExperimentAllocationRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ExperimentAllocationRep
+   * @throws IOException if the JSON string is invalid with respect to ExperimentAllocationRep
+   */
   public static ExperimentAllocationRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ExperimentAllocationRep.class);
   }
 
- /**
-  * Convert an instance of ExperimentAllocationRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ExperimentAllocationRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

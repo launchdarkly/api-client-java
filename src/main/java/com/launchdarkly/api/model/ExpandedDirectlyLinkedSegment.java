@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,111 +39,115 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ExpandedDirectlyLinkedSegment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ExpandedDirectlyLinkedSegment {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_ID = "environmentId";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ID)
+  @javax.annotation.Nonnull
   private String environmentId;
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private ViewsSelfLink links;
 
   public ExpandedDirectlyLinkedSegment() {
   }
 
-  public ExpandedDirectlyLinkedSegment key(String key) {
+  public ExpandedDirectlyLinkedSegment key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * Get key
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public ExpandedDirectlyLinkedSegment name(String name) {
+  public ExpandedDirectlyLinkedSegment name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public ExpandedDirectlyLinkedSegment environmentId(String environmentId) {
+  public ExpandedDirectlyLinkedSegment environmentId(@javax.annotation.Nonnull String environmentId) {
     this.environmentId = environmentId;
     return this;
   }
 
-   /**
+  /**
    * Get environmentId
    * @return environmentId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getEnvironmentId() {
     return environmentId;
   }
 
-  public void setEnvironmentId(String environmentId) {
+  public void setEnvironmentId(@javax.annotation.Nonnull String environmentId) {
     this.environmentId = environmentId;
   }
 
 
-  public ExpandedDirectlyLinkedSegment links(ViewsSelfLink links) {
+  public ExpandedDirectlyLinkedSegment links(@javax.annotation.Nonnull ViewsSelfLink links) {
     this.links = links;
     return this;
   }
 
-   /**
+  /**
    * Get links
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public ViewsSelfLink getLinks() {
     return links;
   }
 
-  public void setLinks(ViewsSelfLink links) {
+  public void setLinks(@javax.annotation.Nonnull ViewsSelfLink links) {
     this.links = links;
   }
 
@@ -243,48 +248,40 @@ public class ExpandedDirectlyLinkedSegment {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("key");
-    openapiFields.add("name");
-    openapiFields.add("environmentId");
-    openapiFields.add("links");
+    openapiFields = new HashSet<String>(Arrays.asList("key", "name", "environmentId", "links"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("environmentId");
-    openapiRequiredFields.add("links");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("key", "name", "environmentId", "links"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ExpandedDirectlyLinkedSegment
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ExpandedDirectlyLinkedSegment
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ExpandedDirectlyLinkedSegment.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ExpandedDirectlyLinkedSegment is not found in the empty JSON string", ExpandedDirectlyLinkedSegment.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ExpandedDirectlyLinkedSegment is not found in the empty JSON string", ExpandedDirectlyLinkedSegment.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ExpandedDirectlyLinkedSegment.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("environmentId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
       }
       // validate the required field `links`
       ViewsSelfLink.validateJsonElement(jsonObj.get("links"));
@@ -347,7 +344,7 @@ public class ExpandedDirectlyLinkedSegment {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -362,22 +359,22 @@ public class ExpandedDirectlyLinkedSegment {
     }
   }
 
- /**
-  * Create an instance of ExpandedDirectlyLinkedSegment given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ExpandedDirectlyLinkedSegment
-  * @throws IOException if the JSON string is invalid with respect to ExpandedDirectlyLinkedSegment
-  */
+  /**
+   * Create an instance of ExpandedDirectlyLinkedSegment given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ExpandedDirectlyLinkedSegment
+   * @throws IOException if the JSON string is invalid with respect to ExpandedDirectlyLinkedSegment
+   */
   public static ExpandedDirectlyLinkedSegment fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ExpandedDirectlyLinkedSegment.class);
   }
 
- /**
-  * Convert an instance of ExpandedDirectlyLinkedSegment to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ExpandedDirectlyLinkedSegment to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

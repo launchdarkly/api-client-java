@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -45,64 +46,74 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ProjectRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ProjectRep {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_INCLUDE_IN_SNIPPET_BY_DEFAULT = "includeInSnippetByDefault";
   @SerializedName(SERIALIZED_NAME_INCLUDE_IN_SNIPPET_BY_DEFAULT)
+  @javax.annotation.Nonnull
   private Boolean includeInSnippetByDefault;
 
   public static final String SERIALIZED_NAME_DEFAULT_CLIENT_SIDE_AVAILABILITY = "defaultClientSideAvailability";
   @SerializedName(SERIALIZED_NAME_DEFAULT_CLIENT_SIDE_AVAILABILITY)
+  @javax.annotation.Nullable
   private ClientSideAvailability defaultClientSideAvailability;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_ACCESS = "_access";
   @SerializedName(SERIALIZED_NAME_ACCESS)
+  @javax.annotation.Nullable
   private Access access;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nonnull
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DEFAULT_RELEASE_PIPELINE_KEY = "defaultReleasePipelineKey";
   @SerializedName(SERIALIZED_NAME_DEFAULT_RELEASE_PIPELINE_KEY)
+  @javax.annotation.Nullable
   private String defaultReleasePipelineKey;
 
   public static final String SERIALIZED_NAME_ENVIRONMENTS = "environments";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENTS)
+  @javax.annotation.Nonnull
   private List<Environment> environments = new ArrayList<>();
 
   public ProjectRep() {
   }
 
-  public ProjectRep links(Map<String, Link> links) {
+  public ProjectRep links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -115,135 +126,135 @@ public class ProjectRep {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public ProjectRep id(String id) {
+  public ProjectRep id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The ID of this project
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public ProjectRep key(String key) {
+  public ProjectRep key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * The key of this project
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public ProjectRep includeInSnippetByDefault(Boolean includeInSnippetByDefault) {
+  public ProjectRep includeInSnippetByDefault(@javax.annotation.Nonnull Boolean includeInSnippetByDefault) {
     this.includeInSnippetByDefault = includeInSnippetByDefault;
     return this;
   }
 
-   /**
+  /**
    * Whether or not flags created in this project are made available to the client-side JavaScript SDK by default
    * @return includeInSnippetByDefault
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getIncludeInSnippetByDefault() {
     return includeInSnippetByDefault;
   }
 
-  public void setIncludeInSnippetByDefault(Boolean includeInSnippetByDefault) {
+  public void setIncludeInSnippetByDefault(@javax.annotation.Nonnull Boolean includeInSnippetByDefault) {
     this.includeInSnippetByDefault = includeInSnippetByDefault;
   }
 
 
-  public ProjectRep defaultClientSideAvailability(ClientSideAvailability defaultClientSideAvailability) {
+  public ProjectRep defaultClientSideAvailability(@javax.annotation.Nullable ClientSideAvailability defaultClientSideAvailability) {
     this.defaultClientSideAvailability = defaultClientSideAvailability;
     return this;
   }
 
-   /**
+  /**
    * Get defaultClientSideAvailability
    * @return defaultClientSideAvailability
-  **/
+   */
   @javax.annotation.Nullable
   public ClientSideAvailability getDefaultClientSideAvailability() {
     return defaultClientSideAvailability;
   }
 
-  public void setDefaultClientSideAvailability(ClientSideAvailability defaultClientSideAvailability) {
+  public void setDefaultClientSideAvailability(@javax.annotation.Nullable ClientSideAvailability defaultClientSideAvailability) {
     this.defaultClientSideAvailability = defaultClientSideAvailability;
   }
 
 
-  public ProjectRep name(String name) {
+  public ProjectRep name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for the project
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public ProjectRep access(Access access) {
+  public ProjectRep access(@javax.annotation.Nullable Access access) {
     this.access = access;
     return this;
   }
 
-   /**
+  /**
    * Get access
    * @return access
-  **/
+   */
   @javax.annotation.Nullable
   public Access getAccess() {
     return access;
   }
 
-  public void setAccess(Access access) {
+  public void setAccess(@javax.annotation.Nullable Access access) {
     this.access = access;
   }
 
 
-  public ProjectRep tags(List<String> tags) {
+  public ProjectRep tags(@javax.annotation.Nonnull List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -256,40 +267,40 @@ public class ProjectRep {
     return this;
   }
 
-   /**
+  /**
    * A list of tags for the project
    * @return tags
-  **/
+   */
   @javax.annotation.Nonnull
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nonnull List<String> tags) {
     this.tags = tags;
   }
 
 
-  public ProjectRep defaultReleasePipelineKey(String defaultReleasePipelineKey) {
+  public ProjectRep defaultReleasePipelineKey(@javax.annotation.Nullable String defaultReleasePipelineKey) {
     this.defaultReleasePipelineKey = defaultReleasePipelineKey;
     return this;
   }
 
-   /**
+  /**
    * The key of the default release pipeline for this project
    * @return defaultReleasePipelineKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getDefaultReleasePipelineKey() {
     return defaultReleasePipelineKey;
   }
 
-  public void setDefaultReleasePipelineKey(String defaultReleasePipelineKey) {
+  public void setDefaultReleasePipelineKey(@javax.annotation.Nullable String defaultReleasePipelineKey) {
     this.defaultReleasePipelineKey = defaultReleasePipelineKey;
   }
 
 
-  public ProjectRep environments(List<Environment> environments) {
+  public ProjectRep environments(@javax.annotation.Nonnull List<Environment> environments) {
     this.environments = environments;
     return this;
   }
@@ -302,16 +313,16 @@ public class ProjectRep {
     return this;
   }
 
-   /**
+  /**
    * A list of environments for the project
    * @return environments
-  **/
+   */
   @javax.annotation.Nonnull
   public List<Environment> getEnvironments() {
     return environments;
   }
 
-  public void setEnvironments(List<Environment> environments) {
+  public void setEnvironments(@javax.annotation.Nonnull List<Environment> environments) {
     this.environments = environments;
   }
 
@@ -424,61 +435,44 @@ public class ProjectRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_links");
-    openapiFields.add("_id");
-    openapiFields.add("key");
-    openapiFields.add("includeInSnippetByDefault");
-    openapiFields.add("defaultClientSideAvailability");
-    openapiFields.add("name");
-    openapiFields.add("_access");
-    openapiFields.add("tags");
-    openapiFields.add("defaultReleasePipelineKey");
-    openapiFields.add("environments");
+    openapiFields = new HashSet<String>(Arrays.asList("_links", "_id", "key", "includeInSnippetByDefault", "defaultClientSideAvailability", "name", "_access", "tags", "defaultReleasePipelineKey", "environments"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_links");
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("includeInSnippetByDefault");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("tags");
-    openapiRequiredFields.add("environments");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_links", "_id", "key", "includeInSnippetByDefault", "name", "tags", "environments"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ProjectRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ProjectRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ProjectRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ProjectRep is not found in the empty JSON string", ProjectRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ProjectRep is not found in the empty JSON string", ProjectRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ProjectRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       // validate the optional field `defaultClientSideAvailability`
       if (jsonObj.get("defaultClientSideAvailability") != null && !jsonObj.get("defaultClientSideAvailability").isJsonNull()) {
         ClientSideAvailability.validateJsonElement(jsonObj.get("defaultClientSideAvailability"));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // validate the optional field `_access`
       if (jsonObj.get("_access") != null && !jsonObj.get("_access").isJsonNull()) {
@@ -488,14 +482,14 @@ public class ProjectRep {
       if (jsonObj.get("tags") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       if ((jsonObj.get("defaultReleasePipelineKey") != null && !jsonObj.get("defaultReleasePipelineKey").isJsonNull()) && !jsonObj.get("defaultReleasePipelineKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `defaultReleasePipelineKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("defaultReleasePipelineKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `defaultReleasePipelineKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("defaultReleasePipelineKey").toString()));
       }
       // ensure the json data is an array
       if (!jsonObj.get("environments").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environments` to be an array in the JSON string but got `%s`", jsonObj.get("environments").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environments` to be an array in the JSON string but got `%s`", jsonObj.get("environments").toString()));
       }
 
       JsonArray jsonArrayenvironments = jsonObj.getAsJsonArray("environments");
@@ -562,7 +556,7 @@ public class ProjectRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -577,22 +571,22 @@ public class ProjectRep {
     }
   }
 
- /**
-  * Create an instance of ProjectRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ProjectRep
-  * @throws IOException if the JSON string is invalid with respect to ProjectRep
-  */
+  /**
+   * Create an instance of ProjectRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ProjectRep
+   * @throws IOException if the JSON string is invalid with respect to ProjectRep
+   */
   public static ProjectRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ProjectRep.class);
   }
 
- /**
-  * Convert an instance of ProjectRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ProjectRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

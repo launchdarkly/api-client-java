@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -48,222 +49,243 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * FeatureFlagConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class FeatureFlagConfig {
   public static final String SERIALIZED_NAME_ON = "on";
   @SerializedName(SERIALIZED_NAME_ON)
+  @javax.annotation.Nonnull
   private Boolean on;
 
   public static final String SERIALIZED_NAME_ARCHIVED = "archived";
   @SerializedName(SERIALIZED_NAME_ARCHIVED)
+  @javax.annotation.Nonnull
   private Boolean archived;
 
   public static final String SERIALIZED_NAME_SALT = "salt";
   @SerializedName(SERIALIZED_NAME_SALT)
+  @javax.annotation.Nonnull
   private String salt;
 
   public static final String SERIALIZED_NAME_SEL = "sel";
   @SerializedName(SERIALIZED_NAME_SEL)
+  @javax.annotation.Nonnull
   private String sel;
 
   public static final String SERIALIZED_NAME_LAST_MODIFIED = "lastModified";
   @SerializedName(SERIALIZED_NAME_LAST_MODIFIED)
+  @javax.annotation.Nonnull
   private Long lastModified;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nonnull
   private Integer version;
 
   public static final String SERIALIZED_NAME_TARGETS = "targets";
   @SerializedName(SERIALIZED_NAME_TARGETS)
+  @javax.annotation.Nullable
   private List<Target> targets = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CONTEXT_TARGETS = "contextTargets";
   @SerializedName(SERIALIZED_NAME_CONTEXT_TARGETS)
+  @javax.annotation.Nullable
   private List<Target> contextTargets = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_RULES = "rules";
   @SerializedName(SERIALIZED_NAME_RULES)
+  @javax.annotation.Nullable
   private List<Rule> rules = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_FALLTHROUGH = "fallthrough";
   @SerializedName(SERIALIZED_NAME_FALLTHROUGH)
+  @javax.annotation.Nullable
   private VariationOrRolloutRep fallthrough;
 
   public static final String SERIALIZED_NAME_OFF_VARIATION = "offVariation";
   @SerializedName(SERIALIZED_NAME_OFF_VARIATION)
+  @javax.annotation.Nullable
   private Integer offVariation;
 
   public static final String SERIALIZED_NAME_PREREQUISITES = "prerequisites";
   @SerializedName(SERIALIZED_NAME_PREREQUISITES)
+  @javax.annotation.Nullable
   private List<Prerequisite> prerequisites = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SITE = "_site";
   @SerializedName(SERIALIZED_NAME_SITE)
+  @javax.annotation.Nonnull
   private Link site;
 
   public static final String SERIALIZED_NAME_ACCESS = "_access";
   @SerializedName(SERIALIZED_NAME_ACCESS)
+  @javax.annotation.Nullable
   private Access access;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_NAME = "_environmentName";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_NAME)
+  @javax.annotation.Nonnull
   private String environmentName;
 
   public static final String SERIALIZED_NAME_TRACK_EVENTS = "trackEvents";
   @SerializedName(SERIALIZED_NAME_TRACK_EVENTS)
+  @javax.annotation.Nonnull
   private Boolean trackEvents;
 
   public static final String SERIALIZED_NAME_TRACK_EVENTS_FALLTHROUGH = "trackEventsFallthrough";
   @SerializedName(SERIALIZED_NAME_TRACK_EVENTS_FALLTHROUGH)
+  @javax.annotation.Nonnull
   private Boolean trackEventsFallthrough;
 
   public static final String SERIALIZED_NAME_DEBUG_EVENTS_UNTIL_DATE = "_debugEventsUntilDate";
   @SerializedName(SERIALIZED_NAME_DEBUG_EVENTS_UNTIL_DATE)
+  @javax.annotation.Nullable
   private Long debugEventsUntilDate;
 
   public static final String SERIALIZED_NAME_SUMMARY = "_summary";
   @SerializedName(SERIALIZED_NAME_SUMMARY)
+  @javax.annotation.Nullable
   private FlagSummary summary;
 
   public static final String SERIALIZED_NAME_EVALUATION = "evaluation";
   @SerializedName(SERIALIZED_NAME_EVALUATION)
+  @javax.annotation.Nullable
   private FlagConfigEvaluation evaluation;
 
   public static final String SERIALIZED_NAME_MIGRATION_SETTINGS = "migrationSettings";
   @SerializedName(SERIALIZED_NAME_MIGRATION_SETTINGS)
+  @javax.annotation.Nullable
   private FlagConfigMigrationSettingsRep migrationSettings;
 
   public FeatureFlagConfig() {
   }
 
-  public FeatureFlagConfig on(Boolean on) {
+  public FeatureFlagConfig on(@javax.annotation.Nonnull Boolean on) {
     this.on = on;
     return this;
   }
 
-   /**
+  /**
    * Whether the flag is on
    * @return on
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getOn() {
     return on;
   }
 
-  public void setOn(Boolean on) {
+  public void setOn(@javax.annotation.Nonnull Boolean on) {
     this.on = on;
   }
 
 
-  public FeatureFlagConfig archived(Boolean archived) {
+  public FeatureFlagConfig archived(@javax.annotation.Nonnull Boolean archived) {
     this.archived = archived;
     return this;
   }
 
-   /**
+  /**
    * Boolean indicating if the feature flag is archived
    * @return archived
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getArchived() {
     return archived;
   }
 
-  public void setArchived(Boolean archived) {
+  public void setArchived(@javax.annotation.Nonnull Boolean archived) {
     this.archived = archived;
   }
 
 
-  public FeatureFlagConfig salt(String salt) {
+  public FeatureFlagConfig salt(@javax.annotation.Nonnull String salt) {
     this.salt = salt;
     return this;
   }
 
-   /**
+  /**
    * Get salt
    * @return salt
-  **/
+   */
   @javax.annotation.Nonnull
   public String getSalt() {
     return salt;
   }
 
-  public void setSalt(String salt) {
+  public void setSalt(@javax.annotation.Nonnull String salt) {
     this.salt = salt;
   }
 
 
-  public FeatureFlagConfig sel(String sel) {
+  public FeatureFlagConfig sel(@javax.annotation.Nonnull String sel) {
     this.sel = sel;
     return this;
   }
 
-   /**
+  /**
    * Get sel
    * @return sel
-  **/
+   */
   @javax.annotation.Nonnull
   public String getSel() {
     return sel;
   }
 
-  public void setSel(String sel) {
+  public void setSel(@javax.annotation.Nonnull String sel) {
     this.sel = sel;
   }
 
 
-  public FeatureFlagConfig lastModified(Long lastModified) {
+  public FeatureFlagConfig lastModified(@javax.annotation.Nonnull Long lastModified) {
     this.lastModified = lastModified;
     return this;
   }
 
-   /**
+  /**
    * Get lastModified
    * @return lastModified
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getLastModified() {
     return lastModified;
   }
 
-  public void setLastModified(Long lastModified) {
+  public void setLastModified(@javax.annotation.Nonnull Long lastModified) {
     this.lastModified = lastModified;
   }
 
 
-  public FeatureFlagConfig version(Integer version) {
+  public FeatureFlagConfig version(@javax.annotation.Nonnull Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * Version of the feature flag
    * @return version
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nonnull Integer version) {
     this.version = version;
   }
 
 
-  public FeatureFlagConfig targets(List<Target> targets) {
+  public FeatureFlagConfig targets(@javax.annotation.Nullable List<Target> targets) {
     this.targets = targets;
     return this;
   }
@@ -276,21 +298,21 @@ public class FeatureFlagConfig {
     return this;
   }
 
-   /**
+  /**
    * An array of the individual targets that will receive a specific variation based on their key. Individual targets with a context kind of &#39;user&#39; are included here.
    * @return targets
-  **/
+   */
   @javax.annotation.Nullable
   public List<Target> getTargets() {
     return targets;
   }
 
-  public void setTargets(List<Target> targets) {
+  public void setTargets(@javax.annotation.Nullable List<Target> targets) {
     this.targets = targets;
   }
 
 
-  public FeatureFlagConfig contextTargets(List<Target> contextTargets) {
+  public FeatureFlagConfig contextTargets(@javax.annotation.Nullable List<Target> contextTargets) {
     this.contextTargets = contextTargets;
     return this;
   }
@@ -303,21 +325,21 @@ public class FeatureFlagConfig {
     return this;
   }
 
-   /**
+  /**
    * An array of the individual targets that will receive a specific variation based on their key. Individual targets with context kinds other than &#39;user&#39; are included here.
    * @return contextTargets
-  **/
+   */
   @javax.annotation.Nullable
   public List<Target> getContextTargets() {
     return contextTargets;
   }
 
-  public void setContextTargets(List<Target> contextTargets) {
+  public void setContextTargets(@javax.annotation.Nullable List<Target> contextTargets) {
     this.contextTargets = contextTargets;
   }
 
 
-  public FeatureFlagConfig rules(List<Rule> rules) {
+  public FeatureFlagConfig rules(@javax.annotation.Nullable List<Rule> rules) {
     this.rules = rules;
     return this;
   }
@@ -330,59 +352,59 @@ public class FeatureFlagConfig {
     return this;
   }
 
-   /**
+  /**
    * An array of the rules for how to serve a variation to specific targets based on their attributes
    * @return rules
-  **/
+   */
   @javax.annotation.Nullable
   public List<Rule> getRules() {
     return rules;
   }
 
-  public void setRules(List<Rule> rules) {
+  public void setRules(@javax.annotation.Nullable List<Rule> rules) {
     this.rules = rules;
   }
 
 
-  public FeatureFlagConfig fallthrough(VariationOrRolloutRep fallthrough) {
+  public FeatureFlagConfig fallthrough(@javax.annotation.Nullable VariationOrRolloutRep fallthrough) {
     this.fallthrough = fallthrough;
     return this;
   }
 
-   /**
+  /**
    * Get fallthrough
    * @return fallthrough
-  **/
+   */
   @javax.annotation.Nullable
   public VariationOrRolloutRep getFallthrough() {
     return fallthrough;
   }
 
-  public void setFallthrough(VariationOrRolloutRep fallthrough) {
+  public void setFallthrough(@javax.annotation.Nullable VariationOrRolloutRep fallthrough) {
     this.fallthrough = fallthrough;
   }
 
 
-  public FeatureFlagConfig offVariation(Integer offVariation) {
+  public FeatureFlagConfig offVariation(@javax.annotation.Nullable Integer offVariation) {
     this.offVariation = offVariation;
     return this;
   }
 
-   /**
+  /**
    * The ID of the variation to serve when the flag is off
    * @return offVariation
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getOffVariation() {
     return offVariation;
   }
 
-  public void setOffVariation(Integer offVariation) {
+  public void setOffVariation(@javax.annotation.Nullable Integer offVariation) {
     this.offVariation = offVariation;
   }
 
 
-  public FeatureFlagConfig prerequisites(List<Prerequisite> prerequisites) {
+  public FeatureFlagConfig prerequisites(@javax.annotation.Nullable List<Prerequisite> prerequisites) {
     this.prerequisites = prerequisites;
     return this;
   }
@@ -395,187 +417,187 @@ public class FeatureFlagConfig {
     return this;
   }
 
-   /**
+  /**
    * An array of the prerequisite flags and their variations that are required before this flag takes effect
    * @return prerequisites
-  **/
+   */
   @javax.annotation.Nullable
   public List<Prerequisite> getPrerequisites() {
     return prerequisites;
   }
 
-  public void setPrerequisites(List<Prerequisite> prerequisites) {
+  public void setPrerequisites(@javax.annotation.Nullable List<Prerequisite> prerequisites) {
     this.prerequisites = prerequisites;
   }
 
 
-  public FeatureFlagConfig site(Link site) {
+  public FeatureFlagConfig site(@javax.annotation.Nonnull Link site) {
     this.site = site;
     return this;
   }
 
-   /**
+  /**
    * Get site
    * @return site
-  **/
+   */
   @javax.annotation.Nonnull
   public Link getSite() {
     return site;
   }
 
-  public void setSite(Link site) {
+  public void setSite(@javax.annotation.Nonnull Link site) {
     this.site = site;
   }
 
 
-  public FeatureFlagConfig access(Access access) {
+  public FeatureFlagConfig access(@javax.annotation.Nullable Access access) {
     this.access = access;
     return this;
   }
 
-   /**
+  /**
    * Get access
    * @return access
-  **/
+   */
   @javax.annotation.Nullable
   public Access getAccess() {
     return access;
   }
 
-  public void setAccess(Access access) {
+  public void setAccess(@javax.annotation.Nullable Access access) {
     this.access = access;
   }
 
 
-  public FeatureFlagConfig environmentName(String environmentName) {
+  public FeatureFlagConfig environmentName(@javax.annotation.Nonnull String environmentName) {
     this.environmentName = environmentName;
     return this;
   }
 
-   /**
+  /**
    * The environment name
    * @return environmentName
-  **/
+   */
   @javax.annotation.Nonnull
   public String getEnvironmentName() {
     return environmentName;
   }
 
-  public void setEnvironmentName(String environmentName) {
+  public void setEnvironmentName(@javax.annotation.Nonnull String environmentName) {
     this.environmentName = environmentName;
   }
 
 
-  public FeatureFlagConfig trackEvents(Boolean trackEvents) {
+  public FeatureFlagConfig trackEvents(@javax.annotation.Nonnull Boolean trackEvents) {
     this.trackEvents = trackEvents;
     return this;
   }
 
-   /**
+  /**
    * Whether LaunchDarkly tracks events for the feature flag, for all rules
    * @return trackEvents
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getTrackEvents() {
     return trackEvents;
   }
 
-  public void setTrackEvents(Boolean trackEvents) {
+  public void setTrackEvents(@javax.annotation.Nonnull Boolean trackEvents) {
     this.trackEvents = trackEvents;
   }
 
 
-  public FeatureFlagConfig trackEventsFallthrough(Boolean trackEventsFallthrough) {
+  public FeatureFlagConfig trackEventsFallthrough(@javax.annotation.Nonnull Boolean trackEventsFallthrough) {
     this.trackEventsFallthrough = trackEventsFallthrough;
     return this;
   }
 
-   /**
+  /**
    * Whether LaunchDarkly tracks events for the feature flag, for the default rule
    * @return trackEventsFallthrough
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getTrackEventsFallthrough() {
     return trackEventsFallthrough;
   }
 
-  public void setTrackEventsFallthrough(Boolean trackEventsFallthrough) {
+  public void setTrackEventsFallthrough(@javax.annotation.Nonnull Boolean trackEventsFallthrough) {
     this.trackEventsFallthrough = trackEventsFallthrough;
   }
 
 
-  public FeatureFlagConfig debugEventsUntilDate(Long debugEventsUntilDate) {
+  public FeatureFlagConfig debugEventsUntilDate(@javax.annotation.Nullable Long debugEventsUntilDate) {
     this.debugEventsUntilDate = debugEventsUntilDate;
     return this;
   }
 
-   /**
+  /**
    * Get debugEventsUntilDate
    * @return debugEventsUntilDate
-  **/
+   */
   @javax.annotation.Nullable
   public Long getDebugEventsUntilDate() {
     return debugEventsUntilDate;
   }
 
-  public void setDebugEventsUntilDate(Long debugEventsUntilDate) {
+  public void setDebugEventsUntilDate(@javax.annotation.Nullable Long debugEventsUntilDate) {
     this.debugEventsUntilDate = debugEventsUntilDate;
   }
 
 
-  public FeatureFlagConfig summary(FlagSummary summary) {
+  public FeatureFlagConfig summary(@javax.annotation.Nullable FlagSummary summary) {
     this.summary = summary;
     return this;
   }
 
-   /**
+  /**
    * Get summary
    * @return summary
-  **/
+   */
   @javax.annotation.Nullable
   public FlagSummary getSummary() {
     return summary;
   }
 
-  public void setSummary(FlagSummary summary) {
+  public void setSummary(@javax.annotation.Nullable FlagSummary summary) {
     this.summary = summary;
   }
 
 
-  public FeatureFlagConfig evaluation(FlagConfigEvaluation evaluation) {
+  public FeatureFlagConfig evaluation(@javax.annotation.Nullable FlagConfigEvaluation evaluation) {
     this.evaluation = evaluation;
     return this;
   }
 
-   /**
+  /**
    * Get evaluation
    * @return evaluation
-  **/
+   */
   @javax.annotation.Nullable
   public FlagConfigEvaluation getEvaluation() {
     return evaluation;
   }
 
-  public void setEvaluation(FlagConfigEvaluation evaluation) {
+  public void setEvaluation(@javax.annotation.Nullable FlagConfigEvaluation evaluation) {
     this.evaluation = evaluation;
   }
 
 
-  public FeatureFlagConfig migrationSettings(FlagConfigMigrationSettingsRep migrationSettings) {
+  public FeatureFlagConfig migrationSettings(@javax.annotation.Nullable FlagConfigMigrationSettingsRep migrationSettings) {
     this.migrationSettings = migrationSettings;
     return this;
   }
 
-   /**
+  /**
    * Get migrationSettings
    * @return migrationSettings
-  **/
+   */
   @javax.annotation.Nullable
   public FlagConfigMigrationSettingsRep getMigrationSettings() {
     return migrationSettings;
   }
 
-  public void setMigrationSettings(FlagConfigMigrationSettingsRep migrationSettings) {
+  public void setMigrationSettings(@javax.annotation.Nullable FlagConfigMigrationSettingsRep migrationSettings) {
     this.migrationSettings = migrationSettings;
   }
 
@@ -710,75 +732,44 @@ public class FeatureFlagConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("on");
-    openapiFields.add("archived");
-    openapiFields.add("salt");
-    openapiFields.add("sel");
-    openapiFields.add("lastModified");
-    openapiFields.add("version");
-    openapiFields.add("targets");
-    openapiFields.add("contextTargets");
-    openapiFields.add("rules");
-    openapiFields.add("fallthrough");
-    openapiFields.add("offVariation");
-    openapiFields.add("prerequisites");
-    openapiFields.add("_site");
-    openapiFields.add("_access");
-    openapiFields.add("_environmentName");
-    openapiFields.add("trackEvents");
-    openapiFields.add("trackEventsFallthrough");
-    openapiFields.add("_debugEventsUntilDate");
-    openapiFields.add("_summary");
-    openapiFields.add("evaluation");
-    openapiFields.add("migrationSettings");
+    openapiFields = new HashSet<String>(Arrays.asList("on", "archived", "salt", "sel", "lastModified", "version", "targets", "contextTargets", "rules", "fallthrough", "offVariation", "prerequisites", "_site", "_access", "_environmentName", "trackEvents", "trackEventsFallthrough", "_debugEventsUntilDate", "_summary", "evaluation", "migrationSettings"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("on");
-    openapiRequiredFields.add("archived");
-    openapiRequiredFields.add("salt");
-    openapiRequiredFields.add("sel");
-    openapiRequiredFields.add("lastModified");
-    openapiRequiredFields.add("version");
-    openapiRequiredFields.add("_site");
-    openapiRequiredFields.add("_environmentName");
-    openapiRequiredFields.add("trackEvents");
-    openapiRequiredFields.add("trackEventsFallthrough");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("on", "archived", "salt", "sel", "lastModified", "version", "_site", "_environmentName", "trackEvents", "trackEventsFallthrough"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FeatureFlagConfig
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FeatureFlagConfig
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FeatureFlagConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FeatureFlagConfig is not found in the empty JSON string", FeatureFlagConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FeatureFlagConfig is not found in the empty JSON string", FeatureFlagConfig.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : FeatureFlagConfig.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("salt").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `salt` to be a primitive type in the JSON string but got `%s`", jsonObj.get("salt").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `salt` to be a primitive type in the JSON string but got `%s`", jsonObj.get("salt").toString()));
       }
       if (!jsonObj.get("sel").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sel` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sel").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `sel` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sel").toString()));
       }
       if (jsonObj.get("targets") != null && !jsonObj.get("targets").isJsonNull()) {
         JsonArray jsonArraytargets = jsonObj.getAsJsonArray("targets");
         if (jsonArraytargets != null) {
           // ensure the json data is an array
           if (!jsonObj.get("targets").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `targets` to be an array in the JSON string but got `%s`", jsonObj.get("targets").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `targets` to be an array in the JSON string but got `%s`", jsonObj.get("targets").toString()));
           }
 
           // validate the optional field `targets` (array)
@@ -792,7 +783,7 @@ public class FeatureFlagConfig {
         if (jsonArraycontextTargets != null) {
           // ensure the json data is an array
           if (!jsonObj.get("contextTargets").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `contextTargets` to be an array in the JSON string but got `%s`", jsonObj.get("contextTargets").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `contextTargets` to be an array in the JSON string but got `%s`", jsonObj.get("contextTargets").toString()));
           }
 
           // validate the optional field `contextTargets` (array)
@@ -806,7 +797,7 @@ public class FeatureFlagConfig {
         if (jsonArrayrules != null) {
           // ensure the json data is an array
           if (!jsonObj.get("rules").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `rules` to be an array in the JSON string but got `%s`", jsonObj.get("rules").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `rules` to be an array in the JSON string but got `%s`", jsonObj.get("rules").toString()));
           }
 
           // validate the optional field `rules` (array)
@@ -824,7 +815,7 @@ public class FeatureFlagConfig {
         if (jsonArrayprerequisites != null) {
           // ensure the json data is an array
           if (!jsonObj.get("prerequisites").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `prerequisites` to be an array in the JSON string but got `%s`", jsonObj.get("prerequisites").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `prerequisites` to be an array in the JSON string but got `%s`", jsonObj.get("prerequisites").toString()));
           }
 
           // validate the optional field `prerequisites` (array)
@@ -840,7 +831,7 @@ public class FeatureFlagConfig {
         Access.validateJsonElement(jsonObj.get("_access"));
       }
       if (!jsonObj.get("_environmentName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_environmentName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_environmentName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_environmentName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_environmentName").toString()));
       }
       // validate the optional field `_summary`
       if (jsonObj.get("_summary") != null && !jsonObj.get("_summary").isJsonNull()) {
@@ -913,7 +904,7 @@ public class FeatureFlagConfig {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -928,22 +919,22 @@ public class FeatureFlagConfig {
     }
   }
 
- /**
-  * Create an instance of FeatureFlagConfig given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FeatureFlagConfig
-  * @throws IOException if the JSON string is invalid with respect to FeatureFlagConfig
-  */
+  /**
+   * Create an instance of FeatureFlagConfig given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FeatureFlagConfig
+   * @throws IOException if the JSON string is invalid with respect to FeatureFlagConfig
+   */
   public static FeatureFlagConfig fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FeatureFlagConfig.class);
   }
 
- /**
-  * Convert an instance of FeatureFlagConfig to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FeatureFlagConfig to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

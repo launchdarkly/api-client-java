@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,32 +40,34 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * IpList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class IpList {
   public static final String SERIALIZED_NAME_ADDRESSES = "addresses";
   @SerializedName(SERIALIZED_NAME_ADDRESSES)
+  @javax.annotation.Nonnull
   private List<String> addresses = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_OUTBOUND_ADDRESSES = "outboundAddresses";
   @SerializedName(SERIALIZED_NAME_OUTBOUND_ADDRESSES)
+  @javax.annotation.Nonnull
   private List<String> outboundAddresses = new ArrayList<>();
 
   public IpList() {
   }
 
-  public IpList addresses(List<String> addresses) {
+  public IpList addresses(@javax.annotation.Nonnull List<String> addresses) {
     this.addresses = addresses;
     return this;
   }
@@ -77,21 +80,21 @@ public class IpList {
     return this;
   }
 
-   /**
+  /**
    * A list of the IP addresses LaunchDarkly&#39;s service uses
    * @return addresses
-  **/
+   */
   @javax.annotation.Nonnull
   public List<String> getAddresses() {
     return addresses;
   }
 
-  public void setAddresses(List<String> addresses) {
+  public void setAddresses(@javax.annotation.Nonnull List<String> addresses) {
     this.addresses = addresses;
   }
 
 
-  public IpList outboundAddresses(List<String> outboundAddresses) {
+  public IpList outboundAddresses(@javax.annotation.Nonnull List<String> outboundAddresses) {
     this.outboundAddresses = outboundAddresses;
     return this;
   }
@@ -104,16 +107,16 @@ public class IpList {
     return this;
   }
 
-   /**
+  /**
    * A list of the IP addresses outgoing webhook notifications use
    * @return outboundAddresses
-  **/
+   */
   @javax.annotation.Nonnull
   public List<String> getOutboundAddresses() {
     return outboundAddresses;
   }
 
-  public void setOutboundAddresses(List<String> outboundAddresses) {
+  public void setOutboundAddresses(@javax.annotation.Nonnull List<String> outboundAddresses) {
     this.outboundAddresses = outboundAddresses;
   }
 
@@ -210,33 +213,29 @@ public class IpList {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("addresses");
-    openapiFields.add("outboundAddresses");
+    openapiFields = new HashSet<String>(Arrays.asList("addresses", "outboundAddresses"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("addresses");
-    openapiRequiredFields.add("outboundAddresses");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("addresses", "outboundAddresses"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to IpList
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to IpList
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IpList.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in IpList is not found in the empty JSON string", IpList.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in IpList is not found in the empty JSON string", IpList.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : IpList.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -244,13 +243,13 @@ public class IpList {
       if (jsonObj.get("addresses") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("addresses").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `addresses` to be an array in the JSON string but got `%s`", jsonObj.get("addresses").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `addresses` to be an array in the JSON string but got `%s`", jsonObj.get("addresses").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("outboundAddresses") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("outboundAddresses").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `outboundAddresses` to be an array in the JSON string but got `%s`", jsonObj.get("outboundAddresses").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `outboundAddresses` to be an array in the JSON string but got `%s`", jsonObj.get("outboundAddresses").toString()));
       }
   }
 
@@ -311,7 +310,7 @@ public class IpList {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -326,22 +325,22 @@ public class IpList {
     }
   }
 
- /**
-  * Create an instance of IpList given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of IpList
-  * @throws IOException if the JSON string is invalid with respect to IpList
-  */
+  /**
+   * Create an instance of IpList given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of IpList
+   * @throws IOException if the JSON string is invalid with respect to IpList
+   */
   public static IpList fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, IpList.class);
   }
 
- /**
-  * Convert an instance of IpList to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of IpList to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

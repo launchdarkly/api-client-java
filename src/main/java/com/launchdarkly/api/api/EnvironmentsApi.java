@@ -90,7 +90,8 @@ public class EnvironmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -99,7 +100,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteEnvironmentCall(String projectKey, String environmentKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteEnvironmentCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -146,7 +147,7 @@ public class EnvironmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteEnvironmentValidateBeforeCall(String projectKey, String environmentKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteEnvironmentValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling deleteEnvironment(Async)");
@@ -168,7 +169,8 @@ public class EnvironmentsApi {
      * @param environmentKey The environment key (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -177,7 +179,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteEnvironment(String projectKey, String environmentKey) throws ApiException {
+    public void deleteEnvironment(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey) throws ApiException {
         deleteEnvironmentWithHttpInfo(projectKey, environmentKey);
     }
 
@@ -189,7 +191,8 @@ public class EnvironmentsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -198,7 +201,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteEnvironmentWithHttpInfo(String projectKey, String environmentKey) throws ApiException {
+    public ApiResponse<Void> deleteEnvironmentWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey) throws ApiException {
         okhttp3.Call localVarCall = deleteEnvironmentValidateBeforeCall(projectKey, environmentKey, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -212,7 +215,8 @@ public class EnvironmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -221,7 +225,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteEnvironmentAsync(String projectKey, String environmentKey, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteEnvironmentAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteEnvironmentValidateBeforeCall(projectKey, environmentKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -235,7 +239,8 @@ public class EnvironmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Environment response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -244,7 +249,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEnvironmentCall(String projectKey, String environmentKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getEnvironmentCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -291,7 +296,7 @@ public class EnvironmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getEnvironmentValidateBeforeCall(String projectKey, String environmentKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getEnvironmentValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getEnvironment(Async)");
@@ -314,7 +319,8 @@ public class EnvironmentsApi {
      * @return Environment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Environment response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -323,7 +329,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Environment getEnvironment(String projectKey, String environmentKey) throws ApiException {
+    public Environment getEnvironment(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey) throws ApiException {
         ApiResponse<Environment> localVarResp = getEnvironmentWithHttpInfo(projectKey, environmentKey);
         return localVarResp.getData();
     }
@@ -336,7 +342,8 @@ public class EnvironmentsApi {
      * @return ApiResponse&lt;Environment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Environment response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -345,7 +352,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Environment> getEnvironmentWithHttpInfo(String projectKey, String environmentKey) throws ApiException {
+    public ApiResponse<Environment> getEnvironmentWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey) throws ApiException {
         okhttp3.Call localVarCall = getEnvironmentValidateBeforeCall(projectKey, environmentKey, null);
         Type localVarReturnType = new TypeToken<Environment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -360,7 +367,8 @@ public class EnvironmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Environment response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -369,7 +377,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEnvironmentAsync(String projectKey, String environmentKey, final ApiCallback<Environment> _callback) throws ApiException {
+    public okhttp3.Call getEnvironmentAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback<Environment> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getEnvironmentValidateBeforeCall(projectKey, environmentKey, _callback);
         Type localVarReturnType = new TypeToken<Environment>(){}.getType();
@@ -387,7 +395,8 @@ public class EnvironmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Environments collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -398,7 +407,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEnvironmentsByProjectCall(String projectKey, Long limit, Long offset, String filter, String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getEnvironmentsByProjectCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -460,7 +469,7 @@ public class EnvironmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getEnvironmentsByProjectValidateBeforeCall(String projectKey, Long limit, Long offset, String filter, String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getEnvironmentsByProjectValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getEnvironmentsByProject(Async)");
@@ -481,7 +490,8 @@ public class EnvironmentsApi {
      * @return Environments
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Environments collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -492,7 +502,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Environments getEnvironmentsByProject(String projectKey, Long limit, Long offset, String filter, String sort) throws ApiException {
+    public Environments getEnvironmentsByProject(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String sort) throws ApiException {
         ApiResponse<Environments> localVarResp = getEnvironmentsByProjectWithHttpInfo(projectKey, limit, offset, filter, sort);
         return localVarResp.getData();
     }
@@ -508,7 +518,8 @@ public class EnvironmentsApi {
      * @return ApiResponse&lt;Environments&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Environments collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -519,7 +530,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Environments> getEnvironmentsByProjectWithHttpInfo(String projectKey, Long limit, Long offset, String filter, String sort) throws ApiException {
+    public ApiResponse<Environments> getEnvironmentsByProjectWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = getEnvironmentsByProjectValidateBeforeCall(projectKey, limit, offset, filter, sort, null);
         Type localVarReturnType = new TypeToken<Environments>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -537,7 +548,8 @@ public class EnvironmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Environments collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -548,7 +560,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEnvironmentsByProjectAsync(String projectKey, Long limit, Long offset, String filter, String sort, final ApiCallback<Environments> _callback) throws ApiException {
+    public okhttp3.Call getEnvironmentsByProjectAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String sort, final ApiCallback<Environments> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getEnvironmentsByProjectValidateBeforeCall(projectKey, limit, offset, filter, sort, _callback);
         Type localVarReturnType = new TypeToken<Environments>(){}.getType();
@@ -564,7 +576,8 @@ public class EnvironmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Environment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -574,7 +587,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchEnvironmentCall(String projectKey, String environmentKey, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchEnvironmentCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -622,7 +635,7 @@ public class EnvironmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchEnvironmentValidateBeforeCall(String projectKey, String environmentKey, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchEnvironmentValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling patchEnvironment(Async)");
@@ -651,7 +664,8 @@ public class EnvironmentsApi {
      * @return Environment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Environment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -661,7 +675,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Environment patchEnvironment(String projectKey, String environmentKey, List<PatchOperation> patchOperation) throws ApiException {
+    public Environment patchEnvironment(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         ApiResponse<Environment> localVarResp = patchEnvironmentWithHttpInfo(projectKey, environmentKey, patchOperation);
         return localVarResp.getData();
     }
@@ -675,7 +689,8 @@ public class EnvironmentsApi {
      * @return ApiResponse&lt;Environment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Environment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -685,7 +700,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Environment> patchEnvironmentWithHttpInfo(String projectKey, String environmentKey, List<PatchOperation> patchOperation) throws ApiException {
+    public ApiResponse<Environment> patchEnvironmentWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         okhttp3.Call localVarCall = patchEnvironmentValidateBeforeCall(projectKey, environmentKey, patchOperation, null);
         Type localVarReturnType = new TypeToken<Environment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -701,7 +716,8 @@ public class EnvironmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Environment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -711,7 +727,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchEnvironmentAsync(String projectKey, String environmentKey, List<PatchOperation> patchOperation, final ApiCallback<Environment> _callback) throws ApiException {
+    public okhttp3.Call patchEnvironmentAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback<Environment> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchEnvironmentValidateBeforeCall(projectKey, environmentKey, patchOperation, _callback);
         Type localVarReturnType = new TypeToken<Environment>(){}.getType();
@@ -726,7 +742,8 @@ public class EnvironmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Environment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -737,7 +754,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postEnvironmentCall(String projectKey, EnvironmentPost environmentPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postEnvironmentCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull EnvironmentPost environmentPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -784,7 +801,7 @@ public class EnvironmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postEnvironmentValidateBeforeCall(String projectKey, EnvironmentPost environmentPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postEnvironmentValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull EnvironmentPost environmentPost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling postEnvironment(Async)");
@@ -807,7 +824,8 @@ public class EnvironmentsApi {
      * @return Environment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Environment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -818,7 +836,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Environment postEnvironment(String projectKey, EnvironmentPost environmentPost) throws ApiException {
+    public Environment postEnvironment(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull EnvironmentPost environmentPost) throws ApiException {
         ApiResponse<Environment> localVarResp = postEnvironmentWithHttpInfo(projectKey, environmentPost);
         return localVarResp.getData();
     }
@@ -831,7 +849,8 @@ public class EnvironmentsApi {
      * @return ApiResponse&lt;Environment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Environment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -842,7 +861,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Environment> postEnvironmentWithHttpInfo(String projectKey, EnvironmentPost environmentPost) throws ApiException {
+    public ApiResponse<Environment> postEnvironmentWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull EnvironmentPost environmentPost) throws ApiException {
         okhttp3.Call localVarCall = postEnvironmentValidateBeforeCall(projectKey, environmentPost, null);
         Type localVarReturnType = new TypeToken<Environment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -857,7 +876,8 @@ public class EnvironmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Environment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -868,7 +888,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postEnvironmentAsync(String projectKey, EnvironmentPost environmentPost, final ApiCallback<Environment> _callback) throws ApiException {
+    public okhttp3.Call postEnvironmentAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull EnvironmentPost environmentPost, final ApiCallback<Environment> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postEnvironmentValidateBeforeCall(projectKey, environmentPost, _callback);
         Type localVarReturnType = new TypeToken<Environment>(){}.getType();
@@ -883,7 +903,8 @@ public class EnvironmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Environment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -894,7 +915,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call resetEnvironmentMobileKeyCall(String projectKey, String environmentKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call resetEnvironmentMobileKeyCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -941,7 +962,7 @@ public class EnvironmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call resetEnvironmentMobileKeyValidateBeforeCall(String projectKey, String environmentKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call resetEnvironmentMobileKeyValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling resetEnvironmentMobileKey(Async)");
@@ -964,7 +985,8 @@ public class EnvironmentsApi {
      * @return Environment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Environment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -975,7 +997,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Environment resetEnvironmentMobileKey(String projectKey, String environmentKey) throws ApiException {
+    public Environment resetEnvironmentMobileKey(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey) throws ApiException {
         ApiResponse<Environment> localVarResp = resetEnvironmentMobileKeyWithHttpInfo(projectKey, environmentKey);
         return localVarResp.getData();
     }
@@ -988,7 +1010,8 @@ public class EnvironmentsApi {
      * @return ApiResponse&lt;Environment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Environment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -999,7 +1022,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Environment> resetEnvironmentMobileKeyWithHttpInfo(String projectKey, String environmentKey) throws ApiException {
+    public ApiResponse<Environment> resetEnvironmentMobileKeyWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey) throws ApiException {
         okhttp3.Call localVarCall = resetEnvironmentMobileKeyValidateBeforeCall(projectKey, environmentKey, null);
         Type localVarReturnType = new TypeToken<Environment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1014,7 +1037,8 @@ public class EnvironmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Environment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1025,7 +1049,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call resetEnvironmentMobileKeyAsync(String projectKey, String environmentKey, final ApiCallback<Environment> _callback) throws ApiException {
+    public okhttp3.Call resetEnvironmentMobileKeyAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback<Environment> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = resetEnvironmentMobileKeyValidateBeforeCall(projectKey, environmentKey, _callback);
         Type localVarReturnType = new TypeToken<Environment>(){}.getType();
@@ -1041,7 +1065,8 @@ public class EnvironmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Environment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1052,7 +1077,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call resetEnvironmentSDKKeyCall(String projectKey, String environmentKey, Long expiry, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call resetEnvironmentSDKKeyCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long expiry, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1103,7 +1128,7 @@ public class EnvironmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call resetEnvironmentSDKKeyValidateBeforeCall(String projectKey, String environmentKey, Long expiry, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call resetEnvironmentSDKKeyValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long expiry, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling resetEnvironmentSDKKey(Async)");
@@ -1127,7 +1152,8 @@ public class EnvironmentsApi {
      * @return Environment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Environment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1138,7 +1164,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Environment resetEnvironmentSDKKey(String projectKey, String environmentKey, Long expiry) throws ApiException {
+    public Environment resetEnvironmentSDKKey(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long expiry) throws ApiException {
         ApiResponse<Environment> localVarResp = resetEnvironmentSDKKeyWithHttpInfo(projectKey, environmentKey, expiry);
         return localVarResp.getData();
     }
@@ -1152,7 +1178,8 @@ public class EnvironmentsApi {
      * @return ApiResponse&lt;Environment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Environment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1163,7 +1190,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Environment> resetEnvironmentSDKKeyWithHttpInfo(String projectKey, String environmentKey, Long expiry) throws ApiException {
+    public ApiResponse<Environment> resetEnvironmentSDKKeyWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long expiry) throws ApiException {
         okhttp3.Call localVarCall = resetEnvironmentSDKKeyValidateBeforeCall(projectKey, environmentKey, expiry, null);
         Type localVarReturnType = new TypeToken<Environment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1179,7 +1206,8 @@ public class EnvironmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Environment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1190,7 +1218,7 @@ public class EnvironmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call resetEnvironmentSDKKeyAsync(String projectKey, String environmentKey, Long expiry, final ApiCallback<Environment> _callback) throws ApiException {
+    public okhttp3.Call resetEnvironmentSDKKeyAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long expiry, final ApiCallback<Environment> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = resetEnvironmentSDKKeyValidateBeforeCall(projectKey, environmentKey, expiry, _callback);
         Type localVarReturnType = new TypeToken<Environment>(){}.getType();

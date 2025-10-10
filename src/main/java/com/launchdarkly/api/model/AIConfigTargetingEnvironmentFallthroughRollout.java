@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,120 +42,125 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * AIConfigTargetingEnvironmentFallthroughRollout
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AIConfigTargetingEnvironmentFallthroughRollout {
   public static final String SERIALIZED_NAME_BUCKET_BY = "bucketBy";
   @SerializedName(SERIALIZED_NAME_BUCKET_BY)
+  @javax.annotation.Nullable
   private String bucketBy;
 
   public static final String SERIALIZED_NAME_CONTEXT_KIND = "contextKind";
   @SerializedName(SERIALIZED_NAME_CONTEXT_KIND)
+  @javax.annotation.Nonnull
   private String contextKind;
 
   public static final String SERIALIZED_NAME_EXPERIMENT_ALLOCATION = "experimentAllocation";
   @SerializedName(SERIALIZED_NAME_EXPERIMENT_ALLOCATION)
+  @javax.annotation.Nullable
   private AIConfigTargetingEnvironmentFallthroughRolloutExperimentationAllocation experimentAllocation;
 
   public static final String SERIALIZED_NAME_SEED = "seed";
   @SerializedName(SERIALIZED_NAME_SEED)
+  @javax.annotation.Nullable
   private Integer seed;
 
   public static final String SERIALIZED_NAME_VARIATIONS = "variations";
   @SerializedName(SERIALIZED_NAME_VARIATIONS)
+  @javax.annotation.Nonnull
   private List<AIConfigTargetingEnvironmentFallthroughRolloutVariation> variations = new ArrayList<>();
 
   public AIConfigTargetingEnvironmentFallthroughRollout() {
   }
 
-  public AIConfigTargetingEnvironmentFallthroughRollout bucketBy(String bucketBy) {
+  public AIConfigTargetingEnvironmentFallthroughRollout bucketBy(@javax.annotation.Nullable String bucketBy) {
     this.bucketBy = bucketBy;
     return this;
   }
 
-   /**
+  /**
    * Get bucketBy
    * @return bucketBy
-  **/
+   */
   @javax.annotation.Nullable
   public String getBucketBy() {
     return bucketBy;
   }
 
-  public void setBucketBy(String bucketBy) {
+  public void setBucketBy(@javax.annotation.Nullable String bucketBy) {
     this.bucketBy = bucketBy;
   }
 
 
-  public AIConfigTargetingEnvironmentFallthroughRollout contextKind(String contextKind) {
+  public AIConfigTargetingEnvironmentFallthroughRollout contextKind(@javax.annotation.Nonnull String contextKind) {
     this.contextKind = contextKind;
     return this;
   }
 
-   /**
+  /**
    * Get contextKind
    * @return contextKind
-  **/
+   */
   @javax.annotation.Nonnull
   public String getContextKind() {
     return contextKind;
   }
 
-  public void setContextKind(String contextKind) {
+  public void setContextKind(@javax.annotation.Nonnull String contextKind) {
     this.contextKind = contextKind;
   }
 
 
-  public AIConfigTargetingEnvironmentFallthroughRollout experimentAllocation(AIConfigTargetingEnvironmentFallthroughRolloutExperimentationAllocation experimentAllocation) {
+  public AIConfigTargetingEnvironmentFallthroughRollout experimentAllocation(@javax.annotation.Nullable AIConfigTargetingEnvironmentFallthroughRolloutExperimentationAllocation experimentAllocation) {
     this.experimentAllocation = experimentAllocation;
     return this;
   }
 
-   /**
+  /**
    * Get experimentAllocation
    * @return experimentAllocation
-  **/
+   */
   @javax.annotation.Nullable
   public AIConfigTargetingEnvironmentFallthroughRolloutExperimentationAllocation getExperimentAllocation() {
     return experimentAllocation;
   }
 
-  public void setExperimentAllocation(AIConfigTargetingEnvironmentFallthroughRolloutExperimentationAllocation experimentAllocation) {
+  public void setExperimentAllocation(@javax.annotation.Nullable AIConfigTargetingEnvironmentFallthroughRolloutExperimentationAllocation experimentAllocation) {
     this.experimentAllocation = experimentAllocation;
   }
 
 
-  public AIConfigTargetingEnvironmentFallthroughRollout seed(Integer seed) {
+  public AIConfigTargetingEnvironmentFallthroughRollout seed(@javax.annotation.Nullable Integer seed) {
     this.seed = seed;
     return this;
   }
 
-   /**
+  /**
    * Get seed
    * @return seed
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getSeed() {
     return seed;
   }
 
-  public void setSeed(Integer seed) {
+  public void setSeed(@javax.annotation.Nullable Integer seed) {
     this.seed = seed;
   }
 
 
-  public AIConfigTargetingEnvironmentFallthroughRollout variations(List<AIConfigTargetingEnvironmentFallthroughRolloutVariation> variations) {
+  public AIConfigTargetingEnvironmentFallthroughRollout variations(@javax.annotation.Nonnull List<AIConfigTargetingEnvironmentFallthroughRolloutVariation> variations) {
     this.variations = variations;
     return this;
   }
@@ -167,16 +173,16 @@ public class AIConfigTargetingEnvironmentFallthroughRollout {
     return this;
   }
 
-   /**
+  /**
    * Get variations
    * @return variations
-  **/
+   */
   @javax.annotation.Nonnull
   public List<AIConfigTargetingEnvironmentFallthroughRolloutVariation> getVariations() {
     return variations;
   }
 
-  public void setVariations(List<AIConfigTargetingEnvironmentFallthroughRolloutVariation> variations) {
+  public void setVariations(@javax.annotation.Nonnull List<AIConfigTargetingEnvironmentFallthroughRolloutVariation> variations) {
     this.variations = variations;
   }
 
@@ -279,44 +285,37 @@ public class AIConfigTargetingEnvironmentFallthroughRollout {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("bucketBy");
-    openapiFields.add("contextKind");
-    openapiFields.add("experimentAllocation");
-    openapiFields.add("seed");
-    openapiFields.add("variations");
+    openapiFields = new HashSet<String>(Arrays.asList("bucketBy", "contextKind", "experimentAllocation", "seed", "variations"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("contextKind");
-    openapiRequiredFields.add("variations");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("contextKind", "variations"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to AIConfigTargetingEnvironmentFallthroughRollout
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AIConfigTargetingEnvironmentFallthroughRollout
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AIConfigTargetingEnvironmentFallthroughRollout.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AIConfigTargetingEnvironmentFallthroughRollout is not found in the empty JSON string", AIConfigTargetingEnvironmentFallthroughRollout.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AIConfigTargetingEnvironmentFallthroughRollout is not found in the empty JSON string", AIConfigTargetingEnvironmentFallthroughRollout.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : AIConfigTargetingEnvironmentFallthroughRollout.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("bucketBy") != null && !jsonObj.get("bucketBy").isJsonNull()) && !jsonObj.get("bucketBy").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `bucketBy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucketBy").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `bucketBy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucketBy").toString()));
       }
       if (!jsonObj.get("contextKind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `contextKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("contextKind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `contextKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("contextKind").toString()));
       }
       // validate the optional field `experimentAllocation`
       if (jsonObj.get("experimentAllocation") != null && !jsonObj.get("experimentAllocation").isJsonNull()) {
@@ -324,7 +323,7 @@ public class AIConfigTargetingEnvironmentFallthroughRollout {
       }
       // ensure the json data is an array
       if (!jsonObj.get("variations").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `variations` to be an array in the JSON string but got `%s`", jsonObj.get("variations").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `variations` to be an array in the JSON string but got `%s`", jsonObj.get("variations").toString()));
       }
 
       JsonArray jsonArrayvariations = jsonObj.getAsJsonArray("variations");
@@ -391,7 +390,7 @@ public class AIConfigTargetingEnvironmentFallthroughRollout {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -406,22 +405,22 @@ public class AIConfigTargetingEnvironmentFallthroughRollout {
     }
   }
 
- /**
-  * Create an instance of AIConfigTargetingEnvironmentFallthroughRollout given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AIConfigTargetingEnvironmentFallthroughRollout
-  * @throws IOException if the JSON string is invalid with respect to AIConfigTargetingEnvironmentFallthroughRollout
-  */
+  /**
+   * Create an instance of AIConfigTargetingEnvironmentFallthroughRollout given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AIConfigTargetingEnvironmentFallthroughRollout
+   * @throws IOException if the JSON string is invalid with respect to AIConfigTargetingEnvironmentFallthroughRollout
+   */
   public static AIConfigTargetingEnvironmentFallthroughRollout fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AIConfigTargetingEnvironmentFallthroughRollout.class);
   }
 
- /**
-  * Convert an instance of AIConfigTargetingEnvironmentFallthroughRollout to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AIConfigTargetingEnvironmentFallthroughRollout to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

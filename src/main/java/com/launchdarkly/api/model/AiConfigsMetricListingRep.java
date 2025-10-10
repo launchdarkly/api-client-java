@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -48,58 +49,68 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * AiConfigsMetricListingRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AiConfigsMetricListingRep {
   public static final String SERIALIZED_NAME_EXPERIMENT_COUNT = "experimentCount";
   @SerializedName(SERIALIZED_NAME_EXPERIMENT_COUNT)
+  @javax.annotation.Nullable
   private Integer experimentCount;
 
   public static final String SERIALIZED_NAME_METRIC_GROUP_COUNT = "metricGroupCount";
   @SerializedName(SERIALIZED_NAME_METRIC_GROUP_COUNT)
+  @javax.annotation.Nullable
   private Integer metricGroupCount;
 
   public static final String SERIALIZED_NAME_GUARDED_ROLLOUT_COUNT = "guardedRolloutCount";
   @SerializedName(SERIALIZED_NAME_GUARDED_ROLLOUT_COUNT)
+  @javax.annotation.Nullable
   private Integer guardedRolloutCount;
 
   public static final String SERIALIZED_NAME_ACTIVE_EXPERIMENT_COUNT = "activeExperimentCount";
   @SerializedName(SERIALIZED_NAME_ACTIVE_EXPERIMENT_COUNT)
+  @javax.annotation.Nullable
   private Integer activeExperimentCount;
 
   public static final String SERIALIZED_NAME_ACTIVE_GUARDED_ROLLOUT_COUNT = "activeGuardedRolloutCount";
   @SerializedName(SERIALIZED_NAME_ACTIVE_GUARDED_ROLLOUT_COUNT)
+  @javax.annotation.Nullable
   private Integer activeGuardedRolloutCount;
 
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_VERSION_ID = "_versionId";
   @SerializedName(SERIALIZED_NAME_VERSION_ID)
+  @javax.annotation.Nonnull
   private String versionId;
 
   public static final String SERIALIZED_NAME_VERSION = "_version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
   private Integer version;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   /**
@@ -158,54 +169,67 @@ public class AiConfigsMetricListingRep {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
+  @javax.annotation.Nonnull
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_ATTACHED_FLAG_COUNT = "_attachedFlagCount";
   @SerializedName(SERIALIZED_NAME_ATTACHED_FLAG_COUNT)
+  @javax.annotation.Nullable
   private Integer attachedFlagCount;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, AiConfigsLink> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_SITE = "_site";
   @SerializedName(SERIALIZED_NAME_SITE)
+  @javax.annotation.Nullable
   private AiConfigsLink site;
 
   public static final String SERIALIZED_NAME_ACCESS = "_access";
   @SerializedName(SERIALIZED_NAME_ACCESS)
+  @javax.annotation.Nullable
   private AiConfigsAccess access;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nonnull
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATION_DATE = "_creationDate";
   @SerializedName(SERIALIZED_NAME_CREATION_DATE)
+  @javax.annotation.Nonnull
   private Long creationDate;
 
   public static final String SERIALIZED_NAME_LAST_MODIFIED = "lastModified";
   @SerializedName(SERIALIZED_NAME_LAST_MODIFIED)
+  @javax.annotation.Nullable
   private AiConfigsModification lastModified;
 
   public static final String SERIALIZED_NAME_MAINTAINER_ID = "maintainerId";
   @SerializedName(SERIALIZED_NAME_MAINTAINER_ID)
+  @javax.annotation.Nullable
   private String maintainerId;
 
   public static final String SERIALIZED_NAME_MAINTAINER = "_maintainer";
   @SerializedName(SERIALIZED_NAME_MAINTAINER)
+  @javax.annotation.Nullable
   private AiConfigsMemberSummary maintainer;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_CATEGORY = "category";
   @SerializedName(SERIALIZED_NAME_CATEGORY)
+  @javax.annotation.Nullable
   private String category;
 
   public static final String SERIALIZED_NAME_IS_NUMERIC = "isNumeric";
   @SerializedName(SERIALIZED_NAME_IS_NUMERIC)
+  @javax.annotation.Nullable
   private Boolean isNumeric;
 
   /**
@@ -213,9 +237,9 @@ public class AiConfigsMetricListingRep {
    */
   @JsonAdapter(SuccessCriteriaEnum.Adapter.class)
   public enum SuccessCriteriaEnum {
-    HIGHERTHANBASELINE("HigherThanBaseline"),
+    HIGHER_THAN_BASELINE("HigherThanBaseline"),
     
-    LOWERTHANBASELINE("LowerThanBaseline");
+    LOWER_THAN_BASELINE("LowerThanBaseline");
 
     private String value;
 
@@ -262,22 +286,27 @@ public class AiConfigsMetricListingRep {
 
   public static final String SERIALIZED_NAME_SUCCESS_CRITERIA = "successCriteria";
   @SerializedName(SERIALIZED_NAME_SUCCESS_CRITERIA)
+  @javax.annotation.Nullable
   private SuccessCriteriaEnum successCriteria;
 
   public static final String SERIALIZED_NAME_UNIT = "unit";
   @SerializedName(SERIALIZED_NAME_UNIT)
+  @javax.annotation.Nullable
   private String unit;
 
   public static final String SERIALIZED_NAME_EVENT_KEY = "eventKey";
   @SerializedName(SERIALIZED_NAME_EVENT_KEY)
+  @javax.annotation.Nullable
   private String eventKey;
 
   public static final String SERIALIZED_NAME_RANDOMIZATION_UNITS = "randomizationUnits";
   @SerializedName(SERIALIZED_NAME_RANDOMIZATION_UNITS)
+  @javax.annotation.Nullable
   private List<String> randomizationUnits = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_FILTERS = "filters";
   @SerializedName(SERIALIZED_NAME_FILTERS)
+  @javax.annotation.Nullable
   private AiConfigsFilter filters;
 
   /**
@@ -334,6 +363,7 @@ public class AiConfigsMetricListingRep {
 
   public static final String SERIALIZED_NAME_UNIT_AGGREGATION_TYPE = "unitAggregationType";
   @SerializedName(SERIALIZED_NAME_UNIT_AGGREGATION_TYPE)
+  @javax.annotation.Nullable
   private UnitAggregationTypeEnum unitAggregationType;
 
   /**
@@ -390,268 +420,276 @@ public class AiConfigsMetricListingRep {
 
   public static final String SERIALIZED_NAME_ANALYSIS_TYPE = "analysisType";
   @SerializedName(SERIALIZED_NAME_ANALYSIS_TYPE)
+  @javax.annotation.Nullable
   private AnalysisTypeEnum analysisType;
 
   public static final String SERIALIZED_NAME_PERCENTILE_VALUE = "percentileValue";
   @SerializedName(SERIALIZED_NAME_PERCENTILE_VALUE)
+  @javax.annotation.Nullable
   private Integer percentileValue;
 
   public static final String SERIALIZED_NAME_EVENT_DEFAULT = "eventDefault";
   @SerializedName(SERIALIZED_NAME_EVENT_DEFAULT)
+  @javax.annotation.Nullable
   private AiConfigsMetricEventDefaultRep eventDefault;
 
   public static final String SERIALIZED_NAME_DATA_SOURCE = "dataSource";
   @SerializedName(SERIALIZED_NAME_DATA_SOURCE)
+  @javax.annotation.Nullable
   private AiConfigsMetricDataSourceRefRep dataSource;
 
   public static final String SERIALIZED_NAME_ARCHIVED = "archived";
   @SerializedName(SERIALIZED_NAME_ARCHIVED)
+  @javax.annotation.Nullable
   private Boolean archived;
 
   public static final String SERIALIZED_NAME_ARCHIVED_AT = "archivedAt";
   @SerializedName(SERIALIZED_NAME_ARCHIVED_AT)
+  @javax.annotation.Nullable
   private Long archivedAt;
 
   public static final String SERIALIZED_NAME_SELECTOR = "selector";
   @SerializedName(SERIALIZED_NAME_SELECTOR)
+  @javax.annotation.Nullable
   private String selector;
 
   public static final String SERIALIZED_NAME_URLS = "urls";
   @SerializedName(SERIALIZED_NAME_URLS)
+  @javax.annotation.Nullable
   private List<Map<String, Object>> urls = new ArrayList<>();
 
   public AiConfigsMetricListingRep() {
   }
 
-  public AiConfigsMetricListingRep experimentCount(Integer experimentCount) {
+  public AiConfigsMetricListingRep experimentCount(@javax.annotation.Nullable Integer experimentCount) {
     this.experimentCount = experimentCount;
     return this;
   }
 
-   /**
+  /**
    * The number of experiments using this metric
    * @return experimentCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getExperimentCount() {
     return experimentCount;
   }
 
-  public void setExperimentCount(Integer experimentCount) {
+  public void setExperimentCount(@javax.annotation.Nullable Integer experimentCount) {
     this.experimentCount = experimentCount;
   }
 
 
-  public AiConfigsMetricListingRep metricGroupCount(Integer metricGroupCount) {
+  public AiConfigsMetricListingRep metricGroupCount(@javax.annotation.Nullable Integer metricGroupCount) {
     this.metricGroupCount = metricGroupCount;
     return this;
   }
 
-   /**
+  /**
    * The number of metric groups using this metric
    * @return metricGroupCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getMetricGroupCount() {
     return metricGroupCount;
   }
 
-  public void setMetricGroupCount(Integer metricGroupCount) {
+  public void setMetricGroupCount(@javax.annotation.Nullable Integer metricGroupCount) {
     this.metricGroupCount = metricGroupCount;
   }
 
 
-  public AiConfigsMetricListingRep guardedRolloutCount(Integer guardedRolloutCount) {
+  public AiConfigsMetricListingRep guardedRolloutCount(@javax.annotation.Nullable Integer guardedRolloutCount) {
     this.guardedRolloutCount = guardedRolloutCount;
     return this;
   }
 
-   /**
+  /**
    * The number of guarded rollouts using this metric
    * @return guardedRolloutCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getGuardedRolloutCount() {
     return guardedRolloutCount;
   }
 
-  public void setGuardedRolloutCount(Integer guardedRolloutCount) {
+  public void setGuardedRolloutCount(@javax.annotation.Nullable Integer guardedRolloutCount) {
     this.guardedRolloutCount = guardedRolloutCount;
   }
 
 
-  public AiConfigsMetricListingRep activeExperimentCount(Integer activeExperimentCount) {
+  public AiConfigsMetricListingRep activeExperimentCount(@javax.annotation.Nullable Integer activeExperimentCount) {
     this.activeExperimentCount = activeExperimentCount;
     return this;
   }
 
-   /**
+  /**
    * The number of active experiments using this metric
    * @return activeExperimentCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getActiveExperimentCount() {
     return activeExperimentCount;
   }
 
-  public void setActiveExperimentCount(Integer activeExperimentCount) {
+  public void setActiveExperimentCount(@javax.annotation.Nullable Integer activeExperimentCount) {
     this.activeExperimentCount = activeExperimentCount;
   }
 
 
-  public AiConfigsMetricListingRep activeGuardedRolloutCount(Integer activeGuardedRolloutCount) {
+  public AiConfigsMetricListingRep activeGuardedRolloutCount(@javax.annotation.Nullable Integer activeGuardedRolloutCount) {
     this.activeGuardedRolloutCount = activeGuardedRolloutCount;
     return this;
   }
 
-   /**
+  /**
    * The number of active guarded rollouts using this metric
    * @return activeGuardedRolloutCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getActiveGuardedRolloutCount() {
     return activeGuardedRolloutCount;
   }
 
-  public void setActiveGuardedRolloutCount(Integer activeGuardedRolloutCount) {
+  public void setActiveGuardedRolloutCount(@javax.annotation.Nullable Integer activeGuardedRolloutCount) {
     this.activeGuardedRolloutCount = activeGuardedRolloutCount;
   }
 
 
-  public AiConfigsMetricListingRep id(String id) {
+  public AiConfigsMetricListingRep id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The ID of this metric
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public AiConfigsMetricListingRep versionId(String versionId) {
+  public AiConfigsMetricListingRep versionId(@javax.annotation.Nonnull String versionId) {
     this.versionId = versionId;
     return this;
   }
 
-   /**
+  /**
    * The version ID of the metric
    * @return versionId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getVersionId() {
     return versionId;
   }
 
-  public void setVersionId(String versionId) {
+  public void setVersionId(@javax.annotation.Nonnull String versionId) {
     this.versionId = versionId;
   }
 
 
-  public AiConfigsMetricListingRep version(Integer version) {
+  public AiConfigsMetricListingRep version(@javax.annotation.Nullable Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * Version of the metric
    * @return version
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nullable Integer version) {
     this.version = version;
   }
 
 
-  public AiConfigsMetricListingRep key(String key) {
+  public AiConfigsMetricListingRep key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * A unique key to reference the metric
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public AiConfigsMetricListingRep name(String name) {
+  public AiConfigsMetricListingRep name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for the metric
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public AiConfigsMetricListingRep kind(KindEnum kind) {
+  public AiConfigsMetricListingRep kind(@javax.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
 
-   /**
+  /**
    * The kind of event the metric tracks
    * @return kind
-  **/
+   */
   @javax.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(KindEnum kind) {
+  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public AiConfigsMetricListingRep attachedFlagCount(Integer attachedFlagCount) {
+  public AiConfigsMetricListingRep attachedFlagCount(@javax.annotation.Nullable Integer attachedFlagCount) {
     this.attachedFlagCount = attachedFlagCount;
     return this;
   }
 
-   /**
+  /**
    * The number of feature flags currently attached to this metric
    * @return attachedFlagCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getAttachedFlagCount() {
     return attachedFlagCount;
   }
 
-  public void setAttachedFlagCount(Integer attachedFlagCount) {
+  public void setAttachedFlagCount(@javax.annotation.Nullable Integer attachedFlagCount) {
     this.attachedFlagCount = attachedFlagCount;
   }
 
 
-  public AiConfigsMetricListingRep links(Map<String, AiConfigsLink> links) {
+  public AiConfigsMetricListingRep links(@javax.annotation.Nonnull Map<String, AiConfigsLink> links) {
     this.links = links;
     return this;
   }
@@ -664,59 +702,59 @@ public class AiConfigsMetricListingRep {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, AiConfigsLink> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, AiConfigsLink> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, AiConfigsLink> links) {
     this.links = links;
   }
 
 
-  public AiConfigsMetricListingRep site(AiConfigsLink site) {
+  public AiConfigsMetricListingRep site(@javax.annotation.Nullable AiConfigsLink site) {
     this.site = site;
     return this;
   }
 
-   /**
+  /**
    * Get site
    * @return site
-  **/
+   */
   @javax.annotation.Nullable
   public AiConfigsLink getSite() {
     return site;
   }
 
-  public void setSite(AiConfigsLink site) {
+  public void setSite(@javax.annotation.Nullable AiConfigsLink site) {
     this.site = site;
   }
 
 
-  public AiConfigsMetricListingRep access(AiConfigsAccess access) {
+  public AiConfigsMetricListingRep access(@javax.annotation.Nullable AiConfigsAccess access) {
     this.access = access;
     return this;
   }
 
-   /**
+  /**
    * Get access
    * @return access
-  **/
+   */
   @javax.annotation.Nullable
   public AiConfigsAccess getAccess() {
     return access;
   }
 
-  public void setAccess(AiConfigsAccess access) {
+  public void setAccess(@javax.annotation.Nullable AiConfigsAccess access) {
     this.access = access;
   }
 
 
-  public AiConfigsMetricListingRep tags(List<String> tags) {
+  public AiConfigsMetricListingRep tags(@javax.annotation.Nonnull List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -729,211 +767,211 @@ public class AiConfigsMetricListingRep {
     return this;
   }
 
-   /**
+  /**
    * Tags for the metric
    * @return tags
-  **/
+   */
   @javax.annotation.Nonnull
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nonnull List<String> tags) {
     this.tags = tags;
   }
 
 
-  public AiConfigsMetricListingRep creationDate(Long creationDate) {
+  public AiConfigsMetricListingRep creationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
     return this;
   }
 
-   /**
+  /**
    * Get creationDate
    * @return creationDate
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate(Long creationDate) {
+  public void setCreationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
   }
 
 
-  public AiConfigsMetricListingRep lastModified(AiConfigsModification lastModified) {
+  public AiConfigsMetricListingRep lastModified(@javax.annotation.Nullable AiConfigsModification lastModified) {
     this.lastModified = lastModified;
     return this;
   }
 
-   /**
+  /**
    * Get lastModified
    * @return lastModified
-  **/
+   */
   @javax.annotation.Nullable
   public AiConfigsModification getLastModified() {
     return lastModified;
   }
 
-  public void setLastModified(AiConfigsModification lastModified) {
+  public void setLastModified(@javax.annotation.Nullable AiConfigsModification lastModified) {
     this.lastModified = lastModified;
   }
 
 
-  public AiConfigsMetricListingRep maintainerId(String maintainerId) {
+  public AiConfigsMetricListingRep maintainerId(@javax.annotation.Nullable String maintainerId) {
     this.maintainerId = maintainerId;
     return this;
   }
 
-   /**
+  /**
    * The ID of the member who maintains this metric
    * @return maintainerId
-  **/
+   */
   @javax.annotation.Nullable
   public String getMaintainerId() {
     return maintainerId;
   }
 
-  public void setMaintainerId(String maintainerId) {
+  public void setMaintainerId(@javax.annotation.Nullable String maintainerId) {
     this.maintainerId = maintainerId;
   }
 
 
-  public AiConfigsMetricListingRep maintainer(AiConfigsMemberSummary maintainer) {
+  public AiConfigsMetricListingRep maintainer(@javax.annotation.Nullable AiConfigsMemberSummary maintainer) {
     this.maintainer = maintainer;
     return this;
   }
 
-   /**
+  /**
    * Get maintainer
    * @return maintainer
-  **/
+   */
   @javax.annotation.Nullable
   public AiConfigsMemberSummary getMaintainer() {
     return maintainer;
   }
 
-  public void setMaintainer(AiConfigsMemberSummary maintainer) {
+  public void setMaintainer(@javax.annotation.Nullable AiConfigsMemberSummary maintainer) {
     this.maintainer = maintainer;
   }
 
 
-  public AiConfigsMetricListingRep description(String description) {
+  public AiConfigsMetricListingRep description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Description of the metric
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public AiConfigsMetricListingRep category(String category) {
+  public AiConfigsMetricListingRep category(@javax.annotation.Nullable String category) {
     this.category = category;
     return this;
   }
 
-   /**
+  /**
    * The category of the metric
    * @return category
-  **/
+   */
   @javax.annotation.Nullable
   public String getCategory() {
     return category;
   }
 
-  public void setCategory(String category) {
+  public void setCategory(@javax.annotation.Nullable String category) {
     this.category = category;
   }
 
 
-  public AiConfigsMetricListingRep isNumeric(Boolean isNumeric) {
+  public AiConfigsMetricListingRep isNumeric(@javax.annotation.Nullable Boolean isNumeric) {
     this.isNumeric = isNumeric;
     return this;
   }
 
-   /**
+  /**
    * For custom metrics, whether to track numeric changes in value against a baseline (&lt;code&gt;true&lt;/code&gt;) or to track a conversion when an end user takes an action (&lt;code&gt;false&lt;/code&gt;).
    * @return isNumeric
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsNumeric() {
     return isNumeric;
   }
 
-  public void setIsNumeric(Boolean isNumeric) {
+  public void setIsNumeric(@javax.annotation.Nullable Boolean isNumeric) {
     this.isNumeric = isNumeric;
   }
 
 
-  public AiConfigsMetricListingRep successCriteria(SuccessCriteriaEnum successCriteria) {
+  public AiConfigsMetricListingRep successCriteria(@javax.annotation.Nullable SuccessCriteriaEnum successCriteria) {
     this.successCriteria = successCriteria;
     return this;
   }
 
-   /**
+  /**
    * For custom metrics, the success criteria
    * @return successCriteria
-  **/
+   */
   @javax.annotation.Nullable
   public SuccessCriteriaEnum getSuccessCriteria() {
     return successCriteria;
   }
 
-  public void setSuccessCriteria(SuccessCriteriaEnum successCriteria) {
+  public void setSuccessCriteria(@javax.annotation.Nullable SuccessCriteriaEnum successCriteria) {
     this.successCriteria = successCriteria;
   }
 
 
-  public AiConfigsMetricListingRep unit(String unit) {
+  public AiConfigsMetricListingRep unit(@javax.annotation.Nullable String unit) {
     this.unit = unit;
     return this;
   }
 
-   /**
+  /**
    * For numeric custom metrics, the unit of measure
    * @return unit
-  **/
+   */
   @javax.annotation.Nullable
   public String getUnit() {
     return unit;
   }
 
-  public void setUnit(String unit) {
+  public void setUnit(@javax.annotation.Nullable String unit) {
     this.unit = unit;
   }
 
 
-  public AiConfigsMetricListingRep eventKey(String eventKey) {
+  public AiConfigsMetricListingRep eventKey(@javax.annotation.Nullable String eventKey) {
     this.eventKey = eventKey;
     return this;
   }
 
-   /**
+  /**
    * For custom metrics, the event key to use in your code
    * @return eventKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getEventKey() {
     return eventKey;
   }
 
-  public void setEventKey(String eventKey) {
+  public void setEventKey(@javax.annotation.Nullable String eventKey) {
     this.eventKey = eventKey;
   }
 
 
-  public AiConfigsMetricListingRep randomizationUnits(List<String> randomizationUnits) {
+  public AiConfigsMetricListingRep randomizationUnits(@javax.annotation.Nullable List<String> randomizationUnits) {
     this.randomizationUnits = randomizationUnits;
     return this;
   }
@@ -946,192 +984,192 @@ public class AiConfigsMetricListingRep {
     return this;
   }
 
-   /**
+  /**
    * An array of randomization units allowed for this metric
    * @return randomizationUnits
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getRandomizationUnits() {
     return randomizationUnits;
   }
 
-  public void setRandomizationUnits(List<String> randomizationUnits) {
+  public void setRandomizationUnits(@javax.annotation.Nullable List<String> randomizationUnits) {
     this.randomizationUnits = randomizationUnits;
   }
 
 
-  public AiConfigsMetricListingRep filters(AiConfigsFilter filters) {
+  public AiConfigsMetricListingRep filters(@javax.annotation.Nullable AiConfigsFilter filters) {
     this.filters = filters;
     return this;
   }
 
-   /**
+  /**
    * Get filters
    * @return filters
-  **/
+   */
   @javax.annotation.Nullable
   public AiConfigsFilter getFilters() {
     return filters;
   }
 
-  public void setFilters(AiConfigsFilter filters) {
+  public void setFilters(@javax.annotation.Nullable AiConfigsFilter filters) {
     this.filters = filters;
   }
 
 
-  public AiConfigsMetricListingRep unitAggregationType(UnitAggregationTypeEnum unitAggregationType) {
+  public AiConfigsMetricListingRep unitAggregationType(@javax.annotation.Nullable UnitAggregationTypeEnum unitAggregationType) {
     this.unitAggregationType = unitAggregationType;
     return this;
   }
 
-   /**
+  /**
    * The method by which multiple unit event values are aggregated
    * @return unitAggregationType
-  **/
+   */
   @javax.annotation.Nullable
   public UnitAggregationTypeEnum getUnitAggregationType() {
     return unitAggregationType;
   }
 
-  public void setUnitAggregationType(UnitAggregationTypeEnum unitAggregationType) {
+  public void setUnitAggregationType(@javax.annotation.Nullable UnitAggregationTypeEnum unitAggregationType) {
     this.unitAggregationType = unitAggregationType;
   }
 
 
-  public AiConfigsMetricListingRep analysisType(AnalysisTypeEnum analysisType) {
+  public AiConfigsMetricListingRep analysisType(@javax.annotation.Nullable AnalysisTypeEnum analysisType) {
     this.analysisType = analysisType;
     return this;
   }
 
-   /**
+  /**
    * The method for analyzing metric events
    * @return analysisType
-  **/
+   */
   @javax.annotation.Nullable
   public AnalysisTypeEnum getAnalysisType() {
     return analysisType;
   }
 
-  public void setAnalysisType(AnalysisTypeEnum analysisType) {
+  public void setAnalysisType(@javax.annotation.Nullable AnalysisTypeEnum analysisType) {
     this.analysisType = analysisType;
   }
 
 
-  public AiConfigsMetricListingRep percentileValue(Integer percentileValue) {
+  public AiConfigsMetricListingRep percentileValue(@javax.annotation.Nullable Integer percentileValue) {
     this.percentileValue = percentileValue;
     return this;
   }
 
-   /**
+  /**
    * The percentile for the analysis method. An integer denoting the target percentile between 0 and 100. Required when &lt;code&gt;analysisType&lt;/code&gt; is &lt;code&gt;percentile&lt;/code&gt;.
    * @return percentileValue
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getPercentileValue() {
     return percentileValue;
   }
 
-  public void setPercentileValue(Integer percentileValue) {
+  public void setPercentileValue(@javax.annotation.Nullable Integer percentileValue) {
     this.percentileValue = percentileValue;
   }
 
 
-  public AiConfigsMetricListingRep eventDefault(AiConfigsMetricEventDefaultRep eventDefault) {
+  public AiConfigsMetricListingRep eventDefault(@javax.annotation.Nullable AiConfigsMetricEventDefaultRep eventDefault) {
     this.eventDefault = eventDefault;
     return this;
   }
 
-   /**
+  /**
    * Get eventDefault
    * @return eventDefault
-  **/
+   */
   @javax.annotation.Nullable
   public AiConfigsMetricEventDefaultRep getEventDefault() {
     return eventDefault;
   }
 
-  public void setEventDefault(AiConfigsMetricEventDefaultRep eventDefault) {
+  public void setEventDefault(@javax.annotation.Nullable AiConfigsMetricEventDefaultRep eventDefault) {
     this.eventDefault = eventDefault;
   }
 
 
-  public AiConfigsMetricListingRep dataSource(AiConfigsMetricDataSourceRefRep dataSource) {
+  public AiConfigsMetricListingRep dataSource(@javax.annotation.Nullable AiConfigsMetricDataSourceRefRep dataSource) {
     this.dataSource = dataSource;
     return this;
   }
 
-   /**
+  /**
    * Get dataSource
    * @return dataSource
-  **/
+   */
   @javax.annotation.Nullable
   public AiConfigsMetricDataSourceRefRep getDataSource() {
     return dataSource;
   }
 
-  public void setDataSource(AiConfigsMetricDataSourceRefRep dataSource) {
+  public void setDataSource(@javax.annotation.Nullable AiConfigsMetricDataSourceRefRep dataSource) {
     this.dataSource = dataSource;
   }
 
 
-  public AiConfigsMetricListingRep archived(Boolean archived) {
+  public AiConfigsMetricListingRep archived(@javax.annotation.Nullable Boolean archived) {
     this.archived = archived;
     return this;
   }
 
-   /**
+  /**
    * Whether the metric version is archived
    * @return archived
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getArchived() {
     return archived;
   }
 
-  public void setArchived(Boolean archived) {
+  public void setArchived(@javax.annotation.Nullable Boolean archived) {
     this.archived = archived;
   }
 
 
-  public AiConfigsMetricListingRep archivedAt(Long archivedAt) {
+  public AiConfigsMetricListingRep archivedAt(@javax.annotation.Nullable Long archivedAt) {
     this.archivedAt = archivedAt;
     return this;
   }
 
-   /**
+  /**
    * Get archivedAt
    * @return archivedAt
-  **/
+   */
   @javax.annotation.Nullable
   public Long getArchivedAt() {
     return archivedAt;
   }
 
-  public void setArchivedAt(Long archivedAt) {
+  public void setArchivedAt(@javax.annotation.Nullable Long archivedAt) {
     this.archivedAt = archivedAt;
   }
 
 
-  public AiConfigsMetricListingRep selector(String selector) {
+  public AiConfigsMetricListingRep selector(@javax.annotation.Nullable String selector) {
     this.selector = selector;
     return this;
   }
 
-   /**
+  /**
    * For click metrics, the CSS selectors
    * @return selector
-  **/
+   */
   @javax.annotation.Nullable
   public String getSelector() {
     return selector;
   }
 
-  public void setSelector(String selector) {
+  public void setSelector(@javax.annotation.Nullable String selector) {
     this.selector = selector;
   }
 
 
-  public AiConfigsMetricListingRep urls(List<Map<String, Object>> urls) {
+  public AiConfigsMetricListingRep urls(@javax.annotation.Nullable List<Map<String, Object>> urls) {
     this.urls = urls;
     return this;
   }
@@ -1144,16 +1182,16 @@ public class AiConfigsMetricListingRep {
     return this;
   }
 
-   /**
+  /**
    * Get urls
    * @return urls
-  **/
+   */
   @javax.annotation.Nullable
   public List<Map<String, Object>> getUrls() {
     return urls;
   }
 
-  public void setUrls(List<Map<String, Object>> urls) {
+  public void setUrls(@javax.annotation.Nullable List<Map<String, Object>> urls) {
     this.urls = urls;
   }
 
@@ -1320,91 +1358,46 @@ public class AiConfigsMetricListingRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("experimentCount");
-    openapiFields.add("metricGroupCount");
-    openapiFields.add("guardedRolloutCount");
-    openapiFields.add("activeExperimentCount");
-    openapiFields.add("activeGuardedRolloutCount");
-    openapiFields.add("_id");
-    openapiFields.add("_versionId");
-    openapiFields.add("_version");
-    openapiFields.add("key");
-    openapiFields.add("name");
-    openapiFields.add("kind");
-    openapiFields.add("_attachedFlagCount");
-    openapiFields.add("_links");
-    openapiFields.add("_site");
-    openapiFields.add("_access");
-    openapiFields.add("tags");
-    openapiFields.add("_creationDate");
-    openapiFields.add("lastModified");
-    openapiFields.add("maintainerId");
-    openapiFields.add("_maintainer");
-    openapiFields.add("description");
-    openapiFields.add("category");
-    openapiFields.add("isNumeric");
-    openapiFields.add("successCriteria");
-    openapiFields.add("unit");
-    openapiFields.add("eventKey");
-    openapiFields.add("randomizationUnits");
-    openapiFields.add("filters");
-    openapiFields.add("unitAggregationType");
-    openapiFields.add("analysisType");
-    openapiFields.add("percentileValue");
-    openapiFields.add("eventDefault");
-    openapiFields.add("dataSource");
-    openapiFields.add("archived");
-    openapiFields.add("archivedAt");
-    openapiFields.add("selector");
-    openapiFields.add("urls");
+    openapiFields = new HashSet<String>(Arrays.asList("experimentCount", "metricGroupCount", "guardedRolloutCount", "activeExperimentCount", "activeGuardedRolloutCount", "_id", "_versionId", "_version", "key", "name", "kind", "_attachedFlagCount", "_links", "_site", "_access", "tags", "_creationDate", "lastModified", "maintainerId", "_maintainer", "description", "category", "isNumeric", "successCriteria", "unit", "eventKey", "randomizationUnits", "filters", "unitAggregationType", "analysisType", "percentileValue", "eventDefault", "dataSource", "archived", "archivedAt", "selector", "urls"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("_versionId");
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("kind");
-    openapiRequiredFields.add("_links");
-    openapiRequiredFields.add("tags");
-    openapiRequiredFields.add("_creationDate");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "_versionId", "key", "name", "kind", "_links", "tags", "_creationDate"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to AiConfigsMetricListingRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AiConfigsMetricListingRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AiConfigsMetricListingRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AiConfigsMetricListingRep is not found in the empty JSON string", AiConfigsMetricListingRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AiConfigsMetricListingRep is not found in the empty JSON string", AiConfigsMetricListingRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : AiConfigsMetricListingRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if (!jsonObj.get("_versionId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_versionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_versionId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_versionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_versionId").toString()));
       }
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("kind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
       // validate the required field `kind`
       KindEnum.validateJsonElement(jsonObj.get("kind"));
@@ -1420,55 +1413,55 @@ public class AiConfigsMetricListingRep {
       if (jsonObj.get("tags") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       // validate the optional field `lastModified`
       if (jsonObj.get("lastModified") != null && !jsonObj.get("lastModified").isJsonNull()) {
         AiConfigsModification.validateJsonElement(jsonObj.get("lastModified"));
       }
       if ((jsonObj.get("maintainerId") != null && !jsonObj.get("maintainerId").isJsonNull()) && !jsonObj.get("maintainerId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerId").toString()));
       }
       // validate the optional field `_maintainer`
       if (jsonObj.get("_maintainer") != null && !jsonObj.get("_maintainer").isJsonNull()) {
         AiConfigsMemberSummary.validateJsonElement(jsonObj.get("_maintainer"));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if ((jsonObj.get("category") != null && !jsonObj.get("category").isJsonNull()) && !jsonObj.get("category").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("category").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("category").toString()));
       }
       if ((jsonObj.get("successCriteria") != null && !jsonObj.get("successCriteria").isJsonNull()) && !jsonObj.get("successCriteria").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `successCriteria` to be a primitive type in the JSON string but got `%s`", jsonObj.get("successCriteria").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `successCriteria` to be a primitive type in the JSON string but got `%s`", jsonObj.get("successCriteria").toString()));
       }
       // validate the optional field `successCriteria`
       if (jsonObj.get("successCriteria") != null && !jsonObj.get("successCriteria").isJsonNull()) {
         SuccessCriteriaEnum.validateJsonElement(jsonObj.get("successCriteria"));
       }
       if ((jsonObj.get("unit") != null && !jsonObj.get("unit").isJsonNull()) && !jsonObj.get("unit").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `unit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unit").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `unit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unit").toString()));
       }
       if ((jsonObj.get("eventKey") != null && !jsonObj.get("eventKey").isJsonNull()) && !jsonObj.get("eventKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `eventKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("eventKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `eventKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("eventKey").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("randomizationUnits") != null && !jsonObj.get("randomizationUnits").isJsonNull() && !jsonObj.get("randomizationUnits").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `randomizationUnits` to be an array in the JSON string but got `%s`", jsonObj.get("randomizationUnits").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `randomizationUnits` to be an array in the JSON string but got `%s`", jsonObj.get("randomizationUnits").toString()));
       }
       // validate the optional field `filters`
       if (jsonObj.get("filters") != null && !jsonObj.get("filters").isJsonNull()) {
         AiConfigsFilter.validateJsonElement(jsonObj.get("filters"));
       }
       if ((jsonObj.get("unitAggregationType") != null && !jsonObj.get("unitAggregationType").isJsonNull()) && !jsonObj.get("unitAggregationType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `unitAggregationType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unitAggregationType").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `unitAggregationType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unitAggregationType").toString()));
       }
       // validate the optional field `unitAggregationType`
       if (jsonObj.get("unitAggregationType") != null && !jsonObj.get("unitAggregationType").isJsonNull()) {
         UnitAggregationTypeEnum.validateJsonElement(jsonObj.get("unitAggregationType"));
       }
       if ((jsonObj.get("analysisType") != null && !jsonObj.get("analysisType").isJsonNull()) && !jsonObj.get("analysisType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `analysisType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("analysisType").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `analysisType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("analysisType").toString()));
       }
       // validate the optional field `analysisType`
       if (jsonObj.get("analysisType") != null && !jsonObj.get("analysisType").isJsonNull()) {
@@ -1483,11 +1476,11 @@ public class AiConfigsMetricListingRep {
         AiConfigsMetricDataSourceRefRep.validateJsonElement(jsonObj.get("dataSource"));
       }
       if ((jsonObj.get("selector") != null && !jsonObj.get("selector").isJsonNull()) && !jsonObj.get("selector").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `selector` to be a primitive type in the JSON string but got `%s`", jsonObj.get("selector").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `selector` to be a primitive type in the JSON string but got `%s`", jsonObj.get("selector").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("urls") != null && !jsonObj.get("urls").isJsonNull() && !jsonObj.get("urls").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `urls` to be an array in the JSON string but got `%s`", jsonObj.get("urls").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `urls` to be an array in the JSON string but got `%s`", jsonObj.get("urls").toString()));
       }
   }
 
@@ -1548,7 +1541,7 @@ public class AiConfigsMetricListingRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -1563,22 +1556,22 @@ public class AiConfigsMetricListingRep {
     }
   }
 
- /**
-  * Create an instance of AiConfigsMetricListingRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AiConfigsMetricListingRep
-  * @throws IOException if the JSON string is invalid with respect to AiConfigsMetricListingRep
-  */
+  /**
+   * Create an instance of AiConfigsMetricListingRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AiConfigsMetricListingRep
+   * @throws IOException if the JSON string is invalid with respect to AiConfigsMetricListingRep
+   */
   public static AiConfigsMetricListingRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AiConfigsMetricListingRep.class);
   }
 
- /**
-  * Convert an instance of AiConfigsMetricListingRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AiConfigsMetricListingRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

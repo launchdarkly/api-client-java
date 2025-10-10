@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,134 +39,139 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * PaginatedLinks
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class PaginatedLinks {
   public static final String SERIALIZED_NAME_FIRST = "first";
   @SerializedName(SERIALIZED_NAME_FIRST)
+  @javax.annotation.Nullable
   private AiConfigsLink first;
 
   public static final String SERIALIZED_NAME_LAST = "last";
   @SerializedName(SERIALIZED_NAME_LAST)
+  @javax.annotation.Nullable
   private AiConfigsLink last;
 
   public static final String SERIALIZED_NAME_NEXT = "next";
   @SerializedName(SERIALIZED_NAME_NEXT)
+  @javax.annotation.Nullable
   private AiConfigsLink next;
 
   public static final String SERIALIZED_NAME_PREV = "prev";
   @SerializedName(SERIALIZED_NAME_PREV)
+  @javax.annotation.Nullable
   private AiConfigsLink prev;
 
   public static final String SERIALIZED_NAME_SELF = "self";
   @SerializedName(SERIALIZED_NAME_SELF)
+  @javax.annotation.Nonnull
   private AiConfigsLink self;
 
   public PaginatedLinks() {
   }
 
-  public PaginatedLinks first(AiConfigsLink first) {
+  public PaginatedLinks first(@javax.annotation.Nullable AiConfigsLink first) {
     this.first = first;
     return this;
   }
 
-   /**
+  /**
    * Get first
    * @return first
-  **/
+   */
   @javax.annotation.Nullable
   public AiConfigsLink getFirst() {
     return first;
   }
 
-  public void setFirst(AiConfigsLink first) {
+  public void setFirst(@javax.annotation.Nullable AiConfigsLink first) {
     this.first = first;
   }
 
 
-  public PaginatedLinks last(AiConfigsLink last) {
+  public PaginatedLinks last(@javax.annotation.Nullable AiConfigsLink last) {
     this.last = last;
     return this;
   }
 
-   /**
+  /**
    * Get last
    * @return last
-  **/
+   */
   @javax.annotation.Nullable
   public AiConfigsLink getLast() {
     return last;
   }
 
-  public void setLast(AiConfigsLink last) {
+  public void setLast(@javax.annotation.Nullable AiConfigsLink last) {
     this.last = last;
   }
 
 
-  public PaginatedLinks next(AiConfigsLink next) {
+  public PaginatedLinks next(@javax.annotation.Nullable AiConfigsLink next) {
     this.next = next;
     return this;
   }
 
-   /**
+  /**
    * Get next
    * @return next
-  **/
+   */
   @javax.annotation.Nullable
   public AiConfigsLink getNext() {
     return next;
   }
 
-  public void setNext(AiConfigsLink next) {
+  public void setNext(@javax.annotation.Nullable AiConfigsLink next) {
     this.next = next;
   }
 
 
-  public PaginatedLinks prev(AiConfigsLink prev) {
+  public PaginatedLinks prev(@javax.annotation.Nullable AiConfigsLink prev) {
     this.prev = prev;
     return this;
   }
 
-   /**
+  /**
    * Get prev
    * @return prev
-  **/
+   */
   @javax.annotation.Nullable
   public AiConfigsLink getPrev() {
     return prev;
   }
 
-  public void setPrev(AiConfigsLink prev) {
+  public void setPrev(@javax.annotation.Nullable AiConfigsLink prev) {
     this.prev = prev;
   }
 
 
-  public PaginatedLinks self(AiConfigsLink self) {
+  public PaginatedLinks self(@javax.annotation.Nonnull AiConfigsLink self) {
     this.self = self;
     return this;
   }
 
-   /**
+  /**
    * Get self
    * @return self
-  **/
+   */
   @javax.annotation.Nonnull
   public AiConfigsLink getSelf() {
     return self;
   }
 
-  public void setSelf(AiConfigsLink self) {
+  public void setSelf(@javax.annotation.Nonnull AiConfigsLink self) {
     this.self = self;
   }
 
@@ -268,35 +274,29 @@ public class PaginatedLinks {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("first");
-    openapiFields.add("last");
-    openapiFields.add("next");
-    openapiFields.add("prev");
-    openapiFields.add("self");
+    openapiFields = new HashSet<String>(Arrays.asList("first", "last", "next", "prev", "self"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("self");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("self"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to PaginatedLinks
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PaginatedLinks
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PaginatedLinks.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PaginatedLinks is not found in the empty JSON string", PaginatedLinks.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in PaginatedLinks is not found in the empty JSON string", PaginatedLinks.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : PaginatedLinks.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -377,7 +377,7 @@ public class PaginatedLinks {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -392,22 +392,22 @@ public class PaginatedLinks {
     }
   }
 
- /**
-  * Create an instance of PaginatedLinks given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PaginatedLinks
-  * @throws IOException if the JSON string is invalid with respect to PaginatedLinks
-  */
+  /**
+   * Create an instance of PaginatedLinks given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PaginatedLinks
+   * @throws IOException if the JSON string is invalid with respect to PaginatedLinks
+   */
   public static PaginatedLinks fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PaginatedLinks.class);
   }
 
- /**
-  * Convert an instance of PaginatedLinks to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PaginatedLinks to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

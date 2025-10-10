@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,65 +39,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * DynamicOptionsParser
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class DynamicOptionsParser {
   public static final String SERIALIZED_NAME_OPTIONS_ITEMS = "optionsItems";
   @SerializedName(SERIALIZED_NAME_OPTIONS_ITEMS)
+  @javax.annotation.Nullable
   private OptionsArray optionsItems;
 
   public static final String SERIALIZED_NAME_OPTIONS_PATH = "optionsPath";
   @SerializedName(SERIALIZED_NAME_OPTIONS_PATH)
+  @javax.annotation.Nullable
   private String optionsPath;
 
   public DynamicOptionsParser() {
   }
 
-  public DynamicOptionsParser optionsItems(OptionsArray optionsItems) {
+  public DynamicOptionsParser optionsItems(@javax.annotation.Nullable OptionsArray optionsItems) {
     this.optionsItems = optionsItems;
     return this;
   }
 
-   /**
+  /**
    * Get optionsItems
    * @return optionsItems
-  **/
+   */
   @javax.annotation.Nullable
   public OptionsArray getOptionsItems() {
     return optionsItems;
   }
 
-  public void setOptionsItems(OptionsArray optionsItems) {
+  public void setOptionsItems(@javax.annotation.Nullable OptionsArray optionsItems) {
     this.optionsItems = optionsItems;
   }
 
 
-  public DynamicOptionsParser optionsPath(String optionsPath) {
+  public DynamicOptionsParser optionsPath(@javax.annotation.Nullable String optionsPath) {
     this.optionsPath = optionsPath;
     return this;
   }
 
-   /**
+  /**
    * Get optionsPath
    * @return optionsPath
-  **/
+   */
   @javax.annotation.Nullable
   public String getOptionsPath() {
     return optionsPath;
   }
 
-  public void setOptionsPath(String optionsPath) {
+  public void setOptionsPath(@javax.annotation.Nullable String optionsPath) {
     this.optionsPath = optionsPath;
   }
 
@@ -193,24 +196,22 @@ public class DynamicOptionsParser {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("optionsItems");
-    openapiFields.add("optionsPath");
+    openapiFields = new HashSet<String>(Arrays.asList("optionsItems", "optionsPath"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DynamicOptionsParser
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DynamicOptionsParser
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DynamicOptionsParser.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DynamicOptionsParser is not found in the empty JSON string", DynamicOptionsParser.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DynamicOptionsParser is not found in the empty JSON string", DynamicOptionsParser.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -219,7 +220,7 @@ public class DynamicOptionsParser {
         OptionsArray.validateJsonElement(jsonObj.get("optionsItems"));
       }
       if ((jsonObj.get("optionsPath") != null && !jsonObj.get("optionsPath").isJsonNull()) && !jsonObj.get("optionsPath").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `optionsPath` to be a primitive type in the JSON string but got `%s`", jsonObj.get("optionsPath").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `optionsPath` to be a primitive type in the JSON string but got `%s`", jsonObj.get("optionsPath").toString()));
       }
   }
 
@@ -280,7 +281,7 @@ public class DynamicOptionsParser {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -295,22 +296,22 @@ public class DynamicOptionsParser {
     }
   }
 
- /**
-  * Create an instance of DynamicOptionsParser given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DynamicOptionsParser
-  * @throws IOException if the JSON string is invalid with respect to DynamicOptionsParser
-  */
+  /**
+   * Create an instance of DynamicOptionsParser given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DynamicOptionsParser
+   * @throws IOException if the JSON string is invalid with respect to DynamicOptionsParser
+   */
   public static DynamicOptionsParser fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DynamicOptionsParser.class);
   }
 
- /**
-  * Convert an instance of DynamicOptionsParser to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DynamicOptionsParser to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

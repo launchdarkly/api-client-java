@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,134 +39,139 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ViewsPaginatedLinks
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ViewsPaginatedLinks {
   public static final String SERIALIZED_NAME_FIRST = "first";
   @SerializedName(SERIALIZED_NAME_FIRST)
+  @javax.annotation.Nullable
   private ViewsLink first;
 
   public static final String SERIALIZED_NAME_LAST = "last";
   @SerializedName(SERIALIZED_NAME_LAST)
+  @javax.annotation.Nullable
   private ViewsLink last;
 
   public static final String SERIALIZED_NAME_NEXT = "next";
   @SerializedName(SERIALIZED_NAME_NEXT)
+  @javax.annotation.Nullable
   private ViewsLink next;
 
   public static final String SERIALIZED_NAME_PREV = "prev";
   @SerializedName(SERIALIZED_NAME_PREV)
+  @javax.annotation.Nullable
   private ViewsLink prev;
 
   public static final String SERIALIZED_NAME_SELF = "self";
   @SerializedName(SERIALIZED_NAME_SELF)
+  @javax.annotation.Nonnull
   private ViewsLink self;
 
   public ViewsPaginatedLinks() {
   }
 
-  public ViewsPaginatedLinks first(ViewsLink first) {
+  public ViewsPaginatedLinks first(@javax.annotation.Nullable ViewsLink first) {
     this.first = first;
     return this;
   }
 
-   /**
+  /**
    * Get first
    * @return first
-  **/
+   */
   @javax.annotation.Nullable
   public ViewsLink getFirst() {
     return first;
   }
 
-  public void setFirst(ViewsLink first) {
+  public void setFirst(@javax.annotation.Nullable ViewsLink first) {
     this.first = first;
   }
 
 
-  public ViewsPaginatedLinks last(ViewsLink last) {
+  public ViewsPaginatedLinks last(@javax.annotation.Nullable ViewsLink last) {
     this.last = last;
     return this;
   }
 
-   /**
+  /**
    * Get last
    * @return last
-  **/
+   */
   @javax.annotation.Nullable
   public ViewsLink getLast() {
     return last;
   }
 
-  public void setLast(ViewsLink last) {
+  public void setLast(@javax.annotation.Nullable ViewsLink last) {
     this.last = last;
   }
 
 
-  public ViewsPaginatedLinks next(ViewsLink next) {
+  public ViewsPaginatedLinks next(@javax.annotation.Nullable ViewsLink next) {
     this.next = next;
     return this;
   }
 
-   /**
+  /**
    * Get next
    * @return next
-  **/
+   */
   @javax.annotation.Nullable
   public ViewsLink getNext() {
     return next;
   }
 
-  public void setNext(ViewsLink next) {
+  public void setNext(@javax.annotation.Nullable ViewsLink next) {
     this.next = next;
   }
 
 
-  public ViewsPaginatedLinks prev(ViewsLink prev) {
+  public ViewsPaginatedLinks prev(@javax.annotation.Nullable ViewsLink prev) {
     this.prev = prev;
     return this;
   }
 
-   /**
+  /**
    * Get prev
    * @return prev
-  **/
+   */
   @javax.annotation.Nullable
   public ViewsLink getPrev() {
     return prev;
   }
 
-  public void setPrev(ViewsLink prev) {
+  public void setPrev(@javax.annotation.Nullable ViewsLink prev) {
     this.prev = prev;
   }
 
 
-  public ViewsPaginatedLinks self(ViewsLink self) {
+  public ViewsPaginatedLinks self(@javax.annotation.Nonnull ViewsLink self) {
     this.self = self;
     return this;
   }
 
-   /**
+  /**
    * Get self
    * @return self
-  **/
+   */
   @javax.annotation.Nonnull
   public ViewsLink getSelf() {
     return self;
   }
 
-  public void setSelf(ViewsLink self) {
+  public void setSelf(@javax.annotation.Nonnull ViewsLink self) {
     this.self = self;
   }
 
@@ -268,35 +274,29 @@ public class ViewsPaginatedLinks {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("first");
-    openapiFields.add("last");
-    openapiFields.add("next");
-    openapiFields.add("prev");
-    openapiFields.add("self");
+    openapiFields = new HashSet<String>(Arrays.asList("first", "last", "next", "prev", "self"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("self");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("self"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ViewsPaginatedLinks
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ViewsPaginatedLinks
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ViewsPaginatedLinks.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ViewsPaginatedLinks is not found in the empty JSON string", ViewsPaginatedLinks.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ViewsPaginatedLinks is not found in the empty JSON string", ViewsPaginatedLinks.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ViewsPaginatedLinks.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -377,7 +377,7 @@ public class ViewsPaginatedLinks {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -392,22 +392,22 @@ public class ViewsPaginatedLinks {
     }
   }
 
- /**
-  * Create an instance of ViewsPaginatedLinks given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ViewsPaginatedLinks
-  * @throws IOException if the JSON string is invalid with respect to ViewsPaginatedLinks
-  */
+  /**
+   * Create an instance of ViewsPaginatedLinks given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ViewsPaginatedLinks
+   * @throws IOException if the JSON string is invalid with respect to ViewsPaginatedLinks
+   */
   public static ViewsPaginatedLinks fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ViewsPaginatedLinks.class);
   }
 
- /**
-  * Convert an instance of ViewsPaginatedLinks to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ViewsPaginatedLinks to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -45,98 +46,107 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * AIConfigTargeting
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AIConfigTargeting {
   public static final String SERIALIZED_NAME_CREATED_AT = "createdAt";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nonnull
   private Long createdAt;
 
   public static final String SERIALIZED_NAME_DEFAULTS = "defaults";
   @SerializedName(SERIALIZED_NAME_DEFAULTS)
+  @javax.annotation.Nullable
   private AIConfigTargetingDefaults defaults;
 
   public static final String SERIALIZED_NAME_ENVIRONMENTS = "environments";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENTS)
+  @javax.annotation.Nonnull
   private Map<String, AIConfigTargetingEnvironment> environments = new HashMap<>();
 
   public static final String SERIALIZED_NAME_EXPERIMENTS = "experiments";
   @SerializedName(SERIALIZED_NAME_EXPERIMENTS)
+  @javax.annotation.Nonnull
   private AiConfigsExperimentInfoRep experiments;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nonnull
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VARIATIONS = "variations";
   @SerializedName(SERIALIZED_NAME_VARIATIONS)
+  @javax.annotation.Nonnull
   private List<AIConfigTargetingVariation> variations = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VERSION = "_version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nonnull
   private Integer version;
 
   public AIConfigTargeting() {
   }
 
-  public AIConfigTargeting createdAt(Long createdAt) {
+  public AIConfigTargeting createdAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Unix timestamp in milliseconds
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public AIConfigTargeting defaults(AIConfigTargetingDefaults defaults) {
+  public AIConfigTargeting defaults(@javax.annotation.Nullable AIConfigTargetingDefaults defaults) {
     this.defaults = defaults;
     return this;
   }
 
-   /**
+  /**
    * Get defaults
    * @return defaults
-  **/
+   */
   @javax.annotation.Nullable
   public AIConfigTargetingDefaults getDefaults() {
     return defaults;
   }
 
-  public void setDefaults(AIConfigTargetingDefaults defaults) {
+  public void setDefaults(@javax.annotation.Nullable AIConfigTargetingDefaults defaults) {
     this.defaults = defaults;
   }
 
 
-  public AIConfigTargeting environments(Map<String, AIConfigTargetingEnvironment> environments) {
+  public AIConfigTargeting environments(@javax.annotation.Nonnull Map<String, AIConfigTargetingEnvironment> environments) {
     this.environments = environments;
     return this;
   }
@@ -149,78 +159,78 @@ public class AIConfigTargeting {
     return this;
   }
 
-   /**
+  /**
    * Get environments
    * @return environments
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, AIConfigTargetingEnvironment> getEnvironments() {
     return environments;
   }
 
-  public void setEnvironments(Map<String, AIConfigTargetingEnvironment> environments) {
+  public void setEnvironments(@javax.annotation.Nonnull Map<String, AIConfigTargetingEnvironment> environments) {
     this.environments = environments;
   }
 
 
-  public AIConfigTargeting experiments(AiConfigsExperimentInfoRep experiments) {
+  public AIConfigTargeting experiments(@javax.annotation.Nonnull AiConfigsExperimentInfoRep experiments) {
     this.experiments = experiments;
     return this;
   }
 
-   /**
+  /**
    * Get experiments
    * @return experiments
-  **/
+   */
   @javax.annotation.Nonnull
   public AiConfigsExperimentInfoRep getExperiments() {
     return experiments;
   }
 
-  public void setExperiments(AiConfigsExperimentInfoRep experiments) {
+  public void setExperiments(@javax.annotation.Nonnull AiConfigsExperimentInfoRep experiments) {
     this.experiments = experiments;
   }
 
 
-  public AIConfigTargeting key(String key) {
+  public AIConfigTargeting key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * Get key
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public AIConfigTargeting name(String name) {
+  public AIConfigTargeting name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public AIConfigTargeting tags(List<String> tags) {
+  public AIConfigTargeting tags(@javax.annotation.Nonnull List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -233,21 +243,21 @@ public class AIConfigTargeting {
     return this;
   }
 
-   /**
+  /**
    * Get tags
    * @return tags
-  **/
+   */
   @javax.annotation.Nonnull
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nonnull List<String> tags) {
     this.tags = tags;
   }
 
 
-  public AIConfigTargeting variations(List<AIConfigTargetingVariation> variations) {
+  public AIConfigTargeting variations(@javax.annotation.Nonnull List<AIConfigTargetingVariation> variations) {
     this.variations = variations;
     return this;
   }
@@ -260,35 +270,35 @@ public class AIConfigTargeting {
     return this;
   }
 
-   /**
+  /**
    * Get variations
    * @return variations
-  **/
+   */
   @javax.annotation.Nonnull
   public List<AIConfigTargetingVariation> getVariations() {
     return variations;
   }
 
-  public void setVariations(List<AIConfigTargetingVariation> variations) {
+  public void setVariations(@javax.annotation.Nonnull List<AIConfigTargetingVariation> variations) {
     this.variations = variations;
   }
 
 
-  public AIConfigTargeting version(Integer version) {
+  public AIConfigTargeting version(@javax.annotation.Nonnull Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * Get version
    * @return version
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nonnull Integer version) {
     this.version = version;
   }
 
@@ -399,46 +409,29 @@ public class AIConfigTargeting {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("createdAt");
-    openapiFields.add("defaults");
-    openapiFields.add("environments");
-    openapiFields.add("experiments");
-    openapiFields.add("key");
-    openapiFields.add("name");
-    openapiFields.add("tags");
-    openapiFields.add("variations");
-    openapiFields.add("_version");
+    openapiFields = new HashSet<String>(Arrays.asList("createdAt", "defaults", "environments", "experiments", "key", "name", "tags", "variations", "_version"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("createdAt");
-    openapiRequiredFields.add("environments");
-    openapiRequiredFields.add("experiments");
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("tags");
-    openapiRequiredFields.add("variations");
-    openapiRequiredFields.add("_version");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("createdAt", "environments", "experiments", "key", "name", "tags", "variations", "_version"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to AIConfigTargeting
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AIConfigTargeting
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AIConfigTargeting.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AIConfigTargeting is not found in the empty JSON string", AIConfigTargeting.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AIConfigTargeting is not found in the empty JSON string", AIConfigTargeting.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : AIConfigTargeting.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -449,20 +442,20 @@ public class AIConfigTargeting {
       // validate the required field `experiments`
       AiConfigsExperimentInfoRep.validateJsonElement(jsonObj.get("experiments"));
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("tags") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       // ensure the json data is an array
       if (!jsonObj.get("variations").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `variations` to be an array in the JSON string but got `%s`", jsonObj.get("variations").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `variations` to be an array in the JSON string but got `%s`", jsonObj.get("variations").toString()));
       }
 
       JsonArray jsonArrayvariations = jsonObj.getAsJsonArray("variations");
@@ -529,7 +522,7 @@ public class AIConfigTargeting {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -544,22 +537,22 @@ public class AIConfigTargeting {
     }
   }
 
- /**
-  * Create an instance of AIConfigTargeting given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AIConfigTargeting
-  * @throws IOException if the JSON string is invalid with respect to AIConfigTargeting
-  */
+  /**
+   * Create an instance of AIConfigTargeting given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AIConfigTargeting
+   * @throws IOException if the JSON string is invalid with respect to AIConfigTargeting
+   */
   public static AIConfigTargeting fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AIConfigTargeting.class);
   }
 
- /**
-  * Convert an instance of AIConfigTargeting to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AIConfigTargeting to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

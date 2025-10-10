@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,289 +44,303 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * FlagEventRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class FlagEventRep {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private UUID id;
 
   public static final String SERIALIZED_NAME_PROJECT_ID = "projectId";
   @SerializedName(SERIALIZED_NAME_PROJECT_ID)
+  @javax.annotation.Nonnull
   private String projectId;
 
   public static final String SERIALIZED_NAME_PROJECT_KEY = "projectKey";
   @SerializedName(SERIALIZED_NAME_PROJECT_KEY)
+  @javax.annotation.Nonnull
   private String projectKey;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_ID = "environmentId";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ID)
+  @javax.annotation.Nullable
   private String environmentId;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_KEY = "environmentKey";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_KEY)
+  @javax.annotation.Nullable
   private String environmentKey;
 
   public static final String SERIALIZED_NAME_FLAG_KEY = "flagKey";
   @SerializedName(SERIALIZED_NAME_FLAG_KEY)
+  @javax.annotation.Nonnull
   private String flagKey;
 
   public static final String SERIALIZED_NAME_EVENT_TYPE = "eventType";
   @SerializedName(SERIALIZED_NAME_EVENT_TYPE)
+  @javax.annotation.Nonnull
   private String eventType;
 
   public static final String SERIALIZED_NAME_EVENT_TIME = "eventTime";
   @SerializedName(SERIALIZED_NAME_EVENT_TIME)
+  @javax.annotation.Nonnull
   private Long eventTime;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nonnull
   private String description;
 
   public static final String SERIALIZED_NAME_AUDIT_LOG_ENTRY_ID = "auditLogEntryId";
   @SerializedName(SERIALIZED_NAME_AUDIT_LOG_ENTRY_ID)
+  @javax.annotation.Nullable
   private String auditLogEntryId;
 
   public static final String SERIALIZED_NAME_MEMBER = "member";
   @SerializedName(SERIALIZED_NAME_MEMBER)
+  @javax.annotation.Nullable
   private FlagEventMemberRep member;
 
   public static final String SERIALIZED_NAME_ACTIONS = "actions";
   @SerializedName(SERIALIZED_NAME_ACTIONS)
+  @javax.annotation.Nullable
   private List<String> actions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_IMPACT = "impact";
   @SerializedName(SERIALIZED_NAME_IMPACT)
+  @javax.annotation.Nonnull
   private FlagEventImpactRep impact;
 
   public static final String SERIALIZED_NAME_EXPERIMENTS = "experiments";
   @SerializedName(SERIALIZED_NAME_EXPERIMENTS)
+  @javax.annotation.Nullable
   private FlagEventExperimentCollection experiments;
 
   public FlagEventRep() {
   }
 
-  public FlagEventRep id(UUID id) {
+  public FlagEventRep id(@javax.annotation.Nonnull UUID id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The flag event ID
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getId() {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nonnull UUID id) {
     this.id = id;
   }
 
 
-  public FlagEventRep projectId(String projectId) {
+  public FlagEventRep projectId(@javax.annotation.Nonnull String projectId) {
     this.projectId = projectId;
     return this;
   }
 
-   /**
+  /**
    * The project ID
    * @return projectId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getProjectId() {
     return projectId;
   }
 
-  public void setProjectId(String projectId) {
+  public void setProjectId(@javax.annotation.Nonnull String projectId) {
     this.projectId = projectId;
   }
 
 
-  public FlagEventRep projectKey(String projectKey) {
+  public FlagEventRep projectKey(@javax.annotation.Nonnull String projectKey) {
     this.projectKey = projectKey;
     return this;
   }
 
-   /**
+  /**
    * The project key
    * @return projectKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getProjectKey() {
     return projectKey;
   }
 
-  public void setProjectKey(String projectKey) {
+  public void setProjectKey(@javax.annotation.Nonnull String projectKey) {
     this.projectKey = projectKey;
   }
 
 
-  public FlagEventRep environmentId(String environmentId) {
+  public FlagEventRep environmentId(@javax.annotation.Nullable String environmentId) {
     this.environmentId = environmentId;
     return this;
   }
 
-   /**
+  /**
    * The environment ID
    * @return environmentId
-  **/
+   */
   @javax.annotation.Nullable
   public String getEnvironmentId() {
     return environmentId;
   }
 
-  public void setEnvironmentId(String environmentId) {
+  public void setEnvironmentId(@javax.annotation.Nullable String environmentId) {
     this.environmentId = environmentId;
   }
 
 
-  public FlagEventRep environmentKey(String environmentKey) {
+  public FlagEventRep environmentKey(@javax.annotation.Nullable String environmentKey) {
     this.environmentKey = environmentKey;
     return this;
   }
 
-   /**
+  /**
    * The environment key
    * @return environmentKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getEnvironmentKey() {
     return environmentKey;
   }
 
-  public void setEnvironmentKey(String environmentKey) {
+  public void setEnvironmentKey(@javax.annotation.Nullable String environmentKey) {
     this.environmentKey = environmentKey;
   }
 
 
-  public FlagEventRep flagKey(String flagKey) {
+  public FlagEventRep flagKey(@javax.annotation.Nonnull String flagKey) {
     this.flagKey = flagKey;
     return this;
   }
 
-   /**
+  /**
    * The flag key
    * @return flagKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getFlagKey() {
     return flagKey;
   }
 
-  public void setFlagKey(String flagKey) {
+  public void setFlagKey(@javax.annotation.Nonnull String flagKey) {
     this.flagKey = flagKey;
   }
 
 
-  public FlagEventRep eventType(String eventType) {
+  public FlagEventRep eventType(@javax.annotation.Nonnull String eventType) {
     this.eventType = eventType;
     return this;
   }
 
-   /**
+  /**
    * Get eventType
    * @return eventType
-  **/
+   */
   @javax.annotation.Nonnull
   public String getEventType() {
     return eventType;
   }
 
-  public void setEventType(String eventType) {
+  public void setEventType(@javax.annotation.Nonnull String eventType) {
     this.eventType = eventType;
   }
 
 
-  public FlagEventRep eventTime(Long eventTime) {
+  public FlagEventRep eventTime(@javax.annotation.Nonnull Long eventTime) {
     this.eventTime = eventTime;
     return this;
   }
 
-   /**
+  /**
    * Get eventTime
    * @return eventTime
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getEventTime() {
     return eventTime;
   }
 
-  public void setEventTime(Long eventTime) {
+  public void setEventTime(@javax.annotation.Nonnull Long eventTime) {
     this.eventTime = eventTime;
   }
 
 
-  public FlagEventRep description(String description) {
+  public FlagEventRep description(@javax.annotation.Nonnull String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * The event description
    * @return description
-  **/
+   */
   @javax.annotation.Nonnull
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nonnull String description) {
     this.description = description;
   }
 
 
-  public FlagEventRep auditLogEntryId(String auditLogEntryId) {
+  public FlagEventRep auditLogEntryId(@javax.annotation.Nullable String auditLogEntryId) {
     this.auditLogEntryId = auditLogEntryId;
     return this;
   }
 
-   /**
+  /**
    * The audit log entry ID
    * @return auditLogEntryId
-  **/
+   */
   @javax.annotation.Nullable
   public String getAuditLogEntryId() {
     return auditLogEntryId;
   }
 
-  public void setAuditLogEntryId(String auditLogEntryId) {
+  public void setAuditLogEntryId(@javax.annotation.Nullable String auditLogEntryId) {
     this.auditLogEntryId = auditLogEntryId;
   }
 
 
-  public FlagEventRep member(FlagEventMemberRep member) {
+  public FlagEventRep member(@javax.annotation.Nullable FlagEventMemberRep member) {
     this.member = member;
     return this;
   }
 
-   /**
+  /**
    * Get member
    * @return member
-  **/
+   */
   @javax.annotation.Nullable
   public FlagEventMemberRep getMember() {
     return member;
   }
 
-  public void setMember(FlagEventMemberRep member) {
+  public void setMember(@javax.annotation.Nullable FlagEventMemberRep member) {
     this.member = member;
   }
 
 
-  public FlagEventRep actions(List<String> actions) {
+  public FlagEventRep actions(@javax.annotation.Nullable List<String> actions) {
     this.actions = actions;
     return this;
   }
@@ -338,54 +353,54 @@ public class FlagEventRep {
     return this;
   }
 
-   /**
+  /**
    * The resource actions
    * @return actions
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getActions() {
     return actions;
   }
 
-  public void setActions(List<String> actions) {
+  public void setActions(@javax.annotation.Nullable List<String> actions) {
     this.actions = actions;
   }
 
 
-  public FlagEventRep impact(FlagEventImpactRep impact) {
+  public FlagEventRep impact(@javax.annotation.Nonnull FlagEventImpactRep impact) {
     this.impact = impact;
     return this;
   }
 
-   /**
+  /**
    * Get impact
    * @return impact
-  **/
+   */
   @javax.annotation.Nonnull
   public FlagEventImpactRep getImpact() {
     return impact;
   }
 
-  public void setImpact(FlagEventImpactRep impact) {
+  public void setImpact(@javax.annotation.Nonnull FlagEventImpactRep impact) {
     this.impact = impact;
   }
 
 
-  public FlagEventRep experiments(FlagEventExperimentCollection experiments) {
+  public FlagEventRep experiments(@javax.annotation.Nullable FlagEventExperimentCollection experiments) {
     this.experiments = experiments;
     return this;
   }
 
-   /**
+  /**
    * Get experiments
    * @return experiments
-  **/
+   */
   @javax.annotation.Nullable
   public FlagEventExperimentCollection getExperiments() {
     return experiments;
   }
 
-  public void setExperiments(FlagEventExperimentCollection experiments) {
+  public void setExperiments(@javax.annotation.Nullable FlagEventExperimentCollection experiments) {
     this.experiments = experiments;
   }
 
@@ -506,80 +521,58 @@ public class FlagEventRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("projectId");
-    openapiFields.add("projectKey");
-    openapiFields.add("environmentId");
-    openapiFields.add("environmentKey");
-    openapiFields.add("flagKey");
-    openapiFields.add("eventType");
-    openapiFields.add("eventTime");
-    openapiFields.add("description");
-    openapiFields.add("auditLogEntryId");
-    openapiFields.add("member");
-    openapiFields.add("actions");
-    openapiFields.add("impact");
-    openapiFields.add("experiments");
+    openapiFields = new HashSet<String>(Arrays.asList("id", "projectId", "projectKey", "environmentId", "environmentKey", "flagKey", "eventType", "eventTime", "description", "auditLogEntryId", "member", "actions", "impact", "experiments"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("id");
-    openapiRequiredFields.add("projectId");
-    openapiRequiredFields.add("projectKey");
-    openapiRequiredFields.add("flagKey");
-    openapiRequiredFields.add("eventType");
-    openapiRequiredFields.add("eventTime");
-    openapiRequiredFields.add("description");
-    openapiRequiredFields.add("impact");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("id", "projectId", "projectKey", "flagKey", "eventType", "eventTime", "description", "impact"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FlagEventRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FlagEventRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FlagEventRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FlagEventRep is not found in the empty JSON string", FlagEventRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FlagEventRep is not found in the empty JSON string", FlagEventRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : FlagEventRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
       if (!jsonObj.get("projectId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `projectId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `projectId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectId").toString()));
       }
       if (!jsonObj.get("projectKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `projectKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `projectKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectKey").toString()));
       }
       if ((jsonObj.get("environmentId") != null && !jsonObj.get("environmentId").isJsonNull()) && !jsonObj.get("environmentId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
       }
       if ((jsonObj.get("environmentKey") != null && !jsonObj.get("environmentKey").isJsonNull()) && !jsonObj.get("environmentKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
       }
       if (!jsonObj.get("flagKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `flagKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("flagKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `flagKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("flagKey").toString()));
       }
       if (!jsonObj.get("eventType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `eventType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("eventType").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `eventType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("eventType").toString()));
       }
       if (!jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if ((jsonObj.get("auditLogEntryId") != null && !jsonObj.get("auditLogEntryId").isJsonNull()) && !jsonObj.get("auditLogEntryId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `auditLogEntryId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auditLogEntryId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `auditLogEntryId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auditLogEntryId").toString()));
       }
       // validate the optional field `member`
       if (jsonObj.get("member") != null && !jsonObj.get("member").isJsonNull()) {
@@ -587,7 +580,7 @@ public class FlagEventRep {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("actions") != null && !jsonObj.get("actions").isJsonNull() && !jsonObj.get("actions").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `actions` to be an array in the JSON string but got `%s`", jsonObj.get("actions").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `actions` to be an array in the JSON string but got `%s`", jsonObj.get("actions").toString()));
       }
       // validate the required field `impact`
       FlagEventImpactRep.validateJsonElement(jsonObj.get("impact"));
@@ -654,7 +647,7 @@ public class FlagEventRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -669,22 +662,22 @@ public class FlagEventRep {
     }
   }
 
- /**
-  * Create an instance of FlagEventRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FlagEventRep
-  * @throws IOException if the JSON string is invalid with respect to FlagEventRep
-  */
+  /**
+   * Create an instance of FlagEventRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FlagEventRep
+   * @throws IOException if the JSON string is invalid with respect to FlagEventRep
+   */
   public static FlagEventRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FlagEventRep.class);
   }
 
- /**
-  * Convert an instance of FlagEventRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FlagEventRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

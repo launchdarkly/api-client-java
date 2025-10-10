@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,120 +41,125 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * BigSegmentStoreStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class BigSegmentStoreStatus {
   public static final String SERIALIZED_NAME_AVAILABLE = "available";
   @SerializedName(SERIALIZED_NAME_AVAILABLE)
+  @javax.annotation.Nullable
   private Boolean available;
 
   public static final String SERIALIZED_NAME_POTENTIALLY_STALE = "potentiallyStale";
   @SerializedName(SERIALIZED_NAME_POTENTIALLY_STALE)
+  @javax.annotation.Nullable
   private Boolean potentiallyStale;
 
   public static final String SERIALIZED_NAME_LAST_SYNC = "lastSync";
   @SerializedName(SERIALIZED_NAME_LAST_SYNC)
+  @javax.annotation.Nullable
   private Long lastSync;
 
   public static final String SERIALIZED_NAME_LAST_ERROR = "lastError";
   @SerializedName(SERIALIZED_NAME_LAST_ERROR)
+  @javax.annotation.Nullable
   private Long lastError;
 
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
+  @javax.annotation.Nullable
   private List<StoreIntegrationError> errors = new ArrayList<>();
 
   public BigSegmentStoreStatus() {
   }
 
-  public BigSegmentStoreStatus available(Boolean available) {
+  public BigSegmentStoreStatus available(@javax.annotation.Nullable Boolean available) {
     this.available = available;
     return this;
   }
 
-   /**
+  /**
    * Whether the persistent store integration is fully synchronized with the LaunchDarkly environment, and the &lt;code&gt;lastSync&lt;/code&gt; occurred within a few minutes
    * @return available
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getAvailable() {
     return available;
   }
 
-  public void setAvailable(Boolean available) {
+  public void setAvailable(@javax.annotation.Nullable Boolean available) {
     this.available = available;
   }
 
 
-  public BigSegmentStoreStatus potentiallyStale(Boolean potentiallyStale) {
+  public BigSegmentStoreStatus potentiallyStale(@javax.annotation.Nullable Boolean potentiallyStale) {
     this.potentiallyStale = potentiallyStale;
     return this;
   }
 
-   /**
+  /**
    * Whether the persistent store integration may not be fully synchronized with the LaunchDarkly environment. &lt;code&gt;true&lt;/code&gt; if the integration could be stale.
    * @return potentiallyStale
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getPotentiallyStale() {
     return potentiallyStale;
   }
 
-  public void setPotentiallyStale(Boolean potentiallyStale) {
+  public void setPotentiallyStale(@javax.annotation.Nullable Boolean potentiallyStale) {
     this.potentiallyStale = potentiallyStale;
   }
 
 
-  public BigSegmentStoreStatus lastSync(Long lastSync) {
+  public BigSegmentStoreStatus lastSync(@javax.annotation.Nullable Long lastSync) {
     this.lastSync = lastSync;
     return this;
   }
 
-   /**
+  /**
    * Get lastSync
    * @return lastSync
-  **/
+   */
   @javax.annotation.Nullable
   public Long getLastSync() {
     return lastSync;
   }
 
-  public void setLastSync(Long lastSync) {
+  public void setLastSync(@javax.annotation.Nullable Long lastSync) {
     this.lastSync = lastSync;
   }
 
 
-  public BigSegmentStoreStatus lastError(Long lastError) {
+  public BigSegmentStoreStatus lastError(@javax.annotation.Nullable Long lastError) {
     this.lastError = lastError;
     return this;
   }
 
-   /**
+  /**
    * Get lastError
    * @return lastError
-  **/
+   */
   @javax.annotation.Nullable
   public Long getLastError() {
     return lastError;
   }
 
-  public void setLastError(Long lastError) {
+  public void setLastError(@javax.annotation.Nullable Long lastError) {
     this.lastError = lastError;
   }
 
 
-  public BigSegmentStoreStatus errors(List<StoreIntegrationError> errors) {
+  public BigSegmentStoreStatus errors(@javax.annotation.Nullable List<StoreIntegrationError> errors) {
     this.errors = errors;
     return this;
   }
@@ -166,16 +172,16 @@ public class BigSegmentStoreStatus {
     return this;
   }
 
-   /**
+  /**
    * Get errors
    * @return errors
-  **/
+   */
   @javax.annotation.Nullable
   public List<StoreIntegrationError> getErrors() {
     return errors;
   }
 
-  public void setErrors(List<StoreIntegrationError> errors) {
+  public void setErrors(@javax.annotation.Nullable List<StoreIntegrationError> errors) {
     this.errors = errors;
   }
 
@@ -278,27 +284,22 @@ public class BigSegmentStoreStatus {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("available");
-    openapiFields.add("potentiallyStale");
-    openapiFields.add("lastSync");
-    openapiFields.add("lastError");
-    openapiFields.add("errors");
+    openapiFields = new HashSet<String>(Arrays.asList("available", "potentiallyStale", "lastSync", "lastError", "errors"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to BigSegmentStoreStatus
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to BigSegmentStoreStatus
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!BigSegmentStoreStatus.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in BigSegmentStoreStatus is not found in the empty JSON string", BigSegmentStoreStatus.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in BigSegmentStoreStatus is not found in the empty JSON string", BigSegmentStoreStatus.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -307,7 +308,7 @@ public class BigSegmentStoreStatus {
         if (jsonArrayerrors != null) {
           // ensure the json data is an array
           if (!jsonObj.get("errors").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `errors` to be an array in the JSON string but got `%s`", jsonObj.get("errors").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `errors` to be an array in the JSON string but got `%s`", jsonObj.get("errors").toString()));
           }
 
           // validate the optional field `errors` (array)
@@ -375,7 +376,7 @@ public class BigSegmentStoreStatus {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -390,22 +391,22 @@ public class BigSegmentStoreStatus {
     }
   }
 
- /**
-  * Create an instance of BigSegmentStoreStatus given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of BigSegmentStoreStatus
-  * @throws IOException if the JSON string is invalid with respect to BigSegmentStoreStatus
-  */
+  /**
+   * Create an instance of BigSegmentStoreStatus given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of BigSegmentStoreStatus
+   * @throws IOException if the JSON string is invalid with respect to BigSegmentStoreStatus
+   */
   public static BigSegmentStoreStatus fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, BigSegmentStoreStatus.class);
   }
 
- /**
-  * Convert an instance of BigSegmentStoreStatus to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of BigSegmentStoreStatus to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

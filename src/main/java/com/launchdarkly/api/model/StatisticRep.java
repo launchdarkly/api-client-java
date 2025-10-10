@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,22 +41,23 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * StatisticRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class StatisticRep {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   /**
@@ -116,196 +118,205 @@ public class StatisticRep {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_SOURCE_LINK = "sourceLink";
   @SerializedName(SERIALIZED_NAME_SOURCE_LINK)
+  @javax.annotation.Nonnull
   private String sourceLink;
 
   public static final String SERIALIZED_NAME_DEFAULT_BRANCH = "defaultBranch";
   @SerializedName(SERIALIZED_NAME_DEFAULT_BRANCH)
+  @javax.annotation.Nonnull
   private String defaultBranch;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
+  @javax.annotation.Nonnull
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nonnull
   private Integer version;
 
   public static final String SERIALIZED_NAME_HUNK_COUNT = "hunkCount";
   @SerializedName(SERIALIZED_NAME_HUNK_COUNT)
+  @javax.annotation.Nonnull
   private Integer hunkCount;
 
   public static final String SERIALIZED_NAME_FILE_COUNT = "fileCount";
   @SerializedName(SERIALIZED_NAME_FILE_COUNT)
+  @javax.annotation.Nonnull
   private Integer fileCount;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_LATEST_COMMIT_TIME = "latestCommitTime";
   @SerializedName(SERIALIZED_NAME_LATEST_COMMIT_TIME)
+  @javax.annotation.Nullable
   private Long latestCommitTime;
 
   public StatisticRep() {
   }
 
-  public StatisticRep name(String name) {
+  public StatisticRep name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The repository name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public StatisticRep type(TypeEnum type) {
+  public StatisticRep type(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * The type of repository
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(TypeEnum type) {
+  public void setType(@javax.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
 
-  public StatisticRep sourceLink(String sourceLink) {
+  public StatisticRep sourceLink(@javax.annotation.Nonnull String sourceLink) {
     this.sourceLink = sourceLink;
     return this;
   }
 
-   /**
+  /**
    * A URL to access the repository
    * @return sourceLink
-  **/
+   */
   @javax.annotation.Nonnull
   public String getSourceLink() {
     return sourceLink;
   }
 
-  public void setSourceLink(String sourceLink) {
+  public void setSourceLink(@javax.annotation.Nonnull String sourceLink) {
     this.sourceLink = sourceLink;
   }
 
 
-  public StatisticRep defaultBranch(String defaultBranch) {
+  public StatisticRep defaultBranch(@javax.annotation.Nonnull String defaultBranch) {
     this.defaultBranch = defaultBranch;
     return this;
   }
 
-   /**
+  /**
    * The repository&#39;s default branch
    * @return defaultBranch
-  **/
+   */
   @javax.annotation.Nonnull
   public String getDefaultBranch() {
     return defaultBranch;
   }
 
-  public void setDefaultBranch(String defaultBranch) {
+  public void setDefaultBranch(@javax.annotation.Nonnull String defaultBranch) {
     this.defaultBranch = defaultBranch;
   }
 
 
-  public StatisticRep enabled(Boolean enabled) {
+  public StatisticRep enabled(@javax.annotation.Nonnull Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
 
-   /**
+  /**
    * Whether or not a repository is enabled for code reference scanning
    * @return enabled
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(Boolean enabled) {
+  public void setEnabled(@javax.annotation.Nonnull Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public StatisticRep version(Integer version) {
+  public StatisticRep version(@javax.annotation.Nonnull Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * The version of the repository&#39;s saved information
    * @return version
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nonnull Integer version) {
     this.version = version;
   }
 
 
-  public StatisticRep hunkCount(Integer hunkCount) {
+  public StatisticRep hunkCount(@javax.annotation.Nonnull Integer hunkCount) {
     this.hunkCount = hunkCount;
     return this;
   }
 
-   /**
+  /**
    * The number of code reference hunks in which the flag appears in this repository
    * @return hunkCount
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getHunkCount() {
     return hunkCount;
   }
 
-  public void setHunkCount(Integer hunkCount) {
+  public void setHunkCount(@javax.annotation.Nonnull Integer hunkCount) {
     this.hunkCount = hunkCount;
   }
 
 
-  public StatisticRep fileCount(Integer fileCount) {
+  public StatisticRep fileCount(@javax.annotation.Nonnull Integer fileCount) {
     this.fileCount = fileCount;
     return this;
   }
 
-   /**
+  /**
    * The number of files in which the flag appears in this repository
    * @return fileCount
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getFileCount() {
     return fileCount;
   }
 
-  public void setFileCount(Integer fileCount) {
+  public void setFileCount(@javax.annotation.Nonnull Integer fileCount) {
     this.fileCount = fileCount;
   }
 
 
-  public StatisticRep links(Map<String, Link> links) {
+  public StatisticRep links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -318,35 +329,35 @@ public class StatisticRep {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public StatisticRep latestCommitTime(Long latestCommitTime) {
+  public StatisticRep latestCommitTime(@javax.annotation.Nullable Long latestCommitTime) {
     this.latestCommitTime = latestCommitTime;
     return this;
   }
 
-   /**
+  /**
    * Get latestCommitTime
    * @return latestCommitTime
-  **/
+   */
   @javax.annotation.Nullable
   public Long getLatestCommitTime() {
     return latestCommitTime;
   }
 
-  public void setLatestCommitTime(Long latestCommitTime) {
+  public void setLatestCommitTime(@javax.annotation.Nullable Long latestCommitTime) {
     this.latestCommitTime = latestCommitTime;
   }
 
@@ -459,64 +470,45 @@ public class StatisticRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("type");
-    openapiFields.add("sourceLink");
-    openapiFields.add("defaultBranch");
-    openapiFields.add("enabled");
-    openapiFields.add("version");
-    openapiFields.add("hunkCount");
-    openapiFields.add("fileCount");
-    openapiFields.add("_links");
-    openapiFields.add("latestCommitTime");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "type", "sourceLink", "defaultBranch", "enabled", "version", "hunkCount", "fileCount", "_links", "latestCommitTime"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("type");
-    openapiRequiredFields.add("sourceLink");
-    openapiRequiredFields.add("defaultBranch");
-    openapiRequiredFields.add("enabled");
-    openapiRequiredFields.add("version");
-    openapiRequiredFields.add("hunkCount");
-    openapiRequiredFields.add("fileCount");
-    openapiRequiredFields.add("_links");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name", "type", "sourceLink", "defaultBranch", "enabled", "version", "hunkCount", "fileCount", "_links"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to StatisticRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to StatisticRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!StatisticRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in StatisticRep is not found in the empty JSON string", StatisticRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in StatisticRep is not found in the empty JSON string", StatisticRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : StatisticRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
       // validate the required field `type`
       TypeEnum.validateJsonElement(jsonObj.get("type"));
       if (!jsonObj.get("sourceLink").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sourceLink` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sourceLink").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `sourceLink` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sourceLink").toString()));
       }
       if (!jsonObj.get("defaultBranch").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `defaultBranch` to be a primitive type in the JSON string but got `%s`", jsonObj.get("defaultBranch").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `defaultBranch` to be a primitive type in the JSON string but got `%s`", jsonObj.get("defaultBranch").toString()));
       }
   }
 
@@ -577,7 +569,7 @@ public class StatisticRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -592,22 +584,22 @@ public class StatisticRep {
     }
   }
 
- /**
-  * Create an instance of StatisticRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of StatisticRep
-  * @throws IOException if the JSON string is invalid with respect to StatisticRep
-  */
+  /**
+   * Create an instance of StatisticRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of StatisticRep
+   * @throws IOException if the JSON string is invalid with respect to StatisticRep
+   */
   public static StatisticRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, StatisticRep.class);
   }
 
- /**
-  * Convert an instance of StatisticRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of StatisticRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

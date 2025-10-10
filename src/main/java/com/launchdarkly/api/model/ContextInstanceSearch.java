@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,111 +38,115 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ContextInstanceSearch
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ContextInstanceSearch {
   public static final String SERIALIZED_NAME_FILTER = "filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
+  @javax.annotation.Nullable
   private String filter;
 
   public static final String SERIALIZED_NAME_SORT = "sort";
   @SerializedName(SERIALIZED_NAME_SORT)
+  @javax.annotation.Nullable
   private String sort;
 
   public static final String SERIALIZED_NAME_LIMIT = "limit";
   @SerializedName(SERIALIZED_NAME_LIMIT)
+  @javax.annotation.Nullable
   private Integer limit;
 
   public static final String SERIALIZED_NAME_CONTINUATION_TOKEN = "continuationToken";
   @SerializedName(SERIALIZED_NAME_CONTINUATION_TOKEN)
+  @javax.annotation.Nullable
   private String continuationToken;
 
   public ContextInstanceSearch() {
   }
 
-  public ContextInstanceSearch filter(String filter) {
+  public ContextInstanceSearch filter(@javax.annotation.Nullable String filter) {
     this.filter = filter;
     return this;
   }
 
-   /**
+  /**
    * A collection of context instance filters
    * @return filter
-  **/
+   */
   @javax.annotation.Nullable
   public String getFilter() {
     return filter;
   }
 
-  public void setFilter(String filter) {
+  public void setFilter(@javax.annotation.Nullable String filter) {
     this.filter = filter;
   }
 
 
-  public ContextInstanceSearch sort(String sort) {
+  public ContextInstanceSearch sort(@javax.annotation.Nullable String sort) {
     this.sort = sort;
     return this;
   }
 
-   /**
+  /**
    * Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying &lt;code&gt;ts&lt;/code&gt; for this value, or descending order by specifying &lt;code&gt;-ts&lt;/code&gt;.
    * @return sort
-  **/
+   */
   @javax.annotation.Nullable
   public String getSort() {
     return sort;
   }
 
-  public void setSort(String sort) {
+  public void setSort(@javax.annotation.Nullable String sort) {
     this.sort = sort;
   }
 
 
-  public ContextInstanceSearch limit(Integer limit) {
+  public ContextInstanceSearch limit(@javax.annotation.Nullable Integer limit) {
     this.limit = limit;
     return this;
   }
 
-   /**
+  /**
    * Specifies the maximum number of items in the collection to return (max: 50, default: 20)
    * @return limit
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getLimit() {
     return limit;
   }
 
-  public void setLimit(Integer limit) {
+  public void setLimit(@javax.annotation.Nullable Integer limit) {
     this.limit = limit;
   }
 
 
-  public ContextInstanceSearch continuationToken(String continuationToken) {
+  public ContextInstanceSearch continuationToken(@javax.annotation.Nullable String continuationToken) {
     this.continuationToken = continuationToken;
     return this;
   }
 
-   /**
+  /**
    * Limits results to context instances with sort values after the value specified. You can use this for pagination, however, we recommend using the &lt;code&gt;next&lt;/code&gt; link instead, because this value is an obfuscated string.
    * @return continuationToken
-  **/
+   */
   @javax.annotation.Nullable
   public String getContinuationToken() {
     return continuationToken;
   }
 
-  public void setContinuationToken(String continuationToken) {
+  public void setContinuationToken(@javax.annotation.Nullable String continuationToken) {
     this.continuationToken = continuationToken;
   }
 
@@ -242,37 +247,33 @@ public class ContextInstanceSearch {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("filter");
-    openapiFields.add("sort");
-    openapiFields.add("limit");
-    openapiFields.add("continuationToken");
+    openapiFields = new HashSet<String>(Arrays.asList("filter", "sort", "limit", "continuationToken"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ContextInstanceSearch
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ContextInstanceSearch
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ContextInstanceSearch.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ContextInstanceSearch is not found in the empty JSON string", ContextInstanceSearch.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ContextInstanceSearch is not found in the empty JSON string", ContextInstanceSearch.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("filter") != null && !jsonObj.get("filter").isJsonNull()) && !jsonObj.get("filter").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `filter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("filter").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `filter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("filter").toString()));
       }
       if ((jsonObj.get("sort") != null && !jsonObj.get("sort").isJsonNull()) && !jsonObj.get("sort").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sort` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sort").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `sort` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sort").toString()));
       }
       if ((jsonObj.get("continuationToken") != null && !jsonObj.get("continuationToken").isJsonNull()) && !jsonObj.get("continuationToken").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `continuationToken` to be a primitive type in the JSON string but got `%s`", jsonObj.get("continuationToken").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `continuationToken` to be a primitive type in the JSON string but got `%s`", jsonObj.get("continuationToken").toString()));
       }
   }
 
@@ -333,7 +334,7 @@ public class ContextInstanceSearch {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -348,22 +349,22 @@ public class ContextInstanceSearch {
     }
   }
 
- /**
-  * Create an instance of ContextInstanceSearch given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ContextInstanceSearch
-  * @throws IOException if the JSON string is invalid with respect to ContextInstanceSearch
-  */
+  /**
+   * Create an instance of ContextInstanceSearch given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ContextInstanceSearch
+   * @throws IOException if the JSON string is invalid with respect to ContextInstanceSearch
+   */
   public static ContextInstanceSearch fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ContextInstanceSearch.class);
   }
 
- /**
-  * Convert an instance of ContextInstanceSearch to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ContextInstanceSearch to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

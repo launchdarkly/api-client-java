@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,32 +41,34 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * BulkEditMembersRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class BulkEditMembersRep {
   public static final String SERIALIZED_NAME_MEMBERS = "members";
   @SerializedName(SERIALIZED_NAME_MEMBERS)
+  @javax.annotation.Nullable
   private List<String> members = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
+  @javax.annotation.Nullable
   private List<Map<String, String>> errors = new ArrayList<>();
 
   public BulkEditMembersRep() {
   }
 
-  public BulkEditMembersRep members(List<String> members) {
+  public BulkEditMembersRep members(@javax.annotation.Nullable List<String> members) {
     this.members = members;
     return this;
   }
@@ -78,21 +81,21 @@ public class BulkEditMembersRep {
     return this;
   }
 
-   /**
+  /**
    * A list of members IDs of the members who were successfully updated.
    * @return members
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getMembers() {
     return members;
   }
 
-  public void setMembers(List<String> members) {
+  public void setMembers(@javax.annotation.Nullable List<String> members) {
     this.members = members;
   }
 
 
-  public BulkEditMembersRep errors(List<Map<String, String>> errors) {
+  public BulkEditMembersRep errors(@javax.annotation.Nullable List<Map<String, String>> errors) {
     this.errors = errors;
     return this;
   }
@@ -105,16 +108,16 @@ public class BulkEditMembersRep {
     return this;
   }
 
-   /**
+  /**
    * A list of member IDs and errors for the members whose updates failed.
    * @return errors
-  **/
+   */
   @javax.annotation.Nullable
   public List<Map<String, String>> getErrors() {
     return errors;
   }
 
-  public void setErrors(List<Map<String, String>> errors) {
+  public void setErrors(@javax.annotation.Nullable List<Map<String, String>> errors) {
     this.errors = errors;
   }
 
@@ -211,34 +214,32 @@ public class BulkEditMembersRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("members");
-    openapiFields.add("errors");
+    openapiFields = new HashSet<String>(Arrays.asList("members", "errors"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to BulkEditMembersRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to BulkEditMembersRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!BulkEditMembersRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in BulkEditMembersRep is not found in the empty JSON string", BulkEditMembersRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in BulkEditMembersRep is not found in the empty JSON string", BulkEditMembersRep.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the optional json data is an array if present
       if (jsonObj.get("members") != null && !jsonObj.get("members").isJsonNull() && !jsonObj.get("members").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `members` to be an array in the JSON string but got `%s`", jsonObj.get("members").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `members` to be an array in the JSON string but got `%s`", jsonObj.get("members").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("errors") != null && !jsonObj.get("errors").isJsonNull() && !jsonObj.get("errors").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `errors` to be an array in the JSON string but got `%s`", jsonObj.get("errors").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `errors` to be an array in the JSON string but got `%s`", jsonObj.get("errors").toString()));
       }
   }
 
@@ -299,7 +300,7 @@ public class BulkEditMembersRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -314,22 +315,22 @@ public class BulkEditMembersRep {
     }
   }
 
- /**
-  * Create an instance of BulkEditMembersRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of BulkEditMembersRep
-  * @throws IOException if the JSON string is invalid with respect to BulkEditMembersRep
-  */
+  /**
+   * Create an instance of BulkEditMembersRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of BulkEditMembersRep
+   * @throws IOException if the JSON string is invalid with respect to BulkEditMembersRep
+   */
   public static BulkEditMembersRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, BulkEditMembersRep.class);
   }
 
- /**
-  * Convert an instance of BulkEditMembersRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of BulkEditMembersRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

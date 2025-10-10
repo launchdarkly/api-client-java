@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,203 +38,211 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * PullRequestLeadTimeRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class PullRequestLeadTimeRep {
   public static final String SERIALIZED_NAME_CODING_DURATION_MS = "codingDurationMs";
   @SerializedName(SERIALIZED_NAME_CODING_DURATION_MS)
+  @javax.annotation.Nonnull
   private Long codingDurationMs;
 
   public static final String SERIALIZED_NAME_REVIEW_DURATION_MS = "reviewDurationMs";
   @SerializedName(SERIALIZED_NAME_REVIEW_DURATION_MS)
+  @javax.annotation.Nullable
   private Long reviewDurationMs;
 
   public static final String SERIALIZED_NAME_MAX_WAIT_DURATION_MS = "maxWaitDurationMs";
   @SerializedName(SERIALIZED_NAME_MAX_WAIT_DURATION_MS)
+  @javax.annotation.Nullable
   private Long maxWaitDurationMs;
 
   public static final String SERIALIZED_NAME_AVG_WAIT_DURATION_MS = "avgWaitDurationMs";
   @SerializedName(SERIALIZED_NAME_AVG_WAIT_DURATION_MS)
+  @javax.annotation.Nullable
   private Long avgWaitDurationMs;
 
   public static final String SERIALIZED_NAME_MAX_DEPLOY_DURATION_MS = "maxDeployDurationMs";
   @SerializedName(SERIALIZED_NAME_MAX_DEPLOY_DURATION_MS)
+  @javax.annotation.Nullable
   private Long maxDeployDurationMs;
 
   public static final String SERIALIZED_NAME_AVG_DEPLOY_DURATION_MS = "avgDeployDurationMs";
   @SerializedName(SERIALIZED_NAME_AVG_DEPLOY_DURATION_MS)
+  @javax.annotation.Nullable
   private Long avgDeployDurationMs;
 
   public static final String SERIALIZED_NAME_MAX_TOTAL_LEAD_TIME_MS = "maxTotalLeadTimeMs";
   @SerializedName(SERIALIZED_NAME_MAX_TOTAL_LEAD_TIME_MS)
+  @javax.annotation.Nullable
   private Long maxTotalLeadTimeMs;
 
   public static final String SERIALIZED_NAME_AVG_TOTAL_LEAD_TIME_MS = "avgTotalLeadTimeMs";
   @SerializedName(SERIALIZED_NAME_AVG_TOTAL_LEAD_TIME_MS)
+  @javax.annotation.Nullable
   private Long avgTotalLeadTimeMs;
 
   public PullRequestLeadTimeRep() {
   }
 
-  public PullRequestLeadTimeRep codingDurationMs(Long codingDurationMs) {
+  public PullRequestLeadTimeRep codingDurationMs(@javax.annotation.Nonnull Long codingDurationMs) {
     this.codingDurationMs = codingDurationMs;
     return this;
   }
 
-   /**
+  /**
    * The coding duration in milliseconds
    * @return codingDurationMs
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCodingDurationMs() {
     return codingDurationMs;
   }
 
-  public void setCodingDurationMs(Long codingDurationMs) {
+  public void setCodingDurationMs(@javax.annotation.Nonnull Long codingDurationMs) {
     this.codingDurationMs = codingDurationMs;
   }
 
 
-  public PullRequestLeadTimeRep reviewDurationMs(Long reviewDurationMs) {
+  public PullRequestLeadTimeRep reviewDurationMs(@javax.annotation.Nullable Long reviewDurationMs) {
     this.reviewDurationMs = reviewDurationMs;
     return this;
   }
 
-   /**
+  /**
    * The review duration in milliseconds
    * @return reviewDurationMs
-  **/
+   */
   @javax.annotation.Nullable
   public Long getReviewDurationMs() {
     return reviewDurationMs;
   }
 
-  public void setReviewDurationMs(Long reviewDurationMs) {
+  public void setReviewDurationMs(@javax.annotation.Nullable Long reviewDurationMs) {
     this.reviewDurationMs = reviewDurationMs;
   }
 
 
-  public PullRequestLeadTimeRep maxWaitDurationMs(Long maxWaitDurationMs) {
+  public PullRequestLeadTimeRep maxWaitDurationMs(@javax.annotation.Nullable Long maxWaitDurationMs) {
     this.maxWaitDurationMs = maxWaitDurationMs;
     return this;
   }
 
-   /**
+  /**
    * The max wait duration between merge time and deploy start time in milliseconds
    * @return maxWaitDurationMs
-  **/
+   */
   @javax.annotation.Nullable
   public Long getMaxWaitDurationMs() {
     return maxWaitDurationMs;
   }
 
-  public void setMaxWaitDurationMs(Long maxWaitDurationMs) {
+  public void setMaxWaitDurationMs(@javax.annotation.Nullable Long maxWaitDurationMs) {
     this.maxWaitDurationMs = maxWaitDurationMs;
   }
 
 
-  public PullRequestLeadTimeRep avgWaitDurationMs(Long avgWaitDurationMs) {
+  public PullRequestLeadTimeRep avgWaitDurationMs(@javax.annotation.Nullable Long avgWaitDurationMs) {
     this.avgWaitDurationMs = avgWaitDurationMs;
     return this;
   }
 
-   /**
+  /**
    * The average wait duration between merge time and deploy start time in milliseconds
    * @return avgWaitDurationMs
-  **/
+   */
   @javax.annotation.Nullable
   public Long getAvgWaitDurationMs() {
     return avgWaitDurationMs;
   }
 
-  public void setAvgWaitDurationMs(Long avgWaitDurationMs) {
+  public void setAvgWaitDurationMs(@javax.annotation.Nullable Long avgWaitDurationMs) {
     this.avgWaitDurationMs = avgWaitDurationMs;
   }
 
 
-  public PullRequestLeadTimeRep maxDeployDurationMs(Long maxDeployDurationMs) {
+  public PullRequestLeadTimeRep maxDeployDurationMs(@javax.annotation.Nullable Long maxDeployDurationMs) {
     this.maxDeployDurationMs = maxDeployDurationMs;
     return this;
   }
 
-   /**
+  /**
    * The max deploy duration in milliseconds
    * @return maxDeployDurationMs
-  **/
+   */
   @javax.annotation.Nullable
   public Long getMaxDeployDurationMs() {
     return maxDeployDurationMs;
   }
 
-  public void setMaxDeployDurationMs(Long maxDeployDurationMs) {
+  public void setMaxDeployDurationMs(@javax.annotation.Nullable Long maxDeployDurationMs) {
     this.maxDeployDurationMs = maxDeployDurationMs;
   }
 
 
-  public PullRequestLeadTimeRep avgDeployDurationMs(Long avgDeployDurationMs) {
+  public PullRequestLeadTimeRep avgDeployDurationMs(@javax.annotation.Nullable Long avgDeployDurationMs) {
     this.avgDeployDurationMs = avgDeployDurationMs;
     return this;
   }
 
-   /**
+  /**
    * The average deploy duration in milliseconds
    * @return avgDeployDurationMs
-  **/
+   */
   @javax.annotation.Nullable
   public Long getAvgDeployDurationMs() {
     return avgDeployDurationMs;
   }
 
-  public void setAvgDeployDurationMs(Long avgDeployDurationMs) {
+  public void setAvgDeployDurationMs(@javax.annotation.Nullable Long avgDeployDurationMs) {
     this.avgDeployDurationMs = avgDeployDurationMs;
   }
 
 
-  public PullRequestLeadTimeRep maxTotalLeadTimeMs(Long maxTotalLeadTimeMs) {
+  public PullRequestLeadTimeRep maxTotalLeadTimeMs(@javax.annotation.Nullable Long maxTotalLeadTimeMs) {
     this.maxTotalLeadTimeMs = maxTotalLeadTimeMs;
     return this;
   }
 
-   /**
+  /**
    * The max total lead time in milliseconds
    * @return maxTotalLeadTimeMs
-  **/
+   */
   @javax.annotation.Nullable
   public Long getMaxTotalLeadTimeMs() {
     return maxTotalLeadTimeMs;
   }
 
-  public void setMaxTotalLeadTimeMs(Long maxTotalLeadTimeMs) {
+  public void setMaxTotalLeadTimeMs(@javax.annotation.Nullable Long maxTotalLeadTimeMs) {
     this.maxTotalLeadTimeMs = maxTotalLeadTimeMs;
   }
 
 
-  public PullRequestLeadTimeRep avgTotalLeadTimeMs(Long avgTotalLeadTimeMs) {
+  public PullRequestLeadTimeRep avgTotalLeadTimeMs(@javax.annotation.Nullable Long avgTotalLeadTimeMs) {
     this.avgTotalLeadTimeMs = avgTotalLeadTimeMs;
     return this;
   }
 
-   /**
+  /**
    * The average total lead time in milliseconds
    * @return avgTotalLeadTimeMs
-  **/
+   */
   @javax.annotation.Nullable
   public Long getAvgTotalLeadTimeMs() {
     return avgTotalLeadTimeMs;
   }
 
-  public void setAvgTotalLeadTimeMs(Long avgTotalLeadTimeMs) {
+  public void setAvgTotalLeadTimeMs(@javax.annotation.Nullable Long avgTotalLeadTimeMs) {
     this.avgTotalLeadTimeMs = avgTotalLeadTimeMs;
   }
 
@@ -342,38 +351,29 @@ public class PullRequestLeadTimeRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("codingDurationMs");
-    openapiFields.add("reviewDurationMs");
-    openapiFields.add("maxWaitDurationMs");
-    openapiFields.add("avgWaitDurationMs");
-    openapiFields.add("maxDeployDurationMs");
-    openapiFields.add("avgDeployDurationMs");
-    openapiFields.add("maxTotalLeadTimeMs");
-    openapiFields.add("avgTotalLeadTimeMs");
+    openapiFields = new HashSet<String>(Arrays.asList("codingDurationMs", "reviewDurationMs", "maxWaitDurationMs", "avgWaitDurationMs", "maxDeployDurationMs", "avgDeployDurationMs", "maxTotalLeadTimeMs", "avgTotalLeadTimeMs"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("codingDurationMs");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("codingDurationMs"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to PullRequestLeadTimeRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PullRequestLeadTimeRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PullRequestLeadTimeRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PullRequestLeadTimeRep is not found in the empty JSON string", PullRequestLeadTimeRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in PullRequestLeadTimeRep is not found in the empty JSON string", PullRequestLeadTimeRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : PullRequestLeadTimeRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -436,7 +436,7 @@ public class PullRequestLeadTimeRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -451,22 +451,22 @@ public class PullRequestLeadTimeRep {
     }
   }
 
- /**
-  * Create an instance of PullRequestLeadTimeRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PullRequestLeadTimeRep
-  * @throws IOException if the JSON string is invalid with respect to PullRequestLeadTimeRep
-  */
+  /**
+   * Create an instance of PullRequestLeadTimeRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PullRequestLeadTimeRep
+   * @throws IOException if the JSON string is invalid with respect to PullRequestLeadTimeRep
+   */
   public static PullRequestLeadTimeRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PullRequestLeadTimeRep.class);
   }
 
- /**
-  * Convert an instance of PullRequestLeadTimeRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PullRequestLeadTimeRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

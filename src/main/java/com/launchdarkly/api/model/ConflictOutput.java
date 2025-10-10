@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,65 +38,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ConflictOutput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ConflictOutput {
   public static final String SERIALIZED_NAME_STAGE_ID = "stageId";
   @SerializedName(SERIALIZED_NAME_STAGE_ID)
+  @javax.annotation.Nonnull
   private String stageId;
 
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
+  @javax.annotation.Nonnull
   private String message;
 
   public ConflictOutput() {
   }
 
-  public ConflictOutput stageId(String stageId) {
+  public ConflictOutput stageId(@javax.annotation.Nonnull String stageId) {
     this.stageId = stageId;
     return this;
   }
 
-   /**
+  /**
    * The stage ID
    * @return stageId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getStageId() {
     return stageId;
   }
 
-  public void setStageId(String stageId) {
+  public void setStageId(@javax.annotation.Nonnull String stageId) {
     this.stageId = stageId;
   }
 
 
-  public ConflictOutput message(String message) {
+  public ConflictOutput message(@javax.annotation.Nonnull String message) {
     this.message = message;
     return this;
   }
 
-   /**
+  /**
    * Message about the conflict
    * @return message
-  **/
+   */
   @javax.annotation.Nonnull
   public String getMessage() {
     return message;
   }
 
-  public void setMessage(String message) {
+  public void setMessage(@javax.annotation.Nonnull String message) {
     this.message = message;
   }
 
@@ -192,41 +195,37 @@ public class ConflictOutput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("stageId");
-    openapiFields.add("message");
+    openapiFields = new HashSet<String>(Arrays.asList("stageId", "message"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("stageId");
-    openapiRequiredFields.add("message");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("stageId", "message"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ConflictOutput
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ConflictOutput
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ConflictOutput.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ConflictOutput is not found in the empty JSON string", ConflictOutput.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ConflictOutput is not found in the empty JSON string", ConflictOutput.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ConflictOutput.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("stageId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `stageId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stageId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `stageId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stageId").toString()));
       }
       if (!jsonObj.get("message").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
       }
   }
 
@@ -287,7 +286,7 @@ public class ConflictOutput {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -302,22 +301,22 @@ public class ConflictOutput {
     }
   }
 
- /**
-  * Create an instance of ConflictOutput given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ConflictOutput
-  * @throws IOException if the JSON string is invalid with respect to ConflictOutput
-  */
+  /**
+   * Create an instance of ConflictOutput given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ConflictOutput
+   * @throws IOException if the JSON string is invalid with respect to ConflictOutput
+   */
   public static ConflictOutput fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ConflictOutput.class);
   }
 
- /**
-  * Convert an instance of ConflictOutput to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ConflictOutput to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

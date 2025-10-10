@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,65 +38,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ExpiringTargetError
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ExpiringTargetError {
   public static final String SERIALIZED_NAME_INSTRUCTION_INDEX = "instructionIndex";
   @SerializedName(SERIALIZED_NAME_INSTRUCTION_INDEX)
+  @javax.annotation.Nonnull
   private Integer instructionIndex;
 
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
+  @javax.annotation.Nonnull
   private String message;
 
   public ExpiringTargetError() {
   }
 
-  public ExpiringTargetError instructionIndex(Integer instructionIndex) {
+  public ExpiringTargetError instructionIndex(@javax.annotation.Nonnull Integer instructionIndex) {
     this.instructionIndex = instructionIndex;
     return this;
   }
 
-   /**
+  /**
    * The index of the PATCH instruction where the error occurred
    * @return instructionIndex
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getInstructionIndex() {
     return instructionIndex;
   }
 
-  public void setInstructionIndex(Integer instructionIndex) {
+  public void setInstructionIndex(@javax.annotation.Nonnull Integer instructionIndex) {
     this.instructionIndex = instructionIndex;
   }
 
 
-  public ExpiringTargetError message(String message) {
+  public ExpiringTargetError message(@javax.annotation.Nonnull String message) {
     this.message = message;
     return this;
   }
 
-   /**
+  /**
    * The error message related to a failed PATCH instruction
    * @return message
-  **/
+   */
   @javax.annotation.Nonnull
   public String getMessage() {
     return message;
   }
 
-  public void setMessage(String message) {
+  public void setMessage(@javax.annotation.Nonnull String message) {
     this.message = message;
   }
 
@@ -192,38 +195,34 @@ public class ExpiringTargetError {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("instructionIndex");
-    openapiFields.add("message");
+    openapiFields = new HashSet<String>(Arrays.asList("instructionIndex", "message"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("instructionIndex");
-    openapiRequiredFields.add("message");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("instructionIndex", "message"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ExpiringTargetError
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ExpiringTargetError
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ExpiringTargetError.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ExpiringTargetError is not found in the empty JSON string", ExpiringTargetError.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ExpiringTargetError is not found in the empty JSON string", ExpiringTargetError.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ExpiringTargetError.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("message").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
       }
   }
 
@@ -284,7 +283,7 @@ public class ExpiringTargetError {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -299,22 +298,22 @@ public class ExpiringTargetError {
     }
   }
 
- /**
-  * Create an instance of ExpiringTargetError given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ExpiringTargetError
-  * @throws IOException if the JSON string is invalid with respect to ExpiringTargetError
-  */
+  /**
+   * Create an instance of ExpiringTargetError given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ExpiringTargetError
+   * @throws IOException if the JSON string is invalid with respect to ExpiringTargetError
+   */
   public static ExpiringTargetError fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ExpiringTargetError.class);
   }
 
- /**
-  * Convert an instance of ExpiringTargetError to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ExpiringTargetError to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

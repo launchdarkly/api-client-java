@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,19 +40,19 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * FeatureFlagStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class FeatureFlagStatus {
   /**
    * Status of the flag
@@ -111,72 +112,75 @@ public class FeatureFlagStatus {
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private NameEnum name;
 
   public static final String SERIALIZED_NAME_LAST_REQUESTED = "lastRequested";
   @SerializedName(SERIALIZED_NAME_LAST_REQUESTED)
+  @javax.annotation.Nullable
   private OffsetDateTime lastRequested;
 
   public static final String SERIALIZED_NAME_DEFAULT = "default";
   @SerializedName(SERIALIZED_NAME_DEFAULT)
+  @javax.annotation.Nullable
   private Object _default = null;
 
   public FeatureFlagStatus() {
   }
 
-  public FeatureFlagStatus name(NameEnum name) {
+  public FeatureFlagStatus name(@javax.annotation.Nonnull NameEnum name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Status of the flag
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public NameEnum getName() {
     return name;
   }
 
-  public void setName(NameEnum name) {
+  public void setName(@javax.annotation.Nonnull NameEnum name) {
     this.name = name;
   }
 
 
-  public FeatureFlagStatus lastRequested(OffsetDateTime lastRequested) {
+  public FeatureFlagStatus lastRequested(@javax.annotation.Nullable OffsetDateTime lastRequested) {
     this.lastRequested = lastRequested;
     return this;
   }
 
-   /**
+  /**
    * Timestamp of last time flag was requested
    * @return lastRequested
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getLastRequested() {
     return lastRequested;
   }
 
-  public void setLastRequested(OffsetDateTime lastRequested) {
+  public void setLastRequested(@javax.annotation.Nullable OffsetDateTime lastRequested) {
     this.lastRequested = lastRequested;
   }
 
 
-  public FeatureFlagStatus _default(Object _default) {
+  public FeatureFlagStatus _default(@javax.annotation.Nullable Object _default) {
     this._default = _default;
     return this;
   }
 
-   /**
+  /**
    * Default value seen from code
    * @return _default
-  **/
+   */
   @javax.annotation.Nullable
   public Object getDefault() {
     return _default;
   }
 
-  public void setDefault(Object _default) {
+  public void setDefault(@javax.annotation.Nullable Object _default) {
     this._default = _default;
   }
 
@@ -286,38 +290,34 @@ public class FeatureFlagStatus {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("lastRequested");
-    openapiFields.add("default");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "lastRequested", "default"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FeatureFlagStatus
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FeatureFlagStatus
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FeatureFlagStatus.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FeatureFlagStatus is not found in the empty JSON string", FeatureFlagStatus.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FeatureFlagStatus is not found in the empty JSON string", FeatureFlagStatus.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : FeatureFlagStatus.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // validate the required field `name`
       NameEnum.validateJsonElement(jsonObj.get("name"));
@@ -380,7 +380,7 @@ public class FeatureFlagStatus {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -395,22 +395,22 @@ public class FeatureFlagStatus {
     }
   }
 
- /**
-  * Create an instance of FeatureFlagStatus given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FeatureFlagStatus
-  * @throws IOException if the JSON string is invalid with respect to FeatureFlagStatus
-  */
+  /**
+   * Create an instance of FeatureFlagStatus given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FeatureFlagStatus
+   * @throws IOException if the JSON string is invalid with respect to FeatureFlagStatus
+   */
   public static FeatureFlagStatus fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FeatureFlagStatus.class);
   }
 
- /**
-  * Convert an instance of FeatureFlagStatus to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FeatureFlagStatus to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

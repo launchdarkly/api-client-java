@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,111 +39,115 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * IntegrationMetadata
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class IntegrationMetadata {
   public static final String SERIALIZED_NAME_EXTERNAL_ID = "externalId";
   @SerializedName(SERIALIZED_NAME_EXTERNAL_ID)
+  @javax.annotation.Nonnull
   private String externalId;
 
   public static final String SERIALIZED_NAME_EXTERNAL_STATUS = "externalStatus";
   @SerializedName(SERIALIZED_NAME_EXTERNAL_STATUS)
+  @javax.annotation.Nonnull
   private IntegrationStatus externalStatus;
 
   public static final String SERIALIZED_NAME_EXTERNAL_URL = "externalUrl";
   @SerializedName(SERIALIZED_NAME_EXTERNAL_URL)
+  @javax.annotation.Nonnull
   private String externalUrl;
 
   public static final String SERIALIZED_NAME_LAST_CHECKED = "lastChecked";
   @SerializedName(SERIALIZED_NAME_LAST_CHECKED)
+  @javax.annotation.Nonnull
   private Long lastChecked;
 
   public IntegrationMetadata() {
   }
 
-  public IntegrationMetadata externalId(String externalId) {
+  public IntegrationMetadata externalId(@javax.annotation.Nonnull String externalId) {
     this.externalId = externalId;
     return this;
   }
 
-   /**
+  /**
    * Get externalId
    * @return externalId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getExternalId() {
     return externalId;
   }
 
-  public void setExternalId(String externalId) {
+  public void setExternalId(@javax.annotation.Nonnull String externalId) {
     this.externalId = externalId;
   }
 
 
-  public IntegrationMetadata externalStatus(IntegrationStatus externalStatus) {
+  public IntegrationMetadata externalStatus(@javax.annotation.Nonnull IntegrationStatus externalStatus) {
     this.externalStatus = externalStatus;
     return this;
   }
 
-   /**
+  /**
    * Get externalStatus
    * @return externalStatus
-  **/
+   */
   @javax.annotation.Nonnull
   public IntegrationStatus getExternalStatus() {
     return externalStatus;
   }
 
-  public void setExternalStatus(IntegrationStatus externalStatus) {
+  public void setExternalStatus(@javax.annotation.Nonnull IntegrationStatus externalStatus) {
     this.externalStatus = externalStatus;
   }
 
 
-  public IntegrationMetadata externalUrl(String externalUrl) {
+  public IntegrationMetadata externalUrl(@javax.annotation.Nonnull String externalUrl) {
     this.externalUrl = externalUrl;
     return this;
   }
 
-   /**
+  /**
    * Get externalUrl
    * @return externalUrl
-  **/
+   */
   @javax.annotation.Nonnull
   public String getExternalUrl() {
     return externalUrl;
   }
 
-  public void setExternalUrl(String externalUrl) {
+  public void setExternalUrl(@javax.annotation.Nonnull String externalUrl) {
     this.externalUrl = externalUrl;
   }
 
 
-  public IntegrationMetadata lastChecked(Long lastChecked) {
+  public IntegrationMetadata lastChecked(@javax.annotation.Nonnull Long lastChecked) {
     this.lastChecked = lastChecked;
     return this;
   }
 
-   /**
+  /**
    * Get lastChecked
    * @return lastChecked
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getLastChecked() {
     return lastChecked;
   }
 
-  public void setLastChecked(Long lastChecked) {
+  public void setLastChecked(@javax.annotation.Nonnull Long lastChecked) {
     this.lastChecked = lastChecked;
   }
 
@@ -243,47 +248,39 @@ public class IntegrationMetadata {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("externalId");
-    openapiFields.add("externalStatus");
-    openapiFields.add("externalUrl");
-    openapiFields.add("lastChecked");
+    openapiFields = new HashSet<String>(Arrays.asList("externalId", "externalStatus", "externalUrl", "lastChecked"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("externalId");
-    openapiRequiredFields.add("externalStatus");
-    openapiRequiredFields.add("externalUrl");
-    openapiRequiredFields.add("lastChecked");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("externalId", "externalStatus", "externalUrl", "lastChecked"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to IntegrationMetadata
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to IntegrationMetadata
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IntegrationMetadata.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in IntegrationMetadata is not found in the empty JSON string", IntegrationMetadata.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in IntegrationMetadata is not found in the empty JSON string", IntegrationMetadata.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : IntegrationMetadata.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("externalId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `externalId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("externalId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `externalId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("externalId").toString()));
       }
       // validate the required field `externalStatus`
       IntegrationStatus.validateJsonElement(jsonObj.get("externalStatus"));
       if (!jsonObj.get("externalUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `externalUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("externalUrl").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `externalUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("externalUrl").toString()));
       }
   }
 
@@ -344,7 +341,7 @@ public class IntegrationMetadata {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -359,22 +356,22 @@ public class IntegrationMetadata {
     }
   }
 
- /**
-  * Create an instance of IntegrationMetadata given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of IntegrationMetadata
-  * @throws IOException if the JSON string is invalid with respect to IntegrationMetadata
-  */
+  /**
+   * Create an instance of IntegrationMetadata given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of IntegrationMetadata
+   * @throws IOException if the JSON string is invalid with respect to IntegrationMetadata
+   */
   public static IntegrationMetadata fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, IntegrationMetadata.class);
   }
 
- /**
-  * Convert an instance of IntegrationMetadata to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of IntegrationMetadata to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

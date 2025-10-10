@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,65 +38,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * InsightsMetricTierDefinition
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class InsightsMetricTierDefinition {
   public static final String SERIALIZED_NAME_INDICATOR = "indicator";
   @SerializedName(SERIALIZED_NAME_INDICATOR)
+  @javax.annotation.Nonnull
   private String indicator;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nonnull
   private String description;
 
   public InsightsMetricTierDefinition() {
   }
 
-  public InsightsMetricTierDefinition indicator(String indicator) {
+  public InsightsMetricTierDefinition indicator(@javax.annotation.Nonnull String indicator) {
     this.indicator = indicator;
     return this;
   }
 
-   /**
+  /**
    * Metric indicator tier
    * @return indicator
-  **/
+   */
   @javax.annotation.Nonnull
   public String getIndicator() {
     return indicator;
   }
 
-  public void setIndicator(String indicator) {
+  public void setIndicator(@javax.annotation.Nonnull String indicator) {
     this.indicator = indicator;
   }
 
 
-  public InsightsMetricTierDefinition description(String description) {
+  public InsightsMetricTierDefinition description(@javax.annotation.Nonnull String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Metric indicator description
    * @return description
-  **/
+   */
   @javax.annotation.Nonnull
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nonnull String description) {
     this.description = description;
   }
 
@@ -192,41 +195,37 @@ public class InsightsMetricTierDefinition {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("indicator");
-    openapiFields.add("description");
+    openapiFields = new HashSet<String>(Arrays.asList("indicator", "description"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("indicator");
-    openapiRequiredFields.add("description");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("indicator", "description"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to InsightsMetricTierDefinition
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to InsightsMetricTierDefinition
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!InsightsMetricTierDefinition.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in InsightsMetricTierDefinition is not found in the empty JSON string", InsightsMetricTierDefinition.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in InsightsMetricTierDefinition is not found in the empty JSON string", InsightsMetricTierDefinition.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : InsightsMetricTierDefinition.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("indicator").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `indicator` to be a primitive type in the JSON string but got `%s`", jsonObj.get("indicator").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `indicator` to be a primitive type in the JSON string but got `%s`", jsonObj.get("indicator").toString()));
       }
       if (!jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
   }
 
@@ -287,7 +286,7 @@ public class InsightsMetricTierDefinition {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -302,22 +301,22 @@ public class InsightsMetricTierDefinition {
     }
   }
 
- /**
-  * Create an instance of InsightsMetricTierDefinition given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of InsightsMetricTierDefinition
-  * @throws IOException if the JSON string is invalid with respect to InsightsMetricTierDefinition
-  */
+  /**
+   * Create an instance of InsightsMetricTierDefinition given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of InsightsMetricTierDefinition
+   * @throws IOException if the JSON string is invalid with respect to InsightsMetricTierDefinition
+   */
   public static InsightsMetricTierDefinition fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, InsightsMetricTierDefinition.class);
   }
 
- /**
-  * Convert an instance of InsightsMetricTierDefinition to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of InsightsMetricTierDefinition to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

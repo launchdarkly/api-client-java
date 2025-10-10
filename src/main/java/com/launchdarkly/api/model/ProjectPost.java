@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,128 +43,135 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ProjectPost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ProjectPost {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_INCLUDE_IN_SNIPPET_BY_DEFAULT = "includeInSnippetByDefault";
   @SerializedName(SERIALIZED_NAME_INCLUDE_IN_SNIPPET_BY_DEFAULT)
+  @javax.annotation.Nullable
   private Boolean includeInSnippetByDefault;
 
   public static final String SERIALIZED_NAME_DEFAULT_CLIENT_SIDE_AVAILABILITY = "defaultClientSideAvailability";
   @SerializedName(SERIALIZED_NAME_DEFAULT_CLIENT_SIDE_AVAILABILITY)
+  @javax.annotation.Nullable
   private DefaultClientSideAvailabilityPost defaultClientSideAvailability;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ENVIRONMENTS = "environments";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENTS)
+  @javax.annotation.Nullable
   private List<EnvironmentPost> environments = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NAMING_CONVENTION = "namingConvention";
   @SerializedName(SERIALIZED_NAME_NAMING_CONVENTION)
+  @javax.annotation.Nullable
   private NamingConvention namingConvention;
 
   public ProjectPost() {
   }
 
-  public ProjectPost name(String name) {
+  public ProjectPost name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for the project.
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public ProjectPost key(String key) {
+  public ProjectPost key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * A unique key used to reference the project in your code.
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public ProjectPost includeInSnippetByDefault(Boolean includeInSnippetByDefault) {
+  public ProjectPost includeInSnippetByDefault(@javax.annotation.Nullable Boolean includeInSnippetByDefault) {
     this.includeInSnippetByDefault = includeInSnippetByDefault;
     return this;
   }
 
-   /**
+  /**
    * Whether or not flags created in this project are made available to the client-side JavaScript SDK by default.
    * @return includeInSnippetByDefault
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIncludeInSnippetByDefault() {
     return includeInSnippetByDefault;
   }
 
-  public void setIncludeInSnippetByDefault(Boolean includeInSnippetByDefault) {
+  public void setIncludeInSnippetByDefault(@javax.annotation.Nullable Boolean includeInSnippetByDefault) {
     this.includeInSnippetByDefault = includeInSnippetByDefault;
   }
 
 
-  public ProjectPost defaultClientSideAvailability(DefaultClientSideAvailabilityPost defaultClientSideAvailability) {
+  public ProjectPost defaultClientSideAvailability(@javax.annotation.Nullable DefaultClientSideAvailabilityPost defaultClientSideAvailability) {
     this.defaultClientSideAvailability = defaultClientSideAvailability;
     return this;
   }
 
-   /**
+  /**
    * Get defaultClientSideAvailability
    * @return defaultClientSideAvailability
-  **/
+   */
   @javax.annotation.Nullable
   public DefaultClientSideAvailabilityPost getDefaultClientSideAvailability() {
     return defaultClientSideAvailability;
   }
 
-  public void setDefaultClientSideAvailability(DefaultClientSideAvailabilityPost defaultClientSideAvailability) {
+  public void setDefaultClientSideAvailability(@javax.annotation.Nullable DefaultClientSideAvailabilityPost defaultClientSideAvailability) {
     this.defaultClientSideAvailability = defaultClientSideAvailability;
   }
 
 
-  public ProjectPost tags(List<String> tags) {
+  public ProjectPost tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -176,21 +184,21 @@ public class ProjectPost {
     return this;
   }
 
-   /**
+  /**
    * Tags for the project
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
 
-  public ProjectPost environments(List<EnvironmentPost> environments) {
+  public ProjectPost environments(@javax.annotation.Nullable List<EnvironmentPost> environments) {
     this.environments = environments;
     return this;
   }
@@ -203,35 +211,35 @@ public class ProjectPost {
     return this;
   }
 
-   /**
+  /**
    * Creates the provided environments for this project. If omitted default environments will be created instead.
    * @return environments
-  **/
+   */
   @javax.annotation.Nullable
   public List<EnvironmentPost> getEnvironments() {
     return environments;
   }
 
-  public void setEnvironments(List<EnvironmentPost> environments) {
+  public void setEnvironments(@javax.annotation.Nullable List<EnvironmentPost> environments) {
     this.environments = environments;
   }
 
 
-  public ProjectPost namingConvention(NamingConvention namingConvention) {
+  public ProjectPost namingConvention(@javax.annotation.Nullable NamingConvention namingConvention) {
     this.namingConvention = namingConvention;
     return this;
   }
 
-   /**
+  /**
    * Get namingConvention
    * @return namingConvention
-  **/
+   */
   @javax.annotation.Nullable
   public NamingConvention getNamingConvention() {
     return namingConvention;
   }
 
-  public void setNamingConvention(NamingConvention namingConvention) {
+  public void setNamingConvention(@javax.annotation.Nullable NamingConvention namingConvention) {
     this.namingConvention = namingConvention;
   }
 
@@ -338,46 +346,37 @@ public class ProjectPost {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("key");
-    openapiFields.add("includeInSnippetByDefault");
-    openapiFields.add("defaultClientSideAvailability");
-    openapiFields.add("tags");
-    openapiFields.add("environments");
-    openapiFields.add("namingConvention");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "key", "includeInSnippetByDefault", "defaultClientSideAvailability", "tags", "environments", "namingConvention"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("key");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name", "key"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ProjectPost
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ProjectPost
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ProjectPost.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ProjectPost is not found in the empty JSON string", ProjectPost.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ProjectPost is not found in the empty JSON string", ProjectPost.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ProjectPost.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       // validate the optional field `defaultClientSideAvailability`
       if (jsonObj.get("defaultClientSideAvailability") != null && !jsonObj.get("defaultClientSideAvailability").isJsonNull()) {
@@ -385,14 +384,14 @@ public class ProjectPost {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       if (jsonObj.get("environments") != null && !jsonObj.get("environments").isJsonNull()) {
         JsonArray jsonArrayenvironments = jsonObj.getAsJsonArray("environments");
         if (jsonArrayenvironments != null) {
           // ensure the json data is an array
           if (!jsonObj.get("environments").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `environments` to be an array in the JSON string but got `%s`", jsonObj.get("environments").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environments` to be an array in the JSON string but got `%s`", jsonObj.get("environments").toString()));
           }
 
           // validate the optional field `environments` (array)
@@ -464,7 +463,7 @@ public class ProjectPost {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -479,22 +478,22 @@ public class ProjectPost {
     }
   }
 
- /**
-  * Create an instance of ProjectPost given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ProjectPost
-  * @throws IOException if the JSON string is invalid with respect to ProjectPost
-  */
+  /**
+   * Create an instance of ProjectPost given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ProjectPost
+   * @throws IOException if the JSON string is invalid with respect to ProjectPost
+   */
   public static ProjectPost fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ProjectPost.class);
   }
 
- /**
-  * Convert an instance of ProjectPost to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ProjectPost to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,240 +45,256 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * Token
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class Token {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_OWNER_ID = "ownerId";
   @SerializedName(SERIALIZED_NAME_OWNER_ID)
+  @javax.annotation.Nonnull
   private String ownerId;
 
   public static final String SERIALIZED_NAME_MEMBER_ID = "memberId";
   @SerializedName(SERIALIZED_NAME_MEMBER_ID)
+  @javax.annotation.Nonnull
   private String memberId;
 
   public static final String SERIALIZED_NAME_MEMBER = "_member";
   @SerializedName(SERIALIZED_NAME_MEMBER)
+  @javax.annotation.Nullable
   private MemberSummary member;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_CREATION_DATE = "creationDate";
   @SerializedName(SERIALIZED_NAME_CREATION_DATE)
+  @javax.annotation.Nonnull
   private Long creationDate;
 
   public static final String SERIALIZED_NAME_LAST_MODIFIED = "lastModified";
   @SerializedName(SERIALIZED_NAME_LAST_MODIFIED)
+  @javax.annotation.Nonnull
   private Long lastModified;
 
   public static final String SERIALIZED_NAME_CUSTOM_ROLE_IDS = "customRoleIds";
   @SerializedName(SERIALIZED_NAME_CUSTOM_ROLE_IDS)
+  @javax.annotation.Nullable
   private List<String> customRoleIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_INLINE_ROLE = "inlineRole";
   @SerializedName(SERIALIZED_NAME_INLINE_ROLE)
+  @javax.annotation.Nullable
   private List<Statement> inlineRole = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ROLE = "role";
   @SerializedName(SERIALIZED_NAME_ROLE)
+  @javax.annotation.Nullable
   private String role;
 
   public static final String SERIALIZED_NAME_TOKEN = "token";
   @SerializedName(SERIALIZED_NAME_TOKEN)
+  @javax.annotation.Nullable
   private String token;
 
   public static final String SERIALIZED_NAME_SERVICE_TOKEN = "serviceToken";
   @SerializedName(SERIALIZED_NAME_SERVICE_TOKEN)
+  @javax.annotation.Nullable
   private Boolean serviceToken;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_DEFAULT_API_VERSION = "defaultApiVersion";
   @SerializedName(SERIALIZED_NAME_DEFAULT_API_VERSION)
+  @javax.annotation.Nullable
   private Integer defaultApiVersion;
 
   public static final String SERIALIZED_NAME_LAST_USED = "lastUsed";
   @SerializedName(SERIALIZED_NAME_LAST_USED)
+  @javax.annotation.Nullable
   private Long lastUsed;
 
   public Token() {
   }
 
-  public Token id(String id) {
+  public Token id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public Token ownerId(String ownerId) {
+  public Token ownerId(@javax.annotation.Nonnull String ownerId) {
     this.ownerId = ownerId;
     return this;
   }
 
-   /**
+  /**
    * Get ownerId
    * @return ownerId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getOwnerId() {
     return ownerId;
   }
 
-  public void setOwnerId(String ownerId) {
+  public void setOwnerId(@javax.annotation.Nonnull String ownerId) {
     this.ownerId = ownerId;
   }
 
 
-  public Token memberId(String memberId) {
+  public Token memberId(@javax.annotation.Nonnull String memberId) {
     this.memberId = memberId;
     return this;
   }
 
-   /**
+  /**
    * Get memberId
    * @return memberId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getMemberId() {
     return memberId;
   }
 
-  public void setMemberId(String memberId) {
+  public void setMemberId(@javax.annotation.Nonnull String memberId) {
     this.memberId = memberId;
   }
 
 
-  public Token member(MemberSummary member) {
+  public Token member(@javax.annotation.Nullable MemberSummary member) {
     this.member = member;
     return this;
   }
 
-   /**
+  /**
    * Get member
    * @return member
-  **/
+   */
   @javax.annotation.Nullable
   public MemberSummary getMember() {
     return member;
   }
 
-  public void setMember(MemberSummary member) {
+  public void setMember(@javax.annotation.Nullable MemberSummary member) {
     this.member = member;
   }
 
 
-  public Token name(String name) {
+  public Token name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for the access token
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public Token description(String description) {
+  public Token description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * A description for the access token
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public Token creationDate(Long creationDate) {
+  public Token creationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
     return this;
   }
 
-   /**
+  /**
    * Get creationDate
    * @return creationDate
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate(Long creationDate) {
+  public void setCreationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
   }
 
 
-  public Token lastModified(Long lastModified) {
+  public Token lastModified(@javax.annotation.Nonnull Long lastModified) {
     this.lastModified = lastModified;
     return this;
   }
 
-   /**
+  /**
    * Get lastModified
    * @return lastModified
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getLastModified() {
     return lastModified;
   }
 
-  public void setLastModified(Long lastModified) {
+  public void setLastModified(@javax.annotation.Nonnull Long lastModified) {
     this.lastModified = lastModified;
   }
 
 
-  public Token customRoleIds(List<String> customRoleIds) {
+  public Token customRoleIds(@javax.annotation.Nullable List<String> customRoleIds) {
     this.customRoleIds = customRoleIds;
     return this;
   }
@@ -290,21 +307,21 @@ public class Token {
     return this;
   }
 
-   /**
+  /**
    * A list of custom role IDs to use as access limits for the access token
    * @return customRoleIds
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getCustomRoleIds() {
     return customRoleIds;
   }
 
-  public void setCustomRoleIds(List<String> customRoleIds) {
+  public void setCustomRoleIds(@javax.annotation.Nullable List<String> customRoleIds) {
     this.customRoleIds = customRoleIds;
   }
 
 
-  public Token inlineRole(List<Statement> inlineRole) {
+  public Token inlineRole(@javax.annotation.Nullable List<Statement> inlineRole) {
     this.inlineRole = inlineRole;
     return this;
   }
@@ -317,78 +334,78 @@ public class Token {
     return this;
   }
 
-   /**
+  /**
    * An array of policy statements, with three attributes: effect, resources, actions. May be used in place of a role.
    * @return inlineRole
-  **/
+   */
   @javax.annotation.Nullable
   public List<Statement> getInlineRole() {
     return inlineRole;
   }
 
-  public void setInlineRole(List<Statement> inlineRole) {
+  public void setInlineRole(@javax.annotation.Nullable List<Statement> inlineRole) {
     this.inlineRole = inlineRole;
   }
 
 
-  public Token role(String role) {
+  public Token role(@javax.annotation.Nullable String role) {
     this.role = role;
     return this;
   }
 
-   /**
+  /**
    * Base role for the token
    * @return role
-  **/
+   */
   @javax.annotation.Nullable
   public String getRole() {
     return role;
   }
 
-  public void setRole(String role) {
+  public void setRole(@javax.annotation.Nullable String role) {
     this.role = role;
   }
 
 
-  public Token token(String token) {
+  public Token token(@javax.annotation.Nullable String token) {
     this.token = token;
     return this;
   }
 
-   /**
+  /**
    * The token value. When creating or resetting, contains the entire token value. Otherwise, contains the last four characters.
    * @return token
-  **/
+   */
   @javax.annotation.Nullable
   public String getToken() {
     return token;
   }
 
-  public void setToken(String token) {
+  public void setToken(@javax.annotation.Nullable String token) {
     this.token = token;
   }
 
 
-  public Token serviceToken(Boolean serviceToken) {
+  public Token serviceToken(@javax.annotation.Nullable Boolean serviceToken) {
     this.serviceToken = serviceToken;
     return this;
   }
 
-   /**
+  /**
    * Whether this is a service token or a personal token
    * @return serviceToken
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getServiceToken() {
     return serviceToken;
   }
 
-  public void setServiceToken(Boolean serviceToken) {
+  public void setServiceToken(@javax.annotation.Nullable Boolean serviceToken) {
     this.serviceToken = serviceToken;
   }
 
 
-  public Token links(Map<String, Link> links) {
+  public Token links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -401,54 +418,54 @@ public class Token {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public Token defaultApiVersion(Integer defaultApiVersion) {
+  public Token defaultApiVersion(@javax.annotation.Nullable Integer defaultApiVersion) {
     this.defaultApiVersion = defaultApiVersion;
     return this;
   }
 
-   /**
+  /**
    * The default API version for this token
    * @return defaultApiVersion
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getDefaultApiVersion() {
     return defaultApiVersion;
   }
 
-  public void setDefaultApiVersion(Integer defaultApiVersion) {
+  public void setDefaultApiVersion(@javax.annotation.Nullable Integer defaultApiVersion) {
     this.defaultApiVersion = defaultApiVersion;
   }
 
 
-  public Token lastUsed(Long lastUsed) {
+  public Token lastUsed(@javax.annotation.Nullable Long lastUsed) {
     this.lastUsed = lastUsed;
     return this;
   }
 
-   /**
+  /**
    * Get lastUsed
    * @return lastUsed
-  **/
+   */
   @javax.annotation.Nullable
   public Long getLastUsed() {
     return lastUsed;
   }
 
-  public void setLastUsed(Long lastUsed) {
+  public void setLastUsed(@javax.annotation.Nullable Long lastUsed) {
     this.lastUsed = lastUsed;
   }
 
@@ -573,83 +590,61 @@ public class Token {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_id");
-    openapiFields.add("ownerId");
-    openapiFields.add("memberId");
-    openapiFields.add("_member");
-    openapiFields.add("name");
-    openapiFields.add("description");
-    openapiFields.add("creationDate");
-    openapiFields.add("lastModified");
-    openapiFields.add("customRoleIds");
-    openapiFields.add("inlineRole");
-    openapiFields.add("role");
-    openapiFields.add("token");
-    openapiFields.add("serviceToken");
-    openapiFields.add("_links");
-    openapiFields.add("defaultApiVersion");
-    openapiFields.add("lastUsed");
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "ownerId", "memberId", "_member", "name", "description", "creationDate", "lastModified", "customRoleIds", "inlineRole", "role", "token", "serviceToken", "_links", "defaultApiVersion", "lastUsed"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("ownerId");
-    openapiRequiredFields.add("memberId");
-    openapiRequiredFields.add("creationDate");
-    openapiRequiredFields.add("lastModified");
-    openapiRequiredFields.add("_links");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "ownerId", "memberId", "creationDate", "lastModified", "_links"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Token
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Token
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Token.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Token is not found in the empty JSON string", Token.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Token is not found in the empty JSON string", Token.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : Token.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if (!jsonObj.get("ownerId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ownerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ownerId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `ownerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ownerId").toString()));
       }
       if (!jsonObj.get("memberId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `memberId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("memberId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `memberId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("memberId").toString()));
       }
       // validate the optional field `_member`
       if (jsonObj.get("_member") != null && !jsonObj.get("_member").isJsonNull()) {
         MemberSummary.validateJsonElement(jsonObj.get("_member"));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("customRoleIds") != null && !jsonObj.get("customRoleIds").isJsonNull() && !jsonObj.get("customRoleIds").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `customRoleIds` to be an array in the JSON string but got `%s`", jsonObj.get("customRoleIds").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `customRoleIds` to be an array in the JSON string but got `%s`", jsonObj.get("customRoleIds").toString()));
       }
       if (jsonObj.get("inlineRole") != null && !jsonObj.get("inlineRole").isJsonNull()) {
         JsonArray jsonArrayinlineRole = jsonObj.getAsJsonArray("inlineRole");
         if (jsonArrayinlineRole != null) {
           // ensure the json data is an array
           if (!jsonObj.get("inlineRole").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `inlineRole` to be an array in the JSON string but got `%s`", jsonObj.get("inlineRole").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `inlineRole` to be an array in the JSON string but got `%s`", jsonObj.get("inlineRole").toString()));
           }
 
           // validate the optional field `inlineRole` (array)
@@ -659,10 +654,10 @@ public class Token {
         }
       }
       if ((jsonObj.get("role") != null && !jsonObj.get("role").isJsonNull()) && !jsonObj.get("role").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role").toString()));
       }
       if ((jsonObj.get("token") != null && !jsonObj.get("token").isJsonNull()) && !jsonObj.get("token").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("token").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("token").toString()));
       }
   }
 
@@ -723,7 +718,7 @@ public class Token {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -738,22 +733,22 @@ public class Token {
     }
   }
 
- /**
-  * Create an instance of Token given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Token
-  * @throws IOException if the JSON string is invalid with respect to Token
-  */
+  /**
+   * Create an instance of Token given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Token
+   * @throws IOException if the JSON string is invalid with respect to Token
+   */
   public static Token fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Token.class);
   }
 
- /**
-  * Convert an instance of Token to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Token to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

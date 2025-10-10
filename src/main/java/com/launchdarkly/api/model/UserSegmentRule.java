@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,67 +41,73 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * UserSegmentRule
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class UserSegmentRule {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_CLAUSES = "clauses";
   @SerializedName(SERIALIZED_NAME_CLAUSES)
+  @javax.annotation.Nonnull
   private List<Clause> clauses = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_WEIGHT = "weight";
   @SerializedName(SERIALIZED_NAME_WEIGHT)
+  @javax.annotation.Nullable
   private Integer weight;
 
   public static final String SERIALIZED_NAME_ROLLOUT_CONTEXT_KIND = "rolloutContextKind";
   @SerializedName(SERIALIZED_NAME_ROLLOUT_CONTEXT_KIND)
+  @javax.annotation.Nullable
   private String rolloutContextKind;
 
   public static final String SERIALIZED_NAME_BUCKET_BY = "bucketBy";
   @SerializedName(SERIALIZED_NAME_BUCKET_BY)
+  @javax.annotation.Nullable
   private String bucketBy;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public UserSegmentRule() {
   }
 
-  public UserSegmentRule id(String id) {
+  public UserSegmentRule id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public UserSegmentRule clauses(List<Clause> clauses) {
+  public UserSegmentRule clauses(@javax.annotation.Nonnull List<Clause> clauses) {
     this.clauses = clauses;
     return this;
   }
@@ -113,92 +120,92 @@ public class UserSegmentRule {
     return this;
   }
 
-   /**
+  /**
    * Get clauses
    * @return clauses
-  **/
+   */
   @javax.annotation.Nonnull
   public List<Clause> getClauses() {
     return clauses;
   }
 
-  public void setClauses(List<Clause> clauses) {
+  public void setClauses(@javax.annotation.Nonnull List<Clause> clauses) {
     this.clauses = clauses;
   }
 
 
-  public UserSegmentRule weight(Integer weight) {
+  public UserSegmentRule weight(@javax.annotation.Nullable Integer weight) {
     this.weight = weight;
     return this;
   }
 
-   /**
+  /**
    * Get weight
    * @return weight
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getWeight() {
     return weight;
   }
 
-  public void setWeight(Integer weight) {
+  public void setWeight(@javax.annotation.Nullable Integer weight) {
     this.weight = weight;
   }
 
 
-  public UserSegmentRule rolloutContextKind(String rolloutContextKind) {
+  public UserSegmentRule rolloutContextKind(@javax.annotation.Nullable String rolloutContextKind) {
     this.rolloutContextKind = rolloutContextKind;
     return this;
   }
 
-   /**
+  /**
    * Get rolloutContextKind
    * @return rolloutContextKind
-  **/
+   */
   @javax.annotation.Nullable
   public String getRolloutContextKind() {
     return rolloutContextKind;
   }
 
-  public void setRolloutContextKind(String rolloutContextKind) {
+  public void setRolloutContextKind(@javax.annotation.Nullable String rolloutContextKind) {
     this.rolloutContextKind = rolloutContextKind;
   }
 
 
-  public UserSegmentRule bucketBy(String bucketBy) {
+  public UserSegmentRule bucketBy(@javax.annotation.Nullable String bucketBy) {
     this.bucketBy = bucketBy;
     return this;
   }
 
-   /**
+  /**
    * Get bucketBy
    * @return bucketBy
-  **/
+   */
   @javax.annotation.Nullable
   public String getBucketBy() {
     return bucketBy;
   }
 
-  public void setBucketBy(String bucketBy) {
+  public void setBucketBy(@javax.annotation.Nullable String bucketBy) {
     this.bucketBy = bucketBy;
   }
 
 
-  public UserSegmentRule description(String description) {
+  public UserSegmentRule description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Get description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
@@ -303,45 +310,38 @@ public class UserSegmentRule {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_id");
-    openapiFields.add("clauses");
-    openapiFields.add("weight");
-    openapiFields.add("rolloutContextKind");
-    openapiFields.add("bucketBy");
-    openapiFields.add("description");
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "clauses", "weight", "rolloutContextKind", "bucketBy", "description"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("clauses");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("clauses"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to UserSegmentRule
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to UserSegmentRule
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UserSegmentRule.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UserSegmentRule is not found in the empty JSON string", UserSegmentRule.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in UserSegmentRule is not found in the empty JSON string", UserSegmentRule.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : UserSegmentRule.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("_id") != null && !jsonObj.get("_id").isJsonNull()) && !jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       // ensure the json data is an array
       if (!jsonObj.get("clauses").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `clauses` to be an array in the JSON string but got `%s`", jsonObj.get("clauses").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `clauses` to be an array in the JSON string but got `%s`", jsonObj.get("clauses").toString()));
       }
 
       JsonArray jsonArrayclauses = jsonObj.getAsJsonArray("clauses");
@@ -350,13 +350,13 @@ public class UserSegmentRule {
         Clause.validateJsonElement(jsonArrayclauses.get(i));
       };
       if ((jsonObj.get("rolloutContextKind") != null && !jsonObj.get("rolloutContextKind").isJsonNull()) && !jsonObj.get("rolloutContextKind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `rolloutContextKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rolloutContextKind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `rolloutContextKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rolloutContextKind").toString()));
       }
       if ((jsonObj.get("bucketBy") != null && !jsonObj.get("bucketBy").isJsonNull()) && !jsonObj.get("bucketBy").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `bucketBy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucketBy").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `bucketBy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucketBy").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
   }
 
@@ -417,7 +417,7 @@ public class UserSegmentRule {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -432,22 +432,22 @@ public class UserSegmentRule {
     }
   }
 
- /**
-  * Create an instance of UserSegmentRule given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UserSegmentRule
-  * @throws IOException if the JSON string is invalid with respect to UserSegmentRule
-  */
+  /**
+   * Create an instance of UserSegmentRule given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of UserSegmentRule
+   * @throws IOException if the JSON string is invalid with respect to UserSegmentRule
+   */
   public static UserSegmentRule fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, UserSegmentRule.class);
   }
 
- /**
-  * Convert an instance of UserSegmentRule to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of UserSegmentRule to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

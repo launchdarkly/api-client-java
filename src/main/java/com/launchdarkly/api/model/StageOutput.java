@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,82 +43,87 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * StageOutput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class StageOutput {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
   @SerializedName(SERIALIZED_NAME_CONDITIONS)
+  @javax.annotation.Nonnull
   private List<ConditionOutput> conditions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ACTION = "action";
   @SerializedName(SERIALIZED_NAME_ACTION)
+  @javax.annotation.Nonnull
   private ActionOutput action;
 
   public static final String SERIALIZED_NAME_EXECUTION = "_execution";
   @SerializedName(SERIALIZED_NAME_EXECUTION)
+  @javax.annotation.Nonnull
   private ExecutionOutput execution;
 
   public StageOutput() {
   }
 
-  public StageOutput id(String id) {
+  public StageOutput id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The ID of this stage
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public StageOutput name(String name) {
+  public StageOutput name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The stage name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public StageOutput conditions(List<ConditionOutput> conditions) {
+  public StageOutput conditions(@javax.annotation.Nonnull List<ConditionOutput> conditions) {
     this.conditions = conditions;
     return this;
   }
@@ -130,54 +136,54 @@ public class StageOutput {
     return this;
   }
 
-   /**
+  /**
    * An array of conditions for the stage
    * @return conditions
-  **/
+   */
   @javax.annotation.Nonnull
   public List<ConditionOutput> getConditions() {
     return conditions;
   }
 
-  public void setConditions(List<ConditionOutput> conditions) {
+  public void setConditions(@javax.annotation.Nonnull List<ConditionOutput> conditions) {
     this.conditions = conditions;
   }
 
 
-  public StageOutput action(ActionOutput action) {
+  public StageOutput action(@javax.annotation.Nonnull ActionOutput action) {
     this.action = action;
     return this;
   }
 
-   /**
+  /**
    * Get action
    * @return action
-  **/
+   */
   @javax.annotation.Nonnull
   public ActionOutput getAction() {
     return action;
   }
 
-  public void setAction(ActionOutput action) {
+  public void setAction(@javax.annotation.Nonnull ActionOutput action) {
     this.action = action;
   }
 
 
-  public StageOutput execution(ExecutionOutput execution) {
+  public StageOutput execution(@javax.annotation.Nonnull ExecutionOutput execution) {
     this.execution = execution;
     return this;
   }
 
-   /**
+  /**
    * Get execution
    * @return execution
-  **/
+   */
   @javax.annotation.Nonnull
   public ExecutionOutput getExecution() {
     return execution;
   }
 
-  public void setExecution(ExecutionOutput execution) {
+  public void setExecution(@javax.annotation.Nonnull ExecutionOutput execution) {
     this.execution = execution;
   }
 
@@ -280,50 +286,41 @@ public class StageOutput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_id");
-    openapiFields.add("name");
-    openapiFields.add("conditions");
-    openapiFields.add("action");
-    openapiFields.add("_execution");
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "name", "conditions", "action", "_execution"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("conditions");
-    openapiRequiredFields.add("action");
-    openapiRequiredFields.add("_execution");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "conditions", "action", "_execution"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to StageOutput
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to StageOutput
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!StageOutput.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in StageOutput is not found in the empty JSON string", StageOutput.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in StageOutput is not found in the empty JSON string", StageOutput.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : StageOutput.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // ensure the json data is an array
       if (!jsonObj.get("conditions").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `conditions` to be an array in the JSON string but got `%s`", jsonObj.get("conditions").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `conditions` to be an array in the JSON string but got `%s`", jsonObj.get("conditions").toString()));
       }
 
       JsonArray jsonArrayconditions = jsonObj.getAsJsonArray("conditions");
@@ -394,7 +391,7 @@ public class StageOutput {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -409,22 +406,22 @@ public class StageOutput {
     }
   }
 
- /**
-  * Create an instance of StageOutput given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of StageOutput
-  * @throws IOException if the JSON string is invalid with respect to StageOutput
-  */
+  /**
+   * Create an instance of StageOutput given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of StageOutput
+   * @throws IOException if the JSON string is invalid with respect to StageOutput
+   */
   public static StageOutput fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, StageOutput.class);
   }
 
- /**
-  * Convert an instance of StageOutput to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of StageOutput to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

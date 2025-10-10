@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,51 +42,53 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * InsightsChart
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class InsightsChart {
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
+  @javax.annotation.Nonnull
   private InsightsChartMetadata metadata;
 
   public static final String SERIALIZED_NAME_SERIES = "series";
   @SerializedName(SERIALIZED_NAME_SERIES)
+  @javax.annotation.Nonnull
   private List<InsightsChartSeries> series = new ArrayList<>();
 
   public InsightsChart() {
   }
 
-  public InsightsChart metadata(InsightsChartMetadata metadata) {
+  public InsightsChart metadata(@javax.annotation.Nonnull InsightsChartMetadata metadata) {
     this.metadata = metadata;
     return this;
   }
 
-   /**
+  /**
    * Get metadata
    * @return metadata
-  **/
+   */
   @javax.annotation.Nonnull
   public InsightsChartMetadata getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(InsightsChartMetadata metadata) {
+  public void setMetadata(@javax.annotation.Nonnull InsightsChartMetadata metadata) {
     this.metadata = metadata;
   }
 
 
-  public InsightsChart series(List<InsightsChartSeries> series) {
+  public InsightsChart series(@javax.annotation.Nonnull List<InsightsChartSeries> series) {
     this.series = series;
     return this;
   }
@@ -98,16 +101,16 @@ public class InsightsChart {
     return this;
   }
 
-   /**
+  /**
    * Series data for the chart
    * @return series
-  **/
+   */
   @javax.annotation.Nonnull
   public List<InsightsChartSeries> getSeries() {
     return series;
   }
 
-  public void setSeries(List<InsightsChartSeries> series) {
+  public void setSeries(@javax.annotation.Nonnull List<InsightsChartSeries> series) {
     this.series = series;
   }
 
@@ -204,33 +207,29 @@ public class InsightsChart {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("metadata");
-    openapiFields.add("series");
+    openapiFields = new HashSet<String>(Arrays.asList("metadata", "series"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("metadata");
-    openapiRequiredFields.add("series");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("metadata", "series"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to InsightsChart
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to InsightsChart
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!InsightsChart.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in InsightsChart is not found in the empty JSON string", InsightsChart.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in InsightsChart is not found in the empty JSON string", InsightsChart.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : InsightsChart.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -238,7 +237,7 @@ public class InsightsChart {
       InsightsChartMetadata.validateJsonElement(jsonObj.get("metadata"));
       // ensure the json data is an array
       if (!jsonObj.get("series").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `series` to be an array in the JSON string but got `%s`", jsonObj.get("series").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `series` to be an array in the JSON string but got `%s`", jsonObj.get("series").toString()));
       }
 
       JsonArray jsonArrayseries = jsonObj.getAsJsonArray("series");
@@ -305,7 +304,7 @@ public class InsightsChart {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -320,22 +319,22 @@ public class InsightsChart {
     }
   }
 
- /**
-  * Create an instance of InsightsChart given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of InsightsChart
-  * @throws IOException if the JSON string is invalid with respect to InsightsChart
-  */
+  /**
+   * Create an instance of InsightsChart given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of InsightsChart
+   * @throws IOException if the JSON string is invalid with respect to InsightsChart
+   */
   public static InsightsChart fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, InsightsChart.class);
   }
 
- /**
-  * Convert an instance of InsightsChart to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of InsightsChart to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

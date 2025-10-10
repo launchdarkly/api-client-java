@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,67 +41,73 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * InsightsMetricScore
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class InsightsMetricScore {
   public static final String SERIALIZED_NAME_SCORE = "score";
   @SerializedName(SERIALIZED_NAME_SCORE)
+  @javax.annotation.Nonnull
   private Integer score;
 
   public static final String SERIALIZED_NAME_AGGREGATE_OF = "aggregateOf";
   @SerializedName(SERIALIZED_NAME_AGGREGATE_OF)
+  @javax.annotation.Nullable
   private List<String> aggregateOf = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DIFF_VS_LAST_PERIOD = "diffVsLastPeriod";
   @SerializedName(SERIALIZED_NAME_DIFF_VS_LAST_PERIOD)
+  @javax.annotation.Nullable
   private Integer diffVsLastPeriod;
 
   public static final String SERIALIZED_NAME_INDICATOR = "indicator";
   @SerializedName(SERIALIZED_NAME_INDICATOR)
+  @javax.annotation.Nonnull
   private String indicator;
 
   public static final String SERIALIZED_NAME_INDICATOR_RANGE = "indicatorRange";
   @SerializedName(SERIALIZED_NAME_INDICATOR_RANGE)
+  @javax.annotation.Nonnull
   private InsightsMetricIndicatorRange indicatorRange;
 
   public static final String SERIALIZED_NAME_LAST_PERIOD = "lastPeriod";
   @SerializedName(SERIALIZED_NAME_LAST_PERIOD)
+  @javax.annotation.Nullable
   private InsightsMetricScore lastPeriod;
 
   public InsightsMetricScore() {
   }
 
-  public InsightsMetricScore score(Integer score) {
+  public InsightsMetricScore score(@javax.annotation.Nonnull Integer score) {
     this.score = score;
     return this;
   }
 
-   /**
+  /**
    * The score for the metric
    * @return score
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getScore() {
     return score;
   }
 
-  public void setScore(Integer score) {
+  public void setScore(@javax.annotation.Nonnull Integer score) {
     this.score = score;
   }
 
 
-  public InsightsMetricScore aggregateOf(List<String> aggregateOf) {
+  public InsightsMetricScore aggregateOf(@javax.annotation.Nullable List<String> aggregateOf) {
     this.aggregateOf = aggregateOf;
     return this;
   }
@@ -113,92 +120,92 @@ public class InsightsMetricScore {
     return this;
   }
 
-   /**
+  /**
    * The keys of the metrics that were aggregated to calculate this score
    * @return aggregateOf
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getAggregateOf() {
     return aggregateOf;
   }
 
-  public void setAggregateOf(List<String> aggregateOf) {
+  public void setAggregateOf(@javax.annotation.Nullable List<String> aggregateOf) {
     this.aggregateOf = aggregateOf;
   }
 
 
-  public InsightsMetricScore diffVsLastPeriod(Integer diffVsLastPeriod) {
+  public InsightsMetricScore diffVsLastPeriod(@javax.annotation.Nullable Integer diffVsLastPeriod) {
     this.diffVsLastPeriod = diffVsLastPeriod;
     return this;
   }
 
-   /**
+  /**
    * Get diffVsLastPeriod
    * @return diffVsLastPeriod
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getDiffVsLastPeriod() {
     return diffVsLastPeriod;
   }
 
-  public void setDiffVsLastPeriod(Integer diffVsLastPeriod) {
+  public void setDiffVsLastPeriod(@javax.annotation.Nullable Integer diffVsLastPeriod) {
     this.diffVsLastPeriod = diffVsLastPeriod;
   }
 
 
-  public InsightsMetricScore indicator(String indicator) {
+  public InsightsMetricScore indicator(@javax.annotation.Nonnull String indicator) {
     this.indicator = indicator;
     return this;
   }
 
-   /**
+  /**
    * Get indicator
    * @return indicator
-  **/
+   */
   @javax.annotation.Nonnull
   public String getIndicator() {
     return indicator;
   }
 
-  public void setIndicator(String indicator) {
+  public void setIndicator(@javax.annotation.Nonnull String indicator) {
     this.indicator = indicator;
   }
 
 
-  public InsightsMetricScore indicatorRange(InsightsMetricIndicatorRange indicatorRange) {
+  public InsightsMetricScore indicatorRange(@javax.annotation.Nonnull InsightsMetricIndicatorRange indicatorRange) {
     this.indicatorRange = indicatorRange;
     return this;
   }
 
-   /**
+  /**
    * Get indicatorRange
    * @return indicatorRange
-  **/
+   */
   @javax.annotation.Nonnull
   public InsightsMetricIndicatorRange getIndicatorRange() {
     return indicatorRange;
   }
 
-  public void setIndicatorRange(InsightsMetricIndicatorRange indicatorRange) {
+  public void setIndicatorRange(@javax.annotation.Nonnull InsightsMetricIndicatorRange indicatorRange) {
     this.indicatorRange = indicatorRange;
   }
 
 
-  public InsightsMetricScore lastPeriod(InsightsMetricScore lastPeriod) {
+  public InsightsMetricScore lastPeriod(@javax.annotation.Nullable InsightsMetricScore lastPeriod) {
     this.lastPeriod = lastPeriod;
     return this;
   }
 
-   /**
+  /**
    * Get lastPeriod
    * @return lastPeriod
-  **/
+   */
   @javax.annotation.Nullable
   public InsightsMetricScore getLastPeriod() {
     return lastPeriod;
   }
 
-  public void setLastPeriod(InsightsMetricScore lastPeriod) {
+  public void setLastPeriod(@javax.annotation.Nullable InsightsMetricScore lastPeriod) {
     this.lastPeriod = lastPeriod;
   }
 
@@ -303,47 +310,38 @@ public class InsightsMetricScore {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("score");
-    openapiFields.add("aggregateOf");
-    openapiFields.add("diffVsLastPeriod");
-    openapiFields.add("indicator");
-    openapiFields.add("indicatorRange");
-    openapiFields.add("lastPeriod");
+    openapiFields = new HashSet<String>(Arrays.asList("score", "aggregateOf", "diffVsLastPeriod", "indicator", "indicatorRange", "lastPeriod"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("score");
-    openapiRequiredFields.add("indicator");
-    openapiRequiredFields.add("indicatorRange");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("score", "indicator", "indicatorRange"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to InsightsMetricScore
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to InsightsMetricScore
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!InsightsMetricScore.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in InsightsMetricScore is not found in the empty JSON string", InsightsMetricScore.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in InsightsMetricScore is not found in the empty JSON string", InsightsMetricScore.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : InsightsMetricScore.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the optional json data is an array if present
       if (jsonObj.get("aggregateOf") != null && !jsonObj.get("aggregateOf").isJsonNull() && !jsonObj.get("aggregateOf").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `aggregateOf` to be an array in the JSON string but got `%s`", jsonObj.get("aggregateOf").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `aggregateOf` to be an array in the JSON string but got `%s`", jsonObj.get("aggregateOf").toString()));
       }
       if (!jsonObj.get("indicator").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `indicator` to be a primitive type in the JSON string but got `%s`", jsonObj.get("indicator").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `indicator` to be a primitive type in the JSON string but got `%s`", jsonObj.get("indicator").toString()));
       }
       // validate the required field `indicatorRange`
       InsightsMetricIndicatorRange.validateJsonElement(jsonObj.get("indicatorRange"));
@@ -410,7 +408,7 @@ public class InsightsMetricScore {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -425,22 +423,22 @@ public class InsightsMetricScore {
     }
   }
 
- /**
-  * Create an instance of InsightsMetricScore given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of InsightsMetricScore
-  * @throws IOException if the JSON string is invalid with respect to InsightsMetricScore
-  */
+  /**
+   * Create an instance of InsightsMetricScore given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of InsightsMetricScore
+   * @throws IOException if the JSON string is invalid with respect to InsightsMetricScore
+   */
   public static InsightsMetricScore fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, InsightsMetricScore.class);
   }
 
- /**
-  * Convert an instance of InsightsMetricScore to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of InsightsMetricScore to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

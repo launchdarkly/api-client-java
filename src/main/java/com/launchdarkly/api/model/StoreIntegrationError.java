@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,88 +38,91 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * StoreIntegrationError
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class StoreIntegrationError {
   public static final String SERIALIZED_NAME_STATUS_CODE = "statusCode";
   @SerializedName(SERIALIZED_NAME_STATUS_CODE)
+  @javax.annotation.Nullable
   private Integer statusCode;
 
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
+  @javax.annotation.Nullable
   private String message;
 
   public static final String SERIALIZED_NAME_TIMESTAMP = "timestamp";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
+  @javax.annotation.Nullable
   private Long timestamp;
 
   public StoreIntegrationError() {
   }
 
-  public StoreIntegrationError statusCode(Integer statusCode) {
+  public StoreIntegrationError statusCode(@javax.annotation.Nullable Integer statusCode) {
     this.statusCode = statusCode;
     return this;
   }
 
-   /**
+  /**
    * Get statusCode
    * @return statusCode
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getStatusCode() {
     return statusCode;
   }
 
-  public void setStatusCode(Integer statusCode) {
+  public void setStatusCode(@javax.annotation.Nullable Integer statusCode) {
     this.statusCode = statusCode;
   }
 
 
-  public StoreIntegrationError message(String message) {
+  public StoreIntegrationError message(@javax.annotation.Nullable String message) {
     this.message = message;
     return this;
   }
 
-   /**
+  /**
    * Get message
    * @return message
-  **/
+   */
   @javax.annotation.Nullable
   public String getMessage() {
     return message;
   }
 
-  public void setMessage(String message) {
+  public void setMessage(@javax.annotation.Nullable String message) {
     this.message = message;
   }
 
 
-  public StoreIntegrationError timestamp(Long timestamp) {
+  public StoreIntegrationError timestamp(@javax.annotation.Nullable Long timestamp) {
     this.timestamp = timestamp;
     return this;
   }
 
-   /**
+  /**
    * Get timestamp
    * @return timestamp
-  **/
+   */
   @javax.annotation.Nullable
   public Long getTimestamp() {
     return timestamp;
   }
 
-  public void setTimestamp(Long timestamp) {
+  public void setTimestamp(@javax.annotation.Nullable Long timestamp) {
     this.timestamp = timestamp;
   }
 
@@ -217,30 +221,27 @@ public class StoreIntegrationError {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("statusCode");
-    openapiFields.add("message");
-    openapiFields.add("timestamp");
+    openapiFields = new HashSet<String>(Arrays.asList("statusCode", "message", "timestamp"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to StoreIntegrationError
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to StoreIntegrationError
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!StoreIntegrationError.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in StoreIntegrationError is not found in the empty JSON string", StoreIntegrationError.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in StoreIntegrationError is not found in the empty JSON string", StoreIntegrationError.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("message") != null && !jsonObj.get("message").isJsonNull()) && !jsonObj.get("message").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
       }
   }
 
@@ -301,7 +302,7 @@ public class StoreIntegrationError {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -316,22 +317,22 @@ public class StoreIntegrationError {
     }
   }
 
- /**
-  * Create an instance of StoreIntegrationError given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of StoreIntegrationError
-  * @throws IOException if the JSON string is invalid with respect to StoreIntegrationError
-  */
+  /**
+   * Create an instance of StoreIntegrationError given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of StoreIntegrationError
+   * @throws IOException if the JSON string is invalid with respect to StoreIntegrationError
+   */
   public static StoreIntegrationError fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, StoreIntegrationError.class);
   }
 
- /**
-  * Convert an instance of StoreIntegrationError to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of StoreIntegrationError to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

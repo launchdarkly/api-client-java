@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,341 +39,355 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * Metric representation for Views API - contains only fields actually used by the Views service
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ExpandedMetric {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nullable
   private String key;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_CREATION_DATE = "creationDate";
   @SerializedName(SERIALIZED_NAME_CREATION_DATE)
+  @javax.annotation.Nullable
   private Long creationDate;
 
   public static final String SERIALIZED_NAME_LAST_MODIFIED = "lastModified";
   @SerializedName(SERIALIZED_NAME_LAST_MODIFIED)
+  @javax.annotation.Nullable
   private Long lastModified;
 
   public static final String SERIALIZED_NAME_IS_ACTIVE = "isActive";
   @SerializedName(SERIALIZED_NAME_IS_ACTIVE)
+  @javax.annotation.Nullable
   private Boolean isActive;
 
   public static final String SERIALIZED_NAME_EVENT_KEY = "eventKey";
   @SerializedName(SERIALIZED_NAME_EVENT_KEY)
+  @javax.annotation.Nullable
   private String eventKey;
 
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_VERSION_ID = "_versionId";
   @SerializedName(SERIALIZED_NAME_VERSION_ID)
+  @javax.annotation.Nullable
   private String versionId;
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
+  @javax.annotation.Nullable
   private String kind;
 
   public static final String SERIALIZED_NAME_CATEGORY = "category";
   @SerializedName(SERIALIZED_NAME_CATEGORY)
+  @javax.annotation.Nullable
   private String category;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_IS_NUMERIC = "isNumeric";
   @SerializedName(SERIALIZED_NAME_IS_NUMERIC)
+  @javax.annotation.Nullable
   private Boolean isNumeric;
 
   public static final String SERIALIZED_NAME_LAST_SEEN = "lastSeen";
   @SerializedName(SERIALIZED_NAME_LAST_SEEN)
+  @javax.annotation.Nullable
   private Long lastSeen;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private ParentAndSelfLinks links;
 
   public ExpandedMetric() {
   }
 
-  public ExpandedMetric key(String key) {
+  public ExpandedMetric key(@javax.annotation.Nullable String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * A unique key used to reference the metric
    * @return key
-  **/
+   */
   @javax.annotation.Nullable
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nullable String key) {
     this.key = key;
   }
 
 
-  public ExpandedMetric name(String name) {
+  public ExpandedMetric name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for the metric
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public ExpandedMetric creationDate(Long creationDate) {
+  public ExpandedMetric creationDate(@javax.annotation.Nullable Long creationDate) {
     this.creationDate = creationDate;
     return this;
   }
 
-   /**
+  /**
    * Creation date in milliseconds
    * @return creationDate
-  **/
+   */
   @javax.annotation.Nullable
   public Long getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate(Long creationDate) {
+  public void setCreationDate(@javax.annotation.Nullable Long creationDate) {
     this.creationDate = creationDate;
   }
 
 
-  public ExpandedMetric lastModified(Long lastModified) {
+  public ExpandedMetric lastModified(@javax.annotation.Nullable Long lastModified) {
     this.lastModified = lastModified;
     return this;
   }
 
-   /**
+  /**
    * Last modification date in milliseconds
    * @return lastModified
-  **/
+   */
   @javax.annotation.Nullable
   public Long getLastModified() {
     return lastModified;
   }
 
-  public void setLastModified(Long lastModified) {
+  public void setLastModified(@javax.annotation.Nullable Long lastModified) {
     this.lastModified = lastModified;
   }
 
 
-  public ExpandedMetric isActive(Boolean isActive) {
+  public ExpandedMetric isActive(@javax.annotation.Nullable Boolean isActive) {
     this.isActive = isActive;
     return this;
   }
 
-   /**
+  /**
    * Whether the metric is active
    * @return isActive
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsActive() {
     return isActive;
   }
 
-  public void setIsActive(Boolean isActive) {
+  public void setIsActive(@javax.annotation.Nullable Boolean isActive) {
     this.isActive = isActive;
   }
 
 
-  public ExpandedMetric eventKey(String eventKey) {
+  public ExpandedMetric eventKey(@javax.annotation.Nullable String eventKey) {
     this.eventKey = eventKey;
     return this;
   }
 
-   /**
+  /**
    * Event key for the metric
    * @return eventKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getEventKey() {
     return eventKey;
   }
 
-  public void setEventKey(String eventKey) {
+  public void setEventKey(@javax.annotation.Nullable String eventKey) {
     this.eventKey = eventKey;
   }
 
 
-  public ExpandedMetric id(String id) {
+  public ExpandedMetric id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * ID of the metric
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public ExpandedMetric versionId(String versionId) {
+  public ExpandedMetric versionId(@javax.annotation.Nullable String versionId) {
     this.versionId = versionId;
     return this;
   }
 
-   /**
+  /**
    * Version ID of the metric
    * @return versionId
-  **/
+   */
   @javax.annotation.Nullable
   public String getVersionId() {
     return versionId;
   }
 
-  public void setVersionId(String versionId) {
+  public void setVersionId(@javax.annotation.Nullable String versionId) {
     this.versionId = versionId;
   }
 
 
-  public ExpandedMetric kind(String kind) {
+  public ExpandedMetric kind(@javax.annotation.Nullable String kind) {
     this.kind = kind;
     return this;
   }
 
-   /**
+  /**
    * Kind of the Metric
    * @return kind
-  **/
+   */
   @javax.annotation.Nullable
   public String getKind() {
     return kind;
   }
 
-  public void setKind(String kind) {
+  public void setKind(@javax.annotation.Nullable String kind) {
     this.kind = kind;
   }
 
 
-  public ExpandedMetric category(String category) {
+  public ExpandedMetric category(@javax.annotation.Nullable String category) {
     this.category = category;
     return this;
   }
 
-   /**
+  /**
    * Category of the Metric
    * @return category
-  **/
+   */
   @javax.annotation.Nullable
   public String getCategory() {
     return category;
   }
 
-  public void setCategory(String category) {
+  public void setCategory(@javax.annotation.Nullable String category) {
     this.category = category;
   }
 
 
-  public ExpandedMetric description(String description) {
+  public ExpandedMetric description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Description of the Metric
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public ExpandedMetric isNumeric(Boolean isNumeric) {
+  public ExpandedMetric isNumeric(@javax.annotation.Nullable Boolean isNumeric) {
     this.isNumeric = isNumeric;
     return this;
   }
 
-   /**
+  /**
    * Get isNumeric
    * @return isNumeric
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsNumeric() {
     return isNumeric;
   }
 
-  public void setIsNumeric(Boolean isNumeric) {
+  public void setIsNumeric(@javax.annotation.Nullable Boolean isNumeric) {
     this.isNumeric = isNumeric;
   }
 
 
-  public ExpandedMetric lastSeen(Long lastSeen) {
+  public ExpandedMetric lastSeen(@javax.annotation.Nullable Long lastSeen) {
     this.lastSeen = lastSeen;
     return this;
   }
 
-   /**
+  /**
    * Last seen date in milliseconds
    * @return lastSeen
-  **/
+   */
   @javax.annotation.Nullable
   public Long getLastSeen() {
     return lastSeen;
   }
 
-  public void setLastSeen(Long lastSeen) {
+  public void setLastSeen(@javax.annotation.Nullable Long lastSeen) {
     this.lastSeen = lastSeen;
   }
 
 
-  public ExpandedMetric links(ParentAndSelfLinks links) {
+  public ExpandedMetric links(@javax.annotation.Nullable ParentAndSelfLinks links) {
     this.links = links;
     return this;
   }
 
-   /**
+  /**
    * Get links
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public ParentAndSelfLinks getLinks() {
     return links;
   }
 
-  public void setLinks(ParentAndSelfLinks links) {
+  public void setLinks(@javax.annotation.Nullable ParentAndSelfLinks links) {
     this.links = links;
   }
 
@@ -493,62 +508,48 @@ public class ExpandedMetric {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("key");
-    openapiFields.add("name");
-    openapiFields.add("creationDate");
-    openapiFields.add("lastModified");
-    openapiFields.add("isActive");
-    openapiFields.add("eventKey");
-    openapiFields.add("_id");
-    openapiFields.add("_versionId");
-    openapiFields.add("kind");
-    openapiFields.add("category");
-    openapiFields.add("description");
-    openapiFields.add("isNumeric");
-    openapiFields.add("lastSeen");
-    openapiFields.add("_links");
+    openapiFields = new HashSet<String>(Arrays.asList("key", "name", "creationDate", "lastModified", "isActive", "eventKey", "_id", "_versionId", "kind", "category", "description", "isNumeric", "lastSeen", "_links"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ExpandedMetric
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ExpandedMetric
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ExpandedMetric.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ExpandedMetric is not found in the empty JSON string", ExpandedMetric.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ExpandedMetric is not found in the empty JSON string", ExpandedMetric.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("eventKey") != null && !jsonObj.get("eventKey").isJsonNull()) && !jsonObj.get("eventKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `eventKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("eventKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `eventKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("eventKey").toString()));
       }
       if ((jsonObj.get("_id") != null && !jsonObj.get("_id").isJsonNull()) && !jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if ((jsonObj.get("_versionId") != null && !jsonObj.get("_versionId").isJsonNull()) && !jsonObj.get("_versionId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_versionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_versionId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_versionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_versionId").toString()));
       }
       if ((jsonObj.get("kind") != null && !jsonObj.get("kind").isJsonNull()) && !jsonObj.get("kind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
       if ((jsonObj.get("category") != null && !jsonObj.get("category").isJsonNull()) && !jsonObj.get("category").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("category").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `category` to be a primitive type in the JSON string but got `%s`", jsonObj.get("category").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       // validate the optional field `_links`
       if (jsonObj.get("_links") != null && !jsonObj.get("_links").isJsonNull()) {
@@ -613,7 +614,7 @@ public class ExpandedMetric {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -628,22 +629,22 @@ public class ExpandedMetric {
     }
   }
 
- /**
-  * Create an instance of ExpandedMetric given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ExpandedMetric
-  * @throws IOException if the JSON string is invalid with respect to ExpandedMetric
-  */
+  /**
+   * Create an instance of ExpandedMetric given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ExpandedMetric
+   * @throws IOException if the JSON string is invalid with respect to ExpandedMetric
+   */
   public static ExpandedMetric fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ExpandedMetric.class);
   }
 
- /**
-  * Convert an instance of ExpandedMetric to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ExpandedMetric to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,22 +39,23 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * DestinationPost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class DestinationPost {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   /**
@@ -122,91 +124,94 @@ public class DestinationPost {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
+  @javax.annotation.Nullable
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
+  @javax.annotation.Nullable
   private Object config = null;
 
   public static final String SERIALIZED_NAME_ON = "on";
   @SerializedName(SERIALIZED_NAME_ON)
+  @javax.annotation.Nullable
   private Boolean on;
 
   public DestinationPost() {
   }
 
-  public DestinationPost name(String name) {
+  public DestinationPost name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-readable name for your Data Export destination
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public DestinationPost kind(KindEnum kind) {
+  public DestinationPost kind(@javax.annotation.Nullable KindEnum kind) {
     this.kind = kind;
     return this;
   }
 
-   /**
+  /**
    * The type of Data Export destination
    * @return kind
-  **/
+   */
   @javax.annotation.Nullable
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(KindEnum kind) {
+  public void setKind(@javax.annotation.Nullable KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public DestinationPost config(Object config) {
+  public DestinationPost config(@javax.annotation.Nullable Object config) {
     this.config = config;
     return this;
   }
 
-   /**
+  /**
    * An object with the configuration parameters required for the destination type
    * @return config
-  **/
+   */
   @javax.annotation.Nullable
   public Object getConfig() {
     return config;
   }
 
-  public void setConfig(Object config) {
+  public void setConfig(@javax.annotation.Nullable Object config) {
     this.config = config;
   }
 
 
-  public DestinationPost on(Boolean on) {
+  public DestinationPost on(@javax.annotation.Nullable Boolean on) {
     this.on = on;
     return this;
   }
 
-   /**
+  /**
    * Whether the export is on. Displayed as the integration status in the LaunchDarkly UI.
    * @return on
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getOn() {
     return on;
   }
 
-  public void setOn(Boolean on) {
+  public void setOn(@javax.annotation.Nullable Boolean on) {
     this.on = on;
   }
 
@@ -318,34 +323,30 @@ public class DestinationPost {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("kind");
-    openapiFields.add("config");
-    openapiFields.add("on");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "kind", "config", "on"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DestinationPost
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DestinationPost
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DestinationPost.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DestinationPost is not found in the empty JSON string", DestinationPost.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DestinationPost is not found in the empty JSON string", DestinationPost.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("kind") != null && !jsonObj.get("kind").isJsonNull()) && !jsonObj.get("kind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
       // validate the optional field `kind`
       if (jsonObj.get("kind") != null && !jsonObj.get("kind").isJsonNull()) {
@@ -410,7 +411,7 @@ public class DestinationPost {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -425,22 +426,22 @@ public class DestinationPost {
     }
   }
 
- /**
-  * Create an instance of DestinationPost given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DestinationPost
-  * @throws IOException if the JSON string is invalid with respect to DestinationPost
-  */
+  /**
+   * Create an instance of DestinationPost given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DestinationPost
+   * @throws IOException if the JSON string is invalid with respect to DestinationPost
+   */
   public static DestinationPost fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DestinationPost.class);
   }
 
- /**
-  * Convert an instance of DestinationPost to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DestinationPost to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

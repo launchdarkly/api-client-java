@@ -91,7 +91,8 @@ public class DataExportDestinationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Destination response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -100,7 +101,7 @@ public class DataExportDestinationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteDestinationCall(String projectKey, String environmentKey, String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteDestinationCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -148,7 +149,7 @@ public class DataExportDestinationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteDestinationValidateBeforeCall(String projectKey, String environmentKey, String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteDestinationValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling deleteDestination(Async)");
@@ -176,7 +177,8 @@ public class DataExportDestinationsApi {
      * @param id The Data Export destination ID (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Destination response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -185,7 +187,7 @@ public class DataExportDestinationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteDestination(String projectKey, String environmentKey, String id) throws ApiException {
+    public void deleteDestination(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id) throws ApiException {
         deleteDestinationWithHttpInfo(projectKey, environmentKey, id);
     }
 
@@ -198,7 +200,8 @@ public class DataExportDestinationsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Destination response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -207,7 +210,7 @@ public class DataExportDestinationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteDestinationWithHttpInfo(String projectKey, String environmentKey, String id) throws ApiException {
+    public ApiResponse<Void> deleteDestinationWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteDestinationValidateBeforeCall(projectKey, environmentKey, id, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -222,7 +225,8 @@ public class DataExportDestinationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Destination response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -231,7 +235,7 @@ public class DataExportDestinationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteDestinationAsync(String projectKey, String environmentKey, String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteDestinationAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteDestinationValidateBeforeCall(projectKey, environmentKey, id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -246,7 +250,8 @@ public class DataExportDestinationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Destination response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -255,7 +260,7 @@ public class DataExportDestinationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDestinationCall(String projectKey, String environmentKey, String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getDestinationCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -303,7 +308,7 @@ public class DataExportDestinationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getDestinationValidateBeforeCall(String projectKey, String environmentKey, String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getDestinationValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getDestination(Async)");
@@ -332,7 +337,8 @@ public class DataExportDestinationsApi {
      * @return Destination
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Destination response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -341,7 +347,7 @@ public class DataExportDestinationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Destination getDestination(String projectKey, String environmentKey, String id) throws ApiException {
+    public Destination getDestination(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id) throws ApiException {
         ApiResponse<Destination> localVarResp = getDestinationWithHttpInfo(projectKey, environmentKey, id);
         return localVarResp.getData();
     }
@@ -355,7 +361,8 @@ public class DataExportDestinationsApi {
      * @return ApiResponse&lt;Destination&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Destination response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -364,7 +371,7 @@ public class DataExportDestinationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Destination> getDestinationWithHttpInfo(String projectKey, String environmentKey, String id) throws ApiException {
+    public ApiResponse<Destination> getDestinationWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getDestinationValidateBeforeCall(projectKey, environmentKey, id, null);
         Type localVarReturnType = new TypeToken<Destination>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -380,7 +387,8 @@ public class DataExportDestinationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Destination response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -389,7 +397,7 @@ public class DataExportDestinationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDestinationAsync(String projectKey, String environmentKey, String id, final ApiCallback<Destination> _callback) throws ApiException {
+    public okhttp3.Call getDestinationAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback<Destination> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getDestinationValidateBeforeCall(projectKey, environmentKey, id, _callback);
         Type localVarReturnType = new TypeToken<Destination>(){}.getType();
@@ -402,7 +410,8 @@ public class DataExportDestinationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Destination collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -466,7 +475,8 @@ public class DataExportDestinationsApi {
      * @return Destinations
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Destination collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -485,7 +495,8 @@ public class DataExportDestinationsApi {
      * @return ApiResponse&lt;Destinations&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Destination collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -506,7 +517,8 @@ public class DataExportDestinationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Destination collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -531,7 +543,8 @@ public class DataExportDestinationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Destination response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -542,7 +555,7 @@ public class DataExportDestinationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchDestinationCall(String projectKey, String environmentKey, String id, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchDestinationCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -591,7 +604,7 @@ public class DataExportDestinationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchDestinationValidateBeforeCall(String projectKey, String environmentKey, String id, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchDestinationValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling patchDestination(Async)");
@@ -626,7 +639,8 @@ public class DataExportDestinationsApi {
      * @return Destination
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Destination response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -637,7 +651,7 @@ public class DataExportDestinationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Destination patchDestination(String projectKey, String environmentKey, String id, List<PatchOperation> patchOperation) throws ApiException {
+    public Destination patchDestination(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         ApiResponse<Destination> localVarResp = patchDestinationWithHttpInfo(projectKey, environmentKey, id, patchOperation);
         return localVarResp.getData();
     }
@@ -652,7 +666,8 @@ public class DataExportDestinationsApi {
      * @return ApiResponse&lt;Destination&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Destination response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -663,7 +678,7 @@ public class DataExportDestinationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Destination> patchDestinationWithHttpInfo(String projectKey, String environmentKey, String id, List<PatchOperation> patchOperation) throws ApiException {
+    public ApiResponse<Destination> patchDestinationWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         okhttp3.Call localVarCall = patchDestinationValidateBeforeCall(projectKey, environmentKey, id, patchOperation, null);
         Type localVarReturnType = new TypeToken<Destination>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -680,7 +695,8 @@ public class DataExportDestinationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Destination response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -691,7 +707,7 @@ public class DataExportDestinationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchDestinationAsync(String projectKey, String environmentKey, String id, List<PatchOperation> patchOperation, final ApiCallback<Destination> _callback) throws ApiException {
+    public okhttp3.Call patchDestinationAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback<Destination> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchDestinationValidateBeforeCall(projectKey, environmentKey, id, patchOperation, _callback);
         Type localVarReturnType = new TypeToken<Destination>(){}.getType();
@@ -707,7 +723,8 @@ public class DataExportDestinationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Destination response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -717,7 +734,7 @@ public class DataExportDestinationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postDestinationCall(String projectKey, String environmentKey, DestinationPost destinationPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postDestinationCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull DestinationPost destinationPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -765,7 +782,7 @@ public class DataExportDestinationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postDestinationValidateBeforeCall(String projectKey, String environmentKey, DestinationPost destinationPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postDestinationValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull DestinationPost destinationPost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling postDestination(Async)");
@@ -794,7 +811,8 @@ public class DataExportDestinationsApi {
      * @return Destination
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Destination response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -804,7 +822,7 @@ public class DataExportDestinationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Destination postDestination(String projectKey, String environmentKey, DestinationPost destinationPost) throws ApiException {
+    public Destination postDestination(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull DestinationPost destinationPost) throws ApiException {
         ApiResponse<Destination> localVarResp = postDestinationWithHttpInfo(projectKey, environmentKey, destinationPost);
         return localVarResp.getData();
     }
@@ -818,7 +836,8 @@ public class DataExportDestinationsApi {
      * @return ApiResponse&lt;Destination&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Destination response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -828,7 +847,7 @@ public class DataExportDestinationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Destination> postDestinationWithHttpInfo(String projectKey, String environmentKey, DestinationPost destinationPost) throws ApiException {
+    public ApiResponse<Destination> postDestinationWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull DestinationPost destinationPost) throws ApiException {
         okhttp3.Call localVarCall = postDestinationValidateBeforeCall(projectKey, environmentKey, destinationPost, null);
         Type localVarReturnType = new TypeToken<Destination>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -844,7 +863,8 @@ public class DataExportDestinationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Destination response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -854,7 +874,7 @@ public class DataExportDestinationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postDestinationAsync(String projectKey, String environmentKey, DestinationPost destinationPost, final ApiCallback<Destination> _callback) throws ApiException {
+    public okhttp3.Call postDestinationAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull DestinationPost destinationPost, final ApiCallback<Destination> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postDestinationValidateBeforeCall(projectKey, environmentKey, destinationPost, _callback);
         Type localVarReturnType = new TypeToken<Destination>(){}.getType();
@@ -867,7 +887,8 @@ public class DataExportDestinationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Generate warehouse destination key pair response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -933,7 +954,8 @@ public class DataExportDestinationsApi {
      * @return GenerateWarehouseDestinationKeyPairPostRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Generate warehouse destination key pair response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -954,7 +976,8 @@ public class DataExportDestinationsApi {
      * @return ApiResponse&lt;GenerateWarehouseDestinationKeyPairPostRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Generate warehouse destination key pair response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -977,7 +1000,8 @@ public class DataExportDestinationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Generate warehouse destination key pair response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>

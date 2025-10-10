@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,26 +44,28 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * DependentMetricGroupRepWithMetrics
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class DependentMetricGroupRepWithMetrics {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   /**
@@ -121,77 +124,80 @@ public class DependentMetricGroupRepWithMetrics {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
+  @javax.annotation.Nonnull
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_METRICS = "metrics";
   @SerializedName(SERIALIZED_NAME_METRICS)
+  @javax.annotation.Nullable
   private List<MetricInGroupRep> metrics = new ArrayList<>();
 
   public DependentMetricGroupRepWithMetrics() {
   }
 
-  public DependentMetricGroupRepWithMetrics key(String key) {
+  public DependentMetricGroupRepWithMetrics key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * A unique key to reference the metric group
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public DependentMetricGroupRepWithMetrics name(String name) {
+  public DependentMetricGroupRepWithMetrics name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for the metric group
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public DependentMetricGroupRepWithMetrics kind(KindEnum kind) {
+  public DependentMetricGroupRepWithMetrics kind(@javax.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
 
-   /**
+  /**
    * The type of the metric group
    * @return kind
-  **/
+   */
   @javax.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(KindEnum kind) {
+  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public DependentMetricGroupRepWithMetrics links(Map<String, Link> links) {
+  public DependentMetricGroupRepWithMetrics links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -204,21 +210,21 @@ public class DependentMetricGroupRepWithMetrics {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public DependentMetricGroupRepWithMetrics metrics(List<MetricInGroupRep> metrics) {
+  public DependentMetricGroupRepWithMetrics metrics(@javax.annotation.Nullable List<MetricInGroupRep> metrics) {
     this.metrics = metrics;
     return this;
   }
@@ -231,16 +237,16 @@ public class DependentMetricGroupRepWithMetrics {
     return this;
   }
 
-   /**
+  /**
    * The metrics in the metric group
    * @return metrics
-  **/
+   */
   @javax.annotation.Nullable
   public List<MetricInGroupRep> getMetrics() {
     return metrics;
   }
 
-  public void setMetrics(List<MetricInGroupRep> metrics) {
+  public void setMetrics(@javax.annotation.Nullable List<MetricInGroupRep> metrics) {
     this.metrics = metrics;
   }
 
@@ -343,49 +349,40 @@ public class DependentMetricGroupRepWithMetrics {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("key");
-    openapiFields.add("name");
-    openapiFields.add("kind");
-    openapiFields.add("_links");
-    openapiFields.add("metrics");
+    openapiFields = new HashSet<String>(Arrays.asList("key", "name", "kind", "_links", "metrics"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("kind");
-    openapiRequiredFields.add("_links");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("key", "name", "kind", "_links"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DependentMetricGroupRepWithMetrics
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DependentMetricGroupRepWithMetrics
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DependentMetricGroupRepWithMetrics.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DependentMetricGroupRepWithMetrics is not found in the empty JSON string", DependentMetricGroupRepWithMetrics.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DependentMetricGroupRepWithMetrics is not found in the empty JSON string", DependentMetricGroupRepWithMetrics.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : DependentMetricGroupRepWithMetrics.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("kind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
       // validate the required field `kind`
       KindEnum.validateJsonElement(jsonObj.get("kind"));
@@ -394,7 +391,7 @@ public class DependentMetricGroupRepWithMetrics {
         if (jsonArraymetrics != null) {
           // ensure the json data is an array
           if (!jsonObj.get("metrics").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `metrics` to be an array in the JSON string but got `%s`", jsonObj.get("metrics").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `metrics` to be an array in the JSON string but got `%s`", jsonObj.get("metrics").toString()));
           }
 
           // validate the optional field `metrics` (array)
@@ -462,7 +459,7 @@ public class DependentMetricGroupRepWithMetrics {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -477,22 +474,22 @@ public class DependentMetricGroupRepWithMetrics {
     }
   }
 
- /**
-  * Create an instance of DependentMetricGroupRepWithMetrics given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DependentMetricGroupRepWithMetrics
-  * @throws IOException if the JSON string is invalid with respect to DependentMetricGroupRepWithMetrics
-  */
+  /**
+   * Create an instance of DependentMetricGroupRepWithMetrics given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DependentMetricGroupRepWithMetrics
+   * @throws IOException if the JSON string is invalid with respect to DependentMetricGroupRepWithMetrics
+   */
   public static DependentMetricGroupRepWithMetrics fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DependentMetricGroupRepWithMetrics.class);
   }
 
- /**
-  * Convert an instance of DependentMetricGroupRepWithMetrics to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DependentMetricGroupRepWithMetrics to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

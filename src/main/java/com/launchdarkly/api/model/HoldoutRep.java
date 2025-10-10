@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,22 +42,23 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * HoldoutRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class HoldoutRep {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   /**
@@ -117,169 +119,176 @@ public class HoldoutRep {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nonnull
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_HOLDOUT_AMOUNT = "holdoutAmount";
   @SerializedName(SERIALIZED_NAME_HOLDOUT_AMOUNT)
+  @javax.annotation.Nonnull
   private String holdoutAmount;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "createdAt";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nonnull
   private Long createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updatedAt";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  @javax.annotation.Nonnull
   private Long updatedAt;
 
   public static final String SERIALIZED_NAME_BASE_EXPERIMENT = "baseExperiment";
   @SerializedName(SERIALIZED_NAME_BASE_EXPERIMENT)
+  @javax.annotation.Nonnull
   private Experiment baseExperiment;
 
   public static final String SERIALIZED_NAME_EXPERIMENTS = "experiments";
   @SerializedName(SERIALIZED_NAME_EXPERIMENTS)
+  @javax.annotation.Nullable
   private List<RelatedExperimentRep> experiments = new ArrayList<>();
 
   public HoldoutRep() {
   }
 
-  public HoldoutRep id(String id) {
+  public HoldoutRep id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public HoldoutRep status(StatusEnum status) {
+  public HoldoutRep status(@javax.annotation.Nonnull StatusEnum status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nonnull
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(@javax.annotation.Nonnull StatusEnum status) {
     this.status = status;
   }
 
 
-  public HoldoutRep description(String description) {
+  public HoldoutRep description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Get description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public HoldoutRep holdoutAmount(String holdoutAmount) {
+  public HoldoutRep holdoutAmount(@javax.annotation.Nonnull String holdoutAmount) {
     this.holdoutAmount = holdoutAmount;
     return this;
   }
 
-   /**
+  /**
    * The percentage of traffic allocated to this holdout.
    * @return holdoutAmount
-  **/
+   */
   @javax.annotation.Nonnull
   public String getHoldoutAmount() {
     return holdoutAmount;
   }
 
-  public void setHoldoutAmount(String holdoutAmount) {
+  public void setHoldoutAmount(@javax.annotation.Nonnull String holdoutAmount) {
     this.holdoutAmount = holdoutAmount;
   }
 
 
-  public HoldoutRep createdAt(Long createdAt) {
+  public HoldoutRep createdAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Get createdAt
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public HoldoutRep updatedAt(Long updatedAt) {
+  public HoldoutRep updatedAt(@javax.annotation.Nonnull Long updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
 
-   /**
+  /**
    * Get updatedAt
    * @return updatedAt
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(Long updatedAt) {
+  public void setUpdatedAt(@javax.annotation.Nonnull Long updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
-  public HoldoutRep baseExperiment(Experiment baseExperiment) {
+  public HoldoutRep baseExperiment(@javax.annotation.Nonnull Experiment baseExperiment) {
     this.baseExperiment = baseExperiment;
     return this;
   }
 
-   /**
+  /**
    * Get baseExperiment
    * @return baseExperiment
-  **/
+   */
   @javax.annotation.Nonnull
   public Experiment getBaseExperiment() {
     return baseExperiment;
   }
 
-  public void setBaseExperiment(Experiment baseExperiment) {
+  public void setBaseExperiment(@javax.annotation.Nonnull Experiment baseExperiment) {
     this.baseExperiment = baseExperiment;
   }
 
 
-  public HoldoutRep experiments(List<RelatedExperimentRep> experiments) {
+  public HoldoutRep experiments(@javax.annotation.Nullable List<RelatedExperimentRep> experiments) {
     this.experiments = experiments;
     return this;
   }
@@ -292,16 +301,16 @@ public class HoldoutRep {
     return this;
   }
 
-   /**
+  /**
    * Get experiments
    * @return experiments
-  **/
+   */
   @javax.annotation.Nullable
   public List<RelatedExperimentRep> getExperiments() {
     return experiments;
   }
 
-  public void setExperiments(List<RelatedExperimentRep> experiments) {
+  public void setExperiments(@javax.annotation.Nullable List<RelatedExperimentRep> experiments) {
     this.experiments = experiments;
   }
 
@@ -410,59 +419,45 @@ public class HoldoutRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_id");
-    openapiFields.add("status");
-    openapiFields.add("description");
-    openapiFields.add("holdoutAmount");
-    openapiFields.add("createdAt");
-    openapiFields.add("updatedAt");
-    openapiFields.add("baseExperiment");
-    openapiFields.add("experiments");
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "status", "description", "holdoutAmount", "createdAt", "updatedAt", "baseExperiment", "experiments"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("status");
-    openapiRequiredFields.add("holdoutAmount");
-    openapiRequiredFields.add("createdAt");
-    openapiRequiredFields.add("updatedAt");
-    openapiRequiredFields.add("baseExperiment");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "status", "holdoutAmount", "createdAt", "updatedAt", "baseExperiment"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to HoldoutRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to HoldoutRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!HoldoutRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in HoldoutRep is not found in the empty JSON string", HoldoutRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in HoldoutRep is not found in the empty JSON string", HoldoutRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : HoldoutRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if (!jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
       // validate the required field `status`
       StatusEnum.validateJsonElement(jsonObj.get("status"));
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if (!jsonObj.get("holdoutAmount").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `holdoutAmount` to be a primitive type in the JSON string but got `%s`", jsonObj.get("holdoutAmount").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `holdoutAmount` to be a primitive type in the JSON string but got `%s`", jsonObj.get("holdoutAmount").toString()));
       }
       // validate the required field `baseExperiment`
       Experiment.validateJsonElement(jsonObj.get("baseExperiment"));
@@ -471,7 +466,7 @@ public class HoldoutRep {
         if (jsonArrayexperiments != null) {
           // ensure the json data is an array
           if (!jsonObj.get("experiments").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `experiments` to be an array in the JSON string but got `%s`", jsonObj.get("experiments").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `experiments` to be an array in the JSON string but got `%s`", jsonObj.get("experiments").toString()));
           }
 
           // validate the optional field `experiments` (array)
@@ -539,7 +534,7 @@ public class HoldoutRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -554,22 +549,22 @@ public class HoldoutRep {
     }
   }
 
- /**
-  * Create an instance of HoldoutRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of HoldoutRep
-  * @throws IOException if the JSON string is invalid with respect to HoldoutRep
-  */
+  /**
+   * Create an instance of HoldoutRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of HoldoutRep
+   * @throws IOException if the JSON string is invalid with respect to HoldoutRep
+   */
   public static HoldoutRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, HoldoutRep.class);
   }
 
- /**
-  * Convert an instance of HoldoutRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of HoldoutRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

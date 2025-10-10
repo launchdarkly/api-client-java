@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,56 +44,64 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * Release
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class Release {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_RELEASE_PIPELINE_KEY = "releasePipelineKey";
   @SerializedName(SERIALIZED_NAME_RELEASE_PIPELINE_KEY)
+  @javax.annotation.Nonnull
   private String releasePipelineKey;
 
   public static final String SERIALIZED_NAME_RELEASE_PIPELINE_DESCRIPTION = "releasePipelineDescription";
   @SerializedName(SERIALIZED_NAME_RELEASE_PIPELINE_DESCRIPTION)
+  @javax.annotation.Nonnull
   private String releasePipelineDescription;
 
   public static final String SERIALIZED_NAME_PHASES = "phases";
   @SerializedName(SERIALIZED_NAME_PHASES)
+  @javax.annotation.Nonnull
   private List<ReleasePhase> phases = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VERSION = "_version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nonnull
   private Integer version;
 
   public static final String SERIALIZED_NAME_RELEASE_VARIATION_ID = "_releaseVariationId";
   @SerializedName(SERIALIZED_NAME_RELEASE_VARIATION_ID)
+  @javax.annotation.Nullable
   private String releaseVariationId;
 
   public static final String SERIALIZED_NAME_CANCELED_AT = "_canceledAt";
   @SerializedName(SERIALIZED_NAME_CANCELED_AT)
+  @javax.annotation.Nullable
   private Long canceledAt;
 
   public Release() {
   }
 
-  public Release links(Map<String, Link> links) {
+  public Release links(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -105,78 +114,78 @@ public class Release {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public Release name(String name) {
+  public Release name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The release pipeline name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public Release releasePipelineKey(String releasePipelineKey) {
+  public Release releasePipelineKey(@javax.annotation.Nonnull String releasePipelineKey) {
     this.releasePipelineKey = releasePipelineKey;
     return this;
   }
 
-   /**
+  /**
    * The release pipeline key
    * @return releasePipelineKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getReleasePipelineKey() {
     return releasePipelineKey;
   }
 
-  public void setReleasePipelineKey(String releasePipelineKey) {
+  public void setReleasePipelineKey(@javax.annotation.Nonnull String releasePipelineKey) {
     this.releasePipelineKey = releasePipelineKey;
   }
 
 
-  public Release releasePipelineDescription(String releasePipelineDescription) {
+  public Release releasePipelineDescription(@javax.annotation.Nonnull String releasePipelineDescription) {
     this.releasePipelineDescription = releasePipelineDescription;
     return this;
   }
 
-   /**
+  /**
    * The release pipeline description
    * @return releasePipelineDescription
-  **/
+   */
   @javax.annotation.Nonnull
   public String getReleasePipelineDescription() {
     return releasePipelineDescription;
   }
 
-  public void setReleasePipelineDescription(String releasePipelineDescription) {
+  public void setReleasePipelineDescription(@javax.annotation.Nonnull String releasePipelineDescription) {
     this.releasePipelineDescription = releasePipelineDescription;
   }
 
 
-  public Release phases(List<ReleasePhase> phases) {
+  public Release phases(@javax.annotation.Nonnull List<ReleasePhase> phases) {
     this.phases = phases;
     return this;
   }
@@ -189,73 +198,73 @@ public class Release {
     return this;
   }
 
-   /**
+  /**
    * An ordered list of the release pipeline phases
    * @return phases
-  **/
+   */
   @javax.annotation.Nonnull
   public List<ReleasePhase> getPhases() {
     return phases;
   }
 
-  public void setPhases(List<ReleasePhase> phases) {
+  public void setPhases(@javax.annotation.Nonnull List<ReleasePhase> phases) {
     this.phases = phases;
   }
 
 
-  public Release version(Integer version) {
+  public Release version(@javax.annotation.Nonnull Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * The release version
    * @return version
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nonnull Integer version) {
     this.version = version;
   }
 
 
-  public Release releaseVariationId(String releaseVariationId) {
+  public Release releaseVariationId(@javax.annotation.Nullable String releaseVariationId) {
     this.releaseVariationId = releaseVariationId;
     return this;
   }
 
-   /**
+  /**
    * The chosen release variation ID to use across all phases of a release
    * @return releaseVariationId
-  **/
+   */
   @javax.annotation.Nullable
   public String getReleaseVariationId() {
     return releaseVariationId;
   }
 
-  public void setReleaseVariationId(String releaseVariationId) {
+  public void setReleaseVariationId(@javax.annotation.Nullable String releaseVariationId) {
     this.releaseVariationId = releaseVariationId;
   }
 
 
-  public Release canceledAt(Long canceledAt) {
+  public Release canceledAt(@javax.annotation.Nullable Long canceledAt) {
     this.canceledAt = canceledAt;
     return this;
   }
 
-   /**
+  /**
    * Get canceledAt
    * @return canceledAt
-  **/
+   */
   @javax.annotation.Nullable
   public Long getCanceledAt() {
     return canceledAt;
   }
 
-  public void setCanceledAt(Long canceledAt) {
+  public void setCanceledAt(@javax.annotation.Nullable Long canceledAt) {
     this.canceledAt = canceledAt;
   }
 
@@ -364,57 +373,44 @@ public class Release {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_links");
-    openapiFields.add("name");
-    openapiFields.add("releasePipelineKey");
-    openapiFields.add("releasePipelineDescription");
-    openapiFields.add("phases");
-    openapiFields.add("_version");
-    openapiFields.add("_releaseVariationId");
-    openapiFields.add("_canceledAt");
+    openapiFields = new HashSet<String>(Arrays.asList("_links", "name", "releasePipelineKey", "releasePipelineDescription", "phases", "_version", "_releaseVariationId", "_canceledAt"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("releasePipelineKey");
-    openapiRequiredFields.add("releasePipelineDescription");
-    openapiRequiredFields.add("phases");
-    openapiRequiredFields.add("_version");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name", "releasePipelineKey", "releasePipelineDescription", "phases", "_version"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Release
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Release
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Release.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Release is not found in the empty JSON string", Release.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Release is not found in the empty JSON string", Release.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : Release.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("releasePipelineKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `releasePipelineKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("releasePipelineKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `releasePipelineKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("releasePipelineKey").toString()));
       }
       if (!jsonObj.get("releasePipelineDescription").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `releasePipelineDescription` to be a primitive type in the JSON string but got `%s`", jsonObj.get("releasePipelineDescription").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `releasePipelineDescription` to be a primitive type in the JSON string but got `%s`", jsonObj.get("releasePipelineDescription").toString()));
       }
       // ensure the json data is an array
       if (!jsonObj.get("phases").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `phases` to be an array in the JSON string but got `%s`", jsonObj.get("phases").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `phases` to be an array in the JSON string but got `%s`", jsonObj.get("phases").toString()));
       }
 
       JsonArray jsonArrayphases = jsonObj.getAsJsonArray("phases");
@@ -423,7 +419,7 @@ public class Release {
         ReleasePhase.validateJsonElement(jsonArrayphases.get(i));
       };
       if ((jsonObj.get("_releaseVariationId") != null && !jsonObj.get("_releaseVariationId").isJsonNull()) && !jsonObj.get("_releaseVariationId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_releaseVariationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_releaseVariationId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_releaseVariationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_releaseVariationId").toString()));
       }
   }
 
@@ -484,7 +480,7 @@ public class Release {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -499,22 +495,22 @@ public class Release {
     }
   }
 
- /**
-  * Create an instance of Release given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Release
-  * @throws IOException if the JSON string is invalid with respect to Release
-  */
+  /**
+   * Create an instance of Release given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Release
+   * @throws IOException if the JSON string is invalid with respect to Release
+   */
   public static Release fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Release.class);
   }
 
- /**
-  * Convert an instance of Release to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Release to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

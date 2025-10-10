@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,59 +42,63 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * IntegrationDeliveryConfigurationPost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class IntegrationDeliveryConfigurationPost {
   public static final String SERIALIZED_NAME_ON = "on";
   @SerializedName(SERIALIZED_NAME_ON)
+  @javax.annotation.Nullable
   private Boolean on;
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
+  @javax.annotation.Nonnull
   private Map<String, Object> config = new HashMap<>();
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public IntegrationDeliveryConfigurationPost() {
   }
 
-  public IntegrationDeliveryConfigurationPost on(Boolean on) {
+  public IntegrationDeliveryConfigurationPost on(@javax.annotation.Nullable Boolean on) {
     this.on = on;
     return this;
   }
 
-   /**
+  /**
    * Whether the integration configuration is active. Default value is false.
    * @return on
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getOn() {
     return on;
   }
 
-  public void setOn(Boolean on) {
+  public void setOn(@javax.annotation.Nullable Boolean on) {
     this.on = on;
   }
 
 
-  public IntegrationDeliveryConfigurationPost config(Map<String, Object> config) {
+  public IntegrationDeliveryConfigurationPost config(@javax.annotation.Nonnull Map<String, Object> config) {
     this.config = config;
     return this;
   }
@@ -106,21 +111,21 @@ public class IntegrationDeliveryConfigurationPost {
     return this;
   }
 
-   /**
+  /**
    * Get config
    * @return config
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Object> getConfig() {
     return config;
   }
 
-  public void setConfig(Map<String, Object> config) {
+  public void setConfig(@javax.annotation.Nonnull Map<String, Object> config) {
     this.config = config;
   }
 
 
-  public IntegrationDeliveryConfigurationPost tags(List<String> tags) {
+  public IntegrationDeliveryConfigurationPost tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -133,35 +138,35 @@ public class IntegrationDeliveryConfigurationPost {
     return this;
   }
 
-   /**
+  /**
    * Tags to associate with the integration
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
 
-  public IntegrationDeliveryConfigurationPost name(String name) {
+  public IntegrationDeliveryConfigurationPost name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Name to identify the integration
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
@@ -262,43 +267,38 @@ public class IntegrationDeliveryConfigurationPost {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("on");
-    openapiFields.add("config");
-    openapiFields.add("tags");
-    openapiFields.add("name");
+    openapiFields = new HashSet<String>(Arrays.asList("on", "config", "tags", "name"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("config");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("config"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to IntegrationDeliveryConfigurationPost
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to IntegrationDeliveryConfigurationPost
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IntegrationDeliveryConfigurationPost.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in IntegrationDeliveryConfigurationPost is not found in the empty JSON string", IntegrationDeliveryConfigurationPost.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in IntegrationDeliveryConfigurationPost is not found in the empty JSON string", IntegrationDeliveryConfigurationPost.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : IntegrationDeliveryConfigurationPost.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
   }
 
@@ -359,7 +359,7 @@ public class IntegrationDeliveryConfigurationPost {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -374,22 +374,22 @@ public class IntegrationDeliveryConfigurationPost {
     }
   }
 
- /**
-  * Create an instance of IntegrationDeliveryConfigurationPost given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of IntegrationDeliveryConfigurationPost
-  * @throws IOException if the JSON string is invalid with respect to IntegrationDeliveryConfigurationPost
-  */
+  /**
+   * Create an instance of IntegrationDeliveryConfigurationPost given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of IntegrationDeliveryConfigurationPost
+   * @throws IOException if the JSON string is invalid with respect to IntegrationDeliveryConfigurationPost
+   */
   public static IntegrationDeliveryConfigurationPost fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, IntegrationDeliveryConfigurationPost.class);
   }
 
- /**
-  * Convert an instance of IntegrationDeliveryConfigurationPost to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of IntegrationDeliveryConfigurationPost to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

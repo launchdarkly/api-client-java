@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,124 +43,130 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * BranchRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class BranchRep {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_HEAD = "head";
   @SerializedName(SERIALIZED_NAME_HEAD)
+  @javax.annotation.Nonnull
   private String head;
 
   public static final String SERIALIZED_NAME_UPDATE_SEQUENCE_ID = "updateSequenceId";
   @SerializedName(SERIALIZED_NAME_UPDATE_SEQUENCE_ID)
+  @javax.annotation.Nullable
   private Long updateSequenceId;
 
   public static final String SERIALIZED_NAME_SYNC_TIME = "syncTime";
   @SerializedName(SERIALIZED_NAME_SYNC_TIME)
+  @javax.annotation.Nonnull
   private Long syncTime;
 
   public static final String SERIALIZED_NAME_REFERENCES = "references";
   @SerializedName(SERIALIZED_NAME_REFERENCES)
+  @javax.annotation.Nullable
   private List<ReferenceRep> references = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Object> links = new HashMap<>();
 
   public BranchRep() {
   }
 
-  public BranchRep name(String name) {
+  public BranchRep name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The branch name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public BranchRep head(String head) {
+  public BranchRep head(@javax.annotation.Nonnull String head) {
     this.head = head;
     return this;
   }
 
-   /**
+  /**
    * An ID representing the branch HEAD. For example, a commit SHA.
    * @return head
-  **/
+   */
   @javax.annotation.Nonnull
   public String getHead() {
     return head;
   }
 
-  public void setHead(String head) {
+  public void setHead(@javax.annotation.Nonnull String head) {
     this.head = head;
   }
 
 
-  public BranchRep updateSequenceId(Long updateSequenceId) {
+  public BranchRep updateSequenceId(@javax.annotation.Nullable Long updateSequenceId) {
     this.updateSequenceId = updateSequenceId;
     return this;
   }
 
-   /**
+  /**
    * An optional ID used to prevent older data from overwriting newer data
    * @return updateSequenceId
-  **/
+   */
   @javax.annotation.Nullable
   public Long getUpdateSequenceId() {
     return updateSequenceId;
   }
 
-  public void setUpdateSequenceId(Long updateSequenceId) {
+  public void setUpdateSequenceId(@javax.annotation.Nullable Long updateSequenceId) {
     this.updateSequenceId = updateSequenceId;
   }
 
 
-  public BranchRep syncTime(Long syncTime) {
+  public BranchRep syncTime(@javax.annotation.Nonnull Long syncTime) {
     this.syncTime = syncTime;
     return this;
   }
 
-   /**
+  /**
    * Get syncTime
    * @return syncTime
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getSyncTime() {
     return syncTime;
   }
 
-  public void setSyncTime(Long syncTime) {
+  public void setSyncTime(@javax.annotation.Nonnull Long syncTime) {
     this.syncTime = syncTime;
   }
 
 
-  public BranchRep references(List<ReferenceRep> references) {
+  public BranchRep references(@javax.annotation.Nullable List<ReferenceRep> references) {
     this.references = references;
     return this;
   }
@@ -172,21 +179,21 @@ public class BranchRep {
     return this;
   }
 
-   /**
+  /**
    * An array of flag references found on the branch
    * @return references
-  **/
+   */
   @javax.annotation.Nullable
   public List<ReferenceRep> getReferences() {
     return references;
   }
 
-  public void setReferences(List<ReferenceRep> references) {
+  public void setReferences(@javax.annotation.Nullable List<ReferenceRep> references) {
     this.references = references;
   }
 
 
-  public BranchRep links(Map<String, Object> links) {
+  public BranchRep links(@javax.annotation.Nonnull Map<String, Object> links) {
     this.links = links;
     return this;
   }
@@ -199,16 +206,16 @@ public class BranchRep {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Object> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Object> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Object> links) {
     this.links = links;
   }
 
@@ -313,54 +320,44 @@ public class BranchRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("head");
-    openapiFields.add("updateSequenceId");
-    openapiFields.add("syncTime");
-    openapiFields.add("references");
-    openapiFields.add("_links");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "head", "updateSequenceId", "syncTime", "references", "_links"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("head");
-    openapiRequiredFields.add("syncTime");
-    openapiRequiredFields.add("_links");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name", "head", "syncTime", "_links"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to BranchRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to BranchRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!BranchRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in BranchRep is not found in the empty JSON string", BranchRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in BranchRep is not found in the empty JSON string", BranchRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : BranchRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("head").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `head` to be a primitive type in the JSON string but got `%s`", jsonObj.get("head").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `head` to be a primitive type in the JSON string but got `%s`", jsonObj.get("head").toString()));
       }
       if (jsonObj.get("references") != null && !jsonObj.get("references").isJsonNull()) {
         JsonArray jsonArrayreferences = jsonObj.getAsJsonArray("references");
         if (jsonArrayreferences != null) {
           // ensure the json data is an array
           if (!jsonObj.get("references").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `references` to be an array in the JSON string but got `%s`", jsonObj.get("references").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `references` to be an array in the JSON string but got `%s`", jsonObj.get("references").toString()));
           }
 
           // validate the optional field `references` (array)
@@ -428,7 +425,7 @@ public class BranchRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -443,22 +440,22 @@ public class BranchRep {
     }
   }
 
- /**
-  * Create an instance of BranchRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of BranchRep
-  * @throws IOException if the JSON string is invalid with respect to BranchRep
-  */
+  /**
+   * Create an instance of BranchRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of BranchRep
+   * @throws IOException if the JSON string is invalid with respect to BranchRep
+   */
   public static BranchRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, BranchRep.class);
   }
 
- /**
-  * Convert an instance of BranchRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of BranchRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -87,7 +87,8 @@ public class FollowFlagsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -96,7 +97,7 @@ public class FollowFlagsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteFlagFollowerCall(String projectKey, String featureFlagKey, String environmentKey, String memberId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteFlagFollowerCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String memberId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -145,7 +146,7 @@ public class FollowFlagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteFlagFollowerValidateBeforeCall(String projectKey, String featureFlagKey, String environmentKey, String memberId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteFlagFollowerValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String memberId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling deleteFlagFollower(Async)");
@@ -179,7 +180,8 @@ public class FollowFlagsApi {
      * @param memberId The memberId of the member to remove as a follower of the flag. Reader roles can only remove themselves. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -188,7 +190,7 @@ public class FollowFlagsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteFlagFollower(String projectKey, String featureFlagKey, String environmentKey, String memberId) throws ApiException {
+    public void deleteFlagFollower(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String memberId) throws ApiException {
         deleteFlagFollowerWithHttpInfo(projectKey, featureFlagKey, environmentKey, memberId);
     }
 
@@ -202,7 +204,8 @@ public class FollowFlagsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -211,7 +214,7 @@ public class FollowFlagsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteFlagFollowerWithHttpInfo(String projectKey, String featureFlagKey, String environmentKey, String memberId) throws ApiException {
+    public ApiResponse<Void> deleteFlagFollowerWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String memberId) throws ApiException {
         okhttp3.Call localVarCall = deleteFlagFollowerValidateBeforeCall(projectKey, featureFlagKey, environmentKey, memberId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -227,7 +230,8 @@ public class FollowFlagsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -236,7 +240,7 @@ public class FollowFlagsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteFlagFollowerAsync(String projectKey, String featureFlagKey, String environmentKey, String memberId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteFlagFollowerAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String memberId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteFlagFollowerValidateBeforeCall(projectKey, featureFlagKey, environmentKey, memberId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -251,7 +255,8 @@ public class FollowFlagsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag followers response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -260,7 +265,7 @@ public class FollowFlagsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFlagFollowersCall(String projectKey, String featureFlagKey, String environmentKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getFlagFollowersCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -308,7 +313,7 @@ public class FollowFlagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFlagFollowersValidateBeforeCall(String projectKey, String featureFlagKey, String environmentKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getFlagFollowersValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getFlagFollowers(Async)");
@@ -337,7 +342,8 @@ public class FollowFlagsApi {
      * @return FlagFollowersGetRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag followers response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -346,7 +352,7 @@ public class FollowFlagsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public FlagFollowersGetRep getFlagFollowers(String projectKey, String featureFlagKey, String environmentKey) throws ApiException {
+    public FlagFollowersGetRep getFlagFollowers(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey) throws ApiException {
         ApiResponse<FlagFollowersGetRep> localVarResp = getFlagFollowersWithHttpInfo(projectKey, featureFlagKey, environmentKey);
         return localVarResp.getData();
     }
@@ -360,7 +366,8 @@ public class FollowFlagsApi {
      * @return ApiResponse&lt;FlagFollowersGetRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag followers response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -369,7 +376,7 @@ public class FollowFlagsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FlagFollowersGetRep> getFlagFollowersWithHttpInfo(String projectKey, String featureFlagKey, String environmentKey) throws ApiException {
+    public ApiResponse<FlagFollowersGetRep> getFlagFollowersWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey) throws ApiException {
         okhttp3.Call localVarCall = getFlagFollowersValidateBeforeCall(projectKey, featureFlagKey, environmentKey, null);
         Type localVarReturnType = new TypeToken<FlagFollowersGetRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -385,7 +392,8 @@ public class FollowFlagsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag followers response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -394,7 +402,7 @@ public class FollowFlagsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFlagFollowersAsync(String projectKey, String featureFlagKey, String environmentKey, final ApiCallback<FlagFollowersGetRep> _callback) throws ApiException {
+    public okhttp3.Call getFlagFollowersAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback<FlagFollowersGetRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFlagFollowersValidateBeforeCall(projectKey, featureFlagKey, environmentKey, _callback);
         Type localVarReturnType = new TypeToken<FlagFollowersGetRep>(){}.getType();
@@ -409,7 +417,8 @@ public class FollowFlagsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flags and flag followers response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -418,7 +427,7 @@ public class FollowFlagsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFollowersByProjEnvCall(String projectKey, String environmentKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getFollowersByProjEnvCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -465,7 +474,7 @@ public class FollowFlagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFollowersByProjEnvValidateBeforeCall(String projectKey, String environmentKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getFollowersByProjEnvValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getFollowersByProjEnv(Async)");
@@ -488,7 +497,8 @@ public class FollowFlagsApi {
      * @return FlagFollowersByProjEnvGetRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flags and flag followers response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -497,7 +507,7 @@ public class FollowFlagsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public FlagFollowersByProjEnvGetRep getFollowersByProjEnv(String projectKey, String environmentKey) throws ApiException {
+    public FlagFollowersByProjEnvGetRep getFollowersByProjEnv(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey) throws ApiException {
         ApiResponse<FlagFollowersByProjEnvGetRep> localVarResp = getFollowersByProjEnvWithHttpInfo(projectKey, environmentKey);
         return localVarResp.getData();
     }
@@ -510,7 +520,8 @@ public class FollowFlagsApi {
      * @return ApiResponse&lt;FlagFollowersByProjEnvGetRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flags and flag followers response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -519,7 +530,7 @@ public class FollowFlagsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FlagFollowersByProjEnvGetRep> getFollowersByProjEnvWithHttpInfo(String projectKey, String environmentKey) throws ApiException {
+    public ApiResponse<FlagFollowersByProjEnvGetRep> getFollowersByProjEnvWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey) throws ApiException {
         okhttp3.Call localVarCall = getFollowersByProjEnvValidateBeforeCall(projectKey, environmentKey, null);
         Type localVarReturnType = new TypeToken<FlagFollowersByProjEnvGetRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -534,7 +545,8 @@ public class FollowFlagsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flags and flag followers response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -543,7 +555,7 @@ public class FollowFlagsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFollowersByProjEnvAsync(String projectKey, String environmentKey, final ApiCallback<FlagFollowersByProjEnvGetRep> _callback) throws ApiException {
+    public okhttp3.Call getFollowersByProjEnvAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback<FlagFollowersByProjEnvGetRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFollowersByProjEnvValidateBeforeCall(projectKey, environmentKey, _callback);
         Type localVarReturnType = new TypeToken<FlagFollowersByProjEnvGetRep>(){}.getType();
@@ -560,7 +572,8 @@ public class FollowFlagsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -569,7 +582,7 @@ public class FollowFlagsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putFlagFollowerCall(String projectKey, String featureFlagKey, String environmentKey, String memberId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call putFlagFollowerCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String memberId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -618,7 +631,7 @@ public class FollowFlagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call putFlagFollowerValidateBeforeCall(String projectKey, String featureFlagKey, String environmentKey, String memberId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call putFlagFollowerValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String memberId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling putFlagFollower(Async)");
@@ -652,7 +665,8 @@ public class FollowFlagsApi {
      * @param memberId The memberId of the member to add as a follower of the flag. Reader roles can only add themselves. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -661,7 +675,7 @@ public class FollowFlagsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public void putFlagFollower(String projectKey, String featureFlagKey, String environmentKey, String memberId) throws ApiException {
+    public void putFlagFollower(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String memberId) throws ApiException {
         putFlagFollowerWithHttpInfo(projectKey, featureFlagKey, environmentKey, memberId);
     }
 
@@ -675,7 +689,8 @@ public class FollowFlagsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -684,7 +699,7 @@ public class FollowFlagsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> putFlagFollowerWithHttpInfo(String projectKey, String featureFlagKey, String environmentKey, String memberId) throws ApiException {
+    public ApiResponse<Void> putFlagFollowerWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String memberId) throws ApiException {
         okhttp3.Call localVarCall = putFlagFollowerValidateBeforeCall(projectKey, featureFlagKey, environmentKey, memberId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -700,7 +715,8 @@ public class FollowFlagsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -709,7 +725,7 @@ public class FollowFlagsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putFlagFollowerAsync(String projectKey, String featureFlagKey, String environmentKey, String memberId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call putFlagFollowerAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String memberId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putFlagFollowerValidateBeforeCall(projectKey, featureFlagKey, environmentKey, memberId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);

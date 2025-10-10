@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,65 +39,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * MetricEventDefaultRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class MetricEventDefaultRep {
   public static final String SERIALIZED_NAME_DISABLED = "disabled";
   @SerializedName(SERIALIZED_NAME_DISABLED)
+  @javax.annotation.Nullable
   private Boolean disabled;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nullable
   private BigDecimal value;
 
   public MetricEventDefaultRep() {
   }
 
-  public MetricEventDefaultRep disabled(Boolean disabled) {
+  public MetricEventDefaultRep disabled(@javax.annotation.Nullable Boolean disabled) {
     this.disabled = disabled;
     return this;
   }
 
-   /**
+  /**
    * Whether to disable defaulting missing unit events when calculating results. Defaults to false
    * @return disabled
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getDisabled() {
     return disabled;
   }
 
-  public void setDisabled(Boolean disabled) {
+  public void setDisabled(@javax.annotation.Nullable Boolean disabled) {
     this.disabled = disabled;
   }
 
 
-  public MetricEventDefaultRep value(BigDecimal value) {
+  public MetricEventDefaultRep value(@javax.annotation.Nullable BigDecimal value) {
     this.value = value;
     return this;
   }
 
-   /**
+  /**
    * The default value applied to missing unit events. Set to 0 when &lt;code&gt;disabled&lt;/code&gt; is false. No other values are currently supported.
    * @return value
-  **/
+   */
   @javax.annotation.Nullable
   public BigDecimal getValue() {
     return value;
   }
 
-  public void setValue(BigDecimal value) {
+  public void setValue(@javax.annotation.Nullable BigDecimal value) {
     this.value = value;
   }
 
@@ -193,24 +196,22 @@ public class MetricEventDefaultRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("disabled");
-    openapiFields.add("value");
+    openapiFields = new HashSet<String>(Arrays.asList("disabled", "value"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to MetricEventDefaultRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to MetricEventDefaultRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!MetricEventDefaultRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in MetricEventDefaultRep is not found in the empty JSON string", MetricEventDefaultRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in MetricEventDefaultRep is not found in the empty JSON string", MetricEventDefaultRep.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -273,7 +274,7 @@ public class MetricEventDefaultRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -288,22 +289,22 @@ public class MetricEventDefaultRep {
     }
   }
 
- /**
-  * Create an instance of MetricEventDefaultRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of MetricEventDefaultRep
-  * @throws IOException if the JSON string is invalid with respect to MetricEventDefaultRep
-  */
+  /**
+   * Create an instance of MetricEventDefaultRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of MetricEventDefaultRep
+   * @throws IOException if the JSON string is invalid with respect to MetricEventDefaultRep
+   */
   public static MetricEventDefaultRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, MetricEventDefaultRep.class);
   }
 
- /**
-  * Convert an instance of MetricEventDefaultRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of MetricEventDefaultRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,64 +45,74 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * IntegrationConfigurationsRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class IntegrationConfigurationsRep {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "_createdAt";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private Long createdAt;
 
   public static final String SERIALIZED_NAME_INTEGRATION_KEY = "_integrationKey";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_KEY)
+  @javax.annotation.Nullable
   private String integrationKey;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
+  @javax.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_ACCESS = "_access";
   @SerializedName(SERIALIZED_NAME_ACCESS)
+  @javax.annotation.Nullable
   private Access access;
 
   public static final String SERIALIZED_NAME_CONFIG_VALUES = "configValues";
   @SerializedName(SERIALIZED_NAME_CONFIG_VALUES)
+  @javax.annotation.Nullable
   private Map<String, Object> configValues = new HashMap<>();
 
   public static final String SERIALIZED_NAME_CAPABILITY_CONFIG = "capabilityConfig";
   @SerializedName(SERIALIZED_NAME_CAPABILITY_CONFIG)
+  @javax.annotation.Nullable
   private CapabilityConfigRep capabilityConfig;
 
   public IntegrationConfigurationsRep() {
   }
 
-  public IntegrationConfigurationsRep links(Map<String, Link> links) {
+  public IntegrationConfigurationsRep links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -114,97 +125,97 @@ public class IntegrationConfigurationsRep {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public IntegrationConfigurationsRep id(String id) {
+  public IntegrationConfigurationsRep id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The unique identifier for this integration configuration
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public IntegrationConfigurationsRep name(String name) {
+  public IntegrationConfigurationsRep name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for the integration
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public IntegrationConfigurationsRep createdAt(Long createdAt) {
+  public IntegrationConfigurationsRep createdAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Get createdAt
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   public Long getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public IntegrationConfigurationsRep integrationKey(String integrationKey) {
+  public IntegrationConfigurationsRep integrationKey(@javax.annotation.Nullable String integrationKey) {
     this.integrationKey = integrationKey;
     return this;
   }
 
-   /**
+  /**
    * The type of integration
    * @return integrationKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getIntegrationKey() {
     return integrationKey;
   }
 
-  public void setIntegrationKey(String integrationKey) {
+  public void setIntegrationKey(@javax.annotation.Nullable String integrationKey) {
     this.integrationKey = integrationKey;
   }
 
 
-  public IntegrationConfigurationsRep tags(List<String> tags) {
+  public IntegrationConfigurationsRep tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -217,59 +228,59 @@ public class IntegrationConfigurationsRep {
     return this;
   }
 
-   /**
+  /**
    * An array of tags for this integration
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
 
-  public IntegrationConfigurationsRep enabled(Boolean enabled) {
+  public IntegrationConfigurationsRep enabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
 
-   /**
+  /**
    * Whether the integration is currently active
    * @return enabled
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(Boolean enabled) {
+  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public IntegrationConfigurationsRep access(Access access) {
+  public IntegrationConfigurationsRep access(@javax.annotation.Nullable Access access) {
     this.access = access;
     return this;
   }
 
-   /**
+  /**
    * Get access
    * @return access
-  **/
+   */
   @javax.annotation.Nullable
   public Access getAccess() {
     return access;
   }
 
-  public void setAccess(Access access) {
+  public void setAccess(@javax.annotation.Nullable Access access) {
     this.access = access;
   }
 
 
-  public IntegrationConfigurationsRep configValues(Map<String, Object> configValues) {
+  public IntegrationConfigurationsRep configValues(@javax.annotation.Nullable Map<String, Object> configValues) {
     this.configValues = configValues;
     return this;
   }
@@ -282,35 +293,35 @@ public class IntegrationConfigurationsRep {
     return this;
   }
 
-   /**
+  /**
    * Details on configuration for an integration of this type. Refer to the &lt;code&gt;formVariables&lt;/code&gt; field in the corresponding &lt;code&gt;manifest.json&lt;/code&gt; for a full list of fields for each integration.
    * @return configValues
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Object> getConfigValues() {
     return configValues;
   }
 
-  public void setConfigValues(Map<String, Object> configValues) {
+  public void setConfigValues(@javax.annotation.Nullable Map<String, Object> configValues) {
     this.configValues = configValues;
   }
 
 
-  public IntegrationConfigurationsRep capabilityConfig(CapabilityConfigRep capabilityConfig) {
+  public IntegrationConfigurationsRep capabilityConfig(@javax.annotation.Nullable CapabilityConfigRep capabilityConfig) {
     this.capabilityConfig = capabilityConfig;
     return this;
   }
 
-   /**
+  /**
    * Get capabilityConfig
    * @return capabilityConfig
-  **/
+   */
   @javax.annotation.Nullable
   public CapabilityConfigRep getCapabilityConfig() {
     return capabilityConfig;
   }
 
-  public void setCapabilityConfig(CapabilityConfigRep capabilityConfig) {
+  public void setCapabilityConfig(@javax.annotation.Nullable CapabilityConfigRep capabilityConfig) {
     this.capabilityConfig = capabilityConfig;
   }
 
@@ -423,57 +434,44 @@ public class IntegrationConfigurationsRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_links");
-    openapiFields.add("_id");
-    openapiFields.add("name");
-    openapiFields.add("_createdAt");
-    openapiFields.add("_integrationKey");
-    openapiFields.add("tags");
-    openapiFields.add("enabled");
-    openapiFields.add("_access");
-    openapiFields.add("configValues");
-    openapiFields.add("capabilityConfig");
+    openapiFields = new HashSet<String>(Arrays.asList("_links", "_id", "name", "_createdAt", "_integrationKey", "tags", "enabled", "_access", "configValues", "capabilityConfig"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_links");
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("name");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_links", "_id", "name"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to IntegrationConfigurationsRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to IntegrationConfigurationsRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IntegrationConfigurationsRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in IntegrationConfigurationsRep is not found in the empty JSON string", IntegrationConfigurationsRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in IntegrationConfigurationsRep is not found in the empty JSON string", IntegrationConfigurationsRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : IntegrationConfigurationsRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("_integrationKey") != null && !jsonObj.get("_integrationKey").isJsonNull()) && !jsonObj.get("_integrationKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_integrationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_integrationKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_integrationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_integrationKey").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       // validate the optional field `_access`
       if (jsonObj.get("_access") != null && !jsonObj.get("_access").isJsonNull()) {
@@ -542,7 +540,7 @@ public class IntegrationConfigurationsRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -557,22 +555,22 @@ public class IntegrationConfigurationsRep {
     }
   }
 
- /**
-  * Create an instance of IntegrationConfigurationsRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of IntegrationConfigurationsRep
-  * @throws IOException if the JSON string is invalid with respect to IntegrationConfigurationsRep
-  */
+  /**
+   * Create an instance of IntegrationConfigurationsRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of IntegrationConfigurationsRep
+   * @throws IOException if the JSON string is invalid with respect to IntegrationConfigurationsRep
+   */
   public static IntegrationConfigurationsRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, IntegrationConfigurationsRep.class);
   }
 
- /**
-  * Convert an instance of IntegrationConfigurationsRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of IntegrationConfigurationsRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

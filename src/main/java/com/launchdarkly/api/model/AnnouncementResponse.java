@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,42 +40,48 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * Announcement response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AnnouncementResponse {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_IS_DISMISSIBLE = "isDismissible";
   @SerializedName(SERIALIZED_NAME_IS_DISMISSIBLE)
+  @javax.annotation.Nonnull
   private Boolean isDismissible;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
+  @javax.annotation.Nonnull
   private String title;
 
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
+  @javax.annotation.Nonnull
   private String message;
 
   public static final String SERIALIZED_NAME_START_TIME = "startTime";
   @SerializedName(SERIALIZED_NAME_START_TIME)
+  @javax.annotation.Nonnull
   private Long startTime;
 
   public static final String SERIALIZED_NAME_END_TIME = "endTime";
   @SerializedName(SERIALIZED_NAME_END_TIME)
+  @javax.annotation.Nullable
   private Long endTime;
 
   /**
@@ -133,6 +140,7 @@ public class AnnouncementResponse {
 
   public static final String SERIALIZED_NAME_SEVERITY = "severity";
   @SerializedName(SERIALIZED_NAME_SEVERITY)
+  @javax.annotation.Nonnull
   private SeverityEnum severity;
 
   /**
@@ -191,205 +199,208 @@ public class AnnouncementResponse {
 
   public static final String SERIALIZED_NAME_STATUS = "_status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nonnull
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_ACCESS = "_access";
   @SerializedName(SERIALIZED_NAME_ACCESS)
+  @javax.annotation.Nullable
   private AnnouncementAccessRep access;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private AnnouncementResponseLinks links;
 
   public AnnouncementResponse() {
   }
 
-  public AnnouncementResponse id(String id) {
+  public AnnouncementResponse id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The ID of the announcement
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public AnnouncementResponse isDismissible(Boolean isDismissible) {
+  public AnnouncementResponse isDismissible(@javax.annotation.Nonnull Boolean isDismissible) {
     this.isDismissible = isDismissible;
     return this;
   }
 
-   /**
+  /**
    * true if the announcement is dismissible
    * @return isDismissible
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getIsDismissible() {
     return isDismissible;
   }
 
-  public void setIsDismissible(Boolean isDismissible) {
+  public void setIsDismissible(@javax.annotation.Nonnull Boolean isDismissible) {
     this.isDismissible = isDismissible;
   }
 
 
-  public AnnouncementResponse title(String title) {
+  public AnnouncementResponse title(@javax.annotation.Nonnull String title) {
     this.title = title;
     return this;
   }
 
-   /**
+  /**
    * The title of the announcement
    * @return title
-  **/
+   */
   @javax.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(String title) {
+  public void setTitle(@javax.annotation.Nonnull String title) {
     this.title = title;
   }
 
 
-  public AnnouncementResponse message(String message) {
+  public AnnouncementResponse message(@javax.annotation.Nonnull String message) {
     this.message = message;
     return this;
   }
 
-   /**
+  /**
    * The message of the announcement
    * @return message
-  **/
+   */
   @javax.annotation.Nonnull
   public String getMessage() {
     return message;
   }
 
-  public void setMessage(String message) {
+  public void setMessage(@javax.annotation.Nonnull String message) {
     this.message = message;
   }
 
 
-  public AnnouncementResponse startTime(Long startTime) {
+  public AnnouncementResponse startTime(@javax.annotation.Nonnull Long startTime) {
     this.startTime = startTime;
     return this;
   }
 
-   /**
+  /**
    * The start time of the announcement. This is a Unix timestamp in milliseconds.
    * @return startTime
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getStartTime() {
     return startTime;
   }
 
-  public void setStartTime(Long startTime) {
+  public void setStartTime(@javax.annotation.Nonnull Long startTime) {
     this.startTime = startTime;
   }
 
 
-  public AnnouncementResponse endTime(Long endTime) {
+  public AnnouncementResponse endTime(@javax.annotation.Nullable Long endTime) {
     this.endTime = endTime;
     return this;
   }
 
-   /**
+  /**
    * The end time of the announcement. This is a Unix timestamp in milliseconds.
    * @return endTime
-  **/
+   */
   @javax.annotation.Nullable
   public Long getEndTime() {
     return endTime;
   }
 
-  public void setEndTime(Long endTime) {
+  public void setEndTime(@javax.annotation.Nullable Long endTime) {
     this.endTime = endTime;
   }
 
 
-  public AnnouncementResponse severity(SeverityEnum severity) {
+  public AnnouncementResponse severity(@javax.annotation.Nonnull SeverityEnum severity) {
     this.severity = severity;
     return this;
   }
 
-   /**
+  /**
    * The severity of the announcement
    * @return severity
-  **/
+   */
   @javax.annotation.Nonnull
   public SeverityEnum getSeverity() {
     return severity;
   }
 
-  public void setSeverity(SeverityEnum severity) {
+  public void setSeverity(@javax.annotation.Nonnull SeverityEnum severity) {
     this.severity = severity;
   }
 
 
-  public AnnouncementResponse status(StatusEnum status) {
+  public AnnouncementResponse status(@javax.annotation.Nonnull StatusEnum status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * The status of the announcement
    * @return status
-  **/
+   */
   @javax.annotation.Nonnull
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(@javax.annotation.Nonnull StatusEnum status) {
     this.status = status;
   }
 
 
-  public AnnouncementResponse access(AnnouncementAccessRep access) {
+  public AnnouncementResponse access(@javax.annotation.Nullable AnnouncementAccessRep access) {
     this.access = access;
     return this;
   }
 
-   /**
+  /**
    * Get access
    * @return access
-  **/
+   */
   @javax.annotation.Nullable
   public AnnouncementAccessRep getAccess() {
     return access;
   }
 
-  public void setAccess(AnnouncementAccessRep access) {
+  public void setAccess(@javax.annotation.Nullable AnnouncementAccessRep access) {
     this.access = access;
   }
 
 
-  public AnnouncementResponse links(AnnouncementResponseLinks links) {
+  public AnnouncementResponse links(@javax.annotation.Nonnull AnnouncementResponseLinks links) {
     this.links = links;
     return this;
   }
 
-   /**
+  /**
    * Get links
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public AnnouncementResponseLinks getLinks() {
     return links;
   }
 
-  public void setLinks(AnnouncementResponseLinks links) {
+  public void setLinks(@javax.annotation.Nonnull AnnouncementResponseLinks links) {
     this.links = links;
   }
 
@@ -502,66 +513,48 @@ public class AnnouncementResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_id");
-    openapiFields.add("isDismissible");
-    openapiFields.add("title");
-    openapiFields.add("message");
-    openapiFields.add("startTime");
-    openapiFields.add("endTime");
-    openapiFields.add("severity");
-    openapiFields.add("_status");
-    openapiFields.add("_access");
-    openapiFields.add("_links");
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "isDismissible", "title", "message", "startTime", "endTime", "severity", "_status", "_access", "_links"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("isDismissible");
-    openapiRequiredFields.add("title");
-    openapiRequiredFields.add("message");
-    openapiRequiredFields.add("startTime");
-    openapiRequiredFields.add("severity");
-    openapiRequiredFields.add("_status");
-    openapiRequiredFields.add("_links");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "isDismissible", "title", "message", "startTime", "severity", "_status", "_links"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to AnnouncementResponse
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AnnouncementResponse
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AnnouncementResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AnnouncementResponse is not found in the empty JSON string", AnnouncementResponse.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AnnouncementResponse is not found in the empty JSON string", AnnouncementResponse.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : AnnouncementResponse.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if (!jsonObj.get("title").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
       }
       if (!jsonObj.get("message").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
       }
       if (!jsonObj.get("severity").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `severity` to be a primitive type in the JSON string but got `%s`", jsonObj.get("severity").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `severity` to be a primitive type in the JSON string but got `%s`", jsonObj.get("severity").toString()));
       }
       // validate the required field `severity`
       SeverityEnum.validateJsonElement(jsonObj.get("severity"));
       if (!jsonObj.get("_status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_status").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_status").toString()));
       }
       // validate the required field `_status`
       StatusEnum.validateJsonElement(jsonObj.get("_status"));
@@ -630,7 +623,7 @@ public class AnnouncementResponse {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -645,22 +638,22 @@ public class AnnouncementResponse {
     }
   }
 
- /**
-  * Create an instance of AnnouncementResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AnnouncementResponse
-  * @throws IOException if the JSON string is invalid with respect to AnnouncementResponse
-  */
+  /**
+   * Create an instance of AnnouncementResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AnnouncementResponse
+   * @throws IOException if the JSON string is invalid with respect to AnnouncementResponse
+   */
   public static AnnouncementResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AnnouncementResponse.class);
   }
 
- /**
-  * Convert an instance of AnnouncementResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AnnouncementResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

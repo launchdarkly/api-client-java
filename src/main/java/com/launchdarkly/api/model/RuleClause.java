@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,22 +38,23 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * RuleClause
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class RuleClause {
   public static final String SERIALIZED_NAME_ATTRIBUTE = "attribute";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTE)
+  @javax.annotation.Nullable
   private String attribute;
 
   /**
@@ -62,33 +64,33 @@ public class RuleClause {
   public enum OpEnum {
     IN("in"),
     
-    ENDSWITH("endsWith"),
+    ENDS_WITH("endsWith"),
     
-    STARTSWITH("startsWith"),
+    STARTS_WITH("startsWith"),
     
     MATCHES("matches"),
     
     CONTAINS("contains"),
     
-    LESSTHAN("lessThan"),
+    LESS_THAN("lessThan"),
     
-    LESSTHANOREQUAL("lessThanOrEqual"),
+    LESS_THAN_OR_EQUAL("lessThanOrEqual"),
     
-    GREATERTHAN("greaterThan"),
+    GREATER_THAN("greaterThan"),
     
-    GREATERTHANOREQUAL("greaterThanOrEqual"),
+    GREATER_THAN_OR_EQUAL("greaterThanOrEqual"),
     
     BEFORE("before"),
     
     AFTER("after"),
     
-    SEGMENTMATCH("segmentMatch"),
+    SEGMENT_MATCH("segmentMatch"),
     
-    SEMVEREQUAL("semVerEqual"),
+    SEM_VER_EQUAL("semVerEqual"),
     
-    SEMVERLESSTHAN("semVerLessThan"),
+    SEM_VER_LESS_THAN("semVerLessThan"),
     
-    SEMVERGREATERTHAN("semVerGreaterThan");
+    SEM_VER_GREATER_THAN("semVerGreaterThan");
 
     private String value;
 
@@ -135,68 +137,70 @@ public class RuleClause {
 
   public static final String SERIALIZED_NAME_OP = "op";
   @SerializedName(SERIALIZED_NAME_OP)
+  @javax.annotation.Nullable
   private OpEnum op;
 
   public static final String SERIALIZED_NAME_NEGATE = "negate";
   @SerializedName(SERIALIZED_NAME_NEGATE)
+  @javax.annotation.Nullable
   private Boolean negate;
 
   public RuleClause() {
   }
 
-  public RuleClause attribute(String attribute) {
+  public RuleClause attribute(@javax.annotation.Nullable String attribute) {
     this.attribute = attribute;
     return this;
   }
 
-   /**
+  /**
    * The attribute the rule applies to, for example, last name or email address
    * @return attribute
-  **/
+   */
   @javax.annotation.Nullable
   public String getAttribute() {
     return attribute;
   }
 
-  public void setAttribute(String attribute) {
+  public void setAttribute(@javax.annotation.Nullable String attribute) {
     this.attribute = attribute;
   }
 
 
-  public RuleClause op(OpEnum op) {
+  public RuleClause op(@javax.annotation.Nullable OpEnum op) {
     this.op = op;
     return this;
   }
 
-   /**
+  /**
    * The operator to apply to the given attribute
    * @return op
-  **/
+   */
   @javax.annotation.Nullable
   public OpEnum getOp() {
     return op;
   }
 
-  public void setOp(OpEnum op) {
+  public void setOp(@javax.annotation.Nullable OpEnum op) {
     this.op = op;
   }
 
 
-  public RuleClause negate(Boolean negate) {
+  public RuleClause negate(@javax.annotation.Nullable Boolean negate) {
     this.negate = negate;
     return this;
   }
 
-   /**
+  /**
    * Whether the operator should be negated
    * @return negate
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getNegate() {
     return negate;
   }
 
-  public void setNegate(Boolean negate) {
+  public void setNegate(@javax.annotation.Nullable Boolean negate) {
     this.negate = negate;
   }
 
@@ -295,33 +299,30 @@ public class RuleClause {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("attribute");
-    openapiFields.add("op");
-    openapiFields.add("negate");
+    openapiFields = new HashSet<String>(Arrays.asList("attribute", "op", "negate"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to RuleClause
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to RuleClause
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RuleClause.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in RuleClause is not found in the empty JSON string", RuleClause.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in RuleClause is not found in the empty JSON string", RuleClause.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("attribute") != null && !jsonObj.get("attribute").isJsonNull()) && !jsonObj.get("attribute").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `attribute` to be a primitive type in the JSON string but got `%s`", jsonObj.get("attribute").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `attribute` to be a primitive type in the JSON string but got `%s`", jsonObj.get("attribute").toString()));
       }
       if ((jsonObj.get("op") != null && !jsonObj.get("op").isJsonNull()) && !jsonObj.get("op").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `op` to be a primitive type in the JSON string but got `%s`", jsonObj.get("op").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `op` to be a primitive type in the JSON string but got `%s`", jsonObj.get("op").toString()));
       }
       // validate the optional field `op`
       if (jsonObj.get("op") != null && !jsonObj.get("op").isJsonNull()) {
@@ -386,7 +387,7 @@ public class RuleClause {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -401,22 +402,22 @@ public class RuleClause {
     }
   }
 
- /**
-  * Create an instance of RuleClause given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RuleClause
-  * @throws IOException if the JSON string is invalid with respect to RuleClause
-  */
+  /**
+   * Create an instance of RuleClause given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of RuleClause
+   * @throws IOException if the JSON string is invalid with respect to RuleClause
+   */
   public static RuleClause fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, RuleClause.class);
   }
 
- /**
-  * Convert an instance of RuleClause to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of RuleClause to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

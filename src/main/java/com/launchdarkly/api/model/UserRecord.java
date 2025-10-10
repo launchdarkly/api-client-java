@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,147 +45,154 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * UserRecord
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class UserRecord {
   public static final String SERIALIZED_NAME_LAST_PING = "lastPing";
   @SerializedName(SERIALIZED_NAME_LAST_PING)
+  @javax.annotation.Nullable
   private OffsetDateTime lastPing;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_ID = "environmentId";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ID)
+  @javax.annotation.Nullable
   private String environmentId;
 
   public static final String SERIALIZED_NAME_OWNER_ID = "ownerId";
   @SerializedName(SERIALIZED_NAME_OWNER_ID)
+  @javax.annotation.Nullable
   private String ownerId;
 
   public static final String SERIALIZED_NAME_USER = "user";
   @SerializedName(SERIALIZED_NAME_USER)
+  @javax.annotation.Nullable
   private User user;
 
   public static final String SERIALIZED_NAME_SORT_VALUE = "sortValue";
   @SerializedName(SERIALIZED_NAME_SORT_VALUE)
+  @javax.annotation.Nullable
   private Object sortValue = null;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_ACCESS = "_access";
   @SerializedName(SERIALIZED_NAME_ACCESS)
+  @javax.annotation.Nullable
   private Access access;
 
   public UserRecord() {
   }
 
-  public UserRecord lastPing(OffsetDateTime lastPing) {
+  public UserRecord lastPing(@javax.annotation.Nullable OffsetDateTime lastPing) {
     this.lastPing = lastPing;
     return this;
   }
 
-   /**
+  /**
    * Timestamp of the last time this user was seen
    * @return lastPing
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getLastPing() {
     return lastPing;
   }
 
-  public void setLastPing(OffsetDateTime lastPing) {
+  public void setLastPing(@javax.annotation.Nullable OffsetDateTime lastPing) {
     this.lastPing = lastPing;
   }
 
 
-  public UserRecord environmentId(String environmentId) {
+  public UserRecord environmentId(@javax.annotation.Nullable String environmentId) {
     this.environmentId = environmentId;
     return this;
   }
 
-   /**
+  /**
    * Get environmentId
    * @return environmentId
-  **/
+   */
   @javax.annotation.Nullable
   public String getEnvironmentId() {
     return environmentId;
   }
 
-  public void setEnvironmentId(String environmentId) {
+  public void setEnvironmentId(@javax.annotation.Nullable String environmentId) {
     this.environmentId = environmentId;
   }
 
 
-  public UserRecord ownerId(String ownerId) {
+  public UserRecord ownerId(@javax.annotation.Nullable String ownerId) {
     this.ownerId = ownerId;
     return this;
   }
 
-   /**
+  /**
    * Get ownerId
    * @return ownerId
-  **/
+   */
   @javax.annotation.Nullable
   public String getOwnerId() {
     return ownerId;
   }
 
-  public void setOwnerId(String ownerId) {
+  public void setOwnerId(@javax.annotation.Nullable String ownerId) {
     this.ownerId = ownerId;
   }
 
 
-  public UserRecord user(User user) {
+  public UserRecord user(@javax.annotation.Nullable User user) {
     this.user = user;
     return this;
   }
 
-   /**
+  /**
    * Get user
    * @return user
-  **/
+   */
   @javax.annotation.Nullable
   public User getUser() {
     return user;
   }
 
-  public void setUser(User user) {
+  public void setUser(@javax.annotation.Nullable User user) {
     this.user = user;
   }
 
 
-  public UserRecord sortValue(Object sortValue) {
+  public UserRecord sortValue(@javax.annotation.Nullable Object sortValue) {
     this.sortValue = sortValue;
     return this;
   }
 
-   /**
+  /**
    * If this record is returned as part of a list, the value used to sort the list. This is only included when the &lt;code&gt;sort&lt;/code&gt; query parameter is specified. It is a time, in Unix milliseconds, if the sort is by &lt;code&gt;lastSeen&lt;/code&gt;. It is a user key if the sort is by &lt;code&gt;userKey&lt;/code&gt;.
    * @return sortValue
-  **/
+   */
   @javax.annotation.Nullable
   public Object getSortValue() {
     return sortValue;
   }
 
-  public void setSortValue(Object sortValue) {
+  public void setSortValue(@javax.annotation.Nullable Object sortValue) {
     this.sortValue = sortValue;
   }
 
 
-  public UserRecord links(Map<String, Link> links) {
+  public UserRecord links(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -197,35 +205,35 @@ public class UserRecord {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public UserRecord access(Access access) {
+  public UserRecord access(@javax.annotation.Nullable Access access) {
     this.access = access;
     return this;
   }
 
-   /**
+  /**
    * Get access
    * @return access
-  **/
+   */
   @javax.annotation.Nullable
   public Access getAccess() {
     return access;
   }
 
-  public void setAccess(Access access) {
+  public void setAccess(@javax.annotation.Nullable Access access) {
     this.access = access;
   }
 
@@ -343,37 +351,30 @@ public class UserRecord {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("lastPing");
-    openapiFields.add("environmentId");
-    openapiFields.add("ownerId");
-    openapiFields.add("user");
-    openapiFields.add("sortValue");
-    openapiFields.add("_links");
-    openapiFields.add("_access");
+    openapiFields = new HashSet<String>(Arrays.asList("lastPing", "environmentId", "ownerId", "user", "sortValue", "_links", "_access"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to UserRecord
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to UserRecord
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UserRecord.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UserRecord is not found in the empty JSON string", UserRecord.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in UserRecord is not found in the empty JSON string", UserRecord.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("environmentId") != null && !jsonObj.get("environmentId").isJsonNull()) && !jsonObj.get("environmentId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
       }
       if ((jsonObj.get("ownerId") != null && !jsonObj.get("ownerId").isJsonNull()) && !jsonObj.get("ownerId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ownerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ownerId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `ownerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ownerId").toString()));
       }
       // validate the optional field `user`
       if (jsonObj.get("user") != null && !jsonObj.get("user").isJsonNull()) {
@@ -442,7 +443,7 @@ public class UserRecord {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -457,22 +458,22 @@ public class UserRecord {
     }
   }
 
- /**
-  * Create an instance of UserRecord given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UserRecord
-  * @throws IOException if the JSON string is invalid with respect to UserRecord
-  */
+  /**
+   * Create an instance of UserRecord given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of UserRecord
+   * @throws IOException if the JSON string is invalid with respect to UserRecord
+   */
   public static UserRecord fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, UserRecord.class);
   }
 
- /**
-  * Convert an instance of UserRecord to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of UserRecord to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

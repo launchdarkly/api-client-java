@@ -16,10 +16,10 @@
 
 | Name | Value |
 |---- | -----|
-| CAMELCASE | &quot;camelCase&quot; |
-| UPPERCAMELCASE | &quot;upperCamelCase&quot; |
-| SNAKECASE | &quot;snakeCase&quot; |
-| KEBABCASE | &quot;kebabCase&quot; |
+| CAMEL_CASE | &quot;camelCase&quot; |
+| UPPER_CAMEL_CASE | &quot;upperCamelCase&quot; |
+| SNAKE_CASE | &quot;snakeCase&quot; |
+| KEBAB_CASE | &quot;kebabCase&quot; |
 
 
 

@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,65 +38,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * InsightsMetricIndicatorRange
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class InsightsMetricIndicatorRange {
   public static final String SERIALIZED_NAME_MIN = "min";
   @SerializedName(SERIALIZED_NAME_MIN)
+  @javax.annotation.Nonnull
   private Integer min;
 
   public static final String SERIALIZED_NAME_MAX = "max";
   @SerializedName(SERIALIZED_NAME_MAX)
+  @javax.annotation.Nonnull
   private Integer max;
 
   public InsightsMetricIndicatorRange() {
   }
 
-  public InsightsMetricIndicatorRange min(Integer min) {
+  public InsightsMetricIndicatorRange min(@javax.annotation.Nonnull Integer min) {
     this.min = min;
     return this;
   }
 
-   /**
+  /**
    * The minimum value for the indicator range
    * @return min
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getMin() {
     return min;
   }
 
-  public void setMin(Integer min) {
+  public void setMin(@javax.annotation.Nonnull Integer min) {
     this.min = min;
   }
 
 
-  public InsightsMetricIndicatorRange max(Integer max) {
+  public InsightsMetricIndicatorRange max(@javax.annotation.Nonnull Integer max) {
     this.max = max;
     return this;
   }
 
-   /**
+  /**
    * The maximum value for the indicator range
    * @return max
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getMax() {
     return max;
   }
 
-  public void setMax(Integer max) {
+  public void setMax(@javax.annotation.Nonnull Integer max) {
     this.max = max;
   }
 
@@ -192,33 +195,29 @@ public class InsightsMetricIndicatorRange {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("min");
-    openapiFields.add("max");
+    openapiFields = new HashSet<String>(Arrays.asList("min", "max"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("min");
-    openapiRequiredFields.add("max");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("min", "max"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to InsightsMetricIndicatorRange
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to InsightsMetricIndicatorRange
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!InsightsMetricIndicatorRange.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in InsightsMetricIndicatorRange is not found in the empty JSON string", InsightsMetricIndicatorRange.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in InsightsMetricIndicatorRange is not found in the empty JSON string", InsightsMetricIndicatorRange.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : InsightsMetricIndicatorRange.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -281,7 +280,7 @@ public class InsightsMetricIndicatorRange {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -296,22 +295,22 @@ public class InsightsMetricIndicatorRange {
     }
   }
 
- /**
-  * Create an instance of InsightsMetricIndicatorRange given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of InsightsMetricIndicatorRange
-  * @throws IOException if the JSON string is invalid with respect to InsightsMetricIndicatorRange
-  */
+  /**
+   * Create an instance of InsightsMetricIndicatorRange given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of InsightsMetricIndicatorRange
+   * @throws IOException if the JSON string is invalid with respect to InsightsMetricIndicatorRange
+   */
   public static InsightsMetricIndicatorRange fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, InsightsMetricIndicatorRange.class);
   }
 
- /**
-  * Convert an instance of InsightsMetricIndicatorRange to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of InsightsMetricIndicatorRange to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

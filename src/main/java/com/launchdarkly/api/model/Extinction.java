@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,134 +38,139 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * Extinction
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class Extinction {
   public static final String SERIALIZED_NAME_REVISION = "revision";
   @SerializedName(SERIALIZED_NAME_REVISION)
+  @javax.annotation.Nonnull
   private String revision;
 
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
+  @javax.annotation.Nonnull
   private String message;
 
   public static final String SERIALIZED_NAME_TIME = "time";
   @SerializedName(SERIALIZED_NAME_TIME)
+  @javax.annotation.Nonnull
   private Long time;
 
   public static final String SERIALIZED_NAME_FLAG_KEY = "flagKey";
   @SerializedName(SERIALIZED_NAME_FLAG_KEY)
+  @javax.annotation.Nonnull
   private String flagKey;
 
   public static final String SERIALIZED_NAME_PROJ_KEY = "projKey";
   @SerializedName(SERIALIZED_NAME_PROJ_KEY)
+  @javax.annotation.Nonnull
   private String projKey;
 
   public Extinction() {
   }
 
-  public Extinction revision(String revision) {
+  public Extinction revision(@javax.annotation.Nonnull String revision) {
     this.revision = revision;
     return this;
   }
 
-   /**
+  /**
    * The identifier for the revision where flag became extinct. For example, a commit SHA.
    * @return revision
-  **/
+   */
   @javax.annotation.Nonnull
   public String getRevision() {
     return revision;
   }
 
-  public void setRevision(String revision) {
+  public void setRevision(@javax.annotation.Nonnull String revision) {
     this.revision = revision;
   }
 
 
-  public Extinction message(String message) {
+  public Extinction message(@javax.annotation.Nonnull String message) {
     this.message = message;
     return this;
   }
 
-   /**
+  /**
    * Description of the extinction. For example, the commit message for the revision.
    * @return message
-  **/
+   */
   @javax.annotation.Nonnull
   public String getMessage() {
     return message;
   }
 
-  public void setMessage(String message) {
+  public void setMessage(@javax.annotation.Nonnull String message) {
     this.message = message;
   }
 
 
-  public Extinction time(Long time) {
+  public Extinction time(@javax.annotation.Nonnull Long time) {
     this.time = time;
     return this;
   }
 
-   /**
+  /**
    * Get time
    * @return time
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getTime() {
     return time;
   }
 
-  public void setTime(Long time) {
+  public void setTime(@javax.annotation.Nonnull Long time) {
     this.time = time;
   }
 
 
-  public Extinction flagKey(String flagKey) {
+  public Extinction flagKey(@javax.annotation.Nonnull String flagKey) {
     this.flagKey = flagKey;
     return this;
   }
 
-   /**
+  /**
    * The feature flag key
    * @return flagKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getFlagKey() {
     return flagKey;
   }
 
-  public void setFlagKey(String flagKey) {
+  public void setFlagKey(@javax.annotation.Nonnull String flagKey) {
     this.flagKey = flagKey;
   }
 
 
-  public Extinction projKey(String projKey) {
+  public Extinction projKey(@javax.annotation.Nonnull String projKey) {
     this.projKey = projKey;
     return this;
   }
 
-   /**
+  /**
    * The project key
    * @return projKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getProjKey() {
     return projKey;
   }
 
-  public void setProjKey(String projKey) {
+  public void setProjKey(@javax.annotation.Nonnull String projKey) {
     this.projKey = projKey;
   }
 
@@ -267,53 +273,43 @@ public class Extinction {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("revision");
-    openapiFields.add("message");
-    openapiFields.add("time");
-    openapiFields.add("flagKey");
-    openapiFields.add("projKey");
+    openapiFields = new HashSet<String>(Arrays.asList("revision", "message", "time", "flagKey", "projKey"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("revision");
-    openapiRequiredFields.add("message");
-    openapiRequiredFields.add("time");
-    openapiRequiredFields.add("flagKey");
-    openapiRequiredFields.add("projKey");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("revision", "message", "time", "flagKey", "projKey"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Extinction
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Extinction
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Extinction.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Extinction is not found in the empty JSON string", Extinction.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Extinction is not found in the empty JSON string", Extinction.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : Extinction.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("revision").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `revision` to be a primitive type in the JSON string but got `%s`", jsonObj.get("revision").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `revision` to be a primitive type in the JSON string but got `%s`", jsonObj.get("revision").toString()));
       }
       if (!jsonObj.get("message").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
       }
       if (!jsonObj.get("flagKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `flagKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("flagKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `flagKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("flagKey").toString()));
       }
       if (!jsonObj.get("projKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `projKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `projKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projKey").toString()));
       }
   }
 
@@ -374,7 +370,7 @@ public class Extinction {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -389,22 +385,22 @@ public class Extinction {
     }
   }
 
- /**
-  * Create an instance of Extinction given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Extinction
-  * @throws IOException if the JSON string is invalid with respect to Extinction
-  */
+  /**
+   * Create an instance of Extinction given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Extinction
+   * @throws IOException if the JSON string is invalid with respect to Extinction
+   */
   public static Extinction fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Extinction.class);
   }
 
- /**
-  * Convert an instance of Extinction to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Extinction to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

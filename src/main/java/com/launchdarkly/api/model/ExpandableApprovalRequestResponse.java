@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -51,42 +52,48 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ExpandableApprovalRequestResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ExpandableApprovalRequestResponse {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_VERSION = "_version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nonnull
   private Integer version;
 
   public static final String SERIALIZED_NAME_CREATION_DATE = "creationDate";
   @SerializedName(SERIALIZED_NAME_CREATION_DATE)
+  @javax.annotation.Nonnull
   private Long creationDate;
 
   public static final String SERIALIZED_NAME_SERVICE_KIND = "serviceKind";
   @SerializedName(SERIALIZED_NAME_SERVICE_KIND)
+  @javax.annotation.Nonnull
   private String serviceKind;
 
   public static final String SERIALIZED_NAME_REQUESTOR_ID = "requestorId";
   @SerializedName(SERIALIZED_NAME_REQUESTOR_ID)
+  @javax.annotation.Nullable
   private String requestorId;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   /**
@@ -145,26 +152,32 @@ public class ExpandableApprovalRequestResponse {
 
   public static final String SERIALIZED_NAME_REVIEW_STATUS = "reviewStatus";
   @SerializedName(SERIALIZED_NAME_REVIEW_STATUS)
+  @javax.annotation.Nonnull
   private ReviewStatusEnum reviewStatus;
 
   public static final String SERIALIZED_NAME_ALL_REVIEWS = "allReviews";
   @SerializedName(SERIALIZED_NAME_ALL_REVIEWS)
+  @javax.annotation.Nonnull
   private List<ReviewResponse> allReviews = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NOTIFY_MEMBER_IDS = "notifyMemberIds";
   @SerializedName(SERIALIZED_NAME_NOTIFY_MEMBER_IDS)
+  @javax.annotation.Nonnull
   private List<String> notifyMemberIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_APPLIED_DATE = "appliedDate";
   @SerializedName(SERIALIZED_NAME_APPLIED_DATE)
+  @javax.annotation.Nullable
   private Long appliedDate;
 
   public static final String SERIALIZED_NAME_APPLIED_BY_MEMBER_ID = "appliedByMemberId";
   @SerializedName(SERIALIZED_NAME_APPLIED_BY_MEMBER_ID)
+  @javax.annotation.Nullable
   private String appliedByMemberId;
 
   public static final String SERIALIZED_NAME_APPLIED_BY_SERVICE_TOKEN_ID = "appliedByServiceTokenId";
   @SerializedName(SERIALIZED_NAME_APPLIED_BY_SERVICE_TOKEN_ID)
+  @javax.annotation.Nullable
   private String appliedByServiceTokenId;
 
   /**
@@ -225,201 +238,216 @@ public class ExpandableApprovalRequestResponse {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nonnull
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_INSTRUCTIONS = "instructions";
   @SerializedName(SERIALIZED_NAME_INSTRUCTIONS)
+  @javax.annotation.Nonnull
   private List<Map<String, Object>> instructions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CONFLICTS = "conflicts";
   @SerializedName(SERIALIZED_NAME_CONFLICTS)
+  @javax.annotation.Nonnull
   private List<Conflict> conflicts = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Object> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_EXECUTION_DATE = "executionDate";
   @SerializedName(SERIALIZED_NAME_EXECUTION_DATE)
+  @javax.annotation.Nullable
   private Long executionDate;
 
   public static final String SERIALIZED_NAME_OPERATING_ON_ID = "operatingOnId";
   @SerializedName(SERIALIZED_NAME_OPERATING_ON_ID)
+  @javax.annotation.Nullable
   private String operatingOnId;
 
   public static final String SERIALIZED_NAME_INTEGRATION_METADATA = "integrationMetadata";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_METADATA)
+  @javax.annotation.Nullable
   private IntegrationMetadata integrationMetadata;
 
   public static final String SERIALIZED_NAME_SOURCE = "source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
+  @javax.annotation.Nullable
   private CopiedFromEnv source;
 
   public static final String SERIALIZED_NAME_CUSTOM_WORKFLOW_METADATA = "customWorkflowMetadata";
   @SerializedName(SERIALIZED_NAME_CUSTOM_WORKFLOW_METADATA)
+  @javax.annotation.Nullable
   private CustomWorkflowMeta customWorkflowMetadata;
 
   public static final String SERIALIZED_NAME_RESOURCE_ID = "resourceId";
   @SerializedName(SERIALIZED_NAME_RESOURCE_ID)
+  @javax.annotation.Nullable
   private String resourceId;
 
   public static final String SERIALIZED_NAME_APPROVAL_SETTINGS = "approvalSettings";
   @SerializedName(SERIALIZED_NAME_APPROVAL_SETTINGS)
+  @javax.annotation.Nullable
   private ApprovalSettings approvalSettings;
 
   public static final String SERIALIZED_NAME_PROJECT = "project";
   @SerializedName(SERIALIZED_NAME_PROJECT)
+  @javax.annotation.Nullable
   private Project project;
 
   public static final String SERIALIZED_NAME_ENVIRONMENTS = "environments";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENTS)
+  @javax.annotation.Nullable
   private List<Environment> environments = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_FLAG = "flag";
   @SerializedName(SERIALIZED_NAME_FLAG)
+  @javax.annotation.Nullable
   private ExpandedFlagRep flag;
 
   public static final String SERIALIZED_NAME_RESOURCE = "resource";
   @SerializedName(SERIALIZED_NAME_RESOURCE)
+  @javax.annotation.Nullable
   private ExpandedResourceRep resource;
 
   public ExpandableApprovalRequestResponse() {
   }
 
-  public ExpandableApprovalRequestResponse id(String id) {
+  public ExpandableApprovalRequestResponse id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The ID of this approval request
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public ExpandableApprovalRequestResponse version(Integer version) {
+  public ExpandableApprovalRequestResponse version(@javax.annotation.Nonnull Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * Version of the approval request
    * @return version
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nonnull Integer version) {
     this.version = version;
   }
 
 
-  public ExpandableApprovalRequestResponse creationDate(Long creationDate) {
+  public ExpandableApprovalRequestResponse creationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
     return this;
   }
 
-   /**
+  /**
    * Get creationDate
    * @return creationDate
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate(Long creationDate) {
+  public void setCreationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
   }
 
 
-  public ExpandableApprovalRequestResponse serviceKind(String serviceKind) {
+  public ExpandableApprovalRequestResponse serviceKind(@javax.annotation.Nonnull String serviceKind) {
     this.serviceKind = serviceKind;
     return this;
   }
 
-   /**
+  /**
    * Get serviceKind
    * @return serviceKind
-  **/
+   */
   @javax.annotation.Nonnull
   public String getServiceKind() {
     return serviceKind;
   }
 
-  public void setServiceKind(String serviceKind) {
+  public void setServiceKind(@javax.annotation.Nonnull String serviceKind) {
     this.serviceKind = serviceKind;
   }
 
 
-  public ExpandableApprovalRequestResponse requestorId(String requestorId) {
+  public ExpandableApprovalRequestResponse requestorId(@javax.annotation.Nullable String requestorId) {
     this.requestorId = requestorId;
     return this;
   }
 
-   /**
+  /**
    * The ID of the member who requested the approval
    * @return requestorId
-  **/
+   */
   @javax.annotation.Nullable
   public String getRequestorId() {
     return requestorId;
   }
 
-  public void setRequestorId(String requestorId) {
+  public void setRequestorId(@javax.annotation.Nullable String requestorId) {
     this.requestorId = requestorId;
   }
 
 
-  public ExpandableApprovalRequestResponse description(String description) {
+  public ExpandableApprovalRequestResponse description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for the approval request
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public ExpandableApprovalRequestResponse reviewStatus(ReviewStatusEnum reviewStatus) {
+  public ExpandableApprovalRequestResponse reviewStatus(@javax.annotation.Nonnull ReviewStatusEnum reviewStatus) {
     this.reviewStatus = reviewStatus;
     return this;
   }
 
-   /**
+  /**
    * Current status of the review of this approval request
    * @return reviewStatus
-  **/
+   */
   @javax.annotation.Nonnull
   public ReviewStatusEnum getReviewStatus() {
     return reviewStatus;
   }
 
-  public void setReviewStatus(ReviewStatusEnum reviewStatus) {
+  public void setReviewStatus(@javax.annotation.Nonnull ReviewStatusEnum reviewStatus) {
     this.reviewStatus = reviewStatus;
   }
 
 
-  public ExpandableApprovalRequestResponse allReviews(List<ReviewResponse> allReviews) {
+  public ExpandableApprovalRequestResponse allReviews(@javax.annotation.Nonnull List<ReviewResponse> allReviews) {
     this.allReviews = allReviews;
     return this;
   }
@@ -432,21 +460,21 @@ public class ExpandableApprovalRequestResponse {
     return this;
   }
 
-   /**
+  /**
    * An array of individual reviews of this approval request
    * @return allReviews
-  **/
+   */
   @javax.annotation.Nonnull
   public List<ReviewResponse> getAllReviews() {
     return allReviews;
   }
 
-  public void setAllReviews(List<ReviewResponse> allReviews) {
+  public void setAllReviews(@javax.annotation.Nonnull List<ReviewResponse> allReviews) {
     this.allReviews = allReviews;
   }
 
 
-  public ExpandableApprovalRequestResponse notifyMemberIds(List<String> notifyMemberIds) {
+  public ExpandableApprovalRequestResponse notifyMemberIds(@javax.annotation.Nonnull List<String> notifyMemberIds) {
     this.notifyMemberIds = notifyMemberIds;
     return this;
   }
@@ -459,97 +487,97 @@ public class ExpandableApprovalRequestResponse {
     return this;
   }
 
-   /**
+  /**
    * An array of member IDs. These members are notified to review the approval request.
    * @return notifyMemberIds
-  **/
+   */
   @javax.annotation.Nonnull
   public List<String> getNotifyMemberIds() {
     return notifyMemberIds;
   }
 
-  public void setNotifyMemberIds(List<String> notifyMemberIds) {
+  public void setNotifyMemberIds(@javax.annotation.Nonnull List<String> notifyMemberIds) {
     this.notifyMemberIds = notifyMemberIds;
   }
 
 
-  public ExpandableApprovalRequestResponse appliedDate(Long appliedDate) {
+  public ExpandableApprovalRequestResponse appliedDate(@javax.annotation.Nullable Long appliedDate) {
     this.appliedDate = appliedDate;
     return this;
   }
 
-   /**
+  /**
    * Get appliedDate
    * @return appliedDate
-  **/
+   */
   @javax.annotation.Nullable
   public Long getAppliedDate() {
     return appliedDate;
   }
 
-  public void setAppliedDate(Long appliedDate) {
+  public void setAppliedDate(@javax.annotation.Nullable Long appliedDate) {
     this.appliedDate = appliedDate;
   }
 
 
-  public ExpandableApprovalRequestResponse appliedByMemberId(String appliedByMemberId) {
+  public ExpandableApprovalRequestResponse appliedByMemberId(@javax.annotation.Nullable String appliedByMemberId) {
     this.appliedByMemberId = appliedByMemberId;
     return this;
   }
 
-   /**
+  /**
    * The member ID of the member who applied the approval request
    * @return appliedByMemberId
-  **/
+   */
   @javax.annotation.Nullable
   public String getAppliedByMemberId() {
     return appliedByMemberId;
   }
 
-  public void setAppliedByMemberId(String appliedByMemberId) {
+  public void setAppliedByMemberId(@javax.annotation.Nullable String appliedByMemberId) {
     this.appliedByMemberId = appliedByMemberId;
   }
 
 
-  public ExpandableApprovalRequestResponse appliedByServiceTokenId(String appliedByServiceTokenId) {
+  public ExpandableApprovalRequestResponse appliedByServiceTokenId(@javax.annotation.Nullable String appliedByServiceTokenId) {
     this.appliedByServiceTokenId = appliedByServiceTokenId;
     return this;
   }
 
-   /**
+  /**
    * The service token ID of the service token which applied the approval request
    * @return appliedByServiceTokenId
-  **/
+   */
   @javax.annotation.Nullable
   public String getAppliedByServiceTokenId() {
     return appliedByServiceTokenId;
   }
 
-  public void setAppliedByServiceTokenId(String appliedByServiceTokenId) {
+  public void setAppliedByServiceTokenId(@javax.annotation.Nullable String appliedByServiceTokenId) {
     this.appliedByServiceTokenId = appliedByServiceTokenId;
   }
 
 
-  public ExpandableApprovalRequestResponse status(StatusEnum status) {
+  public ExpandableApprovalRequestResponse status(@javax.annotation.Nonnull StatusEnum status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Current status of the approval request
    * @return status
-  **/
+   */
   @javax.annotation.Nonnull
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(@javax.annotation.Nonnull StatusEnum status) {
     this.status = status;
   }
 
 
-  public ExpandableApprovalRequestResponse instructions(List<Map<String, Object>> instructions) {
+  public ExpandableApprovalRequestResponse instructions(@javax.annotation.Nonnull List<Map<String, Object>> instructions) {
     this.instructions = instructions;
     return this;
   }
@@ -562,21 +590,21 @@ public class ExpandableApprovalRequestResponse {
     return this;
   }
 
-   /**
+  /**
    * Get instructions
    * @return instructions
-  **/
+   */
   @javax.annotation.Nonnull
   public List<Map<String, Object>> getInstructions() {
     return instructions;
   }
 
-  public void setInstructions(List<Map<String, Object>> instructions) {
+  public void setInstructions(@javax.annotation.Nonnull List<Map<String, Object>> instructions) {
     this.instructions = instructions;
   }
 
 
-  public ExpandableApprovalRequestResponse conflicts(List<Conflict> conflicts) {
+  public ExpandableApprovalRequestResponse conflicts(@javax.annotation.Nonnull List<Conflict> conflicts) {
     this.conflicts = conflicts;
     return this;
   }
@@ -589,21 +617,21 @@ public class ExpandableApprovalRequestResponse {
     return this;
   }
 
-   /**
+  /**
    * Details on any conflicting approval requests
    * @return conflicts
-  **/
+   */
   @javax.annotation.Nonnull
   public List<Conflict> getConflicts() {
     return conflicts;
   }
 
-  public void setConflicts(List<Conflict> conflicts) {
+  public void setConflicts(@javax.annotation.Nonnull List<Conflict> conflicts) {
     this.conflicts = conflicts;
   }
 
 
-  public ExpandableApprovalRequestResponse links(Map<String, Object> links) {
+  public ExpandableApprovalRequestResponse links(@javax.annotation.Nonnull Map<String, Object> links) {
     this.links = links;
     return this;
   }
@@ -616,173 +644,173 @@ public class ExpandableApprovalRequestResponse {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Object> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Object> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Object> links) {
     this.links = links;
   }
 
 
-  public ExpandableApprovalRequestResponse executionDate(Long executionDate) {
+  public ExpandableApprovalRequestResponse executionDate(@javax.annotation.Nullable Long executionDate) {
     this.executionDate = executionDate;
     return this;
   }
 
-   /**
+  /**
    * Get executionDate
    * @return executionDate
-  **/
+   */
   @javax.annotation.Nullable
   public Long getExecutionDate() {
     return executionDate;
   }
 
-  public void setExecutionDate(Long executionDate) {
+  public void setExecutionDate(@javax.annotation.Nullable Long executionDate) {
     this.executionDate = executionDate;
   }
 
 
-  public ExpandableApprovalRequestResponse operatingOnId(String operatingOnId) {
+  public ExpandableApprovalRequestResponse operatingOnId(@javax.annotation.Nullable String operatingOnId) {
     this.operatingOnId = operatingOnId;
     return this;
   }
 
-   /**
+  /**
    * ID of scheduled change to edit or delete
    * @return operatingOnId
-  **/
+   */
   @javax.annotation.Nullable
   public String getOperatingOnId() {
     return operatingOnId;
   }
 
-  public void setOperatingOnId(String operatingOnId) {
+  public void setOperatingOnId(@javax.annotation.Nullable String operatingOnId) {
     this.operatingOnId = operatingOnId;
   }
 
 
-  public ExpandableApprovalRequestResponse integrationMetadata(IntegrationMetadata integrationMetadata) {
+  public ExpandableApprovalRequestResponse integrationMetadata(@javax.annotation.Nullable IntegrationMetadata integrationMetadata) {
     this.integrationMetadata = integrationMetadata;
     return this;
   }
 
-   /**
+  /**
    * Get integrationMetadata
    * @return integrationMetadata
-  **/
+   */
   @javax.annotation.Nullable
   public IntegrationMetadata getIntegrationMetadata() {
     return integrationMetadata;
   }
 
-  public void setIntegrationMetadata(IntegrationMetadata integrationMetadata) {
+  public void setIntegrationMetadata(@javax.annotation.Nullable IntegrationMetadata integrationMetadata) {
     this.integrationMetadata = integrationMetadata;
   }
 
 
-  public ExpandableApprovalRequestResponse source(CopiedFromEnv source) {
+  public ExpandableApprovalRequestResponse source(@javax.annotation.Nullable CopiedFromEnv source) {
     this.source = source;
     return this;
   }
 
-   /**
+  /**
    * Get source
    * @return source
-  **/
+   */
   @javax.annotation.Nullable
   public CopiedFromEnv getSource() {
     return source;
   }
 
-  public void setSource(CopiedFromEnv source) {
+  public void setSource(@javax.annotation.Nullable CopiedFromEnv source) {
     this.source = source;
   }
 
 
-  public ExpandableApprovalRequestResponse customWorkflowMetadata(CustomWorkflowMeta customWorkflowMetadata) {
+  public ExpandableApprovalRequestResponse customWorkflowMetadata(@javax.annotation.Nullable CustomWorkflowMeta customWorkflowMetadata) {
     this.customWorkflowMetadata = customWorkflowMetadata;
     return this;
   }
 
-   /**
+  /**
    * Get customWorkflowMetadata
    * @return customWorkflowMetadata
-  **/
+   */
   @javax.annotation.Nullable
   public CustomWorkflowMeta getCustomWorkflowMetadata() {
     return customWorkflowMetadata;
   }
 
-  public void setCustomWorkflowMetadata(CustomWorkflowMeta customWorkflowMetadata) {
+  public void setCustomWorkflowMetadata(@javax.annotation.Nullable CustomWorkflowMeta customWorkflowMetadata) {
     this.customWorkflowMetadata = customWorkflowMetadata;
   }
 
 
-  public ExpandableApprovalRequestResponse resourceId(String resourceId) {
+  public ExpandableApprovalRequestResponse resourceId(@javax.annotation.Nullable String resourceId) {
     this.resourceId = resourceId;
     return this;
   }
 
-   /**
+  /**
    * String representation of a resource
    * @return resourceId
-  **/
+   */
   @javax.annotation.Nullable
   public String getResourceId() {
     return resourceId;
   }
 
-  public void setResourceId(String resourceId) {
+  public void setResourceId(@javax.annotation.Nullable String resourceId) {
     this.resourceId = resourceId;
   }
 
 
-  public ExpandableApprovalRequestResponse approvalSettings(ApprovalSettings approvalSettings) {
+  public ExpandableApprovalRequestResponse approvalSettings(@javax.annotation.Nullable ApprovalSettings approvalSettings) {
     this.approvalSettings = approvalSettings;
     return this;
   }
 
-   /**
+  /**
    * Get approvalSettings
    * @return approvalSettings
-  **/
+   */
   @javax.annotation.Nullable
   public ApprovalSettings getApprovalSettings() {
     return approvalSettings;
   }
 
-  public void setApprovalSettings(ApprovalSettings approvalSettings) {
+  public void setApprovalSettings(@javax.annotation.Nullable ApprovalSettings approvalSettings) {
     this.approvalSettings = approvalSettings;
   }
 
 
-  public ExpandableApprovalRequestResponse project(Project project) {
+  public ExpandableApprovalRequestResponse project(@javax.annotation.Nullable Project project) {
     this.project = project;
     return this;
   }
 
-   /**
+  /**
    * Get project
    * @return project
-  **/
+   */
   @javax.annotation.Nullable
   public Project getProject() {
     return project;
   }
 
-  public void setProject(Project project) {
+  public void setProject(@javax.annotation.Nullable Project project) {
     this.project = project;
   }
 
 
-  public ExpandableApprovalRequestResponse environments(List<Environment> environments) {
+  public ExpandableApprovalRequestResponse environments(@javax.annotation.Nullable List<Environment> environments) {
     this.environments = environments;
     return this;
   }
@@ -795,54 +823,54 @@ public class ExpandableApprovalRequestResponse {
     return this;
   }
 
-   /**
+  /**
    * List of environments the approval impacts
    * @return environments
-  **/
+   */
   @javax.annotation.Nullable
   public List<Environment> getEnvironments() {
     return environments;
   }
 
-  public void setEnvironments(List<Environment> environments) {
+  public void setEnvironments(@javax.annotation.Nullable List<Environment> environments) {
     this.environments = environments;
   }
 
 
-  public ExpandableApprovalRequestResponse flag(ExpandedFlagRep flag) {
+  public ExpandableApprovalRequestResponse flag(@javax.annotation.Nullable ExpandedFlagRep flag) {
     this.flag = flag;
     return this;
   }
 
-   /**
+  /**
    * Get flag
    * @return flag
-  **/
+   */
   @javax.annotation.Nullable
   public ExpandedFlagRep getFlag() {
     return flag;
   }
 
-  public void setFlag(ExpandedFlagRep flag) {
+  public void setFlag(@javax.annotation.Nullable ExpandedFlagRep flag) {
     this.flag = flag;
   }
 
 
-  public ExpandableApprovalRequestResponse resource(ExpandedResourceRep resource) {
+  public ExpandableApprovalRequestResponse resource(@javax.annotation.Nullable ExpandedResourceRep resource) {
     this.resource = resource;
     return this;
   }
 
-   /**
+  /**
    * Get resource
    * @return resource
-  **/
+   */
   @javax.annotation.Nullable
   public ExpandedResourceRep getResource() {
     return resource;
   }
 
-  public void setResource(ExpandedResourceRep resource) {
+  public void setResource(@javax.annotation.Nullable ExpandedResourceRep resource) {
     this.resource = resource;
   }
 
@@ -989,90 +1017,52 @@ public class ExpandableApprovalRequestResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_id");
-    openapiFields.add("_version");
-    openapiFields.add("creationDate");
-    openapiFields.add("serviceKind");
-    openapiFields.add("requestorId");
-    openapiFields.add("description");
-    openapiFields.add("reviewStatus");
-    openapiFields.add("allReviews");
-    openapiFields.add("notifyMemberIds");
-    openapiFields.add("appliedDate");
-    openapiFields.add("appliedByMemberId");
-    openapiFields.add("appliedByServiceTokenId");
-    openapiFields.add("status");
-    openapiFields.add("instructions");
-    openapiFields.add("conflicts");
-    openapiFields.add("_links");
-    openapiFields.add("executionDate");
-    openapiFields.add("operatingOnId");
-    openapiFields.add("integrationMetadata");
-    openapiFields.add("source");
-    openapiFields.add("customWorkflowMetadata");
-    openapiFields.add("resourceId");
-    openapiFields.add("approvalSettings");
-    openapiFields.add("project");
-    openapiFields.add("environments");
-    openapiFields.add("flag");
-    openapiFields.add("resource");
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "_version", "creationDate", "serviceKind", "requestorId", "description", "reviewStatus", "allReviews", "notifyMemberIds", "appliedDate", "appliedByMemberId", "appliedByServiceTokenId", "status", "instructions", "conflicts", "_links", "executionDate", "operatingOnId", "integrationMetadata", "source", "customWorkflowMetadata", "resourceId", "approvalSettings", "project", "environments", "flag", "resource"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("_version");
-    openapiRequiredFields.add("creationDate");
-    openapiRequiredFields.add("serviceKind");
-    openapiRequiredFields.add("reviewStatus");
-    openapiRequiredFields.add("allReviews");
-    openapiRequiredFields.add("notifyMemberIds");
-    openapiRequiredFields.add("status");
-    openapiRequiredFields.add("instructions");
-    openapiRequiredFields.add("conflicts");
-    openapiRequiredFields.add("_links");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "_version", "creationDate", "serviceKind", "reviewStatus", "allReviews", "notifyMemberIds", "status", "instructions", "conflicts", "_links"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ExpandableApprovalRequestResponse
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ExpandableApprovalRequestResponse
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ExpandableApprovalRequestResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ExpandableApprovalRequestResponse is not found in the empty JSON string", ExpandableApprovalRequestResponse.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ExpandableApprovalRequestResponse is not found in the empty JSON string", ExpandableApprovalRequestResponse.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ExpandableApprovalRequestResponse.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if (!jsonObj.get("serviceKind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `serviceKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("serviceKind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `serviceKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("serviceKind").toString()));
       }
       if ((jsonObj.get("requestorId") != null && !jsonObj.get("requestorId").isJsonNull()) && !jsonObj.get("requestorId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `requestorId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("requestorId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `requestorId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("requestorId").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if (!jsonObj.get("reviewStatus").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `reviewStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("reviewStatus").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `reviewStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("reviewStatus").toString()));
       }
       // validate the required field `reviewStatus`
       ReviewStatusEnum.validateJsonElement(jsonObj.get("reviewStatus"));
       // ensure the json data is an array
       if (!jsonObj.get("allReviews").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `allReviews` to be an array in the JSON string but got `%s`", jsonObj.get("allReviews").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `allReviews` to be an array in the JSON string but got `%s`", jsonObj.get("allReviews").toString()));
       }
 
       JsonArray jsonArrayallReviews = jsonObj.getAsJsonArray("allReviews");
@@ -1084,16 +1074,16 @@ public class ExpandableApprovalRequestResponse {
       if (jsonObj.get("notifyMemberIds") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("notifyMemberIds").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `notifyMemberIds` to be an array in the JSON string but got `%s`", jsonObj.get("notifyMemberIds").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifyMemberIds` to be an array in the JSON string but got `%s`", jsonObj.get("notifyMemberIds").toString()));
       }
       if ((jsonObj.get("appliedByMemberId") != null && !jsonObj.get("appliedByMemberId").isJsonNull()) && !jsonObj.get("appliedByMemberId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `appliedByMemberId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("appliedByMemberId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `appliedByMemberId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("appliedByMemberId").toString()));
       }
       if ((jsonObj.get("appliedByServiceTokenId") != null && !jsonObj.get("appliedByServiceTokenId").isJsonNull()) && !jsonObj.get("appliedByServiceTokenId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `appliedByServiceTokenId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("appliedByServiceTokenId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `appliedByServiceTokenId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("appliedByServiceTokenId").toString()));
       }
       if (!jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
       // validate the required field `status`
       StatusEnum.validateJsonElement(jsonObj.get("status"));
@@ -1101,11 +1091,11 @@ public class ExpandableApprovalRequestResponse {
       if (jsonObj.get("instructions") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("instructions").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `instructions` to be an array in the JSON string but got `%s`", jsonObj.get("instructions").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `instructions` to be an array in the JSON string but got `%s`", jsonObj.get("instructions").toString()));
       }
       // ensure the json data is an array
       if (!jsonObj.get("conflicts").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `conflicts` to be an array in the JSON string but got `%s`", jsonObj.get("conflicts").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `conflicts` to be an array in the JSON string but got `%s`", jsonObj.get("conflicts").toString()));
       }
 
       JsonArray jsonArrayconflicts = jsonObj.getAsJsonArray("conflicts");
@@ -1114,7 +1104,7 @@ public class ExpandableApprovalRequestResponse {
         Conflict.validateJsonElement(jsonArrayconflicts.get(i));
       };
       if ((jsonObj.get("operatingOnId") != null && !jsonObj.get("operatingOnId").isJsonNull()) && !jsonObj.get("operatingOnId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `operatingOnId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("operatingOnId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `operatingOnId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("operatingOnId").toString()));
       }
       // validate the optional field `integrationMetadata`
       if (jsonObj.get("integrationMetadata") != null && !jsonObj.get("integrationMetadata").isJsonNull()) {
@@ -1129,7 +1119,7 @@ public class ExpandableApprovalRequestResponse {
         CustomWorkflowMeta.validateJsonElement(jsonObj.get("customWorkflowMetadata"));
       }
       if ((jsonObj.get("resourceId") != null && !jsonObj.get("resourceId").isJsonNull()) && !jsonObj.get("resourceId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `resourceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resourceId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `resourceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resourceId").toString()));
       }
       // validate the optional field `approvalSettings`
       if (jsonObj.get("approvalSettings") != null && !jsonObj.get("approvalSettings").isJsonNull()) {
@@ -1144,7 +1134,7 @@ public class ExpandableApprovalRequestResponse {
         if (jsonArrayenvironments != null) {
           // ensure the json data is an array
           if (!jsonObj.get("environments").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `environments` to be an array in the JSON string but got `%s`", jsonObj.get("environments").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environments` to be an array in the JSON string but got `%s`", jsonObj.get("environments").toString()));
           }
 
           // validate the optional field `environments` (array)
@@ -1220,7 +1210,7 @@ public class ExpandableApprovalRequestResponse {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -1235,22 +1225,22 @@ public class ExpandableApprovalRequestResponse {
     }
   }
 
- /**
-  * Create an instance of ExpandableApprovalRequestResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ExpandableApprovalRequestResponse
-  * @throws IOException if the JSON string is invalid with respect to ExpandableApprovalRequestResponse
-  */
+  /**
+   * Create an instance of ExpandableApprovalRequestResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ExpandableApprovalRequestResponse
+   * @throws IOException if the JSON string is invalid with respect to ExpandableApprovalRequestResponse
+   */
   public static ExpandableApprovalRequestResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ExpandableApprovalRequestResponse.class);
   }
 
- /**
-  * Convert an instance of ExpandableApprovalRequestResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ExpandableApprovalRequestResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

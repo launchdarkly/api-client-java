@@ -85,7 +85,8 @@ public class AccountMembersBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Members response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -95,7 +96,7 @@ public class AccountMembersBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchMembersCall(MembersPatchInput membersPatchInput, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchMembersCall(@javax.annotation.Nonnull MembersPatchInput membersPatchInput, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -141,7 +142,7 @@ public class AccountMembersBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchMembersValidateBeforeCall(MembersPatchInput membersPatchInput, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchMembersValidateBeforeCall(@javax.annotation.Nonnull MembersPatchInput membersPatchInput, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'membersPatchInput' is set
         if (membersPatchInput == null) {
             throw new ApiException("Missing the required parameter 'membersPatchInput' when calling patchMembers(Async)");
@@ -158,7 +159,8 @@ public class AccountMembersBetaApi {
      * @return BulkEditMembersRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Members response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -168,7 +170,7 @@ public class AccountMembersBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public BulkEditMembersRep patchMembers(MembersPatchInput membersPatchInput) throws ApiException {
+    public BulkEditMembersRep patchMembers(@javax.annotation.Nonnull MembersPatchInput membersPatchInput) throws ApiException {
         ApiResponse<BulkEditMembersRep> localVarResp = patchMembersWithHttpInfo(membersPatchInput);
         return localVarResp.getData();
     }
@@ -180,7 +182,8 @@ public class AccountMembersBetaApi {
      * @return ApiResponse&lt;BulkEditMembersRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Members response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -190,7 +193,7 @@ public class AccountMembersBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BulkEditMembersRep> patchMembersWithHttpInfo(MembersPatchInput membersPatchInput) throws ApiException {
+    public ApiResponse<BulkEditMembersRep> patchMembersWithHttpInfo(@javax.annotation.Nonnull MembersPatchInput membersPatchInput) throws ApiException {
         okhttp3.Call localVarCall = patchMembersValidateBeforeCall(membersPatchInput, null);
         Type localVarReturnType = new TypeToken<BulkEditMembersRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -204,7 +207,8 @@ public class AccountMembersBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Members response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -214,7 +218,7 @@ public class AccountMembersBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchMembersAsync(MembersPatchInput membersPatchInput, final ApiCallback<BulkEditMembersRep> _callback) throws ApiException {
+    public okhttp3.Call patchMembersAsync(@javax.annotation.Nonnull MembersPatchInput membersPatchInput, final ApiCallback<BulkEditMembersRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchMembersValidateBeforeCall(membersPatchInput, _callback);
         Type localVarReturnType = new TypeToken<BulkEditMembersRep>(){}.getType();

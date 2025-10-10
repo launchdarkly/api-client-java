@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,44 +42,49 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * Rollout
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class Rollout {
   public static final String SERIALIZED_NAME_VARIATIONS = "variations";
   @SerializedName(SERIALIZED_NAME_VARIATIONS)
+  @javax.annotation.Nonnull
   private List<WeightedVariation> variations = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_EXPERIMENT_ALLOCATION = "experimentAllocation";
   @SerializedName(SERIALIZED_NAME_EXPERIMENT_ALLOCATION)
+  @javax.annotation.Nullable
   private ExperimentAllocationRep experimentAllocation;
 
   public static final String SERIALIZED_NAME_SEED = "seed";
   @SerializedName(SERIALIZED_NAME_SEED)
+  @javax.annotation.Nullable
   private Integer seed;
 
   public static final String SERIALIZED_NAME_BUCKET_BY = "bucketBy";
   @SerializedName(SERIALIZED_NAME_BUCKET_BY)
+  @javax.annotation.Nullable
   private String bucketBy;
 
   public static final String SERIALIZED_NAME_CONTEXT_KIND = "contextKind";
   @SerializedName(SERIALIZED_NAME_CONTEXT_KIND)
+  @javax.annotation.Nullable
   private String contextKind;
 
   public Rollout() {
   }
 
-  public Rollout variations(List<WeightedVariation> variations) {
+  public Rollout variations(@javax.annotation.Nonnull List<WeightedVariation> variations) {
     this.variations = variations;
     return this;
   }
@@ -91,92 +97,92 @@ public class Rollout {
     return this;
   }
 
-   /**
+  /**
    * Get variations
    * @return variations
-  **/
+   */
   @javax.annotation.Nonnull
   public List<WeightedVariation> getVariations() {
     return variations;
   }
 
-  public void setVariations(List<WeightedVariation> variations) {
+  public void setVariations(@javax.annotation.Nonnull List<WeightedVariation> variations) {
     this.variations = variations;
   }
 
 
-  public Rollout experimentAllocation(ExperimentAllocationRep experimentAllocation) {
+  public Rollout experimentAllocation(@javax.annotation.Nullable ExperimentAllocationRep experimentAllocation) {
     this.experimentAllocation = experimentAllocation;
     return this;
   }
 
-   /**
+  /**
    * Get experimentAllocation
    * @return experimentAllocation
-  **/
+   */
   @javax.annotation.Nullable
   public ExperimentAllocationRep getExperimentAllocation() {
     return experimentAllocation;
   }
 
-  public void setExperimentAllocation(ExperimentAllocationRep experimentAllocation) {
+  public void setExperimentAllocation(@javax.annotation.Nullable ExperimentAllocationRep experimentAllocation) {
     this.experimentAllocation = experimentAllocation;
   }
 
 
-  public Rollout seed(Integer seed) {
+  public Rollout seed(@javax.annotation.Nullable Integer seed) {
     this.seed = seed;
     return this;
   }
 
-   /**
+  /**
    * Get seed
    * @return seed
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getSeed() {
     return seed;
   }
 
-  public void setSeed(Integer seed) {
+  public void setSeed(@javax.annotation.Nullable Integer seed) {
     this.seed = seed;
   }
 
 
-  public Rollout bucketBy(String bucketBy) {
+  public Rollout bucketBy(@javax.annotation.Nullable String bucketBy) {
     this.bucketBy = bucketBy;
     return this;
   }
 
-   /**
+  /**
    * Get bucketBy
    * @return bucketBy
-  **/
+   */
   @javax.annotation.Nullable
   public String getBucketBy() {
     return bucketBy;
   }
 
-  public void setBucketBy(String bucketBy) {
+  public void setBucketBy(@javax.annotation.Nullable String bucketBy) {
     this.bucketBy = bucketBy;
   }
 
 
-  public Rollout contextKind(String contextKind) {
+  public Rollout contextKind(@javax.annotation.Nullable String contextKind) {
     this.contextKind = contextKind;
     return this;
   }
 
-   /**
+  /**
    * Get contextKind
    * @return contextKind
-  **/
+   */
   @javax.annotation.Nullable
   public String getContextKind() {
     return contextKind;
   }
 
-  public void setContextKind(String contextKind) {
+  public void setContextKind(@javax.annotation.Nullable String contextKind) {
     this.contextKind = contextKind;
   }
 
@@ -279,41 +285,35 @@ public class Rollout {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("variations");
-    openapiFields.add("experimentAllocation");
-    openapiFields.add("seed");
-    openapiFields.add("bucketBy");
-    openapiFields.add("contextKind");
+    openapiFields = new HashSet<String>(Arrays.asList("variations", "experimentAllocation", "seed", "bucketBy", "contextKind"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("variations");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("variations"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Rollout
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Rollout
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Rollout.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Rollout is not found in the empty JSON string", Rollout.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Rollout is not found in the empty JSON string", Rollout.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : Rollout.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the json data is an array
       if (!jsonObj.get("variations").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `variations` to be an array in the JSON string but got `%s`", jsonObj.get("variations").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `variations` to be an array in the JSON string but got `%s`", jsonObj.get("variations").toString()));
       }
 
       JsonArray jsonArrayvariations = jsonObj.getAsJsonArray("variations");
@@ -326,10 +326,10 @@ public class Rollout {
         ExperimentAllocationRep.validateJsonElement(jsonObj.get("experimentAllocation"));
       }
       if ((jsonObj.get("bucketBy") != null && !jsonObj.get("bucketBy").isJsonNull()) && !jsonObj.get("bucketBy").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `bucketBy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucketBy").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `bucketBy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucketBy").toString()));
       }
       if ((jsonObj.get("contextKind") != null && !jsonObj.get("contextKind").isJsonNull()) && !jsonObj.get("contextKind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `contextKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("contextKind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `contextKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("contextKind").toString()));
       }
   }
 
@@ -390,7 +390,7 @@ public class Rollout {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -405,22 +405,22 @@ public class Rollout {
     }
   }
 
- /**
-  * Create an instance of Rollout given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Rollout
-  * @throws IOException if the JSON string is invalid with respect to Rollout
-  */
+  /**
+   * Create an instance of Rollout given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Rollout
+   * @throws IOException if the JSON string is invalid with respect to Rollout
+   */
   public static Rollout fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Rollout.class);
   }
 
- /**
-  * Convert an instance of Rollout to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Rollout to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

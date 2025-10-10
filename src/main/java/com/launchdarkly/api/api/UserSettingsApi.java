@@ -91,7 +91,8 @@ public class UserSettingsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -102,7 +103,7 @@ public class UserSettingsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getExpiringFlagsForUserCall(String projectKey, String userKey, String environmentKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getExpiringFlagsForUserCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String userKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -151,7 +152,7 @@ public class UserSettingsApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getExpiringFlagsForUserValidateBeforeCall(String projectKey, String userKey, String environmentKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getExpiringFlagsForUserValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String userKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getExpiringFlagsForUser(Async)");
@@ -180,7 +181,8 @@ public class UserSettingsApi {
      * @return ExpiringUserTargetGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -191,7 +193,7 @@ public class UserSettingsApi {
      * @deprecated
      */
     @Deprecated
-    public ExpiringUserTargetGetResponse getExpiringFlagsForUser(String projectKey, String userKey, String environmentKey) throws ApiException {
+    public ExpiringUserTargetGetResponse getExpiringFlagsForUser(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String userKey, @javax.annotation.Nonnull String environmentKey) throws ApiException {
         ApiResponse<ExpiringUserTargetGetResponse> localVarResp = getExpiringFlagsForUserWithHttpInfo(projectKey, userKey, environmentKey);
         return localVarResp.getData();
     }
@@ -205,7 +207,8 @@ public class UserSettingsApi {
      * @return ApiResponse&lt;ExpiringUserTargetGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -216,7 +219,7 @@ public class UserSettingsApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<ExpiringUserTargetGetResponse> getExpiringFlagsForUserWithHttpInfo(String projectKey, String userKey, String environmentKey) throws ApiException {
+    public ApiResponse<ExpiringUserTargetGetResponse> getExpiringFlagsForUserWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String userKey, @javax.annotation.Nonnull String environmentKey) throws ApiException {
         okhttp3.Call localVarCall = getExpiringFlagsForUserValidateBeforeCall(projectKey, userKey, environmentKey, null);
         Type localVarReturnType = new TypeToken<ExpiringUserTargetGetResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -232,7 +235,8 @@ public class UserSettingsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -243,7 +247,7 @@ public class UserSettingsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getExpiringFlagsForUserAsync(String projectKey, String userKey, String environmentKey, final ApiCallback<ExpiringUserTargetGetResponse> _callback) throws ApiException {
+    public okhttp3.Call getExpiringFlagsForUserAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String userKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback<ExpiringUserTargetGetResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getExpiringFlagsForUserValidateBeforeCall(projectKey, userKey, environmentKey, _callback);
         Type localVarReturnType = new TypeToken<ExpiringUserTargetGetResponse>(){}.getType();
@@ -260,7 +264,8 @@ public class UserSettingsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> User flag settings response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -272,7 +277,7 @@ public class UserSettingsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getUserFlagSettingCall(String projectKey, String environmentKey, String userKey, String featureFlagKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getUserFlagSettingCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -322,7 +327,7 @@ public class UserSettingsApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getUserFlagSettingValidateBeforeCall(String projectKey, String environmentKey, String userKey, String featureFlagKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getUserFlagSettingValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getUserFlagSetting(Async)");
@@ -357,7 +362,8 @@ public class UserSettingsApi {
      * @return UserFlagSetting
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> User flag settings response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -369,7 +375,7 @@ public class UserSettingsApi {
      * @deprecated
      */
     @Deprecated
-    public UserFlagSetting getUserFlagSetting(String projectKey, String environmentKey, String userKey, String featureFlagKey) throws ApiException {
+    public UserFlagSetting getUserFlagSetting(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey, @javax.annotation.Nonnull String featureFlagKey) throws ApiException {
         ApiResponse<UserFlagSetting> localVarResp = getUserFlagSettingWithHttpInfo(projectKey, environmentKey, userKey, featureFlagKey);
         return localVarResp.getData();
     }
@@ -384,7 +390,8 @@ public class UserSettingsApi {
      * @return ApiResponse&lt;UserFlagSetting&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> User flag settings response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -396,7 +403,7 @@ public class UserSettingsApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<UserFlagSetting> getUserFlagSettingWithHttpInfo(String projectKey, String environmentKey, String userKey, String featureFlagKey) throws ApiException {
+    public ApiResponse<UserFlagSetting> getUserFlagSettingWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey, @javax.annotation.Nonnull String featureFlagKey) throws ApiException {
         okhttp3.Call localVarCall = getUserFlagSettingValidateBeforeCall(projectKey, environmentKey, userKey, featureFlagKey, null);
         Type localVarReturnType = new TypeToken<UserFlagSetting>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -413,7 +420,8 @@ public class UserSettingsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> User flag settings response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -425,7 +433,7 @@ public class UserSettingsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getUserFlagSettingAsync(String projectKey, String environmentKey, String userKey, String featureFlagKey, final ApiCallback<UserFlagSetting> _callback) throws ApiException {
+    public okhttp3.Call getUserFlagSettingAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback<UserFlagSetting> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getUserFlagSettingValidateBeforeCall(projectKey, environmentKey, userKey, featureFlagKey, _callback);
         Type localVarReturnType = new TypeToken<UserFlagSetting>(){}.getType();
@@ -441,7 +449,8 @@ public class UserSettingsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> User flag settings collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -453,7 +462,7 @@ public class UserSettingsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getUserFlagSettingsCall(String projectKey, String environmentKey, String userKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getUserFlagSettingsCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -502,7 +511,7 @@ public class UserSettingsApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getUserFlagSettingsValidateBeforeCall(String projectKey, String environmentKey, String userKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getUserFlagSettingsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getUserFlagSettings(Async)");
@@ -531,7 +540,8 @@ public class UserSettingsApi {
      * @return UserFlagSettings
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> User flag settings collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -543,7 +553,7 @@ public class UserSettingsApi {
      * @deprecated
      */
     @Deprecated
-    public UserFlagSettings getUserFlagSettings(String projectKey, String environmentKey, String userKey) throws ApiException {
+    public UserFlagSettings getUserFlagSettings(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey) throws ApiException {
         ApiResponse<UserFlagSettings> localVarResp = getUserFlagSettingsWithHttpInfo(projectKey, environmentKey, userKey);
         return localVarResp.getData();
     }
@@ -557,7 +567,8 @@ public class UserSettingsApi {
      * @return ApiResponse&lt;UserFlagSettings&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> User flag settings collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -569,7 +580,7 @@ public class UserSettingsApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<UserFlagSettings> getUserFlagSettingsWithHttpInfo(String projectKey, String environmentKey, String userKey) throws ApiException {
+    public ApiResponse<UserFlagSettings> getUserFlagSettingsWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey) throws ApiException {
         okhttp3.Call localVarCall = getUserFlagSettingsValidateBeforeCall(projectKey, environmentKey, userKey, null);
         Type localVarReturnType = new TypeToken<UserFlagSettings>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -585,7 +596,8 @@ public class UserSettingsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> User flag settings collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -597,7 +609,7 @@ public class UserSettingsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getUserFlagSettingsAsync(String projectKey, String environmentKey, String userKey, final ApiCallback<UserFlagSettings> _callback) throws ApiException {
+    public okhttp3.Call getUserFlagSettingsAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey, final ApiCallback<UserFlagSettings> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getUserFlagSettingsValidateBeforeCall(projectKey, environmentKey, userKey, _callback);
         Type localVarReturnType = new TypeToken<UserFlagSettings>(){}.getType();
@@ -614,7 +626,8 @@ public class UserSettingsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -626,7 +639,7 @@ public class UserSettingsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call patchExpiringFlagsForUserCall(String projectKey, String userKey, String environmentKey, PatchUsersRequest patchUsersRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchExpiringFlagsForUserCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String userKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull PatchUsersRequest patchUsersRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -676,7 +689,7 @@ public class UserSettingsApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchExpiringFlagsForUserValidateBeforeCall(String projectKey, String userKey, String environmentKey, PatchUsersRequest patchUsersRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchExpiringFlagsForUserValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String userKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull PatchUsersRequest patchUsersRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling patchExpiringFlagsForUser(Async)");
@@ -711,7 +724,8 @@ public class UserSettingsApi {
      * @return ExpiringUserTargetPatchResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -723,7 +737,7 @@ public class UserSettingsApi {
      * @deprecated
      */
     @Deprecated
-    public ExpiringUserTargetPatchResponse patchExpiringFlagsForUser(String projectKey, String userKey, String environmentKey, PatchUsersRequest patchUsersRequest) throws ApiException {
+    public ExpiringUserTargetPatchResponse patchExpiringFlagsForUser(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String userKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull PatchUsersRequest patchUsersRequest) throws ApiException {
         ApiResponse<ExpiringUserTargetPatchResponse> localVarResp = patchExpiringFlagsForUserWithHttpInfo(projectKey, userKey, environmentKey, patchUsersRequest);
         return localVarResp.getData();
     }
@@ -738,7 +752,8 @@ public class UserSettingsApi {
      * @return ApiResponse&lt;ExpiringUserTargetPatchResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -750,7 +765,7 @@ public class UserSettingsApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<ExpiringUserTargetPatchResponse> patchExpiringFlagsForUserWithHttpInfo(String projectKey, String userKey, String environmentKey, PatchUsersRequest patchUsersRequest) throws ApiException {
+    public ApiResponse<ExpiringUserTargetPatchResponse> patchExpiringFlagsForUserWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String userKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull PatchUsersRequest patchUsersRequest) throws ApiException {
         okhttp3.Call localVarCall = patchExpiringFlagsForUserValidateBeforeCall(projectKey, userKey, environmentKey, patchUsersRequest, null);
         Type localVarReturnType = new TypeToken<ExpiringUserTargetPatchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -767,7 +782,8 @@ public class UserSettingsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -779,7 +795,7 @@ public class UserSettingsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call patchExpiringFlagsForUserAsync(String projectKey, String userKey, String environmentKey, PatchUsersRequest patchUsersRequest, final ApiCallback<ExpiringUserTargetPatchResponse> _callback) throws ApiException {
+    public okhttp3.Call patchExpiringFlagsForUserAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String userKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull PatchUsersRequest patchUsersRequest, final ApiCallback<ExpiringUserTargetPatchResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchExpiringFlagsForUserValidateBeforeCall(projectKey, userKey, environmentKey, patchUsersRequest, _callback);
         Type localVarReturnType = new TypeToken<ExpiringUserTargetPatchResponse>(){}.getType();
@@ -797,7 +813,8 @@ public class UserSettingsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -809,7 +826,7 @@ public class UserSettingsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call putFlagSettingCall(String projectKey, String environmentKey, String userKey, String featureFlagKey, ValuePut valuePut, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call putFlagSettingCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull ValuePut valuePut, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -860,7 +877,7 @@ public class UserSettingsApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call putFlagSettingValidateBeforeCall(String projectKey, String environmentKey, String userKey, String featureFlagKey, ValuePut valuePut, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call putFlagSettingValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull ValuePut valuePut, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling putFlagSetting(Async)");
@@ -900,7 +917,8 @@ public class UserSettingsApi {
      * @param valuePut  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -912,7 +930,7 @@ public class UserSettingsApi {
      * @deprecated
      */
     @Deprecated
-    public void putFlagSetting(String projectKey, String environmentKey, String userKey, String featureFlagKey, ValuePut valuePut) throws ApiException {
+    public void putFlagSetting(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull ValuePut valuePut) throws ApiException {
         putFlagSettingWithHttpInfo(projectKey, environmentKey, userKey, featureFlagKey, valuePut);
     }
 
@@ -927,7 +945,8 @@ public class UserSettingsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -939,7 +958,7 @@ public class UserSettingsApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<Void> putFlagSettingWithHttpInfo(String projectKey, String environmentKey, String userKey, String featureFlagKey, ValuePut valuePut) throws ApiException {
+    public ApiResponse<Void> putFlagSettingWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull ValuePut valuePut) throws ApiException {
         okhttp3.Call localVarCall = putFlagSettingValidateBeforeCall(projectKey, environmentKey, userKey, featureFlagKey, valuePut, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -956,7 +975,8 @@ public class UserSettingsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -968,7 +988,7 @@ public class UserSettingsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call putFlagSettingAsync(String projectKey, String environmentKey, String userKey, String featureFlagKey, ValuePut valuePut, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call putFlagSettingAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull ValuePut valuePut, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putFlagSettingValidateBeforeCall(projectKey, environmentKey, userKey, featureFlagKey, valuePut, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);

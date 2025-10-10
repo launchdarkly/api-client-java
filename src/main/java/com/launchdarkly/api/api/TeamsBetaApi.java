@@ -85,7 +85,8 @@ public class TeamsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Teams response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -95,7 +96,7 @@ public class TeamsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchTeamsCall(TeamsPatchInput teamsPatchInput, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchTeamsCall(@javax.annotation.Nonnull TeamsPatchInput teamsPatchInput, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -141,7 +142,7 @@ public class TeamsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchTeamsValidateBeforeCall(TeamsPatchInput teamsPatchInput, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchTeamsValidateBeforeCall(@javax.annotation.Nonnull TeamsPatchInput teamsPatchInput, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'teamsPatchInput' is set
         if (teamsPatchInput == null) {
             throw new ApiException("Missing the required parameter 'teamsPatchInput' when calling patchTeams(Async)");
@@ -158,7 +159,8 @@ public class TeamsBetaApi {
      * @return BulkEditTeamsRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Teams response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -168,7 +170,7 @@ public class TeamsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public BulkEditTeamsRep patchTeams(TeamsPatchInput teamsPatchInput) throws ApiException {
+    public BulkEditTeamsRep patchTeams(@javax.annotation.Nonnull TeamsPatchInput teamsPatchInput) throws ApiException {
         ApiResponse<BulkEditTeamsRep> localVarResp = patchTeamsWithHttpInfo(teamsPatchInput);
         return localVarResp.getData();
     }
@@ -180,7 +182,8 @@ public class TeamsBetaApi {
      * @return ApiResponse&lt;BulkEditTeamsRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Teams response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -190,7 +193,7 @@ public class TeamsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BulkEditTeamsRep> patchTeamsWithHttpInfo(TeamsPatchInput teamsPatchInput) throws ApiException {
+    public ApiResponse<BulkEditTeamsRep> patchTeamsWithHttpInfo(@javax.annotation.Nonnull TeamsPatchInput teamsPatchInput) throws ApiException {
         okhttp3.Call localVarCall = patchTeamsValidateBeforeCall(teamsPatchInput, null);
         Type localVarReturnType = new TypeToken<BulkEditTeamsRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -204,7 +207,8 @@ public class TeamsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Teams response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -214,7 +218,7 @@ public class TeamsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchTeamsAsync(TeamsPatchInput teamsPatchInput, final ApiCallback<BulkEditTeamsRep> _callback) throws ApiException {
+    public okhttp3.Call patchTeamsAsync(@javax.annotation.Nonnull TeamsPatchInput teamsPatchInput, final ApiCallback<BulkEditTeamsRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchTeamsValidateBeforeCall(teamsPatchInput, _callback);
         Type localVarReturnType = new TypeToken<BulkEditTeamsRep>(){}.getType();

@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,178 +41,188 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * Flag representation for Views API - contains only fields actually used by the Views service
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ExpandedFlag {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_CREATION_DATE = "creationDate";
   @SerializedName(SERIALIZED_NAME_CREATION_DATE)
+  @javax.annotation.Nullable
   private Long creationDate;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
   private Integer version;
 
   public static final String SERIALIZED_NAME_ARCHIVED = "archived";
   @SerializedName(SERIALIZED_NAME_ARCHIVED)
+  @javax.annotation.Nullable
   private Boolean archived;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TEMPORARY = "temporary";
   @SerializedName(SERIALIZED_NAME_TEMPORARY)
+  @javax.annotation.Nullable
   private Boolean temporary;
 
   public static final String SERIALIZED_NAME_INCLUDE_IN_SNIPPET = "includeInSnippet";
   @SerializedName(SERIALIZED_NAME_INCLUDE_IN_SNIPPET)
+  @javax.annotation.Nullable
   private Boolean includeInSnippet;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private ParentAndSelfLinks links;
 
   public ExpandedFlag() {
   }
 
-  public ExpandedFlag key(String key) {
+  public ExpandedFlag key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * A unique key used to reference the flag
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public ExpandedFlag name(String name) {
+  public ExpandedFlag name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for the flag
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public ExpandedFlag description(String description) {
+  public ExpandedFlag description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Description of the flag
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public ExpandedFlag creationDate(Long creationDate) {
+  public ExpandedFlag creationDate(@javax.annotation.Nullable Long creationDate) {
     this.creationDate = creationDate;
     return this;
   }
 
-   /**
+  /**
    * Creation date in milliseconds
    * @return creationDate
-  **/
+   */
   @javax.annotation.Nullable
   public Long getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate(Long creationDate) {
+  public void setCreationDate(@javax.annotation.Nullable Long creationDate) {
     this.creationDate = creationDate;
   }
 
 
-  public ExpandedFlag version(Integer version) {
+  public ExpandedFlag version(@javax.annotation.Nullable Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * Version of the flag
    * @return version
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nullable Integer version) {
     this.version = version;
   }
 
 
-  public ExpandedFlag archived(Boolean archived) {
+  public ExpandedFlag archived(@javax.annotation.Nullable Boolean archived) {
     this.archived = archived;
     return this;
   }
 
-   /**
+  /**
    * Whether the flag is archived
    * @return archived
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getArchived() {
     return archived;
   }
 
-  public void setArchived(Boolean archived) {
+  public void setArchived(@javax.annotation.Nullable Boolean archived) {
     this.archived = archived;
   }
 
 
-  public ExpandedFlag tags(List<String> tags) {
+  public ExpandedFlag tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -224,73 +235,73 @@ public class ExpandedFlag {
     return this;
   }
 
-   /**
+  /**
    * Tags for the flag
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
 
-  public ExpandedFlag temporary(Boolean temporary) {
+  public ExpandedFlag temporary(@javax.annotation.Nullable Boolean temporary) {
     this.temporary = temporary;
     return this;
   }
 
-   /**
+  /**
    * Whether the flag is temporary
    * @return temporary
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getTemporary() {
     return temporary;
   }
 
-  public void setTemporary(Boolean temporary) {
+  public void setTemporary(@javax.annotation.Nullable Boolean temporary) {
     this.temporary = temporary;
   }
 
 
-  public ExpandedFlag includeInSnippet(Boolean includeInSnippet) {
+  public ExpandedFlag includeInSnippet(@javax.annotation.Nullable Boolean includeInSnippet) {
     this.includeInSnippet = includeInSnippet;
     return this;
   }
 
-   /**
+  /**
    * Whether to include in snippet
    * @return includeInSnippet
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIncludeInSnippet() {
     return includeInSnippet;
   }
 
-  public void setIncludeInSnippet(Boolean includeInSnippet) {
+  public void setIncludeInSnippet(@javax.annotation.Nullable Boolean includeInSnippet) {
     this.includeInSnippet = includeInSnippet;
   }
 
 
-  public ExpandedFlag links(ParentAndSelfLinks links) {
+  public ExpandedFlag links(@javax.annotation.Nullable ParentAndSelfLinks links) {
     this.links = links;
     return this;
   }
 
-   /**
+  /**
    * Get links
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public ParentAndSelfLinks getLinks() {
     return links;
   }
 
-  public void setLinks(ParentAndSelfLinks links) {
+  public void setLinks(@javax.annotation.Nullable ParentAndSelfLinks links) {
     this.links = links;
   }
 
@@ -403,56 +414,44 @@ public class ExpandedFlag {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("key");
-    openapiFields.add("name");
-    openapiFields.add("description");
-    openapiFields.add("creationDate");
-    openapiFields.add("version");
-    openapiFields.add("archived");
-    openapiFields.add("tags");
-    openapiFields.add("temporary");
-    openapiFields.add("includeInSnippet");
-    openapiFields.add("_links");
+    openapiFields = new HashSet<String>(Arrays.asList("key", "name", "description", "creationDate", "version", "archived", "tags", "temporary", "includeInSnippet", "_links"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("name");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("key", "name"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ExpandedFlag
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ExpandedFlag
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ExpandedFlag.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ExpandedFlag is not found in the empty JSON string", ExpandedFlag.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ExpandedFlag is not found in the empty JSON string", ExpandedFlag.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ExpandedFlag.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       // validate the optional field `_links`
       if (jsonObj.get("_links") != null && !jsonObj.get("_links").isJsonNull()) {
@@ -517,7 +516,7 @@ public class ExpandedFlag {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -532,22 +531,22 @@ public class ExpandedFlag {
     }
   }
 
- /**
-  * Create an instance of ExpandedFlag given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ExpandedFlag
-  * @throws IOException if the JSON string is invalid with respect to ExpandedFlag
-  */
+  /**
+   * Create an instance of ExpandedFlag given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ExpandedFlag
+   * @throws IOException if the JSON string is invalid with respect to ExpandedFlag
+   */
   public static ExpandedFlag fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ExpandedFlag.class);
   }
 
- /**
-  * Convert an instance of ExpandedFlag to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ExpandedFlag to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

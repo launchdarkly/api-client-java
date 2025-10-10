@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,120 +40,125 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * AIConfigPatch
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AIConfigPatch {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_MAINTAINER_ID = "maintainerId";
   @SerializedName(SERIALIZED_NAME_MAINTAINER_ID)
+  @javax.annotation.Nullable
   private String maintainerId;
 
   public static final String SERIALIZED_NAME_MAINTAINER_TEAM_KEY = "maintainerTeamKey";
   @SerializedName(SERIALIZED_NAME_MAINTAINER_TEAM_KEY)
+  @javax.annotation.Nullable
   private String maintainerTeamKey;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
   private List<String> tags = new ArrayList<>();
 
   public AIConfigPatch() {
   }
 
-  public AIConfigPatch description(String description) {
+  public AIConfigPatch description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Get description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public AIConfigPatch maintainerId(String maintainerId) {
+  public AIConfigPatch maintainerId(@javax.annotation.Nullable String maintainerId) {
     this.maintainerId = maintainerId;
     return this;
   }
 
-   /**
+  /**
    * Get maintainerId
    * @return maintainerId
-  **/
+   */
   @javax.annotation.Nullable
   public String getMaintainerId() {
     return maintainerId;
   }
 
-  public void setMaintainerId(String maintainerId) {
+  public void setMaintainerId(@javax.annotation.Nullable String maintainerId) {
     this.maintainerId = maintainerId;
   }
 
 
-  public AIConfigPatch maintainerTeamKey(String maintainerTeamKey) {
+  public AIConfigPatch maintainerTeamKey(@javax.annotation.Nullable String maintainerTeamKey) {
     this.maintainerTeamKey = maintainerTeamKey;
     return this;
   }
 
-   /**
+  /**
    * Get maintainerTeamKey
    * @return maintainerTeamKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getMaintainerTeamKey() {
     return maintainerTeamKey;
   }
 
-  public void setMaintainerTeamKey(String maintainerTeamKey) {
+  public void setMaintainerTeamKey(@javax.annotation.Nullable String maintainerTeamKey) {
     this.maintainerTeamKey = maintainerTeamKey;
   }
 
 
-  public AIConfigPatch name(String name) {
+  public AIConfigPatch name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public AIConfigPatch tags(List<String> tags) {
+  public AIConfigPatch tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -165,16 +171,16 @@ public class AIConfigPatch {
     return this;
   }
 
-   /**
+  /**
    * Get tags
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
@@ -277,45 +283,40 @@ public class AIConfigPatch {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("description");
-    openapiFields.add("maintainerId");
-    openapiFields.add("maintainerTeamKey");
-    openapiFields.add("name");
-    openapiFields.add("tags");
+    openapiFields = new HashSet<String>(Arrays.asList("description", "maintainerId", "maintainerTeamKey", "name", "tags"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to AIConfigPatch
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AIConfigPatch
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AIConfigPatch.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AIConfigPatch is not found in the empty JSON string", AIConfigPatch.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AIConfigPatch is not found in the empty JSON string", AIConfigPatch.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if ((jsonObj.get("maintainerId") != null && !jsonObj.get("maintainerId").isJsonNull()) && !jsonObj.get("maintainerId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerId").toString()));
       }
       if ((jsonObj.get("maintainerTeamKey") != null && !jsonObj.get("maintainerTeamKey").isJsonNull()) && !jsonObj.get("maintainerTeamKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `maintainerTeamKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerTeamKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `maintainerTeamKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerTeamKey").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
   }
 
@@ -376,7 +377,7 @@ public class AIConfigPatch {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -391,22 +392,22 @@ public class AIConfigPatch {
     }
   }
 
- /**
-  * Create an instance of AIConfigPatch given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AIConfigPatch
-  * @throws IOException if the JSON string is invalid with respect to AIConfigPatch
-  */
+  /**
+   * Create an instance of AIConfigPatch given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AIConfigPatch
+   * @throws IOException if the JSON string is invalid with respect to AIConfigPatch
+   */
   public static AIConfigPatch fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AIConfigPatch.class);
   }
 
- /**
-  * Convert an instance of AIConfigPatch to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AIConfigPatch to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

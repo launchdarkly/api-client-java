@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,86 +43,92 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * FlagRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class FlagRep {
   public static final String SERIALIZED_NAME_TARGETING_RULE = "targetingRule";
   @SerializedName(SERIALIZED_NAME_TARGETING_RULE)
+  @javax.annotation.Nullable
   private String targetingRule;
 
   public static final String SERIALIZED_NAME_TARGETING_RULE_DESCRIPTION = "targetingRuleDescription";
   @SerializedName(SERIALIZED_NAME_TARGETING_RULE_DESCRIPTION)
+  @javax.annotation.Nullable
   private String targetingRuleDescription;
 
   public static final String SERIALIZED_NAME_TARGETING_RULE_CLAUSES = "targetingRuleClauses";
   @SerializedName(SERIALIZED_NAME_TARGETING_RULE_CLAUSES)
+  @javax.annotation.Nullable
   private List<Object> targetingRuleClauses = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_FLAG_CONFIG_VERSION = "flagConfigVersion";
   @SerializedName(SERIALIZED_NAME_FLAG_CONFIG_VERSION)
+  @javax.annotation.Nullable
   private Integer flagConfigVersion;
 
   public static final String SERIALIZED_NAME_NOT_IN_EXPERIMENT_VARIATION_ID = "notInExperimentVariationId";
   @SerializedName(SERIALIZED_NAME_NOT_IN_EXPERIMENT_VARIATION_ID)
+  @javax.annotation.Nullable
   private String notInExperimentVariationId;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public FlagRep() {
   }
 
-  public FlagRep targetingRule(String targetingRule) {
+  public FlagRep targetingRule(@javax.annotation.Nullable String targetingRule) {
     this.targetingRule = targetingRule;
     return this;
   }
 
-   /**
+  /**
    * The targeting rule
    * @return targetingRule
-  **/
+   */
   @javax.annotation.Nullable
   public String getTargetingRule() {
     return targetingRule;
   }
 
-  public void setTargetingRule(String targetingRule) {
+  public void setTargetingRule(@javax.annotation.Nullable String targetingRule) {
     this.targetingRule = targetingRule;
   }
 
 
-  public FlagRep targetingRuleDescription(String targetingRuleDescription) {
+  public FlagRep targetingRuleDescription(@javax.annotation.Nullable String targetingRuleDescription) {
     this.targetingRuleDescription = targetingRuleDescription;
     return this;
   }
 
-   /**
+  /**
    * The rule description
    * @return targetingRuleDescription
-  **/
+   */
   @javax.annotation.Nullable
   public String getTargetingRuleDescription() {
     return targetingRuleDescription;
   }
 
-  public void setTargetingRuleDescription(String targetingRuleDescription) {
+  public void setTargetingRuleDescription(@javax.annotation.Nullable String targetingRuleDescription) {
     this.targetingRuleDescription = targetingRuleDescription;
   }
 
 
-  public FlagRep targetingRuleClauses(List<Object> targetingRuleClauses) {
+  public FlagRep targetingRuleClauses(@javax.annotation.Nullable List<Object> targetingRuleClauses) {
     this.targetingRuleClauses = targetingRuleClauses;
     return this;
   }
@@ -134,59 +141,59 @@ public class FlagRep {
     return this;
   }
 
-   /**
+  /**
    * An array of clauses used for individual targeting based on attributes
    * @return targetingRuleClauses
-  **/
+   */
   @javax.annotation.Nullable
   public List<Object> getTargetingRuleClauses() {
     return targetingRuleClauses;
   }
 
-  public void setTargetingRuleClauses(List<Object> targetingRuleClauses) {
+  public void setTargetingRuleClauses(@javax.annotation.Nullable List<Object> targetingRuleClauses) {
     this.targetingRuleClauses = targetingRuleClauses;
   }
 
 
-  public FlagRep flagConfigVersion(Integer flagConfigVersion) {
+  public FlagRep flagConfigVersion(@javax.annotation.Nullable Integer flagConfigVersion) {
     this.flagConfigVersion = flagConfigVersion;
     return this;
   }
 
-   /**
+  /**
    * The flag version
    * @return flagConfigVersion
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getFlagConfigVersion() {
     return flagConfigVersion;
   }
 
-  public void setFlagConfigVersion(Integer flagConfigVersion) {
+  public void setFlagConfigVersion(@javax.annotation.Nullable Integer flagConfigVersion) {
     this.flagConfigVersion = flagConfigVersion;
   }
 
 
-  public FlagRep notInExperimentVariationId(String notInExperimentVariationId) {
+  public FlagRep notInExperimentVariationId(@javax.annotation.Nullable String notInExperimentVariationId) {
     this.notInExperimentVariationId = notInExperimentVariationId;
     return this;
   }
 
-   /**
+  /**
    * The ID of the variation to route traffic not part of the experiment analysis to
    * @return notInExperimentVariationId
-  **/
+   */
   @javax.annotation.Nullable
   public String getNotInExperimentVariationId() {
     return notInExperimentVariationId;
   }
 
-  public void setNotInExperimentVariationId(String notInExperimentVariationId) {
+  public void setNotInExperimentVariationId(@javax.annotation.Nullable String notInExperimentVariationId) {
     this.notInExperimentVariationId = notInExperimentVariationId;
   }
 
 
-  public FlagRep links(Map<String, Link> links) {
+  public FlagRep links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -199,16 +206,16 @@ public class FlagRep {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
@@ -313,51 +320,44 @@ public class FlagRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("targetingRule");
-    openapiFields.add("targetingRuleDescription");
-    openapiFields.add("targetingRuleClauses");
-    openapiFields.add("flagConfigVersion");
-    openapiFields.add("notInExperimentVariationId");
-    openapiFields.add("_links");
+    openapiFields = new HashSet<String>(Arrays.asList("targetingRule", "targetingRuleDescription", "targetingRuleClauses", "flagConfigVersion", "notInExperimentVariationId", "_links"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_links");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_links"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FlagRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FlagRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FlagRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FlagRep is not found in the empty JSON string", FlagRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FlagRep is not found in the empty JSON string", FlagRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : FlagRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("targetingRule") != null && !jsonObj.get("targetingRule").isJsonNull()) && !jsonObj.get("targetingRule").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `targetingRule` to be a primitive type in the JSON string but got `%s`", jsonObj.get("targetingRule").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `targetingRule` to be a primitive type in the JSON string but got `%s`", jsonObj.get("targetingRule").toString()));
       }
       if ((jsonObj.get("targetingRuleDescription") != null && !jsonObj.get("targetingRuleDescription").isJsonNull()) && !jsonObj.get("targetingRuleDescription").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `targetingRuleDescription` to be a primitive type in the JSON string but got `%s`", jsonObj.get("targetingRuleDescription").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `targetingRuleDescription` to be a primitive type in the JSON string but got `%s`", jsonObj.get("targetingRuleDescription").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("targetingRuleClauses") != null && !jsonObj.get("targetingRuleClauses").isJsonNull() && !jsonObj.get("targetingRuleClauses").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `targetingRuleClauses` to be an array in the JSON string but got `%s`", jsonObj.get("targetingRuleClauses").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `targetingRuleClauses` to be an array in the JSON string but got `%s`", jsonObj.get("targetingRuleClauses").toString()));
       }
       if ((jsonObj.get("notInExperimentVariationId") != null && !jsonObj.get("notInExperimentVariationId").isJsonNull()) && !jsonObj.get("notInExperimentVariationId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `notInExperimentVariationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("notInExperimentVariationId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notInExperimentVariationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("notInExperimentVariationId").toString()));
       }
   }
 
@@ -418,7 +418,7 @@ public class FlagRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -433,22 +433,22 @@ public class FlagRep {
     }
   }
 
- /**
-  * Create an instance of FlagRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FlagRep
-  * @throws IOException if the JSON string is invalid with respect to FlagRep
-  */
+  /**
+   * Create an instance of FlagRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FlagRep
+   * @throws IOException if the JSON string is invalid with respect to FlagRep
+   */
   public static FlagRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FlagRep.class);
   }
 
- /**
-  * Convert an instance of FlagRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FlagRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

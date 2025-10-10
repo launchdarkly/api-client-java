@@ -89,7 +89,8 @@ public class MetricsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -98,7 +99,7 @@ public class MetricsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteMetricCall(String projectKey, String metricKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteMetricCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String metricKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -145,7 +146,7 @@ public class MetricsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteMetricValidateBeforeCall(String projectKey, String metricKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteMetricValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String metricKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling deleteMetric(Async)");
@@ -167,7 +168,8 @@ public class MetricsApi {
      * @param metricKey The metric key (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -176,7 +178,7 @@ public class MetricsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteMetric(String projectKey, String metricKey) throws ApiException {
+    public void deleteMetric(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String metricKey) throws ApiException {
         deleteMetricWithHttpInfo(projectKey, metricKey);
     }
 
@@ -188,7 +190,8 @@ public class MetricsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -197,7 +200,7 @@ public class MetricsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteMetricWithHttpInfo(String projectKey, String metricKey) throws ApiException {
+    public ApiResponse<Void> deleteMetricWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String metricKey) throws ApiException {
         okhttp3.Call localVarCall = deleteMetricValidateBeforeCall(projectKey, metricKey, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -211,7 +214,8 @@ public class MetricsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -220,7 +224,7 @@ public class MetricsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteMetricAsync(String projectKey, String metricKey, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteMetricAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String metricKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteMetricValidateBeforeCall(projectKey, metricKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -236,7 +240,8 @@ public class MetricsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metric response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -245,7 +250,7 @@ public class MetricsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMetricCall(String projectKey, String metricKey, String expand, String versionId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getMetricCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String metricKey, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String versionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -300,7 +305,7 @@ public class MetricsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getMetricValidateBeforeCall(String projectKey, String metricKey, String expand, String versionId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getMetricValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String metricKey, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String versionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getMetric(Async)");
@@ -325,7 +330,8 @@ public class MetricsApi {
      * @return MetricRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metric response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -334,7 +340,7 @@ public class MetricsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public MetricRep getMetric(String projectKey, String metricKey, String expand, String versionId) throws ApiException {
+    public MetricRep getMetric(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String metricKey, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String versionId) throws ApiException {
         ApiResponse<MetricRep> localVarResp = getMetricWithHttpInfo(projectKey, metricKey, expand, versionId);
         return localVarResp.getData();
     }
@@ -349,7 +355,8 @@ public class MetricsApi {
      * @return ApiResponse&lt;MetricRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metric response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -358,7 +365,7 @@ public class MetricsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<MetricRep> getMetricWithHttpInfo(String projectKey, String metricKey, String expand, String versionId) throws ApiException {
+    public ApiResponse<MetricRep> getMetricWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String metricKey, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String versionId) throws ApiException {
         okhttp3.Call localVarCall = getMetricValidateBeforeCall(projectKey, metricKey, expand, versionId, null);
         Type localVarReturnType = new TypeToken<MetricRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -375,7 +382,8 @@ public class MetricsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metric response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -384,7 +392,7 @@ public class MetricsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMetricAsync(String projectKey, String metricKey, String expand, String versionId, final ApiCallback<MetricRep> _callback) throws ApiException {
+    public okhttp3.Call getMetricAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String metricKey, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String versionId, final ApiCallback<MetricRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getMetricValidateBeforeCall(projectKey, metricKey, expand, versionId, _callback);
         Type localVarReturnType = new TypeToken<MetricRep>(){}.getType();
@@ -403,14 +411,15 @@ public class MetricsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metrics collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMetricsCall(String projectKey, String expand, Long limit, Long offset, String sort, String filter, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getMetricsCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String expand, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -476,7 +485,7 @@ public class MetricsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getMetricsValidateBeforeCall(String projectKey, String expand, Long limit, Long offset, String sort, String filter, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getMetricsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String expand, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getMetrics(Async)");
@@ -498,14 +507,15 @@ public class MetricsApi {
      * @return MetricCollectionRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metrics collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public MetricCollectionRep getMetrics(String projectKey, String expand, Long limit, Long offset, String sort, String filter) throws ApiException {
+    public MetricCollectionRep getMetrics(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String expand, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter) throws ApiException {
         ApiResponse<MetricCollectionRep> localVarResp = getMetricsWithHttpInfo(projectKey, expand, limit, offset, sort, filter);
         return localVarResp.getData();
     }
@@ -522,14 +532,15 @@ public class MetricsApi {
      * @return ApiResponse&lt;MetricCollectionRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metrics collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<MetricCollectionRep> getMetricsWithHttpInfo(String projectKey, String expand, Long limit, Long offset, String sort, String filter) throws ApiException {
+    public ApiResponse<MetricCollectionRep> getMetricsWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String expand, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter) throws ApiException {
         okhttp3.Call localVarCall = getMetricsValidateBeforeCall(projectKey, expand, limit, offset, sort, filter, null);
         Type localVarReturnType = new TypeToken<MetricCollectionRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -548,14 +559,15 @@ public class MetricsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metrics collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMetricsAsync(String projectKey, String expand, Long limit, Long offset, String sort, String filter, final ApiCallback<MetricCollectionRep> _callback) throws ApiException {
+    public okhttp3.Call getMetricsAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String expand, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, final ApiCallback<MetricCollectionRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getMetricsValidateBeforeCall(projectKey, expand, limit, offset, sort, filter, _callback);
         Type localVarReturnType = new TypeToken<MetricCollectionRep>(){}.getType();
@@ -571,7 +583,8 @@ public class MetricsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metric response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -581,7 +594,7 @@ public class MetricsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchMetricCall(String projectKey, String metricKey, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchMetricCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String metricKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -629,7 +642,7 @@ public class MetricsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchMetricValidateBeforeCall(String projectKey, String metricKey, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchMetricValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String metricKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling patchMetric(Async)");
@@ -658,7 +671,8 @@ public class MetricsApi {
      * @return MetricRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metric response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -668,7 +682,7 @@ public class MetricsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public MetricRep patchMetric(String projectKey, String metricKey, List<PatchOperation> patchOperation) throws ApiException {
+    public MetricRep patchMetric(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String metricKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         ApiResponse<MetricRep> localVarResp = patchMetricWithHttpInfo(projectKey, metricKey, patchOperation);
         return localVarResp.getData();
     }
@@ -682,7 +696,8 @@ public class MetricsApi {
      * @return ApiResponse&lt;MetricRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metric response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -692,7 +707,7 @@ public class MetricsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<MetricRep> patchMetricWithHttpInfo(String projectKey, String metricKey, List<PatchOperation> patchOperation) throws ApiException {
+    public ApiResponse<MetricRep> patchMetricWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String metricKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         okhttp3.Call localVarCall = patchMetricValidateBeforeCall(projectKey, metricKey, patchOperation, null);
         Type localVarReturnType = new TypeToken<MetricRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -708,7 +723,8 @@ public class MetricsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metric response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -718,7 +734,7 @@ public class MetricsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchMetricAsync(String projectKey, String metricKey, List<PatchOperation> patchOperation, final ApiCallback<MetricRep> _callback) throws ApiException {
+    public okhttp3.Call patchMetricAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String metricKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback<MetricRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchMetricValidateBeforeCall(projectKey, metricKey, patchOperation, _callback);
         Type localVarReturnType = new TypeToken<MetricRep>(){}.getType();
@@ -733,7 +749,8 @@ public class MetricsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Metric response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -744,7 +761,7 @@ public class MetricsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postMetricCall(String projectKey, MetricPost metricPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postMetricCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull MetricPost metricPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -791,7 +808,7 @@ public class MetricsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postMetricValidateBeforeCall(String projectKey, MetricPost metricPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postMetricValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull MetricPost metricPost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling postMetric(Async)");
@@ -814,7 +831,8 @@ public class MetricsApi {
      * @return MetricRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Metric response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -825,7 +843,7 @@ public class MetricsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public MetricRep postMetric(String projectKey, MetricPost metricPost) throws ApiException {
+    public MetricRep postMetric(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull MetricPost metricPost) throws ApiException {
         ApiResponse<MetricRep> localVarResp = postMetricWithHttpInfo(projectKey, metricPost);
         return localVarResp.getData();
     }
@@ -838,7 +856,8 @@ public class MetricsApi {
      * @return ApiResponse&lt;MetricRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Metric response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -849,7 +868,7 @@ public class MetricsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<MetricRep> postMetricWithHttpInfo(String projectKey, MetricPost metricPost) throws ApiException {
+    public ApiResponse<MetricRep> postMetricWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull MetricPost metricPost) throws ApiException {
         okhttp3.Call localVarCall = postMetricValidateBeforeCall(projectKey, metricPost, null);
         Type localVarReturnType = new TypeToken<MetricRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -864,7 +883,8 @@ public class MetricsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Metric response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -875,7 +895,7 @@ public class MetricsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postMetricAsync(String projectKey, MetricPost metricPost, final ApiCallback<MetricRep> _callback) throws ApiException {
+    public okhttp3.Call postMetricAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull MetricPost metricPost, final ApiCallback<MetricRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postMetricValidateBeforeCall(projectKey, metricPost, _callback);
         Type localVarReturnType = new TypeToken<MetricRep>(){}.getType();

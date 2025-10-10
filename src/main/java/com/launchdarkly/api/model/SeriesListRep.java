@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,36 +42,39 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * SeriesListRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class SeriesListRep {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Object> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
+  @javax.annotation.Nonnull
   private List<Map<String, Object>> metadata = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SERIES = "series";
   @SerializedName(SERIALIZED_NAME_SERIES)
+  @javax.annotation.Nonnull
   private List<Map<String, Integer>> series = new ArrayList<>();
 
   public SeriesListRep() {
   }
 
-  public SeriesListRep links(Map<String, Object> links) {
+  public SeriesListRep links(@javax.annotation.Nonnull Map<String, Object> links) {
     this.links = links;
     return this;
   }
@@ -83,21 +87,21 @@ public class SeriesListRep {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Object> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Object> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Object> links) {
     this.links = links;
   }
 
 
-  public SeriesListRep metadata(List<Map<String, Object>> metadata) {
+  public SeriesListRep metadata(@javax.annotation.Nonnull List<Map<String, Object>> metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -110,21 +114,21 @@ public class SeriesListRep {
     return this;
   }
 
-   /**
+  /**
    * Metadata about each series
    * @return metadata
-  **/
+   */
   @javax.annotation.Nonnull
   public List<Map<String, Object>> getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(List<Map<String, Object>> metadata) {
+  public void setMetadata(@javax.annotation.Nonnull List<Map<String, Object>> metadata) {
     this.metadata = metadata;
   }
 
 
-  public SeriesListRep series(List<Map<String, Integer>> series) {
+  public SeriesListRep series(@javax.annotation.Nonnull List<Map<String, Integer>> series) {
     this.series = series;
     return this;
   }
@@ -137,16 +141,16 @@ public class SeriesListRep {
     return this;
   }
 
-   /**
+  /**
    * An array of data points with timestamps. Each element of the array is an object with a &#39;time&#39; field, whose value is the timestamp, and one or more key fields. If there are multiple key fields, they are labeled &#39;0&#39;, &#39;1&#39;, and so on, and are explained in the &lt;code&gt;metadata&lt;/code&gt;.
    * @return series
-  **/
+   */
   @javax.annotation.Nonnull
   public List<Map<String, Integer>> getSeries() {
     return series;
   }
 
-  public void setSeries(List<Map<String, Integer>> series) {
+  public void setSeries(@javax.annotation.Nonnull List<Map<String, Integer>> series) {
     this.series = series;
   }
 
@@ -245,35 +249,29 @@ public class SeriesListRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_links");
-    openapiFields.add("metadata");
-    openapiFields.add("series");
+    openapiFields = new HashSet<String>(Arrays.asList("_links", "metadata", "series"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_links");
-    openapiRequiredFields.add("metadata");
-    openapiRequiredFields.add("series");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_links", "metadata", "series"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to SeriesListRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SeriesListRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SeriesListRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SeriesListRep is not found in the empty JSON string", SeriesListRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in SeriesListRep is not found in the empty JSON string", SeriesListRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : SeriesListRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -281,13 +279,13 @@ public class SeriesListRep {
       if (jsonObj.get("metadata") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("metadata").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `metadata` to be an array in the JSON string but got `%s`", jsonObj.get("metadata").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `metadata` to be an array in the JSON string but got `%s`", jsonObj.get("metadata").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("series") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("series").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `series` to be an array in the JSON string but got `%s`", jsonObj.get("series").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `series` to be an array in the JSON string but got `%s`", jsonObj.get("series").toString()));
       }
   }
 
@@ -348,7 +346,7 @@ public class SeriesListRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -363,22 +361,22 @@ public class SeriesListRep {
     }
   }
 
- /**
-  * Create an instance of SeriesListRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SeriesListRep
-  * @throws IOException if the JSON string is invalid with respect to SeriesListRep
-  */
+  /**
+   * Create an instance of SeriesListRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SeriesListRep
+   * @throws IOException if the JSON string is invalid with respect to SeriesListRep
+   */
   public static SeriesListRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SeriesListRep.class);
   }
 
- /**
-  * Convert an instance of SeriesListRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SeriesListRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

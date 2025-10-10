@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,151 +44,159 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * FeatureFlagScheduledChange
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class FeatureFlagScheduledChange {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_CREATION_DATE = "_creationDate";
   @SerializedName(SERIALIZED_NAME_CREATION_DATE)
+  @javax.annotation.Nonnull
   private Long creationDate;
 
   public static final String SERIALIZED_NAME_MAINTAINER_ID = "_maintainerId";
   @SerializedName(SERIALIZED_NAME_MAINTAINER_ID)
+  @javax.annotation.Nonnull
   private String maintainerId;
 
   public static final String SERIALIZED_NAME_VERSION = "_version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nonnull
   private Integer version;
 
   public static final String SERIALIZED_NAME_EXECUTION_DATE = "executionDate";
   @SerializedName(SERIALIZED_NAME_EXECUTION_DATE)
+  @javax.annotation.Nonnull
   private Long executionDate;
 
   public static final String SERIALIZED_NAME_INSTRUCTIONS = "instructions";
   @SerializedName(SERIALIZED_NAME_INSTRUCTIONS)
+  @javax.annotation.Nonnull
   private List<Map<String, Object>> instructions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CONFLICTS = "conflicts";
   @SerializedName(SERIALIZED_NAME_CONFLICTS)
+  @javax.annotation.Nullable
   private Object conflicts = null;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private Map<String, Link> links = new HashMap<>();
 
   public FeatureFlagScheduledChange() {
   }
 
-  public FeatureFlagScheduledChange id(String id) {
+  public FeatureFlagScheduledChange id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public FeatureFlagScheduledChange creationDate(Long creationDate) {
+  public FeatureFlagScheduledChange creationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
     return this;
   }
 
-   /**
+  /**
    * Get creationDate
    * @return creationDate
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate(Long creationDate) {
+  public void setCreationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
   }
 
 
-  public FeatureFlagScheduledChange maintainerId(String maintainerId) {
+  public FeatureFlagScheduledChange maintainerId(@javax.annotation.Nonnull String maintainerId) {
     this.maintainerId = maintainerId;
     return this;
   }
 
-   /**
+  /**
    * The ID of the scheduled change maintainer
    * @return maintainerId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getMaintainerId() {
     return maintainerId;
   }
 
-  public void setMaintainerId(String maintainerId) {
+  public void setMaintainerId(@javax.annotation.Nonnull String maintainerId) {
     this.maintainerId = maintainerId;
   }
 
 
-  public FeatureFlagScheduledChange version(Integer version) {
+  public FeatureFlagScheduledChange version(@javax.annotation.Nonnull Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * Version of the scheduled change
    * @return version
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nonnull Integer version) {
     this.version = version;
   }
 
 
-  public FeatureFlagScheduledChange executionDate(Long executionDate) {
+  public FeatureFlagScheduledChange executionDate(@javax.annotation.Nonnull Long executionDate) {
     this.executionDate = executionDate;
     return this;
   }
 
-   /**
+  /**
    * Get executionDate
    * @return executionDate
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getExecutionDate() {
     return executionDate;
   }
 
-  public void setExecutionDate(Long executionDate) {
+  public void setExecutionDate(@javax.annotation.Nonnull Long executionDate) {
     this.executionDate = executionDate;
   }
 
 
-  public FeatureFlagScheduledChange instructions(List<Map<String, Object>> instructions) {
+  public FeatureFlagScheduledChange instructions(@javax.annotation.Nonnull List<Map<String, Object>> instructions) {
     this.instructions = instructions;
     return this;
   }
@@ -200,40 +209,40 @@ public class FeatureFlagScheduledChange {
     return this;
   }
 
-   /**
+  /**
    * Get instructions
    * @return instructions
-  **/
+   */
   @javax.annotation.Nonnull
   public List<Map<String, Object>> getInstructions() {
     return instructions;
   }
 
-  public void setInstructions(List<Map<String, Object>> instructions) {
+  public void setInstructions(@javax.annotation.Nonnull List<Map<String, Object>> instructions) {
     this.instructions = instructions;
   }
 
 
-  public FeatureFlagScheduledChange conflicts(Object conflicts) {
+  public FeatureFlagScheduledChange conflicts(@javax.annotation.Nullable Object conflicts) {
     this.conflicts = conflicts;
     return this;
   }
 
-   /**
+  /**
    * Details on any conflicting scheduled changes
    * @return conflicts
-  **/
+   */
   @javax.annotation.Nullable
   public Object getConflicts() {
     return conflicts;
   }
 
-  public void setConflicts(Object conflicts) {
+  public void setConflicts(@javax.annotation.Nullable Object conflicts) {
     this.conflicts = conflicts;
   }
 
 
-  public FeatureFlagScheduledChange links(Map<String, Link> links) {
+  public FeatureFlagScheduledChange links(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -246,16 +255,16 @@ public class FeatureFlagScheduledChange {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
   }
 
@@ -375,57 +384,43 @@ public class FeatureFlagScheduledChange {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_id");
-    openapiFields.add("_creationDate");
-    openapiFields.add("_maintainerId");
-    openapiFields.add("_version");
-    openapiFields.add("executionDate");
-    openapiFields.add("instructions");
-    openapiFields.add("conflicts");
-    openapiFields.add("_links");
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "_creationDate", "_maintainerId", "_version", "executionDate", "instructions", "conflicts", "_links"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("_creationDate");
-    openapiRequiredFields.add("_maintainerId");
-    openapiRequiredFields.add("_version");
-    openapiRequiredFields.add("executionDate");
-    openapiRequiredFields.add("instructions");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "_creationDate", "_maintainerId", "_version", "executionDate", "instructions"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FeatureFlagScheduledChange
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FeatureFlagScheduledChange
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FeatureFlagScheduledChange.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FeatureFlagScheduledChange is not found in the empty JSON string", FeatureFlagScheduledChange.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FeatureFlagScheduledChange is not found in the empty JSON string", FeatureFlagScheduledChange.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : FeatureFlagScheduledChange.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if (!jsonObj.get("_maintainerId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_maintainerId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_maintainerId").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("instructions") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("instructions").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `instructions` to be an array in the JSON string but got `%s`", jsonObj.get("instructions").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `instructions` to be an array in the JSON string but got `%s`", jsonObj.get("instructions").toString()));
       }
   }
 
@@ -486,7 +481,7 @@ public class FeatureFlagScheduledChange {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -501,22 +496,22 @@ public class FeatureFlagScheduledChange {
     }
   }
 
- /**
-  * Create an instance of FeatureFlagScheduledChange given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FeatureFlagScheduledChange
-  * @throws IOException if the JSON string is invalid with respect to FeatureFlagScheduledChange
-  */
+  /**
+   * Create an instance of FeatureFlagScheduledChange given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FeatureFlagScheduledChange
+   * @throws IOException if the JSON string is invalid with respect to FeatureFlagScheduledChange
+   */
   public static FeatureFlagScheduledChange fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FeatureFlagScheduledChange.class);
   }
 
- /**
-  * Convert an instance of FeatureFlagScheduledChange to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FeatureFlagScheduledChange to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

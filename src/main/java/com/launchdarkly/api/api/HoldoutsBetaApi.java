@@ -91,7 +91,8 @@ public class HoldoutsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> All Holdouts response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -100,7 +101,7 @@ public class HoldoutsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllHoldoutsCall(String projectKey, String environmentKey, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAllHoldoutsCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -155,7 +156,7 @@ public class HoldoutsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAllHoldoutsValidateBeforeCall(String projectKey, String environmentKey, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAllHoldoutsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getAllHoldouts(Async)");
@@ -180,7 +181,8 @@ public class HoldoutsBetaApi {
      * @return HoldoutsCollectionRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> All Holdouts response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -189,7 +191,7 @@ public class HoldoutsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public HoldoutsCollectionRep getAllHoldouts(String projectKey, String environmentKey, Long limit, Long offset) throws ApiException {
+    public HoldoutsCollectionRep getAllHoldouts(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset) throws ApiException {
         ApiResponse<HoldoutsCollectionRep> localVarResp = getAllHoldoutsWithHttpInfo(projectKey, environmentKey, limit, offset);
         return localVarResp.getData();
     }
@@ -204,7 +206,8 @@ public class HoldoutsBetaApi {
      * @return ApiResponse&lt;HoldoutsCollectionRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> All Holdouts response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -213,7 +216,7 @@ public class HoldoutsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<HoldoutsCollectionRep> getAllHoldoutsWithHttpInfo(String projectKey, String environmentKey, Long limit, Long offset) throws ApiException {
+    public ApiResponse<HoldoutsCollectionRep> getAllHoldoutsWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset) throws ApiException {
         okhttp3.Call localVarCall = getAllHoldoutsValidateBeforeCall(projectKey, environmentKey, limit, offset, null);
         Type localVarReturnType = new TypeToken<HoldoutsCollectionRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -230,7 +233,8 @@ public class HoldoutsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> All Holdouts response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -239,7 +243,7 @@ public class HoldoutsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllHoldoutsAsync(String projectKey, String environmentKey, Long limit, Long offset, final ApiCallback<HoldoutsCollectionRep> _callback) throws ApiException {
+    public okhttp3.Call getAllHoldoutsAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, final ApiCallback<HoldoutsCollectionRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAllHoldoutsValidateBeforeCall(projectKey, environmentKey, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<HoldoutsCollectionRep>(){}.getType();
@@ -256,7 +260,8 @@ public class HoldoutsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> HoldoutDetail response with full experiments </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -266,7 +271,7 @@ public class HoldoutsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getHoldoutCall(String projectKey, String environmentKey, String holdoutKey, String expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getHoldoutCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String holdoutKey, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -318,7 +323,7 @@ public class HoldoutsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getHoldoutValidateBeforeCall(String projectKey, String environmentKey, String holdoutKey, String expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getHoldoutValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String holdoutKey, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getHoldout(Async)");
@@ -348,7 +353,8 @@ public class HoldoutsBetaApi {
      * @return HoldoutDetailRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> HoldoutDetail response with full experiments </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -358,7 +364,7 @@ public class HoldoutsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public HoldoutDetailRep getHoldout(String projectKey, String environmentKey, String holdoutKey, String expand) throws ApiException {
+    public HoldoutDetailRep getHoldout(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String holdoutKey, @javax.annotation.Nullable String expand) throws ApiException {
         ApiResponse<HoldoutDetailRep> localVarResp = getHoldoutWithHttpInfo(projectKey, environmentKey, holdoutKey, expand);
         return localVarResp.getData();
     }
@@ -373,7 +379,8 @@ public class HoldoutsBetaApi {
      * @return ApiResponse&lt;HoldoutDetailRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> HoldoutDetail response with full experiments </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -383,7 +390,7 @@ public class HoldoutsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<HoldoutDetailRep> getHoldoutWithHttpInfo(String projectKey, String environmentKey, String holdoutKey, String expand) throws ApiException {
+    public ApiResponse<HoldoutDetailRep> getHoldoutWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String holdoutKey, @javax.annotation.Nullable String expand) throws ApiException {
         okhttp3.Call localVarCall = getHoldoutValidateBeforeCall(projectKey, environmentKey, holdoutKey, expand, null);
         Type localVarReturnType = new TypeToken<HoldoutDetailRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -400,7 +407,8 @@ public class HoldoutsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> HoldoutDetail response with full experiments </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -410,7 +418,7 @@ public class HoldoutsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getHoldoutAsync(String projectKey, String environmentKey, String holdoutKey, String expand, final ApiCallback<HoldoutDetailRep> _callback) throws ApiException {
+    public okhttp3.Call getHoldoutAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String holdoutKey, @javax.annotation.Nullable String expand, final ApiCallback<HoldoutDetailRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getHoldoutValidateBeforeCall(projectKey, environmentKey, holdoutKey, expand, _callback);
         Type localVarReturnType = new TypeToken<HoldoutDetailRep>(){}.getType();
@@ -426,7 +434,8 @@ public class HoldoutsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Holdout response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -436,7 +445,7 @@ public class HoldoutsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getHoldoutByIdCall(String projectKey, String environmentKey, String holdoutId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getHoldoutByIdCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String holdoutId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -484,7 +493,7 @@ public class HoldoutsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getHoldoutByIdValidateBeforeCall(String projectKey, String environmentKey, String holdoutId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getHoldoutByIdValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String holdoutId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getHoldoutById(Async)");
@@ -513,7 +522,8 @@ public class HoldoutsBetaApi {
      * @return HoldoutRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Holdout response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -523,7 +533,7 @@ public class HoldoutsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public HoldoutRep getHoldoutById(String projectKey, String environmentKey, String holdoutId) throws ApiException {
+    public HoldoutRep getHoldoutById(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String holdoutId) throws ApiException {
         ApiResponse<HoldoutRep> localVarResp = getHoldoutByIdWithHttpInfo(projectKey, environmentKey, holdoutId);
         return localVarResp.getData();
     }
@@ -537,7 +547,8 @@ public class HoldoutsBetaApi {
      * @return ApiResponse&lt;HoldoutRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Holdout response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -547,7 +558,7 @@ public class HoldoutsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<HoldoutRep> getHoldoutByIdWithHttpInfo(String projectKey, String environmentKey, String holdoutId) throws ApiException {
+    public ApiResponse<HoldoutRep> getHoldoutByIdWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String holdoutId) throws ApiException {
         okhttp3.Call localVarCall = getHoldoutByIdValidateBeforeCall(projectKey, environmentKey, holdoutId, null);
         Type localVarReturnType = new TypeToken<HoldoutRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -563,7 +574,8 @@ public class HoldoutsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Holdout response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -573,7 +585,7 @@ public class HoldoutsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getHoldoutByIdAsync(String projectKey, String environmentKey, String holdoutId, final ApiCallback<HoldoutRep> _callback) throws ApiException {
+    public okhttp3.Call getHoldoutByIdAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String holdoutId, final ApiCallback<HoldoutRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getHoldoutByIdValidateBeforeCall(projectKey, environmentKey, holdoutId, _callback);
         Type localVarReturnType = new TypeToken<HoldoutRep>(){}.getType();
@@ -590,7 +602,8 @@ public class HoldoutsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Holdout response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -600,7 +613,7 @@ public class HoldoutsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchHoldoutCall(String projectKey, String environmentKey, String holdoutKey, HoldoutPatchInput holdoutPatchInput, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchHoldoutCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String holdoutKey, @javax.annotation.Nonnull HoldoutPatchInput holdoutPatchInput, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -649,7 +662,7 @@ public class HoldoutsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchHoldoutValidateBeforeCall(String projectKey, String environmentKey, String holdoutKey, HoldoutPatchInput holdoutPatchInput, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchHoldoutValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String holdoutKey, @javax.annotation.Nonnull HoldoutPatchInput holdoutPatchInput, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling patchHoldout(Async)");
@@ -684,7 +697,8 @@ public class HoldoutsBetaApi {
      * @return HoldoutRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Holdout response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -694,7 +708,7 @@ public class HoldoutsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public HoldoutRep patchHoldout(String projectKey, String environmentKey, String holdoutKey, HoldoutPatchInput holdoutPatchInput) throws ApiException {
+    public HoldoutRep patchHoldout(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String holdoutKey, @javax.annotation.Nonnull HoldoutPatchInput holdoutPatchInput) throws ApiException {
         ApiResponse<HoldoutRep> localVarResp = patchHoldoutWithHttpInfo(projectKey, environmentKey, holdoutKey, holdoutPatchInput);
         return localVarResp.getData();
     }
@@ -709,7 +723,8 @@ public class HoldoutsBetaApi {
      * @return ApiResponse&lt;HoldoutRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Holdout response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -719,7 +734,7 @@ public class HoldoutsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<HoldoutRep> patchHoldoutWithHttpInfo(String projectKey, String environmentKey, String holdoutKey, HoldoutPatchInput holdoutPatchInput) throws ApiException {
+    public ApiResponse<HoldoutRep> patchHoldoutWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String holdoutKey, @javax.annotation.Nonnull HoldoutPatchInput holdoutPatchInput) throws ApiException {
         okhttp3.Call localVarCall = patchHoldoutValidateBeforeCall(projectKey, environmentKey, holdoutKey, holdoutPatchInput, null);
         Type localVarReturnType = new TypeToken<HoldoutRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -736,7 +751,8 @@ public class HoldoutsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Holdout response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -746,7 +762,7 @@ public class HoldoutsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchHoldoutAsync(String projectKey, String environmentKey, String holdoutKey, HoldoutPatchInput holdoutPatchInput, final ApiCallback<HoldoutRep> _callback) throws ApiException {
+    public okhttp3.Call patchHoldoutAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String holdoutKey, @javax.annotation.Nonnull HoldoutPatchInput holdoutPatchInput, final ApiCallback<HoldoutRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchHoldoutValidateBeforeCall(projectKey, environmentKey, holdoutKey, holdoutPatchInput, _callback);
         Type localVarReturnType = new TypeToken<HoldoutRep>(){}.getType();
@@ -762,13 +778,14 @@ public class HoldoutsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Holdout response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postHoldoutCall(String projectKey, String environmentKey, HoldoutPostRequest holdoutPostRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postHoldoutCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull HoldoutPostRequest holdoutPostRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -816,7 +833,7 @@ public class HoldoutsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postHoldoutValidateBeforeCall(String projectKey, String environmentKey, HoldoutPostRequest holdoutPostRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postHoldoutValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull HoldoutPostRequest holdoutPostRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling postHoldout(Async)");
@@ -845,13 +862,14 @@ public class HoldoutsBetaApi {
      * @return HoldoutRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Holdout response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public HoldoutRep postHoldout(String projectKey, String environmentKey, HoldoutPostRequest holdoutPostRequest) throws ApiException {
+    public HoldoutRep postHoldout(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull HoldoutPostRequest holdoutPostRequest) throws ApiException {
         ApiResponse<HoldoutRep> localVarResp = postHoldoutWithHttpInfo(projectKey, environmentKey, holdoutPostRequest);
         return localVarResp.getData();
     }
@@ -865,13 +883,14 @@ public class HoldoutsBetaApi {
      * @return ApiResponse&lt;HoldoutRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Holdout response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<HoldoutRep> postHoldoutWithHttpInfo(String projectKey, String environmentKey, HoldoutPostRequest holdoutPostRequest) throws ApiException {
+    public ApiResponse<HoldoutRep> postHoldoutWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull HoldoutPostRequest holdoutPostRequest) throws ApiException {
         okhttp3.Call localVarCall = postHoldoutValidateBeforeCall(projectKey, environmentKey, holdoutPostRequest, null);
         Type localVarReturnType = new TypeToken<HoldoutRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -887,13 +906,14 @@ public class HoldoutsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Holdout response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postHoldoutAsync(String projectKey, String environmentKey, HoldoutPostRequest holdoutPostRequest, final ApiCallback<HoldoutRep> _callback) throws ApiException {
+    public okhttp3.Call postHoldoutAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull HoldoutPostRequest holdoutPostRequest, final ApiCallback<HoldoutRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postHoldoutValidateBeforeCall(projectKey, environmentKey, holdoutPostRequest, _callback);
         Type localVarReturnType = new TypeToken<HoldoutRep>(){}.getType();

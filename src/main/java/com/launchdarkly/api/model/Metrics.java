@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,144 +38,157 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * Metrics
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class Metrics {
   public static final String SERIALIZED_NAME_INPUT_TOKENS = "inputTokens";
   @SerializedName(SERIALIZED_NAME_INPUT_TOKENS)
+  @javax.annotation.Nullable
   private Integer inputTokens;
 
   public static final String SERIALIZED_NAME_OUTPUT_TOKENS = "outputTokens";
   @SerializedName(SERIALIZED_NAME_OUTPUT_TOKENS)
+  @javax.annotation.Nullable
   private Integer outputTokens;
 
   public static final String SERIALIZED_NAME_TOTAL_TOKENS = "totalTokens";
   @SerializedName(SERIALIZED_NAME_TOTAL_TOKENS)
+  @javax.annotation.Nullable
   private Integer totalTokens;
 
   public static final String SERIALIZED_NAME_GENERATION_COUNT = "generationCount";
   @Deprecated
   @SerializedName(SERIALIZED_NAME_GENERATION_COUNT)
+  @javax.annotation.Nullable
   private Integer generationCount;
 
   public static final String SERIALIZED_NAME_GENERATION_SUCCESS_COUNT = "generationSuccessCount";
   @SerializedName(SERIALIZED_NAME_GENERATION_SUCCESS_COUNT)
+  @javax.annotation.Nullable
   private Integer generationSuccessCount;
 
   public static final String SERIALIZED_NAME_GENERATION_ERROR_COUNT = "generationErrorCount";
   @SerializedName(SERIALIZED_NAME_GENERATION_ERROR_COUNT)
+  @javax.annotation.Nullable
   private Integer generationErrorCount;
 
   public static final String SERIALIZED_NAME_THUMBS_UP = "thumbsUp";
   @SerializedName(SERIALIZED_NAME_THUMBS_UP)
+  @javax.annotation.Nullable
   private Integer thumbsUp;
 
   public static final String SERIALIZED_NAME_THUMBS_DOWN = "thumbsDown";
   @SerializedName(SERIALIZED_NAME_THUMBS_DOWN)
+  @javax.annotation.Nullable
   private Integer thumbsDown;
 
   public static final String SERIALIZED_NAME_DURATION_MS = "durationMs";
   @SerializedName(SERIALIZED_NAME_DURATION_MS)
+  @javax.annotation.Nullable
   private Integer durationMs;
 
   public static final String SERIALIZED_NAME_TIME_TO_FIRST_TOKEN_MS = "timeToFirstTokenMs";
   @SerializedName(SERIALIZED_NAME_TIME_TO_FIRST_TOKEN_MS)
+  @javax.annotation.Nullable
   private Integer timeToFirstTokenMs;
 
   public static final String SERIALIZED_NAME_SATISFACTION_RATING = "satisfactionRating";
   @SerializedName(SERIALIZED_NAME_SATISFACTION_RATING)
+  @javax.annotation.Nullable
   private Float satisfactionRating;
 
   public static final String SERIALIZED_NAME_INPUT_COST = "inputCost";
   @SerializedName(SERIALIZED_NAME_INPUT_COST)
+  @javax.annotation.Nullable
   private Double inputCost;
 
   public static final String SERIALIZED_NAME_OUTPUT_COST = "outputCost";
   @SerializedName(SERIALIZED_NAME_OUTPUT_COST)
+  @javax.annotation.Nullable
   private Double outputCost;
 
   public Metrics() {
   }
 
-  public Metrics inputTokens(Integer inputTokens) {
+  public Metrics inputTokens(@javax.annotation.Nullable Integer inputTokens) {
     this.inputTokens = inputTokens;
     return this;
   }
 
-   /**
+  /**
    * Get inputTokens
    * @return inputTokens
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getInputTokens() {
     return inputTokens;
   }
 
-  public void setInputTokens(Integer inputTokens) {
+  public void setInputTokens(@javax.annotation.Nullable Integer inputTokens) {
     this.inputTokens = inputTokens;
   }
 
 
-  public Metrics outputTokens(Integer outputTokens) {
+  public Metrics outputTokens(@javax.annotation.Nullable Integer outputTokens) {
     this.outputTokens = outputTokens;
     return this;
   }
 
-   /**
+  /**
    * Get outputTokens
    * @return outputTokens
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getOutputTokens() {
     return outputTokens;
   }
 
-  public void setOutputTokens(Integer outputTokens) {
+  public void setOutputTokens(@javax.annotation.Nullable Integer outputTokens) {
     this.outputTokens = outputTokens;
   }
 
 
-  public Metrics totalTokens(Integer totalTokens) {
+  public Metrics totalTokens(@javax.annotation.Nullable Integer totalTokens) {
     this.totalTokens = totalTokens;
     return this;
   }
 
-   /**
+  /**
    * Get totalTokens
    * @return totalTokens
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getTotalTokens() {
     return totalTokens;
   }
 
-  public void setTotalTokens(Integer totalTokens) {
+  public void setTotalTokens(@javax.annotation.Nullable Integer totalTokens) {
     this.totalTokens = totalTokens;
   }
 
 
   @Deprecated
-  public Metrics generationCount(Integer generationCount) {
+  public Metrics generationCount(@javax.annotation.Nullable Integer generationCount) {
     this.generationCount = generationCount;
     return this;
   }
 
-   /**
+  /**
    * Number of attempted generations
    * @return generationCount
    * @deprecated
-  **/
+   */
   @Deprecated
   @javax.annotation.Nullable
   public Integer getGenerationCount() {
@@ -182,180 +196,180 @@ public class Metrics {
   }
 
   @Deprecated
-  public void setGenerationCount(Integer generationCount) {
+  public void setGenerationCount(@javax.annotation.Nullable Integer generationCount) {
     this.generationCount = generationCount;
   }
 
 
-  public Metrics generationSuccessCount(Integer generationSuccessCount) {
+  public Metrics generationSuccessCount(@javax.annotation.Nullable Integer generationSuccessCount) {
     this.generationSuccessCount = generationSuccessCount;
     return this;
   }
 
-   /**
+  /**
    * Number of successful generations
    * @return generationSuccessCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getGenerationSuccessCount() {
     return generationSuccessCount;
   }
 
-  public void setGenerationSuccessCount(Integer generationSuccessCount) {
+  public void setGenerationSuccessCount(@javax.annotation.Nullable Integer generationSuccessCount) {
     this.generationSuccessCount = generationSuccessCount;
   }
 
 
-  public Metrics generationErrorCount(Integer generationErrorCount) {
+  public Metrics generationErrorCount(@javax.annotation.Nullable Integer generationErrorCount) {
     this.generationErrorCount = generationErrorCount;
     return this;
   }
 
-   /**
+  /**
    * Number of generations with errors
    * @return generationErrorCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getGenerationErrorCount() {
     return generationErrorCount;
   }
 
-  public void setGenerationErrorCount(Integer generationErrorCount) {
+  public void setGenerationErrorCount(@javax.annotation.Nullable Integer generationErrorCount) {
     this.generationErrorCount = generationErrorCount;
   }
 
 
-  public Metrics thumbsUp(Integer thumbsUp) {
+  public Metrics thumbsUp(@javax.annotation.Nullable Integer thumbsUp) {
     this.thumbsUp = thumbsUp;
     return this;
   }
 
-   /**
+  /**
    * Get thumbsUp
    * @return thumbsUp
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getThumbsUp() {
     return thumbsUp;
   }
 
-  public void setThumbsUp(Integer thumbsUp) {
+  public void setThumbsUp(@javax.annotation.Nullable Integer thumbsUp) {
     this.thumbsUp = thumbsUp;
   }
 
 
-  public Metrics thumbsDown(Integer thumbsDown) {
+  public Metrics thumbsDown(@javax.annotation.Nullable Integer thumbsDown) {
     this.thumbsDown = thumbsDown;
     return this;
   }
 
-   /**
+  /**
    * Get thumbsDown
    * @return thumbsDown
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getThumbsDown() {
     return thumbsDown;
   }
 
-  public void setThumbsDown(Integer thumbsDown) {
+  public void setThumbsDown(@javax.annotation.Nullable Integer thumbsDown) {
     this.thumbsDown = thumbsDown;
   }
 
 
-  public Metrics durationMs(Integer durationMs) {
+  public Metrics durationMs(@javax.annotation.Nullable Integer durationMs) {
     this.durationMs = durationMs;
     return this;
   }
 
-   /**
+  /**
    * Get durationMs
    * @return durationMs
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getDurationMs() {
     return durationMs;
   }
 
-  public void setDurationMs(Integer durationMs) {
+  public void setDurationMs(@javax.annotation.Nullable Integer durationMs) {
     this.durationMs = durationMs;
   }
 
 
-  public Metrics timeToFirstTokenMs(Integer timeToFirstTokenMs) {
+  public Metrics timeToFirstTokenMs(@javax.annotation.Nullable Integer timeToFirstTokenMs) {
     this.timeToFirstTokenMs = timeToFirstTokenMs;
     return this;
   }
 
-   /**
+  /**
    * Get timeToFirstTokenMs
    * @return timeToFirstTokenMs
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getTimeToFirstTokenMs() {
     return timeToFirstTokenMs;
   }
 
-  public void setTimeToFirstTokenMs(Integer timeToFirstTokenMs) {
+  public void setTimeToFirstTokenMs(@javax.annotation.Nullable Integer timeToFirstTokenMs) {
     this.timeToFirstTokenMs = timeToFirstTokenMs;
   }
 
 
-  public Metrics satisfactionRating(Float satisfactionRating) {
+  public Metrics satisfactionRating(@javax.annotation.Nullable Float satisfactionRating) {
     this.satisfactionRating = satisfactionRating;
     return this;
   }
 
-   /**
+  /**
    * A value between 0 and 1 representing satisfaction rating
    * minimum: 0
    * maximum: 1
    * @return satisfactionRating
-  **/
+   */
   @javax.annotation.Nullable
   public Float getSatisfactionRating() {
     return satisfactionRating;
   }
 
-  public void setSatisfactionRating(Float satisfactionRating) {
+  public void setSatisfactionRating(@javax.annotation.Nullable Float satisfactionRating) {
     this.satisfactionRating = satisfactionRating;
   }
 
 
-  public Metrics inputCost(Double inputCost) {
+  public Metrics inputCost(@javax.annotation.Nullable Double inputCost) {
     this.inputCost = inputCost;
     return this;
   }
 
-   /**
+  /**
    * Cost of input tokens in USD
    * @return inputCost
-  **/
+   */
   @javax.annotation.Nullable
   public Double getInputCost() {
     return inputCost;
   }
 
-  public void setInputCost(Double inputCost) {
+  public void setInputCost(@javax.annotation.Nullable Double inputCost) {
     this.inputCost = inputCost;
   }
 
 
-  public Metrics outputCost(Double outputCost) {
+  public Metrics outputCost(@javax.annotation.Nullable Double outputCost) {
     this.outputCost = outputCost;
     return this;
   }
 
-   /**
+  /**
    * Cost of output tokens in USD
    * @return outputCost
-  **/
+   */
   @javax.annotation.Nullable
   public Double getOutputCost() {
     return outputCost;
   }
 
-  public void setOutputCost(Double outputCost) {
+  public void setOutputCost(@javax.annotation.Nullable Double outputCost) {
     this.outputCost = outputCost;
   }
 
@@ -474,35 +488,22 @@ public class Metrics {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("inputTokens");
-    openapiFields.add("outputTokens");
-    openapiFields.add("totalTokens");
-    openapiFields.add("generationCount");
-    openapiFields.add("generationSuccessCount");
-    openapiFields.add("generationErrorCount");
-    openapiFields.add("thumbsUp");
-    openapiFields.add("thumbsDown");
-    openapiFields.add("durationMs");
-    openapiFields.add("timeToFirstTokenMs");
-    openapiFields.add("satisfactionRating");
-    openapiFields.add("inputCost");
-    openapiFields.add("outputCost");
+    openapiFields = new HashSet<String>(Arrays.asList("inputTokens", "outputTokens", "totalTokens", "generationCount", "generationSuccessCount", "generationErrorCount", "thumbsUp", "thumbsDown", "durationMs", "timeToFirstTokenMs", "satisfactionRating", "inputCost", "outputCost"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Metrics
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Metrics
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Metrics.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Metrics is not found in the empty JSON string", Metrics.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Metrics is not found in the empty JSON string", Metrics.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -565,7 +566,7 @@ public class Metrics {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -580,22 +581,22 @@ public class Metrics {
     }
   }
 
- /**
-  * Create an instance of Metrics given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Metrics
-  * @throws IOException if the JSON string is invalid with respect to Metrics
-  */
+  /**
+   * Create an instance of Metrics given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Metrics
+   * @throws IOException if the JSON string is invalid with respect to Metrics
+   */
   public static Metrics fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Metrics.class);
   }
 
- /**
-  * Convert an instance of Metrics to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Metrics to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

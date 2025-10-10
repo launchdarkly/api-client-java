@@ -92,7 +92,8 @@ public class ProjectsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -102,7 +103,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteProjectCall(String projectKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteProjectCall(@javax.annotation.Nonnull String projectKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -148,7 +149,7 @@ public class ProjectsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteProjectValidateBeforeCall(String projectKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteProjectValidateBeforeCall(@javax.annotation.Nonnull String projectKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling deleteProject(Async)");
@@ -164,7 +165,8 @@ public class ProjectsApi {
      * @param projectKey The project key (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -174,7 +176,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteProject(String projectKey) throws ApiException {
+    public void deleteProject(@javax.annotation.Nonnull String projectKey) throws ApiException {
         deleteProjectWithHttpInfo(projectKey);
     }
 
@@ -185,7 +187,8 @@ public class ProjectsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -195,7 +198,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteProjectWithHttpInfo(String projectKey) throws ApiException {
+    public ApiResponse<Void> deleteProjectWithHttpInfo(@javax.annotation.Nonnull String projectKey) throws ApiException {
         okhttp3.Call localVarCall = deleteProjectValidateBeforeCall(projectKey, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -208,7 +211,8 @@ public class ProjectsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -218,7 +222,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteProjectAsync(String projectKey, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteProjectAsync(@javax.annotation.Nonnull String projectKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteProjectValidateBeforeCall(projectKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -231,7 +235,8 @@ public class ProjectsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag defaults response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -239,7 +244,7 @@ public class ProjectsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFlagDefaultsByProjectCall(String projectKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getFlagDefaultsByProjectCall(@javax.annotation.Nonnull String projectKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -285,7 +290,7 @@ public class ProjectsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFlagDefaultsByProjectValidateBeforeCall(String projectKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getFlagDefaultsByProjectValidateBeforeCall(@javax.annotation.Nonnull String projectKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getFlagDefaultsByProject(Async)");
@@ -302,7 +307,8 @@ public class ProjectsApi {
      * @return FlagDefaultsRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag defaults response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -310,7 +316,7 @@ public class ProjectsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public FlagDefaultsRep getFlagDefaultsByProject(String projectKey) throws ApiException {
+    public FlagDefaultsRep getFlagDefaultsByProject(@javax.annotation.Nonnull String projectKey) throws ApiException {
         ApiResponse<FlagDefaultsRep> localVarResp = getFlagDefaultsByProjectWithHttpInfo(projectKey);
         return localVarResp.getData();
     }
@@ -322,7 +328,8 @@ public class ProjectsApi {
      * @return ApiResponse&lt;FlagDefaultsRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag defaults response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -330,7 +337,7 @@ public class ProjectsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FlagDefaultsRep> getFlagDefaultsByProjectWithHttpInfo(String projectKey) throws ApiException {
+    public ApiResponse<FlagDefaultsRep> getFlagDefaultsByProjectWithHttpInfo(@javax.annotation.Nonnull String projectKey) throws ApiException {
         okhttp3.Call localVarCall = getFlagDefaultsByProjectValidateBeforeCall(projectKey, null);
         Type localVarReturnType = new TypeToken<FlagDefaultsRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -344,7 +351,8 @@ public class ProjectsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag defaults response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -352,7 +360,7 @@ public class ProjectsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFlagDefaultsByProjectAsync(String projectKey, final ApiCallback<FlagDefaultsRep> _callback) throws ApiException {
+    public okhttp3.Call getFlagDefaultsByProjectAsync(@javax.annotation.Nonnull String projectKey, final ApiCallback<FlagDefaultsRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFlagDefaultsByProjectValidateBeforeCall(projectKey, _callback);
         Type localVarReturnType = new TypeToken<FlagDefaultsRep>(){}.getType();
@@ -367,7 +375,8 @@ public class ProjectsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Project response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -377,7 +386,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProjectCall(String projectKey, String expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getProjectCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -427,7 +436,7 @@ public class ProjectsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getProjectValidateBeforeCall(String projectKey, String expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getProjectValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getProject(Async)");
@@ -445,7 +454,8 @@ public class ProjectsApi {
      * @return Project
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Project response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -455,7 +465,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Project getProject(String projectKey, String expand) throws ApiException {
+    public Project getProject(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String expand) throws ApiException {
         ApiResponse<Project> localVarResp = getProjectWithHttpInfo(projectKey, expand);
         return localVarResp.getData();
     }
@@ -468,7 +478,8 @@ public class ProjectsApi {
      * @return ApiResponse&lt;Project&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Project response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -478,7 +489,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Project> getProjectWithHttpInfo(String projectKey, String expand) throws ApiException {
+    public ApiResponse<Project> getProjectWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String expand) throws ApiException {
         okhttp3.Call localVarCall = getProjectValidateBeforeCall(projectKey, expand, null);
         Type localVarReturnType = new TypeToken<Project>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -493,7 +504,8 @@ public class ProjectsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Project response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -503,7 +515,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProjectAsync(String projectKey, String expand, final ApiCallback<Project> _callback) throws ApiException {
+    public okhttp3.Call getProjectAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String expand, final ApiCallback<Project> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getProjectValidateBeforeCall(projectKey, expand, _callback);
         Type localVarReturnType = new TypeToken<Project>(){}.getType();
@@ -521,7 +533,8 @@ public class ProjectsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Project collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -530,7 +543,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProjectsCall(Long limit, Long offset, String filter, String sort, String expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getProjectsCall(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -595,7 +608,7 @@ public class ProjectsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getProjectsValidateBeforeCall(Long limit, Long offset, String filter, String sort, String expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getProjectsValidateBeforeCall(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         return getProjectsCall(limit, offset, filter, sort, expand, _callback);
 
     }
@@ -611,7 +624,8 @@ public class ProjectsApi {
      * @return Projects
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Project collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -620,7 +634,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Projects getProjects(Long limit, Long offset, String filter, String sort, String expand) throws ApiException {
+    public Projects getProjects(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String expand) throws ApiException {
         ApiResponse<Projects> localVarResp = getProjectsWithHttpInfo(limit, offset, filter, sort, expand);
         return localVarResp.getData();
     }
@@ -636,7 +650,8 @@ public class ProjectsApi {
      * @return ApiResponse&lt;Projects&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Project collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -645,7 +660,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Projects> getProjectsWithHttpInfo(Long limit, Long offset, String filter, String sort, String expand) throws ApiException {
+    public ApiResponse<Projects> getProjectsWithHttpInfo(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String expand) throws ApiException {
         okhttp3.Call localVarCall = getProjectsValidateBeforeCall(limit, offset, filter, sort, expand, null);
         Type localVarReturnType = new TypeToken<Projects>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -663,7 +678,8 @@ public class ProjectsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Project collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -672,7 +688,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProjectsAsync(Long limit, Long offset, String filter, String sort, String expand, final ApiCallback<Projects> _callback) throws ApiException {
+    public okhttp3.Call getProjectsAsync(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String expand, final ApiCallback<Projects> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getProjectsValidateBeforeCall(limit, offset, filter, sort, expand, _callback);
         Type localVarReturnType = new TypeToken<Projects>(){}.getType();
@@ -687,7 +703,8 @@ public class ProjectsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag default response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -698,7 +715,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchFlagDefaultsByProjectCall(String projectKey, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchFlagDefaultsByProjectCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -745,7 +762,7 @@ public class ProjectsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchFlagDefaultsByProjectValidateBeforeCall(String projectKey, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchFlagDefaultsByProjectValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling patchFlagDefaultsByProject(Async)");
@@ -768,7 +785,8 @@ public class ProjectsApi {
      * @return UpsertPayloadRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag default response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -779,7 +797,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public UpsertPayloadRep patchFlagDefaultsByProject(String projectKey, List<PatchOperation> patchOperation) throws ApiException {
+    public UpsertPayloadRep patchFlagDefaultsByProject(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         ApiResponse<UpsertPayloadRep> localVarResp = patchFlagDefaultsByProjectWithHttpInfo(projectKey, patchOperation);
         return localVarResp.getData();
     }
@@ -792,7 +810,8 @@ public class ProjectsApi {
      * @return ApiResponse&lt;UpsertPayloadRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag default response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -803,7 +822,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UpsertPayloadRep> patchFlagDefaultsByProjectWithHttpInfo(String projectKey, List<PatchOperation> patchOperation) throws ApiException {
+    public ApiResponse<UpsertPayloadRep> patchFlagDefaultsByProjectWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         okhttp3.Call localVarCall = patchFlagDefaultsByProjectValidateBeforeCall(projectKey, patchOperation, null);
         Type localVarReturnType = new TypeToken<UpsertPayloadRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -818,7 +837,8 @@ public class ProjectsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag default response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -829,7 +849,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchFlagDefaultsByProjectAsync(String projectKey, List<PatchOperation> patchOperation, final ApiCallback<UpsertPayloadRep> _callback) throws ApiException {
+    public okhttp3.Call patchFlagDefaultsByProjectAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback<UpsertPayloadRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchFlagDefaultsByProjectValidateBeforeCall(projectKey, patchOperation, _callback);
         Type localVarReturnType = new TypeToken<UpsertPayloadRep>(){}.getType();
@@ -844,7 +864,8 @@ public class ProjectsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Project response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -855,7 +876,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchProjectCall(String projectKey, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchProjectCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -902,7 +923,7 @@ public class ProjectsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchProjectValidateBeforeCall(String projectKey, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchProjectValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling patchProject(Async)");
@@ -925,7 +946,8 @@ public class ProjectsApi {
      * @return ProjectRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Project response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -936,7 +958,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ProjectRep patchProject(String projectKey, List<PatchOperation> patchOperation) throws ApiException {
+    public ProjectRep patchProject(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         ApiResponse<ProjectRep> localVarResp = patchProjectWithHttpInfo(projectKey, patchOperation);
         return localVarResp.getData();
     }
@@ -949,7 +971,8 @@ public class ProjectsApi {
      * @return ApiResponse&lt;ProjectRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Project response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -960,7 +983,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProjectRep> patchProjectWithHttpInfo(String projectKey, List<PatchOperation> patchOperation) throws ApiException {
+    public ApiResponse<ProjectRep> patchProjectWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         okhttp3.Call localVarCall = patchProjectValidateBeforeCall(projectKey, patchOperation, null);
         Type localVarReturnType = new TypeToken<ProjectRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -975,7 +998,8 @@ public class ProjectsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Project response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -986,7 +1010,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchProjectAsync(String projectKey, List<PatchOperation> patchOperation, final ApiCallback<ProjectRep> _callback) throws ApiException {
+    public okhttp3.Call patchProjectAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback<ProjectRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchProjectValidateBeforeCall(projectKey, patchOperation, _callback);
         Type localVarReturnType = new TypeToken<ProjectRep>(){}.getType();
@@ -1000,7 +1024,8 @@ public class ProjectsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Project response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1010,7 +1035,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postProjectCall(ProjectPost projectPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postProjectCall(@javax.annotation.Nonnull ProjectPost projectPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1056,7 +1081,7 @@ public class ProjectsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postProjectValidateBeforeCall(ProjectPost projectPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postProjectValidateBeforeCall(@javax.annotation.Nonnull ProjectPost projectPost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectPost' is set
         if (projectPost == null) {
             throw new ApiException("Missing the required parameter 'projectPost' when calling postProject(Async)");
@@ -1073,7 +1098,8 @@ public class ProjectsApi {
      * @return ProjectRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Project response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1083,7 +1109,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ProjectRep postProject(ProjectPost projectPost) throws ApiException {
+    public ProjectRep postProject(@javax.annotation.Nonnull ProjectPost projectPost) throws ApiException {
         ApiResponse<ProjectRep> localVarResp = postProjectWithHttpInfo(projectPost);
         return localVarResp.getData();
     }
@@ -1095,7 +1121,8 @@ public class ProjectsApi {
      * @return ApiResponse&lt;ProjectRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Project response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1105,7 +1132,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProjectRep> postProjectWithHttpInfo(ProjectPost projectPost) throws ApiException {
+    public ApiResponse<ProjectRep> postProjectWithHttpInfo(@javax.annotation.Nonnull ProjectPost projectPost) throws ApiException {
         okhttp3.Call localVarCall = postProjectValidateBeforeCall(projectPost, null);
         Type localVarReturnType = new TypeToken<ProjectRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1119,7 +1146,8 @@ public class ProjectsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Project response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1129,7 +1157,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postProjectAsync(ProjectPost projectPost, final ApiCallback<ProjectRep> _callback) throws ApiException {
+    public okhttp3.Call postProjectAsync(@javax.annotation.Nonnull ProjectPost projectPost, final ApiCallback<ProjectRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postProjectValidateBeforeCall(projectPost, _callback);
         Type localVarReturnType = new TypeToken<ProjectRep>(){}.getType();
@@ -1144,7 +1172,8 @@ public class ProjectsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag default response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1155,7 +1184,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putFlagDefaultsByProjectCall(String projectKey, UpsertFlagDefaultsPayload upsertFlagDefaultsPayload, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call putFlagDefaultsByProjectCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull UpsertFlagDefaultsPayload upsertFlagDefaultsPayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1202,7 +1231,7 @@ public class ProjectsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call putFlagDefaultsByProjectValidateBeforeCall(String projectKey, UpsertFlagDefaultsPayload upsertFlagDefaultsPayload, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call putFlagDefaultsByProjectValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull UpsertFlagDefaultsPayload upsertFlagDefaultsPayload, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling putFlagDefaultsByProject(Async)");
@@ -1225,7 +1254,8 @@ public class ProjectsApi {
      * @return UpsertPayloadRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag default response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1236,7 +1266,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public UpsertPayloadRep putFlagDefaultsByProject(String projectKey, UpsertFlagDefaultsPayload upsertFlagDefaultsPayload) throws ApiException {
+    public UpsertPayloadRep putFlagDefaultsByProject(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull UpsertFlagDefaultsPayload upsertFlagDefaultsPayload) throws ApiException {
         ApiResponse<UpsertPayloadRep> localVarResp = putFlagDefaultsByProjectWithHttpInfo(projectKey, upsertFlagDefaultsPayload);
         return localVarResp.getData();
     }
@@ -1249,7 +1279,8 @@ public class ProjectsApi {
      * @return ApiResponse&lt;UpsertPayloadRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag default response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1260,7 +1291,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UpsertPayloadRep> putFlagDefaultsByProjectWithHttpInfo(String projectKey, UpsertFlagDefaultsPayload upsertFlagDefaultsPayload) throws ApiException {
+    public ApiResponse<UpsertPayloadRep> putFlagDefaultsByProjectWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull UpsertFlagDefaultsPayload upsertFlagDefaultsPayload) throws ApiException {
         okhttp3.Call localVarCall = putFlagDefaultsByProjectValidateBeforeCall(projectKey, upsertFlagDefaultsPayload, null);
         Type localVarReturnType = new TypeToken<UpsertPayloadRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1275,7 +1306,8 @@ public class ProjectsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag default response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1286,7 +1318,7 @@ public class ProjectsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putFlagDefaultsByProjectAsync(String projectKey, UpsertFlagDefaultsPayload upsertFlagDefaultsPayload, final ApiCallback<UpsertPayloadRep> _callback) throws ApiException {
+    public okhttp3.Call putFlagDefaultsByProjectAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull UpsertFlagDefaultsPayload upsertFlagDefaultsPayload, final ApiCallback<UpsertPayloadRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putFlagDefaultsByProjectValidateBeforeCall(projectKey, upsertFlagDefaultsPayload, _callback);
         Type localVarReturnType = new TypeToken<UpsertPayloadRep>(){}.getType();

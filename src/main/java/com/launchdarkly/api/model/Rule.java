@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,109 +42,116 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * Rule
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class Rule {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_VARIATION = "variation";
   @SerializedName(SERIALIZED_NAME_VARIATION)
+  @javax.annotation.Nullable
   private Integer variation;
 
   public static final String SERIALIZED_NAME_ROLLOUT = "rollout";
   @SerializedName(SERIALIZED_NAME_ROLLOUT)
+  @javax.annotation.Nullable
   private Rollout rollout;
 
   public static final String SERIALIZED_NAME_CLAUSES = "clauses";
   @SerializedName(SERIALIZED_NAME_CLAUSES)
+  @javax.annotation.Nonnull
   private List<Clause> clauses = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TRACK_EVENTS = "trackEvents";
   @SerializedName(SERIALIZED_NAME_TRACK_EVENTS)
+  @javax.annotation.Nonnull
   private Boolean trackEvents;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_REF = "ref";
   @SerializedName(SERIALIZED_NAME_REF)
+  @javax.annotation.Nullable
   private String ref;
 
   public Rule() {
   }
 
-  public Rule id(String id) {
+  public Rule id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The flag rule ID
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public Rule variation(Integer variation) {
+  public Rule variation(@javax.annotation.Nullable Integer variation) {
     this.variation = variation;
     return this;
   }
 
-   /**
+  /**
    * The index of the variation, from the array of variations for this flag
    * @return variation
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getVariation() {
     return variation;
   }
 
-  public void setVariation(Integer variation) {
+  public void setVariation(@javax.annotation.Nullable Integer variation) {
     this.variation = variation;
   }
 
 
-  public Rule rollout(Rollout rollout) {
+  public Rule rollout(@javax.annotation.Nullable Rollout rollout) {
     this.rollout = rollout;
     return this;
   }
 
-   /**
+  /**
    * Get rollout
    * @return rollout
-  **/
+   */
   @javax.annotation.Nullable
   public Rollout getRollout() {
     return rollout;
   }
 
-  public void setRollout(Rollout rollout) {
+  public void setRollout(@javax.annotation.Nullable Rollout rollout) {
     this.rollout = rollout;
   }
 
 
-  public Rule clauses(List<Clause> clauses) {
+  public Rule clauses(@javax.annotation.Nonnull List<Clause> clauses) {
     this.clauses = clauses;
     return this;
   }
@@ -156,73 +164,73 @@ public class Rule {
     return this;
   }
 
-   /**
+  /**
    * An array of clauses used for individual targeting based on attributes
    * @return clauses
-  **/
+   */
   @javax.annotation.Nonnull
   public List<Clause> getClauses() {
     return clauses;
   }
 
-  public void setClauses(List<Clause> clauses) {
+  public void setClauses(@javax.annotation.Nonnull List<Clause> clauses) {
     this.clauses = clauses;
   }
 
 
-  public Rule trackEvents(Boolean trackEvents) {
+  public Rule trackEvents(@javax.annotation.Nonnull Boolean trackEvents) {
     this.trackEvents = trackEvents;
     return this;
   }
 
-   /**
+  /**
    * Whether LaunchDarkly tracks events for this rule
    * @return trackEvents
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getTrackEvents() {
     return trackEvents;
   }
 
-  public void setTrackEvents(Boolean trackEvents) {
+  public void setTrackEvents(@javax.annotation.Nonnull Boolean trackEvents) {
     this.trackEvents = trackEvents;
   }
 
 
-  public Rule description(String description) {
+  public Rule description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * The rule description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public Rule ref(String ref) {
+  public Rule ref(@javax.annotation.Nullable String ref) {
     this.ref = ref;
     return this;
   }
 
-   /**
+  /**
    * Get ref
    * @return ref
-  **/
+   */
   @javax.annotation.Nullable
   public String getRef() {
     return ref;
   }
 
-  public void setRef(String ref) {
+  public void setRef(@javax.annotation.Nullable String ref) {
     this.ref = ref;
   }
 
@@ -329,43 +337,34 @@ public class Rule {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_id");
-    openapiFields.add("variation");
-    openapiFields.add("rollout");
-    openapiFields.add("clauses");
-    openapiFields.add("trackEvents");
-    openapiFields.add("description");
-    openapiFields.add("ref");
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "variation", "rollout", "clauses", "trackEvents", "description", "ref"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("clauses");
-    openapiRequiredFields.add("trackEvents");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("clauses", "trackEvents"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Rule
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Rule
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Rule.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Rule is not found in the empty JSON string", Rule.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Rule is not found in the empty JSON string", Rule.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : Rule.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("_id") != null && !jsonObj.get("_id").isJsonNull()) && !jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       // validate the optional field `rollout`
       if (jsonObj.get("rollout") != null && !jsonObj.get("rollout").isJsonNull()) {
@@ -373,7 +372,7 @@ public class Rule {
       }
       // ensure the json data is an array
       if (!jsonObj.get("clauses").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `clauses` to be an array in the JSON string but got `%s`", jsonObj.get("clauses").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `clauses` to be an array in the JSON string but got `%s`", jsonObj.get("clauses").toString()));
       }
 
       JsonArray jsonArrayclauses = jsonObj.getAsJsonArray("clauses");
@@ -382,10 +381,10 @@ public class Rule {
         Clause.validateJsonElement(jsonArrayclauses.get(i));
       };
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if ((jsonObj.get("ref") != null && !jsonObj.get("ref").isJsonNull()) && !jsonObj.get("ref").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ref` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ref").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `ref` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ref").toString()));
       }
   }
 
@@ -446,7 +445,7 @@ public class Rule {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -461,22 +460,22 @@ public class Rule {
     }
   }
 
- /**
-  * Create an instance of Rule given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Rule
-  * @throws IOException if the JSON string is invalid with respect to Rule
-  */
+  /**
+   * Create an instance of Rule given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Rule
+   * @throws IOException if the JSON string is invalid with respect to Rule
+   */
   public static Rule fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Rule.class);
   }
 
- /**
-  * Convert an instance of Rule to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Rule to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

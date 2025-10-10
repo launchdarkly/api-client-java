@@ -90,7 +90,8 @@ public class ContextSettingsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -101,7 +102,7 @@ public class ContextSettingsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putContextFlagSettingCall(String projectKey, String environmentKey, String contextKind, String contextKey, String featureFlagKey, ValuePut valuePut, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call putContextFlagSettingCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String contextKind, @javax.annotation.Nonnull String contextKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull ValuePut valuePut, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -152,7 +153,7 @@ public class ContextSettingsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call putContextFlagSettingValidateBeforeCall(String projectKey, String environmentKey, String contextKind, String contextKey, String featureFlagKey, ValuePut valuePut, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call putContextFlagSettingValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String contextKind, @javax.annotation.Nonnull String contextKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull ValuePut valuePut, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling putContextFlagSetting(Async)");
@@ -198,7 +199,8 @@ public class ContextSettingsApi {
      * @param valuePut  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -209,7 +211,7 @@ public class ContextSettingsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void putContextFlagSetting(String projectKey, String environmentKey, String contextKind, String contextKey, String featureFlagKey, ValuePut valuePut) throws ApiException {
+    public void putContextFlagSetting(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String contextKind, @javax.annotation.Nonnull String contextKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull ValuePut valuePut) throws ApiException {
         putContextFlagSettingWithHttpInfo(projectKey, environmentKey, contextKind, contextKey, featureFlagKey, valuePut);
     }
 
@@ -225,7 +227,8 @@ public class ContextSettingsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -236,7 +239,7 @@ public class ContextSettingsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> putContextFlagSettingWithHttpInfo(String projectKey, String environmentKey, String contextKind, String contextKey, String featureFlagKey, ValuePut valuePut) throws ApiException {
+    public ApiResponse<Void> putContextFlagSettingWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String contextKind, @javax.annotation.Nonnull String contextKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull ValuePut valuePut) throws ApiException {
         okhttp3.Call localVarCall = putContextFlagSettingValidateBeforeCall(projectKey, environmentKey, contextKind, contextKey, featureFlagKey, valuePut, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -254,7 +257,8 @@ public class ContextSettingsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -265,7 +269,7 @@ public class ContextSettingsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putContextFlagSettingAsync(String projectKey, String environmentKey, String contextKind, String contextKey, String featureFlagKey, ValuePut valuePut, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call putContextFlagSettingAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String contextKind, @javax.annotation.Nonnull String contextKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull ValuePut valuePut, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putContextFlagSettingValidateBeforeCall(projectKey, environmentKey, contextKind, contextKey, featureFlagKey, valuePut, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);

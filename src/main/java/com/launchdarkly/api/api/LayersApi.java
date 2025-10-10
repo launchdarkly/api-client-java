@@ -87,7 +87,8 @@ public class LayersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Layer response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -96,7 +97,7 @@ public class LayersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createLayerCall(String projectKey, LayerPost layerPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createLayerCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull LayerPost layerPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -143,7 +144,7 @@ public class LayersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createLayerValidateBeforeCall(String projectKey, LayerPost layerPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createLayerValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull LayerPost layerPost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling createLayer(Async)");
@@ -166,7 +167,8 @@ public class LayersApi {
      * @return LayerRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Layer response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -175,7 +177,7 @@ public class LayersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public LayerRep createLayer(String projectKey, LayerPost layerPost) throws ApiException {
+    public LayerRep createLayer(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull LayerPost layerPost) throws ApiException {
         ApiResponse<LayerRep> localVarResp = createLayerWithHttpInfo(projectKey, layerPost);
         return localVarResp.getData();
     }
@@ -188,7 +190,8 @@ public class LayersApi {
      * @return ApiResponse&lt;LayerRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Layer response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -197,7 +200,7 @@ public class LayersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<LayerRep> createLayerWithHttpInfo(String projectKey, LayerPost layerPost) throws ApiException {
+    public ApiResponse<LayerRep> createLayerWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull LayerPost layerPost) throws ApiException {
         okhttp3.Call localVarCall = createLayerValidateBeforeCall(projectKey, layerPost, null);
         Type localVarReturnType = new TypeToken<LayerRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -212,7 +215,8 @@ public class LayersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Layer response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -221,7 +225,7 @@ public class LayersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createLayerAsync(String projectKey, LayerPost layerPost, final ApiCallback<LayerRep> _callback) throws ApiException {
+    public okhttp3.Call createLayerAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull LayerPost layerPost, final ApiCallback<LayerRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createLayerValidateBeforeCall(projectKey, layerPost, _callback);
         Type localVarReturnType = new TypeToken<LayerRep>(){}.getType();
@@ -236,7 +240,8 @@ public class LayersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Layer Collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -245,7 +250,7 @@ public class LayersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getLayersCall(String projectKey, String filter, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getLayersCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String filter, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -295,7 +300,7 @@ public class LayersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getLayersValidateBeforeCall(String projectKey, String filter, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getLayersValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String filter, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getLayers(Async)");
@@ -313,7 +318,8 @@ public class LayersApi {
      * @return LayerCollectionRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Layer Collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -322,7 +328,7 @@ public class LayersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public LayerCollectionRep getLayers(String projectKey, String filter) throws ApiException {
+    public LayerCollectionRep getLayers(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String filter) throws ApiException {
         ApiResponse<LayerCollectionRep> localVarResp = getLayersWithHttpInfo(projectKey, filter);
         return localVarResp.getData();
     }
@@ -335,7 +341,8 @@ public class LayersApi {
      * @return ApiResponse&lt;LayerCollectionRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Layer Collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -344,7 +351,7 @@ public class LayersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<LayerCollectionRep> getLayersWithHttpInfo(String projectKey, String filter) throws ApiException {
+    public ApiResponse<LayerCollectionRep> getLayersWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String filter) throws ApiException {
         okhttp3.Call localVarCall = getLayersValidateBeforeCall(projectKey, filter, null);
         Type localVarReturnType = new TypeToken<LayerCollectionRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -359,7 +366,8 @@ public class LayersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Layer Collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -368,7 +376,7 @@ public class LayersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getLayersAsync(String projectKey, String filter, final ApiCallback<LayerCollectionRep> _callback) throws ApiException {
+    public okhttp3.Call getLayersAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String filter, final ApiCallback<LayerCollectionRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getLayersValidateBeforeCall(projectKey, filter, _callback);
         Type localVarReturnType = new TypeToken<LayerCollectionRep>(){}.getType();
@@ -384,7 +392,8 @@ public class LayersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Layer response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -393,7 +402,7 @@ public class LayersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateLayerCall(String projectKey, String layerKey, LayerPatchInput layerPatchInput, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateLayerCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String layerKey, @javax.annotation.Nonnull LayerPatchInput layerPatchInput, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -441,7 +450,7 @@ public class LayersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateLayerValidateBeforeCall(String projectKey, String layerKey, LayerPatchInput layerPatchInput, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateLayerValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String layerKey, @javax.annotation.Nonnull LayerPatchInput layerPatchInput, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling updateLayer(Async)");
@@ -470,7 +479,8 @@ public class LayersApi {
      * @return LayerRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Layer response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -479,7 +489,7 @@ public class LayersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public LayerRep updateLayer(String projectKey, String layerKey, LayerPatchInput layerPatchInput) throws ApiException {
+    public LayerRep updateLayer(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String layerKey, @javax.annotation.Nonnull LayerPatchInput layerPatchInput) throws ApiException {
         ApiResponse<LayerRep> localVarResp = updateLayerWithHttpInfo(projectKey, layerKey, layerPatchInput);
         return localVarResp.getData();
     }
@@ -493,7 +503,8 @@ public class LayersApi {
      * @return ApiResponse&lt;LayerRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Layer response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -502,7 +513,7 @@ public class LayersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<LayerRep> updateLayerWithHttpInfo(String projectKey, String layerKey, LayerPatchInput layerPatchInput) throws ApiException {
+    public ApiResponse<LayerRep> updateLayerWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String layerKey, @javax.annotation.Nonnull LayerPatchInput layerPatchInput) throws ApiException {
         okhttp3.Call localVarCall = updateLayerValidateBeforeCall(projectKey, layerKey, layerPatchInput, null);
         Type localVarReturnType = new TypeToken<LayerRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -518,7 +529,8 @@ public class LayersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Layer response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -527,7 +539,7 @@ public class LayersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateLayerAsync(String projectKey, String layerKey, LayerPatchInput layerPatchInput, final ApiCallback<LayerRep> _callback) throws ApiException {
+    public okhttp3.Call updateLayerAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String layerKey, @javax.annotation.Nonnull LayerPatchInput layerPatchInput, final ApiCallback<LayerRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateLayerValidateBeforeCall(projectKey, layerKey, layerPatchInput, _callback);
         Type localVarReturnType = new TypeToken<LayerRep>(){}.getType();

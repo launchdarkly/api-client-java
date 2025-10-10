@@ -85,7 +85,8 @@ public class TagsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Tag collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -95,7 +96,7 @@ public class TagsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTagsCall(List<String> kind, String pre, Boolean archived, Integer limit, Integer offset, String asOf, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getTagsCall(@javax.annotation.Nullable List<String> kind, @javax.annotation.Nullable String pre, @javax.annotation.Nullable Boolean archived, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String asOf, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -164,7 +165,7 @@ public class TagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTagsValidateBeforeCall(List<String> kind, String pre, Boolean archived, Integer limit, Integer offset, String asOf, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getTagsValidateBeforeCall(@javax.annotation.Nullable List<String> kind, @javax.annotation.Nullable String pre, @javax.annotation.Nullable Boolean archived, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String asOf, final ApiCallback _callback) throws ApiException {
         return getTagsCall(kind, pre, archived, limit, offset, asOf, _callback);
 
     }
@@ -181,7 +182,8 @@ public class TagsApi {
      * @return TagsCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Tag collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -191,7 +193,7 @@ public class TagsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public TagsCollection getTags(List<String> kind, String pre, Boolean archived, Integer limit, Integer offset, String asOf) throws ApiException {
+    public TagsCollection getTags(@javax.annotation.Nullable List<String> kind, @javax.annotation.Nullable String pre, @javax.annotation.Nullable Boolean archived, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String asOf) throws ApiException {
         ApiResponse<TagsCollection> localVarResp = getTagsWithHttpInfo(kind, pre, archived, limit, offset, asOf);
         return localVarResp.getData();
     }
@@ -208,7 +210,8 @@ public class TagsApi {
      * @return ApiResponse&lt;TagsCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Tag collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -218,7 +221,7 @@ public class TagsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TagsCollection> getTagsWithHttpInfo(List<String> kind, String pre, Boolean archived, Integer limit, Integer offset, String asOf) throws ApiException {
+    public ApiResponse<TagsCollection> getTagsWithHttpInfo(@javax.annotation.Nullable List<String> kind, @javax.annotation.Nullable String pre, @javax.annotation.Nullable Boolean archived, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String asOf) throws ApiException {
         okhttp3.Call localVarCall = getTagsValidateBeforeCall(kind, pre, archived, limit, offset, asOf, null);
         Type localVarReturnType = new TypeToken<TagsCollection>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -237,7 +240,8 @@ public class TagsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Tag collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -247,7 +251,7 @@ public class TagsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTagsAsync(List<String> kind, String pre, Boolean archived, Integer limit, Integer offset, String asOf, final ApiCallback<TagsCollection> _callback) throws ApiException {
+    public okhttp3.Call getTagsAsync(@javax.annotation.Nullable List<String> kind, @javax.annotation.Nullable String pre, @javax.annotation.Nullable Boolean archived, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String asOf, final ApiCallback<TagsCollection> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getTagsValidateBeforeCall(kind, pre, archived, limit, offset, asOf, _callback);
         Type localVarReturnType = new TypeToken<TagsCollection>(){}.getType();

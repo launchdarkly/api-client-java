@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,74 +41,77 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ExperimentEnvironmentSettingRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ExperimentEnvironmentSettingRep {
   public static final String SERIALIZED_NAME_START_DATE = "startDate";
   @SerializedName(SERIALIZED_NAME_START_DATE)
+  @javax.annotation.Nullable
   private Long startDate;
 
   public static final String SERIALIZED_NAME_STOP_DATE = "stopDate";
   @SerializedName(SERIALIZED_NAME_STOP_DATE)
+  @javax.annotation.Nullable
   private Long stopDate;
 
   public static final String SERIALIZED_NAME_ENABLED_PERIODS = "enabledPeriods";
   @SerializedName(SERIALIZED_NAME_ENABLED_PERIODS)
+  @javax.annotation.Nullable
   private List<ExperimentEnabledPeriodRep> enabledPeriods = new ArrayList<>();
 
   public ExperimentEnvironmentSettingRep() {
   }
 
-  public ExperimentEnvironmentSettingRep startDate(Long startDate) {
+  public ExperimentEnvironmentSettingRep startDate(@javax.annotation.Nullable Long startDate) {
     this.startDate = startDate;
     return this;
   }
 
-   /**
+  /**
    * Get startDate
    * @return startDate
-  **/
+   */
   @javax.annotation.Nullable
   public Long getStartDate() {
     return startDate;
   }
 
-  public void setStartDate(Long startDate) {
+  public void setStartDate(@javax.annotation.Nullable Long startDate) {
     this.startDate = startDate;
   }
 
 
-  public ExperimentEnvironmentSettingRep stopDate(Long stopDate) {
+  public ExperimentEnvironmentSettingRep stopDate(@javax.annotation.Nullable Long stopDate) {
     this.stopDate = stopDate;
     return this;
   }
 
-   /**
+  /**
    * Get stopDate
    * @return stopDate
-  **/
+   */
   @javax.annotation.Nullable
   public Long getStopDate() {
     return stopDate;
   }
 
-  public void setStopDate(Long stopDate) {
+  public void setStopDate(@javax.annotation.Nullable Long stopDate) {
     this.stopDate = stopDate;
   }
 
 
-  public ExperimentEnvironmentSettingRep enabledPeriods(List<ExperimentEnabledPeriodRep> enabledPeriods) {
+  public ExperimentEnvironmentSettingRep enabledPeriods(@javax.annotation.Nullable List<ExperimentEnabledPeriodRep> enabledPeriods) {
     this.enabledPeriods = enabledPeriods;
     return this;
   }
@@ -120,16 +124,16 @@ public class ExperimentEnvironmentSettingRep {
     return this;
   }
 
-   /**
+  /**
    * Get enabledPeriods
    * @return enabledPeriods
-  **/
+   */
   @javax.annotation.Nullable
   public List<ExperimentEnabledPeriodRep> getEnabledPeriods() {
     return enabledPeriods;
   }
 
-  public void setEnabledPeriods(List<ExperimentEnabledPeriodRep> enabledPeriods) {
+  public void setEnabledPeriods(@javax.annotation.Nullable List<ExperimentEnabledPeriodRep> enabledPeriods) {
     this.enabledPeriods = enabledPeriods;
   }
 
@@ -228,25 +232,22 @@ public class ExperimentEnvironmentSettingRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("startDate");
-    openapiFields.add("stopDate");
-    openapiFields.add("enabledPeriods");
+    openapiFields = new HashSet<String>(Arrays.asList("startDate", "stopDate", "enabledPeriods"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ExperimentEnvironmentSettingRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ExperimentEnvironmentSettingRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ExperimentEnvironmentSettingRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ExperimentEnvironmentSettingRep is not found in the empty JSON string", ExperimentEnvironmentSettingRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ExperimentEnvironmentSettingRep is not found in the empty JSON string", ExperimentEnvironmentSettingRep.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -255,7 +256,7 @@ public class ExperimentEnvironmentSettingRep {
         if (jsonArrayenabledPeriods != null) {
           // ensure the json data is an array
           if (!jsonObj.get("enabledPeriods").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `enabledPeriods` to be an array in the JSON string but got `%s`", jsonObj.get("enabledPeriods").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `enabledPeriods` to be an array in the JSON string but got `%s`", jsonObj.get("enabledPeriods").toString()));
           }
 
           // validate the optional field `enabledPeriods` (array)
@@ -323,7 +324,7 @@ public class ExperimentEnvironmentSettingRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -338,22 +339,22 @@ public class ExperimentEnvironmentSettingRep {
     }
   }
 
- /**
-  * Create an instance of ExperimentEnvironmentSettingRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ExperimentEnvironmentSettingRep
-  * @throws IOException if the JSON string is invalid with respect to ExperimentEnvironmentSettingRep
-  */
+  /**
+   * Create an instance of ExperimentEnvironmentSettingRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ExperimentEnvironmentSettingRep
+   * @throws IOException if the JSON string is invalid with respect to ExperimentEnvironmentSettingRep
+   */
   public static ExperimentEnvironmentSettingRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ExperimentEnvironmentSettingRep.class);
   }
 
- /**
-  * Convert an instance of ExperimentEnvironmentSettingRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ExperimentEnvironmentSettingRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

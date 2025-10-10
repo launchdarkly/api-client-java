@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,220 +41,231 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * EnvironmentPost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class EnvironmentPost {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_COLOR = "color";
   @SerializedName(SERIALIZED_NAME_COLOR)
+  @javax.annotation.Nonnull
   private String color;
 
   public static final String SERIALIZED_NAME_DEFAULT_TTL = "defaultTtl";
   @SerializedName(SERIALIZED_NAME_DEFAULT_TTL)
+  @javax.annotation.Nullable
   private Integer defaultTtl;
 
   public static final String SERIALIZED_NAME_SECURE_MODE = "secureMode";
   @SerializedName(SERIALIZED_NAME_SECURE_MODE)
+  @javax.annotation.Nullable
   private Boolean secureMode;
 
   public static final String SERIALIZED_NAME_DEFAULT_TRACK_EVENTS = "defaultTrackEvents";
   @SerializedName(SERIALIZED_NAME_DEFAULT_TRACK_EVENTS)
+  @javax.annotation.Nullable
   private Boolean defaultTrackEvents;
 
   public static final String SERIALIZED_NAME_CONFIRM_CHANGES = "confirmChanges";
   @SerializedName(SERIALIZED_NAME_CONFIRM_CHANGES)
+  @javax.annotation.Nullable
   private Boolean confirmChanges;
 
   public static final String SERIALIZED_NAME_REQUIRE_COMMENTS = "requireComments";
   @SerializedName(SERIALIZED_NAME_REQUIRE_COMMENTS)
+  @javax.annotation.Nullable
   private Boolean requireComments;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SOURCE = "source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
+  @javax.annotation.Nullable
   private SourceEnv source;
 
   public static final String SERIALIZED_NAME_CRITICAL = "critical";
   @SerializedName(SERIALIZED_NAME_CRITICAL)
+  @javax.annotation.Nullable
   private Boolean critical;
 
   public EnvironmentPost() {
   }
 
-  public EnvironmentPost name(String name) {
+  public EnvironmentPost name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for the new environment
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public EnvironmentPost key(String key) {
+  public EnvironmentPost key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * A project-unique key for the new environment
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public EnvironmentPost color(String color) {
+  public EnvironmentPost color(@javax.annotation.Nonnull String color) {
     this.color = color;
     return this;
   }
 
-   /**
+  /**
    * A color to indicate this environment in the UI
    * @return color
-  **/
+   */
   @javax.annotation.Nonnull
   public String getColor() {
     return color;
   }
 
-  public void setColor(String color) {
+  public void setColor(@javax.annotation.Nonnull String color) {
     this.color = color;
   }
 
 
-  public EnvironmentPost defaultTtl(Integer defaultTtl) {
+  public EnvironmentPost defaultTtl(@javax.annotation.Nullable Integer defaultTtl) {
     this.defaultTtl = defaultTtl;
     return this;
   }
 
-   /**
+  /**
    * The default time (in minutes) that the PHP SDK can cache feature flag rules locally
    * @return defaultTtl
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getDefaultTtl() {
     return defaultTtl;
   }
 
-  public void setDefaultTtl(Integer defaultTtl) {
+  public void setDefaultTtl(@javax.annotation.Nullable Integer defaultTtl) {
     this.defaultTtl = defaultTtl;
   }
 
 
-  public EnvironmentPost secureMode(Boolean secureMode) {
+  public EnvironmentPost secureMode(@javax.annotation.Nullable Boolean secureMode) {
     this.secureMode = secureMode;
     return this;
   }
 
-   /**
+  /**
    * Ensures that one end user of the client-side SDK cannot inspect the variations for another end user
    * @return secureMode
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getSecureMode() {
     return secureMode;
   }
 
-  public void setSecureMode(Boolean secureMode) {
+  public void setSecureMode(@javax.annotation.Nullable Boolean secureMode) {
     this.secureMode = secureMode;
   }
 
 
-  public EnvironmentPost defaultTrackEvents(Boolean defaultTrackEvents) {
+  public EnvironmentPost defaultTrackEvents(@javax.annotation.Nullable Boolean defaultTrackEvents) {
     this.defaultTrackEvents = defaultTrackEvents;
     return this;
   }
 
-   /**
+  /**
    * Enables tracking detailed information for new flags by default
    * @return defaultTrackEvents
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getDefaultTrackEvents() {
     return defaultTrackEvents;
   }
 
-  public void setDefaultTrackEvents(Boolean defaultTrackEvents) {
+  public void setDefaultTrackEvents(@javax.annotation.Nullable Boolean defaultTrackEvents) {
     this.defaultTrackEvents = defaultTrackEvents;
   }
 
 
-  public EnvironmentPost confirmChanges(Boolean confirmChanges) {
+  public EnvironmentPost confirmChanges(@javax.annotation.Nullable Boolean confirmChanges) {
     this.confirmChanges = confirmChanges;
     return this;
   }
 
-   /**
+  /**
    * Requires confirmation for all flag and segment changes via the UI in this environment
    * @return confirmChanges
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getConfirmChanges() {
     return confirmChanges;
   }
 
-  public void setConfirmChanges(Boolean confirmChanges) {
+  public void setConfirmChanges(@javax.annotation.Nullable Boolean confirmChanges) {
     this.confirmChanges = confirmChanges;
   }
 
 
-  public EnvironmentPost requireComments(Boolean requireComments) {
+  public EnvironmentPost requireComments(@javax.annotation.Nullable Boolean requireComments) {
     this.requireComments = requireComments;
     return this;
   }
 
-   /**
+  /**
    * Requires comments for all flag and segment changes via the UI in this environment
    * @return requireComments
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getRequireComments() {
     return requireComments;
   }
 
-  public void setRequireComments(Boolean requireComments) {
+  public void setRequireComments(@javax.annotation.Nullable Boolean requireComments) {
     this.requireComments = requireComments;
   }
 
 
-  public EnvironmentPost tags(List<String> tags) {
+  public EnvironmentPost tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -266,54 +278,54 @@ public class EnvironmentPost {
     return this;
   }
 
-   /**
+  /**
    * Tags to apply to the new environment
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
 
-  public EnvironmentPost source(SourceEnv source) {
+  public EnvironmentPost source(@javax.annotation.Nullable SourceEnv source) {
     this.source = source;
     return this;
   }
 
-   /**
+  /**
    * Get source
    * @return source
-  **/
+   */
   @javax.annotation.Nullable
   public SourceEnv getSource() {
     return source;
   }
 
-  public void setSource(SourceEnv source) {
+  public void setSource(@javax.annotation.Nullable SourceEnv source) {
     this.source = source;
   }
 
 
-  public EnvironmentPost critical(Boolean critical) {
+  public EnvironmentPost critical(@javax.annotation.Nullable Boolean critical) {
     this.critical = critical;
     return this;
   }
 
-   /**
+  /**
    * Whether the environment is critical
    * @return critical
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getCritical() {
     return critical;
   }
 
-  public void setCritical(Boolean critical) {
+  public void setCritical(@javax.annotation.Nullable Boolean critical) {
     this.critical = critical;
   }
 
@@ -428,58 +440,44 @@ public class EnvironmentPost {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("key");
-    openapiFields.add("color");
-    openapiFields.add("defaultTtl");
-    openapiFields.add("secureMode");
-    openapiFields.add("defaultTrackEvents");
-    openapiFields.add("confirmChanges");
-    openapiFields.add("requireComments");
-    openapiFields.add("tags");
-    openapiFields.add("source");
-    openapiFields.add("critical");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "key", "color", "defaultTtl", "secureMode", "defaultTrackEvents", "confirmChanges", "requireComments", "tags", "source", "critical"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("color");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name", "key", "color"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to EnvironmentPost
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to EnvironmentPost
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!EnvironmentPost.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in EnvironmentPost is not found in the empty JSON string", EnvironmentPost.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in EnvironmentPost is not found in the empty JSON string", EnvironmentPost.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : EnvironmentPost.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if (!jsonObj.get("color").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `color` to be a primitive type in the JSON string but got `%s`", jsonObj.get("color").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `color` to be a primitive type in the JSON string but got `%s`", jsonObj.get("color").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       // validate the optional field `source`
       if (jsonObj.get("source") != null && !jsonObj.get("source").isJsonNull()) {
@@ -544,7 +542,7 @@ public class EnvironmentPost {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -559,22 +557,22 @@ public class EnvironmentPost {
     }
   }
 
- /**
-  * Create an instance of EnvironmentPost given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of EnvironmentPost
-  * @throws IOException if the JSON string is invalid with respect to EnvironmentPost
-  */
+  /**
+   * Create an instance of EnvironmentPost given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of EnvironmentPost
+   * @throws IOException if the JSON string is invalid with respect to EnvironmentPost
+   */
   public static EnvironmentPost fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, EnvironmentPost.class);
   }
 
- /**
-  * Convert an instance of EnvironmentPost to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of EnvironmentPost to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

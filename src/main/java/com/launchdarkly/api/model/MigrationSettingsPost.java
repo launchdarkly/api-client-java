@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,65 +38,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * MigrationSettingsPost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class MigrationSettingsPost {
   public static final String SERIALIZED_NAME_CONTEXT_KIND = "contextKind";
   @SerializedName(SERIALIZED_NAME_CONTEXT_KIND)
+  @javax.annotation.Nullable
   private String contextKind;
 
   public static final String SERIALIZED_NAME_STAGE_COUNT = "stageCount";
   @SerializedName(SERIALIZED_NAME_STAGE_COUNT)
+  @javax.annotation.Nonnull
   private Integer stageCount;
 
   public MigrationSettingsPost() {
   }
 
-  public MigrationSettingsPost contextKind(String contextKind) {
+  public MigrationSettingsPost contextKind(@javax.annotation.Nullable String contextKind) {
     this.contextKind = contextKind;
     return this;
   }
 
-   /**
+  /**
    * Context kind for a migration with 6 stages, where data is being moved
    * @return contextKind
-  **/
+   */
   @javax.annotation.Nullable
   public String getContextKind() {
     return contextKind;
   }
 
-  public void setContextKind(String contextKind) {
+  public void setContextKind(@javax.annotation.Nullable String contextKind) {
     this.contextKind = contextKind;
   }
 
 
-  public MigrationSettingsPost stageCount(Integer stageCount) {
+  public MigrationSettingsPost stageCount(@javax.annotation.Nonnull Integer stageCount) {
     this.stageCount = stageCount;
     return this;
   }
 
-   /**
+  /**
    * Get stageCount
    * @return stageCount
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getStageCount() {
     return stageCount;
   }
 
-  public void setStageCount(Integer stageCount) {
+  public void setStageCount(@javax.annotation.Nonnull Integer stageCount) {
     this.stageCount = stageCount;
   }
 
@@ -192,37 +195,34 @@ public class MigrationSettingsPost {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("contextKind");
-    openapiFields.add("stageCount");
+    openapiFields = new HashSet<String>(Arrays.asList("contextKind", "stageCount"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("stageCount");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("stageCount"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to MigrationSettingsPost
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to MigrationSettingsPost
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!MigrationSettingsPost.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in MigrationSettingsPost is not found in the empty JSON string", MigrationSettingsPost.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in MigrationSettingsPost is not found in the empty JSON string", MigrationSettingsPost.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : MigrationSettingsPost.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("contextKind") != null && !jsonObj.get("contextKind").isJsonNull()) && !jsonObj.get("contextKind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `contextKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("contextKind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `contextKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("contextKind").toString()));
       }
   }
 
@@ -283,7 +283,7 @@ public class MigrationSettingsPost {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -298,22 +298,22 @@ public class MigrationSettingsPost {
     }
   }
 
- /**
-  * Create an instance of MigrationSettingsPost given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of MigrationSettingsPost
-  * @throws IOException if the JSON string is invalid with respect to MigrationSettingsPost
-  */
+  /**
+   * Create an instance of MigrationSettingsPost given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of MigrationSettingsPost
+   * @throws IOException if the JSON string is invalid with respect to MigrationSettingsPost
+   */
   public static MigrationSettingsPost fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, MigrationSettingsPost.class);
   }
 
- /**
-  * Convert an instance of MigrationSettingsPost to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of MigrationSettingsPost to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

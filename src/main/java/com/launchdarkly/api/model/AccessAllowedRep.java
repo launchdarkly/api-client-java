@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,65 +39,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * AccessAllowedRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AccessAllowedRep {
   public static final String SERIALIZED_NAME_ACTION = "action";
   @SerializedName(SERIALIZED_NAME_ACTION)
+  @javax.annotation.Nonnull
   private String action;
 
   public static final String SERIALIZED_NAME_REASON = "reason";
   @SerializedName(SERIALIZED_NAME_REASON)
+  @javax.annotation.Nonnull
   private AccessAllowedReason reason;
 
   public AccessAllowedRep() {
   }
 
-  public AccessAllowedRep action(String action) {
+  public AccessAllowedRep action(@javax.annotation.Nonnull String action) {
     this.action = action;
     return this;
   }
 
-   /**
+  /**
    * Get action
    * @return action
-  **/
+   */
   @javax.annotation.Nonnull
   public String getAction() {
     return action;
   }
 
-  public void setAction(String action) {
+  public void setAction(@javax.annotation.Nonnull String action) {
     this.action = action;
   }
 
 
-  public AccessAllowedRep reason(AccessAllowedReason reason) {
+  public AccessAllowedRep reason(@javax.annotation.Nonnull AccessAllowedReason reason) {
     this.reason = reason;
     return this;
   }
 
-   /**
+  /**
    * Get reason
    * @return reason
-  **/
+   */
   @javax.annotation.Nonnull
   public AccessAllowedReason getReason() {
     return reason;
   }
 
-  public void setReason(AccessAllowedReason reason) {
+  public void setReason(@javax.annotation.Nonnull AccessAllowedReason reason) {
     this.reason = reason;
   }
 
@@ -193,38 +196,34 @@ public class AccessAllowedRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("action");
-    openapiFields.add("reason");
+    openapiFields = new HashSet<String>(Arrays.asList("action", "reason"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("action");
-    openapiRequiredFields.add("reason");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("action", "reason"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to AccessAllowedRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AccessAllowedRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AccessAllowedRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AccessAllowedRep is not found in the empty JSON string", AccessAllowedRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AccessAllowedRep is not found in the empty JSON string", AccessAllowedRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : AccessAllowedRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("action").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `action` to be a primitive type in the JSON string but got `%s`", jsonObj.get("action").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `action` to be a primitive type in the JSON string but got `%s`", jsonObj.get("action").toString()));
       }
       // validate the required field `reason`
       AccessAllowedReason.validateJsonElement(jsonObj.get("reason"));
@@ -287,7 +286,7 @@ public class AccessAllowedRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -302,22 +301,22 @@ public class AccessAllowedRep {
     }
   }
 
- /**
-  * Create an instance of AccessAllowedRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AccessAllowedRep
-  * @throws IOException if the JSON string is invalid with respect to AccessAllowedRep
-  */
+  /**
+   * Create an instance of AccessAllowedRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AccessAllowedRep
+   * @throws IOException if the JSON string is invalid with respect to AccessAllowedRep
+   */
   public static AccessAllowedRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AccessAllowedRep.class);
   }
 
- /**
-  * Convert an instance of AccessAllowedRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AccessAllowedRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

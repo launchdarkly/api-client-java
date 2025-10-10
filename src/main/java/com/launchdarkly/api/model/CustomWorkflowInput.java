@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,101 +41,106 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * CustomWorkflowInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class CustomWorkflowInput {
   public static final String SERIALIZED_NAME_MAINTAINER_ID = "maintainerId";
   @SerializedName(SERIALIZED_NAME_MAINTAINER_ID)
+  @javax.annotation.Nullable
   private String maintainerId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_STAGES = "stages";
   @SerializedName(SERIALIZED_NAME_STAGES)
+  @javax.annotation.Nullable
   private List<StageInput> stages = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TEMPLATE_KEY = "templateKey";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_KEY)
+  @javax.annotation.Nullable
   private String templateKey;
 
   public CustomWorkflowInput() {
   }
 
-  public CustomWorkflowInput maintainerId(String maintainerId) {
+  public CustomWorkflowInput maintainerId(@javax.annotation.Nullable String maintainerId) {
     this.maintainerId = maintainerId;
     return this;
   }
 
-   /**
+  /**
    * Get maintainerId
    * @return maintainerId
-  **/
+   */
   @javax.annotation.Nullable
   public String getMaintainerId() {
     return maintainerId;
   }
 
-  public void setMaintainerId(String maintainerId) {
+  public void setMaintainerId(@javax.annotation.Nullable String maintainerId) {
     this.maintainerId = maintainerId;
   }
 
 
-  public CustomWorkflowInput name(String name) {
+  public CustomWorkflowInput name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The workflow name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public CustomWorkflowInput description(String description) {
+  public CustomWorkflowInput description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * The workflow description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CustomWorkflowInput stages(List<StageInput> stages) {
+  public CustomWorkflowInput stages(@javax.annotation.Nullable List<StageInput> stages) {
     this.stages = stages;
     return this;
   }
@@ -147,35 +153,35 @@ public class CustomWorkflowInput {
     return this;
   }
 
-   /**
+  /**
    * A list of the workflow stages
    * @return stages
-  **/
+   */
   @javax.annotation.Nullable
   public List<StageInput> getStages() {
     return stages;
   }
 
-  public void setStages(List<StageInput> stages) {
+  public void setStages(@javax.annotation.Nullable List<StageInput> stages) {
     this.stages = stages;
   }
 
 
-  public CustomWorkflowInput templateKey(String templateKey) {
+  public CustomWorkflowInput templateKey(@javax.annotation.Nullable String templateKey) {
     this.templateKey = templateKey;
     return this;
   }
 
-   /**
+  /**
    * The template key
    * @return templateKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getTemplateKey() {
     return templateKey;
   }
 
-  public void setTemplateKey(String templateKey) {
+  public void setTemplateKey(@javax.annotation.Nullable String templateKey) {
     this.templateKey = templateKey;
   }
 
@@ -278,53 +284,47 @@ public class CustomWorkflowInput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("maintainerId");
-    openapiFields.add("name");
-    openapiFields.add("description");
-    openapiFields.add("stages");
-    openapiFields.add("templateKey");
+    openapiFields = new HashSet<String>(Arrays.asList("maintainerId", "name", "description", "stages", "templateKey"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to CustomWorkflowInput
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CustomWorkflowInput
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CustomWorkflowInput.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CustomWorkflowInput is not found in the empty JSON string", CustomWorkflowInput.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in CustomWorkflowInput is not found in the empty JSON string", CustomWorkflowInput.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : CustomWorkflowInput.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("maintainerId") != null && !jsonObj.get("maintainerId").isJsonNull()) && !jsonObj.get("maintainerId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerId").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if (jsonObj.get("stages") != null && !jsonObj.get("stages").isJsonNull()) {
         JsonArray jsonArraystages = jsonObj.getAsJsonArray("stages");
         if (jsonArraystages != null) {
           // ensure the json data is an array
           if (!jsonObj.get("stages").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `stages` to be an array in the JSON string but got `%s`", jsonObj.get("stages").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `stages` to be an array in the JSON string but got `%s`", jsonObj.get("stages").toString()));
           }
 
           // validate the optional field `stages` (array)
@@ -334,7 +334,7 @@ public class CustomWorkflowInput {
         }
       }
       if ((jsonObj.get("templateKey") != null && !jsonObj.get("templateKey").isJsonNull()) && !jsonObj.get("templateKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `templateKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("templateKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `templateKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("templateKey").toString()));
       }
   }
 
@@ -395,7 +395,7 @@ public class CustomWorkflowInput {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -410,22 +410,22 @@ public class CustomWorkflowInput {
     }
   }
 
- /**
-  * Create an instance of CustomWorkflowInput given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CustomWorkflowInput
-  * @throws IOException if the JSON string is invalid with respect to CustomWorkflowInput
-  */
+  /**
+   * Create an instance of CustomWorkflowInput given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CustomWorkflowInput
+   * @throws IOException if the JSON string is invalid with respect to CustomWorkflowInput
+   */
   public static CustomWorkflowInput fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CustomWorkflowInput.class);
   }
 
- /**
-  * Convert an instance of CustomWorkflowInput to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CustomWorkflowInput to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

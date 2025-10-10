@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,74 +41,77 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * PostFlagScheduledChangesInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class PostFlagScheduledChangesInput {
   public static final String SERIALIZED_NAME_COMMENT = "comment";
   @SerializedName(SERIALIZED_NAME_COMMENT)
+  @javax.annotation.Nullable
   private String comment;
 
   public static final String SERIALIZED_NAME_EXECUTION_DATE = "executionDate";
   @SerializedName(SERIALIZED_NAME_EXECUTION_DATE)
+  @javax.annotation.Nonnull
   private Long executionDate;
 
   public static final String SERIALIZED_NAME_INSTRUCTIONS = "instructions";
   @SerializedName(SERIALIZED_NAME_INSTRUCTIONS)
+  @javax.annotation.Nonnull
   private List<Map<String, Object>> instructions = new ArrayList<>();
 
   public PostFlagScheduledChangesInput() {
   }
 
-  public PostFlagScheduledChangesInput comment(String comment) {
+  public PostFlagScheduledChangesInput comment(@javax.annotation.Nullable String comment) {
     this.comment = comment;
     return this;
   }
 
-   /**
+  /**
    * Optional comment describing the scheduled changes
    * @return comment
-  **/
+   */
   @javax.annotation.Nullable
   public String getComment() {
     return comment;
   }
 
-  public void setComment(String comment) {
+  public void setComment(@javax.annotation.Nullable String comment) {
     this.comment = comment;
   }
 
 
-  public PostFlagScheduledChangesInput executionDate(Long executionDate) {
+  public PostFlagScheduledChangesInput executionDate(@javax.annotation.Nonnull Long executionDate) {
     this.executionDate = executionDate;
     return this;
   }
 
-   /**
+  /**
    * Get executionDate
    * @return executionDate
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getExecutionDate() {
     return executionDate;
   }
 
-  public void setExecutionDate(Long executionDate) {
+  public void setExecutionDate(@javax.annotation.Nonnull Long executionDate) {
     this.executionDate = executionDate;
   }
 
 
-  public PostFlagScheduledChangesInput instructions(List<Map<String, Object>> instructions) {
+  public PostFlagScheduledChangesInput instructions(@javax.annotation.Nonnull List<Map<String, Object>> instructions) {
     this.instructions = instructions;
     return this;
   }
@@ -120,16 +124,16 @@ public class PostFlagScheduledChangesInput {
     return this;
   }
 
-   /**
+  /**
    * Get instructions
    * @return instructions
-  **/
+   */
   @javax.annotation.Nonnull
   public List<Map<String, Object>> getInstructions() {
     return instructions;
   }
 
-  public void setInstructions(List<Map<String, Object>> instructions) {
+  public void setInstructions(@javax.annotation.Nonnull List<Map<String, Object>> instructions) {
     this.instructions = instructions;
   }
 
@@ -228,45 +232,40 @@ public class PostFlagScheduledChangesInput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("comment");
-    openapiFields.add("executionDate");
-    openapiFields.add("instructions");
+    openapiFields = new HashSet<String>(Arrays.asList("comment", "executionDate", "instructions"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("executionDate");
-    openapiRequiredFields.add("instructions");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("executionDate", "instructions"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to PostFlagScheduledChangesInput
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PostFlagScheduledChangesInput
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PostFlagScheduledChangesInput.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PostFlagScheduledChangesInput is not found in the empty JSON string", PostFlagScheduledChangesInput.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in PostFlagScheduledChangesInput is not found in the empty JSON string", PostFlagScheduledChangesInput.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : PostFlagScheduledChangesInput.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("comment") != null && !jsonObj.get("comment").isJsonNull()) && !jsonObj.get("comment").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `comment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comment").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `comment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comment").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("instructions") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("instructions").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `instructions` to be an array in the JSON string but got `%s`", jsonObj.get("instructions").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `instructions` to be an array in the JSON string but got `%s`", jsonObj.get("instructions").toString()));
       }
   }
 
@@ -327,7 +326,7 @@ public class PostFlagScheduledChangesInput {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -342,22 +341,22 @@ public class PostFlagScheduledChangesInput {
     }
   }
 
- /**
-  * Create an instance of PostFlagScheduledChangesInput given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PostFlagScheduledChangesInput
-  * @throws IOException if the JSON string is invalid with respect to PostFlagScheduledChangesInput
-  */
+  /**
+   * Create an instance of PostFlagScheduledChangesInput given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PostFlagScheduledChangesInput
+   * @throws IOException if the JSON string is invalid with respect to PostFlagScheduledChangesInput
+   */
   public static PostFlagScheduledChangesInput fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PostFlagScheduledChangesInput.class);
   }
 
- /**
-  * Convert an instance of PostFlagScheduledChangesInput to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PostFlagScheduledChangesInput to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

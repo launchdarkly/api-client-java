@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,180 +38,187 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * SegmentMetadata
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class SegmentMetadata {
   public static final String SERIALIZED_NAME_ENV_ID = "envId";
   @SerializedName(SERIALIZED_NAME_ENV_ID)
+  @javax.annotation.Nullable
   private String envId;
 
   public static final String SERIALIZED_NAME_SEGMENT_ID = "segmentId";
   @SerializedName(SERIALIZED_NAME_SEGMENT_ID)
+  @javax.annotation.Nullable
   private String segmentId;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
   private Integer version;
 
   public static final String SERIALIZED_NAME_INCLUDED_COUNT = "includedCount";
   @SerializedName(SERIALIZED_NAME_INCLUDED_COUNT)
+  @javax.annotation.Nullable
   private Integer includedCount;
 
   public static final String SERIALIZED_NAME_EXCLUDED_COUNT = "excludedCount";
   @SerializedName(SERIALIZED_NAME_EXCLUDED_COUNT)
+  @javax.annotation.Nullable
   private Integer excludedCount;
 
   public static final String SERIALIZED_NAME_LAST_MODIFIED = "lastModified";
   @SerializedName(SERIALIZED_NAME_LAST_MODIFIED)
+  @javax.annotation.Nullable
   private Long lastModified;
 
   public static final String SERIALIZED_NAME_DELETED = "deleted";
   @SerializedName(SERIALIZED_NAME_DELETED)
+  @javax.annotation.Nullable
   private Boolean deleted;
 
   public SegmentMetadata() {
   }
 
-  public SegmentMetadata envId(String envId) {
+  public SegmentMetadata envId(@javax.annotation.Nullable String envId) {
     this.envId = envId;
     return this;
   }
 
-   /**
+  /**
    * Get envId
    * @return envId
-  **/
+   */
   @javax.annotation.Nullable
   public String getEnvId() {
     return envId;
   }
 
-  public void setEnvId(String envId) {
+  public void setEnvId(@javax.annotation.Nullable String envId) {
     this.envId = envId;
   }
 
 
-  public SegmentMetadata segmentId(String segmentId) {
+  public SegmentMetadata segmentId(@javax.annotation.Nullable String segmentId) {
     this.segmentId = segmentId;
     return this;
   }
 
-   /**
+  /**
    * Get segmentId
    * @return segmentId
-  **/
+   */
   @javax.annotation.Nullable
   public String getSegmentId() {
     return segmentId;
   }
 
-  public void setSegmentId(String segmentId) {
+  public void setSegmentId(@javax.annotation.Nullable String segmentId) {
     this.segmentId = segmentId;
   }
 
 
-  public SegmentMetadata version(Integer version) {
+  public SegmentMetadata version(@javax.annotation.Nullable Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * Get version
    * @return version
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nullable Integer version) {
     this.version = version;
   }
 
 
-  public SegmentMetadata includedCount(Integer includedCount) {
+  public SegmentMetadata includedCount(@javax.annotation.Nullable Integer includedCount) {
     this.includedCount = includedCount;
     return this;
   }
 
-   /**
+  /**
    * Get includedCount
    * @return includedCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getIncludedCount() {
     return includedCount;
   }
 
-  public void setIncludedCount(Integer includedCount) {
+  public void setIncludedCount(@javax.annotation.Nullable Integer includedCount) {
     this.includedCount = includedCount;
   }
 
 
-  public SegmentMetadata excludedCount(Integer excludedCount) {
+  public SegmentMetadata excludedCount(@javax.annotation.Nullable Integer excludedCount) {
     this.excludedCount = excludedCount;
     return this;
   }
 
-   /**
+  /**
    * Get excludedCount
    * @return excludedCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getExcludedCount() {
     return excludedCount;
   }
 
-  public void setExcludedCount(Integer excludedCount) {
+  public void setExcludedCount(@javax.annotation.Nullable Integer excludedCount) {
     this.excludedCount = excludedCount;
   }
 
 
-  public SegmentMetadata lastModified(Long lastModified) {
+  public SegmentMetadata lastModified(@javax.annotation.Nullable Long lastModified) {
     this.lastModified = lastModified;
     return this;
   }
 
-   /**
+  /**
    * Get lastModified
    * @return lastModified
-  **/
+   */
   @javax.annotation.Nullable
   public Long getLastModified() {
     return lastModified;
   }
 
-  public void setLastModified(Long lastModified) {
+  public void setLastModified(@javax.annotation.Nullable Long lastModified) {
     this.lastModified = lastModified;
   }
 
 
-  public SegmentMetadata deleted(Boolean deleted) {
+  public SegmentMetadata deleted(@javax.annotation.Nullable Boolean deleted) {
     this.deleted = deleted;
     return this;
   }
 
-   /**
+  /**
    * Get deleted
    * @return deleted
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getDeleted() {
     return deleted;
   }
 
-  public void setDeleted(Boolean deleted) {
+  public void setDeleted(@javax.annotation.Nullable Boolean deleted) {
     this.deleted = deleted;
   }
 
@@ -317,37 +325,30 @@ public class SegmentMetadata {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("envId");
-    openapiFields.add("segmentId");
-    openapiFields.add("version");
-    openapiFields.add("includedCount");
-    openapiFields.add("excludedCount");
-    openapiFields.add("lastModified");
-    openapiFields.add("deleted");
+    openapiFields = new HashSet<String>(Arrays.asList("envId", "segmentId", "version", "includedCount", "excludedCount", "lastModified", "deleted"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to SegmentMetadata
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SegmentMetadata
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SegmentMetadata.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SegmentMetadata is not found in the empty JSON string", SegmentMetadata.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in SegmentMetadata is not found in the empty JSON string", SegmentMetadata.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("envId") != null && !jsonObj.get("envId").isJsonNull()) && !jsonObj.get("envId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `envId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("envId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `envId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("envId").toString()));
       }
       if ((jsonObj.get("segmentId") != null && !jsonObj.get("segmentId").isJsonNull()) && !jsonObj.get("segmentId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `segmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("segmentId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `segmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("segmentId").toString()));
       }
   }
 
@@ -408,7 +409,7 @@ public class SegmentMetadata {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -423,22 +424,22 @@ public class SegmentMetadata {
     }
   }
 
- /**
-  * Create an instance of SegmentMetadata given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SegmentMetadata
-  * @throws IOException if the JSON string is invalid with respect to SegmentMetadata
-  */
+  /**
+   * Create an instance of SegmentMetadata given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SegmentMetadata
+   * @throws IOException if the JSON string is invalid with respect to SegmentMetadata
+   */
   public static SegmentMetadata fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SegmentMetadata.class);
   }
 
- /**
-  * Convert an instance of SegmentMetadata to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SegmentMetadata to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

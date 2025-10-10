@@ -101,7 +101,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -110,7 +111,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAIConfigCall(String ldAPIVersion, String projectKey, String configKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteAIConfigCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -137,10 +138,6 @@ public class AiConfigsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -156,12 +153,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteAIConfigValidateBeforeCall(String ldAPIVersion, String projectKey, String configKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteAIConfigValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling deleteAIConfig(Async)");
@@ -189,7 +191,8 @@ public class AiConfigsBetaApi {
      * @param configKey  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -198,7 +201,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteAIConfig(String ldAPIVersion, String projectKey, String configKey) throws ApiException {
+    public void deleteAIConfig(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey) throws ApiException {
         deleteAIConfigWithHttpInfo(ldAPIVersion, projectKey, configKey);
     }
 
@@ -211,7 +214,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -220,7 +224,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteAIConfigWithHttpInfo(String ldAPIVersion, String projectKey, String configKey) throws ApiException {
+    public ApiResponse<Void> deleteAIConfigWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey) throws ApiException {
         okhttp3.Call localVarCall = deleteAIConfigValidateBeforeCall(ldAPIVersion, projectKey, configKey, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -235,7 +239,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -244,7 +249,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAIConfigAsync(String ldAPIVersion, String projectKey, String configKey, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteAIConfigAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteAIConfigValidateBeforeCall(ldAPIVersion, projectKey, configKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -260,7 +265,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -269,7 +275,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAIConfigVariationCall(String ldAPIVersion, String projectKey, String configKey, String variationKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteAIConfigVariationCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull String variationKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -297,10 +303,6 @@ public class AiConfigsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -316,12 +318,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteAIConfigVariationValidateBeforeCall(String ldAPIVersion, String projectKey, String configKey, String variationKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteAIConfigVariationValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull String variationKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling deleteAIConfigVariation(Async)");
@@ -355,7 +362,8 @@ public class AiConfigsBetaApi {
      * @param variationKey  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -364,7 +372,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteAIConfigVariation(String ldAPIVersion, String projectKey, String configKey, String variationKey) throws ApiException {
+    public void deleteAIConfigVariation(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull String variationKey) throws ApiException {
         deleteAIConfigVariationWithHttpInfo(ldAPIVersion, projectKey, configKey, variationKey);
     }
 
@@ -378,7 +386,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -387,7 +396,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteAIConfigVariationWithHttpInfo(String ldAPIVersion, String projectKey, String configKey, String variationKey) throws ApiException {
+    public ApiResponse<Void> deleteAIConfigVariationWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull String variationKey) throws ApiException {
         okhttp3.Call localVarCall = deleteAIConfigVariationValidateBeforeCall(ldAPIVersion, projectKey, configKey, variationKey, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -403,7 +412,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -412,7 +422,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAIConfigVariationAsync(String ldAPIVersion, String projectKey, String configKey, String variationKey, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteAIConfigVariationAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull String variationKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteAIConfigVariationValidateBeforeCall(ldAPIVersion, projectKey, configKey, variationKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -427,7 +437,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -436,7 +447,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAIToolCall(String ldAPIVersion, String projectKey, String toolKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteAIToolCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String toolKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -463,10 +474,6 @@ public class AiConfigsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -482,12 +489,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteAIToolValidateBeforeCall(String ldAPIVersion, String projectKey, String toolKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteAIToolValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String toolKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling deleteAITool(Async)");
@@ -515,7 +527,8 @@ public class AiConfigsBetaApi {
      * @param toolKey  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -524,7 +537,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteAITool(String ldAPIVersion, String projectKey, String toolKey) throws ApiException {
+    public void deleteAITool(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String toolKey) throws ApiException {
         deleteAIToolWithHttpInfo(ldAPIVersion, projectKey, toolKey);
     }
 
@@ -537,7 +550,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -546,7 +560,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteAIToolWithHttpInfo(String ldAPIVersion, String projectKey, String toolKey) throws ApiException {
+    public ApiResponse<Void> deleteAIToolWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String toolKey) throws ApiException {
         okhttp3.Call localVarCall = deleteAIToolValidateBeforeCall(ldAPIVersion, projectKey, toolKey, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -561,7 +575,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -570,7 +585,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAIToolAsync(String ldAPIVersion, String projectKey, String toolKey, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteAIToolAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String toolKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteAIToolValidateBeforeCall(ldAPIVersion, projectKey, toolKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -585,7 +600,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -594,7 +610,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteModelConfigCall(String ldAPIVersion, String projectKey, String modelConfigKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteModelConfigCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String modelConfigKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -621,10 +637,6 @@ public class AiConfigsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -640,12 +652,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteModelConfigValidateBeforeCall(String ldAPIVersion, String projectKey, String modelConfigKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteModelConfigValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String modelConfigKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling deleteModelConfig(Async)");
@@ -673,7 +690,8 @@ public class AiConfigsBetaApi {
      * @param modelConfigKey  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -682,7 +700,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteModelConfig(String ldAPIVersion, String projectKey, String modelConfigKey) throws ApiException {
+    public void deleteModelConfig(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String modelConfigKey) throws ApiException {
         deleteModelConfigWithHttpInfo(ldAPIVersion, projectKey, modelConfigKey);
     }
 
@@ -695,7 +713,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -704,7 +723,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteModelConfigWithHttpInfo(String ldAPIVersion, String projectKey, String modelConfigKey) throws ApiException {
+    public ApiResponse<Void> deleteModelConfigWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String modelConfigKey) throws ApiException {
         okhttp3.Call localVarCall = deleteModelConfigValidateBeforeCall(ldAPIVersion, projectKey, modelConfigKey, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -719,7 +738,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -728,7 +748,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteModelConfigAsync(String ldAPIVersion, String projectKey, String modelConfigKey, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteModelConfigAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String modelConfigKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteModelConfigValidateBeforeCall(ldAPIVersion, projectKey, modelConfigKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -743,7 +763,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -752,7 +773,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteRestrictedModelsCall(String ldAPIVersion, String projectKey, RestrictedModelsRequest restrictedModelsRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteRestrictedModelsCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull RestrictedModelsRequest restrictedModelsRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -778,10 +799,6 @@ public class AiConfigsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -798,12 +815,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteRestrictedModelsValidateBeforeCall(String ldAPIVersion, String projectKey, RestrictedModelsRequest restrictedModelsRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteRestrictedModelsValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull RestrictedModelsRequest restrictedModelsRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling deleteRestrictedModels(Async)");
@@ -831,7 +853,8 @@ public class AiConfigsBetaApi {
      * @param restrictedModelsRequest List of AI model keys to remove from the restricted list (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -840,7 +863,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteRestrictedModels(String ldAPIVersion, String projectKey, RestrictedModelsRequest restrictedModelsRequest) throws ApiException {
+    public void deleteRestrictedModels(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull RestrictedModelsRequest restrictedModelsRequest) throws ApiException {
         deleteRestrictedModelsWithHttpInfo(ldAPIVersion, projectKey, restrictedModelsRequest);
     }
 
@@ -853,7 +876,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -862,7 +886,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteRestrictedModelsWithHttpInfo(String ldAPIVersion, String projectKey, RestrictedModelsRequest restrictedModelsRequest) throws ApiException {
+    public ApiResponse<Void> deleteRestrictedModelsWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull RestrictedModelsRequest restrictedModelsRequest) throws ApiException {
         okhttp3.Call localVarCall = deleteRestrictedModelsValidateBeforeCall(ldAPIVersion, projectKey, restrictedModelsRequest, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -877,7 +901,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -886,7 +911,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteRestrictedModelsAsync(String ldAPIVersion, String projectKey, RestrictedModelsRequest restrictedModelsRequest, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteRestrictedModelsAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull RestrictedModelsRequest restrictedModelsRequest, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteRestrictedModelsValidateBeforeCall(ldAPIVersion, projectKey, restrictedModelsRequest, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -901,7 +926,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI Config found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -910,7 +936,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAIConfigCall(String ldAPIVersion, String projectKey, String configKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAIConfigCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -937,10 +963,6 @@ public class AiConfigsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -956,12 +978,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAIConfigValidateBeforeCall(String ldAPIVersion, String projectKey, String configKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAIConfigValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling getAIConfig(Async)");
@@ -990,7 +1017,8 @@ public class AiConfigsBetaApi {
      * @return AIConfig
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI Config found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -999,7 +1027,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public AIConfig getAIConfig(String ldAPIVersion, String projectKey, String configKey) throws ApiException {
+    public AIConfig getAIConfig(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey) throws ApiException {
         ApiResponse<AIConfig> localVarResp = getAIConfigWithHttpInfo(ldAPIVersion, projectKey, configKey);
         return localVarResp.getData();
     }
@@ -1013,7 +1041,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;AIConfig&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI Config found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1022,7 +1051,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AIConfig> getAIConfigWithHttpInfo(String ldAPIVersion, String projectKey, String configKey) throws ApiException {
+    public ApiResponse<AIConfig> getAIConfigWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey) throws ApiException {
         okhttp3.Call localVarCall = getAIConfigValidateBeforeCall(ldAPIVersion, projectKey, configKey, null);
         Type localVarReturnType = new TypeToken<AIConfig>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1038,7 +1067,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI Config found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1047,7 +1077,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAIConfigAsync(String ldAPIVersion, String projectKey, String configKey, final ApiCallback<AIConfig> _callback) throws ApiException {
+    public okhttp3.Call getAIConfigAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, final ApiCallback<AIConfig> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAIConfigValidateBeforeCall(ldAPIVersion, projectKey, configKey, _callback);
         Type localVarReturnType = new TypeToken<AIConfig>(){}.getType();
@@ -1066,7 +1096,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metrics computed </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1075,7 +1106,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAIConfigMetricsCall(String ldAPIVersion, String projectKey, String configKey, Integer from, Integer to, String env, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAIConfigMetricsCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull Integer from, @javax.annotation.Nonnull Integer to, @javax.annotation.Nonnull String env, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1114,10 +1145,6 @@ public class AiConfigsBetaApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("env", env));
         }
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1133,12 +1160,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAIConfigMetricsValidateBeforeCall(String ldAPIVersion, String projectKey, String configKey, Integer from, Integer to, String env, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAIConfigMetricsValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull Integer from, @javax.annotation.Nonnull Integer to, @javax.annotation.Nonnull String env, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling getAIConfigMetrics(Async)");
@@ -1185,7 +1217,8 @@ public class AiConfigsBetaApi {
      * @return Metrics
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metrics computed </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1194,7 +1227,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public Metrics getAIConfigMetrics(String ldAPIVersion, String projectKey, String configKey, Integer from, Integer to, String env) throws ApiException {
+    public Metrics getAIConfigMetrics(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull Integer from, @javax.annotation.Nonnull Integer to, @javax.annotation.Nonnull String env) throws ApiException {
         ApiResponse<Metrics> localVarResp = getAIConfigMetricsWithHttpInfo(ldAPIVersion, projectKey, configKey, from, to, env);
         return localVarResp.getData();
     }
@@ -1211,7 +1244,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;Metrics&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metrics computed </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1220,7 +1254,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Metrics> getAIConfigMetricsWithHttpInfo(String ldAPIVersion, String projectKey, String configKey, Integer from, Integer to, String env) throws ApiException {
+    public ApiResponse<Metrics> getAIConfigMetricsWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull Integer from, @javax.annotation.Nonnull Integer to, @javax.annotation.Nonnull String env) throws ApiException {
         okhttp3.Call localVarCall = getAIConfigMetricsValidateBeforeCall(ldAPIVersion, projectKey, configKey, from, to, env, null);
         Type localVarReturnType = new TypeToken<Metrics>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1239,7 +1273,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metrics computed </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1248,7 +1283,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAIConfigMetricsAsync(String ldAPIVersion, String projectKey, String configKey, Integer from, Integer to, String env, final ApiCallback<Metrics> _callback) throws ApiException {
+    public okhttp3.Call getAIConfigMetricsAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull Integer from, @javax.annotation.Nonnull Integer to, @javax.annotation.Nonnull String env, final ApiCallback<Metrics> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAIConfigMetricsValidateBeforeCall(ldAPIVersion, projectKey, configKey, from, to, env, _callback);
         Type localVarReturnType = new TypeToken<Metrics>(){}.getType();
@@ -1267,7 +1302,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metrics computed </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1276,7 +1312,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAIConfigMetricsByVariationCall(String ldAPIVersion, String projectKey, String configKey, Integer from, Integer to, String env, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAIConfigMetricsByVariationCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull Integer from, @javax.annotation.Nonnull Integer to, @javax.annotation.Nonnull String env, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1315,10 +1351,6 @@ public class AiConfigsBetaApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("env", env));
         }
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1334,12 +1366,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAIConfigMetricsByVariationValidateBeforeCall(String ldAPIVersion, String projectKey, String configKey, Integer from, Integer to, String env, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAIConfigMetricsByVariationValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull Integer from, @javax.annotation.Nonnull Integer to, @javax.annotation.Nonnull String env, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling getAIConfigMetricsByVariation(Async)");
@@ -1386,7 +1423,8 @@ public class AiConfigsBetaApi {
      * @return List&lt;MetricByVariation&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metrics computed </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1395,7 +1433,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public List<MetricByVariation> getAIConfigMetricsByVariation(String ldAPIVersion, String projectKey, String configKey, Integer from, Integer to, String env) throws ApiException {
+    public List<MetricByVariation> getAIConfigMetricsByVariation(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull Integer from, @javax.annotation.Nonnull Integer to, @javax.annotation.Nonnull String env) throws ApiException {
         ApiResponse<List<MetricByVariation>> localVarResp = getAIConfigMetricsByVariationWithHttpInfo(ldAPIVersion, projectKey, configKey, from, to, env);
         return localVarResp.getData();
     }
@@ -1412,7 +1450,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;List&lt;MetricByVariation&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metrics computed </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1421,7 +1460,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<MetricByVariation>> getAIConfigMetricsByVariationWithHttpInfo(String ldAPIVersion, String projectKey, String configKey, Integer from, Integer to, String env) throws ApiException {
+    public ApiResponse<List<MetricByVariation>> getAIConfigMetricsByVariationWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull Integer from, @javax.annotation.Nonnull Integer to, @javax.annotation.Nonnull String env) throws ApiException {
         okhttp3.Call localVarCall = getAIConfigMetricsByVariationValidateBeforeCall(ldAPIVersion, projectKey, configKey, from, to, env, null);
         Type localVarReturnType = new TypeToken<List<MetricByVariation>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1440,7 +1479,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metrics computed </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1449,7 +1489,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAIConfigMetricsByVariationAsync(String ldAPIVersion, String projectKey, String configKey, Integer from, Integer to, String env, final ApiCallback<List<MetricByVariation>> _callback) throws ApiException {
+    public okhttp3.Call getAIConfigMetricsByVariationAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull Integer from, @javax.annotation.Nonnull Integer to, @javax.annotation.Nonnull String env, final ApiCallback<List<MetricByVariation>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAIConfigMetricsByVariationValidateBeforeCall(ldAPIVersion, projectKey, configKey, from, to, env, _callback);
         Type localVarReturnType = new TypeToken<List<MetricByVariation>>(){}.getType();
@@ -1465,7 +1505,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
@@ -1473,7 +1514,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAIConfigTargetingCall(String ldAPIVersion, String projectKey, String configKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAIConfigTargetingCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1500,10 +1541,6 @@ public class AiConfigsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1519,12 +1556,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAIConfigTargetingValidateBeforeCall(String ldAPIVersion, String projectKey, String configKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAIConfigTargetingValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling getAIConfigTargeting(Async)");
@@ -1553,7 +1595,8 @@ public class AiConfigsBetaApi {
      * @return AIConfigTargeting
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
@@ -1561,7 +1604,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public AIConfigTargeting getAIConfigTargeting(String ldAPIVersion, String projectKey, String configKey) throws ApiException {
+    public AIConfigTargeting getAIConfigTargeting(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey) throws ApiException {
         ApiResponse<AIConfigTargeting> localVarResp = getAIConfigTargetingWithHttpInfo(ldAPIVersion, projectKey, configKey);
         return localVarResp.getData();
     }
@@ -1575,7 +1618,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;AIConfigTargeting&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
@@ -1583,7 +1627,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AIConfigTargeting> getAIConfigTargetingWithHttpInfo(String ldAPIVersion, String projectKey, String configKey) throws ApiException {
+    public ApiResponse<AIConfigTargeting> getAIConfigTargetingWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey) throws ApiException {
         okhttp3.Call localVarCall = getAIConfigTargetingValidateBeforeCall(ldAPIVersion, projectKey, configKey, null);
         Type localVarReturnType = new TypeToken<AIConfigTargeting>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1599,7 +1643,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
@@ -1607,7 +1652,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAIConfigTargetingAsync(String ldAPIVersion, String projectKey, String configKey, final ApiCallback<AIConfigTargeting> _callback) throws ApiException {
+    public okhttp3.Call getAIConfigTargetingAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, final ApiCallback<AIConfigTargeting> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAIConfigTargetingValidateBeforeCall(ldAPIVersion, projectKey, configKey, _callback);
         Type localVarReturnType = new TypeToken<AIConfigTargeting>(){}.getType();
@@ -1624,7 +1669,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1633,7 +1679,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAIConfigVariationCall(String ldAPIVersion, String projectKey, String configKey, String variationKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAIConfigVariationCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull String variationKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1661,10 +1707,6 @@ public class AiConfigsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1680,12 +1722,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAIConfigVariationValidateBeforeCall(String ldAPIVersion, String projectKey, String configKey, String variationKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAIConfigVariationValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull String variationKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling getAIConfigVariation(Async)");
@@ -1720,7 +1767,8 @@ public class AiConfigsBetaApi {
      * @return AIConfigVariationsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1729,7 +1777,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public AIConfigVariationsResponse getAIConfigVariation(String ldAPIVersion, String projectKey, String configKey, String variationKey) throws ApiException {
+    public AIConfigVariationsResponse getAIConfigVariation(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull String variationKey) throws ApiException {
         ApiResponse<AIConfigVariationsResponse> localVarResp = getAIConfigVariationWithHttpInfo(ldAPIVersion, projectKey, configKey, variationKey);
         return localVarResp.getData();
     }
@@ -1744,7 +1792,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;AIConfigVariationsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1753,7 +1802,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AIConfigVariationsResponse> getAIConfigVariationWithHttpInfo(String ldAPIVersion, String projectKey, String configKey, String variationKey) throws ApiException {
+    public ApiResponse<AIConfigVariationsResponse> getAIConfigVariationWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull String variationKey) throws ApiException {
         okhttp3.Call localVarCall = getAIConfigVariationValidateBeforeCall(ldAPIVersion, projectKey, configKey, variationKey, null);
         Type localVarReturnType = new TypeToken<AIConfigVariationsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1770,7 +1819,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1779,7 +1829,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAIConfigVariationAsync(String ldAPIVersion, String projectKey, String configKey, String variationKey, final ApiCallback<AIConfigVariationsResponse> _callback) throws ApiException {
+    public okhttp3.Call getAIConfigVariationAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull String variationKey, final ApiCallback<AIConfigVariationsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAIConfigVariationValidateBeforeCall(ldAPIVersion, projectKey, configKey, variationKey, _callback);
         Type localVarReturnType = new TypeToken<AIConfigVariationsResponse>(){}.getType();
@@ -1798,7 +1848,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1807,7 +1858,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAIConfigsCall(String ldAPIVersion, String projectKey, String sort, Integer limit, Integer offset, String filter, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAIConfigsCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1849,10 +1900,6 @@ public class AiConfigsBetaApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter", filter));
         }
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1868,12 +1915,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAIConfigsValidateBeforeCall(String ldAPIVersion, String projectKey, String sort, Integer limit, Integer offset, String filter, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAIConfigsValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling getAIConfigs(Async)");
@@ -1900,7 +1952,8 @@ public class AiConfigsBetaApi {
      * @return AIConfigs
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1909,7 +1962,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public AIConfigs getAIConfigs(String ldAPIVersion, String projectKey, String sort, Integer limit, Integer offset, String filter) throws ApiException {
+    public AIConfigs getAIConfigs(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter) throws ApiException {
         ApiResponse<AIConfigs> localVarResp = getAIConfigsWithHttpInfo(ldAPIVersion, projectKey, sort, limit, offset, filter);
         return localVarResp.getData();
     }
@@ -1926,7 +1979,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;AIConfigs&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1935,7 +1989,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AIConfigs> getAIConfigsWithHttpInfo(String ldAPIVersion, String projectKey, String sort, Integer limit, Integer offset, String filter) throws ApiException {
+    public ApiResponse<AIConfigs> getAIConfigsWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter) throws ApiException {
         okhttp3.Call localVarCall = getAIConfigsValidateBeforeCall(ldAPIVersion, projectKey, sort, limit, offset, filter, null);
         Type localVarReturnType = new TypeToken<AIConfigs>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1954,7 +2008,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1963,7 +2018,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAIConfigsAsync(String ldAPIVersion, String projectKey, String sort, Integer limit, Integer offset, String filter, final ApiCallback<AIConfigs> _callback) throws ApiException {
+    public okhttp3.Call getAIConfigsAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, final ApiCallback<AIConfigs> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAIConfigsValidateBeforeCall(ldAPIVersion, projectKey, sort, limit, offset, filter, _callback);
         Type localVarReturnType = new TypeToken<AIConfigs>(){}.getType();
@@ -1979,7 +2034,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI tool found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1988,7 +2044,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAIToolCall(String ldAPIVersion, String projectKey, String toolKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAIToolCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String toolKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2015,10 +2071,6 @@ public class AiConfigsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -2034,12 +2086,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAIToolValidateBeforeCall(String ldAPIVersion, String projectKey, String toolKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAIToolValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String toolKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling getAITool(Async)");
@@ -2068,7 +2125,8 @@ public class AiConfigsBetaApi {
      * @return AITool
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI tool found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -2077,7 +2135,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public AITool getAITool(String ldAPIVersion, String projectKey, String toolKey) throws ApiException {
+    public AITool getAITool(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String toolKey) throws ApiException {
         ApiResponse<AITool> localVarResp = getAIToolWithHttpInfo(ldAPIVersion, projectKey, toolKey);
         return localVarResp.getData();
     }
@@ -2091,7 +2149,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;AITool&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI tool found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -2100,7 +2159,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AITool> getAIToolWithHttpInfo(String ldAPIVersion, String projectKey, String toolKey) throws ApiException {
+    public ApiResponse<AITool> getAIToolWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String toolKey) throws ApiException {
         okhttp3.Call localVarCall = getAIToolValidateBeforeCall(ldAPIVersion, projectKey, toolKey, null);
         Type localVarReturnType = new TypeToken<AITool>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2116,7 +2175,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI tool found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -2125,7 +2185,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAIToolAsync(String ldAPIVersion, String projectKey, String toolKey, final ApiCallback<AITool> _callback) throws ApiException {
+    public okhttp3.Call getAIToolAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String toolKey, final ApiCallback<AITool> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAIToolValidateBeforeCall(ldAPIVersion, projectKey, toolKey, _callback);
         Type localVarReturnType = new TypeToken<AITool>(){}.getType();
@@ -2141,7 +2201,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -2150,7 +2211,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getModelConfigCall(String ldAPIVersion, String projectKey, String modelConfigKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getModelConfigCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String modelConfigKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2177,10 +2238,6 @@ public class AiConfigsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -2196,12 +2253,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getModelConfigValidateBeforeCall(String ldAPIVersion, String projectKey, String modelConfigKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getModelConfigValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String modelConfigKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling getModelConfig(Async)");
@@ -2230,7 +2292,8 @@ public class AiConfigsBetaApi {
      * @return ModelConfig
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -2239,7 +2302,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelConfig getModelConfig(String ldAPIVersion, String projectKey, String modelConfigKey) throws ApiException {
+    public ModelConfig getModelConfig(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String modelConfigKey) throws ApiException {
         ApiResponse<ModelConfig> localVarResp = getModelConfigWithHttpInfo(ldAPIVersion, projectKey, modelConfigKey);
         return localVarResp.getData();
     }
@@ -2253,7 +2316,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;ModelConfig&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -2262,7 +2326,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelConfig> getModelConfigWithHttpInfo(String ldAPIVersion, String projectKey, String modelConfigKey) throws ApiException {
+    public ApiResponse<ModelConfig> getModelConfigWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String modelConfigKey) throws ApiException {
         okhttp3.Call localVarCall = getModelConfigValidateBeforeCall(ldAPIVersion, projectKey, modelConfigKey, null);
         Type localVarReturnType = new TypeToken<ModelConfig>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2278,7 +2342,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -2287,7 +2352,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getModelConfigAsync(String ldAPIVersion, String projectKey, String modelConfigKey, final ApiCallback<ModelConfig> _callback) throws ApiException {
+    public okhttp3.Call getModelConfigAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String modelConfigKey, final ApiCallback<ModelConfig> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getModelConfigValidateBeforeCall(ldAPIVersion, projectKey, modelConfigKey, _callback);
         Type localVarReturnType = new TypeToken<ModelConfig>(){}.getType();
@@ -2306,7 +2371,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -2314,7 +2380,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAIToolVersionsCall(String ldAPIVersion, String projectKey, String toolKey, String sort, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listAIToolVersionsCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String toolKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2353,10 +2419,6 @@ public class AiConfigsBetaApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
         }
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -2372,12 +2434,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listAIToolVersionsValidateBeforeCall(String ldAPIVersion, String projectKey, String toolKey, String sort, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listAIToolVersionsValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String toolKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling listAIToolVersions(Async)");
@@ -2409,7 +2476,8 @@ public class AiConfigsBetaApi {
      * @return AITools
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -2417,7 +2485,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public AITools listAIToolVersions(String ldAPIVersion, String projectKey, String toolKey, String sort, Integer limit, Integer offset) throws ApiException {
+    public AITools listAIToolVersions(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String toolKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         ApiResponse<AITools> localVarResp = listAIToolVersionsWithHttpInfo(ldAPIVersion, projectKey, toolKey, sort, limit, offset);
         return localVarResp.getData();
     }
@@ -2434,7 +2502,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;AITools&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -2442,7 +2511,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AITools> listAIToolVersionsWithHttpInfo(String ldAPIVersion, String projectKey, String toolKey, String sort, Integer limit, Integer offset) throws ApiException {
+    public ApiResponse<AITools> listAIToolVersionsWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String toolKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         okhttp3.Call localVarCall = listAIToolVersionsValidateBeforeCall(ldAPIVersion, projectKey, toolKey, sort, limit, offset, null);
         Type localVarReturnType = new TypeToken<AITools>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2461,7 +2530,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -2469,7 +2539,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAIToolVersionsAsync(String ldAPIVersion, String projectKey, String toolKey, String sort, Integer limit, Integer offset, final ApiCallback<AITools> _callback) throws ApiException {
+    public okhttp3.Call listAIToolVersionsAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String toolKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<AITools> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listAIToolVersionsValidateBeforeCall(ldAPIVersion, projectKey, toolKey, sort, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<AITools>(){}.getType();
@@ -2488,7 +2558,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -2496,7 +2567,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAIToolsCall(String ldAPIVersion, String projectKey, String sort, Integer limit, Integer offset, String filter, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listAIToolsCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2538,10 +2609,6 @@ public class AiConfigsBetaApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter", filter));
         }
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -2557,12 +2624,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listAIToolsValidateBeforeCall(String ldAPIVersion, String projectKey, String sort, Integer limit, Integer offset, String filter, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listAIToolsValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling listAITools(Async)");
@@ -2589,7 +2661,8 @@ public class AiConfigsBetaApi {
      * @return AITools
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -2597,7 +2670,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public AITools listAITools(String ldAPIVersion, String projectKey, String sort, Integer limit, Integer offset, String filter) throws ApiException {
+    public AITools listAITools(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter) throws ApiException {
         ApiResponse<AITools> localVarResp = listAIToolsWithHttpInfo(ldAPIVersion, projectKey, sort, limit, offset, filter);
         return localVarResp.getData();
     }
@@ -2614,7 +2687,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;AITools&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -2622,7 +2696,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AITools> listAIToolsWithHttpInfo(String ldAPIVersion, String projectKey, String sort, Integer limit, Integer offset, String filter) throws ApiException {
+    public ApiResponse<AITools> listAIToolsWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter) throws ApiException {
         okhttp3.Call localVarCall = listAIToolsValidateBeforeCall(ldAPIVersion, projectKey, sort, limit, offset, filter, null);
         Type localVarReturnType = new TypeToken<AITools>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2641,7 +2715,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -2649,7 +2724,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAIToolsAsync(String ldAPIVersion, String projectKey, String sort, Integer limit, Integer offset, String filter, final ApiCallback<AITools> _callback) throws ApiException {
+    public okhttp3.Call listAIToolsAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String filter, final ApiCallback<AITools> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listAIToolsValidateBeforeCall(ldAPIVersion, projectKey, sort, limit, offset, filter, _callback);
         Type localVarReturnType = new TypeToken<AITools>(){}.getType();
@@ -2665,7 +2740,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -2674,7 +2750,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listModelConfigsCall(String ldAPIVersion, String projectKey, Boolean restricted, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listModelConfigsCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable Boolean restricted, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2704,10 +2780,6 @@ public class AiConfigsBetaApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("restricted", restricted));
         }
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -2723,12 +2795,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listModelConfigsValidateBeforeCall(String ldAPIVersion, String projectKey, Boolean restricted, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listModelConfigsValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable Boolean restricted, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling listModelConfigs(Async)");
@@ -2752,7 +2829,8 @@ public class AiConfigsBetaApi {
      * @return List&lt;ModelConfig&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -2761,7 +2839,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public List<ModelConfig> listModelConfigs(String ldAPIVersion, String projectKey, Boolean restricted) throws ApiException {
+    public List<ModelConfig> listModelConfigs(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable Boolean restricted) throws ApiException {
         ApiResponse<List<ModelConfig>> localVarResp = listModelConfigsWithHttpInfo(ldAPIVersion, projectKey, restricted);
         return localVarResp.getData();
     }
@@ -2775,7 +2853,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;List&lt;ModelConfig&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -2784,7 +2863,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ModelConfig>> listModelConfigsWithHttpInfo(String ldAPIVersion, String projectKey, Boolean restricted) throws ApiException {
+    public ApiResponse<List<ModelConfig>> listModelConfigsWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable Boolean restricted) throws ApiException {
         okhttp3.Call localVarCall = listModelConfigsValidateBeforeCall(ldAPIVersion, projectKey, restricted, null);
         Type localVarReturnType = new TypeToken<List<ModelConfig>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2800,7 +2879,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -2809,7 +2889,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listModelConfigsAsync(String ldAPIVersion, String projectKey, Boolean restricted, final ApiCallback<List<ModelConfig>> _callback) throws ApiException {
+    public okhttp3.Call listModelConfigsAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable Boolean restricted, final ApiCallback<List<ModelConfig>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listModelConfigsValidateBeforeCall(ldAPIVersion, projectKey, restricted, _callback);
         Type localVarReturnType = new TypeToken<List<ModelConfig>>(){}.getType();
@@ -2826,7 +2906,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI Config updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -2835,7 +2916,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchAIConfigCall(String ldAPIVersion, String projectKey, String configKey, AIConfigPatch aiConfigPatch, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchAIConfigCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nullable AIConfigPatch aiConfigPatch, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2862,10 +2943,6 @@ public class AiConfigsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -2882,12 +2959,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchAIConfigValidateBeforeCall(String ldAPIVersion, String projectKey, String configKey, AIConfigPatch aiConfigPatch, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchAIConfigValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nullable AIConfigPatch aiConfigPatch, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling patchAIConfig(Async)");
@@ -2917,7 +2999,8 @@ public class AiConfigsBetaApi {
      * @return AIConfig
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI Config updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -2926,7 +3009,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public AIConfig patchAIConfig(String ldAPIVersion, String projectKey, String configKey, AIConfigPatch aiConfigPatch) throws ApiException {
+    public AIConfig patchAIConfig(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nullable AIConfigPatch aiConfigPatch) throws ApiException {
         ApiResponse<AIConfig> localVarResp = patchAIConfigWithHttpInfo(ldAPIVersion, projectKey, configKey, aiConfigPatch);
         return localVarResp.getData();
     }
@@ -2941,7 +3024,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;AIConfig&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI Config updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -2950,7 +3034,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AIConfig> patchAIConfigWithHttpInfo(String ldAPIVersion, String projectKey, String configKey, AIConfigPatch aiConfigPatch) throws ApiException {
+    public ApiResponse<AIConfig> patchAIConfigWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nullable AIConfigPatch aiConfigPatch) throws ApiException {
         okhttp3.Call localVarCall = patchAIConfigValidateBeforeCall(ldAPIVersion, projectKey, configKey, aiConfigPatch, null);
         Type localVarReturnType = new TypeToken<AIConfig>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2967,7 +3051,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI Config updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -2976,7 +3061,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchAIConfigAsync(String ldAPIVersion, String projectKey, String configKey, AIConfigPatch aiConfigPatch, final ApiCallback<AIConfig> _callback) throws ApiException {
+    public okhttp3.Call patchAIConfigAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nullable AIConfigPatch aiConfigPatch, final ApiCallback<AIConfig> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchAIConfigValidateBeforeCall(ldAPIVersion, projectKey, configKey, aiConfigPatch, _callback);
         Type localVarReturnType = new TypeToken<AIConfig>(){}.getType();
@@ -2993,7 +3078,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI Config targeting updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3002,7 +3088,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchAIConfigTargetingCall(String ldAPIVersion, String projectKey, String configKey, AIConfigTargetingPatch aiConfigTargetingPatch, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchAIConfigTargetingCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nullable AIConfigTargetingPatch aiConfigTargetingPatch, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3029,10 +3115,6 @@ public class AiConfigsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -3049,12 +3131,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchAIConfigTargetingValidateBeforeCall(String ldAPIVersion, String projectKey, String configKey, AIConfigTargetingPatch aiConfigTargetingPatch, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchAIConfigTargetingValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nullable AIConfigTargetingPatch aiConfigTargetingPatch, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling patchAIConfigTargeting(Async)");
@@ -3084,7 +3171,8 @@ public class AiConfigsBetaApi {
      * @return AIConfigTargeting
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI Config targeting updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3093,7 +3181,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public AIConfigTargeting patchAIConfigTargeting(String ldAPIVersion, String projectKey, String configKey, AIConfigTargetingPatch aiConfigTargetingPatch) throws ApiException {
+    public AIConfigTargeting patchAIConfigTargeting(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nullable AIConfigTargetingPatch aiConfigTargetingPatch) throws ApiException {
         ApiResponse<AIConfigTargeting> localVarResp = patchAIConfigTargetingWithHttpInfo(ldAPIVersion, projectKey, configKey, aiConfigTargetingPatch);
         return localVarResp.getData();
     }
@@ -3108,7 +3196,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;AIConfigTargeting&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI Config targeting updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3117,7 +3206,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AIConfigTargeting> patchAIConfigTargetingWithHttpInfo(String ldAPIVersion, String projectKey, String configKey, AIConfigTargetingPatch aiConfigTargetingPatch) throws ApiException {
+    public ApiResponse<AIConfigTargeting> patchAIConfigTargetingWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nullable AIConfigTargetingPatch aiConfigTargetingPatch) throws ApiException {
         okhttp3.Call localVarCall = patchAIConfigTargetingValidateBeforeCall(ldAPIVersion, projectKey, configKey, aiConfigTargetingPatch, null);
         Type localVarReturnType = new TypeToken<AIConfigTargeting>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -3134,7 +3223,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI Config targeting updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3143,7 +3233,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchAIConfigTargetingAsync(String ldAPIVersion, String projectKey, String configKey, AIConfigTargetingPatch aiConfigTargetingPatch, final ApiCallback<AIConfigTargeting> _callback) throws ApiException {
+    public okhttp3.Call patchAIConfigTargetingAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nullable AIConfigTargetingPatch aiConfigTargetingPatch, final ApiCallback<AIConfigTargeting> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchAIConfigTargetingValidateBeforeCall(ldAPIVersion, projectKey, configKey, aiConfigTargetingPatch, _callback);
         Type localVarReturnType = new TypeToken<AIConfigTargeting>(){}.getType();
@@ -3161,7 +3251,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI Config variation updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3170,7 +3261,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchAIConfigVariationCall(String ldAPIVersion, String projectKey, String configKey, String variationKey, AIConfigVariationPatch aiConfigVariationPatch, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchAIConfigVariationCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull String variationKey, @javax.annotation.Nullable AIConfigVariationPatch aiConfigVariationPatch, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3198,10 +3289,6 @@ public class AiConfigsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -3218,12 +3305,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchAIConfigVariationValidateBeforeCall(String ldAPIVersion, String projectKey, String configKey, String variationKey, AIConfigVariationPatch aiConfigVariationPatch, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchAIConfigVariationValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull String variationKey, @javax.annotation.Nullable AIConfigVariationPatch aiConfigVariationPatch, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling patchAIConfigVariation(Async)");
@@ -3259,7 +3351,8 @@ public class AiConfigsBetaApi {
      * @return AIConfigVariation
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI Config variation updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3268,7 +3361,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public AIConfigVariation patchAIConfigVariation(String ldAPIVersion, String projectKey, String configKey, String variationKey, AIConfigVariationPatch aiConfigVariationPatch) throws ApiException {
+    public AIConfigVariation patchAIConfigVariation(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull String variationKey, @javax.annotation.Nullable AIConfigVariationPatch aiConfigVariationPatch) throws ApiException {
         ApiResponse<AIConfigVariation> localVarResp = patchAIConfigVariationWithHttpInfo(ldAPIVersion, projectKey, configKey, variationKey, aiConfigVariationPatch);
         return localVarResp.getData();
     }
@@ -3284,7 +3377,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;AIConfigVariation&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI Config variation updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3293,7 +3387,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AIConfigVariation> patchAIConfigVariationWithHttpInfo(String ldAPIVersion, String projectKey, String configKey, String variationKey, AIConfigVariationPatch aiConfigVariationPatch) throws ApiException {
+    public ApiResponse<AIConfigVariation> patchAIConfigVariationWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull String variationKey, @javax.annotation.Nullable AIConfigVariationPatch aiConfigVariationPatch) throws ApiException {
         okhttp3.Call localVarCall = patchAIConfigVariationValidateBeforeCall(ldAPIVersion, projectKey, configKey, variationKey, aiConfigVariationPatch, null);
         Type localVarReturnType = new TypeToken<AIConfigVariation>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -3311,7 +3405,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI Config variation updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3320,7 +3415,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchAIConfigVariationAsync(String ldAPIVersion, String projectKey, String configKey, String variationKey, AIConfigVariationPatch aiConfigVariationPatch, final ApiCallback<AIConfigVariation> _callback) throws ApiException {
+    public okhttp3.Call patchAIConfigVariationAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull String variationKey, @javax.annotation.Nullable AIConfigVariationPatch aiConfigVariationPatch, final ApiCallback<AIConfigVariation> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchAIConfigVariationValidateBeforeCall(ldAPIVersion, projectKey, configKey, variationKey, aiConfigVariationPatch, _callback);
         Type localVarReturnType = new TypeToken<AIConfigVariation>(){}.getType();
@@ -3337,7 +3432,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI tool updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3346,7 +3442,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchAIToolCall(String ldAPIVersion, String projectKey, String toolKey, AIToolPatch aiToolPatch, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchAIToolCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String toolKey, @javax.annotation.Nullable AIToolPatch aiToolPatch, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3373,10 +3469,6 @@ public class AiConfigsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -3393,12 +3485,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchAIToolValidateBeforeCall(String ldAPIVersion, String projectKey, String toolKey, AIToolPatch aiToolPatch, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchAIToolValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String toolKey, @javax.annotation.Nullable AIToolPatch aiToolPatch, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling patchAITool(Async)");
@@ -3428,7 +3525,8 @@ public class AiConfigsBetaApi {
      * @return AITool
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI tool updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3437,7 +3535,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public AITool patchAITool(String ldAPIVersion, String projectKey, String toolKey, AIToolPatch aiToolPatch) throws ApiException {
+    public AITool patchAITool(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String toolKey, @javax.annotation.Nullable AIToolPatch aiToolPatch) throws ApiException {
         ApiResponse<AITool> localVarResp = patchAIToolWithHttpInfo(ldAPIVersion, projectKey, toolKey, aiToolPatch);
         return localVarResp.getData();
     }
@@ -3452,7 +3550,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;AITool&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI tool updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3461,7 +3560,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AITool> patchAIToolWithHttpInfo(String ldAPIVersion, String projectKey, String toolKey, AIToolPatch aiToolPatch) throws ApiException {
+    public ApiResponse<AITool> patchAIToolWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String toolKey, @javax.annotation.Nullable AIToolPatch aiToolPatch) throws ApiException {
         okhttp3.Call localVarCall = patchAIToolValidateBeforeCall(ldAPIVersion, projectKey, toolKey, aiToolPatch, null);
         Type localVarReturnType = new TypeToken<AITool>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -3478,7 +3577,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> AI tool updated </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3487,7 +3587,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchAIToolAsync(String ldAPIVersion, String projectKey, String toolKey, AIToolPatch aiToolPatch, final ApiCallback<AITool> _callback) throws ApiException {
+    public okhttp3.Call patchAIToolAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String toolKey, @javax.annotation.Nullable AIToolPatch aiToolPatch, final ApiCallback<AITool> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchAIToolValidateBeforeCall(ldAPIVersion, projectKey, toolKey, aiToolPatch, _callback);
         Type localVarReturnType = new TypeToken<AITool>(){}.getType();
@@ -3503,7 +3603,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> AI Config created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3511,7 +3612,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postAIConfigCall(String ldAPIVersion, String projectKey, AIConfigPost aiConfigPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postAIConfigCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull AIConfigPost aiConfigPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3537,10 +3638,6 @@ public class AiConfigsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -3557,12 +3654,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postAIConfigValidateBeforeCall(String ldAPIVersion, String projectKey, AIConfigPost aiConfigPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postAIConfigValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull AIConfigPost aiConfigPost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling postAIConfig(Async)");
@@ -3591,7 +3693,8 @@ public class AiConfigsBetaApi {
      * @return AIConfig
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> AI Config created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3599,7 +3702,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public AIConfig postAIConfig(String ldAPIVersion, String projectKey, AIConfigPost aiConfigPost) throws ApiException {
+    public AIConfig postAIConfig(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull AIConfigPost aiConfigPost) throws ApiException {
         ApiResponse<AIConfig> localVarResp = postAIConfigWithHttpInfo(ldAPIVersion, projectKey, aiConfigPost);
         return localVarResp.getData();
     }
@@ -3613,7 +3716,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;AIConfig&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> AI Config created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3621,7 +3725,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AIConfig> postAIConfigWithHttpInfo(String ldAPIVersion, String projectKey, AIConfigPost aiConfigPost) throws ApiException {
+    public ApiResponse<AIConfig> postAIConfigWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull AIConfigPost aiConfigPost) throws ApiException {
         okhttp3.Call localVarCall = postAIConfigValidateBeforeCall(ldAPIVersion, projectKey, aiConfigPost, null);
         Type localVarReturnType = new TypeToken<AIConfig>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -3637,7 +3741,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> AI Config created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3645,7 +3750,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postAIConfigAsync(String ldAPIVersion, String projectKey, AIConfigPost aiConfigPost, final ApiCallback<AIConfig> _callback) throws ApiException {
+    public okhttp3.Call postAIConfigAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull AIConfigPost aiConfigPost, final ApiCallback<AIConfig> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postAIConfigValidateBeforeCall(ldAPIVersion, projectKey, aiConfigPost, _callback);
         Type localVarReturnType = new TypeToken<AIConfig>(){}.getType();
@@ -3662,7 +3767,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> AI Config variation created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3670,7 +3776,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postAIConfigVariationCall(String ldAPIVersion, String projectKey, String configKey, AIConfigVariationPost aiConfigVariationPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postAIConfigVariationCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull AIConfigVariationPost aiConfigVariationPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3697,10 +3803,6 @@ public class AiConfigsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -3717,12 +3819,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postAIConfigVariationValidateBeforeCall(String ldAPIVersion, String projectKey, String configKey, AIConfigVariationPost aiConfigVariationPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postAIConfigVariationValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull AIConfigVariationPost aiConfigVariationPost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling postAIConfigVariation(Async)");
@@ -3757,7 +3864,8 @@ public class AiConfigsBetaApi {
      * @return AIConfigVariation
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> AI Config variation created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3765,7 +3873,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public AIConfigVariation postAIConfigVariation(String ldAPIVersion, String projectKey, String configKey, AIConfigVariationPost aiConfigVariationPost) throws ApiException {
+    public AIConfigVariation postAIConfigVariation(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull AIConfigVariationPost aiConfigVariationPost) throws ApiException {
         ApiResponse<AIConfigVariation> localVarResp = postAIConfigVariationWithHttpInfo(ldAPIVersion, projectKey, configKey, aiConfigVariationPost);
         return localVarResp.getData();
     }
@@ -3780,7 +3888,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;AIConfigVariation&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> AI Config variation created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3788,7 +3897,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AIConfigVariation> postAIConfigVariationWithHttpInfo(String ldAPIVersion, String projectKey, String configKey, AIConfigVariationPost aiConfigVariationPost) throws ApiException {
+    public ApiResponse<AIConfigVariation> postAIConfigVariationWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull AIConfigVariationPost aiConfigVariationPost) throws ApiException {
         okhttp3.Call localVarCall = postAIConfigVariationValidateBeforeCall(ldAPIVersion, projectKey, configKey, aiConfigVariationPost, null);
         Type localVarReturnType = new TypeToken<AIConfigVariation>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -3805,7 +3914,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> AI Config variation created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3813,7 +3923,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postAIConfigVariationAsync(String ldAPIVersion, String projectKey, String configKey, AIConfigVariationPost aiConfigVariationPost, final ApiCallback<AIConfigVariation> _callback) throws ApiException {
+    public okhttp3.Call postAIConfigVariationAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String configKey, @javax.annotation.Nonnull AIConfigVariationPost aiConfigVariationPost, final ApiCallback<AIConfigVariation> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postAIConfigVariationValidateBeforeCall(ldAPIVersion, projectKey, configKey, aiConfigVariationPost, _callback);
         Type localVarReturnType = new TypeToken<AIConfigVariation>(){}.getType();
@@ -3829,7 +3939,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> AI tool created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3837,7 +3948,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postAIToolCall(String ldAPIVersion, String projectKey, AIToolPost aiToolPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postAIToolCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull AIToolPost aiToolPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3863,10 +3974,6 @@ public class AiConfigsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -3883,12 +3990,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postAIToolValidateBeforeCall(String ldAPIVersion, String projectKey, AIToolPost aiToolPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postAIToolValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull AIToolPost aiToolPost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling postAITool(Async)");
@@ -3917,7 +4029,8 @@ public class AiConfigsBetaApi {
      * @return AITool
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> AI tool created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3925,7 +4038,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public AITool postAITool(String ldAPIVersion, String projectKey, AIToolPost aiToolPost) throws ApiException {
+    public AITool postAITool(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull AIToolPost aiToolPost) throws ApiException {
         ApiResponse<AITool> localVarResp = postAIToolWithHttpInfo(ldAPIVersion, projectKey, aiToolPost);
         return localVarResp.getData();
     }
@@ -3939,7 +4052,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;AITool&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> AI tool created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3947,7 +4061,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AITool> postAIToolWithHttpInfo(String ldAPIVersion, String projectKey, AIToolPost aiToolPost) throws ApiException {
+    public ApiResponse<AITool> postAIToolWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull AIToolPost aiToolPost) throws ApiException {
         okhttp3.Call localVarCall = postAIToolValidateBeforeCall(ldAPIVersion, projectKey, aiToolPost, null);
         Type localVarReturnType = new TypeToken<AITool>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -3963,7 +4077,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> AI tool created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3971,7 +4086,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postAIToolAsync(String ldAPIVersion, String projectKey, AIToolPost aiToolPost, final ApiCallback<AITool> _callback) throws ApiException {
+    public okhttp3.Call postAIToolAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull AIToolPost aiToolPost, final ApiCallback<AITool> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postAIToolValidateBeforeCall(ldAPIVersion, projectKey, aiToolPost, _callback);
         Type localVarReturnType = new TypeToken<AITool>(){}.getType();
@@ -3987,7 +4102,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -3996,7 +4112,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postModelConfigCall(String ldAPIVersion, String projectKey, ModelConfigPost modelConfigPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postModelConfigCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull ModelConfigPost modelConfigPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -4022,10 +4138,6 @@ public class AiConfigsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -4042,12 +4154,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postModelConfigValidateBeforeCall(String ldAPIVersion, String projectKey, ModelConfigPost modelConfigPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postModelConfigValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull ModelConfigPost modelConfigPost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling postModelConfig(Async)");
@@ -4076,7 +4193,8 @@ public class AiConfigsBetaApi {
      * @return ModelConfig
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -4085,7 +4203,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelConfig postModelConfig(String ldAPIVersion, String projectKey, ModelConfigPost modelConfigPost) throws ApiException {
+    public ModelConfig postModelConfig(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull ModelConfigPost modelConfigPost) throws ApiException {
         ApiResponse<ModelConfig> localVarResp = postModelConfigWithHttpInfo(ldAPIVersion, projectKey, modelConfigPost);
         return localVarResp.getData();
     }
@@ -4099,7 +4217,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;ModelConfig&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -4108,7 +4227,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelConfig> postModelConfigWithHttpInfo(String ldAPIVersion, String projectKey, ModelConfigPost modelConfigPost) throws ApiException {
+    public ApiResponse<ModelConfig> postModelConfigWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull ModelConfigPost modelConfigPost) throws ApiException {
         okhttp3.Call localVarCall = postModelConfigValidateBeforeCall(ldAPIVersion, projectKey, modelConfigPost, null);
         Type localVarReturnType = new TypeToken<ModelConfig>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -4124,7 +4243,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -4133,7 +4253,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postModelConfigAsync(String ldAPIVersion, String projectKey, ModelConfigPost modelConfigPost, final ApiCallback<ModelConfig> _callback) throws ApiException {
+    public okhttp3.Call postModelConfigAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull ModelConfigPost modelConfigPost, final ApiCallback<ModelConfig> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postModelConfigValidateBeforeCall(ldAPIVersion, projectKey, modelConfigPost, _callback);
         Type localVarReturnType = new TypeToken<ModelConfig>(){}.getType();
@@ -4149,7 +4269,8 @@ public class AiConfigsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -4158,7 +4279,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postRestrictedModelsCall(String ldAPIVersion, String projectKey, RestrictedModelsRequest restrictedModelsRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postRestrictedModelsCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull RestrictedModelsRequest restrictedModelsRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -4184,10 +4305,6 @@ public class AiConfigsBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -4204,12 +4321,17 @@ public class AiConfigsBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postRestrictedModelsValidateBeforeCall(String ldAPIVersion, String projectKey, RestrictedModelsRequest restrictedModelsRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postRestrictedModelsValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull RestrictedModelsRequest restrictedModelsRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling postRestrictedModels(Async)");
@@ -4238,7 +4360,8 @@ public class AiConfigsBetaApi {
      * @return RestrictedModelsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -4247,7 +4370,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RestrictedModelsResponse postRestrictedModels(String ldAPIVersion, String projectKey, RestrictedModelsRequest restrictedModelsRequest) throws ApiException {
+    public RestrictedModelsResponse postRestrictedModels(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull RestrictedModelsRequest restrictedModelsRequest) throws ApiException {
         ApiResponse<RestrictedModelsResponse> localVarResp = postRestrictedModelsWithHttpInfo(ldAPIVersion, projectKey, restrictedModelsRequest);
         return localVarResp.getData();
     }
@@ -4261,7 +4384,8 @@ public class AiConfigsBetaApi {
      * @return ApiResponse&lt;RestrictedModelsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -4270,7 +4394,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RestrictedModelsResponse> postRestrictedModelsWithHttpInfo(String ldAPIVersion, String projectKey, RestrictedModelsRequest restrictedModelsRequest) throws ApiException {
+    public ApiResponse<RestrictedModelsResponse> postRestrictedModelsWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull RestrictedModelsRequest restrictedModelsRequest) throws ApiException {
         okhttp3.Call localVarCall = postRestrictedModelsValidateBeforeCall(ldAPIVersion, projectKey, restrictedModelsRequest, null);
         Type localVarReturnType = new TypeToken<RestrictedModelsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -4286,7 +4410,8 @@ public class AiConfigsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -4295,7 +4420,7 @@ public class AiConfigsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postRestrictedModelsAsync(String ldAPIVersion, String projectKey, RestrictedModelsRequest restrictedModelsRequest, final ApiCallback<RestrictedModelsResponse> _callback) throws ApiException {
+    public okhttp3.Call postRestrictedModelsAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull RestrictedModelsRequest restrictedModelsRequest, final ApiCallback<RestrictedModelsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postRestrictedModelsValidateBeforeCall(ldAPIVersion, projectKey, restrictedModelsRequest, _callback);
         Type localVarReturnType = new TypeToken<RestrictedModelsResponse>(){}.getType();

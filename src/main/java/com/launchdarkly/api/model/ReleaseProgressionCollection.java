@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,86 +45,92 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ReleaseProgressionCollection
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ReleaseProgressionCollection {
   public static final String SERIALIZED_NAME_ACTIVE_COUNT = "activeCount";
   @SerializedName(SERIALIZED_NAME_ACTIVE_COUNT)
+  @javax.annotation.Nonnull
   private Integer activeCount;
 
   public static final String SERIALIZED_NAME_COMPLETED_COUNT = "completedCount";
   @SerializedName(SERIALIZED_NAME_COMPLETED_COUNT)
+  @javax.annotation.Nonnull
   private Integer completedCount;
 
   public static final String SERIALIZED_NAME_ITEMS = "items";
   @SerializedName(SERIALIZED_NAME_ITEMS)
+  @javax.annotation.Nonnull
   private List<ReleaseProgression> items = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PHASES = "phases";
   @SerializedName(SERIALIZED_NAME_PHASES)
+  @javax.annotation.Nonnull
   private List<PhaseInfo> phases = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TOTAL_COUNT = "totalCount";
   @SerializedName(SERIALIZED_NAME_TOTAL_COUNT)
+  @javax.annotation.Nonnull
   private Integer totalCount;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public ReleaseProgressionCollection() {
   }
 
-  public ReleaseProgressionCollection activeCount(Integer activeCount) {
+  public ReleaseProgressionCollection activeCount(@javax.annotation.Nonnull Integer activeCount) {
     this.activeCount = activeCount;
     return this;
   }
 
-   /**
+  /**
    * The number of active releases
    * @return activeCount
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getActiveCount() {
     return activeCount;
   }
 
-  public void setActiveCount(Integer activeCount) {
+  public void setActiveCount(@javax.annotation.Nonnull Integer activeCount) {
     this.activeCount = activeCount;
   }
 
 
-  public ReleaseProgressionCollection completedCount(Integer completedCount) {
+  public ReleaseProgressionCollection completedCount(@javax.annotation.Nonnull Integer completedCount) {
     this.completedCount = completedCount;
     return this;
   }
 
-   /**
+  /**
    * The number of completed releases
    * @return completedCount
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getCompletedCount() {
     return completedCount;
   }
 
-  public void setCompletedCount(Integer completedCount) {
+  public void setCompletedCount(@javax.annotation.Nonnull Integer completedCount) {
     this.completedCount = completedCount;
   }
 
 
-  public ReleaseProgressionCollection items(List<ReleaseProgression> items) {
+  public ReleaseProgressionCollection items(@javax.annotation.Nonnull List<ReleaseProgression> items) {
     this.items = items;
     return this;
   }
@@ -136,21 +143,21 @@ public class ReleaseProgressionCollection {
     return this;
   }
 
-   /**
+  /**
    * A list of details for each release, across all flags, for this release pipeline
    * @return items
-  **/
+   */
   @javax.annotation.Nonnull
   public List<ReleaseProgression> getItems() {
     return items;
   }
 
-  public void setItems(List<ReleaseProgression> items) {
+  public void setItems(@javax.annotation.Nonnull List<ReleaseProgression> items) {
     this.items = items;
   }
 
 
-  public ReleaseProgressionCollection phases(List<PhaseInfo> phases) {
+  public ReleaseProgressionCollection phases(@javax.annotation.Nonnull List<PhaseInfo> phases) {
     this.phases = phases;
     return this;
   }
@@ -163,40 +170,40 @@ public class ReleaseProgressionCollection {
     return this;
   }
 
-   /**
+  /**
    * A list of details for each phase, across all releases, for this release pipeline
    * @return phases
-  **/
+   */
   @javax.annotation.Nonnull
   public List<PhaseInfo> getPhases() {
     return phases;
   }
 
-  public void setPhases(List<PhaseInfo> phases) {
+  public void setPhases(@javax.annotation.Nonnull List<PhaseInfo> phases) {
     this.phases = phases;
   }
 
 
-  public ReleaseProgressionCollection totalCount(Integer totalCount) {
+  public ReleaseProgressionCollection totalCount(@javax.annotation.Nonnull Integer totalCount) {
     this.totalCount = totalCount;
     return this;
   }
 
-   /**
+  /**
    * The total number of releases for this release pipeline
    * @return totalCount
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getTotalCount() {
     return totalCount;
   }
 
-  public void setTotalCount(Integer totalCount) {
+  public void setTotalCount(@javax.annotation.Nonnull Integer totalCount) {
     this.totalCount = totalCount;
   }
 
 
-  public ReleaseProgressionCollection links(Map<String, Link> links) {
+  public ReleaseProgressionCollection links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -209,16 +216,16 @@ public class ReleaseProgressionCollection {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
@@ -323,47 +330,35 @@ public class ReleaseProgressionCollection {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("activeCount");
-    openapiFields.add("completedCount");
-    openapiFields.add("items");
-    openapiFields.add("phases");
-    openapiFields.add("totalCount");
-    openapiFields.add("_links");
+    openapiFields = new HashSet<String>(Arrays.asList("activeCount", "completedCount", "items", "phases", "totalCount", "_links"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("activeCount");
-    openapiRequiredFields.add("completedCount");
-    openapiRequiredFields.add("items");
-    openapiRequiredFields.add("phases");
-    openapiRequiredFields.add("totalCount");
-    openapiRequiredFields.add("_links");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("activeCount", "completedCount", "items", "phases", "totalCount", "_links"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ReleaseProgressionCollection
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ReleaseProgressionCollection
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ReleaseProgressionCollection.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ReleaseProgressionCollection is not found in the empty JSON string", ReleaseProgressionCollection.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ReleaseProgressionCollection is not found in the empty JSON string", ReleaseProgressionCollection.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ReleaseProgressionCollection.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the json data is an array
       if (!jsonObj.get("items").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
       }
 
       JsonArray jsonArrayitems = jsonObj.getAsJsonArray("items");
@@ -373,7 +368,7 @@ public class ReleaseProgressionCollection {
       };
       // ensure the json data is an array
       if (!jsonObj.get("phases").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `phases` to be an array in the JSON string but got `%s`", jsonObj.get("phases").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `phases` to be an array in the JSON string but got `%s`", jsonObj.get("phases").toString()));
       }
 
       JsonArray jsonArrayphases = jsonObj.getAsJsonArray("phases");
@@ -440,7 +435,7 @@ public class ReleaseProgressionCollection {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -455,22 +450,22 @@ public class ReleaseProgressionCollection {
     }
   }
 
- /**
-  * Create an instance of ReleaseProgressionCollection given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ReleaseProgressionCollection
-  * @throws IOException if the JSON string is invalid with respect to ReleaseProgressionCollection
-  */
+  /**
+   * Create an instance of ReleaseProgressionCollection given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ReleaseProgressionCollection
+   * @throws IOException if the JSON string is invalid with respect to ReleaseProgressionCollection
+   */
   public static ReleaseProgressionCollection fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ReleaseProgressionCollection.class);
   }
 
- /**
-  * Convert an instance of ReleaseProgressionCollection to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ReleaseProgressionCollection to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

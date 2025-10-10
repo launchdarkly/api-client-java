@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,55 +42,58 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ViewLinkedResources
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ViewLinkedResources {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private ViewsPaginatedLinks links;
 
   public static final String SERIALIZED_NAME_ITEMS = "items";
   @SerializedName(SERIALIZED_NAME_ITEMS)
+  @javax.annotation.Nonnull
   private List<ViewLinkedResource> items = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TOTAL_COUNT = "totalCount";
   @SerializedName(SERIALIZED_NAME_TOTAL_COUNT)
+  @javax.annotation.Nonnull
   private Integer totalCount;
 
   public ViewLinkedResources() {
   }
 
-  public ViewLinkedResources links(ViewsPaginatedLinks links) {
+  public ViewLinkedResources links(@javax.annotation.Nullable ViewsPaginatedLinks links) {
     this.links = links;
     return this;
   }
 
-   /**
+  /**
    * Get links
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public ViewsPaginatedLinks getLinks() {
     return links;
   }
 
-  public void setLinks(ViewsPaginatedLinks links) {
+  public void setLinks(@javax.annotation.Nullable ViewsPaginatedLinks links) {
     this.links = links;
   }
 
 
-  public ViewLinkedResources items(List<ViewLinkedResource> items) {
+  public ViewLinkedResources items(@javax.annotation.Nonnull List<ViewLinkedResource> items) {
     this.items = items;
     return this;
   }
@@ -102,35 +106,35 @@ public class ViewLinkedResources {
     return this;
   }
 
-   /**
+  /**
    * Get items
    * @return items
-  **/
+   */
   @javax.annotation.Nonnull
   public List<ViewLinkedResource> getItems() {
     return items;
   }
 
-  public void setItems(List<ViewLinkedResource> items) {
+  public void setItems(@javax.annotation.Nonnull List<ViewLinkedResource> items) {
     this.items = items;
   }
 
 
-  public ViewLinkedResources totalCount(Integer totalCount) {
+  public ViewLinkedResources totalCount(@javax.annotation.Nonnull Integer totalCount) {
     this.totalCount = totalCount;
     return this;
   }
 
-   /**
+  /**
    * Get totalCount
    * @return totalCount
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getTotalCount() {
     return totalCount;
   }
 
-  public void setTotalCount(Integer totalCount) {
+  public void setTotalCount(@javax.annotation.Nonnull Integer totalCount) {
     this.totalCount = totalCount;
   }
 
@@ -229,34 +233,29 @@ public class ViewLinkedResources {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_links");
-    openapiFields.add("items");
-    openapiFields.add("totalCount");
+    openapiFields = new HashSet<String>(Arrays.asList("_links", "items", "totalCount"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("items");
-    openapiRequiredFields.add("totalCount");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("items", "totalCount"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ViewLinkedResources
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ViewLinkedResources
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ViewLinkedResources.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ViewLinkedResources is not found in the empty JSON string", ViewLinkedResources.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ViewLinkedResources is not found in the empty JSON string", ViewLinkedResources.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ViewLinkedResources.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -266,7 +265,7 @@ public class ViewLinkedResources {
       }
       // ensure the json data is an array
       if (!jsonObj.get("items").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
       }
 
       JsonArray jsonArrayitems = jsonObj.getAsJsonArray("items");
@@ -333,7 +332,7 @@ public class ViewLinkedResources {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -348,22 +347,22 @@ public class ViewLinkedResources {
     }
   }
 
- /**
-  * Create an instance of ViewLinkedResources given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ViewLinkedResources
-  * @throws IOException if the JSON string is invalid with respect to ViewLinkedResources
-  */
+  /**
+   * Create an instance of ViewLinkedResources given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ViewLinkedResources
+   * @throws IOException if the JSON string is invalid with respect to ViewLinkedResources
+   */
   public static ViewLinkedResources fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ViewLinkedResources.class);
   }
 
- /**
-  * Convert an instance of ViewLinkedResources to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ViewLinkedResources to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

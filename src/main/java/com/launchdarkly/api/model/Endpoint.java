@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,40 +42,44 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * Endpoint
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class Endpoint {
   public static final String SERIALIZED_NAME_HEADERS = "headers";
   @SerializedName(SERIALIZED_NAME_HEADERS)
+  @javax.annotation.Nullable
   private List<HeaderItems> headers = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_HMAC_SIGNATURE = "hmacSignature";
   @SerializedName(SERIALIZED_NAME_HMAC_SIGNATURE)
+  @javax.annotation.Nullable
   private HMACSignature hmacSignature;
 
   public static final String SERIALIZED_NAME_METHOD = "method";
   @SerializedName(SERIALIZED_NAME_METHOD)
+  @javax.annotation.Nullable
   private String method;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
+  @javax.annotation.Nullable
   private String url;
 
   public Endpoint() {
   }
 
-  public Endpoint headers(List<HeaderItems> headers) {
+  public Endpoint headers(@javax.annotation.Nullable List<HeaderItems> headers) {
     this.headers = headers;
     return this;
   }
@@ -87,73 +92,73 @@ public class Endpoint {
     return this;
   }
 
-   /**
+  /**
    * Get headers
    * @return headers
-  **/
+   */
   @javax.annotation.Nullable
   public List<HeaderItems> getHeaders() {
     return headers;
   }
 
-  public void setHeaders(List<HeaderItems> headers) {
+  public void setHeaders(@javax.annotation.Nullable List<HeaderItems> headers) {
     this.headers = headers;
   }
 
 
-  public Endpoint hmacSignature(HMACSignature hmacSignature) {
+  public Endpoint hmacSignature(@javax.annotation.Nullable HMACSignature hmacSignature) {
     this.hmacSignature = hmacSignature;
     return this;
   }
 
-   /**
+  /**
    * Get hmacSignature
    * @return hmacSignature
-  **/
+   */
   @javax.annotation.Nullable
   public HMACSignature getHmacSignature() {
     return hmacSignature;
   }
 
-  public void setHmacSignature(HMACSignature hmacSignature) {
+  public void setHmacSignature(@javax.annotation.Nullable HMACSignature hmacSignature) {
     this.hmacSignature = hmacSignature;
   }
 
 
-  public Endpoint method(String method) {
+  public Endpoint method(@javax.annotation.Nullable String method) {
     this.method = method;
     return this;
   }
 
-   /**
+  /**
    * Get method
    * @return method
-  **/
+   */
   @javax.annotation.Nullable
   public String getMethod() {
     return method;
   }
 
-  public void setMethod(String method) {
+  public void setMethod(@javax.annotation.Nullable String method) {
     this.method = method;
   }
 
 
-  public Endpoint url(String url) {
+  public Endpoint url(@javax.annotation.Nullable String url) {
     this.url = url;
     return this;
   }
 
-   /**
+  /**
    * Get url
    * @return url
-  **/
+   */
   @javax.annotation.Nullable
   public String getUrl() {
     return url;
   }
 
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nullable String url) {
     this.url = url;
   }
 
@@ -254,26 +259,22 @@ public class Endpoint {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("headers");
-    openapiFields.add("hmacSignature");
-    openapiFields.add("method");
-    openapiFields.add("url");
+    openapiFields = new HashSet<String>(Arrays.asList("headers", "hmacSignature", "method", "url"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Endpoint
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Endpoint
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Endpoint.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Endpoint is not found in the empty JSON string", Endpoint.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Endpoint is not found in the empty JSON string", Endpoint.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -282,7 +283,7 @@ public class Endpoint {
         if (jsonArrayheaders != null) {
           // ensure the json data is an array
           if (!jsonObj.get("headers").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `headers` to be an array in the JSON string but got `%s`", jsonObj.get("headers").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `headers` to be an array in the JSON string but got `%s`", jsonObj.get("headers").toString()));
           }
 
           // validate the optional field `headers` (array)
@@ -296,10 +297,10 @@ public class Endpoint {
         HMACSignature.validateJsonElement(jsonObj.get("hmacSignature"));
       }
       if ((jsonObj.get("method") != null && !jsonObj.get("method").isJsonNull()) && !jsonObj.get("method").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `method` to be a primitive type in the JSON string but got `%s`", jsonObj.get("method").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `method` to be a primitive type in the JSON string but got `%s`", jsonObj.get("method").toString()));
       }
       if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull()) && !jsonObj.get("url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
       }
   }
 
@@ -360,7 +361,7 @@ public class Endpoint {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -375,22 +376,22 @@ public class Endpoint {
     }
   }
 
- /**
-  * Create an instance of Endpoint given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Endpoint
-  * @throws IOException if the JSON string is invalid with respect to Endpoint
-  */
+  /**
+   * Create an instance of Endpoint given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Endpoint
+   * @throws IOException if the JSON string is invalid with respect to Endpoint
+   */
   public static Endpoint fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Endpoint.class);
   }
 
- /**
-  * Convert an instance of Endpoint to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Endpoint to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

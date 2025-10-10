@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,78 +41,82 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ReleaserAudienceConfigInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ReleaserAudienceConfigInput {
   public static final String SERIALIZED_NAME_AUDIENCE_ID = "audienceId";
   @SerializedName(SERIALIZED_NAME_AUDIENCE_ID)
+  @javax.annotation.Nullable
   private String audienceId;
 
   public static final String SERIALIZED_NAME_RELEASE_GUARDIAN_CONFIGURATION = "releaseGuardianConfiguration";
   @SerializedName(SERIALIZED_NAME_RELEASE_GUARDIAN_CONFIGURATION)
+  @javax.annotation.Nullable
   private ReleaseGuardianConfigurationInput releaseGuardianConfiguration;
 
   public static final String SERIALIZED_NAME_NOTIFY_MEMBER_IDS = "notifyMemberIds";
   @SerializedName(SERIALIZED_NAME_NOTIFY_MEMBER_IDS)
+  @javax.annotation.Nullable
   private List<String> notifyMemberIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NOTIFY_TEAM_KEYS = "notifyTeamKeys";
   @SerializedName(SERIALIZED_NAME_NOTIFY_TEAM_KEYS)
+  @javax.annotation.Nullable
   private List<String> notifyTeamKeys = new ArrayList<>();
 
   public ReleaserAudienceConfigInput() {
   }
 
-  public ReleaserAudienceConfigInput audienceId(String audienceId) {
+  public ReleaserAudienceConfigInput audienceId(@javax.annotation.Nullable String audienceId) {
     this.audienceId = audienceId;
     return this;
   }
 
-   /**
+  /**
    * UUID of the audience.
    * @return audienceId
-  **/
+   */
   @javax.annotation.Nullable
   public String getAudienceId() {
     return audienceId;
   }
 
-  public void setAudienceId(String audienceId) {
+  public void setAudienceId(@javax.annotation.Nullable String audienceId) {
     this.audienceId = audienceId;
   }
 
 
-  public ReleaserAudienceConfigInput releaseGuardianConfiguration(ReleaseGuardianConfigurationInput releaseGuardianConfiguration) {
+  public ReleaserAudienceConfigInput releaseGuardianConfiguration(@javax.annotation.Nullable ReleaseGuardianConfigurationInput releaseGuardianConfiguration) {
     this.releaseGuardianConfiguration = releaseGuardianConfiguration;
     return this;
   }
 
-   /**
+  /**
    * Get releaseGuardianConfiguration
    * @return releaseGuardianConfiguration
-  **/
+   */
   @javax.annotation.Nullable
   public ReleaseGuardianConfigurationInput getReleaseGuardianConfiguration() {
     return releaseGuardianConfiguration;
   }
 
-  public void setReleaseGuardianConfiguration(ReleaseGuardianConfigurationInput releaseGuardianConfiguration) {
+  public void setReleaseGuardianConfiguration(@javax.annotation.Nullable ReleaseGuardianConfigurationInput releaseGuardianConfiguration) {
     this.releaseGuardianConfiguration = releaseGuardianConfiguration;
   }
 
 
-  public ReleaserAudienceConfigInput notifyMemberIds(List<String> notifyMemberIds) {
+  public ReleaserAudienceConfigInput notifyMemberIds(@javax.annotation.Nullable List<String> notifyMemberIds) {
     this.notifyMemberIds = notifyMemberIds;
     return this;
   }
@@ -124,21 +129,21 @@ public class ReleaserAudienceConfigInput {
     return this;
   }
 
-   /**
+  /**
    * An array of member IDs. These members are notified to review the approval request.
    * @return notifyMemberIds
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getNotifyMemberIds() {
     return notifyMemberIds;
   }
 
-  public void setNotifyMemberIds(List<String> notifyMemberIds) {
+  public void setNotifyMemberIds(@javax.annotation.Nullable List<String> notifyMemberIds) {
     this.notifyMemberIds = notifyMemberIds;
   }
 
 
-  public ReleaserAudienceConfigInput notifyTeamKeys(List<String> notifyTeamKeys) {
+  public ReleaserAudienceConfigInput notifyTeamKeys(@javax.annotation.Nullable List<String> notifyTeamKeys) {
     this.notifyTeamKeys = notifyTeamKeys;
     return this;
   }
@@ -151,16 +156,16 @@ public class ReleaserAudienceConfigInput {
     return this;
   }
 
-   /**
+  /**
    * An array of team keys. The members of these teams are notified to review the approval request.
    * @return notifyTeamKeys
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getNotifyTeamKeys() {
     return notifyTeamKeys;
   }
 
-  public void setNotifyTeamKeys(List<String> notifyTeamKeys) {
+  public void setNotifyTeamKeys(@javax.annotation.Nullable List<String> notifyTeamKeys) {
     this.notifyTeamKeys = notifyTeamKeys;
   }
 
@@ -261,31 +266,27 @@ public class ReleaserAudienceConfigInput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("audienceId");
-    openapiFields.add("releaseGuardianConfiguration");
-    openapiFields.add("notifyMemberIds");
-    openapiFields.add("notifyTeamKeys");
+    openapiFields = new HashSet<String>(Arrays.asList("audienceId", "releaseGuardianConfiguration", "notifyMemberIds", "notifyTeamKeys"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ReleaserAudienceConfigInput
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ReleaserAudienceConfigInput
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ReleaserAudienceConfigInput.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ReleaserAudienceConfigInput is not found in the empty JSON string", ReleaserAudienceConfigInput.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ReleaserAudienceConfigInput is not found in the empty JSON string", ReleaserAudienceConfigInput.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("audienceId") != null && !jsonObj.get("audienceId").isJsonNull()) && !jsonObj.get("audienceId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `audienceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("audienceId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `audienceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("audienceId").toString()));
       }
       // validate the optional field `releaseGuardianConfiguration`
       if (jsonObj.get("releaseGuardianConfiguration") != null && !jsonObj.get("releaseGuardianConfiguration").isJsonNull()) {
@@ -293,11 +294,11 @@ public class ReleaserAudienceConfigInput {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("notifyMemberIds") != null && !jsonObj.get("notifyMemberIds").isJsonNull() && !jsonObj.get("notifyMemberIds").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `notifyMemberIds` to be an array in the JSON string but got `%s`", jsonObj.get("notifyMemberIds").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifyMemberIds` to be an array in the JSON string but got `%s`", jsonObj.get("notifyMemberIds").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("notifyTeamKeys") != null && !jsonObj.get("notifyTeamKeys").isJsonNull() && !jsonObj.get("notifyTeamKeys").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `notifyTeamKeys` to be an array in the JSON string but got `%s`", jsonObj.get("notifyTeamKeys").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifyTeamKeys` to be an array in the JSON string but got `%s`", jsonObj.get("notifyTeamKeys").toString()));
       }
   }
 
@@ -358,7 +359,7 @@ public class ReleaserAudienceConfigInput {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -373,22 +374,22 @@ public class ReleaserAudienceConfigInput {
     }
   }
 
- /**
-  * Create an instance of ReleaserAudienceConfigInput given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ReleaserAudienceConfigInput
-  * @throws IOException if the JSON string is invalid with respect to ReleaserAudienceConfigInput
-  */
+  /**
+   * Create an instance of ReleaserAudienceConfigInput given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ReleaserAudienceConfigInput
+   * @throws IOException if the JSON string is invalid with respect to ReleaserAudienceConfigInput
+   */
   public static ReleaserAudienceConfigInput fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ReleaserAudienceConfigInput.class);
   }
 
- /**
-  * Convert an instance of ReleaserAudienceConfigInput to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ReleaserAudienceConfigInput to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

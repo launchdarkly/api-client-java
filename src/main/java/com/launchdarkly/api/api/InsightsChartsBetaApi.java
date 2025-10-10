@@ -93,7 +93,8 @@ public class InsightsChartsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Chart response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -103,7 +104,7 @@ public class InsightsChartsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDeploymentFrequencyChartCall(String projectKey, String environmentKey, String applicationKey, OffsetDateTime from, OffsetDateTime to, String bucketType, Long bucketMs, String groupBy, String expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getDeploymentFrequencyChartCall(@javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String bucketType, @javax.annotation.Nullable Long bucketMs, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -184,7 +185,7 @@ public class InsightsChartsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getDeploymentFrequencyChartValidateBeforeCall(String projectKey, String environmentKey, String applicationKey, OffsetDateTime from, OffsetDateTime to, String bucketType, Long bucketMs, String groupBy, String expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getDeploymentFrequencyChartValidateBeforeCall(@javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String bucketType, @javax.annotation.Nullable Long bucketMs, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         return getDeploymentFrequencyChartCall(projectKey, environmentKey, applicationKey, from, to, bucketType, bucketMs, groupBy, expand, _callback);
 
     }
@@ -204,7 +205,8 @@ public class InsightsChartsBetaApi {
      * @return InsightsChart
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Chart response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -214,7 +216,7 @@ public class InsightsChartsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public InsightsChart getDeploymentFrequencyChart(String projectKey, String environmentKey, String applicationKey, OffsetDateTime from, OffsetDateTime to, String bucketType, Long bucketMs, String groupBy, String expand) throws ApiException {
+    public InsightsChart getDeploymentFrequencyChart(@javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String bucketType, @javax.annotation.Nullable Long bucketMs, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String expand) throws ApiException {
         ApiResponse<InsightsChart> localVarResp = getDeploymentFrequencyChartWithHttpInfo(projectKey, environmentKey, applicationKey, from, to, bucketType, bucketMs, groupBy, expand);
         return localVarResp.getData();
     }
@@ -234,7 +236,8 @@ public class InsightsChartsBetaApi {
      * @return ApiResponse&lt;InsightsChart&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Chart response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -244,7 +247,7 @@ public class InsightsChartsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InsightsChart> getDeploymentFrequencyChartWithHttpInfo(String projectKey, String environmentKey, String applicationKey, OffsetDateTime from, OffsetDateTime to, String bucketType, Long bucketMs, String groupBy, String expand) throws ApiException {
+    public ApiResponse<InsightsChart> getDeploymentFrequencyChartWithHttpInfo(@javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String bucketType, @javax.annotation.Nullable Long bucketMs, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String expand) throws ApiException {
         okhttp3.Call localVarCall = getDeploymentFrequencyChartValidateBeforeCall(projectKey, environmentKey, applicationKey, from, to, bucketType, bucketMs, groupBy, expand, null);
         Type localVarReturnType = new TypeToken<InsightsChart>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -266,7 +269,8 @@ public class InsightsChartsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Chart response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -276,7 +280,7 @@ public class InsightsChartsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDeploymentFrequencyChartAsync(String projectKey, String environmentKey, String applicationKey, OffsetDateTime from, OffsetDateTime to, String bucketType, Long bucketMs, String groupBy, String expand, final ApiCallback<InsightsChart> _callback) throws ApiException {
+    public okhttp3.Call getDeploymentFrequencyChartAsync(@javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String bucketType, @javax.annotation.Nullable Long bucketMs, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String expand, final ApiCallback<InsightsChart> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getDeploymentFrequencyChartValidateBeforeCall(projectKey, environmentKey, applicationKey, from, to, bucketType, bucketMs, groupBy, expand, _callback);
         Type localVarReturnType = new TypeToken<InsightsChart>(){}.getType();
@@ -292,7 +296,8 @@ public class InsightsChartsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Chart response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -302,7 +307,7 @@ public class InsightsChartsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFlagStatusChartCall(String projectKey, String environmentKey, String applicationKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getFlagStatusChartCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -359,7 +364,7 @@ public class InsightsChartsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFlagStatusChartValidateBeforeCall(String projectKey, String environmentKey, String applicationKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getFlagStatusChartValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getFlagStatusChart(Async)");
@@ -383,7 +388,8 @@ public class InsightsChartsBetaApi {
      * @return InsightsChart
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Chart response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -393,7 +399,7 @@ public class InsightsChartsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public InsightsChart getFlagStatusChart(String projectKey, String environmentKey, String applicationKey) throws ApiException {
+    public InsightsChart getFlagStatusChart(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey) throws ApiException {
         ApiResponse<InsightsChart> localVarResp = getFlagStatusChartWithHttpInfo(projectKey, environmentKey, applicationKey);
         return localVarResp.getData();
     }
@@ -407,7 +413,8 @@ public class InsightsChartsBetaApi {
      * @return ApiResponse&lt;InsightsChart&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Chart response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -417,7 +424,7 @@ public class InsightsChartsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InsightsChart> getFlagStatusChartWithHttpInfo(String projectKey, String environmentKey, String applicationKey) throws ApiException {
+    public ApiResponse<InsightsChart> getFlagStatusChartWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey) throws ApiException {
         okhttp3.Call localVarCall = getFlagStatusChartValidateBeforeCall(projectKey, environmentKey, applicationKey, null);
         Type localVarReturnType = new TypeToken<InsightsChart>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -433,7 +440,8 @@ public class InsightsChartsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Chart response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -443,7 +451,7 @@ public class InsightsChartsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFlagStatusChartAsync(String projectKey, String environmentKey, String applicationKey, final ApiCallback<InsightsChart> _callback) throws ApiException {
+    public okhttp3.Call getFlagStatusChartAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, final ApiCallback<InsightsChart> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFlagStatusChartValidateBeforeCall(projectKey, environmentKey, applicationKey, _callback);
         Type localVarReturnType = new TypeToken<InsightsChart>(){}.getType();
@@ -465,7 +473,8 @@ public class InsightsChartsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Chart response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -475,7 +484,7 @@ public class InsightsChartsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getLeadTimeChartCall(String projectKey, String environmentKey, String applicationKey, Long from, Long to, String bucketType, Long bucketMs, String groupBy, String expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getLeadTimeChartCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable Long from, @javax.annotation.Nullable Long to, @javax.annotation.Nullable String bucketType, @javax.annotation.Nullable Long bucketMs, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -556,7 +565,7 @@ public class InsightsChartsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getLeadTimeChartValidateBeforeCall(String projectKey, String environmentKey, String applicationKey, Long from, Long to, String bucketType, Long bucketMs, String groupBy, String expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getLeadTimeChartValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable Long from, @javax.annotation.Nullable Long to, @javax.annotation.Nullable String bucketType, @javax.annotation.Nullable Long bucketMs, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getLeadTimeChart(Async)");
@@ -581,7 +590,8 @@ public class InsightsChartsBetaApi {
      * @return InsightsChart
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Chart response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -591,7 +601,7 @@ public class InsightsChartsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public InsightsChart getLeadTimeChart(String projectKey, String environmentKey, String applicationKey, Long from, Long to, String bucketType, Long bucketMs, String groupBy, String expand) throws ApiException {
+    public InsightsChart getLeadTimeChart(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable Long from, @javax.annotation.Nullable Long to, @javax.annotation.Nullable String bucketType, @javax.annotation.Nullable Long bucketMs, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String expand) throws ApiException {
         ApiResponse<InsightsChart> localVarResp = getLeadTimeChartWithHttpInfo(projectKey, environmentKey, applicationKey, from, to, bucketType, bucketMs, groupBy, expand);
         return localVarResp.getData();
     }
@@ -611,7 +621,8 @@ public class InsightsChartsBetaApi {
      * @return ApiResponse&lt;InsightsChart&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Chart response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -621,7 +632,7 @@ public class InsightsChartsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InsightsChart> getLeadTimeChartWithHttpInfo(String projectKey, String environmentKey, String applicationKey, Long from, Long to, String bucketType, Long bucketMs, String groupBy, String expand) throws ApiException {
+    public ApiResponse<InsightsChart> getLeadTimeChartWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable Long from, @javax.annotation.Nullable Long to, @javax.annotation.Nullable String bucketType, @javax.annotation.Nullable Long bucketMs, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String expand) throws ApiException {
         okhttp3.Call localVarCall = getLeadTimeChartValidateBeforeCall(projectKey, environmentKey, applicationKey, from, to, bucketType, bucketMs, groupBy, expand, null);
         Type localVarReturnType = new TypeToken<InsightsChart>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -643,7 +654,8 @@ public class InsightsChartsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Chart response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -653,7 +665,7 @@ public class InsightsChartsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getLeadTimeChartAsync(String projectKey, String environmentKey, String applicationKey, Long from, Long to, String bucketType, Long bucketMs, String groupBy, String expand, final ApiCallback<InsightsChart> _callback) throws ApiException {
+    public okhttp3.Call getLeadTimeChartAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable Long from, @javax.annotation.Nullable Long to, @javax.annotation.Nullable String bucketType, @javax.annotation.Nullable Long bucketMs, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String expand, final ApiCallback<InsightsChart> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getLeadTimeChartValidateBeforeCall(projectKey, environmentKey, applicationKey, from, to, bucketType, bucketMs, groupBy, expand, _callback);
         Type localVarReturnType = new TypeToken<InsightsChart>(){}.getType();
@@ -677,7 +689,8 @@ public class InsightsChartsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Chart response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -687,7 +700,7 @@ public class InsightsChartsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getReleaseFrequencyChartCall(String projectKey, String environmentKey, String applicationKey, Boolean hasExperiments, String global, String groupBy, OffsetDateTime from, OffsetDateTime to, String bucketType, Long bucketMs, String expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getReleaseFrequencyChartCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable Boolean hasExperiments, @javax.annotation.Nullable String global, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String bucketType, @javax.annotation.Nullable Long bucketMs, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -776,7 +789,7 @@ public class InsightsChartsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getReleaseFrequencyChartValidateBeforeCall(String projectKey, String environmentKey, String applicationKey, Boolean hasExperiments, String global, String groupBy, OffsetDateTime from, OffsetDateTime to, String bucketType, Long bucketMs, String expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getReleaseFrequencyChartValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable Boolean hasExperiments, @javax.annotation.Nullable String global, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String bucketType, @javax.annotation.Nullable Long bucketMs, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getReleaseFrequencyChart(Async)");
@@ -808,7 +821,8 @@ public class InsightsChartsBetaApi {
      * @return InsightsChart
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Chart response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -818,7 +832,7 @@ public class InsightsChartsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public InsightsChart getReleaseFrequencyChart(String projectKey, String environmentKey, String applicationKey, Boolean hasExperiments, String global, String groupBy, OffsetDateTime from, OffsetDateTime to, String bucketType, Long bucketMs, String expand) throws ApiException {
+    public InsightsChart getReleaseFrequencyChart(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable Boolean hasExperiments, @javax.annotation.Nullable String global, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String bucketType, @javax.annotation.Nullable Long bucketMs, @javax.annotation.Nullable String expand) throws ApiException {
         ApiResponse<InsightsChart> localVarResp = getReleaseFrequencyChartWithHttpInfo(projectKey, environmentKey, applicationKey, hasExperiments, global, groupBy, from, to, bucketType, bucketMs, expand);
         return localVarResp.getData();
     }
@@ -840,7 +854,8 @@ public class InsightsChartsBetaApi {
      * @return ApiResponse&lt;InsightsChart&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Chart response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -850,7 +865,7 @@ public class InsightsChartsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InsightsChart> getReleaseFrequencyChartWithHttpInfo(String projectKey, String environmentKey, String applicationKey, Boolean hasExperiments, String global, String groupBy, OffsetDateTime from, OffsetDateTime to, String bucketType, Long bucketMs, String expand) throws ApiException {
+    public ApiResponse<InsightsChart> getReleaseFrequencyChartWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable Boolean hasExperiments, @javax.annotation.Nullable String global, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String bucketType, @javax.annotation.Nullable Long bucketMs, @javax.annotation.Nullable String expand) throws ApiException {
         okhttp3.Call localVarCall = getReleaseFrequencyChartValidateBeforeCall(projectKey, environmentKey, applicationKey, hasExperiments, global, groupBy, from, to, bucketType, bucketMs, expand, null);
         Type localVarReturnType = new TypeToken<InsightsChart>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -874,7 +889,8 @@ public class InsightsChartsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Chart response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -884,7 +900,7 @@ public class InsightsChartsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getReleaseFrequencyChartAsync(String projectKey, String environmentKey, String applicationKey, Boolean hasExperiments, String global, String groupBy, OffsetDateTime from, OffsetDateTime to, String bucketType, Long bucketMs, String expand, final ApiCallback<InsightsChart> _callback) throws ApiException {
+    public okhttp3.Call getReleaseFrequencyChartAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable Boolean hasExperiments, @javax.annotation.Nullable String global, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable OffsetDateTime from, @javax.annotation.Nullable OffsetDateTime to, @javax.annotation.Nullable String bucketType, @javax.annotation.Nullable Long bucketMs, @javax.annotation.Nullable String expand, final ApiCallback<InsightsChart> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getReleaseFrequencyChartValidateBeforeCall(projectKey, environmentKey, applicationKey, hasExperiments, global, groupBy, from, to, bucketType, bucketMs, expand, _callback);
         Type localVarReturnType = new TypeToken<InsightsChart>(){}.getType();
@@ -904,7 +920,8 @@ public class InsightsChartsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Chart response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -914,7 +931,7 @@ public class InsightsChartsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStaleFlagsChartCall(String projectKey, String environmentKey, String applicationKey, String groupBy, String maintainerId, String maintainerTeamKey, String expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getStaleFlagsChartCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String maintainerId, @javax.annotation.Nullable String maintainerTeamKey, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -987,7 +1004,7 @@ public class InsightsChartsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getStaleFlagsChartValidateBeforeCall(String projectKey, String environmentKey, String applicationKey, String groupBy, String maintainerId, String maintainerTeamKey, String expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getStaleFlagsChartValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String maintainerId, @javax.annotation.Nullable String maintainerTeamKey, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getStaleFlagsChart(Async)");
@@ -1015,7 +1032,8 @@ public class InsightsChartsBetaApi {
      * @return InsightsChart
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Chart response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1025,7 +1043,7 @@ public class InsightsChartsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public InsightsChart getStaleFlagsChart(String projectKey, String environmentKey, String applicationKey, String groupBy, String maintainerId, String maintainerTeamKey, String expand) throws ApiException {
+    public InsightsChart getStaleFlagsChart(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String maintainerId, @javax.annotation.Nullable String maintainerTeamKey, @javax.annotation.Nullable String expand) throws ApiException {
         ApiResponse<InsightsChart> localVarResp = getStaleFlagsChartWithHttpInfo(projectKey, environmentKey, applicationKey, groupBy, maintainerId, maintainerTeamKey, expand);
         return localVarResp.getData();
     }
@@ -1043,7 +1061,8 @@ public class InsightsChartsBetaApi {
      * @return ApiResponse&lt;InsightsChart&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Chart response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1053,7 +1072,7 @@ public class InsightsChartsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InsightsChart> getStaleFlagsChartWithHttpInfo(String projectKey, String environmentKey, String applicationKey, String groupBy, String maintainerId, String maintainerTeamKey, String expand) throws ApiException {
+    public ApiResponse<InsightsChart> getStaleFlagsChartWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String maintainerId, @javax.annotation.Nullable String maintainerTeamKey, @javax.annotation.Nullable String expand) throws ApiException {
         okhttp3.Call localVarCall = getStaleFlagsChartValidateBeforeCall(projectKey, environmentKey, applicationKey, groupBy, maintainerId, maintainerTeamKey, expand, null);
         Type localVarReturnType = new TypeToken<InsightsChart>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1073,7 +1092,8 @@ public class InsightsChartsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Chart response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1083,7 +1103,7 @@ public class InsightsChartsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStaleFlagsChartAsync(String projectKey, String environmentKey, String applicationKey, String groupBy, String maintainerId, String maintainerTeamKey, String expand, final ApiCallback<InsightsChart> _callback) throws ApiException {
+    public okhttp3.Call getStaleFlagsChartAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String maintainerId, @javax.annotation.Nullable String maintainerTeamKey, @javax.annotation.Nullable String expand, final ApiCallback<InsightsChart> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStaleFlagsChartValidateBeforeCall(projectKey, environmentKey, applicationKey, groupBy, maintainerId, maintainerTeamKey, expand, _callback);
         Type localVarReturnType = new TypeToken<InsightsChart>(){}.getType();

@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,144 +43,155 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * AIConfigVariationPost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AIConfigVariationPost {
   public static final String SERIALIZED_NAME_COMMENT = "comment";
   @SerializedName(SERIALIZED_NAME_COMMENT)
+  @javax.annotation.Nullable
   private String comment;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_INSTRUCTIONS = "instructions";
   @SerializedName(SERIALIZED_NAME_INSTRUCTIONS)
+  @javax.annotation.Nullable
   private String instructions;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_MESSAGES = "messages";
   @SerializedName(SERIALIZED_NAME_MESSAGES)
+  @javax.annotation.Nonnull
   private List<Message> messages = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MODEL = "model";
   @SerializedName(SERIALIZED_NAME_MODEL)
+  @javax.annotation.Nullable
   private Object model;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_MODEL_CONFIG_KEY = "modelConfigKey";
   @SerializedName(SERIALIZED_NAME_MODEL_CONFIG_KEY)
+  @javax.annotation.Nullable
   private String modelConfigKey;
 
   public static final String SERIALIZED_NAME_TOOLS = "tools";
   @SerializedName(SERIALIZED_NAME_TOOLS)
+  @javax.annotation.Nullable
   private List<VariationToolPost> tools = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TOOL_KEYS = "toolKeys";
   @SerializedName(SERIALIZED_NAME_TOOL_KEYS)
+  @javax.annotation.Nullable
   private List<String> toolKeys = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_JUDGE_CONFIGURATION = "judgeConfiguration";
   @SerializedName(SERIALIZED_NAME_JUDGE_CONFIGURATION)
+  @javax.annotation.Nullable
   private JudgeConfiguration judgeConfiguration;
 
   public AIConfigVariationPost() {
   }
 
-  public AIConfigVariationPost comment(String comment) {
+  public AIConfigVariationPost comment(@javax.annotation.Nullable String comment) {
     this.comment = comment;
     return this;
   }
 
-   /**
+  /**
    * Human-readable description of this variation
    * @return comment
-  **/
+   */
   @javax.annotation.Nullable
   public String getComment() {
     return comment;
   }
 
-  public void setComment(String comment) {
+  public void setComment(@javax.annotation.Nullable String comment) {
     this.comment = comment;
   }
 
 
-  public AIConfigVariationPost description(String description) {
+  public AIConfigVariationPost description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Returns the description for the agent. This is only returned for agent variations.
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public AIConfigVariationPost instructions(String instructions) {
+  public AIConfigVariationPost instructions(@javax.annotation.Nullable String instructions) {
     this.instructions = instructions;
     return this;
   }
 
-   /**
+  /**
    * Returns the instructions for the agent. This is only returned for agent variations.
    * @return instructions
-  **/
+   */
   @javax.annotation.Nullable
   public String getInstructions() {
     return instructions;
   }
 
-  public void setInstructions(String instructions) {
+  public void setInstructions(@javax.annotation.Nullable String instructions) {
     this.instructions = instructions;
   }
 
 
-  public AIConfigVariationPost key(String key) {
+  public AIConfigVariationPost key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * Get key
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public AIConfigVariationPost messages(List<Message> messages) {
+  public AIConfigVariationPost messages(@javax.annotation.Nonnull List<Message> messages) {
     this.messages = messages;
     return this;
   }
@@ -192,78 +204,78 @@ public class AIConfigVariationPost {
     return this;
   }
 
-   /**
+  /**
    * Get messages
    * @return messages
-  **/
+   */
   @javax.annotation.Nonnull
   public List<Message> getMessages() {
     return messages;
   }
 
-  public void setMessages(List<Message> messages) {
+  public void setMessages(@javax.annotation.Nonnull List<Message> messages) {
     this.messages = messages;
   }
 
 
-  public AIConfigVariationPost model(Object model) {
+  public AIConfigVariationPost model(@javax.annotation.Nullable Object model) {
     this.model = model;
     return this;
   }
 
-   /**
+  /**
    * Get model
    * @return model
-  **/
+   */
   @javax.annotation.Nullable
   public Object getModel() {
     return model;
   }
 
-  public void setModel(Object model) {
+  public void setModel(@javax.annotation.Nullable Object model) {
     this.model = model;
   }
 
 
-  public AIConfigVariationPost name(String name) {
+  public AIConfigVariationPost name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public AIConfigVariationPost modelConfigKey(String modelConfigKey) {
+  public AIConfigVariationPost modelConfigKey(@javax.annotation.Nullable String modelConfigKey) {
     this.modelConfigKey = modelConfigKey;
     return this;
   }
 
-   /**
+  /**
    * Get modelConfigKey
    * @return modelConfigKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getModelConfigKey() {
     return modelConfigKey;
   }
 
-  public void setModelConfigKey(String modelConfigKey) {
+  public void setModelConfigKey(@javax.annotation.Nullable String modelConfigKey) {
     this.modelConfigKey = modelConfigKey;
   }
 
 
-  public AIConfigVariationPost tools(List<VariationToolPost> tools) {
+  public AIConfigVariationPost tools(@javax.annotation.Nullable List<VariationToolPost> tools) {
     this.tools = tools;
     return this;
   }
@@ -276,21 +288,21 @@ public class AIConfigVariationPost {
     return this;
   }
 
-   /**
+  /**
    * List of tools to use for this variation. The latest version of the tool will be used.
    * @return tools
-  **/
+   */
   @javax.annotation.Nullable
   public List<VariationToolPost> getTools() {
     return tools;
   }
 
-  public void setTools(List<VariationToolPost> tools) {
+  public void setTools(@javax.annotation.Nullable List<VariationToolPost> tools) {
     this.tools = tools;
   }
 
 
-  public AIConfigVariationPost toolKeys(List<String> toolKeys) {
+  public AIConfigVariationPost toolKeys(@javax.annotation.Nullable List<String> toolKeys) {
     this.toolKeys = toolKeys;
     return this;
   }
@@ -303,35 +315,35 @@ public class AIConfigVariationPost {
     return this;
   }
 
-   /**
+  /**
    * List of tool keys to use for this variation. The latest version of the tool will be used.
    * @return toolKeys
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getToolKeys() {
     return toolKeys;
   }
 
-  public void setToolKeys(List<String> toolKeys) {
+  public void setToolKeys(@javax.annotation.Nullable List<String> toolKeys) {
     this.toolKeys = toolKeys;
   }
 
 
-  public AIConfigVariationPost judgeConfiguration(JudgeConfiguration judgeConfiguration) {
+  public AIConfigVariationPost judgeConfiguration(@javax.annotation.Nullable JudgeConfiguration judgeConfiguration) {
     this.judgeConfiguration = judgeConfiguration;
     return this;
   }
 
-   /**
+  /**
    * Get judgeConfiguration
    * @return judgeConfiguration
-  **/
+   */
   @javax.annotation.Nullable
   public JudgeConfiguration getJudgeConfiguration() {
     return judgeConfiguration;
   }
 
-  public void setJudgeConfiguration(JudgeConfiguration judgeConfiguration) {
+  public void setJudgeConfiguration(@javax.annotation.Nullable JudgeConfiguration judgeConfiguration) {
     this.judgeConfiguration = judgeConfiguration;
   }
 
@@ -446,61 +458,47 @@ public class AIConfigVariationPost {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("comment");
-    openapiFields.add("description");
-    openapiFields.add("instructions");
-    openapiFields.add("key");
-    openapiFields.add("messages");
-    openapiFields.add("model");
-    openapiFields.add("name");
-    openapiFields.add("modelConfigKey");
-    openapiFields.add("tools");
-    openapiFields.add("toolKeys");
-    openapiFields.add("judgeConfiguration");
+    openapiFields = new HashSet<String>(Arrays.asList("comment", "description", "instructions", "key", "messages", "model", "name", "modelConfigKey", "tools", "toolKeys", "judgeConfiguration"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("messages");
-    openapiRequiredFields.add("name");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("key", "messages", "name"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to AIConfigVariationPost
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AIConfigVariationPost
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AIConfigVariationPost.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AIConfigVariationPost is not found in the empty JSON string", AIConfigVariationPost.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AIConfigVariationPost is not found in the empty JSON string", AIConfigVariationPost.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : AIConfigVariationPost.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("comment") != null && !jsonObj.get("comment").isJsonNull()) && !jsonObj.get("comment").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `comment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comment").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `comment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comment").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if ((jsonObj.get("instructions") != null && !jsonObj.get("instructions").isJsonNull()) && !jsonObj.get("instructions").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `instructions` to be a primitive type in the JSON string but got `%s`", jsonObj.get("instructions").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `instructions` to be a primitive type in the JSON string but got `%s`", jsonObj.get("instructions").toString()));
       }
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       // ensure the json data is an array
       if (!jsonObj.get("messages").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `messages` to be an array in the JSON string but got `%s`", jsonObj.get("messages").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `messages` to be an array in the JSON string but got `%s`", jsonObj.get("messages").toString()));
       }
 
       JsonArray jsonArraymessages = jsonObj.getAsJsonArray("messages");
@@ -509,17 +507,17 @@ public class AIConfigVariationPost {
         Message.validateJsonElement(jsonArraymessages.get(i));
       };
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("modelConfigKey") != null && !jsonObj.get("modelConfigKey").isJsonNull()) && !jsonObj.get("modelConfigKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `modelConfigKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("modelConfigKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `modelConfigKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("modelConfigKey").toString()));
       }
       if (jsonObj.get("tools") != null && !jsonObj.get("tools").isJsonNull()) {
         JsonArray jsonArraytools = jsonObj.getAsJsonArray("tools");
         if (jsonArraytools != null) {
           // ensure the json data is an array
           if (!jsonObj.get("tools").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `tools` to be an array in the JSON string but got `%s`", jsonObj.get("tools").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tools` to be an array in the JSON string but got `%s`", jsonObj.get("tools").toString()));
           }
 
           // validate the optional field `tools` (array)
@@ -530,7 +528,7 @@ public class AIConfigVariationPost {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("toolKeys") != null && !jsonObj.get("toolKeys").isJsonNull() && !jsonObj.get("toolKeys").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `toolKeys` to be an array in the JSON string but got `%s`", jsonObj.get("toolKeys").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `toolKeys` to be an array in the JSON string but got `%s`", jsonObj.get("toolKeys").toString()));
       }
       // validate the optional field `judgeConfiguration`
       if (jsonObj.get("judgeConfiguration") != null && !jsonObj.get("judgeConfiguration").isJsonNull()) {
@@ -595,7 +593,7 @@ public class AIConfigVariationPost {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -610,22 +608,22 @@ public class AIConfigVariationPost {
     }
   }
 
- /**
-  * Create an instance of AIConfigVariationPost given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AIConfigVariationPost
-  * @throws IOException if the JSON string is invalid with respect to AIConfigVariationPost
-  */
+  /**
+   * Create an instance of AIConfigVariationPost given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AIConfigVariationPost
+   * @throws IOException if the JSON string is invalid with respect to AIConfigVariationPost
+   */
   public static AIConfigVariationPost fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AIConfigVariationPost.class);
   }
 
- /**
-  * Convert an instance of AIConfigVariationPost to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AIConfigVariationPost to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

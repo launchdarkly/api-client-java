@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,105 +41,111 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * CustomRolePost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class CustomRolePost {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_POLICY = "policy";
   @SerializedName(SERIALIZED_NAME_POLICY)
+  @javax.annotation.Nonnull
   private List<StatementPost> policy = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_BASE_PERMISSIONS = "basePermissions";
   @SerializedName(SERIALIZED_NAME_BASE_PERMISSIONS)
+  @javax.annotation.Nullable
   private String basePermissions;
 
   public static final String SERIALIZED_NAME_RESOURCE_CATEGORY = "resourceCategory";
   @SerializedName(SERIALIZED_NAME_RESOURCE_CATEGORY)
+  @javax.annotation.Nullable
   private String resourceCategory;
 
   public CustomRolePost() {
   }
 
-  public CustomRolePost name(String name) {
+  public CustomRolePost name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for the custom role
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public CustomRolePost key(String key) {
+  public CustomRolePost key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * The custom role key
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public CustomRolePost description(String description) {
+  public CustomRolePost description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Description of custom role
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CustomRolePost policy(List<StatementPost> policy) {
+  public CustomRolePost policy(@javax.annotation.Nonnull List<StatementPost> policy) {
     this.policy = policy;
     return this;
   }
@@ -151,54 +158,54 @@ public class CustomRolePost {
     return this;
   }
 
-   /**
+  /**
    * Get policy
    * @return policy
-  **/
+   */
   @javax.annotation.Nonnull
   public List<StatementPost> getPolicy() {
     return policy;
   }
 
-  public void setPolicy(List<StatementPost> policy) {
+  public void setPolicy(@javax.annotation.Nonnull List<StatementPost> policy) {
     this.policy = policy;
   }
 
 
-  public CustomRolePost basePermissions(String basePermissions) {
+  public CustomRolePost basePermissions(@javax.annotation.Nullable String basePermissions) {
     this.basePermissions = basePermissions;
     return this;
   }
 
-   /**
+  /**
    * Get basePermissions
    * @return basePermissions
-  **/
+   */
   @javax.annotation.Nullable
   public String getBasePermissions() {
     return basePermissions;
   }
 
-  public void setBasePermissions(String basePermissions) {
+  public void setBasePermissions(@javax.annotation.Nullable String basePermissions) {
     this.basePermissions = basePermissions;
   }
 
 
-  public CustomRolePost resourceCategory(String resourceCategory) {
+  public CustomRolePost resourceCategory(@javax.annotation.Nullable String resourceCategory) {
     this.resourceCategory = resourceCategory;
     return this;
   }
 
-   /**
+  /**
    * Get resourceCategory
    * @return resourceCategory
-  **/
+   */
   @javax.annotation.Nullable
   public String getResourceCategory() {
     return resourceCategory;
   }
 
-  public void setResourceCategory(String resourceCategory) {
+  public void setResourceCategory(@javax.annotation.Nullable String resourceCategory) {
     this.resourceCategory = resourceCategory;
   }
 
@@ -303,53 +310,44 @@ public class CustomRolePost {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("key");
-    openapiFields.add("description");
-    openapiFields.add("policy");
-    openapiFields.add("basePermissions");
-    openapiFields.add("resourceCategory");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "key", "description", "policy", "basePermissions", "resourceCategory"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("policy");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name", "key", "policy"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to CustomRolePost
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CustomRolePost
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CustomRolePost.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CustomRolePost is not found in the empty JSON string", CustomRolePost.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in CustomRolePost is not found in the empty JSON string", CustomRolePost.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : CustomRolePost.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       // ensure the json data is an array
       if (!jsonObj.get("policy").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `policy` to be an array in the JSON string but got `%s`", jsonObj.get("policy").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `policy` to be an array in the JSON string but got `%s`", jsonObj.get("policy").toString()));
       }
 
       JsonArray jsonArraypolicy = jsonObj.getAsJsonArray("policy");
@@ -358,10 +356,10 @@ public class CustomRolePost {
         StatementPost.validateJsonElement(jsonArraypolicy.get(i));
       };
       if ((jsonObj.get("basePermissions") != null && !jsonObj.get("basePermissions").isJsonNull()) && !jsonObj.get("basePermissions").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `basePermissions` to be a primitive type in the JSON string but got `%s`", jsonObj.get("basePermissions").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `basePermissions` to be a primitive type in the JSON string but got `%s`", jsonObj.get("basePermissions").toString()));
       }
       if ((jsonObj.get("resourceCategory") != null && !jsonObj.get("resourceCategory").isJsonNull()) && !jsonObj.get("resourceCategory").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `resourceCategory` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resourceCategory").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `resourceCategory` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resourceCategory").toString()));
       }
   }
 
@@ -422,7 +420,7 @@ public class CustomRolePost {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -437,22 +435,22 @@ public class CustomRolePost {
     }
   }
 
- /**
-  * Create an instance of CustomRolePost given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CustomRolePost
-  * @throws IOException if the JSON string is invalid with respect to CustomRolePost
-  */
+  /**
+   * Create an instance of CustomRolePost given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CustomRolePost
+   * @throws IOException if the JSON string is invalid with respect to CustomRolePost
+   */
   public static CustomRolePost fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CustomRolePost.class);
   }
 
- /**
-  * Convert an instance of CustomRolePost to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CustomRolePost to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,295 +38,307 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * CallerIdentityRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class CallerIdentityRep {
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "accountId";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
+  @javax.annotation.Nullable
   private String accountId;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_ID = "environmentId";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ID)
+  @javax.annotation.Nullable
   private String environmentId;
 
   public static final String SERIALIZED_NAME_PROJECT_ID = "projectId";
   @SerializedName(SERIALIZED_NAME_PROJECT_ID)
+  @javax.annotation.Nullable
   private String projectId;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_NAME = "environmentName";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_NAME)
+  @javax.annotation.Nullable
   private String environmentName;
 
   public static final String SERIALIZED_NAME_PROJECT_NAME = "projectName";
   @SerializedName(SERIALIZED_NAME_PROJECT_NAME)
+  @javax.annotation.Nullable
   private String projectName;
 
   public static final String SERIALIZED_NAME_AUTH_KIND = "authKind";
   @SerializedName(SERIALIZED_NAME_AUTH_KIND)
+  @javax.annotation.Nullable
   private String authKind;
 
   public static final String SERIALIZED_NAME_TOKEN_KIND = "tokenKind";
   @SerializedName(SERIALIZED_NAME_TOKEN_KIND)
+  @javax.annotation.Nullable
   private String tokenKind;
 
   public static final String SERIALIZED_NAME_CLIENT_ID = "clientId";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)
+  @javax.annotation.Nullable
   private String clientId;
 
   public static final String SERIALIZED_NAME_TOKEN_NAME = "tokenName";
   @SerializedName(SERIALIZED_NAME_TOKEN_NAME)
+  @javax.annotation.Nullable
   private String tokenName;
 
   public static final String SERIALIZED_NAME_TOKEN_ID = "tokenId";
   @SerializedName(SERIALIZED_NAME_TOKEN_ID)
+  @javax.annotation.Nullable
   private String tokenId;
 
   public static final String SERIALIZED_NAME_MEMBER_ID = "memberId";
   @SerializedName(SERIALIZED_NAME_MEMBER_ID)
+  @javax.annotation.Nullable
   private String memberId;
 
   public static final String SERIALIZED_NAME_SERVICE_TOKEN = "serviceToken";
   @SerializedName(SERIALIZED_NAME_SERVICE_TOKEN)
+  @javax.annotation.Nullable
   private Boolean serviceToken;
 
   public CallerIdentityRep() {
   }
 
-  public CallerIdentityRep accountId(String accountId) {
+  public CallerIdentityRep accountId(@javax.annotation.Nullable String accountId) {
     this.accountId = accountId;
     return this;
   }
 
-   /**
+  /**
    * Get accountId
    * @return accountId
-  **/
+   */
   @javax.annotation.Nullable
   public String getAccountId() {
     return accountId;
   }
 
-  public void setAccountId(String accountId) {
+  public void setAccountId(@javax.annotation.Nullable String accountId) {
     this.accountId = accountId;
   }
 
 
-  public CallerIdentityRep environmentId(String environmentId) {
+  public CallerIdentityRep environmentId(@javax.annotation.Nullable String environmentId) {
     this.environmentId = environmentId;
     return this;
   }
 
-   /**
+  /**
    * Get environmentId
    * @return environmentId
-  **/
+   */
   @javax.annotation.Nullable
   public String getEnvironmentId() {
     return environmentId;
   }
 
-  public void setEnvironmentId(String environmentId) {
+  public void setEnvironmentId(@javax.annotation.Nullable String environmentId) {
     this.environmentId = environmentId;
   }
 
 
-  public CallerIdentityRep projectId(String projectId) {
+  public CallerIdentityRep projectId(@javax.annotation.Nullable String projectId) {
     this.projectId = projectId;
     return this;
   }
 
-   /**
+  /**
    * Get projectId
    * @return projectId
-  **/
+   */
   @javax.annotation.Nullable
   public String getProjectId() {
     return projectId;
   }
 
-  public void setProjectId(String projectId) {
+  public void setProjectId(@javax.annotation.Nullable String projectId) {
     this.projectId = projectId;
   }
 
 
-  public CallerIdentityRep environmentName(String environmentName) {
+  public CallerIdentityRep environmentName(@javax.annotation.Nullable String environmentName) {
     this.environmentName = environmentName;
     return this;
   }
 
-   /**
+  /**
    * Get environmentName
    * @return environmentName
-  **/
+   */
   @javax.annotation.Nullable
   public String getEnvironmentName() {
     return environmentName;
   }
 
-  public void setEnvironmentName(String environmentName) {
+  public void setEnvironmentName(@javax.annotation.Nullable String environmentName) {
     this.environmentName = environmentName;
   }
 
 
-  public CallerIdentityRep projectName(String projectName) {
+  public CallerIdentityRep projectName(@javax.annotation.Nullable String projectName) {
     this.projectName = projectName;
     return this;
   }
 
-   /**
+  /**
    * Get projectName
    * @return projectName
-  **/
+   */
   @javax.annotation.Nullable
   public String getProjectName() {
     return projectName;
   }
 
-  public void setProjectName(String projectName) {
+  public void setProjectName(@javax.annotation.Nullable String projectName) {
     this.projectName = projectName;
   }
 
 
-  public CallerIdentityRep authKind(String authKind) {
+  public CallerIdentityRep authKind(@javax.annotation.Nullable String authKind) {
     this.authKind = authKind;
     return this;
   }
 
-   /**
+  /**
    * Get authKind
    * @return authKind
-  **/
+   */
   @javax.annotation.Nullable
   public String getAuthKind() {
     return authKind;
   }
 
-  public void setAuthKind(String authKind) {
+  public void setAuthKind(@javax.annotation.Nullable String authKind) {
     this.authKind = authKind;
   }
 
 
-  public CallerIdentityRep tokenKind(String tokenKind) {
+  public CallerIdentityRep tokenKind(@javax.annotation.Nullable String tokenKind) {
     this.tokenKind = tokenKind;
     return this;
   }
 
-   /**
+  /**
    * Get tokenKind
    * @return tokenKind
-  **/
+   */
   @javax.annotation.Nullable
   public String getTokenKind() {
     return tokenKind;
   }
 
-  public void setTokenKind(String tokenKind) {
+  public void setTokenKind(@javax.annotation.Nullable String tokenKind) {
     this.tokenKind = tokenKind;
   }
 
 
-  public CallerIdentityRep clientId(String clientId) {
+  public CallerIdentityRep clientId(@javax.annotation.Nullable String clientId) {
     this.clientId = clientId;
     return this;
   }
 
-   /**
+  /**
    * Get clientId
    * @return clientId
-  **/
+   */
   @javax.annotation.Nullable
   public String getClientId() {
     return clientId;
   }
 
-  public void setClientId(String clientId) {
+  public void setClientId(@javax.annotation.Nullable String clientId) {
     this.clientId = clientId;
   }
 
 
-  public CallerIdentityRep tokenName(String tokenName) {
+  public CallerIdentityRep tokenName(@javax.annotation.Nullable String tokenName) {
     this.tokenName = tokenName;
     return this;
   }
 
-   /**
+  /**
    * Get tokenName
    * @return tokenName
-  **/
+   */
   @javax.annotation.Nullable
   public String getTokenName() {
     return tokenName;
   }
 
-  public void setTokenName(String tokenName) {
+  public void setTokenName(@javax.annotation.Nullable String tokenName) {
     this.tokenName = tokenName;
   }
 
 
-  public CallerIdentityRep tokenId(String tokenId) {
+  public CallerIdentityRep tokenId(@javax.annotation.Nullable String tokenId) {
     this.tokenId = tokenId;
     return this;
   }
 
-   /**
+  /**
    * Get tokenId
    * @return tokenId
-  **/
+   */
   @javax.annotation.Nullable
   public String getTokenId() {
     return tokenId;
   }
 
-  public void setTokenId(String tokenId) {
+  public void setTokenId(@javax.annotation.Nullable String tokenId) {
     this.tokenId = tokenId;
   }
 
 
-  public CallerIdentityRep memberId(String memberId) {
+  public CallerIdentityRep memberId(@javax.annotation.Nullable String memberId) {
     this.memberId = memberId;
     return this;
   }
 
-   /**
+  /**
    * Get memberId
    * @return memberId
-  **/
+   */
   @javax.annotation.Nullable
   public String getMemberId() {
     return memberId;
   }
 
-  public void setMemberId(String memberId) {
+  public void setMemberId(@javax.annotation.Nullable String memberId) {
     this.memberId = memberId;
   }
 
 
-  public CallerIdentityRep serviceToken(Boolean serviceToken) {
+  public CallerIdentityRep serviceToken(@javax.annotation.Nullable Boolean serviceToken) {
     this.serviceToken = serviceToken;
     return this;
   }
 
-   /**
+  /**
    * Get serviceToken
    * @return serviceToken
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getServiceToken() {
     return serviceToken;
   }
 
-  public void setServiceToken(Boolean serviceToken) {
+  public void setServiceToken(@javax.annotation.Nullable Boolean serviceToken) {
     this.serviceToken = serviceToken;
   }
 
@@ -442,69 +455,57 @@ public class CallerIdentityRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("accountId");
-    openapiFields.add("environmentId");
-    openapiFields.add("projectId");
-    openapiFields.add("environmentName");
-    openapiFields.add("projectName");
-    openapiFields.add("authKind");
-    openapiFields.add("tokenKind");
-    openapiFields.add("clientId");
-    openapiFields.add("tokenName");
-    openapiFields.add("tokenId");
-    openapiFields.add("memberId");
-    openapiFields.add("serviceToken");
+    openapiFields = new HashSet<String>(Arrays.asList("accountId", "environmentId", "projectId", "environmentName", "projectName", "authKind", "tokenKind", "clientId", "tokenName", "tokenId", "memberId", "serviceToken"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to CallerIdentityRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CallerIdentityRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CallerIdentityRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CallerIdentityRep is not found in the empty JSON string", CallerIdentityRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in CallerIdentityRep is not found in the empty JSON string", CallerIdentityRep.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("accountId") != null && !jsonObj.get("accountId").isJsonNull()) && !jsonObj.get("accountId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `accountId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("accountId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `accountId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("accountId").toString()));
       }
       if ((jsonObj.get("environmentId") != null && !jsonObj.get("environmentId").isJsonNull()) && !jsonObj.get("environmentId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
       }
       if ((jsonObj.get("projectId") != null && !jsonObj.get("projectId").isJsonNull()) && !jsonObj.get("projectId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `projectId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `projectId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectId").toString()));
       }
       if ((jsonObj.get("environmentName") != null && !jsonObj.get("environmentName").isJsonNull()) && !jsonObj.get("environmentName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environmentName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentName").toString()));
       }
       if ((jsonObj.get("projectName") != null && !jsonObj.get("projectName").isJsonNull()) && !jsonObj.get("projectName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `projectName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `projectName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectName").toString()));
       }
       if ((jsonObj.get("authKind") != null && !jsonObj.get("authKind").isJsonNull()) && !jsonObj.get("authKind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `authKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("authKind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `authKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("authKind").toString()));
       }
       if ((jsonObj.get("tokenKind") != null && !jsonObj.get("tokenKind").isJsonNull()) && !jsonObj.get("tokenKind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tokenKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tokenKind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tokenKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tokenKind").toString()));
       }
       if ((jsonObj.get("clientId") != null && !jsonObj.get("clientId").isJsonNull()) && !jsonObj.get("clientId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `clientId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("clientId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `clientId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("clientId").toString()));
       }
       if ((jsonObj.get("tokenName") != null && !jsonObj.get("tokenName").isJsonNull()) && !jsonObj.get("tokenName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tokenName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tokenName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tokenName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tokenName").toString()));
       }
       if ((jsonObj.get("tokenId") != null && !jsonObj.get("tokenId").isJsonNull()) && !jsonObj.get("tokenId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tokenId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tokenId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tokenId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tokenId").toString()));
       }
       if ((jsonObj.get("memberId") != null && !jsonObj.get("memberId").isJsonNull()) && !jsonObj.get("memberId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `memberId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("memberId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `memberId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("memberId").toString()));
       }
   }
 
@@ -565,7 +566,7 @@ public class CallerIdentityRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -580,22 +581,22 @@ public class CallerIdentityRep {
     }
   }
 
- /**
-  * Create an instance of CallerIdentityRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CallerIdentityRep
-  * @throws IOException if the JSON string is invalid with respect to CallerIdentityRep
-  */
+  /**
+   * Create an instance of CallerIdentityRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CallerIdentityRep
+   * @throws IOException if the JSON string is invalid with respect to CallerIdentityRep
+   */
   public static CallerIdentityRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CallerIdentityRep.class);
   }
 
- /**
-  * Convert an instance of CallerIdentityRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CallerIdentityRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

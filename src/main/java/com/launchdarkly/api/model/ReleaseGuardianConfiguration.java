@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,111 +38,115 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ReleaseGuardianConfiguration
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ReleaseGuardianConfiguration {
   public static final String SERIALIZED_NAME_MONITORING_WINDOW_MILLISECONDS = "monitoringWindowMilliseconds";
   @SerializedName(SERIALIZED_NAME_MONITORING_WINDOW_MILLISECONDS)
+  @javax.annotation.Nonnull
   private Long monitoringWindowMilliseconds;
 
   public static final String SERIALIZED_NAME_ROLLOUT_WEIGHT = "rolloutWeight";
   @SerializedName(SERIALIZED_NAME_ROLLOUT_WEIGHT)
+  @javax.annotation.Nonnull
   private Integer rolloutWeight;
 
   public static final String SERIALIZED_NAME_ROLLBACK_ON_REGRESSION = "rollbackOnRegression";
   @SerializedName(SERIALIZED_NAME_ROLLBACK_ON_REGRESSION)
+  @javax.annotation.Nonnull
   private Boolean rollbackOnRegression;
 
   public static final String SERIALIZED_NAME_RANDOMIZATION_UNIT = "randomizationUnit";
   @SerializedName(SERIALIZED_NAME_RANDOMIZATION_UNIT)
+  @javax.annotation.Nullable
   private String randomizationUnit;
 
   public ReleaseGuardianConfiguration() {
   }
 
-  public ReleaseGuardianConfiguration monitoringWindowMilliseconds(Long monitoringWindowMilliseconds) {
+  public ReleaseGuardianConfiguration monitoringWindowMilliseconds(@javax.annotation.Nonnull Long monitoringWindowMilliseconds) {
     this.monitoringWindowMilliseconds = monitoringWindowMilliseconds;
     return this;
   }
 
-   /**
+  /**
    * The monitoring window in milliseconds
    * @return monitoringWindowMilliseconds
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getMonitoringWindowMilliseconds() {
     return monitoringWindowMilliseconds;
   }
 
-  public void setMonitoringWindowMilliseconds(Long monitoringWindowMilliseconds) {
+  public void setMonitoringWindowMilliseconds(@javax.annotation.Nonnull Long monitoringWindowMilliseconds) {
     this.monitoringWindowMilliseconds = monitoringWindowMilliseconds;
   }
 
 
-  public ReleaseGuardianConfiguration rolloutWeight(Integer rolloutWeight) {
+  public ReleaseGuardianConfiguration rolloutWeight(@javax.annotation.Nonnull Integer rolloutWeight) {
     this.rolloutWeight = rolloutWeight;
     return this;
   }
 
-   /**
+  /**
    * The rollout weight percentage
    * @return rolloutWeight
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getRolloutWeight() {
     return rolloutWeight;
   }
 
-  public void setRolloutWeight(Integer rolloutWeight) {
+  public void setRolloutWeight(@javax.annotation.Nonnull Integer rolloutWeight) {
     this.rolloutWeight = rolloutWeight;
   }
 
 
-  public ReleaseGuardianConfiguration rollbackOnRegression(Boolean rollbackOnRegression) {
+  public ReleaseGuardianConfiguration rollbackOnRegression(@javax.annotation.Nonnull Boolean rollbackOnRegression) {
     this.rollbackOnRegression = rollbackOnRegression;
     return this;
   }
 
-   /**
+  /**
    * Whether or not to roll back on regression
    * @return rollbackOnRegression
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getRollbackOnRegression() {
     return rollbackOnRegression;
   }
 
-  public void setRollbackOnRegression(Boolean rollbackOnRegression) {
+  public void setRollbackOnRegression(@javax.annotation.Nonnull Boolean rollbackOnRegression) {
     this.rollbackOnRegression = rollbackOnRegression;
   }
 
 
-  public ReleaseGuardianConfiguration randomizationUnit(String randomizationUnit) {
+  public ReleaseGuardianConfiguration randomizationUnit(@javax.annotation.Nullable String randomizationUnit) {
     this.randomizationUnit = randomizationUnit;
     return this;
   }
 
-   /**
+  /**
    * The randomization unit for the measured rollout
    * @return randomizationUnit
-  **/
+   */
   @javax.annotation.Nullable
   public String getRandomizationUnit() {
     return randomizationUnit;
   }
 
-  public void setRandomizationUnit(String randomizationUnit) {
+  public void setRandomizationUnit(@javax.annotation.Nullable String randomizationUnit) {
     this.randomizationUnit = randomizationUnit;
   }
 
@@ -242,41 +247,34 @@ public class ReleaseGuardianConfiguration {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("monitoringWindowMilliseconds");
-    openapiFields.add("rolloutWeight");
-    openapiFields.add("rollbackOnRegression");
-    openapiFields.add("randomizationUnit");
+    openapiFields = new HashSet<String>(Arrays.asList("monitoringWindowMilliseconds", "rolloutWeight", "rollbackOnRegression", "randomizationUnit"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("monitoringWindowMilliseconds");
-    openapiRequiredFields.add("rolloutWeight");
-    openapiRequiredFields.add("rollbackOnRegression");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("monitoringWindowMilliseconds", "rolloutWeight", "rollbackOnRegression"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ReleaseGuardianConfiguration
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ReleaseGuardianConfiguration
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ReleaseGuardianConfiguration.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ReleaseGuardianConfiguration is not found in the empty JSON string", ReleaseGuardianConfiguration.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ReleaseGuardianConfiguration is not found in the empty JSON string", ReleaseGuardianConfiguration.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ReleaseGuardianConfiguration.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("randomizationUnit") != null && !jsonObj.get("randomizationUnit").isJsonNull()) && !jsonObj.get("randomizationUnit").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `randomizationUnit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("randomizationUnit").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `randomizationUnit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("randomizationUnit").toString()));
       }
   }
 
@@ -337,7 +335,7 @@ public class ReleaseGuardianConfiguration {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -352,22 +350,22 @@ public class ReleaseGuardianConfiguration {
     }
   }
 
- /**
-  * Create an instance of ReleaseGuardianConfiguration given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ReleaseGuardianConfiguration
-  * @throws IOException if the JSON string is invalid with respect to ReleaseGuardianConfiguration
-  */
+  /**
+   * Create an instance of ReleaseGuardianConfiguration given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ReleaseGuardianConfiguration
+   * @throws IOException if the JSON string is invalid with respect to ReleaseGuardianConfiguration
+   */
   public static ReleaseGuardianConfiguration fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ReleaseGuardianConfiguration.class);
   }
 
- /**
-  * Convert an instance of ReleaseGuardianConfiguration to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ReleaseGuardianConfiguration to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

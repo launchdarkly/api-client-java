@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,40 +42,44 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * UpsertFlagDefaultsPayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class UpsertFlagDefaultsPayload {
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nonnull
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TEMPORARY = "temporary";
   @SerializedName(SERIALIZED_NAME_TEMPORARY)
+  @javax.annotation.Nonnull
   private Boolean temporary;
 
   public static final String SERIALIZED_NAME_BOOLEAN_DEFAULTS = "booleanDefaults";
   @SerializedName(SERIALIZED_NAME_BOOLEAN_DEFAULTS)
+  @javax.annotation.Nonnull
   private BooleanFlagDefaults booleanDefaults;
 
   public static final String SERIALIZED_NAME_DEFAULT_CLIENT_SIDE_AVAILABILITY = "defaultClientSideAvailability";
   @SerializedName(SERIALIZED_NAME_DEFAULT_CLIENT_SIDE_AVAILABILITY)
+  @javax.annotation.Nonnull
   private DefaultClientSideAvailability defaultClientSideAvailability;
 
   public UpsertFlagDefaultsPayload() {
   }
 
-  public UpsertFlagDefaultsPayload tags(List<String> tags) {
+  public UpsertFlagDefaultsPayload tags(@javax.annotation.Nonnull List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -87,73 +92,73 @@ public class UpsertFlagDefaultsPayload {
     return this;
   }
 
-   /**
+  /**
    * A list of default tags for each flag
    * @return tags
-  **/
+   */
   @javax.annotation.Nonnull
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nonnull List<String> tags) {
     this.tags = tags;
   }
 
 
-  public UpsertFlagDefaultsPayload temporary(Boolean temporary) {
+  public UpsertFlagDefaultsPayload temporary(@javax.annotation.Nonnull Boolean temporary) {
     this.temporary = temporary;
     return this;
   }
 
-   /**
+  /**
    * Whether the flag should be temporary by default
    * @return temporary
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getTemporary() {
     return temporary;
   }
 
-  public void setTemporary(Boolean temporary) {
+  public void setTemporary(@javax.annotation.Nonnull Boolean temporary) {
     this.temporary = temporary;
   }
 
 
-  public UpsertFlagDefaultsPayload booleanDefaults(BooleanFlagDefaults booleanDefaults) {
+  public UpsertFlagDefaultsPayload booleanDefaults(@javax.annotation.Nonnull BooleanFlagDefaults booleanDefaults) {
     this.booleanDefaults = booleanDefaults;
     return this;
   }
 
-   /**
+  /**
    * Get booleanDefaults
    * @return booleanDefaults
-  **/
+   */
   @javax.annotation.Nonnull
   public BooleanFlagDefaults getBooleanDefaults() {
     return booleanDefaults;
   }
 
-  public void setBooleanDefaults(BooleanFlagDefaults booleanDefaults) {
+  public void setBooleanDefaults(@javax.annotation.Nonnull BooleanFlagDefaults booleanDefaults) {
     this.booleanDefaults = booleanDefaults;
   }
 
 
-  public UpsertFlagDefaultsPayload defaultClientSideAvailability(DefaultClientSideAvailability defaultClientSideAvailability) {
+  public UpsertFlagDefaultsPayload defaultClientSideAvailability(@javax.annotation.Nonnull DefaultClientSideAvailability defaultClientSideAvailability) {
     this.defaultClientSideAvailability = defaultClientSideAvailability;
     return this;
   }
 
-   /**
+  /**
    * Get defaultClientSideAvailability
    * @return defaultClientSideAvailability
-  **/
+   */
   @javax.annotation.Nonnull
   public DefaultClientSideAvailability getDefaultClientSideAvailability() {
     return defaultClientSideAvailability;
   }
 
-  public void setDefaultClientSideAvailability(DefaultClientSideAvailability defaultClientSideAvailability) {
+  public void setDefaultClientSideAvailability(@javax.annotation.Nonnull DefaultClientSideAvailability defaultClientSideAvailability) {
     this.defaultClientSideAvailability = defaultClientSideAvailability;
   }
 
@@ -254,37 +259,29 @@ public class UpsertFlagDefaultsPayload {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("tags");
-    openapiFields.add("temporary");
-    openapiFields.add("booleanDefaults");
-    openapiFields.add("defaultClientSideAvailability");
+    openapiFields = new HashSet<String>(Arrays.asList("tags", "temporary", "booleanDefaults", "defaultClientSideAvailability"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("tags");
-    openapiRequiredFields.add("temporary");
-    openapiRequiredFields.add("booleanDefaults");
-    openapiRequiredFields.add("defaultClientSideAvailability");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("tags", "temporary", "booleanDefaults", "defaultClientSideAvailability"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to UpsertFlagDefaultsPayload
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to UpsertFlagDefaultsPayload
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UpsertFlagDefaultsPayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpsertFlagDefaultsPayload is not found in the empty JSON string", UpsertFlagDefaultsPayload.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in UpsertFlagDefaultsPayload is not found in the empty JSON string", UpsertFlagDefaultsPayload.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : UpsertFlagDefaultsPayload.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -292,7 +289,7 @@ public class UpsertFlagDefaultsPayload {
       if (jsonObj.get("tags") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       // validate the required field `booleanDefaults`
       BooleanFlagDefaults.validateJsonElement(jsonObj.get("booleanDefaults"));
@@ -357,7 +354,7 @@ public class UpsertFlagDefaultsPayload {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -372,22 +369,22 @@ public class UpsertFlagDefaultsPayload {
     }
   }
 
- /**
-  * Create an instance of UpsertFlagDefaultsPayload given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UpsertFlagDefaultsPayload
-  * @throws IOException if the JSON string is invalid with respect to UpsertFlagDefaultsPayload
-  */
+  /**
+   * Create an instance of UpsertFlagDefaultsPayload given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of UpsertFlagDefaultsPayload
+   * @throws IOException if the JSON string is invalid with respect to UpsertFlagDefaultsPayload
+   */
   public static UpsertFlagDefaultsPayload fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, UpsertFlagDefaultsPayload.class);
   }
 
- /**
-  * Convert an instance of UpsertFlagDefaultsPayload to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of UpsertFlagDefaultsPayload to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

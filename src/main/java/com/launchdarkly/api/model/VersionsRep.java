@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,40 +40,44 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * VersionsRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class VersionsRep {
   public static final String SERIALIZED_NAME_VALID_VERSIONS = "validVersions";
   @SerializedName(SERIALIZED_NAME_VALID_VERSIONS)
+  @javax.annotation.Nonnull
   private List<Integer> validVersions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LATEST_VERSION = "latestVersion";
   @SerializedName(SERIALIZED_NAME_LATEST_VERSION)
+  @javax.annotation.Nonnull
   private Integer latestVersion;
 
   public static final String SERIALIZED_NAME_CURRENT_VERSION = "currentVersion";
   @SerializedName(SERIALIZED_NAME_CURRENT_VERSION)
+  @javax.annotation.Nonnull
   private Integer currentVersion;
 
   public static final String SERIALIZED_NAME_BETA = "beta";
   @SerializedName(SERIALIZED_NAME_BETA)
+  @javax.annotation.Nullable
   private Boolean beta;
 
   public VersionsRep() {
   }
 
-  public VersionsRep validVersions(List<Integer> validVersions) {
+  public VersionsRep validVersions(@javax.annotation.Nonnull List<Integer> validVersions) {
     this.validVersions = validVersions;
     return this;
   }
@@ -85,73 +90,73 @@ public class VersionsRep {
     return this;
   }
 
-   /**
+  /**
    * A list of all valid API versions. To learn more about our versioning, read [Versioning](https://launchdarkly.com/docs/api#versioning).
    * @return validVersions
-  **/
+   */
   @javax.annotation.Nonnull
   public List<Integer> getValidVersions() {
     return validVersions;
   }
 
-  public void setValidVersions(List<Integer> validVersions) {
+  public void setValidVersions(@javax.annotation.Nonnull List<Integer> validVersions) {
     this.validVersions = validVersions;
   }
 
 
-  public VersionsRep latestVersion(Integer latestVersion) {
+  public VersionsRep latestVersion(@javax.annotation.Nonnull Integer latestVersion) {
     this.latestVersion = latestVersion;
     return this;
   }
 
-   /**
+  /**
    * Get latestVersion
    * @return latestVersion
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getLatestVersion() {
     return latestVersion;
   }
 
-  public void setLatestVersion(Integer latestVersion) {
+  public void setLatestVersion(@javax.annotation.Nonnull Integer latestVersion) {
     this.latestVersion = latestVersion;
   }
 
 
-  public VersionsRep currentVersion(Integer currentVersion) {
+  public VersionsRep currentVersion(@javax.annotation.Nonnull Integer currentVersion) {
     this.currentVersion = currentVersion;
     return this;
   }
 
-   /**
+  /**
    * Get currentVersion
    * @return currentVersion
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getCurrentVersion() {
     return currentVersion;
   }
 
-  public void setCurrentVersion(Integer currentVersion) {
+  public void setCurrentVersion(@javax.annotation.Nonnull Integer currentVersion) {
     this.currentVersion = currentVersion;
   }
 
 
-  public VersionsRep beta(Boolean beta) {
+  public VersionsRep beta(@javax.annotation.Nullable Boolean beta) {
     this.beta = beta;
     return this;
   }
 
-   /**
+  /**
    * Whether the version of the API currently is use is a beta version. This is always &lt;code&gt;true&lt;/code&gt; if you add the &lt;code&gt;LD-API-Version: beta&lt;/code&gt; header to your request.
    * @return beta
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getBeta() {
     return beta;
   }
 
-  public void setBeta(Boolean beta) {
+  public void setBeta(@javax.annotation.Nullable Boolean beta) {
     this.beta = beta;
   }
 
@@ -252,36 +257,29 @@ public class VersionsRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("validVersions");
-    openapiFields.add("latestVersion");
-    openapiFields.add("currentVersion");
-    openapiFields.add("beta");
+    openapiFields = new HashSet<String>(Arrays.asList("validVersions", "latestVersion", "currentVersion", "beta"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("validVersions");
-    openapiRequiredFields.add("latestVersion");
-    openapiRequiredFields.add("currentVersion");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("validVersions", "latestVersion", "currentVersion"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to VersionsRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to VersionsRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!VersionsRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in VersionsRep is not found in the empty JSON string", VersionsRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in VersionsRep is not found in the empty JSON string", VersionsRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : VersionsRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -289,7 +287,7 @@ public class VersionsRep {
       if (jsonObj.get("validVersions") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("validVersions").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `validVersions` to be an array in the JSON string but got `%s`", jsonObj.get("validVersions").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `validVersions` to be an array in the JSON string but got `%s`", jsonObj.get("validVersions").toString()));
       }
   }
 
@@ -350,7 +348,7 @@ public class VersionsRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -365,22 +363,22 @@ public class VersionsRep {
     }
   }
 
- /**
-  * Create an instance of VersionsRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of VersionsRep
-  * @throws IOException if the JSON string is invalid with respect to VersionsRep
-  */
+  /**
+   * Create an instance of VersionsRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of VersionsRep
+   * @throws IOException if the JSON string is invalid with respect to VersionsRep
+   */
   public static VersionsRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, VersionsRep.class);
   }
 
- /**
-  * Convert an instance of VersionsRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of VersionsRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

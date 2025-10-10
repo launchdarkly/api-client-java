@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,120 +40,125 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * AIConfigTargetingEnvironmentRuleClause
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AIConfigTargetingEnvironmentRuleClause {
   public static final String SERIALIZED_NAME_ATTRIBUTE = "attribute";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTE)
+  @javax.annotation.Nonnull
   private String attribute;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_NEGATE = "negate";
   @SerializedName(SERIALIZED_NAME_NEGATE)
+  @javax.annotation.Nonnull
   private Boolean negate;
 
   public static final String SERIALIZED_NAME_OP = "op";
   @SerializedName(SERIALIZED_NAME_OP)
+  @javax.annotation.Nonnull
   private String op;
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
+  @javax.annotation.Nonnull
   private List<Object> values = new ArrayList<>();
 
   public AIConfigTargetingEnvironmentRuleClause() {
   }
 
-  public AIConfigTargetingEnvironmentRuleClause attribute(String attribute) {
+  public AIConfigTargetingEnvironmentRuleClause attribute(@javax.annotation.Nonnull String attribute) {
     this.attribute = attribute;
     return this;
   }
 
-   /**
+  /**
    * Get attribute
    * @return attribute
-  **/
+   */
   @javax.annotation.Nonnull
   public String getAttribute() {
     return attribute;
   }
 
-  public void setAttribute(String attribute) {
+  public void setAttribute(@javax.annotation.Nonnull String attribute) {
     this.attribute = attribute;
   }
 
 
-  public AIConfigTargetingEnvironmentRuleClause id(String id) {
+  public AIConfigTargetingEnvironmentRuleClause id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public AIConfigTargetingEnvironmentRuleClause negate(Boolean negate) {
+  public AIConfigTargetingEnvironmentRuleClause negate(@javax.annotation.Nonnull Boolean negate) {
     this.negate = negate;
     return this;
   }
 
-   /**
+  /**
    * Get negate
    * @return negate
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getNegate() {
     return negate;
   }
 
-  public void setNegate(Boolean negate) {
+  public void setNegate(@javax.annotation.Nonnull Boolean negate) {
     this.negate = negate;
   }
 
 
-  public AIConfigTargetingEnvironmentRuleClause op(String op) {
+  public AIConfigTargetingEnvironmentRuleClause op(@javax.annotation.Nonnull String op) {
     this.op = op;
     return this;
   }
 
-   /**
+  /**
    * Get op
    * @return op
-  **/
+   */
   @javax.annotation.Nonnull
   public String getOp() {
     return op;
   }
 
-  public void setOp(String op) {
+  public void setOp(@javax.annotation.Nonnull String op) {
     this.op = op;
   }
 
 
-  public AIConfigTargetingEnvironmentRuleClause values(List<Object> values) {
+  public AIConfigTargetingEnvironmentRuleClause values(@javax.annotation.Nonnull List<Object> values) {
     this.values = values;
     return this;
   }
@@ -165,16 +171,16 @@ public class AIConfigTargetingEnvironmentRuleClause {
     return this;
   }
 
-   /**
+  /**
    * Get values
    * @return values
-  **/
+   */
   @javax.annotation.Nonnull
   public List<Object> getValues() {
     return values;
   }
 
-  public void setValues(List<Object> values) {
+  public void setValues(@javax.annotation.Nonnull List<Object> values) {
     this.values = values;
   }
 
@@ -277,56 +283,46 @@ public class AIConfigTargetingEnvironmentRuleClause {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("attribute");
-    openapiFields.add("id");
-    openapiFields.add("negate");
-    openapiFields.add("op");
-    openapiFields.add("values");
+    openapiFields = new HashSet<String>(Arrays.asList("attribute", "id", "negate", "op", "values"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("attribute");
-    openapiRequiredFields.add("id");
-    openapiRequiredFields.add("negate");
-    openapiRequiredFields.add("op");
-    openapiRequiredFields.add("values");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("attribute", "id", "negate", "op", "values"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to AIConfigTargetingEnvironmentRuleClause
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AIConfigTargetingEnvironmentRuleClause
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AIConfigTargetingEnvironmentRuleClause.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AIConfigTargetingEnvironmentRuleClause is not found in the empty JSON string", AIConfigTargetingEnvironmentRuleClause.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AIConfigTargetingEnvironmentRuleClause is not found in the empty JSON string", AIConfigTargetingEnvironmentRuleClause.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : AIConfigTargetingEnvironmentRuleClause.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("attribute").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `attribute` to be a primitive type in the JSON string but got `%s`", jsonObj.get("attribute").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `attribute` to be a primitive type in the JSON string but got `%s`", jsonObj.get("attribute").toString()));
       }
       if (!jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
       if (!jsonObj.get("op").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `op` to be a primitive type in the JSON string but got `%s`", jsonObj.get("op").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `op` to be a primitive type in the JSON string but got `%s`", jsonObj.get("op").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("values") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("values").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `values` to be an array in the JSON string but got `%s`", jsonObj.get("values").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `values` to be an array in the JSON string but got `%s`", jsonObj.get("values").toString()));
       }
   }
 
@@ -387,7 +383,7 @@ public class AIConfigTargetingEnvironmentRuleClause {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -402,22 +398,22 @@ public class AIConfigTargetingEnvironmentRuleClause {
     }
   }
 
- /**
-  * Create an instance of AIConfigTargetingEnvironmentRuleClause given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AIConfigTargetingEnvironmentRuleClause
-  * @throws IOException if the JSON string is invalid with respect to AIConfigTargetingEnvironmentRuleClause
-  */
+  /**
+   * Create an instance of AIConfigTargetingEnvironmentRuleClause given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AIConfigTargetingEnvironmentRuleClause
+   * @throws IOException if the JSON string is invalid with respect to AIConfigTargetingEnvironmentRuleClause
+   */
   public static AIConfigTargetingEnvironmentRuleClause fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AIConfigTargetingEnvironmentRuleClause.class);
   }
 
- /**
-  * Convert an instance of AIConfigTargetingEnvironmentRuleClause to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AIConfigTargetingEnvironmentRuleClause to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

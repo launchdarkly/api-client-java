@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -47,154 +48,177 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * UserSegment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class UserSegment {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nonnull
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATION_DATE = "creationDate";
   @SerializedName(SERIALIZED_NAME_CREATION_DATE)
+  @javax.annotation.Nonnull
   private Long creationDate;
 
   public static final String SERIALIZED_NAME_LAST_MODIFIED_DATE = "lastModifiedDate";
   @SerializedName(SERIALIZED_NAME_LAST_MODIFIED_DATE)
+  @javax.annotation.Nonnull
   private Long lastModifiedDate;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_INCLUDED = "included";
   @SerializedName(SERIALIZED_NAME_INCLUDED)
+  @javax.annotation.Nullable
   private List<String> included = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_EXCLUDED = "excluded";
   @SerializedName(SERIALIZED_NAME_EXCLUDED)
+  @javax.annotation.Nullable
   private List<String> excluded = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_INCLUDED_CONTEXTS = "includedContexts";
   @SerializedName(SERIALIZED_NAME_INCLUDED_CONTEXTS)
+  @javax.annotation.Nullable
   private List<SegmentTarget> includedContexts = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_EXCLUDED_CONTEXTS = "excludedContexts";
   @SerializedName(SERIALIZED_NAME_EXCLUDED_CONTEXTS)
+  @javax.annotation.Nullable
   private List<SegmentTarget> excludedContexts = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_RULES = "rules";
   @SerializedName(SERIALIZED_NAME_RULES)
+  @javax.annotation.Nonnull
   private List<UserSegmentRule> rules = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nonnull
   private Integer version;
 
   public static final String SERIALIZED_NAME_DELETED = "deleted";
   @SerializedName(SERIALIZED_NAME_DELETED)
+  @javax.annotation.Nonnull
   private Boolean deleted;
 
   public static final String SERIALIZED_NAME_ACCESS = "_access";
   @SerializedName(SERIALIZED_NAME_ACCESS)
+  @javax.annotation.Nullable
   private Access access;
 
   public static final String SERIALIZED_NAME_FLAGS = "_flags";
   @SerializedName(SERIALIZED_NAME_FLAGS)
+  @javax.annotation.Nullable
   private List<FlagListingRep> flags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_UNBOUNDED = "unbounded";
   @SerializedName(SERIALIZED_NAME_UNBOUNDED)
+  @javax.annotation.Nullable
   private Boolean unbounded;
 
   public static final String SERIALIZED_NAME_UNBOUNDED_CONTEXT_KIND = "unboundedContextKind";
   @SerializedName(SERIALIZED_NAME_UNBOUNDED_CONTEXT_KIND)
+  @javax.annotation.Nullable
   private String unboundedContextKind;
 
   public static final String SERIALIZED_NAME_GENERATION = "generation";
   @SerializedName(SERIALIZED_NAME_GENERATION)
+  @javax.annotation.Nonnull
   private Integer generation;
 
   public static final String SERIALIZED_NAME_UNBOUNDED_METADATA = "_unboundedMetadata";
   @SerializedName(SERIALIZED_NAME_UNBOUNDED_METADATA)
+  @javax.annotation.Nullable
   private SegmentMetadata unboundedMetadata;
 
   public static final String SERIALIZED_NAME_EXTERNAL = "_external";
   @SerializedName(SERIALIZED_NAME_EXTERNAL)
+  @javax.annotation.Nullable
   private String external;
 
   public static final String SERIALIZED_NAME_EXTERNAL_LINK = "_externalLink";
   @SerializedName(SERIALIZED_NAME_EXTERNAL_LINK)
+  @javax.annotation.Nullable
   private String externalLink;
 
   public static final String SERIALIZED_NAME_IMPORT_IN_PROGRESS = "_importInProgress";
   @SerializedName(SERIALIZED_NAME_IMPORT_IN_PROGRESS)
+  @javax.annotation.Nullable
   private Boolean importInProgress;
 
   public UserSegment() {
   }
 
-  public UserSegment name(String name) {
+  public UserSegment name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for the segment.
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public UserSegment description(String description) {
+  public UserSegment description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * A description of the segment&#39;s purpose. Defaults to &lt;code&gt;null&lt;/code&gt; and is omitted in the response if not provided.
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UserSegment tags(List<String> tags) {
+  public UserSegment tags(@javax.annotation.Nonnull List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -207,78 +231,78 @@ public class UserSegment {
     return this;
   }
 
-   /**
+  /**
    * Tags for the segment. Defaults to an empty array.
    * @return tags
-  **/
+   */
   @javax.annotation.Nonnull
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nonnull List<String> tags) {
     this.tags = tags;
   }
 
 
-  public UserSegment creationDate(Long creationDate) {
+  public UserSegment creationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
     return this;
   }
 
-   /**
+  /**
    * Get creationDate
    * @return creationDate
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate(Long creationDate) {
+  public void setCreationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
   }
 
 
-  public UserSegment lastModifiedDate(Long lastModifiedDate) {
+  public UserSegment lastModifiedDate(@javax.annotation.Nonnull Long lastModifiedDate) {
     this.lastModifiedDate = lastModifiedDate;
     return this;
   }
 
-   /**
+  /**
    * Get lastModifiedDate
    * @return lastModifiedDate
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getLastModifiedDate() {
     return lastModifiedDate;
   }
 
-  public void setLastModifiedDate(Long lastModifiedDate) {
+  public void setLastModifiedDate(@javax.annotation.Nonnull Long lastModifiedDate) {
     this.lastModifiedDate = lastModifiedDate;
   }
 
 
-  public UserSegment key(String key) {
+  public UserSegment key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * A unique key used to reference the segment
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public UserSegment included(List<String> included) {
+  public UserSegment included(@javax.annotation.Nullable List<String> included) {
     this.included = included;
     return this;
   }
@@ -291,21 +315,21 @@ public class UserSegment {
     return this;
   }
 
-   /**
+  /**
    * An array of keys for included targets. Included individual targets are always segment members, regardless of segment rules. For list-based segments over 15,000 entries, also called big segments, this array is either empty or omitted.
    * @return included
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getIncluded() {
     return included;
   }
 
-  public void setIncluded(List<String> included) {
+  public void setIncluded(@javax.annotation.Nullable List<String> included) {
     this.included = included;
   }
 
 
-  public UserSegment excluded(List<String> excluded) {
+  public UserSegment excluded(@javax.annotation.Nullable List<String> excluded) {
     this.excluded = excluded;
     return this;
   }
@@ -318,21 +342,21 @@ public class UserSegment {
     return this;
   }
 
-   /**
+  /**
    * An array of keys for excluded targets. Segment rules bypass individual excluded targets, so they will never be included based on rules. Excluded targets may still be included explicitly. This value is omitted for list-based segments over 15,000 entries, also called big segments.
    * @return excluded
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getExcluded() {
     return excluded;
   }
 
-  public void setExcluded(List<String> excluded) {
+  public void setExcluded(@javax.annotation.Nullable List<String> excluded) {
     this.excluded = excluded;
   }
 
 
-  public UserSegment includedContexts(List<SegmentTarget> includedContexts) {
+  public UserSegment includedContexts(@javax.annotation.Nullable List<SegmentTarget> includedContexts) {
     this.includedContexts = includedContexts;
     return this;
   }
@@ -345,21 +369,21 @@ public class UserSegment {
     return this;
   }
 
-   /**
+  /**
    * Get includedContexts
    * @return includedContexts
-  **/
+   */
   @javax.annotation.Nullable
   public List<SegmentTarget> getIncludedContexts() {
     return includedContexts;
   }
 
-  public void setIncludedContexts(List<SegmentTarget> includedContexts) {
+  public void setIncludedContexts(@javax.annotation.Nullable List<SegmentTarget> includedContexts) {
     this.includedContexts = includedContexts;
   }
 
 
-  public UserSegment excludedContexts(List<SegmentTarget> excludedContexts) {
+  public UserSegment excludedContexts(@javax.annotation.Nullable List<SegmentTarget> excludedContexts) {
     this.excludedContexts = excludedContexts;
     return this;
   }
@@ -372,21 +396,21 @@ public class UserSegment {
     return this;
   }
 
-   /**
+  /**
    * Get excludedContexts
    * @return excludedContexts
-  **/
+   */
   @javax.annotation.Nullable
   public List<SegmentTarget> getExcludedContexts() {
     return excludedContexts;
   }
 
-  public void setExcludedContexts(List<SegmentTarget> excludedContexts) {
+  public void setExcludedContexts(@javax.annotation.Nullable List<SegmentTarget> excludedContexts) {
     this.excludedContexts = excludedContexts;
   }
 
 
-  public UserSegment links(Map<String, Link> links) {
+  public UserSegment links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -399,21 +423,21 @@ public class UserSegment {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public UserSegment rules(List<UserSegmentRule> rules) {
+  public UserSegment rules(@javax.annotation.Nonnull List<UserSegmentRule> rules) {
     this.rules = rules;
     return this;
   }
@@ -426,78 +450,78 @@ public class UserSegment {
     return this;
   }
 
-   /**
+  /**
    * An array of the targeting rules for this segment.
    * @return rules
-  **/
+   */
   @javax.annotation.Nonnull
   public List<UserSegmentRule> getRules() {
     return rules;
   }
 
-  public void setRules(List<UserSegmentRule> rules) {
+  public void setRules(@javax.annotation.Nonnull List<UserSegmentRule> rules) {
     this.rules = rules;
   }
 
 
-  public UserSegment version(Integer version) {
+  public UserSegment version(@javax.annotation.Nonnull Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * Version of the segment
    * @return version
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nonnull Integer version) {
     this.version = version;
   }
 
 
-  public UserSegment deleted(Boolean deleted) {
+  public UserSegment deleted(@javax.annotation.Nonnull Boolean deleted) {
     this.deleted = deleted;
     return this;
   }
 
-   /**
+  /**
    * Whether the segment has been deleted
    * @return deleted
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getDeleted() {
     return deleted;
   }
 
-  public void setDeleted(Boolean deleted) {
+  public void setDeleted(@javax.annotation.Nonnull Boolean deleted) {
     this.deleted = deleted;
   }
 
 
-  public UserSegment access(Access access) {
+  public UserSegment access(@javax.annotation.Nullable Access access) {
     this.access = access;
     return this;
   }
 
-   /**
+  /**
    * Get access
    * @return access
-  **/
+   */
   @javax.annotation.Nullable
   public Access getAccess() {
     return access;
   }
 
-  public void setAccess(Access access) {
+  public void setAccess(@javax.annotation.Nullable Access access) {
     this.access = access;
   }
 
 
-  public UserSegment flags(List<FlagListingRep> flags) {
+  public UserSegment flags(@javax.annotation.Nullable List<FlagListingRep> flags) {
     this.flags = flags;
     return this;
   }
@@ -510,149 +534,149 @@ public class UserSegment {
     return this;
   }
 
-   /**
+  /**
    * A list of flags targeting this segment. Only included when getting a single segment, using the &lt;code&gt;getSegment&lt;/code&gt; endpoint.
    * @return flags
-  **/
+   */
   @javax.annotation.Nullable
   public List<FlagListingRep> getFlags() {
     return flags;
   }
 
-  public void setFlags(List<FlagListingRep> flags) {
+  public void setFlags(@javax.annotation.Nullable List<FlagListingRep> flags) {
     this.flags = flags;
   }
 
 
-  public UserSegment unbounded(Boolean unbounded) {
+  public UserSegment unbounded(@javax.annotation.Nullable Boolean unbounded) {
     this.unbounded = unbounded;
     return this;
   }
 
-   /**
+  /**
    * Whether this is a standard segment (&lt;code&gt;false&lt;/code&gt;) or a big segment (&lt;code&gt;true&lt;/code&gt;). Standard segments include rule-based segments and smaller list-based segments. Big segments include larger list-based segments and synced segments. If omitted, the segment is a standard segment.
    * @return unbounded
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getUnbounded() {
     return unbounded;
   }
 
-  public void setUnbounded(Boolean unbounded) {
+  public void setUnbounded(@javax.annotation.Nullable Boolean unbounded) {
     this.unbounded = unbounded;
   }
 
 
-  public UserSegment unboundedContextKind(String unboundedContextKind) {
+  public UserSegment unboundedContextKind(@javax.annotation.Nullable String unboundedContextKind) {
     this.unboundedContextKind = unboundedContextKind;
     return this;
   }
 
-   /**
+  /**
    * For big segments, the targeted context kind.
    * @return unboundedContextKind
-  **/
+   */
   @javax.annotation.Nullable
   public String getUnboundedContextKind() {
     return unboundedContextKind;
   }
 
-  public void setUnboundedContextKind(String unboundedContextKind) {
+  public void setUnboundedContextKind(@javax.annotation.Nullable String unboundedContextKind) {
     this.unboundedContextKind = unboundedContextKind;
   }
 
 
-  public UserSegment generation(Integer generation) {
+  public UserSegment generation(@javax.annotation.Nonnull Integer generation) {
     this.generation = generation;
     return this;
   }
 
-   /**
+  /**
    * For big segments, how many times this segment has been created.
    * @return generation
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getGeneration() {
     return generation;
   }
 
-  public void setGeneration(Integer generation) {
+  public void setGeneration(@javax.annotation.Nonnull Integer generation) {
     this.generation = generation;
   }
 
 
-  public UserSegment unboundedMetadata(SegmentMetadata unboundedMetadata) {
+  public UserSegment unboundedMetadata(@javax.annotation.Nullable SegmentMetadata unboundedMetadata) {
     this.unboundedMetadata = unboundedMetadata;
     return this;
   }
 
-   /**
+  /**
    * Get unboundedMetadata
    * @return unboundedMetadata
-  **/
+   */
   @javax.annotation.Nullable
   public SegmentMetadata getUnboundedMetadata() {
     return unboundedMetadata;
   }
 
-  public void setUnboundedMetadata(SegmentMetadata unboundedMetadata) {
+  public void setUnboundedMetadata(@javax.annotation.Nullable SegmentMetadata unboundedMetadata) {
     this.unboundedMetadata = unboundedMetadata;
   }
 
 
-  public UserSegment external(String external) {
+  public UserSegment external(@javax.annotation.Nullable String external) {
     this.external = external;
     return this;
   }
 
-   /**
+  /**
    * The external data store backing this segment. Only applies to synced segments.
    * @return external
-  **/
+   */
   @javax.annotation.Nullable
   public String getExternal() {
     return external;
   }
 
-  public void setExternal(String external) {
+  public void setExternal(@javax.annotation.Nullable String external) {
     this.external = external;
   }
 
 
-  public UserSegment externalLink(String externalLink) {
+  public UserSegment externalLink(@javax.annotation.Nullable String externalLink) {
     this.externalLink = externalLink;
     return this;
   }
 
-   /**
+  /**
    * The URL for the external data store backing this segment. Only applies to synced segments.
    * @return externalLink
-  **/
+   */
   @javax.annotation.Nullable
   public String getExternalLink() {
     return externalLink;
   }
 
-  public void setExternalLink(String externalLink) {
+  public void setExternalLink(@javax.annotation.Nullable String externalLink) {
     this.externalLink = externalLink;
   }
 
 
-  public UserSegment importInProgress(Boolean importInProgress) {
+  public UserSegment importInProgress(@javax.annotation.Nullable Boolean importInProgress) {
     this.importInProgress = importInProgress;
     return this;
   }
 
-   /**
+  /**
    * Whether an import is currently in progress for the specified segment. Only applies to big segments.
    * @return importInProgress
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getImportInProgress() {
     return importInProgress;
   }
 
-  public void setImportInProgress(Boolean importInProgress) {
+  public void setImportInProgress(@javax.annotation.Nullable Boolean importInProgress) {
     this.importInProgress = importInProgress;
   }
 
@@ -791,94 +815,61 @@ public class UserSegment {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("description");
-    openapiFields.add("tags");
-    openapiFields.add("creationDate");
-    openapiFields.add("lastModifiedDate");
-    openapiFields.add("key");
-    openapiFields.add("included");
-    openapiFields.add("excluded");
-    openapiFields.add("includedContexts");
-    openapiFields.add("excludedContexts");
-    openapiFields.add("_links");
-    openapiFields.add("rules");
-    openapiFields.add("version");
-    openapiFields.add("deleted");
-    openapiFields.add("_access");
-    openapiFields.add("_flags");
-    openapiFields.add("unbounded");
-    openapiFields.add("unboundedContextKind");
-    openapiFields.add("generation");
-    openapiFields.add("_unboundedMetadata");
-    openapiFields.add("_external");
-    openapiFields.add("_externalLink");
-    openapiFields.add("_importInProgress");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "description", "tags", "creationDate", "lastModifiedDate", "key", "included", "excluded", "includedContexts", "excludedContexts", "_links", "rules", "version", "deleted", "_access", "_flags", "unbounded", "unboundedContextKind", "generation", "_unboundedMetadata", "_external", "_externalLink", "_importInProgress"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("tags");
-    openapiRequiredFields.add("creationDate");
-    openapiRequiredFields.add("lastModifiedDate");
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("_links");
-    openapiRequiredFields.add("rules");
-    openapiRequiredFields.add("version");
-    openapiRequiredFields.add("deleted");
-    openapiRequiredFields.add("generation");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name", "tags", "creationDate", "lastModifiedDate", "key", "_links", "rules", "version", "deleted", "generation"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to UserSegment
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to UserSegment
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UserSegment.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UserSegment is not found in the empty JSON string", UserSegment.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in UserSegment is not found in the empty JSON string", UserSegment.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : UserSegment.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("tags") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("included") != null && !jsonObj.get("included").isJsonNull() && !jsonObj.get("included").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `included` to be an array in the JSON string but got `%s`", jsonObj.get("included").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `included` to be an array in the JSON string but got `%s`", jsonObj.get("included").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("excluded") != null && !jsonObj.get("excluded").isJsonNull() && !jsonObj.get("excluded").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `excluded` to be an array in the JSON string but got `%s`", jsonObj.get("excluded").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `excluded` to be an array in the JSON string but got `%s`", jsonObj.get("excluded").toString()));
       }
       if (jsonObj.get("includedContexts") != null && !jsonObj.get("includedContexts").isJsonNull()) {
         JsonArray jsonArrayincludedContexts = jsonObj.getAsJsonArray("includedContexts");
         if (jsonArrayincludedContexts != null) {
           // ensure the json data is an array
           if (!jsonObj.get("includedContexts").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `includedContexts` to be an array in the JSON string but got `%s`", jsonObj.get("includedContexts").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `includedContexts` to be an array in the JSON string but got `%s`", jsonObj.get("includedContexts").toString()));
           }
 
           // validate the optional field `includedContexts` (array)
@@ -892,7 +883,7 @@ public class UserSegment {
         if (jsonArrayexcludedContexts != null) {
           // ensure the json data is an array
           if (!jsonObj.get("excludedContexts").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `excludedContexts` to be an array in the JSON string but got `%s`", jsonObj.get("excludedContexts").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `excludedContexts` to be an array in the JSON string but got `%s`", jsonObj.get("excludedContexts").toString()));
           }
 
           // validate the optional field `excludedContexts` (array)
@@ -903,7 +894,7 @@ public class UserSegment {
       }
       // ensure the json data is an array
       if (!jsonObj.get("rules").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `rules` to be an array in the JSON string but got `%s`", jsonObj.get("rules").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `rules` to be an array in the JSON string but got `%s`", jsonObj.get("rules").toString()));
       }
 
       JsonArray jsonArrayrules = jsonObj.getAsJsonArray("rules");
@@ -920,7 +911,7 @@ public class UserSegment {
         if (jsonArrayflags != null) {
           // ensure the json data is an array
           if (!jsonObj.get("_flags").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `_flags` to be an array in the JSON string but got `%s`", jsonObj.get("_flags").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_flags` to be an array in the JSON string but got `%s`", jsonObj.get("_flags").toString()));
           }
 
           // validate the optional field `_flags` (array)
@@ -930,17 +921,17 @@ public class UserSegment {
         }
       }
       if ((jsonObj.get("unboundedContextKind") != null && !jsonObj.get("unboundedContextKind").isJsonNull()) && !jsonObj.get("unboundedContextKind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `unboundedContextKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unboundedContextKind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `unboundedContextKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unboundedContextKind").toString()));
       }
       // validate the optional field `_unboundedMetadata`
       if (jsonObj.get("_unboundedMetadata") != null && !jsonObj.get("_unboundedMetadata").isJsonNull()) {
         SegmentMetadata.validateJsonElement(jsonObj.get("_unboundedMetadata"));
       }
       if ((jsonObj.get("_external") != null && !jsonObj.get("_external").isJsonNull()) && !jsonObj.get("_external").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_external` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_external").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_external` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_external").toString()));
       }
       if ((jsonObj.get("_externalLink") != null && !jsonObj.get("_externalLink").isJsonNull()) && !jsonObj.get("_externalLink").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_externalLink` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_externalLink").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_externalLink` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_externalLink").toString()));
       }
   }
 
@@ -1001,7 +992,7 @@ public class UserSegment {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -1016,22 +1007,22 @@ public class UserSegment {
     }
   }
 
- /**
-  * Create an instance of UserSegment given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UserSegment
-  * @throws IOException if the JSON string is invalid with respect to UserSegment
-  */
+  /**
+   * Create an instance of UserSegment given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of UserSegment
+   * @throws IOException if the JSON string is invalid with respect to UserSegment
+   */
   public static UserSegment fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, UserSegment.class);
   }
 
- /**
-  * Convert an instance of UserSegment to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of UserSegment to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

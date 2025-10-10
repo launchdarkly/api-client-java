@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,65 +40,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * CapabilityConfigPost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class CapabilityConfigPost {
   public static final String SERIALIZED_NAME_APPROVALS = "approvals";
   @SerializedName(SERIALIZED_NAME_APPROVALS)
+  @javax.annotation.Nullable
   private ApprovalsCapabilityConfig approvals;
 
   public static final String SERIALIZED_NAME_AUDIT_LOG_EVENTS_HOOK = "auditLogEventsHook";
   @SerializedName(SERIALIZED_NAME_AUDIT_LOG_EVENTS_HOOK)
+  @javax.annotation.Nullable
   private AuditLogEventsHookCapabilityConfigPost auditLogEventsHook;
 
   public CapabilityConfigPost() {
   }
 
-  public CapabilityConfigPost approvals(ApprovalsCapabilityConfig approvals) {
+  public CapabilityConfigPost approvals(@javax.annotation.Nullable ApprovalsCapabilityConfig approvals) {
     this.approvals = approvals;
     return this;
   }
 
-   /**
+  /**
    * Get approvals
    * @return approvals
-  **/
+   */
   @javax.annotation.Nullable
   public ApprovalsCapabilityConfig getApprovals() {
     return approvals;
   }
 
-  public void setApprovals(ApprovalsCapabilityConfig approvals) {
+  public void setApprovals(@javax.annotation.Nullable ApprovalsCapabilityConfig approvals) {
     this.approvals = approvals;
   }
 
 
-  public CapabilityConfigPost auditLogEventsHook(AuditLogEventsHookCapabilityConfigPost auditLogEventsHook) {
+  public CapabilityConfigPost auditLogEventsHook(@javax.annotation.Nullable AuditLogEventsHookCapabilityConfigPost auditLogEventsHook) {
     this.auditLogEventsHook = auditLogEventsHook;
     return this;
   }
 
-   /**
+  /**
    * Get auditLogEventsHook
    * @return auditLogEventsHook
-  **/
+   */
   @javax.annotation.Nullable
   public AuditLogEventsHookCapabilityConfigPost getAuditLogEventsHook() {
     return auditLogEventsHook;
   }
 
-  public void setAuditLogEventsHook(AuditLogEventsHookCapabilityConfigPost auditLogEventsHook) {
+  public void setAuditLogEventsHook(@javax.annotation.Nullable AuditLogEventsHookCapabilityConfigPost auditLogEventsHook) {
     this.auditLogEventsHook = auditLogEventsHook;
   }
 
@@ -194,24 +197,22 @@ public class CapabilityConfigPost {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("approvals");
-    openapiFields.add("auditLogEventsHook");
+    openapiFields = new HashSet<String>(Arrays.asList("approvals", "auditLogEventsHook"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to CapabilityConfigPost
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CapabilityConfigPost
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CapabilityConfigPost.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CapabilityConfigPost is not found in the empty JSON string", CapabilityConfigPost.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in CapabilityConfigPost is not found in the empty JSON string", CapabilityConfigPost.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -282,7 +283,7 @@ public class CapabilityConfigPost {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -297,22 +298,22 @@ public class CapabilityConfigPost {
     }
   }
 
- /**
-  * Create an instance of CapabilityConfigPost given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CapabilityConfigPost
-  * @throws IOException if the JSON string is invalid with respect to CapabilityConfigPost
-  */
+  /**
+   * Create an instance of CapabilityConfigPost given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CapabilityConfigPost
+   * @throws IOException if the JSON string is invalid with respect to CapabilityConfigPost
+   */
   public static CapabilityConfigPost fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CapabilityConfigPost.class);
   }
 
- /**
-  * Convert an instance of CapabilityConfigPost to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CapabilityConfigPost to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

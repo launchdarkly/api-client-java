@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,50 +44,58 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ApplicationRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ApplicationRep {
   public static final String SERIALIZED_NAME_FLAGS = "flags";
   @SerializedName(SERIALIZED_NAME_FLAGS)
+  @javax.annotation.Nullable
   private ApplicationFlagCollectionRep flags;
 
   public static final String SERIALIZED_NAME_ACCESS = "_access";
   @SerializedName(SERIALIZED_NAME_ACCESS)
+  @javax.annotation.Nullable
   private Access access;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_VERSION = "_version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
   private Integer version;
 
   public static final String SERIALIZED_NAME_AUTO_ADDED = "autoAdded";
   @SerializedName(SERIALIZED_NAME_AUTO_ADDED)
+  @javax.annotation.Nonnull
   private Boolean autoAdded;
 
   public static final String SERIALIZED_NAME_CREATION_DATE = "creationDate";
   @SerializedName(SERIALIZED_NAME_CREATION_DATE)
+  @javax.annotation.Nullable
   private Long creationDate;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   /**
@@ -145,58 +154,61 @@ public class ApplicationRep {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
+  @javax.annotation.Nonnull
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_MAINTAINER = "_maintainer";
   @SerializedName(SERIALIZED_NAME_MAINTAINER)
+  @javax.annotation.Nullable
   private MaintainerRep maintainer;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public ApplicationRep() {
   }
 
-  public ApplicationRep flags(ApplicationFlagCollectionRep flags) {
+  public ApplicationRep flags(@javax.annotation.Nullable ApplicationFlagCollectionRep flags) {
     this.flags = flags;
     return this;
   }
 
-   /**
+  /**
    * Get flags
    * @return flags
-  **/
+   */
   @javax.annotation.Nullable
   public ApplicationFlagCollectionRep getFlags() {
     return flags;
   }
 
-  public void setFlags(ApplicationFlagCollectionRep flags) {
+  public void setFlags(@javax.annotation.Nullable ApplicationFlagCollectionRep flags) {
     this.flags = flags;
   }
 
 
-  public ApplicationRep access(Access access) {
+  public ApplicationRep access(@javax.annotation.Nullable Access access) {
     this.access = access;
     return this;
   }
 
-   /**
+  /**
    * Get access
    * @return access
-  **/
+   */
   @javax.annotation.Nullable
   public Access getAccess() {
     return access;
   }
 
-  public void setAccess(Access access) {
+  public void setAccess(@javax.annotation.Nullable Access access) {
     this.access = access;
   }
 
 
-  public ApplicationRep links(Map<String, Link> links) {
+  public ApplicationRep links(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -209,168 +221,168 @@ public class ApplicationRep {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public ApplicationRep version(Integer version) {
+  public ApplicationRep version(@javax.annotation.Nullable Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * Version of the application
    * @return version
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nullable Integer version) {
     this.version = version;
   }
 
 
-  public ApplicationRep autoAdded(Boolean autoAdded) {
+  public ApplicationRep autoAdded(@javax.annotation.Nonnull Boolean autoAdded) {
     this.autoAdded = autoAdded;
     return this;
   }
 
-   /**
+  /**
    * Whether the application was automatically created because it was included in a context when a LaunchDarkly SDK evaluated a feature flag, or was created through the LaunchDarkly UI or REST API.
    * @return autoAdded
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getAutoAdded() {
     return autoAdded;
   }
 
-  public void setAutoAdded(Boolean autoAdded) {
+  public void setAutoAdded(@javax.annotation.Nonnull Boolean autoAdded) {
     this.autoAdded = autoAdded;
   }
 
 
-  public ApplicationRep creationDate(Long creationDate) {
+  public ApplicationRep creationDate(@javax.annotation.Nullable Long creationDate) {
     this.creationDate = creationDate;
     return this;
   }
 
-   /**
+  /**
    * Get creationDate
    * @return creationDate
-  **/
+   */
   @javax.annotation.Nullable
   public Long getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate(Long creationDate) {
+  public void setCreationDate(@javax.annotation.Nullable Long creationDate) {
     this.creationDate = creationDate;
   }
 
 
-  public ApplicationRep description(String description) {
+  public ApplicationRep description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * The application description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public ApplicationRep key(String key) {
+  public ApplicationRep key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * The unique identifier of this application
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public ApplicationRep kind(KindEnum kind) {
+  public ApplicationRep kind(@javax.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
 
-   /**
+  /**
    * To distinguish the kind of application
    * @return kind
-  **/
+   */
   @javax.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(KindEnum kind) {
+  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public ApplicationRep maintainer(MaintainerRep maintainer) {
+  public ApplicationRep maintainer(@javax.annotation.Nullable MaintainerRep maintainer) {
     this.maintainer = maintainer;
     return this;
   }
 
-   /**
+  /**
    * Get maintainer
    * @return maintainer
-  **/
+   */
   @javax.annotation.Nullable
   public MaintainerRep getMaintainer() {
     return maintainer;
   }
 
-  public void setMaintainer(MaintainerRep maintainer) {
+  public void setMaintainer(@javax.annotation.Nullable MaintainerRep maintainer) {
     this.maintainer = maintainer;
   }
 
 
-  public ApplicationRep name(String name) {
+  public ApplicationRep name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The name of the application
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
@@ -485,44 +497,29 @@ public class ApplicationRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("flags");
-    openapiFields.add("_access");
-    openapiFields.add("_links");
-    openapiFields.add("_version");
-    openapiFields.add("autoAdded");
-    openapiFields.add("creationDate");
-    openapiFields.add("description");
-    openapiFields.add("key");
-    openapiFields.add("kind");
-    openapiFields.add("_maintainer");
-    openapiFields.add("name");
+    openapiFields = new HashSet<String>(Arrays.asList("flags", "_access", "_links", "_version", "autoAdded", "creationDate", "description", "key", "kind", "_maintainer", "name"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("autoAdded");
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("kind");
-    openapiRequiredFields.add("name");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("autoAdded", "key", "kind", "name"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ApplicationRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApplicationRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApplicationRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ApplicationRep is not found in the empty JSON string", ApplicationRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ApplicationRep is not found in the empty JSON string", ApplicationRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ApplicationRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -535,13 +532,13 @@ public class ApplicationRep {
         Access.validateJsonElement(jsonObj.get("_access"));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if (!jsonObj.get("kind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
       // validate the required field `kind`
       KindEnum.validateJsonElement(jsonObj.get("kind"));
@@ -550,7 +547,7 @@ public class ApplicationRep {
         MaintainerRep.validateJsonElement(jsonObj.get("_maintainer"));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
   }
 
@@ -611,7 +608,7 @@ public class ApplicationRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -626,22 +623,22 @@ public class ApplicationRep {
     }
   }
 
- /**
-  * Create an instance of ApplicationRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApplicationRep
-  * @throws IOException if the JSON string is invalid with respect to ApplicationRep
-  */
+  /**
+   * Create an instance of ApplicationRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApplicationRep
+   * @throws IOException if the JSON string is invalid with respect to ApplicationRep
+   */
   public static ApplicationRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApplicationRep.class);
   }
 
- /**
-  * Convert an instance of ApplicationRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApplicationRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

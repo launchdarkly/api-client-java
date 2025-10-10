@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,30 +44,33 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * DependentMetricOrMetricGroupRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class DependentMetricOrMetricGroupRep {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_VERSION_ID = "_versionId";
   @SerializedName(SERIALIZED_NAME_VERSION_ID)
+  @javax.annotation.Nonnull
   private String versionId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   /**
@@ -131,146 +135,152 @@ public class DependentMetricOrMetricGroupRep {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
+  @javax.annotation.Nonnull
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_IS_NUMERIC = "isNumeric";
   @SerializedName(SERIALIZED_NAME_IS_NUMERIC)
+  @javax.annotation.Nullable
   private Boolean isNumeric;
 
   public static final String SERIALIZED_NAME_EVENT_KEY = "eventKey";
   @SerializedName(SERIALIZED_NAME_EVENT_KEY)
+  @javax.annotation.Nullable
   private String eventKey;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_IS_GROUP = "isGroup";
   @SerializedName(SERIALIZED_NAME_IS_GROUP)
+  @javax.annotation.Nonnull
   private Boolean isGroup;
 
   public static final String SERIALIZED_NAME_METRICS = "metrics";
   @SerializedName(SERIALIZED_NAME_METRICS)
+  @javax.annotation.Nullable
   private List<MetricInGroupRep> metrics = new ArrayList<>();
 
   public DependentMetricOrMetricGroupRep() {
   }
 
-  public DependentMetricOrMetricGroupRep key(String key) {
+  public DependentMetricOrMetricGroupRep key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * A unique key to reference the metric or metric group
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public DependentMetricOrMetricGroupRep versionId(String versionId) {
+  public DependentMetricOrMetricGroupRep versionId(@javax.annotation.Nonnull String versionId) {
     this.versionId = versionId;
     return this;
   }
 
-   /**
+  /**
    * The version ID of the metric or metric group
    * @return versionId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getVersionId() {
     return versionId;
   }
 
-  public void setVersionId(String versionId) {
+  public void setVersionId(@javax.annotation.Nonnull String versionId) {
     this.versionId = versionId;
   }
 
 
-  public DependentMetricOrMetricGroupRep name(String name) {
+  public DependentMetricOrMetricGroupRep name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for the metric or metric group
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public DependentMetricOrMetricGroupRep kind(KindEnum kind) {
+  public DependentMetricOrMetricGroupRep kind(@javax.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
 
-   /**
+  /**
    * If this is a metric, then it represents the kind of event the metric tracks. If this is a metric group, then it represents the group type
    * @return kind
-  **/
+   */
   @javax.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(KindEnum kind) {
+  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public DependentMetricOrMetricGroupRep isNumeric(Boolean isNumeric) {
+  public DependentMetricOrMetricGroupRep isNumeric(@javax.annotation.Nullable Boolean isNumeric) {
     this.isNumeric = isNumeric;
     return this;
   }
 
-   /**
+  /**
    * For custom metrics, whether to track numeric changes in value against a baseline (&lt;code&gt;true&lt;/code&gt;) or to track a conversion when an end user takes an action (&lt;code&gt;false&lt;/code&gt;).
    * @return isNumeric
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsNumeric() {
     return isNumeric;
   }
 
-  public void setIsNumeric(Boolean isNumeric) {
+  public void setIsNumeric(@javax.annotation.Nullable Boolean isNumeric) {
     this.isNumeric = isNumeric;
   }
 
 
-  public DependentMetricOrMetricGroupRep eventKey(String eventKey) {
+  public DependentMetricOrMetricGroupRep eventKey(@javax.annotation.Nullable String eventKey) {
     this.eventKey = eventKey;
     return this;
   }
 
-   /**
+  /**
    * The event key sent with the metric. Only relevant for custom metrics.
    * @return eventKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getEventKey() {
     return eventKey;
   }
 
-  public void setEventKey(String eventKey) {
+  public void setEventKey(@javax.annotation.Nullable String eventKey) {
     this.eventKey = eventKey;
   }
 
 
-  public DependentMetricOrMetricGroupRep links(Map<String, Link> links) {
+  public DependentMetricOrMetricGroupRep links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -283,40 +293,40 @@ public class DependentMetricOrMetricGroupRep {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public DependentMetricOrMetricGroupRep isGroup(Boolean isGroup) {
+  public DependentMetricOrMetricGroupRep isGroup(@javax.annotation.Nonnull Boolean isGroup) {
     this.isGroup = isGroup;
     return this;
   }
 
-   /**
+  /**
    * Whether this is a metric group or a metric
    * @return isGroup
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getIsGroup() {
     return isGroup;
   }
 
-  public void setIsGroup(Boolean isGroup) {
+  public void setIsGroup(@javax.annotation.Nonnull Boolean isGroup) {
     this.isGroup = isGroup;
   }
 
 
-  public DependentMetricOrMetricGroupRep metrics(List<MetricInGroupRep> metrics) {
+  public DependentMetricOrMetricGroupRep metrics(@javax.annotation.Nullable List<MetricInGroupRep> metrics) {
     this.metrics = metrics;
     return this;
   }
@@ -329,16 +339,16 @@ public class DependentMetricOrMetricGroupRep {
     return this;
   }
 
-   /**
+  /**
    * An ordered list of the metrics in this metric group
    * @return metrics
-  **/
+   */
   @javax.annotation.Nullable
   public List<MetricInGroupRep> getMetrics() {
     return metrics;
   }
 
-  public void setMetrics(List<MetricInGroupRep> metrics) {
+  public void setMetrics(@javax.annotation.Nullable List<MetricInGroupRep> metrics) {
     this.metrics = metrics;
   }
 
@@ -449,70 +459,55 @@ public class DependentMetricOrMetricGroupRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("key");
-    openapiFields.add("_versionId");
-    openapiFields.add("name");
-    openapiFields.add("kind");
-    openapiFields.add("isNumeric");
-    openapiFields.add("eventKey");
-    openapiFields.add("_links");
-    openapiFields.add("isGroup");
-    openapiFields.add("metrics");
+    openapiFields = new HashSet<String>(Arrays.asList("key", "_versionId", "name", "kind", "isNumeric", "eventKey", "_links", "isGroup", "metrics"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("_versionId");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("kind");
-    openapiRequiredFields.add("_links");
-    openapiRequiredFields.add("isGroup");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("key", "_versionId", "name", "kind", "_links", "isGroup"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DependentMetricOrMetricGroupRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DependentMetricOrMetricGroupRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DependentMetricOrMetricGroupRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DependentMetricOrMetricGroupRep is not found in the empty JSON string", DependentMetricOrMetricGroupRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DependentMetricOrMetricGroupRep is not found in the empty JSON string", DependentMetricOrMetricGroupRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : DependentMetricOrMetricGroupRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if (!jsonObj.get("_versionId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_versionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_versionId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_versionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_versionId").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("kind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
       // validate the required field `kind`
       KindEnum.validateJsonElement(jsonObj.get("kind"));
       if ((jsonObj.get("eventKey") != null && !jsonObj.get("eventKey").isJsonNull()) && !jsonObj.get("eventKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `eventKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("eventKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `eventKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("eventKey").toString()));
       }
       if (jsonObj.get("metrics") != null && !jsonObj.get("metrics").isJsonNull()) {
         JsonArray jsonArraymetrics = jsonObj.getAsJsonArray("metrics");
         if (jsonArraymetrics != null) {
           // ensure the json data is an array
           if (!jsonObj.get("metrics").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `metrics` to be an array in the JSON string but got `%s`", jsonObj.get("metrics").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `metrics` to be an array in the JSON string but got `%s`", jsonObj.get("metrics").toString()));
           }
 
           // validate the optional field `metrics` (array)
@@ -580,7 +575,7 @@ public class DependentMetricOrMetricGroupRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -595,22 +590,22 @@ public class DependentMetricOrMetricGroupRep {
     }
   }
 
- /**
-  * Create an instance of DependentMetricOrMetricGroupRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DependentMetricOrMetricGroupRep
-  * @throws IOException if the JSON string is invalid with respect to DependentMetricOrMetricGroupRep
-  */
+  /**
+   * Create an instance of DependentMetricOrMetricGroupRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DependentMetricOrMetricGroupRep
+   * @throws IOException if the JSON string is invalid with respect to DependentMetricOrMetricGroupRep
+   */
   public static DependentMetricOrMetricGroupRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DependentMetricOrMetricGroupRep.class);
   }
 
- /**
-  * Convert an instance of DependentMetricOrMetricGroupRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DependentMetricOrMetricGroupRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

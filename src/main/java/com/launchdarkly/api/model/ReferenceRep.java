@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,74 +41,77 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ReferenceRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ReferenceRep {
   public static final String SERIALIZED_NAME_PATH = "path";
   @SerializedName(SERIALIZED_NAME_PATH)
+  @javax.annotation.Nonnull
   private String path;
 
   public static final String SERIALIZED_NAME_HINT = "hint";
   @SerializedName(SERIALIZED_NAME_HINT)
+  @javax.annotation.Nullable
   private String hint;
 
   public static final String SERIALIZED_NAME_HUNKS = "hunks";
   @SerializedName(SERIALIZED_NAME_HUNKS)
+  @javax.annotation.Nonnull
   private List<HunkRep> hunks = new ArrayList<>();
 
   public ReferenceRep() {
   }
 
-  public ReferenceRep path(String path) {
+  public ReferenceRep path(@javax.annotation.Nonnull String path) {
     this.path = path;
     return this;
   }
 
-   /**
+  /**
    * File path of the reference
    * @return path
-  **/
+   */
   @javax.annotation.Nonnull
   public String getPath() {
     return path;
   }
 
-  public void setPath(String path) {
+  public void setPath(@javax.annotation.Nonnull String path) {
     this.path = path;
   }
 
 
-  public ReferenceRep hint(String hint) {
+  public ReferenceRep hint(@javax.annotation.Nullable String hint) {
     this.hint = hint;
     return this;
   }
 
-   /**
+  /**
    * Programming language used in the file
    * @return hint
-  **/
+   */
   @javax.annotation.Nullable
   public String getHint() {
     return hint;
   }
 
-  public void setHint(String hint) {
+  public void setHint(@javax.annotation.Nullable String hint) {
     this.hint = hint;
   }
 
 
-  public ReferenceRep hunks(List<HunkRep> hunks) {
+  public ReferenceRep hunks(@javax.annotation.Nonnull List<HunkRep> hunks) {
     this.hunks = hunks;
     return this;
   }
@@ -120,16 +124,16 @@ public class ReferenceRep {
     return this;
   }
 
-   /**
+  /**
    * Get hunks
    * @return hunks
-  **/
+   */
   @javax.annotation.Nonnull
   public List<HunkRep> getHunks() {
     return hunks;
   }
 
-  public void setHunks(List<HunkRep> hunks) {
+  public void setHunks(@javax.annotation.Nonnull List<HunkRep> hunks) {
     this.hunks = hunks;
   }
 
@@ -228,46 +232,41 @@ public class ReferenceRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("path");
-    openapiFields.add("hint");
-    openapiFields.add("hunks");
+    openapiFields = new HashSet<String>(Arrays.asList("path", "hint", "hunks"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("path");
-    openapiRequiredFields.add("hunks");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("path", "hunks"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ReferenceRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ReferenceRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ReferenceRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ReferenceRep is not found in the empty JSON string", ReferenceRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ReferenceRep is not found in the empty JSON string", ReferenceRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ReferenceRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("path").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("path").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("path").toString()));
       }
       if ((jsonObj.get("hint") != null && !jsonObj.get("hint").isJsonNull()) && !jsonObj.get("hint").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `hint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hint").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `hint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hint").toString()));
       }
       // ensure the json data is an array
       if (!jsonObj.get("hunks").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `hunks` to be an array in the JSON string but got `%s`", jsonObj.get("hunks").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `hunks` to be an array in the JSON string but got `%s`", jsonObj.get("hunks").toString()));
       }
 
       JsonArray jsonArrayhunks = jsonObj.getAsJsonArray("hunks");
@@ -334,7 +333,7 @@ public class ReferenceRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -349,22 +348,22 @@ public class ReferenceRep {
     }
   }
 
- /**
-  * Create an instance of ReferenceRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ReferenceRep
-  * @throws IOException if the JSON string is invalid with respect to ReferenceRep
-  */
+  /**
+   * Create an instance of ReferenceRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ReferenceRep
+   * @throws IOException if the JSON string is invalid with respect to ReferenceRep
+   */
   public static ReferenceRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ReferenceRep.class);
   }
 
- /**
-  * Convert an instance of ReferenceRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ReferenceRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

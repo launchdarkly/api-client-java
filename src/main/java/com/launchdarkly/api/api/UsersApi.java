@@ -89,7 +89,8 @@ public class UsersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -101,7 +102,7 @@ public class UsersApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call deleteUserCall(String projectKey, String environmentKey, String userKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteUserCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -150,7 +151,7 @@ public class UsersApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteUserValidateBeforeCall(String projectKey, String environmentKey, String userKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteUserValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling deleteUser(Async)");
@@ -178,7 +179,8 @@ public class UsersApi {
      * @param userKey The user key (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -190,7 +192,7 @@ public class UsersApi {
      * @deprecated
      */
     @Deprecated
-    public void deleteUser(String projectKey, String environmentKey, String userKey) throws ApiException {
+    public void deleteUser(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey) throws ApiException {
         deleteUserWithHttpInfo(projectKey, environmentKey, userKey);
     }
 
@@ -203,7 +205,8 @@ public class UsersApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -215,7 +218,7 @@ public class UsersApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<Void> deleteUserWithHttpInfo(String projectKey, String environmentKey, String userKey) throws ApiException {
+    public ApiResponse<Void> deleteUserWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey) throws ApiException {
         okhttp3.Call localVarCall = deleteUserValidateBeforeCall(projectKey, environmentKey, userKey, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -230,7 +233,8 @@ public class UsersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -242,7 +246,7 @@ public class UsersApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call deleteUserAsync(String projectKey, String environmentKey, String userKey, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteUserAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteUserValidateBeforeCall(projectKey, environmentKey, userKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -263,7 +267,8 @@ public class UsersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Users collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -275,7 +280,7 @@ public class UsersApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getSearchUsersCall(String projectKey, String environmentKey, String q, Long limit, Long offset, Long after, String sort, String searchAfter, String filter, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSearchUsersCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String q, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable Long after, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String searchAfter, @javax.annotation.Nullable String filter, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -351,7 +356,7 @@ public class UsersApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSearchUsersValidateBeforeCall(String projectKey, String environmentKey, String q, Long limit, Long offset, Long after, String sort, String searchAfter, String filter, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSearchUsersValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String q, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable Long after, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String searchAfter, @javax.annotation.Nullable String filter, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getSearchUsers(Async)");
@@ -381,7 +386,8 @@ public class UsersApi {
      * @return Users
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Users collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -393,7 +399,7 @@ public class UsersApi {
      * @deprecated
      */
     @Deprecated
-    public Users getSearchUsers(String projectKey, String environmentKey, String q, Long limit, Long offset, Long after, String sort, String searchAfter, String filter) throws ApiException {
+    public Users getSearchUsers(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String q, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable Long after, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String searchAfter, @javax.annotation.Nullable String filter) throws ApiException {
         ApiResponse<Users> localVarResp = getSearchUsersWithHttpInfo(projectKey, environmentKey, q, limit, offset, after, sort, searchAfter, filter);
         return localVarResp.getData();
     }
@@ -413,7 +419,8 @@ public class UsersApi {
      * @return ApiResponse&lt;Users&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Users collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -425,7 +432,7 @@ public class UsersApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<Users> getSearchUsersWithHttpInfo(String projectKey, String environmentKey, String q, Long limit, Long offset, Long after, String sort, String searchAfter, String filter) throws ApiException {
+    public ApiResponse<Users> getSearchUsersWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String q, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable Long after, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String searchAfter, @javax.annotation.Nullable String filter) throws ApiException {
         okhttp3.Call localVarCall = getSearchUsersValidateBeforeCall(projectKey, environmentKey, q, limit, offset, after, sort, searchAfter, filter, null);
         Type localVarReturnType = new TypeToken<Users>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -447,7 +454,8 @@ public class UsersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Users collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -459,7 +467,7 @@ public class UsersApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getSearchUsersAsync(String projectKey, String environmentKey, String q, Long limit, Long offset, Long after, String sort, String searchAfter, String filter, final ApiCallback<Users> _callback) throws ApiException {
+    public okhttp3.Call getSearchUsersAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String q, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable Long after, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String searchAfter, @javax.annotation.Nullable String filter, final ApiCallback<Users> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSearchUsersValidateBeforeCall(projectKey, environmentKey, q, limit, offset, after, sort, searchAfter, filter, _callback);
         Type localVarReturnType = new TypeToken<Users>(){}.getType();
@@ -475,7 +483,8 @@ public class UsersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> User response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -487,7 +496,7 @@ public class UsersApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getUserCall(String projectKey, String environmentKey, String userKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getUserCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -536,7 +545,7 @@ public class UsersApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getUserValidateBeforeCall(String projectKey, String environmentKey, String userKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getUserValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getUser(Async)");
@@ -565,7 +574,8 @@ public class UsersApi {
      * @return UserRecord
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> User response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -577,7 +587,7 @@ public class UsersApi {
      * @deprecated
      */
     @Deprecated
-    public UserRecord getUser(String projectKey, String environmentKey, String userKey) throws ApiException {
+    public UserRecord getUser(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey) throws ApiException {
         ApiResponse<UserRecord> localVarResp = getUserWithHttpInfo(projectKey, environmentKey, userKey);
         return localVarResp.getData();
     }
@@ -591,7 +601,8 @@ public class UsersApi {
      * @return ApiResponse&lt;UserRecord&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> User response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -603,7 +614,7 @@ public class UsersApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<UserRecord> getUserWithHttpInfo(String projectKey, String environmentKey, String userKey) throws ApiException {
+    public ApiResponse<UserRecord> getUserWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey) throws ApiException {
         okhttp3.Call localVarCall = getUserValidateBeforeCall(projectKey, environmentKey, userKey, null);
         Type localVarReturnType = new TypeToken<UserRecord>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -619,7 +630,8 @@ public class UsersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> User response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -631,7 +643,7 @@ public class UsersApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getUserAsync(String projectKey, String environmentKey, String userKey, final ApiCallback<UserRecord> _callback) throws ApiException {
+    public okhttp3.Call getUserAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String userKey, final ApiCallback<UserRecord> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getUserValidateBeforeCall(projectKey, environmentKey, userKey, _callback);
         Type localVarReturnType = new TypeToken<UserRecord>(){}.getType();
@@ -648,7 +660,8 @@ public class UsersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Users collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -660,7 +673,7 @@ public class UsersApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getUsersCall(String projectKey, String environmentKey, Long limit, String searchAfter, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getUsersCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String searchAfter, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -716,7 +729,7 @@ public class UsersApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getUsersValidateBeforeCall(String projectKey, String environmentKey, Long limit, String searchAfter, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getUsersValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String searchAfter, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getUsers(Async)");
@@ -741,7 +754,8 @@ public class UsersApi {
      * @return UsersRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Users collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -753,7 +767,7 @@ public class UsersApi {
      * @deprecated
      */
     @Deprecated
-    public UsersRep getUsers(String projectKey, String environmentKey, Long limit, String searchAfter) throws ApiException {
+    public UsersRep getUsers(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String searchAfter) throws ApiException {
         ApiResponse<UsersRep> localVarResp = getUsersWithHttpInfo(projectKey, environmentKey, limit, searchAfter);
         return localVarResp.getData();
     }
@@ -768,7 +782,8 @@ public class UsersApi {
      * @return ApiResponse&lt;UsersRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Users collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -780,7 +795,7 @@ public class UsersApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<UsersRep> getUsersWithHttpInfo(String projectKey, String environmentKey, Long limit, String searchAfter) throws ApiException {
+    public ApiResponse<UsersRep> getUsersWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String searchAfter) throws ApiException {
         okhttp3.Call localVarCall = getUsersValidateBeforeCall(projectKey, environmentKey, limit, searchAfter, null);
         Type localVarReturnType = new TypeToken<UsersRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -797,7 +812,8 @@ public class UsersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Users collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -809,7 +825,7 @@ public class UsersApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getUsersAsync(String projectKey, String environmentKey, Long limit, String searchAfter, final ApiCallback<UsersRep> _callback) throws ApiException {
+    public okhttp3.Call getUsersAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String searchAfter, final ApiCallback<UsersRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getUsersValidateBeforeCall(projectKey, environmentKey, limit, searchAfter, _callback);
         Type localVarReturnType = new TypeToken<UsersRep>(){}.getType();

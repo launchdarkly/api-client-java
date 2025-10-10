@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,34 +40,38 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * Statement
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class Statement {
   public static final String SERIALIZED_NAME_RESOURCES = "resources";
   @SerializedName(SERIALIZED_NAME_RESOURCES)
+  @javax.annotation.Nullable
   private List<String> resources = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NOT_RESOURCES = "notResources";
   @SerializedName(SERIALIZED_NAME_NOT_RESOURCES)
+  @javax.annotation.Nullable
   private List<String> notResources = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ACTIONS = "actions";
   @SerializedName(SERIALIZED_NAME_ACTIONS)
+  @javax.annotation.Nullable
   private List<String> actions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NOT_ACTIONS = "notActions";
   @SerializedName(SERIALIZED_NAME_NOT_ACTIONS)
+  @javax.annotation.Nullable
   private List<String> notActions = new ArrayList<>();
 
   /**
@@ -123,12 +128,13 @@ public class Statement {
 
   public static final String SERIALIZED_NAME_EFFECT = "effect";
   @SerializedName(SERIALIZED_NAME_EFFECT)
+  @javax.annotation.Nonnull
   private EffectEnum effect;
 
   public Statement() {
   }
 
-  public Statement resources(List<String> resources) {
+  public Statement resources(@javax.annotation.Nullable List<String> resources) {
     this.resources = resources;
     return this;
   }
@@ -141,21 +147,21 @@ public class Statement {
     return this;
   }
 
-   /**
+  /**
    * Resource specifier strings
    * @return resources
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getResources() {
     return resources;
   }
 
-  public void setResources(List<String> resources) {
+  public void setResources(@javax.annotation.Nullable List<String> resources) {
     this.resources = resources;
   }
 
 
-  public Statement notResources(List<String> notResources) {
+  public Statement notResources(@javax.annotation.Nullable List<String> notResources) {
     this.notResources = notResources;
     return this;
   }
@@ -168,21 +174,21 @@ public class Statement {
     return this;
   }
 
-   /**
+  /**
    * Targeted resources are the resources NOT in this list. The &lt;code&gt;resources&lt;/code&gt; and &lt;code&gt;notActions&lt;/code&gt; fields must be empty to use this field.
    * @return notResources
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getNotResources() {
     return notResources;
   }
 
-  public void setNotResources(List<String> notResources) {
+  public void setNotResources(@javax.annotation.Nullable List<String> notResources) {
     this.notResources = notResources;
   }
 
 
-  public Statement actions(List<String> actions) {
+  public Statement actions(@javax.annotation.Nullable List<String> actions) {
     this.actions = actions;
     return this;
   }
@@ -195,21 +201,21 @@ public class Statement {
     return this;
   }
 
-   /**
+  /**
    * Actions to perform on a resource
    * @return actions
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getActions() {
     return actions;
   }
 
-  public void setActions(List<String> actions) {
+  public void setActions(@javax.annotation.Nullable List<String> actions) {
     this.actions = actions;
   }
 
 
-  public Statement notActions(List<String> notActions) {
+  public Statement notActions(@javax.annotation.Nullable List<String> notActions) {
     this.notActions = notActions;
     return this;
   }
@@ -222,35 +228,35 @@ public class Statement {
     return this;
   }
 
-   /**
+  /**
    * Targeted actions are the actions NOT in this list. The &lt;code&gt;actions&lt;/code&gt; and &lt;code&gt;notResources&lt;/code&gt; fields must be empty to use this field.
    * @return notActions
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getNotActions() {
     return notActions;
   }
 
-  public void setNotActions(List<String> notActions) {
+  public void setNotActions(@javax.annotation.Nullable List<String> notActions) {
     this.notActions = notActions;
   }
 
 
-  public Statement effect(EffectEnum effect) {
+  public Statement effect(@javax.annotation.Nonnull EffectEnum effect) {
     this.effect = effect;
     return this;
   }
 
-   /**
+  /**
    * Whether this statement should allow or deny actions on the resources.
    * @return effect
-  **/
+   */
   @javax.annotation.Nonnull
   public EffectEnum getEffect() {
     return effect;
   }
 
-  public void setEffect(EffectEnum effect) {
+  public void setEffect(@javax.annotation.Nonnull EffectEnum effect) {
     this.effect = effect;
   }
 
@@ -353,56 +359,50 @@ public class Statement {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("resources");
-    openapiFields.add("notResources");
-    openapiFields.add("actions");
-    openapiFields.add("notActions");
-    openapiFields.add("effect");
+    openapiFields = new HashSet<String>(Arrays.asList("resources", "notResources", "actions", "notActions", "effect"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("effect");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("effect"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Statement
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Statement
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Statement.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Statement is not found in the empty JSON string", Statement.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Statement is not found in the empty JSON string", Statement.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : Statement.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the optional json data is an array if present
       if (jsonObj.get("resources") != null && !jsonObj.get("resources").isJsonNull() && !jsonObj.get("resources").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `resources` to be an array in the JSON string but got `%s`", jsonObj.get("resources").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `resources` to be an array in the JSON string but got `%s`", jsonObj.get("resources").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("notResources") != null && !jsonObj.get("notResources").isJsonNull() && !jsonObj.get("notResources").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `notResources` to be an array in the JSON string but got `%s`", jsonObj.get("notResources").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notResources` to be an array in the JSON string but got `%s`", jsonObj.get("notResources").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("actions") != null && !jsonObj.get("actions").isJsonNull() && !jsonObj.get("actions").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `actions` to be an array in the JSON string but got `%s`", jsonObj.get("actions").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `actions` to be an array in the JSON string but got `%s`", jsonObj.get("actions").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("notActions") != null && !jsonObj.get("notActions").isJsonNull() && !jsonObj.get("notActions").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `notActions` to be an array in the JSON string but got `%s`", jsonObj.get("notActions").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notActions` to be an array in the JSON string but got `%s`", jsonObj.get("notActions").toString()));
       }
       if (!jsonObj.get("effect").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `effect` to be a primitive type in the JSON string but got `%s`", jsonObj.get("effect").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `effect` to be a primitive type in the JSON string but got `%s`", jsonObj.get("effect").toString()));
       }
       // validate the required field `effect`
       EffectEnum.validateJsonElement(jsonObj.get("effect"));
@@ -465,7 +465,7 @@ public class Statement {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -480,22 +480,22 @@ public class Statement {
     }
   }
 
- /**
-  * Create an instance of Statement given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Statement
-  * @throws IOException if the JSON string is invalid with respect to Statement
-  */
+  /**
+   * Create an instance of Statement given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Statement
+   * @throws IOException if the JSON string is invalid with respect to Statement
+   */
   public static Statement fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Statement.class);
   }
 
- /**
-  * Convert an instance of Statement to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Statement to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

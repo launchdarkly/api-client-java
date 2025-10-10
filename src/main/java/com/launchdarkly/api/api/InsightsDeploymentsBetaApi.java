@@ -87,7 +87,8 @@ public class InsightsDeploymentsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -97,7 +98,7 @@ public class InsightsDeploymentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createDeploymentEventCall(PostDeploymentEventInput postDeploymentEventInput, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createDeploymentEventCall(@javax.annotation.Nonnull PostDeploymentEventInput postDeploymentEventInput, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -143,7 +144,7 @@ public class InsightsDeploymentsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createDeploymentEventValidateBeforeCall(PostDeploymentEventInput postDeploymentEventInput, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createDeploymentEventValidateBeforeCall(@javax.annotation.Nonnull PostDeploymentEventInput postDeploymentEventInput, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'postDeploymentEventInput' is set
         if (postDeploymentEventInput == null) {
             throw new ApiException("Missing the required parameter 'postDeploymentEventInput' when calling createDeploymentEvent(Async)");
@@ -159,7 +160,8 @@ public class InsightsDeploymentsBetaApi {
      * @param postDeploymentEventInput  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -169,7 +171,7 @@ public class InsightsDeploymentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void createDeploymentEvent(PostDeploymentEventInput postDeploymentEventInput) throws ApiException {
+    public void createDeploymentEvent(@javax.annotation.Nonnull PostDeploymentEventInput postDeploymentEventInput) throws ApiException {
         createDeploymentEventWithHttpInfo(postDeploymentEventInput);
     }
 
@@ -180,7 +182,8 @@ public class InsightsDeploymentsBetaApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -190,7 +193,7 @@ public class InsightsDeploymentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> createDeploymentEventWithHttpInfo(PostDeploymentEventInput postDeploymentEventInput) throws ApiException {
+    public ApiResponse<Void> createDeploymentEventWithHttpInfo(@javax.annotation.Nonnull PostDeploymentEventInput postDeploymentEventInput) throws ApiException {
         okhttp3.Call localVarCall = createDeploymentEventValidateBeforeCall(postDeploymentEventInput, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -203,7 +206,8 @@ public class InsightsDeploymentsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -213,7 +217,7 @@ public class InsightsDeploymentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createDeploymentEventAsync(PostDeploymentEventInput postDeploymentEventInput, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call createDeploymentEventAsync(@javax.annotation.Nonnull PostDeploymentEventInput postDeploymentEventInput, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createDeploymentEventValidateBeforeCall(postDeploymentEventInput, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -227,7 +231,8 @@ public class InsightsDeploymentsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Deployment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -237,7 +242,7 @@ public class InsightsDeploymentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDeploymentCall(String deploymentID, String expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getDeploymentCall(@javax.annotation.Nonnull String deploymentID, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -287,7 +292,7 @@ public class InsightsDeploymentsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getDeploymentValidateBeforeCall(String deploymentID, String expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getDeploymentValidateBeforeCall(@javax.annotation.Nonnull String deploymentID, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'deploymentID' is set
         if (deploymentID == null) {
             throw new ApiException("Missing the required parameter 'deploymentID' when calling getDeployment(Async)");
@@ -305,7 +310,8 @@ public class InsightsDeploymentsBetaApi {
      * @return DeploymentRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Deployment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -315,7 +321,7 @@ public class InsightsDeploymentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public DeploymentRep getDeployment(String deploymentID, String expand) throws ApiException {
+    public DeploymentRep getDeployment(@javax.annotation.Nonnull String deploymentID, @javax.annotation.Nullable String expand) throws ApiException {
         ApiResponse<DeploymentRep> localVarResp = getDeploymentWithHttpInfo(deploymentID, expand);
         return localVarResp.getData();
     }
@@ -328,7 +334,8 @@ public class InsightsDeploymentsBetaApi {
      * @return ApiResponse&lt;DeploymentRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Deployment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -338,7 +345,7 @@ public class InsightsDeploymentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DeploymentRep> getDeploymentWithHttpInfo(String deploymentID, String expand) throws ApiException {
+    public ApiResponse<DeploymentRep> getDeploymentWithHttpInfo(@javax.annotation.Nonnull String deploymentID, @javax.annotation.Nullable String expand) throws ApiException {
         okhttp3.Call localVarCall = getDeploymentValidateBeforeCall(deploymentID, expand, null);
         Type localVarReturnType = new TypeToken<DeploymentRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -353,7 +360,8 @@ public class InsightsDeploymentsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Deployment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -363,7 +371,7 @@ public class InsightsDeploymentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDeploymentAsync(String deploymentID, String expand, final ApiCallback<DeploymentRep> _callback) throws ApiException {
+    public okhttp3.Call getDeploymentAsync(@javax.annotation.Nonnull String deploymentID, @javax.annotation.Nullable String expand, final ApiCallback<DeploymentRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getDeploymentValidateBeforeCall(deploymentID, expand, _callback);
         Type localVarReturnType = new TypeToken<DeploymentRep>(){}.getType();
@@ -387,7 +395,8 @@ public class InsightsDeploymentsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Deployment collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -397,7 +406,7 @@ public class InsightsDeploymentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDeploymentsCall(String projectKey, String environmentKey, String applicationKey, Long limit, String expand, Long from, Long to, String after, String before, String kind, String status, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getDeploymentsCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String expand, @javax.annotation.Nullable Long from, @javax.annotation.Nullable Long to, @javax.annotation.Nullable String after, @javax.annotation.Nullable String before, @javax.annotation.Nullable String kind, @javax.annotation.Nullable String status, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -486,7 +495,7 @@ public class InsightsDeploymentsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getDeploymentsValidateBeforeCall(String projectKey, String environmentKey, String applicationKey, Long limit, String expand, Long from, Long to, String after, String before, String kind, String status, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getDeploymentsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String expand, @javax.annotation.Nullable Long from, @javax.annotation.Nullable Long to, @javax.annotation.Nullable String after, @javax.annotation.Nullable String before, @javax.annotation.Nullable String kind, @javax.annotation.Nullable String status, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getDeployments(Async)");
@@ -518,7 +527,8 @@ public class InsightsDeploymentsBetaApi {
      * @return DeploymentCollectionRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Deployment collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -528,7 +538,7 @@ public class InsightsDeploymentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public DeploymentCollectionRep getDeployments(String projectKey, String environmentKey, String applicationKey, Long limit, String expand, Long from, Long to, String after, String before, String kind, String status) throws ApiException {
+    public DeploymentCollectionRep getDeployments(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String expand, @javax.annotation.Nullable Long from, @javax.annotation.Nullable Long to, @javax.annotation.Nullable String after, @javax.annotation.Nullable String before, @javax.annotation.Nullable String kind, @javax.annotation.Nullable String status) throws ApiException {
         ApiResponse<DeploymentCollectionRep> localVarResp = getDeploymentsWithHttpInfo(projectKey, environmentKey, applicationKey, limit, expand, from, to, after, before, kind, status);
         return localVarResp.getData();
     }
@@ -550,7 +560,8 @@ public class InsightsDeploymentsBetaApi {
      * @return ApiResponse&lt;DeploymentCollectionRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Deployment collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -560,7 +571,7 @@ public class InsightsDeploymentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DeploymentCollectionRep> getDeploymentsWithHttpInfo(String projectKey, String environmentKey, String applicationKey, Long limit, String expand, Long from, Long to, String after, String before, String kind, String status) throws ApiException {
+    public ApiResponse<DeploymentCollectionRep> getDeploymentsWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String expand, @javax.annotation.Nullable Long from, @javax.annotation.Nullable Long to, @javax.annotation.Nullable String after, @javax.annotation.Nullable String before, @javax.annotation.Nullable String kind, @javax.annotation.Nullable String status) throws ApiException {
         okhttp3.Call localVarCall = getDeploymentsValidateBeforeCall(projectKey, environmentKey, applicationKey, limit, expand, from, to, after, before, kind, status, null);
         Type localVarReturnType = new TypeToken<DeploymentCollectionRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -584,7 +595,8 @@ public class InsightsDeploymentsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Deployment collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -594,7 +606,7 @@ public class InsightsDeploymentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDeploymentsAsync(String projectKey, String environmentKey, String applicationKey, Long limit, String expand, Long from, Long to, String after, String before, String kind, String status, final ApiCallback<DeploymentCollectionRep> _callback) throws ApiException {
+    public okhttp3.Call getDeploymentsAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String expand, @javax.annotation.Nullable Long from, @javax.annotation.Nullable Long to, @javax.annotation.Nullable String after, @javax.annotation.Nullable String before, @javax.annotation.Nullable String kind, @javax.annotation.Nullable String status, final ApiCallback<DeploymentCollectionRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getDeploymentsValidateBeforeCall(projectKey, environmentKey, applicationKey, limit, expand, from, to, after, before, kind, status, _callback);
         Type localVarReturnType = new TypeToken<DeploymentCollectionRep>(){}.getType();
@@ -609,7 +621,8 @@ public class InsightsDeploymentsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Deployment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -619,7 +632,7 @@ public class InsightsDeploymentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateDeploymentCall(String deploymentID, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateDeploymentCall(@javax.annotation.Nonnull String deploymentID, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -666,7 +679,7 @@ public class InsightsDeploymentsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateDeploymentValidateBeforeCall(String deploymentID, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateDeploymentValidateBeforeCall(@javax.annotation.Nonnull String deploymentID, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'deploymentID' is set
         if (deploymentID == null) {
             throw new ApiException("Missing the required parameter 'deploymentID' when calling updateDeployment(Async)");
@@ -689,7 +702,8 @@ public class InsightsDeploymentsBetaApi {
      * @return DeploymentRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Deployment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -699,7 +713,7 @@ public class InsightsDeploymentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public DeploymentRep updateDeployment(String deploymentID, List<PatchOperation> patchOperation) throws ApiException {
+    public DeploymentRep updateDeployment(@javax.annotation.Nonnull String deploymentID, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         ApiResponse<DeploymentRep> localVarResp = updateDeploymentWithHttpInfo(deploymentID, patchOperation);
         return localVarResp.getData();
     }
@@ -712,7 +726,8 @@ public class InsightsDeploymentsBetaApi {
      * @return ApiResponse&lt;DeploymentRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Deployment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -722,7 +737,7 @@ public class InsightsDeploymentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DeploymentRep> updateDeploymentWithHttpInfo(String deploymentID, List<PatchOperation> patchOperation) throws ApiException {
+    public ApiResponse<DeploymentRep> updateDeploymentWithHttpInfo(@javax.annotation.Nonnull String deploymentID, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         okhttp3.Call localVarCall = updateDeploymentValidateBeforeCall(deploymentID, patchOperation, null);
         Type localVarReturnType = new TypeToken<DeploymentRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -737,7 +752,8 @@ public class InsightsDeploymentsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Deployment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -747,7 +763,7 @@ public class InsightsDeploymentsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateDeploymentAsync(String deploymentID, List<PatchOperation> patchOperation, final ApiCallback<DeploymentRep> _callback) throws ApiException {
+    public okhttp3.Call updateDeploymentAsync(@javax.annotation.Nonnull String deploymentID, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback<DeploymentRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateDeploymentValidateBeforeCall(deploymentID, patchOperation, _callback);
         Type localVarReturnType = new TypeToken<DeploymentRep>(){}.getType();

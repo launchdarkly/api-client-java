@@ -97,7 +97,8 @@ public class AccountUsageBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -107,7 +108,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getContextsClientsideUsageCall(String from, String to, String projectKey, String environmentKey, String contextKind, String sdkName, String anonymous, String groupBy, String aggregationType, String granularity, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getContextsClientsideUsageCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String contextKind, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -192,7 +193,7 @@ public class AccountUsageBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getContextsClientsideUsageValidateBeforeCall(String from, String to, String projectKey, String environmentKey, String contextKind, String sdkName, String anonymous, String groupBy, String aggregationType, String granularity, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getContextsClientsideUsageValidateBeforeCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String contextKind, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback _callback) throws ApiException {
         return getContextsClientsideUsageCall(from, to, projectKey, environmentKey, contextKind, sdkName, anonymous, groupBy, aggregationType, granularity, _callback);
 
     }
@@ -213,7 +214,8 @@ public class AccountUsageBetaApi {
      * @return SeriesListRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -223,7 +225,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public SeriesListRep getContextsClientsideUsage(String from, String to, String projectKey, String environmentKey, String contextKind, String sdkName, String anonymous, String groupBy, String aggregationType, String granularity) throws ApiException {
+    public SeriesListRep getContextsClientsideUsage(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String contextKind, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity) throws ApiException {
         ApiResponse<SeriesListRep> localVarResp = getContextsClientsideUsageWithHttpInfo(from, to, projectKey, environmentKey, contextKind, sdkName, anonymous, groupBy, aggregationType, granularity);
         return localVarResp.getData();
     }
@@ -244,7 +246,8 @@ public class AccountUsageBetaApi {
      * @return ApiResponse&lt;SeriesListRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -254,7 +257,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SeriesListRep> getContextsClientsideUsageWithHttpInfo(String from, String to, String projectKey, String environmentKey, String contextKind, String sdkName, String anonymous, String groupBy, String aggregationType, String granularity) throws ApiException {
+    public ApiResponse<SeriesListRep> getContextsClientsideUsageWithHttpInfo(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String contextKind, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity) throws ApiException {
         okhttp3.Call localVarCall = getContextsClientsideUsageValidateBeforeCall(from, to, projectKey, environmentKey, contextKind, sdkName, anonymous, groupBy, aggregationType, granularity, null);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -277,7 +280,8 @@ public class AccountUsageBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -287,7 +291,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getContextsClientsideUsageAsync(String from, String to, String projectKey, String environmentKey, String contextKind, String sdkName, String anonymous, String groupBy, String aggregationType, String granularity, final ApiCallback<SeriesListRep> _callback) throws ApiException {
+    public okhttp3.Call getContextsClientsideUsageAsync(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String contextKind, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback<SeriesListRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getContextsClientsideUsageValidateBeforeCall(from, to, projectKey, environmentKey, contextKind, sdkName, anonymous, groupBy, aggregationType, granularity, _callback);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
@@ -310,7 +314,8 @@ public class AccountUsageBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -320,7 +325,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getContextsServersideUsageCall(String from, String to, String projectKey, String environmentKey, String contextKind, String sdkName, String anonymous, String groupBy, String aggregationType, String granularity, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getContextsServersideUsageCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String contextKind, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -405,7 +410,7 @@ public class AccountUsageBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getContextsServersideUsageValidateBeforeCall(String from, String to, String projectKey, String environmentKey, String contextKind, String sdkName, String anonymous, String groupBy, String aggregationType, String granularity, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getContextsServersideUsageValidateBeforeCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String contextKind, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback _callback) throws ApiException {
         return getContextsServersideUsageCall(from, to, projectKey, environmentKey, contextKind, sdkName, anonymous, groupBy, aggregationType, granularity, _callback);
 
     }
@@ -426,7 +431,8 @@ public class AccountUsageBetaApi {
      * @return SeriesListRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -436,7 +442,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public SeriesListRep getContextsServersideUsage(String from, String to, String projectKey, String environmentKey, String contextKind, String sdkName, String anonymous, String groupBy, String aggregationType, String granularity) throws ApiException {
+    public SeriesListRep getContextsServersideUsage(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String contextKind, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity) throws ApiException {
         ApiResponse<SeriesListRep> localVarResp = getContextsServersideUsageWithHttpInfo(from, to, projectKey, environmentKey, contextKind, sdkName, anonymous, groupBy, aggregationType, granularity);
         return localVarResp.getData();
     }
@@ -457,7 +463,8 @@ public class AccountUsageBetaApi {
      * @return ApiResponse&lt;SeriesListRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -467,7 +474,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SeriesListRep> getContextsServersideUsageWithHttpInfo(String from, String to, String projectKey, String environmentKey, String contextKind, String sdkName, String anonymous, String groupBy, String aggregationType, String granularity) throws ApiException {
+    public ApiResponse<SeriesListRep> getContextsServersideUsageWithHttpInfo(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String contextKind, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity) throws ApiException {
         okhttp3.Call localVarCall = getContextsServersideUsageValidateBeforeCall(from, to, projectKey, environmentKey, contextKind, sdkName, anonymous, groupBy, aggregationType, granularity, null);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -490,7 +497,8 @@ public class AccountUsageBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -500,7 +508,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getContextsServersideUsageAsync(String from, String to, String projectKey, String environmentKey, String contextKind, String sdkName, String anonymous, String groupBy, String aggregationType, String granularity, final ApiCallback<SeriesListRep> _callback) throws ApiException {
+    public okhttp3.Call getContextsServersideUsageAsync(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String contextKind, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback<SeriesListRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getContextsServersideUsageValidateBeforeCall(from, to, projectKey, environmentKey, contextKind, sdkName, anonymous, groupBy, aggregationType, granularity, _callback);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
@@ -524,7 +532,8 @@ public class AccountUsageBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -534,7 +543,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getContextsTotalUsageCall(String from, String to, String projectKey, String environmentKey, String contextKind, String sdkName, String sdkType, String anonymous, String groupBy, String aggregationType, String granularity, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getContextsTotalUsageCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String contextKind, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String sdkType, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -623,7 +632,7 @@ public class AccountUsageBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getContextsTotalUsageValidateBeforeCall(String from, String to, String projectKey, String environmentKey, String contextKind, String sdkName, String sdkType, String anonymous, String groupBy, String aggregationType, String granularity, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getContextsTotalUsageValidateBeforeCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String contextKind, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String sdkType, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback _callback) throws ApiException {
         return getContextsTotalUsageCall(from, to, projectKey, environmentKey, contextKind, sdkName, sdkType, anonymous, groupBy, aggregationType, granularity, _callback);
 
     }
@@ -645,7 +654,8 @@ public class AccountUsageBetaApi {
      * @return SeriesListRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -655,7 +665,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public SeriesListRep getContextsTotalUsage(String from, String to, String projectKey, String environmentKey, String contextKind, String sdkName, String sdkType, String anonymous, String groupBy, String aggregationType, String granularity) throws ApiException {
+    public SeriesListRep getContextsTotalUsage(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String contextKind, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String sdkType, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity) throws ApiException {
         ApiResponse<SeriesListRep> localVarResp = getContextsTotalUsageWithHttpInfo(from, to, projectKey, environmentKey, contextKind, sdkName, sdkType, anonymous, groupBy, aggregationType, granularity);
         return localVarResp.getData();
     }
@@ -677,7 +687,8 @@ public class AccountUsageBetaApi {
      * @return ApiResponse&lt;SeriesListRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -687,7 +698,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SeriesListRep> getContextsTotalUsageWithHttpInfo(String from, String to, String projectKey, String environmentKey, String contextKind, String sdkName, String sdkType, String anonymous, String groupBy, String aggregationType, String granularity) throws ApiException {
+    public ApiResponse<SeriesListRep> getContextsTotalUsageWithHttpInfo(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String contextKind, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String sdkType, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity) throws ApiException {
         okhttp3.Call localVarCall = getContextsTotalUsageValidateBeforeCall(from, to, projectKey, environmentKey, contextKind, sdkName, sdkType, anonymous, groupBy, aggregationType, granularity, null);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -711,7 +722,8 @@ public class AccountUsageBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -721,7 +733,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getContextsTotalUsageAsync(String from, String to, String projectKey, String environmentKey, String contextKind, String sdkName, String sdkType, String anonymous, String groupBy, String aggregationType, String granularity, final ApiCallback<SeriesListRep> _callback) throws ApiException {
+    public okhttp3.Call getContextsTotalUsageAsync(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String contextKind, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String sdkType, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback<SeriesListRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getContextsTotalUsageValidateBeforeCall(from, to, projectKey, environmentKey, contextKind, sdkName, sdkType, anonymous, groupBy, aggregationType, granularity, _callback);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
@@ -742,7 +754,8 @@ public class AccountUsageBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -752,7 +765,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDataExportEventsUsageCall(String from, String to, String projectKey, String environmentKey, String eventKind, String groupBy, String aggregationType, String granularity, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getDataExportEventsUsageCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String eventKind, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -829,7 +842,7 @@ public class AccountUsageBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getDataExportEventsUsageValidateBeforeCall(String from, String to, String projectKey, String environmentKey, String eventKind, String groupBy, String aggregationType, String granularity, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getDataExportEventsUsageValidateBeforeCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String eventKind, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback _callback) throws ApiException {
         return getDataExportEventsUsageCall(from, to, projectKey, environmentKey, eventKind, groupBy, aggregationType, granularity, _callback);
 
     }
@@ -848,7 +861,8 @@ public class AccountUsageBetaApi {
      * @return SeriesListRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -858,7 +872,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public SeriesListRep getDataExportEventsUsage(String from, String to, String projectKey, String environmentKey, String eventKind, String groupBy, String aggregationType, String granularity) throws ApiException {
+    public SeriesListRep getDataExportEventsUsage(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String eventKind, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity) throws ApiException {
         ApiResponse<SeriesListRep> localVarResp = getDataExportEventsUsageWithHttpInfo(from, to, projectKey, environmentKey, eventKind, groupBy, aggregationType, granularity);
         return localVarResp.getData();
     }
@@ -877,7 +891,8 @@ public class AccountUsageBetaApi {
      * @return ApiResponse&lt;SeriesListRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -887,7 +902,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SeriesListRep> getDataExportEventsUsageWithHttpInfo(String from, String to, String projectKey, String environmentKey, String eventKind, String groupBy, String aggregationType, String granularity) throws ApiException {
+    public ApiResponse<SeriesListRep> getDataExportEventsUsageWithHttpInfo(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String eventKind, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity) throws ApiException {
         okhttp3.Call localVarCall = getDataExportEventsUsageValidateBeforeCall(from, to, projectKey, environmentKey, eventKind, groupBy, aggregationType, granularity, null);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -908,7 +923,8 @@ public class AccountUsageBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -918,7 +934,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDataExportEventsUsageAsync(String from, String to, String projectKey, String environmentKey, String eventKind, String groupBy, String aggregationType, String granularity, final ApiCallback<SeriesListRep> _callback) throws ApiException {
+    public okhttp3.Call getDataExportEventsUsageAsync(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String eventKind, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback<SeriesListRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getDataExportEventsUsageValidateBeforeCall(from, to, projectKey, environmentKey, eventKind, groupBy, aggregationType, granularity, _callback);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
@@ -937,7 +953,8 @@ public class AccountUsageBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -947,7 +964,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEvaluationsUsageCall(String projectKey, String environmentKey, String featureFlagKey, String from, String to, String tz, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getEvaluationsUsageCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String tz, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1007,7 +1024,7 @@ public class AccountUsageBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getEvaluationsUsageValidateBeforeCall(String projectKey, String environmentKey, String featureFlagKey, String from, String to, String tz, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getEvaluationsUsageValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String tz, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getEvaluationsUsage(Async)");
@@ -1039,7 +1056,8 @@ public class AccountUsageBetaApi {
      * @return SeriesListRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1049,7 +1067,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public SeriesListRep getEvaluationsUsage(String projectKey, String environmentKey, String featureFlagKey, String from, String to, String tz) throws ApiException {
+    public SeriesListRep getEvaluationsUsage(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String tz) throws ApiException {
         ApiResponse<SeriesListRep> localVarResp = getEvaluationsUsageWithHttpInfo(projectKey, environmentKey, featureFlagKey, from, to, tz);
         return localVarResp.getData();
     }
@@ -1066,7 +1084,8 @@ public class AccountUsageBetaApi {
      * @return ApiResponse&lt;SeriesListRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1076,7 +1095,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SeriesListRep> getEvaluationsUsageWithHttpInfo(String projectKey, String environmentKey, String featureFlagKey, String from, String to, String tz) throws ApiException {
+    public ApiResponse<SeriesListRep> getEvaluationsUsageWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String tz) throws ApiException {
         okhttp3.Call localVarCall = getEvaluationsUsageValidateBeforeCall(projectKey, environmentKey, featureFlagKey, from, to, tz, null);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1095,7 +1114,8 @@ public class AccountUsageBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1105,7 +1125,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEvaluationsUsageAsync(String projectKey, String environmentKey, String featureFlagKey, String from, String to, String tz, final ApiCallback<SeriesListRep> _callback) throws ApiException {
+    public okhttp3.Call getEvaluationsUsageAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String tz, final ApiCallback<SeriesListRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getEvaluationsUsageValidateBeforeCall(projectKey, environmentKey, featureFlagKey, from, to, tz, _callback);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
@@ -1121,7 +1141,8 @@ public class AccountUsageBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1131,7 +1152,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEventsUsageCall(String type, String from, String to, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getEventsUsageCall(@javax.annotation.Nonnull String type, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1185,7 +1206,7 @@ public class AccountUsageBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getEventsUsageValidateBeforeCall(String type, String from, String to, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getEventsUsageValidateBeforeCall(@javax.annotation.Nonnull String type, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'type' is set
         if (type == null) {
             throw new ApiException("Missing the required parameter 'type' when calling getEventsUsage(Async)");
@@ -1204,7 +1225,8 @@ public class AccountUsageBetaApi {
      * @return SeriesListRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1214,7 +1236,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public SeriesListRep getEventsUsage(String type, String from, String to) throws ApiException {
+    public SeriesListRep getEventsUsage(@javax.annotation.Nonnull String type, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to) throws ApiException {
         ApiResponse<SeriesListRep> localVarResp = getEventsUsageWithHttpInfo(type, from, to);
         return localVarResp.getData();
     }
@@ -1228,7 +1250,8 @@ public class AccountUsageBetaApi {
      * @return ApiResponse&lt;SeriesListRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1238,7 +1261,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SeriesListRep> getEventsUsageWithHttpInfo(String type, String from, String to) throws ApiException {
+    public ApiResponse<SeriesListRep> getEventsUsageWithHttpInfo(@javax.annotation.Nonnull String type, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to) throws ApiException {
         okhttp3.Call localVarCall = getEventsUsageValidateBeforeCall(type, from, to, null);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1254,7 +1277,8 @@ public class AccountUsageBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1264,7 +1288,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEventsUsageAsync(String type, String from, String to, final ApiCallback<SeriesListRep> _callback) throws ApiException {
+    public okhttp3.Call getEventsUsageAsync(@javax.annotation.Nonnull String type, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, final ApiCallback<SeriesListRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getEventsUsageValidateBeforeCall(type, from, to, _callback);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
@@ -1286,7 +1310,8 @@ public class AccountUsageBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1296,7 +1321,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExperimentationEventsUsageCall(String from, String to, String projectKey, String environmentKey, String eventKey, String eventKind, String groupBy, String aggregationType, String granularity, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getExperimentationEventsUsageCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String eventKey, @javax.annotation.Nullable String eventKind, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1377,7 +1402,7 @@ public class AccountUsageBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getExperimentationEventsUsageValidateBeforeCall(String from, String to, String projectKey, String environmentKey, String eventKey, String eventKind, String groupBy, String aggregationType, String granularity, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getExperimentationEventsUsageValidateBeforeCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String eventKey, @javax.annotation.Nullable String eventKind, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback _callback) throws ApiException {
         return getExperimentationEventsUsageCall(from, to, projectKey, environmentKey, eventKey, eventKind, groupBy, aggregationType, granularity, _callback);
 
     }
@@ -1397,7 +1422,8 @@ public class AccountUsageBetaApi {
      * @return SeriesListRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1407,7 +1433,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public SeriesListRep getExperimentationEventsUsage(String from, String to, String projectKey, String environmentKey, String eventKey, String eventKind, String groupBy, String aggregationType, String granularity) throws ApiException {
+    public SeriesListRep getExperimentationEventsUsage(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String eventKey, @javax.annotation.Nullable String eventKind, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity) throws ApiException {
         ApiResponse<SeriesListRep> localVarResp = getExperimentationEventsUsageWithHttpInfo(from, to, projectKey, environmentKey, eventKey, eventKind, groupBy, aggregationType, granularity);
         return localVarResp.getData();
     }
@@ -1427,7 +1453,8 @@ public class AccountUsageBetaApi {
      * @return ApiResponse&lt;SeriesListRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1437,7 +1464,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SeriesListRep> getExperimentationEventsUsageWithHttpInfo(String from, String to, String projectKey, String environmentKey, String eventKey, String eventKind, String groupBy, String aggregationType, String granularity) throws ApiException {
+    public ApiResponse<SeriesListRep> getExperimentationEventsUsageWithHttpInfo(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String eventKey, @javax.annotation.Nullable String eventKind, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity) throws ApiException {
         okhttp3.Call localVarCall = getExperimentationEventsUsageValidateBeforeCall(from, to, projectKey, environmentKey, eventKey, eventKind, groupBy, aggregationType, granularity, null);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1459,7 +1486,8 @@ public class AccountUsageBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1469,7 +1497,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExperimentationEventsUsageAsync(String from, String to, String projectKey, String environmentKey, String eventKey, String eventKind, String groupBy, String aggregationType, String granularity, final ApiCallback<SeriesListRep> _callback) throws ApiException {
+    public okhttp3.Call getExperimentationEventsUsageAsync(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String eventKey, @javax.annotation.Nullable String eventKind, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback<SeriesListRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getExperimentationEventsUsageValidateBeforeCall(from, to, projectKey, environmentKey, eventKey, eventKind, groupBy, aggregationType, granularity, _callback);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
@@ -1490,7 +1518,8 @@ public class AccountUsageBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1500,7 +1529,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExperimentationKeysUsageCall(String from, String to, String projectKey, String environmentKey, String experimentId, String groupBy, String aggregationType, String granularity, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getExperimentationKeysUsageCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String experimentId, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1577,7 +1606,7 @@ public class AccountUsageBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getExperimentationKeysUsageValidateBeforeCall(String from, String to, String projectKey, String environmentKey, String experimentId, String groupBy, String aggregationType, String granularity, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getExperimentationKeysUsageValidateBeforeCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String experimentId, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback _callback) throws ApiException {
         return getExperimentationKeysUsageCall(from, to, projectKey, environmentKey, experimentId, groupBy, aggregationType, granularity, _callback);
 
     }
@@ -1596,7 +1625,8 @@ public class AccountUsageBetaApi {
      * @return SeriesListRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1606,7 +1636,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public SeriesListRep getExperimentationKeysUsage(String from, String to, String projectKey, String environmentKey, String experimentId, String groupBy, String aggregationType, String granularity) throws ApiException {
+    public SeriesListRep getExperimentationKeysUsage(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String experimentId, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity) throws ApiException {
         ApiResponse<SeriesListRep> localVarResp = getExperimentationKeysUsageWithHttpInfo(from, to, projectKey, environmentKey, experimentId, groupBy, aggregationType, granularity);
         return localVarResp.getData();
     }
@@ -1625,7 +1655,8 @@ public class AccountUsageBetaApi {
      * @return ApiResponse&lt;SeriesListRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1635,7 +1666,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SeriesListRep> getExperimentationKeysUsageWithHttpInfo(String from, String to, String projectKey, String environmentKey, String experimentId, String groupBy, String aggregationType, String granularity) throws ApiException {
+    public ApiResponse<SeriesListRep> getExperimentationKeysUsageWithHttpInfo(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String experimentId, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity) throws ApiException {
         okhttp3.Call localVarCall = getExperimentationKeysUsageValidateBeforeCall(from, to, projectKey, environmentKey, experimentId, groupBy, aggregationType, granularity, null);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1656,7 +1687,8 @@ public class AccountUsageBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1666,7 +1698,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExperimentationKeysUsageAsync(String from, String to, String projectKey, String environmentKey, String experimentId, String groupBy, String aggregationType, String granularity, final ApiCallback<SeriesListRep> _callback) throws ApiException {
+    public okhttp3.Call getExperimentationKeysUsageAsync(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String experimentId, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback<SeriesListRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getExperimentationKeysUsageValidateBeforeCall(from, to, projectKey, environmentKey, experimentId, groupBy, aggregationType, granularity, _callback);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
@@ -1682,7 +1714,8 @@ public class AccountUsageBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> MAU SDKs response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1691,7 +1724,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMauSdksByTypeCall(String from, String to, String sdktype, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getMauSdksByTypeCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String sdktype, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1748,7 +1781,7 @@ public class AccountUsageBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getMauSdksByTypeValidateBeforeCall(String from, String to, String sdktype, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getMauSdksByTypeValidateBeforeCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String sdktype, final ApiCallback _callback) throws ApiException {
         return getMauSdksByTypeCall(from, to, sdktype, _callback);
 
     }
@@ -1762,7 +1795,8 @@ public class AccountUsageBetaApi {
      * @return SdkListRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> MAU SDKs response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1771,7 +1805,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public SdkListRep getMauSdksByType(String from, String to, String sdktype) throws ApiException {
+    public SdkListRep getMauSdksByType(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String sdktype) throws ApiException {
         ApiResponse<SdkListRep> localVarResp = getMauSdksByTypeWithHttpInfo(from, to, sdktype);
         return localVarResp.getData();
     }
@@ -1785,7 +1819,8 @@ public class AccountUsageBetaApi {
      * @return ApiResponse&lt;SdkListRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> MAU SDKs response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1794,7 +1829,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SdkListRep> getMauSdksByTypeWithHttpInfo(String from, String to, String sdktype) throws ApiException {
+    public ApiResponse<SdkListRep> getMauSdksByTypeWithHttpInfo(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String sdktype) throws ApiException {
         okhttp3.Call localVarCall = getMauSdksByTypeValidateBeforeCall(from, to, sdktype, null);
         Type localVarReturnType = new TypeToken<SdkListRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1810,7 +1845,8 @@ public class AccountUsageBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> MAU SDKs response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1819,7 +1855,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMauSdksByTypeAsync(String from, String to, String sdktype, final ApiCallback<SdkListRep> _callback) throws ApiException {
+    public okhttp3.Call getMauSdksByTypeAsync(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String sdktype, final ApiCallback<SdkListRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getMauSdksByTypeValidateBeforeCall(from, to, sdktype, _callback);
         Type localVarReturnType = new TypeToken<SdkListRep>(){}.getType();
@@ -1842,7 +1878,8 @@ public class AccountUsageBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1851,7 +1888,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMauUsageCall(String from, String to, String project, String environment, String sdktype, String sdk, String anonymous, String groupby, String aggregationType, String contextKind, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getMauUsageCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String project, @javax.annotation.Nullable String environment, @javax.annotation.Nullable String sdktype, @javax.annotation.Nullable String sdk, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupby, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String contextKind, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1936,7 +1973,7 @@ public class AccountUsageBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getMauUsageValidateBeforeCall(String from, String to, String project, String environment, String sdktype, String sdk, String anonymous, String groupby, String aggregationType, String contextKind, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getMauUsageValidateBeforeCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String project, @javax.annotation.Nullable String environment, @javax.annotation.Nullable String sdktype, @javax.annotation.Nullable String sdk, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupby, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String contextKind, final ApiCallback _callback) throws ApiException {
         return getMauUsageCall(from, to, project, environment, sdktype, sdk, anonymous, groupby, aggregationType, contextKind, _callback);
 
     }
@@ -1957,7 +1994,8 @@ public class AccountUsageBetaApi {
      * @return SeriesListRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1966,7 +2004,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public SeriesListRep getMauUsage(String from, String to, String project, String environment, String sdktype, String sdk, String anonymous, String groupby, String aggregationType, String contextKind) throws ApiException {
+    public SeriesListRep getMauUsage(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String project, @javax.annotation.Nullable String environment, @javax.annotation.Nullable String sdktype, @javax.annotation.Nullable String sdk, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupby, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String contextKind) throws ApiException {
         ApiResponse<SeriesListRep> localVarResp = getMauUsageWithHttpInfo(from, to, project, environment, sdktype, sdk, anonymous, groupby, aggregationType, contextKind);
         return localVarResp.getData();
     }
@@ -1987,7 +2025,8 @@ public class AccountUsageBetaApi {
      * @return ApiResponse&lt;SeriesListRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1996,7 +2035,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SeriesListRep> getMauUsageWithHttpInfo(String from, String to, String project, String environment, String sdktype, String sdk, String anonymous, String groupby, String aggregationType, String contextKind) throws ApiException {
+    public ApiResponse<SeriesListRep> getMauUsageWithHttpInfo(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String project, @javax.annotation.Nullable String environment, @javax.annotation.Nullable String sdktype, @javax.annotation.Nullable String sdk, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupby, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String contextKind) throws ApiException {
         okhttp3.Call localVarCall = getMauUsageValidateBeforeCall(from, to, project, environment, sdktype, sdk, anonymous, groupby, aggregationType, contextKind, null);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2019,7 +2058,8 @@ public class AccountUsageBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2028,7 +2068,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMauUsageAsync(String from, String to, String project, String environment, String sdktype, String sdk, String anonymous, String groupby, String aggregationType, String contextKind, final ApiCallback<SeriesListRep> _callback) throws ApiException {
+    public okhttp3.Call getMauUsageAsync(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String project, @javax.annotation.Nullable String environment, @javax.annotation.Nullable String sdktype, @javax.annotation.Nullable String sdk, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupby, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String contextKind, final ApiCallback<SeriesListRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getMauUsageValidateBeforeCall(from, to, project, environment, sdktype, sdk, anonymous, groupby, aggregationType, contextKind, _callback);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
@@ -2043,7 +2083,8 @@ public class AccountUsageBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2053,7 +2094,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMauUsageByCategoryCall(String from, String to, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getMauUsageByCategoryCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2106,7 +2147,7 @@ public class AccountUsageBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getMauUsageByCategoryValidateBeforeCall(String from, String to, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getMauUsageByCategoryValidateBeforeCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, final ApiCallback _callback) throws ApiException {
         return getMauUsageByCategoryCall(from, to, _callback);
 
     }
@@ -2119,7 +2160,8 @@ public class AccountUsageBetaApi {
      * @return SeriesListRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2129,7 +2171,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public SeriesListRep getMauUsageByCategory(String from, String to) throws ApiException {
+    public SeriesListRep getMauUsageByCategory(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to) throws ApiException {
         ApiResponse<SeriesListRep> localVarResp = getMauUsageByCategoryWithHttpInfo(from, to);
         return localVarResp.getData();
     }
@@ -2142,7 +2184,8 @@ public class AccountUsageBetaApi {
      * @return ApiResponse&lt;SeriesListRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2152,7 +2195,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SeriesListRep> getMauUsageByCategoryWithHttpInfo(String from, String to) throws ApiException {
+    public ApiResponse<SeriesListRep> getMauUsageByCategoryWithHttpInfo(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to) throws ApiException {
         okhttp3.Call localVarCall = getMauUsageByCategoryValidateBeforeCall(from, to, null);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2167,7 +2210,8 @@ public class AccountUsageBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2177,7 +2221,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMauUsageByCategoryAsync(String from, String to, final ApiCallback<SeriesListRep> _callback) throws ApiException {
+    public okhttp3.Call getMauUsageByCategoryAsync(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, final ApiCallback<SeriesListRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getMauUsageByCategoryValidateBeforeCall(from, to, _callback);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
@@ -2195,7 +2239,8 @@ public class AccountUsageBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2205,7 +2250,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getObservabilityErrorsUsageCall(String from, String to, String projectKey, String granularity, String aggregationType, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getObservabilityErrorsUsageCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2270,7 +2315,7 @@ public class AccountUsageBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getObservabilityErrorsUsageValidateBeforeCall(String from, String to, String projectKey, String granularity, String aggregationType, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getObservabilityErrorsUsageValidateBeforeCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType, final ApiCallback _callback) throws ApiException {
         return getObservabilityErrorsUsageCall(from, to, projectKey, granularity, aggregationType, _callback);
 
     }
@@ -2286,7 +2331,8 @@ public class AccountUsageBetaApi {
      * @return SeriesListRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2296,7 +2342,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public SeriesListRep getObservabilityErrorsUsage(String from, String to, String projectKey, String granularity, String aggregationType) throws ApiException {
+    public SeriesListRep getObservabilityErrorsUsage(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType) throws ApiException {
         ApiResponse<SeriesListRep> localVarResp = getObservabilityErrorsUsageWithHttpInfo(from, to, projectKey, granularity, aggregationType);
         return localVarResp.getData();
     }
@@ -2312,7 +2358,8 @@ public class AccountUsageBetaApi {
      * @return ApiResponse&lt;SeriesListRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2322,7 +2369,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SeriesListRep> getObservabilityErrorsUsageWithHttpInfo(String from, String to, String projectKey, String granularity, String aggregationType) throws ApiException {
+    public ApiResponse<SeriesListRep> getObservabilityErrorsUsageWithHttpInfo(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType) throws ApiException {
         okhttp3.Call localVarCall = getObservabilityErrorsUsageValidateBeforeCall(from, to, projectKey, granularity, aggregationType, null);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2340,7 +2387,8 @@ public class AccountUsageBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2350,7 +2398,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getObservabilityErrorsUsageAsync(String from, String to, String projectKey, String granularity, String aggregationType, final ApiCallback<SeriesListRep> _callback) throws ApiException {
+    public okhttp3.Call getObservabilityErrorsUsageAsync(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType, final ApiCallback<SeriesListRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getObservabilityErrorsUsageValidateBeforeCall(from, to, projectKey, granularity, aggregationType, _callback);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
@@ -2368,7 +2416,8 @@ public class AccountUsageBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2378,7 +2427,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getObservabilityLogsUsageCall(String from, String to, String projectKey, String granularity, String aggregationType, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getObservabilityLogsUsageCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2443,7 +2492,7 @@ public class AccountUsageBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getObservabilityLogsUsageValidateBeforeCall(String from, String to, String projectKey, String granularity, String aggregationType, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getObservabilityLogsUsageValidateBeforeCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType, final ApiCallback _callback) throws ApiException {
         return getObservabilityLogsUsageCall(from, to, projectKey, granularity, aggregationType, _callback);
 
     }
@@ -2459,7 +2508,8 @@ public class AccountUsageBetaApi {
      * @return SeriesListRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2469,7 +2519,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public SeriesListRep getObservabilityLogsUsage(String from, String to, String projectKey, String granularity, String aggregationType) throws ApiException {
+    public SeriesListRep getObservabilityLogsUsage(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType) throws ApiException {
         ApiResponse<SeriesListRep> localVarResp = getObservabilityLogsUsageWithHttpInfo(from, to, projectKey, granularity, aggregationType);
         return localVarResp.getData();
     }
@@ -2485,7 +2535,8 @@ public class AccountUsageBetaApi {
      * @return ApiResponse&lt;SeriesListRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2495,7 +2546,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SeriesListRep> getObservabilityLogsUsageWithHttpInfo(String from, String to, String projectKey, String granularity, String aggregationType) throws ApiException {
+    public ApiResponse<SeriesListRep> getObservabilityLogsUsageWithHttpInfo(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType) throws ApiException {
         okhttp3.Call localVarCall = getObservabilityLogsUsageValidateBeforeCall(from, to, projectKey, granularity, aggregationType, null);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2513,7 +2564,8 @@ public class AccountUsageBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2523,7 +2575,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getObservabilityLogsUsageAsync(String from, String to, String projectKey, String granularity, String aggregationType, final ApiCallback<SeriesListRep> _callback) throws ApiException {
+    public okhttp3.Call getObservabilityLogsUsageAsync(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType, final ApiCallback<SeriesListRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getObservabilityLogsUsageValidateBeforeCall(from, to, projectKey, granularity, aggregationType, _callback);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
@@ -2541,7 +2593,8 @@ public class AccountUsageBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2551,7 +2604,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getObservabilitySessionsUsageCall(String from, String to, String projectKey, String granularity, String aggregationType, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getObservabilitySessionsUsageCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2616,7 +2669,7 @@ public class AccountUsageBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getObservabilitySessionsUsageValidateBeforeCall(String from, String to, String projectKey, String granularity, String aggregationType, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getObservabilitySessionsUsageValidateBeforeCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType, final ApiCallback _callback) throws ApiException {
         return getObservabilitySessionsUsageCall(from, to, projectKey, granularity, aggregationType, _callback);
 
     }
@@ -2632,7 +2685,8 @@ public class AccountUsageBetaApi {
      * @return SeriesListRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2642,7 +2696,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public SeriesListRep getObservabilitySessionsUsage(String from, String to, String projectKey, String granularity, String aggregationType) throws ApiException {
+    public SeriesListRep getObservabilitySessionsUsage(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType) throws ApiException {
         ApiResponse<SeriesListRep> localVarResp = getObservabilitySessionsUsageWithHttpInfo(from, to, projectKey, granularity, aggregationType);
         return localVarResp.getData();
     }
@@ -2658,7 +2712,8 @@ public class AccountUsageBetaApi {
      * @return ApiResponse&lt;SeriesListRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2668,7 +2723,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SeriesListRep> getObservabilitySessionsUsageWithHttpInfo(String from, String to, String projectKey, String granularity, String aggregationType) throws ApiException {
+    public ApiResponse<SeriesListRep> getObservabilitySessionsUsageWithHttpInfo(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType) throws ApiException {
         okhttp3.Call localVarCall = getObservabilitySessionsUsageValidateBeforeCall(from, to, projectKey, granularity, aggregationType, null);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2686,7 +2741,8 @@ public class AccountUsageBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2696,7 +2752,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getObservabilitySessionsUsageAsync(String from, String to, String projectKey, String granularity, String aggregationType, final ApiCallback<SeriesListRep> _callback) throws ApiException {
+    public okhttp3.Call getObservabilitySessionsUsageAsync(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType, final ApiCallback<SeriesListRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getObservabilitySessionsUsageValidateBeforeCall(from, to, projectKey, granularity, aggregationType, _callback);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
@@ -2714,7 +2770,8 @@ public class AccountUsageBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2724,7 +2781,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getObservabilityTracesUsageCall(String from, String to, String projectKey, String granularity, String aggregationType, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getObservabilityTracesUsageCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2789,7 +2846,7 @@ public class AccountUsageBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getObservabilityTracesUsageValidateBeforeCall(String from, String to, String projectKey, String granularity, String aggregationType, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getObservabilityTracesUsageValidateBeforeCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType, final ApiCallback _callback) throws ApiException {
         return getObservabilityTracesUsageCall(from, to, projectKey, granularity, aggregationType, _callback);
 
     }
@@ -2805,7 +2862,8 @@ public class AccountUsageBetaApi {
      * @return SeriesListRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2815,7 +2873,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public SeriesListRep getObservabilityTracesUsage(String from, String to, String projectKey, String granularity, String aggregationType) throws ApiException {
+    public SeriesListRep getObservabilityTracesUsage(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType) throws ApiException {
         ApiResponse<SeriesListRep> localVarResp = getObservabilityTracesUsageWithHttpInfo(from, to, projectKey, granularity, aggregationType);
         return localVarResp.getData();
     }
@@ -2831,7 +2889,8 @@ public class AccountUsageBetaApi {
      * @return ApiResponse&lt;SeriesListRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2841,7 +2900,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SeriesListRep> getObservabilityTracesUsageWithHttpInfo(String from, String to, String projectKey, String granularity, String aggregationType) throws ApiException {
+    public ApiResponse<SeriesListRep> getObservabilityTracesUsageWithHttpInfo(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType) throws ApiException {
         okhttp3.Call localVarCall = getObservabilityTracesUsageValidateBeforeCall(from, to, projectKey, granularity, aggregationType, null);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2859,7 +2918,8 @@ public class AccountUsageBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2869,7 +2929,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getObservabilityTracesUsageAsync(String from, String to, String projectKey, String granularity, String aggregationType, final ApiCallback<SeriesListRep> _callback) throws ApiException {
+    public okhttp3.Call getObservabilityTracesUsageAsync(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType, final ApiCallback<SeriesListRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getObservabilityTracesUsageValidateBeforeCall(from, to, projectKey, granularity, aggregationType, _callback);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
@@ -2894,7 +2954,8 @@ public class AccountUsageBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2904,7 +2965,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getServiceConnectionsUsageCall(String from, String to, String projectKey, String environmentKey, String connectionType, String relayVersion, String sdkName, String sdkVersion, String sdkType, String groupBy, String aggregationType, String granularity, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getServiceConnectionsUsageCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String connectionType, @javax.annotation.Nullable String relayVersion, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String sdkVersion, @javax.annotation.Nullable String sdkType, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2997,7 +3058,7 @@ public class AccountUsageBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getServiceConnectionsUsageValidateBeforeCall(String from, String to, String projectKey, String environmentKey, String connectionType, String relayVersion, String sdkName, String sdkVersion, String sdkType, String groupBy, String aggregationType, String granularity, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getServiceConnectionsUsageValidateBeforeCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String connectionType, @javax.annotation.Nullable String relayVersion, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String sdkVersion, @javax.annotation.Nullable String sdkType, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback _callback) throws ApiException {
         return getServiceConnectionsUsageCall(from, to, projectKey, environmentKey, connectionType, relayVersion, sdkName, sdkVersion, sdkType, groupBy, aggregationType, granularity, _callback);
 
     }
@@ -3020,7 +3081,8 @@ public class AccountUsageBetaApi {
      * @return SeriesListRepFloat
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -3030,7 +3092,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public SeriesListRepFloat getServiceConnectionsUsage(String from, String to, String projectKey, String environmentKey, String connectionType, String relayVersion, String sdkName, String sdkVersion, String sdkType, String groupBy, String aggregationType, String granularity) throws ApiException {
+    public SeriesListRepFloat getServiceConnectionsUsage(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String connectionType, @javax.annotation.Nullable String relayVersion, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String sdkVersion, @javax.annotation.Nullable String sdkType, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity) throws ApiException {
         ApiResponse<SeriesListRepFloat> localVarResp = getServiceConnectionsUsageWithHttpInfo(from, to, projectKey, environmentKey, connectionType, relayVersion, sdkName, sdkVersion, sdkType, groupBy, aggregationType, granularity);
         return localVarResp.getData();
     }
@@ -3053,7 +3115,8 @@ public class AccountUsageBetaApi {
      * @return ApiResponse&lt;SeriesListRepFloat&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -3063,7 +3126,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SeriesListRepFloat> getServiceConnectionsUsageWithHttpInfo(String from, String to, String projectKey, String environmentKey, String connectionType, String relayVersion, String sdkName, String sdkVersion, String sdkType, String groupBy, String aggregationType, String granularity) throws ApiException {
+    public ApiResponse<SeriesListRepFloat> getServiceConnectionsUsageWithHttpInfo(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String connectionType, @javax.annotation.Nullable String relayVersion, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String sdkVersion, @javax.annotation.Nullable String sdkType, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity) throws ApiException {
         okhttp3.Call localVarCall = getServiceConnectionsUsageValidateBeforeCall(from, to, projectKey, environmentKey, connectionType, relayVersion, sdkName, sdkVersion, sdkType, groupBy, aggregationType, granularity, null);
         Type localVarReturnType = new TypeToken<SeriesListRepFloat>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -3088,7 +3151,8 @@ public class AccountUsageBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -3098,7 +3162,7 @@ public class AccountUsageBetaApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getServiceConnectionsUsageAsync(String from, String to, String projectKey, String environmentKey, String connectionType, String relayVersion, String sdkName, String sdkVersion, String sdkType, String groupBy, String aggregationType, String granularity, final ApiCallback<SeriesListRepFloat> _callback) throws ApiException {
+    public okhttp3.Call getServiceConnectionsUsageAsync(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String connectionType, @javax.annotation.Nullable String relayVersion, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String sdkVersion, @javax.annotation.Nullable String sdkType, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback<SeriesListRepFloat> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getServiceConnectionsUsageValidateBeforeCall(from, to, projectKey, environmentKey, connectionType, relayVersion, sdkName, sdkVersion, sdkType, groupBy, aggregationType, granularity, _callback);
         Type localVarReturnType = new TypeToken<SeriesListRepFloat>(){}.getType();
@@ -3115,7 +3179,8 @@ public class AccountUsageBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -3125,7 +3190,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamUsageCall(String source, String from, String to, String tz, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getStreamUsageCall(@javax.annotation.Nonnull String source, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String tz, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3183,7 +3248,7 @@ public class AccountUsageBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getStreamUsageValidateBeforeCall(String source, String from, String to, String tz, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getStreamUsageValidateBeforeCall(@javax.annotation.Nonnull String source, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String tz, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'source' is set
         if (source == null) {
             throw new ApiException("Missing the required parameter 'source' when calling getStreamUsage(Async)");
@@ -3203,7 +3268,8 @@ public class AccountUsageBetaApi {
      * @return SeriesListRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -3213,7 +3279,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public SeriesListRep getStreamUsage(String source, String from, String to, String tz) throws ApiException {
+    public SeriesListRep getStreamUsage(@javax.annotation.Nonnull String source, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String tz) throws ApiException {
         ApiResponse<SeriesListRep> localVarResp = getStreamUsageWithHttpInfo(source, from, to, tz);
         return localVarResp.getData();
     }
@@ -3228,7 +3294,8 @@ public class AccountUsageBetaApi {
      * @return ApiResponse&lt;SeriesListRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -3238,7 +3305,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SeriesListRep> getStreamUsageWithHttpInfo(String source, String from, String to, String tz) throws ApiException {
+    public ApiResponse<SeriesListRep> getStreamUsageWithHttpInfo(@javax.annotation.Nonnull String source, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String tz) throws ApiException {
         okhttp3.Call localVarCall = getStreamUsageValidateBeforeCall(source, from, to, tz, null);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -3255,7 +3322,8 @@ public class AccountUsageBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -3265,7 +3333,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamUsageAsync(String source, String from, String to, String tz, final ApiCallback<SeriesListRep> _callback) throws ApiException {
+    public okhttp3.Call getStreamUsageAsync(@javax.annotation.Nonnull String source, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String tz, final ApiCallback<SeriesListRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStreamUsageValidateBeforeCall(source, from, to, tz, _callback);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
@@ -3284,7 +3352,8 @@ public class AccountUsageBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -3294,7 +3363,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamUsageBySdkVersionCall(String source, String from, String to, String tz, String sdk, String version, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getStreamUsageBySdkVersionCall(@javax.annotation.Nonnull String source, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String tz, @javax.annotation.Nullable String sdk, @javax.annotation.Nullable String version, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3360,7 +3429,7 @@ public class AccountUsageBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getStreamUsageBySdkVersionValidateBeforeCall(String source, String from, String to, String tz, String sdk, String version, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getStreamUsageBySdkVersionValidateBeforeCall(@javax.annotation.Nonnull String source, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String tz, @javax.annotation.Nullable String sdk, @javax.annotation.Nullable String version, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'source' is set
         if (source == null) {
             throw new ApiException("Missing the required parameter 'source' when calling getStreamUsageBySdkVersion(Async)");
@@ -3382,7 +3451,8 @@ public class AccountUsageBetaApi {
      * @return SeriesListRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -3392,7 +3462,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public SeriesListRep getStreamUsageBySdkVersion(String source, String from, String to, String tz, String sdk, String version) throws ApiException {
+    public SeriesListRep getStreamUsageBySdkVersion(@javax.annotation.Nonnull String source, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String tz, @javax.annotation.Nullable String sdk, @javax.annotation.Nullable String version) throws ApiException {
         ApiResponse<SeriesListRep> localVarResp = getStreamUsageBySdkVersionWithHttpInfo(source, from, to, tz, sdk, version);
         return localVarResp.getData();
     }
@@ -3409,7 +3479,8 @@ public class AccountUsageBetaApi {
      * @return ApiResponse&lt;SeriesListRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -3419,7 +3490,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SeriesListRep> getStreamUsageBySdkVersionWithHttpInfo(String source, String from, String to, String tz, String sdk, String version) throws ApiException {
+    public ApiResponse<SeriesListRep> getStreamUsageBySdkVersionWithHttpInfo(@javax.annotation.Nonnull String source, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String tz, @javax.annotation.Nullable String sdk, @javax.annotation.Nullable String version) throws ApiException {
         okhttp3.Call localVarCall = getStreamUsageBySdkVersionValidateBeforeCall(source, from, to, tz, sdk, version, null);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -3438,7 +3509,8 @@ public class AccountUsageBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -3448,7 +3520,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamUsageBySdkVersionAsync(String source, String from, String to, String tz, String sdk, String version, final ApiCallback<SeriesListRep> _callback) throws ApiException {
+    public okhttp3.Call getStreamUsageBySdkVersionAsync(@javax.annotation.Nonnull String source, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String tz, @javax.annotation.Nullable String sdk, @javax.annotation.Nullable String version, final ApiCallback<SeriesListRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStreamUsageBySdkVersionValidateBeforeCall(source, from, to, tz, sdk, version, _callback);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
@@ -3462,7 +3534,8 @@ public class AccountUsageBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> SDK Versions response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -3470,7 +3543,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamUsageSdkversionCall(String source, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getStreamUsageSdkversionCall(@javax.annotation.Nonnull String source, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -3516,7 +3589,7 @@ public class AccountUsageBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getStreamUsageSdkversionValidateBeforeCall(String source, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getStreamUsageSdkversionValidateBeforeCall(@javax.annotation.Nonnull String source, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'source' is set
         if (source == null) {
             throw new ApiException("Missing the required parameter 'source' when calling getStreamUsageSdkversion(Async)");
@@ -3533,7 +3606,8 @@ public class AccountUsageBetaApi {
      * @return SdkVersionListRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> SDK Versions response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -3541,7 +3615,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public SdkVersionListRep getStreamUsageSdkversion(String source) throws ApiException {
+    public SdkVersionListRep getStreamUsageSdkversion(@javax.annotation.Nonnull String source) throws ApiException {
         ApiResponse<SdkVersionListRep> localVarResp = getStreamUsageSdkversionWithHttpInfo(source);
         return localVarResp.getData();
     }
@@ -3553,7 +3627,8 @@ public class AccountUsageBetaApi {
      * @return ApiResponse&lt;SdkVersionListRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> SDK Versions response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -3561,7 +3636,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SdkVersionListRep> getStreamUsageSdkversionWithHttpInfo(String source) throws ApiException {
+    public ApiResponse<SdkVersionListRep> getStreamUsageSdkversionWithHttpInfo(@javax.annotation.Nonnull String source) throws ApiException {
         okhttp3.Call localVarCall = getStreamUsageSdkversionValidateBeforeCall(source, null);
         Type localVarReturnType = new TypeToken<SdkVersionListRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -3575,7 +3650,8 @@ public class AccountUsageBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> SDK Versions response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -3583,7 +3659,7 @@ public class AccountUsageBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStreamUsageSdkversionAsync(String source, final ApiCallback<SdkVersionListRep> _callback) throws ApiException {
+    public okhttp3.Call getStreamUsageSdkversionAsync(@javax.annotation.Nonnull String source, final ApiCallback<SdkVersionListRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStreamUsageSdkversionValidateBeforeCall(source, _callback);
         Type localVarReturnType = new TypeToken<SdkVersionListRep>(){}.getType();

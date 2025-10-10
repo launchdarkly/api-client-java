@@ -20,9 +20,9 @@
 
 | Name | Value |
 |---- | -----|
-| ADDEXPIRINGTARGET | &quot;addExpiringTarget&quot; |
-| UPDATEEXPIRINGTARGET | &quot;updateExpiringTarget&quot; |
-| REMOVEEXPIRINGTARGET | &quot;removeExpiringTarget&quot; |
+| ADD_EXPIRING_TARGET | &quot;addExpiringTarget&quot; |
+| UPDATE_EXPIRING_TARGET | &quot;updateExpiringTarget&quot; |
+| REMOVE_EXPIRING_TARGET | &quot;removeExpiringTarget&quot; |
 
 
 

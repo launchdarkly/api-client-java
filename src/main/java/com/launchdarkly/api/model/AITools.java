@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,55 +42,58 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * AITools
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AITools {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private PaginatedLinks links;
 
   public static final String SERIALIZED_NAME_ITEMS = "items";
   @SerializedName(SERIALIZED_NAME_ITEMS)
+  @javax.annotation.Nonnull
   private List<AITool> items = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TOTAL_COUNT = "totalCount";
   @SerializedName(SERIALIZED_NAME_TOTAL_COUNT)
+  @javax.annotation.Nonnull
   private Integer totalCount;
 
   public AITools() {
   }
 
-  public AITools links(PaginatedLinks links) {
+  public AITools links(@javax.annotation.Nullable PaginatedLinks links) {
     this.links = links;
     return this;
   }
 
-   /**
+  /**
    * Get links
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public PaginatedLinks getLinks() {
     return links;
   }
 
-  public void setLinks(PaginatedLinks links) {
+  public void setLinks(@javax.annotation.Nullable PaginatedLinks links) {
     this.links = links;
   }
 
 
-  public AITools items(List<AITool> items) {
+  public AITools items(@javax.annotation.Nonnull List<AITool> items) {
     this.items = items;
     return this;
   }
@@ -102,35 +106,35 @@ public class AITools {
     return this;
   }
 
-   /**
+  /**
    * Get items
    * @return items
-  **/
+   */
   @javax.annotation.Nonnull
   public List<AITool> getItems() {
     return items;
   }
 
-  public void setItems(List<AITool> items) {
+  public void setItems(@javax.annotation.Nonnull List<AITool> items) {
     this.items = items;
   }
 
 
-  public AITools totalCount(Integer totalCount) {
+  public AITools totalCount(@javax.annotation.Nonnull Integer totalCount) {
     this.totalCount = totalCount;
     return this;
   }
 
-   /**
+  /**
    * Get totalCount
    * @return totalCount
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getTotalCount() {
     return totalCount;
   }
 
-  public void setTotalCount(Integer totalCount) {
+  public void setTotalCount(@javax.annotation.Nonnull Integer totalCount) {
     this.totalCount = totalCount;
   }
 
@@ -229,34 +233,29 @@ public class AITools {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_links");
-    openapiFields.add("items");
-    openapiFields.add("totalCount");
+    openapiFields = new HashSet<String>(Arrays.asList("_links", "items", "totalCount"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("items");
-    openapiRequiredFields.add("totalCount");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("items", "totalCount"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to AITools
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AITools
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AITools.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AITools is not found in the empty JSON string", AITools.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AITools is not found in the empty JSON string", AITools.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : AITools.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -266,7 +265,7 @@ public class AITools {
       }
       // ensure the json data is an array
       if (!jsonObj.get("items").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
       }
 
       JsonArray jsonArrayitems = jsonObj.getAsJsonArray("items");
@@ -333,7 +332,7 @@ public class AITools {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -348,22 +347,22 @@ public class AITools {
     }
   }
 
- /**
-  * Create an instance of AITools given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AITools
-  * @throws IOException if the JSON string is invalid with respect to AITools
-  */
+  /**
+   * Create an instance of AITools given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AITools
+   * @throws IOException if the JSON string is invalid with respect to AITools
+   */
   public static AITools fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AITools.class);
   }
 
- /**
-  * Convert an instance of AITools to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AITools to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

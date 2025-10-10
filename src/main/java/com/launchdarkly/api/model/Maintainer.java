@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,111 +40,115 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * Maintainer
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class Maintainer {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
+  @javax.annotation.Nonnull
   private String kind;
 
   public static final String SERIALIZED_NAME_MAINTAINER_MEMBER = "maintainerMember";
   @SerializedName(SERIALIZED_NAME_MAINTAINER_MEMBER)
+  @javax.annotation.Nullable
   private ViewsMaintainerMember maintainerMember;
 
   public static final String SERIALIZED_NAME_MAINTAINER_TEAM = "maintainerTeam";
   @SerializedName(SERIALIZED_NAME_MAINTAINER_TEAM)
+  @javax.annotation.Nullable
   private ViewsMaintainerTeam maintainerTeam;
 
   public Maintainer() {
   }
 
-  public Maintainer id(String id) {
+  public Maintainer id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public Maintainer kind(String kind) {
+  public Maintainer kind(@javax.annotation.Nonnull String kind) {
     this.kind = kind;
     return this;
   }
 
-   /**
+  /**
    * Get kind
    * @return kind
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKind() {
     return kind;
   }
 
-  public void setKind(String kind) {
+  public void setKind(@javax.annotation.Nonnull String kind) {
     this.kind = kind;
   }
 
 
-  public Maintainer maintainerMember(ViewsMaintainerMember maintainerMember) {
+  public Maintainer maintainerMember(@javax.annotation.Nullable ViewsMaintainerMember maintainerMember) {
     this.maintainerMember = maintainerMember;
     return this;
   }
 
-   /**
+  /**
    * Get maintainerMember
    * @return maintainerMember
-  **/
+   */
   @javax.annotation.Nullable
   public ViewsMaintainerMember getMaintainerMember() {
     return maintainerMember;
   }
 
-  public void setMaintainerMember(ViewsMaintainerMember maintainerMember) {
+  public void setMaintainerMember(@javax.annotation.Nullable ViewsMaintainerMember maintainerMember) {
     this.maintainerMember = maintainerMember;
   }
 
 
-  public Maintainer maintainerTeam(ViewsMaintainerTeam maintainerTeam) {
+  public Maintainer maintainerTeam(@javax.annotation.Nullable ViewsMaintainerTeam maintainerTeam) {
     this.maintainerTeam = maintainerTeam;
     return this;
   }
 
-   /**
+  /**
    * Get maintainerTeam
    * @return maintainerTeam
-  **/
+   */
   @javax.annotation.Nullable
   public ViewsMaintainerTeam getMaintainerTeam() {
     return maintainerTeam;
   }
 
-  public void setMaintainerTeam(ViewsMaintainerTeam maintainerTeam) {
+  public void setMaintainerTeam(@javax.annotation.Nullable ViewsMaintainerTeam maintainerTeam) {
     this.maintainerTeam = maintainerTeam;
   }
 
@@ -244,43 +249,37 @@ public class Maintainer {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("kind");
-    openapiFields.add("maintainerMember");
-    openapiFields.add("maintainerTeam");
+    openapiFields = new HashSet<String>(Arrays.asList("id", "kind", "maintainerMember", "maintainerTeam"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("id");
-    openapiRequiredFields.add("kind");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("id", "kind"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Maintainer
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Maintainer
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Maintainer.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Maintainer is not found in the empty JSON string", Maintainer.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Maintainer is not found in the empty JSON string", Maintainer.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : Maintainer.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
       if (!jsonObj.get("kind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
       // validate the optional field `maintainerMember`
       if (jsonObj.get("maintainerMember") != null && !jsonObj.get("maintainerMember").isJsonNull()) {
@@ -349,7 +348,7 @@ public class Maintainer {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -364,22 +363,22 @@ public class Maintainer {
     }
   }
 
- /**
-  * Create an instance of Maintainer given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Maintainer
-  * @throws IOException if the JSON string is invalid with respect to Maintainer
-  */
+  /**
+   * Create an instance of Maintainer given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Maintainer
+   * @throws IOException if the JSON string is invalid with respect to Maintainer
+   */
   public static Maintainer fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Maintainer.class);
   }
 
- /**
-  * Convert an instance of Maintainer to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Maintainer to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

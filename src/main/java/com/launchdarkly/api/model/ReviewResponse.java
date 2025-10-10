@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,22 +38,23 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ReviewResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ReviewResponse {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   /**
@@ -111,137 +113,142 @@ public class ReviewResponse {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
+  @javax.annotation.Nonnull
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_CREATION_DATE = "creationDate";
   @SerializedName(SERIALIZED_NAME_CREATION_DATE)
+  @javax.annotation.Nullable
   private Long creationDate;
 
   public static final String SERIALIZED_NAME_COMMENT = "comment";
   @SerializedName(SERIALIZED_NAME_COMMENT)
+  @javax.annotation.Nullable
   private String comment;
 
   public static final String SERIALIZED_NAME_MEMBER_ID = "memberId";
   @SerializedName(SERIALIZED_NAME_MEMBER_ID)
+  @javax.annotation.Nullable
   private String memberId;
 
   public static final String SERIALIZED_NAME_SERVICE_TOKEN_ID = "serviceTokenId";
   @SerializedName(SERIALIZED_NAME_SERVICE_TOKEN_ID)
+  @javax.annotation.Nullable
   private String serviceTokenId;
 
   public ReviewResponse() {
   }
 
-  public ReviewResponse id(String id) {
+  public ReviewResponse id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The approval request ID
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public ReviewResponse kind(KindEnum kind) {
+  public ReviewResponse kind(@javax.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
 
-   /**
+  /**
    * The type of review action to take
    * @return kind
-  **/
+   */
   @javax.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(KindEnum kind) {
+  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public ReviewResponse creationDate(Long creationDate) {
+  public ReviewResponse creationDate(@javax.annotation.Nullable Long creationDate) {
     this.creationDate = creationDate;
     return this;
   }
 
-   /**
+  /**
    * Get creationDate
    * @return creationDate
-  **/
+   */
   @javax.annotation.Nullable
   public Long getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate(Long creationDate) {
+  public void setCreationDate(@javax.annotation.Nullable Long creationDate) {
     this.creationDate = creationDate;
   }
 
 
-  public ReviewResponse comment(String comment) {
+  public ReviewResponse comment(@javax.annotation.Nullable String comment) {
     this.comment = comment;
     return this;
   }
 
-   /**
+  /**
    * A comment describing the approval response
    * @return comment
-  **/
+   */
   @javax.annotation.Nullable
   public String getComment() {
     return comment;
   }
 
-  public void setComment(String comment) {
+  public void setComment(@javax.annotation.Nullable String comment) {
     this.comment = comment;
   }
 
 
-  public ReviewResponse memberId(String memberId) {
+  public ReviewResponse memberId(@javax.annotation.Nullable String memberId) {
     this.memberId = memberId;
     return this;
   }
 
-   /**
+  /**
    * ID of account member that reviewed request
    * @return memberId
-  **/
+   */
   @javax.annotation.Nullable
   public String getMemberId() {
     return memberId;
   }
 
-  public void setMemberId(String memberId) {
+  public void setMemberId(@javax.annotation.Nullable String memberId) {
     this.memberId = memberId;
   }
 
 
-  public ReviewResponse serviceTokenId(String serviceTokenId) {
+  public ReviewResponse serviceTokenId(@javax.annotation.Nullable String serviceTokenId) {
     this.serviceTokenId = serviceTokenId;
     return this;
   }
 
-   /**
+  /**
    * ID of account service token that reviewed request
    * @return serviceTokenId
-  **/
+   */
   @javax.annotation.Nullable
   public String getServiceTokenId() {
     return serviceTokenId;
   }
 
-  public void setServiceTokenId(String serviceTokenId) {
+  public void setServiceTokenId(@javax.annotation.Nullable String serviceTokenId) {
     this.serviceTokenId = serviceTokenId;
   }
 
@@ -346,56 +353,48 @@ public class ReviewResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_id");
-    openapiFields.add("kind");
-    openapiFields.add("creationDate");
-    openapiFields.add("comment");
-    openapiFields.add("memberId");
-    openapiFields.add("serviceTokenId");
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "kind", "creationDate", "comment", "memberId", "serviceTokenId"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("kind");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "kind"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ReviewResponse
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ReviewResponse
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ReviewResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ReviewResponse is not found in the empty JSON string", ReviewResponse.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ReviewResponse is not found in the empty JSON string", ReviewResponse.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ReviewResponse.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if (!jsonObj.get("kind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
       // validate the required field `kind`
       KindEnum.validateJsonElement(jsonObj.get("kind"));
       if ((jsonObj.get("comment") != null && !jsonObj.get("comment").isJsonNull()) && !jsonObj.get("comment").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `comment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comment").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `comment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comment").toString()));
       }
       if ((jsonObj.get("memberId") != null && !jsonObj.get("memberId").isJsonNull()) && !jsonObj.get("memberId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `memberId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("memberId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `memberId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("memberId").toString()));
       }
       if ((jsonObj.get("serviceTokenId") != null && !jsonObj.get("serviceTokenId").isJsonNull()) && !jsonObj.get("serviceTokenId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `serviceTokenId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("serviceTokenId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `serviceTokenId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("serviceTokenId").toString()));
       }
   }
 
@@ -456,7 +455,7 @@ public class ReviewResponse {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -471,22 +470,22 @@ public class ReviewResponse {
     }
   }
 
- /**
-  * Create an instance of ReviewResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ReviewResponse
-  * @throws IOException if the JSON string is invalid with respect to ReviewResponse
-  */
+  /**
+   * Create an instance of ReviewResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ReviewResponse
+   * @throws IOException if the JSON string is invalid with respect to ReviewResponse
+   */
   public static ReviewResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ReviewResponse.class);
   }
 
- /**
-  * Convert an instance of ReviewResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ReviewResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -90,7 +90,8 @@ public class FlagLinksBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Flag link response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -100,7 +101,7 @@ public class FlagLinksBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createFlagLinkCall(String projectKey, String featureFlagKey, FlagLinkPost flagLinkPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createFlagLinkCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull FlagLinkPost flagLinkPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -148,7 +149,7 @@ public class FlagLinksBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createFlagLinkValidateBeforeCall(String projectKey, String featureFlagKey, FlagLinkPost flagLinkPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createFlagLinkValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull FlagLinkPost flagLinkPost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling createFlagLink(Async)");
@@ -177,7 +178,8 @@ public class FlagLinksBetaApi {
      * @return FlagLinkRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Flag link response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -187,7 +189,7 @@ public class FlagLinksBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public FlagLinkRep createFlagLink(String projectKey, String featureFlagKey, FlagLinkPost flagLinkPost) throws ApiException {
+    public FlagLinkRep createFlagLink(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull FlagLinkPost flagLinkPost) throws ApiException {
         ApiResponse<FlagLinkRep> localVarResp = createFlagLinkWithHttpInfo(projectKey, featureFlagKey, flagLinkPost);
         return localVarResp.getData();
     }
@@ -201,7 +203,8 @@ public class FlagLinksBetaApi {
      * @return ApiResponse&lt;FlagLinkRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Flag link response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -211,7 +214,7 @@ public class FlagLinksBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FlagLinkRep> createFlagLinkWithHttpInfo(String projectKey, String featureFlagKey, FlagLinkPost flagLinkPost) throws ApiException {
+    public ApiResponse<FlagLinkRep> createFlagLinkWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull FlagLinkPost flagLinkPost) throws ApiException {
         okhttp3.Call localVarCall = createFlagLinkValidateBeforeCall(projectKey, featureFlagKey, flagLinkPost, null);
         Type localVarReturnType = new TypeToken<FlagLinkRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -227,7 +230,8 @@ public class FlagLinksBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Flag link response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -237,7 +241,7 @@ public class FlagLinksBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createFlagLinkAsync(String projectKey, String featureFlagKey, FlagLinkPost flagLinkPost, final ApiCallback<FlagLinkRep> _callback) throws ApiException {
+    public okhttp3.Call createFlagLinkAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull FlagLinkPost flagLinkPost, final ApiCallback<FlagLinkRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createFlagLinkValidateBeforeCall(projectKey, featureFlagKey, flagLinkPost, _callback);
         Type localVarReturnType = new TypeToken<FlagLinkRep>(){}.getType();
@@ -253,7 +257,8 @@ public class FlagLinksBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -263,7 +268,7 @@ public class FlagLinksBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteFlagLinkCall(String projectKey, String featureFlagKey, String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteFlagLinkCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -311,7 +316,7 @@ public class FlagLinksBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteFlagLinkValidateBeforeCall(String projectKey, String featureFlagKey, String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteFlagLinkValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling deleteFlagLink(Async)");
@@ -339,7 +344,8 @@ public class FlagLinksBetaApi {
      * @param id The flag link ID or Key (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -349,7 +355,7 @@ public class FlagLinksBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteFlagLink(String projectKey, String featureFlagKey, String id) throws ApiException {
+    public void deleteFlagLink(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String id) throws ApiException {
         deleteFlagLinkWithHttpInfo(projectKey, featureFlagKey, id);
     }
 
@@ -362,7 +368,8 @@ public class FlagLinksBetaApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -372,7 +379,7 @@ public class FlagLinksBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteFlagLinkWithHttpInfo(String projectKey, String featureFlagKey, String id) throws ApiException {
+    public ApiResponse<Void> deleteFlagLinkWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteFlagLinkValidateBeforeCall(projectKey, featureFlagKey, id, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -387,7 +394,8 @@ public class FlagLinksBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -397,7 +405,7 @@ public class FlagLinksBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteFlagLinkAsync(String projectKey, String featureFlagKey, String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteFlagLinkAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteFlagLinkValidateBeforeCall(projectKey, featureFlagKey, id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -411,7 +419,8 @@ public class FlagLinksBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag link collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -419,7 +428,7 @@ public class FlagLinksBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFlagLinksCall(String projectKey, String featureFlagKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getFlagLinksCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -466,7 +475,7 @@ public class FlagLinksBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFlagLinksValidateBeforeCall(String projectKey, String featureFlagKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getFlagLinksValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getFlagLinks(Async)");
@@ -489,7 +498,8 @@ public class FlagLinksBetaApi {
      * @return FlagLinkCollectionRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag link collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -497,7 +507,7 @@ public class FlagLinksBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public FlagLinkCollectionRep getFlagLinks(String projectKey, String featureFlagKey) throws ApiException {
+    public FlagLinkCollectionRep getFlagLinks(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey) throws ApiException {
         ApiResponse<FlagLinkCollectionRep> localVarResp = getFlagLinksWithHttpInfo(projectKey, featureFlagKey);
         return localVarResp.getData();
     }
@@ -510,7 +520,8 @@ public class FlagLinksBetaApi {
      * @return ApiResponse&lt;FlagLinkCollectionRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag link collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -518,7 +529,7 @@ public class FlagLinksBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FlagLinkCollectionRep> getFlagLinksWithHttpInfo(String projectKey, String featureFlagKey) throws ApiException {
+    public ApiResponse<FlagLinkCollectionRep> getFlagLinksWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey) throws ApiException {
         okhttp3.Call localVarCall = getFlagLinksValidateBeforeCall(projectKey, featureFlagKey, null);
         Type localVarReturnType = new TypeToken<FlagLinkCollectionRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -533,7 +544,8 @@ public class FlagLinksBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag link collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -541,7 +553,7 @@ public class FlagLinksBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFlagLinksAsync(String projectKey, String featureFlagKey, final ApiCallback<FlagLinkCollectionRep> _callback) throws ApiException {
+    public okhttp3.Call getFlagLinksAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback<FlagLinkCollectionRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFlagLinksValidateBeforeCall(projectKey, featureFlagKey, _callback);
         Type localVarReturnType = new TypeToken<FlagLinkCollectionRep>(){}.getType();
@@ -558,7 +570,8 @@ public class FlagLinksBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag link response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -569,7 +582,7 @@ public class FlagLinksBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateFlagLinkCall(String projectKey, String featureFlagKey, String id, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateFlagLinkCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -618,7 +631,7 @@ public class FlagLinksBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateFlagLinkValidateBeforeCall(String projectKey, String featureFlagKey, String id, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateFlagLinkValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling updateFlagLink(Async)");
@@ -653,7 +666,8 @@ public class FlagLinksBetaApi {
      * @return FlagLinkRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag link response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -664,7 +678,7 @@ public class FlagLinksBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public FlagLinkRep updateFlagLink(String projectKey, String featureFlagKey, String id, List<PatchOperation> patchOperation) throws ApiException {
+    public FlagLinkRep updateFlagLink(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         ApiResponse<FlagLinkRep> localVarResp = updateFlagLinkWithHttpInfo(projectKey, featureFlagKey, id, patchOperation);
         return localVarResp.getData();
     }
@@ -679,7 +693,8 @@ public class FlagLinksBetaApi {
      * @return ApiResponse&lt;FlagLinkRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag link response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -690,7 +705,7 @@ public class FlagLinksBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FlagLinkRep> updateFlagLinkWithHttpInfo(String projectKey, String featureFlagKey, String id, List<PatchOperation> patchOperation) throws ApiException {
+    public ApiResponse<FlagLinkRep> updateFlagLinkWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         okhttp3.Call localVarCall = updateFlagLinkValidateBeforeCall(projectKey, featureFlagKey, id, patchOperation, null);
         Type localVarReturnType = new TypeToken<FlagLinkRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -707,7 +722,8 @@ public class FlagLinksBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag link response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -718,7 +734,7 @@ public class FlagLinksBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateFlagLinkAsync(String projectKey, String featureFlagKey, String id, List<PatchOperation> patchOperation, final ApiCallback<FlagLinkRep> _callback) throws ApiException {
+    public okhttp3.Call updateFlagLinkAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback<FlagLinkRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateFlagLinkValidateBeforeCall(projectKey, featureFlagKey, id, patchOperation, _callback);
         Type localVarReturnType = new TypeToken<FlagLinkRep>(){}.getType();

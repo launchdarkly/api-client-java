@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,28 +41,29 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ContextAttributeNamesCollection
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ContextAttributeNamesCollection {
   public static final String SERIALIZED_NAME_ITEMS = "items";
   @SerializedName(SERIALIZED_NAME_ITEMS)
+  @javax.annotation.Nonnull
   private List<ContextAttributeNames> items = new ArrayList<>();
 
   public ContextAttributeNamesCollection() {
   }
 
-  public ContextAttributeNamesCollection items(List<ContextAttributeNames> items) {
+  public ContextAttributeNamesCollection items(@javax.annotation.Nonnull List<ContextAttributeNames> items) {
     this.items = items;
     return this;
   }
@@ -74,16 +76,16 @@ public class ContextAttributeNamesCollection {
     return this;
   }
 
-   /**
+  /**
    * A collection of context attribute name data grouped by kind.
    * @return items
-  **/
+   */
   @javax.annotation.Nonnull
   public List<ContextAttributeNames> getItems() {
     return items;
   }
 
-  public void setItems(List<ContextAttributeNames> items) {
+  public void setItems(@javax.annotation.Nonnull List<ContextAttributeNames> items) {
     this.items = items;
   }
 
@@ -178,37 +180,35 @@ public class ContextAttributeNamesCollection {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("items");
+    openapiFields = new HashSet<String>(Arrays.asList("items"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("items");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("items"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ContextAttributeNamesCollection
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ContextAttributeNamesCollection
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ContextAttributeNamesCollection.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ContextAttributeNamesCollection is not found in the empty JSON string", ContextAttributeNamesCollection.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ContextAttributeNamesCollection is not found in the empty JSON string", ContextAttributeNamesCollection.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ContextAttributeNamesCollection.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the json data is an array
       if (!jsonObj.get("items").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
       }
 
       JsonArray jsonArrayitems = jsonObj.getAsJsonArray("items");
@@ -275,7 +275,7 @@ public class ContextAttributeNamesCollection {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -290,22 +290,22 @@ public class ContextAttributeNamesCollection {
     }
   }
 
- /**
-  * Create an instance of ContextAttributeNamesCollection given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ContextAttributeNamesCollection
-  * @throws IOException if the JSON string is invalid with respect to ContextAttributeNamesCollection
-  */
+  /**
+   * Create an instance of ContextAttributeNamesCollection given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ContextAttributeNamesCollection
+   * @throws IOException if the JSON string is invalid with respect to ContextAttributeNamesCollection
+   */
   public static ContextAttributeNamesCollection fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ContextAttributeNamesCollection.class);
   }
 
- /**
-  * Convert an instance of ContextAttributeNamesCollection to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ContextAttributeNamesCollection to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

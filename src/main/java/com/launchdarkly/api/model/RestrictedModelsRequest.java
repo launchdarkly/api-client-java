@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,28 +40,29 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * RestrictedModelsRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class RestrictedModelsRequest {
   public static final String SERIALIZED_NAME_KEYS = "keys";
   @SerializedName(SERIALIZED_NAME_KEYS)
+  @javax.annotation.Nonnull
   private List<String> keys = new ArrayList<>();
 
   public RestrictedModelsRequest() {
   }
 
-  public RestrictedModelsRequest keys(List<String> keys) {
+  public RestrictedModelsRequest keys(@javax.annotation.Nonnull List<String> keys) {
     this.keys = keys;
     return this;
   }
@@ -73,16 +75,16 @@ public class RestrictedModelsRequest {
     return this;
   }
 
-   /**
+  /**
    * Get keys
    * @return keys
-  **/
+   */
   @javax.annotation.Nonnull
   public List<String> getKeys() {
     return keys;
   }
 
-  public void setKeys(List<String> keys) {
+  public void setKeys(@javax.annotation.Nonnull List<String> keys) {
     this.keys = keys;
   }
 
@@ -177,31 +179,29 @@ public class RestrictedModelsRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("keys");
+    openapiFields = new HashSet<String>(Arrays.asList("keys"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("keys");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("keys"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to RestrictedModelsRequest
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to RestrictedModelsRequest
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RestrictedModelsRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in RestrictedModelsRequest is not found in the empty JSON string", RestrictedModelsRequest.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in RestrictedModelsRequest is not found in the empty JSON string", RestrictedModelsRequest.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : RestrictedModelsRequest.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -209,7 +209,7 @@ public class RestrictedModelsRequest {
       if (jsonObj.get("keys") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("keys").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `keys` to be an array in the JSON string but got `%s`", jsonObj.get("keys").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `keys` to be an array in the JSON string but got `%s`", jsonObj.get("keys").toString()));
       }
   }
 
@@ -270,7 +270,7 @@ public class RestrictedModelsRequest {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -285,22 +285,22 @@ public class RestrictedModelsRequest {
     }
   }
 
- /**
-  * Create an instance of RestrictedModelsRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RestrictedModelsRequest
-  * @throws IOException if the JSON string is invalid with respect to RestrictedModelsRequest
-  */
+  /**
+   * Create an instance of RestrictedModelsRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of RestrictedModelsRequest
+   * @throws IOException if the JSON string is invalid with respect to RestrictedModelsRequest
+   */
   public static RestrictedModelsRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, RestrictedModelsRequest.class);
   }
 
- /**
-  * Convert an instance of RestrictedModelsRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of RestrictedModelsRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

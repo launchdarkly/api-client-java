@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,59 +40,63 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * MigrationSafetyIssueRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class MigrationSafetyIssueRep {
   public static final String SERIALIZED_NAME_CAUSING_RULE_ID = "causingRuleId";
   @SerializedName(SERIALIZED_NAME_CAUSING_RULE_ID)
+  @javax.annotation.Nullable
   private String causingRuleId;
 
   public static final String SERIALIZED_NAME_AFFECTED_RULE_IDS = "affectedRuleIds";
   @SerializedName(SERIALIZED_NAME_AFFECTED_RULE_IDS)
+  @javax.annotation.Nullable
   private List<String> affectedRuleIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ISSUE = "issue";
   @SerializedName(SERIALIZED_NAME_ISSUE)
+  @javax.annotation.Nullable
   private String issue;
 
   public static final String SERIALIZED_NAME_OLD_SYSTEM_AFFECTED = "oldSystemAffected";
   @SerializedName(SERIALIZED_NAME_OLD_SYSTEM_AFFECTED)
+  @javax.annotation.Nullable
   private Boolean oldSystemAffected;
 
   public MigrationSafetyIssueRep() {
   }
 
-  public MigrationSafetyIssueRep causingRuleId(String causingRuleId) {
+  public MigrationSafetyIssueRep causingRuleId(@javax.annotation.Nullable String causingRuleId) {
     this.causingRuleId = causingRuleId;
     return this;
   }
 
-   /**
+  /**
    * The ID of the rule which caused this issue
    * @return causingRuleId
-  **/
+   */
   @javax.annotation.Nullable
   public String getCausingRuleId() {
     return causingRuleId;
   }
 
-  public void setCausingRuleId(String causingRuleId) {
+  public void setCausingRuleId(@javax.annotation.Nullable String causingRuleId) {
     this.causingRuleId = causingRuleId;
   }
 
 
-  public MigrationSafetyIssueRep affectedRuleIds(List<String> affectedRuleIds) {
+  public MigrationSafetyIssueRep affectedRuleIds(@javax.annotation.Nullable List<String> affectedRuleIds) {
     this.affectedRuleIds = affectedRuleIds;
     return this;
   }
@@ -104,54 +109,54 @@ public class MigrationSafetyIssueRep {
     return this;
   }
 
-   /**
+  /**
    * A list of the IDs of the rules which are affected by this issue. &lt;code&gt;fallthrough&lt;/code&gt; is a sentinel value for the default rule.
    * @return affectedRuleIds
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getAffectedRuleIds() {
     return affectedRuleIds;
   }
 
-  public void setAffectedRuleIds(List<String> affectedRuleIds) {
+  public void setAffectedRuleIds(@javax.annotation.Nullable List<String> affectedRuleIds) {
     this.affectedRuleIds = affectedRuleIds;
   }
 
 
-  public MigrationSafetyIssueRep issue(String issue) {
+  public MigrationSafetyIssueRep issue(@javax.annotation.Nullable String issue) {
     this.issue = issue;
     return this;
   }
 
-   /**
+  /**
    * A description of the issue that &lt;code&gt;causingRuleId&lt;/code&gt; has caused for &lt;code&gt;affectedRuleIds&lt;/code&gt;.
    * @return issue
-  **/
+   */
   @javax.annotation.Nullable
   public String getIssue() {
     return issue;
   }
 
-  public void setIssue(String issue) {
+  public void setIssue(@javax.annotation.Nullable String issue) {
     this.issue = issue;
   }
 
 
-  public MigrationSafetyIssueRep oldSystemAffected(Boolean oldSystemAffected) {
+  public MigrationSafetyIssueRep oldSystemAffected(@javax.annotation.Nullable Boolean oldSystemAffected) {
     this.oldSystemAffected = oldSystemAffected;
     return this;
   }
 
-   /**
+  /**
    * Whether the changes caused by &lt;code&gt;causingRuleId&lt;/code&gt; bring inconsistency to the old system
    * @return oldSystemAffected
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getOldSystemAffected() {
     return oldSystemAffected;
   }
 
-  public void setOldSystemAffected(Boolean oldSystemAffected) {
+  public void setOldSystemAffected(@javax.annotation.Nullable Boolean oldSystemAffected) {
     this.oldSystemAffected = oldSystemAffected;
   }
 
@@ -252,38 +257,34 @@ public class MigrationSafetyIssueRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("causingRuleId");
-    openapiFields.add("affectedRuleIds");
-    openapiFields.add("issue");
-    openapiFields.add("oldSystemAffected");
+    openapiFields = new HashSet<String>(Arrays.asList("causingRuleId", "affectedRuleIds", "issue", "oldSystemAffected"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to MigrationSafetyIssueRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to MigrationSafetyIssueRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!MigrationSafetyIssueRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in MigrationSafetyIssueRep is not found in the empty JSON string", MigrationSafetyIssueRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in MigrationSafetyIssueRep is not found in the empty JSON string", MigrationSafetyIssueRep.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("causingRuleId") != null && !jsonObj.get("causingRuleId").isJsonNull()) && !jsonObj.get("causingRuleId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `causingRuleId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("causingRuleId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `causingRuleId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("causingRuleId").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("affectedRuleIds") != null && !jsonObj.get("affectedRuleIds").isJsonNull() && !jsonObj.get("affectedRuleIds").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `affectedRuleIds` to be an array in the JSON string but got `%s`", jsonObj.get("affectedRuleIds").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `affectedRuleIds` to be an array in the JSON string but got `%s`", jsonObj.get("affectedRuleIds").toString()));
       }
       if ((jsonObj.get("issue") != null && !jsonObj.get("issue").isJsonNull()) && !jsonObj.get("issue").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `issue` to be a primitive type in the JSON string but got `%s`", jsonObj.get("issue").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `issue` to be a primitive type in the JSON string but got `%s`", jsonObj.get("issue").toString()));
       }
   }
 
@@ -344,7 +345,7 @@ public class MigrationSafetyIssueRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -359,22 +360,22 @@ public class MigrationSafetyIssueRep {
     }
   }
 
- /**
-  * Create an instance of MigrationSafetyIssueRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of MigrationSafetyIssueRep
-  * @throws IOException if the JSON string is invalid with respect to MigrationSafetyIssueRep
-  */
+  /**
+   * Create an instance of MigrationSafetyIssueRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of MigrationSafetyIssueRep
+   * @throws IOException if the JSON string is invalid with respect to MigrationSafetyIssueRep
+   */
   public static MigrationSafetyIssueRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, MigrationSafetyIssueRep.class);
   }
 
- /**
-  * Convert an instance of MigrationSafetyIssueRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of MigrationSafetyIssueRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

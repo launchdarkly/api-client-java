@@ -102,7 +102,8 @@ public class SegmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -111,7 +112,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createBigSegmentExportCall(String projectKey, String environmentKey, String segmentKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createBigSegmentExportCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -159,7 +160,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createBigSegmentExportValidateBeforeCall(String projectKey, String environmentKey, String segmentKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createBigSegmentExportValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling createBigSegmentExport(Async)");
@@ -187,7 +188,8 @@ public class SegmentsApi {
      * @param segmentKey The segment key (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -196,7 +198,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void createBigSegmentExport(String projectKey, String environmentKey, String segmentKey) throws ApiException {
+    public void createBigSegmentExport(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey) throws ApiException {
         createBigSegmentExportWithHttpInfo(projectKey, environmentKey, segmentKey);
     }
 
@@ -209,7 +211,8 @@ public class SegmentsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -218,7 +221,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> createBigSegmentExportWithHttpInfo(String projectKey, String environmentKey, String segmentKey) throws ApiException {
+    public ApiResponse<Void> createBigSegmentExportWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey) throws ApiException {
         okhttp3.Call localVarCall = createBigSegmentExportValidateBeforeCall(projectKey, environmentKey, segmentKey, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -233,7 +236,8 @@ public class SegmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -242,7 +246,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createBigSegmentExportAsync(String projectKey, String environmentKey, String segmentKey, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call createBigSegmentExportAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createBigSegmentExportValidateBeforeCall(projectKey, environmentKey, segmentKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -260,7 +264,8 @@ public class SegmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Import request submitted successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -270,7 +275,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createBigSegmentImportCall(String projectKey, String environmentKey, String segmentKey, File _file, String mode, Boolean waitOnApprovals, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createBigSegmentImportCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nullable File _file, @javax.annotation.Nullable String mode, @javax.annotation.Nullable Boolean waitOnApprovals, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -331,7 +336,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createBigSegmentImportValidateBeforeCall(String projectKey, String environmentKey, String segmentKey, File _file, String mode, Boolean waitOnApprovals, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createBigSegmentImportValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nullable File _file, @javax.annotation.Nullable String mode, @javax.annotation.Nullable Boolean waitOnApprovals, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling createBigSegmentImport(Async)");
@@ -362,7 +367,8 @@ public class SegmentsApi {
      * @param waitOnApprovals Whether to wait for approvals before processing the import (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Import request submitted successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -372,7 +378,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void createBigSegmentImport(String projectKey, String environmentKey, String segmentKey, File _file, String mode, Boolean waitOnApprovals) throws ApiException {
+    public void createBigSegmentImport(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nullable File _file, @javax.annotation.Nullable String mode, @javax.annotation.Nullable Boolean waitOnApprovals) throws ApiException {
         createBigSegmentImportWithHttpInfo(projectKey, environmentKey, segmentKey, _file, mode, waitOnApprovals);
     }
 
@@ -388,7 +394,8 @@ public class SegmentsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Import request submitted successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -398,7 +405,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> createBigSegmentImportWithHttpInfo(String projectKey, String environmentKey, String segmentKey, File _file, String mode, Boolean waitOnApprovals) throws ApiException {
+    public ApiResponse<Void> createBigSegmentImportWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nullable File _file, @javax.annotation.Nullable String mode, @javax.annotation.Nullable Boolean waitOnApprovals) throws ApiException {
         okhttp3.Call localVarCall = createBigSegmentImportValidateBeforeCall(projectKey, environmentKey, segmentKey, _file, mode, waitOnApprovals, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -416,7 +423,8 @@ public class SegmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Import request submitted successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -426,7 +434,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createBigSegmentImportAsync(String projectKey, String environmentKey, String segmentKey, File _file, String mode, Boolean waitOnApprovals, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call createBigSegmentImportAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nullable File _file, @javax.annotation.Nullable String mode, @javax.annotation.Nullable Boolean waitOnApprovals, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createBigSegmentImportValidateBeforeCall(projectKey, environmentKey, segmentKey, _file, mode, waitOnApprovals, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -441,7 +449,8 @@ public class SegmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -451,7 +460,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteSegmentCall(String projectKey, String environmentKey, String segmentKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteSegmentCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -499,7 +508,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteSegmentValidateBeforeCall(String projectKey, String environmentKey, String segmentKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteSegmentValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling deleteSegment(Async)");
@@ -527,7 +536,8 @@ public class SegmentsApi {
      * @param segmentKey The segment key (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -537,7 +547,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteSegment(String projectKey, String environmentKey, String segmentKey) throws ApiException {
+    public void deleteSegment(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey) throws ApiException {
         deleteSegmentWithHttpInfo(projectKey, environmentKey, segmentKey);
     }
 
@@ -550,7 +560,8 @@ public class SegmentsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -560,7 +571,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteSegmentWithHttpInfo(String projectKey, String environmentKey, String segmentKey) throws ApiException {
+    public ApiResponse<Void> deleteSegmentWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey) throws ApiException {
         okhttp3.Call localVarCall = deleteSegmentValidateBeforeCall(projectKey, environmentKey, segmentKey, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -575,7 +586,8 @@ public class SegmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -585,7 +597,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteSegmentAsync(String projectKey, String environmentKey, String segmentKey, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteSegmentAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteSegmentValidateBeforeCall(projectKey, environmentKey, segmentKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -601,7 +613,8 @@ public class SegmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment export response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -609,7 +622,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getBigSegmentExportCall(String projectKey, String environmentKey, String segmentKey, String exportID, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getBigSegmentExportCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull String exportID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -658,7 +671,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getBigSegmentExportValidateBeforeCall(String projectKey, String environmentKey, String segmentKey, String exportID, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getBigSegmentExportValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull String exportID, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getBigSegmentExport(Async)");
@@ -693,7 +706,8 @@ public class SegmentsApi {
      * @return Export
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment export response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -701,7 +715,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Export getBigSegmentExport(String projectKey, String environmentKey, String segmentKey, String exportID) throws ApiException {
+    public Export getBigSegmentExport(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull String exportID) throws ApiException {
         ApiResponse<Export> localVarResp = getBigSegmentExportWithHttpInfo(projectKey, environmentKey, segmentKey, exportID);
         return localVarResp.getData();
     }
@@ -716,7 +730,8 @@ public class SegmentsApi {
      * @return ApiResponse&lt;Export&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment export response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -724,7 +739,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Export> getBigSegmentExportWithHttpInfo(String projectKey, String environmentKey, String segmentKey, String exportID) throws ApiException {
+    public ApiResponse<Export> getBigSegmentExportWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull String exportID) throws ApiException {
         okhttp3.Call localVarCall = getBigSegmentExportValidateBeforeCall(projectKey, environmentKey, segmentKey, exportID, null);
         Type localVarReturnType = new TypeToken<Export>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -741,7 +756,8 @@ public class SegmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment export response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -749,7 +765,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getBigSegmentExportAsync(String projectKey, String environmentKey, String segmentKey, String exportID, final ApiCallback<Export> _callback) throws ApiException {
+    public okhttp3.Call getBigSegmentExportAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull String exportID, final ApiCallback<Export> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getBigSegmentExportValidateBeforeCall(projectKey, environmentKey, segmentKey, exportID, _callback);
         Type localVarReturnType = new TypeToken<Export>(){}.getType();
@@ -766,7 +782,8 @@ public class SegmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment import response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -774,7 +791,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getBigSegmentImportCall(String projectKey, String environmentKey, String segmentKey, String importID, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getBigSegmentImportCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull String importID, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -823,7 +840,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getBigSegmentImportValidateBeforeCall(String projectKey, String environmentKey, String segmentKey, String importID, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getBigSegmentImportValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull String importID, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getBigSegmentImport(Async)");
@@ -858,7 +875,8 @@ public class SegmentsApi {
      * @return ModelImport
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment import response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -866,7 +884,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ModelImport getBigSegmentImport(String projectKey, String environmentKey, String segmentKey, String importID) throws ApiException {
+    public ModelImport getBigSegmentImport(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull String importID) throws ApiException {
         ApiResponse<ModelImport> localVarResp = getBigSegmentImportWithHttpInfo(projectKey, environmentKey, segmentKey, importID);
         return localVarResp.getData();
     }
@@ -881,7 +899,8 @@ public class SegmentsApi {
      * @return ApiResponse&lt;ModelImport&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment import response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -889,7 +908,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelImport> getBigSegmentImportWithHttpInfo(String projectKey, String environmentKey, String segmentKey, String importID) throws ApiException {
+    public ApiResponse<ModelImport> getBigSegmentImportWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull String importID) throws ApiException {
         okhttp3.Call localVarCall = getBigSegmentImportValidateBeforeCall(projectKey, environmentKey, segmentKey, importID, null);
         Type localVarReturnType = new TypeToken<ModelImport>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -906,7 +925,8 @@ public class SegmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment import response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -914,7 +934,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getBigSegmentImportAsync(String projectKey, String environmentKey, String segmentKey, String importID, final ApiCallback<ModelImport> _callback) throws ApiException {
+    public okhttp3.Call getBigSegmentImportAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull String importID, final ApiCallback<ModelImport> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getBigSegmentImportValidateBeforeCall(projectKey, environmentKey, segmentKey, importID, _callback);
         Type localVarReturnType = new TypeToken<ModelImport>(){}.getType();
@@ -930,7 +950,8 @@ public class SegmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context instance segment membership collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -938,7 +959,7 @@ public class SegmentsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getContextInstanceSegmentsMembershipByEnvCall(String projectKey, String environmentKey, Map<String, Object> requestBody, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getContextInstanceSegmentsMembershipByEnvCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull Map<String, Object> requestBody, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -986,7 +1007,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getContextInstanceSegmentsMembershipByEnvValidateBeforeCall(String projectKey, String environmentKey, Map<String, Object> requestBody, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getContextInstanceSegmentsMembershipByEnvValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull Map<String, Object> requestBody, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getContextInstanceSegmentsMembershipByEnv(Async)");
@@ -1015,7 +1036,8 @@ public class SegmentsApi {
      * @return ContextInstanceSegmentMemberships
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context instance segment membership collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1023,7 +1045,7 @@ public class SegmentsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ContextInstanceSegmentMemberships getContextInstanceSegmentsMembershipByEnv(String projectKey, String environmentKey, Map<String, Object> requestBody) throws ApiException {
+    public ContextInstanceSegmentMemberships getContextInstanceSegmentsMembershipByEnv(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull Map<String, Object> requestBody) throws ApiException {
         ApiResponse<ContextInstanceSegmentMemberships> localVarResp = getContextInstanceSegmentsMembershipByEnvWithHttpInfo(projectKey, environmentKey, requestBody);
         return localVarResp.getData();
     }
@@ -1037,7 +1059,8 @@ public class SegmentsApi {
      * @return ApiResponse&lt;ContextInstanceSegmentMemberships&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context instance segment membership collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1045,7 +1068,7 @@ public class SegmentsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ContextInstanceSegmentMemberships> getContextInstanceSegmentsMembershipByEnvWithHttpInfo(String projectKey, String environmentKey, Map<String, Object> requestBody) throws ApiException {
+    public ApiResponse<ContextInstanceSegmentMemberships> getContextInstanceSegmentsMembershipByEnvWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull Map<String, Object> requestBody) throws ApiException {
         okhttp3.Call localVarCall = getContextInstanceSegmentsMembershipByEnvValidateBeforeCall(projectKey, environmentKey, requestBody, null);
         Type localVarReturnType = new TypeToken<ContextInstanceSegmentMemberships>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1061,7 +1084,8 @@ public class SegmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context instance segment membership collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1069,7 +1093,7 @@ public class SegmentsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getContextInstanceSegmentsMembershipByEnvAsync(String projectKey, String environmentKey, Map<String, Object> requestBody, final ApiCallback<ContextInstanceSegmentMemberships> _callback) throws ApiException {
+    public okhttp3.Call getContextInstanceSegmentsMembershipByEnvAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull Map<String, Object> requestBody, final ApiCallback<ContextInstanceSegmentMemberships> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getContextInstanceSegmentsMembershipByEnvValidateBeforeCall(projectKey, environmentKey, requestBody, _callback);
         Type localVarReturnType = new TypeToken<ContextInstanceSegmentMemberships>(){}.getType();
@@ -1085,7 +1109,8 @@ public class SegmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring context target response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1093,7 +1118,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExpiringTargetsForSegmentCall(String projectKey, String environmentKey, String segmentKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getExpiringTargetsForSegmentCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1141,7 +1166,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getExpiringTargetsForSegmentValidateBeforeCall(String projectKey, String environmentKey, String segmentKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getExpiringTargetsForSegmentValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getExpiringTargetsForSegment(Async)");
@@ -1170,7 +1195,8 @@ public class SegmentsApi {
      * @return ExpiringTargetGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring context target response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1178,7 +1204,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ExpiringTargetGetResponse getExpiringTargetsForSegment(String projectKey, String environmentKey, String segmentKey) throws ApiException {
+    public ExpiringTargetGetResponse getExpiringTargetsForSegment(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey) throws ApiException {
         ApiResponse<ExpiringTargetGetResponse> localVarResp = getExpiringTargetsForSegmentWithHttpInfo(projectKey, environmentKey, segmentKey);
         return localVarResp.getData();
     }
@@ -1192,7 +1218,8 @@ public class SegmentsApi {
      * @return ApiResponse&lt;ExpiringTargetGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring context target response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1200,7 +1227,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ExpiringTargetGetResponse> getExpiringTargetsForSegmentWithHttpInfo(String projectKey, String environmentKey, String segmentKey) throws ApiException {
+    public ApiResponse<ExpiringTargetGetResponse> getExpiringTargetsForSegmentWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey) throws ApiException {
         okhttp3.Call localVarCall = getExpiringTargetsForSegmentValidateBeforeCall(projectKey, environmentKey, segmentKey, null);
         Type localVarReturnType = new TypeToken<ExpiringTargetGetResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1216,7 +1243,8 @@ public class SegmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring context target response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1224,7 +1252,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExpiringTargetsForSegmentAsync(String projectKey, String environmentKey, String segmentKey, final ApiCallback<ExpiringTargetGetResponse> _callback) throws ApiException {
+    public okhttp3.Call getExpiringTargetsForSegmentAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, final ApiCallback<ExpiringTargetGetResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getExpiringTargetsForSegmentValidateBeforeCall(projectKey, environmentKey, segmentKey, _callback);
         Type localVarReturnType = new TypeToken<ExpiringTargetGetResponse>(){}.getType();
@@ -1240,7 +1268,8 @@ public class SegmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1248,7 +1277,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExpiringUserTargetsForSegmentCall(String projectKey, String environmentKey, String segmentKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getExpiringUserTargetsForSegmentCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1296,7 +1325,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getExpiringUserTargetsForSegmentValidateBeforeCall(String projectKey, String environmentKey, String segmentKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getExpiringUserTargetsForSegmentValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getExpiringUserTargetsForSegment(Async)");
@@ -1325,7 +1354,8 @@ public class SegmentsApi {
      * @return ExpiringUserTargetGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1333,7 +1363,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ExpiringUserTargetGetResponse getExpiringUserTargetsForSegment(String projectKey, String environmentKey, String segmentKey) throws ApiException {
+    public ExpiringUserTargetGetResponse getExpiringUserTargetsForSegment(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey) throws ApiException {
         ApiResponse<ExpiringUserTargetGetResponse> localVarResp = getExpiringUserTargetsForSegmentWithHttpInfo(projectKey, environmentKey, segmentKey);
         return localVarResp.getData();
     }
@@ -1347,7 +1377,8 @@ public class SegmentsApi {
      * @return ApiResponse&lt;ExpiringUserTargetGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1355,7 +1386,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ExpiringUserTargetGetResponse> getExpiringUserTargetsForSegmentWithHttpInfo(String projectKey, String environmentKey, String segmentKey) throws ApiException {
+    public ApiResponse<ExpiringUserTargetGetResponse> getExpiringUserTargetsForSegmentWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey) throws ApiException {
         okhttp3.Call localVarCall = getExpiringUserTargetsForSegmentValidateBeforeCall(projectKey, environmentKey, segmentKey, null);
         Type localVarReturnType = new TypeToken<ExpiringUserTargetGetResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1371,7 +1402,8 @@ public class SegmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1379,7 +1411,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExpiringUserTargetsForSegmentAsync(String projectKey, String environmentKey, String segmentKey, final ApiCallback<ExpiringUserTargetGetResponse> _callback) throws ApiException {
+    public okhttp3.Call getExpiringUserTargetsForSegmentAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, final ApiCallback<ExpiringUserTargetGetResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getExpiringUserTargetsForSegmentValidateBeforeCall(projectKey, environmentKey, segmentKey, _callback);
         Type localVarReturnType = new TypeToken<ExpiringUserTargetGetResponse>(){}.getType();
@@ -1395,7 +1427,8 @@ public class SegmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1403,7 +1436,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSegmentCall(String projectKey, String environmentKey, String segmentKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSegmentCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1451,7 +1484,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSegmentValidateBeforeCall(String projectKey, String environmentKey, String segmentKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSegmentValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getSegment(Async)");
@@ -1480,7 +1513,8 @@ public class SegmentsApi {
      * @return UserSegment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1488,7 +1522,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public UserSegment getSegment(String projectKey, String environmentKey, String segmentKey) throws ApiException {
+    public UserSegment getSegment(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey) throws ApiException {
         ApiResponse<UserSegment> localVarResp = getSegmentWithHttpInfo(projectKey, environmentKey, segmentKey);
         return localVarResp.getData();
     }
@@ -1502,7 +1536,8 @@ public class SegmentsApi {
      * @return ApiResponse&lt;UserSegment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1510,7 +1545,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserSegment> getSegmentWithHttpInfo(String projectKey, String environmentKey, String segmentKey) throws ApiException {
+    public ApiResponse<UserSegment> getSegmentWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey) throws ApiException {
         okhttp3.Call localVarCall = getSegmentValidateBeforeCall(projectKey, environmentKey, segmentKey, null);
         Type localVarReturnType = new TypeToken<UserSegment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1526,7 +1561,8 @@ public class SegmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1534,7 +1570,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSegmentAsync(String projectKey, String environmentKey, String segmentKey, final ApiCallback<UserSegment> _callback) throws ApiException {
+    public okhttp3.Call getSegmentAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, final ApiCallback<UserSegment> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSegmentValidateBeforeCall(projectKey, environmentKey, segmentKey, _callback);
         Type localVarReturnType = new TypeToken<UserSegment>(){}.getType();
@@ -1551,7 +1587,8 @@ public class SegmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment membership for context response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1560,7 +1597,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSegmentMembershipForContextCall(String projectKey, String environmentKey, String segmentKey, String contextKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSegmentMembershipForContextCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull String contextKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1609,7 +1646,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSegmentMembershipForContextValidateBeforeCall(String projectKey, String environmentKey, String segmentKey, String contextKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSegmentMembershipForContextValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull String contextKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getSegmentMembershipForContext(Async)");
@@ -1644,7 +1681,8 @@ public class SegmentsApi {
      * @return BigSegmentTarget
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment membership for context response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1653,7 +1691,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public BigSegmentTarget getSegmentMembershipForContext(String projectKey, String environmentKey, String segmentKey, String contextKey) throws ApiException {
+    public BigSegmentTarget getSegmentMembershipForContext(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull String contextKey) throws ApiException {
         ApiResponse<BigSegmentTarget> localVarResp = getSegmentMembershipForContextWithHttpInfo(projectKey, environmentKey, segmentKey, contextKey);
         return localVarResp.getData();
     }
@@ -1668,7 +1706,8 @@ public class SegmentsApi {
      * @return ApiResponse&lt;BigSegmentTarget&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment membership for context response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1677,7 +1716,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BigSegmentTarget> getSegmentMembershipForContextWithHttpInfo(String projectKey, String environmentKey, String segmentKey, String contextKey) throws ApiException {
+    public ApiResponse<BigSegmentTarget> getSegmentMembershipForContextWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull String contextKey) throws ApiException {
         okhttp3.Call localVarCall = getSegmentMembershipForContextValidateBeforeCall(projectKey, environmentKey, segmentKey, contextKey, null);
         Type localVarReturnType = new TypeToken<BigSegmentTarget>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1694,7 +1733,8 @@ public class SegmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment membership for context response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1703,7 +1743,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSegmentMembershipForContextAsync(String projectKey, String environmentKey, String segmentKey, String contextKey, final ApiCallback<BigSegmentTarget> _callback) throws ApiException {
+    public okhttp3.Call getSegmentMembershipForContextAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull String contextKey, final ApiCallback<BigSegmentTarget> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSegmentMembershipForContextValidateBeforeCall(projectKey, environmentKey, segmentKey, contextKey, _callback);
         Type localVarReturnType = new TypeToken<BigSegmentTarget>(){}.getType();
@@ -1720,7 +1760,8 @@ public class SegmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment membership for user response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1729,7 +1770,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSegmentMembershipForUserCall(String projectKey, String environmentKey, String segmentKey, String userKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSegmentMembershipForUserCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull String userKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1778,7 +1819,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSegmentMembershipForUserValidateBeforeCall(String projectKey, String environmentKey, String segmentKey, String userKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSegmentMembershipForUserValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull String userKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getSegmentMembershipForUser(Async)");
@@ -1813,7 +1854,8 @@ public class SegmentsApi {
      * @return BigSegmentTarget
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment membership for user response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1822,7 +1864,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public BigSegmentTarget getSegmentMembershipForUser(String projectKey, String environmentKey, String segmentKey, String userKey) throws ApiException {
+    public BigSegmentTarget getSegmentMembershipForUser(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull String userKey) throws ApiException {
         ApiResponse<BigSegmentTarget> localVarResp = getSegmentMembershipForUserWithHttpInfo(projectKey, environmentKey, segmentKey, userKey);
         return localVarResp.getData();
     }
@@ -1837,7 +1879,8 @@ public class SegmentsApi {
      * @return ApiResponse&lt;BigSegmentTarget&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment membership for user response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1846,7 +1889,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BigSegmentTarget> getSegmentMembershipForUserWithHttpInfo(String projectKey, String environmentKey, String segmentKey, String userKey) throws ApiException {
+    public ApiResponse<BigSegmentTarget> getSegmentMembershipForUserWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull String userKey) throws ApiException {
         okhttp3.Call localVarCall = getSegmentMembershipForUserValidateBeforeCall(projectKey, environmentKey, segmentKey, userKey, null);
         Type localVarReturnType = new TypeToken<BigSegmentTarget>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1863,7 +1906,8 @@ public class SegmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment membership for user response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1872,7 +1916,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSegmentMembershipForUserAsync(String projectKey, String environmentKey, String segmentKey, String userKey, final ApiCallback<BigSegmentTarget> _callback) throws ApiException {
+    public okhttp3.Call getSegmentMembershipForUserAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull String userKey, final ApiCallback<BigSegmentTarget> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSegmentMembershipForUserValidateBeforeCall(projectKey, environmentKey, segmentKey, userKey, _callback);
         Type localVarReturnType = new TypeToken<BigSegmentTarget>(){}.getType();
@@ -1891,14 +1935,15 @@ public class SegmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSegmentsCall(String projectKey, String environmentKey, Long limit, Long offset, String sort, String filter, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSegmentsCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1961,7 +2006,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSegmentsValidateBeforeCall(String projectKey, String environmentKey, Long limit, Long offset, String sort, String filter, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSegmentsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getSegments(Async)");
@@ -1988,14 +2033,15 @@ public class SegmentsApi {
      * @return UserSegments
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public UserSegments getSegments(String projectKey, String environmentKey, Long limit, Long offset, String sort, String filter) throws ApiException {
+    public UserSegments getSegments(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter) throws ApiException {
         ApiResponse<UserSegments> localVarResp = getSegmentsWithHttpInfo(projectKey, environmentKey, limit, offset, sort, filter);
         return localVarResp.getData();
     }
@@ -2012,14 +2058,15 @@ public class SegmentsApi {
      * @return ApiResponse&lt;UserSegments&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserSegments> getSegmentsWithHttpInfo(String projectKey, String environmentKey, Long limit, Long offset, String sort, String filter) throws ApiException {
+    public ApiResponse<UserSegments> getSegmentsWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter) throws ApiException {
         okhttp3.Call localVarCall = getSegmentsValidateBeforeCall(projectKey, environmentKey, limit, offset, sort, filter, null);
         Type localVarReturnType = new TypeToken<UserSegments>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2038,14 +2085,15 @@ public class SegmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSegmentsAsync(String projectKey, String environmentKey, Long limit, Long offset, String sort, String filter, final ApiCallback<UserSegments> _callback) throws ApiException {
+    public okhttp3.Call getSegmentsAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, final ApiCallback<UserSegments> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSegmentsValidateBeforeCall(projectKey, environmentKey, limit, offset, sort, filter, _callback);
         Type localVarReturnType = new TypeToken<UserSegments>(){}.getType();
@@ -2062,7 +2110,8 @@ public class SegmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring  target response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2073,7 +2122,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchExpiringTargetsForSegmentCall(String projectKey, String environmentKey, String segmentKey, PatchSegmentExpiringTargetInputRep patchSegmentExpiringTargetInputRep, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchExpiringTargetsForSegmentCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchSegmentExpiringTargetInputRep patchSegmentExpiringTargetInputRep, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2122,7 +2171,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchExpiringTargetsForSegmentValidateBeforeCall(String projectKey, String environmentKey, String segmentKey, PatchSegmentExpiringTargetInputRep patchSegmentExpiringTargetInputRep, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchExpiringTargetsForSegmentValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchSegmentExpiringTargetInputRep patchSegmentExpiringTargetInputRep, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling patchExpiringTargetsForSegment(Async)");
@@ -2157,7 +2206,8 @@ public class SegmentsApi {
      * @return ExpiringTargetPatchResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring  target response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2168,7 +2218,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ExpiringTargetPatchResponse patchExpiringTargetsForSegment(String projectKey, String environmentKey, String segmentKey, PatchSegmentExpiringTargetInputRep patchSegmentExpiringTargetInputRep) throws ApiException {
+    public ExpiringTargetPatchResponse patchExpiringTargetsForSegment(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchSegmentExpiringTargetInputRep patchSegmentExpiringTargetInputRep) throws ApiException {
         ApiResponse<ExpiringTargetPatchResponse> localVarResp = patchExpiringTargetsForSegmentWithHttpInfo(projectKey, environmentKey, segmentKey, patchSegmentExpiringTargetInputRep);
         return localVarResp.getData();
     }
@@ -2183,7 +2233,8 @@ public class SegmentsApi {
      * @return ApiResponse&lt;ExpiringTargetPatchResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring  target response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2194,7 +2245,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ExpiringTargetPatchResponse> patchExpiringTargetsForSegmentWithHttpInfo(String projectKey, String environmentKey, String segmentKey, PatchSegmentExpiringTargetInputRep patchSegmentExpiringTargetInputRep) throws ApiException {
+    public ApiResponse<ExpiringTargetPatchResponse> patchExpiringTargetsForSegmentWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchSegmentExpiringTargetInputRep patchSegmentExpiringTargetInputRep) throws ApiException {
         okhttp3.Call localVarCall = patchExpiringTargetsForSegmentValidateBeforeCall(projectKey, environmentKey, segmentKey, patchSegmentExpiringTargetInputRep, null);
         Type localVarReturnType = new TypeToken<ExpiringTargetPatchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2211,7 +2262,8 @@ public class SegmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring  target response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2222,7 +2274,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchExpiringTargetsForSegmentAsync(String projectKey, String environmentKey, String segmentKey, PatchSegmentExpiringTargetInputRep patchSegmentExpiringTargetInputRep, final ApiCallback<ExpiringTargetPatchResponse> _callback) throws ApiException {
+    public okhttp3.Call patchExpiringTargetsForSegmentAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchSegmentExpiringTargetInputRep patchSegmentExpiringTargetInputRep, final ApiCallback<ExpiringTargetPatchResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchExpiringTargetsForSegmentValidateBeforeCall(projectKey, environmentKey, segmentKey, patchSegmentExpiringTargetInputRep, _callback);
         Type localVarReturnType = new TypeToken<ExpiringTargetPatchResponse>(){}.getType();
@@ -2239,7 +2291,8 @@ public class SegmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2250,7 +2303,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchExpiringUserTargetsForSegmentCall(String projectKey, String environmentKey, String segmentKey, PatchSegmentRequest patchSegmentRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchExpiringUserTargetsForSegmentCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchSegmentRequest patchSegmentRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2299,7 +2352,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchExpiringUserTargetsForSegmentValidateBeforeCall(String projectKey, String environmentKey, String segmentKey, PatchSegmentRequest patchSegmentRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchExpiringUserTargetsForSegmentValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchSegmentRequest patchSegmentRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling patchExpiringUserTargetsForSegment(Async)");
@@ -2334,7 +2387,8 @@ public class SegmentsApi {
      * @return ExpiringUserTargetPatchResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2345,7 +2399,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ExpiringUserTargetPatchResponse patchExpiringUserTargetsForSegment(String projectKey, String environmentKey, String segmentKey, PatchSegmentRequest patchSegmentRequest) throws ApiException {
+    public ExpiringUserTargetPatchResponse patchExpiringUserTargetsForSegment(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchSegmentRequest patchSegmentRequest) throws ApiException {
         ApiResponse<ExpiringUserTargetPatchResponse> localVarResp = patchExpiringUserTargetsForSegmentWithHttpInfo(projectKey, environmentKey, segmentKey, patchSegmentRequest);
         return localVarResp.getData();
     }
@@ -2360,7 +2414,8 @@ public class SegmentsApi {
      * @return ApiResponse&lt;ExpiringUserTargetPatchResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2371,7 +2426,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ExpiringUserTargetPatchResponse> patchExpiringUserTargetsForSegmentWithHttpInfo(String projectKey, String environmentKey, String segmentKey, PatchSegmentRequest patchSegmentRequest) throws ApiException {
+    public ApiResponse<ExpiringUserTargetPatchResponse> patchExpiringUserTargetsForSegmentWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchSegmentRequest patchSegmentRequest) throws ApiException {
         okhttp3.Call localVarCall = patchExpiringUserTargetsForSegmentValidateBeforeCall(projectKey, environmentKey, segmentKey, patchSegmentRequest, null);
         Type localVarReturnType = new TypeToken<ExpiringUserTargetPatchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2388,7 +2443,8 @@ public class SegmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2399,7 +2455,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchExpiringUserTargetsForSegmentAsync(String projectKey, String environmentKey, String segmentKey, PatchSegmentRequest patchSegmentRequest, final ApiCallback<ExpiringUserTargetPatchResponse> _callback) throws ApiException {
+    public okhttp3.Call patchExpiringUserTargetsForSegmentAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchSegmentRequest patchSegmentRequest, final ApiCallback<ExpiringUserTargetPatchResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchExpiringUserTargetsForSegmentValidateBeforeCall(projectKey, environmentKey, segmentKey, patchSegmentRequest, _callback);
         Type localVarReturnType = new TypeToken<ExpiringUserTargetPatchResponse>(){}.getType();
@@ -2416,7 +2472,8 @@ public class SegmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2427,7 +2484,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchSegmentCall(String projectKey, String environmentKey, String segmentKey, PatchWithComment patchWithComment, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchSegmentCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2476,7 +2533,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchSegmentValidateBeforeCall(String projectKey, String environmentKey, String segmentKey, PatchWithComment patchWithComment, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchSegmentValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling patchSegment(Async)");
@@ -2511,7 +2568,8 @@ public class SegmentsApi {
      * @return UserSegment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2522,7 +2580,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public UserSegment patchSegment(String projectKey, String environmentKey, String segmentKey, PatchWithComment patchWithComment) throws ApiException {
+    public UserSegment patchSegment(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchWithComment patchWithComment) throws ApiException {
         ApiResponse<UserSegment> localVarResp = patchSegmentWithHttpInfo(projectKey, environmentKey, segmentKey, patchWithComment);
         return localVarResp.getData();
     }
@@ -2537,7 +2595,8 @@ public class SegmentsApi {
      * @return ApiResponse&lt;UserSegment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2548,7 +2607,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserSegment> patchSegmentWithHttpInfo(String projectKey, String environmentKey, String segmentKey, PatchWithComment patchWithComment) throws ApiException {
+    public ApiResponse<UserSegment> patchSegmentWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchWithComment patchWithComment) throws ApiException {
         okhttp3.Call localVarCall = patchSegmentValidateBeforeCall(projectKey, environmentKey, segmentKey, patchWithComment, null);
         Type localVarReturnType = new TypeToken<UserSegment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2565,7 +2624,8 @@ public class SegmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Segment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2576,7 +2636,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchSegmentAsync(String projectKey, String environmentKey, String segmentKey, PatchWithComment patchWithComment, final ApiCallback<UserSegment> _callback) throws ApiException {
+    public okhttp3.Call patchSegmentAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, final ApiCallback<UserSegment> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchSegmentValidateBeforeCall(projectKey, environmentKey, segmentKey, patchWithComment, _callback);
         Type localVarReturnType = new TypeToken<UserSegment>(){}.getType();
@@ -2592,7 +2652,8 @@ public class SegmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Segment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2602,7 +2663,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postSegmentCall(String projectKey, String environmentKey, SegmentBody segmentBody, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postSegmentCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull SegmentBody segmentBody, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2650,7 +2711,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postSegmentValidateBeforeCall(String projectKey, String environmentKey, SegmentBody segmentBody, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postSegmentValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull SegmentBody segmentBody, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling postSegment(Async)");
@@ -2679,7 +2740,8 @@ public class SegmentsApi {
      * @return UserSegment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Segment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2689,7 +2751,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public UserSegment postSegment(String projectKey, String environmentKey, SegmentBody segmentBody) throws ApiException {
+    public UserSegment postSegment(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull SegmentBody segmentBody) throws ApiException {
         ApiResponse<UserSegment> localVarResp = postSegmentWithHttpInfo(projectKey, environmentKey, segmentBody);
         return localVarResp.getData();
     }
@@ -2703,7 +2765,8 @@ public class SegmentsApi {
      * @return ApiResponse&lt;UserSegment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Segment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2713,7 +2776,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserSegment> postSegmentWithHttpInfo(String projectKey, String environmentKey, SegmentBody segmentBody) throws ApiException {
+    public ApiResponse<UserSegment> postSegmentWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull SegmentBody segmentBody) throws ApiException {
         okhttp3.Call localVarCall = postSegmentValidateBeforeCall(projectKey, environmentKey, segmentBody, null);
         Type localVarReturnType = new TypeToken<UserSegment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2729,7 +2792,8 @@ public class SegmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Segment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2739,7 +2803,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postSegmentAsync(String projectKey, String environmentKey, SegmentBody segmentBody, final ApiCallback<UserSegment> _callback) throws ApiException {
+    public okhttp3.Call postSegmentAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull SegmentBody segmentBody, final ApiCallback<UserSegment> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postSegmentValidateBeforeCall(projectKey, environmentKey, segmentBody, _callback);
         Type localVarReturnType = new TypeToken<UserSegment>(){}.getType();
@@ -2756,7 +2820,8 @@ public class SegmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2765,7 +2830,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateBigSegmentContextTargetsCall(String projectKey, String environmentKey, String segmentKey, SegmentUserState segmentUserState, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateBigSegmentContextTargetsCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull SegmentUserState segmentUserState, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2814,7 +2879,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateBigSegmentContextTargetsValidateBeforeCall(String projectKey, String environmentKey, String segmentKey, SegmentUserState segmentUserState, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateBigSegmentContextTargetsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull SegmentUserState segmentUserState, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling updateBigSegmentContextTargets(Async)");
@@ -2848,7 +2913,8 @@ public class SegmentsApi {
      * @param segmentUserState  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2857,7 +2923,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void updateBigSegmentContextTargets(String projectKey, String environmentKey, String segmentKey, SegmentUserState segmentUserState) throws ApiException {
+    public void updateBigSegmentContextTargets(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull SegmentUserState segmentUserState) throws ApiException {
         updateBigSegmentContextTargetsWithHttpInfo(projectKey, environmentKey, segmentKey, segmentUserState);
     }
 
@@ -2871,7 +2937,8 @@ public class SegmentsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2880,7 +2947,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> updateBigSegmentContextTargetsWithHttpInfo(String projectKey, String environmentKey, String segmentKey, SegmentUserState segmentUserState) throws ApiException {
+    public ApiResponse<Void> updateBigSegmentContextTargetsWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull SegmentUserState segmentUserState) throws ApiException {
         okhttp3.Call localVarCall = updateBigSegmentContextTargetsValidateBeforeCall(projectKey, environmentKey, segmentKey, segmentUserState, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -2896,7 +2963,8 @@ public class SegmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2905,7 +2973,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateBigSegmentContextTargetsAsync(String projectKey, String environmentKey, String segmentKey, SegmentUserState segmentUserState, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call updateBigSegmentContextTargetsAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull SegmentUserState segmentUserState, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateBigSegmentContextTargetsValidateBeforeCall(projectKey, environmentKey, segmentKey, segmentUserState, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -2921,7 +2989,8 @@ public class SegmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2930,7 +2999,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateBigSegmentTargetsCall(String projectKey, String environmentKey, String segmentKey, SegmentUserState segmentUserState, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateBigSegmentTargetsCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull SegmentUserState segmentUserState, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2979,7 +3048,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateBigSegmentTargetsValidateBeforeCall(String projectKey, String environmentKey, String segmentKey, SegmentUserState segmentUserState, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateBigSegmentTargetsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull SegmentUserState segmentUserState, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling updateBigSegmentTargets(Async)");
@@ -3013,7 +3082,8 @@ public class SegmentsApi {
      * @param segmentUserState  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -3022,7 +3092,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void updateBigSegmentTargets(String projectKey, String environmentKey, String segmentKey, SegmentUserState segmentUserState) throws ApiException {
+    public void updateBigSegmentTargets(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull SegmentUserState segmentUserState) throws ApiException {
         updateBigSegmentTargetsWithHttpInfo(projectKey, environmentKey, segmentKey, segmentUserState);
     }
 
@@ -3036,7 +3106,8 @@ public class SegmentsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -3045,7 +3116,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> updateBigSegmentTargetsWithHttpInfo(String projectKey, String environmentKey, String segmentKey, SegmentUserState segmentUserState) throws ApiException {
+    public ApiResponse<Void> updateBigSegmentTargetsWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull SegmentUserState segmentUserState) throws ApiException {
         okhttp3.Call localVarCall = updateBigSegmentTargetsValidateBeforeCall(projectKey, environmentKey, segmentKey, segmentUserState, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -3061,7 +3132,8 @@ public class SegmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -3070,7 +3142,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateBigSegmentTargetsAsync(String projectKey, String environmentKey, String segmentKey, SegmentUserState segmentUserState, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call updateBigSegmentTargetsAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull SegmentUserState segmentUserState, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateBigSegmentTargetsValidateBeforeCall(projectKey, environmentKey, segmentKey, segmentUserState, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);

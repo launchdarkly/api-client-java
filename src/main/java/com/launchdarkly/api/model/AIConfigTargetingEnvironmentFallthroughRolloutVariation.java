@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,88 +38,91 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * AIConfigTargetingEnvironmentFallthroughRolloutVariation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AIConfigTargetingEnvironmentFallthroughRolloutVariation {
   public static final String SERIALIZED_NAME_UNTRACKED = "_untracked";
   @SerializedName(SERIALIZED_NAME_UNTRACKED)
+  @javax.annotation.Nullable
   private Boolean untracked;
 
   public static final String SERIALIZED_NAME_VARIATION = "variation";
   @SerializedName(SERIALIZED_NAME_VARIATION)
+  @javax.annotation.Nonnull
   private Integer variation;
 
   public static final String SERIALIZED_NAME_WEIGHT = "weight";
   @SerializedName(SERIALIZED_NAME_WEIGHT)
+  @javax.annotation.Nonnull
   private Integer weight;
 
   public AIConfigTargetingEnvironmentFallthroughRolloutVariation() {
   }
 
-  public AIConfigTargetingEnvironmentFallthroughRolloutVariation untracked(Boolean untracked) {
+  public AIConfigTargetingEnvironmentFallthroughRolloutVariation untracked(@javax.annotation.Nullable Boolean untracked) {
     this.untracked = untracked;
     return this;
   }
 
-   /**
+  /**
    * Get untracked
    * @return untracked
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getUntracked() {
     return untracked;
   }
 
-  public void setUntracked(Boolean untracked) {
+  public void setUntracked(@javax.annotation.Nullable Boolean untracked) {
     this.untracked = untracked;
   }
 
 
-  public AIConfigTargetingEnvironmentFallthroughRolloutVariation variation(Integer variation) {
+  public AIConfigTargetingEnvironmentFallthroughRolloutVariation variation(@javax.annotation.Nonnull Integer variation) {
     this.variation = variation;
     return this;
   }
 
-   /**
+  /**
    * Get variation
    * @return variation
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getVariation() {
     return variation;
   }
 
-  public void setVariation(Integer variation) {
+  public void setVariation(@javax.annotation.Nonnull Integer variation) {
     this.variation = variation;
   }
 
 
-  public AIConfigTargetingEnvironmentFallthroughRolloutVariation weight(Integer weight) {
+  public AIConfigTargetingEnvironmentFallthroughRolloutVariation weight(@javax.annotation.Nonnull Integer weight) {
     this.weight = weight;
     return this;
   }
 
-   /**
+  /**
    * Get weight
    * @return weight
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getWeight() {
     return weight;
   }
 
-  public void setWeight(Integer weight) {
+  public void setWeight(@javax.annotation.Nonnull Integer weight) {
     this.weight = weight;
   }
 
@@ -217,34 +221,29 @@ public class AIConfigTargetingEnvironmentFallthroughRolloutVariation {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_untracked");
-    openapiFields.add("variation");
-    openapiFields.add("weight");
+    openapiFields = new HashSet<String>(Arrays.asList("_untracked", "variation", "weight"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("variation");
-    openapiRequiredFields.add("weight");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("variation", "weight"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to AIConfigTargetingEnvironmentFallthroughRolloutVariation
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AIConfigTargetingEnvironmentFallthroughRolloutVariation
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AIConfigTargetingEnvironmentFallthroughRolloutVariation.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AIConfigTargetingEnvironmentFallthroughRolloutVariation is not found in the empty JSON string", AIConfigTargetingEnvironmentFallthroughRolloutVariation.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AIConfigTargetingEnvironmentFallthroughRolloutVariation is not found in the empty JSON string", AIConfigTargetingEnvironmentFallthroughRolloutVariation.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : AIConfigTargetingEnvironmentFallthroughRolloutVariation.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -307,7 +306,7 @@ public class AIConfigTargetingEnvironmentFallthroughRolloutVariation {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -322,22 +321,22 @@ public class AIConfigTargetingEnvironmentFallthroughRolloutVariation {
     }
   }
 
- /**
-  * Create an instance of AIConfigTargetingEnvironmentFallthroughRolloutVariation given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AIConfigTargetingEnvironmentFallthroughRolloutVariation
-  * @throws IOException if the JSON string is invalid with respect to AIConfigTargetingEnvironmentFallthroughRolloutVariation
-  */
+  /**
+   * Create an instance of AIConfigTargetingEnvironmentFallthroughRolloutVariation given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AIConfigTargetingEnvironmentFallthroughRolloutVariation
+   * @throws IOException if the JSON string is invalid with respect to AIConfigTargetingEnvironmentFallthroughRolloutVariation
+   */
   public static AIConfigTargetingEnvironmentFallthroughRolloutVariation fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AIConfigTargetingEnvironmentFallthroughRolloutVariation.class);
   }
 
- /**
-  * Convert an instance of AIConfigTargetingEnvironmentFallthroughRolloutVariation to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AIConfigTargetingEnvironmentFallthroughRolloutVariation to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

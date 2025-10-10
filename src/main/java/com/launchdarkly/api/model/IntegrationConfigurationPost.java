@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,82 +43,87 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * IntegrationConfigurationPost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class IntegrationConfigurationPost {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
+  @javax.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CONFIG_VALUES = "configValues";
   @SerializedName(SERIALIZED_NAME_CONFIG_VALUES)
+  @javax.annotation.Nonnull
   private Map<String, Object> configValues = new HashMap<>();
 
   public static final String SERIALIZED_NAME_CAPABILITY_CONFIG = "capabilityConfig";
   @SerializedName(SERIALIZED_NAME_CAPABILITY_CONFIG)
+  @javax.annotation.Nullable
   private CapabilityConfigPost capabilityConfig;
 
   public IntegrationConfigurationPost() {
   }
 
-  public IntegrationConfigurationPost name(String name) {
+  public IntegrationConfigurationPost name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The name of the integration configuration
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public IntegrationConfigurationPost enabled(Boolean enabled) {
+  public IntegrationConfigurationPost enabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
 
-   /**
+  /**
    * Whether the integration configuration is enabled. If omitted, defaults to true
    * @return enabled
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(Boolean enabled) {
+  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public IntegrationConfigurationPost tags(List<String> tags) {
+  public IntegrationConfigurationPost tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -130,21 +136,21 @@ public class IntegrationConfigurationPost {
     return this;
   }
 
-   /**
+  /**
    * Tags for the integration
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
 
-  public IntegrationConfigurationPost configValues(Map<String, Object> configValues) {
+  public IntegrationConfigurationPost configValues(@javax.annotation.Nonnull Map<String, Object> configValues) {
     this.configValues = configValues;
     return this;
   }
@@ -157,35 +163,35 @@ public class IntegrationConfigurationPost {
     return this;
   }
 
-   /**
+  /**
    * The unique set of fields required to configure the integration. Refer to the &lt;code&gt;formVariables&lt;/code&gt; field in the corresponding &lt;code&gt;manifest.json&lt;/code&gt; at https://github.com/launchdarkly/integration-framework/tree/main/integrations for a full list of fields for the integration you wish to configure.
    * @return configValues
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Object> getConfigValues() {
     return configValues;
   }
 
-  public void setConfigValues(Map<String, Object> configValues) {
+  public void setConfigValues(@javax.annotation.Nonnull Map<String, Object> configValues) {
     this.configValues = configValues;
   }
 
 
-  public IntegrationConfigurationPost capabilityConfig(CapabilityConfigPost capabilityConfig) {
+  public IntegrationConfigurationPost capabilityConfig(@javax.annotation.Nullable CapabilityConfigPost capabilityConfig) {
     this.capabilityConfig = capabilityConfig;
     return this;
   }
 
-   /**
+  /**
    * Get capabilityConfig
    * @return capabilityConfig
-  **/
+   */
   @javax.annotation.Nullable
   public CapabilityConfigPost getCapabilityConfig() {
     return capabilityConfig;
   }
 
-  public void setCapabilityConfig(CapabilityConfigPost capabilityConfig) {
+  public void setCapabilityConfig(@javax.annotation.Nullable CapabilityConfigPost capabilityConfig) {
     this.capabilityConfig = capabilityConfig;
   }
 
@@ -288,45 +294,38 @@ public class IntegrationConfigurationPost {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("enabled");
-    openapiFields.add("tags");
-    openapiFields.add("configValues");
-    openapiFields.add("capabilityConfig");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "enabled", "tags", "configValues", "capabilityConfig"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("configValues");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name", "configValues"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to IntegrationConfigurationPost
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to IntegrationConfigurationPost
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IntegrationConfigurationPost.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in IntegrationConfigurationPost is not found in the empty JSON string", IntegrationConfigurationPost.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in IntegrationConfigurationPost is not found in the empty JSON string", IntegrationConfigurationPost.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : IntegrationConfigurationPost.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       // validate the optional field `capabilityConfig`
       if (jsonObj.get("capabilityConfig") != null && !jsonObj.get("capabilityConfig").isJsonNull()) {
@@ -391,7 +390,7 @@ public class IntegrationConfigurationPost {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -406,22 +405,22 @@ public class IntegrationConfigurationPost {
     }
   }
 
- /**
-  * Create an instance of IntegrationConfigurationPost given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of IntegrationConfigurationPost
-  * @throws IOException if the JSON string is invalid with respect to IntegrationConfigurationPost
-  */
+  /**
+   * Create an instance of IntegrationConfigurationPost given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of IntegrationConfigurationPost
+   * @throws IOException if the JSON string is invalid with respect to IntegrationConfigurationPost
+   */
   public static IntegrationConfigurationPost fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, IntegrationConfigurationPost.class);
   }
 
- /**
-  * Convert an instance of IntegrationConfigurationPost to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of IntegrationConfigurationPost to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

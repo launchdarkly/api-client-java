@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,180 +39,187 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ExpiringUserTargetItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ExpiringUserTargetItem {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_VERSION = "_version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nonnull
   private Integer version;
 
   public static final String SERIALIZED_NAME_EXPIRATION_DATE = "expirationDate";
   @SerializedName(SERIALIZED_NAME_EXPIRATION_DATE)
+  @javax.annotation.Nonnull
   private Long expirationDate;
 
   public static final String SERIALIZED_NAME_USER_KEY = "userKey";
   @SerializedName(SERIALIZED_NAME_USER_KEY)
+  @javax.annotation.Nonnull
   private String userKey;
 
   public static final String SERIALIZED_NAME_TARGET_TYPE = "targetType";
   @SerializedName(SERIALIZED_NAME_TARGET_TYPE)
+  @javax.annotation.Nullable
   private String targetType;
 
   public static final String SERIALIZED_NAME_VARIATION_ID = "variationId";
   @SerializedName(SERIALIZED_NAME_VARIATION_ID)
+  @javax.annotation.Nullable
   private String variationId;
 
   public static final String SERIALIZED_NAME_RESOURCE_ID = "_resourceId";
   @SerializedName(SERIALIZED_NAME_RESOURCE_ID)
+  @javax.annotation.Nonnull
   private ResourceIDResponse resourceId;
 
   public ExpiringUserTargetItem() {
   }
 
-  public ExpiringUserTargetItem id(String id) {
+  public ExpiringUserTargetItem id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The ID of this expiring user target
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public ExpiringUserTargetItem version(Integer version) {
+  public ExpiringUserTargetItem version(@javax.annotation.Nonnull Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * The version of this expiring user target
    * @return version
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nonnull Integer version) {
     this.version = version;
   }
 
 
-  public ExpiringUserTargetItem expirationDate(Long expirationDate) {
+  public ExpiringUserTargetItem expirationDate(@javax.annotation.Nonnull Long expirationDate) {
     this.expirationDate = expirationDate;
     return this;
   }
 
-   /**
+  /**
    * Get expirationDate
    * @return expirationDate
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getExpirationDate() {
     return expirationDate;
   }
 
-  public void setExpirationDate(Long expirationDate) {
+  public void setExpirationDate(@javax.annotation.Nonnull Long expirationDate) {
     this.expirationDate = expirationDate;
   }
 
 
-  public ExpiringUserTargetItem userKey(String userKey) {
+  public ExpiringUserTargetItem userKey(@javax.annotation.Nonnull String userKey) {
     this.userKey = userKey;
     return this;
   }
 
-   /**
+  /**
    * A unique key used to represent the user
    * @return userKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getUserKey() {
     return userKey;
   }
 
-  public void setUserKey(String userKey) {
+  public void setUserKey(@javax.annotation.Nonnull String userKey) {
     this.userKey = userKey;
   }
 
 
-  public ExpiringUserTargetItem targetType(String targetType) {
+  public ExpiringUserTargetItem targetType(@javax.annotation.Nullable String targetType) {
     this.targetType = targetType;
     return this;
   }
 
-   /**
+  /**
    * A segment&#39;s target type. Included when expiring user targets are updated on a segment.
    * @return targetType
-  **/
+   */
   @javax.annotation.Nullable
   public String getTargetType() {
     return targetType;
   }
 
-  public void setTargetType(String targetType) {
+  public void setTargetType(@javax.annotation.Nullable String targetType) {
     this.targetType = targetType;
   }
 
 
-  public ExpiringUserTargetItem variationId(String variationId) {
+  public ExpiringUserTargetItem variationId(@javax.annotation.Nullable String variationId) {
     this.variationId = variationId;
     return this;
   }
 
-   /**
+  /**
    * A unique key used to represent the flag variation. Included when expiring user targets are updated on a feature flag.
    * @return variationId
-  **/
+   */
   @javax.annotation.Nullable
   public String getVariationId() {
     return variationId;
   }
 
-  public void setVariationId(String variationId) {
+  public void setVariationId(@javax.annotation.Nullable String variationId) {
     this.variationId = variationId;
   }
 
 
-  public ExpiringUserTargetItem resourceId(ResourceIDResponse resourceId) {
+  public ExpiringUserTargetItem resourceId(@javax.annotation.Nonnull ResourceIDResponse resourceId) {
     this.resourceId = resourceId;
     return this;
   }
 
-   /**
+  /**
    * Get resourceId
    * @return resourceId
-  **/
+   */
   @javax.annotation.Nonnull
   public ResourceIDResponse getResourceId() {
     return resourceId;
   }
 
-  public void setResourceId(ResourceIDResponse resourceId) {
+  public void setResourceId(@javax.annotation.Nonnull ResourceIDResponse resourceId) {
     this.resourceId = resourceId;
   }
 
@@ -318,55 +326,43 @@ public class ExpiringUserTargetItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_id");
-    openapiFields.add("_version");
-    openapiFields.add("expirationDate");
-    openapiFields.add("userKey");
-    openapiFields.add("targetType");
-    openapiFields.add("variationId");
-    openapiFields.add("_resourceId");
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "_version", "expirationDate", "userKey", "targetType", "variationId", "_resourceId"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("_version");
-    openapiRequiredFields.add("expirationDate");
-    openapiRequiredFields.add("userKey");
-    openapiRequiredFields.add("_resourceId");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "_version", "expirationDate", "userKey", "_resourceId"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ExpiringUserTargetItem
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ExpiringUserTargetItem
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ExpiringUserTargetItem.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ExpiringUserTargetItem is not found in the empty JSON string", ExpiringUserTargetItem.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ExpiringUserTargetItem is not found in the empty JSON string", ExpiringUserTargetItem.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ExpiringUserTargetItem.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if (!jsonObj.get("userKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `userKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `userKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userKey").toString()));
       }
       if ((jsonObj.get("targetType") != null && !jsonObj.get("targetType").isJsonNull()) && !jsonObj.get("targetType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `targetType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("targetType").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `targetType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("targetType").toString()));
       }
       if ((jsonObj.get("variationId") != null && !jsonObj.get("variationId").isJsonNull()) && !jsonObj.get("variationId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `variationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("variationId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `variationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("variationId").toString()));
       }
       // validate the required field `_resourceId`
       ResourceIDResponse.validateJsonElement(jsonObj.get("_resourceId"));
@@ -429,7 +425,7 @@ public class ExpiringUserTargetItem {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -444,22 +440,22 @@ public class ExpiringUserTargetItem {
     }
   }
 
- /**
-  * Create an instance of ExpiringUserTargetItem given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ExpiringUserTargetItem
-  * @throws IOException if the JSON string is invalid with respect to ExpiringUserTargetItem
-  */
+  /**
+   * Create an instance of ExpiringUserTargetItem given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ExpiringUserTargetItem
+   * @throws IOException if the JSON string is invalid with respect to ExpiringUserTargetItem
+   */
   public static ExpiringUserTargetItem fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ExpiringUserTargetItem.class);
   }
 
- /**
-  * Convert an instance of ExpiringUserTargetItem to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ExpiringUserTargetItem to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

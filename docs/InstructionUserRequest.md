@@ -19,9 +19,9 @@
 
 | Name | Value |
 |---- | -----|
-| ADDEXPIREUSERTARGETDATE | &quot;addExpireUserTargetDate&quot; |
-| UPDATEEXPIREUSERTARGETDATE | &quot;updateExpireUserTargetDate&quot; |
-| REMOVEEXPIREUSERTARGETDATE | &quot;removeExpireUserTargetDate&quot; |
+| ADD_EXPIRE_USER_TARGET_DATE | &quot;addExpireUserTargetDate&quot; |
+| UPDATE_EXPIRE_USER_TARGET_DATE | &quot;updateExpireUserTargetDate&quot; |
+| REMOVE_EXPIRE_USER_TARGET_DATE | &quot;removeExpireUserTargetDate&quot; |
 
 
 

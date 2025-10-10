@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,19 +40,19 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * FlagEventImpactRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class FlagEventImpactRep {
   /**
    * The size of the flag event impact. Sizes are defined as: none (0%), small (0-20%), medium (20-80%), large (&gt;80%)
@@ -111,95 +112,99 @@ public class FlagEventImpactRep {
 
   public static final String SERIALIZED_NAME_SIZE = "size";
   @SerializedName(SERIALIZED_NAME_SIZE)
+  @javax.annotation.Nullable
   private SizeEnum size;
 
   public static final String SERIALIZED_NAME_PERCENTAGE = "percentage";
   @SerializedName(SERIALIZED_NAME_PERCENTAGE)
+  @javax.annotation.Nullable
   private BigDecimal percentage;
 
   public static final String SERIALIZED_NAME_REASON = "reason";
   @SerializedName(SERIALIZED_NAME_REASON)
+  @javax.annotation.Nullable
   private String reason;
 
   public static final String SERIALIZED_NAME_EVALUATIONS_SUMMARY = "evaluationsSummary";
   @SerializedName(SERIALIZED_NAME_EVALUATIONS_SUMMARY)
+  @javax.annotation.Nullable
   private EvaluationsSummary evaluationsSummary;
 
   public FlagEventImpactRep() {
   }
 
-  public FlagEventImpactRep size(SizeEnum size) {
+  public FlagEventImpactRep size(@javax.annotation.Nullable SizeEnum size) {
     this.size = size;
     return this;
   }
 
-   /**
+  /**
    * The size of the flag event impact. Sizes are defined as: none (0%), small (0-20%), medium (20-80%), large (&gt;80%)
    * @return size
-  **/
+   */
   @javax.annotation.Nullable
   public SizeEnum getSize() {
     return size;
   }
 
-  public void setSize(SizeEnum size) {
+  public void setSize(@javax.annotation.Nullable SizeEnum size) {
     this.size = size;
   }
 
 
-  public FlagEventImpactRep percentage(BigDecimal percentage) {
+  public FlagEventImpactRep percentage(@javax.annotation.Nullable BigDecimal percentage) {
     this.percentage = percentage;
     return this;
   }
 
-   /**
+  /**
    * The percentage of the flag event impact
    * @return percentage
-  **/
+   */
   @javax.annotation.Nullable
   public BigDecimal getPercentage() {
     return percentage;
   }
 
-  public void setPercentage(BigDecimal percentage) {
+  public void setPercentage(@javax.annotation.Nullable BigDecimal percentage) {
     this.percentage = percentage;
   }
 
 
-  public FlagEventImpactRep reason(String reason) {
+  public FlagEventImpactRep reason(@javax.annotation.Nullable String reason) {
     this.reason = reason;
     return this;
   }
 
-   /**
+  /**
    * Get reason
    * @return reason
-  **/
+   */
   @javax.annotation.Nullable
   public String getReason() {
     return reason;
   }
 
-  public void setReason(String reason) {
+  public void setReason(@javax.annotation.Nullable String reason) {
     this.reason = reason;
   }
 
 
-  public FlagEventImpactRep evaluationsSummary(EvaluationsSummary evaluationsSummary) {
+  public FlagEventImpactRep evaluationsSummary(@javax.annotation.Nullable EvaluationsSummary evaluationsSummary) {
     this.evaluationsSummary = evaluationsSummary;
     return this;
   }
 
-   /**
+  /**
    * Get evaluationsSummary
    * @return evaluationsSummary
-  **/
+   */
   @javax.annotation.Nullable
   public EvaluationsSummary getEvaluationsSummary() {
     return evaluationsSummary;
   }
 
-  public void setEvaluationsSummary(EvaluationsSummary evaluationsSummary) {
+  public void setEvaluationsSummary(@javax.annotation.Nullable EvaluationsSummary evaluationsSummary) {
     this.evaluationsSummary = evaluationsSummary;
   }
 
@@ -300,38 +305,34 @@ public class FlagEventImpactRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("size");
-    openapiFields.add("percentage");
-    openapiFields.add("reason");
-    openapiFields.add("evaluationsSummary");
+    openapiFields = new HashSet<String>(Arrays.asList("size", "percentage", "reason", "evaluationsSummary"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FlagEventImpactRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FlagEventImpactRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FlagEventImpactRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FlagEventImpactRep is not found in the empty JSON string", FlagEventImpactRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FlagEventImpactRep is not found in the empty JSON string", FlagEventImpactRep.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("size") != null && !jsonObj.get("size").isJsonNull()) && !jsonObj.get("size").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `size` to be a primitive type in the JSON string but got `%s`", jsonObj.get("size").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `size` to be a primitive type in the JSON string but got `%s`", jsonObj.get("size").toString()));
       }
       // validate the optional field `size`
       if (jsonObj.get("size") != null && !jsonObj.get("size").isJsonNull()) {
         SizeEnum.validateJsonElement(jsonObj.get("size"));
       }
       if ((jsonObj.get("reason") != null && !jsonObj.get("reason").isJsonNull()) && !jsonObj.get("reason").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `reason` to be a primitive type in the JSON string but got `%s`", jsonObj.get("reason").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `reason` to be a primitive type in the JSON string but got `%s`", jsonObj.get("reason").toString()));
       }
       // validate the optional field `evaluationsSummary`
       if (jsonObj.get("evaluationsSummary") != null && !jsonObj.get("evaluationsSummary").isJsonNull()) {
@@ -396,7 +397,7 @@ public class FlagEventImpactRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -411,22 +412,22 @@ public class FlagEventImpactRep {
     }
   }
 
- /**
-  * Create an instance of FlagEventImpactRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FlagEventImpactRep
-  * @throws IOException if the JSON string is invalid with respect to FlagEventImpactRep
-  */
+  /**
+   * Create an instance of FlagEventImpactRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FlagEventImpactRep
+   * @throws IOException if the JSON string is invalid with respect to FlagEventImpactRep
+   */
   public static FlagEventImpactRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FlagEventImpactRep.class);
   }
 
- /**
-  * Convert an instance of FlagEventImpactRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FlagEventImpactRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,48 +45,54 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ExpiringTargetPatchResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ExpiringTargetPatchResponse {
   public static final String SERIALIZED_NAME_ITEMS = "items";
   @SerializedName(SERIALIZED_NAME_ITEMS)
+  @javax.annotation.Nonnull
   private List<ExpiringTarget> items = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_TOTAL_INSTRUCTIONS = "totalInstructions";
   @SerializedName(SERIALIZED_NAME_TOTAL_INSTRUCTIONS)
+  @javax.annotation.Nullable
   private Integer totalInstructions;
 
   public static final String SERIALIZED_NAME_SUCCESSFUL_INSTRUCTIONS = "successfulInstructions";
   @SerializedName(SERIALIZED_NAME_SUCCESSFUL_INSTRUCTIONS)
+  @javax.annotation.Nullable
   private Integer successfulInstructions;
 
   public static final String SERIALIZED_NAME_FAILED_INSTRUCTIONS = "failedInstructions";
   @SerializedName(SERIALIZED_NAME_FAILED_INSTRUCTIONS)
+  @javax.annotation.Nullable
   private Integer failedInstructions;
 
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
+  @javax.annotation.Nullable
   private List<ExpiringTargetError> errors = new ArrayList<>();
 
   public ExpiringTargetPatchResponse() {
   }
 
-  public ExpiringTargetPatchResponse items(List<ExpiringTarget> items) {
+  public ExpiringTargetPatchResponse items(@javax.annotation.Nonnull List<ExpiringTarget> items) {
     this.items = items;
     return this;
   }
@@ -98,21 +105,21 @@ public class ExpiringTargetPatchResponse {
     return this;
   }
 
-   /**
+  /**
    * A list of the results from each instruction
    * @return items
-  **/
+   */
   @javax.annotation.Nonnull
   public List<ExpiringTarget> getItems() {
     return items;
   }
 
-  public void setItems(List<ExpiringTarget> items) {
+  public void setItems(@javax.annotation.Nonnull List<ExpiringTarget> items) {
     this.items = items;
   }
 
 
-  public ExpiringTargetPatchResponse links(Map<String, Link> links) {
+  public ExpiringTargetPatchResponse links(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -125,78 +132,78 @@ public class ExpiringTargetPatchResponse {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public ExpiringTargetPatchResponse totalInstructions(Integer totalInstructions) {
+  public ExpiringTargetPatchResponse totalInstructions(@javax.annotation.Nullable Integer totalInstructions) {
     this.totalInstructions = totalInstructions;
     return this;
   }
 
-   /**
+  /**
    * Get totalInstructions
    * @return totalInstructions
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getTotalInstructions() {
     return totalInstructions;
   }
 
-  public void setTotalInstructions(Integer totalInstructions) {
+  public void setTotalInstructions(@javax.annotation.Nullable Integer totalInstructions) {
     this.totalInstructions = totalInstructions;
   }
 
 
-  public ExpiringTargetPatchResponse successfulInstructions(Integer successfulInstructions) {
+  public ExpiringTargetPatchResponse successfulInstructions(@javax.annotation.Nullable Integer successfulInstructions) {
     this.successfulInstructions = successfulInstructions;
     return this;
   }
 
-   /**
+  /**
    * Get successfulInstructions
    * @return successfulInstructions
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getSuccessfulInstructions() {
     return successfulInstructions;
   }
 
-  public void setSuccessfulInstructions(Integer successfulInstructions) {
+  public void setSuccessfulInstructions(@javax.annotation.Nullable Integer successfulInstructions) {
     this.successfulInstructions = successfulInstructions;
   }
 
 
-  public ExpiringTargetPatchResponse failedInstructions(Integer failedInstructions) {
+  public ExpiringTargetPatchResponse failedInstructions(@javax.annotation.Nullable Integer failedInstructions) {
     this.failedInstructions = failedInstructions;
     return this;
   }
 
-   /**
+  /**
    * Get failedInstructions
    * @return failedInstructions
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getFailedInstructions() {
     return failedInstructions;
   }
 
-  public void setFailedInstructions(Integer failedInstructions) {
+  public void setFailedInstructions(@javax.annotation.Nullable Integer failedInstructions) {
     this.failedInstructions = failedInstructions;
   }
 
 
-  public ExpiringTargetPatchResponse errors(List<ExpiringTargetError> errors) {
+  public ExpiringTargetPatchResponse errors(@javax.annotation.Nullable List<ExpiringTargetError> errors) {
     this.errors = errors;
     return this;
   }
@@ -209,16 +216,16 @@ public class ExpiringTargetPatchResponse {
     return this;
   }
 
-   /**
+  /**
    * Get errors
    * @return errors
-  **/
+   */
   @javax.annotation.Nullable
   public List<ExpiringTargetError> getErrors() {
     return errors;
   }
 
-  public void setErrors(List<ExpiringTargetError> errors) {
+  public void setErrors(@javax.annotation.Nullable List<ExpiringTargetError> errors) {
     this.errors = errors;
   }
 
@@ -323,42 +330,35 @@ public class ExpiringTargetPatchResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("items");
-    openapiFields.add("_links");
-    openapiFields.add("totalInstructions");
-    openapiFields.add("successfulInstructions");
-    openapiFields.add("failedInstructions");
-    openapiFields.add("errors");
+    openapiFields = new HashSet<String>(Arrays.asList("items", "_links", "totalInstructions", "successfulInstructions", "failedInstructions", "errors"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("items");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("items"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ExpiringTargetPatchResponse
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ExpiringTargetPatchResponse
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ExpiringTargetPatchResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ExpiringTargetPatchResponse is not found in the empty JSON string", ExpiringTargetPatchResponse.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ExpiringTargetPatchResponse is not found in the empty JSON string", ExpiringTargetPatchResponse.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ExpiringTargetPatchResponse.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the json data is an array
       if (!jsonObj.get("items").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
       }
 
       JsonArray jsonArrayitems = jsonObj.getAsJsonArray("items");
@@ -371,7 +371,7 @@ public class ExpiringTargetPatchResponse {
         if (jsonArrayerrors != null) {
           // ensure the json data is an array
           if (!jsonObj.get("errors").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `errors` to be an array in the JSON string but got `%s`", jsonObj.get("errors").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `errors` to be an array in the JSON string but got `%s`", jsonObj.get("errors").toString()));
           }
 
           // validate the optional field `errors` (array)
@@ -439,7 +439,7 @@ public class ExpiringTargetPatchResponse {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -454,22 +454,22 @@ public class ExpiringTargetPatchResponse {
     }
   }
 
- /**
-  * Create an instance of ExpiringTargetPatchResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ExpiringTargetPatchResponse
-  * @throws IOException if the JSON string is invalid with respect to ExpiringTargetPatchResponse
-  */
+  /**
+   * Create an instance of ExpiringTargetPatchResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ExpiringTargetPatchResponse
+   * @throws IOException if the JSON string is invalid with respect to ExpiringTargetPatchResponse
+   */
   public static ExpiringTargetPatchResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ExpiringTargetPatchResponse.class);
   }
 
- /**
-  * Convert an instance of ExpiringTargetPatchResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ExpiringTargetPatchResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

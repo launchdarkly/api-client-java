@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,44 +42,49 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * InsightsChartMetadata
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class InsightsChartMetadata {
   public static final String SERIALIZED_NAME_SUMMARY = "summary";
   @SerializedName(SERIALIZED_NAME_SUMMARY)
+  @javax.annotation.Nonnull
   private Map<String, Object> summary = new HashMap<>();
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_METRICS = "metrics";
   @SerializedName(SERIALIZED_NAME_METRICS)
+  @javax.annotation.Nullable
   private Map<String, InsightsChartMetric> metrics = new HashMap<>();
 
   public static final String SERIALIZED_NAME_X_AXIS = "xAxis";
   @SerializedName(SERIALIZED_NAME_X_AXIS)
+  @javax.annotation.Nonnull
   private InsightsChartSeriesMetadataAxis xAxis;
 
   public static final String SERIALIZED_NAME_Y_AXIS = "yAxis";
   @SerializedName(SERIALIZED_NAME_Y_AXIS)
+  @javax.annotation.Nonnull
   private InsightsChartSeriesMetadataAxis yAxis;
 
   public InsightsChartMetadata() {
   }
 
-  public InsightsChartMetadata summary(Map<String, Object> summary) {
+  public InsightsChartMetadata summary(@javax.annotation.Nonnull Map<String, Object> summary) {
     this.summary = summary;
     return this;
   }
@@ -91,40 +97,40 @@ public class InsightsChartMetadata {
     return this;
   }
 
-   /**
+  /**
    * Get summary
    * @return summary
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Object> getSummary() {
     return summary;
   }
 
-  public void setSummary(Map<String, Object> summary) {
+  public void setSummary(@javax.annotation.Nonnull Map<String, Object> summary) {
     this.summary = summary;
   }
 
 
-  public InsightsChartMetadata name(String name) {
+  public InsightsChartMetadata name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Name of the chart
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public InsightsChartMetadata metrics(Map<String, InsightsChartMetric> metrics) {
+  public InsightsChartMetadata metrics(@javax.annotation.Nullable Map<String, InsightsChartMetric> metrics) {
     this.metrics = metrics;
     return this;
   }
@@ -137,54 +143,54 @@ public class InsightsChartMetadata {
     return this;
   }
 
-   /**
+  /**
    * Get metrics
    * @return metrics
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, InsightsChartMetric> getMetrics() {
     return metrics;
   }
 
-  public void setMetrics(Map<String, InsightsChartMetric> metrics) {
+  public void setMetrics(@javax.annotation.Nullable Map<String, InsightsChartMetric> metrics) {
     this.metrics = metrics;
   }
 
 
-  public InsightsChartMetadata xAxis(InsightsChartSeriesMetadataAxis xAxis) {
+  public InsightsChartMetadata xAxis(@javax.annotation.Nonnull InsightsChartSeriesMetadataAxis xAxis) {
     this.xAxis = xAxis;
     return this;
   }
 
-   /**
+  /**
    * Get xAxis
    * @return xAxis
-  **/
+   */
   @javax.annotation.Nonnull
   public InsightsChartSeriesMetadataAxis getxAxis() {
     return xAxis;
   }
 
-  public void setxAxis(InsightsChartSeriesMetadataAxis xAxis) {
+  public void setxAxis(@javax.annotation.Nonnull InsightsChartSeriesMetadataAxis xAxis) {
     this.xAxis = xAxis;
   }
 
 
-  public InsightsChartMetadata yAxis(InsightsChartSeriesMetadataAxis yAxis) {
+  public InsightsChartMetadata yAxis(@javax.annotation.Nonnull InsightsChartSeriesMetadataAxis yAxis) {
     this.yAxis = yAxis;
     return this;
   }
 
-   /**
+  /**
    * Get yAxis
    * @return yAxis
-  **/
+   */
   @javax.annotation.Nonnull
   public InsightsChartSeriesMetadataAxis getyAxis() {
     return yAxis;
   }
 
-  public void setyAxis(InsightsChartSeriesMetadataAxis yAxis) {
+  public void setyAxis(@javax.annotation.Nonnull InsightsChartSeriesMetadataAxis yAxis) {
     this.yAxis = yAxis;
   }
 
@@ -287,42 +293,34 @@ public class InsightsChartMetadata {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("summary");
-    openapiFields.add("name");
-    openapiFields.add("metrics");
-    openapiFields.add("xAxis");
-    openapiFields.add("yAxis");
+    openapiFields = new HashSet<String>(Arrays.asList("summary", "name", "metrics", "xAxis", "yAxis"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("summary");
-    openapiRequiredFields.add("xAxis");
-    openapiRequiredFields.add("yAxis");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("summary", "xAxis", "yAxis"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to InsightsChartMetadata
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to InsightsChartMetadata
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!InsightsChartMetadata.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in InsightsChartMetadata is not found in the empty JSON string", InsightsChartMetadata.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in InsightsChartMetadata is not found in the empty JSON string", InsightsChartMetadata.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : InsightsChartMetadata.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // validate the required field `xAxis`
       InsightsChartSeriesMetadataAxis.validateJsonElement(jsonObj.get("xAxis"));
@@ -387,7 +385,7 @@ public class InsightsChartMetadata {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -402,22 +400,22 @@ public class InsightsChartMetadata {
     }
   }
 
- /**
-  * Create an instance of InsightsChartMetadata given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of InsightsChartMetadata
-  * @throws IOException if the JSON string is invalid with respect to InsightsChartMetadata
-  */
+  /**
+   * Create an instance of InsightsChartMetadata given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of InsightsChartMetadata
+   * @throws IOException if the JSON string is invalid with respect to InsightsChartMetadata
+   */
   public static InsightsChartMetadata fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, InsightsChartMetadata.class);
   }
 
- /**
-  * Convert an instance of InsightsChartMetadata to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of InsightsChartMetadata to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

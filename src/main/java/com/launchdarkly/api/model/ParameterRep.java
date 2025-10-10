@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,65 +38,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ParameterRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ParameterRep {
   public static final String SERIALIZED_NAME_VARIATION_ID = "variationId";
   @SerializedName(SERIALIZED_NAME_VARIATION_ID)
+  @javax.annotation.Nullable
   private String variationId;
 
   public static final String SERIALIZED_NAME_FLAG_KEY = "flagKey";
   @SerializedName(SERIALIZED_NAME_FLAG_KEY)
+  @javax.annotation.Nullable
   private String flagKey;
 
   public ParameterRep() {
   }
 
-  public ParameterRep variationId(String variationId) {
+  public ParameterRep variationId(@javax.annotation.Nullable String variationId) {
     this.variationId = variationId;
     return this;
   }
 
-   /**
+  /**
    * Get variationId
    * @return variationId
-  **/
+   */
   @javax.annotation.Nullable
   public String getVariationId() {
     return variationId;
   }
 
-  public void setVariationId(String variationId) {
+  public void setVariationId(@javax.annotation.Nullable String variationId) {
     this.variationId = variationId;
   }
 
 
-  public ParameterRep flagKey(String flagKey) {
+  public ParameterRep flagKey(@javax.annotation.Nullable String flagKey) {
     this.flagKey = flagKey;
     return this;
   }
 
-   /**
+  /**
    * Get flagKey
    * @return flagKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getFlagKey() {
     return flagKey;
   }
 
-  public void setFlagKey(String flagKey) {
+  public void setFlagKey(@javax.annotation.Nullable String flagKey) {
     this.flagKey = flagKey;
   }
 
@@ -192,32 +195,30 @@ public class ParameterRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("variationId");
-    openapiFields.add("flagKey");
+    openapiFields = new HashSet<String>(Arrays.asList("variationId", "flagKey"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ParameterRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ParameterRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ParameterRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ParameterRep is not found in the empty JSON string", ParameterRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ParameterRep is not found in the empty JSON string", ParameterRep.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("variationId") != null && !jsonObj.get("variationId").isJsonNull()) && !jsonObj.get("variationId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `variationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("variationId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `variationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("variationId").toString()));
       }
       if ((jsonObj.get("flagKey") != null && !jsonObj.get("flagKey").isJsonNull()) && !jsonObj.get("flagKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `flagKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("flagKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `flagKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("flagKey").toString()));
       }
   }
 
@@ -278,7 +279,7 @@ public class ParameterRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -293,22 +294,22 @@ public class ParameterRep {
     }
   }
 
- /**
-  * Create an instance of ParameterRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ParameterRep
-  * @throws IOException if the JSON string is invalid with respect to ParameterRep
-  */
+  /**
+   * Create an instance of ParameterRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ParameterRep
+   * @throws IOException if the JSON string is invalid with respect to ParameterRep
+   */
   public static ParameterRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ParameterRep.class);
   }
 
- /**
-  * Convert an instance of ParameterRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ParameterRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

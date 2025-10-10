@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,26 +45,28 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * BigSegmentStoreIntegration
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class BigSegmentStoreIntegration {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private BigSegmentStoreIntegrationLinks links;
 
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   /**
@@ -120,143 +123,153 @@ public class BigSegmentStoreIntegration {
 
   public static final String SERIALIZED_NAME_INTEGRATION_KEY = "integrationKey";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_KEY)
+  @javax.annotation.Nonnull
   private IntegrationKeyEnum integrationKey;
 
   public static final String SERIALIZED_NAME_PROJECT_KEY = "projectKey";
   @SerializedName(SERIALIZED_NAME_PROJECT_KEY)
+  @javax.annotation.Nonnull
   private String projectKey;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_KEY = "environmentKey";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_KEY)
+  @javax.annotation.Nonnull
   private String environmentKey;
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
+  @javax.annotation.Nonnull
   private Map<String, Object> config = new HashMap<>();
 
   public static final String SERIALIZED_NAME_ON = "on";
   @SerializedName(SERIALIZED_NAME_ON)
+  @javax.annotation.Nonnull
   private Boolean on;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nonnull
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nonnull
   private Integer version;
 
   public static final String SERIALIZED_NAME_ACCESS = "_access";
   @SerializedName(SERIALIZED_NAME_ACCESS)
+  @javax.annotation.Nullable
   private Access access;
 
   public static final String SERIALIZED_NAME_STATUS = "_status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nonnull
   private BigSegmentStoreStatus status;
 
   public BigSegmentStoreIntegration() {
   }
 
-  public BigSegmentStoreIntegration links(BigSegmentStoreIntegrationLinks links) {
+  public BigSegmentStoreIntegration links(@javax.annotation.Nonnull BigSegmentStoreIntegrationLinks links) {
     this.links = links;
     return this;
   }
 
-   /**
+  /**
    * Get links
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public BigSegmentStoreIntegrationLinks getLinks() {
     return links;
   }
 
-  public void setLinks(BigSegmentStoreIntegrationLinks links) {
+  public void setLinks(@javax.annotation.Nonnull BigSegmentStoreIntegrationLinks links) {
     this.links = links;
   }
 
 
-  public BigSegmentStoreIntegration id(String id) {
+  public BigSegmentStoreIntegration id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The integration ID
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public BigSegmentStoreIntegration integrationKey(IntegrationKeyEnum integrationKey) {
+  public BigSegmentStoreIntegration integrationKey(@javax.annotation.Nonnull IntegrationKeyEnum integrationKey) {
     this.integrationKey = integrationKey;
     return this;
   }
 
-   /**
+  /**
    * The integration key
    * @return integrationKey
-  **/
+   */
   @javax.annotation.Nonnull
   public IntegrationKeyEnum getIntegrationKey() {
     return integrationKey;
   }
 
-  public void setIntegrationKey(IntegrationKeyEnum integrationKey) {
+  public void setIntegrationKey(@javax.annotation.Nonnull IntegrationKeyEnum integrationKey) {
     this.integrationKey = integrationKey;
   }
 
 
-  public BigSegmentStoreIntegration projectKey(String projectKey) {
+  public BigSegmentStoreIntegration projectKey(@javax.annotation.Nonnull String projectKey) {
     this.projectKey = projectKey;
     return this;
   }
 
-   /**
+  /**
    * The project key
    * @return projectKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getProjectKey() {
     return projectKey;
   }
 
-  public void setProjectKey(String projectKey) {
+  public void setProjectKey(@javax.annotation.Nonnull String projectKey) {
     this.projectKey = projectKey;
   }
 
 
-  public BigSegmentStoreIntegration environmentKey(String environmentKey) {
+  public BigSegmentStoreIntegration environmentKey(@javax.annotation.Nonnull String environmentKey) {
     this.environmentKey = environmentKey;
     return this;
   }
 
-   /**
+  /**
    * The environment key
    * @return environmentKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getEnvironmentKey() {
     return environmentKey;
   }
 
-  public void setEnvironmentKey(String environmentKey) {
+  public void setEnvironmentKey(@javax.annotation.Nonnull String environmentKey) {
     this.environmentKey = environmentKey;
   }
 
 
-  public BigSegmentStoreIntegration config(Map<String, Object> config) {
+  public BigSegmentStoreIntegration config(@javax.annotation.Nonnull Map<String, Object> config) {
     this.config = config;
     return this;
   }
@@ -269,40 +282,40 @@ public class BigSegmentStoreIntegration {
     return this;
   }
 
-   /**
+  /**
    * Get config
    * @return config
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Object> getConfig() {
     return config;
   }
 
-  public void setConfig(Map<String, Object> config) {
+  public void setConfig(@javax.annotation.Nonnull Map<String, Object> config) {
     this.config = config;
   }
 
 
-  public BigSegmentStoreIntegration on(Boolean on) {
+  public BigSegmentStoreIntegration on(@javax.annotation.Nonnull Boolean on) {
     this.on = on;
     return this;
   }
 
-   /**
+  /**
    * Whether the configuration is turned on
    * @return on
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getOn() {
     return on;
   }
 
-  public void setOn(Boolean on) {
+  public void setOn(@javax.annotation.Nonnull Boolean on) {
     this.on = on;
   }
 
 
-  public BigSegmentStoreIntegration tags(List<String> tags) {
+  public BigSegmentStoreIntegration tags(@javax.annotation.Nonnull List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -315,92 +328,92 @@ public class BigSegmentStoreIntegration {
     return this;
   }
 
-   /**
+  /**
    * List of tags for this configuration
    * @return tags
-  **/
+   */
   @javax.annotation.Nonnull
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nonnull List<String> tags) {
     this.tags = tags;
   }
 
 
-  public BigSegmentStoreIntegration name(String name) {
+  public BigSegmentStoreIntegration name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Name of the configuration
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public BigSegmentStoreIntegration version(Integer version) {
+  public BigSegmentStoreIntegration version(@javax.annotation.Nonnull Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * Version of the current configuration
    * @return version
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nonnull Integer version) {
     this.version = version;
   }
 
 
-  public BigSegmentStoreIntegration access(Access access) {
+  public BigSegmentStoreIntegration access(@javax.annotation.Nullable Access access) {
     this.access = access;
     return this;
   }
 
-   /**
+  /**
    * Get access
    * @return access
-  **/
+   */
   @javax.annotation.Nullable
   public Access getAccess() {
     return access;
   }
 
-  public void setAccess(Access access) {
+  public void setAccess(@javax.annotation.Nullable Access access) {
     this.access = access;
   }
 
 
-  public BigSegmentStoreIntegration status(BigSegmentStoreStatus status) {
+  public BigSegmentStoreIntegration status(@javax.annotation.Nonnull BigSegmentStoreStatus status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nonnull
   public BigSegmentStoreStatus getStatus() {
     return status;
   }
 
-  public void setStatus(BigSegmentStoreStatus status) {
+  public void setStatus(@javax.annotation.Nonnull BigSegmentStoreStatus status) {
     this.status = status;
   }
 
@@ -517,79 +530,56 @@ public class BigSegmentStoreIntegration {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_links");
-    openapiFields.add("_id");
-    openapiFields.add("integrationKey");
-    openapiFields.add("projectKey");
-    openapiFields.add("environmentKey");
-    openapiFields.add("config");
-    openapiFields.add("on");
-    openapiFields.add("tags");
-    openapiFields.add("name");
-    openapiFields.add("version");
-    openapiFields.add("_access");
-    openapiFields.add("_status");
+    openapiFields = new HashSet<String>(Arrays.asList("_links", "_id", "integrationKey", "projectKey", "environmentKey", "config", "on", "tags", "name", "version", "_access", "_status"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_links");
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("integrationKey");
-    openapiRequiredFields.add("projectKey");
-    openapiRequiredFields.add("environmentKey");
-    openapiRequiredFields.add("config");
-    openapiRequiredFields.add("on");
-    openapiRequiredFields.add("tags");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("version");
-    openapiRequiredFields.add("_status");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_links", "_id", "integrationKey", "projectKey", "environmentKey", "config", "on", "tags", "name", "version", "_status"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to BigSegmentStoreIntegration
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to BigSegmentStoreIntegration
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!BigSegmentStoreIntegration.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in BigSegmentStoreIntegration is not found in the empty JSON string", BigSegmentStoreIntegration.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in BigSegmentStoreIntegration is not found in the empty JSON string", BigSegmentStoreIntegration.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : BigSegmentStoreIntegration.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the required field `_links`
       BigSegmentStoreIntegrationLinks.validateJsonElement(jsonObj.get("_links"));
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if (!jsonObj.get("integrationKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `integrationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("integrationKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `integrationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("integrationKey").toString()));
       }
       // validate the required field `integrationKey`
       IntegrationKeyEnum.validateJsonElement(jsonObj.get("integrationKey"));
       if (!jsonObj.get("projectKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `projectKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `projectKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectKey").toString()));
       }
       if (!jsonObj.get("environmentKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("tags") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // validate the optional field `_access`
       if (jsonObj.get("_access") != null && !jsonObj.get("_access").isJsonNull()) {
@@ -656,7 +646,7 @@ public class BigSegmentStoreIntegration {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -671,22 +661,22 @@ public class BigSegmentStoreIntegration {
     }
   }
 
- /**
-  * Create an instance of BigSegmentStoreIntegration given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of BigSegmentStoreIntegration
-  * @throws IOException if the JSON string is invalid with respect to BigSegmentStoreIntegration
-  */
+  /**
+   * Create an instance of BigSegmentStoreIntegration given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of BigSegmentStoreIntegration
+   * @throws IOException if the JSON string is invalid with respect to BigSegmentStoreIntegration
+   */
   public static BigSegmentStoreIntegration fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, BigSegmentStoreIntegration.class);
   }
 
- /**
-  * Convert an instance of BigSegmentStoreIntegration to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of BigSegmentStoreIntegration to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

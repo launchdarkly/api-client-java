@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,228 +44,241 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * Experiment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class Experiment {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_MAINTAINER_ID = "_maintainerId";
   @SerializedName(SERIALIZED_NAME_MAINTAINER_ID)
+  @javax.annotation.Nonnull
   private String maintainerId;
 
   public static final String SERIALIZED_NAME_CREATION_DATE = "_creationDate";
   @SerializedName(SERIALIZED_NAME_CREATION_DATE)
+  @javax.annotation.Nonnull
   private Long creationDate;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_KEY = "environmentKey";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_KEY)
+  @javax.annotation.Nonnull
   private String environmentKey;
 
   public static final String SERIALIZED_NAME_ARCHIVED_DATE = "archivedDate";
   @SerializedName(SERIALIZED_NAME_ARCHIVED_DATE)
+  @javax.annotation.Nullable
   private Long archivedDate;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_HOLDOUT_ID = "holdoutId";
   @SerializedName(SERIALIZED_NAME_HOLDOUT_ID)
+  @javax.annotation.Nullable
   private String holdoutId;
 
   public static final String SERIALIZED_NAME_CURRENT_ITERATION = "currentIteration";
   @SerializedName(SERIALIZED_NAME_CURRENT_ITERATION)
+  @javax.annotation.Nullable
   private IterationRep currentIteration;
 
   public static final String SERIALIZED_NAME_DRAFT_ITERATION = "draftIteration";
   @SerializedName(SERIALIZED_NAME_DRAFT_ITERATION)
+  @javax.annotation.Nullable
   private IterationRep draftIteration;
 
   public static final String SERIALIZED_NAME_PREVIOUS_ITERATIONS = "previousIterations";
   @SerializedName(SERIALIZED_NAME_PREVIOUS_ITERATIONS)
+  @javax.annotation.Nullable
   private List<IterationRep> previousIterations = new ArrayList<>();
 
   public Experiment() {
   }
 
-  public Experiment id(String id) {
+  public Experiment id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The experiment ID
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public Experiment key(String key) {
+  public Experiment key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * The experiment key
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public Experiment name(String name) {
+  public Experiment name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The experiment name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public Experiment description(String description) {
+  public Experiment description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * The experiment description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public Experiment maintainerId(String maintainerId) {
+  public Experiment maintainerId(@javax.annotation.Nonnull String maintainerId) {
     this.maintainerId = maintainerId;
     return this;
   }
 
-   /**
+  /**
    * The ID of the member who maintains this experiment.
    * @return maintainerId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getMaintainerId() {
     return maintainerId;
   }
 
-  public void setMaintainerId(String maintainerId) {
+  public void setMaintainerId(@javax.annotation.Nonnull String maintainerId) {
     this.maintainerId = maintainerId;
   }
 
 
-  public Experiment creationDate(Long creationDate) {
+  public Experiment creationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
     return this;
   }
 
-   /**
+  /**
    * Get creationDate
    * @return creationDate
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate(Long creationDate) {
+  public void setCreationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
   }
 
 
-  public Experiment environmentKey(String environmentKey) {
+  public Experiment environmentKey(@javax.annotation.Nonnull String environmentKey) {
     this.environmentKey = environmentKey;
     return this;
   }
 
-   /**
+  /**
    * Get environmentKey
    * @return environmentKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getEnvironmentKey() {
     return environmentKey;
   }
 
-  public void setEnvironmentKey(String environmentKey) {
+  public void setEnvironmentKey(@javax.annotation.Nonnull String environmentKey) {
     this.environmentKey = environmentKey;
   }
 
 
-  public Experiment archivedDate(Long archivedDate) {
+  public Experiment archivedDate(@javax.annotation.Nullable Long archivedDate) {
     this.archivedDate = archivedDate;
     return this;
   }
 
-   /**
+  /**
    * Get archivedDate
    * @return archivedDate
-  **/
+   */
   @javax.annotation.Nullable
   public Long getArchivedDate() {
     return archivedDate;
   }
 
-  public void setArchivedDate(Long archivedDate) {
+  public void setArchivedDate(@javax.annotation.Nullable Long archivedDate) {
     this.archivedDate = archivedDate;
   }
 
 
-  public Experiment links(Map<String, Link> links) {
+  public Experiment links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -277,78 +291,78 @@ public class Experiment {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public Experiment holdoutId(String holdoutId) {
+  public Experiment holdoutId(@javax.annotation.Nullable String holdoutId) {
     this.holdoutId = holdoutId;
     return this;
   }
 
-   /**
+  /**
    * The holdout ID
    * @return holdoutId
-  **/
+   */
   @javax.annotation.Nullable
   public String getHoldoutId() {
     return holdoutId;
   }
 
-  public void setHoldoutId(String holdoutId) {
+  public void setHoldoutId(@javax.annotation.Nullable String holdoutId) {
     this.holdoutId = holdoutId;
   }
 
 
-  public Experiment currentIteration(IterationRep currentIteration) {
+  public Experiment currentIteration(@javax.annotation.Nullable IterationRep currentIteration) {
     this.currentIteration = currentIteration;
     return this;
   }
 
-   /**
+  /**
    * Get currentIteration
    * @return currentIteration
-  **/
+   */
   @javax.annotation.Nullable
   public IterationRep getCurrentIteration() {
     return currentIteration;
   }
 
-  public void setCurrentIteration(IterationRep currentIteration) {
+  public void setCurrentIteration(@javax.annotation.Nullable IterationRep currentIteration) {
     this.currentIteration = currentIteration;
   }
 
 
-  public Experiment draftIteration(IterationRep draftIteration) {
+  public Experiment draftIteration(@javax.annotation.Nullable IterationRep draftIteration) {
     this.draftIteration = draftIteration;
     return this;
   }
 
-   /**
+  /**
    * Get draftIteration
    * @return draftIteration
-  **/
+   */
   @javax.annotation.Nullable
   public IterationRep getDraftIteration() {
     return draftIteration;
   }
 
-  public void setDraftIteration(IterationRep draftIteration) {
+  public void setDraftIteration(@javax.annotation.Nullable IterationRep draftIteration) {
     this.draftIteration = draftIteration;
   }
 
 
-  public Experiment previousIterations(List<IterationRep> previousIterations) {
+  public Experiment previousIterations(@javax.annotation.Nullable List<IterationRep> previousIterations) {
     this.previousIterations = previousIterations;
     return this;
   }
@@ -361,16 +375,16 @@ public class Experiment {
     return this;
   }
 
-   /**
+  /**
    * Details on the previous iterations for this experiment.
    * @return previousIterations
-  **/
+   */
   @javax.annotation.Nullable
   public List<IterationRep> getPreviousIterations() {
     return previousIterations;
   }
 
-  public void setPreviousIterations(List<IterationRep> previousIterations) {
+  public void setPreviousIterations(@javax.annotation.Nullable List<IterationRep> previousIterations) {
     this.previousIterations = previousIterations;
   }
 
@@ -489,71 +503,52 @@ public class Experiment {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_id");
-    openapiFields.add("key");
-    openapiFields.add("name");
-    openapiFields.add("description");
-    openapiFields.add("_maintainerId");
-    openapiFields.add("_creationDate");
-    openapiFields.add("environmentKey");
-    openapiFields.add("archivedDate");
-    openapiFields.add("_links");
-    openapiFields.add("holdoutId");
-    openapiFields.add("currentIteration");
-    openapiFields.add("draftIteration");
-    openapiFields.add("previousIterations");
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "key", "name", "description", "_maintainerId", "_creationDate", "environmentKey", "archivedDate", "_links", "holdoutId", "currentIteration", "draftIteration", "previousIterations"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("_maintainerId");
-    openapiRequiredFields.add("_creationDate");
-    openapiRequiredFields.add("environmentKey");
-    openapiRequiredFields.add("_links");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("key", "name", "_maintainerId", "_creationDate", "environmentKey", "_links"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Experiment
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Experiment
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Experiment.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Experiment is not found in the empty JSON string", Experiment.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Experiment is not found in the empty JSON string", Experiment.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : Experiment.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("_id") != null && !jsonObj.get("_id").isJsonNull()) && !jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if (!jsonObj.get("_maintainerId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_maintainerId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_maintainerId").toString()));
       }
       if (!jsonObj.get("environmentKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
       }
       if ((jsonObj.get("holdoutId") != null && !jsonObj.get("holdoutId").isJsonNull()) && !jsonObj.get("holdoutId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `holdoutId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("holdoutId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `holdoutId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("holdoutId").toString()));
       }
       // validate the optional field `currentIteration`
       if (jsonObj.get("currentIteration") != null && !jsonObj.get("currentIteration").isJsonNull()) {
@@ -568,7 +563,7 @@ public class Experiment {
         if (jsonArraypreviousIterations != null) {
           // ensure the json data is an array
           if (!jsonObj.get("previousIterations").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `previousIterations` to be an array in the JSON string but got `%s`", jsonObj.get("previousIterations").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `previousIterations` to be an array in the JSON string but got `%s`", jsonObj.get("previousIterations").toString()));
           }
 
           // validate the optional field `previousIterations` (array)
@@ -636,7 +631,7 @@ public class Experiment {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -651,22 +646,22 @@ public class Experiment {
     }
   }
 
- /**
-  * Create an instance of Experiment given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Experiment
-  * @throws IOException if the JSON string is invalid with respect to Experiment
-  */
+  /**
+   * Create an instance of Experiment given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Experiment
+   * @throws IOException if the JSON string is invalid with respect to Experiment
+   */
   public static Experiment fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Experiment.class);
   }
 
- /**
-  * Convert an instance of Experiment to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Experiment to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

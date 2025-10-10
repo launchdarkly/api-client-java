@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,19 +38,19 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * UrlPost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class UrlPost {
   /**
    * Gets or Sets kind
@@ -109,95 +110,99 @@ public class UrlPost {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
+  @javax.annotation.Nullable
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
+  @javax.annotation.Nullable
   private String url;
 
   public static final String SERIALIZED_NAME_SUBSTRING = "substring";
   @SerializedName(SERIALIZED_NAME_SUBSTRING)
+  @javax.annotation.Nullable
   private String substring;
 
   public static final String SERIALIZED_NAME_PATTERN = "pattern";
   @SerializedName(SERIALIZED_NAME_PATTERN)
+  @javax.annotation.Nullable
   private String pattern;
 
   public UrlPost() {
   }
 
-  public UrlPost kind(KindEnum kind) {
+  public UrlPost kind(@javax.annotation.Nullable KindEnum kind) {
     this.kind = kind;
     return this;
   }
 
-   /**
+  /**
    * Get kind
    * @return kind
-  **/
+   */
   @javax.annotation.Nullable
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(KindEnum kind) {
+  public void setKind(@javax.annotation.Nullable KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public UrlPost url(String url) {
+  public UrlPost url(@javax.annotation.Nullable String url) {
     this.url = url;
     return this;
   }
 
-   /**
+  /**
    * Get url
    * @return url
-  **/
+   */
   @javax.annotation.Nullable
   public String getUrl() {
     return url;
   }
 
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nullable String url) {
     this.url = url;
   }
 
 
-  public UrlPost substring(String substring) {
+  public UrlPost substring(@javax.annotation.Nullable String substring) {
     this.substring = substring;
     return this;
   }
 
-   /**
+  /**
    * Get substring
    * @return substring
-  **/
+   */
   @javax.annotation.Nullable
   public String getSubstring() {
     return substring;
   }
 
-  public void setSubstring(String substring) {
+  public void setSubstring(@javax.annotation.Nullable String substring) {
     this.substring = substring;
   }
 
 
-  public UrlPost pattern(String pattern) {
+  public UrlPost pattern(@javax.annotation.Nullable String pattern) {
     this.pattern = pattern;
     return this;
   }
 
-   /**
+  /**
    * Get pattern
    * @return pattern
-  **/
+   */
   @javax.annotation.Nullable
   public String getPattern() {
     return pattern;
   }
 
-  public void setPattern(String pattern) {
+  public void setPattern(@javax.annotation.Nullable String pattern) {
     this.pattern = pattern;
   }
 
@@ -298,44 +303,40 @@ public class UrlPost {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("kind");
-    openapiFields.add("url");
-    openapiFields.add("substring");
-    openapiFields.add("pattern");
+    openapiFields = new HashSet<String>(Arrays.asList("kind", "url", "substring", "pattern"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to UrlPost
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to UrlPost
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UrlPost.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UrlPost is not found in the empty JSON string", UrlPost.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in UrlPost is not found in the empty JSON string", UrlPost.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("kind") != null && !jsonObj.get("kind").isJsonNull()) && !jsonObj.get("kind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
       // validate the optional field `kind`
       if (jsonObj.get("kind") != null && !jsonObj.get("kind").isJsonNull()) {
         KindEnum.validateJsonElement(jsonObj.get("kind"));
       }
       if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull()) && !jsonObj.get("url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
       }
       if ((jsonObj.get("substring") != null && !jsonObj.get("substring").isJsonNull()) && !jsonObj.get("substring").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `substring` to be a primitive type in the JSON string but got `%s`", jsonObj.get("substring").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `substring` to be a primitive type in the JSON string but got `%s`", jsonObj.get("substring").toString()));
       }
       if ((jsonObj.get("pattern") != null && !jsonObj.get("pattern").isJsonNull()) && !jsonObj.get("pattern").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `pattern` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pattern").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `pattern` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pattern").toString()));
       }
   }
 
@@ -396,7 +397,7 @@ public class UrlPost {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -411,22 +412,22 @@ public class UrlPost {
     }
   }
 
- /**
-  * Create an instance of UrlPost given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UrlPost
-  * @throws IOException if the JSON string is invalid with respect to UrlPost
-  */
+  /**
+   * Create an instance of UrlPost given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of UrlPost
+   * @throws IOException if the JSON string is invalid with respect to UrlPost
+   */
   public static UrlPost fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, UrlPost.class);
   }
 
- /**
-  * Convert an instance of UrlPost to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of UrlPost to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

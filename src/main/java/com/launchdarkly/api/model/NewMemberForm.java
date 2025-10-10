@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,34 +42,38 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * NewMemberForm
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class NewMemberForm {
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
+  @javax.annotation.Nonnull
   private String email;
 
   public static final String SERIALIZED_NAME_PASSWORD = "password";
   @SerializedName(SERIALIZED_NAME_PASSWORD)
+  @javax.annotation.Nullable
   private String password;
 
   public static final String SERIALIZED_NAME_FIRST_NAME = "firstName";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
+  @javax.annotation.Nullable
   private String firstName;
 
   public static final String SERIALIZED_NAME_LAST_NAME = "lastName";
   @SerializedName(SERIALIZED_NAME_LAST_NAME)
+  @javax.annotation.Nullable
   private String lastName;
 
   /**
@@ -129,119 +134,123 @@ public class NewMemberForm {
 
   public static final String SERIALIZED_NAME_ROLE = "role";
   @SerializedName(SERIALIZED_NAME_ROLE)
+  @javax.annotation.Nullable
   private RoleEnum role;
 
   public static final String SERIALIZED_NAME_CUSTOM_ROLES = "customRoles";
   @SerializedName(SERIALIZED_NAME_CUSTOM_ROLES)
+  @javax.annotation.Nullable
   private List<String> customRoles = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TEAM_KEYS = "teamKeys";
   @SerializedName(SERIALIZED_NAME_TEAM_KEYS)
+  @javax.annotation.Nullable
   private List<String> teamKeys = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ROLE_ATTRIBUTES = "roleAttributes";
   @SerializedName(SERIALIZED_NAME_ROLE_ATTRIBUTES)
+  @javax.annotation.Nullable
   private Map<String, List<String>> roleAttributes = new HashMap<>();
 
   public NewMemberForm() {
   }
 
-  public NewMemberForm email(String email) {
+  public NewMemberForm email(@javax.annotation.Nonnull String email) {
     this.email = email;
     return this;
   }
 
-   /**
+  /**
    * The member&#39;s email
    * @return email
-  **/
+   */
   @javax.annotation.Nonnull
   public String getEmail() {
     return email;
   }
 
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nonnull String email) {
     this.email = email;
   }
 
 
-  public NewMemberForm password(String password) {
+  public NewMemberForm password(@javax.annotation.Nullable String password) {
     this.password = password;
     return this;
   }
 
-   /**
+  /**
    * The member&#39;s password
    * @return password
-  **/
+   */
   @javax.annotation.Nullable
   public String getPassword() {
     return password;
   }
 
-  public void setPassword(String password) {
+  public void setPassword(@javax.annotation.Nullable String password) {
     this.password = password;
   }
 
 
-  public NewMemberForm firstName(String firstName) {
+  public NewMemberForm firstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
     return this;
   }
 
-   /**
+  /**
    * The member&#39;s first name
    * @return firstName
-  **/
+   */
   @javax.annotation.Nullable
   public String getFirstName() {
     return firstName;
   }
 
-  public void setFirstName(String firstName) {
+  public void setFirstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
   }
 
 
-  public NewMemberForm lastName(String lastName) {
+  public NewMemberForm lastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
     return this;
   }
 
-   /**
+  /**
    * The member&#39;s last name
    * @return lastName
-  **/
+   */
   @javax.annotation.Nullable
   public String getLastName() {
     return lastName;
   }
 
-  public void setLastName(String lastName) {
+  public void setLastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
   }
 
 
-  public NewMemberForm role(RoleEnum role) {
+  public NewMemberForm role(@javax.annotation.Nullable RoleEnum role) {
     this.role = role;
     return this;
   }
 
-   /**
+  /**
    * The member&#39;s initial role, if you are using a base role for the initial role
    * @return role
-  **/
+   */
   @javax.annotation.Nullable
   public RoleEnum getRole() {
     return role;
   }
 
-  public void setRole(RoleEnum role) {
+  public void setRole(@javax.annotation.Nullable RoleEnum role) {
     this.role = role;
   }
 
 
-  public NewMemberForm customRoles(List<String> customRoles) {
+  public NewMemberForm customRoles(@javax.annotation.Nullable List<String> customRoles) {
     this.customRoles = customRoles;
     return this;
   }
@@ -254,21 +263,21 @@ public class NewMemberForm {
     return this;
   }
 
-   /**
+  /**
    * An array of the member&#39;s initial roles, if you are using custom roles or preset roles provided by LaunchDarkly
    * @return customRoles
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getCustomRoles() {
     return customRoles;
   }
 
-  public void setCustomRoles(List<String> customRoles) {
+  public void setCustomRoles(@javax.annotation.Nullable List<String> customRoles) {
     this.customRoles = customRoles;
   }
 
 
-  public NewMemberForm teamKeys(List<String> teamKeys) {
+  public NewMemberForm teamKeys(@javax.annotation.Nullable List<String> teamKeys) {
     this.teamKeys = teamKeys;
     return this;
   }
@@ -281,21 +290,21 @@ public class NewMemberForm {
     return this;
   }
 
-   /**
+  /**
    * An array of the member&#39;s teams
    * @return teamKeys
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getTeamKeys() {
     return teamKeys;
   }
 
-  public void setTeamKeys(List<String> teamKeys) {
+  public void setTeamKeys(@javax.annotation.Nullable List<String> teamKeys) {
     this.teamKeys = teamKeys;
   }
 
 
-  public NewMemberForm roleAttributes(Map<String, List<String>> roleAttributes) {
+  public NewMemberForm roleAttributes(@javax.annotation.Nullable Map<String, List<String>> roleAttributes) {
     this.roleAttributes = roleAttributes;
     return this;
   }
@@ -308,16 +317,16 @@ public class NewMemberForm {
     return this;
   }
 
-   /**
+  /**
    * Get roleAttributes
    * @return roleAttributes
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, List<String>> getRoleAttributes() {
     return roleAttributes;
   }
 
-  public void setRoleAttributes(Map<String, List<String>> roleAttributes) {
+  public void setRoleAttributes(@javax.annotation.Nullable Map<String, List<String>> roleAttributes) {
     this.roleAttributes = roleAttributes;
   }
 
@@ -426,55 +435,46 @@ public class NewMemberForm {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("email");
-    openapiFields.add("password");
-    openapiFields.add("firstName");
-    openapiFields.add("lastName");
-    openapiFields.add("role");
-    openapiFields.add("customRoles");
-    openapiFields.add("teamKeys");
-    openapiFields.add("roleAttributes");
+    openapiFields = new HashSet<String>(Arrays.asList("email", "password", "firstName", "lastName", "role", "customRoles", "teamKeys", "roleAttributes"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("email");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("email"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to NewMemberForm
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to NewMemberForm
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!NewMemberForm.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in NewMemberForm is not found in the empty JSON string", NewMemberForm.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in NewMemberForm is not found in the empty JSON string", NewMemberForm.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : NewMemberForm.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("email").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
       }
       if ((jsonObj.get("password") != null && !jsonObj.get("password").isJsonNull()) && !jsonObj.get("password").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `password` to be a primitive type in the JSON string but got `%s`", jsonObj.get("password").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `password` to be a primitive type in the JSON string but got `%s`", jsonObj.get("password").toString()));
       }
       if ((jsonObj.get("firstName") != null && !jsonObj.get("firstName").isJsonNull()) && !jsonObj.get("firstName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `firstName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("firstName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `firstName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("firstName").toString()));
       }
       if ((jsonObj.get("lastName") != null && !jsonObj.get("lastName").isJsonNull()) && !jsonObj.get("lastName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `lastName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `lastName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastName").toString()));
       }
       if ((jsonObj.get("role") != null && !jsonObj.get("role").isJsonNull()) && !jsonObj.get("role").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role").toString()));
       }
       // validate the optional field `role`
       if (jsonObj.get("role") != null && !jsonObj.get("role").isJsonNull()) {
@@ -482,11 +482,11 @@ public class NewMemberForm {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("customRoles") != null && !jsonObj.get("customRoles").isJsonNull() && !jsonObj.get("customRoles").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `customRoles` to be an array in the JSON string but got `%s`", jsonObj.get("customRoles").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `customRoles` to be an array in the JSON string but got `%s`", jsonObj.get("customRoles").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("teamKeys") != null && !jsonObj.get("teamKeys").isJsonNull() && !jsonObj.get("teamKeys").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `teamKeys` to be an array in the JSON string but got `%s`", jsonObj.get("teamKeys").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `teamKeys` to be an array in the JSON string but got `%s`", jsonObj.get("teamKeys").toString()));
       }
   }
 
@@ -547,7 +547,7 @@ public class NewMemberForm {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -562,22 +562,22 @@ public class NewMemberForm {
     }
   }
 
- /**
-  * Create an instance of NewMemberForm given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of NewMemberForm
-  * @throws IOException if the JSON string is invalid with respect to NewMemberForm
-  */
+  /**
+   * Create an instance of NewMemberForm given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of NewMemberForm
+   * @throws IOException if the JSON string is invalid with respect to NewMemberForm
+   */
   public static NewMemberForm fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, NewMemberForm.class);
   }
 
- /**
-  * Convert an instance of NewMemberForm to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of NewMemberForm to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,120 +42,125 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * InsightsChartMetric
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class InsightsChartMetric {
   public static final String SERIALIZED_NAME_INDICATOR = "indicator";
   @SerializedName(SERIALIZED_NAME_INDICATOR)
+  @javax.annotation.Nonnull
   private String indicator;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nonnull
   private BigDecimal value;
 
   public static final String SERIALIZED_NAME_UNIT = "unit";
   @SerializedName(SERIALIZED_NAME_UNIT)
+  @javax.annotation.Nonnull
   private String unit;
 
   public static final String SERIALIZED_NAME_MODIFIER = "modifier";
   @SerializedName(SERIALIZED_NAME_MODIFIER)
+  @javax.annotation.Nonnull
   private String modifier;
 
   public static final String SERIALIZED_NAME_TIERS = "tiers";
   @SerializedName(SERIALIZED_NAME_TIERS)
+  @javax.annotation.Nonnull
   private List<InsightsMetricTierDefinition> tiers = new ArrayList<>();
 
   public InsightsChartMetric() {
   }
 
-  public InsightsChartMetric indicator(String indicator) {
+  public InsightsChartMetric indicator(@javax.annotation.Nonnull String indicator) {
     this.indicator = indicator;
     return this;
   }
 
-   /**
+  /**
    * Metric indicator tier
    * @return indicator
-  **/
+   */
   @javax.annotation.Nonnull
   public String getIndicator() {
     return indicator;
   }
 
-  public void setIndicator(String indicator) {
+  public void setIndicator(@javax.annotation.Nonnull String indicator) {
     this.indicator = indicator;
   }
 
 
-  public InsightsChartMetric value(BigDecimal value) {
+  public InsightsChartMetric value(@javax.annotation.Nonnull BigDecimal value) {
     this.value = value;
     return this;
   }
 
-   /**
+  /**
    * Metric value
    * @return value
-  **/
+   */
   @javax.annotation.Nonnull
   public BigDecimal getValue() {
     return value;
   }
 
-  public void setValue(BigDecimal value) {
+  public void setValue(@javax.annotation.Nonnull BigDecimal value) {
     this.value = value;
   }
 
 
-  public InsightsChartMetric unit(String unit) {
+  public InsightsChartMetric unit(@javax.annotation.Nonnull String unit) {
     this.unit = unit;
     return this;
   }
 
-   /**
+  /**
    * Metric unit
    * @return unit
-  **/
+   */
   @javax.annotation.Nonnull
   public String getUnit() {
     return unit;
   }
 
-  public void setUnit(String unit) {
+  public void setUnit(@javax.annotation.Nonnull String unit) {
     this.unit = unit;
   }
 
 
-  public InsightsChartMetric modifier(String modifier) {
+  public InsightsChartMetric modifier(@javax.annotation.Nonnull String modifier) {
     this.modifier = modifier;
     return this;
   }
 
-   /**
+  /**
    * Metric modifier
    * @return modifier
-  **/
+   */
   @javax.annotation.Nonnull
   public String getModifier() {
     return modifier;
   }
 
-  public void setModifier(String modifier) {
+  public void setModifier(@javax.annotation.Nonnull String modifier) {
     this.modifier = modifier;
   }
 
 
-  public InsightsChartMetric tiers(List<InsightsMetricTierDefinition> tiers) {
+  public InsightsChartMetric tiers(@javax.annotation.Nonnull List<InsightsMetricTierDefinition> tiers) {
     this.tiers = tiers;
     return this;
   }
@@ -167,16 +173,16 @@ public class InsightsChartMetric {
     return this;
   }
 
-   /**
+  /**
    * Metric indicator tiers
    * @return tiers
-  **/
+   */
   @javax.annotation.Nonnull
   public List<InsightsMetricTierDefinition> getTiers() {
     return tiers;
   }
 
-  public void setTiers(List<InsightsMetricTierDefinition> tiers) {
+  public void setTiers(@javax.annotation.Nonnull List<InsightsMetricTierDefinition> tiers) {
     this.tiers = tiers;
   }
 
@@ -279,54 +285,44 @@ public class InsightsChartMetric {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("indicator");
-    openapiFields.add("value");
-    openapiFields.add("unit");
-    openapiFields.add("modifier");
-    openapiFields.add("tiers");
+    openapiFields = new HashSet<String>(Arrays.asList("indicator", "value", "unit", "modifier", "tiers"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("indicator");
-    openapiRequiredFields.add("value");
-    openapiRequiredFields.add("unit");
-    openapiRequiredFields.add("modifier");
-    openapiRequiredFields.add("tiers");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("indicator", "value", "unit", "modifier", "tiers"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to InsightsChartMetric
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to InsightsChartMetric
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!InsightsChartMetric.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in InsightsChartMetric is not found in the empty JSON string", InsightsChartMetric.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in InsightsChartMetric is not found in the empty JSON string", InsightsChartMetric.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : InsightsChartMetric.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("indicator").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `indicator` to be a primitive type in the JSON string but got `%s`", jsonObj.get("indicator").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `indicator` to be a primitive type in the JSON string but got `%s`", jsonObj.get("indicator").toString()));
       }
       if (!jsonObj.get("unit").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `unit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unit").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `unit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unit").toString()));
       }
       if (!jsonObj.get("modifier").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `modifier` to be a primitive type in the JSON string but got `%s`", jsonObj.get("modifier").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `modifier` to be a primitive type in the JSON string but got `%s`", jsonObj.get("modifier").toString()));
       }
       // ensure the json data is an array
       if (!jsonObj.get("tiers").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tiers` to be an array in the JSON string but got `%s`", jsonObj.get("tiers").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tiers` to be an array in the JSON string but got `%s`", jsonObj.get("tiers").toString()));
       }
 
       JsonArray jsonArraytiers = jsonObj.getAsJsonArray("tiers");
@@ -393,7 +389,7 @@ public class InsightsChartMetric {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -408,22 +404,22 @@ public class InsightsChartMetric {
     }
   }
 
- /**
-  * Create an instance of InsightsChartMetric given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of InsightsChartMetric
-  * @throws IOException if the JSON string is invalid with respect to InsightsChartMetric
-  */
+  /**
+   * Create an instance of InsightsChartMetric given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of InsightsChartMetric
+   * @throws IOException if the JSON string is invalid with respect to InsightsChartMetric
+   */
   public static InsightsChartMetric fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, InsightsChartMetric.class);
   }
 
- /**
-  * Convert an instance of InsightsChartMetric to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of InsightsChartMetric to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

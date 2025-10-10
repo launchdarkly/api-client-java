@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,111 +39,115 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * IntegrationDeliveryConfigurationLinks
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class IntegrationDeliveryConfigurationLinks {
   public static final String SERIALIZED_NAME_SELF = "self";
   @SerializedName(SERIALIZED_NAME_SELF)
+  @javax.annotation.Nonnull
   private Link self;
 
   public static final String SERIALIZED_NAME_PARENT = "parent";
   @SerializedName(SERIALIZED_NAME_PARENT)
+  @javax.annotation.Nonnull
   private Link parent;
 
   public static final String SERIALIZED_NAME_PROJECT = "project";
   @SerializedName(SERIALIZED_NAME_PROJECT)
+  @javax.annotation.Nonnull
   private Link project;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT = "environment";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT)
+  @javax.annotation.Nonnull
   private Link environment;
 
   public IntegrationDeliveryConfigurationLinks() {
   }
 
-  public IntegrationDeliveryConfigurationLinks self(Link self) {
+  public IntegrationDeliveryConfigurationLinks self(@javax.annotation.Nonnull Link self) {
     this.self = self;
     return this;
   }
 
-   /**
+  /**
    * Get self
    * @return self
-  **/
+   */
   @javax.annotation.Nonnull
   public Link getSelf() {
     return self;
   }
 
-  public void setSelf(Link self) {
+  public void setSelf(@javax.annotation.Nonnull Link self) {
     this.self = self;
   }
 
 
-  public IntegrationDeliveryConfigurationLinks parent(Link parent) {
+  public IntegrationDeliveryConfigurationLinks parent(@javax.annotation.Nonnull Link parent) {
     this.parent = parent;
     return this;
   }
 
-   /**
+  /**
    * Get parent
    * @return parent
-  **/
+   */
   @javax.annotation.Nonnull
   public Link getParent() {
     return parent;
   }
 
-  public void setParent(Link parent) {
+  public void setParent(@javax.annotation.Nonnull Link parent) {
     this.parent = parent;
   }
 
 
-  public IntegrationDeliveryConfigurationLinks project(Link project) {
+  public IntegrationDeliveryConfigurationLinks project(@javax.annotation.Nonnull Link project) {
     this.project = project;
     return this;
   }
 
-   /**
+  /**
    * Get project
    * @return project
-  **/
+   */
   @javax.annotation.Nonnull
   public Link getProject() {
     return project;
   }
 
-  public void setProject(Link project) {
+  public void setProject(@javax.annotation.Nonnull Link project) {
     this.project = project;
   }
 
 
-  public IntegrationDeliveryConfigurationLinks environment(Link environment) {
+  public IntegrationDeliveryConfigurationLinks environment(@javax.annotation.Nonnull Link environment) {
     this.environment = environment;
     return this;
   }
 
-   /**
+  /**
    * Get environment
    * @return environment
-  **/
+   */
   @javax.annotation.Nonnull
   public Link getEnvironment() {
     return environment;
   }
 
-  public void setEnvironment(Link environment) {
+  public void setEnvironment(@javax.annotation.Nonnull Link environment) {
     this.environment = environment;
   }
 
@@ -243,37 +248,29 @@ public class IntegrationDeliveryConfigurationLinks {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("self");
-    openapiFields.add("parent");
-    openapiFields.add("project");
-    openapiFields.add("environment");
+    openapiFields = new HashSet<String>(Arrays.asList("self", "parent", "project", "environment"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("self");
-    openapiRequiredFields.add("parent");
-    openapiRequiredFields.add("project");
-    openapiRequiredFields.add("environment");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("self", "parent", "project", "environment"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to IntegrationDeliveryConfigurationLinks
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to IntegrationDeliveryConfigurationLinks
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IntegrationDeliveryConfigurationLinks.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in IntegrationDeliveryConfigurationLinks is not found in the empty JSON string", IntegrationDeliveryConfigurationLinks.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in IntegrationDeliveryConfigurationLinks is not found in the empty JSON string", IntegrationDeliveryConfigurationLinks.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : IntegrationDeliveryConfigurationLinks.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -344,7 +341,7 @@ public class IntegrationDeliveryConfigurationLinks {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -359,22 +356,22 @@ public class IntegrationDeliveryConfigurationLinks {
     }
   }
 
- /**
-  * Create an instance of IntegrationDeliveryConfigurationLinks given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of IntegrationDeliveryConfigurationLinks
-  * @throws IOException if the JSON string is invalid with respect to IntegrationDeliveryConfigurationLinks
-  */
+  /**
+   * Create an instance of IntegrationDeliveryConfigurationLinks given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of IntegrationDeliveryConfigurationLinks
+   * @throws IOException if the JSON string is invalid with respect to IntegrationDeliveryConfigurationLinks
+   */
   public static IntegrationDeliveryConfigurationLinks fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, IntegrationDeliveryConfigurationLinks.class);
   }
 
- /**
-  * Convert an instance of IntegrationDeliveryConfigurationLinks to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of IntegrationDeliveryConfigurationLinks to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,275 +44,295 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * DeploymentRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class DeploymentRep {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private UUID id;
 
   public static final String SERIALIZED_NAME_APPLICATION_KEY = "applicationKey";
   @SerializedName(SERIALIZED_NAME_APPLICATION_KEY)
+  @javax.annotation.Nonnull
   private String applicationKey;
 
   public static final String SERIALIZED_NAME_APPLICATION_VERSION = "applicationVersion";
   @SerializedName(SERIALIZED_NAME_APPLICATION_VERSION)
+  @javax.annotation.Nonnull
   private String applicationVersion;
 
   public static final String SERIALIZED_NAME_STARTED_AT = "startedAt";
   @SerializedName(SERIALIZED_NAME_STARTED_AT)
+  @javax.annotation.Nonnull
   private Long startedAt;
 
   public static final String SERIALIZED_NAME_ENDED_AT = "endedAt";
   @SerializedName(SERIALIZED_NAME_ENDED_AT)
+  @javax.annotation.Nullable
   private Long endedAt;
 
   public static final String SERIALIZED_NAME_DURATION_MS = "durationMs";
   @SerializedName(SERIALIZED_NAME_DURATION_MS)
+  @javax.annotation.Nullable
   private Long durationMs;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nonnull
   private String status;
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
+  @javax.annotation.Nonnull
   private String kind;
 
   public static final String SERIALIZED_NAME_ACTIVE = "active";
   @SerializedName(SERIALIZED_NAME_ACTIVE)
+  @javax.annotation.Nonnull
   private Boolean active;
 
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
+  @javax.annotation.Nullable
   private Map<String, Object> metadata = new HashMap<>();
 
   public static final String SERIALIZED_NAME_ARCHIVED = "archived";
   @SerializedName(SERIALIZED_NAME_ARCHIVED)
+  @javax.annotation.Nonnull
   private Boolean archived;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_KEY = "environmentKey";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_KEY)
+  @javax.annotation.Nonnull
   private String environmentKey;
 
   public static final String SERIALIZED_NAME_NUMBER_OF_CONTRIBUTORS = "numberOfContributors";
   @SerializedName(SERIALIZED_NAME_NUMBER_OF_CONTRIBUTORS)
+  @javax.annotation.Nonnull
   private Integer numberOfContributors;
 
   public static final String SERIALIZED_NAME_NUMBER_OF_PULL_REQUESTS = "numberOfPullRequests";
   @SerializedName(SERIALIZED_NAME_NUMBER_OF_PULL_REQUESTS)
+  @javax.annotation.Nonnull
   private Integer numberOfPullRequests;
 
   public static final String SERIALIZED_NAME_LINES_ADDED = "linesAdded";
   @SerializedName(SERIALIZED_NAME_LINES_ADDED)
+  @javax.annotation.Nonnull
   private Long linesAdded;
 
   public static final String SERIALIZED_NAME_LINES_DELETED = "linesDeleted";
   @SerializedName(SERIALIZED_NAME_LINES_DELETED)
+  @javax.annotation.Nonnull
   private Long linesDeleted;
 
   public static final String SERIALIZED_NAME_LEAD_TIME = "leadTime";
   @SerializedName(SERIALIZED_NAME_LEAD_TIME)
+  @javax.annotation.Nonnull
   private Long leadTime;
 
   public static final String SERIALIZED_NAME_PULL_REQUESTS = "pullRequests";
   @SerializedName(SERIALIZED_NAME_PULL_REQUESTS)
+  @javax.annotation.Nullable
   private PullRequestCollectionRep pullRequests;
 
   public static final String SERIALIZED_NAME_FLAG_REFERENCES = "flagReferences";
   @SerializedName(SERIALIZED_NAME_FLAG_REFERENCES)
+  @javax.annotation.Nullable
   private FlagReferenceCollectionRep flagReferences;
 
   public static final String SERIALIZED_NAME_LEAD_TIME_STAGES = "leadTimeStages";
   @SerializedName(SERIALIZED_NAME_LEAD_TIME_STAGES)
+  @javax.annotation.Nullable
   private LeadTimeStagesRep leadTimeStages;
 
   public DeploymentRep() {
   }
 
-  public DeploymentRep id(UUID id) {
+  public DeploymentRep id(@javax.annotation.Nonnull UUID id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The deployment ID
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getId() {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nonnull UUID id) {
     this.id = id;
   }
 
 
-  public DeploymentRep applicationKey(String applicationKey) {
+  public DeploymentRep applicationKey(@javax.annotation.Nonnull String applicationKey) {
     this.applicationKey = applicationKey;
     return this;
   }
 
-   /**
+  /**
    * The application key
    * @return applicationKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getApplicationKey() {
     return applicationKey;
   }
 
-  public void setApplicationKey(String applicationKey) {
+  public void setApplicationKey(@javax.annotation.Nonnull String applicationKey) {
     this.applicationKey = applicationKey;
   }
 
 
-  public DeploymentRep applicationVersion(String applicationVersion) {
+  public DeploymentRep applicationVersion(@javax.annotation.Nonnull String applicationVersion) {
     this.applicationVersion = applicationVersion;
     return this;
   }
 
-   /**
+  /**
    * The application version
    * @return applicationVersion
-  **/
+   */
   @javax.annotation.Nonnull
   public String getApplicationVersion() {
     return applicationVersion;
   }
 
-  public void setApplicationVersion(String applicationVersion) {
+  public void setApplicationVersion(@javax.annotation.Nonnull String applicationVersion) {
     this.applicationVersion = applicationVersion;
   }
 
 
-  public DeploymentRep startedAt(Long startedAt) {
+  public DeploymentRep startedAt(@javax.annotation.Nonnull Long startedAt) {
     this.startedAt = startedAt;
     return this;
   }
 
-   /**
+  /**
    * Get startedAt
    * @return startedAt
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getStartedAt() {
     return startedAt;
   }
 
-  public void setStartedAt(Long startedAt) {
+  public void setStartedAt(@javax.annotation.Nonnull Long startedAt) {
     this.startedAt = startedAt;
   }
 
 
-  public DeploymentRep endedAt(Long endedAt) {
+  public DeploymentRep endedAt(@javax.annotation.Nullable Long endedAt) {
     this.endedAt = endedAt;
     return this;
   }
 
-   /**
+  /**
    * Get endedAt
    * @return endedAt
-  **/
+   */
   @javax.annotation.Nullable
   public Long getEndedAt() {
     return endedAt;
   }
 
-  public void setEndedAt(Long endedAt) {
+  public void setEndedAt(@javax.annotation.Nullable Long endedAt) {
     this.endedAt = endedAt;
   }
 
 
-  public DeploymentRep durationMs(Long durationMs) {
+  public DeploymentRep durationMs(@javax.annotation.Nullable Long durationMs) {
     this.durationMs = durationMs;
     return this;
   }
 
-   /**
+  /**
    * The duration of the deployment in milliseconds
    * @return durationMs
-  **/
+   */
   @javax.annotation.Nullable
   public Long getDurationMs() {
     return durationMs;
   }
 
-  public void setDurationMs(Long durationMs) {
+  public void setDurationMs(@javax.annotation.Nullable Long durationMs) {
     this.durationMs = durationMs;
   }
 
 
-  public DeploymentRep status(String status) {
+  public DeploymentRep status(@javax.annotation.Nonnull String status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nonnull
   public String getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(@javax.annotation.Nonnull String status) {
     this.status = status;
   }
 
 
-  public DeploymentRep kind(String kind) {
+  public DeploymentRep kind(@javax.annotation.Nonnull String kind) {
     this.kind = kind;
     return this;
   }
 
-   /**
+  /**
    * Get kind
    * @return kind
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKind() {
     return kind;
   }
 
-  public void setKind(String kind) {
+  public void setKind(@javax.annotation.Nonnull String kind) {
     this.kind = kind;
   }
 
 
-  public DeploymentRep active(Boolean active) {
+  public DeploymentRep active(@javax.annotation.Nonnull Boolean active) {
     this.active = active;
     return this;
   }
 
-   /**
+  /**
    * Whether the deployment is active
    * @return active
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getActive() {
     return active;
   }
 
-  public void setActive(Boolean active) {
+  public void setActive(@javax.annotation.Nonnull Boolean active) {
     this.active = active;
   }
 
 
-  public DeploymentRep metadata(Map<String, Object> metadata) {
+  public DeploymentRep metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -324,206 +345,206 @@ public class DeploymentRep {
     return this;
   }
 
-   /**
+  /**
    * The metadata associated with the deployment
    * @return metadata
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Object> getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(Map<String, Object> metadata) {
+  public void setMetadata(@javax.annotation.Nullable Map<String, Object> metadata) {
     this.metadata = metadata;
   }
 
 
-  public DeploymentRep archived(Boolean archived) {
+  public DeploymentRep archived(@javax.annotation.Nonnull Boolean archived) {
     this.archived = archived;
     return this;
   }
 
-   /**
+  /**
    * Whether the deployment is archived
    * @return archived
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getArchived() {
     return archived;
   }
 
-  public void setArchived(Boolean archived) {
+  public void setArchived(@javax.annotation.Nonnull Boolean archived) {
     this.archived = archived;
   }
 
 
-  public DeploymentRep environmentKey(String environmentKey) {
+  public DeploymentRep environmentKey(@javax.annotation.Nonnull String environmentKey) {
     this.environmentKey = environmentKey;
     return this;
   }
 
-   /**
+  /**
    * The environment key
    * @return environmentKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getEnvironmentKey() {
     return environmentKey;
   }
 
-  public void setEnvironmentKey(String environmentKey) {
+  public void setEnvironmentKey(@javax.annotation.Nonnull String environmentKey) {
     this.environmentKey = environmentKey;
   }
 
 
-  public DeploymentRep numberOfContributors(Integer numberOfContributors) {
+  public DeploymentRep numberOfContributors(@javax.annotation.Nonnull Integer numberOfContributors) {
     this.numberOfContributors = numberOfContributors;
     return this;
   }
 
-   /**
+  /**
    * The number of contributors
    * @return numberOfContributors
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getNumberOfContributors() {
     return numberOfContributors;
   }
 
-  public void setNumberOfContributors(Integer numberOfContributors) {
+  public void setNumberOfContributors(@javax.annotation.Nonnull Integer numberOfContributors) {
     this.numberOfContributors = numberOfContributors;
   }
 
 
-  public DeploymentRep numberOfPullRequests(Integer numberOfPullRequests) {
+  public DeploymentRep numberOfPullRequests(@javax.annotation.Nonnull Integer numberOfPullRequests) {
     this.numberOfPullRequests = numberOfPullRequests;
     return this;
   }
 
-   /**
+  /**
    * The number of pull requests
    * @return numberOfPullRequests
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getNumberOfPullRequests() {
     return numberOfPullRequests;
   }
 
-  public void setNumberOfPullRequests(Integer numberOfPullRequests) {
+  public void setNumberOfPullRequests(@javax.annotation.Nonnull Integer numberOfPullRequests) {
     this.numberOfPullRequests = numberOfPullRequests;
   }
 
 
-  public DeploymentRep linesAdded(Long linesAdded) {
+  public DeploymentRep linesAdded(@javax.annotation.Nonnull Long linesAdded) {
     this.linesAdded = linesAdded;
     return this;
   }
 
-   /**
+  /**
    * The number of lines added
    * @return linesAdded
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getLinesAdded() {
     return linesAdded;
   }
 
-  public void setLinesAdded(Long linesAdded) {
+  public void setLinesAdded(@javax.annotation.Nonnull Long linesAdded) {
     this.linesAdded = linesAdded;
   }
 
 
-  public DeploymentRep linesDeleted(Long linesDeleted) {
+  public DeploymentRep linesDeleted(@javax.annotation.Nonnull Long linesDeleted) {
     this.linesDeleted = linesDeleted;
     return this;
   }
 
-   /**
+  /**
    * The number of lines deleted
    * @return linesDeleted
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getLinesDeleted() {
     return linesDeleted;
   }
 
-  public void setLinesDeleted(Long linesDeleted) {
+  public void setLinesDeleted(@javax.annotation.Nonnull Long linesDeleted) {
     this.linesDeleted = linesDeleted;
   }
 
 
-  public DeploymentRep leadTime(Long leadTime) {
+  public DeploymentRep leadTime(@javax.annotation.Nonnull Long leadTime) {
     this.leadTime = leadTime;
     return this;
   }
 
-   /**
+  /**
    * The total lead time from first commit to deployment end in milliseconds
    * @return leadTime
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getLeadTime() {
     return leadTime;
   }
 
-  public void setLeadTime(Long leadTime) {
+  public void setLeadTime(@javax.annotation.Nonnull Long leadTime) {
     this.leadTime = leadTime;
   }
 
 
-  public DeploymentRep pullRequests(PullRequestCollectionRep pullRequests) {
+  public DeploymentRep pullRequests(@javax.annotation.Nullable PullRequestCollectionRep pullRequests) {
     this.pullRequests = pullRequests;
     return this;
   }
 
-   /**
+  /**
    * Get pullRequests
    * @return pullRequests
-  **/
+   */
   @javax.annotation.Nullable
   public PullRequestCollectionRep getPullRequests() {
     return pullRequests;
   }
 
-  public void setPullRequests(PullRequestCollectionRep pullRequests) {
+  public void setPullRequests(@javax.annotation.Nullable PullRequestCollectionRep pullRequests) {
     this.pullRequests = pullRequests;
   }
 
 
-  public DeploymentRep flagReferences(FlagReferenceCollectionRep flagReferences) {
+  public DeploymentRep flagReferences(@javax.annotation.Nullable FlagReferenceCollectionRep flagReferences) {
     this.flagReferences = flagReferences;
     return this;
   }
 
-   /**
+  /**
    * Get flagReferences
    * @return flagReferences
-  **/
+   */
   @javax.annotation.Nullable
   public FlagReferenceCollectionRep getFlagReferences() {
     return flagReferences;
   }
 
-  public void setFlagReferences(FlagReferenceCollectionRep flagReferences) {
+  public void setFlagReferences(@javax.annotation.Nullable FlagReferenceCollectionRep flagReferences) {
     this.flagReferences = flagReferences;
   }
 
 
-  public DeploymentRep leadTimeStages(LeadTimeStagesRep leadTimeStages) {
+  public DeploymentRep leadTimeStages(@javax.annotation.Nullable LeadTimeStagesRep leadTimeStages) {
     this.leadTimeStages = leadTimeStages;
     return this;
   }
 
-   /**
+  /**
    * Get leadTimeStages
    * @return leadTimeStages
-  **/
+   */
   @javax.annotation.Nullable
   public LeadTimeStagesRep getLeadTimeStages() {
     return leadTimeStages;
   }
 
-  public void setLeadTimeStages(LeadTimeStagesRep leadTimeStages) {
+  public void setLeadTimeStages(@javax.annotation.Nullable LeadTimeStagesRep leadTimeStages) {
     this.leadTimeStages = leadTimeStages;
   }
 
@@ -656,83 +677,49 @@ public class DeploymentRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("applicationKey");
-    openapiFields.add("applicationVersion");
-    openapiFields.add("startedAt");
-    openapiFields.add("endedAt");
-    openapiFields.add("durationMs");
-    openapiFields.add("status");
-    openapiFields.add("kind");
-    openapiFields.add("active");
-    openapiFields.add("metadata");
-    openapiFields.add("archived");
-    openapiFields.add("environmentKey");
-    openapiFields.add("numberOfContributors");
-    openapiFields.add("numberOfPullRequests");
-    openapiFields.add("linesAdded");
-    openapiFields.add("linesDeleted");
-    openapiFields.add("leadTime");
-    openapiFields.add("pullRequests");
-    openapiFields.add("flagReferences");
-    openapiFields.add("leadTimeStages");
+    openapiFields = new HashSet<String>(Arrays.asList("id", "applicationKey", "applicationVersion", "startedAt", "endedAt", "durationMs", "status", "kind", "active", "metadata", "archived", "environmentKey", "numberOfContributors", "numberOfPullRequests", "linesAdded", "linesDeleted", "leadTime", "pullRequests", "flagReferences", "leadTimeStages"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("id");
-    openapiRequiredFields.add("applicationKey");
-    openapiRequiredFields.add("applicationVersion");
-    openapiRequiredFields.add("startedAt");
-    openapiRequiredFields.add("status");
-    openapiRequiredFields.add("kind");
-    openapiRequiredFields.add("active");
-    openapiRequiredFields.add("archived");
-    openapiRequiredFields.add("environmentKey");
-    openapiRequiredFields.add("numberOfContributors");
-    openapiRequiredFields.add("numberOfPullRequests");
-    openapiRequiredFields.add("linesAdded");
-    openapiRequiredFields.add("linesDeleted");
-    openapiRequiredFields.add("leadTime");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("id", "applicationKey", "applicationVersion", "startedAt", "status", "kind", "active", "archived", "environmentKey", "numberOfContributors", "numberOfPullRequests", "linesAdded", "linesDeleted", "leadTime"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DeploymentRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DeploymentRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DeploymentRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DeploymentRep is not found in the empty JSON string", DeploymentRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DeploymentRep is not found in the empty JSON string", DeploymentRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : DeploymentRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
       if (!jsonObj.get("applicationKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `applicationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicationKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `applicationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicationKey").toString()));
       }
       if (!jsonObj.get("applicationVersion").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `applicationVersion` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicationVersion").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `applicationVersion` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicationVersion").toString()));
       }
       if (!jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
       if (!jsonObj.get("kind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
       if (!jsonObj.get("environmentKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
       }
       // validate the optional field `pullRequests`
       if (jsonObj.get("pullRequests") != null && !jsonObj.get("pullRequests").isJsonNull()) {
@@ -805,7 +792,7 @@ public class DeploymentRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -820,22 +807,22 @@ public class DeploymentRep {
     }
   }
 
- /**
-  * Create an instance of DeploymentRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DeploymentRep
-  * @throws IOException if the JSON string is invalid with respect to DeploymentRep
-  */
+  /**
+   * Create an instance of DeploymentRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DeploymentRep
+   * @throws IOException if the JSON string is invalid with respect to DeploymentRep
+   */
   public static DeploymentRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DeploymentRep.class);
   }
 
- /**
-  * Convert an instance of DeploymentRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DeploymentRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,166 +40,173 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * FlagLinkPost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class FlagLinkPost {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nullable
   private String key;
 
   public static final String SERIALIZED_NAME_INTEGRATION_KEY = "integrationKey";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_KEY)
+  @javax.annotation.Nullable
   private String integrationKey;
 
   public static final String SERIALIZED_NAME_TIMESTAMP = "timestamp";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
+  @javax.annotation.Nullable
   private Long timestamp;
 
   public static final String SERIALIZED_NAME_DEEP_LINK = "deepLink";
   @SerializedName(SERIALIZED_NAME_DEEP_LINK)
+  @javax.annotation.Nullable
   private String deepLink;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
+  @javax.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
+  @javax.annotation.Nullable
   private Map<String, String> metadata = new HashMap<>();
 
   public FlagLinkPost() {
   }
 
-  public FlagLinkPost key(String key) {
+  public FlagLinkPost key(@javax.annotation.Nullable String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * The flag link key
    * @return key
-  **/
+   */
   @javax.annotation.Nullable
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nullable String key) {
     this.key = key;
   }
 
 
-  public FlagLinkPost integrationKey(String integrationKey) {
+  public FlagLinkPost integrationKey(@javax.annotation.Nullable String integrationKey) {
     this.integrationKey = integrationKey;
     return this;
   }
 
-   /**
+  /**
    * The integration key for an integration whose &lt;code&gt;manifest.json&lt;/code&gt; includes the &lt;code&gt;flagLink&lt;/code&gt; capability, if this is a flag link for an existing integration. Do not include for URL flag links.
    * @return integrationKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getIntegrationKey() {
     return integrationKey;
   }
 
-  public void setIntegrationKey(String integrationKey) {
+  public void setIntegrationKey(@javax.annotation.Nullable String integrationKey) {
     this.integrationKey = integrationKey;
   }
 
 
-  public FlagLinkPost timestamp(Long timestamp) {
+  public FlagLinkPost timestamp(@javax.annotation.Nullable Long timestamp) {
     this.timestamp = timestamp;
     return this;
   }
 
-   /**
+  /**
    * Get timestamp
    * @return timestamp
-  **/
+   */
   @javax.annotation.Nullable
   public Long getTimestamp() {
     return timestamp;
   }
 
-  public void setTimestamp(Long timestamp) {
+  public void setTimestamp(@javax.annotation.Nullable Long timestamp) {
     this.timestamp = timestamp;
   }
 
 
-  public FlagLinkPost deepLink(String deepLink) {
+  public FlagLinkPost deepLink(@javax.annotation.Nullable String deepLink) {
     this.deepLink = deepLink;
     return this;
   }
 
-   /**
+  /**
    * The URL for the external resource you are linking the flag to
    * @return deepLink
-  **/
+   */
   @javax.annotation.Nullable
   public String getDeepLink() {
     return deepLink;
   }
 
-  public void setDeepLink(String deepLink) {
+  public void setDeepLink(@javax.annotation.Nullable String deepLink) {
     this.deepLink = deepLink;
   }
 
 
-  public FlagLinkPost title(String title) {
+  public FlagLinkPost title(@javax.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
 
-   /**
+  /**
    * The title of the flag link
    * @return title
-  **/
+   */
   @javax.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(String title) {
+  public void setTitle(@javax.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public FlagLinkPost description(String description) {
+  public FlagLinkPost description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * The description of the flag link
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public FlagLinkPost metadata(Map<String, String> metadata) {
+  public FlagLinkPost metadata(@javax.annotation.Nullable Map<String, String> metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -211,16 +219,16 @@ public class FlagLinkPost {
     return this;
   }
 
-   /**
+  /**
    * The metadata required by this integration in order to create a flag link, if this is a flag link for an existing integration. Defined in the integration&#39;s &lt;code&gt;manifest.json&lt;/code&gt; file under &lt;code&gt;flagLink&lt;/code&gt;.
    * @return metadata
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, String> getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(Map<String, String> metadata) {
+  public void setMetadata(@javax.annotation.Nullable Map<String, String> metadata) {
     this.metadata = metadata;
   }
 
@@ -327,46 +335,39 @@ public class FlagLinkPost {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("key");
-    openapiFields.add("integrationKey");
-    openapiFields.add("timestamp");
-    openapiFields.add("deepLink");
-    openapiFields.add("title");
-    openapiFields.add("description");
-    openapiFields.add("metadata");
+    openapiFields = new HashSet<String>(Arrays.asList("key", "integrationKey", "timestamp", "deepLink", "title", "description", "metadata"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FlagLinkPost
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FlagLinkPost
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FlagLinkPost.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FlagLinkPost is not found in the empty JSON string", FlagLinkPost.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FlagLinkPost is not found in the empty JSON string", FlagLinkPost.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if ((jsonObj.get("integrationKey") != null && !jsonObj.get("integrationKey").isJsonNull()) && !jsonObj.get("integrationKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `integrationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("integrationKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `integrationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("integrationKey").toString()));
       }
       if ((jsonObj.get("deepLink") != null && !jsonObj.get("deepLink").isJsonNull()) && !jsonObj.get("deepLink").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `deepLink` to be a primitive type in the JSON string but got `%s`", jsonObj.get("deepLink").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `deepLink` to be a primitive type in the JSON string but got `%s`", jsonObj.get("deepLink").toString()));
       }
       if ((jsonObj.get("title") != null && !jsonObj.get("title").isJsonNull()) && !jsonObj.get("title").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
   }
 
@@ -427,7 +428,7 @@ public class FlagLinkPost {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -442,22 +443,22 @@ public class FlagLinkPost {
     }
   }
 
- /**
-  * Create an instance of FlagLinkPost given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FlagLinkPost
-  * @throws IOException if the JSON string is invalid with respect to FlagLinkPost
-  */
+  /**
+   * Create an instance of FlagLinkPost given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FlagLinkPost
+   * @throws IOException if the JSON string is invalid with respect to FlagLinkPost
+   */
   public static FlagLinkPost fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FlagLinkPost.class);
   }
 
- /**
-  * Convert an instance of FlagLinkPost to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FlagLinkPost to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

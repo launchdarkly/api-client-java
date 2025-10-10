@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,82 +41,87 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * AudienceConfiguration
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AudienceConfiguration {
   public static final String SERIALIZED_NAME_RELEASE_STRATEGY = "releaseStrategy";
   @SerializedName(SERIALIZED_NAME_RELEASE_STRATEGY)
+  @javax.annotation.Nonnull
   private String releaseStrategy;
 
   public static final String SERIALIZED_NAME_REQUIRE_APPROVAL = "requireApproval";
   @SerializedName(SERIALIZED_NAME_REQUIRE_APPROVAL)
+  @javax.annotation.Nonnull
   private Boolean requireApproval;
 
   public static final String SERIALIZED_NAME_NOTIFY_MEMBER_IDS = "notifyMemberIds";
   @SerializedName(SERIALIZED_NAME_NOTIFY_MEMBER_IDS)
+  @javax.annotation.Nullable
   private List<String> notifyMemberIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NOTIFY_TEAM_KEYS = "notifyTeamKeys";
   @SerializedName(SERIALIZED_NAME_NOTIFY_TEAM_KEYS)
+  @javax.annotation.Nullable
   private List<String> notifyTeamKeys = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_RELEASE_GUARDIAN_CONFIGURATION = "releaseGuardianConfiguration";
   @SerializedName(SERIALIZED_NAME_RELEASE_GUARDIAN_CONFIGURATION)
+  @javax.annotation.Nullable
   private ReleaseGuardianConfiguration releaseGuardianConfiguration;
 
   public AudienceConfiguration() {
   }
 
-  public AudienceConfiguration releaseStrategy(String releaseStrategy) {
+  public AudienceConfiguration releaseStrategy(@javax.annotation.Nonnull String releaseStrategy) {
     this.releaseStrategy = releaseStrategy;
     return this;
   }
 
-   /**
+  /**
    * Get releaseStrategy
    * @return releaseStrategy
-  **/
+   */
   @javax.annotation.Nonnull
   public String getReleaseStrategy() {
     return releaseStrategy;
   }
 
-  public void setReleaseStrategy(String releaseStrategy) {
+  public void setReleaseStrategy(@javax.annotation.Nonnull String releaseStrategy) {
     this.releaseStrategy = releaseStrategy;
   }
 
 
-  public AudienceConfiguration requireApproval(Boolean requireApproval) {
+  public AudienceConfiguration requireApproval(@javax.annotation.Nonnull Boolean requireApproval) {
     this.requireApproval = requireApproval;
     return this;
   }
 
-   /**
+  /**
    * Whether or not the audience requires approval
    * @return requireApproval
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getRequireApproval() {
     return requireApproval;
   }
 
-  public void setRequireApproval(Boolean requireApproval) {
+  public void setRequireApproval(@javax.annotation.Nonnull Boolean requireApproval) {
     this.requireApproval = requireApproval;
   }
 
 
-  public AudienceConfiguration notifyMemberIds(List<String> notifyMemberIds) {
+  public AudienceConfiguration notifyMemberIds(@javax.annotation.Nullable List<String> notifyMemberIds) {
     this.notifyMemberIds = notifyMemberIds;
     return this;
   }
@@ -128,21 +134,21 @@ public class AudienceConfiguration {
     return this;
   }
 
-   /**
+  /**
    * An array of member IDs. These members are notified to review the approval request.
    * @return notifyMemberIds
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getNotifyMemberIds() {
     return notifyMemberIds;
   }
 
-  public void setNotifyMemberIds(List<String> notifyMemberIds) {
+  public void setNotifyMemberIds(@javax.annotation.Nullable List<String> notifyMemberIds) {
     this.notifyMemberIds = notifyMemberIds;
   }
 
 
-  public AudienceConfiguration notifyTeamKeys(List<String> notifyTeamKeys) {
+  public AudienceConfiguration notifyTeamKeys(@javax.annotation.Nullable List<String> notifyTeamKeys) {
     this.notifyTeamKeys = notifyTeamKeys;
     return this;
   }
@@ -155,35 +161,35 @@ public class AudienceConfiguration {
     return this;
   }
 
-   /**
+  /**
    * An array of team keys. The members of these teams are notified to review the approval request.
    * @return notifyTeamKeys
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getNotifyTeamKeys() {
     return notifyTeamKeys;
   }
 
-  public void setNotifyTeamKeys(List<String> notifyTeamKeys) {
+  public void setNotifyTeamKeys(@javax.annotation.Nullable List<String> notifyTeamKeys) {
     this.notifyTeamKeys = notifyTeamKeys;
   }
 
 
-  public AudienceConfiguration releaseGuardianConfiguration(ReleaseGuardianConfiguration releaseGuardianConfiguration) {
+  public AudienceConfiguration releaseGuardianConfiguration(@javax.annotation.Nullable ReleaseGuardianConfiguration releaseGuardianConfiguration) {
     this.releaseGuardianConfiguration = releaseGuardianConfiguration;
     return this;
   }
 
-   /**
+  /**
    * Get releaseGuardianConfiguration
    * @return releaseGuardianConfiguration
-  **/
+   */
   @javax.annotation.Nullable
   public ReleaseGuardianConfiguration getReleaseGuardianConfiguration() {
     return releaseGuardianConfiguration;
   }
 
-  public void setReleaseGuardianConfiguration(ReleaseGuardianConfiguration releaseGuardianConfiguration) {
+  public void setReleaseGuardianConfiguration(@javax.annotation.Nullable ReleaseGuardianConfiguration releaseGuardianConfiguration) {
     this.releaseGuardianConfiguration = releaseGuardianConfiguration;
   }
 
@@ -286,49 +292,42 @@ public class AudienceConfiguration {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("releaseStrategy");
-    openapiFields.add("requireApproval");
-    openapiFields.add("notifyMemberIds");
-    openapiFields.add("notifyTeamKeys");
-    openapiFields.add("releaseGuardianConfiguration");
+    openapiFields = new HashSet<String>(Arrays.asList("releaseStrategy", "requireApproval", "notifyMemberIds", "notifyTeamKeys", "releaseGuardianConfiguration"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("releaseStrategy");
-    openapiRequiredFields.add("requireApproval");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("releaseStrategy", "requireApproval"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to AudienceConfiguration
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AudienceConfiguration
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AudienceConfiguration.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AudienceConfiguration is not found in the empty JSON string", AudienceConfiguration.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AudienceConfiguration is not found in the empty JSON string", AudienceConfiguration.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : AudienceConfiguration.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("releaseStrategy").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `releaseStrategy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("releaseStrategy").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `releaseStrategy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("releaseStrategy").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("notifyMemberIds") != null && !jsonObj.get("notifyMemberIds").isJsonNull() && !jsonObj.get("notifyMemberIds").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `notifyMemberIds` to be an array in the JSON string but got `%s`", jsonObj.get("notifyMemberIds").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifyMemberIds` to be an array in the JSON string but got `%s`", jsonObj.get("notifyMemberIds").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("notifyTeamKeys") != null && !jsonObj.get("notifyTeamKeys").isJsonNull() && !jsonObj.get("notifyTeamKeys").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `notifyTeamKeys` to be an array in the JSON string but got `%s`", jsonObj.get("notifyTeamKeys").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifyTeamKeys` to be an array in the JSON string but got `%s`", jsonObj.get("notifyTeamKeys").toString()));
       }
       // validate the optional field `releaseGuardianConfiguration`
       if (jsonObj.get("releaseGuardianConfiguration") != null && !jsonObj.get("releaseGuardianConfiguration").isJsonNull()) {
@@ -393,7 +392,7 @@ public class AudienceConfiguration {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -408,22 +407,22 @@ public class AudienceConfiguration {
     }
   }
 
- /**
-  * Create an instance of AudienceConfiguration given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AudienceConfiguration
-  * @throws IOException if the JSON string is invalid with respect to AudienceConfiguration
-  */
+  /**
+   * Create an instance of AudienceConfiguration given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AudienceConfiguration
+   * @throws IOException if the JSON string is invalid with respect to AudienceConfiguration
+   */
   public static AudienceConfiguration fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AudienceConfiguration.class);
   }
 
- /**
-  * Convert an instance of AudienceConfiguration to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AudienceConfiguration to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

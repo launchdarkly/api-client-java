@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,88 +38,91 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * BigSegmentTarget
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class BigSegmentTarget {
   public static final String SERIALIZED_NAME_USER_KEY = "userKey";
   @SerializedName(SERIALIZED_NAME_USER_KEY)
+  @javax.annotation.Nonnull
   private String userKey;
 
   public static final String SERIALIZED_NAME_INCLUDED = "included";
   @SerializedName(SERIALIZED_NAME_INCLUDED)
+  @javax.annotation.Nonnull
   private Boolean included;
 
   public static final String SERIALIZED_NAME_EXCLUDED = "excluded";
   @SerializedName(SERIALIZED_NAME_EXCLUDED)
+  @javax.annotation.Nonnull
   private Boolean excluded;
 
   public BigSegmentTarget() {
   }
 
-  public BigSegmentTarget userKey(String userKey) {
+  public BigSegmentTarget userKey(@javax.annotation.Nonnull String userKey) {
     this.userKey = userKey;
     return this;
   }
 
-   /**
+  /**
    * The target key
    * @return userKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getUserKey() {
     return userKey;
   }
 
-  public void setUserKey(String userKey) {
+  public void setUserKey(@javax.annotation.Nonnull String userKey) {
     this.userKey = userKey;
   }
 
 
-  public BigSegmentTarget included(Boolean included) {
+  public BigSegmentTarget included(@javax.annotation.Nonnull Boolean included) {
     this.included = included;
     return this;
   }
 
-   /**
+  /**
    * Indicates whether the target is included.&lt;br /&gt;Included targets are always segment members, regardless of segment rules.
    * @return included
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getIncluded() {
     return included;
   }
 
-  public void setIncluded(Boolean included) {
+  public void setIncluded(@javax.annotation.Nonnull Boolean included) {
     this.included = included;
   }
 
 
-  public BigSegmentTarget excluded(Boolean excluded) {
+  public BigSegmentTarget excluded(@javax.annotation.Nonnull Boolean excluded) {
     this.excluded = excluded;
     return this;
   }
 
-   /**
+  /**
    * Indicates whether the target is excluded.&lt;br /&gt;Segment rules bypass excluded targets, so they will never be included based on rules. Excluded targets may still be included explicitly.
    * @return excluded
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getExcluded() {
     return excluded;
   }
 
-  public void setExcluded(Boolean excluded) {
+  public void setExcluded(@javax.annotation.Nonnull Boolean excluded) {
     this.excluded = excluded;
   }
 
@@ -217,40 +221,34 @@ public class BigSegmentTarget {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("userKey");
-    openapiFields.add("included");
-    openapiFields.add("excluded");
+    openapiFields = new HashSet<String>(Arrays.asList("userKey", "included", "excluded"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("userKey");
-    openapiRequiredFields.add("included");
-    openapiRequiredFields.add("excluded");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("userKey", "included", "excluded"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to BigSegmentTarget
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to BigSegmentTarget
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!BigSegmentTarget.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in BigSegmentTarget is not found in the empty JSON string", BigSegmentTarget.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in BigSegmentTarget is not found in the empty JSON string", BigSegmentTarget.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : BigSegmentTarget.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("userKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `userKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `userKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userKey").toString()));
       }
   }
 
@@ -311,7 +309,7 @@ public class BigSegmentTarget {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -326,22 +324,22 @@ public class BigSegmentTarget {
     }
   }
 
- /**
-  * Create an instance of BigSegmentTarget given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of BigSegmentTarget
-  * @throws IOException if the JSON string is invalid with respect to BigSegmentTarget
-  */
+  /**
+   * Create an instance of BigSegmentTarget given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of BigSegmentTarget
+   * @throws IOException if the JSON string is invalid with respect to BigSegmentTarget
+   */
   public static BigSegmentTarget fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, BigSegmentTarget.class);
   }
 
- /**
-  * Convert an instance of BigSegmentTarget to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of BigSegmentTarget to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

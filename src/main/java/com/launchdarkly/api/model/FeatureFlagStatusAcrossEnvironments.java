@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,36 +42,39 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * FeatureFlagStatusAcrossEnvironments
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class FeatureFlagStatusAcrossEnvironments {
   public static final String SERIALIZED_NAME_ENVIRONMENTS = "environments";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENTS)
+  @javax.annotation.Nonnull
   private Map<String, FeatureFlagStatus> environments = new HashMap<>();
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public FeatureFlagStatusAcrossEnvironments() {
   }
 
-  public FeatureFlagStatusAcrossEnvironments environments(Map<String, FeatureFlagStatus> environments) {
+  public FeatureFlagStatusAcrossEnvironments environments(@javax.annotation.Nonnull Map<String, FeatureFlagStatus> environments) {
     this.environments = environments;
     return this;
   }
@@ -83,40 +87,40 @@ public class FeatureFlagStatusAcrossEnvironments {
     return this;
   }
 
-   /**
+  /**
    * Flag status for environment.
    * @return environments
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, FeatureFlagStatus> getEnvironments() {
     return environments;
   }
 
-  public void setEnvironments(Map<String, FeatureFlagStatus> environments) {
+  public void setEnvironments(@javax.annotation.Nonnull Map<String, FeatureFlagStatus> environments) {
     this.environments = environments;
   }
 
 
-  public FeatureFlagStatusAcrossEnvironments key(String key) {
+  public FeatureFlagStatusAcrossEnvironments key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * feature flag key
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public FeatureFlagStatusAcrossEnvironments links(Map<String, Link> links) {
+  public FeatureFlagStatusAcrossEnvironments links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -129,16 +133,16 @@ public class FeatureFlagStatusAcrossEnvironments {
     return this;
   }
 
-   /**
+  /**
    * Get links
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
@@ -237,40 +241,34 @@ public class FeatureFlagStatusAcrossEnvironments {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("environments");
-    openapiFields.add("key");
-    openapiFields.add("_links");
+    openapiFields = new HashSet<String>(Arrays.asList("environments", "key", "_links"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("environments");
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("_links");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("environments", "key", "_links"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FeatureFlagStatusAcrossEnvironments
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FeatureFlagStatusAcrossEnvironments
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FeatureFlagStatusAcrossEnvironments.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FeatureFlagStatusAcrossEnvironments is not found in the empty JSON string", FeatureFlagStatusAcrossEnvironments.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FeatureFlagStatusAcrossEnvironments is not found in the empty JSON string", FeatureFlagStatusAcrossEnvironments.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : FeatureFlagStatusAcrossEnvironments.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
   }
 
@@ -331,7 +329,7 @@ public class FeatureFlagStatusAcrossEnvironments {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -346,22 +344,22 @@ public class FeatureFlagStatusAcrossEnvironments {
     }
   }
 
- /**
-  * Create an instance of FeatureFlagStatusAcrossEnvironments given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FeatureFlagStatusAcrossEnvironments
-  * @throws IOException if the JSON string is invalid with respect to FeatureFlagStatusAcrossEnvironments
-  */
+  /**
+   * Create an instance of FeatureFlagStatusAcrossEnvironments given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FeatureFlagStatusAcrossEnvironments
+   * @throws IOException if the JSON string is invalid with respect to FeatureFlagStatusAcrossEnvironments
+   */
   public static FeatureFlagStatusAcrossEnvironments fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FeatureFlagStatusAcrossEnvironments.class);
   }
 
- /**
-  * Convert an instance of FeatureFlagStatusAcrossEnvironments to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FeatureFlagStatusAcrossEnvironments to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

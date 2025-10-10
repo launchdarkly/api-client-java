@@ -17,7 +17,7 @@
 
 | Name | Value |
 |---- | -----|
-| MAINTAINTEAM | &quot;maintainTeam&quot; |
+| MAINTAIN_TEAM | &quot;maintainTeam&quot; |
 
 
 

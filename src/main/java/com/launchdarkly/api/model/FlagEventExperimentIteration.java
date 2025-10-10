@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,120 +41,125 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * FlagEventExperimentIteration
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class FlagEventExperimentIteration {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nonnull
   private String status;
 
   public static final String SERIALIZED_NAME_STARTED_AT = "startedAt";
   @SerializedName(SERIALIZED_NAME_STARTED_AT)
+  @javax.annotation.Nonnull
   private Long startedAt;
 
   public static final String SERIALIZED_NAME_ENDED_AT = "endedAt";
   @SerializedName(SERIALIZED_NAME_ENDED_AT)
+  @javax.annotation.Nullable
   private Long endedAt;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private Map<String, Link> links = new HashMap<>();
 
   public FlagEventExperimentIteration() {
   }
 
-  public FlagEventExperimentIteration id(String id) {
+  public FlagEventExperimentIteration id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The experiment iteration ID
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public FlagEventExperimentIteration status(String status) {
+  public FlagEventExperimentIteration status(@javax.annotation.Nonnull String status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nonnull
   public String getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(@javax.annotation.Nonnull String status) {
     this.status = status;
   }
 
 
-  public FlagEventExperimentIteration startedAt(Long startedAt) {
+  public FlagEventExperimentIteration startedAt(@javax.annotation.Nonnull Long startedAt) {
     this.startedAt = startedAt;
     return this;
   }
 
-   /**
+  /**
    * Get startedAt
    * @return startedAt
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getStartedAt() {
     return startedAt;
   }
 
-  public void setStartedAt(Long startedAt) {
+  public void setStartedAt(@javax.annotation.Nonnull Long startedAt) {
     this.startedAt = startedAt;
   }
 
 
-  public FlagEventExperimentIteration endedAt(Long endedAt) {
+  public FlagEventExperimentIteration endedAt(@javax.annotation.Nullable Long endedAt) {
     this.endedAt = endedAt;
     return this;
   }
 
-   /**
+  /**
    * Get endedAt
    * @return endedAt
-  **/
+   */
   @javax.annotation.Nullable
   public Long getEndedAt() {
     return endedAt;
   }
 
-  public void setEndedAt(Long endedAt) {
+  public void setEndedAt(@javax.annotation.Nullable Long endedAt) {
     this.endedAt = endedAt;
   }
 
 
-  public FlagEventExperimentIteration links(Map<String, Link> links) {
+  public FlagEventExperimentIteration links(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -166,16 +172,16 @@ public class FlagEventExperimentIteration {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
   }
 
@@ -278,45 +284,37 @@ public class FlagEventExperimentIteration {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("status");
-    openapiFields.add("startedAt");
-    openapiFields.add("endedAt");
-    openapiFields.add("_links");
+    openapiFields = new HashSet<String>(Arrays.asList("id", "status", "startedAt", "endedAt", "_links"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("id");
-    openapiRequiredFields.add("status");
-    openapiRequiredFields.add("startedAt");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("id", "status", "startedAt"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FlagEventExperimentIteration
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FlagEventExperimentIteration
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FlagEventExperimentIteration.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FlagEventExperimentIteration is not found in the empty JSON string", FlagEventExperimentIteration.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FlagEventExperimentIteration is not found in the empty JSON string", FlagEventExperimentIteration.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : FlagEventExperimentIteration.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
       if (!jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
   }
 
@@ -377,7 +375,7 @@ public class FlagEventExperimentIteration {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -392,22 +390,22 @@ public class FlagEventExperimentIteration {
     }
   }
 
- /**
-  * Create an instance of FlagEventExperimentIteration given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FlagEventExperimentIteration
-  * @throws IOException if the JSON string is invalid with respect to FlagEventExperimentIteration
-  */
+  /**
+   * Create an instance of FlagEventExperimentIteration given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FlagEventExperimentIteration
+   * @throws IOException if the JSON string is invalid with respect to FlagEventExperimentIteration
+   */
   public static FlagEventExperimentIteration fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FlagEventExperimentIteration.class);
   }
 
- /**
-  * Convert an instance of FlagEventExperimentIteration to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FlagEventExperimentIteration to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

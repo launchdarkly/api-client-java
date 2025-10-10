@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,32 +41,34 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * FlagSummary
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class FlagSummary {
   public static final String SERIALIZED_NAME_VARIATIONS = "variations";
   @SerializedName(SERIALIZED_NAME_VARIATIONS)
+  @javax.annotation.Nonnull
   private Map<String, VariationSummary> variations = new HashMap<>();
 
   public static final String SERIALIZED_NAME_PREREQUISITES = "prerequisites";
   @SerializedName(SERIALIZED_NAME_PREREQUISITES)
+  @javax.annotation.Nonnull
   private Integer prerequisites;
 
   public FlagSummary() {
   }
 
-  public FlagSummary variations(Map<String, VariationSummary> variations) {
+  public FlagSummary variations(@javax.annotation.Nonnull Map<String, VariationSummary> variations) {
     this.variations = variations;
     return this;
   }
@@ -78,35 +81,35 @@ public class FlagSummary {
     return this;
   }
 
-   /**
+  /**
    * Get variations
    * @return variations
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, VariationSummary> getVariations() {
     return variations;
   }
 
-  public void setVariations(Map<String, VariationSummary> variations) {
+  public void setVariations(@javax.annotation.Nonnull Map<String, VariationSummary> variations) {
     this.variations = variations;
   }
 
 
-  public FlagSummary prerequisites(Integer prerequisites) {
+  public FlagSummary prerequisites(@javax.annotation.Nonnull Integer prerequisites) {
     this.prerequisites = prerequisites;
     return this;
   }
 
-   /**
+  /**
    * The number of prerequisites for this flag
    * @return prerequisites
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getPrerequisites() {
     return prerequisites;
   }
 
-  public void setPrerequisites(Integer prerequisites) {
+  public void setPrerequisites(@javax.annotation.Nonnull Integer prerequisites) {
     this.prerequisites = prerequisites;
   }
 
@@ -203,33 +206,29 @@ public class FlagSummary {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("variations");
-    openapiFields.add("prerequisites");
+    openapiFields = new HashSet<String>(Arrays.asList("variations", "prerequisites"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("variations");
-    openapiRequiredFields.add("prerequisites");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("variations", "prerequisites"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FlagSummary
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FlagSummary
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FlagSummary.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FlagSummary is not found in the empty JSON string", FlagSummary.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FlagSummary is not found in the empty JSON string", FlagSummary.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : FlagSummary.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -292,7 +291,7 @@ public class FlagSummary {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -307,22 +306,22 @@ public class FlagSummary {
     }
   }
 
- /**
-  * Create an instance of FlagSummary given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FlagSummary
-  * @throws IOException if the JSON string is invalid with respect to FlagSummary
-  */
+  /**
+   * Create an instance of FlagSummary given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FlagSummary
+   * @throws IOException if the JSON string is invalid with respect to FlagSummary
+   */
   public static FlagSummary fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FlagSummary.class);
   }
 
- /**
-  * Convert an instance of FlagSummary to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FlagSummary to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

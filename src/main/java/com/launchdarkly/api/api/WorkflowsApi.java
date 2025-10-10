@@ -89,7 +89,8 @@ public class WorkflowsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -99,7 +100,7 @@ public class WorkflowsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWorkflowCall(String projectKey, String featureFlagKey, String environmentKey, String workflowId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteWorkflowCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String workflowId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -148,7 +149,7 @@ public class WorkflowsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteWorkflowValidateBeforeCall(String projectKey, String featureFlagKey, String environmentKey, String workflowId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteWorkflowValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String workflowId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling deleteWorkflow(Async)");
@@ -182,7 +183,8 @@ public class WorkflowsApi {
      * @param workflowId The workflow id (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -192,7 +194,7 @@ public class WorkflowsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteWorkflow(String projectKey, String featureFlagKey, String environmentKey, String workflowId) throws ApiException {
+    public void deleteWorkflow(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String workflowId) throws ApiException {
         deleteWorkflowWithHttpInfo(projectKey, featureFlagKey, environmentKey, workflowId);
     }
 
@@ -206,7 +208,8 @@ public class WorkflowsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -216,7 +219,7 @@ public class WorkflowsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteWorkflowWithHttpInfo(String projectKey, String featureFlagKey, String environmentKey, String workflowId) throws ApiException {
+    public ApiResponse<Void> deleteWorkflowWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String workflowId) throws ApiException {
         okhttp3.Call localVarCall = deleteWorkflowValidateBeforeCall(projectKey, featureFlagKey, environmentKey, workflowId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -232,7 +235,8 @@ public class WorkflowsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -242,7 +246,7 @@ public class WorkflowsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWorkflowAsync(String projectKey, String featureFlagKey, String environmentKey, String workflowId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteWorkflowAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String workflowId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteWorkflowValidateBeforeCall(projectKey, featureFlagKey, environmentKey, workflowId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -258,7 +262,8 @@ public class WorkflowsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Workflow response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -267,7 +272,7 @@ public class WorkflowsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCustomWorkflowCall(String projectKey, String featureFlagKey, String environmentKey, String workflowId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCustomWorkflowCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String workflowId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -316,7 +321,7 @@ public class WorkflowsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCustomWorkflowValidateBeforeCall(String projectKey, String featureFlagKey, String environmentKey, String workflowId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCustomWorkflowValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String workflowId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getCustomWorkflow(Async)");
@@ -351,7 +356,8 @@ public class WorkflowsApi {
      * @return CustomWorkflowOutput
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Workflow response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -360,7 +366,7 @@ public class WorkflowsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public CustomWorkflowOutput getCustomWorkflow(String projectKey, String featureFlagKey, String environmentKey, String workflowId) throws ApiException {
+    public CustomWorkflowOutput getCustomWorkflow(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String workflowId) throws ApiException {
         ApiResponse<CustomWorkflowOutput> localVarResp = getCustomWorkflowWithHttpInfo(projectKey, featureFlagKey, environmentKey, workflowId);
         return localVarResp.getData();
     }
@@ -375,7 +381,8 @@ public class WorkflowsApi {
      * @return ApiResponse&lt;CustomWorkflowOutput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Workflow response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -384,7 +391,7 @@ public class WorkflowsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CustomWorkflowOutput> getCustomWorkflowWithHttpInfo(String projectKey, String featureFlagKey, String environmentKey, String workflowId) throws ApiException {
+    public ApiResponse<CustomWorkflowOutput> getCustomWorkflowWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String workflowId) throws ApiException {
         okhttp3.Call localVarCall = getCustomWorkflowValidateBeforeCall(projectKey, featureFlagKey, environmentKey, workflowId, null);
         Type localVarReturnType = new TypeToken<CustomWorkflowOutput>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -401,7 +408,8 @@ public class WorkflowsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Workflow response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -410,7 +418,7 @@ public class WorkflowsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCustomWorkflowAsync(String projectKey, String featureFlagKey, String environmentKey, String workflowId, final ApiCallback<CustomWorkflowOutput> _callback) throws ApiException {
+    public okhttp3.Call getCustomWorkflowAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String workflowId, final ApiCallback<CustomWorkflowOutput> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCustomWorkflowValidateBeforeCall(projectKey, featureFlagKey, environmentKey, workflowId, _callback);
         Type localVarReturnType = new TypeToken<CustomWorkflowOutput>(){}.getType();
@@ -430,7 +438,8 @@ public class WorkflowsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Workflows collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -439,7 +448,7 @@ public class WorkflowsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWorkflowsCall(String projectKey, String featureFlagKey, String environmentKey, String status, String sort, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getWorkflowsCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String status, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -503,7 +512,7 @@ public class WorkflowsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWorkflowsValidateBeforeCall(String projectKey, String featureFlagKey, String environmentKey, String status, String sort, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getWorkflowsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String status, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getWorkflows(Async)");
@@ -536,7 +545,8 @@ public class WorkflowsApi {
      * @return CustomWorkflowsListingOutput
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Workflows collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -545,7 +555,7 @@ public class WorkflowsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public CustomWorkflowsListingOutput getWorkflows(String projectKey, String featureFlagKey, String environmentKey, String status, String sort, Long limit, Long offset) throws ApiException {
+    public CustomWorkflowsListingOutput getWorkflows(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String status, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset) throws ApiException {
         ApiResponse<CustomWorkflowsListingOutput> localVarResp = getWorkflowsWithHttpInfo(projectKey, featureFlagKey, environmentKey, status, sort, limit, offset);
         return localVarResp.getData();
     }
@@ -563,7 +573,8 @@ public class WorkflowsApi {
      * @return ApiResponse&lt;CustomWorkflowsListingOutput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Workflows collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -572,7 +583,7 @@ public class WorkflowsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CustomWorkflowsListingOutput> getWorkflowsWithHttpInfo(String projectKey, String featureFlagKey, String environmentKey, String status, String sort, Long limit, Long offset) throws ApiException {
+    public ApiResponse<CustomWorkflowsListingOutput> getWorkflowsWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String status, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset) throws ApiException {
         okhttp3.Call localVarCall = getWorkflowsValidateBeforeCall(projectKey, featureFlagKey, environmentKey, status, sort, limit, offset, null);
         Type localVarReturnType = new TypeToken<CustomWorkflowsListingOutput>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -592,7 +603,8 @@ public class WorkflowsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Workflows collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -601,7 +613,7 @@ public class WorkflowsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWorkflowsAsync(String projectKey, String featureFlagKey, String environmentKey, String status, String sort, Long limit, Long offset, final ApiCallback<CustomWorkflowsListingOutput> _callback) throws ApiException {
+    public okhttp3.Call getWorkflowsAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String status, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, final ApiCallback<CustomWorkflowsListingOutput> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getWorkflowsValidateBeforeCall(projectKey, featureFlagKey, environmentKey, status, sort, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<CustomWorkflowsListingOutput>(){}.getType();
@@ -620,7 +632,8 @@ public class WorkflowsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Workflow response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -630,7 +643,7 @@ public class WorkflowsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postWorkflowCall(String projectKey, String featureFlagKey, String environmentKey, CustomWorkflowInput customWorkflowInput, String templateKey, Boolean dryRun, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postWorkflowCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull CustomWorkflowInput customWorkflowInput, @javax.annotation.Nullable String templateKey, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -687,7 +700,7 @@ public class WorkflowsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postWorkflowValidateBeforeCall(String projectKey, String featureFlagKey, String environmentKey, CustomWorkflowInput customWorkflowInput, String templateKey, Boolean dryRun, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postWorkflowValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull CustomWorkflowInput customWorkflowInput, @javax.annotation.Nullable String templateKey, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling postWorkflow(Async)");
@@ -724,7 +737,8 @@ public class WorkflowsApi {
      * @return CustomWorkflowOutput
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Workflow response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -734,7 +748,7 @@ public class WorkflowsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public CustomWorkflowOutput postWorkflow(String projectKey, String featureFlagKey, String environmentKey, CustomWorkflowInput customWorkflowInput, String templateKey, Boolean dryRun) throws ApiException {
+    public CustomWorkflowOutput postWorkflow(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull CustomWorkflowInput customWorkflowInput, @javax.annotation.Nullable String templateKey, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
         ApiResponse<CustomWorkflowOutput> localVarResp = postWorkflowWithHttpInfo(projectKey, featureFlagKey, environmentKey, customWorkflowInput, templateKey, dryRun);
         return localVarResp.getData();
     }
@@ -751,7 +765,8 @@ public class WorkflowsApi {
      * @return ApiResponse&lt;CustomWorkflowOutput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Workflow response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -761,7 +776,7 @@ public class WorkflowsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CustomWorkflowOutput> postWorkflowWithHttpInfo(String projectKey, String featureFlagKey, String environmentKey, CustomWorkflowInput customWorkflowInput, String templateKey, Boolean dryRun) throws ApiException {
+    public ApiResponse<CustomWorkflowOutput> postWorkflowWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull CustomWorkflowInput customWorkflowInput, @javax.annotation.Nullable String templateKey, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
         okhttp3.Call localVarCall = postWorkflowValidateBeforeCall(projectKey, featureFlagKey, environmentKey, customWorkflowInput, templateKey, dryRun, null);
         Type localVarReturnType = new TypeToken<CustomWorkflowOutput>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -780,7 +795,8 @@ public class WorkflowsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Workflow response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -790,7 +806,7 @@ public class WorkflowsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postWorkflowAsync(String projectKey, String featureFlagKey, String environmentKey, CustomWorkflowInput customWorkflowInput, String templateKey, Boolean dryRun, final ApiCallback<CustomWorkflowOutput> _callback) throws ApiException {
+    public okhttp3.Call postWorkflowAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull CustomWorkflowInput customWorkflowInput, @javax.annotation.Nullable String templateKey, @javax.annotation.Nullable Boolean dryRun, final ApiCallback<CustomWorkflowOutput> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postWorkflowValidateBeforeCall(projectKey, featureFlagKey, environmentKey, customWorkflowInput, templateKey, dryRun, _callback);
         Type localVarReturnType = new TypeToken<CustomWorkflowOutput>(){}.getType();

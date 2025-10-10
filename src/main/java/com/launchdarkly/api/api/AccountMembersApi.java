@@ -89,7 +89,8 @@ public class AccountMembersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -99,7 +100,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteMemberCall(String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteMemberCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -145,7 +146,7 @@ public class AccountMembersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteMemberValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteMemberValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteMember(Async)");
@@ -161,7 +162,8 @@ public class AccountMembersApi {
      * @param id The member ID (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -171,7 +173,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteMember(String id) throws ApiException {
+    public void deleteMember(@javax.annotation.Nonnull String id) throws ApiException {
         deleteMemberWithHttpInfo(id);
     }
 
@@ -182,7 +184,8 @@ public class AccountMembersApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -192,7 +195,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteMemberWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<Void> deleteMemberWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteMemberValidateBeforeCall(id, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -205,7 +208,8 @@ public class AccountMembersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -215,7 +219,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteMemberAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteMemberAsync(@javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteMemberValidateBeforeCall(id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -229,7 +233,8 @@ public class AccountMembersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Member response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -238,7 +243,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMemberCall(String id, String expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getMemberCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -288,7 +293,7 @@ public class AccountMembersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getMemberValidateBeforeCall(String id, String expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getMemberValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getMember(Async)");
@@ -306,7 +311,8 @@ public class AccountMembersApi {
      * @return Member
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Member response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -315,7 +321,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Member getMember(String id, String expand) throws ApiException {
+    public Member getMember(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String expand) throws ApiException {
         ApiResponse<Member> localVarResp = getMemberWithHttpInfo(id, expand);
         return localVarResp.getData();
     }
@@ -328,7 +334,8 @@ public class AccountMembersApi {
      * @return ApiResponse&lt;Member&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Member response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -337,7 +344,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Member> getMemberWithHttpInfo(String id, String expand) throws ApiException {
+    public ApiResponse<Member> getMemberWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String expand) throws ApiException {
         okhttp3.Call localVarCall = getMemberValidateBeforeCall(id, expand, null);
         Type localVarReturnType = new TypeToken<Member>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -352,7 +359,8 @@ public class AccountMembersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Member response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -361,7 +369,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMemberAsync(String id, String expand, final ApiCallback<Member> _callback) throws ApiException {
+    public okhttp3.Call getMemberAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String expand, final ApiCallback<Member> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getMemberValidateBeforeCall(id, expand, _callback);
         Type localVarReturnType = new TypeToken<Member>(){}.getType();
@@ -379,7 +387,8 @@ public class AccountMembersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Members collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -388,7 +397,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMembersCall(Long limit, Long offset, String filter, String expand, String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getMembersCall(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -453,7 +462,7 @@ public class AccountMembersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getMembersValidateBeforeCall(Long limit, Long offset, String filter, String expand, String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getMembersValidateBeforeCall(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         return getMembersCall(limit, offset, filter, expand, sort, _callback);
 
     }
@@ -469,7 +478,8 @@ public class AccountMembersApi {
      * @return Members
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Members collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -478,7 +488,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Members getMembers(Long limit, Long offset, String filter, String expand, String sort) throws ApiException {
+    public Members getMembers(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String sort) throws ApiException {
         ApiResponse<Members> localVarResp = getMembersWithHttpInfo(limit, offset, filter, expand, sort);
         return localVarResp.getData();
     }
@@ -494,7 +504,8 @@ public class AccountMembersApi {
      * @return ApiResponse&lt;Members&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Members collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -503,7 +514,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Members> getMembersWithHttpInfo(Long limit, Long offset, String filter, String expand, String sort) throws ApiException {
+    public ApiResponse<Members> getMembersWithHttpInfo(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = getMembersValidateBeforeCall(limit, offset, filter, expand, sort, null);
         Type localVarReturnType = new TypeToken<Members>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -521,7 +532,8 @@ public class AccountMembersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Members collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -530,7 +542,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMembersAsync(Long limit, Long offset, String filter, String expand, String sort, final ApiCallback<Members> _callback) throws ApiException {
+    public okhttp3.Call getMembersAsync(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String sort, final ApiCallback<Members> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getMembersValidateBeforeCall(limit, offset, filter, expand, sort, _callback);
         Type localVarReturnType = new TypeToken<Members>(){}.getType();
@@ -545,7 +557,8 @@ public class AccountMembersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Member response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -556,7 +569,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchMemberCall(String id, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchMemberCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -603,7 +616,7 @@ public class AccountMembersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchMemberValidateBeforeCall(String id, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchMemberValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling patchMember(Async)");
@@ -626,7 +639,8 @@ public class AccountMembersApi {
      * @return Member
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Member response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -637,7 +651,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Member patchMember(String id, List<PatchOperation> patchOperation) throws ApiException {
+    public Member patchMember(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         ApiResponse<Member> localVarResp = patchMemberWithHttpInfo(id, patchOperation);
         return localVarResp.getData();
     }
@@ -650,7 +664,8 @@ public class AccountMembersApi {
      * @return ApiResponse&lt;Member&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Member response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -661,7 +676,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Member> patchMemberWithHttpInfo(String id, List<PatchOperation> patchOperation) throws ApiException {
+    public ApiResponse<Member> patchMemberWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         okhttp3.Call localVarCall = patchMemberValidateBeforeCall(id, patchOperation, null);
         Type localVarReturnType = new TypeToken<Member>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -676,7 +691,8 @@ public class AccountMembersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Member response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -687,7 +703,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchMemberAsync(String id, List<PatchOperation> patchOperation, final ApiCallback<Member> _callback) throws ApiException {
+    public okhttp3.Call patchMemberAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback<Member> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchMemberValidateBeforeCall(id, patchOperation, _callback);
         Type localVarReturnType = new TypeToken<Member>(){}.getType();
@@ -702,7 +718,8 @@ public class AccountMembersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Member response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -713,7 +730,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postMemberTeamsCall(String id, MemberTeamsPostInput memberTeamsPostInput, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postMemberTeamsCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull MemberTeamsPostInput memberTeamsPostInput, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -760,7 +777,7 @@ public class AccountMembersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postMemberTeamsValidateBeforeCall(String id, MemberTeamsPostInput memberTeamsPostInput, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postMemberTeamsValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull MemberTeamsPostInput memberTeamsPostInput, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling postMemberTeams(Async)");
@@ -783,7 +800,8 @@ public class AccountMembersApi {
      * @return Member
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Member response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -794,7 +812,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Member postMemberTeams(String id, MemberTeamsPostInput memberTeamsPostInput) throws ApiException {
+    public Member postMemberTeams(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull MemberTeamsPostInput memberTeamsPostInput) throws ApiException {
         ApiResponse<Member> localVarResp = postMemberTeamsWithHttpInfo(id, memberTeamsPostInput);
         return localVarResp.getData();
     }
@@ -807,7 +825,8 @@ public class AccountMembersApi {
      * @return ApiResponse&lt;Member&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Member response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -818,7 +837,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Member> postMemberTeamsWithHttpInfo(String id, MemberTeamsPostInput memberTeamsPostInput) throws ApiException {
+    public ApiResponse<Member> postMemberTeamsWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull MemberTeamsPostInput memberTeamsPostInput) throws ApiException {
         okhttp3.Call localVarCall = postMemberTeamsValidateBeforeCall(id, memberTeamsPostInput, null);
         Type localVarReturnType = new TypeToken<Member>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -833,7 +852,8 @@ public class AccountMembersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Member response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -844,7 +864,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postMemberTeamsAsync(String id, MemberTeamsPostInput memberTeamsPostInput, final ApiCallback<Member> _callback) throws ApiException {
+    public okhttp3.Call postMemberTeamsAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull MemberTeamsPostInput memberTeamsPostInput, final ApiCallback<Member> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postMemberTeamsValidateBeforeCall(id, memberTeamsPostInput, _callback);
         Type localVarReturnType = new TypeToken<Member>(){}.getType();
@@ -858,7 +878,8 @@ public class AccountMembersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Member collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -868,7 +889,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postMembersCall(List<NewMemberForm> newMemberForm, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postMembersCall(@javax.annotation.Nonnull List<NewMemberForm> newMemberForm, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -914,7 +935,7 @@ public class AccountMembersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postMembersValidateBeforeCall(List<NewMemberForm> newMemberForm, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postMembersValidateBeforeCall(@javax.annotation.Nonnull List<NewMemberForm> newMemberForm, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newMemberForm' is set
         if (newMemberForm == null) {
             throw new ApiException("Missing the required parameter 'newMemberForm' when calling postMembers(Async)");
@@ -931,7 +952,8 @@ public class AccountMembersApi {
      * @return Members
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Member collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -941,7 +963,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Members postMembers(List<NewMemberForm> newMemberForm) throws ApiException {
+    public Members postMembers(@javax.annotation.Nonnull List<NewMemberForm> newMemberForm) throws ApiException {
         ApiResponse<Members> localVarResp = postMembersWithHttpInfo(newMemberForm);
         return localVarResp.getData();
     }
@@ -953,7 +975,8 @@ public class AccountMembersApi {
      * @return ApiResponse&lt;Members&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Member collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -963,7 +986,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Members> postMembersWithHttpInfo(List<NewMemberForm> newMemberForm) throws ApiException {
+    public ApiResponse<Members> postMembersWithHttpInfo(@javax.annotation.Nonnull List<NewMemberForm> newMemberForm) throws ApiException {
         okhttp3.Call localVarCall = postMembersValidateBeforeCall(newMemberForm, null);
         Type localVarReturnType = new TypeToken<Members>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -977,7 +1000,8 @@ public class AccountMembersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Member collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -987,7 +1011,7 @@ public class AccountMembersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postMembersAsync(List<NewMemberForm> newMemberForm, final ApiCallback<Members> _callback) throws ApiException {
+    public okhttp3.Call postMembersAsync(@javax.annotation.Nonnull List<NewMemberForm> newMemberForm, final ApiCallback<Members> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postMembersValidateBeforeCall(newMemberForm, _callback);
         Type localVarReturnType = new TypeToken<Members>(){}.getType();

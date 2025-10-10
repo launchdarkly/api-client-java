@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,193 +43,202 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * InsightGroup
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class InsightGroup {
   public static final String SERIALIZED_NAME_ENVIRONMENT = "environment";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT)
+  @javax.annotation.Nullable
   private Environment environment;
 
   public static final String SERIALIZED_NAME_SCORES = "scores";
   @SerializedName(SERIALIZED_NAME_SCORES)
+  @javax.annotation.Nullable
   private InsightGroupScores scores;
 
   public static final String SERIALIZED_NAME_SCORE_METADATA = "scoreMetadata";
   @SerializedName(SERIALIZED_NAME_SCORE_METADATA)
+  @javax.annotation.Nullable
   private InsightGroupCollectionScoreMetadata scoreMetadata;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_PROJECT_KEY = "projectKey";
   @SerializedName(SERIALIZED_NAME_PROJECT_KEY)
+  @javax.annotation.Nonnull
   private String projectKey;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_KEY = "environmentKey";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_KEY)
+  @javax.annotation.Nonnull
   private String environmentKey;
 
   public static final String SERIALIZED_NAME_APPLICATION_KEYS = "applicationKeys";
   @SerializedName(SERIALIZED_NAME_APPLICATION_KEYS)
+  @javax.annotation.Nullable
   private List<String> applicationKeys = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATED_AT = "createdAt";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nonnull
   private Long createdAt;
 
   public InsightGroup() {
   }
 
-  public InsightGroup environment(Environment environment) {
+  public InsightGroup environment(@javax.annotation.Nullable Environment environment) {
     this.environment = environment;
     return this;
   }
 
-   /**
+  /**
    * Get environment
    * @return environment
-  **/
+   */
   @javax.annotation.Nullable
   public Environment getEnvironment() {
     return environment;
   }
 
-  public void setEnvironment(Environment environment) {
+  public void setEnvironment(@javax.annotation.Nullable Environment environment) {
     this.environment = environment;
   }
 
 
-  public InsightGroup scores(InsightGroupScores scores) {
+  public InsightGroup scores(@javax.annotation.Nullable InsightGroupScores scores) {
     this.scores = scores;
     return this;
   }
 
-   /**
+  /**
    * Get scores
    * @return scores
-  **/
+   */
   @javax.annotation.Nullable
   public InsightGroupScores getScores() {
     return scores;
   }
 
-  public void setScores(InsightGroupScores scores) {
+  public void setScores(@javax.annotation.Nullable InsightGroupScores scores) {
     this.scores = scores;
   }
 
 
-  public InsightGroup scoreMetadata(InsightGroupCollectionScoreMetadata scoreMetadata) {
+  public InsightGroup scoreMetadata(@javax.annotation.Nullable InsightGroupCollectionScoreMetadata scoreMetadata) {
     this.scoreMetadata = scoreMetadata;
     return this;
   }
 
-   /**
+  /**
    * Get scoreMetadata
    * @return scoreMetadata
-  **/
+   */
   @javax.annotation.Nullable
   public InsightGroupCollectionScoreMetadata getScoreMetadata() {
     return scoreMetadata;
   }
 
-  public void setScoreMetadata(InsightGroupCollectionScoreMetadata scoreMetadata) {
+  public void setScoreMetadata(@javax.annotation.Nullable InsightGroupCollectionScoreMetadata scoreMetadata) {
     this.scoreMetadata = scoreMetadata;
   }
 
 
-  public InsightGroup key(String key) {
+  public InsightGroup key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * The insight group key
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public InsightGroup name(String name) {
+  public InsightGroup name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The insight group name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public InsightGroup projectKey(String projectKey) {
+  public InsightGroup projectKey(@javax.annotation.Nonnull String projectKey) {
     this.projectKey = projectKey;
     return this;
   }
 
-   /**
+  /**
    * The project key
    * @return projectKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getProjectKey() {
     return projectKey;
   }
 
-  public void setProjectKey(String projectKey) {
+  public void setProjectKey(@javax.annotation.Nonnull String projectKey) {
     this.projectKey = projectKey;
   }
 
 
-  public InsightGroup environmentKey(String environmentKey) {
+  public InsightGroup environmentKey(@javax.annotation.Nonnull String environmentKey) {
     this.environmentKey = environmentKey;
     return this;
   }
 
-   /**
+  /**
    * The environment key
    * @return environmentKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getEnvironmentKey() {
     return environmentKey;
   }
 
-  public void setEnvironmentKey(String environmentKey) {
+  public void setEnvironmentKey(@javax.annotation.Nonnull String environmentKey) {
     this.environmentKey = environmentKey;
   }
 
 
-  public InsightGroup applicationKeys(List<String> applicationKeys) {
+  public InsightGroup applicationKeys(@javax.annotation.Nullable List<String> applicationKeys) {
     this.applicationKeys = applicationKeys;
     return this;
   }
@@ -241,35 +251,35 @@ public class InsightGroup {
     return this;
   }
 
-   /**
+  /**
    * The application keys
    * @return applicationKeys
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getApplicationKeys() {
     return applicationKeys;
   }
 
-  public void setApplicationKeys(List<String> applicationKeys) {
+  public void setApplicationKeys(@javax.annotation.Nullable List<String> applicationKeys) {
     this.applicationKeys = applicationKeys;
   }
 
 
-  public InsightGroup createdAt(Long createdAt) {
+  public InsightGroup createdAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Get createdAt
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
   }
 
@@ -380,43 +390,29 @@ public class InsightGroup {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("environment");
-    openapiFields.add("scores");
-    openapiFields.add("scoreMetadata");
-    openapiFields.add("key");
-    openapiFields.add("name");
-    openapiFields.add("projectKey");
-    openapiFields.add("environmentKey");
-    openapiFields.add("applicationKeys");
-    openapiFields.add("createdAt");
+    openapiFields = new HashSet<String>(Arrays.asList("environment", "scores", "scoreMetadata", "key", "name", "projectKey", "environmentKey", "applicationKeys", "createdAt"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("projectKey");
-    openapiRequiredFields.add("environmentKey");
-    openapiRequiredFields.add("createdAt");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("key", "name", "projectKey", "environmentKey", "createdAt"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to InsightGroup
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to InsightGroup
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!InsightGroup.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in InsightGroup is not found in the empty JSON string", InsightGroup.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in InsightGroup is not found in the empty JSON string", InsightGroup.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : InsightGroup.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -433,20 +429,20 @@ public class InsightGroup {
         InsightGroupCollectionScoreMetadata.validateJsonElement(jsonObj.get("scoreMetadata"));
       }
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("projectKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `projectKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `projectKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectKey").toString()));
       }
       if (!jsonObj.get("environmentKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("applicationKeys") != null && !jsonObj.get("applicationKeys").isJsonNull() && !jsonObj.get("applicationKeys").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `applicationKeys` to be an array in the JSON string but got `%s`", jsonObj.get("applicationKeys").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `applicationKeys` to be an array in the JSON string but got `%s`", jsonObj.get("applicationKeys").toString()));
       }
   }
 
@@ -507,7 +503,7 @@ public class InsightGroup {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -522,22 +518,22 @@ public class InsightGroup {
     }
   }
 
- /**
-  * Create an instance of InsightGroup given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of InsightGroup
-  * @throws IOException if the JSON string is invalid with respect to InsightGroup
-  */
+  /**
+   * Create an instance of InsightGroup given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of InsightGroup
+   * @throws IOException if the JSON string is invalid with respect to InsightGroup
+   */
   public static InsightGroup fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, InsightGroup.class);
   }
 
- /**
-  * Convert an instance of InsightGroup to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of InsightGroup to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,120 +41,125 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ReleaseProgression
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ReleaseProgression {
   public static final String SERIALIZED_NAME_CREATED_AT = "_createdAt";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nonnull
   private Long createdAt;
 
   public static final String SERIALIZED_NAME_COMPLETED_AT = "_completedAt";
   @SerializedName(SERIALIZED_NAME_COMPLETED_AT)
+  @javax.annotation.Nullable
   private Long completedAt;
 
   public static final String SERIALIZED_NAME_FLAG_KEY = "flagKey";
   @SerializedName(SERIALIZED_NAME_FLAG_KEY)
+  @javax.annotation.Nonnull
   private String flagKey;
 
   public static final String SERIALIZED_NAME_ACTIVE_PHASE_ID = "activePhaseId";
   @SerializedName(SERIALIZED_NAME_ACTIVE_PHASE_ID)
+  @javax.annotation.Nullable
   private String activePhaseId;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public ReleaseProgression() {
   }
 
-  public ReleaseProgression createdAt(Long createdAt) {
+  public ReleaseProgression createdAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Get createdAt
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ReleaseProgression completedAt(Long completedAt) {
+  public ReleaseProgression completedAt(@javax.annotation.Nullable Long completedAt) {
     this.completedAt = completedAt;
     return this;
   }
 
-   /**
+  /**
    * Get completedAt
    * @return completedAt
-  **/
+   */
   @javax.annotation.Nullable
   public Long getCompletedAt() {
     return completedAt;
   }
 
-  public void setCompletedAt(Long completedAt) {
+  public void setCompletedAt(@javax.annotation.Nullable Long completedAt) {
     this.completedAt = completedAt;
   }
 
 
-  public ReleaseProgression flagKey(String flagKey) {
+  public ReleaseProgression flagKey(@javax.annotation.Nonnull String flagKey) {
     this.flagKey = flagKey;
     return this;
   }
 
-   /**
+  /**
    * The flag key
    * @return flagKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getFlagKey() {
     return flagKey;
   }
 
-  public void setFlagKey(String flagKey) {
+  public void setFlagKey(@javax.annotation.Nonnull String flagKey) {
     this.flagKey = flagKey;
   }
 
 
-  public ReleaseProgression activePhaseId(String activePhaseId) {
+  public ReleaseProgression activePhaseId(@javax.annotation.Nullable String activePhaseId) {
     this.activePhaseId = activePhaseId;
     return this;
   }
 
-   /**
+  /**
    * The ID of the currently active release phase
    * @return activePhaseId
-  **/
+   */
   @javax.annotation.Nullable
   public String getActivePhaseId() {
     return activePhaseId;
   }
 
-  public void setActivePhaseId(String activePhaseId) {
+  public void setActivePhaseId(@javax.annotation.Nullable String activePhaseId) {
     this.activePhaseId = activePhaseId;
   }
 
 
-  public ReleaseProgression links(Map<String, Link> links) {
+  public ReleaseProgression links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -166,16 +172,16 @@ public class ReleaseProgression {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
@@ -278,45 +284,37 @@ public class ReleaseProgression {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_createdAt");
-    openapiFields.add("_completedAt");
-    openapiFields.add("flagKey");
-    openapiFields.add("activePhaseId");
-    openapiFields.add("_links");
+    openapiFields = new HashSet<String>(Arrays.asList("_createdAt", "_completedAt", "flagKey", "activePhaseId", "_links"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_createdAt");
-    openapiRequiredFields.add("flagKey");
-    openapiRequiredFields.add("_links");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_createdAt", "flagKey", "_links"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ReleaseProgression
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ReleaseProgression
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ReleaseProgression.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ReleaseProgression is not found in the empty JSON string", ReleaseProgression.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ReleaseProgression is not found in the empty JSON string", ReleaseProgression.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ReleaseProgression.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("flagKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `flagKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("flagKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `flagKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("flagKey").toString()));
       }
       if ((jsonObj.get("activePhaseId") != null && !jsonObj.get("activePhaseId").isJsonNull()) && !jsonObj.get("activePhaseId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `activePhaseId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("activePhaseId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `activePhaseId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("activePhaseId").toString()));
       }
   }
 
@@ -377,7 +375,7 @@ public class ReleaseProgression {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -392,22 +390,22 @@ public class ReleaseProgression {
     }
   }
 
- /**
-  * Create an instance of ReleaseProgression given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ReleaseProgression
-  * @throws IOException if the JSON string is invalid with respect to ReleaseProgression
-  */
+  /**
+   * Create an instance of ReleaseProgression given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ReleaseProgression
+   * @throws IOException if the JSON string is invalid with respect to ReleaseProgression
+   */
   public static ReleaseProgression fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ReleaseProgression.class);
   }
 
- /**
-  * Convert an instance of ReleaseProgression to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ReleaseProgression to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

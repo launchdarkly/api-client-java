@@ -96,7 +96,8 @@ public class InsightsFlagEventsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag event collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -106,7 +107,7 @@ public class InsightsFlagEventsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFlagEventsCall(String projectKey, String environmentKey, String applicationKey, String query, String impactSize, Boolean hasExperiments, String global, String expand, Long limit, Long from, Long to, String after, String before, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getFlagEventsCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable String query, @javax.annotation.Nullable String impactSize, @javax.annotation.Nullable Boolean hasExperiments, @javax.annotation.Nullable String global, @javax.annotation.Nullable String expand, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long from, @javax.annotation.Nullable Long to, @javax.annotation.Nullable String after, @javax.annotation.Nullable String before, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -203,7 +204,7 @@ public class InsightsFlagEventsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFlagEventsValidateBeforeCall(String projectKey, String environmentKey, String applicationKey, String query, String impactSize, Boolean hasExperiments, String global, String expand, Long limit, Long from, Long to, String after, String before, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getFlagEventsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable String query, @javax.annotation.Nullable String impactSize, @javax.annotation.Nullable Boolean hasExperiments, @javax.annotation.Nullable String global, @javax.annotation.Nullable String expand, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long from, @javax.annotation.Nullable Long to, @javax.annotation.Nullable String after, @javax.annotation.Nullable String before, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getFlagEvents(Async)");
@@ -237,7 +238,8 @@ public class InsightsFlagEventsBetaApi {
      * @return FlagEventCollectionRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag event collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -247,7 +249,7 @@ public class InsightsFlagEventsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public FlagEventCollectionRep getFlagEvents(String projectKey, String environmentKey, String applicationKey, String query, String impactSize, Boolean hasExperiments, String global, String expand, Long limit, Long from, Long to, String after, String before) throws ApiException {
+    public FlagEventCollectionRep getFlagEvents(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable String query, @javax.annotation.Nullable String impactSize, @javax.annotation.Nullable Boolean hasExperiments, @javax.annotation.Nullable String global, @javax.annotation.Nullable String expand, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long from, @javax.annotation.Nullable Long to, @javax.annotation.Nullable String after, @javax.annotation.Nullable String before) throws ApiException {
         ApiResponse<FlagEventCollectionRep> localVarResp = getFlagEventsWithHttpInfo(projectKey, environmentKey, applicationKey, query, impactSize, hasExperiments, global, expand, limit, from, to, after, before);
         return localVarResp.getData();
     }
@@ -271,7 +273,8 @@ public class InsightsFlagEventsBetaApi {
      * @return ApiResponse&lt;FlagEventCollectionRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag event collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -281,7 +284,7 @@ public class InsightsFlagEventsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FlagEventCollectionRep> getFlagEventsWithHttpInfo(String projectKey, String environmentKey, String applicationKey, String query, String impactSize, Boolean hasExperiments, String global, String expand, Long limit, Long from, Long to, String after, String before) throws ApiException {
+    public ApiResponse<FlagEventCollectionRep> getFlagEventsWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable String query, @javax.annotation.Nullable String impactSize, @javax.annotation.Nullable Boolean hasExperiments, @javax.annotation.Nullable String global, @javax.annotation.Nullable String expand, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long from, @javax.annotation.Nullable Long to, @javax.annotation.Nullable String after, @javax.annotation.Nullable String before) throws ApiException {
         okhttp3.Call localVarCall = getFlagEventsValidateBeforeCall(projectKey, environmentKey, applicationKey, query, impactSize, hasExperiments, global, expand, limit, from, to, after, before, null);
         Type localVarReturnType = new TypeToken<FlagEventCollectionRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -307,7 +310,8 @@ public class InsightsFlagEventsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag event collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -317,7 +321,7 @@ public class InsightsFlagEventsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFlagEventsAsync(String projectKey, String environmentKey, String applicationKey, String query, String impactSize, Boolean hasExperiments, String global, String expand, Long limit, Long from, Long to, String after, String before, final ApiCallback<FlagEventCollectionRep> _callback) throws ApiException {
+    public okhttp3.Call getFlagEventsAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, @javax.annotation.Nullable String query, @javax.annotation.Nullable String impactSize, @javax.annotation.Nullable Boolean hasExperiments, @javax.annotation.Nullable String global, @javax.annotation.Nullable String expand, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long from, @javax.annotation.Nullable Long to, @javax.annotation.Nullable String after, @javax.annotation.Nullable String before, final ApiCallback<FlagEventCollectionRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFlagEventsValidateBeforeCall(projectKey, environmentKey, applicationKey, query, impactSize, hasExperiments, global, expand, limit, from, to, after, before, _callback);
         Type localVarReturnType = new TypeToken<FlagEventCollectionRep>(){}.getType();

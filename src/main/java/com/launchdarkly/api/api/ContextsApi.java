@@ -95,7 +95,8 @@ public class ContextsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -105,7 +106,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteContextInstancesCall(String projectKey, String environmentKey, String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteContextInstancesCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -153,7 +154,7 @@ public class ContextsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteContextInstancesValidateBeforeCall(String projectKey, String environmentKey, String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteContextInstancesValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling deleteContextInstances(Async)");
@@ -181,7 +182,8 @@ public class ContextsApi {
      * @param id The context instance ID (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -191,7 +193,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteContextInstances(String projectKey, String environmentKey, String id) throws ApiException {
+    public void deleteContextInstances(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id) throws ApiException {
         deleteContextInstancesWithHttpInfo(projectKey, environmentKey, id);
     }
 
@@ -204,7 +206,8 @@ public class ContextsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -214,7 +217,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteContextInstancesWithHttpInfo(String projectKey, String environmentKey, String id) throws ApiException {
+    public ApiResponse<Void> deleteContextInstancesWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteContextInstancesValidateBeforeCall(projectKey, environmentKey, id, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -229,7 +232,8 @@ public class ContextsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -239,7 +243,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteContextInstancesAsync(String projectKey, String environmentKey, String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteContextInstancesAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteContextInstancesValidateBeforeCall(projectKey, environmentKey, id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -258,7 +262,8 @@ public class ContextsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag evaluation collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -268,7 +273,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call evaluateContextInstanceCall(String projectKey, String environmentKey, Map<String, Object> requestBody, Long limit, Long offset, String sort, String filter, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call evaluateContextInstanceCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull Map<String, Object> requestBody, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -332,7 +337,7 @@ public class ContextsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call evaluateContextInstanceValidateBeforeCall(String projectKey, String environmentKey, Map<String, Object> requestBody, Long limit, Long offset, String sort, String filter, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call evaluateContextInstanceValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull Map<String, Object> requestBody, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling evaluateContextInstance(Async)");
@@ -365,7 +370,8 @@ public class ContextsApi {
      * @return ContextInstanceEvaluations
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag evaluation collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -375,7 +381,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ContextInstanceEvaluations evaluateContextInstance(String projectKey, String environmentKey, Map<String, Object> requestBody, Long limit, Long offset, String sort, String filter) throws ApiException {
+    public ContextInstanceEvaluations evaluateContextInstance(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull Map<String, Object> requestBody, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter) throws ApiException {
         ApiResponse<ContextInstanceEvaluations> localVarResp = evaluateContextInstanceWithHttpInfo(projectKey, environmentKey, requestBody, limit, offset, sort, filter);
         return localVarResp.getData();
     }
@@ -393,7 +399,8 @@ public class ContextsApi {
      * @return ApiResponse&lt;ContextInstanceEvaluations&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag evaluation collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -403,7 +410,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ContextInstanceEvaluations> evaluateContextInstanceWithHttpInfo(String projectKey, String environmentKey, Map<String, Object> requestBody, Long limit, Long offset, String sort, String filter) throws ApiException {
+    public ApiResponse<ContextInstanceEvaluations> evaluateContextInstanceWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull Map<String, Object> requestBody, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter) throws ApiException {
         okhttp3.Call localVarCall = evaluateContextInstanceValidateBeforeCall(projectKey, environmentKey, requestBody, limit, offset, sort, filter, null);
         Type localVarReturnType = new TypeToken<ContextInstanceEvaluations>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -423,7 +430,8 @@ public class ContextsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag evaluation collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -433,7 +441,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call evaluateContextInstanceAsync(String projectKey, String environmentKey, Map<String, Object> requestBody, Long limit, Long offset, String sort, String filter, final ApiCallback<ContextInstanceEvaluations> _callback) throws ApiException {
+    public okhttp3.Call evaluateContextInstanceAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull Map<String, Object> requestBody, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, final ApiCallback<ContextInstanceEvaluations> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = evaluateContextInstanceValidateBeforeCall(projectKey, environmentKey, requestBody, limit, offset, sort, filter, _callback);
         Type localVarReturnType = new TypeToken<ContextInstanceEvaluations>(){}.getType();
@@ -450,7 +458,8 @@ public class ContextsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context attribute names collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -459,7 +468,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getContextAttributeNamesCall(String projectKey, String environmentKey, String filter, Long limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getContextAttributeNamesCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -514,7 +523,7 @@ public class ContextsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getContextAttributeNamesValidateBeforeCall(String projectKey, String environmentKey, String filter, Long limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getContextAttributeNamesValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getContextAttributeNames(Async)");
@@ -539,7 +548,8 @@ public class ContextsApi {
      * @return ContextAttributeNamesCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context attribute names collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -548,7 +558,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ContextAttributeNamesCollection getContextAttributeNames(String projectKey, String environmentKey, String filter, Long limit) throws ApiException {
+    public ContextAttributeNamesCollection getContextAttributeNames(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit) throws ApiException {
         ApiResponse<ContextAttributeNamesCollection> localVarResp = getContextAttributeNamesWithHttpInfo(projectKey, environmentKey, filter, limit);
         return localVarResp.getData();
     }
@@ -563,7 +573,8 @@ public class ContextsApi {
      * @return ApiResponse&lt;ContextAttributeNamesCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context attribute names collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -572,7 +583,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ContextAttributeNamesCollection> getContextAttributeNamesWithHttpInfo(String projectKey, String environmentKey, String filter, Long limit) throws ApiException {
+    public ApiResponse<ContextAttributeNamesCollection> getContextAttributeNamesWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit) throws ApiException {
         okhttp3.Call localVarCall = getContextAttributeNamesValidateBeforeCall(projectKey, environmentKey, filter, limit, null);
         Type localVarReturnType = new TypeToken<ContextAttributeNamesCollection>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -589,7 +600,8 @@ public class ContextsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context attribute names collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -598,7 +610,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getContextAttributeNamesAsync(String projectKey, String environmentKey, String filter, Long limit, final ApiCallback<ContextAttributeNamesCollection> _callback) throws ApiException {
+    public okhttp3.Call getContextAttributeNamesAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, final ApiCallback<ContextAttributeNamesCollection> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getContextAttributeNamesValidateBeforeCall(projectKey, environmentKey, filter, limit, _callback);
         Type localVarReturnType = new TypeToken<ContextAttributeNamesCollection>(){}.getType();
@@ -616,7 +628,8 @@ public class ContextsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context attribute values collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -625,7 +638,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getContextAttributeValuesCall(String projectKey, String environmentKey, String attributeName, String filter, Long limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getContextAttributeValuesCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String attributeName, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -681,7 +694,7 @@ public class ContextsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getContextAttributeValuesValidateBeforeCall(String projectKey, String environmentKey, String attributeName, String filter, Long limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getContextAttributeValuesValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String attributeName, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getContextAttributeValues(Async)");
@@ -712,7 +725,8 @@ public class ContextsApi {
      * @return ContextAttributeValuesCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context attribute values collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -721,7 +735,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ContextAttributeValuesCollection getContextAttributeValues(String projectKey, String environmentKey, String attributeName, String filter, Long limit) throws ApiException {
+    public ContextAttributeValuesCollection getContextAttributeValues(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String attributeName, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit) throws ApiException {
         ApiResponse<ContextAttributeValuesCollection> localVarResp = getContextAttributeValuesWithHttpInfo(projectKey, environmentKey, attributeName, filter, limit);
         return localVarResp.getData();
     }
@@ -737,7 +751,8 @@ public class ContextsApi {
      * @return ApiResponse&lt;ContextAttributeValuesCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context attribute values collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -746,7 +761,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ContextAttributeValuesCollection> getContextAttributeValuesWithHttpInfo(String projectKey, String environmentKey, String attributeName, String filter, Long limit) throws ApiException {
+    public ApiResponse<ContextAttributeValuesCollection> getContextAttributeValuesWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String attributeName, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit) throws ApiException {
         okhttp3.Call localVarCall = getContextAttributeValuesValidateBeforeCall(projectKey, environmentKey, attributeName, filter, limit, null);
         Type localVarReturnType = new TypeToken<ContextAttributeValuesCollection>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -764,7 +779,8 @@ public class ContextsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context attribute values collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -773,7 +789,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getContextAttributeValuesAsync(String projectKey, String environmentKey, String attributeName, String filter, Long limit, final ApiCallback<ContextAttributeValuesCollection> _callback) throws ApiException {
+    public okhttp3.Call getContextAttributeValuesAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String attributeName, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, final ApiCallback<ContextAttributeValuesCollection> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getContextAttributeValuesValidateBeforeCall(projectKey, environmentKey, attributeName, filter, limit, _callback);
         Type localVarReturnType = new TypeToken<ContextAttributeValuesCollection>(){}.getType();
@@ -794,7 +810,8 @@ public class ContextsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context instances collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -803,7 +820,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getContextInstancesCall(String projectKey, String environmentKey, String id, Long limit, String continuationToken, String sort, String filter, Boolean includeTotalCount, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getContextInstancesCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -871,7 +888,7 @@ public class ContextsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getContextInstancesValidateBeforeCall(String projectKey, String environmentKey, String id, Long limit, String continuationToken, String sort, String filter, Boolean includeTotalCount, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getContextInstancesValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getContextInstances(Async)");
@@ -905,7 +922,8 @@ public class ContextsApi {
      * @return ContextInstances
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context instances collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -914,7 +932,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ContextInstances getContextInstances(String projectKey, String environmentKey, String id, Long limit, String continuationToken, String sort, String filter, Boolean includeTotalCount) throws ApiException {
+    public ContextInstances getContextInstances(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount) throws ApiException {
         ApiResponse<ContextInstances> localVarResp = getContextInstancesWithHttpInfo(projectKey, environmentKey, id, limit, continuationToken, sort, filter, includeTotalCount);
         return localVarResp.getData();
     }
@@ -933,7 +951,8 @@ public class ContextsApi {
      * @return ApiResponse&lt;ContextInstances&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context instances collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -942,7 +961,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ContextInstances> getContextInstancesWithHttpInfo(String projectKey, String environmentKey, String id, Long limit, String continuationToken, String sort, String filter, Boolean includeTotalCount) throws ApiException {
+    public ApiResponse<ContextInstances> getContextInstancesWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount) throws ApiException {
         okhttp3.Call localVarCall = getContextInstancesValidateBeforeCall(projectKey, environmentKey, id, limit, continuationToken, sort, filter, includeTotalCount, null);
         Type localVarReturnType = new TypeToken<ContextInstances>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -963,7 +982,8 @@ public class ContextsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context instances collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -972,7 +992,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getContextInstancesAsync(String projectKey, String environmentKey, String id, Long limit, String continuationToken, String sort, String filter, Boolean includeTotalCount, final ApiCallback<ContextInstances> _callback) throws ApiException {
+    public okhttp3.Call getContextInstancesAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount, final ApiCallback<ContextInstances> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getContextInstancesValidateBeforeCall(projectKey, environmentKey, id, limit, continuationToken, sort, filter, includeTotalCount, _callback);
         Type localVarReturnType = new TypeToken<ContextInstances>(){}.getType();
@@ -986,7 +1006,8 @@ public class ContextsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context kinds collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -994,7 +1015,7 @@ public class ContextsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getContextKindsByProjectKeyCall(String projectKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getContextKindsByProjectKeyCall(@javax.annotation.Nonnull String projectKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1040,7 +1061,7 @@ public class ContextsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getContextKindsByProjectKeyValidateBeforeCall(String projectKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getContextKindsByProjectKeyValidateBeforeCall(@javax.annotation.Nonnull String projectKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getContextKindsByProjectKey(Async)");
@@ -1057,7 +1078,8 @@ public class ContextsApi {
      * @return ContextKindsCollectionRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context kinds collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1065,7 +1087,7 @@ public class ContextsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ContextKindsCollectionRep getContextKindsByProjectKey(String projectKey) throws ApiException {
+    public ContextKindsCollectionRep getContextKindsByProjectKey(@javax.annotation.Nonnull String projectKey) throws ApiException {
         ApiResponse<ContextKindsCollectionRep> localVarResp = getContextKindsByProjectKeyWithHttpInfo(projectKey);
         return localVarResp.getData();
     }
@@ -1077,7 +1099,8 @@ public class ContextsApi {
      * @return ApiResponse&lt;ContextKindsCollectionRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context kinds collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1085,7 +1108,7 @@ public class ContextsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ContextKindsCollectionRep> getContextKindsByProjectKeyWithHttpInfo(String projectKey) throws ApiException {
+    public ApiResponse<ContextKindsCollectionRep> getContextKindsByProjectKeyWithHttpInfo(@javax.annotation.Nonnull String projectKey) throws ApiException {
         okhttp3.Call localVarCall = getContextKindsByProjectKeyValidateBeforeCall(projectKey, null);
         Type localVarReturnType = new TypeToken<ContextKindsCollectionRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1099,7 +1122,8 @@ public class ContextsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context kinds collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1107,7 +1131,7 @@ public class ContextsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getContextKindsByProjectKeyAsync(String projectKey, final ApiCallback<ContextKindsCollectionRep> _callback) throws ApiException {
+    public okhttp3.Call getContextKindsByProjectKeyAsync(@javax.annotation.Nonnull String projectKey, final ApiCallback<ContextKindsCollectionRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getContextKindsByProjectKeyValidateBeforeCall(projectKey, _callback);
         Type localVarReturnType = new TypeToken<ContextKindsCollectionRep>(){}.getType();
@@ -1129,7 +1153,8 @@ public class ContextsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Contexts collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1138,7 +1163,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getContextsCall(String projectKey, String environmentKey, String kind, String key, Long limit, String continuationToken, String sort, String filter, Boolean includeTotalCount, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getContextsCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String kind, @javax.annotation.Nonnull String key, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1207,7 +1232,7 @@ public class ContextsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getContextsValidateBeforeCall(String projectKey, String environmentKey, String kind, String key, Long limit, String continuationToken, String sort, String filter, Boolean includeTotalCount, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getContextsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String kind, @javax.annotation.Nonnull String key, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getContexts(Async)");
@@ -1247,7 +1272,8 @@ public class ContextsApi {
      * @return Contexts
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Contexts collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1256,7 +1282,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Contexts getContexts(String projectKey, String environmentKey, String kind, String key, Long limit, String continuationToken, String sort, String filter, Boolean includeTotalCount) throws ApiException {
+    public Contexts getContexts(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String kind, @javax.annotation.Nonnull String key, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount) throws ApiException {
         ApiResponse<Contexts> localVarResp = getContextsWithHttpInfo(projectKey, environmentKey, kind, key, limit, continuationToken, sort, filter, includeTotalCount);
         return localVarResp.getData();
     }
@@ -1276,7 +1302,8 @@ public class ContextsApi {
      * @return ApiResponse&lt;Contexts&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Contexts collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1285,7 +1312,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Contexts> getContextsWithHttpInfo(String projectKey, String environmentKey, String kind, String key, Long limit, String continuationToken, String sort, String filter, Boolean includeTotalCount) throws ApiException {
+    public ApiResponse<Contexts> getContextsWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String kind, @javax.annotation.Nonnull String key, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount) throws ApiException {
         okhttp3.Call localVarCall = getContextsValidateBeforeCall(projectKey, environmentKey, kind, key, limit, continuationToken, sort, filter, includeTotalCount, null);
         Type localVarReturnType = new TypeToken<Contexts>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1307,7 +1334,8 @@ public class ContextsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Contexts collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1316,7 +1344,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getContextsAsync(String projectKey, String environmentKey, String kind, String key, Long limit, String continuationToken, String sort, String filter, Boolean includeTotalCount, final ApiCallback<Contexts> _callback) throws ApiException {
+    public okhttp3.Call getContextsAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String kind, @javax.annotation.Nonnull String key, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount, final ApiCallback<Contexts> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getContextsValidateBeforeCall(projectKey, environmentKey, kind, key, limit, continuationToken, sort, filter, includeTotalCount, _callback);
         Type localVarReturnType = new TypeToken<Contexts>(){}.getType();
@@ -1332,7 +1360,8 @@ public class ContextsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context kind upsert response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1341,7 +1370,7 @@ public class ContextsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putContextKindCall(String projectKey, String key, UpsertContextKindPayload upsertContextKindPayload, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call putContextKindCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String key, @javax.annotation.Nonnull UpsertContextKindPayload upsertContextKindPayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1389,7 +1418,7 @@ public class ContextsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call putContextKindValidateBeforeCall(String projectKey, String key, UpsertContextKindPayload upsertContextKindPayload, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call putContextKindValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String key, @javax.annotation.Nonnull UpsertContextKindPayload upsertContextKindPayload, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling putContextKind(Async)");
@@ -1418,7 +1447,8 @@ public class ContextsApi {
      * @return UpsertResponseRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context kind upsert response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1427,7 +1457,7 @@ public class ContextsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public UpsertResponseRep putContextKind(String projectKey, String key, UpsertContextKindPayload upsertContextKindPayload) throws ApiException {
+    public UpsertResponseRep putContextKind(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String key, @javax.annotation.Nonnull UpsertContextKindPayload upsertContextKindPayload) throws ApiException {
         ApiResponse<UpsertResponseRep> localVarResp = putContextKindWithHttpInfo(projectKey, key, upsertContextKindPayload);
         return localVarResp.getData();
     }
@@ -1441,7 +1471,8 @@ public class ContextsApi {
      * @return ApiResponse&lt;UpsertResponseRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context kind upsert response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1450,7 +1481,7 @@ public class ContextsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UpsertResponseRep> putContextKindWithHttpInfo(String projectKey, String key, UpsertContextKindPayload upsertContextKindPayload) throws ApiException {
+    public ApiResponse<UpsertResponseRep> putContextKindWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String key, @javax.annotation.Nonnull UpsertContextKindPayload upsertContextKindPayload) throws ApiException {
         okhttp3.Call localVarCall = putContextKindValidateBeforeCall(projectKey, key, upsertContextKindPayload, null);
         Type localVarReturnType = new TypeToken<UpsertResponseRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1466,7 +1497,8 @@ public class ContextsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context kind upsert response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1475,7 +1507,7 @@ public class ContextsApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putContextKindAsync(String projectKey, String key, UpsertContextKindPayload upsertContextKindPayload, final ApiCallback<UpsertResponseRep> _callback) throws ApiException {
+    public okhttp3.Call putContextKindAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String key, @javax.annotation.Nonnull UpsertContextKindPayload upsertContextKindPayload, final ApiCallback<UpsertResponseRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putContextKindValidateBeforeCall(projectKey, key, upsertContextKindPayload, _callback);
         Type localVarReturnType = new TypeToken<UpsertResponseRep>(){}.getType();
@@ -1496,7 +1528,8 @@ public class ContextsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context instances collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1505,7 +1538,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchContextInstancesCall(String projectKey, String environmentKey, ContextInstanceSearch contextInstanceSearch, Long limit, String continuationToken, String sort, String filter, Boolean includeTotalCount, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call searchContextInstancesCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull ContextInstanceSearch contextInstanceSearch, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1573,7 +1606,7 @@ public class ContextsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchContextInstancesValidateBeforeCall(String projectKey, String environmentKey, ContextInstanceSearch contextInstanceSearch, Long limit, String continuationToken, String sort, String filter, Boolean includeTotalCount, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call searchContextInstancesValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull ContextInstanceSearch contextInstanceSearch, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling searchContextInstances(Async)");
@@ -1607,7 +1640,8 @@ public class ContextsApi {
      * @return ContextInstances
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context instances collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1616,7 +1650,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ContextInstances searchContextInstances(String projectKey, String environmentKey, ContextInstanceSearch contextInstanceSearch, Long limit, String continuationToken, String sort, String filter, Boolean includeTotalCount) throws ApiException {
+    public ContextInstances searchContextInstances(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull ContextInstanceSearch contextInstanceSearch, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount) throws ApiException {
         ApiResponse<ContextInstances> localVarResp = searchContextInstancesWithHttpInfo(projectKey, environmentKey, contextInstanceSearch, limit, continuationToken, sort, filter, includeTotalCount);
         return localVarResp.getData();
     }
@@ -1635,7 +1669,8 @@ public class ContextsApi {
      * @return ApiResponse&lt;ContextInstances&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context instances collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1644,7 +1679,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ContextInstances> searchContextInstancesWithHttpInfo(String projectKey, String environmentKey, ContextInstanceSearch contextInstanceSearch, Long limit, String continuationToken, String sort, String filter, Boolean includeTotalCount) throws ApiException {
+    public ApiResponse<ContextInstances> searchContextInstancesWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull ContextInstanceSearch contextInstanceSearch, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount) throws ApiException {
         okhttp3.Call localVarCall = searchContextInstancesValidateBeforeCall(projectKey, environmentKey, contextInstanceSearch, limit, continuationToken, sort, filter, includeTotalCount, null);
         Type localVarReturnType = new TypeToken<ContextInstances>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1665,7 +1700,8 @@ public class ContextsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Context instances collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1674,7 +1710,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchContextInstancesAsync(String projectKey, String environmentKey, ContextInstanceSearch contextInstanceSearch, Long limit, String continuationToken, String sort, String filter, Boolean includeTotalCount, final ApiCallback<ContextInstances> _callback) throws ApiException {
+    public okhttp3.Call searchContextInstancesAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull ContextInstanceSearch contextInstanceSearch, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount, final ApiCallback<ContextInstances> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchContextInstancesValidateBeforeCall(projectKey, environmentKey, contextInstanceSearch, limit, continuationToken, sort, filter, includeTotalCount, _callback);
         Type localVarReturnType = new TypeToken<ContextInstances>(){}.getType();
@@ -1695,7 +1731,8 @@ public class ContextsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Contexts collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1704,7 +1741,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchContextsCall(String projectKey, String environmentKey, ContextSearch contextSearch, Long limit, String continuationToken, String sort, String filter, Boolean includeTotalCount, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call searchContextsCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull ContextSearch contextSearch, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1772,7 +1809,7 @@ public class ContextsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchContextsValidateBeforeCall(String projectKey, String environmentKey, ContextSearch contextSearch, Long limit, String continuationToken, String sort, String filter, Boolean includeTotalCount, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call searchContextsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull ContextSearch contextSearch, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling searchContexts(Async)");
@@ -1806,7 +1843,8 @@ public class ContextsApi {
      * @return Contexts
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Contexts collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1815,7 +1853,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Contexts searchContexts(String projectKey, String environmentKey, ContextSearch contextSearch, Long limit, String continuationToken, String sort, String filter, Boolean includeTotalCount) throws ApiException {
+    public Contexts searchContexts(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull ContextSearch contextSearch, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount) throws ApiException {
         ApiResponse<Contexts> localVarResp = searchContextsWithHttpInfo(projectKey, environmentKey, contextSearch, limit, continuationToken, sort, filter, includeTotalCount);
         return localVarResp.getData();
     }
@@ -1834,7 +1872,8 @@ public class ContextsApi {
      * @return ApiResponse&lt;Contexts&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Contexts collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1843,7 +1882,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Contexts> searchContextsWithHttpInfo(String projectKey, String environmentKey, ContextSearch contextSearch, Long limit, String continuationToken, String sort, String filter, Boolean includeTotalCount) throws ApiException {
+    public ApiResponse<Contexts> searchContextsWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull ContextSearch contextSearch, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount) throws ApiException {
         okhttp3.Call localVarCall = searchContextsValidateBeforeCall(projectKey, environmentKey, contextSearch, limit, continuationToken, sort, filter, includeTotalCount, null);
         Type localVarReturnType = new TypeToken<Contexts>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1864,7 +1903,8 @@ public class ContextsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Contexts collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1873,7 +1913,7 @@ public class ContextsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call searchContextsAsync(String projectKey, String environmentKey, ContextSearch contextSearch, Long limit, String continuationToken, String sort, String filter, Boolean includeTotalCount, final ApiCallback<Contexts> _callback) throws ApiException {
+    public okhttp3.Call searchContextsAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull ContextSearch contextSearch, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount, final ApiCallback<Contexts> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchContextsValidateBeforeCall(projectKey, environmentKey, contextSearch, limit, continuationToken, sort, filter, includeTotalCount, _callback);
         Type localVarReturnType = new TypeToken<Contexts>(){}.getType();

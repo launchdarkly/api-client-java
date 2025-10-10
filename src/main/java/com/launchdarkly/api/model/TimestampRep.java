@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,111 +38,115 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * TimestampRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class TimestampRep {
   public static final String SERIALIZED_NAME_MILLISECONDS = "milliseconds";
   @SerializedName(SERIALIZED_NAME_MILLISECONDS)
+  @javax.annotation.Nullable
   private Long milliseconds;
 
   public static final String SERIALIZED_NAME_SECONDS = "seconds";
   @SerializedName(SERIALIZED_NAME_SECONDS)
+  @javax.annotation.Nullable
   private Long seconds;
 
   public static final String SERIALIZED_NAME_RFC3339 = "rfc3339";
   @SerializedName(SERIALIZED_NAME_RFC3339)
+  @javax.annotation.Nullable
   private String rfc3339;
 
   public static final String SERIALIZED_NAME_SIMPLE = "simple";
   @SerializedName(SERIALIZED_NAME_SIMPLE)
+  @javax.annotation.Nullable
   private String simple;
 
   public TimestampRep() {
   }
 
-  public TimestampRep milliseconds(Long milliseconds) {
+  public TimestampRep milliseconds(@javax.annotation.Nullable Long milliseconds) {
     this.milliseconds = milliseconds;
     return this;
   }
 
-   /**
+  /**
    * Get milliseconds
    * @return milliseconds
-  **/
+   */
   @javax.annotation.Nullable
   public Long getMilliseconds() {
     return milliseconds;
   }
 
-  public void setMilliseconds(Long milliseconds) {
+  public void setMilliseconds(@javax.annotation.Nullable Long milliseconds) {
     this.milliseconds = milliseconds;
   }
 
 
-  public TimestampRep seconds(Long seconds) {
+  public TimestampRep seconds(@javax.annotation.Nullable Long seconds) {
     this.seconds = seconds;
     return this;
   }
 
-   /**
+  /**
    * Get seconds
    * @return seconds
-  **/
+   */
   @javax.annotation.Nullable
   public Long getSeconds() {
     return seconds;
   }
 
-  public void setSeconds(Long seconds) {
+  public void setSeconds(@javax.annotation.Nullable Long seconds) {
     this.seconds = seconds;
   }
 
 
-  public TimestampRep rfc3339(String rfc3339) {
+  public TimestampRep rfc3339(@javax.annotation.Nullable String rfc3339) {
     this.rfc3339 = rfc3339;
     return this;
   }
 
-   /**
+  /**
    * Get rfc3339
    * @return rfc3339
-  **/
+   */
   @javax.annotation.Nullable
   public String getRfc3339() {
     return rfc3339;
   }
 
-  public void setRfc3339(String rfc3339) {
+  public void setRfc3339(@javax.annotation.Nullable String rfc3339) {
     this.rfc3339 = rfc3339;
   }
 
 
-  public TimestampRep simple(String simple) {
+  public TimestampRep simple(@javax.annotation.Nullable String simple) {
     this.simple = simple;
     return this;
   }
 
-   /**
+  /**
    * Get simple
    * @return simple
-  **/
+   */
   @javax.annotation.Nullable
   public String getSimple() {
     return simple;
   }
 
-  public void setSimple(String simple) {
+  public void setSimple(@javax.annotation.Nullable String simple) {
     this.simple = simple;
   }
 
@@ -242,34 +247,30 @@ public class TimestampRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("milliseconds");
-    openapiFields.add("seconds");
-    openapiFields.add("rfc3339");
-    openapiFields.add("simple");
+    openapiFields = new HashSet<String>(Arrays.asList("milliseconds", "seconds", "rfc3339", "simple"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to TimestampRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to TimestampRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!TimestampRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in TimestampRep is not found in the empty JSON string", TimestampRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in TimestampRep is not found in the empty JSON string", TimestampRep.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("rfc3339") != null && !jsonObj.get("rfc3339").isJsonNull()) && !jsonObj.get("rfc3339").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `rfc3339` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rfc3339").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `rfc3339` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rfc3339").toString()));
       }
       if ((jsonObj.get("simple") != null && !jsonObj.get("simple").isJsonNull()) && !jsonObj.get("simple").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `simple` to be a primitive type in the JSON string but got `%s`", jsonObj.get("simple").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `simple` to be a primitive type in the JSON string but got `%s`", jsonObj.get("simple").toString()));
       }
   }
 
@@ -330,7 +331,7 @@ public class TimestampRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -345,22 +346,22 @@ public class TimestampRep {
     }
   }
 
- /**
-  * Create an instance of TimestampRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of TimestampRep
-  * @throws IOException if the JSON string is invalid with respect to TimestampRep
-  */
+  /**
+   * Create an instance of TimestampRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of TimestampRep
+   * @throws IOException if the JSON string is invalid with respect to TimestampRep
+   */
   public static TimestampRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, TimestampRep.class);
   }
 
- /**
-  * Convert an instance of TimestampRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of TimestampRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

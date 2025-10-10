@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,65 +38,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * SdkVersionRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class SdkVersionRep {
   public static final String SERIALIZED_NAME_SDK = "sdk";
   @SerializedName(SERIALIZED_NAME_SDK)
+  @javax.annotation.Nonnull
   private String sdk;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nonnull
   private String version;
 
   public SdkVersionRep() {
   }
 
-  public SdkVersionRep sdk(String sdk) {
+  public SdkVersionRep sdk(@javax.annotation.Nonnull String sdk) {
     this.sdk = sdk;
     return this;
   }
 
-   /**
+  /**
    * The SDK name, or \&quot;Unknown\&quot;
    * @return sdk
-  **/
+   */
   @javax.annotation.Nonnull
   public String getSdk() {
     return sdk;
   }
 
-  public void setSdk(String sdk) {
+  public void setSdk(@javax.annotation.Nonnull String sdk) {
     this.sdk = sdk;
   }
 
 
-  public SdkVersionRep version(String version) {
+  public SdkVersionRep version(@javax.annotation.Nonnull String version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * The version number, or \&quot;Unknown\&quot;
    * @return version
-  **/
+   */
   @javax.annotation.Nonnull
   public String getVersion() {
     return version;
   }
 
-  public void setVersion(String version) {
+  public void setVersion(@javax.annotation.Nonnull String version) {
     this.version = version;
   }
 
@@ -192,41 +195,37 @@ public class SdkVersionRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("sdk");
-    openapiFields.add("version");
+    openapiFields = new HashSet<String>(Arrays.asList("sdk", "version"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("sdk");
-    openapiRequiredFields.add("version");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("sdk", "version"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to SdkVersionRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SdkVersionRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SdkVersionRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SdkVersionRep is not found in the empty JSON string", SdkVersionRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in SdkVersionRep is not found in the empty JSON string", SdkVersionRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : SdkVersionRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("sdk").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sdk` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sdk").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `sdk` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sdk").toString()));
       }
       if (!jsonObj.get("version").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("version").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("version").toString()));
       }
   }
 
@@ -287,7 +286,7 @@ public class SdkVersionRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -302,22 +301,22 @@ public class SdkVersionRep {
     }
   }
 
- /**
-  * Create an instance of SdkVersionRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SdkVersionRep
-  * @throws IOException if the JSON string is invalid with respect to SdkVersionRep
-  */
+  /**
+   * Create an instance of SdkVersionRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SdkVersionRep
+   * @throws IOException if the JSON string is invalid with respect to SdkVersionRep
+   */
   public static SdkVersionRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SdkVersionRep.class);
   }
 
- /**
-  * Convert an instance of SdkVersionRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SdkVersionRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

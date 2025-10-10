@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,28 +40,29 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * FlagConfigEvaluation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class FlagConfigEvaluation {
   public static final String SERIALIZED_NAME_CONTEXT_KINDS = "contextKinds";
   @SerializedName(SERIALIZED_NAME_CONTEXT_KINDS)
+  @javax.annotation.Nullable
   private List<String> contextKinds = new ArrayList<>();
 
   public FlagConfigEvaluation() {
   }
 
-  public FlagConfigEvaluation contextKinds(List<String> contextKinds) {
+  public FlagConfigEvaluation contextKinds(@javax.annotation.Nullable List<String> contextKinds) {
     this.contextKinds = contextKinds;
     return this;
   }
@@ -73,16 +75,16 @@ public class FlagConfigEvaluation {
     return this;
   }
 
-   /**
+  /**
    * Get contextKinds
    * @return contextKinds
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getContextKinds() {
     return contextKinds;
   }
 
-  public void setContextKinds(List<String> contextKinds) {
+  public void setContextKinds(@javax.annotation.Nullable List<String> contextKinds) {
     this.contextKinds = contextKinds;
   }
 
@@ -177,29 +179,28 @@ public class FlagConfigEvaluation {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("contextKinds");
+    openapiFields = new HashSet<String>(Arrays.asList("contextKinds"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FlagConfigEvaluation
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FlagConfigEvaluation
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FlagConfigEvaluation.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FlagConfigEvaluation is not found in the empty JSON string", FlagConfigEvaluation.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FlagConfigEvaluation is not found in the empty JSON string", FlagConfigEvaluation.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the optional json data is an array if present
       if (jsonObj.get("contextKinds") != null && !jsonObj.get("contextKinds").isJsonNull() && !jsonObj.get("contextKinds").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `contextKinds` to be an array in the JSON string but got `%s`", jsonObj.get("contextKinds").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `contextKinds` to be an array in the JSON string but got `%s`", jsonObj.get("contextKinds").toString()));
       }
   }
 
@@ -260,7 +261,7 @@ public class FlagConfigEvaluation {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -275,22 +276,22 @@ public class FlagConfigEvaluation {
     }
   }
 
- /**
-  * Create an instance of FlagConfigEvaluation given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FlagConfigEvaluation
-  * @throws IOException if the JSON string is invalid with respect to FlagConfigEvaluation
-  */
+  /**
+   * Create an instance of FlagConfigEvaluation given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FlagConfigEvaluation
+   * @throws IOException if the JSON string is invalid with respect to FlagConfigEvaluation
+   */
   public static FlagConfigEvaluation fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FlagConfigEvaluation.class);
   }
 
- /**
-  * Convert an instance of FlagConfigEvaluation to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FlagConfigEvaluation to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

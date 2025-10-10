@@ -90,7 +90,8 @@ public class InsightsScoresBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -101,7 +102,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createInsightGroupCall(PostInsightGroupParams postInsightGroupParams, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createInsightGroupCall(@javax.annotation.Nonnull PostInsightGroupParams postInsightGroupParams, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -147,7 +148,7 @@ public class InsightsScoresBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createInsightGroupValidateBeforeCall(PostInsightGroupParams postInsightGroupParams, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createInsightGroupValidateBeforeCall(@javax.annotation.Nonnull PostInsightGroupParams postInsightGroupParams, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'postInsightGroupParams' is set
         if (postInsightGroupParams == null) {
             throw new ApiException("Missing the required parameter 'postInsightGroupParams' when calling createInsightGroup(Async)");
@@ -164,7 +165,8 @@ public class InsightsScoresBetaApi {
      * @return InsightGroup
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -175,7 +177,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public InsightGroup createInsightGroup(PostInsightGroupParams postInsightGroupParams) throws ApiException {
+    public InsightGroup createInsightGroup(@javax.annotation.Nonnull PostInsightGroupParams postInsightGroupParams) throws ApiException {
         ApiResponse<InsightGroup> localVarResp = createInsightGroupWithHttpInfo(postInsightGroupParams);
         return localVarResp.getData();
     }
@@ -187,7 +189,8 @@ public class InsightsScoresBetaApi {
      * @return ApiResponse&lt;InsightGroup&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -198,7 +201,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InsightGroup> createInsightGroupWithHttpInfo(PostInsightGroupParams postInsightGroupParams) throws ApiException {
+    public ApiResponse<InsightGroup> createInsightGroupWithHttpInfo(@javax.annotation.Nonnull PostInsightGroupParams postInsightGroupParams) throws ApiException {
         okhttp3.Call localVarCall = createInsightGroupValidateBeforeCall(postInsightGroupParams, null);
         Type localVarReturnType = new TypeToken<InsightGroup>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -212,7 +215,8 @@ public class InsightsScoresBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -223,7 +227,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createInsightGroupAsync(PostInsightGroupParams postInsightGroupParams, final ApiCallback<InsightGroup> _callback) throws ApiException {
+    public okhttp3.Call createInsightGroupAsync(@javax.annotation.Nonnull PostInsightGroupParams postInsightGroupParams, final ApiCallback<InsightGroup> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createInsightGroupValidateBeforeCall(postInsightGroupParams, _callback);
         Type localVarReturnType = new TypeToken<InsightGroup>(){}.getType();
@@ -237,7 +241,8 @@ public class InsightsScoresBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -247,7 +252,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteInsightGroupCall(String insightGroupKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteInsightGroupCall(@javax.annotation.Nonnull String insightGroupKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -293,7 +298,7 @@ public class InsightsScoresBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteInsightGroupValidateBeforeCall(String insightGroupKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteInsightGroupValidateBeforeCall(@javax.annotation.Nonnull String insightGroupKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'insightGroupKey' is set
         if (insightGroupKey == null) {
             throw new ApiException("Missing the required parameter 'insightGroupKey' when calling deleteInsightGroup(Async)");
@@ -309,7 +314,8 @@ public class InsightsScoresBetaApi {
      * @param insightGroupKey The insight group key (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -319,7 +325,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteInsightGroup(String insightGroupKey) throws ApiException {
+    public void deleteInsightGroup(@javax.annotation.Nonnull String insightGroupKey) throws ApiException {
         deleteInsightGroupWithHttpInfo(insightGroupKey);
     }
 
@@ -330,7 +336,8 @@ public class InsightsScoresBetaApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -340,7 +347,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteInsightGroupWithHttpInfo(String insightGroupKey) throws ApiException {
+    public ApiResponse<Void> deleteInsightGroupWithHttpInfo(@javax.annotation.Nonnull String insightGroupKey) throws ApiException {
         okhttp3.Call localVarCall = deleteInsightGroupValidateBeforeCall(insightGroupKey, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -353,7 +360,8 @@ public class InsightsScoresBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -363,7 +371,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteInsightGroupAsync(String insightGroupKey, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteInsightGroupAsync(@javax.annotation.Nonnull String insightGroupKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteInsightGroupValidateBeforeCall(insightGroupKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -377,7 +385,8 @@ public class InsightsScoresBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Insight group response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -387,7 +396,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInsightGroupCall(String insightGroupKey, String expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getInsightGroupCall(@javax.annotation.Nonnull String insightGroupKey, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -437,7 +446,7 @@ public class InsightsScoresBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getInsightGroupValidateBeforeCall(String insightGroupKey, String expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getInsightGroupValidateBeforeCall(@javax.annotation.Nonnull String insightGroupKey, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'insightGroupKey' is set
         if (insightGroupKey == null) {
             throw new ApiException("Missing the required parameter 'insightGroupKey' when calling getInsightGroup(Async)");
@@ -455,7 +464,8 @@ public class InsightsScoresBetaApi {
      * @return InsightGroup
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Insight group response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -465,7 +475,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public InsightGroup getInsightGroup(String insightGroupKey, String expand) throws ApiException {
+    public InsightGroup getInsightGroup(@javax.annotation.Nonnull String insightGroupKey, @javax.annotation.Nullable String expand) throws ApiException {
         ApiResponse<InsightGroup> localVarResp = getInsightGroupWithHttpInfo(insightGroupKey, expand);
         return localVarResp.getData();
     }
@@ -478,7 +488,8 @@ public class InsightsScoresBetaApi {
      * @return ApiResponse&lt;InsightGroup&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Insight group response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -488,7 +499,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InsightGroup> getInsightGroupWithHttpInfo(String insightGroupKey, String expand) throws ApiException {
+    public ApiResponse<InsightGroup> getInsightGroupWithHttpInfo(@javax.annotation.Nonnull String insightGroupKey, @javax.annotation.Nullable String expand) throws ApiException {
         okhttp3.Call localVarCall = getInsightGroupValidateBeforeCall(insightGroupKey, expand, null);
         Type localVarReturnType = new TypeToken<InsightGroup>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -503,7 +514,8 @@ public class InsightsScoresBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Insight group response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -513,7 +525,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInsightGroupAsync(String insightGroupKey, String expand, final ApiCallback<InsightGroup> _callback) throws ApiException {
+    public okhttp3.Call getInsightGroupAsync(@javax.annotation.Nonnull String insightGroupKey, @javax.annotation.Nullable String expand, final ApiCallback<InsightGroup> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getInsightGroupValidateBeforeCall(insightGroupKey, expand, _callback);
         Type localVarReturnType = new TypeToken<InsightGroup>(){}.getType();
@@ -531,7 +543,8 @@ public class InsightsScoresBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Insight groups collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -540,7 +553,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInsightGroupsCall(Long limit, Long offset, String sort, String query, String expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getInsightGroupsCall(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -605,7 +618,7 @@ public class InsightsScoresBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getInsightGroupsValidateBeforeCall(Long limit, Long offset, String sort, String query, String expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getInsightGroupsValidateBeforeCall(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         return getInsightGroupsCall(limit, offset, sort, query, expand, _callback);
 
     }
@@ -621,7 +634,8 @@ public class InsightsScoresBetaApi {
      * @return InsightGroupCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Insight groups collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -630,7 +644,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public InsightGroupCollection getInsightGroups(Long limit, Long offset, String sort, String query, String expand) throws ApiException {
+    public InsightGroupCollection getInsightGroups(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable String expand) throws ApiException {
         ApiResponse<InsightGroupCollection> localVarResp = getInsightGroupsWithHttpInfo(limit, offset, sort, query, expand);
         return localVarResp.getData();
     }
@@ -646,7 +660,8 @@ public class InsightsScoresBetaApi {
      * @return ApiResponse&lt;InsightGroupCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Insight groups collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -655,7 +670,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InsightGroupCollection> getInsightGroupsWithHttpInfo(Long limit, Long offset, String sort, String query, String expand) throws ApiException {
+    public ApiResponse<InsightGroupCollection> getInsightGroupsWithHttpInfo(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable String expand) throws ApiException {
         okhttp3.Call localVarCall = getInsightGroupsValidateBeforeCall(limit, offset, sort, query, expand, null);
         Type localVarReturnType = new TypeToken<InsightGroupCollection>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -673,7 +688,8 @@ public class InsightsScoresBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Insight groups collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -682,7 +698,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInsightGroupsAsync(Long limit, Long offset, String sort, String query, String expand, final ApiCallback<InsightGroupCollection> _callback) throws ApiException {
+    public okhttp3.Call getInsightGroupsAsync(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable String expand, final ApiCallback<InsightGroupCollection> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getInsightGroupsValidateBeforeCall(limit, offset, sort, query, expand, _callback);
         Type localVarReturnType = new TypeToken<InsightGroupCollection>(){}.getType();
@@ -698,7 +714,8 @@ public class InsightsScoresBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Insight score response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -707,7 +724,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInsightsScoresCall(String projectKey, String environmentKey, String applicationKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getInsightsScoresCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -764,7 +781,7 @@ public class InsightsScoresBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getInsightsScoresValidateBeforeCall(String projectKey, String environmentKey, String applicationKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getInsightsScoresValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getInsightsScores(Async)");
@@ -788,7 +805,8 @@ public class InsightsScoresBetaApi {
      * @return InsightScores
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Insight score response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -797,7 +815,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public InsightScores getInsightsScores(String projectKey, String environmentKey, String applicationKey) throws ApiException {
+    public InsightScores getInsightsScores(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey) throws ApiException {
         ApiResponse<InsightScores> localVarResp = getInsightsScoresWithHttpInfo(projectKey, environmentKey, applicationKey);
         return localVarResp.getData();
     }
@@ -811,7 +829,8 @@ public class InsightsScoresBetaApi {
      * @return ApiResponse&lt;InsightScores&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Insight score response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -820,7 +839,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InsightScores> getInsightsScoresWithHttpInfo(String projectKey, String environmentKey, String applicationKey) throws ApiException {
+    public ApiResponse<InsightScores> getInsightsScoresWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey) throws ApiException {
         okhttp3.Call localVarCall = getInsightsScoresValidateBeforeCall(projectKey, environmentKey, applicationKey, null);
         Type localVarReturnType = new TypeToken<InsightScores>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -836,7 +855,8 @@ public class InsightsScoresBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Insight score response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -845,7 +865,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInsightsScoresAsync(String projectKey, String environmentKey, String applicationKey, final ApiCallback<InsightScores> _callback) throws ApiException {
+    public okhttp3.Call getInsightsScoresAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable String applicationKey, final ApiCallback<InsightScores> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getInsightsScoresValidateBeforeCall(projectKey, environmentKey, applicationKey, _callback);
         Type localVarReturnType = new TypeToken<InsightScores>(){}.getType();
@@ -860,7 +880,8 @@ public class InsightsScoresBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Insight group response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -871,7 +892,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchInsightGroupCall(String insightGroupKey, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchInsightGroupCall(@javax.annotation.Nonnull String insightGroupKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -918,7 +939,7 @@ public class InsightsScoresBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchInsightGroupValidateBeforeCall(String insightGroupKey, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchInsightGroupValidateBeforeCall(@javax.annotation.Nonnull String insightGroupKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'insightGroupKey' is set
         if (insightGroupKey == null) {
             throw new ApiException("Missing the required parameter 'insightGroupKey' when calling patchInsightGroup(Async)");
@@ -941,7 +962,8 @@ public class InsightsScoresBetaApi {
      * @return InsightGroup
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Insight group response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -952,7 +974,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public InsightGroup patchInsightGroup(String insightGroupKey, List<PatchOperation> patchOperation) throws ApiException {
+    public InsightGroup patchInsightGroup(@javax.annotation.Nonnull String insightGroupKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         ApiResponse<InsightGroup> localVarResp = patchInsightGroupWithHttpInfo(insightGroupKey, patchOperation);
         return localVarResp.getData();
     }
@@ -965,7 +987,8 @@ public class InsightsScoresBetaApi {
      * @return ApiResponse&lt;InsightGroup&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Insight group response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -976,7 +999,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InsightGroup> patchInsightGroupWithHttpInfo(String insightGroupKey, List<PatchOperation> patchOperation) throws ApiException {
+    public ApiResponse<InsightGroup> patchInsightGroupWithHttpInfo(@javax.annotation.Nonnull String insightGroupKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         okhttp3.Call localVarCall = patchInsightGroupValidateBeforeCall(insightGroupKey, patchOperation, null);
         Type localVarReturnType = new TypeToken<InsightGroup>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -991,7 +1014,8 @@ public class InsightsScoresBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Insight group response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1002,7 +1026,7 @@ public class InsightsScoresBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchInsightGroupAsync(String insightGroupKey, List<PatchOperation> patchOperation, final ApiCallback<InsightGroup> _callback) throws ApiException {
+    public okhttp3.Call patchInsightGroupAsync(@javax.annotation.Nonnull String insightGroupKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback<InsightGroup> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchInsightGroupValidateBeforeCall(insightGroupKey, patchOperation, _callback);
         Type localVarReturnType = new TypeToken<InsightGroup>(){}.getType();

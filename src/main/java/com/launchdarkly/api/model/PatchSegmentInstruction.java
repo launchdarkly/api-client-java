@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,30 +38,30 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * PatchSegmentInstruction
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class PatchSegmentInstruction {
   /**
    * The type of change to make to the user&#39;s removal date from this segment
    */
   @JsonAdapter(KindEnum.Adapter.class)
   public enum KindEnum {
-    ADDEXPIREUSERTARGETDATE("addExpireUserTargetDate"),
+    ADD_EXPIRE_USER_TARGET_DATE("addExpireUserTargetDate"),
     
-    UPDATEEXPIREUSERTARGETDATE("updateExpireUserTargetDate"),
+    UPDATE_EXPIRE_USER_TARGET_DATE("updateExpireUserTargetDate"),
     
-    REMOVEEXPIREUSERTARGETDATE("removeExpireUserTargetDate");
+    REMOVE_EXPIRE_USER_TARGET_DATE("removeExpireUserTargetDate");
 
     private String value;
 
@@ -107,10 +108,12 @@ public class PatchSegmentInstruction {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
+  @javax.annotation.Nonnull
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_USER_KEY = "userKey";
   @SerializedName(SERIALIZED_NAME_USER_KEY)
+  @javax.annotation.Nonnull
   private String userKey;
 
   /**
@@ -167,110 +170,113 @@ public class PatchSegmentInstruction {
 
   public static final String SERIALIZED_NAME_TARGET_TYPE = "targetType";
   @SerializedName(SERIALIZED_NAME_TARGET_TYPE)
+  @javax.annotation.Nonnull
   private TargetTypeEnum targetType;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nullable
   private Integer value;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
   private Integer version;
 
   public PatchSegmentInstruction() {
   }
 
-  public PatchSegmentInstruction kind(KindEnum kind) {
+  public PatchSegmentInstruction kind(@javax.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
 
-   /**
+  /**
    * The type of change to make to the user&#39;s removal date from this segment
    * @return kind
-  **/
+   */
   @javax.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(KindEnum kind) {
+  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public PatchSegmentInstruction userKey(String userKey) {
+  public PatchSegmentInstruction userKey(@javax.annotation.Nonnull String userKey) {
     this.userKey = userKey;
     return this;
   }
 
-   /**
+  /**
    * A unique key used to represent the user
    * @return userKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getUserKey() {
     return userKey;
   }
 
-  public void setUserKey(String userKey) {
+  public void setUserKey(@javax.annotation.Nonnull String userKey) {
     this.userKey = userKey;
   }
 
 
-  public PatchSegmentInstruction targetType(TargetTypeEnum targetType) {
+  public PatchSegmentInstruction targetType(@javax.annotation.Nonnull TargetTypeEnum targetType) {
     this.targetType = targetType;
     return this;
   }
 
-   /**
+  /**
    * The segment&#39;s target type
    * @return targetType
-  **/
+   */
   @javax.annotation.Nonnull
   public TargetTypeEnum getTargetType() {
     return targetType;
   }
 
-  public void setTargetType(TargetTypeEnum targetType) {
+  public void setTargetType(@javax.annotation.Nonnull TargetTypeEnum targetType) {
     this.targetType = targetType;
   }
 
 
-  public PatchSegmentInstruction value(Integer value) {
+  public PatchSegmentInstruction value(@javax.annotation.Nullable Integer value) {
     this.value = value;
     return this;
   }
 
-   /**
+  /**
    * The time, in Unix milliseconds, when the user should be removed from this segment. Required if &lt;code&gt;kind&lt;/code&gt; is &lt;code&gt;addExpireUserTargetDate&lt;/code&gt; or &lt;code&gt;updateExpireUserTargetDate&lt;/code&gt;.
    * @return value
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getValue() {
     return value;
   }
 
-  public void setValue(Integer value) {
+  public void setValue(@javax.annotation.Nullable Integer value) {
     this.value = value;
   }
 
 
-  public PatchSegmentInstruction version(Integer version) {
+  public PatchSegmentInstruction version(@javax.annotation.Nullable Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * The version of the segment to update. Required if &lt;code&gt;kind&lt;/code&gt; is &lt;code&gt;updateExpireUserTargetDate&lt;/code&gt;.
    * @return version
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nullable Integer version) {
     this.version = version;
   }
 
@@ -373,50 +379,42 @@ public class PatchSegmentInstruction {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("kind");
-    openapiFields.add("userKey");
-    openapiFields.add("targetType");
-    openapiFields.add("value");
-    openapiFields.add("version");
+    openapiFields = new HashSet<String>(Arrays.asList("kind", "userKey", "targetType", "value", "version"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("kind");
-    openapiRequiredFields.add("userKey");
-    openapiRequiredFields.add("targetType");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("kind", "userKey", "targetType"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to PatchSegmentInstruction
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PatchSegmentInstruction
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PatchSegmentInstruction.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PatchSegmentInstruction is not found in the empty JSON string", PatchSegmentInstruction.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in PatchSegmentInstruction is not found in the empty JSON string", PatchSegmentInstruction.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : PatchSegmentInstruction.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("kind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
       // validate the required field `kind`
       KindEnum.validateJsonElement(jsonObj.get("kind"));
       if (!jsonObj.get("userKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `userKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `userKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userKey").toString()));
       }
       if (!jsonObj.get("targetType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `targetType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("targetType").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `targetType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("targetType").toString()));
       }
       // validate the required field `targetType`
       TargetTypeEnum.validateJsonElement(jsonObj.get("targetType"));
@@ -479,7 +477,7 @@ public class PatchSegmentInstruction {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -494,22 +492,22 @@ public class PatchSegmentInstruction {
     }
   }
 
- /**
-  * Create an instance of PatchSegmentInstruction given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PatchSegmentInstruction
-  * @throws IOException if the JSON string is invalid with respect to PatchSegmentInstruction
-  */
+  /**
+   * Create an instance of PatchSegmentInstruction given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PatchSegmentInstruction
+   * @throws IOException if the JSON string is invalid with respect to PatchSegmentInstruction
+   */
   public static PatchSegmentInstruction fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PatchSegmentInstruction.class);
   }
 
- /**
-  * Convert an instance of PatchSegmentInstruction to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PatchSegmentInstruction to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -52,349 +53,378 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * View
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class View {
   public static final String SERIALIZED_NAME_ACCESS = "_access";
   @SerializedName(SERIALIZED_NAME_ACCESS)
+  @javax.annotation.Nullable
   private ViewsAccessRep access;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private ParentAndSelfLinks links;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "accountId";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
+  @javax.annotation.Nonnull
   private String accountId;
 
   public static final String SERIALIZED_NAME_PROJECT_ID = "projectId";
   @SerializedName(SERIALIZED_NAME_PROJECT_ID)
+  @javax.annotation.Nonnull
   private String projectId;
 
   public static final String SERIALIZED_NAME_PROJECT_KEY = "projectKey";
   @SerializedName(SERIALIZED_NAME_PROJECT_KEY)
+  @javax.annotation.Nonnull
   private String projectKey;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nonnull
   private String description;
 
   public static final String SERIALIZED_NAME_GENERATE_SDK_KEYS = "generateSdkKeys";
   @SerializedName(SERIALIZED_NAME_GENERATE_SDK_KEYS)
+  @javax.annotation.Nonnull
   private Boolean generateSdkKeys;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nonnull
   private Integer version;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nonnull
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATED_AT = "createdAt";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nonnull
   private Long createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updatedAt";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  @javax.annotation.Nonnull
   private Long updatedAt;
 
   public static final String SERIALIZED_NAME_ARCHIVED = "archived";
   @SerializedName(SERIALIZED_NAME_ARCHIVED)
+  @javax.annotation.Nonnull
   private Boolean archived = false;
 
   public static final String SERIALIZED_NAME_ARCHIVED_AT = "archivedAt";
   @SerializedName(SERIALIZED_NAME_ARCHIVED_AT)
+  @javax.annotation.Nullable
   private Long archivedAt;
 
   public static final String SERIALIZED_NAME_DELETED_AT = "deletedAt";
   @SerializedName(SERIALIZED_NAME_DELETED_AT)
+  @javax.annotation.Nullable
   private Long deletedAt;
 
   public static final String SERIALIZED_NAME_DELETED = "deleted";
   @SerializedName(SERIALIZED_NAME_DELETED)
+  @javax.annotation.Nonnull
   private Boolean deleted = false;
 
   public static final String SERIALIZED_NAME_MAINTAINER = "maintainer";
   @SerializedName(SERIALIZED_NAME_MAINTAINER)
+  @javax.annotation.Nullable
   private Maintainer maintainer;
 
   public static final String SERIALIZED_NAME_FLAGS_SUMMARY = "flagsSummary";
   @SerializedName(SERIALIZED_NAME_FLAGS_SUMMARY)
+  @javax.annotation.Nullable
   private FlagsSummary flagsSummary;
 
   public static final String SERIALIZED_NAME_SEGMENTS_SUMMARY = "segmentsSummary";
   @SerializedName(SERIALIZED_NAME_SEGMENTS_SUMMARY)
+  @javax.annotation.Nullable
   private SegmentsSummary segmentsSummary;
 
   public static final String SERIALIZED_NAME_METRICS_SUMMARY = "metricsSummary";
   @SerializedName(SERIALIZED_NAME_METRICS_SUMMARY)
+  @javax.annotation.Nullable
   private MetricsSummary metricsSummary;
 
   public static final String SERIALIZED_NAME_AI_CONFIGS_SUMMARY = "aiConfigsSummary";
   @SerializedName(SERIALIZED_NAME_AI_CONFIGS_SUMMARY)
+  @javax.annotation.Nullable
   private AIConfigsSummary aiConfigsSummary;
 
   public static final String SERIALIZED_NAME_RESOURCE_SUMMARY = "resourceSummary";
   @SerializedName(SERIALIZED_NAME_RESOURCE_SUMMARY)
+  @javax.annotation.Nullable
   private ResourceSummary resourceSummary;
 
   public static final String SERIALIZED_NAME_FLAGS_EXPANDED = "flagsExpanded";
   @SerializedName(SERIALIZED_NAME_FLAGS_EXPANDED)
+  @javax.annotation.Nullable
   private ExpandedLinkedFlags flagsExpanded;
 
   public static final String SERIALIZED_NAME_SEGMENTS_EXPANDED = "segmentsExpanded";
   @SerializedName(SERIALIZED_NAME_SEGMENTS_EXPANDED)
+  @javax.annotation.Nullable
   private ExpandedLinkedSegments segmentsExpanded;
 
   public static final String SERIALIZED_NAME_METRICS_EXPANDED = "metricsExpanded";
   @SerializedName(SERIALIZED_NAME_METRICS_EXPANDED)
+  @javax.annotation.Nullable
   private ExpandedLinkedMetrics metricsExpanded;
 
   public static final String SERIALIZED_NAME_AI_CONFIGS_EXPANDED = "aiConfigsExpanded";
   @SerializedName(SERIALIZED_NAME_AI_CONFIGS_EXPANDED)
+  @javax.annotation.Nullable
   private ExpandedLinkedAIConfigs aiConfigsExpanded;
 
   public static final String SERIALIZED_NAME_RESOURCES_EXPANDED = "resourcesExpanded";
   @SerializedName(SERIALIZED_NAME_RESOURCES_EXPANDED)
+  @javax.annotation.Nullable
   private ExpandedLinkedResources resourcesExpanded;
 
   public View() {
   }
 
-  public View access(ViewsAccessRep access) {
+  public View access(@javax.annotation.Nullable ViewsAccessRep access) {
     this.access = access;
     return this;
   }
 
-   /**
+  /**
    * Get access
    * @return access
-  **/
+   */
   @javax.annotation.Nullable
   public ViewsAccessRep getAccess() {
     return access;
   }
 
-  public void setAccess(ViewsAccessRep access) {
+  public void setAccess(@javax.annotation.Nullable ViewsAccessRep access) {
     this.access = access;
   }
 
 
-  public View links(ParentAndSelfLinks links) {
+  public View links(@javax.annotation.Nullable ParentAndSelfLinks links) {
     this.links = links;
     return this;
   }
 
-   /**
+  /**
    * Get links
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public ParentAndSelfLinks getLinks() {
     return links;
   }
 
-  public void setLinks(ParentAndSelfLinks links) {
+  public void setLinks(@javax.annotation.Nullable ParentAndSelfLinks links) {
     this.links = links;
   }
 
 
-  public View id(String id) {
+  public View id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Unique ID of this view
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public View accountId(String accountId) {
+  public View accountId(@javax.annotation.Nonnull String accountId) {
     this.accountId = accountId;
     return this;
   }
 
-   /**
+  /**
    * ID of the account that owns this view
    * @return accountId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getAccountId() {
     return accountId;
   }
 
-  public void setAccountId(String accountId) {
+  public void setAccountId(@javax.annotation.Nonnull String accountId) {
     this.accountId = accountId;
   }
 
 
-  public View projectId(String projectId) {
+  public View projectId(@javax.annotation.Nonnull String projectId) {
     this.projectId = projectId;
     return this;
   }
 
-   /**
+  /**
    * ID of the project this view belongs to
    * @return projectId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getProjectId() {
     return projectId;
   }
 
-  public void setProjectId(String projectId) {
+  public void setProjectId(@javax.annotation.Nonnull String projectId) {
     this.projectId = projectId;
   }
 
 
-  public View projectKey(String projectKey) {
+  public View projectKey(@javax.annotation.Nonnull String projectKey) {
     this.projectKey = projectKey;
     return this;
   }
 
-   /**
+  /**
    * Key of the project this view belongs to
    * @return projectKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getProjectKey() {
     return projectKey;
   }
 
-  public void setProjectKey(String projectKey) {
+  public void setProjectKey(@javax.annotation.Nonnull String projectKey) {
     this.projectKey = projectKey;
   }
 
 
-  public View key(String key) {
+  public View key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * Unique key for the view within the account/project
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public View name(String name) {
+  public View name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Human-readable name for the view
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public View description(String description) {
+  public View description(@javax.annotation.Nonnull String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Optional detailed description of the view
    * @return description
-  **/
+   */
   @javax.annotation.Nonnull
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nonnull String description) {
     this.description = description;
   }
 
 
-  public View generateSdkKeys(Boolean generateSdkKeys) {
+  public View generateSdkKeys(@javax.annotation.Nonnull Boolean generateSdkKeys) {
     this.generateSdkKeys = generateSdkKeys;
     return this;
   }
 
-   /**
+  /**
    * Whether to generate SDK keys for this view. Defaults to false.
    * @return generateSdkKeys
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getGenerateSdkKeys() {
     return generateSdkKeys;
   }
 
-  public void setGenerateSdkKeys(Boolean generateSdkKeys) {
+  public void setGenerateSdkKeys(@javax.annotation.Nonnull Boolean generateSdkKeys) {
     this.generateSdkKeys = generateSdkKeys;
   }
 
 
-  public View version(Integer version) {
+  public View version(@javax.annotation.Nonnull Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * Version number for tracking changes
    * @return version
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nonnull Integer version) {
     this.version = version;
   }
 
 
-  public View tags(List<String> tags) {
+  public View tags(@javax.annotation.Nonnull List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -407,339 +437,339 @@ public class View {
     return this;
   }
 
-   /**
+  /**
    * Tags associated with this view
    * @return tags
-  **/
+   */
   @javax.annotation.Nonnull
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nonnull List<String> tags) {
     this.tags = tags;
   }
 
 
-  public View createdAt(Long createdAt) {
+  public View createdAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Get createdAt
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public View updatedAt(Long updatedAt) {
+  public View updatedAt(@javax.annotation.Nonnull Long updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
 
-   /**
+  /**
    * Get updatedAt
    * @return updatedAt
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(Long updatedAt) {
+  public void setUpdatedAt(@javax.annotation.Nonnull Long updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
-  public View archived(Boolean archived) {
+  public View archived(@javax.annotation.Nonnull Boolean archived) {
     this.archived = archived;
     return this;
   }
 
-   /**
+  /**
    * Whether this view is archived
    * @return archived
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getArchived() {
     return archived;
   }
 
-  public void setArchived(Boolean archived) {
+  public void setArchived(@javax.annotation.Nonnull Boolean archived) {
     this.archived = archived;
   }
 
 
-  public View archivedAt(Long archivedAt) {
+  public View archivedAt(@javax.annotation.Nullable Long archivedAt) {
     this.archivedAt = archivedAt;
     return this;
   }
 
-   /**
+  /**
    * Get archivedAt
    * @return archivedAt
-  **/
+   */
   @javax.annotation.Nullable
   public Long getArchivedAt() {
     return archivedAt;
   }
 
-  public void setArchivedAt(Long archivedAt) {
+  public void setArchivedAt(@javax.annotation.Nullable Long archivedAt) {
     this.archivedAt = archivedAt;
   }
 
 
-  public View deletedAt(Long deletedAt) {
+  public View deletedAt(@javax.annotation.Nullable Long deletedAt) {
     this.deletedAt = deletedAt;
     return this;
   }
 
-   /**
+  /**
    * Get deletedAt
    * @return deletedAt
-  **/
+   */
   @javax.annotation.Nullable
   public Long getDeletedAt() {
     return deletedAt;
   }
 
-  public void setDeletedAt(Long deletedAt) {
+  public void setDeletedAt(@javax.annotation.Nullable Long deletedAt) {
     this.deletedAt = deletedAt;
   }
 
 
-  public View deleted(Boolean deleted) {
+  public View deleted(@javax.annotation.Nonnull Boolean deleted) {
     this.deleted = deleted;
     return this;
   }
 
-   /**
+  /**
    * Whether this view is deleted
    * @return deleted
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getDeleted() {
     return deleted;
   }
 
-  public void setDeleted(Boolean deleted) {
+  public void setDeleted(@javax.annotation.Nonnull Boolean deleted) {
     this.deleted = deleted;
   }
 
 
-  public View maintainer(Maintainer maintainer) {
+  public View maintainer(@javax.annotation.Nullable Maintainer maintainer) {
     this.maintainer = maintainer;
     return this;
   }
 
-   /**
+  /**
    * Get maintainer
    * @return maintainer
-  **/
+   */
   @javax.annotation.Nullable
   public Maintainer getMaintainer() {
     return maintainer;
   }
 
-  public void setMaintainer(Maintainer maintainer) {
+  public void setMaintainer(@javax.annotation.Nullable Maintainer maintainer) {
     this.maintainer = maintainer;
   }
 
 
-  public View flagsSummary(FlagsSummary flagsSummary) {
+  public View flagsSummary(@javax.annotation.Nullable FlagsSummary flagsSummary) {
     this.flagsSummary = flagsSummary;
     return this;
   }
 
-   /**
+  /**
    * Get flagsSummary
    * @return flagsSummary
-  **/
+   */
   @javax.annotation.Nullable
   public FlagsSummary getFlagsSummary() {
     return flagsSummary;
   }
 
-  public void setFlagsSummary(FlagsSummary flagsSummary) {
+  public void setFlagsSummary(@javax.annotation.Nullable FlagsSummary flagsSummary) {
     this.flagsSummary = flagsSummary;
   }
 
 
-  public View segmentsSummary(SegmentsSummary segmentsSummary) {
+  public View segmentsSummary(@javax.annotation.Nullable SegmentsSummary segmentsSummary) {
     this.segmentsSummary = segmentsSummary;
     return this;
   }
 
-   /**
+  /**
    * Get segmentsSummary
    * @return segmentsSummary
-  **/
+   */
   @javax.annotation.Nullable
   public SegmentsSummary getSegmentsSummary() {
     return segmentsSummary;
   }
 
-  public void setSegmentsSummary(SegmentsSummary segmentsSummary) {
+  public void setSegmentsSummary(@javax.annotation.Nullable SegmentsSummary segmentsSummary) {
     this.segmentsSummary = segmentsSummary;
   }
 
 
-  public View metricsSummary(MetricsSummary metricsSummary) {
+  public View metricsSummary(@javax.annotation.Nullable MetricsSummary metricsSummary) {
     this.metricsSummary = metricsSummary;
     return this;
   }
 
-   /**
+  /**
    * Get metricsSummary
    * @return metricsSummary
-  **/
+   */
   @javax.annotation.Nullable
   public MetricsSummary getMetricsSummary() {
     return metricsSummary;
   }
 
-  public void setMetricsSummary(MetricsSummary metricsSummary) {
+  public void setMetricsSummary(@javax.annotation.Nullable MetricsSummary metricsSummary) {
     this.metricsSummary = metricsSummary;
   }
 
 
-  public View aiConfigsSummary(AIConfigsSummary aiConfigsSummary) {
+  public View aiConfigsSummary(@javax.annotation.Nullable AIConfigsSummary aiConfigsSummary) {
     this.aiConfigsSummary = aiConfigsSummary;
     return this;
   }
 
-   /**
+  /**
    * Get aiConfigsSummary
    * @return aiConfigsSummary
-  **/
+   */
   @javax.annotation.Nullable
   public AIConfigsSummary getAiConfigsSummary() {
     return aiConfigsSummary;
   }
 
-  public void setAiConfigsSummary(AIConfigsSummary aiConfigsSummary) {
+  public void setAiConfigsSummary(@javax.annotation.Nullable AIConfigsSummary aiConfigsSummary) {
     this.aiConfigsSummary = aiConfigsSummary;
   }
 
 
-  public View resourceSummary(ResourceSummary resourceSummary) {
+  public View resourceSummary(@javax.annotation.Nullable ResourceSummary resourceSummary) {
     this.resourceSummary = resourceSummary;
     return this;
   }
 
-   /**
+  /**
    * Get resourceSummary
    * @return resourceSummary
-  **/
+   */
   @javax.annotation.Nullable
   public ResourceSummary getResourceSummary() {
     return resourceSummary;
   }
 
-  public void setResourceSummary(ResourceSummary resourceSummary) {
+  public void setResourceSummary(@javax.annotation.Nullable ResourceSummary resourceSummary) {
     this.resourceSummary = resourceSummary;
   }
 
 
-  public View flagsExpanded(ExpandedLinkedFlags flagsExpanded) {
+  public View flagsExpanded(@javax.annotation.Nullable ExpandedLinkedFlags flagsExpanded) {
     this.flagsExpanded = flagsExpanded;
     return this;
   }
 
-   /**
+  /**
    * Get flagsExpanded
    * @return flagsExpanded
-  **/
+   */
   @javax.annotation.Nullable
   public ExpandedLinkedFlags getFlagsExpanded() {
     return flagsExpanded;
   }
 
-  public void setFlagsExpanded(ExpandedLinkedFlags flagsExpanded) {
+  public void setFlagsExpanded(@javax.annotation.Nullable ExpandedLinkedFlags flagsExpanded) {
     this.flagsExpanded = flagsExpanded;
   }
 
 
-  public View segmentsExpanded(ExpandedLinkedSegments segmentsExpanded) {
+  public View segmentsExpanded(@javax.annotation.Nullable ExpandedLinkedSegments segmentsExpanded) {
     this.segmentsExpanded = segmentsExpanded;
     return this;
   }
 
-   /**
+  /**
    * Get segmentsExpanded
    * @return segmentsExpanded
-  **/
+   */
   @javax.annotation.Nullable
   public ExpandedLinkedSegments getSegmentsExpanded() {
     return segmentsExpanded;
   }
 
-  public void setSegmentsExpanded(ExpandedLinkedSegments segmentsExpanded) {
+  public void setSegmentsExpanded(@javax.annotation.Nullable ExpandedLinkedSegments segmentsExpanded) {
     this.segmentsExpanded = segmentsExpanded;
   }
 
 
-  public View metricsExpanded(ExpandedLinkedMetrics metricsExpanded) {
+  public View metricsExpanded(@javax.annotation.Nullable ExpandedLinkedMetrics metricsExpanded) {
     this.metricsExpanded = metricsExpanded;
     return this;
   }
 
-   /**
+  /**
    * Get metricsExpanded
    * @return metricsExpanded
-  **/
+   */
   @javax.annotation.Nullable
   public ExpandedLinkedMetrics getMetricsExpanded() {
     return metricsExpanded;
   }
 
-  public void setMetricsExpanded(ExpandedLinkedMetrics metricsExpanded) {
+  public void setMetricsExpanded(@javax.annotation.Nullable ExpandedLinkedMetrics metricsExpanded) {
     this.metricsExpanded = metricsExpanded;
   }
 
 
-  public View aiConfigsExpanded(ExpandedLinkedAIConfigs aiConfigsExpanded) {
+  public View aiConfigsExpanded(@javax.annotation.Nullable ExpandedLinkedAIConfigs aiConfigsExpanded) {
     this.aiConfigsExpanded = aiConfigsExpanded;
     return this;
   }
 
-   /**
+  /**
    * Get aiConfigsExpanded
    * @return aiConfigsExpanded
-  **/
+   */
   @javax.annotation.Nullable
   public ExpandedLinkedAIConfigs getAiConfigsExpanded() {
     return aiConfigsExpanded;
   }
 
-  public void setAiConfigsExpanded(ExpandedLinkedAIConfigs aiConfigsExpanded) {
+  public void setAiConfigsExpanded(@javax.annotation.Nullable ExpandedLinkedAIConfigs aiConfigsExpanded) {
     this.aiConfigsExpanded = aiConfigsExpanded;
   }
 
 
-  public View resourcesExpanded(ExpandedLinkedResources resourcesExpanded) {
+  public View resourcesExpanded(@javax.annotation.Nullable ExpandedLinkedResources resourcesExpanded) {
     this.resourcesExpanded = resourcesExpanded;
     return this;
   }
 
-   /**
+  /**
    * Get resourcesExpanded
    * @return resourcesExpanded
-  **/
+   */
   @javax.annotation.Nullable
   public ExpandedLinkedResources getResourcesExpanded() {
     return resourcesExpanded;
   }
 
-  public void setResourcesExpanded(ExpandedLinkedResources resourcesExpanded) {
+  public void setResourcesExpanded(@javax.annotation.Nullable ExpandedLinkedResources resourcesExpanded) {
     this.resourcesExpanded = resourcesExpanded;
   }
 
@@ -890,72 +920,29 @@ public class View {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_access");
-    openapiFields.add("_links");
-    openapiFields.add("id");
-    openapiFields.add("accountId");
-    openapiFields.add("projectId");
-    openapiFields.add("projectKey");
-    openapiFields.add("key");
-    openapiFields.add("name");
-    openapiFields.add("description");
-    openapiFields.add("generateSdkKeys");
-    openapiFields.add("version");
-    openapiFields.add("tags");
-    openapiFields.add("createdAt");
-    openapiFields.add("updatedAt");
-    openapiFields.add("archived");
-    openapiFields.add("archivedAt");
-    openapiFields.add("deletedAt");
-    openapiFields.add("deleted");
-    openapiFields.add("maintainer");
-    openapiFields.add("flagsSummary");
-    openapiFields.add("segmentsSummary");
-    openapiFields.add("metricsSummary");
-    openapiFields.add("aiConfigsSummary");
-    openapiFields.add("resourceSummary");
-    openapiFields.add("flagsExpanded");
-    openapiFields.add("segmentsExpanded");
-    openapiFields.add("metricsExpanded");
-    openapiFields.add("aiConfigsExpanded");
-    openapiFields.add("resourcesExpanded");
+    openapiFields = new HashSet<String>(Arrays.asList("_access", "_links", "id", "accountId", "projectId", "projectKey", "key", "name", "description", "generateSdkKeys", "version", "tags", "createdAt", "updatedAt", "archived", "archivedAt", "deletedAt", "deleted", "maintainer", "flagsSummary", "segmentsSummary", "metricsSummary", "aiConfigsSummary", "resourceSummary", "flagsExpanded", "segmentsExpanded", "metricsExpanded", "aiConfigsExpanded", "resourcesExpanded"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("id");
-    openapiRequiredFields.add("accountId");
-    openapiRequiredFields.add("projectId");
-    openapiRequiredFields.add("projectKey");
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("description");
-    openapiRequiredFields.add("generateSdkKeys");
-    openapiRequiredFields.add("version");
-    openapiRequiredFields.add("tags");
-    openapiRequiredFields.add("createdAt");
-    openapiRequiredFields.add("updatedAt");
-    openapiRequiredFields.add("archived");
-    openapiRequiredFields.add("deleted");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("id", "accountId", "projectId", "projectKey", "key", "name", "description", "generateSdkKeys", "version", "tags", "createdAt", "updatedAt", "archived", "deleted"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to View
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to View
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!View.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in View is not found in the empty JSON string", View.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in View is not found in the empty JSON string", View.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : View.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -968,31 +955,31 @@ public class View {
         ParentAndSelfLinks.validateJsonElement(jsonObj.get("_links"));
       }
       if (!jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
       if (!jsonObj.get("accountId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `accountId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("accountId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `accountId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("accountId").toString()));
       }
       if (!jsonObj.get("projectId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `projectId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `projectId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectId").toString()));
       }
       if (!jsonObj.get("projectKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `projectKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `projectKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectKey").toString()));
       }
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("tags") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       // validate the optional field `maintainer`
       if (jsonObj.get("maintainer") != null && !jsonObj.get("maintainer").isJsonNull()) {
@@ -1097,7 +1084,7 @@ public class View {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -1112,22 +1099,22 @@ public class View {
     }
   }
 
- /**
-  * Create an instance of View given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of View
-  * @throws IOException if the JSON string is invalid with respect to View
-  */
+  /**
+   * Create an instance of View given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of View
+   * @throws IOException if the JSON string is invalid with respect to View
+   */
   public static View fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, View.class);
   }
 
- /**
-  * Convert an instance of View to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of View to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

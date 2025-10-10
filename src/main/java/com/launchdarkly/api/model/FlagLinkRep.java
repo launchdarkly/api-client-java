@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,68 +43,79 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * FlagLinkRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class FlagLinkRep {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_KEY = "_key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nullable
   private String key;
 
   public static final String SERIALIZED_NAME_INTEGRATION_KEY = "_integrationKey";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_KEY)
+  @javax.annotation.Nullable
   private String integrationKey;
 
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_DEEP_LINK = "_deepLink";
   @SerializedName(SERIALIZED_NAME_DEEP_LINK)
+  @javax.annotation.Nonnull
   private String deepLink;
 
   public static final String SERIALIZED_NAME_TIMESTAMP = "_timestamp";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
+  @javax.annotation.Nonnull
   private TimestampRep timestamp;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
+  @javax.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_METADATA = "_metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
+  @javax.annotation.Nullable
   private Map<String, String> metadata = new HashMap<>();
 
   public static final String SERIALIZED_NAME_CREATED_AT = "_createdAt";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nonnull
   private Long createdAt;
 
   public static final String SERIALIZED_NAME_MEMBER = "_member";
   @SerializedName(SERIALIZED_NAME_MEMBER)
+  @javax.annotation.Nullable
   private FlagLinkMember member;
 
   public FlagLinkRep() {
   }
 
-  public FlagLinkRep links(Map<String, Link> links) {
+  public FlagLinkRep links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -116,154 +128,154 @@ public class FlagLinkRep {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public FlagLinkRep key(String key) {
+  public FlagLinkRep key(@javax.annotation.Nullable String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * The flag link key
    * @return key
-  **/
+   */
   @javax.annotation.Nullable
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nullable String key) {
     this.key = key;
   }
 
 
-  public FlagLinkRep integrationKey(String integrationKey) {
+  public FlagLinkRep integrationKey(@javax.annotation.Nullable String integrationKey) {
     this.integrationKey = integrationKey;
     return this;
   }
 
-   /**
+  /**
    * The integration key for an integration whose &lt;code&gt;manifest.json&lt;/code&gt; includes the &lt;code&gt;flagLink&lt;/code&gt; capability, if this is a flag link for an existing integration
    * @return integrationKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getIntegrationKey() {
     return integrationKey;
   }
 
-  public void setIntegrationKey(String integrationKey) {
+  public void setIntegrationKey(@javax.annotation.Nullable String integrationKey) {
     this.integrationKey = integrationKey;
   }
 
 
-  public FlagLinkRep id(String id) {
+  public FlagLinkRep id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The ID of this flag link
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public FlagLinkRep deepLink(String deepLink) {
+  public FlagLinkRep deepLink(@javax.annotation.Nonnull String deepLink) {
     this.deepLink = deepLink;
     return this;
   }
 
-   /**
+  /**
    * The URL for the external resource the flag is linked to
    * @return deepLink
-  **/
+   */
   @javax.annotation.Nonnull
   public String getDeepLink() {
     return deepLink;
   }
 
-  public void setDeepLink(String deepLink) {
+  public void setDeepLink(@javax.annotation.Nonnull String deepLink) {
     this.deepLink = deepLink;
   }
 
 
-  public FlagLinkRep timestamp(TimestampRep timestamp) {
+  public FlagLinkRep timestamp(@javax.annotation.Nonnull TimestampRep timestamp) {
     this.timestamp = timestamp;
     return this;
   }
 
-   /**
+  /**
    * Get timestamp
    * @return timestamp
-  **/
+   */
   @javax.annotation.Nonnull
   public TimestampRep getTimestamp() {
     return timestamp;
   }
 
-  public void setTimestamp(TimestampRep timestamp) {
+  public void setTimestamp(@javax.annotation.Nonnull TimestampRep timestamp) {
     this.timestamp = timestamp;
   }
 
 
-  public FlagLinkRep title(String title) {
+  public FlagLinkRep title(@javax.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
 
-   /**
+  /**
    * The title of the flag link
    * @return title
-  **/
+   */
   @javax.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(String title) {
+  public void setTitle(@javax.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public FlagLinkRep description(String description) {
+  public FlagLinkRep description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * The description of the flag link
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public FlagLinkRep metadata(Map<String, String> metadata) {
+  public FlagLinkRep metadata(@javax.annotation.Nullable Map<String, String> metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -276,54 +288,54 @@ public class FlagLinkRep {
     return this;
   }
 
-   /**
+  /**
    * The metadata required by this integration in order to create a flag link, if this is a flag link for an existing integration. Defined in the integration&#39;s &lt;code&gt;manifest.json&lt;/code&gt; file under &lt;code&gt;flagLink&lt;/code&gt;.
    * @return metadata
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, String> getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(Map<String, String> metadata) {
+  public void setMetadata(@javax.annotation.Nullable Map<String, String> metadata) {
     this.metadata = metadata;
   }
 
 
-  public FlagLinkRep createdAt(Long createdAt) {
+  public FlagLinkRep createdAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Get createdAt
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public FlagLinkRep member(FlagLinkMember member) {
+  public FlagLinkRep member(@javax.annotation.Nullable FlagLinkMember member) {
     this.member = member;
     return this;
   }
 
-   /**
+  /**
    * Get member
    * @return member
-  **/
+   */
   @javax.annotation.Nullable
   public FlagLinkMember getMember() {
     return member;
   }
 
-  public void setMember(FlagLinkMember member) {
+  public void setMember(@javax.annotation.Nullable FlagLinkMember member) {
     this.member = member;
   }
 
@@ -438,67 +450,51 @@ public class FlagLinkRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_links");
-    openapiFields.add("_key");
-    openapiFields.add("_integrationKey");
-    openapiFields.add("_id");
-    openapiFields.add("_deepLink");
-    openapiFields.add("_timestamp");
-    openapiFields.add("title");
-    openapiFields.add("description");
-    openapiFields.add("_metadata");
-    openapiFields.add("_createdAt");
-    openapiFields.add("_member");
+    openapiFields = new HashSet<String>(Arrays.asList("_links", "_key", "_integrationKey", "_id", "_deepLink", "_timestamp", "title", "description", "_metadata", "_createdAt", "_member"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_links");
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("_deepLink");
-    openapiRequiredFields.add("_timestamp");
-    openapiRequiredFields.add("_createdAt");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_links", "_id", "_deepLink", "_timestamp", "_createdAt"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FlagLinkRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FlagLinkRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FlagLinkRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FlagLinkRep is not found in the empty JSON string", FlagLinkRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FlagLinkRep is not found in the empty JSON string", FlagLinkRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : FlagLinkRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("_key") != null && !jsonObj.get("_key").isJsonNull()) && !jsonObj.get("_key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_key").toString()));
       }
       if ((jsonObj.get("_integrationKey") != null && !jsonObj.get("_integrationKey").isJsonNull()) && !jsonObj.get("_integrationKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_integrationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_integrationKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_integrationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_integrationKey").toString()));
       }
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if (!jsonObj.get("_deepLink").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_deepLink` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_deepLink").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_deepLink` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_deepLink").toString()));
       }
       // validate the required field `_timestamp`
       TimestampRep.validateJsonElement(jsonObj.get("_timestamp"));
       if ((jsonObj.get("title") != null && !jsonObj.get("title").isJsonNull()) && !jsonObj.get("title").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       // validate the optional field `_member`
       if (jsonObj.get("_member") != null && !jsonObj.get("_member").isJsonNull()) {
@@ -563,7 +559,7 @@ public class FlagLinkRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -578,22 +574,22 @@ public class FlagLinkRep {
     }
   }
 
- /**
-  * Create an instance of FlagLinkRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FlagLinkRep
-  * @throws IOException if the JSON string is invalid with respect to FlagLinkRep
-  */
+  /**
+   * Create an instance of FlagLinkRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FlagLinkRep
+   * @throws IOException if the JSON string is invalid with respect to FlagLinkRep
+   */
   public static FlagLinkRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FlagLinkRep.class);
   }
 
- /**
-  * Convert an instance of FlagLinkRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FlagLinkRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

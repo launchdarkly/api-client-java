@@ -103,7 +103,8 @@ public class FeatureFlagsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Global flag response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -113,7 +114,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call copyFeatureFlagCall(String projectKey, String featureFlagKey, FlagCopyConfigPost flagCopyConfigPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call copyFeatureFlagCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull FlagCopyConfigPost flagCopyConfigPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -161,7 +162,7 @@ public class FeatureFlagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call copyFeatureFlagValidateBeforeCall(String projectKey, String featureFlagKey, FlagCopyConfigPost flagCopyConfigPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call copyFeatureFlagValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull FlagCopyConfigPost flagCopyConfigPost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling copyFeatureFlag(Async)");
@@ -190,7 +191,8 @@ public class FeatureFlagsApi {
      * @return FeatureFlag
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Global flag response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -200,7 +202,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public FeatureFlag copyFeatureFlag(String projectKey, String featureFlagKey, FlagCopyConfigPost flagCopyConfigPost) throws ApiException {
+    public FeatureFlag copyFeatureFlag(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull FlagCopyConfigPost flagCopyConfigPost) throws ApiException {
         ApiResponse<FeatureFlag> localVarResp = copyFeatureFlagWithHttpInfo(projectKey, featureFlagKey, flagCopyConfigPost);
         return localVarResp.getData();
     }
@@ -214,7 +216,8 @@ public class FeatureFlagsApi {
      * @return ApiResponse&lt;FeatureFlag&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Global flag response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -224,7 +227,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FeatureFlag> copyFeatureFlagWithHttpInfo(String projectKey, String featureFlagKey, FlagCopyConfigPost flagCopyConfigPost) throws ApiException {
+    public ApiResponse<FeatureFlag> copyFeatureFlagWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull FlagCopyConfigPost flagCopyConfigPost) throws ApiException {
         okhttp3.Call localVarCall = copyFeatureFlagValidateBeforeCall(projectKey, featureFlagKey, flagCopyConfigPost, null);
         Type localVarReturnType = new TypeToken<FeatureFlag>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -240,7 +243,8 @@ public class FeatureFlagsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Global flag response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -250,7 +254,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call copyFeatureFlagAsync(String projectKey, String featureFlagKey, FlagCopyConfigPost flagCopyConfigPost, final ApiCallback<FeatureFlag> _callback) throws ApiException {
+    public okhttp3.Call copyFeatureFlagAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull FlagCopyConfigPost flagCopyConfigPost, final ApiCallback<FeatureFlag> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = copyFeatureFlagValidateBeforeCall(projectKey, featureFlagKey, flagCopyConfigPost, _callback);
         Type localVarReturnType = new TypeToken<FeatureFlag>(){}.getType();
@@ -265,7 +269,8 @@ public class FeatureFlagsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -274,7 +279,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteFeatureFlagCall(String projectKey, String featureFlagKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteFeatureFlagCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -321,7 +326,7 @@ public class FeatureFlagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteFeatureFlagValidateBeforeCall(String projectKey, String featureFlagKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteFeatureFlagValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling deleteFeatureFlag(Async)");
@@ -343,7 +348,8 @@ public class FeatureFlagsApi {
      * @param featureFlagKey The feature flag key. The key identifies the flag in your code. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -352,7 +358,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteFeatureFlag(String projectKey, String featureFlagKey) throws ApiException {
+    public void deleteFeatureFlag(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey) throws ApiException {
         deleteFeatureFlagWithHttpInfo(projectKey, featureFlagKey);
     }
 
@@ -364,7 +370,8 @@ public class FeatureFlagsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -373,7 +380,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteFeatureFlagWithHttpInfo(String projectKey, String featureFlagKey) throws ApiException {
+    public ApiResponse<Void> deleteFeatureFlagWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey) throws ApiException {
         okhttp3.Call localVarCall = deleteFeatureFlagValidateBeforeCall(projectKey, featureFlagKey, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -387,7 +394,8 @@ public class FeatureFlagsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -396,7 +404,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteFeatureFlagAsync(String projectKey, String featureFlagKey, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteFeatureFlagAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteFeatureFlagValidateBeforeCall(projectKey, featureFlagKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -411,7 +419,8 @@ public class FeatureFlagsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring target response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -420,7 +429,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExpiringContextTargetsCall(String projectKey, String environmentKey, String featureFlagKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getExpiringContextTargetsCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -468,7 +477,7 @@ public class FeatureFlagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getExpiringContextTargetsValidateBeforeCall(String projectKey, String environmentKey, String featureFlagKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getExpiringContextTargetsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getExpiringContextTargets(Async)");
@@ -497,7 +506,8 @@ public class FeatureFlagsApi {
      * @return ExpiringTargetGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring target response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -506,7 +516,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ExpiringTargetGetResponse getExpiringContextTargets(String projectKey, String environmentKey, String featureFlagKey) throws ApiException {
+    public ExpiringTargetGetResponse getExpiringContextTargets(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey) throws ApiException {
         ApiResponse<ExpiringTargetGetResponse> localVarResp = getExpiringContextTargetsWithHttpInfo(projectKey, environmentKey, featureFlagKey);
         return localVarResp.getData();
     }
@@ -520,7 +530,8 @@ public class FeatureFlagsApi {
      * @return ApiResponse&lt;ExpiringTargetGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring target response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -529,7 +540,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ExpiringTargetGetResponse> getExpiringContextTargetsWithHttpInfo(String projectKey, String environmentKey, String featureFlagKey) throws ApiException {
+    public ApiResponse<ExpiringTargetGetResponse> getExpiringContextTargetsWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey) throws ApiException {
         okhttp3.Call localVarCall = getExpiringContextTargetsValidateBeforeCall(projectKey, environmentKey, featureFlagKey, null);
         Type localVarReturnType = new TypeToken<ExpiringTargetGetResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -545,7 +556,8 @@ public class FeatureFlagsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring target response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -554,7 +566,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExpiringContextTargetsAsync(String projectKey, String environmentKey, String featureFlagKey, final ApiCallback<ExpiringTargetGetResponse> _callback) throws ApiException {
+    public okhttp3.Call getExpiringContextTargetsAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback<ExpiringTargetGetResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getExpiringContextTargetsValidateBeforeCall(projectKey, environmentKey, featureFlagKey, _callback);
         Type localVarReturnType = new TypeToken<ExpiringTargetGetResponse>(){}.getType();
@@ -570,7 +582,8 @@ public class FeatureFlagsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -579,7 +592,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExpiringUserTargetsCall(String projectKey, String environmentKey, String featureFlagKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getExpiringUserTargetsCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -627,7 +640,7 @@ public class FeatureFlagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getExpiringUserTargetsValidateBeforeCall(String projectKey, String environmentKey, String featureFlagKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getExpiringUserTargetsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getExpiringUserTargets(Async)");
@@ -656,7 +669,8 @@ public class FeatureFlagsApi {
      * @return ExpiringUserTargetGetResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -665,7 +679,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ExpiringUserTargetGetResponse getExpiringUserTargets(String projectKey, String environmentKey, String featureFlagKey) throws ApiException {
+    public ExpiringUserTargetGetResponse getExpiringUserTargets(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey) throws ApiException {
         ApiResponse<ExpiringUserTargetGetResponse> localVarResp = getExpiringUserTargetsWithHttpInfo(projectKey, environmentKey, featureFlagKey);
         return localVarResp.getData();
     }
@@ -679,7 +693,8 @@ public class FeatureFlagsApi {
      * @return ApiResponse&lt;ExpiringUserTargetGetResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -688,7 +703,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ExpiringUserTargetGetResponse> getExpiringUserTargetsWithHttpInfo(String projectKey, String environmentKey, String featureFlagKey) throws ApiException {
+    public ApiResponse<ExpiringUserTargetGetResponse> getExpiringUserTargetsWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey) throws ApiException {
         okhttp3.Call localVarCall = getExpiringUserTargetsValidateBeforeCall(projectKey, environmentKey, featureFlagKey, null);
         Type localVarReturnType = new TypeToken<ExpiringUserTargetGetResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -704,7 +719,8 @@ public class FeatureFlagsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -713,7 +729,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExpiringUserTargetsAsync(String projectKey, String environmentKey, String featureFlagKey, final ApiCallback<ExpiringUserTargetGetResponse> _callback) throws ApiException {
+    public okhttp3.Call getExpiringUserTargetsAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback<ExpiringUserTargetGetResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getExpiringUserTargetsValidateBeforeCall(projectKey, environmentKey, featureFlagKey, _callback);
         Type localVarReturnType = new TypeToken<ExpiringUserTargetGetResponse>(){}.getType();
@@ -730,7 +746,8 @@ public class FeatureFlagsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Global flag response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -739,7 +756,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFeatureFlagCall(String projectKey, String featureFlagKey, String env, String expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getFeatureFlagCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nullable String env, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -794,7 +811,7 @@ public class FeatureFlagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFeatureFlagValidateBeforeCall(String projectKey, String featureFlagKey, String env, String expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getFeatureFlagValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nullable String env, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getFeatureFlag(Async)");
@@ -819,7 +836,8 @@ public class FeatureFlagsApi {
      * @return FeatureFlag
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Global flag response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -828,7 +846,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public FeatureFlag getFeatureFlag(String projectKey, String featureFlagKey, String env, String expand) throws ApiException {
+    public FeatureFlag getFeatureFlag(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nullable String env, @javax.annotation.Nullable String expand) throws ApiException {
         ApiResponse<FeatureFlag> localVarResp = getFeatureFlagWithHttpInfo(projectKey, featureFlagKey, env, expand);
         return localVarResp.getData();
     }
@@ -843,7 +861,8 @@ public class FeatureFlagsApi {
      * @return ApiResponse&lt;FeatureFlag&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Global flag response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -852,7 +871,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FeatureFlag> getFeatureFlagWithHttpInfo(String projectKey, String featureFlagKey, String env, String expand) throws ApiException {
+    public ApiResponse<FeatureFlag> getFeatureFlagWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nullable String env, @javax.annotation.Nullable String expand) throws ApiException {
         okhttp3.Call localVarCall = getFeatureFlagValidateBeforeCall(projectKey, featureFlagKey, env, expand, null);
         Type localVarReturnType = new TypeToken<FeatureFlag>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -869,7 +888,8 @@ public class FeatureFlagsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Global flag response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -878,7 +898,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFeatureFlagAsync(String projectKey, String featureFlagKey, String env, String expand, final ApiCallback<FeatureFlag> _callback) throws ApiException {
+    public okhttp3.Call getFeatureFlagAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nullable String env, @javax.annotation.Nullable String expand, final ApiCallback<FeatureFlag> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFeatureFlagValidateBeforeCall(projectKey, featureFlagKey, env, expand, _callback);
         Type localVarReturnType = new TypeToken<FeatureFlag>(){}.getType();
@@ -894,7 +914,8 @@ public class FeatureFlagsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag status response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -903,7 +924,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFeatureFlagStatusCall(String projectKey, String environmentKey, String featureFlagKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getFeatureFlagStatusCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -951,7 +972,7 @@ public class FeatureFlagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFeatureFlagStatusValidateBeforeCall(String projectKey, String environmentKey, String featureFlagKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getFeatureFlagStatusValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getFeatureFlagStatus(Async)");
@@ -980,7 +1001,8 @@ public class FeatureFlagsApi {
      * @return FlagStatusRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag status response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -989,7 +1011,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public FlagStatusRep getFeatureFlagStatus(String projectKey, String environmentKey, String featureFlagKey) throws ApiException {
+    public FlagStatusRep getFeatureFlagStatus(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey) throws ApiException {
         ApiResponse<FlagStatusRep> localVarResp = getFeatureFlagStatusWithHttpInfo(projectKey, environmentKey, featureFlagKey);
         return localVarResp.getData();
     }
@@ -1003,7 +1025,8 @@ public class FeatureFlagsApi {
      * @return ApiResponse&lt;FlagStatusRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag status response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1012,7 +1035,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FlagStatusRep> getFeatureFlagStatusWithHttpInfo(String projectKey, String environmentKey, String featureFlagKey) throws ApiException {
+    public ApiResponse<FlagStatusRep> getFeatureFlagStatusWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey) throws ApiException {
         okhttp3.Call localVarCall = getFeatureFlagStatusValidateBeforeCall(projectKey, environmentKey, featureFlagKey, null);
         Type localVarReturnType = new TypeToken<FlagStatusRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1028,7 +1051,8 @@ public class FeatureFlagsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag status response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1037,7 +1061,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFeatureFlagStatusAsync(String projectKey, String environmentKey, String featureFlagKey, final ApiCallback<FlagStatusRep> _callback) throws ApiException {
+    public okhttp3.Call getFeatureFlagStatusAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback<FlagStatusRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFeatureFlagStatusValidateBeforeCall(projectKey, environmentKey, featureFlagKey, _callback);
         Type localVarReturnType = new TypeToken<FlagStatusRep>(){}.getType();
@@ -1053,7 +1077,8 @@ public class FeatureFlagsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag status across environments response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1062,7 +1087,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFeatureFlagStatusAcrossEnvironmentsCall(String projectKey, String featureFlagKey, String env, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getFeatureFlagStatusAcrossEnvironmentsCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nullable String env, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1113,7 +1138,7 @@ public class FeatureFlagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFeatureFlagStatusAcrossEnvironmentsValidateBeforeCall(String projectKey, String featureFlagKey, String env, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getFeatureFlagStatusAcrossEnvironmentsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nullable String env, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getFeatureFlagStatusAcrossEnvironments(Async)");
@@ -1137,7 +1162,8 @@ public class FeatureFlagsApi {
      * @return FeatureFlagStatusAcrossEnvironments
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag status across environments response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1146,7 +1172,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public FeatureFlagStatusAcrossEnvironments getFeatureFlagStatusAcrossEnvironments(String projectKey, String featureFlagKey, String env) throws ApiException {
+    public FeatureFlagStatusAcrossEnvironments getFeatureFlagStatusAcrossEnvironments(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nullable String env) throws ApiException {
         ApiResponse<FeatureFlagStatusAcrossEnvironments> localVarResp = getFeatureFlagStatusAcrossEnvironmentsWithHttpInfo(projectKey, featureFlagKey, env);
         return localVarResp.getData();
     }
@@ -1160,7 +1186,8 @@ public class FeatureFlagsApi {
      * @return ApiResponse&lt;FeatureFlagStatusAcrossEnvironments&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag status across environments response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1169,7 +1196,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FeatureFlagStatusAcrossEnvironments> getFeatureFlagStatusAcrossEnvironmentsWithHttpInfo(String projectKey, String featureFlagKey, String env) throws ApiException {
+    public ApiResponse<FeatureFlagStatusAcrossEnvironments> getFeatureFlagStatusAcrossEnvironmentsWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nullable String env) throws ApiException {
         okhttp3.Call localVarCall = getFeatureFlagStatusAcrossEnvironmentsValidateBeforeCall(projectKey, featureFlagKey, env, null);
         Type localVarReturnType = new TypeToken<FeatureFlagStatusAcrossEnvironments>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1185,7 +1212,8 @@ public class FeatureFlagsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag status across environments response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1194,7 +1222,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFeatureFlagStatusAcrossEnvironmentsAsync(String projectKey, String featureFlagKey, String env, final ApiCallback<FeatureFlagStatusAcrossEnvironments> _callback) throws ApiException {
+    public okhttp3.Call getFeatureFlagStatusAcrossEnvironmentsAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nullable String env, final ApiCallback<FeatureFlagStatusAcrossEnvironments> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFeatureFlagStatusAcrossEnvironmentsValidateBeforeCall(projectKey, featureFlagKey, env, _callback);
         Type localVarReturnType = new TypeToken<FeatureFlagStatusAcrossEnvironments>(){}.getType();
@@ -1209,7 +1237,8 @@ public class FeatureFlagsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag Statuses collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1218,7 +1247,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFeatureFlagStatusesCall(String projectKey, String environmentKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getFeatureFlagStatusesCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1265,7 +1294,7 @@ public class FeatureFlagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFeatureFlagStatusesValidateBeforeCall(String projectKey, String environmentKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getFeatureFlagStatusesValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getFeatureFlagStatuses(Async)");
@@ -1288,7 +1317,8 @@ public class FeatureFlagsApi {
      * @return FeatureFlagStatuses
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag Statuses collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1297,7 +1327,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public FeatureFlagStatuses getFeatureFlagStatuses(String projectKey, String environmentKey) throws ApiException {
+    public FeatureFlagStatuses getFeatureFlagStatuses(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey) throws ApiException {
         ApiResponse<FeatureFlagStatuses> localVarResp = getFeatureFlagStatusesWithHttpInfo(projectKey, environmentKey);
         return localVarResp.getData();
     }
@@ -1310,7 +1340,8 @@ public class FeatureFlagsApi {
      * @return ApiResponse&lt;FeatureFlagStatuses&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag Statuses collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1319,7 +1350,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FeatureFlagStatuses> getFeatureFlagStatusesWithHttpInfo(String projectKey, String environmentKey) throws ApiException {
+    public ApiResponse<FeatureFlagStatuses> getFeatureFlagStatusesWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey) throws ApiException {
         okhttp3.Call localVarCall = getFeatureFlagStatusesValidateBeforeCall(projectKey, environmentKey, null);
         Type localVarReturnType = new TypeToken<FeatureFlagStatuses>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1334,7 +1365,8 @@ public class FeatureFlagsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag Statuses collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -1343,7 +1375,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFeatureFlagStatusesAsync(String projectKey, String environmentKey, final ApiCallback<FeatureFlagStatuses> _callback) throws ApiException {
+    public okhttp3.Call getFeatureFlagStatusesAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback<FeatureFlagStatuses> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFeatureFlagStatusesValidateBeforeCall(projectKey, environmentKey, _callback);
         Type localVarReturnType = new TypeToken<FeatureFlagStatuses>(){}.getType();
@@ -1367,7 +1399,8 @@ public class FeatureFlagsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Global flags collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1377,7 +1410,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFeatureFlagsCall(String projectKey, String env, String tag, Long limit, Long offset, Boolean archived, Boolean summary, String filter, String sort, Boolean compare, String expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getFeatureFlagsCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String env, @javax.annotation.Nullable String tag, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable Boolean archived, @javax.annotation.Nullable Boolean summary, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Boolean compare, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1463,7 +1496,7 @@ public class FeatureFlagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFeatureFlagsValidateBeforeCall(String projectKey, String env, String tag, Long limit, Long offset, Boolean archived, Boolean summary, String filter, String sort, Boolean compare, String expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getFeatureFlagsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String env, @javax.annotation.Nullable String tag, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable Boolean archived, @javax.annotation.Nullable Boolean summary, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Boolean compare, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getFeatureFlags(Async)");
@@ -1490,7 +1523,8 @@ public class FeatureFlagsApi {
      * @return FeatureFlags
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Global flags collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1500,7 +1534,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public FeatureFlags getFeatureFlags(String projectKey, String env, String tag, Long limit, Long offset, Boolean archived, Boolean summary, String filter, String sort, Boolean compare, String expand) throws ApiException {
+    public FeatureFlags getFeatureFlags(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String env, @javax.annotation.Nullable String tag, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable Boolean archived, @javax.annotation.Nullable Boolean summary, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Boolean compare, @javax.annotation.Nullable String expand) throws ApiException {
         ApiResponse<FeatureFlags> localVarResp = getFeatureFlagsWithHttpInfo(projectKey, env, tag, limit, offset, archived, summary, filter, sort, compare, expand);
         return localVarResp.getData();
     }
@@ -1522,7 +1556,8 @@ public class FeatureFlagsApi {
      * @return ApiResponse&lt;FeatureFlags&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Global flags collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1532,7 +1567,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FeatureFlags> getFeatureFlagsWithHttpInfo(String projectKey, String env, String tag, Long limit, Long offset, Boolean archived, Boolean summary, String filter, String sort, Boolean compare, String expand) throws ApiException {
+    public ApiResponse<FeatureFlags> getFeatureFlagsWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String env, @javax.annotation.Nullable String tag, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable Boolean archived, @javax.annotation.Nullable Boolean summary, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Boolean compare, @javax.annotation.Nullable String expand) throws ApiException {
         okhttp3.Call localVarCall = getFeatureFlagsValidateBeforeCall(projectKey, env, tag, limit, offset, archived, summary, filter, sort, compare, expand, null);
         Type localVarReturnType = new TypeToken<FeatureFlags>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1556,7 +1591,8 @@ public class FeatureFlagsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Global flags collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1566,7 +1602,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFeatureFlagsAsync(String projectKey, String env, String tag, Long limit, Long offset, Boolean archived, Boolean summary, String filter, String sort, Boolean compare, String expand, final ApiCallback<FeatureFlags> _callback) throws ApiException {
+    public okhttp3.Call getFeatureFlagsAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String env, @javax.annotation.Nullable String tag, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable Boolean archived, @javax.annotation.Nullable Boolean summary, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Boolean compare, @javax.annotation.Nullable String expand, final ApiCallback<FeatureFlags> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFeatureFlagsValidateBeforeCall(projectKey, env, tag, limit, offset, archived, summary, filter, sort, compare, expand, _callback);
         Type localVarReturnType = new TypeToken<FeatureFlags>(){}.getType();
@@ -1583,7 +1619,8 @@ public class FeatureFlagsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring target response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1593,7 +1630,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchExpiringTargetsCall(String projectKey, String environmentKey, String featureFlagKey, PatchFlagsRequest patchFlagsRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchExpiringTargetsCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchFlagsRequest patchFlagsRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1642,7 +1679,7 @@ public class FeatureFlagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchExpiringTargetsValidateBeforeCall(String projectKey, String environmentKey, String featureFlagKey, PatchFlagsRequest patchFlagsRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchExpiringTargetsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchFlagsRequest patchFlagsRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling patchExpiringTargets(Async)");
@@ -1677,7 +1714,8 @@ public class FeatureFlagsApi {
      * @return ExpiringTargetPatchResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring target response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1687,7 +1725,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ExpiringTargetPatchResponse patchExpiringTargets(String projectKey, String environmentKey, String featureFlagKey, PatchFlagsRequest patchFlagsRequest) throws ApiException {
+    public ExpiringTargetPatchResponse patchExpiringTargets(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchFlagsRequest patchFlagsRequest) throws ApiException {
         ApiResponse<ExpiringTargetPatchResponse> localVarResp = patchExpiringTargetsWithHttpInfo(projectKey, environmentKey, featureFlagKey, patchFlagsRequest);
         return localVarResp.getData();
     }
@@ -1702,7 +1740,8 @@ public class FeatureFlagsApi {
      * @return ApiResponse&lt;ExpiringTargetPatchResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring target response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1712,7 +1751,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ExpiringTargetPatchResponse> patchExpiringTargetsWithHttpInfo(String projectKey, String environmentKey, String featureFlagKey, PatchFlagsRequest patchFlagsRequest) throws ApiException {
+    public ApiResponse<ExpiringTargetPatchResponse> patchExpiringTargetsWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchFlagsRequest patchFlagsRequest) throws ApiException {
         okhttp3.Call localVarCall = patchExpiringTargetsValidateBeforeCall(projectKey, environmentKey, featureFlagKey, patchFlagsRequest, null);
         Type localVarReturnType = new TypeToken<ExpiringTargetPatchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1729,7 +1768,8 @@ public class FeatureFlagsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring target response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1739,7 +1779,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchExpiringTargetsAsync(String projectKey, String environmentKey, String featureFlagKey, PatchFlagsRequest patchFlagsRequest, final ApiCallback<ExpiringTargetPatchResponse> _callback) throws ApiException {
+    public okhttp3.Call patchExpiringTargetsAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchFlagsRequest patchFlagsRequest, final ApiCallback<ExpiringTargetPatchResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchExpiringTargetsValidateBeforeCall(projectKey, environmentKey, featureFlagKey, patchFlagsRequest, _callback);
         Type localVarReturnType = new TypeToken<ExpiringTargetPatchResponse>(){}.getType();
@@ -1756,7 +1796,8 @@ public class FeatureFlagsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1766,7 +1807,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchExpiringUserTargetsCall(String projectKey, String environmentKey, String featureFlagKey, PatchFlagsRequest patchFlagsRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchExpiringUserTargetsCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchFlagsRequest patchFlagsRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1815,7 +1856,7 @@ public class FeatureFlagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchExpiringUserTargetsValidateBeforeCall(String projectKey, String environmentKey, String featureFlagKey, PatchFlagsRequest patchFlagsRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchExpiringUserTargetsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchFlagsRequest patchFlagsRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling patchExpiringUserTargets(Async)");
@@ -1850,7 +1891,8 @@ public class FeatureFlagsApi {
      * @return ExpiringUserTargetPatchResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1860,7 +1902,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ExpiringUserTargetPatchResponse patchExpiringUserTargets(String projectKey, String environmentKey, String featureFlagKey, PatchFlagsRequest patchFlagsRequest) throws ApiException {
+    public ExpiringUserTargetPatchResponse patchExpiringUserTargets(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchFlagsRequest patchFlagsRequest) throws ApiException {
         ApiResponse<ExpiringUserTargetPatchResponse> localVarResp = patchExpiringUserTargetsWithHttpInfo(projectKey, environmentKey, featureFlagKey, patchFlagsRequest);
         return localVarResp.getData();
     }
@@ -1875,7 +1917,8 @@ public class FeatureFlagsApi {
      * @return ApiResponse&lt;ExpiringUserTargetPatchResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1885,7 +1928,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ExpiringUserTargetPatchResponse> patchExpiringUserTargetsWithHttpInfo(String projectKey, String environmentKey, String featureFlagKey, PatchFlagsRequest patchFlagsRequest) throws ApiException {
+    public ApiResponse<ExpiringUserTargetPatchResponse> patchExpiringUserTargetsWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchFlagsRequest patchFlagsRequest) throws ApiException {
         okhttp3.Call localVarCall = patchExpiringUserTargetsValidateBeforeCall(projectKey, environmentKey, featureFlagKey, patchFlagsRequest, null);
         Type localVarReturnType = new TypeToken<ExpiringUserTargetPatchResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1902,7 +1945,8 @@ public class FeatureFlagsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Expiring user target response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1912,7 +1956,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchExpiringUserTargetsAsync(String projectKey, String environmentKey, String featureFlagKey, PatchFlagsRequest patchFlagsRequest, final ApiCallback<ExpiringUserTargetPatchResponse> _callback) throws ApiException {
+    public okhttp3.Call patchExpiringUserTargetsAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchFlagsRequest patchFlagsRequest, final ApiCallback<ExpiringUserTargetPatchResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchExpiringUserTargetsValidateBeforeCall(projectKey, environmentKey, featureFlagKey, patchFlagsRequest, _callback);
         Type localVarReturnType = new TypeToken<ExpiringUserTargetPatchResponse>(){}.getType();
@@ -1929,7 +1973,8 @@ public class FeatureFlagsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Global flag response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1940,7 +1985,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchFeatureFlagCall(String projectKey, String featureFlagKey, PatchWithComment patchWithComment, Boolean ignoreConflicts, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchFeatureFlagCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, @javax.annotation.Nullable Boolean ignoreConflicts, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1992,7 +2037,7 @@ public class FeatureFlagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchFeatureFlagValidateBeforeCall(String projectKey, String featureFlagKey, PatchWithComment patchWithComment, Boolean ignoreConflicts, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchFeatureFlagValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, @javax.annotation.Nullable Boolean ignoreConflicts, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling patchFeatureFlag(Async)");
@@ -2022,7 +2067,8 @@ public class FeatureFlagsApi {
      * @return FeatureFlag
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Global flag response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2033,7 +2079,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public FeatureFlag patchFeatureFlag(String projectKey, String featureFlagKey, PatchWithComment patchWithComment, Boolean ignoreConflicts) throws ApiException {
+    public FeatureFlag patchFeatureFlag(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, @javax.annotation.Nullable Boolean ignoreConflicts) throws ApiException {
         ApiResponse<FeatureFlag> localVarResp = patchFeatureFlagWithHttpInfo(projectKey, featureFlagKey, patchWithComment, ignoreConflicts);
         return localVarResp.getData();
     }
@@ -2048,7 +2094,8 @@ public class FeatureFlagsApi {
      * @return ApiResponse&lt;FeatureFlag&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Global flag response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2059,7 +2106,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FeatureFlag> patchFeatureFlagWithHttpInfo(String projectKey, String featureFlagKey, PatchWithComment patchWithComment, Boolean ignoreConflicts) throws ApiException {
+    public ApiResponse<FeatureFlag> patchFeatureFlagWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, @javax.annotation.Nullable Boolean ignoreConflicts) throws ApiException {
         okhttp3.Call localVarCall = patchFeatureFlagValidateBeforeCall(projectKey, featureFlagKey, patchWithComment, ignoreConflicts, null);
         Type localVarReturnType = new TypeToken<FeatureFlag>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2076,7 +2123,8 @@ public class FeatureFlagsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Global flag response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2087,7 +2135,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchFeatureFlagAsync(String projectKey, String featureFlagKey, PatchWithComment patchWithComment, Boolean ignoreConflicts, final ApiCallback<FeatureFlag> _callback) throws ApiException {
+    public okhttp3.Call patchFeatureFlagAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, @javax.annotation.Nullable Boolean ignoreConflicts, final ApiCallback<FeatureFlag> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchFeatureFlagValidateBeforeCall(projectKey, featureFlagKey, patchWithComment, ignoreConflicts, _callback);
         Type localVarReturnType = new TypeToken<FeatureFlag>(){}.getType();
@@ -2103,7 +2151,8 @@ public class FeatureFlagsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Global flag response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2112,7 +2161,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postFeatureFlagCall(String projectKey, FeatureFlagBody featureFlagBody, String clone, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postFeatureFlagCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull FeatureFlagBody featureFlagBody, @javax.annotation.Nullable String clone, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2163,7 +2212,7 @@ public class FeatureFlagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postFeatureFlagValidateBeforeCall(String projectKey, FeatureFlagBody featureFlagBody, String clone, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postFeatureFlagValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull FeatureFlagBody featureFlagBody, @javax.annotation.Nullable String clone, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling postFeatureFlag(Async)");
@@ -2187,7 +2236,8 @@ public class FeatureFlagsApi {
      * @return FeatureFlag
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Global flag response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2196,7 +2246,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public FeatureFlag postFeatureFlag(String projectKey, FeatureFlagBody featureFlagBody, String clone) throws ApiException {
+    public FeatureFlag postFeatureFlag(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull FeatureFlagBody featureFlagBody, @javax.annotation.Nullable String clone) throws ApiException {
         ApiResponse<FeatureFlag> localVarResp = postFeatureFlagWithHttpInfo(projectKey, featureFlagBody, clone);
         return localVarResp.getData();
     }
@@ -2210,7 +2260,8 @@ public class FeatureFlagsApi {
      * @return ApiResponse&lt;FeatureFlag&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Global flag response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2219,7 +2270,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FeatureFlag> postFeatureFlagWithHttpInfo(String projectKey, FeatureFlagBody featureFlagBody, String clone) throws ApiException {
+    public ApiResponse<FeatureFlag> postFeatureFlagWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull FeatureFlagBody featureFlagBody, @javax.annotation.Nullable String clone) throws ApiException {
         okhttp3.Call localVarCall = postFeatureFlagValidateBeforeCall(projectKey, featureFlagBody, clone, null);
         Type localVarReturnType = new TypeToken<FeatureFlag>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2235,7 +2286,8 @@ public class FeatureFlagsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Global flag response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -2244,7 +2296,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postFeatureFlagAsync(String projectKey, FeatureFlagBody featureFlagBody, String clone, final ApiCallback<FeatureFlag> _callback) throws ApiException {
+    public okhttp3.Call postFeatureFlagAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull FeatureFlagBody featureFlagBody, @javax.annotation.Nullable String clone, final ApiCallback<FeatureFlag> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postFeatureFlagValidateBeforeCall(projectKey, featureFlagBody, clone, _callback);
         Type localVarReturnType = new TypeToken<FeatureFlag>(){}.getType();
@@ -2261,7 +2313,8 @@ public class FeatureFlagsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Migration safety issues found </td><td>  -  </td></tr>
         <tr><td> 204 </td><td> No safety issues found </td><td>  -  </td></tr>
@@ -2273,7 +2326,7 @@ public class FeatureFlagsApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postMigrationSafetyIssuesCall(String projectKey, String flagKey, String environmentKey, FlagSempatch flagSempatch, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postMigrationSafetyIssuesCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull FlagSempatch flagSempatch, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2322,7 +2375,7 @@ public class FeatureFlagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postMigrationSafetyIssuesValidateBeforeCall(String projectKey, String flagKey, String environmentKey, FlagSempatch flagSempatch, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postMigrationSafetyIssuesValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull FlagSempatch flagSempatch, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling postMigrationSafetyIssues(Async)");
@@ -2357,7 +2410,8 @@ public class FeatureFlagsApi {
      * @return List&lt;MigrationSafetyIssueRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Migration safety issues found </td><td>  -  </td></tr>
         <tr><td> 204 </td><td> No safety issues found </td><td>  -  </td></tr>
@@ -2369,7 +2423,7 @@ public class FeatureFlagsApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public List<MigrationSafetyIssueRep> postMigrationSafetyIssues(String projectKey, String flagKey, String environmentKey, FlagSempatch flagSempatch) throws ApiException {
+    public List<MigrationSafetyIssueRep> postMigrationSafetyIssues(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull FlagSempatch flagSempatch) throws ApiException {
         ApiResponse<List<MigrationSafetyIssueRep>> localVarResp = postMigrationSafetyIssuesWithHttpInfo(projectKey, flagKey, environmentKey, flagSempatch);
         return localVarResp.getData();
     }
@@ -2384,7 +2438,8 @@ public class FeatureFlagsApi {
      * @return ApiResponse&lt;List&lt;MigrationSafetyIssueRep&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Migration safety issues found </td><td>  -  </td></tr>
         <tr><td> 204 </td><td> No safety issues found </td><td>  -  </td></tr>
@@ -2396,7 +2451,7 @@ public class FeatureFlagsApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<MigrationSafetyIssueRep>> postMigrationSafetyIssuesWithHttpInfo(String projectKey, String flagKey, String environmentKey, FlagSempatch flagSempatch) throws ApiException {
+    public ApiResponse<List<MigrationSafetyIssueRep>> postMigrationSafetyIssuesWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull FlagSempatch flagSempatch) throws ApiException {
         okhttp3.Call localVarCall = postMigrationSafetyIssuesValidateBeforeCall(projectKey, flagKey, environmentKey, flagSempatch, null);
         Type localVarReturnType = new TypeToken<List<MigrationSafetyIssueRep>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2413,7 +2468,8 @@ public class FeatureFlagsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Migration safety issues found </td><td>  -  </td></tr>
         <tr><td> 204 </td><td> No safety issues found </td><td>  -  </td></tr>
@@ -2425,7 +2481,7 @@ public class FeatureFlagsApi {
         <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postMigrationSafetyIssuesAsync(String projectKey, String flagKey, String environmentKey, FlagSempatch flagSempatch, final ApiCallback<List<MigrationSafetyIssueRep>> _callback) throws ApiException {
+    public okhttp3.Call postMigrationSafetyIssuesAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull FlagSempatch flagSempatch, final ApiCallback<List<MigrationSafetyIssueRep>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postMigrationSafetyIssuesValidateBeforeCall(projectKey, flagKey, environmentKey, flagSempatch, _callback);
         Type localVarReturnType = new TypeToken<List<MigrationSafetyIssueRep>>(){}.getType();

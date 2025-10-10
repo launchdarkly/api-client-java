@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,189 +41,197 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * DependentMeasuredRolloutRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class DependentMeasuredRolloutRep {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_FLAG_KEY = "flagKey";
   @SerializedName(SERIALIZED_NAME_FLAG_KEY)
+  @javax.annotation.Nonnull
   private String flagKey;
 
   public static final String SERIALIZED_NAME_FLAG_NAME = "flagName";
   @SerializedName(SERIALIZED_NAME_FLAG_NAME)
+  @javax.annotation.Nonnull
   private String flagName;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_KEY = "environmentKey";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_KEY)
+  @javax.annotation.Nonnull
   private String environmentKey;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_NAME = "environmentName";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_NAME)
+  @javax.annotation.Nonnull
   private String environmentName;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nonnull
   private String status;
 
   public static final String SERIALIZED_NAME_CREATION_DATE = "creationDate";
   @SerializedName(SERIALIZED_NAME_CREATION_DATE)
+  @javax.annotation.Nonnull
   private Long creationDate;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public DependentMeasuredRolloutRep() {
   }
 
-  public DependentMeasuredRolloutRep id(String id) {
+  public DependentMeasuredRolloutRep id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The guarded rollout measured rollout Id
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public DependentMeasuredRolloutRep flagKey(String flagKey) {
+  public DependentMeasuredRolloutRep flagKey(@javax.annotation.Nonnull String flagKey) {
     this.flagKey = flagKey;
     return this;
   }
 
-   /**
+  /**
    * The guarded rollout flag key 
    * @return flagKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getFlagKey() {
     return flagKey;
   }
 
-  public void setFlagKey(String flagKey) {
+  public void setFlagKey(@javax.annotation.Nonnull String flagKey) {
     this.flagKey = flagKey;
   }
 
 
-  public DependentMeasuredRolloutRep flagName(String flagName) {
+  public DependentMeasuredRolloutRep flagName(@javax.annotation.Nonnull String flagName) {
     this.flagName = flagName;
     return this;
   }
 
-   /**
+  /**
    * The guarded rollout flag name 
    * @return flagName
-  **/
+   */
   @javax.annotation.Nonnull
   public String getFlagName() {
     return flagName;
   }
 
-  public void setFlagName(String flagName) {
+  public void setFlagName(@javax.annotation.Nonnull String flagName) {
     this.flagName = flagName;
   }
 
 
-  public DependentMeasuredRolloutRep environmentKey(String environmentKey) {
+  public DependentMeasuredRolloutRep environmentKey(@javax.annotation.Nonnull String environmentKey) {
     this.environmentKey = environmentKey;
     return this;
   }
 
-   /**
+  /**
    * The guarded rollout environment key
    * @return environmentKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getEnvironmentKey() {
     return environmentKey;
   }
 
-  public void setEnvironmentKey(String environmentKey) {
+  public void setEnvironmentKey(@javax.annotation.Nonnull String environmentKey) {
     this.environmentKey = environmentKey;
   }
 
 
-  public DependentMeasuredRolloutRep environmentName(String environmentName) {
+  public DependentMeasuredRolloutRep environmentName(@javax.annotation.Nonnull String environmentName) {
     this.environmentName = environmentName;
     return this;
   }
 
-   /**
+  /**
    * The guarded rollout environment name
    * @return environmentName
-  **/
+   */
   @javax.annotation.Nonnull
   public String getEnvironmentName() {
     return environmentName;
   }
 
-  public void setEnvironmentName(String environmentName) {
+  public void setEnvironmentName(@javax.annotation.Nonnull String environmentName) {
     this.environmentName = environmentName;
   }
 
 
-  public DependentMeasuredRolloutRep status(String status) {
+  public DependentMeasuredRolloutRep status(@javax.annotation.Nonnull String status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * The guarded rollout status
    * @return status
-  **/
+   */
   @javax.annotation.Nonnull
   public String getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(@javax.annotation.Nonnull String status) {
     this.status = status;
   }
 
 
-  public DependentMeasuredRolloutRep creationDate(Long creationDate) {
+  public DependentMeasuredRolloutRep creationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
     return this;
   }
 
-   /**
+  /**
    * Get creationDate
    * @return creationDate
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate(Long creationDate) {
+  public void setCreationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
   }
 
 
-  public DependentMeasuredRolloutRep links(Map<String, Link> links) {
+  public DependentMeasuredRolloutRep links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -235,16 +244,16 @@ public class DependentMeasuredRolloutRep {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
@@ -353,65 +362,49 @@ public class DependentMeasuredRolloutRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_id");
-    openapiFields.add("flagKey");
-    openapiFields.add("flagName");
-    openapiFields.add("environmentKey");
-    openapiFields.add("environmentName");
-    openapiFields.add("status");
-    openapiFields.add("creationDate");
-    openapiFields.add("_links");
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "flagKey", "flagName", "environmentKey", "environmentName", "status", "creationDate", "_links"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("flagKey");
-    openapiRequiredFields.add("flagName");
-    openapiRequiredFields.add("environmentKey");
-    openapiRequiredFields.add("environmentName");
-    openapiRequiredFields.add("status");
-    openapiRequiredFields.add("creationDate");
-    openapiRequiredFields.add("_links");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "flagKey", "flagName", "environmentKey", "environmentName", "status", "creationDate", "_links"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DependentMeasuredRolloutRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DependentMeasuredRolloutRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DependentMeasuredRolloutRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DependentMeasuredRolloutRep is not found in the empty JSON string", DependentMeasuredRolloutRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DependentMeasuredRolloutRep is not found in the empty JSON string", DependentMeasuredRolloutRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : DependentMeasuredRolloutRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if (!jsonObj.get("flagKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `flagKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("flagKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `flagKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("flagKey").toString()));
       }
       if (!jsonObj.get("flagName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `flagName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("flagName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `flagName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("flagName").toString()));
       }
       if (!jsonObj.get("environmentKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
       }
       if (!jsonObj.get("environmentName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environmentName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentName").toString()));
       }
       if (!jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
   }
 
@@ -472,7 +465,7 @@ public class DependentMeasuredRolloutRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -487,22 +480,22 @@ public class DependentMeasuredRolloutRep {
     }
   }
 
- /**
-  * Create an instance of DependentMeasuredRolloutRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DependentMeasuredRolloutRep
-  * @throws IOException if the JSON string is invalid with respect to DependentMeasuredRolloutRep
-  */
+  /**
+   * Create an instance of DependentMeasuredRolloutRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DependentMeasuredRolloutRep
+   * @throws IOException if the JSON string is invalid with respect to DependentMeasuredRolloutRep
+   */
   public static DependentMeasuredRolloutRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DependentMeasuredRolloutRep.class);
   }
 
- /**
-  * Convert an instance of DependentMeasuredRolloutRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DependentMeasuredRolloutRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

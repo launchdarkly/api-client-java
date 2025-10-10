@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,6 +40,7 @@ import java.util.HashSet;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Locale;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -62,7 +64,7 @@ import com.google.gson.JsonParseException;
 
 import com.launchdarkly.api.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ViewLinkRequest extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(ViewLinkRequest.class.getName());
 
@@ -118,7 +120,7 @@ public class ViewLinkRequest extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ViewLinkRequestKeys'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for ViewLinkRequestKeys failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for ViewLinkRequestKeys failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ViewLinkRequestKeys'", e);
                     }
                     // deserialize ViewLinkRequestSegmentIdentifiers
@@ -130,7 +132,7 @@ public class ViewLinkRequest extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ViewLinkRequestSegmentIdentifiers'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for ViewLinkRequestSegmentIdentifiers failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(Locale.ROOT, "Deserialization for ViewLinkRequestSegmentIdentifiers failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ViewLinkRequestSegmentIdentifiers'", e);
                     }
 
@@ -140,7 +142,7 @@ public class ViewLinkRequest extends AbstractOpenApiSchema {
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for ViewLinkRequest: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
+                    throw new IOException(String.format(Locale.ROOT, "Failed deserialization for ViewLinkRequest: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
@@ -153,12 +155,7 @@ public class ViewLinkRequest extends AbstractOpenApiSchema {
         super("oneOf", Boolean.FALSE);
     }
 
-    public ViewLinkRequest(ViewLinkRequestKeys o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public ViewLinkRequest(ViewLinkRequestSegmentIdentifiers o) {
+    public ViewLinkRequest(Object o) {
         super("oneOf", Boolean.FALSE);
         setActualInstance(o);
     }
@@ -217,6 +214,7 @@ public class ViewLinkRequest extends AbstractOpenApiSchema {
     public ViewLinkRequestKeys getViewLinkRequestKeys() throws ClassCastException {
         return (ViewLinkRequestKeys)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `ViewLinkRequestSegmentIdentifiers`. If the actual instance is not `ViewLinkRequestSegmentIdentifiers`,
      * the ClassCastException will be thrown.
@@ -243,7 +241,7 @@ public class ViewLinkRequest extends AbstractOpenApiSchema {
             ViewLinkRequestKeys.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for ViewLinkRequestKeys failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(Locale.ROOT, "Deserialization for ViewLinkRequestKeys failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with ViewLinkRequestSegmentIdentifiers
@@ -251,11 +249,11 @@ public class ViewLinkRequest extends AbstractOpenApiSchema {
             ViewLinkRequestSegmentIdentifiers.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for ViewLinkRequestSegmentIdentifiers failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(Locale.ROOT, "Deserialization for ViewLinkRequestSegmentIdentifiers failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for ViewLinkRequest with oneOf schemas: ViewLinkRequestKeys, ViewLinkRequestSegmentIdentifiers. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format(Locale.ROOT, "The JSON string is invalid for ViewLinkRequest with oneOf schemas: ViewLinkRequestKeys, ViewLinkRequestSegmentIdentifiers. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

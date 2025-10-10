@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,212 +41,221 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ContextInstanceSegmentMembership
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ContextInstanceSegmentMembership {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nonnull
   private String description;
 
   public static final String SERIALIZED_NAME_UNBOUNDED = "unbounded";
   @SerializedName(SERIALIZED_NAME_UNBOUNDED)
+  @javax.annotation.Nonnull
   private Boolean unbounded;
 
   public static final String SERIALIZED_NAME_EXTERNAL = "external";
   @SerializedName(SERIALIZED_NAME_EXTERNAL)
+  @javax.annotation.Nonnull
   private String external;
 
   public static final String SERIALIZED_NAME_IS_MEMBER = "isMember";
   @SerializedName(SERIALIZED_NAME_IS_MEMBER)
+  @javax.annotation.Nonnull
   private Boolean isMember;
 
   public static final String SERIALIZED_NAME_IS_INDIVIDUALLY_TARGETED = "isIndividuallyTargeted";
   @SerializedName(SERIALIZED_NAME_IS_INDIVIDUALLY_TARGETED)
+  @javax.annotation.Nonnull
   private Boolean isIndividuallyTargeted;
 
   public static final String SERIALIZED_NAME_IS_RULE_TARGETED = "isRuleTargeted";
   @SerializedName(SERIALIZED_NAME_IS_RULE_TARGETED)
+  @javax.annotation.Nonnull
   private Boolean isRuleTargeted;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public ContextInstanceSegmentMembership() {
   }
 
-  public ContextInstanceSegmentMembership name(String name) {
+  public ContextInstanceSegmentMembership name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for the segment
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public ContextInstanceSegmentMembership key(String key) {
+  public ContextInstanceSegmentMembership key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * A unique key used to reference the segment
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public ContextInstanceSegmentMembership description(String description) {
+  public ContextInstanceSegmentMembership description(@javax.annotation.Nonnull String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * A description of the segment&#39;s purpose
    * @return description
-  **/
+   */
   @javax.annotation.Nonnull
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nonnull String description) {
     this.description = description;
   }
 
 
-  public ContextInstanceSegmentMembership unbounded(Boolean unbounded) {
+  public ContextInstanceSegmentMembership unbounded(@javax.annotation.Nonnull Boolean unbounded) {
     this.unbounded = unbounded;
     return this;
   }
 
-   /**
+  /**
    * Whether this is an unbounded segment. Unbounded segments, also called big segments, may be list-based segments with more than 15,000 entries, or synced segments.
    * @return unbounded
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getUnbounded() {
     return unbounded;
   }
 
-  public void setUnbounded(Boolean unbounded) {
+  public void setUnbounded(@javax.annotation.Nonnull Boolean unbounded) {
     this.unbounded = unbounded;
   }
 
 
-  public ContextInstanceSegmentMembership external(String external) {
+  public ContextInstanceSegmentMembership external(@javax.annotation.Nonnull String external) {
     this.external = external;
     return this;
   }
 
-   /**
+  /**
    * If the segment is a synced segment, the name of the external source
    * @return external
-  **/
+   */
   @javax.annotation.Nonnull
   public String getExternal() {
     return external;
   }
 
-  public void setExternal(String external) {
+  public void setExternal(@javax.annotation.Nonnull String external) {
     this.external = external;
   }
 
 
-  public ContextInstanceSegmentMembership isMember(Boolean isMember) {
+  public ContextInstanceSegmentMembership isMember(@javax.annotation.Nonnull Boolean isMember) {
     this.isMember = isMember;
     return this;
   }
 
-   /**
+  /**
    * Whether the context is a member of this segment, either by explicit inclusion or by rule matching
    * @return isMember
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getIsMember() {
     return isMember;
   }
 
-  public void setIsMember(Boolean isMember) {
+  public void setIsMember(@javax.annotation.Nonnull Boolean isMember) {
     this.isMember = isMember;
   }
 
 
-  public ContextInstanceSegmentMembership isIndividuallyTargeted(Boolean isIndividuallyTargeted) {
+  public ContextInstanceSegmentMembership isIndividuallyTargeted(@javax.annotation.Nonnull Boolean isIndividuallyTargeted) {
     this.isIndividuallyTargeted = isIndividuallyTargeted;
     return this;
   }
 
-   /**
+  /**
    * Whether the context is explicitly included in this segment
    * @return isIndividuallyTargeted
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getIsIndividuallyTargeted() {
     return isIndividuallyTargeted;
   }
 
-  public void setIsIndividuallyTargeted(Boolean isIndividuallyTargeted) {
+  public void setIsIndividuallyTargeted(@javax.annotation.Nonnull Boolean isIndividuallyTargeted) {
     this.isIndividuallyTargeted = isIndividuallyTargeted;
   }
 
 
-  public ContextInstanceSegmentMembership isRuleTargeted(Boolean isRuleTargeted) {
+  public ContextInstanceSegmentMembership isRuleTargeted(@javax.annotation.Nonnull Boolean isRuleTargeted) {
     this.isRuleTargeted = isRuleTargeted;
     return this;
   }
 
-   /**
+  /**
    * Whether the context is captured by this segment&#39;s rules. The value of this field is undefined if the context is also explicitly included (&lt;code&gt;isIndividuallyTargeted&lt;/code&gt; is &lt;code&gt;true&lt;/code&gt;).
    * @return isRuleTargeted
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getIsRuleTargeted() {
     return isRuleTargeted;
   }
 
-  public void setIsRuleTargeted(Boolean isRuleTargeted) {
+  public void setIsRuleTargeted(@javax.annotation.Nonnull Boolean isRuleTargeted) {
     this.isRuleTargeted = isRuleTargeted;
   }
 
 
-  public ContextInstanceSegmentMembership links(Map<String, Link> links) {
+  public ContextInstanceSegmentMembership links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -258,16 +268,16 @@ public class ContextInstanceSegmentMembership {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
@@ -378,61 +388,43 @@ public class ContextInstanceSegmentMembership {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("key");
-    openapiFields.add("description");
-    openapiFields.add("unbounded");
-    openapiFields.add("external");
-    openapiFields.add("isMember");
-    openapiFields.add("isIndividuallyTargeted");
-    openapiFields.add("isRuleTargeted");
-    openapiFields.add("_links");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "key", "description", "unbounded", "external", "isMember", "isIndividuallyTargeted", "isRuleTargeted", "_links"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("description");
-    openapiRequiredFields.add("unbounded");
-    openapiRequiredFields.add("external");
-    openapiRequiredFields.add("isMember");
-    openapiRequiredFields.add("isIndividuallyTargeted");
-    openapiRequiredFields.add("isRuleTargeted");
-    openapiRequiredFields.add("_links");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name", "key", "description", "unbounded", "external", "isMember", "isIndividuallyTargeted", "isRuleTargeted", "_links"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ContextInstanceSegmentMembership
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ContextInstanceSegmentMembership
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ContextInstanceSegmentMembership.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ContextInstanceSegmentMembership is not found in the empty JSON string", ContextInstanceSegmentMembership.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ContextInstanceSegmentMembership is not found in the empty JSON string", ContextInstanceSegmentMembership.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ContextInstanceSegmentMembership.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if (!jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if (!jsonObj.get("external").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `external` to be a primitive type in the JSON string but got `%s`", jsonObj.get("external").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `external` to be a primitive type in the JSON string but got `%s`", jsonObj.get("external").toString()));
       }
   }
 
@@ -493,7 +485,7 @@ public class ContextInstanceSegmentMembership {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -508,22 +500,22 @@ public class ContextInstanceSegmentMembership {
     }
   }
 
- /**
-  * Create an instance of ContextInstanceSegmentMembership given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ContextInstanceSegmentMembership
-  * @throws IOException if the JSON string is invalid with respect to ContextInstanceSegmentMembership
-  */
+  /**
+   * Create an instance of ContextInstanceSegmentMembership given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ContextInstanceSegmentMembership
+   * @throws IOException if the JSON string is invalid with respect to ContextInstanceSegmentMembership
+   */
   public static ContextInstanceSegmentMembership fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ContextInstanceSegmentMembership.class);
   }
 
- /**
-  * Convert an instance of ContextInstanceSegmentMembership to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ContextInstanceSegmentMembership to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

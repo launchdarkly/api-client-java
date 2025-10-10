@@ -21,7 +21,7 @@
 | FLAG | &quot;flag&quot; |
 | SEGMENT | &quot;segment&quot; |
 | METRIC | &quot;metric&quot; |
-| AICONFIG | &quot;aiConfig&quot; |
+| AI_CONFIG | &quot;aiConfig&quot; |
 
 
 

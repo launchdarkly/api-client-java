@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,36 +40,39 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * UserAttributeNamesRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class UserAttributeNamesRep {
   public static final String SERIALIZED_NAME_PRIVATE = "private";
   @SerializedName(SERIALIZED_NAME_PRIVATE)
+  @javax.annotation.Nullable
   private List<String> _private = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CUSTOM = "custom";
   @SerializedName(SERIALIZED_NAME_CUSTOM)
+  @javax.annotation.Nullable
   private List<String> custom = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_STANDARD = "standard";
   @SerializedName(SERIALIZED_NAME_STANDARD)
+  @javax.annotation.Nullable
   private List<String> standard = new ArrayList<>();
 
   public UserAttributeNamesRep() {
   }
 
-  public UserAttributeNamesRep _private(List<String> _private) {
+  public UserAttributeNamesRep _private(@javax.annotation.Nullable List<String> _private) {
     this._private = _private;
     return this;
   }
@@ -81,21 +85,21 @@ public class UserAttributeNamesRep {
     return this;
   }
 
-   /**
+  /**
    * private attributes
    * @return _private
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getPrivate() {
     return _private;
   }
 
-  public void setPrivate(List<String> _private) {
+  public void setPrivate(@javax.annotation.Nullable List<String> _private) {
     this._private = _private;
   }
 
 
-  public UserAttributeNamesRep custom(List<String> custom) {
+  public UserAttributeNamesRep custom(@javax.annotation.Nullable List<String> custom) {
     this.custom = custom;
     return this;
   }
@@ -108,21 +112,21 @@ public class UserAttributeNamesRep {
     return this;
   }
 
-   /**
+  /**
    * custom attributes
    * @return custom
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getCustom() {
     return custom;
   }
 
-  public void setCustom(List<String> custom) {
+  public void setCustom(@javax.annotation.Nullable List<String> custom) {
     this.custom = custom;
   }
 
 
-  public UserAttributeNamesRep standard(List<String> standard) {
+  public UserAttributeNamesRep standard(@javax.annotation.Nullable List<String> standard) {
     this.standard = standard;
     return this;
   }
@@ -135,16 +139,16 @@ public class UserAttributeNamesRep {
     return this;
   }
 
-   /**
+  /**
    * standard attributes
    * @return standard
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getStandard() {
     return standard;
   }
 
-  public void setStandard(List<String> standard) {
+  public void setStandard(@javax.annotation.Nullable List<String> standard) {
     this.standard = standard;
   }
 
@@ -243,39 +247,36 @@ public class UserAttributeNamesRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("private");
-    openapiFields.add("custom");
-    openapiFields.add("standard");
+    openapiFields = new HashSet<String>(Arrays.asList("private", "custom", "standard"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to UserAttributeNamesRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to UserAttributeNamesRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UserAttributeNamesRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UserAttributeNamesRep is not found in the empty JSON string", UserAttributeNamesRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in UserAttributeNamesRep is not found in the empty JSON string", UserAttributeNamesRep.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the optional json data is an array if present
       if (jsonObj.get("private") != null && !jsonObj.get("private").isJsonNull() && !jsonObj.get("private").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `private` to be an array in the JSON string but got `%s`", jsonObj.get("private").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `private` to be an array in the JSON string but got `%s`", jsonObj.get("private").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("custom") != null && !jsonObj.get("custom").isJsonNull() && !jsonObj.get("custom").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `custom` to be an array in the JSON string but got `%s`", jsonObj.get("custom").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `custom` to be an array in the JSON string but got `%s`", jsonObj.get("custom").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("standard") != null && !jsonObj.get("standard").isJsonNull() && !jsonObj.get("standard").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `standard` to be an array in the JSON string but got `%s`", jsonObj.get("standard").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `standard` to be an array in the JSON string but got `%s`", jsonObj.get("standard").toString()));
       }
   }
 
@@ -336,7 +337,7 @@ public class UserAttributeNamesRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -351,22 +352,22 @@ public class UserAttributeNamesRep {
     }
   }
 
- /**
-  * Create an instance of UserAttributeNamesRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UserAttributeNamesRep
-  * @throws IOException if the JSON string is invalid with respect to UserAttributeNamesRep
-  */
+  /**
+   * Create an instance of UserAttributeNamesRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of UserAttributeNamesRep
+   * @throws IOException if the JSON string is invalid with respect to UserAttributeNamesRep
+   */
   public static UserAttributeNamesRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, UserAttributeNamesRep.class);
   }
 
- /**
-  * Convert an instance of UserAttributeNamesRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of UserAttributeNamesRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

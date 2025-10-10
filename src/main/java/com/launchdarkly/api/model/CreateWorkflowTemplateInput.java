@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,132 +41,140 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * CreateWorkflowTemplateInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class CreateWorkflowTemplateInput {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_WORKFLOW_ID = "workflowId";
   @SerializedName(SERIALIZED_NAME_WORKFLOW_ID)
+  @javax.annotation.Nullable
   private String workflowId;
 
   public static final String SERIALIZED_NAME_STAGES = "stages";
   @SerializedName(SERIALIZED_NAME_STAGES)
+  @javax.annotation.Nullable
   private List<StageInput> stages = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PROJECT_KEY = "projectKey";
   @SerializedName(SERIALIZED_NAME_PROJECT_KEY)
+  @javax.annotation.Nullable
   private String projectKey;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_KEY = "environmentKey";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_KEY)
+  @javax.annotation.Nullable
   private String environmentKey;
 
   public static final String SERIALIZED_NAME_FLAG_KEY = "flagKey";
   @SerializedName(SERIALIZED_NAME_FLAG_KEY)
+  @javax.annotation.Nullable
   private String flagKey;
 
   public CreateWorkflowTemplateInput() {
   }
 
-  public CreateWorkflowTemplateInput key(String key) {
+  public CreateWorkflowTemplateInput key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * Get key
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public CreateWorkflowTemplateInput name(String name) {
+  public CreateWorkflowTemplateInput name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public CreateWorkflowTemplateInput description(String description) {
+  public CreateWorkflowTemplateInput description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Get description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CreateWorkflowTemplateInput workflowId(String workflowId) {
+  public CreateWorkflowTemplateInput workflowId(@javax.annotation.Nullable String workflowId) {
     this.workflowId = workflowId;
     return this;
   }
 
-   /**
+  /**
    * Get workflowId
    * @return workflowId
-  **/
+   */
   @javax.annotation.Nullable
   public String getWorkflowId() {
     return workflowId;
   }
 
-  public void setWorkflowId(String workflowId) {
+  public void setWorkflowId(@javax.annotation.Nullable String workflowId) {
     this.workflowId = workflowId;
   }
 
 
-  public CreateWorkflowTemplateInput stages(List<StageInput> stages) {
+  public CreateWorkflowTemplateInput stages(@javax.annotation.Nullable List<StageInput> stages) {
     this.stages = stages;
     return this;
   }
@@ -178,73 +187,73 @@ public class CreateWorkflowTemplateInput {
     return this;
   }
 
-   /**
+  /**
    * Get stages
    * @return stages
-  **/
+   */
   @javax.annotation.Nullable
   public List<StageInput> getStages() {
     return stages;
   }
 
-  public void setStages(List<StageInput> stages) {
+  public void setStages(@javax.annotation.Nullable List<StageInput> stages) {
     this.stages = stages;
   }
 
 
-  public CreateWorkflowTemplateInput projectKey(String projectKey) {
+  public CreateWorkflowTemplateInput projectKey(@javax.annotation.Nullable String projectKey) {
     this.projectKey = projectKey;
     return this;
   }
 
-   /**
+  /**
    * Get projectKey
    * @return projectKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getProjectKey() {
     return projectKey;
   }
 
-  public void setProjectKey(String projectKey) {
+  public void setProjectKey(@javax.annotation.Nullable String projectKey) {
     this.projectKey = projectKey;
   }
 
 
-  public CreateWorkflowTemplateInput environmentKey(String environmentKey) {
+  public CreateWorkflowTemplateInput environmentKey(@javax.annotation.Nullable String environmentKey) {
     this.environmentKey = environmentKey;
     return this;
   }
 
-   /**
+  /**
    * Get environmentKey
    * @return environmentKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getEnvironmentKey() {
     return environmentKey;
   }
 
-  public void setEnvironmentKey(String environmentKey) {
+  public void setEnvironmentKey(@javax.annotation.Nullable String environmentKey) {
     this.environmentKey = environmentKey;
   }
 
 
-  public CreateWorkflowTemplateInput flagKey(String flagKey) {
+  public CreateWorkflowTemplateInput flagKey(@javax.annotation.Nullable String flagKey) {
     this.flagKey = flagKey;
     return this;
   }
 
-   /**
+  /**
    * Get flagKey
    * @return flagKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getFlagKey() {
     return flagKey;
   }
 
-  public void setFlagKey(String flagKey) {
+  public void setFlagKey(@javax.annotation.Nullable String flagKey) {
     this.flagKey = flagKey;
   }
 
@@ -353,59 +362,50 @@ public class CreateWorkflowTemplateInput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("key");
-    openapiFields.add("name");
-    openapiFields.add("description");
-    openapiFields.add("workflowId");
-    openapiFields.add("stages");
-    openapiFields.add("projectKey");
-    openapiFields.add("environmentKey");
-    openapiFields.add("flagKey");
+    openapiFields = new HashSet<String>(Arrays.asList("key", "name", "description", "workflowId", "stages", "projectKey", "environmentKey", "flagKey"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("key");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("key"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to CreateWorkflowTemplateInput
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CreateWorkflowTemplateInput
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CreateWorkflowTemplateInput.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CreateWorkflowTemplateInput is not found in the empty JSON string", CreateWorkflowTemplateInput.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in CreateWorkflowTemplateInput is not found in the empty JSON string", CreateWorkflowTemplateInput.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : CreateWorkflowTemplateInput.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if ((jsonObj.get("workflowId") != null && !jsonObj.get("workflowId").isJsonNull()) && !jsonObj.get("workflowId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `workflowId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("workflowId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `workflowId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("workflowId").toString()));
       }
       if (jsonObj.get("stages") != null && !jsonObj.get("stages").isJsonNull()) {
         JsonArray jsonArraystages = jsonObj.getAsJsonArray("stages");
         if (jsonArraystages != null) {
           // ensure the json data is an array
           if (!jsonObj.get("stages").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `stages` to be an array in the JSON string but got `%s`", jsonObj.get("stages").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `stages` to be an array in the JSON string but got `%s`", jsonObj.get("stages").toString()));
           }
 
           // validate the optional field `stages` (array)
@@ -415,13 +415,13 @@ public class CreateWorkflowTemplateInput {
         }
       }
       if ((jsonObj.get("projectKey") != null && !jsonObj.get("projectKey").isJsonNull()) && !jsonObj.get("projectKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `projectKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `projectKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectKey").toString()));
       }
       if ((jsonObj.get("environmentKey") != null && !jsonObj.get("environmentKey").isJsonNull()) && !jsonObj.get("environmentKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
       }
       if ((jsonObj.get("flagKey") != null && !jsonObj.get("flagKey").isJsonNull()) && !jsonObj.get("flagKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `flagKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("flagKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `flagKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("flagKey").toString()));
       }
   }
 
@@ -482,7 +482,7 @@ public class CreateWorkflowTemplateInput {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -497,22 +497,22 @@ public class CreateWorkflowTemplateInput {
     }
   }
 
- /**
-  * Create an instance of CreateWorkflowTemplateInput given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CreateWorkflowTemplateInput
-  * @throws IOException if the JSON string is invalid with respect to CreateWorkflowTemplateInput
-  */
+  /**
+   * Create an instance of CreateWorkflowTemplateInput given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CreateWorkflowTemplateInput
+   * @throws IOException if the JSON string is invalid with respect to CreateWorkflowTemplateInput
+   */
   public static CreateWorkflowTemplateInput fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CreateWorkflowTemplateInput.class);
   }
 
- /**
-  * Convert an instance of CreateWorkflowTemplateInput to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CreateWorkflowTemplateInput to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

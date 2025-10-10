@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -51,120 +52,144 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * AuditLogEntryRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AuditLogEntryRep {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "_accountId";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
+  @javax.annotation.Nonnull
   private String accountId;
 
   public static final String SERIALIZED_NAME_DATE = "date";
   @SerializedName(SERIALIZED_NAME_DATE)
+  @javax.annotation.Nonnull
   private Long date;
 
   public static final String SERIALIZED_NAME_ACCESSES = "accesses";
   @SerializedName(SERIALIZED_NAME_ACCESSES)
+  @javax.annotation.Nonnull
   private List<ResourceAccess> accesses = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
+  @javax.annotation.Nonnull
   private String kind;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nonnull
   private String description;
 
   public static final String SERIALIZED_NAME_SHORT_DESCRIPTION = "shortDescription";
   @SerializedName(SERIALIZED_NAME_SHORT_DESCRIPTION)
+  @javax.annotation.Nonnull
   private String shortDescription;
 
   public static final String SERIALIZED_NAME_COMMENT = "comment";
   @SerializedName(SERIALIZED_NAME_COMMENT)
+  @javax.annotation.Nullable
   private String comment;
 
   public static final String SERIALIZED_NAME_SUBJECT = "subject";
   @SerializedName(SERIALIZED_NAME_SUBJECT)
+  @javax.annotation.Nullable
   private SubjectDataRep subject;
 
   public static final String SERIALIZED_NAME_MEMBER = "member";
   @SerializedName(SERIALIZED_NAME_MEMBER)
+  @javax.annotation.Nullable
   private MemberDataRep member;
 
   public static final String SERIALIZED_NAME_TOKEN = "token";
   @SerializedName(SERIALIZED_NAME_TOKEN)
+  @javax.annotation.Nullable
   private TokenSummary token;
 
   public static final String SERIALIZED_NAME_APP = "app";
   @SerializedName(SERIALIZED_NAME_APP)
+  @javax.annotation.Nullable
   private AuthorizedAppDataRep app;
 
   public static final String SERIALIZED_NAME_TITLE_VERB = "titleVerb";
   @SerializedName(SERIALIZED_NAME_TITLE_VERB)
+  @javax.annotation.Nullable
   private String titleVerb;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
+  @javax.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_TARGET = "target";
   @SerializedName(SERIALIZED_NAME_TARGET)
+  @javax.annotation.Nullable
   private TargetResourceRep target;
 
   public static final String SERIALIZED_NAME_PARENT = "parent";
   @SerializedName(SERIALIZED_NAME_PARENT)
+  @javax.annotation.Nullable
   private ParentResourceRep parent;
 
   public static final String SERIALIZED_NAME_DELTA = "delta";
   @SerializedName(SERIALIZED_NAME_DELTA)
+  @javax.annotation.Nullable
   private Object delta = null;
 
   public static final String SERIALIZED_NAME_TRIGGER_BODY = "triggerBody";
   @SerializedName(SERIALIZED_NAME_TRIGGER_BODY)
+  @javax.annotation.Nullable
   private Object triggerBody = null;
 
   public static final String SERIALIZED_NAME_MERGE = "merge";
   @SerializedName(SERIALIZED_NAME_MERGE)
+  @javax.annotation.Nullable
   private Object merge = null;
 
   public static final String SERIALIZED_NAME_PREVIOUS_VERSION = "previousVersion";
   @SerializedName(SERIALIZED_NAME_PREVIOUS_VERSION)
+  @javax.annotation.Nullable
   private Object previousVersion = null;
 
   public static final String SERIALIZED_NAME_CURRENT_VERSION = "currentVersion";
   @SerializedName(SERIALIZED_NAME_CURRENT_VERSION)
+  @javax.annotation.Nullable
   private Object currentVersion = null;
 
   public static final String SERIALIZED_NAME_SUBENTRIES = "subentries";
   @SerializedName(SERIALIZED_NAME_SUBENTRIES)
+  @javax.annotation.Nullable
   private List<AuditLogEntryListingRep> subentries = new ArrayList<>();
 
   public AuditLogEntryRep() {
   }
 
-  public AuditLogEntryRep links(Map<String, Link> links) {
+  public AuditLogEntryRep links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -177,78 +202,78 @@ public class AuditLogEntryRep {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public AuditLogEntryRep id(String id) {
+  public AuditLogEntryRep id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The ID of the audit log entry
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public AuditLogEntryRep accountId(String accountId) {
+  public AuditLogEntryRep accountId(@javax.annotation.Nonnull String accountId) {
     this.accountId = accountId;
     return this;
   }
 
-   /**
+  /**
    * The ID of the account to which this audit log entry belongs
    * @return accountId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getAccountId() {
     return accountId;
   }
 
-  public void setAccountId(String accountId) {
+  public void setAccountId(@javax.annotation.Nonnull String accountId) {
     this.accountId = accountId;
   }
 
 
-  public AuditLogEntryRep date(Long date) {
+  public AuditLogEntryRep date(@javax.annotation.Nonnull Long date) {
     this.date = date;
     return this;
   }
 
-   /**
+  /**
    * Get date
    * @return date
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getDate() {
     return date;
   }
 
-  public void setDate(Long date) {
+  public void setDate(@javax.annotation.Nonnull Long date) {
     this.date = date;
   }
 
 
-  public AuditLogEntryRep accesses(List<ResourceAccess> accesses) {
+  public AuditLogEntryRep accesses(@javax.annotation.Nonnull List<ResourceAccess> accesses) {
     this.accesses = accesses;
     return this;
   }
@@ -261,363 +286,363 @@ public class AuditLogEntryRep {
     return this;
   }
 
-   /**
+  /**
    * Details on the actions performed and resources acted on in this audit log entry
    * @return accesses
-  **/
+   */
   @javax.annotation.Nonnull
   public List<ResourceAccess> getAccesses() {
     return accesses;
   }
 
-  public void setAccesses(List<ResourceAccess> accesses) {
+  public void setAccesses(@javax.annotation.Nonnull List<ResourceAccess> accesses) {
     this.accesses = accesses;
   }
 
 
-  public AuditLogEntryRep kind(String kind) {
+  public AuditLogEntryRep kind(@javax.annotation.Nonnull String kind) {
     this.kind = kind;
     return this;
   }
 
-   /**
+  /**
    * Get kind
    * @return kind
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKind() {
     return kind;
   }
 
-  public void setKind(String kind) {
+  public void setKind(@javax.annotation.Nonnull String kind) {
     this.kind = kind;
   }
 
 
-  public AuditLogEntryRep name(String name) {
+  public AuditLogEntryRep name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The name of the resource this audit log entry refers to
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public AuditLogEntryRep description(String description) {
+  public AuditLogEntryRep description(@javax.annotation.Nonnull String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Description of the change recorded in the audit log entry
    * @return description
-  **/
+   */
   @javax.annotation.Nonnull
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nonnull String description) {
     this.description = description;
   }
 
 
-  public AuditLogEntryRep shortDescription(String shortDescription) {
+  public AuditLogEntryRep shortDescription(@javax.annotation.Nonnull String shortDescription) {
     this.shortDescription = shortDescription;
     return this;
   }
 
-   /**
+  /**
    * Shorter version of the change recorded in the audit log entry
    * @return shortDescription
-  **/
+   */
   @javax.annotation.Nonnull
   public String getShortDescription() {
     return shortDescription;
   }
 
-  public void setShortDescription(String shortDescription) {
+  public void setShortDescription(@javax.annotation.Nonnull String shortDescription) {
     this.shortDescription = shortDescription;
   }
 
 
-  public AuditLogEntryRep comment(String comment) {
+  public AuditLogEntryRep comment(@javax.annotation.Nullable String comment) {
     this.comment = comment;
     return this;
   }
 
-   /**
+  /**
    * Optional comment for the audit log entry
    * @return comment
-  **/
+   */
   @javax.annotation.Nullable
   public String getComment() {
     return comment;
   }
 
-  public void setComment(String comment) {
+  public void setComment(@javax.annotation.Nullable String comment) {
     this.comment = comment;
   }
 
 
-  public AuditLogEntryRep subject(SubjectDataRep subject) {
+  public AuditLogEntryRep subject(@javax.annotation.Nullable SubjectDataRep subject) {
     this.subject = subject;
     return this;
   }
 
-   /**
+  /**
    * Get subject
    * @return subject
-  **/
+   */
   @javax.annotation.Nullable
   public SubjectDataRep getSubject() {
     return subject;
   }
 
-  public void setSubject(SubjectDataRep subject) {
+  public void setSubject(@javax.annotation.Nullable SubjectDataRep subject) {
     this.subject = subject;
   }
 
 
-  public AuditLogEntryRep member(MemberDataRep member) {
+  public AuditLogEntryRep member(@javax.annotation.Nullable MemberDataRep member) {
     this.member = member;
     return this;
   }
 
-   /**
+  /**
    * Get member
    * @return member
-  **/
+   */
   @javax.annotation.Nullable
   public MemberDataRep getMember() {
     return member;
   }
 
-  public void setMember(MemberDataRep member) {
+  public void setMember(@javax.annotation.Nullable MemberDataRep member) {
     this.member = member;
   }
 
 
-  public AuditLogEntryRep token(TokenSummary token) {
+  public AuditLogEntryRep token(@javax.annotation.Nullable TokenSummary token) {
     this.token = token;
     return this;
   }
 
-   /**
+  /**
    * Get token
    * @return token
-  **/
+   */
   @javax.annotation.Nullable
   public TokenSummary getToken() {
     return token;
   }
 
-  public void setToken(TokenSummary token) {
+  public void setToken(@javax.annotation.Nullable TokenSummary token) {
     this.token = token;
   }
 
 
-  public AuditLogEntryRep app(AuthorizedAppDataRep app) {
+  public AuditLogEntryRep app(@javax.annotation.Nullable AuthorizedAppDataRep app) {
     this.app = app;
     return this;
   }
 
-   /**
+  /**
    * Get app
    * @return app
-  **/
+   */
   @javax.annotation.Nullable
   public AuthorizedAppDataRep getApp() {
     return app;
   }
 
-  public void setApp(AuthorizedAppDataRep app) {
+  public void setApp(@javax.annotation.Nullable AuthorizedAppDataRep app) {
     this.app = app;
   }
 
 
-  public AuditLogEntryRep titleVerb(String titleVerb) {
+  public AuditLogEntryRep titleVerb(@javax.annotation.Nullable String titleVerb) {
     this.titleVerb = titleVerb;
     return this;
   }
 
-   /**
+  /**
    * The action and resource recorded in this audit log entry
    * @return titleVerb
-  **/
+   */
   @javax.annotation.Nullable
   public String getTitleVerb() {
     return titleVerb;
   }
 
-  public void setTitleVerb(String titleVerb) {
+  public void setTitleVerb(@javax.annotation.Nullable String titleVerb) {
     this.titleVerb = titleVerb;
   }
 
 
-  public AuditLogEntryRep title(String title) {
+  public AuditLogEntryRep title(@javax.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
 
-   /**
+  /**
    * A description of what occurred, in the format &lt;code&gt;member&lt;/code&gt; &lt;code&gt;titleVerb&lt;/code&gt; &lt;code&gt;target&lt;/code&gt;
    * @return title
-  **/
+   */
   @javax.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(String title) {
+  public void setTitle(@javax.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public AuditLogEntryRep target(TargetResourceRep target) {
+  public AuditLogEntryRep target(@javax.annotation.Nullable TargetResourceRep target) {
     this.target = target;
     return this;
   }
 
-   /**
+  /**
    * Get target
    * @return target
-  **/
+   */
   @javax.annotation.Nullable
   public TargetResourceRep getTarget() {
     return target;
   }
 
-  public void setTarget(TargetResourceRep target) {
+  public void setTarget(@javax.annotation.Nullable TargetResourceRep target) {
     this.target = target;
   }
 
 
-  public AuditLogEntryRep parent(ParentResourceRep parent) {
+  public AuditLogEntryRep parent(@javax.annotation.Nullable ParentResourceRep parent) {
     this.parent = parent;
     return this;
   }
 
-   /**
+  /**
    * Get parent
    * @return parent
-  **/
+   */
   @javax.annotation.Nullable
   public ParentResourceRep getParent() {
     return parent;
   }
 
-  public void setParent(ParentResourceRep parent) {
+  public void setParent(@javax.annotation.Nullable ParentResourceRep parent) {
     this.parent = parent;
   }
 
 
-  public AuditLogEntryRep delta(Object delta) {
+  public AuditLogEntryRep delta(@javax.annotation.Nullable Object delta) {
     this.delta = delta;
     return this;
   }
 
-   /**
+  /**
    * If the audit log entry has been updated, this is the JSON patch body that was used in the request to update the entity
    * @return delta
-  **/
+   */
   @javax.annotation.Nullable
   public Object getDelta() {
     return delta;
   }
 
-  public void setDelta(Object delta) {
+  public void setDelta(@javax.annotation.Nullable Object delta) {
     this.delta = delta;
   }
 
 
-  public AuditLogEntryRep triggerBody(Object triggerBody) {
+  public AuditLogEntryRep triggerBody(@javax.annotation.Nullable Object triggerBody) {
     this.triggerBody = triggerBody;
     return this;
   }
 
-   /**
+  /**
    * A JSON representation of the external trigger for this audit log entry, if any
    * @return triggerBody
-  **/
+   */
   @javax.annotation.Nullable
   public Object getTriggerBody() {
     return triggerBody;
   }
 
-  public void setTriggerBody(Object triggerBody) {
+  public void setTriggerBody(@javax.annotation.Nullable Object triggerBody) {
     this.triggerBody = triggerBody;
   }
 
 
-  public AuditLogEntryRep merge(Object merge) {
+  public AuditLogEntryRep merge(@javax.annotation.Nullable Object merge) {
     this.merge = merge;
     return this;
   }
 
-   /**
+  /**
    * A JSON representation of the merge information for this audit log entry, if any
    * @return merge
-  **/
+   */
   @javax.annotation.Nullable
   public Object getMerge() {
     return merge;
   }
 
-  public void setMerge(Object merge) {
+  public void setMerge(@javax.annotation.Nullable Object merge) {
     this.merge = merge;
   }
 
 
-  public AuditLogEntryRep previousVersion(Object previousVersion) {
+  public AuditLogEntryRep previousVersion(@javax.annotation.Nullable Object previousVersion) {
     this.previousVersion = previousVersion;
     return this;
   }
 
-   /**
+  /**
    * If the audit log entry has been updated, this is a JSON representation of the previous version of the entity
    * @return previousVersion
-  **/
+   */
   @javax.annotation.Nullable
   public Object getPreviousVersion() {
     return previousVersion;
   }
 
-  public void setPreviousVersion(Object previousVersion) {
+  public void setPreviousVersion(@javax.annotation.Nullable Object previousVersion) {
     this.previousVersion = previousVersion;
   }
 
 
-  public AuditLogEntryRep currentVersion(Object currentVersion) {
+  public AuditLogEntryRep currentVersion(@javax.annotation.Nullable Object currentVersion) {
     this.currentVersion = currentVersion;
     return this;
   }
 
-   /**
+  /**
    * If the audit log entry has been updated, this is a JSON representation of the current version of the entity
    * @return currentVersion
-  **/
+   */
   @javax.annotation.Nullable
   public Object getCurrentVersion() {
     return currentVersion;
   }
 
-  public void setCurrentVersion(Object currentVersion) {
+  public void setCurrentVersion(@javax.annotation.Nullable Object currentVersion) {
     this.currentVersion = currentVersion;
   }
 
 
-  public AuditLogEntryRep subentries(List<AuditLogEntryListingRep> subentries) {
+  public AuditLogEntryRep subentries(@javax.annotation.Nullable List<AuditLogEntryListingRep> subentries) {
     this.subentries = subentries;
     return this;
   }
@@ -630,16 +655,16 @@ public class AuditLogEntryRep {
     return this;
   }
 
-   /**
+  /**
    * Get subentries
    * @return subentries
-  **/
+   */
   @javax.annotation.Nullable
   public List<AuditLogEntryListingRep> getSubentries() {
     return subentries;
   }
 
-  public void setSubentries(List<AuditLogEntryListingRep> subentries) {
+  public void setSubentries(@javax.annotation.Nullable List<AuditLogEntryListingRep> subentries) {
     this.subentries = subentries;
   }
 
@@ -791,74 +816,41 @@ public class AuditLogEntryRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_links");
-    openapiFields.add("_id");
-    openapiFields.add("_accountId");
-    openapiFields.add("date");
-    openapiFields.add("accesses");
-    openapiFields.add("kind");
-    openapiFields.add("name");
-    openapiFields.add("description");
-    openapiFields.add("shortDescription");
-    openapiFields.add("comment");
-    openapiFields.add("subject");
-    openapiFields.add("member");
-    openapiFields.add("token");
-    openapiFields.add("app");
-    openapiFields.add("titleVerb");
-    openapiFields.add("title");
-    openapiFields.add("target");
-    openapiFields.add("parent");
-    openapiFields.add("delta");
-    openapiFields.add("triggerBody");
-    openapiFields.add("merge");
-    openapiFields.add("previousVersion");
-    openapiFields.add("currentVersion");
-    openapiFields.add("subentries");
+    openapiFields = new HashSet<String>(Arrays.asList("_links", "_id", "_accountId", "date", "accesses", "kind", "name", "description", "shortDescription", "comment", "subject", "member", "token", "app", "titleVerb", "title", "target", "parent", "delta", "triggerBody", "merge", "previousVersion", "currentVersion", "subentries"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_links");
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("_accountId");
-    openapiRequiredFields.add("date");
-    openapiRequiredFields.add("accesses");
-    openapiRequiredFields.add("kind");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("description");
-    openapiRequiredFields.add("shortDescription");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_links", "_id", "_accountId", "date", "accesses", "kind", "name", "description", "shortDescription"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to AuditLogEntryRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AuditLogEntryRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AuditLogEntryRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AuditLogEntryRep is not found in the empty JSON string", AuditLogEntryRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AuditLogEntryRep is not found in the empty JSON string", AuditLogEntryRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : AuditLogEntryRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if (!jsonObj.get("_accountId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_accountId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_accountId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_accountId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_accountId").toString()));
       }
       // ensure the json data is an array
       if (!jsonObj.get("accesses").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `accesses` to be an array in the JSON string but got `%s`", jsonObj.get("accesses").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `accesses` to be an array in the JSON string but got `%s`", jsonObj.get("accesses").toString()));
       }
 
       JsonArray jsonArrayaccesses = jsonObj.getAsJsonArray("accesses");
@@ -867,19 +859,19 @@ public class AuditLogEntryRep {
         ResourceAccess.validateJsonElement(jsonArrayaccesses.get(i));
       };
       if (!jsonObj.get("kind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if (!jsonObj.get("shortDescription").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `shortDescription` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shortDescription").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `shortDescription` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shortDescription").toString()));
       }
       if ((jsonObj.get("comment") != null && !jsonObj.get("comment").isJsonNull()) && !jsonObj.get("comment").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `comment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comment").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `comment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comment").toString()));
       }
       // validate the optional field `subject`
       if (jsonObj.get("subject") != null && !jsonObj.get("subject").isJsonNull()) {
@@ -898,10 +890,10 @@ public class AuditLogEntryRep {
         AuthorizedAppDataRep.validateJsonElement(jsonObj.get("app"));
       }
       if ((jsonObj.get("titleVerb") != null && !jsonObj.get("titleVerb").isJsonNull()) && !jsonObj.get("titleVerb").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `titleVerb` to be a primitive type in the JSON string but got `%s`", jsonObj.get("titleVerb").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `titleVerb` to be a primitive type in the JSON string but got `%s`", jsonObj.get("titleVerb").toString()));
       }
       if ((jsonObj.get("title") != null && !jsonObj.get("title").isJsonNull()) && !jsonObj.get("title").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
       }
       // validate the optional field `target`
       if (jsonObj.get("target") != null && !jsonObj.get("target").isJsonNull()) {
@@ -916,7 +908,7 @@ public class AuditLogEntryRep {
         if (jsonArraysubentries != null) {
           // ensure the json data is an array
           if (!jsonObj.get("subentries").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `subentries` to be an array in the JSON string but got `%s`", jsonObj.get("subentries").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `subentries` to be an array in the JSON string but got `%s`", jsonObj.get("subentries").toString()));
           }
 
           // validate the optional field `subentries` (array)
@@ -984,7 +976,7 @@ public class AuditLogEntryRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -999,22 +991,22 @@ public class AuditLogEntryRep {
     }
   }
 
- /**
-  * Create an instance of AuditLogEntryRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AuditLogEntryRep
-  * @throws IOException if the JSON string is invalid with respect to AuditLogEntryRep
-  */
+  /**
+   * Create an instance of AuditLogEntryRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AuditLogEntryRep
+   * @throws IOException if the JSON string is invalid with respect to AuditLogEntryRep
+   */
   public static AuditLogEntryRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AuditLogEntryRep.class);
   }
 
- /**
-  * Convert an instance of AuditLogEntryRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AuditLogEntryRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

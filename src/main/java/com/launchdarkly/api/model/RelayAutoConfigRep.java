@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,136 +43,145 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * RelayAutoConfigRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class RelayAutoConfigRep {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_CREATOR = "_creator";
   @SerializedName(SERIALIZED_NAME_CREATOR)
+  @javax.annotation.Nullable
   private MemberSummary creator;
 
   public static final String SERIALIZED_NAME_ACCESS = "_access";
   @SerializedName(SERIALIZED_NAME_ACCESS)
+  @javax.annotation.Nullable
   private Access access;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_POLICY = "policy";
   @SerializedName(SERIALIZED_NAME_POLICY)
+  @javax.annotation.Nonnull
   private List<Statement> policy = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_FULL_KEY = "fullKey";
   @SerializedName(SERIALIZED_NAME_FULL_KEY)
+  @javax.annotation.Nonnull
   private String fullKey;
 
   public static final String SERIALIZED_NAME_DISPLAY_KEY = "displayKey";
   @SerializedName(SERIALIZED_NAME_DISPLAY_KEY)
+  @javax.annotation.Nonnull
   private String displayKey;
 
   public static final String SERIALIZED_NAME_CREATION_DATE = "creationDate";
   @SerializedName(SERIALIZED_NAME_CREATION_DATE)
+  @javax.annotation.Nonnull
   private Long creationDate;
 
   public static final String SERIALIZED_NAME_LAST_MODIFIED = "lastModified";
   @SerializedName(SERIALIZED_NAME_LAST_MODIFIED)
+  @javax.annotation.Nonnull
   private Long lastModified;
 
   public RelayAutoConfigRep() {
   }
 
-  public RelayAutoConfigRep id(String id) {
+  public RelayAutoConfigRep id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public RelayAutoConfigRep creator(MemberSummary creator) {
+  public RelayAutoConfigRep creator(@javax.annotation.Nullable MemberSummary creator) {
     this.creator = creator;
     return this;
   }
 
-   /**
+  /**
    * Get creator
    * @return creator
-  **/
+   */
   @javax.annotation.Nullable
   public MemberSummary getCreator() {
     return creator;
   }
 
-  public void setCreator(MemberSummary creator) {
+  public void setCreator(@javax.annotation.Nullable MemberSummary creator) {
     this.creator = creator;
   }
 
 
-  public RelayAutoConfigRep access(Access access) {
+  public RelayAutoConfigRep access(@javax.annotation.Nullable Access access) {
     this.access = access;
     return this;
   }
 
-   /**
+  /**
    * Get access
    * @return access
-  **/
+   */
   @javax.annotation.Nullable
   public Access getAccess() {
     return access;
   }
 
-  public void setAccess(Access access) {
+  public void setAccess(@javax.annotation.Nullable Access access) {
     this.access = access;
   }
 
 
-  public RelayAutoConfigRep name(String name) {
+  public RelayAutoConfigRep name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for the Relay Proxy configuration
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public RelayAutoConfigRep policy(List<Statement> policy) {
+  public RelayAutoConfigRep policy(@javax.annotation.Nonnull List<Statement> policy) {
     this.policy = policy;
     return this;
   }
@@ -184,92 +194,92 @@ public class RelayAutoConfigRep {
     return this;
   }
 
-   /**
+  /**
    * A description of what environments and projects the Relay Proxy should include or exclude
    * @return policy
-  **/
+   */
   @javax.annotation.Nonnull
   public List<Statement> getPolicy() {
     return policy;
   }
 
-  public void setPolicy(List<Statement> policy) {
+  public void setPolicy(@javax.annotation.Nonnull List<Statement> policy) {
     this.policy = policy;
   }
 
 
-  public RelayAutoConfigRep fullKey(String fullKey) {
+  public RelayAutoConfigRep fullKey(@javax.annotation.Nonnull String fullKey) {
     this.fullKey = fullKey;
     return this;
   }
 
-   /**
+  /**
    * The Relay Proxy configuration key
    * @return fullKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getFullKey() {
     return fullKey;
   }
 
-  public void setFullKey(String fullKey) {
+  public void setFullKey(@javax.annotation.Nonnull String fullKey) {
     this.fullKey = fullKey;
   }
 
 
-  public RelayAutoConfigRep displayKey(String displayKey) {
+  public RelayAutoConfigRep displayKey(@javax.annotation.Nonnull String displayKey) {
     this.displayKey = displayKey;
     return this;
   }
 
-   /**
+  /**
    * The last few characters of the Relay Proxy configuration key, displayed in the LaunchDarkly UI
    * @return displayKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getDisplayKey() {
     return displayKey;
   }
 
-  public void setDisplayKey(String displayKey) {
+  public void setDisplayKey(@javax.annotation.Nonnull String displayKey) {
     this.displayKey = displayKey;
   }
 
 
-  public RelayAutoConfigRep creationDate(Long creationDate) {
+  public RelayAutoConfigRep creationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
     return this;
   }
 
-   /**
+  /**
    * Get creationDate
    * @return creationDate
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate(Long creationDate) {
+  public void setCreationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
   }
 
 
-  public RelayAutoConfigRep lastModified(Long lastModified) {
+  public RelayAutoConfigRep lastModified(@javax.annotation.Nonnull Long lastModified) {
     this.lastModified = lastModified;
     return this;
   }
 
-   /**
+  /**
    * Get lastModified
    * @return lastModified
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getLastModified() {
     return lastModified;
   }
 
-  public void setLastModified(Long lastModified) {
+  public void setLastModified(@javax.annotation.Nonnull Long lastModified) {
     this.lastModified = lastModified;
   }
 
@@ -380,50 +390,34 @@ public class RelayAutoConfigRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_id");
-    openapiFields.add("_creator");
-    openapiFields.add("_access");
-    openapiFields.add("name");
-    openapiFields.add("policy");
-    openapiFields.add("fullKey");
-    openapiFields.add("displayKey");
-    openapiFields.add("creationDate");
-    openapiFields.add("lastModified");
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "_creator", "_access", "name", "policy", "fullKey", "displayKey", "creationDate", "lastModified"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("policy");
-    openapiRequiredFields.add("fullKey");
-    openapiRequiredFields.add("displayKey");
-    openapiRequiredFields.add("creationDate");
-    openapiRequiredFields.add("lastModified");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "name", "policy", "fullKey", "displayKey", "creationDate", "lastModified"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to RelayAutoConfigRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to RelayAutoConfigRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RelayAutoConfigRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in RelayAutoConfigRep is not found in the empty JSON string", RelayAutoConfigRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in RelayAutoConfigRep is not found in the empty JSON string", RelayAutoConfigRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : RelayAutoConfigRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       // validate the optional field `_creator`
       if (jsonObj.get("_creator") != null && !jsonObj.get("_creator").isJsonNull()) {
@@ -434,11 +428,11 @@ public class RelayAutoConfigRep {
         Access.validateJsonElement(jsonObj.get("_access"));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // ensure the json data is an array
       if (!jsonObj.get("policy").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `policy` to be an array in the JSON string but got `%s`", jsonObj.get("policy").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `policy` to be an array in the JSON string but got `%s`", jsonObj.get("policy").toString()));
       }
 
       JsonArray jsonArraypolicy = jsonObj.getAsJsonArray("policy");
@@ -447,10 +441,10 @@ public class RelayAutoConfigRep {
         Statement.validateJsonElement(jsonArraypolicy.get(i));
       };
       if (!jsonObj.get("fullKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `fullKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fullKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `fullKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fullKey").toString()));
       }
       if (!jsonObj.get("displayKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `displayKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("displayKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `displayKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("displayKey").toString()));
       }
   }
 
@@ -511,7 +505,7 @@ public class RelayAutoConfigRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -526,22 +520,22 @@ public class RelayAutoConfigRep {
     }
   }
 
- /**
-  * Create an instance of RelayAutoConfigRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RelayAutoConfigRep
-  * @throws IOException if the JSON string is invalid with respect to RelayAutoConfigRep
-  */
+  /**
+   * Create an instance of RelayAutoConfigRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of RelayAutoConfigRep
+   * @throws IOException if the JSON string is invalid with respect to RelayAutoConfigRep
+   */
   public static RelayAutoConfigRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, RelayAutoConfigRep.class);
   }
 
- /**
-  * Convert an instance of RelayAutoConfigRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of RelayAutoConfigRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

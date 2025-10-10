@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,65 +38,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ClientSideAvailability
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ClientSideAvailability {
   public static final String SERIALIZED_NAME_USING_MOBILE_KEY = "usingMobileKey";
   @SerializedName(SERIALIZED_NAME_USING_MOBILE_KEY)
+  @javax.annotation.Nullable
   private Boolean usingMobileKey;
 
   public static final String SERIALIZED_NAME_USING_ENVIRONMENT_ID = "usingEnvironmentId";
   @SerializedName(SERIALIZED_NAME_USING_ENVIRONMENT_ID)
+  @javax.annotation.Nullable
   private Boolean usingEnvironmentId;
 
   public ClientSideAvailability() {
   }
 
-  public ClientSideAvailability usingMobileKey(Boolean usingMobileKey) {
+  public ClientSideAvailability usingMobileKey(@javax.annotation.Nullable Boolean usingMobileKey) {
     this.usingMobileKey = usingMobileKey;
     return this;
   }
 
-   /**
+  /**
    * Get usingMobileKey
    * @return usingMobileKey
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getUsingMobileKey() {
     return usingMobileKey;
   }
 
-  public void setUsingMobileKey(Boolean usingMobileKey) {
+  public void setUsingMobileKey(@javax.annotation.Nullable Boolean usingMobileKey) {
     this.usingMobileKey = usingMobileKey;
   }
 
 
-  public ClientSideAvailability usingEnvironmentId(Boolean usingEnvironmentId) {
+  public ClientSideAvailability usingEnvironmentId(@javax.annotation.Nullable Boolean usingEnvironmentId) {
     this.usingEnvironmentId = usingEnvironmentId;
     return this;
   }
 
-   /**
+  /**
    * Get usingEnvironmentId
    * @return usingEnvironmentId
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getUsingEnvironmentId() {
     return usingEnvironmentId;
   }
 
-  public void setUsingEnvironmentId(Boolean usingEnvironmentId) {
+  public void setUsingEnvironmentId(@javax.annotation.Nullable Boolean usingEnvironmentId) {
     this.usingEnvironmentId = usingEnvironmentId;
   }
 
@@ -192,24 +195,22 @@ public class ClientSideAvailability {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("usingMobileKey");
-    openapiFields.add("usingEnvironmentId");
+    openapiFields = new HashSet<String>(Arrays.asList("usingMobileKey", "usingEnvironmentId"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ClientSideAvailability
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ClientSideAvailability
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ClientSideAvailability.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ClientSideAvailability is not found in the empty JSON string", ClientSideAvailability.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ClientSideAvailability is not found in the empty JSON string", ClientSideAvailability.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -272,7 +273,7 @@ public class ClientSideAvailability {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -287,22 +288,22 @@ public class ClientSideAvailability {
     }
   }
 
- /**
-  * Create an instance of ClientSideAvailability given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ClientSideAvailability
-  * @throws IOException if the JSON string is invalid with respect to ClientSideAvailability
-  */
+  /**
+   * Create an instance of ClientSideAvailability given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ClientSideAvailability
+   * @throws IOException if the JSON string is invalid with respect to ClientSideAvailability
+   */
   public static ClientSideAvailability fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ClientSideAvailability.class);
   }
 
- /**
-  * Convert an instance of ClientSideAvailability to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ClientSideAvailability to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

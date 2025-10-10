@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,51 +41,53 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * UpdatePhaseStatusInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class UpdatePhaseStatusInput {
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private String status;
 
   public static final String SERIALIZED_NAME_AUDIENCES = "audiences";
   @SerializedName(SERIALIZED_NAME_AUDIENCES)
+  @javax.annotation.Nullable
   private List<ReleaserAudienceConfigInput> audiences = new ArrayList<>();
 
   public UpdatePhaseStatusInput() {
   }
 
-  public UpdatePhaseStatusInput status(String status) {
+  public UpdatePhaseStatusInput status(@javax.annotation.Nullable String status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   public String getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(@javax.annotation.Nullable String status) {
     this.status = status;
   }
 
 
-  public UpdatePhaseStatusInput audiences(List<ReleaserAudienceConfigInput> audiences) {
+  public UpdatePhaseStatusInput audiences(@javax.annotation.Nullable List<ReleaserAudienceConfigInput> audiences) {
     this.audiences = audiences;
     return this;
   }
@@ -97,16 +100,16 @@ public class UpdatePhaseStatusInput {
     return this;
   }
 
-   /**
+  /**
    * Extra configuration for audiences required upon phase initialization.
    * @return audiences
-  **/
+   */
   @javax.annotation.Nullable
   public List<ReleaserAudienceConfigInput> getAudiences() {
     return audiences;
   }
 
-  public void setAudiences(List<ReleaserAudienceConfigInput> audiences) {
+  public void setAudiences(@javax.annotation.Nullable List<ReleaserAudienceConfigInput> audiences) {
     this.audiences = audiences;
   }
 
@@ -203,36 +206,34 @@ public class UpdatePhaseStatusInput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("status");
-    openapiFields.add("audiences");
+    openapiFields = new HashSet<String>(Arrays.asList("status", "audiences"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to UpdatePhaseStatusInput
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to UpdatePhaseStatusInput
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UpdatePhaseStatusInput.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdatePhaseStatusInput is not found in the empty JSON string", UpdatePhaseStatusInput.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in UpdatePhaseStatusInput is not found in the empty JSON string", UpdatePhaseStatusInput.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
       if (jsonObj.get("audiences") != null && !jsonObj.get("audiences").isJsonNull()) {
         JsonArray jsonArrayaudiences = jsonObj.getAsJsonArray("audiences");
         if (jsonArrayaudiences != null) {
           // ensure the json data is an array
           if (!jsonObj.get("audiences").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `audiences` to be an array in the JSON string but got `%s`", jsonObj.get("audiences").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `audiences` to be an array in the JSON string but got `%s`", jsonObj.get("audiences").toString()));
           }
 
           // validate the optional field `audiences` (array)
@@ -300,7 +301,7 @@ public class UpdatePhaseStatusInput {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -315,22 +316,22 @@ public class UpdatePhaseStatusInput {
     }
   }
 
- /**
-  * Create an instance of UpdatePhaseStatusInput given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UpdatePhaseStatusInput
-  * @throws IOException if the JSON string is invalid with respect to UpdatePhaseStatusInput
-  */
+  /**
+   * Create an instance of UpdatePhaseStatusInput given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of UpdatePhaseStatusInput
+   * @throws IOException if the JSON string is invalid with respect to UpdatePhaseStatusInput
+   */
   public static UpdatePhaseStatusInput fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, UpdatePhaseStatusInput.class);
   }
 
- /**
-  * Convert an instance of UpdatePhaseStatusInput to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of UpdatePhaseStatusInput to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,109 +45,116 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ContextInstanceRecord
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ContextInstanceRecord {
   public static final String SERIALIZED_NAME_LAST_SEEN = "lastSeen";
   @SerializedName(SERIALIZED_NAME_LAST_SEEN)
+  @javax.annotation.Nullable
   private OffsetDateTime lastSeen;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_APPLICATION_ID = "applicationId";
   @SerializedName(SERIALIZED_NAME_APPLICATION_ID)
+  @javax.annotation.Nullable
   private String applicationId;
 
   public static final String SERIALIZED_NAME_ANONYMOUS_KINDS = "anonymousKinds";
   @SerializedName(SERIALIZED_NAME_ANONYMOUS_KINDS)
+  @javax.annotation.Nullable
   private List<String> anonymousKinds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CONTEXT = "context";
   @SerializedName(SERIALIZED_NAME_CONTEXT)
+  @javax.annotation.Nullable
   private Object context = null;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_ACCESS = "_access";
   @SerializedName(SERIALIZED_NAME_ACCESS)
+  @javax.annotation.Nullable
   private Access access;
 
   public ContextInstanceRecord() {
   }
 
-  public ContextInstanceRecord lastSeen(OffsetDateTime lastSeen) {
+  public ContextInstanceRecord lastSeen(@javax.annotation.Nullable OffsetDateTime lastSeen) {
     this.lastSeen = lastSeen;
     return this;
   }
 
-   /**
+  /**
    * Timestamp of the last time an evaluation occurred for this context instance
    * @return lastSeen
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getLastSeen() {
     return lastSeen;
   }
 
-  public void setLastSeen(OffsetDateTime lastSeen) {
+  public void setLastSeen(@javax.annotation.Nullable OffsetDateTime lastSeen) {
     this.lastSeen = lastSeen;
   }
 
 
-  public ContextInstanceRecord id(String id) {
+  public ContextInstanceRecord id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The context instance ID
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public ContextInstanceRecord applicationId(String applicationId) {
+  public ContextInstanceRecord applicationId(@javax.annotation.Nullable String applicationId) {
     this.applicationId = applicationId;
     return this;
   }
 
-   /**
+  /**
    * An identifier representing the application where the LaunchDarkly SDK is running
    * @return applicationId
-  **/
+   */
   @javax.annotation.Nullable
   public String getApplicationId() {
     return applicationId;
   }
 
-  public void setApplicationId(String applicationId) {
+  public void setApplicationId(@javax.annotation.Nullable String applicationId) {
     this.applicationId = applicationId;
   }
 
 
-  public ContextInstanceRecord anonymousKinds(List<String> anonymousKinds) {
+  public ContextInstanceRecord anonymousKinds(@javax.annotation.Nullable List<String> anonymousKinds) {
     this.anonymousKinds = anonymousKinds;
     return this;
   }
@@ -159,40 +167,40 @@ public class ContextInstanceRecord {
     return this;
   }
 
-   /**
+  /**
    * A list of the context kinds this context was associated with that the SDK removed because they were marked as anonymous at flag evaluation
    * @return anonymousKinds
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getAnonymousKinds() {
     return anonymousKinds;
   }
 
-  public void setAnonymousKinds(List<String> anonymousKinds) {
+  public void setAnonymousKinds(@javax.annotation.Nullable List<String> anonymousKinds) {
     this.anonymousKinds = anonymousKinds;
   }
 
 
-  public ContextInstanceRecord context(Object context) {
+  public ContextInstanceRecord context(@javax.annotation.Nullable Object context) {
     this.context = context;
     return this;
   }
 
-   /**
+  /**
    * The context, including its kind and attributes
    * @return context
-  **/
+   */
   @javax.annotation.Nullable
   public Object getContext() {
     return context;
   }
 
-  public void setContext(Object context) {
+  public void setContext(@javax.annotation.Nullable Object context) {
     this.context = context;
   }
 
 
-  public ContextInstanceRecord links(Map<String, Link> links) {
+  public ContextInstanceRecord links(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -205,35 +213,35 @@ public class ContextInstanceRecord {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public ContextInstanceRecord access(Access access) {
+  public ContextInstanceRecord access(@javax.annotation.Nullable Access access) {
     this.access = access;
     return this;
   }
 
-   /**
+  /**
    * Get access
    * @return access
-  **/
+   */
   @javax.annotation.Nullable
   public Access getAccess() {
     return access;
   }
 
-  public void setAccess(Access access) {
+  public void setAccess(@javax.annotation.Nullable Access access) {
     this.access = access;
   }
 
@@ -340,50 +348,41 @@ public class ContextInstanceRecord {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("lastSeen");
-    openapiFields.add("id");
-    openapiFields.add("applicationId");
-    openapiFields.add("anonymousKinds");
-    openapiFields.add("context");
-    openapiFields.add("_links");
-    openapiFields.add("_access");
+    openapiFields = new HashSet<String>(Arrays.asList("lastSeen", "id", "applicationId", "anonymousKinds", "context", "_links", "_access"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("id");
-    openapiRequiredFields.add("context");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("id", "context"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ContextInstanceRecord
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ContextInstanceRecord
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ContextInstanceRecord.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ContextInstanceRecord is not found in the empty JSON string", ContextInstanceRecord.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ContextInstanceRecord is not found in the empty JSON string", ContextInstanceRecord.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ContextInstanceRecord.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
       if ((jsonObj.get("applicationId") != null && !jsonObj.get("applicationId").isJsonNull()) && !jsonObj.get("applicationId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `applicationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicationId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `applicationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicationId").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("anonymousKinds") != null && !jsonObj.get("anonymousKinds").isJsonNull() && !jsonObj.get("anonymousKinds").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `anonymousKinds` to be an array in the JSON string but got `%s`", jsonObj.get("anonymousKinds").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `anonymousKinds` to be an array in the JSON string but got `%s`", jsonObj.get("anonymousKinds").toString()));
       }
       // validate the optional field `_access`
       if (jsonObj.get("_access") != null && !jsonObj.get("_access").isJsonNull()) {
@@ -448,7 +447,7 @@ public class ContextInstanceRecord {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -463,22 +462,22 @@ public class ContextInstanceRecord {
     }
   }
 
- /**
-  * Create an instance of ContextInstanceRecord given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ContextInstanceRecord
-  * @throws IOException if the JSON string is invalid with respect to ContextInstanceRecord
-  */
+  /**
+   * Create an instance of ContextInstanceRecord given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ContextInstanceRecord
+   * @throws IOException if the JSON string is invalid with respect to ContextInstanceRecord
+   */
   public static ContextInstanceRecord fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ContextInstanceRecord.class);
   }
 
- /**
-  * Convert an instance of ContextInstanceRecord to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ContextInstanceRecord to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

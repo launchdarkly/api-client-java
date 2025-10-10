@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,30 +38,30 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * PatchSegmentExpiringTargetInstruction
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class PatchSegmentExpiringTargetInstruction {
   /**
    * The type of change to make to the context&#39;s removal date from this segment
    */
   @JsonAdapter(KindEnum.Adapter.class)
   public enum KindEnum {
-    ADDEXPIRINGTARGET("addExpiringTarget"),
+    ADD_EXPIRING_TARGET("addExpiringTarget"),
     
-    UPDATEEXPIRINGTARGET("updateExpiringTarget"),
+    UPDATE_EXPIRING_TARGET("updateExpiringTarget"),
     
-    REMOVEEXPIRINGTARGET("removeExpiringTarget");
+    REMOVE_EXPIRING_TARGET("removeExpiringTarget");
 
     private String value;
 
@@ -107,14 +108,17 @@ public class PatchSegmentExpiringTargetInstruction {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
+  @javax.annotation.Nonnull
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_CONTEXT_KEY = "contextKey";
   @SerializedName(SERIALIZED_NAME_CONTEXT_KEY)
+  @javax.annotation.Nonnull
   private String contextKey;
 
   public static final String SERIALIZED_NAME_CONTEXT_KIND = "contextKind";
   @SerializedName(SERIALIZED_NAME_CONTEXT_KIND)
+  @javax.annotation.Nonnull
   private String contextKind;
 
   /**
@@ -171,129 +175,132 @@ public class PatchSegmentExpiringTargetInstruction {
 
   public static final String SERIALIZED_NAME_TARGET_TYPE = "targetType";
   @SerializedName(SERIALIZED_NAME_TARGET_TYPE)
+  @javax.annotation.Nonnull
   private TargetTypeEnum targetType;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nullable
   private Long value;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
   private Integer version;
 
   public PatchSegmentExpiringTargetInstruction() {
   }
 
-  public PatchSegmentExpiringTargetInstruction kind(KindEnum kind) {
+  public PatchSegmentExpiringTargetInstruction kind(@javax.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
 
-   /**
+  /**
    * The type of change to make to the context&#39;s removal date from this segment
    * @return kind
-  **/
+   */
   @javax.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(KindEnum kind) {
+  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public PatchSegmentExpiringTargetInstruction contextKey(String contextKey) {
+  public PatchSegmentExpiringTargetInstruction contextKey(@javax.annotation.Nonnull String contextKey) {
     this.contextKey = contextKey;
     return this;
   }
 
-   /**
+  /**
    * A unique key used to represent the context
    * @return contextKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getContextKey() {
     return contextKey;
   }
 
-  public void setContextKey(String contextKey) {
+  public void setContextKey(@javax.annotation.Nonnull String contextKey) {
     this.contextKey = contextKey;
   }
 
 
-  public PatchSegmentExpiringTargetInstruction contextKind(String contextKind) {
+  public PatchSegmentExpiringTargetInstruction contextKind(@javax.annotation.Nonnull String contextKind) {
     this.contextKind = contextKind;
     return this;
   }
 
-   /**
+  /**
    * The kind of context
    * @return contextKind
-  **/
+   */
   @javax.annotation.Nonnull
   public String getContextKind() {
     return contextKind;
   }
 
-  public void setContextKind(String contextKind) {
+  public void setContextKind(@javax.annotation.Nonnull String contextKind) {
     this.contextKind = contextKind;
   }
 
 
-  public PatchSegmentExpiringTargetInstruction targetType(TargetTypeEnum targetType) {
+  public PatchSegmentExpiringTargetInstruction targetType(@javax.annotation.Nonnull TargetTypeEnum targetType) {
     this.targetType = targetType;
     return this;
   }
 
-   /**
+  /**
    * The segment&#39;s target type
    * @return targetType
-  **/
+   */
   @javax.annotation.Nonnull
   public TargetTypeEnum getTargetType() {
     return targetType;
   }
 
-  public void setTargetType(TargetTypeEnum targetType) {
+  public void setTargetType(@javax.annotation.Nonnull TargetTypeEnum targetType) {
     this.targetType = targetType;
   }
 
 
-  public PatchSegmentExpiringTargetInstruction value(Long value) {
+  public PatchSegmentExpiringTargetInstruction value(@javax.annotation.Nullable Long value) {
     this.value = value;
     return this;
   }
 
-   /**
+  /**
    * The time, in Unix milliseconds, when the context should be removed from this segment. Required if &lt;code&gt;kind&lt;/code&gt; is &lt;code&gt;addExpiringTarget&lt;/code&gt; or &lt;code&gt;updateExpiringTarget&lt;/code&gt;.
    * @return value
-  **/
+   */
   @javax.annotation.Nullable
   public Long getValue() {
     return value;
   }
 
-  public void setValue(Long value) {
+  public void setValue(@javax.annotation.Nullable Long value) {
     this.value = value;
   }
 
 
-  public PatchSegmentExpiringTargetInstruction version(Integer version) {
+  public PatchSegmentExpiringTargetInstruction version(@javax.annotation.Nullable Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * The version of the expiring target to update. Optional and only used if &lt;code&gt;kind&lt;/code&gt; is &lt;code&gt;updateExpiringTarget&lt;/code&gt;. If included, update will fail if version doesn&#39;t match current version of the expiring target.
    * @return version
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nullable Integer version) {
     this.version = version;
   }
 
@@ -398,55 +405,45 @@ public class PatchSegmentExpiringTargetInstruction {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("kind");
-    openapiFields.add("contextKey");
-    openapiFields.add("contextKind");
-    openapiFields.add("targetType");
-    openapiFields.add("value");
-    openapiFields.add("version");
+    openapiFields = new HashSet<String>(Arrays.asList("kind", "contextKey", "contextKind", "targetType", "value", "version"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("kind");
-    openapiRequiredFields.add("contextKey");
-    openapiRequiredFields.add("contextKind");
-    openapiRequiredFields.add("targetType");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("kind", "contextKey", "contextKind", "targetType"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to PatchSegmentExpiringTargetInstruction
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PatchSegmentExpiringTargetInstruction
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PatchSegmentExpiringTargetInstruction.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PatchSegmentExpiringTargetInstruction is not found in the empty JSON string", PatchSegmentExpiringTargetInstruction.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in PatchSegmentExpiringTargetInstruction is not found in the empty JSON string", PatchSegmentExpiringTargetInstruction.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : PatchSegmentExpiringTargetInstruction.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("kind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
       // validate the required field `kind`
       KindEnum.validateJsonElement(jsonObj.get("kind"));
       if (!jsonObj.get("contextKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `contextKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("contextKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `contextKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("contextKey").toString()));
       }
       if (!jsonObj.get("contextKind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `contextKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("contextKind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `contextKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("contextKind").toString()));
       }
       if (!jsonObj.get("targetType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `targetType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("targetType").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `targetType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("targetType").toString()));
       }
       // validate the required field `targetType`
       TargetTypeEnum.validateJsonElement(jsonObj.get("targetType"));
@@ -509,7 +506,7 @@ public class PatchSegmentExpiringTargetInstruction {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -524,22 +521,22 @@ public class PatchSegmentExpiringTargetInstruction {
     }
   }
 
- /**
-  * Create an instance of PatchSegmentExpiringTargetInstruction given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PatchSegmentExpiringTargetInstruction
-  * @throws IOException if the JSON string is invalid with respect to PatchSegmentExpiringTargetInstruction
-  */
+  /**
+   * Create an instance of PatchSegmentExpiringTargetInstruction given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PatchSegmentExpiringTargetInstruction
+   * @throws IOException if the JSON string is invalid with respect to PatchSegmentExpiringTargetInstruction
+   */
   public static PatchSegmentExpiringTargetInstruction fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PatchSegmentExpiringTargetInstruction.class);
   }
 
- /**
-  * Convert an instance of PatchSegmentExpiringTargetInstruction to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PatchSegmentExpiringTargetInstruction to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,180 +38,187 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * InsightGroupsCountByIndicator
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class InsightGroupsCountByIndicator {
   public static final String SERIALIZED_NAME_EXCELLENT = "excellent";
   @SerializedName(SERIALIZED_NAME_EXCELLENT)
+  @javax.annotation.Nonnull
   private Integer excellent;
 
   public static final String SERIALIZED_NAME_GOOD = "good";
   @SerializedName(SERIALIZED_NAME_GOOD)
+  @javax.annotation.Nonnull
   private Integer good;
 
   public static final String SERIALIZED_NAME_FAIR = "fair";
   @SerializedName(SERIALIZED_NAME_FAIR)
+  @javax.annotation.Nonnull
   private Integer fair;
 
   public static final String SERIALIZED_NAME_NEEDS_ATTENTION = "needsAttention";
   @SerializedName(SERIALIZED_NAME_NEEDS_ATTENTION)
+  @javax.annotation.Nonnull
   private Integer needsAttention;
 
   public static final String SERIALIZED_NAME_NOT_CALCULATED = "notCalculated";
   @SerializedName(SERIALIZED_NAME_NOT_CALCULATED)
+  @javax.annotation.Nonnull
   private Integer notCalculated;
 
   public static final String SERIALIZED_NAME_UNKNOWN = "unknown";
   @SerializedName(SERIALIZED_NAME_UNKNOWN)
+  @javax.annotation.Nonnull
   private Integer unknown;
 
   public static final String SERIALIZED_NAME_TOTAL = "total";
   @SerializedName(SERIALIZED_NAME_TOTAL)
+  @javax.annotation.Nonnull
   private Integer total;
 
   public InsightGroupsCountByIndicator() {
   }
 
-  public InsightGroupsCountByIndicator excellent(Integer excellent) {
+  public InsightGroupsCountByIndicator excellent(@javax.annotation.Nonnull Integer excellent) {
     this.excellent = excellent;
     return this;
   }
 
-   /**
+  /**
    * The number of insight groups with an excellent indicator
    * @return excellent
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getExcellent() {
     return excellent;
   }
 
-  public void setExcellent(Integer excellent) {
+  public void setExcellent(@javax.annotation.Nonnull Integer excellent) {
     this.excellent = excellent;
   }
 
 
-  public InsightGroupsCountByIndicator good(Integer good) {
+  public InsightGroupsCountByIndicator good(@javax.annotation.Nonnull Integer good) {
     this.good = good;
     return this;
   }
 
-   /**
+  /**
    * The number of insight groups with a good indicator
    * @return good
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getGood() {
     return good;
   }
 
-  public void setGood(Integer good) {
+  public void setGood(@javax.annotation.Nonnull Integer good) {
     this.good = good;
   }
 
 
-  public InsightGroupsCountByIndicator fair(Integer fair) {
+  public InsightGroupsCountByIndicator fair(@javax.annotation.Nonnull Integer fair) {
     this.fair = fair;
     return this;
   }
 
-   /**
+  /**
    * The number of insight groups with a fair indicator
    * @return fair
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getFair() {
     return fair;
   }
 
-  public void setFair(Integer fair) {
+  public void setFair(@javax.annotation.Nonnull Integer fair) {
     this.fair = fair;
   }
 
 
-  public InsightGroupsCountByIndicator needsAttention(Integer needsAttention) {
+  public InsightGroupsCountByIndicator needsAttention(@javax.annotation.Nonnull Integer needsAttention) {
     this.needsAttention = needsAttention;
     return this;
   }
 
-   /**
+  /**
    * The number of insight groups with a needs attention indicator
    * @return needsAttention
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getNeedsAttention() {
     return needsAttention;
   }
 
-  public void setNeedsAttention(Integer needsAttention) {
+  public void setNeedsAttention(@javax.annotation.Nonnull Integer needsAttention) {
     this.needsAttention = needsAttention;
   }
 
 
-  public InsightGroupsCountByIndicator notCalculated(Integer notCalculated) {
+  public InsightGroupsCountByIndicator notCalculated(@javax.annotation.Nonnull Integer notCalculated) {
     this.notCalculated = notCalculated;
     return this;
   }
 
-   /**
+  /**
    * The number of insight groups with a not calculated indicator
    * @return notCalculated
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getNotCalculated() {
     return notCalculated;
   }
 
-  public void setNotCalculated(Integer notCalculated) {
+  public void setNotCalculated(@javax.annotation.Nonnull Integer notCalculated) {
     this.notCalculated = notCalculated;
   }
 
 
-  public InsightGroupsCountByIndicator unknown(Integer unknown) {
+  public InsightGroupsCountByIndicator unknown(@javax.annotation.Nonnull Integer unknown) {
     this.unknown = unknown;
     return this;
   }
 
-   /**
+  /**
    * The number of insight groups with an unknown indicator
    * @return unknown
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getUnknown() {
     return unknown;
   }
 
-  public void setUnknown(Integer unknown) {
+  public void setUnknown(@javax.annotation.Nonnull Integer unknown) {
     this.unknown = unknown;
   }
 
 
-  public InsightGroupsCountByIndicator total(Integer total) {
+  public InsightGroupsCountByIndicator total(@javax.annotation.Nonnull Integer total) {
     this.total = total;
     return this;
   }
 
-   /**
+  /**
    * The total number of insight groups
    * @return total
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getTotal() {
     return total;
   }
 
-  public void setTotal(Integer total) {
+  public void setTotal(@javax.annotation.Nonnull Integer total) {
     this.total = total;
   }
 
@@ -317,43 +325,29 @@ public class InsightGroupsCountByIndicator {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("excellent");
-    openapiFields.add("good");
-    openapiFields.add("fair");
-    openapiFields.add("needsAttention");
-    openapiFields.add("notCalculated");
-    openapiFields.add("unknown");
-    openapiFields.add("total");
+    openapiFields = new HashSet<String>(Arrays.asList("excellent", "good", "fair", "needsAttention", "notCalculated", "unknown", "total"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("excellent");
-    openapiRequiredFields.add("good");
-    openapiRequiredFields.add("fair");
-    openapiRequiredFields.add("needsAttention");
-    openapiRequiredFields.add("notCalculated");
-    openapiRequiredFields.add("unknown");
-    openapiRequiredFields.add("total");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("excellent", "good", "fair", "needsAttention", "notCalculated", "unknown", "total"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to InsightGroupsCountByIndicator
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to InsightGroupsCountByIndicator
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!InsightGroupsCountByIndicator.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in InsightGroupsCountByIndicator is not found in the empty JSON string", InsightGroupsCountByIndicator.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in InsightGroupsCountByIndicator is not found in the empty JSON string", InsightGroupsCountByIndicator.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : InsightGroupsCountByIndicator.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -416,7 +410,7 @@ public class InsightGroupsCountByIndicator {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -431,22 +425,22 @@ public class InsightGroupsCountByIndicator {
     }
   }
 
- /**
-  * Create an instance of InsightGroupsCountByIndicator given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of InsightGroupsCountByIndicator
-  * @throws IOException if the JSON string is invalid with respect to InsightGroupsCountByIndicator
-  */
+  /**
+   * Create an instance of InsightGroupsCountByIndicator given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of InsightGroupsCountByIndicator
+   * @throws IOException if the JSON string is invalid with respect to InsightGroupsCountByIndicator
+   */
   public static InsightGroupsCountByIndicator fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, InsightGroupsCountByIndicator.class);
   }
 
- /**
-  * Convert an instance of InsightGroupsCountByIndicator to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of InsightGroupsCountByIndicator to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

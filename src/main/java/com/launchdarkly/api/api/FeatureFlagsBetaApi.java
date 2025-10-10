@@ -85,7 +85,8 @@ public class FeatureFlagsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Multi environment dependent flags collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -94,7 +95,7 @@ public class FeatureFlagsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDependentFlagsCall(String projectKey, String featureFlagKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getDependentFlagsCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -141,7 +142,7 @@ public class FeatureFlagsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getDependentFlagsValidateBeforeCall(String projectKey, String featureFlagKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getDependentFlagsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getDependentFlags(Async)");
@@ -164,7 +165,8 @@ public class FeatureFlagsBetaApi {
      * @return MultiEnvironmentDependentFlags
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Multi environment dependent flags collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -173,7 +175,7 @@ public class FeatureFlagsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public MultiEnvironmentDependentFlags getDependentFlags(String projectKey, String featureFlagKey) throws ApiException {
+    public MultiEnvironmentDependentFlags getDependentFlags(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey) throws ApiException {
         ApiResponse<MultiEnvironmentDependentFlags> localVarResp = getDependentFlagsWithHttpInfo(projectKey, featureFlagKey);
         return localVarResp.getData();
     }
@@ -186,7 +188,8 @@ public class FeatureFlagsBetaApi {
      * @return ApiResponse&lt;MultiEnvironmentDependentFlags&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Multi environment dependent flags collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -195,7 +198,7 @@ public class FeatureFlagsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<MultiEnvironmentDependentFlags> getDependentFlagsWithHttpInfo(String projectKey, String featureFlagKey) throws ApiException {
+    public ApiResponse<MultiEnvironmentDependentFlags> getDependentFlagsWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey) throws ApiException {
         okhttp3.Call localVarCall = getDependentFlagsValidateBeforeCall(projectKey, featureFlagKey, null);
         Type localVarReturnType = new TypeToken<MultiEnvironmentDependentFlags>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -210,7 +213,8 @@ public class FeatureFlagsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Multi environment dependent flags collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -219,7 +223,7 @@ public class FeatureFlagsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDependentFlagsAsync(String projectKey, String featureFlagKey, final ApiCallback<MultiEnvironmentDependentFlags> _callback) throws ApiException {
+    public okhttp3.Call getDependentFlagsAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback<MultiEnvironmentDependentFlags> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getDependentFlagsValidateBeforeCall(projectKey, featureFlagKey, _callback);
         Type localVarReturnType = new TypeToken<MultiEnvironmentDependentFlags>(){}.getType();
@@ -235,7 +239,8 @@ public class FeatureFlagsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Dependent flags collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -244,7 +249,7 @@ public class FeatureFlagsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDependentFlagsByEnvCall(String projectKey, String environmentKey, String featureFlagKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getDependentFlagsByEnvCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -292,7 +297,7 @@ public class FeatureFlagsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getDependentFlagsByEnvValidateBeforeCall(String projectKey, String environmentKey, String featureFlagKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getDependentFlagsByEnvValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getDependentFlagsByEnv(Async)");
@@ -321,7 +326,8 @@ public class FeatureFlagsBetaApi {
      * @return DependentFlagsByEnvironment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Dependent flags collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -330,7 +336,7 @@ public class FeatureFlagsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public DependentFlagsByEnvironment getDependentFlagsByEnv(String projectKey, String environmentKey, String featureFlagKey) throws ApiException {
+    public DependentFlagsByEnvironment getDependentFlagsByEnv(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey) throws ApiException {
         ApiResponse<DependentFlagsByEnvironment> localVarResp = getDependentFlagsByEnvWithHttpInfo(projectKey, environmentKey, featureFlagKey);
         return localVarResp.getData();
     }
@@ -344,7 +350,8 @@ public class FeatureFlagsBetaApi {
      * @return ApiResponse&lt;DependentFlagsByEnvironment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Dependent flags collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -353,7 +360,7 @@ public class FeatureFlagsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DependentFlagsByEnvironment> getDependentFlagsByEnvWithHttpInfo(String projectKey, String environmentKey, String featureFlagKey) throws ApiException {
+    public ApiResponse<DependentFlagsByEnvironment> getDependentFlagsByEnvWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey) throws ApiException {
         okhttp3.Call localVarCall = getDependentFlagsByEnvValidateBeforeCall(projectKey, environmentKey, featureFlagKey, null);
         Type localVarReturnType = new TypeToken<DependentFlagsByEnvironment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -369,7 +376,8 @@ public class FeatureFlagsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Dependent flags collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -378,7 +386,7 @@ public class FeatureFlagsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDependentFlagsByEnvAsync(String projectKey, String environmentKey, String featureFlagKey, final ApiCallback<DependentFlagsByEnvironment> _callback) throws ApiException {
+    public okhttp3.Call getDependentFlagsByEnvAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback<DependentFlagsByEnvironment> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getDependentFlagsByEnvValidateBeforeCall(projectKey, environmentKey, featureFlagKey, _callback);
         Type localVarReturnType = new TypeToken<DependentFlagsByEnvironment>(){}.getType();

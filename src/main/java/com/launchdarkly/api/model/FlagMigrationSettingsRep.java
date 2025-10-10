@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,65 +38,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * FlagMigrationSettingsRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class FlagMigrationSettingsRep {
   public static final String SERIALIZED_NAME_CONTEXT_KIND = "contextKind";
   @SerializedName(SERIALIZED_NAME_CONTEXT_KIND)
+  @javax.annotation.Nullable
   private String contextKind;
 
   public static final String SERIALIZED_NAME_STAGE_COUNT = "stageCount";
   @SerializedName(SERIALIZED_NAME_STAGE_COUNT)
+  @javax.annotation.Nullable
   private Integer stageCount;
 
   public FlagMigrationSettingsRep() {
   }
 
-  public FlagMigrationSettingsRep contextKind(String contextKind) {
+  public FlagMigrationSettingsRep contextKind(@javax.annotation.Nullable String contextKind) {
     this.contextKind = contextKind;
     return this;
   }
 
-   /**
+  /**
    * The context kind targeted by this migration flag. Only applicable for six-stage migrations.
    * @return contextKind
-  **/
+   */
   @javax.annotation.Nullable
   public String getContextKind() {
     return contextKind;
   }
 
-  public void setContextKind(String contextKind) {
+  public void setContextKind(@javax.annotation.Nullable String contextKind) {
     this.contextKind = contextKind;
   }
 
 
-  public FlagMigrationSettingsRep stageCount(Integer stageCount) {
+  public FlagMigrationSettingsRep stageCount(@javax.annotation.Nullable Integer stageCount) {
     this.stageCount = stageCount;
     return this;
   }
 
-   /**
+  /**
    * The number of stages for this migration flag
    * @return stageCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getStageCount() {
     return stageCount;
   }
 
-  public void setStageCount(Integer stageCount) {
+  public void setStageCount(@javax.annotation.Nullable Integer stageCount) {
     this.stageCount = stageCount;
   }
 
@@ -192,29 +195,27 @@ public class FlagMigrationSettingsRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("contextKind");
-    openapiFields.add("stageCount");
+    openapiFields = new HashSet<String>(Arrays.asList("contextKind", "stageCount"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FlagMigrationSettingsRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FlagMigrationSettingsRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FlagMigrationSettingsRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FlagMigrationSettingsRep is not found in the empty JSON string", FlagMigrationSettingsRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FlagMigrationSettingsRep is not found in the empty JSON string", FlagMigrationSettingsRep.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("contextKind") != null && !jsonObj.get("contextKind").isJsonNull()) && !jsonObj.get("contextKind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `contextKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("contextKind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `contextKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("contextKind").toString()));
       }
   }
 
@@ -275,7 +276,7 @@ public class FlagMigrationSettingsRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -290,22 +291,22 @@ public class FlagMigrationSettingsRep {
     }
   }
 
- /**
-  * Create an instance of FlagMigrationSettingsRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FlagMigrationSettingsRep
-  * @throws IOException if the JSON string is invalid with respect to FlagMigrationSettingsRep
-  */
+  /**
+   * Create an instance of FlagMigrationSettingsRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FlagMigrationSettingsRep
+   * @throws IOException if the JSON string is invalid with respect to FlagMigrationSettingsRep
+   */
   public static FlagMigrationSettingsRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FlagMigrationSettingsRep.class);
   }
 
- /**
-  * Convert an instance of FlagMigrationSettingsRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FlagMigrationSettingsRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -88,14 +88,15 @@ public class ReleasePipelinesBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteReleasePipelineCall(String projectKey, String pipelineKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteReleasePipelineCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String pipelineKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -142,7 +143,7 @@ public class ReleasePipelinesBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteReleasePipelineValidateBeforeCall(String projectKey, String pipelineKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteReleasePipelineValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String pipelineKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling deleteReleasePipeline(Async)");
@@ -164,14 +165,15 @@ public class ReleasePipelinesBetaApi {
      * @param pipelineKey The release pipeline key (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteReleasePipeline(String projectKey, String pipelineKey) throws ApiException {
+    public void deleteReleasePipeline(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String pipelineKey) throws ApiException {
         deleteReleasePipelineWithHttpInfo(projectKey, pipelineKey);
     }
 
@@ -183,14 +185,15 @@ public class ReleasePipelinesBetaApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteReleasePipelineWithHttpInfo(String projectKey, String pipelineKey) throws ApiException {
+    public ApiResponse<Void> deleteReleasePipelineWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String pipelineKey) throws ApiException {
         okhttp3.Call localVarCall = deleteReleasePipelineValidateBeforeCall(projectKey, pipelineKey, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -204,14 +207,15 @@ public class ReleasePipelinesBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteReleasePipelineAsync(String projectKey, String pipelineKey, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteReleasePipelineAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String pipelineKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteReleasePipelineValidateBeforeCall(projectKey, pipelineKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -227,13 +231,14 @@ public class ReleasePipelinesBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release pipeline collection </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllReleasePipelinesCall(String projectKey, String filter, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAllReleasePipelinesCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -291,7 +296,7 @@ public class ReleasePipelinesBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAllReleasePipelinesValidateBeforeCall(String projectKey, String filter, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAllReleasePipelinesValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getAllReleasePipelines(Async)");
@@ -311,13 +316,14 @@ public class ReleasePipelinesBetaApi {
      * @return ReleasePipelineCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release pipeline collection </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ReleasePipelineCollection getAllReleasePipelines(String projectKey, String filter, Long limit, Long offset) throws ApiException {
+    public ReleasePipelineCollection getAllReleasePipelines(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset) throws ApiException {
         ApiResponse<ReleasePipelineCollection> localVarResp = getAllReleasePipelinesWithHttpInfo(projectKey, filter, limit, offset);
         return localVarResp.getData();
     }
@@ -332,13 +338,14 @@ public class ReleasePipelinesBetaApi {
      * @return ApiResponse&lt;ReleasePipelineCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release pipeline collection </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ReleasePipelineCollection> getAllReleasePipelinesWithHttpInfo(String projectKey, String filter, Long limit, Long offset) throws ApiException {
+    public ApiResponse<ReleasePipelineCollection> getAllReleasePipelinesWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset) throws ApiException {
         okhttp3.Call localVarCall = getAllReleasePipelinesValidateBeforeCall(projectKey, filter, limit, offset, null);
         Type localVarReturnType = new TypeToken<ReleasePipelineCollection>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -355,13 +362,14 @@ public class ReleasePipelinesBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release pipeline collection </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllReleasePipelinesAsync(String projectKey, String filter, Long limit, Long offset, final ApiCallback<ReleasePipelineCollection> _callback) throws ApiException {
+    public okhttp3.Call getAllReleasePipelinesAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, final ApiCallback<ReleasePipelineCollection> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAllReleasePipelinesValidateBeforeCall(projectKey, filter, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ReleasePipelineCollection>(){}.getType();
@@ -379,13 +387,14 @@ public class ReleasePipelinesBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release progression collection </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllReleaseProgressionsForReleasePipelineCall(String projectKey, String pipelineKey, String filter, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAllReleaseProgressionsForReleasePipelineCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String pipelineKey, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -444,7 +453,7 @@ public class ReleasePipelinesBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAllReleaseProgressionsForReleasePipelineValidateBeforeCall(String projectKey, String pipelineKey, String filter, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAllReleaseProgressionsForReleasePipelineValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String pipelineKey, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getAllReleaseProgressionsForReleasePipeline(Async)");
@@ -470,13 +479,14 @@ public class ReleasePipelinesBetaApi {
      * @return ReleaseProgressionCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release progression collection </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ReleaseProgressionCollection getAllReleaseProgressionsForReleasePipeline(String projectKey, String pipelineKey, String filter, Long limit, Long offset) throws ApiException {
+    public ReleaseProgressionCollection getAllReleaseProgressionsForReleasePipeline(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String pipelineKey, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset) throws ApiException {
         ApiResponse<ReleaseProgressionCollection> localVarResp = getAllReleaseProgressionsForReleasePipelineWithHttpInfo(projectKey, pipelineKey, filter, limit, offset);
         return localVarResp.getData();
     }
@@ -492,13 +502,14 @@ public class ReleasePipelinesBetaApi {
      * @return ApiResponse&lt;ReleaseProgressionCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release progression collection </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ReleaseProgressionCollection> getAllReleaseProgressionsForReleasePipelineWithHttpInfo(String projectKey, String pipelineKey, String filter, Long limit, Long offset) throws ApiException {
+    public ApiResponse<ReleaseProgressionCollection> getAllReleaseProgressionsForReleasePipelineWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String pipelineKey, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset) throws ApiException {
         okhttp3.Call localVarCall = getAllReleaseProgressionsForReleasePipelineValidateBeforeCall(projectKey, pipelineKey, filter, limit, offset, null);
         Type localVarReturnType = new TypeToken<ReleaseProgressionCollection>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -516,13 +527,14 @@ public class ReleasePipelinesBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release progression collection </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAllReleaseProgressionsForReleasePipelineAsync(String projectKey, String pipelineKey, String filter, Long limit, Long offset, final ApiCallback<ReleaseProgressionCollection> _callback) throws ApiException {
+    public okhttp3.Call getAllReleaseProgressionsForReleasePipelineAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String pipelineKey, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, final ApiCallback<ReleaseProgressionCollection> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAllReleaseProgressionsForReleasePipelineValidateBeforeCall(projectKey, pipelineKey, filter, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ReleaseProgressionCollection>(){}.getType();
@@ -537,13 +549,14 @@ public class ReleasePipelinesBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release pipeline response </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getReleasePipelineByKeyCall(String projectKey, String pipelineKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getReleasePipelineByKeyCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String pipelineKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -590,7 +603,7 @@ public class ReleasePipelinesBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getReleasePipelineByKeyValidateBeforeCall(String projectKey, String pipelineKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getReleasePipelineByKeyValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String pipelineKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getReleasePipelineByKey(Async)");
@@ -613,13 +626,14 @@ public class ReleasePipelinesBetaApi {
      * @return ReleasePipeline
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release pipeline response </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ReleasePipeline getReleasePipelineByKey(String projectKey, String pipelineKey) throws ApiException {
+    public ReleasePipeline getReleasePipelineByKey(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String pipelineKey) throws ApiException {
         ApiResponse<ReleasePipeline> localVarResp = getReleasePipelineByKeyWithHttpInfo(projectKey, pipelineKey);
         return localVarResp.getData();
     }
@@ -632,13 +646,14 @@ public class ReleasePipelinesBetaApi {
      * @return ApiResponse&lt;ReleasePipeline&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release pipeline response </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ReleasePipeline> getReleasePipelineByKeyWithHttpInfo(String projectKey, String pipelineKey) throws ApiException {
+    public ApiResponse<ReleasePipeline> getReleasePipelineByKeyWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String pipelineKey) throws ApiException {
         okhttp3.Call localVarCall = getReleasePipelineByKeyValidateBeforeCall(projectKey, pipelineKey, null);
         Type localVarReturnType = new TypeToken<ReleasePipeline>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -653,13 +668,14 @@ public class ReleasePipelinesBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release pipeline response </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getReleasePipelineByKeyAsync(String projectKey, String pipelineKey, final ApiCallback<ReleasePipeline> _callback) throws ApiException {
+    public okhttp3.Call getReleasePipelineByKeyAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String pipelineKey, final ApiCallback<ReleasePipeline> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getReleasePipelineByKeyValidateBeforeCall(projectKey, pipelineKey, _callback);
         Type localVarReturnType = new TypeToken<ReleasePipeline>(){}.getType();
@@ -674,7 +690,8 @@ public class ReleasePipelinesBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Release pipeline response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -683,7 +700,7 @@ public class ReleasePipelinesBetaApi {
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postReleasePipelineCall(String projectKey, CreateReleasePipelineInput createReleasePipelineInput, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postReleasePipelineCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull CreateReleasePipelineInput createReleasePipelineInput, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -730,7 +747,7 @@ public class ReleasePipelinesBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postReleasePipelineValidateBeforeCall(String projectKey, CreateReleasePipelineInput createReleasePipelineInput, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postReleasePipelineValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull CreateReleasePipelineInput createReleasePipelineInput, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling postReleasePipeline(Async)");
@@ -753,7 +770,8 @@ public class ReleasePipelinesBetaApi {
      * @return ReleasePipeline
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Release pipeline response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -762,7 +780,7 @@ public class ReleasePipelinesBetaApi {
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
      </table>
      */
-    public ReleasePipeline postReleasePipeline(String projectKey, CreateReleasePipelineInput createReleasePipelineInput) throws ApiException {
+    public ReleasePipeline postReleasePipeline(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull CreateReleasePipelineInput createReleasePipelineInput) throws ApiException {
         ApiResponse<ReleasePipeline> localVarResp = postReleasePipelineWithHttpInfo(projectKey, createReleasePipelineInput);
         return localVarResp.getData();
     }
@@ -775,7 +793,8 @@ public class ReleasePipelinesBetaApi {
      * @return ApiResponse&lt;ReleasePipeline&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Release pipeline response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -784,7 +803,7 @@ public class ReleasePipelinesBetaApi {
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ReleasePipeline> postReleasePipelineWithHttpInfo(String projectKey, CreateReleasePipelineInput createReleasePipelineInput) throws ApiException {
+    public ApiResponse<ReleasePipeline> postReleasePipelineWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull CreateReleasePipelineInput createReleasePipelineInput) throws ApiException {
         okhttp3.Call localVarCall = postReleasePipelineValidateBeforeCall(projectKey, createReleasePipelineInput, null);
         Type localVarReturnType = new TypeToken<ReleasePipeline>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -799,7 +818,8 @@ public class ReleasePipelinesBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Release pipeline response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -808,7 +828,7 @@ public class ReleasePipelinesBetaApi {
         <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postReleasePipelineAsync(String projectKey, CreateReleasePipelineInput createReleasePipelineInput, final ApiCallback<ReleasePipeline> _callback) throws ApiException {
+    public okhttp3.Call postReleasePipelineAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull CreateReleasePipelineInput createReleasePipelineInput, final ApiCallback<ReleasePipeline> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postReleasePipelineValidateBeforeCall(projectKey, createReleasePipelineInput, _callback);
         Type localVarReturnType = new TypeToken<ReleasePipeline>(){}.getType();
@@ -824,7 +844,8 @@ public class ReleasePipelinesBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release pipeline response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -832,7 +853,7 @@ public class ReleasePipelinesBetaApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putReleasePipelineCall(String projectKey, String pipelineKey, UpdateReleasePipelineInput updateReleasePipelineInput, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call putReleasePipelineCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String pipelineKey, @javax.annotation.Nonnull UpdateReleasePipelineInput updateReleasePipelineInput, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -880,7 +901,7 @@ public class ReleasePipelinesBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call putReleasePipelineValidateBeforeCall(String projectKey, String pipelineKey, UpdateReleasePipelineInput updateReleasePipelineInput, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call putReleasePipelineValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String pipelineKey, @javax.annotation.Nonnull UpdateReleasePipelineInput updateReleasePipelineInput, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling putReleasePipeline(Async)");
@@ -909,7 +930,8 @@ public class ReleasePipelinesBetaApi {
      * @return ReleasePipeline
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release pipeline response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -917,7 +939,7 @@ public class ReleasePipelinesBetaApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ReleasePipeline putReleasePipeline(String projectKey, String pipelineKey, UpdateReleasePipelineInput updateReleasePipelineInput) throws ApiException {
+    public ReleasePipeline putReleasePipeline(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String pipelineKey, @javax.annotation.Nonnull UpdateReleasePipelineInput updateReleasePipelineInput) throws ApiException {
         ApiResponse<ReleasePipeline> localVarResp = putReleasePipelineWithHttpInfo(projectKey, pipelineKey, updateReleasePipelineInput);
         return localVarResp.getData();
     }
@@ -931,7 +953,8 @@ public class ReleasePipelinesBetaApi {
      * @return ApiResponse&lt;ReleasePipeline&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release pipeline response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -939,7 +962,7 @@ public class ReleasePipelinesBetaApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ReleasePipeline> putReleasePipelineWithHttpInfo(String projectKey, String pipelineKey, UpdateReleasePipelineInput updateReleasePipelineInput) throws ApiException {
+    public ApiResponse<ReleasePipeline> putReleasePipelineWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String pipelineKey, @javax.annotation.Nonnull UpdateReleasePipelineInput updateReleasePipelineInput) throws ApiException {
         okhttp3.Call localVarCall = putReleasePipelineValidateBeforeCall(projectKey, pipelineKey, updateReleasePipelineInput, null);
         Type localVarReturnType = new TypeToken<ReleasePipeline>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -955,7 +978,8 @@ public class ReleasePipelinesBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release pipeline response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -963,7 +987,7 @@ public class ReleasePipelinesBetaApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putReleasePipelineAsync(String projectKey, String pipelineKey, UpdateReleasePipelineInput updateReleasePipelineInput, final ApiCallback<ReleasePipeline> _callback) throws ApiException {
+    public okhttp3.Call putReleasePipelineAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String pipelineKey, @javax.annotation.Nonnull UpdateReleasePipelineInput updateReleasePipelineInput, final ApiCallback<ReleasePipeline> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putReleasePipelineValidateBeforeCall(projectKey, pipelineKey, updateReleasePipelineInput, _callback);
         Type localVarReturnType = new TypeToken<ReleasePipeline>(){}.getType();

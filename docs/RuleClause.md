@@ -18,20 +18,20 @@
 | Name | Value |
 |---- | -----|
 | IN | &quot;in&quot; |
-| ENDSWITH | &quot;endsWith&quot; |
-| STARTSWITH | &quot;startsWith&quot; |
+| ENDS_WITH | &quot;endsWith&quot; |
+| STARTS_WITH | &quot;startsWith&quot; |
 | MATCHES | &quot;matches&quot; |
 | CONTAINS | &quot;contains&quot; |
-| LESSTHAN | &quot;lessThan&quot; |
-| LESSTHANOREQUAL | &quot;lessThanOrEqual&quot; |
-| GREATERTHAN | &quot;greaterThan&quot; |
-| GREATERTHANOREQUAL | &quot;greaterThanOrEqual&quot; |
+| LESS_THAN | &quot;lessThan&quot; |
+| LESS_THAN_OR_EQUAL | &quot;lessThanOrEqual&quot; |
+| GREATER_THAN | &quot;greaterThan&quot; |
+| GREATER_THAN_OR_EQUAL | &quot;greaterThanOrEqual&quot; |
 | BEFORE | &quot;before&quot; |
 | AFTER | &quot;after&quot; |
-| SEGMENTMATCH | &quot;segmentMatch&quot; |
-| SEMVEREQUAL | &quot;semVerEqual&quot; |
-| SEMVERLESSTHAN | &quot;semVerLessThan&quot; |
-| SEMVERGREATERTHAN | &quot;semVerGreaterThan&quot; |
+| SEGMENT_MATCH | &quot;segmentMatch&quot; |
+| SEM_VER_EQUAL | &quot;semVerEqual&quot; |
+| SEM_VER_LESS_THAN | &quot;semVerLessThan&quot; |
+| SEM_VER_GREATER_THAN | &quot;semVerGreaterThan&quot; |
 
 
 

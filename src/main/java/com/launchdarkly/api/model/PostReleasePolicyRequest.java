@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,157 +41,163 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * PostReleasePolicyRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class PostReleasePolicyRequest {
   public static final String SERIALIZED_NAME_SCOPE = "scope";
   @SerializedName(SERIALIZED_NAME_SCOPE)
+  @javax.annotation.Nullable
   private ReleasePolicyScope scope;
 
   public static final String SERIALIZED_NAME_RELEASE_METHOD = "releaseMethod";
   @SerializedName(SERIALIZED_NAME_RELEASE_METHOD)
+  @javax.annotation.Nonnull
   private ReleaseMethod releaseMethod;
 
   public static final String SERIALIZED_NAME_GUARDED_RELEASE_CONFIG = "guardedReleaseConfig";
   @SerializedName(SERIALIZED_NAME_GUARDED_RELEASE_CONFIG)
+  @javax.annotation.Nullable
   private GuardedReleaseConfig guardedReleaseConfig;
 
   public static final String SERIALIZED_NAME_PROGRESSIVE_RELEASE_CONFIG = "progressiveReleaseConfig";
   @SerializedName(SERIALIZED_NAME_PROGRESSIVE_RELEASE_CONFIG)
+  @javax.annotation.Nullable
   private Object progressiveReleaseConfig;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public PostReleasePolicyRequest() {
   }
 
-  public PostReleasePolicyRequest scope(ReleasePolicyScope scope) {
+  public PostReleasePolicyRequest scope(@javax.annotation.Nullable ReleasePolicyScope scope) {
     this.scope = scope;
     return this;
   }
 
-   /**
+  /**
    * Get scope
    * @return scope
-  **/
+   */
   @javax.annotation.Nullable
   public ReleasePolicyScope getScope() {
     return scope;
   }
 
-  public void setScope(ReleasePolicyScope scope) {
+  public void setScope(@javax.annotation.Nullable ReleasePolicyScope scope) {
     this.scope = scope;
   }
 
 
-  public PostReleasePolicyRequest releaseMethod(ReleaseMethod releaseMethod) {
+  public PostReleasePolicyRequest releaseMethod(@javax.annotation.Nonnull ReleaseMethod releaseMethod) {
     this.releaseMethod = releaseMethod;
     return this;
   }
 
-   /**
+  /**
    * Get releaseMethod
    * @return releaseMethod
-  **/
+   */
   @javax.annotation.Nonnull
   public ReleaseMethod getReleaseMethod() {
     return releaseMethod;
   }
 
-  public void setReleaseMethod(ReleaseMethod releaseMethod) {
+  public void setReleaseMethod(@javax.annotation.Nonnull ReleaseMethod releaseMethod) {
     this.releaseMethod = releaseMethod;
   }
 
 
-  public PostReleasePolicyRequest guardedReleaseConfig(GuardedReleaseConfig guardedReleaseConfig) {
+  public PostReleasePolicyRequest guardedReleaseConfig(@javax.annotation.Nullable GuardedReleaseConfig guardedReleaseConfig) {
     this.guardedReleaseConfig = guardedReleaseConfig;
     return this;
   }
 
-   /**
+  /**
    * Get guardedReleaseConfig
    * @return guardedReleaseConfig
-  **/
+   */
   @javax.annotation.Nullable
   public GuardedReleaseConfig getGuardedReleaseConfig() {
     return guardedReleaseConfig;
   }
 
-  public void setGuardedReleaseConfig(GuardedReleaseConfig guardedReleaseConfig) {
+  public void setGuardedReleaseConfig(@javax.annotation.Nullable GuardedReleaseConfig guardedReleaseConfig) {
     this.guardedReleaseConfig = guardedReleaseConfig;
   }
 
 
-  public PostReleasePolicyRequest progressiveReleaseConfig(Object progressiveReleaseConfig) {
+  public PostReleasePolicyRequest progressiveReleaseConfig(@javax.annotation.Nullable Object progressiveReleaseConfig) {
     this.progressiveReleaseConfig = progressiveReleaseConfig;
     return this;
   }
 
-   /**
+  /**
    * Configuration for progressive releases
    * @return progressiveReleaseConfig
-  **/
+   */
   @javax.annotation.Nullable
   public Object getProgressiveReleaseConfig() {
     return progressiveReleaseConfig;
   }
 
-  public void setProgressiveReleaseConfig(Object progressiveReleaseConfig) {
+  public void setProgressiveReleaseConfig(@javax.annotation.Nullable Object progressiveReleaseConfig) {
     this.progressiveReleaseConfig = progressiveReleaseConfig;
   }
 
 
-  public PostReleasePolicyRequest name(String name) {
+  public PostReleasePolicyRequest name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The name of the release policy
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public PostReleasePolicyRequest key(String key) {
+  public PostReleasePolicyRequest key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * The human-readable key of the release policy
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
@@ -295,38 +302,29 @@ public class PostReleasePolicyRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("scope");
-    openapiFields.add("releaseMethod");
-    openapiFields.add("guardedReleaseConfig");
-    openapiFields.add("progressiveReleaseConfig");
-    openapiFields.add("name");
-    openapiFields.add("key");
+    openapiFields = new HashSet<String>(Arrays.asList("scope", "releaseMethod", "guardedReleaseConfig", "progressiveReleaseConfig", "name", "key"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("releaseMethod");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("key");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("releaseMethod", "name", "key"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to PostReleasePolicyRequest
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PostReleasePolicyRequest
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PostReleasePolicyRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PostReleasePolicyRequest is not found in the empty JSON string", PostReleasePolicyRequest.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in PostReleasePolicyRequest is not found in the empty JSON string", PostReleasePolicyRequest.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : PostReleasePolicyRequest.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -341,10 +339,10 @@ public class PostReleasePolicyRequest {
         GuardedReleaseConfig.validateJsonElement(jsonObj.get("guardedReleaseConfig"));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
   }
 
@@ -405,7 +403,7 @@ public class PostReleasePolicyRequest {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -420,22 +418,22 @@ public class PostReleasePolicyRequest {
     }
   }
 
- /**
-  * Create an instance of PostReleasePolicyRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PostReleasePolicyRequest
-  * @throws IOException if the JSON string is invalid with respect to PostReleasePolicyRequest
-  */
+  /**
+   * Create an instance of PostReleasePolicyRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PostReleasePolicyRequest
+   * @throws IOException if the JSON string is invalid with respect to PostReleasePolicyRequest
+   */
   public static PostReleasePolicyRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PostReleasePolicyRequest.class);
   }
 
- /**
-  * Convert an instance of PostReleasePolicyRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PostReleasePolicyRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -21,12 +21,12 @@
 
 | Name | Value |
 |---- | -----|
-| UPDATEON | &quot;updateOn&quot; |
-| UPDATEFALLTHROUGH | &quot;updateFallthrough&quot; |
-| UPDATEOFFVARIATION | &quot;updateOffVariation&quot; |
-| UPDATERULES | &quot;updateRules&quot; |
-| UPDATETARGETS | &quot;updateTargets&quot; |
-| UPDATEPREREQUISITES | &quot;updatePrerequisites&quot; |
+| UPDATE_ON | &quot;updateOn&quot; |
+| UPDATE_FALLTHROUGH | &quot;updateFallthrough&quot; |
+| UPDATE_OFF_VARIATION | &quot;updateOffVariation&quot; |
+| UPDATE_RULES | &quot;updateRules&quot; |
+| UPDATE_TARGETS | &quot;updateTargets&quot; |
+| UPDATE_PREREQUISITES | &quot;updatePrerequisites&quot; |
 
 
 
@@ -34,12 +34,12 @@
 
 | Name | Value |
 |---- | -----|
-| UPDATEON | &quot;updateOn&quot; |
-| UPDATEFALLTHROUGH | &quot;updateFallthrough&quot; |
-| UPDATEOFFVARIATION | &quot;updateOffVariation&quot; |
-| UPDATERULES | &quot;updateRules&quot; |
-| UPDATETARGETS | &quot;updateTargets&quot; |
-| UPDATEPREREQUISITES | &quot;updatePrerequisites&quot; |
+| UPDATE_ON | &quot;updateOn&quot; |
+| UPDATE_FALLTHROUGH | &quot;updateFallthrough&quot; |
+| UPDATE_OFF_VARIATION | &quot;updateOffVariation&quot; |
+| UPDATE_RULES | &quot;updateRules&quot; |
+| UPDATE_TARGETS | &quot;updateTargets&quot; |
+| UPDATE_PREREQUISITES | &quot;updatePrerequisites&quot; |
 
 
 

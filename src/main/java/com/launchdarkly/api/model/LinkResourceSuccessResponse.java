@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,97 +42,101 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * LinkResourceSuccessResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class LinkResourceSuccessResponse {
   public static final String SERIALIZED_NAME_SUCCESS_COUNT = "successCount";
   @SerializedName(SERIALIZED_NAME_SUCCESS_COUNT)
+  @javax.annotation.Nonnull
   private Integer successCount;
 
   public static final String SERIALIZED_NAME_FAILURE_COUNT = "failureCount";
   @SerializedName(SERIALIZED_NAME_FAILURE_COUNT)
+  @javax.annotation.Nonnull
   private Integer failureCount;
 
   public static final String SERIALIZED_NAME_LINKED_RESOURCES = "linkedResources";
   @SerializedName(SERIALIZED_NAME_LINKED_RESOURCES)
+  @javax.annotation.Nullable
   private ViewLinkedResources linkedResources;
 
   public static final String SERIALIZED_NAME_FAILED_RESOURCES = "failedResources";
   @SerializedName(SERIALIZED_NAME_FAILED_RESOURCES)
+  @javax.annotation.Nullable
   private List<FailedResourceLink> failedResources = new ArrayList<>();
 
   public LinkResourceSuccessResponse() {
   }
 
-  public LinkResourceSuccessResponse successCount(Integer successCount) {
+  public LinkResourceSuccessResponse successCount(@javax.annotation.Nonnull Integer successCount) {
     this.successCount = successCount;
     return this;
   }
 
-   /**
+  /**
    * The number of resources successfully linked.
    * @return successCount
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getSuccessCount() {
     return successCount;
   }
 
-  public void setSuccessCount(Integer successCount) {
+  public void setSuccessCount(@javax.annotation.Nonnull Integer successCount) {
     this.successCount = successCount;
   }
 
 
-  public LinkResourceSuccessResponse failureCount(Integer failureCount) {
+  public LinkResourceSuccessResponse failureCount(@javax.annotation.Nonnull Integer failureCount) {
     this.failureCount = failureCount;
     return this;
   }
 
-   /**
+  /**
    * The number of resources that failed to link.
    * @return failureCount
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getFailureCount() {
     return failureCount;
   }
 
-  public void setFailureCount(Integer failureCount) {
+  public void setFailureCount(@javax.annotation.Nonnull Integer failureCount) {
     this.failureCount = failureCount;
   }
 
 
-  public LinkResourceSuccessResponse linkedResources(ViewLinkedResources linkedResources) {
+  public LinkResourceSuccessResponse linkedResources(@javax.annotation.Nullable ViewLinkedResources linkedResources) {
     this.linkedResources = linkedResources;
     return this;
   }
 
-   /**
+  /**
    * Get linkedResources
    * @return linkedResources
-  **/
+   */
   @javax.annotation.Nullable
   public ViewLinkedResources getLinkedResources() {
     return linkedResources;
   }
 
-  public void setLinkedResources(ViewLinkedResources linkedResources) {
+  public void setLinkedResources(@javax.annotation.Nullable ViewLinkedResources linkedResources) {
     this.linkedResources = linkedResources;
   }
 
 
-  public LinkResourceSuccessResponse failedResources(List<FailedResourceLink> failedResources) {
+  public LinkResourceSuccessResponse failedResources(@javax.annotation.Nullable List<FailedResourceLink> failedResources) {
     this.failedResources = failedResources;
     return this;
   }
@@ -144,16 +149,16 @@ public class LinkResourceSuccessResponse {
     return this;
   }
 
-   /**
+  /**
    * Details of resources that failed to link.
    * @return failedResources
-  **/
+   */
   @javax.annotation.Nullable
   public List<FailedResourceLink> getFailedResources() {
     return failedResources;
   }
 
-  public void setFailedResources(List<FailedResourceLink> failedResources) {
+  public void setFailedResources(@javax.annotation.Nullable List<FailedResourceLink> failedResources) {
     this.failedResources = failedResources;
   }
 
@@ -254,35 +259,29 @@ public class LinkResourceSuccessResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("successCount");
-    openapiFields.add("failureCount");
-    openapiFields.add("linkedResources");
-    openapiFields.add("failedResources");
+    openapiFields = new HashSet<String>(Arrays.asList("successCount", "failureCount", "linkedResources", "failedResources"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("successCount");
-    openapiRequiredFields.add("failureCount");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("successCount", "failureCount"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to LinkResourceSuccessResponse
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to LinkResourceSuccessResponse
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!LinkResourceSuccessResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in LinkResourceSuccessResponse is not found in the empty JSON string", LinkResourceSuccessResponse.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in LinkResourceSuccessResponse is not found in the empty JSON string", LinkResourceSuccessResponse.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : LinkResourceSuccessResponse.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -295,7 +294,7 @@ public class LinkResourceSuccessResponse {
         if (jsonArrayfailedResources != null) {
           // ensure the json data is an array
           if (!jsonObj.get("failedResources").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `failedResources` to be an array in the JSON string but got `%s`", jsonObj.get("failedResources").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `failedResources` to be an array in the JSON string but got `%s`", jsonObj.get("failedResources").toString()));
           }
 
           // validate the optional field `failedResources` (array)
@@ -363,7 +362,7 @@ public class LinkResourceSuccessResponse {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -378,22 +377,22 @@ public class LinkResourceSuccessResponse {
     }
   }
 
- /**
-  * Create an instance of LinkResourceSuccessResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of LinkResourceSuccessResponse
-  * @throws IOException if the JSON string is invalid with respect to LinkResourceSuccessResponse
-  */
+  /**
+   * Create an instance of LinkResourceSuccessResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of LinkResourceSuccessResponse
+   * @throws IOException if the JSON string is invalid with respect to LinkResourceSuccessResponse
+   */
   public static LinkResourceSuccessResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, LinkResourceSuccessResponse.class);
   }
 
- /**
-  * Convert an instance of LinkResourceSuccessResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of LinkResourceSuccessResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

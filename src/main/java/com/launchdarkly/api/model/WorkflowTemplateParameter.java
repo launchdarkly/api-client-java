@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,111 +39,115 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * WorkflowTemplateParameter
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class WorkflowTemplateParameter {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_PATH = "path";
   @SerializedName(SERIALIZED_NAME_PATH)
+  @javax.annotation.Nullable
   private String path;
 
   public static final String SERIALIZED_NAME_DEFAULT = "default";
   @SerializedName(SERIALIZED_NAME_DEFAULT)
+  @javax.annotation.Nullable
   private ParameterDefault _default;
 
   public static final String SERIALIZED_NAME_VALID = "valid";
   @SerializedName(SERIALIZED_NAME_VALID)
+  @javax.annotation.Nullable
   private Boolean valid;
 
   public WorkflowTemplateParameter() {
   }
 
-  public WorkflowTemplateParameter id(String id) {
+  public WorkflowTemplateParameter id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public WorkflowTemplateParameter path(String path) {
+  public WorkflowTemplateParameter path(@javax.annotation.Nullable String path) {
     this.path = path;
     return this;
   }
 
-   /**
+  /**
    * The path of the property to parameterize, relative to its parent condition or instruction
    * @return path
-  **/
+   */
   @javax.annotation.Nullable
   public String getPath() {
     return path;
   }
 
-  public void setPath(String path) {
+  public void setPath(@javax.annotation.Nullable String path) {
     this.path = path;
   }
 
 
-  public WorkflowTemplateParameter _default(ParameterDefault _default) {
+  public WorkflowTemplateParameter _default(@javax.annotation.Nullable ParameterDefault _default) {
     this._default = _default;
     return this;
   }
 
-   /**
+  /**
    * Get _default
    * @return _default
-  **/
+   */
   @javax.annotation.Nullable
   public ParameterDefault getDefault() {
     return _default;
   }
 
-  public void setDefault(ParameterDefault _default) {
+  public void setDefault(@javax.annotation.Nullable ParameterDefault _default) {
     this._default = _default;
   }
 
 
-  public WorkflowTemplateParameter valid(Boolean valid) {
+  public WorkflowTemplateParameter valid(@javax.annotation.Nullable Boolean valid) {
     this.valid = valid;
     return this;
   }
 
-   /**
+  /**
    * Whether the default value is valid for the target flag and environment
    * @return valid
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getValid() {
     return valid;
   }
 
-  public void setValid(Boolean valid) {
+  public void setValid(@javax.annotation.Nullable Boolean valid) {
     this.valid = valid;
   }
 
@@ -243,34 +248,30 @@ public class WorkflowTemplateParameter {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_id");
-    openapiFields.add("path");
-    openapiFields.add("default");
-    openapiFields.add("valid");
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "path", "default", "valid"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WorkflowTemplateParameter
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WorkflowTemplateParameter
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WorkflowTemplateParameter.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WorkflowTemplateParameter is not found in the empty JSON string", WorkflowTemplateParameter.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in WorkflowTemplateParameter is not found in the empty JSON string", WorkflowTemplateParameter.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("_id") != null && !jsonObj.get("_id").isJsonNull()) && !jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if ((jsonObj.get("path") != null && !jsonObj.get("path").isJsonNull()) && !jsonObj.get("path").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("path").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("path").toString()));
       }
       // validate the optional field `default`
       if (jsonObj.get("default") != null && !jsonObj.get("default").isJsonNull()) {
@@ -335,7 +336,7 @@ public class WorkflowTemplateParameter {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -350,22 +351,22 @@ public class WorkflowTemplateParameter {
     }
   }
 
- /**
-  * Create an instance of WorkflowTemplateParameter given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WorkflowTemplateParameter
-  * @throws IOException if the JSON string is invalid with respect to WorkflowTemplateParameter
-  */
+  /**
+   * Create an instance of WorkflowTemplateParameter given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WorkflowTemplateParameter
+   * @throws IOException if the JSON string is invalid with respect to WorkflowTemplateParameter
+   */
   public static WorkflowTemplateParameter fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WorkflowTemplateParameter.class);
   }
 
- /**
-  * Convert an instance of WorkflowTemplateParameter to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WorkflowTemplateParameter to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

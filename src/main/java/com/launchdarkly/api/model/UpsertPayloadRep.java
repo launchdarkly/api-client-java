@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,44 +45,49 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * UpsertPayloadRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class UpsertPayloadRep {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nonnull
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TEMPORARY = "temporary";
   @SerializedName(SERIALIZED_NAME_TEMPORARY)
+  @javax.annotation.Nonnull
   private Boolean temporary;
 
   public static final String SERIALIZED_NAME_BOOLEAN_DEFAULTS = "booleanDefaults";
   @SerializedName(SERIALIZED_NAME_BOOLEAN_DEFAULTS)
+  @javax.annotation.Nonnull
   private BooleanFlagDefaults booleanDefaults;
 
   public static final String SERIALIZED_NAME_DEFAULT_CLIENT_SIDE_AVAILABILITY = "defaultClientSideAvailability";
   @SerializedName(SERIALIZED_NAME_DEFAULT_CLIENT_SIDE_AVAILABILITY)
+  @javax.annotation.Nonnull
   private DefaultClientSideAvailability defaultClientSideAvailability;
 
   public UpsertPayloadRep() {
   }
 
-  public UpsertPayloadRep links(Map<String, Link> links) {
+  public UpsertPayloadRep links(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -94,21 +100,21 @@ public class UpsertPayloadRep {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public UpsertPayloadRep tags(List<String> tags) {
+  public UpsertPayloadRep tags(@javax.annotation.Nonnull List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -121,73 +127,73 @@ public class UpsertPayloadRep {
     return this;
   }
 
-   /**
+  /**
    * A list of default tags for each flag
    * @return tags
-  **/
+   */
   @javax.annotation.Nonnull
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nonnull List<String> tags) {
     this.tags = tags;
   }
 
 
-  public UpsertPayloadRep temporary(Boolean temporary) {
+  public UpsertPayloadRep temporary(@javax.annotation.Nonnull Boolean temporary) {
     this.temporary = temporary;
     return this;
   }
 
-   /**
+  /**
    * Whether the flag should be temporary by default
    * @return temporary
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getTemporary() {
     return temporary;
   }
 
-  public void setTemporary(Boolean temporary) {
+  public void setTemporary(@javax.annotation.Nonnull Boolean temporary) {
     this.temporary = temporary;
   }
 
 
-  public UpsertPayloadRep booleanDefaults(BooleanFlagDefaults booleanDefaults) {
+  public UpsertPayloadRep booleanDefaults(@javax.annotation.Nonnull BooleanFlagDefaults booleanDefaults) {
     this.booleanDefaults = booleanDefaults;
     return this;
   }
 
-   /**
+  /**
    * Get booleanDefaults
    * @return booleanDefaults
-  **/
+   */
   @javax.annotation.Nonnull
   public BooleanFlagDefaults getBooleanDefaults() {
     return booleanDefaults;
   }
 
-  public void setBooleanDefaults(BooleanFlagDefaults booleanDefaults) {
+  public void setBooleanDefaults(@javax.annotation.Nonnull BooleanFlagDefaults booleanDefaults) {
     this.booleanDefaults = booleanDefaults;
   }
 
 
-  public UpsertPayloadRep defaultClientSideAvailability(DefaultClientSideAvailability defaultClientSideAvailability) {
+  public UpsertPayloadRep defaultClientSideAvailability(@javax.annotation.Nonnull DefaultClientSideAvailability defaultClientSideAvailability) {
     this.defaultClientSideAvailability = defaultClientSideAvailability;
     return this;
   }
 
-   /**
+  /**
    * Get defaultClientSideAvailability
    * @return defaultClientSideAvailability
-  **/
+   */
   @javax.annotation.Nonnull
   public DefaultClientSideAvailability getDefaultClientSideAvailability() {
     return defaultClientSideAvailability;
   }
 
-  public void setDefaultClientSideAvailability(DefaultClientSideAvailability defaultClientSideAvailability) {
+  public void setDefaultClientSideAvailability(@javax.annotation.Nonnull DefaultClientSideAvailability defaultClientSideAvailability) {
     this.defaultClientSideAvailability = defaultClientSideAvailability;
   }
 
@@ -290,38 +296,29 @@ public class UpsertPayloadRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_links");
-    openapiFields.add("tags");
-    openapiFields.add("temporary");
-    openapiFields.add("booleanDefaults");
-    openapiFields.add("defaultClientSideAvailability");
+    openapiFields = new HashSet<String>(Arrays.asList("_links", "tags", "temporary", "booleanDefaults", "defaultClientSideAvailability"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("tags");
-    openapiRequiredFields.add("temporary");
-    openapiRequiredFields.add("booleanDefaults");
-    openapiRequiredFields.add("defaultClientSideAvailability");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("tags", "temporary", "booleanDefaults", "defaultClientSideAvailability"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to UpsertPayloadRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to UpsertPayloadRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UpsertPayloadRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpsertPayloadRep is not found in the empty JSON string", UpsertPayloadRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in UpsertPayloadRep is not found in the empty JSON string", UpsertPayloadRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : UpsertPayloadRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -329,7 +326,7 @@ public class UpsertPayloadRep {
       if (jsonObj.get("tags") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       // validate the required field `booleanDefaults`
       BooleanFlagDefaults.validateJsonElement(jsonObj.get("booleanDefaults"));
@@ -394,7 +391,7 @@ public class UpsertPayloadRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -409,22 +406,22 @@ public class UpsertPayloadRep {
     }
   }
 
- /**
-  * Create an instance of UpsertPayloadRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of UpsertPayloadRep
-  * @throws IOException if the JSON string is invalid with respect to UpsertPayloadRep
-  */
+  /**
+   * Create an instance of UpsertPayloadRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of UpsertPayloadRep
+   * @throws IOException if the JSON string is invalid with respect to UpsertPayloadRep
+   */
   public static UpsertPayloadRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, UpsertPayloadRep.class);
   }
 
- /**
-  * Convert an instance of UpsertPayloadRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of UpsertPayloadRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

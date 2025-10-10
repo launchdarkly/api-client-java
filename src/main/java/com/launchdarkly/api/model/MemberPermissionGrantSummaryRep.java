@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,55 +40,58 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * MemberPermissionGrantSummaryRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class MemberPermissionGrantSummaryRep {
   public static final String SERIALIZED_NAME_ACTION_SET = "actionSet";
   @SerializedName(SERIALIZED_NAME_ACTION_SET)
+  @javax.annotation.Nullable
   private String actionSet;
 
   public static final String SERIALIZED_NAME_ACTIONS = "actions";
   @SerializedName(SERIALIZED_NAME_ACTIONS)
+  @javax.annotation.Nullable
   private List<String> actions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_RESOURCE = "resource";
   @SerializedName(SERIALIZED_NAME_RESOURCE)
+  @javax.annotation.Nonnull
   private String resource;
 
   public MemberPermissionGrantSummaryRep() {
   }
 
-  public MemberPermissionGrantSummaryRep actionSet(String actionSet) {
+  public MemberPermissionGrantSummaryRep actionSet(@javax.annotation.Nullable String actionSet) {
     this.actionSet = actionSet;
     return this;
   }
 
-   /**
+  /**
    * The name of the group of related actions to allow. A permission grant may have either an &lt;code&gt;actionSet&lt;/code&gt; or a list of &lt;code&gt;actions&lt;/code&gt; but not both at the same time.
    * @return actionSet
-  **/
+   */
   @javax.annotation.Nullable
   public String getActionSet() {
     return actionSet;
   }
 
-  public void setActionSet(String actionSet) {
+  public void setActionSet(@javax.annotation.Nullable String actionSet) {
     this.actionSet = actionSet;
   }
 
 
-  public MemberPermissionGrantSummaryRep actions(List<String> actions) {
+  public MemberPermissionGrantSummaryRep actions(@javax.annotation.Nullable List<String> actions) {
     this.actions = actions;
     return this;
   }
@@ -100,35 +104,35 @@ public class MemberPermissionGrantSummaryRep {
     return this;
   }
 
-   /**
+  /**
    * A list of actions to allow. A permission grant may have either an &lt;code&gt;actionSet&lt;/code&gt; or a list of &lt;code&gt;actions&lt;/code&gt; but not both at the same time.
    * @return actions
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getActions() {
     return actions;
   }
 
-  public void setActions(List<String> actions) {
+  public void setActions(@javax.annotation.Nullable List<String> actions) {
     this.actions = actions;
   }
 
 
-  public MemberPermissionGrantSummaryRep resource(String resource) {
+  public MemberPermissionGrantSummaryRep resource(@javax.annotation.Nonnull String resource) {
     this.resource = resource;
     return this;
   }
 
-   /**
+  /**
    * The resource for which the actions are allowed
    * @return resource
-  **/
+   */
   @javax.annotation.Nonnull
   public String getResource() {
     return resource;
   }
 
-  public void setResource(String resource) {
+  public void setResource(@javax.annotation.Nonnull String resource) {
     this.resource = resource;
   }
 
@@ -227,45 +231,41 @@ public class MemberPermissionGrantSummaryRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("actionSet");
-    openapiFields.add("actions");
-    openapiFields.add("resource");
+    openapiFields = new HashSet<String>(Arrays.asList("actionSet", "actions", "resource"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("resource");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("resource"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to MemberPermissionGrantSummaryRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to MemberPermissionGrantSummaryRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!MemberPermissionGrantSummaryRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in MemberPermissionGrantSummaryRep is not found in the empty JSON string", MemberPermissionGrantSummaryRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in MemberPermissionGrantSummaryRep is not found in the empty JSON string", MemberPermissionGrantSummaryRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : MemberPermissionGrantSummaryRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("actionSet") != null && !jsonObj.get("actionSet").isJsonNull()) && !jsonObj.get("actionSet").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `actionSet` to be a primitive type in the JSON string but got `%s`", jsonObj.get("actionSet").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `actionSet` to be a primitive type in the JSON string but got `%s`", jsonObj.get("actionSet").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("actions") != null && !jsonObj.get("actions").isJsonNull() && !jsonObj.get("actions").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `actions` to be an array in the JSON string but got `%s`", jsonObj.get("actions").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `actions` to be an array in the JSON string but got `%s`", jsonObj.get("actions").toString()));
       }
       if (!jsonObj.get("resource").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `resource` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resource").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `resource` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resource").toString()));
       }
   }
 
@@ -326,7 +326,7 @@ public class MemberPermissionGrantSummaryRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -341,22 +341,22 @@ public class MemberPermissionGrantSummaryRep {
     }
   }
 
- /**
-  * Create an instance of MemberPermissionGrantSummaryRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of MemberPermissionGrantSummaryRep
-  * @throws IOException if the JSON string is invalid with respect to MemberPermissionGrantSummaryRep
-  */
+  /**
+   * Create an instance of MemberPermissionGrantSummaryRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of MemberPermissionGrantSummaryRep
+   * @throws IOException if the JSON string is invalid with respect to MemberPermissionGrantSummaryRep
+   */
   public static MemberPermissionGrantSummaryRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, MemberPermissionGrantSummaryRep.class);
   }
 
- /**
-  * Convert an instance of MemberPermissionGrantSummaryRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of MemberPermissionGrantSummaryRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

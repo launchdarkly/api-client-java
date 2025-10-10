@@ -92,7 +92,8 @@ public class ScheduledChangesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -103,7 +104,7 @@ public class ScheduledChangesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteFlagConfigScheduledChangesCall(String projectKey, String featureFlagKey, String environmentKey, String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteFlagConfigScheduledChangesCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -152,7 +153,7 @@ public class ScheduledChangesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteFlagConfigScheduledChangesValidateBeforeCall(String projectKey, String featureFlagKey, String environmentKey, String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteFlagConfigScheduledChangesValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling deleteFlagConfigScheduledChanges(Async)");
@@ -186,7 +187,8 @@ public class ScheduledChangesApi {
      * @param id The scheduled change id (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -197,7 +199,7 @@ public class ScheduledChangesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteFlagConfigScheduledChanges(String projectKey, String featureFlagKey, String environmentKey, String id) throws ApiException {
+    public void deleteFlagConfigScheduledChanges(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id) throws ApiException {
         deleteFlagConfigScheduledChangesWithHttpInfo(projectKey, featureFlagKey, environmentKey, id);
     }
 
@@ -211,7 +213,8 @@ public class ScheduledChangesApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -222,7 +225,7 @@ public class ScheduledChangesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteFlagConfigScheduledChangesWithHttpInfo(String projectKey, String featureFlagKey, String environmentKey, String id) throws ApiException {
+    public ApiResponse<Void> deleteFlagConfigScheduledChangesWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteFlagConfigScheduledChangesValidateBeforeCall(projectKey, featureFlagKey, environmentKey, id, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -238,7 +241,8 @@ public class ScheduledChangesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -249,7 +253,7 @@ public class ScheduledChangesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteFlagConfigScheduledChangesAsync(String projectKey, String featureFlagKey, String environmentKey, String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteFlagConfigScheduledChangesAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteFlagConfigScheduledChangesValidateBeforeCall(projectKey, featureFlagKey, environmentKey, id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -265,7 +269,8 @@ public class ScheduledChangesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Scheduled changes response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -273,7 +278,7 @@ public class ScheduledChangesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFeatureFlagScheduledChangeCall(String projectKey, String featureFlagKey, String environmentKey, String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getFeatureFlagScheduledChangeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -322,7 +327,7 @@ public class ScheduledChangesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFeatureFlagScheduledChangeValidateBeforeCall(String projectKey, String featureFlagKey, String environmentKey, String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getFeatureFlagScheduledChangeValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getFeatureFlagScheduledChange(Async)");
@@ -357,7 +362,8 @@ public class ScheduledChangesApi {
      * @return FeatureFlagScheduledChange
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Scheduled changes response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -365,7 +371,7 @@ public class ScheduledChangesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public FeatureFlagScheduledChange getFeatureFlagScheduledChange(String projectKey, String featureFlagKey, String environmentKey, String id) throws ApiException {
+    public FeatureFlagScheduledChange getFeatureFlagScheduledChange(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id) throws ApiException {
         ApiResponse<FeatureFlagScheduledChange> localVarResp = getFeatureFlagScheduledChangeWithHttpInfo(projectKey, featureFlagKey, environmentKey, id);
         return localVarResp.getData();
     }
@@ -380,7 +386,8 @@ public class ScheduledChangesApi {
      * @return ApiResponse&lt;FeatureFlagScheduledChange&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Scheduled changes response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -388,7 +395,7 @@ public class ScheduledChangesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FeatureFlagScheduledChange> getFeatureFlagScheduledChangeWithHttpInfo(String projectKey, String featureFlagKey, String environmentKey, String id) throws ApiException {
+    public ApiResponse<FeatureFlagScheduledChange> getFeatureFlagScheduledChangeWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getFeatureFlagScheduledChangeValidateBeforeCall(projectKey, featureFlagKey, environmentKey, id, null);
         Type localVarReturnType = new TypeToken<FeatureFlagScheduledChange>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -405,7 +412,8 @@ public class ScheduledChangesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Scheduled changes response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -413,7 +421,7 @@ public class ScheduledChangesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFeatureFlagScheduledChangeAsync(String projectKey, String featureFlagKey, String environmentKey, String id, final ApiCallback<FeatureFlagScheduledChange> _callback) throws ApiException {
+    public okhttp3.Call getFeatureFlagScheduledChangeAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback<FeatureFlagScheduledChange> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFeatureFlagScheduledChangeValidateBeforeCall(projectKey, featureFlagKey, environmentKey, id, _callback);
         Type localVarReturnType = new TypeToken<FeatureFlagScheduledChange>(){}.getType();
@@ -429,7 +437,8 @@ public class ScheduledChangesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Scheduled changes collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -438,7 +447,7 @@ public class ScheduledChangesApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFlagConfigScheduledChangesCall(String projectKey, String featureFlagKey, String environmentKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getFlagConfigScheduledChangesCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -486,7 +495,7 @@ public class ScheduledChangesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFlagConfigScheduledChangesValidateBeforeCall(String projectKey, String featureFlagKey, String environmentKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getFlagConfigScheduledChangesValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getFlagConfigScheduledChanges(Async)");
@@ -515,7 +524,8 @@ public class ScheduledChangesApi {
      * @return FeatureFlagScheduledChanges
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Scheduled changes collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -524,7 +534,7 @@ public class ScheduledChangesApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public FeatureFlagScheduledChanges getFlagConfigScheduledChanges(String projectKey, String featureFlagKey, String environmentKey) throws ApiException {
+    public FeatureFlagScheduledChanges getFlagConfigScheduledChanges(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey) throws ApiException {
         ApiResponse<FeatureFlagScheduledChanges> localVarResp = getFlagConfigScheduledChangesWithHttpInfo(projectKey, featureFlagKey, environmentKey);
         return localVarResp.getData();
     }
@@ -538,7 +548,8 @@ public class ScheduledChangesApi {
      * @return ApiResponse&lt;FeatureFlagScheduledChanges&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Scheduled changes collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -547,7 +558,7 @@ public class ScheduledChangesApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FeatureFlagScheduledChanges> getFlagConfigScheduledChangesWithHttpInfo(String projectKey, String featureFlagKey, String environmentKey) throws ApiException {
+    public ApiResponse<FeatureFlagScheduledChanges> getFlagConfigScheduledChangesWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey) throws ApiException {
         okhttp3.Call localVarCall = getFlagConfigScheduledChangesValidateBeforeCall(projectKey, featureFlagKey, environmentKey, null);
         Type localVarReturnType = new TypeToken<FeatureFlagScheduledChanges>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -563,7 +574,8 @@ public class ScheduledChangesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Scheduled changes collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -572,7 +584,7 @@ public class ScheduledChangesApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFlagConfigScheduledChangesAsync(String projectKey, String featureFlagKey, String environmentKey, final ApiCallback<FeatureFlagScheduledChanges> _callback) throws ApiException {
+    public okhttp3.Call getFlagConfigScheduledChangesAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, final ApiCallback<FeatureFlagScheduledChanges> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFlagConfigScheduledChangesValidateBeforeCall(projectKey, featureFlagKey, environmentKey, _callback);
         Type localVarReturnType = new TypeToken<FeatureFlagScheduledChanges>(){}.getType();
@@ -591,7 +603,8 @@ public class ScheduledChangesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Scheduled changes response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -603,7 +616,7 @@ public class ScheduledChangesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchFlagConfigScheduledChangeCall(String projectKey, String featureFlagKey, String environmentKey, String id, FlagScheduledChangesInput flagScheduledChangesInput, Boolean ignoreConflicts, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchFlagConfigScheduledChangeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull FlagScheduledChangesInput flagScheduledChangesInput, @javax.annotation.Nullable Boolean ignoreConflicts, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -657,7 +670,7 @@ public class ScheduledChangesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchFlagConfigScheduledChangeValidateBeforeCall(String projectKey, String featureFlagKey, String environmentKey, String id, FlagScheduledChangesInput flagScheduledChangesInput, Boolean ignoreConflicts, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchFlagConfigScheduledChangeValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull FlagScheduledChangesInput flagScheduledChangesInput, @javax.annotation.Nullable Boolean ignoreConflicts, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling patchFlagConfigScheduledChange(Async)");
@@ -699,7 +712,8 @@ public class ScheduledChangesApi {
      * @return FeatureFlagScheduledChange
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Scheduled changes response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -711,7 +725,7 @@ public class ScheduledChangesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public FeatureFlagScheduledChange patchFlagConfigScheduledChange(String projectKey, String featureFlagKey, String environmentKey, String id, FlagScheduledChangesInput flagScheduledChangesInput, Boolean ignoreConflicts) throws ApiException {
+    public FeatureFlagScheduledChange patchFlagConfigScheduledChange(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull FlagScheduledChangesInput flagScheduledChangesInput, @javax.annotation.Nullable Boolean ignoreConflicts) throws ApiException {
         ApiResponse<FeatureFlagScheduledChange> localVarResp = patchFlagConfigScheduledChangeWithHttpInfo(projectKey, featureFlagKey, environmentKey, id, flagScheduledChangesInput, ignoreConflicts);
         return localVarResp.getData();
     }
@@ -728,7 +742,8 @@ public class ScheduledChangesApi {
      * @return ApiResponse&lt;FeatureFlagScheduledChange&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Scheduled changes response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -740,7 +755,7 @@ public class ScheduledChangesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FeatureFlagScheduledChange> patchFlagConfigScheduledChangeWithHttpInfo(String projectKey, String featureFlagKey, String environmentKey, String id, FlagScheduledChangesInput flagScheduledChangesInput, Boolean ignoreConflicts) throws ApiException {
+    public ApiResponse<FeatureFlagScheduledChange> patchFlagConfigScheduledChangeWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull FlagScheduledChangesInput flagScheduledChangesInput, @javax.annotation.Nullable Boolean ignoreConflicts) throws ApiException {
         okhttp3.Call localVarCall = patchFlagConfigScheduledChangeValidateBeforeCall(projectKey, featureFlagKey, environmentKey, id, flagScheduledChangesInput, ignoreConflicts, null);
         Type localVarReturnType = new TypeToken<FeatureFlagScheduledChange>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -759,7 +774,8 @@ public class ScheduledChangesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Scheduled changes response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -771,7 +787,7 @@ public class ScheduledChangesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchFlagConfigScheduledChangeAsync(String projectKey, String featureFlagKey, String environmentKey, String id, FlagScheduledChangesInput flagScheduledChangesInput, Boolean ignoreConflicts, final ApiCallback<FeatureFlagScheduledChange> _callback) throws ApiException {
+    public okhttp3.Call patchFlagConfigScheduledChangeAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull FlagScheduledChangesInput flagScheduledChangesInput, @javax.annotation.Nullable Boolean ignoreConflicts, final ApiCallback<FeatureFlagScheduledChange> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchFlagConfigScheduledChangeValidateBeforeCall(projectKey, featureFlagKey, environmentKey, id, flagScheduledChangesInput, ignoreConflicts, _callback);
         Type localVarReturnType = new TypeToken<FeatureFlagScheduledChange>(){}.getType();
@@ -789,7 +805,8 @@ public class ScheduledChangesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Scheduled changes response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -801,7 +818,7 @@ public class ScheduledChangesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postFlagConfigScheduledChangesCall(String projectKey, String featureFlagKey, String environmentKey, PostFlagScheduledChangesInput postFlagScheduledChangesInput, Boolean ignoreConflicts, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postFlagConfigScheduledChangesCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull PostFlagScheduledChangesInput postFlagScheduledChangesInput, @javax.annotation.Nullable Boolean ignoreConflicts, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -854,7 +871,7 @@ public class ScheduledChangesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postFlagConfigScheduledChangesValidateBeforeCall(String projectKey, String featureFlagKey, String environmentKey, PostFlagScheduledChangesInput postFlagScheduledChangesInput, Boolean ignoreConflicts, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postFlagConfigScheduledChangesValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull PostFlagScheduledChangesInput postFlagScheduledChangesInput, @javax.annotation.Nullable Boolean ignoreConflicts, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling postFlagConfigScheduledChanges(Async)");
@@ -890,7 +907,8 @@ public class ScheduledChangesApi {
      * @return FeatureFlagScheduledChange
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Scheduled changes response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -902,7 +920,7 @@ public class ScheduledChangesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public FeatureFlagScheduledChange postFlagConfigScheduledChanges(String projectKey, String featureFlagKey, String environmentKey, PostFlagScheduledChangesInput postFlagScheduledChangesInput, Boolean ignoreConflicts) throws ApiException {
+    public FeatureFlagScheduledChange postFlagConfigScheduledChanges(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull PostFlagScheduledChangesInput postFlagScheduledChangesInput, @javax.annotation.Nullable Boolean ignoreConflicts) throws ApiException {
         ApiResponse<FeatureFlagScheduledChange> localVarResp = postFlagConfigScheduledChangesWithHttpInfo(projectKey, featureFlagKey, environmentKey, postFlagScheduledChangesInput, ignoreConflicts);
         return localVarResp.getData();
     }
@@ -918,7 +936,8 @@ public class ScheduledChangesApi {
      * @return ApiResponse&lt;FeatureFlagScheduledChange&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Scheduled changes response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -930,7 +949,7 @@ public class ScheduledChangesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FeatureFlagScheduledChange> postFlagConfigScheduledChangesWithHttpInfo(String projectKey, String featureFlagKey, String environmentKey, PostFlagScheduledChangesInput postFlagScheduledChangesInput, Boolean ignoreConflicts) throws ApiException {
+    public ApiResponse<FeatureFlagScheduledChange> postFlagConfigScheduledChangesWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull PostFlagScheduledChangesInput postFlagScheduledChangesInput, @javax.annotation.Nullable Boolean ignoreConflicts) throws ApiException {
         okhttp3.Call localVarCall = postFlagConfigScheduledChangesValidateBeforeCall(projectKey, featureFlagKey, environmentKey, postFlagScheduledChangesInput, ignoreConflicts, null);
         Type localVarReturnType = new TypeToken<FeatureFlagScheduledChange>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -948,7 +967,8 @@ public class ScheduledChangesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Scheduled changes response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -960,7 +980,7 @@ public class ScheduledChangesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postFlagConfigScheduledChangesAsync(String projectKey, String featureFlagKey, String environmentKey, PostFlagScheduledChangesInput postFlagScheduledChangesInput, Boolean ignoreConflicts, final ApiCallback<FeatureFlagScheduledChange> _callback) throws ApiException {
+    public okhttp3.Call postFlagConfigScheduledChangesAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull PostFlagScheduledChangesInput postFlagScheduledChangesInput, @javax.annotation.Nullable Boolean ignoreConflicts, final ApiCallback<FeatureFlagScheduledChange> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postFlagConfigScheduledChangesValidateBeforeCall(projectKey, featureFlagKey, environmentKey, postFlagScheduledChangesInput, ignoreConflicts, _callback);
         Type localVarReturnType = new TypeToken<FeatureFlagScheduledChange>(){}.getType();

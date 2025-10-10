@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,65 +40,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * DynamicOptions
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class DynamicOptions {
   public static final String SERIALIZED_NAME_ENDPOINT = "endpoint";
   @SerializedName(SERIALIZED_NAME_ENDPOINT)
+  @javax.annotation.Nullable
   private Endpoint endpoint;
 
   public static final String SERIALIZED_NAME_PARSER = "parser";
   @SerializedName(SERIALIZED_NAME_PARSER)
+  @javax.annotation.Nullable
   private DynamicOptionsParser parser;
 
   public DynamicOptions() {
   }
 
-  public DynamicOptions endpoint(Endpoint endpoint) {
+  public DynamicOptions endpoint(@javax.annotation.Nullable Endpoint endpoint) {
     this.endpoint = endpoint;
     return this;
   }
 
-   /**
+  /**
    * Get endpoint
    * @return endpoint
-  **/
+   */
   @javax.annotation.Nullable
   public Endpoint getEndpoint() {
     return endpoint;
   }
 
-  public void setEndpoint(Endpoint endpoint) {
+  public void setEndpoint(@javax.annotation.Nullable Endpoint endpoint) {
     this.endpoint = endpoint;
   }
 
 
-  public DynamicOptions parser(DynamicOptionsParser parser) {
+  public DynamicOptions parser(@javax.annotation.Nullable DynamicOptionsParser parser) {
     this.parser = parser;
     return this;
   }
 
-   /**
+  /**
    * Get parser
    * @return parser
-  **/
+   */
   @javax.annotation.Nullable
   public DynamicOptionsParser getParser() {
     return parser;
   }
 
-  public void setParser(DynamicOptionsParser parser) {
+  public void setParser(@javax.annotation.Nullable DynamicOptionsParser parser) {
     this.parser = parser;
   }
 
@@ -194,24 +197,22 @@ public class DynamicOptions {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("endpoint");
-    openapiFields.add("parser");
+    openapiFields = new HashSet<String>(Arrays.asList("endpoint", "parser"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DynamicOptions
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DynamicOptions
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DynamicOptions.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DynamicOptions is not found in the empty JSON string", DynamicOptions.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DynamicOptions is not found in the empty JSON string", DynamicOptions.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -282,7 +283,7 @@ public class DynamicOptions {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -297,22 +298,22 @@ public class DynamicOptions {
     }
   }
 
- /**
-  * Create an instance of DynamicOptions given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DynamicOptions
-  * @throws IOException if the JSON string is invalid with respect to DynamicOptions
-  */
+  /**
+   * Create an instance of DynamicOptions given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DynamicOptions
+   * @throws IOException if the JSON string is invalid with respect to DynamicOptions
+   */
   public static DynamicOptions fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DynamicOptions.class);
   }
 
- /**
-  * Convert an instance of DynamicOptions to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DynamicOptions to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

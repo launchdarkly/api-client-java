@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,111 +38,115 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * AIToolPatch
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AIToolPatch {
   public static final String SERIALIZED_NAME_MAINTAINER_ID = "maintainerId";
   @SerializedName(SERIALIZED_NAME_MAINTAINER_ID)
+  @javax.annotation.Nullable
   private String maintainerId;
 
   public static final String SERIALIZED_NAME_MAINTAINER_TEAM_KEY = "maintainerTeamKey";
   @SerializedName(SERIALIZED_NAME_MAINTAINER_TEAM_KEY)
+  @javax.annotation.Nullable
   private String maintainerTeamKey;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_SCHEMA = "schema";
   @SerializedName(SERIALIZED_NAME_SCHEMA)
+  @javax.annotation.Nullable
   private Object schema;
 
   public AIToolPatch() {
   }
 
-  public AIToolPatch maintainerId(String maintainerId) {
+  public AIToolPatch maintainerId(@javax.annotation.Nullable String maintainerId) {
     this.maintainerId = maintainerId;
     return this;
   }
 
-   /**
+  /**
    * Get maintainerId
    * @return maintainerId
-  **/
+   */
   @javax.annotation.Nullable
   public String getMaintainerId() {
     return maintainerId;
   }
 
-  public void setMaintainerId(String maintainerId) {
+  public void setMaintainerId(@javax.annotation.Nullable String maintainerId) {
     this.maintainerId = maintainerId;
   }
 
 
-  public AIToolPatch maintainerTeamKey(String maintainerTeamKey) {
+  public AIToolPatch maintainerTeamKey(@javax.annotation.Nullable String maintainerTeamKey) {
     this.maintainerTeamKey = maintainerTeamKey;
     return this;
   }
 
-   /**
+  /**
    * Get maintainerTeamKey
    * @return maintainerTeamKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getMaintainerTeamKey() {
     return maintainerTeamKey;
   }
 
-  public void setMaintainerTeamKey(String maintainerTeamKey) {
+  public void setMaintainerTeamKey(@javax.annotation.Nullable String maintainerTeamKey) {
     this.maintainerTeamKey = maintainerTeamKey;
   }
 
 
-  public AIToolPatch description(String description) {
+  public AIToolPatch description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Get description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public AIToolPatch schema(Object schema) {
+  public AIToolPatch schema(@javax.annotation.Nullable Object schema) {
     this.schema = schema;
     return this;
   }
 
-   /**
+  /**
    * Get schema
    * @return schema
-  **/
+   */
   @javax.annotation.Nullable
   public Object getSchema() {
     return schema;
   }
 
-  public void setSchema(Object schema) {
+  public void setSchema(@javax.annotation.Nullable Object schema) {
     this.schema = schema;
   }
 
@@ -242,37 +247,33 @@ public class AIToolPatch {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("maintainerId");
-    openapiFields.add("maintainerTeamKey");
-    openapiFields.add("description");
-    openapiFields.add("schema");
+    openapiFields = new HashSet<String>(Arrays.asList("maintainerId", "maintainerTeamKey", "description", "schema"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to AIToolPatch
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AIToolPatch
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AIToolPatch.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AIToolPatch is not found in the empty JSON string", AIToolPatch.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AIToolPatch is not found in the empty JSON string", AIToolPatch.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("maintainerId") != null && !jsonObj.get("maintainerId").isJsonNull()) && !jsonObj.get("maintainerId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerId").toString()));
       }
       if ((jsonObj.get("maintainerTeamKey") != null && !jsonObj.get("maintainerTeamKey").isJsonNull()) && !jsonObj.get("maintainerTeamKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `maintainerTeamKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerTeamKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `maintainerTeamKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerTeamKey").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
   }
 
@@ -333,7 +334,7 @@ public class AIToolPatch {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -348,22 +349,22 @@ public class AIToolPatch {
     }
   }
 
- /**
-  * Create an instance of AIToolPatch given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AIToolPatch
-  * @throws IOException if the JSON string is invalid with respect to AIToolPatch
-  */
+  /**
+   * Create an instance of AIToolPatch given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AIToolPatch
+   * @throws IOException if the JSON string is invalid with respect to AIToolPatch
+   */
   public static AIToolPatch fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AIToolPatch.class);
   }
 
- /**
-  * Convert an instance of AIToolPatch to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AIToolPatch to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

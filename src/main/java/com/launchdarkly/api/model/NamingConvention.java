@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,32 +38,32 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * NamingConvention
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class NamingConvention {
   /**
    * The casing convention to enforce for new flag keys in this project
    */
   @JsonAdapter(CaseEnum.Adapter.class)
   public enum CaseEnum {
-    CAMELCASE("camelCase"),
+    CAMEL_CASE("camelCase"),
     
-    UPPERCAMELCASE("upperCamelCase"),
+    UPPER_CAMEL_CASE("upperCamelCase"),
     
-    SNAKECASE("snakeCase"),
+    SNAKE_CASE("snakeCase"),
     
-    KEBABCASE("kebabCase");
+    KEBAB_CASE("kebabCase");
 
     private String value;
 
@@ -109,49 +110,51 @@ public class NamingConvention {
 
   public static final String SERIALIZED_NAME_CASE = "case";
   @SerializedName(SERIALIZED_NAME_CASE)
+  @javax.annotation.Nullable
   private CaseEnum _case;
 
   public static final String SERIALIZED_NAME_PREFIX = "prefix";
   @SerializedName(SERIALIZED_NAME_PREFIX)
+  @javax.annotation.Nullable
   private String prefix;
 
   public NamingConvention() {
   }
 
-  public NamingConvention _case(CaseEnum _case) {
+  public NamingConvention _case(@javax.annotation.Nullable CaseEnum _case) {
     this._case = _case;
     return this;
   }
 
-   /**
+  /**
    * The casing convention to enforce for new flag keys in this project
    * @return _case
-  **/
+   */
   @javax.annotation.Nullable
   public CaseEnum getCase() {
     return _case;
   }
 
-  public void setCase(CaseEnum _case) {
+  public void setCase(@javax.annotation.Nullable CaseEnum _case) {
     this._case = _case;
   }
 
 
-  public NamingConvention prefix(String prefix) {
+  public NamingConvention prefix(@javax.annotation.Nullable String prefix) {
     this.prefix = prefix;
     return this;
   }
 
-   /**
+  /**
    * The prefix to enforce for new flag keys in this project
    * @return prefix
-  **/
+   */
   @javax.annotation.Nullable
   public String getPrefix() {
     return prefix;
   }
 
-  public void setPrefix(String prefix) {
+  public void setPrefix(@javax.annotation.Nullable String prefix) {
     this.prefix = prefix;
   }
 
@@ -248,36 +251,34 @@ public class NamingConvention {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("case");
-    openapiFields.add("prefix");
+    openapiFields = new HashSet<String>(Arrays.asList("case", "prefix"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to NamingConvention
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to NamingConvention
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!NamingConvention.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in NamingConvention is not found in the empty JSON string", NamingConvention.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in NamingConvention is not found in the empty JSON string", NamingConvention.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("case") != null && !jsonObj.get("case").isJsonNull()) && !jsonObj.get("case").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `case` to be a primitive type in the JSON string but got `%s`", jsonObj.get("case").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `case` to be a primitive type in the JSON string but got `%s`", jsonObj.get("case").toString()));
       }
       // validate the optional field `case`
       if (jsonObj.get("case") != null && !jsonObj.get("case").isJsonNull()) {
         CaseEnum.validateJsonElement(jsonObj.get("case"));
       }
       if ((jsonObj.get("prefix") != null && !jsonObj.get("prefix").isJsonNull()) && !jsonObj.get("prefix").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));
       }
   }
 
@@ -338,7 +339,7 @@ public class NamingConvention {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -353,22 +354,22 @@ public class NamingConvention {
     }
   }
 
- /**
-  * Create an instance of NamingConvention given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of NamingConvention
-  * @throws IOException if the JSON string is invalid with respect to NamingConvention
-  */
+  /**
+   * Create an instance of NamingConvention given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of NamingConvention
+   * @throws IOException if the JSON string is invalid with respect to NamingConvention
+   */
   public static NamingConvention fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, NamingConvention.class);
   }
 
- /**
-  * Convert an instance of NamingConvention to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of NamingConvention to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

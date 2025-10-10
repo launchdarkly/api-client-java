@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,88 +39,91 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * VariationEvalSummary
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class VariationEvalSummary {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nullable
   private Object value = null;
 
   public static final String SERIALIZED_NAME_BEFORE = "before";
   @SerializedName(SERIALIZED_NAME_BEFORE)
+  @javax.annotation.Nullable
   private Long before;
 
   public static final String SERIALIZED_NAME_AFTER = "after";
   @SerializedName(SERIALIZED_NAME_AFTER)
+  @javax.annotation.Nullable
   private Long after;
 
   public VariationEvalSummary() {
   }
 
-  public VariationEvalSummary value(Object value) {
+  public VariationEvalSummary value(@javax.annotation.Nullable Object value) {
     this.value = value;
     return this;
   }
 
-   /**
+  /**
    * The variation value
    * @return value
-  **/
+   */
   @javax.annotation.Nullable
   public Object getValue() {
     return value;
   }
 
-  public void setValue(Object value) {
+  public void setValue(@javax.annotation.Nullable Object value) {
     this.value = value;
   }
 
 
-  public VariationEvalSummary before(Long before) {
+  public VariationEvalSummary before(@javax.annotation.Nullable Long before) {
     this.before = before;
     return this;
   }
 
-   /**
+  /**
    * The number of evaluations in the ten minutes before the flag event
    * @return before
-  **/
+   */
   @javax.annotation.Nullable
   public Long getBefore() {
     return before;
   }
 
-  public void setBefore(Long before) {
+  public void setBefore(@javax.annotation.Nullable Long before) {
     this.before = before;
   }
 
 
-  public VariationEvalSummary after(Long after) {
+  public VariationEvalSummary after(@javax.annotation.Nullable Long after) {
     this.after = after;
     return this;
   }
 
-   /**
+  /**
    * The number of evaluations in the ten minutes after the flag event
    * @return after
-  **/
+   */
   @javax.annotation.Nullable
   public Long getAfter() {
     return after;
   }
 
-  public void setAfter(Long after) {
+  public void setAfter(@javax.annotation.Nullable Long after) {
     this.after = after;
   }
 
@@ -229,25 +233,22 @@ public class VariationEvalSummary {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("value");
-    openapiFields.add("before");
-    openapiFields.add("after");
+    openapiFields = new HashSet<String>(Arrays.asList("value", "before", "after"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to VariationEvalSummary
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to VariationEvalSummary
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!VariationEvalSummary.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in VariationEvalSummary is not found in the empty JSON string", VariationEvalSummary.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in VariationEvalSummary is not found in the empty JSON string", VariationEvalSummary.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -310,7 +311,7 @@ public class VariationEvalSummary {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -325,22 +326,22 @@ public class VariationEvalSummary {
     }
   }
 
- /**
-  * Create an instance of VariationEvalSummary given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of VariationEvalSummary
-  * @throws IOException if the JSON string is invalid with respect to VariationEvalSummary
-  */
+  /**
+   * Create an instance of VariationEvalSummary given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of VariationEvalSummary
+   * @throws IOException if the JSON string is invalid with respect to VariationEvalSummary
+   */
   public static VariationEvalSummary fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, VariationEvalSummary.class);
   }
 
- /**
-  * Convert an instance of VariationEvalSummary to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of VariationEvalSummary to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

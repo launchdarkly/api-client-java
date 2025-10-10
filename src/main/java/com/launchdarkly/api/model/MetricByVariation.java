@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,65 +39,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * MetricByVariation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class MetricByVariation {
   public static final String SERIALIZED_NAME_VARIATION_KEY = "variationKey";
   @SerializedName(SERIALIZED_NAME_VARIATION_KEY)
+  @javax.annotation.Nullable
   private String variationKey;
 
   public static final String SERIALIZED_NAME_METRICS = "metrics";
   @SerializedName(SERIALIZED_NAME_METRICS)
+  @javax.annotation.Nullable
   private Metrics metrics;
 
   public MetricByVariation() {
   }
 
-  public MetricByVariation variationKey(String variationKey) {
+  public MetricByVariation variationKey(@javax.annotation.Nullable String variationKey) {
     this.variationKey = variationKey;
     return this;
   }
 
-   /**
+  /**
    * Get variationKey
    * @return variationKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getVariationKey() {
     return variationKey;
   }
 
-  public void setVariationKey(String variationKey) {
+  public void setVariationKey(@javax.annotation.Nullable String variationKey) {
     this.variationKey = variationKey;
   }
 
 
-  public MetricByVariation metrics(Metrics metrics) {
+  public MetricByVariation metrics(@javax.annotation.Nullable Metrics metrics) {
     this.metrics = metrics;
     return this;
   }
 
-   /**
+  /**
    * Get metrics
    * @return metrics
-  **/
+   */
   @javax.annotation.Nullable
   public Metrics getMetrics() {
     return metrics;
   }
 
-  public void setMetrics(Metrics metrics) {
+  public void setMetrics(@javax.annotation.Nullable Metrics metrics) {
     this.metrics = metrics;
   }
 
@@ -193,29 +196,27 @@ public class MetricByVariation {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("variationKey");
-    openapiFields.add("metrics");
+    openapiFields = new HashSet<String>(Arrays.asList("variationKey", "metrics"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to MetricByVariation
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to MetricByVariation
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!MetricByVariation.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in MetricByVariation is not found in the empty JSON string", MetricByVariation.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in MetricByVariation is not found in the empty JSON string", MetricByVariation.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("variationKey") != null && !jsonObj.get("variationKey").isJsonNull()) && !jsonObj.get("variationKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `variationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("variationKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `variationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("variationKey").toString()));
       }
       // validate the optional field `metrics`
       if (jsonObj.get("metrics") != null && !jsonObj.get("metrics").isJsonNull()) {
@@ -280,7 +281,7 @@ public class MetricByVariation {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -295,22 +296,22 @@ public class MetricByVariation {
     }
   }
 
- /**
-  * Create an instance of MetricByVariation given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of MetricByVariation
-  * @throws IOException if the JSON string is invalid with respect to MetricByVariation
-  */
+  /**
+   * Create an instance of MetricByVariation given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of MetricByVariation
+   * @throws IOException if the JSON string is invalid with respect to MetricByVariation
+   */
   public static MetricByVariation fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, MetricByVariation.class);
   }
 
- /**
-  * Convert an instance of MetricByVariation to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of MetricByVariation to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

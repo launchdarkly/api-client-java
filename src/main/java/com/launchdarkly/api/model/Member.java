@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -46,108 +47,129 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * Member
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class Member {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_FIRST_NAME = "firstName";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
+  @javax.annotation.Nullable
   private String firstName;
 
   public static final String SERIALIZED_NAME_LAST_NAME = "lastName";
   @SerializedName(SERIALIZED_NAME_LAST_NAME)
+  @javax.annotation.Nullable
   private String lastName;
 
   public static final String SERIALIZED_NAME_ROLE = "role";
   @SerializedName(SERIALIZED_NAME_ROLE)
+  @javax.annotation.Nonnull
   private String role;
 
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
+  @javax.annotation.Nonnull
   private String email;
 
   public static final String SERIALIZED_NAME_PENDING_INVITE = "_pendingInvite";
   @SerializedName(SERIALIZED_NAME_PENDING_INVITE)
+  @javax.annotation.Nonnull
   private Boolean pendingInvite;
 
   public static final String SERIALIZED_NAME_VERIFIED = "_verified";
   @SerializedName(SERIALIZED_NAME_VERIFIED)
+  @javax.annotation.Nonnull
   private Boolean verified;
 
   public static final String SERIALIZED_NAME_PENDING_EMAIL = "_pendingEmail";
   @SerializedName(SERIALIZED_NAME_PENDING_EMAIL)
+  @javax.annotation.Nullable
   private String pendingEmail;
 
   public static final String SERIALIZED_NAME_CUSTOM_ROLES = "customRoles";
   @SerializedName(SERIALIZED_NAME_CUSTOM_ROLES)
+  @javax.annotation.Nonnull
   private List<String> customRoles = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MFA = "mfa";
   @SerializedName(SERIALIZED_NAME_MFA)
+  @javax.annotation.Nonnull
   private String mfa;
 
   public static final String SERIALIZED_NAME_EXCLUDED_DASHBOARDS = "excludedDashboards";
   @SerializedName(SERIALIZED_NAME_EXCLUDED_DASHBOARDS)
+  @javax.annotation.Nullable
   private List<String> excludedDashboards = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LAST_SEEN = "_lastSeen";
   @SerializedName(SERIALIZED_NAME_LAST_SEEN)
+  @javax.annotation.Nonnull
   private Long lastSeen;
 
   public static final String SERIALIZED_NAME_LAST_SEEN_METADATA = "_lastSeenMetadata";
   @SerializedName(SERIALIZED_NAME_LAST_SEEN_METADATA)
+  @javax.annotation.Nullable
   private LastSeenMetadata lastSeenMetadata;
 
   public static final String SERIALIZED_NAME_INTEGRATION_METADATA = "_integrationMetadata";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_METADATA)
+  @javax.annotation.Nullable
   private IntegrationMetadata integrationMetadata;
 
   public static final String SERIALIZED_NAME_TEAMS = "teams";
   @SerializedName(SERIALIZED_NAME_TEAMS)
+  @javax.annotation.Nullable
   private List<MemberTeamSummaryRep> teams = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PERMISSION_GRANTS = "permissionGrants";
   @SerializedName(SERIALIZED_NAME_PERMISSION_GRANTS)
+  @javax.annotation.Nullable
   private List<MemberPermissionGrantSummaryRep> permissionGrants = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATION_DATE = "creationDate";
   @SerializedName(SERIALIZED_NAME_CREATION_DATE)
+  @javax.annotation.Nonnull
   private Long creationDate;
 
   public static final String SERIALIZED_NAME_OAUTH_PROVIDERS = "oauthProviders";
   @SerializedName(SERIALIZED_NAME_OAUTH_PROVIDERS)
+  @javax.annotation.Nullable
   private List<String> oauthProviders = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
   private Integer version;
 
   public static final String SERIALIZED_NAME_ROLE_ATTRIBUTES = "roleAttributes";
   @SerializedName(SERIALIZED_NAME_ROLE_ATTRIBUTES)
+  @javax.annotation.Nullable
   private Map<String, List<String>> roleAttributes = new HashMap<>();
 
   public Member() {
   }
 
-  public Member links(Map<String, Link> links) {
+  public Member links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -160,173 +182,173 @@ public class Member {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public Member id(String id) {
+  public Member id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The member&#39;s ID
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public Member firstName(String firstName) {
+  public Member firstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
     return this;
   }
 
-   /**
+  /**
    * The member&#39;s first name
    * @return firstName
-  **/
+   */
   @javax.annotation.Nullable
   public String getFirstName() {
     return firstName;
   }
 
-  public void setFirstName(String firstName) {
+  public void setFirstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
   }
 
 
-  public Member lastName(String lastName) {
+  public Member lastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
     return this;
   }
 
-   /**
+  /**
    * The member&#39;s last name
    * @return lastName
-  **/
+   */
   @javax.annotation.Nullable
   public String getLastName() {
     return lastName;
   }
 
-  public void setLastName(String lastName) {
+  public void setLastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
   }
 
 
-  public Member role(String role) {
+  public Member role(@javax.annotation.Nonnull String role) {
     this.role = role;
     return this;
   }
 
-   /**
+  /**
    * The member&#39;s base role. If the member has no additional roles, this role will be in effect.
    * @return role
-  **/
+   */
   @javax.annotation.Nonnull
   public String getRole() {
     return role;
   }
 
-  public void setRole(String role) {
+  public void setRole(@javax.annotation.Nonnull String role) {
     this.role = role;
   }
 
 
-  public Member email(String email) {
+  public Member email(@javax.annotation.Nonnull String email) {
     this.email = email;
     return this;
   }
 
-   /**
+  /**
    * The member&#39;s email address
    * @return email
-  **/
+   */
   @javax.annotation.Nonnull
   public String getEmail() {
     return email;
   }
 
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nonnull String email) {
     this.email = email;
   }
 
 
-  public Member pendingInvite(Boolean pendingInvite) {
+  public Member pendingInvite(@javax.annotation.Nonnull Boolean pendingInvite) {
     this.pendingInvite = pendingInvite;
     return this;
   }
 
-   /**
+  /**
    * Whether the member has a pending invitation
    * @return pendingInvite
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getPendingInvite() {
     return pendingInvite;
   }
 
-  public void setPendingInvite(Boolean pendingInvite) {
+  public void setPendingInvite(@javax.annotation.Nonnull Boolean pendingInvite) {
     this.pendingInvite = pendingInvite;
   }
 
 
-  public Member verified(Boolean verified) {
+  public Member verified(@javax.annotation.Nonnull Boolean verified) {
     this.verified = verified;
     return this;
   }
 
-   /**
+  /**
    * Whether the member&#39;s email address has been verified
    * @return verified
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getVerified() {
     return verified;
   }
 
-  public void setVerified(Boolean verified) {
+  public void setVerified(@javax.annotation.Nonnull Boolean verified) {
     this.verified = verified;
   }
 
 
-  public Member pendingEmail(String pendingEmail) {
+  public Member pendingEmail(@javax.annotation.Nullable String pendingEmail) {
     this.pendingEmail = pendingEmail;
     return this;
   }
 
-   /**
+  /**
    * The member&#39;s email address before it has been verified, for accounts where email verification is required
    * @return pendingEmail
-  **/
+   */
   @javax.annotation.Nullable
   public String getPendingEmail() {
     return pendingEmail;
   }
 
-  public void setPendingEmail(String pendingEmail) {
+  public void setPendingEmail(@javax.annotation.Nullable String pendingEmail) {
     this.pendingEmail = pendingEmail;
   }
 
 
-  public Member customRoles(List<String> customRoles) {
+  public Member customRoles(@javax.annotation.Nonnull List<String> customRoles) {
     this.customRoles = customRoles;
     return this;
   }
@@ -339,40 +361,40 @@ public class Member {
     return this;
   }
 
-   /**
+  /**
    * The set of additional roles, besides the base role, assigned to the member
    * @return customRoles
-  **/
+   */
   @javax.annotation.Nonnull
   public List<String> getCustomRoles() {
     return customRoles;
   }
 
-  public void setCustomRoles(List<String> customRoles) {
+  public void setCustomRoles(@javax.annotation.Nonnull List<String> customRoles) {
     this.customRoles = customRoles;
   }
 
 
-  public Member mfa(String mfa) {
+  public Member mfa(@javax.annotation.Nonnull String mfa) {
     this.mfa = mfa;
     return this;
   }
 
-   /**
+  /**
    * Whether multi-factor authentication is enabled for this member
    * @return mfa
-  **/
+   */
   @javax.annotation.Nonnull
   public String getMfa() {
     return mfa;
   }
 
-  public void setMfa(String mfa) {
+  public void setMfa(@javax.annotation.Nonnull String mfa) {
     this.mfa = mfa;
   }
 
 
-  public Member excludedDashboards(List<String> excludedDashboards) {
+  public Member excludedDashboards(@javax.annotation.Nullable List<String> excludedDashboards) {
     this.excludedDashboards = excludedDashboards;
     return this;
   }
@@ -385,78 +407,78 @@ public class Member {
     return this;
   }
 
-   /**
+  /**
    * Default dashboards that the member has chosen to ignore
    * @return excludedDashboards
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getExcludedDashboards() {
     return excludedDashboards;
   }
 
-  public void setExcludedDashboards(List<String> excludedDashboards) {
+  public void setExcludedDashboards(@javax.annotation.Nullable List<String> excludedDashboards) {
     this.excludedDashboards = excludedDashboards;
   }
 
 
-  public Member lastSeen(Long lastSeen) {
+  public Member lastSeen(@javax.annotation.Nonnull Long lastSeen) {
     this.lastSeen = lastSeen;
     return this;
   }
 
-   /**
+  /**
    * Get lastSeen
    * @return lastSeen
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getLastSeen() {
     return lastSeen;
   }
 
-  public void setLastSeen(Long lastSeen) {
+  public void setLastSeen(@javax.annotation.Nonnull Long lastSeen) {
     this.lastSeen = lastSeen;
   }
 
 
-  public Member lastSeenMetadata(LastSeenMetadata lastSeenMetadata) {
+  public Member lastSeenMetadata(@javax.annotation.Nullable LastSeenMetadata lastSeenMetadata) {
     this.lastSeenMetadata = lastSeenMetadata;
     return this;
   }
 
-   /**
+  /**
    * Get lastSeenMetadata
    * @return lastSeenMetadata
-  **/
+   */
   @javax.annotation.Nullable
   public LastSeenMetadata getLastSeenMetadata() {
     return lastSeenMetadata;
   }
 
-  public void setLastSeenMetadata(LastSeenMetadata lastSeenMetadata) {
+  public void setLastSeenMetadata(@javax.annotation.Nullable LastSeenMetadata lastSeenMetadata) {
     this.lastSeenMetadata = lastSeenMetadata;
   }
 
 
-  public Member integrationMetadata(IntegrationMetadata integrationMetadata) {
+  public Member integrationMetadata(@javax.annotation.Nullable IntegrationMetadata integrationMetadata) {
     this.integrationMetadata = integrationMetadata;
     return this;
   }
 
-   /**
+  /**
    * Get integrationMetadata
    * @return integrationMetadata
-  **/
+   */
   @javax.annotation.Nullable
   public IntegrationMetadata getIntegrationMetadata() {
     return integrationMetadata;
   }
 
-  public void setIntegrationMetadata(IntegrationMetadata integrationMetadata) {
+  public void setIntegrationMetadata(@javax.annotation.Nullable IntegrationMetadata integrationMetadata) {
     this.integrationMetadata = integrationMetadata;
   }
 
 
-  public Member teams(List<MemberTeamSummaryRep> teams) {
+  public Member teams(@javax.annotation.Nullable List<MemberTeamSummaryRep> teams) {
     this.teams = teams;
     return this;
   }
@@ -469,21 +491,21 @@ public class Member {
     return this;
   }
 
-   /**
+  /**
    * Details on the teams this member is assigned to
    * @return teams
-  **/
+   */
   @javax.annotation.Nullable
   public List<MemberTeamSummaryRep> getTeams() {
     return teams;
   }
 
-  public void setTeams(List<MemberTeamSummaryRep> teams) {
+  public void setTeams(@javax.annotation.Nullable List<MemberTeamSummaryRep> teams) {
     this.teams = teams;
   }
 
 
-  public Member permissionGrants(List<MemberPermissionGrantSummaryRep> permissionGrants) {
+  public Member permissionGrants(@javax.annotation.Nullable List<MemberPermissionGrantSummaryRep> permissionGrants) {
     this.permissionGrants = permissionGrants;
     return this;
   }
@@ -496,40 +518,40 @@ public class Member {
     return this;
   }
 
-   /**
+  /**
    * A list of permission grants. Permission grants allow a member to have access to a specific action, without having to create or update a custom role.
    * @return permissionGrants
-  **/
+   */
   @javax.annotation.Nullable
   public List<MemberPermissionGrantSummaryRep> getPermissionGrants() {
     return permissionGrants;
   }
 
-  public void setPermissionGrants(List<MemberPermissionGrantSummaryRep> permissionGrants) {
+  public void setPermissionGrants(@javax.annotation.Nullable List<MemberPermissionGrantSummaryRep> permissionGrants) {
     this.permissionGrants = permissionGrants;
   }
 
 
-  public Member creationDate(Long creationDate) {
+  public Member creationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
     return this;
   }
 
-   /**
+  /**
    * Get creationDate
    * @return creationDate
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate(Long creationDate) {
+  public void setCreationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
   }
 
 
-  public Member oauthProviders(List<String> oauthProviders) {
+  public Member oauthProviders(@javax.annotation.Nullable List<String> oauthProviders) {
     this.oauthProviders = oauthProviders;
     return this;
   }
@@ -542,40 +564,40 @@ public class Member {
     return this;
   }
 
-   /**
+  /**
    * A list of OAuth providers
    * @return oauthProviders
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getOauthProviders() {
     return oauthProviders;
   }
 
-  public void setOauthProviders(List<String> oauthProviders) {
+  public void setOauthProviders(@javax.annotation.Nullable List<String> oauthProviders) {
     this.oauthProviders = oauthProviders;
   }
 
 
-  public Member version(Integer version) {
+  public Member version(@javax.annotation.Nullable Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * Version of the current configuration
    * @return version
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nullable Integer version) {
     this.version = version;
   }
 
 
-  public Member roleAttributes(Map<String, List<String>> roleAttributes) {
+  public Member roleAttributes(@javax.annotation.Nullable Map<String, List<String>> roleAttributes) {
     this.roleAttributes = roleAttributes;
     return this;
   }
@@ -588,16 +610,16 @@ public class Member {
     return this;
   }
 
-   /**
+  /**
    * Get roleAttributes
    * @return roleAttributes
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, List<String>> getRoleAttributes() {
     return roleAttributes;
   }
 
-  public void setRoleAttributes(Map<String, List<String>> roleAttributes) {
+  public void setRoleAttributes(@javax.annotation.Nullable Map<String, List<String>> roleAttributes) {
     this.roleAttributes = roleAttributes;
   }
 
@@ -732,93 +754,62 @@ public class Member {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_links");
-    openapiFields.add("_id");
-    openapiFields.add("firstName");
-    openapiFields.add("lastName");
-    openapiFields.add("role");
-    openapiFields.add("email");
-    openapiFields.add("_pendingInvite");
-    openapiFields.add("_verified");
-    openapiFields.add("_pendingEmail");
-    openapiFields.add("customRoles");
-    openapiFields.add("mfa");
-    openapiFields.add("excludedDashboards");
-    openapiFields.add("_lastSeen");
-    openapiFields.add("_lastSeenMetadata");
-    openapiFields.add("_integrationMetadata");
-    openapiFields.add("teams");
-    openapiFields.add("permissionGrants");
-    openapiFields.add("creationDate");
-    openapiFields.add("oauthProviders");
-    openapiFields.add("version");
-    openapiFields.add("roleAttributes");
+    openapiFields = new HashSet<String>(Arrays.asList("_links", "_id", "firstName", "lastName", "role", "email", "_pendingInvite", "_verified", "_pendingEmail", "customRoles", "mfa", "excludedDashboards", "_lastSeen", "_lastSeenMetadata", "_integrationMetadata", "teams", "permissionGrants", "creationDate", "oauthProviders", "version", "roleAttributes"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_links");
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("role");
-    openapiRequiredFields.add("email");
-    openapiRequiredFields.add("_pendingInvite");
-    openapiRequiredFields.add("_verified");
-    openapiRequiredFields.add("customRoles");
-    openapiRequiredFields.add("mfa");
-    openapiRequiredFields.add("_lastSeen");
-    openapiRequiredFields.add("creationDate");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_links", "_id", "role", "email", "_pendingInvite", "_verified", "customRoles", "mfa", "_lastSeen", "creationDate"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Member
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Member
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Member.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Member is not found in the empty JSON string", Member.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Member is not found in the empty JSON string", Member.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : Member.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if ((jsonObj.get("firstName") != null && !jsonObj.get("firstName").isJsonNull()) && !jsonObj.get("firstName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `firstName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("firstName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `firstName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("firstName").toString()));
       }
       if ((jsonObj.get("lastName") != null && !jsonObj.get("lastName").isJsonNull()) && !jsonObj.get("lastName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `lastName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `lastName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastName").toString()));
       }
       if (!jsonObj.get("role").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role").toString()));
       }
       if (!jsonObj.get("email").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
       }
       if ((jsonObj.get("_pendingEmail") != null && !jsonObj.get("_pendingEmail").isJsonNull()) && !jsonObj.get("_pendingEmail").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_pendingEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_pendingEmail").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_pendingEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_pendingEmail").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("customRoles") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("customRoles").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `customRoles` to be an array in the JSON string but got `%s`", jsonObj.get("customRoles").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `customRoles` to be an array in the JSON string but got `%s`", jsonObj.get("customRoles").toString()));
       }
       if (!jsonObj.get("mfa").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `mfa` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mfa").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `mfa` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mfa").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("excludedDashboards") != null && !jsonObj.get("excludedDashboards").isJsonNull() && !jsonObj.get("excludedDashboards").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `excludedDashboards` to be an array in the JSON string but got `%s`", jsonObj.get("excludedDashboards").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `excludedDashboards` to be an array in the JSON string but got `%s`", jsonObj.get("excludedDashboards").toString()));
       }
       // validate the optional field `_lastSeenMetadata`
       if (jsonObj.get("_lastSeenMetadata") != null && !jsonObj.get("_lastSeenMetadata").isJsonNull()) {
@@ -833,7 +824,7 @@ public class Member {
         if (jsonArrayteams != null) {
           // ensure the json data is an array
           if (!jsonObj.get("teams").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `teams` to be an array in the JSON string but got `%s`", jsonObj.get("teams").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `teams` to be an array in the JSON string but got `%s`", jsonObj.get("teams").toString()));
           }
 
           // validate the optional field `teams` (array)
@@ -847,7 +838,7 @@ public class Member {
         if (jsonArraypermissionGrants != null) {
           // ensure the json data is an array
           if (!jsonObj.get("permissionGrants").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `permissionGrants` to be an array in the JSON string but got `%s`", jsonObj.get("permissionGrants").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `permissionGrants` to be an array in the JSON string but got `%s`", jsonObj.get("permissionGrants").toString()));
           }
 
           // validate the optional field `permissionGrants` (array)
@@ -858,7 +849,7 @@ public class Member {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("oauthProviders") != null && !jsonObj.get("oauthProviders").isJsonNull() && !jsonObj.get("oauthProviders").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `oauthProviders` to be an array in the JSON string but got `%s`", jsonObj.get("oauthProviders").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `oauthProviders` to be an array in the JSON string but got `%s`", jsonObj.get("oauthProviders").toString()));
       }
   }
 
@@ -919,7 +910,7 @@ public class Member {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -934,22 +925,22 @@ public class Member {
     }
   }
 
- /**
-  * Create an instance of Member given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Member
-  * @throws IOException if the JSON string is invalid with respect to Member
-  */
+  /**
+   * Create an instance of Member given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Member
+   * @throws IOException if the JSON string is invalid with respect to Member
+   */
   public static Member fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Member.class);
   }
 
- /**
-  * Convert an instance of Member to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Member to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -88,7 +88,8 @@ public class CustomRolesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -96,7 +97,7 @@ public class CustomRolesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteCustomRoleCall(String customRoleKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteCustomRoleCall(@javax.annotation.Nonnull String customRoleKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -142,7 +143,7 @@ public class CustomRolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteCustomRoleValidateBeforeCall(String customRoleKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteCustomRoleValidateBeforeCall(@javax.annotation.Nonnull String customRoleKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'customRoleKey' is set
         if (customRoleKey == null) {
             throw new ApiException("Missing the required parameter 'customRoleKey' when calling deleteCustomRole(Async)");
@@ -158,7 +159,8 @@ public class CustomRolesApi {
      * @param customRoleKey The custom role key (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -166,7 +168,7 @@ public class CustomRolesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteCustomRole(String customRoleKey) throws ApiException {
+    public void deleteCustomRole(@javax.annotation.Nonnull String customRoleKey) throws ApiException {
         deleteCustomRoleWithHttpInfo(customRoleKey);
     }
 
@@ -177,7 +179,8 @@ public class CustomRolesApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -185,7 +188,7 @@ public class CustomRolesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteCustomRoleWithHttpInfo(String customRoleKey) throws ApiException {
+    public ApiResponse<Void> deleteCustomRoleWithHttpInfo(@javax.annotation.Nonnull String customRoleKey) throws ApiException {
         okhttp3.Call localVarCall = deleteCustomRoleValidateBeforeCall(customRoleKey, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -198,7 +201,8 @@ public class CustomRolesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -206,7 +210,7 @@ public class CustomRolesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteCustomRoleAsync(String customRoleKey, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteCustomRoleAsync(@javax.annotation.Nonnull String customRoleKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteCustomRoleValidateBeforeCall(customRoleKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -219,7 +223,8 @@ public class CustomRolesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom role response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -228,7 +233,7 @@ public class CustomRolesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCustomRoleCall(String customRoleKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCustomRoleCall(@javax.annotation.Nonnull String customRoleKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -274,7 +279,7 @@ public class CustomRolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCustomRoleValidateBeforeCall(String customRoleKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCustomRoleValidateBeforeCall(@javax.annotation.Nonnull String customRoleKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'customRoleKey' is set
         if (customRoleKey == null) {
             throw new ApiException("Missing the required parameter 'customRoleKey' when calling getCustomRole(Async)");
@@ -291,7 +296,8 @@ public class CustomRolesApi {
      * @return CustomRole
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom role response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -300,7 +306,7 @@ public class CustomRolesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public CustomRole getCustomRole(String customRoleKey) throws ApiException {
+    public CustomRole getCustomRole(@javax.annotation.Nonnull String customRoleKey) throws ApiException {
         ApiResponse<CustomRole> localVarResp = getCustomRoleWithHttpInfo(customRoleKey);
         return localVarResp.getData();
     }
@@ -312,7 +318,8 @@ public class CustomRolesApi {
      * @return ApiResponse&lt;CustomRole&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom role response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -321,7 +328,7 @@ public class CustomRolesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CustomRole> getCustomRoleWithHttpInfo(String customRoleKey) throws ApiException {
+    public ApiResponse<CustomRole> getCustomRoleWithHttpInfo(@javax.annotation.Nonnull String customRoleKey) throws ApiException {
         okhttp3.Call localVarCall = getCustomRoleValidateBeforeCall(customRoleKey, null);
         Type localVarReturnType = new TypeToken<CustomRole>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -335,7 +342,8 @@ public class CustomRolesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom role response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -344,7 +352,7 @@ public class CustomRolesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCustomRoleAsync(String customRoleKey, final ApiCallback<CustomRole> _callback) throws ApiException {
+    public okhttp3.Call getCustomRoleAsync(@javax.annotation.Nonnull String customRoleKey, final ApiCallback<CustomRole> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCustomRoleValidateBeforeCall(customRoleKey, _callback);
         Type localVarReturnType = new TypeToken<CustomRole>(){}.getType();
@@ -359,7 +367,8 @@ public class CustomRolesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom roles collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -367,7 +376,7 @@ public class CustomRolesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCustomRolesCall(Long limit, Long offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCustomRolesCall(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -420,7 +429,7 @@ public class CustomRolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCustomRolesValidateBeforeCall(Long limit, Long offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCustomRolesValidateBeforeCall(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, final ApiCallback _callback) throws ApiException {
         return getCustomRolesCall(limit, offset, _callback);
 
     }
@@ -433,7 +442,8 @@ public class CustomRolesApi {
      * @return CustomRoles
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom roles collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -441,7 +451,7 @@ public class CustomRolesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public CustomRoles getCustomRoles(Long limit, Long offset) throws ApiException {
+    public CustomRoles getCustomRoles(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset) throws ApiException {
         ApiResponse<CustomRoles> localVarResp = getCustomRolesWithHttpInfo(limit, offset);
         return localVarResp.getData();
     }
@@ -454,7 +464,8 @@ public class CustomRolesApi {
      * @return ApiResponse&lt;CustomRoles&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom roles collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -462,7 +473,7 @@ public class CustomRolesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CustomRoles> getCustomRolesWithHttpInfo(Long limit, Long offset) throws ApiException {
+    public ApiResponse<CustomRoles> getCustomRolesWithHttpInfo(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset) throws ApiException {
         okhttp3.Call localVarCall = getCustomRolesValidateBeforeCall(limit, offset, null);
         Type localVarReturnType = new TypeToken<CustomRoles>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -477,7 +488,8 @@ public class CustomRolesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom roles collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -485,7 +497,7 @@ public class CustomRolesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCustomRolesAsync(Long limit, Long offset, final ApiCallback<CustomRoles> _callback) throws ApiException {
+    public okhttp3.Call getCustomRolesAsync(@javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, final ApiCallback<CustomRoles> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCustomRolesValidateBeforeCall(limit, offset, _callback);
         Type localVarReturnType = new TypeToken<CustomRoles>(){}.getType();
@@ -500,7 +512,8 @@ public class CustomRolesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom role response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -510,7 +523,7 @@ public class CustomRolesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchCustomRoleCall(String customRoleKey, PatchWithComment patchWithComment, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchCustomRoleCall(@javax.annotation.Nonnull String customRoleKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -557,7 +570,7 @@ public class CustomRolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchCustomRoleValidateBeforeCall(String customRoleKey, PatchWithComment patchWithComment, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchCustomRoleValidateBeforeCall(@javax.annotation.Nonnull String customRoleKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'customRoleKey' is set
         if (customRoleKey == null) {
             throw new ApiException("Missing the required parameter 'customRoleKey' when calling patchCustomRole(Async)");
@@ -580,7 +593,8 @@ public class CustomRolesApi {
      * @return CustomRole
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom role response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -590,7 +604,7 @@ public class CustomRolesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public CustomRole patchCustomRole(String customRoleKey, PatchWithComment patchWithComment) throws ApiException {
+    public CustomRole patchCustomRole(@javax.annotation.Nonnull String customRoleKey, @javax.annotation.Nonnull PatchWithComment patchWithComment) throws ApiException {
         ApiResponse<CustomRole> localVarResp = patchCustomRoleWithHttpInfo(customRoleKey, patchWithComment);
         return localVarResp.getData();
     }
@@ -603,7 +617,8 @@ public class CustomRolesApi {
      * @return ApiResponse&lt;CustomRole&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom role response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -613,7 +628,7 @@ public class CustomRolesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CustomRole> patchCustomRoleWithHttpInfo(String customRoleKey, PatchWithComment patchWithComment) throws ApiException {
+    public ApiResponse<CustomRole> patchCustomRoleWithHttpInfo(@javax.annotation.Nonnull String customRoleKey, @javax.annotation.Nonnull PatchWithComment patchWithComment) throws ApiException {
         okhttp3.Call localVarCall = patchCustomRoleValidateBeforeCall(customRoleKey, patchWithComment, null);
         Type localVarReturnType = new TypeToken<CustomRole>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -628,7 +643,8 @@ public class CustomRolesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Custom role response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -638,7 +654,7 @@ public class CustomRolesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchCustomRoleAsync(String customRoleKey, PatchWithComment patchWithComment, final ApiCallback<CustomRole> _callback) throws ApiException {
+    public okhttp3.Call patchCustomRoleAsync(@javax.annotation.Nonnull String customRoleKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, final ApiCallback<CustomRole> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchCustomRoleValidateBeforeCall(customRoleKey, patchWithComment, _callback);
         Type localVarReturnType = new TypeToken<CustomRole>(){}.getType();
@@ -652,7 +668,8 @@ public class CustomRolesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Custom role response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -662,7 +679,7 @@ public class CustomRolesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postCustomRoleCall(CustomRolePost customRolePost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postCustomRoleCall(@javax.annotation.Nonnull CustomRolePost customRolePost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -708,7 +725,7 @@ public class CustomRolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postCustomRoleValidateBeforeCall(CustomRolePost customRolePost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postCustomRoleValidateBeforeCall(@javax.annotation.Nonnull CustomRolePost customRolePost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'customRolePost' is set
         if (customRolePost == null) {
             throw new ApiException("Missing the required parameter 'customRolePost' when calling postCustomRole(Async)");
@@ -725,7 +742,8 @@ public class CustomRolesApi {
      * @return CustomRole
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Custom role response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -735,7 +753,7 @@ public class CustomRolesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public CustomRole postCustomRole(CustomRolePost customRolePost) throws ApiException {
+    public CustomRole postCustomRole(@javax.annotation.Nonnull CustomRolePost customRolePost) throws ApiException {
         ApiResponse<CustomRole> localVarResp = postCustomRoleWithHttpInfo(customRolePost);
         return localVarResp.getData();
     }
@@ -747,7 +765,8 @@ public class CustomRolesApi {
      * @return ApiResponse&lt;CustomRole&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Custom role response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -757,7 +776,7 @@ public class CustomRolesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CustomRole> postCustomRoleWithHttpInfo(CustomRolePost customRolePost) throws ApiException {
+    public ApiResponse<CustomRole> postCustomRoleWithHttpInfo(@javax.annotation.Nonnull CustomRolePost customRolePost) throws ApiException {
         okhttp3.Call localVarCall = postCustomRoleValidateBeforeCall(customRolePost, null);
         Type localVarReturnType = new TypeToken<CustomRole>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -771,7 +790,8 @@ public class CustomRolesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Custom role response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -781,7 +801,7 @@ public class CustomRolesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postCustomRoleAsync(CustomRolePost customRolePost, final ApiCallback<CustomRole> _callback) throws ApiException {
+    public okhttp3.Call postCustomRoleAsync(@javax.annotation.Nonnull CustomRolePost customRolePost, final ApiCallback<CustomRole> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postCustomRoleValidateBeforeCall(customRolePost, _callback);
         Type localVarReturnType = new TypeToken<CustomRole>(){}.getType();

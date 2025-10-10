@@ -21,8 +21,8 @@
 | Name | Value |
 |---- | -----|
 | GROUP | &quot;group&quot; |
-| CONTEXTATTRIBUTE | &quot;contextAttribute&quot; |
-| EVENTPROPERTY | &quot;eventProperty&quot; |
+| CONTEXT_ATTRIBUTE | &quot;contextAttribute&quot; |
+| EVENT_PROPERTY | &quot;eventProperty&quot; |
 
 
 

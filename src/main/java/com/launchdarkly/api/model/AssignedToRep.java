@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,65 +38,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * AssignedToRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AssignedToRep {
   public static final String SERIALIZED_NAME_MEMBERS_COUNT = "membersCount";
   @SerializedName(SERIALIZED_NAME_MEMBERS_COUNT)
+  @javax.annotation.Nullable
   private Integer membersCount;
 
   public static final String SERIALIZED_NAME_TEAMS_COUNT = "teamsCount";
   @SerializedName(SERIALIZED_NAME_TEAMS_COUNT)
+  @javax.annotation.Nullable
   private Integer teamsCount;
 
   public AssignedToRep() {
   }
 
-  public AssignedToRep membersCount(Integer membersCount) {
+  public AssignedToRep membersCount(@javax.annotation.Nullable Integer membersCount) {
     this.membersCount = membersCount;
     return this;
   }
 
-   /**
+  /**
    * The number of individual members this role is assigned to
    * @return membersCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getMembersCount() {
     return membersCount;
   }
 
-  public void setMembersCount(Integer membersCount) {
+  public void setMembersCount(@javax.annotation.Nullable Integer membersCount) {
     this.membersCount = membersCount;
   }
 
 
-  public AssignedToRep teamsCount(Integer teamsCount) {
+  public AssignedToRep teamsCount(@javax.annotation.Nullable Integer teamsCount) {
     this.teamsCount = teamsCount;
     return this;
   }
 
-   /**
+  /**
    * The number of teams this role is assigned to
    * @return teamsCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getTeamsCount() {
     return teamsCount;
   }
 
-  public void setTeamsCount(Integer teamsCount) {
+  public void setTeamsCount(@javax.annotation.Nullable Integer teamsCount) {
     this.teamsCount = teamsCount;
   }
 
@@ -192,24 +195,22 @@ public class AssignedToRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("membersCount");
-    openapiFields.add("teamsCount");
+    openapiFields = new HashSet<String>(Arrays.asList("membersCount", "teamsCount"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to AssignedToRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AssignedToRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AssignedToRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AssignedToRep is not found in the empty JSON string", AssignedToRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AssignedToRep is not found in the empty JSON string", AssignedToRep.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -272,7 +273,7 @@ public class AssignedToRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -287,22 +288,22 @@ public class AssignedToRep {
     }
   }
 
- /**
-  * Create an instance of AssignedToRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AssignedToRep
-  * @throws IOException if the JSON string is invalid with respect to AssignedToRep
-  */
+  /**
+   * Create an instance of AssignedToRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AssignedToRep
+   * @throws IOException if the JSON string is invalid with respect to AssignedToRep
+   */
   public static AssignedToRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AssignedToRep.class);
   }
 
- /**
-  * Convert an instance of AssignedToRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AssignedToRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

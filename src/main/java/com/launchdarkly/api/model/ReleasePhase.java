@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,182 +42,193 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ReleasePhase
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ReleasePhase {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_NAME = "_name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_COMPLETE = "complete";
   @SerializedName(SERIALIZED_NAME_COMPLETE)
+  @javax.annotation.Nonnull
   private Boolean complete;
 
   public static final String SERIALIZED_NAME_CREATION_DATE = "_creationDate";
   @SerializedName(SERIALIZED_NAME_CREATION_DATE)
+  @javax.annotation.Nonnull
   private Long creationDate;
 
   public static final String SERIALIZED_NAME_COMPLETION_DATE = "_completionDate";
   @SerializedName(SERIALIZED_NAME_COMPLETION_DATE)
+  @javax.annotation.Nullable
   private Long completionDate;
 
   public static final String SERIALIZED_NAME_COMPLETED_BY = "_completedBy";
   @SerializedName(SERIALIZED_NAME_COMPLETED_BY)
+  @javax.annotation.Nullable
   private CompletedBy completedBy;
 
   public static final String SERIALIZED_NAME_AUDIENCES = "_audiences";
   @SerializedName(SERIALIZED_NAME_AUDIENCES)
+  @javax.annotation.Nonnull
   private List<ReleaseAudience> audiences = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private String status;
 
   public static final String SERIALIZED_NAME_STARTED = "started";
   @SerializedName(SERIALIZED_NAME_STARTED)
+  @javax.annotation.Nullable
   private Boolean started;
 
   public static final String SERIALIZED_NAME_STARTED_DATE = "_startedDate";
   @SerializedName(SERIALIZED_NAME_STARTED_DATE)
+  @javax.annotation.Nullable
   private Long startedDate;
 
   public static final String SERIALIZED_NAME_CONFIGURATION = "configuration";
   @SerializedName(SERIALIZED_NAME_CONFIGURATION)
+  @javax.annotation.Nullable
   private Object _configuration;
 
   public ReleasePhase() {
   }
 
-  public ReleasePhase id(String id) {
+  public ReleasePhase id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The phase ID
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public ReleasePhase name(String name) {
+  public ReleasePhase name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The release phase name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public ReleasePhase complete(Boolean complete) {
+  public ReleasePhase complete(@javax.annotation.Nonnull Boolean complete) {
     this.complete = complete;
     return this;
   }
 
-   /**
+  /**
    * Whether this phase is complete
    * @return complete
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getComplete() {
     return complete;
   }
 
-  public void setComplete(Boolean complete) {
+  public void setComplete(@javax.annotation.Nonnull Boolean complete) {
     this.complete = complete;
   }
 
 
-  public ReleasePhase creationDate(Long creationDate) {
+  public ReleasePhase creationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
     return this;
   }
 
-   /**
+  /**
    * Get creationDate
    * @return creationDate
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate(Long creationDate) {
+  public void setCreationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
   }
 
 
-  public ReleasePhase completionDate(Long completionDate) {
+  public ReleasePhase completionDate(@javax.annotation.Nullable Long completionDate) {
     this.completionDate = completionDate;
     return this;
   }
 
-   /**
+  /**
    * Get completionDate
    * @return completionDate
-  **/
+   */
   @javax.annotation.Nullable
   public Long getCompletionDate() {
     return completionDate;
   }
 
-  public void setCompletionDate(Long completionDate) {
+  public void setCompletionDate(@javax.annotation.Nullable Long completionDate) {
     this.completionDate = completionDate;
   }
 
 
-  public ReleasePhase completedBy(CompletedBy completedBy) {
+  public ReleasePhase completedBy(@javax.annotation.Nullable CompletedBy completedBy) {
     this.completedBy = completedBy;
     return this;
   }
 
-   /**
+  /**
    * Get completedBy
    * @return completedBy
-  **/
+   */
   @javax.annotation.Nullable
   public CompletedBy getCompletedBy() {
     return completedBy;
   }
 
-  public void setCompletedBy(CompletedBy completedBy) {
+  public void setCompletedBy(@javax.annotation.Nullable CompletedBy completedBy) {
     this.completedBy = completedBy;
   }
 
 
-  public ReleasePhase audiences(List<ReleaseAudience> audiences) {
+  public ReleasePhase audiences(@javax.annotation.Nonnull List<ReleaseAudience> audiences) {
     this.audiences = audiences;
     return this;
   }
@@ -229,92 +241,92 @@ public class ReleasePhase {
     return this;
   }
 
-   /**
+  /**
    * A logical grouping of one or more environments that share attributes for rolling out changes
    * @return audiences
-  **/
+   */
   @javax.annotation.Nonnull
   public List<ReleaseAudience> getAudiences() {
     return audiences;
   }
 
-  public void setAudiences(List<ReleaseAudience> audiences) {
+  public void setAudiences(@javax.annotation.Nonnull List<ReleaseAudience> audiences) {
     this.audiences = audiences;
   }
 
 
-  public ReleasePhase status(String status) {
+  public ReleasePhase status(@javax.annotation.Nullable String status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   public String getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(@javax.annotation.Nullable String status) {
     this.status = status;
   }
 
 
-  public ReleasePhase started(Boolean started) {
+  public ReleasePhase started(@javax.annotation.Nullable Boolean started) {
     this.started = started;
     return this;
   }
 
-   /**
+  /**
    * Whether or not this phase has started
    * @return started
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getStarted() {
     return started;
   }
 
-  public void setStarted(Boolean started) {
+  public void setStarted(@javax.annotation.Nullable Boolean started) {
     this.started = started;
   }
 
 
-  public ReleasePhase startedDate(Long startedDate) {
+  public ReleasePhase startedDate(@javax.annotation.Nullable Long startedDate) {
     this.startedDate = startedDate;
     return this;
   }
 
-   /**
+  /**
    * Get startedDate
    * @return startedDate
-  **/
+   */
   @javax.annotation.Nullable
   public Long getStartedDate() {
     return startedDate;
   }
 
-  public void setStartedDate(Long startedDate) {
+  public void setStartedDate(@javax.annotation.Nullable Long startedDate) {
     this.startedDate = startedDate;
   }
 
 
-  public ReleasePhase _configuration(Object _configuration) {
+  public ReleasePhase _configuration(@javax.annotation.Nullable Object _configuration) {
     this._configuration = _configuration;
     return this;
   }
 
-   /**
+  /**
    * Get _configuration
    * @return _configuration
-  **/
+   */
   @javax.annotation.Nullable
   public Object getConfiguration() {
     return _configuration;
   }
 
-  public void setConfiguration(Object _configuration) {
+  public void setConfiguration(@javax.annotation.Nullable Object _configuration) {
     this._configuration = _configuration;
   }
 
@@ -429,53 +441,37 @@ public class ReleasePhase {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_id");
-    openapiFields.add("_name");
-    openapiFields.add("complete");
-    openapiFields.add("_creationDate");
-    openapiFields.add("_completionDate");
-    openapiFields.add("_completedBy");
-    openapiFields.add("_audiences");
-    openapiFields.add("status");
-    openapiFields.add("started");
-    openapiFields.add("_startedDate");
-    openapiFields.add("configuration");
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "_name", "complete", "_creationDate", "_completionDate", "_completedBy", "_audiences", "status", "started", "_startedDate", "configuration"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("_name");
-    openapiRequiredFields.add("complete");
-    openapiRequiredFields.add("_creationDate");
-    openapiRequiredFields.add("_audiences");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "_name", "complete", "_creationDate", "_audiences"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ReleasePhase
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ReleasePhase
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ReleasePhase.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ReleasePhase is not found in the empty JSON string", ReleasePhase.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ReleasePhase is not found in the empty JSON string", ReleasePhase.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ReleasePhase.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if (!jsonObj.get("_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_name").toString()));
       }
       // validate the optional field `_completedBy`
       if (jsonObj.get("_completedBy") != null && !jsonObj.get("_completedBy").isJsonNull()) {
@@ -483,7 +479,7 @@ public class ReleasePhase {
       }
       // ensure the json data is an array
       if (!jsonObj.get("_audiences").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_audiences` to be an array in the JSON string but got `%s`", jsonObj.get("_audiences").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_audiences` to be an array in the JSON string but got `%s`", jsonObj.get("_audiences").toString()));
       }
 
       JsonArray jsonArrayaudiences = jsonObj.getAsJsonArray("_audiences");
@@ -492,7 +488,7 @@ public class ReleasePhase {
         ReleaseAudience.validateJsonElement(jsonArrayaudiences.get(i));
       };
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
   }
 
@@ -553,7 +549,7 @@ public class ReleasePhase {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -568,22 +564,22 @@ public class ReleasePhase {
     }
   }
 
- /**
-  * Create an instance of ReleasePhase given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ReleasePhase
-  * @throws IOException if the JSON string is invalid with respect to ReleasePhase
-  */
+  /**
+   * Create an instance of ReleasePhase given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ReleasePhase
+   * @throws IOException if the JSON string is invalid with respect to ReleasePhase
+   */
   public static ReleasePhase fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ReleasePhase.class);
   }
 
- /**
-  * Convert an instance of ReleasePhase to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ReleasePhase to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

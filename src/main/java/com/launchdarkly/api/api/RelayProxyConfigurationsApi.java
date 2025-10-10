@@ -89,7 +89,8 @@ public class RelayProxyConfigurationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -98,7 +99,7 @@ public class RelayProxyConfigurationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteRelayAutoConfigCall(String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteRelayAutoConfigCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -144,7 +145,7 @@ public class RelayProxyConfigurationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteRelayAutoConfigValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteRelayAutoConfigValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteRelayAutoConfig(Async)");
@@ -160,7 +161,8 @@ public class RelayProxyConfigurationsApi {
      * @param id The relay auto config id (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -169,7 +171,7 @@ public class RelayProxyConfigurationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteRelayAutoConfig(String id) throws ApiException {
+    public void deleteRelayAutoConfig(@javax.annotation.Nonnull String id) throws ApiException {
         deleteRelayAutoConfigWithHttpInfo(id);
     }
 
@@ -180,7 +182,8 @@ public class RelayProxyConfigurationsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -189,7 +192,7 @@ public class RelayProxyConfigurationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteRelayAutoConfigWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<Void> deleteRelayAutoConfigWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteRelayAutoConfigValidateBeforeCall(id, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -202,7 +205,8 @@ public class RelayProxyConfigurationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -211,7 +215,7 @@ public class RelayProxyConfigurationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteRelayAutoConfigAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteRelayAutoConfigAsync(@javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteRelayAutoConfigValidateBeforeCall(id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -224,7 +228,8 @@ public class RelayProxyConfigurationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Relay auto config response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -233,7 +238,7 @@ public class RelayProxyConfigurationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRelayProxyConfigCall(String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRelayProxyConfigCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -279,7 +284,7 @@ public class RelayProxyConfigurationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRelayProxyConfigValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRelayProxyConfigValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getRelayProxyConfig(Async)");
@@ -296,7 +301,8 @@ public class RelayProxyConfigurationsApi {
      * @return RelayAutoConfigRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Relay auto config response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -305,7 +311,7 @@ public class RelayProxyConfigurationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public RelayAutoConfigRep getRelayProxyConfig(String id) throws ApiException {
+    public RelayAutoConfigRep getRelayProxyConfig(@javax.annotation.Nonnull String id) throws ApiException {
         ApiResponse<RelayAutoConfigRep> localVarResp = getRelayProxyConfigWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -317,7 +323,8 @@ public class RelayProxyConfigurationsApi {
      * @return ApiResponse&lt;RelayAutoConfigRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Relay auto config response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -326,7 +333,7 @@ public class RelayProxyConfigurationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RelayAutoConfigRep> getRelayProxyConfigWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<RelayAutoConfigRep> getRelayProxyConfigWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getRelayProxyConfigValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<RelayAutoConfigRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -340,7 +347,8 @@ public class RelayProxyConfigurationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Relay auto config response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -349,7 +357,7 @@ public class RelayProxyConfigurationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRelayProxyConfigAsync(String id, final ApiCallback<RelayAutoConfigRep> _callback) throws ApiException {
+    public okhttp3.Call getRelayProxyConfigAsync(@javax.annotation.Nonnull String id, final ApiCallback<RelayAutoConfigRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRelayProxyConfigValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<RelayAutoConfigRep>(){}.getType();
@@ -362,7 +370,8 @@ public class RelayProxyConfigurationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Relay auto configs collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -426,7 +435,8 @@ public class RelayProxyConfigurationsApi {
      * @return RelayAutoConfigCollectionRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Relay auto configs collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -445,7 +455,8 @@ public class RelayProxyConfigurationsApi {
      * @return ApiResponse&lt;RelayAutoConfigCollectionRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Relay auto configs collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -466,7 +477,8 @@ public class RelayProxyConfigurationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Relay auto configs collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -489,7 +501,8 @@ public class RelayProxyConfigurationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Relay auto config response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -500,7 +513,7 @@ public class RelayProxyConfigurationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchRelayAutoConfigCall(String id, PatchWithComment patchWithComment, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchRelayAutoConfigCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull PatchWithComment patchWithComment, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -547,7 +560,7 @@ public class RelayProxyConfigurationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchRelayAutoConfigValidateBeforeCall(String id, PatchWithComment patchWithComment, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchRelayAutoConfigValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull PatchWithComment patchWithComment, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling patchRelayAutoConfig(Async)");
@@ -570,7 +583,8 @@ public class RelayProxyConfigurationsApi {
      * @return RelayAutoConfigRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Relay auto config response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -581,7 +595,7 @@ public class RelayProxyConfigurationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public RelayAutoConfigRep patchRelayAutoConfig(String id, PatchWithComment patchWithComment) throws ApiException {
+    public RelayAutoConfigRep patchRelayAutoConfig(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull PatchWithComment patchWithComment) throws ApiException {
         ApiResponse<RelayAutoConfigRep> localVarResp = patchRelayAutoConfigWithHttpInfo(id, patchWithComment);
         return localVarResp.getData();
     }
@@ -594,7 +608,8 @@ public class RelayProxyConfigurationsApi {
      * @return ApiResponse&lt;RelayAutoConfigRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Relay auto config response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -605,7 +620,7 @@ public class RelayProxyConfigurationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RelayAutoConfigRep> patchRelayAutoConfigWithHttpInfo(String id, PatchWithComment patchWithComment) throws ApiException {
+    public ApiResponse<RelayAutoConfigRep> patchRelayAutoConfigWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull PatchWithComment patchWithComment) throws ApiException {
         okhttp3.Call localVarCall = patchRelayAutoConfigValidateBeforeCall(id, patchWithComment, null);
         Type localVarReturnType = new TypeToken<RelayAutoConfigRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -620,7 +635,8 @@ public class RelayProxyConfigurationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Relay auto config response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -631,7 +647,7 @@ public class RelayProxyConfigurationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchRelayAutoConfigAsync(String id, PatchWithComment patchWithComment, final ApiCallback<RelayAutoConfigRep> _callback) throws ApiException {
+    public okhttp3.Call patchRelayAutoConfigAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull PatchWithComment patchWithComment, final ApiCallback<RelayAutoConfigRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchRelayAutoConfigValidateBeforeCall(id, patchWithComment, _callback);
         Type localVarReturnType = new TypeToken<RelayAutoConfigRep>(){}.getType();
@@ -645,7 +661,8 @@ public class RelayProxyConfigurationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Relay auto config response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -653,7 +670,7 @@ public class RelayProxyConfigurationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postRelayAutoConfigCall(RelayAutoConfigPost relayAutoConfigPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postRelayAutoConfigCall(@javax.annotation.Nonnull RelayAutoConfigPost relayAutoConfigPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -699,7 +716,7 @@ public class RelayProxyConfigurationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postRelayAutoConfigValidateBeforeCall(RelayAutoConfigPost relayAutoConfigPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postRelayAutoConfigValidateBeforeCall(@javax.annotation.Nonnull RelayAutoConfigPost relayAutoConfigPost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'relayAutoConfigPost' is set
         if (relayAutoConfigPost == null) {
             throw new ApiException("Missing the required parameter 'relayAutoConfigPost' when calling postRelayAutoConfig(Async)");
@@ -716,7 +733,8 @@ public class RelayProxyConfigurationsApi {
      * @return RelayAutoConfigRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Relay auto config response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -724,7 +742,7 @@ public class RelayProxyConfigurationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public RelayAutoConfigRep postRelayAutoConfig(RelayAutoConfigPost relayAutoConfigPost) throws ApiException {
+    public RelayAutoConfigRep postRelayAutoConfig(@javax.annotation.Nonnull RelayAutoConfigPost relayAutoConfigPost) throws ApiException {
         ApiResponse<RelayAutoConfigRep> localVarResp = postRelayAutoConfigWithHttpInfo(relayAutoConfigPost);
         return localVarResp.getData();
     }
@@ -736,7 +754,8 @@ public class RelayProxyConfigurationsApi {
      * @return ApiResponse&lt;RelayAutoConfigRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Relay auto config response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -744,7 +763,7 @@ public class RelayProxyConfigurationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RelayAutoConfigRep> postRelayAutoConfigWithHttpInfo(RelayAutoConfigPost relayAutoConfigPost) throws ApiException {
+    public ApiResponse<RelayAutoConfigRep> postRelayAutoConfigWithHttpInfo(@javax.annotation.Nonnull RelayAutoConfigPost relayAutoConfigPost) throws ApiException {
         okhttp3.Call localVarCall = postRelayAutoConfigValidateBeforeCall(relayAutoConfigPost, null);
         Type localVarReturnType = new TypeToken<RelayAutoConfigRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -758,7 +777,8 @@ public class RelayProxyConfigurationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Relay auto config response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -766,7 +786,7 @@ public class RelayProxyConfigurationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postRelayAutoConfigAsync(RelayAutoConfigPost relayAutoConfigPost, final ApiCallback<RelayAutoConfigRep> _callback) throws ApiException {
+    public okhttp3.Call postRelayAutoConfigAsync(@javax.annotation.Nonnull RelayAutoConfigPost relayAutoConfigPost, final ApiCallback<RelayAutoConfigRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postRelayAutoConfigValidateBeforeCall(relayAutoConfigPost, _callback);
         Type localVarReturnType = new TypeToken<RelayAutoConfigRep>(){}.getType();
@@ -781,7 +801,8 @@ public class RelayProxyConfigurationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Relay auto config response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -790,7 +811,7 @@ public class RelayProxyConfigurationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call resetRelayAutoConfigCall(String id, Long expiry, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call resetRelayAutoConfigCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable Long expiry, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -840,7 +861,7 @@ public class RelayProxyConfigurationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call resetRelayAutoConfigValidateBeforeCall(String id, Long expiry, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call resetRelayAutoConfigValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable Long expiry, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling resetRelayAutoConfig(Async)");
@@ -858,7 +879,8 @@ public class RelayProxyConfigurationsApi {
      * @return RelayAutoConfigRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Relay auto config response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -867,7 +889,7 @@ public class RelayProxyConfigurationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public RelayAutoConfigRep resetRelayAutoConfig(String id, Long expiry) throws ApiException {
+    public RelayAutoConfigRep resetRelayAutoConfig(@javax.annotation.Nonnull String id, @javax.annotation.Nullable Long expiry) throws ApiException {
         ApiResponse<RelayAutoConfigRep> localVarResp = resetRelayAutoConfigWithHttpInfo(id, expiry);
         return localVarResp.getData();
     }
@@ -880,7 +902,8 @@ public class RelayProxyConfigurationsApi {
      * @return ApiResponse&lt;RelayAutoConfigRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Relay auto config response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -889,7 +912,7 @@ public class RelayProxyConfigurationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RelayAutoConfigRep> resetRelayAutoConfigWithHttpInfo(String id, Long expiry) throws ApiException {
+    public ApiResponse<RelayAutoConfigRep> resetRelayAutoConfigWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable Long expiry) throws ApiException {
         okhttp3.Call localVarCall = resetRelayAutoConfigValidateBeforeCall(id, expiry, null);
         Type localVarReturnType = new TypeToken<RelayAutoConfigRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -904,7 +927,8 @@ public class RelayProxyConfigurationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Relay auto config response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -913,7 +937,7 @@ public class RelayProxyConfigurationsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call resetRelayAutoConfigAsync(String id, Long expiry, final ApiCallback<RelayAutoConfigRep> _callback) throws ApiException {
+    public okhttp3.Call resetRelayAutoConfigAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nullable Long expiry, final ApiCallback<RelayAutoConfigRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = resetRelayAutoConfigValidateBeforeCall(id, expiry, _callback);
         Type localVarReturnType = new TypeToken<RelayAutoConfigRep>(){}.getType();

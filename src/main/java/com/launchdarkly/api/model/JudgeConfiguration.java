@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,28 +41,29 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * JudgeConfiguration
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class JudgeConfiguration {
   public static final String SERIALIZED_NAME_JUDGES = "judges";
   @SerializedName(SERIALIZED_NAME_JUDGES)
+  @javax.annotation.Nullable
   private List<JudgeAttachment> judges = new ArrayList<>();
 
   public JudgeConfiguration() {
   }
 
-  public JudgeConfiguration judges(List<JudgeAttachment> judges) {
+  public JudgeConfiguration judges(@javax.annotation.Nullable List<JudgeAttachment> judges) {
     this.judges = judges;
     return this;
   }
@@ -74,16 +76,16 @@ public class JudgeConfiguration {
     return this;
   }
 
-   /**
+  /**
    * List of judges for this variation. When updating, this replaces all existing judge attachments, and if empty, removes all judge attachments. 
    * @return judges
-  **/
+   */
   @javax.annotation.Nullable
   public List<JudgeAttachment> getJudges() {
     return judges;
   }
 
-  public void setJudges(List<JudgeAttachment> judges) {
+  public void setJudges(@javax.annotation.Nullable List<JudgeAttachment> judges) {
     this.judges = judges;
   }
 
@@ -178,23 +180,22 @@ public class JudgeConfiguration {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("judges");
+    openapiFields = new HashSet<String>(Arrays.asList("judges"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to JudgeConfiguration
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to JudgeConfiguration
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!JudgeConfiguration.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in JudgeConfiguration is not found in the empty JSON string", JudgeConfiguration.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in JudgeConfiguration is not found in the empty JSON string", JudgeConfiguration.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -203,7 +204,7 @@ public class JudgeConfiguration {
         if (jsonArrayjudges != null) {
           // ensure the json data is an array
           if (!jsonObj.get("judges").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `judges` to be an array in the JSON string but got `%s`", jsonObj.get("judges").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `judges` to be an array in the JSON string but got `%s`", jsonObj.get("judges").toString()));
           }
 
           // validate the optional field `judges` (array)
@@ -271,7 +272,7 @@ public class JudgeConfiguration {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -286,22 +287,22 @@ public class JudgeConfiguration {
     }
   }
 
- /**
-  * Create an instance of JudgeConfiguration given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of JudgeConfiguration
-  * @throws IOException if the JSON string is invalid with respect to JudgeConfiguration
-  */
+  /**
+   * Create an instance of JudgeConfiguration given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of JudgeConfiguration
+   * @throws IOException if the JSON string is invalid with respect to JudgeConfiguration
+   */
   public static JudgeConfiguration fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, JudgeConfiguration.class);
   }
 
- /**
-  * Convert an instance of JudgeConfiguration to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of JudgeConfiguration to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

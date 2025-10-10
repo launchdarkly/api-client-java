@@ -95,7 +95,8 @@ public class ExperimentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Experiment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -105,7 +106,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createExperimentCall(String projectKey, String environmentKey, ExperimentPost experimentPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createExperimentCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull ExperimentPost experimentPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -153,7 +154,7 @@ public class ExperimentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createExperimentValidateBeforeCall(String projectKey, String environmentKey, ExperimentPost experimentPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createExperimentValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull ExperimentPost experimentPost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling createExperiment(Async)");
@@ -182,7 +183,8 @@ public class ExperimentsApi {
      * @return Experiment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Experiment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -192,7 +194,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Experiment createExperiment(String projectKey, String environmentKey, ExperimentPost experimentPost) throws ApiException {
+    public Experiment createExperiment(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull ExperimentPost experimentPost) throws ApiException {
         ApiResponse<Experiment> localVarResp = createExperimentWithHttpInfo(projectKey, environmentKey, experimentPost);
         return localVarResp.getData();
     }
@@ -206,7 +208,8 @@ public class ExperimentsApi {
      * @return ApiResponse&lt;Experiment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Experiment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -216,7 +219,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Experiment> createExperimentWithHttpInfo(String projectKey, String environmentKey, ExperimentPost experimentPost) throws ApiException {
+    public ApiResponse<Experiment> createExperimentWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull ExperimentPost experimentPost) throws ApiException {
         okhttp3.Call localVarCall = createExperimentValidateBeforeCall(projectKey, environmentKey, experimentPost, null);
         Type localVarReturnType = new TypeToken<Experiment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -232,7 +235,8 @@ public class ExperimentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Experiment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -242,7 +246,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createExperimentAsync(String projectKey, String environmentKey, ExperimentPost experimentPost, final ApiCallback<Experiment> _callback) throws ApiException {
+    public okhttp3.Call createExperimentAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull ExperimentPost experimentPost, final ApiCallback<Experiment> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createExperimentValidateBeforeCall(projectKey, environmentKey, experimentPost, _callback);
         Type localVarReturnType = new TypeToken<Experiment>(){}.getType();
@@ -259,7 +263,8 @@ public class ExperimentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Iteration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -269,7 +274,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createIterationCall(String projectKey, String environmentKey, String experimentKey, IterationInput iterationInput, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createIterationCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String experimentKey, @javax.annotation.Nonnull IterationInput iterationInput, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -318,7 +323,7 @@ public class ExperimentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createIterationValidateBeforeCall(String projectKey, String environmentKey, String experimentKey, IterationInput iterationInput, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createIterationValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String experimentKey, @javax.annotation.Nonnull IterationInput iterationInput, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling createIteration(Async)");
@@ -353,7 +358,8 @@ public class ExperimentsApi {
      * @return IterationRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Iteration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -363,7 +369,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public IterationRep createIteration(String projectKey, String environmentKey, String experimentKey, IterationInput iterationInput) throws ApiException {
+    public IterationRep createIteration(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String experimentKey, @javax.annotation.Nonnull IterationInput iterationInput) throws ApiException {
         ApiResponse<IterationRep> localVarResp = createIterationWithHttpInfo(projectKey, environmentKey, experimentKey, iterationInput);
         return localVarResp.getData();
     }
@@ -378,7 +384,8 @@ public class ExperimentsApi {
      * @return ApiResponse&lt;IterationRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Iteration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -388,7 +395,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IterationRep> createIterationWithHttpInfo(String projectKey, String environmentKey, String experimentKey, IterationInput iterationInput) throws ApiException {
+    public ApiResponse<IterationRep> createIterationWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String experimentKey, @javax.annotation.Nonnull IterationInput iterationInput) throws ApiException {
         okhttp3.Call localVarCall = createIterationValidateBeforeCall(projectKey, environmentKey, experimentKey, iterationInput, null);
         Type localVarReturnType = new TypeToken<IterationRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -405,7 +412,8 @@ public class ExperimentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Iteration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -415,7 +423,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createIterationAsync(String projectKey, String environmentKey, String experimentKey, IterationInput iterationInput, final ApiCallback<IterationRep> _callback) throws ApiException {
+    public okhttp3.Call createIterationAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String experimentKey, @javax.annotation.Nonnull IterationInput iterationInput, final ApiCallback<IterationRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createIterationValidateBeforeCall(projectKey, environmentKey, experimentKey, iterationInput, _callback);
         Type localVarReturnType = new TypeToken<IterationRep>(){}.getType();
@@ -432,7 +440,8 @@ public class ExperimentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Experiment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -443,7 +452,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExperimentCall(String projectKey, String environmentKey, String experimentKey, String expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getExperimentCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String experimentKey, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -495,7 +504,7 @@ public class ExperimentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getExperimentValidateBeforeCall(String projectKey, String environmentKey, String experimentKey, String expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getExperimentValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String experimentKey, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getExperiment(Async)");
@@ -525,7 +534,8 @@ public class ExperimentsApi {
      * @return Experiment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Experiment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -536,7 +546,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Experiment getExperiment(String projectKey, String environmentKey, String experimentKey, String expand) throws ApiException {
+    public Experiment getExperiment(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String experimentKey, @javax.annotation.Nullable String expand) throws ApiException {
         ApiResponse<Experiment> localVarResp = getExperimentWithHttpInfo(projectKey, environmentKey, experimentKey, expand);
         return localVarResp.getData();
     }
@@ -551,7 +561,8 @@ public class ExperimentsApi {
      * @return ApiResponse&lt;Experiment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Experiment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -562,7 +573,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Experiment> getExperimentWithHttpInfo(String projectKey, String environmentKey, String experimentKey, String expand) throws ApiException {
+    public ApiResponse<Experiment> getExperimentWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String experimentKey, @javax.annotation.Nullable String expand) throws ApiException {
         okhttp3.Call localVarCall = getExperimentValidateBeforeCall(projectKey, environmentKey, experimentKey, expand, null);
         Type localVarReturnType = new TypeToken<Experiment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -579,7 +590,8 @@ public class ExperimentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Experiment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -590,7 +602,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExperimentAsync(String projectKey, String environmentKey, String experimentKey, String expand, final ApiCallback<Experiment> _callback) throws ApiException {
+    public okhttp3.Call getExperimentAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String experimentKey, @javax.annotation.Nullable String expand, final ApiCallback<Experiment> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getExperimentValidateBeforeCall(projectKey, environmentKey, experimentKey, expand, _callback);
         Type localVarReturnType = new TypeToken<Experiment>(){}.getType();
@@ -604,7 +616,8 @@ public class ExperimentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Experimentation settings response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -615,7 +628,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExperimentationSettingsCall(String projectKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getExperimentationSettingsCall(@javax.annotation.Nonnull String projectKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -661,7 +674,7 @@ public class ExperimentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getExperimentationSettingsValidateBeforeCall(String projectKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getExperimentationSettingsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getExperimentationSettings(Async)");
@@ -678,7 +691,8 @@ public class ExperimentsApi {
      * @return RandomizationSettingsRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Experimentation settings response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -689,7 +703,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public RandomizationSettingsRep getExperimentationSettings(String projectKey) throws ApiException {
+    public RandomizationSettingsRep getExperimentationSettings(@javax.annotation.Nonnull String projectKey) throws ApiException {
         ApiResponse<RandomizationSettingsRep> localVarResp = getExperimentationSettingsWithHttpInfo(projectKey);
         return localVarResp.getData();
     }
@@ -701,7 +715,8 @@ public class ExperimentsApi {
      * @return ApiResponse&lt;RandomizationSettingsRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Experimentation settings response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -712,7 +727,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RandomizationSettingsRep> getExperimentationSettingsWithHttpInfo(String projectKey) throws ApiException {
+    public ApiResponse<RandomizationSettingsRep> getExperimentationSettingsWithHttpInfo(@javax.annotation.Nonnull String projectKey) throws ApiException {
         okhttp3.Call localVarCall = getExperimentationSettingsValidateBeforeCall(projectKey, null);
         Type localVarReturnType = new TypeToken<RandomizationSettingsRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -726,7 +741,8 @@ public class ExperimentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Experimentation settings response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -737,7 +753,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExperimentationSettingsAsync(String projectKey, final ApiCallback<RandomizationSettingsRep> _callback) throws ApiException {
+    public okhttp3.Call getExperimentationSettingsAsync(@javax.annotation.Nonnull String projectKey, final ApiCallback<RandomizationSettingsRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getExperimentationSettingsValidateBeforeCall(projectKey, _callback);
         Type localVarReturnType = new TypeToken<RandomizationSettingsRep>(){}.getType();
@@ -757,7 +773,8 @@ public class ExperimentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Experiment collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -768,7 +785,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExperimentsCall(String projectKey, String environmentKey, Long limit, Long offset, String filter, String expand, String lifecycleState, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getExperimentsCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String lifecycleState, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -835,7 +852,7 @@ public class ExperimentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getExperimentsValidateBeforeCall(String projectKey, String environmentKey, Long limit, Long offset, String filter, String expand, String lifecycleState, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getExperimentsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String lifecycleState, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getExperiments(Async)");
@@ -863,7 +880,8 @@ public class ExperimentsApi {
      * @return ExperimentCollectionRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Experiment collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -874,7 +892,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ExperimentCollectionRep getExperiments(String projectKey, String environmentKey, Long limit, Long offset, String filter, String expand, String lifecycleState) throws ApiException {
+    public ExperimentCollectionRep getExperiments(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String lifecycleState) throws ApiException {
         ApiResponse<ExperimentCollectionRep> localVarResp = getExperimentsWithHttpInfo(projectKey, environmentKey, limit, offset, filter, expand, lifecycleState);
         return localVarResp.getData();
     }
@@ -892,7 +910,8 @@ public class ExperimentsApi {
      * @return ApiResponse&lt;ExperimentCollectionRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Experiment collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -903,7 +922,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ExperimentCollectionRep> getExperimentsWithHttpInfo(String projectKey, String environmentKey, Long limit, Long offset, String filter, String expand, String lifecycleState) throws ApiException {
+    public ApiResponse<ExperimentCollectionRep> getExperimentsWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String lifecycleState) throws ApiException {
         okhttp3.Call localVarCall = getExperimentsValidateBeforeCall(projectKey, environmentKey, limit, offset, filter, expand, lifecycleState, null);
         Type localVarReturnType = new TypeToken<ExperimentCollectionRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -923,7 +942,8 @@ public class ExperimentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Experiment collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -934,7 +954,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExperimentsAsync(String projectKey, String environmentKey, Long limit, Long offset, String filter, String expand, String lifecycleState, final ApiCallback<ExperimentCollectionRep> _callback) throws ApiException {
+    public okhttp3.Call getExperimentsAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String filter, @javax.annotation.Nullable String expand, @javax.annotation.Nullable String lifecycleState, final ApiCallback<ExperimentCollectionRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getExperimentsValidateBeforeCall(projectKey, environmentKey, limit, offset, filter, expand, lifecycleState, _callback);
         Type localVarReturnType = new TypeToken<ExperimentCollectionRep>(){}.getType();
@@ -951,7 +971,8 @@ public class ExperimentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Experiment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -962,7 +983,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchExperimentCall(String projectKey, String environmentKey, String experimentKey, ExperimentPatchInput experimentPatchInput, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchExperimentCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String experimentKey, @javax.annotation.Nonnull ExperimentPatchInput experimentPatchInput, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1011,7 +1032,7 @@ public class ExperimentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchExperimentValidateBeforeCall(String projectKey, String environmentKey, String experimentKey, ExperimentPatchInput experimentPatchInput, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchExperimentValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String experimentKey, @javax.annotation.Nonnull ExperimentPatchInput experimentPatchInput, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling patchExperiment(Async)");
@@ -1046,7 +1067,8 @@ public class ExperimentsApi {
      * @return Experiment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Experiment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1057,7 +1079,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Experiment patchExperiment(String projectKey, String environmentKey, String experimentKey, ExperimentPatchInput experimentPatchInput) throws ApiException {
+    public Experiment patchExperiment(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String experimentKey, @javax.annotation.Nonnull ExperimentPatchInput experimentPatchInput) throws ApiException {
         ApiResponse<Experiment> localVarResp = patchExperimentWithHttpInfo(projectKey, environmentKey, experimentKey, experimentPatchInput);
         return localVarResp.getData();
     }
@@ -1072,7 +1094,8 @@ public class ExperimentsApi {
      * @return ApiResponse&lt;Experiment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Experiment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1083,7 +1106,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Experiment> patchExperimentWithHttpInfo(String projectKey, String environmentKey, String experimentKey, ExperimentPatchInput experimentPatchInput) throws ApiException {
+    public ApiResponse<Experiment> patchExperimentWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String experimentKey, @javax.annotation.Nonnull ExperimentPatchInput experimentPatchInput) throws ApiException {
         okhttp3.Call localVarCall = patchExperimentValidateBeforeCall(projectKey, environmentKey, experimentKey, experimentPatchInput, null);
         Type localVarReturnType = new TypeToken<Experiment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1100,7 +1123,8 @@ public class ExperimentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Experiment response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1111,7 +1135,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchExperimentAsync(String projectKey, String environmentKey, String experimentKey, ExperimentPatchInput experimentPatchInput, final ApiCallback<Experiment> _callback) throws ApiException {
+    public okhttp3.Call patchExperimentAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String experimentKey, @javax.annotation.Nonnull ExperimentPatchInput experimentPatchInput, final ApiCallback<Experiment> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchExperimentValidateBeforeCall(projectKey, environmentKey, experimentKey, experimentPatchInput, _callback);
         Type localVarReturnType = new TypeToken<Experiment>(){}.getType();
@@ -1126,7 +1150,8 @@ public class ExperimentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Experimentation settings response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1137,7 +1162,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putExperimentationSettingsCall(String projectKey, RandomizationSettingsPut randomizationSettingsPut, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call putExperimentationSettingsCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull RandomizationSettingsPut randomizationSettingsPut, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1184,7 +1209,7 @@ public class ExperimentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call putExperimentationSettingsValidateBeforeCall(String projectKey, RandomizationSettingsPut randomizationSettingsPut, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call putExperimentationSettingsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull RandomizationSettingsPut randomizationSettingsPut, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling putExperimentationSettings(Async)");
@@ -1207,7 +1232,8 @@ public class ExperimentsApi {
      * @return RandomizationSettingsRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Experimentation settings response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1218,7 +1244,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public RandomizationSettingsRep putExperimentationSettings(String projectKey, RandomizationSettingsPut randomizationSettingsPut) throws ApiException {
+    public RandomizationSettingsRep putExperimentationSettings(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull RandomizationSettingsPut randomizationSettingsPut) throws ApiException {
         ApiResponse<RandomizationSettingsRep> localVarResp = putExperimentationSettingsWithHttpInfo(projectKey, randomizationSettingsPut);
         return localVarResp.getData();
     }
@@ -1231,7 +1257,8 @@ public class ExperimentsApi {
      * @return ApiResponse&lt;RandomizationSettingsRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Experimentation settings response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1242,7 +1269,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RandomizationSettingsRep> putExperimentationSettingsWithHttpInfo(String projectKey, RandomizationSettingsPut randomizationSettingsPut) throws ApiException {
+    public ApiResponse<RandomizationSettingsRep> putExperimentationSettingsWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull RandomizationSettingsPut randomizationSettingsPut) throws ApiException {
         okhttp3.Call localVarCall = putExperimentationSettingsValidateBeforeCall(projectKey, randomizationSettingsPut, null);
         Type localVarReturnType = new TypeToken<RandomizationSettingsRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1257,7 +1284,8 @@ public class ExperimentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Experimentation settings response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1268,7 +1296,7 @@ public class ExperimentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putExperimentationSettingsAsync(String projectKey, RandomizationSettingsPut randomizationSettingsPut, final ApiCallback<RandomizationSettingsRep> _callback) throws ApiException {
+    public okhttp3.Call putExperimentationSettingsAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull RandomizationSettingsPut randomizationSettingsPut, final ApiCallback<RandomizationSettingsRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putExperimentationSettingsValidateBeforeCall(projectKey, randomizationSettingsPut, _callback);
         Type localVarReturnType = new TypeToken<RandomizationSettingsRep>(){}.getType();

@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,251 +41,265 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ModelConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ModelConfig {
   public static final String SERIALIZED_NAME_ACCESS = "_access";
   @SerializedName(SERIALIZED_NAME_ACCESS)
+  @javax.annotation.Nullable
   private AiConfigsAccess access;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_ICON = "icon";
   @SerializedName(SERIALIZED_NAME_ICON)
+  @javax.annotation.Nullable
   private String icon;
 
   public static final String SERIALIZED_NAME_PROVIDER = "provider";
   @SerializedName(SERIALIZED_NAME_PROVIDER)
+  @javax.annotation.Nullable
   private String provider;
 
   public static final String SERIALIZED_NAME_GLOBAL = "global";
   @SerializedName(SERIALIZED_NAME_GLOBAL)
+  @javax.annotation.Nonnull
   private Boolean global;
 
   public static final String SERIALIZED_NAME_PARAMS = "params";
   @SerializedName(SERIALIZED_NAME_PARAMS)
+  @javax.annotation.Nullable
   private Object params;
 
   public static final String SERIALIZED_NAME_CUSTOM_PARAMS = "customParams";
   @SerializedName(SERIALIZED_NAME_CUSTOM_PARAMS)
+  @javax.annotation.Nullable
   private Object customParams;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nonnull
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nonnull
   private Integer version;
 
   public static final String SERIALIZED_NAME_COST_PER_INPUT_TOKEN = "costPerInputToken";
   @SerializedName(SERIALIZED_NAME_COST_PER_INPUT_TOKEN)
+  @javax.annotation.Nullable
   private Double costPerInputToken;
 
   public static final String SERIALIZED_NAME_COST_PER_OUTPUT_TOKEN = "costPerOutputToken";
   @SerializedName(SERIALIZED_NAME_COST_PER_OUTPUT_TOKEN)
+  @javax.annotation.Nullable
   private Double costPerOutputToken;
 
   public static final String SERIALIZED_NAME_IS_RESTRICTED = "isRestricted";
   @SerializedName(SERIALIZED_NAME_IS_RESTRICTED)
+  @javax.annotation.Nonnull
   private Boolean isRestricted;
 
   public ModelConfig() {
   }
 
-  public ModelConfig access(AiConfigsAccess access) {
+  public ModelConfig access(@javax.annotation.Nullable AiConfigsAccess access) {
     this.access = access;
     return this;
   }
 
-   /**
+  /**
    * Get access
    * @return access
-  **/
+   */
   @javax.annotation.Nullable
   public AiConfigsAccess getAccess() {
     return access;
   }
 
-  public void setAccess(AiConfigsAccess access) {
+  public void setAccess(@javax.annotation.Nullable AiConfigsAccess access) {
     this.access = access;
   }
 
 
-  public ModelConfig name(String name) {
+  public ModelConfig name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Human readable name of the model
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public ModelConfig key(String key) {
+  public ModelConfig key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * Unique key for the model
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public ModelConfig id(String id) {
+  public ModelConfig id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Identifier for the model, for use with third party providers
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public ModelConfig icon(String icon) {
+  public ModelConfig icon(@javax.annotation.Nullable String icon) {
     this.icon = icon;
     return this;
   }
 
-   /**
+  /**
    * Icon for the model
    * @return icon
-  **/
+   */
   @javax.annotation.Nullable
   public String getIcon() {
     return icon;
   }
 
-  public void setIcon(String icon) {
+  public void setIcon(@javax.annotation.Nullable String icon) {
     this.icon = icon;
   }
 
 
-  public ModelConfig provider(String provider) {
+  public ModelConfig provider(@javax.annotation.Nullable String provider) {
     this.provider = provider;
     return this;
   }
 
-   /**
+  /**
    * Provider for the model
    * @return provider
-  **/
+   */
   @javax.annotation.Nullable
   public String getProvider() {
     return provider;
   }
 
-  public void setProvider(String provider) {
+  public void setProvider(@javax.annotation.Nullable String provider) {
     this.provider = provider;
   }
 
 
-  public ModelConfig global(Boolean global) {
+  public ModelConfig global(@javax.annotation.Nonnull Boolean global) {
     this.global = global;
     return this;
   }
 
-   /**
+  /**
    * Whether the model is global
    * @return global
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getGlobal() {
     return global;
   }
 
-  public void setGlobal(Boolean global) {
+  public void setGlobal(@javax.annotation.Nonnull Boolean global) {
     this.global = global;
   }
 
 
-  public ModelConfig params(Object params) {
+  public ModelConfig params(@javax.annotation.Nullable Object params) {
     this.params = params;
     return this;
   }
 
-   /**
+  /**
    * Get params
    * @return params
-  **/
+   */
   @javax.annotation.Nullable
   public Object getParams() {
     return params;
   }
 
-  public void setParams(Object params) {
+  public void setParams(@javax.annotation.Nullable Object params) {
     this.params = params;
   }
 
 
-  public ModelConfig customParams(Object customParams) {
+  public ModelConfig customParams(@javax.annotation.Nullable Object customParams) {
     this.customParams = customParams;
     return this;
   }
 
-   /**
+  /**
    * Get customParams
    * @return customParams
-  **/
+   */
   @javax.annotation.Nullable
   public Object getCustomParams() {
     return customParams;
   }
 
-  public void setCustomParams(Object customParams) {
+  public void setCustomParams(@javax.annotation.Nullable Object customParams) {
     this.customParams = customParams;
   }
 
 
-  public ModelConfig tags(List<String> tags) {
+  public ModelConfig tags(@javax.annotation.Nonnull List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -297,92 +312,92 @@ public class ModelConfig {
     return this;
   }
 
-   /**
+  /**
    * Get tags
    * @return tags
-  **/
+   */
   @javax.annotation.Nonnull
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nonnull List<String> tags) {
     this.tags = tags;
   }
 
 
-  public ModelConfig version(Integer version) {
+  public ModelConfig version(@javax.annotation.Nonnull Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * Get version
    * @return version
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nonnull Integer version) {
     this.version = version;
   }
 
 
-  public ModelConfig costPerInputToken(Double costPerInputToken) {
+  public ModelConfig costPerInputToken(@javax.annotation.Nullable Double costPerInputToken) {
     this.costPerInputToken = costPerInputToken;
     return this;
   }
 
-   /**
+  /**
    * Cost per input token in USD
    * @return costPerInputToken
-  **/
+   */
   @javax.annotation.Nullable
   public Double getCostPerInputToken() {
     return costPerInputToken;
   }
 
-  public void setCostPerInputToken(Double costPerInputToken) {
+  public void setCostPerInputToken(@javax.annotation.Nullable Double costPerInputToken) {
     this.costPerInputToken = costPerInputToken;
   }
 
 
-  public ModelConfig costPerOutputToken(Double costPerOutputToken) {
+  public ModelConfig costPerOutputToken(@javax.annotation.Nullable Double costPerOutputToken) {
     this.costPerOutputToken = costPerOutputToken;
     return this;
   }
 
-   /**
+  /**
    * Cost per output token in USD
    * @return costPerOutputToken
-  **/
+   */
   @javax.annotation.Nullable
   public Double getCostPerOutputToken() {
     return costPerOutputToken;
   }
 
-  public void setCostPerOutputToken(Double costPerOutputToken) {
+  public void setCostPerOutputToken(@javax.annotation.Nullable Double costPerOutputToken) {
     this.costPerOutputToken = costPerOutputToken;
   }
 
 
-  public ModelConfig isRestricted(Boolean isRestricted) {
+  public ModelConfig isRestricted(@javax.annotation.Nonnull Boolean isRestricted) {
     this.isRestricted = isRestricted;
     return this;
   }
 
-   /**
+  /**
    * Whether the model is restricted
    * @return isRestricted
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getIsRestricted() {
     return isRestricted;
   }
 
-  public void setIsRestricted(Boolean isRestricted) {
+  public void setIsRestricted(@javax.annotation.Nonnull Boolean isRestricted) {
     this.isRestricted = isRestricted;
   }
 
@@ -503,50 +518,29 @@ public class ModelConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_access");
-    openapiFields.add("name");
-    openapiFields.add("key");
-    openapiFields.add("id");
-    openapiFields.add("icon");
-    openapiFields.add("provider");
-    openapiFields.add("global");
-    openapiFields.add("params");
-    openapiFields.add("customParams");
-    openapiFields.add("tags");
-    openapiFields.add("version");
-    openapiFields.add("costPerInputToken");
-    openapiFields.add("costPerOutputToken");
-    openapiFields.add("isRestricted");
+    openapiFields = new HashSet<String>(Arrays.asList("_access", "name", "key", "id", "icon", "provider", "global", "params", "customParams", "tags", "version", "costPerInputToken", "costPerOutputToken", "isRestricted"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("id");
-    openapiRequiredFields.add("global");
-    openapiRequiredFields.add("tags");
-    openapiRequiredFields.add("version");
-    openapiRequiredFields.add("isRestricted");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name", "key", "id", "global", "tags", "version", "isRestricted"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ModelConfig
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ModelConfig
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ModelConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ModelConfig is not found in the empty JSON string", ModelConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ModelConfig is not found in the empty JSON string", ModelConfig.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ModelConfig.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -555,25 +549,25 @@ public class ModelConfig {
         AiConfigsAccess.validateJsonElement(jsonObj.get("_access"));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if (!jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
       if ((jsonObj.get("icon") != null && !jsonObj.get("icon").isJsonNull()) && !jsonObj.get("icon").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `icon` to be a primitive type in the JSON string but got `%s`", jsonObj.get("icon").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `icon` to be a primitive type in the JSON string but got `%s`", jsonObj.get("icon").toString()));
       }
       if ((jsonObj.get("provider") != null && !jsonObj.get("provider").isJsonNull()) && !jsonObj.get("provider").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `provider` to be a primitive type in the JSON string but got `%s`", jsonObj.get("provider").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `provider` to be a primitive type in the JSON string but got `%s`", jsonObj.get("provider").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("tags") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
   }
 
@@ -634,7 +628,7 @@ public class ModelConfig {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -649,22 +643,22 @@ public class ModelConfig {
     }
   }
 
- /**
-  * Create an instance of ModelConfig given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ModelConfig
-  * @throws IOException if the JSON string is invalid with respect to ModelConfig
-  */
+  /**
+   * Create an instance of ModelConfig given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ModelConfig
+   * @throws IOException if the JSON string is invalid with respect to ModelConfig
+   */
   public static ModelConfig fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ModelConfig.class);
   }
 
- /**
-  * Convert an instance of ModelConfig to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ModelConfig to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

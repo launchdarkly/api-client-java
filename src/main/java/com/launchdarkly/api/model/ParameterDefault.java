@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,88 +40,91 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ParameterDefault
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ParameterDefault {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nullable
   private Object value = null;
 
   public static final String SERIALIZED_NAME_BOOLEAN_VARIATION_VALUE = "booleanVariationValue";
   @SerializedName(SERIALIZED_NAME_BOOLEAN_VARIATION_VALUE)
+  @javax.annotation.Nullable
   private Boolean booleanVariationValue;
 
   public static final String SERIALIZED_NAME_RULE_CLAUSE = "ruleClause";
   @SerializedName(SERIALIZED_NAME_RULE_CLAUSE)
+  @javax.annotation.Nullable
   private RuleClause ruleClause;
 
   public ParameterDefault() {
   }
 
-  public ParameterDefault value(Object value) {
+  public ParameterDefault value(@javax.annotation.Nullable Object value) {
     this.value = value;
     return this;
   }
 
-   /**
+  /**
    * The default value for the given parameter
    * @return value
-  **/
+   */
   @javax.annotation.Nullable
   public Object getValue() {
     return value;
   }
 
-  public void setValue(Object value) {
+  public void setValue(@javax.annotation.Nullable Object value) {
     this.value = value;
   }
 
 
-  public ParameterDefault booleanVariationValue(Boolean booleanVariationValue) {
+  public ParameterDefault booleanVariationValue(@javax.annotation.Nullable Boolean booleanVariationValue) {
     this.booleanVariationValue = booleanVariationValue;
     return this;
   }
 
-   /**
+  /**
    * Variation value for boolean flags. Not applicable for non-boolean flags.
    * @return booleanVariationValue
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getBooleanVariationValue() {
     return booleanVariationValue;
   }
 
-  public void setBooleanVariationValue(Boolean booleanVariationValue) {
+  public void setBooleanVariationValue(@javax.annotation.Nullable Boolean booleanVariationValue) {
     this.booleanVariationValue = booleanVariationValue;
   }
 
 
-  public ParameterDefault ruleClause(RuleClause ruleClause) {
+  public ParameterDefault ruleClause(@javax.annotation.Nullable RuleClause ruleClause) {
     this.ruleClause = ruleClause;
     return this;
   }
 
-   /**
+  /**
    * Get ruleClause
    * @return ruleClause
-  **/
+   */
   @javax.annotation.Nullable
   public RuleClause getRuleClause() {
     return ruleClause;
   }
 
-  public void setRuleClause(RuleClause ruleClause) {
+  public void setRuleClause(@javax.annotation.Nullable RuleClause ruleClause) {
     this.ruleClause = ruleClause;
   }
 
@@ -230,25 +234,22 @@ public class ParameterDefault {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("value");
-    openapiFields.add("booleanVariationValue");
-    openapiFields.add("ruleClause");
+    openapiFields = new HashSet<String>(Arrays.asList("value", "booleanVariationValue", "ruleClause"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ParameterDefault
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ParameterDefault
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ParameterDefault.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ParameterDefault is not found in the empty JSON string", ParameterDefault.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ParameterDefault is not found in the empty JSON string", ParameterDefault.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -315,7 +316,7 @@ public class ParameterDefault {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -330,22 +331,22 @@ public class ParameterDefault {
     }
   }
 
- /**
-  * Create an instance of ParameterDefault given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ParameterDefault
-  * @throws IOException if the JSON string is invalid with respect to ParameterDefault
-  */
+  /**
+   * Create an instance of ParameterDefault given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ParameterDefault
+   * @throws IOException if the JSON string is invalid with respect to ParameterDefault
+   */
   public static ParameterDefault fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ParameterDefault.class);
   }
 
- /**
-  * Convert an instance of ParameterDefault to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ParameterDefault to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

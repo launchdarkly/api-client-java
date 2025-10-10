@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,65 +38,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * DefaultClientSideAvailability
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class DefaultClientSideAvailability {
   public static final String SERIALIZED_NAME_USING_MOBILE_KEY = "usingMobileKey";
   @SerializedName(SERIALIZED_NAME_USING_MOBILE_KEY)
+  @javax.annotation.Nonnull
   private Boolean usingMobileKey;
 
   public static final String SERIALIZED_NAME_USING_ENVIRONMENT_ID = "usingEnvironmentId";
   @SerializedName(SERIALIZED_NAME_USING_ENVIRONMENT_ID)
+  @javax.annotation.Nonnull
   private Boolean usingEnvironmentId;
 
   public DefaultClientSideAvailability() {
   }
 
-  public DefaultClientSideAvailability usingMobileKey(Boolean usingMobileKey) {
+  public DefaultClientSideAvailability usingMobileKey(@javax.annotation.Nonnull Boolean usingMobileKey) {
     this.usingMobileKey = usingMobileKey;
     return this;
   }
 
-   /**
+  /**
    * Whether to enable availability for mobile SDKs
    * @return usingMobileKey
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getUsingMobileKey() {
     return usingMobileKey;
   }
 
-  public void setUsingMobileKey(Boolean usingMobileKey) {
+  public void setUsingMobileKey(@javax.annotation.Nonnull Boolean usingMobileKey) {
     this.usingMobileKey = usingMobileKey;
   }
 
 
-  public DefaultClientSideAvailability usingEnvironmentId(Boolean usingEnvironmentId) {
+  public DefaultClientSideAvailability usingEnvironmentId(@javax.annotation.Nonnull Boolean usingEnvironmentId) {
     this.usingEnvironmentId = usingEnvironmentId;
     return this;
   }
 
-   /**
+  /**
    * Whether to enable availability for client-side SDKs
    * @return usingEnvironmentId
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getUsingEnvironmentId() {
     return usingEnvironmentId;
   }
 
-  public void setUsingEnvironmentId(Boolean usingEnvironmentId) {
+  public void setUsingEnvironmentId(@javax.annotation.Nonnull Boolean usingEnvironmentId) {
     this.usingEnvironmentId = usingEnvironmentId;
   }
 
@@ -192,33 +195,29 @@ public class DefaultClientSideAvailability {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("usingMobileKey");
-    openapiFields.add("usingEnvironmentId");
+    openapiFields = new HashSet<String>(Arrays.asList("usingMobileKey", "usingEnvironmentId"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("usingMobileKey");
-    openapiRequiredFields.add("usingEnvironmentId");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("usingMobileKey", "usingEnvironmentId"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DefaultClientSideAvailability
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DefaultClientSideAvailability
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DefaultClientSideAvailability.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DefaultClientSideAvailability is not found in the empty JSON string", DefaultClientSideAvailability.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in DefaultClientSideAvailability is not found in the empty JSON string", DefaultClientSideAvailability.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : DefaultClientSideAvailability.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -281,7 +280,7 @@ public class DefaultClientSideAvailability {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -296,22 +295,22 @@ public class DefaultClientSideAvailability {
     }
   }
 
- /**
-  * Create an instance of DefaultClientSideAvailability given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DefaultClientSideAvailability
-  * @throws IOException if the JSON string is invalid with respect to DefaultClientSideAvailability
-  */
+  /**
+   * Create an instance of DefaultClientSideAvailability given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DefaultClientSideAvailability
+   * @throws IOException if the JSON string is invalid with respect to DefaultClientSideAvailability
+   */
   public static DefaultClientSideAvailability fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DefaultClientSideAvailability.class);
   }
 
- /**
-  * Convert an instance of DefaultClientSideAvailability to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DefaultClientSideAvailability to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -91,7 +91,8 @@ public class PersistentStoreIntegrationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Big segment store response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -102,7 +103,7 @@ public class PersistentStoreIntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createBigSegmentStoreIntegrationCall(String projectKey, String environmentKey, String integrationKey, IntegrationDeliveryConfigurationPost integrationDeliveryConfigurationPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createBigSegmentStoreIntegrationCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull IntegrationDeliveryConfigurationPost integrationDeliveryConfigurationPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -151,7 +152,7 @@ public class PersistentStoreIntegrationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createBigSegmentStoreIntegrationValidateBeforeCall(String projectKey, String environmentKey, String integrationKey, IntegrationDeliveryConfigurationPost integrationDeliveryConfigurationPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createBigSegmentStoreIntegrationValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull IntegrationDeliveryConfigurationPost integrationDeliveryConfigurationPost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling createBigSegmentStoreIntegration(Async)");
@@ -186,7 +187,8 @@ public class PersistentStoreIntegrationsBetaApi {
      * @return BigSegmentStoreIntegration
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Big segment store response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -197,7 +199,7 @@ public class PersistentStoreIntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public BigSegmentStoreIntegration createBigSegmentStoreIntegration(String projectKey, String environmentKey, String integrationKey, IntegrationDeliveryConfigurationPost integrationDeliveryConfigurationPost) throws ApiException {
+    public BigSegmentStoreIntegration createBigSegmentStoreIntegration(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull IntegrationDeliveryConfigurationPost integrationDeliveryConfigurationPost) throws ApiException {
         ApiResponse<BigSegmentStoreIntegration> localVarResp = createBigSegmentStoreIntegrationWithHttpInfo(projectKey, environmentKey, integrationKey, integrationDeliveryConfigurationPost);
         return localVarResp.getData();
     }
@@ -212,7 +214,8 @@ public class PersistentStoreIntegrationsBetaApi {
      * @return ApiResponse&lt;BigSegmentStoreIntegration&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Big segment store response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -223,7 +226,7 @@ public class PersistentStoreIntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BigSegmentStoreIntegration> createBigSegmentStoreIntegrationWithHttpInfo(String projectKey, String environmentKey, String integrationKey, IntegrationDeliveryConfigurationPost integrationDeliveryConfigurationPost) throws ApiException {
+    public ApiResponse<BigSegmentStoreIntegration> createBigSegmentStoreIntegrationWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull IntegrationDeliveryConfigurationPost integrationDeliveryConfigurationPost) throws ApiException {
         okhttp3.Call localVarCall = createBigSegmentStoreIntegrationValidateBeforeCall(projectKey, environmentKey, integrationKey, integrationDeliveryConfigurationPost, null);
         Type localVarReturnType = new TypeToken<BigSegmentStoreIntegration>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -240,7 +243,8 @@ public class PersistentStoreIntegrationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Big segment store response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -251,7 +255,7 @@ public class PersistentStoreIntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createBigSegmentStoreIntegrationAsync(String projectKey, String environmentKey, String integrationKey, IntegrationDeliveryConfigurationPost integrationDeliveryConfigurationPost, final ApiCallback<BigSegmentStoreIntegration> _callback) throws ApiException {
+    public okhttp3.Call createBigSegmentStoreIntegrationAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull IntegrationDeliveryConfigurationPost integrationDeliveryConfigurationPost, final ApiCallback<BigSegmentStoreIntegration> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createBigSegmentStoreIntegrationValidateBeforeCall(projectKey, environmentKey, integrationKey, integrationDeliveryConfigurationPost, _callback);
         Type localVarReturnType = new TypeToken<BigSegmentStoreIntegration>(){}.getType();
@@ -268,7 +272,8 @@ public class PersistentStoreIntegrationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -278,7 +283,7 @@ public class PersistentStoreIntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteBigSegmentStoreIntegrationCall(String projectKey, String environmentKey, String integrationKey, String integrationId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteBigSegmentStoreIntegrationCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -327,7 +332,7 @@ public class PersistentStoreIntegrationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteBigSegmentStoreIntegrationValidateBeforeCall(String projectKey, String environmentKey, String integrationKey, String integrationId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteBigSegmentStoreIntegrationValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling deleteBigSegmentStoreIntegration(Async)");
@@ -361,7 +366,8 @@ public class PersistentStoreIntegrationsBetaApi {
      * @param integrationId The integration ID (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -371,7 +377,7 @@ public class PersistentStoreIntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteBigSegmentStoreIntegration(String projectKey, String environmentKey, String integrationKey, String integrationId) throws ApiException {
+    public void deleteBigSegmentStoreIntegration(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId) throws ApiException {
         deleteBigSegmentStoreIntegrationWithHttpInfo(projectKey, environmentKey, integrationKey, integrationId);
     }
 
@@ -385,7 +391,8 @@ public class PersistentStoreIntegrationsBetaApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -395,7 +402,7 @@ public class PersistentStoreIntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteBigSegmentStoreIntegrationWithHttpInfo(String projectKey, String environmentKey, String integrationKey, String integrationId) throws ApiException {
+    public ApiResponse<Void> deleteBigSegmentStoreIntegrationWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId) throws ApiException {
         okhttp3.Call localVarCall = deleteBigSegmentStoreIntegrationValidateBeforeCall(projectKey, environmentKey, integrationKey, integrationId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -411,7 +418,8 @@ public class PersistentStoreIntegrationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -421,7 +429,7 @@ public class PersistentStoreIntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteBigSegmentStoreIntegrationAsync(String projectKey, String environmentKey, String integrationKey, String integrationId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteBigSegmentStoreIntegrationAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteBigSegmentStoreIntegrationValidateBeforeCall(projectKey, environmentKey, integrationKey, integrationId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -437,7 +445,8 @@ public class PersistentStoreIntegrationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Big segment store response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -446,7 +455,7 @@ public class PersistentStoreIntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getBigSegmentStoreIntegrationCall(String projectKey, String environmentKey, String integrationKey, String integrationId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getBigSegmentStoreIntegrationCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -495,7 +504,7 @@ public class PersistentStoreIntegrationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getBigSegmentStoreIntegrationValidateBeforeCall(String projectKey, String environmentKey, String integrationKey, String integrationId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getBigSegmentStoreIntegrationValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getBigSegmentStoreIntegration(Async)");
@@ -530,7 +539,8 @@ public class PersistentStoreIntegrationsBetaApi {
      * @return BigSegmentStoreIntegration
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Big segment store response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -539,7 +549,7 @@ public class PersistentStoreIntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public BigSegmentStoreIntegration getBigSegmentStoreIntegration(String projectKey, String environmentKey, String integrationKey, String integrationId) throws ApiException {
+    public BigSegmentStoreIntegration getBigSegmentStoreIntegration(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId) throws ApiException {
         ApiResponse<BigSegmentStoreIntegration> localVarResp = getBigSegmentStoreIntegrationWithHttpInfo(projectKey, environmentKey, integrationKey, integrationId);
         return localVarResp.getData();
     }
@@ -554,7 +564,8 @@ public class PersistentStoreIntegrationsBetaApi {
      * @return ApiResponse&lt;BigSegmentStoreIntegration&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Big segment store response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -563,7 +574,7 @@ public class PersistentStoreIntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BigSegmentStoreIntegration> getBigSegmentStoreIntegrationWithHttpInfo(String projectKey, String environmentKey, String integrationKey, String integrationId) throws ApiException {
+    public ApiResponse<BigSegmentStoreIntegration> getBigSegmentStoreIntegrationWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId) throws ApiException {
         okhttp3.Call localVarCall = getBigSegmentStoreIntegrationValidateBeforeCall(projectKey, environmentKey, integrationKey, integrationId, null);
         Type localVarReturnType = new TypeToken<BigSegmentStoreIntegration>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -580,7 +591,8 @@ public class PersistentStoreIntegrationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Big segment store response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -589,7 +601,7 @@ public class PersistentStoreIntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getBigSegmentStoreIntegrationAsync(String projectKey, String environmentKey, String integrationKey, String integrationId, final ApiCallback<BigSegmentStoreIntegration> _callback) throws ApiException {
+    public okhttp3.Call getBigSegmentStoreIntegrationAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, final ApiCallback<BigSegmentStoreIntegration> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getBigSegmentStoreIntegrationValidateBeforeCall(projectKey, environmentKey, integrationKey, integrationId, _callback);
         Type localVarReturnType = new TypeToken<BigSegmentStoreIntegration>(){}.getType();
@@ -602,7 +614,8 @@ public class PersistentStoreIntegrationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Big segment store collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -667,7 +680,8 @@ public class PersistentStoreIntegrationsBetaApi {
      * @return BigSegmentStoreIntegrationCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Big segment store collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -687,7 +701,8 @@ public class PersistentStoreIntegrationsBetaApi {
      * @return ApiResponse&lt;BigSegmentStoreIntegrationCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Big segment store collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -709,7 +724,8 @@ public class PersistentStoreIntegrationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Big segment store collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -736,7 +752,8 @@ public class PersistentStoreIntegrationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Big segment store response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -747,7 +764,7 @@ public class PersistentStoreIntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchBigSegmentStoreIntegrationCall(String projectKey, String environmentKey, String integrationKey, String integrationId, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchBigSegmentStoreIntegrationCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -797,7 +814,7 @@ public class PersistentStoreIntegrationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchBigSegmentStoreIntegrationValidateBeforeCall(String projectKey, String environmentKey, String integrationKey, String integrationId, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchBigSegmentStoreIntegrationValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling patchBigSegmentStoreIntegration(Async)");
@@ -838,7 +855,8 @@ public class PersistentStoreIntegrationsBetaApi {
      * @return BigSegmentStoreIntegration
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Big segment store response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -849,7 +867,7 @@ public class PersistentStoreIntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public BigSegmentStoreIntegration patchBigSegmentStoreIntegration(String projectKey, String environmentKey, String integrationKey, String integrationId, List<PatchOperation> patchOperation) throws ApiException {
+    public BigSegmentStoreIntegration patchBigSegmentStoreIntegration(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         ApiResponse<BigSegmentStoreIntegration> localVarResp = patchBigSegmentStoreIntegrationWithHttpInfo(projectKey, environmentKey, integrationKey, integrationId, patchOperation);
         return localVarResp.getData();
     }
@@ -865,7 +883,8 @@ public class PersistentStoreIntegrationsBetaApi {
      * @return ApiResponse&lt;BigSegmentStoreIntegration&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Big segment store response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -876,7 +895,7 @@ public class PersistentStoreIntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BigSegmentStoreIntegration> patchBigSegmentStoreIntegrationWithHttpInfo(String projectKey, String environmentKey, String integrationKey, String integrationId, List<PatchOperation> patchOperation) throws ApiException {
+    public ApiResponse<BigSegmentStoreIntegration> patchBigSegmentStoreIntegrationWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         okhttp3.Call localVarCall = patchBigSegmentStoreIntegrationValidateBeforeCall(projectKey, environmentKey, integrationKey, integrationId, patchOperation, null);
         Type localVarReturnType = new TypeToken<BigSegmentStoreIntegration>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -894,7 +913,8 @@ public class PersistentStoreIntegrationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Big segment store response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -905,7 +925,7 @@ public class PersistentStoreIntegrationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchBigSegmentStoreIntegrationAsync(String projectKey, String environmentKey, String integrationKey, String integrationId, List<PatchOperation> patchOperation, final ApiCallback<BigSegmentStoreIntegration> _callback) throws ApiException {
+    public okhttp3.Call patchBigSegmentStoreIntegrationAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback<BigSegmentStoreIntegration> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchBigSegmentStoreIntegrationValidateBeforeCall(projectKey, environmentKey, integrationKey, integrationId, patchOperation, _callback);
         Type localVarReturnType = new TypeToken<BigSegmentStoreIntegration>(){}.getType();

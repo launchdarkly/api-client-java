@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,30 +44,33 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * MetricPost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class MetricPost {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   /**
@@ -125,26 +129,32 @@ public class MetricPost {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
+  @javax.annotation.Nonnull
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_SELECTOR = "selector";
   @SerializedName(SERIALIZED_NAME_SELECTOR)
+  @javax.annotation.Nullable
   private String selector;
 
   public static final String SERIALIZED_NAME_URLS = "urls";
   @SerializedName(SERIALIZED_NAME_URLS)
+  @javax.annotation.Nullable
   private List<UrlPost> urls = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_IS_NUMERIC = "isNumeric";
   @SerializedName(SERIALIZED_NAME_IS_NUMERIC)
+  @javax.annotation.Nullable
   private Boolean isNumeric;
 
   public static final String SERIALIZED_NAME_UNIT = "unit";
   @SerializedName(SERIALIZED_NAME_UNIT)
+  @javax.annotation.Nullable
   private String unit;
 
   public static final String SERIALIZED_NAME_EVENT_KEY = "eventKey";
   @SerializedName(SERIALIZED_NAME_EVENT_KEY)
+  @javax.annotation.Nullable
   private String eventKey;
 
   /**
@@ -152,9 +162,9 @@ public class MetricPost {
    */
   @JsonAdapter(SuccessCriteriaEnum.Adapter.class)
   public enum SuccessCriteriaEnum {
-    HIGHERTHANBASELINE("HigherThanBaseline"),
+    HIGHER_THAN_BASELINE("HigherThanBaseline"),
     
-    LOWERTHANBASELINE("LowerThanBaseline");
+    LOWER_THAN_BASELINE("LowerThanBaseline");
 
     private String value;
 
@@ -201,18 +211,22 @@ public class MetricPost {
 
   public static final String SERIALIZED_NAME_SUCCESS_CRITERIA = "successCriteria";
   @SerializedName(SERIALIZED_NAME_SUCCESS_CRITERIA)
+  @javax.annotation.Nullable
   private SuccessCriteriaEnum successCriteria;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_RANDOMIZATION_UNITS = "randomizationUnits";
   @SerializedName(SERIALIZED_NAME_RANDOMIZATION_UNITS)
+  @javax.annotation.Nullable
   private List<String> randomizationUnits = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MAINTAINER_ID = "maintainerId";
   @SerializedName(SERIALIZED_NAME_MAINTAINER_ID)
+  @javax.annotation.Nullable
   private String maintainerId;
 
   /**
@@ -269,127 +283,133 @@ public class MetricPost {
 
   public static final String SERIALIZED_NAME_UNIT_AGGREGATION_TYPE = "unitAggregationType";
   @SerializedName(SERIALIZED_NAME_UNIT_AGGREGATION_TYPE)
+  @javax.annotation.Nullable
   private UnitAggregationTypeEnum unitAggregationType;
 
   public static final String SERIALIZED_NAME_ANALYSIS_TYPE = "analysisType";
   @SerializedName(SERIALIZED_NAME_ANALYSIS_TYPE)
+  @javax.annotation.Nullable
   private String analysisType;
 
   public static final String SERIALIZED_NAME_PERCENTILE_VALUE = "percentileValue";
   @SerializedName(SERIALIZED_NAME_PERCENTILE_VALUE)
+  @javax.annotation.Nullable
   private Integer percentileValue;
 
   public static final String SERIALIZED_NAME_EVENT_DEFAULT = "eventDefault";
   @SerializedName(SERIALIZED_NAME_EVENT_DEFAULT)
+  @javax.annotation.Nullable
   private MetricEventDefaultRep eventDefault;
 
   public static final String SERIALIZED_NAME_DATA_SOURCE = "dataSource";
   @SerializedName(SERIALIZED_NAME_DATA_SOURCE)
+  @javax.annotation.Nullable
   private MetricDataSourceRefRep dataSource;
 
   public static final String SERIALIZED_NAME_FILTERS = "filters";
   @SerializedName(SERIALIZED_NAME_FILTERS)
+  @javax.annotation.Nullable
   private EventFilter filters;
 
   public MetricPost() {
   }
 
-  public MetricPost key(String key) {
+  public MetricPost key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * A unique key to reference the metric
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public MetricPost name(String name) {
+  public MetricPost name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for the metric
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public MetricPost description(String description) {
+  public MetricPost description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Description of the metric
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public MetricPost kind(KindEnum kind) {
+  public MetricPost kind(@javax.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
 
-   /**
+  /**
    * The kind of event your metric will track
    * @return kind
-  **/
+   */
   @javax.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(KindEnum kind) {
+  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public MetricPost selector(String selector) {
+  public MetricPost selector(@javax.annotation.Nullable String selector) {
     this.selector = selector;
     return this;
   }
 
-   /**
+  /**
    * One or more CSS selectors. Required for click metrics only.
    * @return selector
-  **/
+   */
   @javax.annotation.Nullable
   public String getSelector() {
     return selector;
   }
 
-  public void setSelector(String selector) {
+  public void setSelector(@javax.annotation.Nullable String selector) {
     this.selector = selector;
   }
 
 
-  public MetricPost urls(List<UrlPost> urls) {
+  public MetricPost urls(@javax.annotation.Nullable List<UrlPost> urls) {
     this.urls = urls;
     return this;
   }
@@ -402,97 +422,97 @@ public class MetricPost {
     return this;
   }
 
-   /**
+  /**
    * One or more target URLs. Required for click and pageview metrics only.
    * @return urls
-  **/
+   */
   @javax.annotation.Nullable
   public List<UrlPost> getUrls() {
     return urls;
   }
 
-  public void setUrls(List<UrlPost> urls) {
+  public void setUrls(@javax.annotation.Nullable List<UrlPost> urls) {
     this.urls = urls;
   }
 
 
-  public MetricPost isNumeric(Boolean isNumeric) {
+  public MetricPost isNumeric(@javax.annotation.Nullable Boolean isNumeric) {
     this.isNumeric = isNumeric;
     return this;
   }
 
-   /**
+  /**
    * Whether to track numeric changes in value against a baseline (&lt;code&gt;true&lt;/code&gt;) or to track a conversion when an end user takes an action (&lt;code&gt;false&lt;/code&gt;). Required for custom metrics only.
    * @return isNumeric
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsNumeric() {
     return isNumeric;
   }
 
-  public void setIsNumeric(Boolean isNumeric) {
+  public void setIsNumeric(@javax.annotation.Nullable Boolean isNumeric) {
     this.isNumeric = isNumeric;
   }
 
 
-  public MetricPost unit(String unit) {
+  public MetricPost unit(@javax.annotation.Nullable String unit) {
     this.unit = unit;
     return this;
   }
 
-   /**
+  /**
    * The unit of measure. Applicable for numeric custom metrics only.
    * @return unit
-  **/
+   */
   @javax.annotation.Nullable
   public String getUnit() {
     return unit;
   }
 
-  public void setUnit(String unit) {
+  public void setUnit(@javax.annotation.Nullable String unit) {
     this.unit = unit;
   }
 
 
-  public MetricPost eventKey(String eventKey) {
+  public MetricPost eventKey(@javax.annotation.Nullable String eventKey) {
     this.eventKey = eventKey;
     return this;
   }
 
-   /**
+  /**
    * The event key to use in your code. Required for custom conversion/binary and custom numeric metrics only.
    * @return eventKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getEventKey() {
     return eventKey;
   }
 
-  public void setEventKey(String eventKey) {
+  public void setEventKey(@javax.annotation.Nullable String eventKey) {
     this.eventKey = eventKey;
   }
 
 
-  public MetricPost successCriteria(SuccessCriteriaEnum successCriteria) {
+  public MetricPost successCriteria(@javax.annotation.Nullable SuccessCriteriaEnum successCriteria) {
     this.successCriteria = successCriteria;
     return this;
   }
 
-   /**
+  /**
    * Success criteria. Required for custom numeric metrics, optional for custom conversion metrics.
    * @return successCriteria
-  **/
+   */
   @javax.annotation.Nullable
   public SuccessCriteriaEnum getSuccessCriteria() {
     return successCriteria;
   }
 
-  public void setSuccessCriteria(SuccessCriteriaEnum successCriteria) {
+  public void setSuccessCriteria(@javax.annotation.Nullable SuccessCriteriaEnum successCriteria) {
     this.successCriteria = successCriteria;
   }
 
 
-  public MetricPost tags(List<String> tags) {
+  public MetricPost tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -505,21 +525,21 @@ public class MetricPost {
     return this;
   }
 
-   /**
+  /**
    * Tags for the metric
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
 
-  public MetricPost randomizationUnits(List<String> randomizationUnits) {
+  public MetricPost randomizationUnits(@javax.annotation.Nullable List<String> randomizationUnits) {
     this.randomizationUnits = randomizationUnits;
     return this;
   }
@@ -532,149 +552,149 @@ public class MetricPost {
     return this;
   }
 
-   /**
+  /**
    * An array of randomization units allowed for this metric
    * @return randomizationUnits
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getRandomizationUnits() {
     return randomizationUnits;
   }
 
-  public void setRandomizationUnits(List<String> randomizationUnits) {
+  public void setRandomizationUnits(@javax.annotation.Nullable List<String> randomizationUnits) {
     this.randomizationUnits = randomizationUnits;
   }
 
 
-  public MetricPost maintainerId(String maintainerId) {
+  public MetricPost maintainerId(@javax.annotation.Nullable String maintainerId) {
     this.maintainerId = maintainerId;
     return this;
   }
 
-   /**
+  /**
    * The ID of the member who maintains this metric
    * @return maintainerId
-  **/
+   */
   @javax.annotation.Nullable
   public String getMaintainerId() {
     return maintainerId;
   }
 
-  public void setMaintainerId(String maintainerId) {
+  public void setMaintainerId(@javax.annotation.Nullable String maintainerId) {
     this.maintainerId = maintainerId;
   }
 
 
-  public MetricPost unitAggregationType(UnitAggregationTypeEnum unitAggregationType) {
+  public MetricPost unitAggregationType(@javax.annotation.Nullable UnitAggregationTypeEnum unitAggregationType) {
     this.unitAggregationType = unitAggregationType;
     return this;
   }
 
-   /**
+  /**
    * The method by which multiple unit event values are aggregated
    * @return unitAggregationType
-  **/
+   */
   @javax.annotation.Nullable
   public UnitAggregationTypeEnum getUnitAggregationType() {
     return unitAggregationType;
   }
 
-  public void setUnitAggregationType(UnitAggregationTypeEnum unitAggregationType) {
+  public void setUnitAggregationType(@javax.annotation.Nullable UnitAggregationTypeEnum unitAggregationType) {
     this.unitAggregationType = unitAggregationType;
   }
 
 
-  public MetricPost analysisType(String analysisType) {
+  public MetricPost analysisType(@javax.annotation.Nullable String analysisType) {
     this.analysisType = analysisType;
     return this;
   }
 
-   /**
+  /**
    * The method for analyzing metric events
    * @return analysisType
-  **/
+   */
   @javax.annotation.Nullable
   public String getAnalysisType() {
     return analysisType;
   }
 
-  public void setAnalysisType(String analysisType) {
+  public void setAnalysisType(@javax.annotation.Nullable String analysisType) {
     this.analysisType = analysisType;
   }
 
 
-  public MetricPost percentileValue(Integer percentileValue) {
+  public MetricPost percentileValue(@javax.annotation.Nullable Integer percentileValue) {
     this.percentileValue = percentileValue;
     return this;
   }
 
-   /**
+  /**
    * The percentile for the analysis method. An integer denoting the target percentile between 0 and 100. Required when &lt;code&gt;analysisType&lt;/code&gt; is &lt;code&gt;percentile&lt;/code&gt;.
    * @return percentileValue
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getPercentileValue() {
     return percentileValue;
   }
 
-  public void setPercentileValue(Integer percentileValue) {
+  public void setPercentileValue(@javax.annotation.Nullable Integer percentileValue) {
     this.percentileValue = percentileValue;
   }
 
 
-  public MetricPost eventDefault(MetricEventDefaultRep eventDefault) {
+  public MetricPost eventDefault(@javax.annotation.Nullable MetricEventDefaultRep eventDefault) {
     this.eventDefault = eventDefault;
     return this;
   }
 
-   /**
+  /**
    * Get eventDefault
    * @return eventDefault
-  **/
+   */
   @javax.annotation.Nullable
   public MetricEventDefaultRep getEventDefault() {
     return eventDefault;
   }
 
-  public void setEventDefault(MetricEventDefaultRep eventDefault) {
+  public void setEventDefault(@javax.annotation.Nullable MetricEventDefaultRep eventDefault) {
     this.eventDefault = eventDefault;
   }
 
 
-  public MetricPost dataSource(MetricDataSourceRefRep dataSource) {
+  public MetricPost dataSource(@javax.annotation.Nullable MetricDataSourceRefRep dataSource) {
     this.dataSource = dataSource;
     return this;
   }
 
-   /**
+  /**
    * Get dataSource
    * @return dataSource
-  **/
+   */
   @javax.annotation.Nullable
   public MetricDataSourceRefRep getDataSource() {
     return dataSource;
   }
 
-  public void setDataSource(MetricDataSourceRefRep dataSource) {
+  public void setDataSource(@javax.annotation.Nullable MetricDataSourceRefRep dataSource) {
     this.dataSource = dataSource;
   }
 
 
-  public MetricPost filters(EventFilter filters) {
+  public MetricPost filters(@javax.annotation.Nullable EventFilter filters) {
     this.filters = filters;
     return this;
   }
 
-   /**
+  /**
    * Get filters
    * @return filters
-  **/
+   */
   @javax.annotation.Nullable
   public EventFilter getFilters() {
     return filters;
   }
 
-  public void setFilters(EventFilter filters) {
+  public void setFilters(@javax.annotation.Nullable EventFilter filters) {
     this.filters = filters;
   }
 
@@ -805,76 +825,55 @@ public class MetricPost {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("key");
-    openapiFields.add("name");
-    openapiFields.add("description");
-    openapiFields.add("kind");
-    openapiFields.add("selector");
-    openapiFields.add("urls");
-    openapiFields.add("isNumeric");
-    openapiFields.add("unit");
-    openapiFields.add("eventKey");
-    openapiFields.add("successCriteria");
-    openapiFields.add("tags");
-    openapiFields.add("randomizationUnits");
-    openapiFields.add("maintainerId");
-    openapiFields.add("unitAggregationType");
-    openapiFields.add("analysisType");
-    openapiFields.add("percentileValue");
-    openapiFields.add("eventDefault");
-    openapiFields.add("dataSource");
-    openapiFields.add("filters");
+    openapiFields = new HashSet<String>(Arrays.asList("key", "name", "description", "kind", "selector", "urls", "isNumeric", "unit", "eventKey", "successCriteria", "tags", "randomizationUnits", "maintainerId", "unitAggregationType", "analysisType", "percentileValue", "eventDefault", "dataSource", "filters"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("kind");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("key", "kind"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to MetricPost
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to MetricPost
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!MetricPost.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in MetricPost is not found in the empty JSON string", MetricPost.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in MetricPost is not found in the empty JSON string", MetricPost.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : MetricPost.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if (!jsonObj.get("kind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
       // validate the required field `kind`
       KindEnum.validateJsonElement(jsonObj.get("kind"));
       if ((jsonObj.get("selector") != null && !jsonObj.get("selector").isJsonNull()) && !jsonObj.get("selector").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `selector` to be a primitive type in the JSON string but got `%s`", jsonObj.get("selector").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `selector` to be a primitive type in the JSON string but got `%s`", jsonObj.get("selector").toString()));
       }
       if (jsonObj.get("urls") != null && !jsonObj.get("urls").isJsonNull()) {
         JsonArray jsonArrayurls = jsonObj.getAsJsonArray("urls");
         if (jsonArrayurls != null) {
           // ensure the json data is an array
           if (!jsonObj.get("urls").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `urls` to be an array in the JSON string but got `%s`", jsonObj.get("urls").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `urls` to be an array in the JSON string but got `%s`", jsonObj.get("urls").toString()));
           }
 
           // validate the optional field `urls` (array)
@@ -884,13 +883,13 @@ public class MetricPost {
         }
       }
       if ((jsonObj.get("unit") != null && !jsonObj.get("unit").isJsonNull()) && !jsonObj.get("unit").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `unit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unit").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `unit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unit").toString()));
       }
       if ((jsonObj.get("eventKey") != null && !jsonObj.get("eventKey").isJsonNull()) && !jsonObj.get("eventKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `eventKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("eventKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `eventKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("eventKey").toString()));
       }
       if ((jsonObj.get("successCriteria") != null && !jsonObj.get("successCriteria").isJsonNull()) && !jsonObj.get("successCriteria").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `successCriteria` to be a primitive type in the JSON string but got `%s`", jsonObj.get("successCriteria").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `successCriteria` to be a primitive type in the JSON string but got `%s`", jsonObj.get("successCriteria").toString()));
       }
       // validate the optional field `successCriteria`
       if (jsonObj.get("successCriteria") != null && !jsonObj.get("successCriteria").isJsonNull()) {
@@ -898,24 +897,24 @@ public class MetricPost {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("randomizationUnits") != null && !jsonObj.get("randomizationUnits").isJsonNull() && !jsonObj.get("randomizationUnits").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `randomizationUnits` to be an array in the JSON string but got `%s`", jsonObj.get("randomizationUnits").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `randomizationUnits` to be an array in the JSON string but got `%s`", jsonObj.get("randomizationUnits").toString()));
       }
       if ((jsonObj.get("maintainerId") != null && !jsonObj.get("maintainerId").isJsonNull()) && !jsonObj.get("maintainerId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerId").toString()));
       }
       if ((jsonObj.get("unitAggregationType") != null && !jsonObj.get("unitAggregationType").isJsonNull()) && !jsonObj.get("unitAggregationType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `unitAggregationType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unitAggregationType").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `unitAggregationType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unitAggregationType").toString()));
       }
       // validate the optional field `unitAggregationType`
       if (jsonObj.get("unitAggregationType") != null && !jsonObj.get("unitAggregationType").isJsonNull()) {
         UnitAggregationTypeEnum.validateJsonElement(jsonObj.get("unitAggregationType"));
       }
       if ((jsonObj.get("analysisType") != null && !jsonObj.get("analysisType").isJsonNull()) && !jsonObj.get("analysisType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `analysisType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("analysisType").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `analysisType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("analysisType").toString()));
       }
       // validate the optional field `eventDefault`
       if (jsonObj.get("eventDefault") != null && !jsonObj.get("eventDefault").isJsonNull()) {
@@ -988,7 +987,7 @@ public class MetricPost {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -1003,22 +1002,22 @@ public class MetricPost {
     }
   }
 
- /**
-  * Create an instance of MetricPost given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of MetricPost
-  * @throws IOException if the JSON string is invalid with respect to MetricPost
-  */
+  /**
+   * Create an instance of MetricPost given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of MetricPost
+   * @throws IOException if the JSON string is invalid with respect to MetricPost
+   */
   public static MetricPost fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, MetricPost.class);
   }
 
- /**
-  * Convert an instance of MetricPost to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of MetricPost to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

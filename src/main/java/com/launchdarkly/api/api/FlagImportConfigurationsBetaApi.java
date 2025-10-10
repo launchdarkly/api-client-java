@@ -90,7 +90,8 @@ public class FlagImportConfigurationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag Import Configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -101,7 +102,7 @@ public class FlagImportConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createFlagImportConfigurationCall(String projectKey, String integrationKey, FlagImportConfigurationPost flagImportConfigurationPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createFlagImportConfigurationCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull FlagImportConfigurationPost flagImportConfigurationPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -149,7 +150,7 @@ public class FlagImportConfigurationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createFlagImportConfigurationValidateBeforeCall(String projectKey, String integrationKey, FlagImportConfigurationPost flagImportConfigurationPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createFlagImportConfigurationValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull FlagImportConfigurationPost flagImportConfigurationPost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling createFlagImportConfiguration(Async)");
@@ -178,7 +179,8 @@ public class FlagImportConfigurationsBetaApi {
      * @return FlagImportIntegration
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag Import Configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -189,7 +191,7 @@ public class FlagImportConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public FlagImportIntegration createFlagImportConfiguration(String projectKey, String integrationKey, FlagImportConfigurationPost flagImportConfigurationPost) throws ApiException {
+    public FlagImportIntegration createFlagImportConfiguration(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull FlagImportConfigurationPost flagImportConfigurationPost) throws ApiException {
         ApiResponse<FlagImportIntegration> localVarResp = createFlagImportConfigurationWithHttpInfo(projectKey, integrationKey, flagImportConfigurationPost);
         return localVarResp.getData();
     }
@@ -203,7 +205,8 @@ public class FlagImportConfigurationsBetaApi {
      * @return ApiResponse&lt;FlagImportIntegration&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag Import Configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -214,7 +217,7 @@ public class FlagImportConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FlagImportIntegration> createFlagImportConfigurationWithHttpInfo(String projectKey, String integrationKey, FlagImportConfigurationPost flagImportConfigurationPost) throws ApiException {
+    public ApiResponse<FlagImportIntegration> createFlagImportConfigurationWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull FlagImportConfigurationPost flagImportConfigurationPost) throws ApiException {
         okhttp3.Call localVarCall = createFlagImportConfigurationValidateBeforeCall(projectKey, integrationKey, flagImportConfigurationPost, null);
         Type localVarReturnType = new TypeToken<FlagImportIntegration>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -230,7 +233,8 @@ public class FlagImportConfigurationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag Import Configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -241,7 +245,7 @@ public class FlagImportConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createFlagImportConfigurationAsync(String projectKey, String integrationKey, FlagImportConfigurationPost flagImportConfigurationPost, final ApiCallback<FlagImportIntegration> _callback) throws ApiException {
+    public okhttp3.Call createFlagImportConfigurationAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull FlagImportConfigurationPost flagImportConfigurationPost, final ApiCallback<FlagImportIntegration> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createFlagImportConfigurationValidateBeforeCall(projectKey, integrationKey, flagImportConfigurationPost, _callback);
         Type localVarReturnType = new TypeToken<FlagImportIntegration>(){}.getType();
@@ -257,7 +261,8 @@ public class FlagImportConfigurationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -267,7 +272,7 @@ public class FlagImportConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteFlagImportConfigurationCall(String projectKey, String integrationKey, String integrationId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteFlagImportConfigurationCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -315,7 +320,7 @@ public class FlagImportConfigurationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteFlagImportConfigurationValidateBeforeCall(String projectKey, String integrationKey, String integrationId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteFlagImportConfigurationValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling deleteFlagImportConfiguration(Async)");
@@ -343,7 +348,8 @@ public class FlagImportConfigurationsBetaApi {
      * @param integrationId The integration ID (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -353,7 +359,7 @@ public class FlagImportConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteFlagImportConfiguration(String projectKey, String integrationKey, String integrationId) throws ApiException {
+    public void deleteFlagImportConfiguration(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId) throws ApiException {
         deleteFlagImportConfigurationWithHttpInfo(projectKey, integrationKey, integrationId);
     }
 
@@ -366,7 +372,8 @@ public class FlagImportConfigurationsBetaApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -376,7 +383,7 @@ public class FlagImportConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteFlagImportConfigurationWithHttpInfo(String projectKey, String integrationKey, String integrationId) throws ApiException {
+    public ApiResponse<Void> deleteFlagImportConfigurationWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId) throws ApiException {
         okhttp3.Call localVarCall = deleteFlagImportConfigurationValidateBeforeCall(projectKey, integrationKey, integrationId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -391,7 +398,8 @@ public class FlagImportConfigurationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -401,7 +409,7 @@ public class FlagImportConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteFlagImportConfigurationAsync(String projectKey, String integrationKey, String integrationId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteFlagImportConfigurationAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteFlagImportConfigurationValidateBeforeCall(projectKey, integrationKey, integrationId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -416,7 +424,8 @@ public class FlagImportConfigurationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag import response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -427,7 +436,7 @@ public class FlagImportConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFlagImportConfigurationCall(String projectKey, String integrationKey, String integrationId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getFlagImportConfigurationCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -475,7 +484,7 @@ public class FlagImportConfigurationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFlagImportConfigurationValidateBeforeCall(String projectKey, String integrationKey, String integrationId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getFlagImportConfigurationValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getFlagImportConfiguration(Async)");
@@ -504,7 +513,8 @@ public class FlagImportConfigurationsBetaApi {
      * @return FlagImportIntegration
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag import response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -515,7 +525,7 @@ public class FlagImportConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public FlagImportIntegration getFlagImportConfiguration(String projectKey, String integrationKey, String integrationId) throws ApiException {
+    public FlagImportIntegration getFlagImportConfiguration(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId) throws ApiException {
         ApiResponse<FlagImportIntegration> localVarResp = getFlagImportConfigurationWithHttpInfo(projectKey, integrationKey, integrationId);
         return localVarResp.getData();
     }
@@ -529,7 +539,8 @@ public class FlagImportConfigurationsBetaApi {
      * @return ApiResponse&lt;FlagImportIntegration&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag import response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -540,7 +551,7 @@ public class FlagImportConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FlagImportIntegration> getFlagImportConfigurationWithHttpInfo(String projectKey, String integrationKey, String integrationId) throws ApiException {
+    public ApiResponse<FlagImportIntegration> getFlagImportConfigurationWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId) throws ApiException {
         okhttp3.Call localVarCall = getFlagImportConfigurationValidateBeforeCall(projectKey, integrationKey, integrationId, null);
         Type localVarReturnType = new TypeToken<FlagImportIntegration>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -556,7 +567,8 @@ public class FlagImportConfigurationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag import response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -567,7 +579,7 @@ public class FlagImportConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFlagImportConfigurationAsync(String projectKey, String integrationKey, String integrationId, final ApiCallback<FlagImportIntegration> _callback) throws ApiException {
+    public okhttp3.Call getFlagImportConfigurationAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, final ApiCallback<FlagImportIntegration> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFlagImportConfigurationValidateBeforeCall(projectKey, integrationKey, integrationId, _callback);
         Type localVarReturnType = new TypeToken<FlagImportIntegration>(){}.getType();
@@ -580,7 +592,8 @@ public class FlagImportConfigurationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag Import Configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -647,7 +660,8 @@ public class FlagImportConfigurationsBetaApi {
      * @return FlagImportIntegrationCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag Import Configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -669,7 +683,8 @@ public class FlagImportConfigurationsBetaApi {
      * @return ApiResponse&lt;FlagImportIntegrationCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag Import Configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -693,7 +708,8 @@ public class FlagImportConfigurationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag Import Configuration response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -721,7 +737,8 @@ public class FlagImportConfigurationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag import response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -732,7 +749,7 @@ public class FlagImportConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchFlagImportConfigurationCall(String projectKey, String integrationKey, String integrationId, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchFlagImportConfigurationCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -781,7 +798,7 @@ public class FlagImportConfigurationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchFlagImportConfigurationValidateBeforeCall(String projectKey, String integrationKey, String integrationId, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchFlagImportConfigurationValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling patchFlagImportConfiguration(Async)");
@@ -816,7 +833,8 @@ public class FlagImportConfigurationsBetaApi {
      * @return FlagImportIntegration
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag import response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -827,7 +845,7 @@ public class FlagImportConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public FlagImportIntegration patchFlagImportConfiguration(String projectKey, String integrationKey, String integrationId, List<PatchOperation> patchOperation) throws ApiException {
+    public FlagImportIntegration patchFlagImportConfiguration(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         ApiResponse<FlagImportIntegration> localVarResp = patchFlagImportConfigurationWithHttpInfo(projectKey, integrationKey, integrationId, patchOperation);
         return localVarResp.getData();
     }
@@ -842,7 +860,8 @@ public class FlagImportConfigurationsBetaApi {
      * @return ApiResponse&lt;FlagImportIntegration&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag import response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -853,7 +872,7 @@ public class FlagImportConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FlagImportIntegration> patchFlagImportConfigurationWithHttpInfo(String projectKey, String integrationKey, String integrationId, List<PatchOperation> patchOperation) throws ApiException {
+    public ApiResponse<FlagImportIntegration> patchFlagImportConfigurationWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         okhttp3.Call localVarCall = patchFlagImportConfigurationValidateBeforeCall(projectKey, integrationKey, integrationId, patchOperation, null);
         Type localVarReturnType = new TypeToken<FlagImportIntegration>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -870,7 +889,8 @@ public class FlagImportConfigurationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag import response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -881,7 +901,7 @@ public class FlagImportConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchFlagImportConfigurationAsync(String projectKey, String integrationKey, String integrationId, List<PatchOperation> patchOperation, final ApiCallback<FlagImportIntegration> _callback) throws ApiException {
+    public okhttp3.Call patchFlagImportConfigurationAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback<FlagImportIntegration> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchFlagImportConfigurationValidateBeforeCall(projectKey, integrationKey, integrationId, patchOperation, _callback);
         Type localVarReturnType = new TypeToken<FlagImportIntegration>(){}.getType();
@@ -897,7 +917,8 @@ public class FlagImportConfigurationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Import job queued successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -908,7 +929,7 @@ public class FlagImportConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call triggerFlagImportJobCall(String projectKey, String integrationKey, String integrationId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call triggerFlagImportJobCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -956,7 +977,7 @@ public class FlagImportConfigurationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call triggerFlagImportJobValidateBeforeCall(String projectKey, String integrationKey, String integrationId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call triggerFlagImportJobValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling triggerFlagImportJob(Async)");
@@ -984,7 +1005,8 @@ public class FlagImportConfigurationsBetaApi {
      * @param integrationId The integration ID (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Import job queued successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -995,7 +1017,7 @@ public class FlagImportConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void triggerFlagImportJob(String projectKey, String integrationKey, String integrationId) throws ApiException {
+    public void triggerFlagImportJob(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId) throws ApiException {
         triggerFlagImportJobWithHttpInfo(projectKey, integrationKey, integrationId);
     }
 
@@ -1008,7 +1030,8 @@ public class FlagImportConfigurationsBetaApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Import job queued successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1019,7 +1042,7 @@ public class FlagImportConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> triggerFlagImportJobWithHttpInfo(String projectKey, String integrationKey, String integrationId) throws ApiException {
+    public ApiResponse<Void> triggerFlagImportJobWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId) throws ApiException {
         okhttp3.Call localVarCall = triggerFlagImportJobValidateBeforeCall(projectKey, integrationKey, integrationId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -1034,7 +1057,8 @@ public class FlagImportConfigurationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Import job queued successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1045,7 +1069,7 @@ public class FlagImportConfigurationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call triggerFlagImportJobAsync(String projectKey, String integrationKey, String integrationId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call triggerFlagImportJobAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String integrationKey, @javax.annotation.Nonnull String integrationId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = triggerFlagImportJobValidateBeforeCall(projectKey, integrationKey, integrationId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);

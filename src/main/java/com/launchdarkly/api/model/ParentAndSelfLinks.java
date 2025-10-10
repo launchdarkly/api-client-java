@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,65 +39,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * The location and content type of related resources
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ParentAndSelfLinks {
   public static final String SERIALIZED_NAME_SELF = "self";
   @SerializedName(SERIALIZED_NAME_SELF)
+  @javax.annotation.Nonnull
   private CoreLink self;
 
   public static final String SERIALIZED_NAME_PARENT = "parent";
   @SerializedName(SERIALIZED_NAME_PARENT)
+  @javax.annotation.Nonnull
   private CoreLink parent;
 
   public ParentAndSelfLinks() {
   }
 
-  public ParentAndSelfLinks self(CoreLink self) {
+  public ParentAndSelfLinks self(@javax.annotation.Nonnull CoreLink self) {
     this.self = self;
     return this;
   }
 
-   /**
+  /**
    * Get self
    * @return self
-  **/
+   */
   @javax.annotation.Nonnull
   public CoreLink getSelf() {
     return self;
   }
 
-  public void setSelf(CoreLink self) {
+  public void setSelf(@javax.annotation.Nonnull CoreLink self) {
     this.self = self;
   }
 
 
-  public ParentAndSelfLinks parent(CoreLink parent) {
+  public ParentAndSelfLinks parent(@javax.annotation.Nonnull CoreLink parent) {
     this.parent = parent;
     return this;
   }
 
-   /**
+  /**
    * Get parent
    * @return parent
-  **/
+   */
   @javax.annotation.Nonnull
   public CoreLink getParent() {
     return parent;
   }
 
-  public void setParent(CoreLink parent) {
+  public void setParent(@javax.annotation.Nonnull CoreLink parent) {
     this.parent = parent;
   }
 
@@ -193,33 +196,29 @@ public class ParentAndSelfLinks {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("self");
-    openapiFields.add("parent");
+    openapiFields = new HashSet<String>(Arrays.asList("self", "parent"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("self");
-    openapiRequiredFields.add("parent");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("self", "parent"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ParentAndSelfLinks
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ParentAndSelfLinks
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ParentAndSelfLinks.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ParentAndSelfLinks is not found in the empty JSON string", ParentAndSelfLinks.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ParentAndSelfLinks is not found in the empty JSON string", ParentAndSelfLinks.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ParentAndSelfLinks.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -286,7 +285,7 @@ public class ParentAndSelfLinks {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -301,22 +300,22 @@ public class ParentAndSelfLinks {
     }
   }
 
- /**
-  * Create an instance of ParentAndSelfLinks given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ParentAndSelfLinks
-  * @throws IOException if the JSON string is invalid with respect to ParentAndSelfLinks
-  */
+  /**
+   * Create an instance of ParentAndSelfLinks given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ParentAndSelfLinks
+   * @throws IOException if the JSON string is invalid with respect to ParentAndSelfLinks
+   */
   public static ParentAndSelfLinks fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ParentAndSelfLinks.class);
   }
 
- /**
-  * Convert an instance of ParentAndSelfLinks to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ParentAndSelfLinks to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

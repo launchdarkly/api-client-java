@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,209 +45,222 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * TriggerWorkflowRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class TriggerWorkflowRep {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_VERSION = "_version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
   private Integer version;
 
   public static final String SERIALIZED_NAME_CREATION_DATE = "_creationDate";
   @SerializedName(SERIALIZED_NAME_CREATION_DATE)
+  @javax.annotation.Nullable
   private Long creationDate;
 
   public static final String SERIALIZED_NAME_MAINTAINER_ID = "_maintainerId";
   @SerializedName(SERIALIZED_NAME_MAINTAINER_ID)
+  @javax.annotation.Nullable
   private String maintainerId;
 
   public static final String SERIALIZED_NAME_MAINTAINER = "_maintainer";
   @SerializedName(SERIALIZED_NAME_MAINTAINER)
+  @javax.annotation.Nullable
   private MemberSummary maintainer;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
+  @javax.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_INTEGRATION_KEY = "_integrationKey";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_KEY)
+  @javax.annotation.Nullable
   private String integrationKey;
 
   public static final String SERIALIZED_NAME_INSTRUCTIONS = "instructions";
   @SerializedName(SERIALIZED_NAME_INSTRUCTIONS)
+  @javax.annotation.Nullable
   private List<Map<String, Object>> instructions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LAST_TRIGGERED_AT = "_lastTriggeredAt";
   @SerializedName(SERIALIZED_NAME_LAST_TRIGGERED_AT)
+  @javax.annotation.Nullable
   private Long lastTriggeredAt;
 
   public static final String SERIALIZED_NAME_RECENT_TRIGGER_BODIES = "_recentTriggerBodies";
   @SerializedName(SERIALIZED_NAME_RECENT_TRIGGER_BODIES)
+  @javax.annotation.Nullable
   private List<RecentTriggerBody> recentTriggerBodies = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TRIGGER_COUNT = "_triggerCount";
   @SerializedName(SERIALIZED_NAME_TRIGGER_COUNT)
+  @javax.annotation.Nullable
   private Integer triggerCount;
 
   public static final String SERIALIZED_NAME_TRIGGER_U_R_L = "triggerURL";
   @SerializedName(SERIALIZED_NAME_TRIGGER_U_R_L)
+  @javax.annotation.Nullable
   private String triggerURL;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private Map<String, Link> links = new HashMap<>();
 
   public TriggerWorkflowRep() {
   }
 
-  public TriggerWorkflowRep id(String id) {
+  public TriggerWorkflowRep id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public TriggerWorkflowRep version(Integer version) {
+  public TriggerWorkflowRep version(@javax.annotation.Nullable Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * The flag trigger version
    * @return version
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nullable Integer version) {
     this.version = version;
   }
 
 
-  public TriggerWorkflowRep creationDate(Long creationDate) {
+  public TriggerWorkflowRep creationDate(@javax.annotation.Nullable Long creationDate) {
     this.creationDate = creationDate;
     return this;
   }
 
-   /**
+  /**
    * Get creationDate
    * @return creationDate
-  **/
+   */
   @javax.annotation.Nullable
   public Long getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate(Long creationDate) {
+  public void setCreationDate(@javax.annotation.Nullable Long creationDate) {
     this.creationDate = creationDate;
   }
 
 
-  public TriggerWorkflowRep maintainerId(String maintainerId) {
+  public TriggerWorkflowRep maintainerId(@javax.annotation.Nullable String maintainerId) {
     this.maintainerId = maintainerId;
     return this;
   }
 
-   /**
+  /**
    * The ID of the flag trigger maintainer
    * @return maintainerId
-  **/
+   */
   @javax.annotation.Nullable
   public String getMaintainerId() {
     return maintainerId;
   }
 
-  public void setMaintainerId(String maintainerId) {
+  public void setMaintainerId(@javax.annotation.Nullable String maintainerId) {
     this.maintainerId = maintainerId;
   }
 
 
-  public TriggerWorkflowRep maintainer(MemberSummary maintainer) {
+  public TriggerWorkflowRep maintainer(@javax.annotation.Nullable MemberSummary maintainer) {
     this.maintainer = maintainer;
     return this;
   }
 
-   /**
+  /**
    * Get maintainer
    * @return maintainer
-  **/
+   */
   @javax.annotation.Nullable
   public MemberSummary getMaintainer() {
     return maintainer;
   }
 
-  public void setMaintainer(MemberSummary maintainer) {
+  public void setMaintainer(@javax.annotation.Nullable MemberSummary maintainer) {
     this.maintainer = maintainer;
   }
 
 
-  public TriggerWorkflowRep enabled(Boolean enabled) {
+  public TriggerWorkflowRep enabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
 
-   /**
+  /**
    * Whether the flag trigger is currently enabled
    * @return enabled
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(Boolean enabled) {
+  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public TriggerWorkflowRep integrationKey(String integrationKey) {
+  public TriggerWorkflowRep integrationKey(@javax.annotation.Nullable String integrationKey) {
     this.integrationKey = integrationKey;
     return this;
   }
 
-   /**
+  /**
    * The unique identifier of the integration for your trigger
    * @return integrationKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getIntegrationKey() {
     return integrationKey;
   }
 
-  public void setIntegrationKey(String integrationKey) {
+  public void setIntegrationKey(@javax.annotation.Nullable String integrationKey) {
     this.integrationKey = integrationKey;
   }
 
 
-  public TriggerWorkflowRep instructions(List<Map<String, Object>> instructions) {
+  public TriggerWorkflowRep instructions(@javax.annotation.Nullable List<Map<String, Object>> instructions) {
     this.instructions = instructions;
     return this;
   }
@@ -259,40 +273,40 @@ public class TriggerWorkflowRep {
     return this;
   }
 
-   /**
+  /**
    * Get instructions
    * @return instructions
-  **/
+   */
   @javax.annotation.Nullable
   public List<Map<String, Object>> getInstructions() {
     return instructions;
   }
 
-  public void setInstructions(List<Map<String, Object>> instructions) {
+  public void setInstructions(@javax.annotation.Nullable List<Map<String, Object>> instructions) {
     this.instructions = instructions;
   }
 
 
-  public TriggerWorkflowRep lastTriggeredAt(Long lastTriggeredAt) {
+  public TriggerWorkflowRep lastTriggeredAt(@javax.annotation.Nullable Long lastTriggeredAt) {
     this.lastTriggeredAt = lastTriggeredAt;
     return this;
   }
 
-   /**
+  /**
    * Get lastTriggeredAt
    * @return lastTriggeredAt
-  **/
+   */
   @javax.annotation.Nullable
   public Long getLastTriggeredAt() {
     return lastTriggeredAt;
   }
 
-  public void setLastTriggeredAt(Long lastTriggeredAt) {
+  public void setLastTriggeredAt(@javax.annotation.Nullable Long lastTriggeredAt) {
     this.lastTriggeredAt = lastTriggeredAt;
   }
 
 
-  public TriggerWorkflowRep recentTriggerBodies(List<RecentTriggerBody> recentTriggerBodies) {
+  public TriggerWorkflowRep recentTriggerBodies(@javax.annotation.Nullable List<RecentTriggerBody> recentTriggerBodies) {
     this.recentTriggerBodies = recentTriggerBodies;
     return this;
   }
@@ -305,59 +319,59 @@ public class TriggerWorkflowRep {
     return this;
   }
 
-   /**
+  /**
    * Details on recent flag trigger requests.
    * @return recentTriggerBodies
-  **/
+   */
   @javax.annotation.Nullable
   public List<RecentTriggerBody> getRecentTriggerBodies() {
     return recentTriggerBodies;
   }
 
-  public void setRecentTriggerBodies(List<RecentTriggerBody> recentTriggerBodies) {
+  public void setRecentTriggerBodies(@javax.annotation.Nullable List<RecentTriggerBody> recentTriggerBodies) {
     this.recentTriggerBodies = recentTriggerBodies;
   }
 
 
-  public TriggerWorkflowRep triggerCount(Integer triggerCount) {
+  public TriggerWorkflowRep triggerCount(@javax.annotation.Nullable Integer triggerCount) {
     this.triggerCount = triggerCount;
     return this;
   }
 
-   /**
+  /**
    * Number of times the trigger has been executed
    * @return triggerCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getTriggerCount() {
     return triggerCount;
   }
 
-  public void setTriggerCount(Integer triggerCount) {
+  public void setTriggerCount(@javax.annotation.Nullable Integer triggerCount) {
     this.triggerCount = triggerCount;
   }
 
 
-  public TriggerWorkflowRep triggerURL(String triggerURL) {
+  public TriggerWorkflowRep triggerURL(@javax.annotation.Nullable String triggerURL) {
     this.triggerURL = triggerURL;
     return this;
   }
 
-   /**
+  /**
    * The unguessable URL for this flag trigger
    * @return triggerURL
-  **/
+   */
   @javax.annotation.Nullable
   public String getTriggerURL() {
     return triggerURL;
   }
 
-  public void setTriggerURL(String triggerURL) {
+  public void setTriggerURL(@javax.annotation.Nullable String triggerURL) {
     this.triggerURL = triggerURL;
   }
 
 
-  public TriggerWorkflowRep links(Map<String, Link> links) {
+  public TriggerWorkflowRep links(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -370,16 +384,16 @@ public class TriggerWorkflowRep {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
   }
 
@@ -498,61 +512,48 @@ public class TriggerWorkflowRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_id");
-    openapiFields.add("_version");
-    openapiFields.add("_creationDate");
-    openapiFields.add("_maintainerId");
-    openapiFields.add("_maintainer");
-    openapiFields.add("enabled");
-    openapiFields.add("_integrationKey");
-    openapiFields.add("instructions");
-    openapiFields.add("_lastTriggeredAt");
-    openapiFields.add("_recentTriggerBodies");
-    openapiFields.add("_triggerCount");
-    openapiFields.add("triggerURL");
-    openapiFields.add("_links");
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "_version", "_creationDate", "_maintainerId", "_maintainer", "enabled", "_integrationKey", "instructions", "_lastTriggeredAt", "_recentTriggerBodies", "_triggerCount", "triggerURL", "_links"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to TriggerWorkflowRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to TriggerWorkflowRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!TriggerWorkflowRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in TriggerWorkflowRep is not found in the empty JSON string", TriggerWorkflowRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in TriggerWorkflowRep is not found in the empty JSON string", TriggerWorkflowRep.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("_id") != null && !jsonObj.get("_id").isJsonNull()) && !jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if ((jsonObj.get("_maintainerId") != null && !jsonObj.get("_maintainerId").isJsonNull()) && !jsonObj.get("_maintainerId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_maintainerId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_maintainerId").toString()));
       }
       // validate the optional field `_maintainer`
       if (jsonObj.get("_maintainer") != null && !jsonObj.get("_maintainer").isJsonNull()) {
         MemberSummary.validateJsonElement(jsonObj.get("_maintainer"));
       }
       if ((jsonObj.get("_integrationKey") != null && !jsonObj.get("_integrationKey").isJsonNull()) && !jsonObj.get("_integrationKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_integrationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_integrationKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_integrationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_integrationKey").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("instructions") != null && !jsonObj.get("instructions").isJsonNull() && !jsonObj.get("instructions").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `instructions` to be an array in the JSON string but got `%s`", jsonObj.get("instructions").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `instructions` to be an array in the JSON string but got `%s`", jsonObj.get("instructions").toString()));
       }
       if (jsonObj.get("_recentTriggerBodies") != null && !jsonObj.get("_recentTriggerBodies").isJsonNull()) {
         JsonArray jsonArrayrecentTriggerBodies = jsonObj.getAsJsonArray("_recentTriggerBodies");
         if (jsonArrayrecentTriggerBodies != null) {
           // ensure the json data is an array
           if (!jsonObj.get("_recentTriggerBodies").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `_recentTriggerBodies` to be an array in the JSON string but got `%s`", jsonObj.get("_recentTriggerBodies").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_recentTriggerBodies` to be an array in the JSON string but got `%s`", jsonObj.get("_recentTriggerBodies").toString()));
           }
 
           // validate the optional field `_recentTriggerBodies` (array)
@@ -562,7 +563,7 @@ public class TriggerWorkflowRep {
         }
       }
       if ((jsonObj.get("triggerURL") != null && !jsonObj.get("triggerURL").isJsonNull()) && !jsonObj.get("triggerURL").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `triggerURL` to be a primitive type in the JSON string but got `%s`", jsonObj.get("triggerURL").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `triggerURL` to be a primitive type in the JSON string but got `%s`", jsonObj.get("triggerURL").toString()));
       }
   }
 
@@ -623,7 +624,7 @@ public class TriggerWorkflowRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -638,22 +639,22 @@ public class TriggerWorkflowRep {
     }
   }
 
- /**
-  * Create an instance of TriggerWorkflowRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of TriggerWorkflowRep
-  * @throws IOException if the JSON string is invalid with respect to TriggerWorkflowRep
-  */
+  /**
+   * Create an instance of TriggerWorkflowRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of TriggerWorkflowRep
+   * @throws IOException if the JSON string is invalid with respect to TriggerWorkflowRep
+   */
   public static TriggerWorkflowRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, TriggerWorkflowRep.class);
   }
 
- /**
-  * Convert an instance of TriggerWorkflowRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of TriggerWorkflowRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

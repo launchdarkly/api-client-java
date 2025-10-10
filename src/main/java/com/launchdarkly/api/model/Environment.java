@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,88 +44,104 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * Environment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class Environment {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_API_KEY = "apiKey";
   @SerializedName(SERIALIZED_NAME_API_KEY)
+  @javax.annotation.Nonnull
   private String apiKey;
 
   public static final String SERIALIZED_NAME_MOBILE_KEY = "mobileKey";
   @SerializedName(SERIALIZED_NAME_MOBILE_KEY)
+  @javax.annotation.Nonnull
   private String mobileKey;
 
   public static final String SERIALIZED_NAME_COLOR = "color";
   @SerializedName(SERIALIZED_NAME_COLOR)
+  @javax.annotation.Nonnull
   private String color;
 
   public static final String SERIALIZED_NAME_DEFAULT_TTL = "defaultTtl";
   @SerializedName(SERIALIZED_NAME_DEFAULT_TTL)
+  @javax.annotation.Nonnull
   private Integer defaultTtl;
 
   public static final String SERIALIZED_NAME_SECURE_MODE = "secureMode";
   @SerializedName(SERIALIZED_NAME_SECURE_MODE)
+  @javax.annotation.Nonnull
   private Boolean secureMode;
 
   public static final String SERIALIZED_NAME_DEFAULT_TRACK_EVENTS = "defaultTrackEvents";
   @SerializedName(SERIALIZED_NAME_DEFAULT_TRACK_EVENTS)
+  @javax.annotation.Nonnull
   private Boolean defaultTrackEvents;
 
   public static final String SERIALIZED_NAME_REQUIRE_COMMENTS = "requireComments";
   @SerializedName(SERIALIZED_NAME_REQUIRE_COMMENTS)
+  @javax.annotation.Nonnull
   private Boolean requireComments;
 
   public static final String SERIALIZED_NAME_CONFIRM_CHANGES = "confirmChanges";
   @SerializedName(SERIALIZED_NAME_CONFIRM_CHANGES)
+  @javax.annotation.Nonnull
   private Boolean confirmChanges;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nonnull
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_APPROVAL_SETTINGS = "approvalSettings";
   @SerializedName(SERIALIZED_NAME_APPROVAL_SETTINGS)
+  @javax.annotation.Nullable
   private ApprovalSettings approvalSettings;
 
   public static final String SERIALIZED_NAME_RESOURCE_APPROVAL_SETTINGS = "resourceApprovalSettings";
   @SerializedName(SERIALIZED_NAME_RESOURCE_APPROVAL_SETTINGS)
+  @javax.annotation.Nullable
   private Map<String, ApprovalSettings> resourceApprovalSettings = new HashMap<>();
 
   public static final String SERIALIZED_NAME_CRITICAL = "critical";
   @SerializedName(SERIALIZED_NAME_CRITICAL)
+  @javax.annotation.Nonnull
   private Boolean critical;
 
   public Environment() {
   }
 
-  public Environment links(Map<String, Link> links) {
+  public Environment links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -137,230 +154,230 @@ public class Environment {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public Environment id(String id) {
+  public Environment id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The ID for the environment. Use this as the client-side ID for authorization in some client-side SDKs, and to associate LaunchDarkly environments with CDN integrations in edge SDKs.
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public Environment key(String key) {
+  public Environment key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * A project-unique key for the new environment
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public Environment name(String name) {
+  public Environment name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for the new environment
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public Environment apiKey(String apiKey) {
+  public Environment apiKey(@javax.annotation.Nonnull String apiKey) {
     this.apiKey = apiKey;
     return this;
   }
 
-   /**
+  /**
    * The SDK key for the environment. Use this for authorization in server-side SDKs.
    * @return apiKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getApiKey() {
     return apiKey;
   }
 
-  public void setApiKey(String apiKey) {
+  public void setApiKey(@javax.annotation.Nonnull String apiKey) {
     this.apiKey = apiKey;
   }
 
 
-  public Environment mobileKey(String mobileKey) {
+  public Environment mobileKey(@javax.annotation.Nonnull String mobileKey) {
     this.mobileKey = mobileKey;
     return this;
   }
 
-   /**
+  /**
    * The mobile key for the environment. Use this for authorization in mobile SDKs.
    * @return mobileKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getMobileKey() {
     return mobileKey;
   }
 
-  public void setMobileKey(String mobileKey) {
+  public void setMobileKey(@javax.annotation.Nonnull String mobileKey) {
     this.mobileKey = mobileKey;
   }
 
 
-  public Environment color(String color) {
+  public Environment color(@javax.annotation.Nonnull String color) {
     this.color = color;
     return this;
   }
 
-   /**
+  /**
    * The color used to indicate this environment in the UI
    * @return color
-  **/
+   */
   @javax.annotation.Nonnull
   public String getColor() {
     return color;
   }
 
-  public void setColor(String color) {
+  public void setColor(@javax.annotation.Nonnull String color) {
     this.color = color;
   }
 
 
-  public Environment defaultTtl(Integer defaultTtl) {
+  public Environment defaultTtl(@javax.annotation.Nonnull Integer defaultTtl) {
     this.defaultTtl = defaultTtl;
     return this;
   }
 
-   /**
+  /**
    * The default time (in minutes) that the PHP SDK can cache feature flag rules locally
    * @return defaultTtl
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getDefaultTtl() {
     return defaultTtl;
   }
 
-  public void setDefaultTtl(Integer defaultTtl) {
+  public void setDefaultTtl(@javax.annotation.Nonnull Integer defaultTtl) {
     this.defaultTtl = defaultTtl;
   }
 
 
-  public Environment secureMode(Boolean secureMode) {
+  public Environment secureMode(@javax.annotation.Nonnull Boolean secureMode) {
     this.secureMode = secureMode;
     return this;
   }
 
-   /**
+  /**
    * Ensures that one end user of the client-side SDK cannot inspect the variations for another end user
    * @return secureMode
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getSecureMode() {
     return secureMode;
   }
 
-  public void setSecureMode(Boolean secureMode) {
+  public void setSecureMode(@javax.annotation.Nonnull Boolean secureMode) {
     this.secureMode = secureMode;
   }
 
 
-  public Environment defaultTrackEvents(Boolean defaultTrackEvents) {
+  public Environment defaultTrackEvents(@javax.annotation.Nonnull Boolean defaultTrackEvents) {
     this.defaultTrackEvents = defaultTrackEvents;
     return this;
   }
 
-   /**
+  /**
    * Enables tracking detailed information for new flags by default
    * @return defaultTrackEvents
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getDefaultTrackEvents() {
     return defaultTrackEvents;
   }
 
-  public void setDefaultTrackEvents(Boolean defaultTrackEvents) {
+  public void setDefaultTrackEvents(@javax.annotation.Nonnull Boolean defaultTrackEvents) {
     this.defaultTrackEvents = defaultTrackEvents;
   }
 
 
-  public Environment requireComments(Boolean requireComments) {
+  public Environment requireComments(@javax.annotation.Nonnull Boolean requireComments) {
     this.requireComments = requireComments;
     return this;
   }
 
-   /**
+  /**
    * Whether members who modify flags and segments through the LaunchDarkly user interface are required to add a comment
    * @return requireComments
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getRequireComments() {
     return requireComments;
   }
 
-  public void setRequireComments(Boolean requireComments) {
+  public void setRequireComments(@javax.annotation.Nonnull Boolean requireComments) {
     this.requireComments = requireComments;
   }
 
 
-  public Environment confirmChanges(Boolean confirmChanges) {
+  public Environment confirmChanges(@javax.annotation.Nonnull Boolean confirmChanges) {
     this.confirmChanges = confirmChanges;
     return this;
   }
 
-   /**
+  /**
    * Whether members who modify flags and segments through the LaunchDarkly user interface are required to confirm those changes
    * @return confirmChanges
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getConfirmChanges() {
     return confirmChanges;
   }
 
-  public void setConfirmChanges(Boolean confirmChanges) {
+  public void setConfirmChanges(@javax.annotation.Nonnull Boolean confirmChanges) {
     this.confirmChanges = confirmChanges;
   }
 
 
-  public Environment tags(List<String> tags) {
+  public Environment tags(@javax.annotation.Nonnull List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -373,40 +390,40 @@ public class Environment {
     return this;
   }
 
-   /**
+  /**
    * A list of tags for this environment
    * @return tags
-  **/
+   */
   @javax.annotation.Nonnull
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nonnull List<String> tags) {
     this.tags = tags;
   }
 
 
-  public Environment approvalSettings(ApprovalSettings approvalSettings) {
+  public Environment approvalSettings(@javax.annotation.Nullable ApprovalSettings approvalSettings) {
     this.approvalSettings = approvalSettings;
     return this;
   }
 
-   /**
+  /**
    * Get approvalSettings
    * @return approvalSettings
-  **/
+   */
   @javax.annotation.Nullable
   public ApprovalSettings getApprovalSettings() {
     return approvalSettings;
   }
 
-  public void setApprovalSettings(ApprovalSettings approvalSettings) {
+  public void setApprovalSettings(@javax.annotation.Nullable ApprovalSettings approvalSettings) {
     this.approvalSettings = approvalSettings;
   }
 
 
-  public Environment resourceApprovalSettings(Map<String, ApprovalSettings> resourceApprovalSettings) {
+  public Environment resourceApprovalSettings(@javax.annotation.Nullable Map<String, ApprovalSettings> resourceApprovalSettings) {
     this.resourceApprovalSettings = resourceApprovalSettings;
     return this;
   }
@@ -419,35 +436,35 @@ public class Environment {
     return this;
   }
 
-   /**
+  /**
    * Details on the approval settings for this environment for each resource kind
    * @return resourceApprovalSettings
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, ApprovalSettings> getResourceApprovalSettings() {
     return resourceApprovalSettings;
   }
 
-  public void setResourceApprovalSettings(Map<String, ApprovalSettings> resourceApprovalSettings) {
+  public void setResourceApprovalSettings(@javax.annotation.Nullable Map<String, ApprovalSettings> resourceApprovalSettings) {
     this.resourceApprovalSettings = resourceApprovalSettings;
   }
 
 
-  public Environment critical(Boolean critical) {
+  public Environment critical(@javax.annotation.Nonnull Boolean critical) {
     this.critical = critical;
     return this;
   }
 
-   /**
+  /**
    * Whether the environment is critical
    * @return critical
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getCritical() {
     return critical;
   }
 
-  public void setCritical(Boolean critical) {
+  public void setCritical(@javax.annotation.Nonnull Boolean critical) {
     this.critical = critical;
   }
 
@@ -572,85 +589,55 @@ public class Environment {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_links");
-    openapiFields.add("_id");
-    openapiFields.add("key");
-    openapiFields.add("name");
-    openapiFields.add("apiKey");
-    openapiFields.add("mobileKey");
-    openapiFields.add("color");
-    openapiFields.add("defaultTtl");
-    openapiFields.add("secureMode");
-    openapiFields.add("defaultTrackEvents");
-    openapiFields.add("requireComments");
-    openapiFields.add("confirmChanges");
-    openapiFields.add("tags");
-    openapiFields.add("approvalSettings");
-    openapiFields.add("resourceApprovalSettings");
-    openapiFields.add("critical");
+    openapiFields = new HashSet<String>(Arrays.asList("_links", "_id", "key", "name", "apiKey", "mobileKey", "color", "defaultTtl", "secureMode", "defaultTrackEvents", "requireComments", "confirmChanges", "tags", "approvalSettings", "resourceApprovalSettings", "critical"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_links");
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("apiKey");
-    openapiRequiredFields.add("mobileKey");
-    openapiRequiredFields.add("color");
-    openapiRequiredFields.add("defaultTtl");
-    openapiRequiredFields.add("secureMode");
-    openapiRequiredFields.add("defaultTrackEvents");
-    openapiRequiredFields.add("requireComments");
-    openapiRequiredFields.add("confirmChanges");
-    openapiRequiredFields.add("tags");
-    openapiRequiredFields.add("critical");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_links", "_id", "key", "name", "apiKey", "mobileKey", "color", "defaultTtl", "secureMode", "defaultTrackEvents", "requireComments", "confirmChanges", "tags", "critical"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Environment
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Environment
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Environment.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Environment is not found in the empty JSON string", Environment.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Environment is not found in the empty JSON string", Environment.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : Environment.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("apiKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `apiKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("apiKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `apiKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("apiKey").toString()));
       }
       if (!jsonObj.get("mobileKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `mobileKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mobileKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `mobileKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mobileKey").toString()));
       }
       if (!jsonObj.get("color").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `color` to be a primitive type in the JSON string but got `%s`", jsonObj.get("color").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `color` to be a primitive type in the JSON string but got `%s`", jsonObj.get("color").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("tags") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       // validate the optional field `approvalSettings`
       if (jsonObj.get("approvalSettings") != null && !jsonObj.get("approvalSettings").isJsonNull()) {
@@ -715,7 +702,7 @@ public class Environment {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -730,22 +717,22 @@ public class Environment {
     }
   }
 
- /**
-  * Create an instance of Environment given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Environment
-  * @throws IOException if the JSON string is invalid with respect to Environment
-  */
+  /**
+   * Create an instance of Environment given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Environment
+   * @throws IOException if the JSON string is invalid with respect to Environment
+   */
   public static Environment fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Environment.class);
   }
 
- /**
-  * Convert an instance of Environment to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Environment to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,111 +38,115 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * AiConfigsMetricDataSourceRefRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AiConfigsMetricDataSourceRefRep {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nullable
   private String key;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_KEY = "environmentKey";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_KEY)
+  @javax.annotation.Nullable
   private String environmentKey;
 
   public static final String SERIALIZED_NAME_NAME = "_name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_INTEGRATION_KEY = "_integrationKey";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_KEY)
+  @javax.annotation.Nullable
   private String integrationKey;
 
   public AiConfigsMetricDataSourceRefRep() {
   }
 
-  public AiConfigsMetricDataSourceRefRep key(String key) {
+  public AiConfigsMetricDataSourceRefRep key(@javax.annotation.Nullable String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * Get key
    * @return key
-  **/
+   */
   @javax.annotation.Nullable
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nullable String key) {
     this.key = key;
   }
 
 
-  public AiConfigsMetricDataSourceRefRep environmentKey(String environmentKey) {
+  public AiConfigsMetricDataSourceRefRep environmentKey(@javax.annotation.Nullable String environmentKey) {
     this.environmentKey = environmentKey;
     return this;
   }
 
-   /**
+  /**
    * Get environmentKey
    * @return environmentKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getEnvironmentKey() {
     return environmentKey;
   }
 
-  public void setEnvironmentKey(String environmentKey) {
+  public void setEnvironmentKey(@javax.annotation.Nullable String environmentKey) {
     this.environmentKey = environmentKey;
   }
 
 
-  public AiConfigsMetricDataSourceRefRep name(String name) {
+  public AiConfigsMetricDataSourceRefRep name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public AiConfigsMetricDataSourceRefRep integrationKey(String integrationKey) {
+  public AiConfigsMetricDataSourceRefRep integrationKey(@javax.annotation.Nullable String integrationKey) {
     this.integrationKey = integrationKey;
     return this;
   }
 
-   /**
+  /**
    * Get integrationKey
    * @return integrationKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getIntegrationKey() {
     return integrationKey;
   }
 
-  public void setIntegrationKey(String integrationKey) {
+  public void setIntegrationKey(@javax.annotation.Nullable String integrationKey) {
     this.integrationKey = integrationKey;
   }
 
@@ -242,40 +247,36 @@ public class AiConfigsMetricDataSourceRefRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("key");
-    openapiFields.add("environmentKey");
-    openapiFields.add("_name");
-    openapiFields.add("_integrationKey");
+    openapiFields = new HashSet<String>(Arrays.asList("key", "environmentKey", "_name", "_integrationKey"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to AiConfigsMetricDataSourceRefRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AiConfigsMetricDataSourceRefRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AiConfigsMetricDataSourceRefRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AiConfigsMetricDataSourceRefRep is not found in the empty JSON string", AiConfigsMetricDataSourceRefRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AiConfigsMetricDataSourceRefRep is not found in the empty JSON string", AiConfigsMetricDataSourceRefRep.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if ((jsonObj.get("environmentKey") != null && !jsonObj.get("environmentKey").isJsonNull()) && !jsonObj.get("environmentKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
       }
       if ((jsonObj.get("_name") != null && !jsonObj.get("_name").isJsonNull()) && !jsonObj.get("_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_name").toString()));
       }
       if ((jsonObj.get("_integrationKey") != null && !jsonObj.get("_integrationKey").isJsonNull()) && !jsonObj.get("_integrationKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_integrationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_integrationKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_integrationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_integrationKey").toString()));
       }
   }
 
@@ -336,7 +337,7 @@ public class AiConfigsMetricDataSourceRefRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -351,22 +352,22 @@ public class AiConfigsMetricDataSourceRefRep {
     }
   }
 
- /**
-  * Create an instance of AiConfigsMetricDataSourceRefRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AiConfigsMetricDataSourceRefRep
-  * @throws IOException if the JSON string is invalid with respect to AiConfigsMetricDataSourceRefRep
-  */
+  /**
+   * Create an instance of AiConfigsMetricDataSourceRefRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AiConfigsMetricDataSourceRefRep
+   * @throws IOException if the JSON string is invalid with respect to AiConfigsMetricDataSourceRefRep
+   */
   public static AiConfigsMetricDataSourceRefRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AiConfigsMetricDataSourceRefRep.class);
   }
 
- /**
-  * Convert an instance of AiConfigsMetricDataSourceRefRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AiConfigsMetricDataSourceRefRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

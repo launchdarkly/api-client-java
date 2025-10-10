@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,97 +43,101 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * InsightScores
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class InsightScores {
   public static final String SERIALIZED_NAME_PERIOD = "period";
   @SerializedName(SERIALIZED_NAME_PERIOD)
+  @javax.annotation.Nonnull
   private InsightPeriod period;
 
   public static final String SERIALIZED_NAME_LAST_PERIOD = "lastPeriod";
   @SerializedName(SERIALIZED_NAME_LAST_PERIOD)
+  @javax.annotation.Nonnull
   private InsightPeriod lastPeriod;
 
   public static final String SERIALIZED_NAME_SCORES = "scores";
   @SerializedName(SERIALIZED_NAME_SCORES)
+  @javax.annotation.Nonnull
   private InsightGroupScores scores;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private Map<String, Link> links = new HashMap<>();
 
   public InsightScores() {
   }
 
-  public InsightScores period(InsightPeriod period) {
+  public InsightScores period(@javax.annotation.Nonnull InsightPeriod period) {
     this.period = period;
     return this;
   }
 
-   /**
+  /**
    * Get period
    * @return period
-  **/
+   */
   @javax.annotation.Nonnull
   public InsightPeriod getPeriod() {
     return period;
   }
 
-  public void setPeriod(InsightPeriod period) {
+  public void setPeriod(@javax.annotation.Nonnull InsightPeriod period) {
     this.period = period;
   }
 
 
-  public InsightScores lastPeriod(InsightPeriod lastPeriod) {
+  public InsightScores lastPeriod(@javax.annotation.Nonnull InsightPeriod lastPeriod) {
     this.lastPeriod = lastPeriod;
     return this;
   }
 
-   /**
+  /**
    * Get lastPeriod
    * @return lastPeriod
-  **/
+   */
   @javax.annotation.Nonnull
   public InsightPeriod getLastPeriod() {
     return lastPeriod;
   }
 
-  public void setLastPeriod(InsightPeriod lastPeriod) {
+  public void setLastPeriod(@javax.annotation.Nonnull InsightPeriod lastPeriod) {
     this.lastPeriod = lastPeriod;
   }
 
 
-  public InsightScores scores(InsightGroupScores scores) {
+  public InsightScores scores(@javax.annotation.Nonnull InsightGroupScores scores) {
     this.scores = scores;
     return this;
   }
 
-   /**
+  /**
    * Get scores
    * @return scores
-  **/
+   */
   @javax.annotation.Nonnull
   public InsightGroupScores getScores() {
     return scores;
   }
 
-  public void setScores(InsightGroupScores scores) {
+  public void setScores(@javax.annotation.Nonnull InsightGroupScores scores) {
     this.scores = scores;
   }
 
 
-  public InsightScores links(Map<String, Link> links) {
+  public InsightScores links(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -145,16 +150,16 @@ public class InsightScores {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
   }
 
@@ -255,36 +260,29 @@ public class InsightScores {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("period");
-    openapiFields.add("lastPeriod");
-    openapiFields.add("scores");
-    openapiFields.add("_links");
+    openapiFields = new HashSet<String>(Arrays.asList("period", "lastPeriod", "scores", "_links"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("period");
-    openapiRequiredFields.add("lastPeriod");
-    openapiRequiredFields.add("scores");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("period", "lastPeriod", "scores"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to InsightScores
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to InsightScores
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!InsightScores.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in InsightScores is not found in the empty JSON string", InsightScores.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in InsightScores is not found in the empty JSON string", InsightScores.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : InsightScores.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -353,7 +351,7 @@ public class InsightScores {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -368,22 +366,22 @@ public class InsightScores {
     }
   }
 
- /**
-  * Create an instance of InsightScores given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of InsightScores
-  * @throws IOException if the JSON string is invalid with respect to InsightScores
-  */
+  /**
+   * Create an instance of InsightScores given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of InsightScores
+   * @throws IOException if the JSON string is invalid with respect to InsightScores
+   */
   public static InsightScores fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, InsightScores.class);
   }
 
- /**
-  * Convert an instance of InsightScores to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of InsightScores to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

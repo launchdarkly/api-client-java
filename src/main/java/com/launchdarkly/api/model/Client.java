@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,56 +41,64 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * Client
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class Client {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "_accountId";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
+  @javax.annotation.Nonnull
   private String accountId;
 
   public static final String SERIALIZED_NAME_CLIENT_ID = "_clientId";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)
+  @javax.annotation.Nonnull
   private String clientId;
 
   public static final String SERIALIZED_NAME_CLIENT_SECRET = "_clientSecret";
   @SerializedName(SERIALIZED_NAME_CLIENT_SECRET)
+  @javax.annotation.Nullable
   private String clientSecret;
 
   public static final String SERIALIZED_NAME_REDIRECT_URI = "redirectUri";
   @SerializedName(SERIALIZED_NAME_REDIRECT_URI)
+  @javax.annotation.Nonnull
   private String redirectUri;
 
   public static final String SERIALIZED_NAME_CREATION_DATE = "_creationDate";
   @SerializedName(SERIALIZED_NAME_CREATION_DATE)
+  @javax.annotation.Nonnull
   private Long creationDate;
 
   public Client() {
   }
 
-  public Client links(Map<String, Link> links) {
+  public Client links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -102,149 +111,149 @@ public class Client {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public Client name(String name) {
+  public Client name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Client name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public Client description(String description) {
+  public Client description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Client description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public Client accountId(String accountId) {
+  public Client accountId(@javax.annotation.Nonnull String accountId) {
     this.accountId = accountId;
     return this;
   }
 
-   /**
+  /**
    * The account ID the client is registered under
    * @return accountId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getAccountId() {
     return accountId;
   }
 
-  public void setAccountId(String accountId) {
+  public void setAccountId(@javax.annotation.Nonnull String accountId) {
     this.accountId = accountId;
   }
 
 
-  public Client clientId(String clientId) {
+  public Client clientId(@javax.annotation.Nonnull String clientId) {
     this.clientId = clientId;
     return this;
   }
 
-   /**
+  /**
    * The client&#39;s unique ID
    * @return clientId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getClientId() {
     return clientId;
   }
 
-  public void setClientId(String clientId) {
+  public void setClientId(@javax.annotation.Nonnull String clientId) {
     this.clientId = clientId;
   }
 
 
-  public Client clientSecret(String clientSecret) {
+  public Client clientSecret(@javax.annotation.Nullable String clientSecret) {
     this.clientSecret = clientSecret;
     return this;
   }
 
-   /**
+  /**
    * The client secret. This will only be shown upon creation.
    * @return clientSecret
-  **/
+   */
   @javax.annotation.Nullable
   public String getClientSecret() {
     return clientSecret;
   }
 
-  public void setClientSecret(String clientSecret) {
+  public void setClientSecret(@javax.annotation.Nullable String clientSecret) {
     this.clientSecret = clientSecret;
   }
 
 
-  public Client redirectUri(String redirectUri) {
+  public Client redirectUri(@javax.annotation.Nonnull String redirectUri) {
     this.redirectUri = redirectUri;
     return this;
   }
 
-   /**
+  /**
    * The client&#39;s redirect URI
    * @return redirectUri
-  **/
+   */
   @javax.annotation.Nonnull
   public String getRedirectUri() {
     return redirectUri;
   }
 
-  public void setRedirectUri(String redirectUri) {
+  public void setRedirectUri(@javax.annotation.Nonnull String redirectUri) {
     this.redirectUri = redirectUri;
   }
 
 
-  public Client creationDate(Long creationDate) {
+  public Client creationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
     return this;
   }
 
-   /**
+  /**
    * Get creationDate
    * @return creationDate
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate(Long creationDate) {
+  public void setCreationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
   }
 
@@ -353,63 +362,49 @@ public class Client {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_links");
-    openapiFields.add("name");
-    openapiFields.add("description");
-    openapiFields.add("_accountId");
-    openapiFields.add("_clientId");
-    openapiFields.add("_clientSecret");
-    openapiFields.add("redirectUri");
-    openapiFields.add("_creationDate");
+    openapiFields = new HashSet<String>(Arrays.asList("_links", "name", "description", "_accountId", "_clientId", "_clientSecret", "redirectUri", "_creationDate"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_links");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("_accountId");
-    openapiRequiredFields.add("_clientId");
-    openapiRequiredFields.add("redirectUri");
-    openapiRequiredFields.add("_creationDate");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_links", "name", "_accountId", "_clientId", "redirectUri", "_creationDate"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Client
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Client
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Client.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Client is not found in the empty JSON string", Client.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Client is not found in the empty JSON string", Client.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : Client.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if (!jsonObj.get("_accountId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_accountId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_accountId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_accountId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_accountId").toString()));
       }
       if (!jsonObj.get("_clientId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_clientId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_clientId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_clientId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_clientId").toString()));
       }
       if ((jsonObj.get("_clientSecret") != null && !jsonObj.get("_clientSecret").isJsonNull()) && !jsonObj.get("_clientSecret").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_clientSecret` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_clientSecret").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_clientSecret` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_clientSecret").toString()));
       }
       if (!jsonObj.get("redirectUri").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `redirectUri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("redirectUri").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `redirectUri` to be a primitive type in the JSON string but got `%s`", jsonObj.get("redirectUri").toString()));
       }
   }
 
@@ -470,7 +465,7 @@ public class Client {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -485,22 +480,22 @@ public class Client {
     }
   }
 
- /**
-  * Create an instance of Client given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Client
-  * @throws IOException if the JSON string is invalid with respect to Client
-  */
+  /**
+   * Create an instance of Client given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Client
+   * @throws IOException if the JSON string is invalid with respect to Client
+   */
   public static Client fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Client.class);
   }
 
- /**
-  * Convert an instance of Client to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Client to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

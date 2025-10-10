@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,109 +42,116 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * CreateApprovalRequestRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class CreateApprovalRequestRequest {
   public static final String SERIALIZED_NAME_RESOURCE_ID = "resourceId";
   @SerializedName(SERIALIZED_NAME_RESOURCE_ID)
+  @javax.annotation.Nonnull
   private String resourceId;
 
   public static final String SERIALIZED_NAME_COMMENT = "comment";
   @SerializedName(SERIALIZED_NAME_COMMENT)
+  @javax.annotation.Nullable
   private String comment;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nonnull
   private String description;
 
   public static final String SERIALIZED_NAME_INSTRUCTIONS = "instructions";
   @SerializedName(SERIALIZED_NAME_INSTRUCTIONS)
+  @javax.annotation.Nonnull
   private List<Map<String, Object>> instructions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NOTIFY_MEMBER_IDS = "notifyMemberIds";
   @SerializedName(SERIALIZED_NAME_NOTIFY_MEMBER_IDS)
+  @javax.annotation.Nullable
   private List<String> notifyMemberIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NOTIFY_TEAM_KEYS = "notifyTeamKeys";
   @SerializedName(SERIALIZED_NAME_NOTIFY_TEAM_KEYS)
+  @javax.annotation.Nullable
   private List<String> notifyTeamKeys = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_INTEGRATION_CONFIG = "integrationConfig";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_CONFIG)
+  @javax.annotation.Nullable
   private Map<String, Object> integrationConfig = new HashMap<>();
 
   public CreateApprovalRequestRequest() {
   }
 
-  public CreateApprovalRequestRequest resourceId(String resourceId) {
+  public CreateApprovalRequestRequest resourceId(@javax.annotation.Nonnull String resourceId) {
     this.resourceId = resourceId;
     return this;
   }
 
-   /**
+  /**
    * String representation of the resource specifier
    * @return resourceId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getResourceId() {
     return resourceId;
   }
 
-  public void setResourceId(String resourceId) {
+  public void setResourceId(@javax.annotation.Nonnull String resourceId) {
     this.resourceId = resourceId;
   }
 
 
-  public CreateApprovalRequestRequest comment(String comment) {
+  public CreateApprovalRequestRequest comment(@javax.annotation.Nullable String comment) {
     this.comment = comment;
     return this;
   }
 
-   /**
+  /**
    * Optional comment describing the approval request
    * @return comment
-  **/
+   */
   @javax.annotation.Nullable
   public String getComment() {
     return comment;
   }
 
-  public void setComment(String comment) {
+  public void setComment(@javax.annotation.Nullable String comment) {
     this.comment = comment;
   }
 
 
-  public CreateApprovalRequestRequest description(String description) {
+  public CreateApprovalRequestRequest description(@javax.annotation.Nonnull String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * A brief description of the changes you&#39;re requesting
    * @return description
-  **/
+   */
   @javax.annotation.Nonnull
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nonnull String description) {
     this.description = description;
   }
 
 
-  public CreateApprovalRequestRequest instructions(List<Map<String, Object>> instructions) {
+  public CreateApprovalRequestRequest instructions(@javax.annotation.Nonnull List<Map<String, Object>> instructions) {
     this.instructions = instructions;
     return this;
   }
@@ -156,21 +164,21 @@ public class CreateApprovalRequestRequest {
     return this;
   }
 
-   /**
+  /**
    * Get instructions
    * @return instructions
-  **/
+   */
   @javax.annotation.Nonnull
   public List<Map<String, Object>> getInstructions() {
     return instructions;
   }
 
-  public void setInstructions(List<Map<String, Object>> instructions) {
+  public void setInstructions(@javax.annotation.Nonnull List<Map<String, Object>> instructions) {
     this.instructions = instructions;
   }
 
 
-  public CreateApprovalRequestRequest notifyMemberIds(List<String> notifyMemberIds) {
+  public CreateApprovalRequestRequest notifyMemberIds(@javax.annotation.Nullable List<String> notifyMemberIds) {
     this.notifyMemberIds = notifyMemberIds;
     return this;
   }
@@ -183,21 +191,21 @@ public class CreateApprovalRequestRequest {
     return this;
   }
 
-   /**
+  /**
    * An array of member IDs. These members are notified to review the approval request.
    * @return notifyMemberIds
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getNotifyMemberIds() {
     return notifyMemberIds;
   }
 
-  public void setNotifyMemberIds(List<String> notifyMemberIds) {
+  public void setNotifyMemberIds(@javax.annotation.Nullable List<String> notifyMemberIds) {
     this.notifyMemberIds = notifyMemberIds;
   }
 
 
-  public CreateApprovalRequestRequest notifyTeamKeys(List<String> notifyTeamKeys) {
+  public CreateApprovalRequestRequest notifyTeamKeys(@javax.annotation.Nullable List<String> notifyTeamKeys) {
     this.notifyTeamKeys = notifyTeamKeys;
     return this;
   }
@@ -210,21 +218,21 @@ public class CreateApprovalRequestRequest {
     return this;
   }
 
-   /**
+  /**
    * An array of team keys. The members of these teams are notified to review the approval request.
    * @return notifyTeamKeys
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getNotifyTeamKeys() {
     return notifyTeamKeys;
   }
 
-  public void setNotifyTeamKeys(List<String> notifyTeamKeys) {
+  public void setNotifyTeamKeys(@javax.annotation.Nullable List<String> notifyTeamKeys) {
     this.notifyTeamKeys = notifyTeamKeys;
   }
 
 
-  public CreateApprovalRequestRequest integrationConfig(Map<String, Object> integrationConfig) {
+  public CreateApprovalRequestRequest integrationConfig(@javax.annotation.Nullable Map<String, Object> integrationConfig) {
     this.integrationConfig = integrationConfig;
     return this;
   }
@@ -237,16 +245,16 @@ public class CreateApprovalRequestRequest {
     return this;
   }
 
-   /**
+  /**
    * Get integrationConfig
    * @return integrationConfig
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Object> getIntegrationConfig() {
     return integrationConfig;
   }
 
-  public void setIntegrationConfig(Map<String, Object> integrationConfig) {
+  public void setIntegrationConfig(@javax.annotation.Nullable Map<String, Object> integrationConfig) {
     this.integrationConfig = integrationConfig;
   }
 
@@ -353,64 +361,54 @@ public class CreateApprovalRequestRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("resourceId");
-    openapiFields.add("comment");
-    openapiFields.add("description");
-    openapiFields.add("instructions");
-    openapiFields.add("notifyMemberIds");
-    openapiFields.add("notifyTeamKeys");
-    openapiFields.add("integrationConfig");
+    openapiFields = new HashSet<String>(Arrays.asList("resourceId", "comment", "description", "instructions", "notifyMemberIds", "notifyTeamKeys", "integrationConfig"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("resourceId");
-    openapiRequiredFields.add("description");
-    openapiRequiredFields.add("instructions");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("resourceId", "description", "instructions"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to CreateApprovalRequestRequest
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CreateApprovalRequestRequest
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CreateApprovalRequestRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CreateApprovalRequestRequest is not found in the empty JSON string", CreateApprovalRequestRequest.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in CreateApprovalRequestRequest is not found in the empty JSON string", CreateApprovalRequestRequest.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : CreateApprovalRequestRequest.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("resourceId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `resourceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resourceId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `resourceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resourceId").toString()));
       }
       if ((jsonObj.get("comment") != null && !jsonObj.get("comment").isJsonNull()) && !jsonObj.get("comment").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `comment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comment").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `comment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comment").toString()));
       }
       if (!jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("instructions") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("instructions").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `instructions` to be an array in the JSON string but got `%s`", jsonObj.get("instructions").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `instructions` to be an array in the JSON string but got `%s`", jsonObj.get("instructions").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("notifyMemberIds") != null && !jsonObj.get("notifyMemberIds").isJsonNull() && !jsonObj.get("notifyMemberIds").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `notifyMemberIds` to be an array in the JSON string but got `%s`", jsonObj.get("notifyMemberIds").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifyMemberIds` to be an array in the JSON string but got `%s`", jsonObj.get("notifyMemberIds").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("notifyTeamKeys") != null && !jsonObj.get("notifyTeamKeys").isJsonNull() && !jsonObj.get("notifyTeamKeys").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `notifyTeamKeys` to be an array in the JSON string but got `%s`", jsonObj.get("notifyTeamKeys").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `notifyTeamKeys` to be an array in the JSON string but got `%s`", jsonObj.get("notifyTeamKeys").toString()));
       }
   }
 
@@ -471,7 +469,7 @@ public class CreateApprovalRequestRequest {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -486,22 +484,22 @@ public class CreateApprovalRequestRequest {
     }
   }
 
- /**
-  * Create an instance of CreateApprovalRequestRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CreateApprovalRequestRequest
-  * @throws IOException if the JSON string is invalid with respect to CreateApprovalRequestRequest
-  */
+  /**
+   * Create an instance of CreateApprovalRequestRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CreateApprovalRequestRequest
+   * @throws IOException if the JSON string is invalid with respect to CreateApprovalRequestRequest
+   */
   public static CreateApprovalRequestRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CreateApprovalRequestRequest.class);
   }
 
- /**
-  * Convert an instance of CreateApprovalRequestRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CreateApprovalRequestRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

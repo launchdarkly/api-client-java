@@ -90,7 +90,8 @@ public class AuditLogApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Audit log entries response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -99,7 +100,7 @@ public class AuditLogApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAuditLogEntriesCall(Long before, Long after, String q, Long limit, String spec, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAuditLogEntriesCall(@javax.annotation.Nullable Long before, @javax.annotation.Nullable Long after, @javax.annotation.Nullable String q, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String spec, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -164,7 +165,7 @@ public class AuditLogApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAuditLogEntriesValidateBeforeCall(Long before, Long after, String q, Long limit, String spec, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAuditLogEntriesValidateBeforeCall(@javax.annotation.Nullable Long before, @javax.annotation.Nullable Long after, @javax.annotation.Nullable String q, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String spec, final ApiCallback _callback) throws ApiException {
         return getAuditLogEntriesCall(before, after, q, limit, spec, _callback);
 
     }
@@ -180,7 +181,8 @@ public class AuditLogApi {
      * @return AuditLogEntryListingRepCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Audit log entries response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -189,7 +191,7 @@ public class AuditLogApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public AuditLogEntryListingRepCollection getAuditLogEntries(Long before, Long after, String q, Long limit, String spec) throws ApiException {
+    public AuditLogEntryListingRepCollection getAuditLogEntries(@javax.annotation.Nullable Long before, @javax.annotation.Nullable Long after, @javax.annotation.Nullable String q, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String spec) throws ApiException {
         ApiResponse<AuditLogEntryListingRepCollection> localVarResp = getAuditLogEntriesWithHttpInfo(before, after, q, limit, spec);
         return localVarResp.getData();
     }
@@ -205,7 +207,8 @@ public class AuditLogApi {
      * @return ApiResponse&lt;AuditLogEntryListingRepCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Audit log entries response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -214,7 +217,7 @@ public class AuditLogApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AuditLogEntryListingRepCollection> getAuditLogEntriesWithHttpInfo(Long before, Long after, String q, Long limit, String spec) throws ApiException {
+    public ApiResponse<AuditLogEntryListingRepCollection> getAuditLogEntriesWithHttpInfo(@javax.annotation.Nullable Long before, @javax.annotation.Nullable Long after, @javax.annotation.Nullable String q, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String spec) throws ApiException {
         okhttp3.Call localVarCall = getAuditLogEntriesValidateBeforeCall(before, after, q, limit, spec, null);
         Type localVarReturnType = new TypeToken<AuditLogEntryListingRepCollection>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -232,7 +235,8 @@ public class AuditLogApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Audit log entries response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -241,7 +245,7 @@ public class AuditLogApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAuditLogEntriesAsync(Long before, Long after, String q, Long limit, String spec, final ApiCallback<AuditLogEntryListingRepCollection> _callback) throws ApiException {
+    public okhttp3.Call getAuditLogEntriesAsync(@javax.annotation.Nullable Long before, @javax.annotation.Nullable Long after, @javax.annotation.Nullable String q, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String spec, final ApiCallback<AuditLogEntryListingRepCollection> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAuditLogEntriesValidateBeforeCall(before, after, q, limit, spec, _callback);
         Type localVarReturnType = new TypeToken<AuditLogEntryListingRepCollection>(){}.getType();
@@ -255,7 +259,8 @@ public class AuditLogApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Audit log entry response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -264,7 +269,7 @@ public class AuditLogApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAuditLogEntryCall(String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAuditLogEntryCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -310,7 +315,7 @@ public class AuditLogApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAuditLogEntryValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAuditLogEntryValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getAuditLogEntry(Async)");
@@ -327,7 +332,8 @@ public class AuditLogApi {
      * @return AuditLogEntryRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Audit log entry response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -336,7 +342,7 @@ public class AuditLogApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public AuditLogEntryRep getAuditLogEntry(String id) throws ApiException {
+    public AuditLogEntryRep getAuditLogEntry(@javax.annotation.Nonnull String id) throws ApiException {
         ApiResponse<AuditLogEntryRep> localVarResp = getAuditLogEntryWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -348,7 +354,8 @@ public class AuditLogApi {
      * @return ApiResponse&lt;AuditLogEntryRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Audit log entry response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -357,7 +364,7 @@ public class AuditLogApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AuditLogEntryRep> getAuditLogEntryWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<AuditLogEntryRep> getAuditLogEntryWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getAuditLogEntryValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<AuditLogEntryRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -371,7 +378,8 @@ public class AuditLogApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Audit log entry response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -380,7 +388,7 @@ public class AuditLogApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAuditLogEntryAsync(String id, final ApiCallback<AuditLogEntryRep> _callback) throws ApiException {
+    public okhttp3.Call getAuditLogEntryAsync(@javax.annotation.Nonnull String id, final ApiCallback<AuditLogEntryRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAuditLogEntryValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<AuditLogEntryRep>(){}.getType();
@@ -398,7 +406,8 @@ public class AuditLogApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Audit log entries response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -407,7 +416,7 @@ public class AuditLogApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postAuditLogEntriesCall(Long before, Long after, String q, Long limit, List<StatementPost> statementPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postAuditLogEntriesCall(@javax.annotation.Nullable Long before, @javax.annotation.Nullable Long after, @javax.annotation.Nullable String q, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable List<StatementPost> statementPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -469,7 +478,7 @@ public class AuditLogApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postAuditLogEntriesValidateBeforeCall(Long before, Long after, String q, Long limit, List<StatementPost> statementPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postAuditLogEntriesValidateBeforeCall(@javax.annotation.Nullable Long before, @javax.annotation.Nullable Long after, @javax.annotation.Nullable String q, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable List<StatementPost> statementPost, final ApiCallback _callback) throws ApiException {
         return postAuditLogEntriesCall(before, after, q, limit, statementPost, _callback);
 
     }
@@ -485,7 +494,8 @@ public class AuditLogApi {
      * @return AuditLogEntryListingRepCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Audit log entries response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -494,7 +504,7 @@ public class AuditLogApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public AuditLogEntryListingRepCollection postAuditLogEntries(Long before, Long after, String q, Long limit, List<StatementPost> statementPost) throws ApiException {
+    public AuditLogEntryListingRepCollection postAuditLogEntries(@javax.annotation.Nullable Long before, @javax.annotation.Nullable Long after, @javax.annotation.Nullable String q, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable List<StatementPost> statementPost) throws ApiException {
         ApiResponse<AuditLogEntryListingRepCollection> localVarResp = postAuditLogEntriesWithHttpInfo(before, after, q, limit, statementPost);
         return localVarResp.getData();
     }
@@ -510,7 +520,8 @@ public class AuditLogApi {
      * @return ApiResponse&lt;AuditLogEntryListingRepCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Audit log entries response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -519,7 +530,7 @@ public class AuditLogApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AuditLogEntryListingRepCollection> postAuditLogEntriesWithHttpInfo(Long before, Long after, String q, Long limit, List<StatementPost> statementPost) throws ApiException {
+    public ApiResponse<AuditLogEntryListingRepCollection> postAuditLogEntriesWithHttpInfo(@javax.annotation.Nullable Long before, @javax.annotation.Nullable Long after, @javax.annotation.Nullable String q, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable List<StatementPost> statementPost) throws ApiException {
         okhttp3.Call localVarCall = postAuditLogEntriesValidateBeforeCall(before, after, q, limit, statementPost, null);
         Type localVarReturnType = new TypeToken<AuditLogEntryListingRepCollection>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -537,7 +548,8 @@ public class AuditLogApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Audit log entries response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -546,7 +558,7 @@ public class AuditLogApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postAuditLogEntriesAsync(Long before, Long after, String q, Long limit, List<StatementPost> statementPost, final ApiCallback<AuditLogEntryListingRepCollection> _callback) throws ApiException {
+    public okhttp3.Call postAuditLogEntriesAsync(@javax.annotation.Nullable Long before, @javax.annotation.Nullable Long after, @javax.annotation.Nullable String q, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable List<StatementPost> statementPost, final ApiCallback<AuditLogEntryListingRepCollection> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postAuditLogEntriesValidateBeforeCall(before, after, q, limit, statementPost, _callback);
         Type localVarReturnType = new TypeToken<AuditLogEntryListingRepCollection>(){}.getType();

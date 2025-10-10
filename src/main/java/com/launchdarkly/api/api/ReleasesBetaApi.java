@@ -89,7 +89,8 @@ public class ReleasesBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -98,7 +99,7 @@ public class ReleasesBetaApi {
         <tr><td> 429 </td><td> Rate limit exceeded </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createReleaseForFlagCall(String projectKey, String flagKey, CreateReleaseInput createReleaseInput, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createReleaseForFlagCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, @javax.annotation.Nonnull CreateReleaseInput createReleaseInput, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -146,7 +147,7 @@ public class ReleasesBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createReleaseForFlagValidateBeforeCall(String projectKey, String flagKey, CreateReleaseInput createReleaseInput, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createReleaseForFlagValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, @javax.annotation.Nonnull CreateReleaseInput createReleaseInput, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling createReleaseForFlag(Async)");
@@ -175,7 +176,8 @@ public class ReleasesBetaApi {
      * @return Release
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -184,7 +186,7 @@ public class ReleasesBetaApi {
         <tr><td> 429 </td><td> Rate limit exceeded </td><td>  -  </td></tr>
      </table>
      */
-    public Release createReleaseForFlag(String projectKey, String flagKey, CreateReleaseInput createReleaseInput) throws ApiException {
+    public Release createReleaseForFlag(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, @javax.annotation.Nonnull CreateReleaseInput createReleaseInput) throws ApiException {
         ApiResponse<Release> localVarResp = createReleaseForFlagWithHttpInfo(projectKey, flagKey, createReleaseInput);
         return localVarResp.getData();
     }
@@ -198,7 +200,8 @@ public class ReleasesBetaApi {
      * @return ApiResponse&lt;Release&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -207,7 +210,7 @@ public class ReleasesBetaApi {
         <tr><td> 429 </td><td> Rate limit exceeded </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Release> createReleaseForFlagWithHttpInfo(String projectKey, String flagKey, CreateReleaseInput createReleaseInput) throws ApiException {
+    public ApiResponse<Release> createReleaseForFlagWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, @javax.annotation.Nonnull CreateReleaseInput createReleaseInput) throws ApiException {
         okhttp3.Call localVarCall = createReleaseForFlagValidateBeforeCall(projectKey, flagKey, createReleaseInput, null);
         Type localVarReturnType = new TypeToken<Release>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -223,7 +226,8 @@ public class ReleasesBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -232,7 +236,7 @@ public class ReleasesBetaApi {
         <tr><td> 429 </td><td> Rate limit exceeded </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createReleaseForFlagAsync(String projectKey, String flagKey, CreateReleaseInput createReleaseInput, final ApiCallback<Release> _callback) throws ApiException {
+    public okhttp3.Call createReleaseForFlagAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, @javax.annotation.Nonnull CreateReleaseInput createReleaseInput, final ApiCallback<Release> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createReleaseForFlagValidateBeforeCall(projectKey, flagKey, createReleaseInput, _callback);
         Type localVarReturnType = new TypeToken<Release>(){}.getType();
@@ -247,14 +251,15 @@ public class ReleasesBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteReleaseByFlagKeyCall(String projectKey, String flagKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteReleaseByFlagKeyCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -301,7 +306,7 @@ public class ReleasesBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteReleaseByFlagKeyValidateBeforeCall(String projectKey, String flagKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteReleaseByFlagKeyValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling deleteReleaseByFlagKey(Async)");
@@ -323,14 +328,15 @@ public class ReleasesBetaApi {
      * @param flagKey The flag key (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteReleaseByFlagKey(String projectKey, String flagKey) throws ApiException {
+    public void deleteReleaseByFlagKey(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey) throws ApiException {
         deleteReleaseByFlagKeyWithHttpInfo(projectKey, flagKey);
     }
 
@@ -342,14 +348,15 @@ public class ReleasesBetaApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteReleaseByFlagKeyWithHttpInfo(String projectKey, String flagKey) throws ApiException {
+    public ApiResponse<Void> deleteReleaseByFlagKeyWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey) throws ApiException {
         okhttp3.Call localVarCall = deleteReleaseByFlagKeyValidateBeforeCall(projectKey, flagKey, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -363,14 +370,15 @@ public class ReleasesBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteReleaseByFlagKeyAsync(String projectKey, String flagKey, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteReleaseByFlagKeyAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteReleaseByFlagKeyValidateBeforeCall(projectKey, flagKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -384,13 +392,14 @@ public class ReleasesBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release response </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getReleaseByFlagKeyCall(String projectKey, String flagKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getReleaseByFlagKeyCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -437,7 +446,7 @@ public class ReleasesBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getReleaseByFlagKeyValidateBeforeCall(String projectKey, String flagKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getReleaseByFlagKeyValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getReleaseByFlagKey(Async)");
@@ -460,13 +469,14 @@ public class ReleasesBetaApi {
      * @return Release
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release response </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public Release getReleaseByFlagKey(String projectKey, String flagKey) throws ApiException {
+    public Release getReleaseByFlagKey(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey) throws ApiException {
         ApiResponse<Release> localVarResp = getReleaseByFlagKeyWithHttpInfo(projectKey, flagKey);
         return localVarResp.getData();
     }
@@ -479,13 +489,14 @@ public class ReleasesBetaApi {
      * @return ApiResponse&lt;Release&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release response </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Release> getReleaseByFlagKeyWithHttpInfo(String projectKey, String flagKey) throws ApiException {
+    public ApiResponse<Release> getReleaseByFlagKeyWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey) throws ApiException {
         okhttp3.Call localVarCall = getReleaseByFlagKeyValidateBeforeCall(projectKey, flagKey, null);
         Type localVarReturnType = new TypeToken<Release>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -500,13 +511,14 @@ public class ReleasesBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release response </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getReleaseByFlagKeyAsync(String projectKey, String flagKey, final ApiCallback<Release> _callback) throws ApiException {
+    public okhttp3.Call getReleaseByFlagKeyAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, final ApiCallback<Release> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getReleaseByFlagKeyValidateBeforeCall(projectKey, flagKey, _callback);
         Type localVarReturnType = new TypeToken<Release>(){}.getType();
@@ -522,7 +534,8 @@ public class ReleasesBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -532,7 +545,7 @@ public class ReleasesBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchReleaseByFlagKeyCall(String projectKey, String flagKey, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchReleaseByFlagKeyCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -580,7 +593,7 @@ public class ReleasesBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchReleaseByFlagKeyValidateBeforeCall(String projectKey, String flagKey, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchReleaseByFlagKeyValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling patchReleaseByFlagKey(Async)");
@@ -609,7 +622,8 @@ public class ReleasesBetaApi {
      * @return Release
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -619,7 +633,7 @@ public class ReleasesBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public Release patchReleaseByFlagKey(String projectKey, String flagKey, List<PatchOperation> patchOperation) throws ApiException {
+    public Release patchReleaseByFlagKey(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         ApiResponse<Release> localVarResp = patchReleaseByFlagKeyWithHttpInfo(projectKey, flagKey, patchOperation);
         return localVarResp.getData();
     }
@@ -633,7 +647,8 @@ public class ReleasesBetaApi {
      * @return ApiResponse&lt;Release&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -643,7 +658,7 @@ public class ReleasesBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Release> patchReleaseByFlagKeyWithHttpInfo(String projectKey, String flagKey, List<PatchOperation> patchOperation) throws ApiException {
+    public ApiResponse<Release> patchReleaseByFlagKeyWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         okhttp3.Call localVarCall = patchReleaseByFlagKeyValidateBeforeCall(projectKey, flagKey, patchOperation, null);
         Type localVarReturnType = new TypeToken<Release>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -659,7 +674,8 @@ public class ReleasesBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -669,7 +685,7 @@ public class ReleasesBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchReleaseByFlagKeyAsync(String projectKey, String flagKey, List<PatchOperation> patchOperation, final ApiCallback<Release> _callback) throws ApiException {
+    public okhttp3.Call patchReleaseByFlagKeyAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback<Release> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchReleaseByFlagKeyValidateBeforeCall(projectKey, flagKey, patchOperation, _callback);
         Type localVarReturnType = new TypeToken<Release>(){}.getType();
@@ -686,7 +702,8 @@ public class ReleasesBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -695,7 +712,7 @@ public class ReleasesBetaApi {
         <tr><td> 429 </td><td> Rate limit exceeded </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePhaseStatusCall(String projectKey, String flagKey, String phaseId, UpdatePhaseStatusInput updatePhaseStatusInput, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updatePhaseStatusCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, @javax.annotation.Nonnull String phaseId, @javax.annotation.Nonnull UpdatePhaseStatusInput updatePhaseStatusInput, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -744,7 +761,7 @@ public class ReleasesBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updatePhaseStatusValidateBeforeCall(String projectKey, String flagKey, String phaseId, UpdatePhaseStatusInput updatePhaseStatusInput, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updatePhaseStatusValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, @javax.annotation.Nonnull String phaseId, @javax.annotation.Nonnull UpdatePhaseStatusInput updatePhaseStatusInput, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling updatePhaseStatus(Async)");
@@ -779,7 +796,8 @@ public class ReleasesBetaApi {
      * @return Release
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -788,7 +806,7 @@ public class ReleasesBetaApi {
         <tr><td> 429 </td><td> Rate limit exceeded </td><td>  -  </td></tr>
      </table>
      */
-    public Release updatePhaseStatus(String projectKey, String flagKey, String phaseId, UpdatePhaseStatusInput updatePhaseStatusInput) throws ApiException {
+    public Release updatePhaseStatus(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, @javax.annotation.Nonnull String phaseId, @javax.annotation.Nonnull UpdatePhaseStatusInput updatePhaseStatusInput) throws ApiException {
         ApiResponse<Release> localVarResp = updatePhaseStatusWithHttpInfo(projectKey, flagKey, phaseId, updatePhaseStatusInput);
         return localVarResp.getData();
     }
@@ -803,7 +821,8 @@ public class ReleasesBetaApi {
      * @return ApiResponse&lt;Release&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -812,7 +831,7 @@ public class ReleasesBetaApi {
         <tr><td> 429 </td><td> Rate limit exceeded </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Release> updatePhaseStatusWithHttpInfo(String projectKey, String flagKey, String phaseId, UpdatePhaseStatusInput updatePhaseStatusInput) throws ApiException {
+    public ApiResponse<Release> updatePhaseStatusWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, @javax.annotation.Nonnull String phaseId, @javax.annotation.Nonnull UpdatePhaseStatusInput updatePhaseStatusInput) throws ApiException {
         okhttp3.Call localVarCall = updatePhaseStatusValidateBeforeCall(projectKey, flagKey, phaseId, updatePhaseStatusInput, null);
         Type localVarReturnType = new TypeToken<Release>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -829,7 +848,8 @@ public class ReleasesBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -838,7 +858,7 @@ public class ReleasesBetaApi {
         <tr><td> 429 </td><td> Rate limit exceeded </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePhaseStatusAsync(String projectKey, String flagKey, String phaseId, UpdatePhaseStatusInput updatePhaseStatusInput, final ApiCallback<Release> _callback) throws ApiException {
+    public okhttp3.Call updatePhaseStatusAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String flagKey, @javax.annotation.Nonnull String phaseId, @javax.annotation.Nonnull UpdatePhaseStatusInput updatePhaseStatusInput, final ApiCallback<Release> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updatePhaseStatusValidateBeforeCall(projectKey, flagKey, phaseId, updatePhaseStatusInput, _callback);
         Type localVarReturnType = new TypeToken<Release>(){}.getType();

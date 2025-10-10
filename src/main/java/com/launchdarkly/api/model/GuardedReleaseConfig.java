@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,65 +38,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * Configuration for guarded releases
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class GuardedReleaseConfig {
   public static final String SERIALIZED_NAME_MIN_SAMPLE_SIZE = "minSampleSize";
   @SerializedName(SERIALIZED_NAME_MIN_SAMPLE_SIZE)
+  @javax.annotation.Nullable
   private Integer minSampleSize;
 
   public static final String SERIALIZED_NAME_ROLLBACK_ON_REGRESSION = "rollbackOnRegression";
   @SerializedName(SERIALIZED_NAME_ROLLBACK_ON_REGRESSION)
+  @javax.annotation.Nonnull
   private Boolean rollbackOnRegression;
 
   public GuardedReleaseConfig() {
   }
 
-  public GuardedReleaseConfig minSampleSize(Integer minSampleSize) {
+  public GuardedReleaseConfig minSampleSize(@javax.annotation.Nullable Integer minSampleSize) {
     this.minSampleSize = minSampleSize;
     return this;
   }
 
-   /**
+  /**
    * The minimum number of samples required to make a decision
    * @return minSampleSize
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getMinSampleSize() {
     return minSampleSize;
   }
 
-  public void setMinSampleSize(Integer minSampleSize) {
+  public void setMinSampleSize(@javax.annotation.Nullable Integer minSampleSize) {
     this.minSampleSize = minSampleSize;
   }
 
 
-  public GuardedReleaseConfig rollbackOnRegression(Boolean rollbackOnRegression) {
+  public GuardedReleaseConfig rollbackOnRegression(@javax.annotation.Nonnull Boolean rollbackOnRegression) {
     this.rollbackOnRegression = rollbackOnRegression;
     return this;
   }
 
-   /**
+  /**
    * Whether to roll back on regression
    * @return rollbackOnRegression
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getRollbackOnRegression() {
     return rollbackOnRegression;
   }
 
-  public void setRollbackOnRegression(Boolean rollbackOnRegression) {
+  public void setRollbackOnRegression(@javax.annotation.Nonnull Boolean rollbackOnRegression) {
     this.rollbackOnRegression = rollbackOnRegression;
   }
 
@@ -192,32 +195,29 @@ public class GuardedReleaseConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("minSampleSize");
-    openapiFields.add("rollbackOnRegression");
+    openapiFields = new HashSet<String>(Arrays.asList("minSampleSize", "rollbackOnRegression"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("rollbackOnRegression");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("rollbackOnRegression"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to GuardedReleaseConfig
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to GuardedReleaseConfig
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!GuardedReleaseConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in GuardedReleaseConfig is not found in the empty JSON string", GuardedReleaseConfig.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in GuardedReleaseConfig is not found in the empty JSON string", GuardedReleaseConfig.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : GuardedReleaseConfig.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -280,7 +280,7 @@ public class GuardedReleaseConfig {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -295,22 +295,22 @@ public class GuardedReleaseConfig {
     }
   }
 
- /**
-  * Create an instance of GuardedReleaseConfig given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of GuardedReleaseConfig
-  * @throws IOException if the JSON string is invalid with respect to GuardedReleaseConfig
-  */
+  /**
+   * Create an instance of GuardedReleaseConfig given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of GuardedReleaseConfig
+   * @throws IOException if the JSON string is invalid with respect to GuardedReleaseConfig
+   */
   public static GuardedReleaseConfig fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, GuardedReleaseConfig.class);
   }
 
- /**
-  * Convert an instance of GuardedReleaseConfig to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of GuardedReleaseConfig to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

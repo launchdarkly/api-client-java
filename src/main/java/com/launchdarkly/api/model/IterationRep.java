@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -47,280 +48,301 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * IterationRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class IterationRep {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_HYPOTHESIS = "hypothesis";
   @SerializedName(SERIALIZED_NAME_HYPOTHESIS)
+  @javax.annotation.Nonnull
   private String hypothesis;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nonnull
   private String status;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "createdAt";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nonnull
   private Long createdAt;
 
   public static final String SERIALIZED_NAME_STARTED_AT = "startedAt";
   @SerializedName(SERIALIZED_NAME_STARTED_AT)
+  @javax.annotation.Nullable
   private Long startedAt;
 
   public static final String SERIALIZED_NAME_ENDED_AT = "endedAt";
   @SerializedName(SERIALIZED_NAME_ENDED_AT)
+  @javax.annotation.Nullable
   private Long endedAt;
 
   public static final String SERIALIZED_NAME_WINNING_TREATMENT_ID = "winningTreatmentId";
   @SerializedName(SERIALIZED_NAME_WINNING_TREATMENT_ID)
+  @javax.annotation.Nullable
   private String winningTreatmentId;
 
   public static final String SERIALIZED_NAME_WINNING_REASON = "winningReason";
   @SerializedName(SERIALIZED_NAME_WINNING_REASON)
+  @javax.annotation.Nullable
   private String winningReason;
 
   public static final String SERIALIZED_NAME_CAN_RESHUFFLE_TRAFFIC = "canReshuffleTraffic";
   @SerializedName(SERIALIZED_NAME_CAN_RESHUFFLE_TRAFFIC)
+  @javax.annotation.Nullable
   private Boolean canReshuffleTraffic;
 
   public static final String SERIALIZED_NAME_FLAGS = "flags";
   @SerializedName(SERIALIZED_NAME_FLAGS)
+  @javax.annotation.Nullable
   private Map<String, FlagRep> flags = new HashMap<>();
 
   public static final String SERIALIZED_NAME_REALLOCATION_FREQUENCY_MILLIS = "reallocationFrequencyMillis";
   @SerializedName(SERIALIZED_NAME_REALLOCATION_FREQUENCY_MILLIS)
+  @javax.annotation.Nullable
   private Integer reallocationFrequencyMillis;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
   private Integer version;
 
   public static final String SERIALIZED_NAME_PRIMARY_METRIC = "primaryMetric";
   @SerializedName(SERIALIZED_NAME_PRIMARY_METRIC)
+  @javax.annotation.Nullable
   private DependentMetricOrMetricGroupRep primaryMetric;
 
   public static final String SERIALIZED_NAME_PRIMARY_SINGLE_METRIC = "primarySingleMetric";
   @SerializedName(SERIALIZED_NAME_PRIMARY_SINGLE_METRIC)
+  @javax.annotation.Nullable
   private MetricV2Rep primarySingleMetric;
 
   public static final String SERIALIZED_NAME_PRIMARY_FUNNEL = "primaryFunnel";
   @SerializedName(SERIALIZED_NAME_PRIMARY_FUNNEL)
+  @javax.annotation.Nullable
   private DependentMetricGroupRepWithMetrics primaryFunnel;
 
   public static final String SERIALIZED_NAME_RANDOMIZATION_UNIT = "randomizationUnit";
   @SerializedName(SERIALIZED_NAME_RANDOMIZATION_UNIT)
+  @javax.annotation.Nullable
   private String randomizationUnit;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
+  @javax.annotation.Nullable
   private List<String> attributes = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TREATMENTS = "treatments";
   @SerializedName(SERIALIZED_NAME_TREATMENTS)
+  @javax.annotation.Nullable
   private List<TreatmentRep> treatments = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SECONDARY_METRICS = "secondaryMetrics";
   @Deprecated
   @SerializedName(SERIALIZED_NAME_SECONDARY_METRICS)
+  @javax.annotation.Nullable
   private List<MetricV2Rep> secondaryMetrics = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_METRICS = "metrics";
   @SerializedName(SERIALIZED_NAME_METRICS)
+  @javax.annotation.Nullable
   private List<DependentMetricOrMetricGroupRep> metrics = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LAYER_SNAPSHOT = "layerSnapshot";
   @SerializedName(SERIALIZED_NAME_LAYER_SNAPSHOT)
+  @javax.annotation.Nullable
   private LayerSnapshotRep layerSnapshot;
 
   public IterationRep() {
   }
 
-  public IterationRep id(String id) {
+  public IterationRep id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The iteration ID
    * @return id
-  **/
+   */
   @javax.annotation.Nullable
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public IterationRep hypothesis(String hypothesis) {
+  public IterationRep hypothesis(@javax.annotation.Nonnull String hypothesis) {
     this.hypothesis = hypothesis;
     return this;
   }
 
-   /**
+  /**
    * The expected outcome of this experiment
    * @return hypothesis
-  **/
+   */
   @javax.annotation.Nonnull
   public String getHypothesis() {
     return hypothesis;
   }
 
-  public void setHypothesis(String hypothesis) {
+  public void setHypothesis(@javax.annotation.Nonnull String hypothesis) {
     this.hypothesis = hypothesis;
   }
 
 
-  public IterationRep status(String status) {
+  public IterationRep status(@javax.annotation.Nonnull String status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * The status of the iteration: &lt;code&gt;not_started&lt;/code&gt;, &lt;code&gt;running&lt;/code&gt;, &lt;code&gt;stopped&lt;/code&gt;
    * @return status
-  **/
+   */
   @javax.annotation.Nonnull
   public String getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(@javax.annotation.Nonnull String status) {
     this.status = status;
   }
 
 
-  public IterationRep createdAt(Long createdAt) {
+  public IterationRep createdAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
-   /**
+  /**
    * Get createdAt
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(Long createdAt) {
+  public void setCreatedAt(@javax.annotation.Nonnull Long createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public IterationRep startedAt(Long startedAt) {
+  public IterationRep startedAt(@javax.annotation.Nullable Long startedAt) {
     this.startedAt = startedAt;
     return this;
   }
 
-   /**
+  /**
    * Get startedAt
    * @return startedAt
-  **/
+   */
   @javax.annotation.Nullable
   public Long getStartedAt() {
     return startedAt;
   }
 
-  public void setStartedAt(Long startedAt) {
+  public void setStartedAt(@javax.annotation.Nullable Long startedAt) {
     this.startedAt = startedAt;
   }
 
 
-  public IterationRep endedAt(Long endedAt) {
+  public IterationRep endedAt(@javax.annotation.Nullable Long endedAt) {
     this.endedAt = endedAt;
     return this;
   }
 
-   /**
+  /**
    * Get endedAt
    * @return endedAt
-  **/
+   */
   @javax.annotation.Nullable
   public Long getEndedAt() {
     return endedAt;
   }
 
-  public void setEndedAt(Long endedAt) {
+  public void setEndedAt(@javax.annotation.Nullable Long endedAt) {
     this.endedAt = endedAt;
   }
 
 
-  public IterationRep winningTreatmentId(String winningTreatmentId) {
+  public IterationRep winningTreatmentId(@javax.annotation.Nullable String winningTreatmentId) {
     this.winningTreatmentId = winningTreatmentId;
     return this;
   }
 
-   /**
+  /**
    * The ID of the treatment chosen when the experiment stopped
    * @return winningTreatmentId
-  **/
+   */
   @javax.annotation.Nullable
   public String getWinningTreatmentId() {
     return winningTreatmentId;
   }
 
-  public void setWinningTreatmentId(String winningTreatmentId) {
+  public void setWinningTreatmentId(@javax.annotation.Nullable String winningTreatmentId) {
     this.winningTreatmentId = winningTreatmentId;
   }
 
 
-  public IterationRep winningReason(String winningReason) {
+  public IterationRep winningReason(@javax.annotation.Nullable String winningReason) {
     this.winningReason = winningReason;
     return this;
   }
 
-   /**
+  /**
    * The reason you stopped the experiment
    * @return winningReason
-  **/
+   */
   @javax.annotation.Nullable
   public String getWinningReason() {
     return winningReason;
   }
 
-  public void setWinningReason(String winningReason) {
+  public void setWinningReason(@javax.annotation.Nullable String winningReason) {
     this.winningReason = winningReason;
   }
 
 
-  public IterationRep canReshuffleTraffic(Boolean canReshuffleTraffic) {
+  public IterationRep canReshuffleTraffic(@javax.annotation.Nullable Boolean canReshuffleTraffic) {
     this.canReshuffleTraffic = canReshuffleTraffic;
     return this;
   }
 
-   /**
+  /**
    * Whether the experiment may reassign traffic to different variations when the experiment audience changes (true) or must keep all traffic assigned to its initial variation (false).
    * @return canReshuffleTraffic
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getCanReshuffleTraffic() {
     return canReshuffleTraffic;
   }
 
-  public void setCanReshuffleTraffic(Boolean canReshuffleTraffic) {
+  public void setCanReshuffleTraffic(@javax.annotation.Nullable Boolean canReshuffleTraffic) {
     this.canReshuffleTraffic = canReshuffleTraffic;
   }
 
 
-  public IterationRep flags(Map<String, FlagRep> flags) {
+  public IterationRep flags(@javax.annotation.Nullable Map<String, FlagRep> flags) {
     this.flags = flags;
     return this;
   }
@@ -333,135 +355,135 @@ public class IterationRep {
     return this;
   }
 
-   /**
+  /**
    * Details on the flag used in this experiment
    * @return flags
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, FlagRep> getFlags() {
     return flags;
   }
 
-  public void setFlags(Map<String, FlagRep> flags) {
+  public void setFlags(@javax.annotation.Nullable Map<String, FlagRep> flags) {
     this.flags = flags;
   }
 
 
-  public IterationRep reallocationFrequencyMillis(Integer reallocationFrequencyMillis) {
+  public IterationRep reallocationFrequencyMillis(@javax.annotation.Nullable Integer reallocationFrequencyMillis) {
     this.reallocationFrequencyMillis = reallocationFrequencyMillis;
     return this;
   }
 
-   /**
+  /**
    * The cadence (in milliseconds) to update the allocation. Only present for multi-armed bandits.
    * @return reallocationFrequencyMillis
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getReallocationFrequencyMillis() {
     return reallocationFrequencyMillis;
   }
 
-  public void setReallocationFrequencyMillis(Integer reallocationFrequencyMillis) {
+  public void setReallocationFrequencyMillis(@javax.annotation.Nullable Integer reallocationFrequencyMillis) {
     this.reallocationFrequencyMillis = reallocationFrequencyMillis;
   }
 
 
-  public IterationRep version(Integer version) {
+  public IterationRep version(@javax.annotation.Nullable Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * The current version that the iteration is on
    * @return version
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nullable Integer version) {
     this.version = version;
   }
 
 
-  public IterationRep primaryMetric(DependentMetricOrMetricGroupRep primaryMetric) {
+  public IterationRep primaryMetric(@javax.annotation.Nullable DependentMetricOrMetricGroupRep primaryMetric) {
     this.primaryMetric = primaryMetric;
     return this;
   }
 
-   /**
+  /**
    * Get primaryMetric
    * @return primaryMetric
-  **/
+   */
   @javax.annotation.Nullable
   public DependentMetricOrMetricGroupRep getPrimaryMetric() {
     return primaryMetric;
   }
 
-  public void setPrimaryMetric(DependentMetricOrMetricGroupRep primaryMetric) {
+  public void setPrimaryMetric(@javax.annotation.Nullable DependentMetricOrMetricGroupRep primaryMetric) {
     this.primaryMetric = primaryMetric;
   }
 
 
-  public IterationRep primarySingleMetric(MetricV2Rep primarySingleMetric) {
+  public IterationRep primarySingleMetric(@javax.annotation.Nullable MetricV2Rep primarySingleMetric) {
     this.primarySingleMetric = primarySingleMetric;
     return this;
   }
 
-   /**
+  /**
    * Get primarySingleMetric
    * @return primarySingleMetric
-  **/
+   */
   @javax.annotation.Nullable
   public MetricV2Rep getPrimarySingleMetric() {
     return primarySingleMetric;
   }
 
-  public void setPrimarySingleMetric(MetricV2Rep primarySingleMetric) {
+  public void setPrimarySingleMetric(@javax.annotation.Nullable MetricV2Rep primarySingleMetric) {
     this.primarySingleMetric = primarySingleMetric;
   }
 
 
-  public IterationRep primaryFunnel(DependentMetricGroupRepWithMetrics primaryFunnel) {
+  public IterationRep primaryFunnel(@javax.annotation.Nullable DependentMetricGroupRepWithMetrics primaryFunnel) {
     this.primaryFunnel = primaryFunnel;
     return this;
   }
 
-   /**
+  /**
    * Get primaryFunnel
    * @return primaryFunnel
-  **/
+   */
   @javax.annotation.Nullable
   public DependentMetricGroupRepWithMetrics getPrimaryFunnel() {
     return primaryFunnel;
   }
 
-  public void setPrimaryFunnel(DependentMetricGroupRepWithMetrics primaryFunnel) {
+  public void setPrimaryFunnel(@javax.annotation.Nullable DependentMetricGroupRepWithMetrics primaryFunnel) {
     this.primaryFunnel = primaryFunnel;
   }
 
 
-  public IterationRep randomizationUnit(String randomizationUnit) {
+  public IterationRep randomizationUnit(@javax.annotation.Nullable String randomizationUnit) {
     this.randomizationUnit = randomizationUnit;
     return this;
   }
 
-   /**
+  /**
    * The unit of randomization for this iteration
    * @return randomizationUnit
-  **/
+   */
   @javax.annotation.Nullable
   public String getRandomizationUnit() {
     return randomizationUnit;
   }
 
-  public void setRandomizationUnit(String randomizationUnit) {
+  public void setRandomizationUnit(@javax.annotation.Nullable String randomizationUnit) {
     this.randomizationUnit = randomizationUnit;
   }
 
 
-  public IterationRep attributes(List<String> attributes) {
+  public IterationRep attributes(@javax.annotation.Nullable List<String> attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -474,21 +496,21 @@ public class IterationRep {
     return this;
   }
 
-   /**
+  /**
    * The available attribute filters for this iteration
    * @return attributes
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(List<String> attributes) {
+  public void setAttributes(@javax.annotation.Nullable List<String> attributes) {
     this.attributes = attributes;
   }
 
 
-  public IterationRep treatments(List<TreatmentRep> treatments) {
+  public IterationRep treatments(@javax.annotation.Nullable List<TreatmentRep> treatments) {
     this.treatments = treatments;
     return this;
   }
@@ -501,22 +523,22 @@ public class IterationRep {
     return this;
   }
 
-   /**
+  /**
    * Details on the variations you are testing in the experiment
    * @return treatments
-  **/
+   */
   @javax.annotation.Nullable
   public List<TreatmentRep> getTreatments() {
     return treatments;
   }
 
-  public void setTreatments(List<TreatmentRep> treatments) {
+  public void setTreatments(@javax.annotation.Nullable List<TreatmentRep> treatments) {
     this.treatments = treatments;
   }
 
 
   @Deprecated
-  public IterationRep secondaryMetrics(List<MetricV2Rep> secondaryMetrics) {
+  public IterationRep secondaryMetrics(@javax.annotation.Nullable List<MetricV2Rep> secondaryMetrics) {
     this.secondaryMetrics = secondaryMetrics;
     return this;
   }
@@ -529,11 +551,11 @@ public class IterationRep {
     return this;
   }
 
-   /**
+  /**
    * Deprecated, use &lt;code&gt;metrics&lt;/code&gt; instead. Details on the secondary metrics for this experiment.
    * @return secondaryMetrics
    * @deprecated
-  **/
+   */
   @Deprecated
   @javax.annotation.Nullable
   public List<MetricV2Rep> getSecondaryMetrics() {
@@ -541,12 +563,12 @@ public class IterationRep {
   }
 
   @Deprecated
-  public void setSecondaryMetrics(List<MetricV2Rep> secondaryMetrics) {
+  public void setSecondaryMetrics(@javax.annotation.Nullable List<MetricV2Rep> secondaryMetrics) {
     this.secondaryMetrics = secondaryMetrics;
   }
 
 
-  public IterationRep metrics(List<DependentMetricOrMetricGroupRep> metrics) {
+  public IterationRep metrics(@javax.annotation.Nullable List<DependentMetricOrMetricGroupRep> metrics) {
     this.metrics = metrics;
     return this;
   }
@@ -559,35 +581,35 @@ public class IterationRep {
     return this;
   }
 
-   /**
+  /**
    * Details on the metrics for this experiment
    * @return metrics
-  **/
+   */
   @javax.annotation.Nullable
   public List<DependentMetricOrMetricGroupRep> getMetrics() {
     return metrics;
   }
 
-  public void setMetrics(List<DependentMetricOrMetricGroupRep> metrics) {
+  public void setMetrics(@javax.annotation.Nullable List<DependentMetricOrMetricGroupRep> metrics) {
     this.metrics = metrics;
   }
 
 
-  public IterationRep layerSnapshot(LayerSnapshotRep layerSnapshot) {
+  public IterationRep layerSnapshot(@javax.annotation.Nullable LayerSnapshotRep layerSnapshot) {
     this.layerSnapshot = layerSnapshot;
     return this;
   }
 
-   /**
+  /**
    * Get layerSnapshot
    * @return layerSnapshot
-  **/
+   */
   @javax.annotation.Nullable
   public LayerSnapshotRep getLayerSnapshot() {
     return layerSnapshot;
   }
 
-  public void setLayerSnapshot(LayerSnapshotRep layerSnapshot) {
+  public void setLayerSnapshot(@javax.annotation.Nullable LayerSnapshotRep layerSnapshot) {
     this.layerSnapshot = layerSnapshot;
   }
 
@@ -722,70 +744,46 @@ public class IterationRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_id");
-    openapiFields.add("hypothesis");
-    openapiFields.add("status");
-    openapiFields.add("createdAt");
-    openapiFields.add("startedAt");
-    openapiFields.add("endedAt");
-    openapiFields.add("winningTreatmentId");
-    openapiFields.add("winningReason");
-    openapiFields.add("canReshuffleTraffic");
-    openapiFields.add("flags");
-    openapiFields.add("reallocationFrequencyMillis");
-    openapiFields.add("version");
-    openapiFields.add("primaryMetric");
-    openapiFields.add("primarySingleMetric");
-    openapiFields.add("primaryFunnel");
-    openapiFields.add("randomizationUnit");
-    openapiFields.add("attributes");
-    openapiFields.add("treatments");
-    openapiFields.add("secondaryMetrics");
-    openapiFields.add("metrics");
-    openapiFields.add("layerSnapshot");
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "hypothesis", "status", "createdAt", "startedAt", "endedAt", "winningTreatmentId", "winningReason", "canReshuffleTraffic", "flags", "reallocationFrequencyMillis", "version", "primaryMetric", "primarySingleMetric", "primaryFunnel", "randomizationUnit", "attributes", "treatments", "secondaryMetrics", "metrics", "layerSnapshot"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("hypothesis");
-    openapiRequiredFields.add("status");
-    openapiRequiredFields.add("createdAt");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("hypothesis", "status", "createdAt"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to IterationRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to IterationRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IterationRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in IterationRep is not found in the empty JSON string", IterationRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in IterationRep is not found in the empty JSON string", IterationRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : IterationRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("_id") != null && !jsonObj.get("_id").isJsonNull()) && !jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if (!jsonObj.get("hypothesis").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `hypothesis` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hypothesis").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `hypothesis` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hypothesis").toString()));
       }
       if (!jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
       if ((jsonObj.get("winningTreatmentId") != null && !jsonObj.get("winningTreatmentId").isJsonNull()) && !jsonObj.get("winningTreatmentId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `winningTreatmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("winningTreatmentId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `winningTreatmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("winningTreatmentId").toString()));
       }
       if ((jsonObj.get("winningReason") != null && !jsonObj.get("winningReason").isJsonNull()) && !jsonObj.get("winningReason").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `winningReason` to be a primitive type in the JSON string but got `%s`", jsonObj.get("winningReason").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `winningReason` to be a primitive type in the JSON string but got `%s`", jsonObj.get("winningReason").toString()));
       }
       // validate the optional field `primaryMetric`
       if (jsonObj.get("primaryMetric") != null && !jsonObj.get("primaryMetric").isJsonNull()) {
@@ -800,18 +798,18 @@ public class IterationRep {
         DependentMetricGroupRepWithMetrics.validateJsonElement(jsonObj.get("primaryFunnel"));
       }
       if ((jsonObj.get("randomizationUnit") != null && !jsonObj.get("randomizationUnit").isJsonNull()) && !jsonObj.get("randomizationUnit").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `randomizationUnit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("randomizationUnit").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `randomizationUnit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("randomizationUnit").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("attributes") != null && !jsonObj.get("attributes").isJsonNull() && !jsonObj.get("attributes").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `attributes` to be an array in the JSON string but got `%s`", jsonObj.get("attributes").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `attributes` to be an array in the JSON string but got `%s`", jsonObj.get("attributes").toString()));
       }
       if (jsonObj.get("treatments") != null && !jsonObj.get("treatments").isJsonNull()) {
         JsonArray jsonArraytreatments = jsonObj.getAsJsonArray("treatments");
         if (jsonArraytreatments != null) {
           // ensure the json data is an array
           if (!jsonObj.get("treatments").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `treatments` to be an array in the JSON string but got `%s`", jsonObj.get("treatments").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `treatments` to be an array in the JSON string but got `%s`", jsonObj.get("treatments").toString()));
           }
 
           // validate the optional field `treatments` (array)
@@ -825,7 +823,7 @@ public class IterationRep {
         if (jsonArraysecondaryMetrics != null) {
           // ensure the json data is an array
           if (!jsonObj.get("secondaryMetrics").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `secondaryMetrics` to be an array in the JSON string but got `%s`", jsonObj.get("secondaryMetrics").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `secondaryMetrics` to be an array in the JSON string but got `%s`", jsonObj.get("secondaryMetrics").toString()));
           }
 
           // validate the optional field `secondaryMetrics` (array)
@@ -839,7 +837,7 @@ public class IterationRep {
         if (jsonArraymetrics != null) {
           // ensure the json data is an array
           if (!jsonObj.get("metrics").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `metrics` to be an array in the JSON string but got `%s`", jsonObj.get("metrics").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `metrics` to be an array in the JSON string but got `%s`", jsonObj.get("metrics").toString()));
           }
 
           // validate the optional field `metrics` (array)
@@ -911,7 +909,7 @@ public class IterationRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -926,22 +924,22 @@ public class IterationRep {
     }
   }
 
- /**
-  * Create an instance of IterationRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of IterationRep
-  * @throws IOException if the JSON string is invalid with respect to IterationRep
-  */
+  /**
+   * Create an instance of IterationRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of IterationRep
+   * @throws IOException if the JSON string is invalid with respect to IterationRep
+   */
   public static IterationRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, IterationRep.class);
   }
 
- /**
-  * Convert an instance of IterationRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of IterationRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

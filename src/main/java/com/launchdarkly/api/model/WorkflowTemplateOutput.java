@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,174 +44,183 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * WorkflowTemplateOutput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class WorkflowTemplateOutput {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_KEY = "_key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_CREATION_DATE = "_creationDate";
   @SerializedName(SERIALIZED_NAME_CREATION_DATE)
+  @javax.annotation.Nonnull
   private Long creationDate;
 
   public static final String SERIALIZED_NAME_OWNER_ID = "_ownerId";
   @SerializedName(SERIALIZED_NAME_OWNER_ID)
+  @javax.annotation.Nonnull
   private String ownerId;
 
   public static final String SERIALIZED_NAME_MAINTAINER_ID = "_maintainerId";
   @SerializedName(SERIALIZED_NAME_MAINTAINER_ID)
+  @javax.annotation.Nonnull
   private String maintainerId;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_STAGES = "stages";
   @SerializedName(SERIALIZED_NAME_STAGES)
+  @javax.annotation.Nullable
   private List<StageOutput> stages = new ArrayList<>();
 
   public WorkflowTemplateOutput() {
   }
 
-  public WorkflowTemplateOutput id(String id) {
+  public WorkflowTemplateOutput id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public WorkflowTemplateOutput key(String key) {
+  public WorkflowTemplateOutput key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * Get key
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public WorkflowTemplateOutput name(String name) {
+  public WorkflowTemplateOutput name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public WorkflowTemplateOutput creationDate(Long creationDate) {
+  public WorkflowTemplateOutput creationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
     return this;
   }
 
-   /**
+  /**
    * Get creationDate
    * @return creationDate
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreationDate() {
     return creationDate;
   }
 
-  public void setCreationDate(Long creationDate) {
+  public void setCreationDate(@javax.annotation.Nonnull Long creationDate) {
     this.creationDate = creationDate;
   }
 
 
-  public WorkflowTemplateOutput ownerId(String ownerId) {
+  public WorkflowTemplateOutput ownerId(@javax.annotation.Nonnull String ownerId) {
     this.ownerId = ownerId;
     return this;
   }
 
-   /**
+  /**
    * Get ownerId
    * @return ownerId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getOwnerId() {
     return ownerId;
   }
 
-  public void setOwnerId(String ownerId) {
+  public void setOwnerId(@javax.annotation.Nonnull String ownerId) {
     this.ownerId = ownerId;
   }
 
 
-  public WorkflowTemplateOutput maintainerId(String maintainerId) {
+  public WorkflowTemplateOutput maintainerId(@javax.annotation.Nonnull String maintainerId) {
     this.maintainerId = maintainerId;
     return this;
   }
 
-   /**
+  /**
    * Get maintainerId
    * @return maintainerId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getMaintainerId() {
     return maintainerId;
   }
 
-  public void setMaintainerId(String maintainerId) {
+  public void setMaintainerId(@javax.annotation.Nonnull String maintainerId) {
     this.maintainerId = maintainerId;
   }
 
 
-  public WorkflowTemplateOutput links(Map<String, Link> links) {
+  public WorkflowTemplateOutput links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -223,40 +233,40 @@ public class WorkflowTemplateOutput {
     return this;
   }
 
-   /**
+  /**
    * Get links
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public WorkflowTemplateOutput description(String description) {
+  public WorkflowTemplateOutput description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Get description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public WorkflowTemplateOutput stages(List<StageOutput> stages) {
+  public WorkflowTemplateOutput stages(@javax.annotation.Nullable List<StageOutput> stages) {
     this.stages = stages;
     return this;
   }
@@ -269,16 +279,16 @@ public class WorkflowTemplateOutput {
     return this;
   }
 
-   /**
+  /**
    * Get stages
    * @return stages
-  **/
+   */
   @javax.annotation.Nullable
   public List<StageOutput> getStages() {
     return stages;
   }
 
-  public void setStages(List<StageOutput> stages) {
+  public void setStages(@javax.annotation.Nullable List<StageOutput> stages) {
     this.stages = stages;
   }
 
@@ -389,71 +399,56 @@ public class WorkflowTemplateOutput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_id");
-    openapiFields.add("_key");
-    openapiFields.add("name");
-    openapiFields.add("_creationDate");
-    openapiFields.add("_ownerId");
-    openapiFields.add("_maintainerId");
-    openapiFields.add("_links");
-    openapiFields.add("description");
-    openapiFields.add("stages");
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "_key", "name", "_creationDate", "_ownerId", "_maintainerId", "_links", "description", "stages"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("_key");
-    openapiRequiredFields.add("_creationDate");
-    openapiRequiredFields.add("_ownerId");
-    openapiRequiredFields.add("_maintainerId");
-    openapiRequiredFields.add("_links");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "_key", "_creationDate", "_ownerId", "_maintainerId", "_links"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WorkflowTemplateOutput
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WorkflowTemplateOutput
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WorkflowTemplateOutput.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WorkflowTemplateOutput is not found in the empty JSON string", WorkflowTemplateOutput.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in WorkflowTemplateOutput is not found in the empty JSON string", WorkflowTemplateOutput.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : WorkflowTemplateOutput.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       if (!jsonObj.get("_key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_key").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("_ownerId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_ownerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_ownerId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_ownerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_ownerId").toString()));
       }
       if (!jsonObj.get("_maintainerId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_maintainerId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_maintainerId").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if (jsonObj.get("stages") != null && !jsonObj.get("stages").isJsonNull()) {
         JsonArray jsonArraystages = jsonObj.getAsJsonArray("stages");
         if (jsonArraystages != null) {
           // ensure the json data is an array
           if (!jsonObj.get("stages").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `stages` to be an array in the JSON string but got `%s`", jsonObj.get("stages").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `stages` to be an array in the JSON string but got `%s`", jsonObj.get("stages").toString()));
           }
 
           // validate the optional field `stages` (array)
@@ -521,7 +516,7 @@ public class WorkflowTemplateOutput {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -536,22 +531,22 @@ public class WorkflowTemplateOutput {
     }
   }
 
- /**
-  * Create an instance of WorkflowTemplateOutput given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WorkflowTemplateOutput
-  * @throws IOException if the JSON string is invalid with respect to WorkflowTemplateOutput
-  */
+  /**
+   * Create an instance of WorkflowTemplateOutput given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WorkflowTemplateOutput
+   * @throws IOException if the JSON string is invalid with respect to WorkflowTemplateOutput
+   */
   public static WorkflowTemplateOutput fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WorkflowTemplateOutput.class);
   }
 
- /**
-  * Convert an instance of WorkflowTemplateOutput to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WorkflowTemplateOutput to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

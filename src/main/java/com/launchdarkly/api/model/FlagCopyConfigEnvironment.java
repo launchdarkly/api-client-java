@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,65 +38,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * FlagCopyConfigEnvironment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class FlagCopyConfigEnvironment {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_CURRENT_VERSION = "currentVersion";
   @SerializedName(SERIALIZED_NAME_CURRENT_VERSION)
+  @javax.annotation.Nullable
   private Integer currentVersion;
 
   public FlagCopyConfigEnvironment() {
   }
 
-  public FlagCopyConfigEnvironment key(String key) {
+  public FlagCopyConfigEnvironment key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * The environment key
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public FlagCopyConfigEnvironment currentVersion(Integer currentVersion) {
+  public FlagCopyConfigEnvironment currentVersion(@javax.annotation.Nullable Integer currentVersion) {
     this.currentVersion = currentVersion;
     return this;
   }
 
-   /**
+  /**
    * Optional flag version. If you include this, the operation only succeeds if the current flag version in the environment matches this version.
    * @return currentVersion
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getCurrentVersion() {
     return currentVersion;
   }
 
-  public void setCurrentVersion(Integer currentVersion) {
+  public void setCurrentVersion(@javax.annotation.Nullable Integer currentVersion) {
     this.currentVersion = currentVersion;
   }
 
@@ -192,37 +195,34 @@ public class FlagCopyConfigEnvironment {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("key");
-    openapiFields.add("currentVersion");
+    openapiFields = new HashSet<String>(Arrays.asList("key", "currentVersion"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("key");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("key"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FlagCopyConfigEnvironment
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FlagCopyConfigEnvironment
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FlagCopyConfigEnvironment.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FlagCopyConfigEnvironment is not found in the empty JSON string", FlagCopyConfigEnvironment.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FlagCopyConfigEnvironment is not found in the empty JSON string", FlagCopyConfigEnvironment.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : FlagCopyConfigEnvironment.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
   }
 
@@ -283,7 +283,7 @@ public class FlagCopyConfigEnvironment {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -298,22 +298,22 @@ public class FlagCopyConfigEnvironment {
     }
   }
 
- /**
-  * Create an instance of FlagCopyConfigEnvironment given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FlagCopyConfigEnvironment
-  * @throws IOException if the JSON string is invalid with respect to FlagCopyConfigEnvironment
-  */
+  /**
+   * Create an instance of FlagCopyConfigEnvironment given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FlagCopyConfigEnvironment
+   * @throws IOException if the JSON string is invalid with respect to FlagCopyConfigEnvironment
+   */
   public static FlagCopyConfigEnvironment fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FlagCopyConfigEnvironment.class);
   }
 
- /**
-  * Convert an instance of FlagCopyConfigEnvironment to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FlagCopyConfigEnvironment to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

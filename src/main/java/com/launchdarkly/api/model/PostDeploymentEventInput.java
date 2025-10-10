@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,34 +40,38 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * PostDeploymentEventInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class PostDeploymentEventInput {
   public static final String SERIALIZED_NAME_PROJECT_KEY = "projectKey";
   @SerializedName(SERIALIZED_NAME_PROJECT_KEY)
+  @javax.annotation.Nonnull
   private String projectKey;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_KEY = "environmentKey";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_KEY)
+  @javax.annotation.Nonnull
   private String environmentKey;
 
   public static final String SERIALIZED_NAME_APPLICATION_KEY = "applicationKey";
   @SerializedName(SERIALIZED_NAME_APPLICATION_KEY)
+  @javax.annotation.Nonnull
   private String applicationKey;
 
   public static final String SERIALIZED_NAME_APPLICATION_NAME = "applicationName";
   @SerializedName(SERIALIZED_NAME_APPLICATION_NAME)
+  @javax.annotation.Nullable
   private String applicationName;
 
   /**
@@ -125,14 +130,17 @@ public class PostDeploymentEventInput {
 
   public static final String SERIALIZED_NAME_APPLICATION_KIND = "applicationKind";
   @SerializedName(SERIALIZED_NAME_APPLICATION_KIND)
+  @javax.annotation.Nullable
   private ApplicationKindEnum applicationKind;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nonnull
   private String version;
 
   public static final String SERIALIZED_NAME_VERSION_NAME = "versionName";
   @SerializedName(SERIALIZED_NAME_VERSION_NAME)
+  @javax.annotation.Nullable
   private String versionName;
 
   /**
@@ -193,195 +201,199 @@ public class PostDeploymentEventInput {
 
   public static final String SERIALIZED_NAME_EVENT_TYPE = "eventType";
   @SerializedName(SERIALIZED_NAME_EVENT_TYPE)
+  @javax.annotation.Nonnull
   private EventTypeEnum eventType;
 
   public static final String SERIALIZED_NAME_EVENT_TIME = "eventTime";
   @SerializedName(SERIALIZED_NAME_EVENT_TIME)
+  @javax.annotation.Nullable
   private Long eventTime;
 
   public static final String SERIALIZED_NAME_EVENT_METADATA = "eventMetadata";
   @SerializedName(SERIALIZED_NAME_EVENT_METADATA)
+  @javax.annotation.Nullable
   private Map<String, Object> eventMetadata = new HashMap<>();
 
   public static final String SERIALIZED_NAME_DEPLOYMENT_METADATA = "deploymentMetadata";
   @SerializedName(SERIALIZED_NAME_DEPLOYMENT_METADATA)
+  @javax.annotation.Nullable
   private Map<String, Object> deploymentMetadata = new HashMap<>();
 
   public PostDeploymentEventInput() {
   }
 
-  public PostDeploymentEventInput projectKey(String projectKey) {
+  public PostDeploymentEventInput projectKey(@javax.annotation.Nonnull String projectKey) {
     this.projectKey = projectKey;
     return this;
   }
 
-   /**
+  /**
    * The project key
    * @return projectKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getProjectKey() {
     return projectKey;
   }
 
-  public void setProjectKey(String projectKey) {
+  public void setProjectKey(@javax.annotation.Nonnull String projectKey) {
     this.projectKey = projectKey;
   }
 
 
-  public PostDeploymentEventInput environmentKey(String environmentKey) {
+  public PostDeploymentEventInput environmentKey(@javax.annotation.Nonnull String environmentKey) {
     this.environmentKey = environmentKey;
     return this;
   }
 
-   /**
+  /**
    * The environment key
    * @return environmentKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getEnvironmentKey() {
     return environmentKey;
   }
 
-  public void setEnvironmentKey(String environmentKey) {
+  public void setEnvironmentKey(@javax.annotation.Nonnull String environmentKey) {
     this.environmentKey = environmentKey;
   }
 
 
-  public PostDeploymentEventInput applicationKey(String applicationKey) {
+  public PostDeploymentEventInput applicationKey(@javax.annotation.Nonnull String applicationKey) {
     this.applicationKey = applicationKey;
     return this;
   }
 
-   /**
+  /**
    * The application key. This defines the granularity at which you want to view your insights metrics. Typically it is the name of one of the GitHub repositories that you use in this project.&lt;br/&gt;&lt;br/&gt;LaunchDarkly automatically creates a new application each time you send a unique application key.
    * @return applicationKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getApplicationKey() {
     return applicationKey;
   }
 
-  public void setApplicationKey(String applicationKey) {
+  public void setApplicationKey(@javax.annotation.Nonnull String applicationKey) {
     this.applicationKey = applicationKey;
   }
 
 
-  public PostDeploymentEventInput applicationName(String applicationName) {
+  public PostDeploymentEventInput applicationName(@javax.annotation.Nullable String applicationName) {
     this.applicationName = applicationName;
     return this;
   }
 
-   /**
+  /**
    * The application name. This defines how the application is displayed
    * @return applicationName
-  **/
+   */
   @javax.annotation.Nullable
   public String getApplicationName() {
     return applicationName;
   }
 
-  public void setApplicationName(String applicationName) {
+  public void setApplicationName(@javax.annotation.Nullable String applicationName) {
     this.applicationName = applicationName;
   }
 
 
-  public PostDeploymentEventInput applicationKind(ApplicationKindEnum applicationKind) {
+  public PostDeploymentEventInput applicationKind(@javax.annotation.Nullable ApplicationKindEnum applicationKind) {
     this.applicationKind = applicationKind;
     return this;
   }
 
-   /**
+  /**
    * The kind of application. Default: &lt;code&gt;server&lt;/code&gt;
    * @return applicationKind
-  **/
+   */
   @javax.annotation.Nullable
   public ApplicationKindEnum getApplicationKind() {
     return applicationKind;
   }
 
-  public void setApplicationKind(ApplicationKindEnum applicationKind) {
+  public void setApplicationKind(@javax.annotation.Nullable ApplicationKindEnum applicationKind) {
     this.applicationKind = applicationKind;
   }
 
 
-  public PostDeploymentEventInput version(String version) {
+  public PostDeploymentEventInput version(@javax.annotation.Nonnull String version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * The application version. You can set the application version to any string that includes only letters, numbers, periods (&lt;code&gt;.&lt;/code&gt;), hyphens (&lt;code&gt;-&lt;/code&gt;), or underscores (&lt;code&gt;_&lt;/code&gt;).&lt;br/&gt;&lt;br/&gt;We recommend setting the application version to at least the first seven characters of the SHA or to the tag of the GitHub commit for this deployment.
    * @return version
-  **/
+   */
   @javax.annotation.Nonnull
   public String getVersion() {
     return version;
   }
 
-  public void setVersion(String version) {
+  public void setVersion(@javax.annotation.Nonnull String version) {
     this.version = version;
   }
 
 
-  public PostDeploymentEventInput versionName(String versionName) {
+  public PostDeploymentEventInput versionName(@javax.annotation.Nullable String versionName) {
     this.versionName = versionName;
     return this;
   }
 
-   /**
+  /**
    * The version name. This defines how the version is displayed
    * @return versionName
-  **/
+   */
   @javax.annotation.Nullable
   public String getVersionName() {
     return versionName;
   }
 
-  public void setVersionName(String versionName) {
+  public void setVersionName(@javax.annotation.Nullable String versionName) {
     this.versionName = versionName;
   }
 
 
-  public PostDeploymentEventInput eventType(EventTypeEnum eventType) {
+  public PostDeploymentEventInput eventType(@javax.annotation.Nonnull EventTypeEnum eventType) {
     this.eventType = eventType;
     return this;
   }
 
-   /**
+  /**
    * The event type
    * @return eventType
-  **/
+   */
   @javax.annotation.Nonnull
   public EventTypeEnum getEventType() {
     return eventType;
   }
 
-  public void setEventType(EventTypeEnum eventType) {
+  public void setEventType(@javax.annotation.Nonnull EventTypeEnum eventType) {
     this.eventType = eventType;
   }
 
 
-  public PostDeploymentEventInput eventTime(Long eventTime) {
+  public PostDeploymentEventInput eventTime(@javax.annotation.Nullable Long eventTime) {
     this.eventTime = eventTime;
     return this;
   }
 
-   /**
+  /**
    * Get eventTime
    * @return eventTime
-  **/
+   */
   @javax.annotation.Nullable
   public Long getEventTime() {
     return eventTime;
   }
 
-  public void setEventTime(Long eventTime) {
+  public void setEventTime(@javax.annotation.Nullable Long eventTime) {
     this.eventTime = eventTime;
   }
 
 
-  public PostDeploymentEventInput eventMetadata(Map<String, Object> eventMetadata) {
+  public PostDeploymentEventInput eventMetadata(@javax.annotation.Nullable Map<String, Object> eventMetadata) {
     this.eventMetadata = eventMetadata;
     return this;
   }
@@ -394,21 +406,21 @@ public class PostDeploymentEventInput {
     return this;
   }
 
-   /**
+  /**
    * A JSON object containing metadata about the event
    * @return eventMetadata
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Object> getEventMetadata() {
     return eventMetadata;
   }
 
-  public void setEventMetadata(Map<String, Object> eventMetadata) {
+  public void setEventMetadata(@javax.annotation.Nullable Map<String, Object> eventMetadata) {
     this.eventMetadata = eventMetadata;
   }
 
 
-  public PostDeploymentEventInput deploymentMetadata(Map<String, Object> deploymentMetadata) {
+  public PostDeploymentEventInput deploymentMetadata(@javax.annotation.Nullable Map<String, Object> deploymentMetadata) {
     this.deploymentMetadata = deploymentMetadata;
     return this;
   }
@@ -421,16 +433,16 @@ public class PostDeploymentEventInput {
     return this;
   }
 
-   /**
+  /**
    * A JSON object containing metadata about the deployment
    * @return deploymentMetadata
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Object> getDeploymentMetadata() {
     return deploymentMetadata;
   }
 
-  public void setDeploymentMetadata(Map<String, Object> deploymentMetadata) {
+  public void setDeploymentMetadata(@javax.annotation.Nullable Map<String, Object> deploymentMetadata) {
     this.deploymentMetadata = deploymentMetadata;
   }
 
@@ -545,75 +557,59 @@ public class PostDeploymentEventInput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("projectKey");
-    openapiFields.add("environmentKey");
-    openapiFields.add("applicationKey");
-    openapiFields.add("applicationName");
-    openapiFields.add("applicationKind");
-    openapiFields.add("version");
-    openapiFields.add("versionName");
-    openapiFields.add("eventType");
-    openapiFields.add("eventTime");
-    openapiFields.add("eventMetadata");
-    openapiFields.add("deploymentMetadata");
+    openapiFields = new HashSet<String>(Arrays.asList("projectKey", "environmentKey", "applicationKey", "applicationName", "applicationKind", "version", "versionName", "eventType", "eventTime", "eventMetadata", "deploymentMetadata"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("projectKey");
-    openapiRequiredFields.add("environmentKey");
-    openapiRequiredFields.add("applicationKey");
-    openapiRequiredFields.add("version");
-    openapiRequiredFields.add("eventType");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("projectKey", "environmentKey", "applicationKey", "version", "eventType"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to PostDeploymentEventInput
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PostDeploymentEventInput
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PostDeploymentEventInput.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PostDeploymentEventInput is not found in the empty JSON string", PostDeploymentEventInput.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in PostDeploymentEventInput is not found in the empty JSON string", PostDeploymentEventInput.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : PostDeploymentEventInput.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("projectKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `projectKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `projectKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("projectKey").toString()));
       }
       if (!jsonObj.get("environmentKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
       }
       if (!jsonObj.get("applicationKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `applicationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicationKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `applicationKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicationKey").toString()));
       }
       if ((jsonObj.get("applicationName") != null && !jsonObj.get("applicationName").isJsonNull()) && !jsonObj.get("applicationName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `applicationName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicationName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `applicationName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicationName").toString()));
       }
       if ((jsonObj.get("applicationKind") != null && !jsonObj.get("applicationKind").isJsonNull()) && !jsonObj.get("applicationKind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `applicationKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicationKind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `applicationKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicationKind").toString()));
       }
       // validate the optional field `applicationKind`
       if (jsonObj.get("applicationKind") != null && !jsonObj.get("applicationKind").isJsonNull()) {
         ApplicationKindEnum.validateJsonElement(jsonObj.get("applicationKind"));
       }
       if (!jsonObj.get("version").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("version").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("version").toString()));
       }
       if ((jsonObj.get("versionName") != null && !jsonObj.get("versionName").isJsonNull()) && !jsonObj.get("versionName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `versionName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("versionName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `versionName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("versionName").toString()));
       }
       if (!jsonObj.get("eventType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `eventType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("eventType").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `eventType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("eventType").toString()));
       }
       // validate the required field `eventType`
       EventTypeEnum.validateJsonElement(jsonObj.get("eventType"));
@@ -676,7 +672,7 @@ public class PostDeploymentEventInput {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -691,22 +687,22 @@ public class PostDeploymentEventInput {
     }
   }
 
- /**
-  * Create an instance of PostDeploymentEventInput given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PostDeploymentEventInput
-  * @throws IOException if the JSON string is invalid with respect to PostDeploymentEventInput
-  */
+  /**
+   * Create an instance of PostDeploymentEventInput given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PostDeploymentEventInput
+   * @throws IOException if the JSON string is invalid with respect to PostDeploymentEventInput
+   */
   public static PostDeploymentEventInput fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PostDeploymentEventInput.class);
   }
 
- /**
-  * Convert an instance of PostDeploymentEventInput to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PostDeploymentEventInput to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

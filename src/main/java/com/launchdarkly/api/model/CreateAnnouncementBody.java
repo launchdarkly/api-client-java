@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,38 +38,43 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * Create announcement request body
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class CreateAnnouncementBody {
   public static final String SERIALIZED_NAME_IS_DISMISSIBLE = "isDismissible";
   @SerializedName(SERIALIZED_NAME_IS_DISMISSIBLE)
+  @javax.annotation.Nonnull
   private Boolean isDismissible;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
+  @javax.annotation.Nonnull
   private String title;
 
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
+  @javax.annotation.Nonnull
   private String message;
 
   public static final String SERIALIZED_NAME_START_TIME = "startTime";
   @SerializedName(SERIALIZED_NAME_START_TIME)
+  @javax.annotation.Nonnull
   private Long startTime;
 
   public static final String SERIALIZED_NAME_END_TIME = "endTime";
   @SerializedName(SERIALIZED_NAME_END_TIME)
+  @javax.annotation.Nullable
   private Long endTime;
 
   /**
@@ -127,121 +133,122 @@ public class CreateAnnouncementBody {
 
   public static final String SERIALIZED_NAME_SEVERITY = "severity";
   @SerializedName(SERIALIZED_NAME_SEVERITY)
+  @javax.annotation.Nonnull
   private SeverityEnum severity;
 
   public CreateAnnouncementBody() {
   }
 
-  public CreateAnnouncementBody isDismissible(Boolean isDismissible) {
+  public CreateAnnouncementBody isDismissible(@javax.annotation.Nonnull Boolean isDismissible) {
     this.isDismissible = isDismissible;
     return this;
   }
 
-   /**
+  /**
    * true if the announcement is dismissible
    * @return isDismissible
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getIsDismissible() {
     return isDismissible;
   }
 
-  public void setIsDismissible(Boolean isDismissible) {
+  public void setIsDismissible(@javax.annotation.Nonnull Boolean isDismissible) {
     this.isDismissible = isDismissible;
   }
 
 
-  public CreateAnnouncementBody title(String title) {
+  public CreateAnnouncementBody title(@javax.annotation.Nonnull String title) {
     this.title = title;
     return this;
   }
 
-   /**
+  /**
    * The title of the announcement
    * @return title
-  **/
+   */
   @javax.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(String title) {
+  public void setTitle(@javax.annotation.Nonnull String title) {
     this.title = title;
   }
 
 
-  public CreateAnnouncementBody message(String message) {
+  public CreateAnnouncementBody message(@javax.annotation.Nonnull String message) {
     this.message = message;
     return this;
   }
 
-   /**
+  /**
    * The message of the announcement
    * @return message
-  **/
+   */
   @javax.annotation.Nonnull
   public String getMessage() {
     return message;
   }
 
-  public void setMessage(String message) {
+  public void setMessage(@javax.annotation.Nonnull String message) {
     this.message = message;
   }
 
 
-  public CreateAnnouncementBody startTime(Long startTime) {
+  public CreateAnnouncementBody startTime(@javax.annotation.Nonnull Long startTime) {
     this.startTime = startTime;
     return this;
   }
 
-   /**
+  /**
    * The start time of the announcement. This is a Unix timestamp in milliseconds.
    * @return startTime
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getStartTime() {
     return startTime;
   }
 
-  public void setStartTime(Long startTime) {
+  public void setStartTime(@javax.annotation.Nonnull Long startTime) {
     this.startTime = startTime;
   }
 
 
-  public CreateAnnouncementBody endTime(Long endTime) {
+  public CreateAnnouncementBody endTime(@javax.annotation.Nullable Long endTime) {
     this.endTime = endTime;
     return this;
   }
 
-   /**
+  /**
    * The end time of the announcement. This is a Unix timestamp in milliseconds.
    * @return endTime
-  **/
+   */
   @javax.annotation.Nullable
   public Long getEndTime() {
     return endTime;
   }
 
-  public void setEndTime(Long endTime) {
+  public void setEndTime(@javax.annotation.Nullable Long endTime) {
     this.endTime = endTime;
   }
 
 
-  public CreateAnnouncementBody severity(SeverityEnum severity) {
+  public CreateAnnouncementBody severity(@javax.annotation.Nonnull SeverityEnum severity) {
     this.severity = severity;
     return this;
   }
 
-   /**
+  /**
    * The severity of the announcement
    * @return severity
-  **/
+   */
   @javax.annotation.Nonnull
   public SeverityEnum getSeverity() {
     return severity;
   }
 
-  public void setSeverity(SeverityEnum severity) {
+  public void setSeverity(@javax.annotation.Nonnull SeverityEnum severity) {
     this.severity = severity;
   }
 
@@ -346,51 +353,40 @@ public class CreateAnnouncementBody {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("isDismissible");
-    openapiFields.add("title");
-    openapiFields.add("message");
-    openapiFields.add("startTime");
-    openapiFields.add("endTime");
-    openapiFields.add("severity");
+    openapiFields = new HashSet<String>(Arrays.asList("isDismissible", "title", "message", "startTime", "endTime", "severity"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("isDismissible");
-    openapiRequiredFields.add("title");
-    openapiRequiredFields.add("message");
-    openapiRequiredFields.add("startTime");
-    openapiRequiredFields.add("severity");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("isDismissible", "title", "message", "startTime", "severity"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to CreateAnnouncementBody
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CreateAnnouncementBody
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CreateAnnouncementBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CreateAnnouncementBody is not found in the empty JSON string", CreateAnnouncementBody.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in CreateAnnouncementBody is not found in the empty JSON string", CreateAnnouncementBody.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : CreateAnnouncementBody.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("title").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
       }
       if (!jsonObj.get("message").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
       }
       if (!jsonObj.get("severity").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `severity` to be a primitive type in the JSON string but got `%s`", jsonObj.get("severity").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `severity` to be a primitive type in the JSON string but got `%s`", jsonObj.get("severity").toString()));
       }
       // validate the required field `severity`
       SeverityEnum.validateJsonElement(jsonObj.get("severity"));
@@ -453,7 +449,7 @@ public class CreateAnnouncementBody {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -468,22 +464,22 @@ public class CreateAnnouncementBody {
     }
   }
 
- /**
-  * Create an instance of CreateAnnouncementBody given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CreateAnnouncementBody
-  * @throws IOException if the JSON string is invalid with respect to CreateAnnouncementBody
-  */
+  /**
+   * Create an instance of CreateAnnouncementBody given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CreateAnnouncementBody
+   * @throws IOException if the JSON string is invalid with respect to CreateAnnouncementBody
+   */
   public static CreateAnnouncementBody fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CreateAnnouncementBody.class);
   }
 
- /**
-  * Convert an instance of CreateAnnouncementBody to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CreateAnnouncementBody to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

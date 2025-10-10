@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,44 +44,49 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ContextInstances
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ContextInstances {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_TOTAL_COUNT = "totalCount";
   @SerializedName(SERIALIZED_NAME_TOTAL_COUNT)
+  @javax.annotation.Nullable
   private Integer totalCount;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_ID = "_environmentId";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ID)
+  @javax.annotation.Nonnull
   private String environmentId;
 
   public static final String SERIALIZED_NAME_CONTINUATION_TOKEN = "continuationToken";
   @SerializedName(SERIALIZED_NAME_CONTINUATION_TOKEN)
+  @javax.annotation.Nullable
   private String continuationToken;
 
   public static final String SERIALIZED_NAME_ITEMS = "items";
   @SerializedName(SERIALIZED_NAME_ITEMS)
+  @javax.annotation.Nonnull
   private List<ContextInstanceRecord> items = new ArrayList<>();
 
   public ContextInstances() {
   }
 
-  public ContextInstances links(Map<String, Link> links) {
+  public ContextInstances links(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -93,78 +99,78 @@ public class ContextInstances {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public ContextInstances totalCount(Integer totalCount) {
+  public ContextInstances totalCount(@javax.annotation.Nullable Integer totalCount) {
     this.totalCount = totalCount;
     return this;
   }
 
-   /**
+  /**
    * The number of unique context instances
    * @return totalCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getTotalCount() {
     return totalCount;
   }
 
-  public void setTotalCount(Integer totalCount) {
+  public void setTotalCount(@javax.annotation.Nullable Integer totalCount) {
     this.totalCount = totalCount;
   }
 
 
-  public ContextInstances environmentId(String environmentId) {
+  public ContextInstances environmentId(@javax.annotation.Nonnull String environmentId) {
     this.environmentId = environmentId;
     return this;
   }
 
-   /**
+  /**
    * The environment ID
    * @return environmentId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getEnvironmentId() {
     return environmentId;
   }
 
-  public void setEnvironmentId(String environmentId) {
+  public void setEnvironmentId(@javax.annotation.Nonnull String environmentId) {
     this.environmentId = environmentId;
   }
 
 
-  public ContextInstances continuationToken(String continuationToken) {
+  public ContextInstances continuationToken(@javax.annotation.Nullable String continuationToken) {
     this.continuationToken = continuationToken;
     return this;
   }
 
-   /**
+  /**
    * An obfuscated string that references the last context instance on the previous page of results. You can use this for pagination, however, we recommend using the &lt;code&gt;next&lt;/code&gt; link instead.
    * @return continuationToken
-  **/
+   */
   @javax.annotation.Nullable
   public String getContinuationToken() {
     return continuationToken;
   }
 
-  public void setContinuationToken(String continuationToken) {
+  public void setContinuationToken(@javax.annotation.Nullable String continuationToken) {
     this.continuationToken = continuationToken;
   }
 
 
-  public ContextInstances items(List<ContextInstanceRecord> items) {
+  public ContextInstances items(@javax.annotation.Nonnull List<ContextInstanceRecord> items) {
     this.items = items;
     return this;
   }
@@ -177,16 +183,16 @@ public class ContextInstances {
     return this;
   }
 
-   /**
+  /**
    * A collection of context instances. Can include multiple versions of context instances that have the same &lt;code&gt;id&lt;/code&gt;, but different &lt;code&gt;applicationId&lt;/code&gt;s.
    * @return items
-  **/
+   */
   @javax.annotation.Nonnull
   public List<ContextInstanceRecord> getItems() {
     return items;
   }
 
-  public void setItems(List<ContextInstanceRecord> items) {
+  public void setItems(@javax.annotation.Nonnull List<ContextInstanceRecord> items) {
     this.items = items;
   }
 
@@ -289,48 +295,41 @@ public class ContextInstances {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_links");
-    openapiFields.add("totalCount");
-    openapiFields.add("_environmentId");
-    openapiFields.add("continuationToken");
-    openapiFields.add("items");
+    openapiFields = new HashSet<String>(Arrays.asList("_links", "totalCount", "_environmentId", "continuationToken", "items"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_environmentId");
-    openapiRequiredFields.add("items");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_environmentId", "items"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ContextInstances
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ContextInstances
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ContextInstances.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ContextInstances is not found in the empty JSON string", ContextInstances.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ContextInstances is not found in the empty JSON string", ContextInstances.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ContextInstances.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("_environmentId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_environmentId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_environmentId").toString()));
       }
       if ((jsonObj.get("continuationToken") != null && !jsonObj.get("continuationToken").isJsonNull()) && !jsonObj.get("continuationToken").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `continuationToken` to be a primitive type in the JSON string but got `%s`", jsonObj.get("continuationToken").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `continuationToken` to be a primitive type in the JSON string but got `%s`", jsonObj.get("continuationToken").toString()));
       }
       // ensure the json data is an array
       if (!jsonObj.get("items").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
       }
 
       JsonArray jsonArrayitems = jsonObj.getAsJsonArray("items");
@@ -397,7 +396,7 @@ public class ContextInstances {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -412,22 +411,22 @@ public class ContextInstances {
     }
   }
 
- /**
-  * Create an instance of ContextInstances given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ContextInstances
-  * @throws IOException if the JSON string is invalid with respect to ContextInstances
-  */
+  /**
+   * Create an instance of ContextInstances given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ContextInstances
+   * @throws IOException if the JSON string is invalid with respect to ContextInstances
+   */
   public static ContextInstances fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ContextInstances.class);
   }
 
- /**
-  * Convert an instance of ContextInstances to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ContextInstances to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

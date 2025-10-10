@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,26 +41,28 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * AccessTokenPost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AccessTokenPost {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   /**
@@ -118,85 +121,90 @@ public class AccessTokenPost {
 
   public static final String SERIALIZED_NAME_ROLE = "role";
   @SerializedName(SERIALIZED_NAME_ROLE)
+  @javax.annotation.Nullable
   private RoleEnum role;
 
   public static final String SERIALIZED_NAME_CUSTOM_ROLE_IDS = "customRoleIds";
   @SerializedName(SERIALIZED_NAME_CUSTOM_ROLE_IDS)
+  @javax.annotation.Nullable
   private List<String> customRoleIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_INLINE_ROLE = "inlineRole";
   @SerializedName(SERIALIZED_NAME_INLINE_ROLE)
+  @javax.annotation.Nullable
   private List<StatementPost> inlineRole = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SERVICE_TOKEN = "serviceToken";
   @SerializedName(SERIALIZED_NAME_SERVICE_TOKEN)
+  @javax.annotation.Nullable
   private Boolean serviceToken;
 
   public static final String SERIALIZED_NAME_DEFAULT_API_VERSION = "defaultApiVersion";
   @SerializedName(SERIALIZED_NAME_DEFAULT_API_VERSION)
+  @javax.annotation.Nullable
   private Integer defaultApiVersion;
 
   public AccessTokenPost() {
   }
 
-  public AccessTokenPost name(String name) {
+  public AccessTokenPost name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for the access token
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public AccessTokenPost description(String description) {
+  public AccessTokenPost description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * A description for the access token
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public AccessTokenPost role(RoleEnum role) {
+  public AccessTokenPost role(@javax.annotation.Nullable RoleEnum role) {
     this.role = role;
     return this;
   }
 
-   /**
+  /**
    * Base role for the token
    * @return role
-  **/
+   */
   @javax.annotation.Nullable
   public RoleEnum getRole() {
     return role;
   }
 
-  public void setRole(RoleEnum role) {
+  public void setRole(@javax.annotation.Nullable RoleEnum role) {
     this.role = role;
   }
 
 
-  public AccessTokenPost customRoleIds(List<String> customRoleIds) {
+  public AccessTokenPost customRoleIds(@javax.annotation.Nullable List<String> customRoleIds) {
     this.customRoleIds = customRoleIds;
     return this;
   }
@@ -209,21 +217,21 @@ public class AccessTokenPost {
     return this;
   }
 
-   /**
+  /**
    * A list of custom role IDs to use as access limits for the access token
    * @return customRoleIds
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getCustomRoleIds() {
     return customRoleIds;
   }
 
-  public void setCustomRoleIds(List<String> customRoleIds) {
+  public void setCustomRoleIds(@javax.annotation.Nullable List<String> customRoleIds) {
     this.customRoleIds = customRoleIds;
   }
 
 
-  public AccessTokenPost inlineRole(List<StatementPost> inlineRole) {
+  public AccessTokenPost inlineRole(@javax.annotation.Nullable List<StatementPost> inlineRole) {
     this.inlineRole = inlineRole;
     return this;
   }
@@ -236,54 +244,54 @@ public class AccessTokenPost {
     return this;
   }
 
-   /**
+  /**
    * A JSON array of statements represented as JSON objects with three attributes: effect, resources, actions. May be used in place of a role.
    * @return inlineRole
-  **/
+   */
   @javax.annotation.Nullable
   public List<StatementPost> getInlineRole() {
     return inlineRole;
   }
 
-  public void setInlineRole(List<StatementPost> inlineRole) {
+  public void setInlineRole(@javax.annotation.Nullable List<StatementPost> inlineRole) {
     this.inlineRole = inlineRole;
   }
 
 
-  public AccessTokenPost serviceToken(Boolean serviceToken) {
+  public AccessTokenPost serviceToken(@javax.annotation.Nullable Boolean serviceToken) {
     this.serviceToken = serviceToken;
     return this;
   }
 
-   /**
+  /**
    * Whether the token is a service token
    * @return serviceToken
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getServiceToken() {
     return serviceToken;
   }
 
-  public void setServiceToken(Boolean serviceToken) {
+  public void setServiceToken(@javax.annotation.Nullable Boolean serviceToken) {
     this.serviceToken = serviceToken;
   }
 
 
-  public AccessTokenPost defaultApiVersion(Integer defaultApiVersion) {
+  public AccessTokenPost defaultApiVersion(@javax.annotation.Nullable Integer defaultApiVersion) {
     this.defaultApiVersion = defaultApiVersion;
     return this;
   }
 
-   /**
+  /**
    * The default API version for this token
    * @return defaultApiVersion
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getDefaultApiVersion() {
     return defaultApiVersion;
   }
 
-  public void setDefaultApiVersion(Integer defaultApiVersion) {
+  public void setDefaultApiVersion(@javax.annotation.Nullable Integer defaultApiVersion) {
     this.defaultApiVersion = defaultApiVersion;
   }
 
@@ -390,40 +398,33 @@ public class AccessTokenPost {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("description");
-    openapiFields.add("role");
-    openapiFields.add("customRoleIds");
-    openapiFields.add("inlineRole");
-    openapiFields.add("serviceToken");
-    openapiFields.add("defaultApiVersion");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "description", "role", "customRoleIds", "inlineRole", "serviceToken", "defaultApiVersion"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to AccessTokenPost
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AccessTokenPost
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AccessTokenPost.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AccessTokenPost is not found in the empty JSON string", AccessTokenPost.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AccessTokenPost is not found in the empty JSON string", AccessTokenPost.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if ((jsonObj.get("role") != null && !jsonObj.get("role").isJsonNull()) && !jsonObj.get("role").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role").toString()));
       }
       // validate the optional field `role`
       if (jsonObj.get("role") != null && !jsonObj.get("role").isJsonNull()) {
@@ -431,14 +432,14 @@ public class AccessTokenPost {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("customRoleIds") != null && !jsonObj.get("customRoleIds").isJsonNull() && !jsonObj.get("customRoleIds").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `customRoleIds` to be an array in the JSON string but got `%s`", jsonObj.get("customRoleIds").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `customRoleIds` to be an array in the JSON string but got `%s`", jsonObj.get("customRoleIds").toString()));
       }
       if (jsonObj.get("inlineRole") != null && !jsonObj.get("inlineRole").isJsonNull()) {
         JsonArray jsonArrayinlineRole = jsonObj.getAsJsonArray("inlineRole");
         if (jsonArrayinlineRole != null) {
           // ensure the json data is an array
           if (!jsonObj.get("inlineRole").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `inlineRole` to be an array in the JSON string but got `%s`", jsonObj.get("inlineRole").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `inlineRole` to be an array in the JSON string but got `%s`", jsonObj.get("inlineRole").toString()));
           }
 
           // validate the optional field `inlineRole` (array)
@@ -506,7 +507,7 @@ public class AccessTokenPost {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -521,22 +522,22 @@ public class AccessTokenPost {
     }
   }
 
- /**
-  * Create an instance of AccessTokenPost given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AccessTokenPost
-  * @throws IOException if the JSON string is invalid with respect to AccessTokenPost
-  */
+  /**
+   * Create an instance of AccessTokenPost given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AccessTokenPost
+   * @throws IOException if the JSON string is invalid with respect to AccessTokenPost
+   */
   public static AccessTokenPost fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AccessTokenPost.class);
   }
 
- /**
-  * Convert an instance of AccessTokenPost to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AccessTokenPost to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

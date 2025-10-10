@@ -85,7 +85,8 @@ public class ReleasePoliciesBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Release policy deleted successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -95,7 +96,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteReleasePolicyCall(String ldAPIVersion, String projectKey, String policyKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteReleasePolicyCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String policyKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -122,10 +123,6 @@ public class ReleasePoliciesBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -141,12 +138,17 @@ public class ReleasePoliciesBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteReleasePolicyValidateBeforeCall(String ldAPIVersion, String projectKey, String policyKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteReleasePolicyValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String policyKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling deleteReleasePolicy(Async)");
@@ -174,7 +176,8 @@ public class ReleasePoliciesBetaApi {
      * @param policyKey The human-readable key of the release policy (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Release policy deleted successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -184,7 +187,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteReleasePolicy(String ldAPIVersion, String projectKey, String policyKey) throws ApiException {
+    public void deleteReleasePolicy(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String policyKey) throws ApiException {
         deleteReleasePolicyWithHttpInfo(ldAPIVersion, projectKey, policyKey);
     }
 
@@ -197,7 +200,8 @@ public class ReleasePoliciesBetaApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Release policy deleted successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -207,7 +211,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteReleasePolicyWithHttpInfo(String ldAPIVersion, String projectKey, String policyKey) throws ApiException {
+    public ApiResponse<Void> deleteReleasePolicyWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String policyKey) throws ApiException {
         okhttp3.Call localVarCall = deleteReleasePolicyValidateBeforeCall(ldAPIVersion, projectKey, policyKey, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -222,7 +226,8 @@ public class ReleasePoliciesBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Release policy deleted successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -232,7 +237,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteReleasePolicyAsync(String ldAPIVersion, String projectKey, String policyKey, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteReleasePolicyAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String policyKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteReleasePolicyValidateBeforeCall(ldAPIVersion, projectKey, policyKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -247,7 +252,8 @@ public class ReleasePoliciesBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of release policies </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -257,7 +263,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getReleasePoliciesCall(String ldAPIVersion, String projectKey, Boolean excludeDefault, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getReleasePoliciesCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable Boolean excludeDefault, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -287,10 +293,6 @@ public class ReleasePoliciesBetaApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("excludeDefault", excludeDefault));
         }
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -306,12 +308,17 @@ public class ReleasePoliciesBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getReleasePoliciesValidateBeforeCall(String ldAPIVersion, String projectKey, Boolean excludeDefault, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getReleasePoliciesValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable Boolean excludeDefault, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling getReleasePolicies(Async)");
@@ -335,7 +342,8 @@ public class ReleasePoliciesBetaApi {
      * @return ReleasePoliciesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of release policies </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -345,7 +353,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ReleasePoliciesResponse getReleasePolicies(String ldAPIVersion, String projectKey, Boolean excludeDefault) throws ApiException {
+    public ReleasePoliciesResponse getReleasePolicies(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable Boolean excludeDefault) throws ApiException {
         ApiResponse<ReleasePoliciesResponse> localVarResp = getReleasePoliciesWithHttpInfo(ldAPIVersion, projectKey, excludeDefault);
         return localVarResp.getData();
     }
@@ -359,7 +367,8 @@ public class ReleasePoliciesBetaApi {
      * @return ApiResponse&lt;ReleasePoliciesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of release policies </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -369,7 +378,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ReleasePoliciesResponse> getReleasePoliciesWithHttpInfo(String ldAPIVersion, String projectKey, Boolean excludeDefault) throws ApiException {
+    public ApiResponse<ReleasePoliciesResponse> getReleasePoliciesWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable Boolean excludeDefault) throws ApiException {
         okhttp3.Call localVarCall = getReleasePoliciesValidateBeforeCall(ldAPIVersion, projectKey, excludeDefault, null);
         Type localVarReturnType = new TypeToken<ReleasePoliciesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -385,7 +394,8 @@ public class ReleasePoliciesBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of release policies </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -395,7 +405,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getReleasePoliciesAsync(String ldAPIVersion, String projectKey, Boolean excludeDefault, final ApiCallback<ReleasePoliciesResponse> _callback) throws ApiException {
+    public okhttp3.Call getReleasePoliciesAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable Boolean excludeDefault, final ApiCallback<ReleasePoliciesResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getReleasePoliciesValidateBeforeCall(ldAPIVersion, projectKey, excludeDefault, _callback);
         Type localVarReturnType = new TypeToken<ReleasePoliciesResponse>(){}.getType();
@@ -411,7 +421,8 @@ public class ReleasePoliciesBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release policy found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -421,7 +432,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getReleasePolicyCall(String ldAPIVersion, String projectKey, String policyKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getReleasePolicyCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String policyKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -448,10 +459,6 @@ public class ReleasePoliciesBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -467,12 +474,17 @@ public class ReleasePoliciesBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getReleasePolicyValidateBeforeCall(String ldAPIVersion, String projectKey, String policyKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getReleasePolicyValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String policyKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling getReleasePolicy(Async)");
@@ -501,7 +513,8 @@ public class ReleasePoliciesBetaApi {
      * @return ReleasePolicy
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release policy found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -511,7 +524,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ReleasePolicy getReleasePolicy(String ldAPIVersion, String projectKey, String policyKey) throws ApiException {
+    public ReleasePolicy getReleasePolicy(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String policyKey) throws ApiException {
         ApiResponse<ReleasePolicy> localVarResp = getReleasePolicyWithHttpInfo(ldAPIVersion, projectKey, policyKey);
         return localVarResp.getData();
     }
@@ -525,7 +538,8 @@ public class ReleasePoliciesBetaApi {
      * @return ApiResponse&lt;ReleasePolicy&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release policy found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -535,7 +549,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ReleasePolicy> getReleasePolicyWithHttpInfo(String ldAPIVersion, String projectKey, String policyKey) throws ApiException {
+    public ApiResponse<ReleasePolicy> getReleasePolicyWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String policyKey) throws ApiException {
         okhttp3.Call localVarCall = getReleasePolicyValidateBeforeCall(ldAPIVersion, projectKey, policyKey, null);
         Type localVarReturnType = new TypeToken<ReleasePolicy>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -551,7 +565,8 @@ public class ReleasePoliciesBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release policy found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -561,7 +576,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getReleasePolicyAsync(String ldAPIVersion, String projectKey, String policyKey, final ApiCallback<ReleasePolicy> _callback) throws ApiException {
+    public okhttp3.Call getReleasePolicyAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String policyKey, final ApiCallback<ReleasePolicy> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getReleasePolicyValidateBeforeCall(ldAPIVersion, projectKey, policyKey, _callback);
         Type localVarReturnType = new TypeToken<ReleasePolicy>(){}.getType();
@@ -577,7 +592,8 @@ public class ReleasePoliciesBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release policies updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -587,7 +603,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postReleasePoliciesOrderCall(String ldAPIVersion, String projectKey, List<String> requestBody, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postReleasePoliciesOrderCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull List<String> requestBody, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -613,10 +629,6 @@ public class ReleasePoliciesBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -633,12 +645,17 @@ public class ReleasePoliciesBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postReleasePoliciesOrderValidateBeforeCall(String ldAPIVersion, String projectKey, List<String> requestBody, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postReleasePoliciesOrderValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull List<String> requestBody, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling postReleasePoliciesOrder(Async)");
@@ -667,7 +684,8 @@ public class ReleasePoliciesBetaApi {
      * @return List&lt;ReleasePolicy&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release policies updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -677,7 +695,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public List<ReleasePolicy> postReleasePoliciesOrder(String ldAPIVersion, String projectKey, List<String> requestBody) throws ApiException {
+    public List<ReleasePolicy> postReleasePoliciesOrder(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull List<String> requestBody) throws ApiException {
         ApiResponse<List<ReleasePolicy>> localVarResp = postReleasePoliciesOrderWithHttpInfo(ldAPIVersion, projectKey, requestBody);
         return localVarResp.getData();
     }
@@ -691,7 +709,8 @@ public class ReleasePoliciesBetaApi {
      * @return ApiResponse&lt;List&lt;ReleasePolicy&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release policies updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -701,7 +720,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ReleasePolicy>> postReleasePoliciesOrderWithHttpInfo(String ldAPIVersion, String projectKey, List<String> requestBody) throws ApiException {
+    public ApiResponse<List<ReleasePolicy>> postReleasePoliciesOrderWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull List<String> requestBody) throws ApiException {
         okhttp3.Call localVarCall = postReleasePoliciesOrderValidateBeforeCall(ldAPIVersion, projectKey, requestBody, null);
         Type localVarReturnType = new TypeToken<List<ReleasePolicy>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -717,7 +736,8 @@ public class ReleasePoliciesBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release policies updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -727,7 +747,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postReleasePoliciesOrderAsync(String ldAPIVersion, String projectKey, List<String> requestBody, final ApiCallback<List<ReleasePolicy>> _callback) throws ApiException {
+    public okhttp3.Call postReleasePoliciesOrderAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull List<String> requestBody, final ApiCallback<List<ReleasePolicy>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postReleasePoliciesOrderValidateBeforeCall(ldAPIVersion, projectKey, requestBody, _callback);
         Type localVarReturnType = new TypeToken<List<ReleasePolicy>>(){}.getType();
@@ -743,7 +763,8 @@ public class ReleasePoliciesBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Release policy created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -754,7 +775,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postReleasePolicyCall(String ldAPIVersion, String projectKey, PostReleasePolicyRequest postReleasePolicyRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postReleasePolicyCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull PostReleasePolicyRequest postReleasePolicyRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -780,10 +801,6 @@ public class ReleasePoliciesBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -800,12 +817,17 @@ public class ReleasePoliciesBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postReleasePolicyValidateBeforeCall(String ldAPIVersion, String projectKey, PostReleasePolicyRequest postReleasePolicyRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postReleasePolicyValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull PostReleasePolicyRequest postReleasePolicyRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling postReleasePolicy(Async)");
@@ -834,7 +856,8 @@ public class ReleasePoliciesBetaApi {
      * @return ReleasePolicy
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Release policy created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -845,7 +868,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ReleasePolicy postReleasePolicy(String ldAPIVersion, String projectKey, PostReleasePolicyRequest postReleasePolicyRequest) throws ApiException {
+    public ReleasePolicy postReleasePolicy(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull PostReleasePolicyRequest postReleasePolicyRequest) throws ApiException {
         ApiResponse<ReleasePolicy> localVarResp = postReleasePolicyWithHttpInfo(ldAPIVersion, projectKey, postReleasePolicyRequest);
         return localVarResp.getData();
     }
@@ -859,7 +882,8 @@ public class ReleasePoliciesBetaApi {
      * @return ApiResponse&lt;ReleasePolicy&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Release policy created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -870,7 +894,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ReleasePolicy> postReleasePolicyWithHttpInfo(String ldAPIVersion, String projectKey, PostReleasePolicyRequest postReleasePolicyRequest) throws ApiException {
+    public ApiResponse<ReleasePolicy> postReleasePolicyWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull PostReleasePolicyRequest postReleasePolicyRequest) throws ApiException {
         okhttp3.Call localVarCall = postReleasePolicyValidateBeforeCall(ldAPIVersion, projectKey, postReleasePolicyRequest, null);
         Type localVarReturnType = new TypeToken<ReleasePolicy>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -886,7 +910,8 @@ public class ReleasePoliciesBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Release policy created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -897,7 +922,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postReleasePolicyAsync(String ldAPIVersion, String projectKey, PostReleasePolicyRequest postReleasePolicyRequest, final ApiCallback<ReleasePolicy> _callback) throws ApiException {
+    public okhttp3.Call postReleasePolicyAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull PostReleasePolicyRequest postReleasePolicyRequest, final ApiCallback<ReleasePolicy> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postReleasePolicyValidateBeforeCall(ldAPIVersion, projectKey, postReleasePolicyRequest, _callback);
         Type localVarReturnType = new TypeToken<ReleasePolicy>(){}.getType();
@@ -914,7 +939,8 @@ public class ReleasePoliciesBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release policy updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -924,7 +950,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putReleasePolicyCall(String ldAPIVersion, String projectKey, String policyKey, PutReleasePolicyRequest putReleasePolicyRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call putReleasePolicyCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String policyKey, @javax.annotation.Nonnull PutReleasePolicyRequest putReleasePolicyRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -951,10 +977,6 @@ public class ReleasePoliciesBetaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (ldAPIVersion != null) {
-            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -971,12 +993,17 @@ public class ReleasePoliciesBetaApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
         String[] localVarAuthNames = new String[] { "ApiKey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call putReleasePolicyValidateBeforeCall(String ldAPIVersion, String projectKey, String policyKey, PutReleasePolicyRequest putReleasePolicyRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call putReleasePolicyValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String policyKey, @javax.annotation.Nonnull PutReleasePolicyRequest putReleasePolicyRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling putReleasePolicy(Async)");
@@ -1011,7 +1038,8 @@ public class ReleasePoliciesBetaApi {
      * @return ReleasePolicy
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release policy updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1021,7 +1049,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ReleasePolicy putReleasePolicy(String ldAPIVersion, String projectKey, String policyKey, PutReleasePolicyRequest putReleasePolicyRequest) throws ApiException {
+    public ReleasePolicy putReleasePolicy(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String policyKey, @javax.annotation.Nonnull PutReleasePolicyRequest putReleasePolicyRequest) throws ApiException {
         ApiResponse<ReleasePolicy> localVarResp = putReleasePolicyWithHttpInfo(ldAPIVersion, projectKey, policyKey, putReleasePolicyRequest);
         return localVarResp.getData();
     }
@@ -1036,7 +1064,8 @@ public class ReleasePoliciesBetaApi {
      * @return ApiResponse&lt;ReleasePolicy&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release policy updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1046,7 +1075,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ReleasePolicy> putReleasePolicyWithHttpInfo(String ldAPIVersion, String projectKey, String policyKey, PutReleasePolicyRequest putReleasePolicyRequest) throws ApiException {
+    public ApiResponse<ReleasePolicy> putReleasePolicyWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String policyKey, @javax.annotation.Nonnull PutReleasePolicyRequest putReleasePolicyRequest) throws ApiException {
         okhttp3.Call localVarCall = putReleasePolicyValidateBeforeCall(ldAPIVersion, projectKey, policyKey, putReleasePolicyRequest, null);
         Type localVarReturnType = new TypeToken<ReleasePolicy>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1063,7 +1092,8 @@ public class ReleasePoliciesBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Release policy updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
@@ -1073,7 +1103,7 @@ public class ReleasePoliciesBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putReleasePolicyAsync(String ldAPIVersion, String projectKey, String policyKey, PutReleasePolicyRequest putReleasePolicyRequest, final ApiCallback<ReleasePolicy> _callback) throws ApiException {
+    public okhttp3.Call putReleasePolicyAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String policyKey, @javax.annotation.Nonnull PutReleasePolicyRequest putReleasePolicyRequest, final ApiCallback<ReleasePolicy> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putReleasePolicyValidateBeforeCall(ldAPIVersion, projectKey, policyKey, putReleasePolicyRequest, _callback);
         Type localVarReturnType = new TypeToken<ReleasePolicy>(){}.getType();

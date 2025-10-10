@@ -86,7 +86,8 @@ public class InsightsRepositoriesBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repositories projects response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -96,7 +97,7 @@ public class InsightsRepositoriesBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call associateRepositoriesAndProjectsCall(InsightsRepositoryProjectMappings insightsRepositoryProjectMappings, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call associateRepositoriesAndProjectsCall(@javax.annotation.Nonnull InsightsRepositoryProjectMappings insightsRepositoryProjectMappings, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -142,7 +143,7 @@ public class InsightsRepositoriesBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call associateRepositoriesAndProjectsValidateBeforeCall(InsightsRepositoryProjectMappings insightsRepositoryProjectMappings, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call associateRepositoriesAndProjectsValidateBeforeCall(@javax.annotation.Nonnull InsightsRepositoryProjectMappings insightsRepositoryProjectMappings, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'insightsRepositoryProjectMappings' is set
         if (insightsRepositoryProjectMappings == null) {
             throw new ApiException("Missing the required parameter 'insightsRepositoryProjectMappings' when calling associateRepositoriesAndProjects(Async)");
@@ -159,7 +160,8 @@ public class InsightsRepositoriesBetaApi {
      * @return InsightsRepositoryProjectCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repositories projects response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -169,7 +171,7 @@ public class InsightsRepositoriesBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public InsightsRepositoryProjectCollection associateRepositoriesAndProjects(InsightsRepositoryProjectMappings insightsRepositoryProjectMappings) throws ApiException {
+    public InsightsRepositoryProjectCollection associateRepositoriesAndProjects(@javax.annotation.Nonnull InsightsRepositoryProjectMappings insightsRepositoryProjectMappings) throws ApiException {
         ApiResponse<InsightsRepositoryProjectCollection> localVarResp = associateRepositoriesAndProjectsWithHttpInfo(insightsRepositoryProjectMappings);
         return localVarResp.getData();
     }
@@ -181,7 +183,8 @@ public class InsightsRepositoriesBetaApi {
      * @return ApiResponse&lt;InsightsRepositoryProjectCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repositories projects response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -191,7 +194,7 @@ public class InsightsRepositoriesBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InsightsRepositoryProjectCollection> associateRepositoriesAndProjectsWithHttpInfo(InsightsRepositoryProjectMappings insightsRepositoryProjectMappings) throws ApiException {
+    public ApiResponse<InsightsRepositoryProjectCollection> associateRepositoriesAndProjectsWithHttpInfo(@javax.annotation.Nonnull InsightsRepositoryProjectMappings insightsRepositoryProjectMappings) throws ApiException {
         okhttp3.Call localVarCall = associateRepositoriesAndProjectsValidateBeforeCall(insightsRepositoryProjectMappings, null);
         Type localVarReturnType = new TypeToken<InsightsRepositoryProjectCollection>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -205,7 +208,8 @@ public class InsightsRepositoriesBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repositories projects response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -215,7 +219,7 @@ public class InsightsRepositoriesBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call associateRepositoriesAndProjectsAsync(InsightsRepositoryProjectMappings insightsRepositoryProjectMappings, final ApiCallback<InsightsRepositoryProjectCollection> _callback) throws ApiException {
+    public okhttp3.Call associateRepositoriesAndProjectsAsync(@javax.annotation.Nonnull InsightsRepositoryProjectMappings insightsRepositoryProjectMappings, final ApiCallback<InsightsRepositoryProjectCollection> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = associateRepositoriesAndProjectsValidateBeforeCall(insightsRepositoryProjectMappings, _callback);
         Type localVarReturnType = new TypeToken<InsightsRepositoryProjectCollection>(){}.getType();
@@ -230,7 +234,8 @@ public class InsightsRepositoriesBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -240,7 +245,7 @@ public class InsightsRepositoriesBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteRepositoryProjectCall(String repositoryKey, String projectKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteRepositoryProjectCall(@javax.annotation.Nonnull String repositoryKey, @javax.annotation.Nonnull String projectKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -287,7 +292,7 @@ public class InsightsRepositoriesBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteRepositoryProjectValidateBeforeCall(String repositoryKey, String projectKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteRepositoryProjectValidateBeforeCall(@javax.annotation.Nonnull String repositoryKey, @javax.annotation.Nonnull String projectKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'repositoryKey' is set
         if (repositoryKey == null) {
             throw new ApiException("Missing the required parameter 'repositoryKey' when calling deleteRepositoryProject(Async)");
@@ -309,7 +314,8 @@ public class InsightsRepositoriesBetaApi {
      * @param projectKey The project key (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -319,7 +325,7 @@ public class InsightsRepositoriesBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteRepositoryProject(String repositoryKey, String projectKey) throws ApiException {
+    public void deleteRepositoryProject(@javax.annotation.Nonnull String repositoryKey, @javax.annotation.Nonnull String projectKey) throws ApiException {
         deleteRepositoryProjectWithHttpInfo(repositoryKey, projectKey);
     }
 
@@ -331,7 +337,8 @@ public class InsightsRepositoriesBetaApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -341,7 +348,7 @@ public class InsightsRepositoriesBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteRepositoryProjectWithHttpInfo(String repositoryKey, String projectKey) throws ApiException {
+    public ApiResponse<Void> deleteRepositoryProjectWithHttpInfo(@javax.annotation.Nonnull String repositoryKey, @javax.annotation.Nonnull String projectKey) throws ApiException {
         okhttp3.Call localVarCall = deleteRepositoryProjectValidateBeforeCall(repositoryKey, projectKey, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -355,7 +362,8 @@ public class InsightsRepositoriesBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -365,7 +373,7 @@ public class InsightsRepositoriesBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteRepositoryProjectAsync(String repositoryKey, String projectKey, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteRepositoryProjectAsync(@javax.annotation.Nonnull String repositoryKey, @javax.annotation.Nonnull String projectKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteRepositoryProjectValidateBeforeCall(repositoryKey, projectKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -378,7 +386,8 @@ public class InsightsRepositoriesBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -388,7 +397,7 @@ public class InsightsRepositoriesBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInsightsRepositoriesCall(String expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getInsightsRepositoriesCall(@javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -437,7 +446,7 @@ public class InsightsRepositoriesBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getInsightsRepositoriesValidateBeforeCall(String expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getInsightsRepositoriesValidateBeforeCall(@javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         return getInsightsRepositoriesCall(expand, _callback);
 
     }
@@ -449,7 +458,8 @@ public class InsightsRepositoriesBetaApi {
      * @return InsightsRepositoryCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -459,7 +469,7 @@ public class InsightsRepositoriesBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public InsightsRepositoryCollection getInsightsRepositories(String expand) throws ApiException {
+    public InsightsRepositoryCollection getInsightsRepositories(@javax.annotation.Nullable String expand) throws ApiException {
         ApiResponse<InsightsRepositoryCollection> localVarResp = getInsightsRepositoriesWithHttpInfo(expand);
         return localVarResp.getData();
     }
@@ -471,7 +481,8 @@ public class InsightsRepositoriesBetaApi {
      * @return ApiResponse&lt;InsightsRepositoryCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -481,7 +492,7 @@ public class InsightsRepositoriesBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InsightsRepositoryCollection> getInsightsRepositoriesWithHttpInfo(String expand) throws ApiException {
+    public ApiResponse<InsightsRepositoryCollection> getInsightsRepositoriesWithHttpInfo(@javax.annotation.Nullable String expand) throws ApiException {
         okhttp3.Call localVarCall = getInsightsRepositoriesValidateBeforeCall(expand, null);
         Type localVarReturnType = new TypeToken<InsightsRepositoryCollection>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -495,7 +506,8 @@ public class InsightsRepositoriesBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Repository collection response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -505,7 +517,7 @@ public class InsightsRepositoriesBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInsightsRepositoriesAsync(String expand, final ApiCallback<InsightsRepositoryCollection> _callback) throws ApiException {
+    public okhttp3.Call getInsightsRepositoriesAsync(@javax.annotation.Nullable String expand, final ApiCallback<InsightsRepositoryCollection> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getInsightsRepositoriesValidateBeforeCall(expand, _callback);
         Type localVarReturnType = new TypeToken<InsightsRepositoryCollection>(){}.getType();

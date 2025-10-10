@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,42 +39,43 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ViewsSelfLink
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ViewsSelfLink {
   public static final String SERIALIZED_NAME_SELF = "self";
   @SerializedName(SERIALIZED_NAME_SELF)
+  @javax.annotation.Nonnull
   private CoreLink self;
 
   public ViewsSelfLink() {
   }
 
-  public ViewsSelfLink self(CoreLink self) {
+  public ViewsSelfLink self(@javax.annotation.Nonnull CoreLink self) {
     this.self = self;
     return this;
   }
 
-   /**
+  /**
    * Get self
    * @return self
-  **/
+   */
   @javax.annotation.Nonnull
   public CoreLink getSelf() {
     return self;
   }
 
-  public void setSelf(CoreLink self) {
+  public void setSelf(@javax.annotation.Nonnull CoreLink self) {
     this.self = self;
   }
 
@@ -168,31 +170,29 @@ public class ViewsSelfLink {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("self");
+    openapiFields = new HashSet<String>(Arrays.asList("self"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("self");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("self"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ViewsSelfLink
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ViewsSelfLink
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ViewsSelfLink.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ViewsSelfLink is not found in the empty JSON string", ViewsSelfLink.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ViewsSelfLink is not found in the empty JSON string", ViewsSelfLink.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ViewsSelfLink.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -257,7 +257,7 @@ public class ViewsSelfLink {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -272,22 +272,22 @@ public class ViewsSelfLink {
     }
   }
 
- /**
-  * Create an instance of ViewsSelfLink given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ViewsSelfLink
-  * @throws IOException if the JSON string is invalid with respect to ViewsSelfLink
-  */
+  /**
+   * Create an instance of ViewsSelfLink given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ViewsSelfLink
+   * @throws IOException if the JSON string is invalid with respect to ViewsSelfLink
+   */
   public static ViewsSelfLink fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ViewsSelfLink.class);
   }
 
- /**
-  * Convert an instance of ViewsSelfLink to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ViewsSelfLink to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

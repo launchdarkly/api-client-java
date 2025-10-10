@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,28 +41,29 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * InsightsRepositoryProjectMappings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class InsightsRepositoryProjectMappings {
   public static final String SERIALIZED_NAME_MAPPINGS = "mappings";
   @SerializedName(SERIALIZED_NAME_MAPPINGS)
+  @javax.annotation.Nonnull
   private List<InsightsRepositoryProject> mappings = new ArrayList<>();
 
   public InsightsRepositoryProjectMappings() {
   }
 
-  public InsightsRepositoryProjectMappings mappings(List<InsightsRepositoryProject> mappings) {
+  public InsightsRepositoryProjectMappings mappings(@javax.annotation.Nonnull List<InsightsRepositoryProject> mappings) {
     this.mappings = mappings;
     return this;
   }
@@ -74,16 +76,16 @@ public class InsightsRepositoryProjectMappings {
     return this;
   }
 
-   /**
+  /**
    * Get mappings
    * @return mappings
-  **/
+   */
   @javax.annotation.Nonnull
   public List<InsightsRepositoryProject> getMappings() {
     return mappings;
   }
 
-  public void setMappings(List<InsightsRepositoryProject> mappings) {
+  public void setMappings(@javax.annotation.Nonnull List<InsightsRepositoryProject> mappings) {
     this.mappings = mappings;
   }
 
@@ -178,37 +180,35 @@ public class InsightsRepositoryProjectMappings {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("mappings");
+    openapiFields = new HashSet<String>(Arrays.asList("mappings"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("mappings");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("mappings"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to InsightsRepositoryProjectMappings
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to InsightsRepositoryProjectMappings
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!InsightsRepositoryProjectMappings.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in InsightsRepositoryProjectMappings is not found in the empty JSON string", InsightsRepositoryProjectMappings.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in InsightsRepositoryProjectMappings is not found in the empty JSON string", InsightsRepositoryProjectMappings.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : InsightsRepositoryProjectMappings.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the json data is an array
       if (!jsonObj.get("mappings").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `mappings` to be an array in the JSON string but got `%s`", jsonObj.get("mappings").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `mappings` to be an array in the JSON string but got `%s`", jsonObj.get("mappings").toString()));
       }
 
       JsonArray jsonArraymappings = jsonObj.getAsJsonArray("mappings");
@@ -275,7 +275,7 @@ public class InsightsRepositoryProjectMappings {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -290,22 +290,22 @@ public class InsightsRepositoryProjectMappings {
     }
   }
 
- /**
-  * Create an instance of InsightsRepositoryProjectMappings given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of InsightsRepositoryProjectMappings
-  * @throws IOException if the JSON string is invalid with respect to InsightsRepositoryProjectMappings
-  */
+  /**
+   * Create an instance of InsightsRepositoryProjectMappings given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of InsightsRepositoryProjectMappings
+   * @throws IOException if the JSON string is invalid with respect to InsightsRepositoryProjectMappings
+   */
   public static InsightsRepositoryProjectMappings fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, InsightsRepositoryProjectMappings.class);
   }
 
- /**
-  * Convert an instance of InsightsRepositoryProjectMappings to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of InsightsRepositoryProjectMappings to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

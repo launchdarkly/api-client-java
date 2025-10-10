@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,105 +43,111 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ContextRecord
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ContextRecord {
   public static final String SERIALIZED_NAME_LAST_SEEN = "lastSeen";
   @SerializedName(SERIALIZED_NAME_LAST_SEEN)
+  @javax.annotation.Nullable
   private OffsetDateTime lastSeen;
 
   public static final String SERIALIZED_NAME_APPLICATION_ID = "applicationId";
   @SerializedName(SERIALIZED_NAME_APPLICATION_ID)
+  @javax.annotation.Nullable
   private String applicationId;
 
   public static final String SERIALIZED_NAME_CONTEXT = "context";
   @SerializedName(SERIALIZED_NAME_CONTEXT)
+  @javax.annotation.Nullable
   private Object context = null;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_ACCESS = "_access";
   @SerializedName(SERIALIZED_NAME_ACCESS)
+  @javax.annotation.Nullable
   private Access access;
 
   public static final String SERIALIZED_NAME_ASSOCIATED_CONTEXTS = "associatedContexts";
   @SerializedName(SERIALIZED_NAME_ASSOCIATED_CONTEXTS)
+  @javax.annotation.Nullable
   private Integer associatedContexts;
 
   public ContextRecord() {
   }
 
-  public ContextRecord lastSeen(OffsetDateTime lastSeen) {
+  public ContextRecord lastSeen(@javax.annotation.Nullable OffsetDateTime lastSeen) {
     this.lastSeen = lastSeen;
     return this;
   }
 
-   /**
+  /**
    * Timestamp of the last time an evaluation occurred for this context
    * @return lastSeen
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getLastSeen() {
     return lastSeen;
   }
 
-  public void setLastSeen(OffsetDateTime lastSeen) {
+  public void setLastSeen(@javax.annotation.Nullable OffsetDateTime lastSeen) {
     this.lastSeen = lastSeen;
   }
 
 
-  public ContextRecord applicationId(String applicationId) {
+  public ContextRecord applicationId(@javax.annotation.Nullable String applicationId) {
     this.applicationId = applicationId;
     return this;
   }
 
-   /**
+  /**
    * An identifier representing the application where the LaunchDarkly SDK is running
    * @return applicationId
-  **/
+   */
   @javax.annotation.Nullable
   public String getApplicationId() {
     return applicationId;
   }
 
-  public void setApplicationId(String applicationId) {
+  public void setApplicationId(@javax.annotation.Nullable String applicationId) {
     this.applicationId = applicationId;
   }
 
 
-  public ContextRecord context(Object context) {
+  public ContextRecord context(@javax.annotation.Nullable Object context) {
     this.context = context;
     return this;
   }
 
-   /**
+  /**
    * The context, including its kind and attributes
    * @return context
-  **/
+   */
   @javax.annotation.Nullable
   public Object getContext() {
     return context;
   }
 
-  public void setContext(Object context) {
+  public void setContext(@javax.annotation.Nullable Object context) {
     this.context = context;
   }
 
 
-  public ContextRecord links(Map<String, Link> links) {
+  public ContextRecord links(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -153,54 +160,54 @@ public class ContextRecord {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public ContextRecord access(Access access) {
+  public ContextRecord access(@javax.annotation.Nullable Access access) {
     this.access = access;
     return this;
   }
 
-   /**
+  /**
    * Get access
    * @return access
-  **/
+   */
   @javax.annotation.Nullable
   public Access getAccess() {
     return access;
   }
 
-  public void setAccess(Access access) {
+  public void setAccess(@javax.annotation.Nullable Access access) {
     this.access = access;
   }
 
 
-  public ContextRecord associatedContexts(Integer associatedContexts) {
+  public ContextRecord associatedContexts(@javax.annotation.Nullable Integer associatedContexts) {
     this.associatedContexts = associatedContexts;
     return this;
   }
 
-   /**
+  /**
    * The total number of associated contexts. Associated contexts are contexts that have appeared in the same context instance, that is, they were part of the same flag evaluation.
    * @return associatedContexts
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getAssociatedContexts() {
     return associatedContexts;
   }
 
-  public void setAssociatedContexts(Integer associatedContexts) {
+  public void setAssociatedContexts(@javax.annotation.Nullable Integer associatedContexts) {
     this.associatedContexts = associatedContexts;
   }
 
@@ -305,41 +312,34 @@ public class ContextRecord {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("lastSeen");
-    openapiFields.add("applicationId");
-    openapiFields.add("context");
-    openapiFields.add("_links");
-    openapiFields.add("_access");
-    openapiFields.add("associatedContexts");
+    openapiFields = new HashSet<String>(Arrays.asList("lastSeen", "applicationId", "context", "_links", "_access", "associatedContexts"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("context");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("context"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ContextRecord
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ContextRecord
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ContextRecord.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ContextRecord is not found in the empty JSON string", ContextRecord.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ContextRecord is not found in the empty JSON string", ContextRecord.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ContextRecord.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("applicationId") != null && !jsonObj.get("applicationId").isJsonNull()) && !jsonObj.get("applicationId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `applicationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicationId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `applicationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("applicationId").toString()));
       }
       // validate the optional field `_access`
       if (jsonObj.get("_access") != null && !jsonObj.get("_access").isJsonNull()) {
@@ -404,7 +404,7 @@ public class ContextRecord {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -419,22 +419,22 @@ public class ContextRecord {
     }
   }
 
- /**
-  * Create an instance of ContextRecord given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ContextRecord
-  * @throws IOException if the JSON string is invalid with respect to ContextRecord
-  */
+  /**
+   * Create an instance of ContextRecord given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ContextRecord
+   * @throws IOException if the JSON string is invalid with respect to ContextRecord
+   */
   public static ContextRecord fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ContextRecord.class);
   }
 
- /**
-  * Convert an instance of ContextRecord to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ContextRecord to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

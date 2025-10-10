@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,78 +44,82 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * LegacyExperimentRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class LegacyExperimentRep {
   public static final String SERIALIZED_NAME_METRIC_KEY = "metricKey";
   @SerializedName(SERIALIZED_NAME_METRIC_KEY)
+  @javax.annotation.Nullable
   private String metricKey;
 
   public static final String SERIALIZED_NAME_METRIC = "_metric";
   @SerializedName(SERIALIZED_NAME_METRIC)
+  @javax.annotation.Nullable
   private MetricListingRep metric;
 
   public static final String SERIALIZED_NAME_ENVIRONMENTS = "environments";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENTS)
+  @javax.annotation.Nullable
   private List<String> environments = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_SETTINGS = "_environmentSettings";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_SETTINGS)
+  @javax.annotation.Nullable
   private Map<String, ExperimentEnvironmentSettingRep> environmentSettings = new HashMap<>();
 
   public LegacyExperimentRep() {
   }
 
-  public LegacyExperimentRep metricKey(String metricKey) {
+  public LegacyExperimentRep metricKey(@javax.annotation.Nullable String metricKey) {
     this.metricKey = metricKey;
     return this;
   }
 
-   /**
+  /**
    * Get metricKey
    * @return metricKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getMetricKey() {
     return metricKey;
   }
 
-  public void setMetricKey(String metricKey) {
+  public void setMetricKey(@javax.annotation.Nullable String metricKey) {
     this.metricKey = metricKey;
   }
 
 
-  public LegacyExperimentRep metric(MetricListingRep metric) {
+  public LegacyExperimentRep metric(@javax.annotation.Nullable MetricListingRep metric) {
     this.metric = metric;
     return this;
   }
 
-   /**
+  /**
    * Get metric
    * @return metric
-  **/
+   */
   @javax.annotation.Nullable
   public MetricListingRep getMetric() {
     return metric;
   }
 
-  public void setMetric(MetricListingRep metric) {
+  public void setMetric(@javax.annotation.Nullable MetricListingRep metric) {
     this.metric = metric;
   }
 
 
-  public LegacyExperimentRep environments(List<String> environments) {
+  public LegacyExperimentRep environments(@javax.annotation.Nullable List<String> environments) {
     this.environments = environments;
     return this;
   }
@@ -127,21 +132,21 @@ public class LegacyExperimentRep {
     return this;
   }
 
-   /**
+  /**
    * Get environments
    * @return environments
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getEnvironments() {
     return environments;
   }
 
-  public void setEnvironments(List<String> environments) {
+  public void setEnvironments(@javax.annotation.Nullable List<String> environments) {
     this.environments = environments;
   }
 
 
-  public LegacyExperimentRep environmentSettings(Map<String, ExperimentEnvironmentSettingRep> environmentSettings) {
+  public LegacyExperimentRep environmentSettings(@javax.annotation.Nullable Map<String, ExperimentEnvironmentSettingRep> environmentSettings) {
     this.environmentSettings = environmentSettings;
     return this;
   }
@@ -154,16 +159,16 @@ public class LegacyExperimentRep {
     return this;
   }
 
-   /**
+  /**
    * Get environmentSettings
    * @return environmentSettings
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, ExperimentEnvironmentSettingRep> getEnvironmentSettings() {
     return environmentSettings;
   }
 
-  public void setEnvironmentSettings(Map<String, ExperimentEnvironmentSettingRep> environmentSettings) {
+  public void setEnvironmentSettings(@javax.annotation.Nullable Map<String, ExperimentEnvironmentSettingRep> environmentSettings) {
     this.environmentSettings = environmentSettings;
   }
 
@@ -264,31 +269,27 @@ public class LegacyExperimentRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("metricKey");
-    openapiFields.add("_metric");
-    openapiFields.add("environments");
-    openapiFields.add("_environmentSettings");
+    openapiFields = new HashSet<String>(Arrays.asList("metricKey", "_metric", "environments", "_environmentSettings"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to LegacyExperimentRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to LegacyExperimentRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!LegacyExperimentRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in LegacyExperimentRep is not found in the empty JSON string", LegacyExperimentRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in LegacyExperimentRep is not found in the empty JSON string", LegacyExperimentRep.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("metricKey") != null && !jsonObj.get("metricKey").isJsonNull()) && !jsonObj.get("metricKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `metricKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metricKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `metricKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("metricKey").toString()));
       }
       // validate the optional field `_metric`
       if (jsonObj.get("_metric") != null && !jsonObj.get("_metric").isJsonNull()) {
@@ -296,7 +297,7 @@ public class LegacyExperimentRep {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("environments") != null && !jsonObj.get("environments").isJsonNull() && !jsonObj.get("environments").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environments` to be an array in the JSON string but got `%s`", jsonObj.get("environments").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environments` to be an array in the JSON string but got `%s`", jsonObj.get("environments").toString()));
       }
   }
 
@@ -357,7 +358,7 @@ public class LegacyExperimentRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -372,22 +373,22 @@ public class LegacyExperimentRep {
     }
   }
 
- /**
-  * Create an instance of LegacyExperimentRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of LegacyExperimentRep
-  * @throws IOException if the JSON string is invalid with respect to LegacyExperimentRep
-  */
+  /**
+   * Create an instance of LegacyExperimentRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of LegacyExperimentRep
+   * @throws IOException if the JSON string is invalid with respect to LegacyExperimentRep
+   */
   public static LegacyExperimentRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, LegacyExperimentRep.class);
   }
 
- /**
-  * Convert an instance of LegacyExperimentRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of LegacyExperimentRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

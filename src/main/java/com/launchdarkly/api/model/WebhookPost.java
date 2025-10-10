@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,109 +41,116 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * WebhookPost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class WebhookPost {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
+  @javax.annotation.Nonnull
   private String url;
 
   public static final String SERIALIZED_NAME_SECRET = "secret";
   @SerializedName(SERIALIZED_NAME_SECRET)
+  @javax.annotation.Nullable
   private String secret;
 
   public static final String SERIALIZED_NAME_STATEMENTS = "statements";
   @SerializedName(SERIALIZED_NAME_STATEMENTS)
+  @javax.annotation.Nullable
   private List<StatementPost> statements = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SIGN = "sign";
   @SerializedName(SERIALIZED_NAME_SIGN)
+  @javax.annotation.Nonnull
   private Boolean sign;
 
   public static final String SERIALIZED_NAME_ON = "on";
   @SerializedName(SERIALIZED_NAME_ON)
+  @javax.annotation.Nonnull
   private Boolean on;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
   private List<String> tags = new ArrayList<>();
 
   public WebhookPost() {
   }
 
-  public WebhookPost name(String name) {
+  public WebhookPost name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-readable name for your webhook
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public WebhookPost url(String url) {
+  public WebhookPost url(@javax.annotation.Nonnull String url) {
     this.url = url;
     return this;
   }
 
-   /**
+  /**
    * The URL of the remote webhook
    * @return url
-  **/
+   */
   @javax.annotation.Nonnull
   public String getUrl() {
     return url;
   }
 
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nonnull String url) {
     this.url = url;
   }
 
 
-  public WebhookPost secret(String secret) {
+  public WebhookPost secret(@javax.annotation.Nullable String secret) {
     this.secret = secret;
     return this;
   }
 
-   /**
+  /**
    * If sign is true, and the secret attribute is omitted, LaunchDarkly automatically generates a secret for you.
    * @return secret
-  **/
+   */
   @javax.annotation.Nullable
   public String getSecret() {
     return secret;
   }
 
-  public void setSecret(String secret) {
+  public void setSecret(@javax.annotation.Nullable String secret) {
     this.secret = secret;
   }
 
 
-  public WebhookPost statements(List<StatementPost> statements) {
+  public WebhookPost statements(@javax.annotation.Nullable List<StatementPost> statements) {
     this.statements = statements;
     return this;
   }
@@ -155,59 +163,59 @@ public class WebhookPost {
     return this;
   }
 
-   /**
+  /**
    * Get statements
    * @return statements
-  **/
+   */
   @javax.annotation.Nullable
   public List<StatementPost> getStatements() {
     return statements;
   }
 
-  public void setStatements(List<StatementPost> statements) {
+  public void setStatements(@javax.annotation.Nullable List<StatementPost> statements) {
     this.statements = statements;
   }
 
 
-  public WebhookPost sign(Boolean sign) {
+  public WebhookPost sign(@javax.annotation.Nonnull Boolean sign) {
     this.sign = sign;
     return this;
   }
 
-   /**
+  /**
    * If sign is false, the webhook does not include a signature header, and the secret can be omitted.
    * @return sign
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getSign() {
     return sign;
   }
 
-  public void setSign(Boolean sign) {
+  public void setSign(@javax.annotation.Nonnull Boolean sign) {
     this.sign = sign;
   }
 
 
-  public WebhookPost on(Boolean on) {
+  public WebhookPost on(@javax.annotation.Nonnull Boolean on) {
     this.on = on;
     return this;
   }
 
-   /**
+  /**
    * Whether or not this webhook is enabled.
    * @return on
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getOn() {
     return on;
   }
 
-  public void setOn(Boolean on) {
+  public void setOn(@javax.annotation.Nonnull Boolean on) {
     this.on = on;
   }
 
 
-  public WebhookPost tags(List<String> tags) {
+  public WebhookPost tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -220,16 +228,16 @@ public class WebhookPost {
     return this;
   }
 
-   /**
+  /**
    * List of tags for this webhook
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
@@ -336,57 +344,47 @@ public class WebhookPost {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("url");
-    openapiFields.add("secret");
-    openapiFields.add("statements");
-    openapiFields.add("sign");
-    openapiFields.add("on");
-    openapiFields.add("tags");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "url", "secret", "statements", "sign", "on", "tags"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("url");
-    openapiRequiredFields.add("sign");
-    openapiRequiredFields.add("on");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("url", "sign", "on"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WebhookPost
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WebhookPost
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WebhookPost.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WebhookPost is not found in the empty JSON string", WebhookPost.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in WebhookPost is not found in the empty JSON string", WebhookPost.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : WebhookPost.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
       }
       if ((jsonObj.get("secret") != null && !jsonObj.get("secret").isJsonNull()) && !jsonObj.get("secret").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `secret` to be a primitive type in the JSON string but got `%s`", jsonObj.get("secret").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `secret` to be a primitive type in the JSON string but got `%s`", jsonObj.get("secret").toString()));
       }
       if (jsonObj.get("statements") != null && !jsonObj.get("statements").isJsonNull()) {
         JsonArray jsonArraystatements = jsonObj.getAsJsonArray("statements");
         if (jsonArraystatements != null) {
           // ensure the json data is an array
           if (!jsonObj.get("statements").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `statements` to be an array in the JSON string but got `%s`", jsonObj.get("statements").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `statements` to be an array in the JSON string but got `%s`", jsonObj.get("statements").toString()));
           }
 
           // validate the optional field `statements` (array)
@@ -397,7 +395,7 @@ public class WebhookPost {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
   }
 
@@ -458,7 +456,7 @@ public class WebhookPost {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -473,22 +471,22 @@ public class WebhookPost {
     }
   }
 
- /**
-  * Create an instance of WebhookPost given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WebhookPost
-  * @throws IOException if the JSON string is invalid with respect to WebhookPost
-  */
+  /**
+   * Create an instance of WebhookPost given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WebhookPost
+   * @throws IOException if the JSON string is invalid with respect to WebhookPost
+   */
   public static WebhookPost fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WebhookPost.class);
   }
 
- /**
-  * Convert an instance of WebhookPost to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WebhookPost to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

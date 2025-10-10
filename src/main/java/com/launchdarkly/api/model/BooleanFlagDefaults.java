@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,157 +38,163 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * BooleanFlagDefaults
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class BooleanFlagDefaults {
   public static final String SERIALIZED_NAME_TRUE_DISPLAY_NAME = "trueDisplayName";
   @SerializedName(SERIALIZED_NAME_TRUE_DISPLAY_NAME)
+  @javax.annotation.Nonnull
   private String trueDisplayName;
 
   public static final String SERIALIZED_NAME_FALSE_DISPLAY_NAME = "falseDisplayName";
   @SerializedName(SERIALIZED_NAME_FALSE_DISPLAY_NAME)
+  @javax.annotation.Nonnull
   private String falseDisplayName;
 
   public static final String SERIALIZED_NAME_TRUE_DESCRIPTION = "trueDescription";
   @SerializedName(SERIALIZED_NAME_TRUE_DESCRIPTION)
+  @javax.annotation.Nonnull
   private String trueDescription;
 
   public static final String SERIALIZED_NAME_FALSE_DESCRIPTION = "falseDescription";
   @SerializedName(SERIALIZED_NAME_FALSE_DESCRIPTION)
+  @javax.annotation.Nonnull
   private String falseDescription;
 
   public static final String SERIALIZED_NAME_ON_VARIATION = "onVariation";
   @SerializedName(SERIALIZED_NAME_ON_VARIATION)
+  @javax.annotation.Nonnull
   private Integer onVariation;
 
   public static final String SERIALIZED_NAME_OFF_VARIATION = "offVariation";
   @SerializedName(SERIALIZED_NAME_OFF_VARIATION)
+  @javax.annotation.Nonnull
   private Integer offVariation;
 
   public BooleanFlagDefaults() {
   }
 
-  public BooleanFlagDefaults trueDisplayName(String trueDisplayName) {
+  public BooleanFlagDefaults trueDisplayName(@javax.annotation.Nonnull String trueDisplayName) {
     this.trueDisplayName = trueDisplayName;
     return this;
   }
 
-   /**
+  /**
    * The display name for the true variation, displayed in the LaunchDarkly user interface
    * @return trueDisplayName
-  **/
+   */
   @javax.annotation.Nonnull
   public String getTrueDisplayName() {
     return trueDisplayName;
   }
 
-  public void setTrueDisplayName(String trueDisplayName) {
+  public void setTrueDisplayName(@javax.annotation.Nonnull String trueDisplayName) {
     this.trueDisplayName = trueDisplayName;
   }
 
 
-  public BooleanFlagDefaults falseDisplayName(String falseDisplayName) {
+  public BooleanFlagDefaults falseDisplayName(@javax.annotation.Nonnull String falseDisplayName) {
     this.falseDisplayName = falseDisplayName;
     return this;
   }
 
-   /**
+  /**
    * The display name for the false variation, displayed in the LaunchDarkly user interface
    * @return falseDisplayName
-  **/
+   */
   @javax.annotation.Nonnull
   public String getFalseDisplayName() {
     return falseDisplayName;
   }
 
-  public void setFalseDisplayName(String falseDisplayName) {
+  public void setFalseDisplayName(@javax.annotation.Nonnull String falseDisplayName) {
     this.falseDisplayName = falseDisplayName;
   }
 
 
-  public BooleanFlagDefaults trueDescription(String trueDescription) {
+  public BooleanFlagDefaults trueDescription(@javax.annotation.Nonnull String trueDescription) {
     this.trueDescription = trueDescription;
     return this;
   }
 
-   /**
+  /**
    * The description for the true variation
    * @return trueDescription
-  **/
+   */
   @javax.annotation.Nonnull
   public String getTrueDescription() {
     return trueDescription;
   }
 
-  public void setTrueDescription(String trueDescription) {
+  public void setTrueDescription(@javax.annotation.Nonnull String trueDescription) {
     this.trueDescription = trueDescription;
   }
 
 
-  public BooleanFlagDefaults falseDescription(String falseDescription) {
+  public BooleanFlagDefaults falseDescription(@javax.annotation.Nonnull String falseDescription) {
     this.falseDescription = falseDescription;
     return this;
   }
 
-   /**
+  /**
    * The description for the false variation
    * @return falseDescription
-  **/
+   */
   @javax.annotation.Nonnull
   public String getFalseDescription() {
     return falseDescription;
   }
 
-  public void setFalseDescription(String falseDescription) {
+  public void setFalseDescription(@javax.annotation.Nonnull String falseDescription) {
     this.falseDescription = falseDescription;
   }
 
 
-  public BooleanFlagDefaults onVariation(Integer onVariation) {
+  public BooleanFlagDefaults onVariation(@javax.annotation.Nonnull Integer onVariation) {
     this.onVariation = onVariation;
     return this;
   }
 
-   /**
+  /**
    * The variation index of the flag variation to use for the default targeting behavior when a flag&#39;s targeting is on and the target did not match any rules
    * @return onVariation
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getOnVariation() {
     return onVariation;
   }
 
-  public void setOnVariation(Integer onVariation) {
+  public void setOnVariation(@javax.annotation.Nonnull Integer onVariation) {
     this.onVariation = onVariation;
   }
 
 
-  public BooleanFlagDefaults offVariation(Integer offVariation) {
+  public BooleanFlagDefaults offVariation(@javax.annotation.Nonnull Integer offVariation) {
     this.offVariation = offVariation;
     return this;
   }
 
-   /**
+  /**
    * The variation index of the flag variation to use for the default targeting behavior when a flag&#39;s targeting is off
    * @return offVariation
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getOffVariation() {
     return offVariation;
   }
 
-  public void setOffVariation(Integer offVariation) {
+  public void setOffVariation(@javax.annotation.Nonnull Integer offVariation) {
     this.offVariation = offVariation;
   }
 
@@ -292,55 +299,43 @@ public class BooleanFlagDefaults {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("trueDisplayName");
-    openapiFields.add("falseDisplayName");
-    openapiFields.add("trueDescription");
-    openapiFields.add("falseDescription");
-    openapiFields.add("onVariation");
-    openapiFields.add("offVariation");
+    openapiFields = new HashSet<String>(Arrays.asList("trueDisplayName", "falseDisplayName", "trueDescription", "falseDescription", "onVariation", "offVariation"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("trueDisplayName");
-    openapiRequiredFields.add("falseDisplayName");
-    openapiRequiredFields.add("trueDescription");
-    openapiRequiredFields.add("falseDescription");
-    openapiRequiredFields.add("onVariation");
-    openapiRequiredFields.add("offVariation");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("trueDisplayName", "falseDisplayName", "trueDescription", "falseDescription", "onVariation", "offVariation"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to BooleanFlagDefaults
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to BooleanFlagDefaults
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!BooleanFlagDefaults.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in BooleanFlagDefaults is not found in the empty JSON string", BooleanFlagDefaults.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in BooleanFlagDefaults is not found in the empty JSON string", BooleanFlagDefaults.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : BooleanFlagDefaults.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("trueDisplayName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `trueDisplayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("trueDisplayName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `trueDisplayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("trueDisplayName").toString()));
       }
       if (!jsonObj.get("falseDisplayName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `falseDisplayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("falseDisplayName").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `falseDisplayName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("falseDisplayName").toString()));
       }
       if (!jsonObj.get("trueDescription").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `trueDescription` to be a primitive type in the JSON string but got `%s`", jsonObj.get("trueDescription").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `trueDescription` to be a primitive type in the JSON string but got `%s`", jsonObj.get("trueDescription").toString()));
       }
       if (!jsonObj.get("falseDescription").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `falseDescription` to be a primitive type in the JSON string but got `%s`", jsonObj.get("falseDescription").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `falseDescription` to be a primitive type in the JSON string but got `%s`", jsonObj.get("falseDescription").toString()));
       }
   }
 
@@ -401,7 +396,7 @@ public class BooleanFlagDefaults {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -416,22 +411,22 @@ public class BooleanFlagDefaults {
     }
   }
 
- /**
-  * Create an instance of BooleanFlagDefaults given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of BooleanFlagDefaults
-  * @throws IOException if the JSON string is invalid with respect to BooleanFlagDefaults
-  */
+  /**
+   * Create an instance of BooleanFlagDefaults given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of BooleanFlagDefaults
+   * @throws IOException if the JSON string is invalid with respect to BooleanFlagDefaults
+   */
   public static BooleanFlagDefaults fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, BooleanFlagDefaults.class);
   }
 
- /**
-  * Convert an instance of BooleanFlagDefaults to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of BooleanFlagDefaults to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

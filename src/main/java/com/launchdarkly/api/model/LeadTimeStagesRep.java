@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,134 +38,139 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * LeadTimeStagesRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class LeadTimeStagesRep {
   public static final String SERIALIZED_NAME_CODING_DURATION_MS = "codingDurationMs";
   @SerializedName(SERIALIZED_NAME_CODING_DURATION_MS)
+  @javax.annotation.Nonnull
   private Long codingDurationMs;
 
   public static final String SERIALIZED_NAME_REVIEW_DURATION_MS = "reviewDurationMs";
   @SerializedName(SERIALIZED_NAME_REVIEW_DURATION_MS)
+  @javax.annotation.Nullable
   private Long reviewDurationMs;
 
   public static final String SERIALIZED_NAME_WAIT_DURATION_MS = "waitDurationMs";
   @SerializedName(SERIALIZED_NAME_WAIT_DURATION_MS)
+  @javax.annotation.Nullable
   private Long waitDurationMs;
 
   public static final String SERIALIZED_NAME_DEPLOY_DURATION_MS = "deployDurationMs";
   @SerializedName(SERIALIZED_NAME_DEPLOY_DURATION_MS)
+  @javax.annotation.Nullable
   private Long deployDurationMs;
 
   public static final String SERIALIZED_NAME_TOTAL_LEAD_TIME_MS = "totalLeadTimeMs";
   @SerializedName(SERIALIZED_NAME_TOTAL_LEAD_TIME_MS)
+  @javax.annotation.Nullable
   private Long totalLeadTimeMs;
 
   public LeadTimeStagesRep() {
   }
 
-  public LeadTimeStagesRep codingDurationMs(Long codingDurationMs) {
+  public LeadTimeStagesRep codingDurationMs(@javax.annotation.Nonnull Long codingDurationMs) {
     this.codingDurationMs = codingDurationMs;
     return this;
   }
 
-   /**
+  /**
    * The coding duration in milliseconds
    * @return codingDurationMs
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCodingDurationMs() {
     return codingDurationMs;
   }
 
-  public void setCodingDurationMs(Long codingDurationMs) {
+  public void setCodingDurationMs(@javax.annotation.Nonnull Long codingDurationMs) {
     this.codingDurationMs = codingDurationMs;
   }
 
 
-  public LeadTimeStagesRep reviewDurationMs(Long reviewDurationMs) {
+  public LeadTimeStagesRep reviewDurationMs(@javax.annotation.Nullable Long reviewDurationMs) {
     this.reviewDurationMs = reviewDurationMs;
     return this;
   }
 
-   /**
+  /**
    * The review duration in milliseconds
    * @return reviewDurationMs
-  **/
+   */
   @javax.annotation.Nullable
   public Long getReviewDurationMs() {
     return reviewDurationMs;
   }
 
-  public void setReviewDurationMs(Long reviewDurationMs) {
+  public void setReviewDurationMs(@javax.annotation.Nullable Long reviewDurationMs) {
     this.reviewDurationMs = reviewDurationMs;
   }
 
 
-  public LeadTimeStagesRep waitDurationMs(Long waitDurationMs) {
+  public LeadTimeStagesRep waitDurationMs(@javax.annotation.Nullable Long waitDurationMs) {
     this.waitDurationMs = waitDurationMs;
     return this;
   }
 
-   /**
+  /**
    * The wait duration between merge time and deploy start time in milliseconds
    * @return waitDurationMs
-  **/
+   */
   @javax.annotation.Nullable
   public Long getWaitDurationMs() {
     return waitDurationMs;
   }
 
-  public void setWaitDurationMs(Long waitDurationMs) {
+  public void setWaitDurationMs(@javax.annotation.Nullable Long waitDurationMs) {
     this.waitDurationMs = waitDurationMs;
   }
 
 
-  public LeadTimeStagesRep deployDurationMs(Long deployDurationMs) {
+  public LeadTimeStagesRep deployDurationMs(@javax.annotation.Nullable Long deployDurationMs) {
     this.deployDurationMs = deployDurationMs;
     return this;
   }
 
-   /**
+  /**
    * The deploy duration in milliseconds
    * @return deployDurationMs
-  **/
+   */
   @javax.annotation.Nullable
   public Long getDeployDurationMs() {
     return deployDurationMs;
   }
 
-  public void setDeployDurationMs(Long deployDurationMs) {
+  public void setDeployDurationMs(@javax.annotation.Nullable Long deployDurationMs) {
     this.deployDurationMs = deployDurationMs;
   }
 
 
-  public LeadTimeStagesRep totalLeadTimeMs(Long totalLeadTimeMs) {
+  public LeadTimeStagesRep totalLeadTimeMs(@javax.annotation.Nullable Long totalLeadTimeMs) {
     this.totalLeadTimeMs = totalLeadTimeMs;
     return this;
   }
 
-   /**
+  /**
    * The total lead time in milliseconds
    * @return totalLeadTimeMs
-  **/
+   */
   @javax.annotation.Nullable
   public Long getTotalLeadTimeMs() {
     return totalLeadTimeMs;
   }
 
-  public void setTotalLeadTimeMs(Long totalLeadTimeMs) {
+  public void setTotalLeadTimeMs(@javax.annotation.Nullable Long totalLeadTimeMs) {
     this.totalLeadTimeMs = totalLeadTimeMs;
   }
 
@@ -267,35 +273,29 @@ public class LeadTimeStagesRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("codingDurationMs");
-    openapiFields.add("reviewDurationMs");
-    openapiFields.add("waitDurationMs");
-    openapiFields.add("deployDurationMs");
-    openapiFields.add("totalLeadTimeMs");
+    openapiFields = new HashSet<String>(Arrays.asList("codingDurationMs", "reviewDurationMs", "waitDurationMs", "deployDurationMs", "totalLeadTimeMs"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("codingDurationMs");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("codingDurationMs"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to LeadTimeStagesRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to LeadTimeStagesRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!LeadTimeStagesRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in LeadTimeStagesRep is not found in the empty JSON string", LeadTimeStagesRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in LeadTimeStagesRep is not found in the empty JSON string", LeadTimeStagesRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : LeadTimeStagesRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -358,7 +358,7 @@ public class LeadTimeStagesRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -373,22 +373,22 @@ public class LeadTimeStagesRep {
     }
   }
 
- /**
-  * Create an instance of LeadTimeStagesRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of LeadTimeStagesRep
-  * @throws IOException if the JSON string is invalid with respect to LeadTimeStagesRep
-  */
+  /**
+   * Create an instance of LeadTimeStagesRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of LeadTimeStagesRep
+   * @throws IOException if the JSON string is invalid with respect to LeadTimeStagesRep
+   */
   public static LeadTimeStagesRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, LeadTimeStagesRep.class);
   }
 
- /**
-  * Convert an instance of LeadTimeStagesRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of LeadTimeStagesRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

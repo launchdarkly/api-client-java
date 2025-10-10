@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,52 +43,59 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * TeamPostInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class TeamPostInput {
   public static final String SERIALIZED_NAME_CUSTOM_ROLE_KEYS = "customRoleKeys";
   @SerializedName(SERIALIZED_NAME_CUSTOM_ROLE_KEYS)
+  @javax.annotation.Nullable
   private List<String> customRoleKeys = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_MEMBER_I_DS = "memberIDs";
   @SerializedName(SERIALIZED_NAME_MEMBER_I_DS)
+  @javax.annotation.Nullable
   private List<String> memberIDs = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_PERMISSION_GRANTS = "permissionGrants";
   @SerializedName(SERIALIZED_NAME_PERMISSION_GRANTS)
+  @javax.annotation.Nullable
   private List<PermissionGrantInput> permissionGrants = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ROLE_ATTRIBUTES = "roleAttributes";
   @SerializedName(SERIALIZED_NAME_ROLE_ATTRIBUTES)
+  @javax.annotation.Nullable
   private Map<String, List<String>> roleAttributes = new HashMap<>();
 
   public TeamPostInput() {
   }
 
-  public TeamPostInput customRoleKeys(List<String> customRoleKeys) {
+  public TeamPostInput customRoleKeys(@javax.annotation.Nullable List<String> customRoleKeys) {
     this.customRoleKeys = customRoleKeys;
     return this;
   }
@@ -100,59 +108,59 @@ public class TeamPostInput {
     return this;
   }
 
-   /**
+  /**
    * List of custom role keys the team will access
    * @return customRoleKeys
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getCustomRoleKeys() {
     return customRoleKeys;
   }
 
-  public void setCustomRoleKeys(List<String> customRoleKeys) {
+  public void setCustomRoleKeys(@javax.annotation.Nullable List<String> customRoleKeys) {
     this.customRoleKeys = customRoleKeys;
   }
 
 
-  public TeamPostInput description(String description) {
+  public TeamPostInput description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * A description of the team
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public TeamPostInput key(String key) {
+  public TeamPostInput key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * The team key
    * @return key
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public TeamPostInput memberIDs(List<String> memberIDs) {
+  public TeamPostInput memberIDs(@javax.annotation.Nullable List<String> memberIDs) {
     this.memberIDs = memberIDs;
     return this;
   }
@@ -165,40 +173,40 @@ public class TeamPostInput {
     return this;
   }
 
-   /**
+  /**
    * A list of member IDs who belong to the team
    * @return memberIDs
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getMemberIDs() {
     return memberIDs;
   }
 
-  public void setMemberIDs(List<String> memberIDs) {
+  public void setMemberIDs(@javax.annotation.Nullable List<String> memberIDs) {
     this.memberIDs = memberIDs;
   }
 
 
-  public TeamPostInput name(String name) {
+  public TeamPostInput name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * A human-friendly name for the team
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public TeamPostInput permissionGrants(List<PermissionGrantInput> permissionGrants) {
+  public TeamPostInput permissionGrants(@javax.annotation.Nullable List<PermissionGrantInput> permissionGrants) {
     this.permissionGrants = permissionGrants;
     return this;
   }
@@ -211,21 +219,21 @@ public class TeamPostInput {
     return this;
   }
 
-   /**
+  /**
    * A list of permission grants. Permission grants allow access to a specific action, without having to create or update a custom role.
    * @return permissionGrants
-  **/
+   */
   @javax.annotation.Nullable
   public List<PermissionGrantInput> getPermissionGrants() {
     return permissionGrants;
   }
 
-  public void setPermissionGrants(List<PermissionGrantInput> permissionGrants) {
+  public void setPermissionGrants(@javax.annotation.Nullable List<PermissionGrantInput> permissionGrants) {
     this.permissionGrants = permissionGrants;
   }
 
 
-  public TeamPostInput roleAttributes(Map<String, List<String>> roleAttributes) {
+  public TeamPostInput roleAttributes(@javax.annotation.Nullable Map<String, List<String>> roleAttributes) {
     this.roleAttributes = roleAttributes;
     return this;
   }
@@ -238,16 +246,16 @@ public class TeamPostInput {
     return this;
   }
 
-   /**
+  /**
    * Get roleAttributes
    * @return roleAttributes
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, List<String>> getRoleAttributes() {
     return roleAttributes;
   }
 
-  public void setRoleAttributes(Map<String, List<String>> roleAttributes) {
+  public void setRoleAttributes(@javax.annotation.Nullable Map<String, List<String>> roleAttributes) {
     this.roleAttributes = roleAttributes;
   }
 
@@ -354,64 +362,55 @@ public class TeamPostInput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("customRoleKeys");
-    openapiFields.add("description");
-    openapiFields.add("key");
-    openapiFields.add("memberIDs");
-    openapiFields.add("name");
-    openapiFields.add("permissionGrants");
-    openapiFields.add("roleAttributes");
+    openapiFields = new HashSet<String>(Arrays.asList("customRoleKeys", "description", "key", "memberIDs", "name", "permissionGrants", "roleAttributes"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("name");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("key", "name"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to TeamPostInput
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to TeamPostInput
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!TeamPostInput.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in TeamPostInput is not found in the empty JSON string", TeamPostInput.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in TeamPostInput is not found in the empty JSON string", TeamPostInput.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : TeamPostInput.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the optional json data is an array if present
       if (jsonObj.get("customRoleKeys") != null && !jsonObj.get("customRoleKeys").isJsonNull() && !jsonObj.get("customRoleKeys").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `customRoleKeys` to be an array in the JSON string but got `%s`", jsonObj.get("customRoleKeys").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `customRoleKeys` to be an array in the JSON string but got `%s`", jsonObj.get("customRoleKeys").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("memberIDs") != null && !jsonObj.get("memberIDs").isJsonNull() && !jsonObj.get("memberIDs").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `memberIDs` to be an array in the JSON string but got `%s`", jsonObj.get("memberIDs").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `memberIDs` to be an array in the JSON string but got `%s`", jsonObj.get("memberIDs").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (jsonObj.get("permissionGrants") != null && !jsonObj.get("permissionGrants").isJsonNull()) {
         JsonArray jsonArraypermissionGrants = jsonObj.getAsJsonArray("permissionGrants");
         if (jsonArraypermissionGrants != null) {
           // ensure the json data is an array
           if (!jsonObj.get("permissionGrants").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `permissionGrants` to be an array in the JSON string but got `%s`", jsonObj.get("permissionGrants").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `permissionGrants` to be an array in the JSON string but got `%s`", jsonObj.get("permissionGrants").toString()));
           }
 
           // validate the optional field `permissionGrants` (array)
@@ -479,7 +478,7 @@ public class TeamPostInput {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -494,22 +493,22 @@ public class TeamPostInput {
     }
   }
 
- /**
-  * Create an instance of TeamPostInput given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of TeamPostInput
-  * @throws IOException if the JSON string is invalid with respect to TeamPostInput
-  */
+  /**
+   * Create an instance of TeamPostInput given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of TeamPostInput
+   * @throws IOException if the JSON string is invalid with respect to TeamPostInput
+   */
   public static TeamPostInput fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, TeamPostInput.class);
   }
 
- /**
-  * Convert an instance of TeamPostInput to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of TeamPostInput to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

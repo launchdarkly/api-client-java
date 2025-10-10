@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,51 +40,53 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * RecentTriggerBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class RecentTriggerBody {
   public static final String SERIALIZED_NAME_TIMESTAMP = "timestamp";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
+  @javax.annotation.Nullable
   private Long timestamp;
 
   public static final String SERIALIZED_NAME_JSON_BODY = "jsonBody";
   @SerializedName(SERIALIZED_NAME_JSON_BODY)
+  @javax.annotation.Nullable
   private Map<String, Object> jsonBody = new HashMap<>();
 
   public RecentTriggerBody() {
   }
 
-  public RecentTriggerBody timestamp(Long timestamp) {
+  public RecentTriggerBody timestamp(@javax.annotation.Nullable Long timestamp) {
     this.timestamp = timestamp;
     return this;
   }
 
-   /**
+  /**
    * Get timestamp
    * @return timestamp
-  **/
+   */
   @javax.annotation.Nullable
   public Long getTimestamp() {
     return timestamp;
   }
 
-  public void setTimestamp(Long timestamp) {
+  public void setTimestamp(@javax.annotation.Nullable Long timestamp) {
     this.timestamp = timestamp;
   }
 
 
-  public RecentTriggerBody jsonBody(Map<String, Object> jsonBody) {
+  public RecentTriggerBody jsonBody(@javax.annotation.Nullable Map<String, Object> jsonBody) {
     this.jsonBody = jsonBody;
     return this;
   }
@@ -96,16 +99,16 @@ public class RecentTriggerBody {
     return this;
   }
 
-   /**
+  /**
    * The marshalled JSON request body for the incoming trigger webhook. If this is empty or contains invalid JSON, the timestamp is recorded but this field will be empty.
    * @return jsonBody
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Object> getJsonBody() {
     return jsonBody;
   }
 
-  public void setJsonBody(Map<String, Object> jsonBody) {
+  public void setJsonBody(@javax.annotation.Nullable Map<String, Object> jsonBody) {
     this.jsonBody = jsonBody;
   }
 
@@ -202,24 +205,22 @@ public class RecentTriggerBody {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("timestamp");
-    openapiFields.add("jsonBody");
+    openapiFields = new HashSet<String>(Arrays.asList("timestamp", "jsonBody"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to RecentTriggerBody
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to RecentTriggerBody
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RecentTriggerBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in RecentTriggerBody is not found in the empty JSON string", RecentTriggerBody.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in RecentTriggerBody is not found in the empty JSON string", RecentTriggerBody.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -282,7 +283,7 @@ public class RecentTriggerBody {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -297,22 +298,22 @@ public class RecentTriggerBody {
     }
   }
 
- /**
-  * Create an instance of RecentTriggerBody given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RecentTriggerBody
-  * @throws IOException if the JSON string is invalid with respect to RecentTriggerBody
-  */
+  /**
+   * Create an instance of RecentTriggerBody given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of RecentTriggerBody
+   * @throws IOException if the JSON string is invalid with respect to RecentTriggerBody
+   */
   public static RecentTriggerBody fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, RecentTriggerBody.class);
   }
 
- /**
-  * Convert an instance of RecentTriggerBody to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of RecentTriggerBody to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

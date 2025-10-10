@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,157 +38,163 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * EvaluationReason
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class EvaluationReason {
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
+  @javax.annotation.Nonnull
   private String kind;
 
   public static final String SERIALIZED_NAME_RULE_INDEX = "ruleIndex";
   @SerializedName(SERIALIZED_NAME_RULE_INDEX)
+  @javax.annotation.Nullable
   private Integer ruleIndex;
 
   public static final String SERIALIZED_NAME_RULE_I_D = "ruleID";
   @SerializedName(SERIALIZED_NAME_RULE_I_D)
+  @javax.annotation.Nullable
   private String ruleID;
 
   public static final String SERIALIZED_NAME_PREREQUISITE_KEY = "prerequisiteKey";
   @SerializedName(SERIALIZED_NAME_PREREQUISITE_KEY)
+  @javax.annotation.Nullable
   private String prerequisiteKey;
 
   public static final String SERIALIZED_NAME_IN_EXPERIMENT = "inExperiment";
   @SerializedName(SERIALIZED_NAME_IN_EXPERIMENT)
+  @javax.annotation.Nullable
   private Boolean inExperiment;
 
   public static final String SERIALIZED_NAME_ERROR_KIND = "errorKind";
   @SerializedName(SERIALIZED_NAME_ERROR_KIND)
+  @javax.annotation.Nullable
   private String errorKind;
 
   public EvaluationReason() {
   }
 
-  public EvaluationReason kind(String kind) {
+  public EvaluationReason kind(@javax.annotation.Nonnull String kind) {
     this.kind = kind;
     return this;
   }
 
-   /**
+  /**
    * Describes the general reason that LaunchDarkly selected this variation.
    * @return kind
-  **/
+   */
   @javax.annotation.Nonnull
   public String getKind() {
     return kind;
   }
 
-  public void setKind(String kind) {
+  public void setKind(@javax.annotation.Nonnull String kind) {
     this.kind = kind;
   }
 
 
-  public EvaluationReason ruleIndex(Integer ruleIndex) {
+  public EvaluationReason ruleIndex(@javax.annotation.Nullable Integer ruleIndex) {
     this.ruleIndex = ruleIndex;
     return this;
   }
 
-   /**
+  /**
    * The positional index of the matching rule if the kind is &#39;RULE_MATCH&#39;. The index is 0-based.
    * @return ruleIndex
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getRuleIndex() {
     return ruleIndex;
   }
 
-  public void setRuleIndex(Integer ruleIndex) {
+  public void setRuleIndex(@javax.annotation.Nullable Integer ruleIndex) {
     this.ruleIndex = ruleIndex;
   }
 
 
-  public EvaluationReason ruleID(String ruleID) {
+  public EvaluationReason ruleID(@javax.annotation.Nullable String ruleID) {
     this.ruleID = ruleID;
     return this;
   }
 
-   /**
+  /**
    * The unique identifier of the matching rule if the kind is &#39;RULE_MATCH&#39;.
    * @return ruleID
-  **/
+   */
   @javax.annotation.Nullable
   public String getRuleID() {
     return ruleID;
   }
 
-  public void setRuleID(String ruleID) {
+  public void setRuleID(@javax.annotation.Nullable String ruleID) {
     this.ruleID = ruleID;
   }
 
 
-  public EvaluationReason prerequisiteKey(String prerequisiteKey) {
+  public EvaluationReason prerequisiteKey(@javax.annotation.Nullable String prerequisiteKey) {
     this.prerequisiteKey = prerequisiteKey;
     return this;
   }
 
-   /**
+  /**
    * The key of the flag that failed if the kind is &#39;PREREQUISITE_FAILED&#39;.
    * @return prerequisiteKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getPrerequisiteKey() {
     return prerequisiteKey;
   }
 
-  public void setPrerequisiteKey(String prerequisiteKey) {
+  public void setPrerequisiteKey(@javax.annotation.Nullable String prerequisiteKey) {
     this.prerequisiteKey = prerequisiteKey;
   }
 
 
-  public EvaluationReason inExperiment(Boolean inExperiment) {
+  public EvaluationReason inExperiment(@javax.annotation.Nullable Boolean inExperiment) {
     this.inExperiment = inExperiment;
     return this;
   }
 
-   /**
+  /**
    * Indicates whether the evaluation occurred as part of an experiment.
    * @return inExperiment
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getInExperiment() {
     return inExperiment;
   }
 
-  public void setInExperiment(Boolean inExperiment) {
+  public void setInExperiment(@javax.annotation.Nullable Boolean inExperiment) {
     this.inExperiment = inExperiment;
   }
 
 
-  public EvaluationReason errorKind(String errorKind) {
+  public EvaluationReason errorKind(@javax.annotation.Nullable String errorKind) {
     this.errorKind = errorKind;
     return this;
   }
 
-   /**
+  /**
    * The specific error type if the kind is &#39;ERROR&#39;.
    * @return errorKind
-  **/
+   */
   @javax.annotation.Nullable
   public String getErrorKind() {
     return errorKind;
   }
 
-  public void setErrorKind(String errorKind) {
+  public void setErrorKind(@javax.annotation.Nullable String errorKind) {
     this.errorKind = errorKind;
   }
 
@@ -292,50 +299,43 @@ public class EvaluationReason {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("kind");
-    openapiFields.add("ruleIndex");
-    openapiFields.add("ruleID");
-    openapiFields.add("prerequisiteKey");
-    openapiFields.add("inExperiment");
-    openapiFields.add("errorKind");
+    openapiFields = new HashSet<String>(Arrays.asList("kind", "ruleIndex", "ruleID", "prerequisiteKey", "inExperiment", "errorKind"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("kind");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("kind"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to EvaluationReason
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to EvaluationReason
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!EvaluationReason.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in EvaluationReason is not found in the empty JSON string", EvaluationReason.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in EvaluationReason is not found in the empty JSON string", EvaluationReason.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : EvaluationReason.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("kind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
       if ((jsonObj.get("ruleID") != null && !jsonObj.get("ruleID").isJsonNull()) && !jsonObj.get("ruleID").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ruleID` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ruleID").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `ruleID` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ruleID").toString()));
       }
       if ((jsonObj.get("prerequisiteKey") != null && !jsonObj.get("prerequisiteKey").isJsonNull()) && !jsonObj.get("prerequisiteKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `prerequisiteKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prerequisiteKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `prerequisiteKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prerequisiteKey").toString()));
       }
       if ((jsonObj.get("errorKind") != null && !jsonObj.get("errorKind").isJsonNull()) && !jsonObj.get("errorKind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `errorKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("errorKind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `errorKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("errorKind").toString()));
       }
   }
 
@@ -396,7 +396,7 @@ public class EvaluationReason {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -411,22 +411,22 @@ public class EvaluationReason {
     }
   }
 
- /**
-  * Create an instance of EvaluationReason given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of EvaluationReason
-  * @throws IOException if the JSON string is invalid with respect to EvaluationReason
-  */
+  /**
+   * Create an instance of EvaluationReason given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of EvaluationReason
+   * @throws IOException if the JSON string is invalid with respect to EvaluationReason
+   */
   public static EvaluationReason fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, EvaluationReason.class);
   }
 
- /**
-  * Convert an instance of EvaluationReason to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of EvaluationReason to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

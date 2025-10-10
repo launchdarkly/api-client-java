@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,30 +41,33 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * FlagCopyConfigPost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class FlagCopyConfigPost {
   public static final String SERIALIZED_NAME_SOURCE = "source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
+  @javax.annotation.Nonnull
   private FlagCopyConfigEnvironment source;
 
   public static final String SERIALIZED_NAME_TARGET = "target";
   @SerializedName(SERIALIZED_NAME_TARGET)
+  @javax.annotation.Nonnull
   private FlagCopyConfigEnvironment target;
 
   public static final String SERIALIZED_NAME_COMMENT = "comment";
   @SerializedName(SERIALIZED_NAME_COMMENT)
+  @javax.annotation.Nullable
   private String comment;
 
   /**
@@ -71,19 +75,19 @@ public class FlagCopyConfigPost {
    */
   @JsonAdapter(IncludedActionsEnum.Adapter.class)
   public enum IncludedActionsEnum {
-    UPDATEON("updateOn"),
+    UPDATE_ON("updateOn"),
     
-    UPDATERULES("updateRules"),
+    UPDATE_RULES("updateRules"),
     
-    UPDATEFALLTHROUGH("updateFallthrough"),
+    UPDATE_FALLTHROUGH("updateFallthrough"),
     
-    UPDATEOFFVARIATION("updateOffVariation"),
+    UPDATE_OFF_VARIATION("updateOffVariation"),
     
-    UPDATEPREREQUISITES("updatePrerequisites"),
+    UPDATE_PREREQUISITES("updatePrerequisites"),
     
-    UPDATETARGETS("updateTargets"),
+    UPDATE_TARGETS("updateTargets"),
     
-    UPDATEFLAGCONFIGMIGRATIONSETTINGS("updateFlagConfigMigrationSettings");
+    UPDATE_FLAG_CONFIG_MIGRATION_SETTINGS("updateFlagConfigMigrationSettings");
 
     private String value;
 
@@ -130,6 +134,7 @@ public class FlagCopyConfigPost {
 
   public static final String SERIALIZED_NAME_INCLUDED_ACTIONS = "includedActions";
   @SerializedName(SERIALIZED_NAME_INCLUDED_ACTIONS)
+  @javax.annotation.Nullable
   private List<IncludedActionsEnum> includedActions = new ArrayList<>();
 
   /**
@@ -137,19 +142,19 @@ public class FlagCopyConfigPost {
    */
   @JsonAdapter(ExcludedActionsEnum.Adapter.class)
   public enum ExcludedActionsEnum {
-    UPDATEON("updateOn"),
+    UPDATE_ON("updateOn"),
     
-    UPDATERULES("updateRules"),
+    UPDATE_RULES("updateRules"),
     
-    UPDATEFALLTHROUGH("updateFallthrough"),
+    UPDATE_FALLTHROUGH("updateFallthrough"),
     
-    UPDATEOFFVARIATION("updateOffVariation"),
+    UPDATE_OFF_VARIATION("updateOffVariation"),
     
-    UPDATEPREREQUISITES("updatePrerequisites"),
+    UPDATE_PREREQUISITES("updatePrerequisites"),
     
-    UPDATETARGETS("updateTargets"),
+    UPDATE_TARGETS("updateTargets"),
     
-    UPDATEFLAGCONFIGMIGRATIONSETTINGS("updateFlagConfigMigrationSettings");
+    UPDATE_FLAG_CONFIG_MIGRATION_SETTINGS("updateFlagConfigMigrationSettings");
 
     private String value;
 
@@ -196,69 +201,70 @@ public class FlagCopyConfigPost {
 
   public static final String SERIALIZED_NAME_EXCLUDED_ACTIONS = "excludedActions";
   @SerializedName(SERIALIZED_NAME_EXCLUDED_ACTIONS)
+  @javax.annotation.Nullable
   private List<ExcludedActionsEnum> excludedActions = new ArrayList<>();
 
   public FlagCopyConfigPost() {
   }
 
-  public FlagCopyConfigPost source(FlagCopyConfigEnvironment source) {
+  public FlagCopyConfigPost source(@javax.annotation.Nonnull FlagCopyConfigEnvironment source) {
     this.source = source;
     return this;
   }
 
-   /**
+  /**
    * Get source
    * @return source
-  **/
+   */
   @javax.annotation.Nonnull
   public FlagCopyConfigEnvironment getSource() {
     return source;
   }
 
-  public void setSource(FlagCopyConfigEnvironment source) {
+  public void setSource(@javax.annotation.Nonnull FlagCopyConfigEnvironment source) {
     this.source = source;
   }
 
 
-  public FlagCopyConfigPost target(FlagCopyConfigEnvironment target) {
+  public FlagCopyConfigPost target(@javax.annotation.Nonnull FlagCopyConfigEnvironment target) {
     this.target = target;
     return this;
   }
 
-   /**
+  /**
    * Get target
    * @return target
-  **/
+   */
   @javax.annotation.Nonnull
   public FlagCopyConfigEnvironment getTarget() {
     return target;
   }
 
-  public void setTarget(FlagCopyConfigEnvironment target) {
+  public void setTarget(@javax.annotation.Nonnull FlagCopyConfigEnvironment target) {
     this.target = target;
   }
 
 
-  public FlagCopyConfigPost comment(String comment) {
+  public FlagCopyConfigPost comment(@javax.annotation.Nullable String comment) {
     this.comment = comment;
     return this;
   }
 
-   /**
+  /**
    * Optional comment
    * @return comment
-  **/
+   */
   @javax.annotation.Nullable
   public String getComment() {
     return comment;
   }
 
-  public void setComment(String comment) {
+  public void setComment(@javax.annotation.Nullable String comment) {
     this.comment = comment;
   }
 
 
-  public FlagCopyConfigPost includedActions(List<IncludedActionsEnum> includedActions) {
+  public FlagCopyConfigPost includedActions(@javax.annotation.Nullable List<IncludedActionsEnum> includedActions) {
     this.includedActions = includedActions;
     return this;
   }
@@ -271,21 +277,21 @@ public class FlagCopyConfigPost {
     return this;
   }
 
-   /**
+  /**
    * Optional list of the flag changes to copy from the source environment to the target environment. You may include either &lt;code&gt;includedActions&lt;/code&gt; or &lt;code&gt;excludedActions&lt;/code&gt;, but not both. If you include neither, then all flag changes will be copied.
    * @return includedActions
-  **/
+   */
   @javax.annotation.Nullable
   public List<IncludedActionsEnum> getIncludedActions() {
     return includedActions;
   }
 
-  public void setIncludedActions(List<IncludedActionsEnum> includedActions) {
+  public void setIncludedActions(@javax.annotation.Nullable List<IncludedActionsEnum> includedActions) {
     this.includedActions = includedActions;
   }
 
 
-  public FlagCopyConfigPost excludedActions(List<ExcludedActionsEnum> excludedActions) {
+  public FlagCopyConfigPost excludedActions(@javax.annotation.Nullable List<ExcludedActionsEnum> excludedActions) {
     this.excludedActions = excludedActions;
     return this;
   }
@@ -298,16 +304,16 @@ public class FlagCopyConfigPost {
     return this;
   }
 
-   /**
+  /**
    * Optional list of the flag changes NOT to copy from the source environment to the target environment. You may include either  &lt;code&gt;includedActions&lt;/code&gt; or &lt;code&gt;excludedActions&lt;/code&gt;, but not both. If you include neither, then all flag changes will be copied.
    * @return excludedActions
-  **/
+   */
   @javax.annotation.Nullable
   public List<ExcludedActionsEnum> getExcludedActions() {
     return excludedActions;
   }
 
-  public void setExcludedActions(List<ExcludedActionsEnum> excludedActions) {
+  public void setExcludedActions(@javax.annotation.Nullable List<ExcludedActionsEnum> excludedActions) {
     this.excludedActions = excludedActions;
   }
 
@@ -410,36 +416,29 @@ public class FlagCopyConfigPost {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("source");
-    openapiFields.add("target");
-    openapiFields.add("comment");
-    openapiFields.add("includedActions");
-    openapiFields.add("excludedActions");
+    openapiFields = new HashSet<String>(Arrays.asList("source", "target", "comment", "includedActions", "excludedActions"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("source");
-    openapiRequiredFields.add("target");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("source", "target"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FlagCopyConfigPost
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FlagCopyConfigPost
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FlagCopyConfigPost.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FlagCopyConfigPost is not found in the empty JSON string", FlagCopyConfigPost.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FlagCopyConfigPost is not found in the empty JSON string", FlagCopyConfigPost.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : FlagCopyConfigPost.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -448,15 +447,15 @@ public class FlagCopyConfigPost {
       // validate the required field `target`
       FlagCopyConfigEnvironment.validateJsonElement(jsonObj.get("target"));
       if ((jsonObj.get("comment") != null && !jsonObj.get("comment").isJsonNull()) && !jsonObj.get("comment").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `comment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comment").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `comment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comment").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("includedActions") != null && !jsonObj.get("includedActions").isJsonNull() && !jsonObj.get("includedActions").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `includedActions` to be an array in the JSON string but got `%s`", jsonObj.get("includedActions").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `includedActions` to be an array in the JSON string but got `%s`", jsonObj.get("includedActions").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("excludedActions") != null && !jsonObj.get("excludedActions").isJsonNull() && !jsonObj.get("excludedActions").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `excludedActions` to be an array in the JSON string but got `%s`", jsonObj.get("excludedActions").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `excludedActions` to be an array in the JSON string but got `%s`", jsonObj.get("excludedActions").toString()));
       }
   }
 
@@ -517,7 +516,7 @@ public class FlagCopyConfigPost {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -532,22 +531,22 @@ public class FlagCopyConfigPost {
     }
   }
 
- /**
-  * Create an instance of FlagCopyConfigPost given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FlagCopyConfigPost
-  * @throws IOException if the JSON string is invalid with respect to FlagCopyConfigPost
-  */
+  /**
+   * Create an instance of FlagCopyConfigPost given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FlagCopyConfigPost
+   * @throws IOException if the JSON string is invalid with respect to FlagCopyConfigPost
+   */
   public static FlagCopyConfigPost fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FlagCopyConfigPost.class);
   }
 
- /**
-  * Convert an instance of FlagCopyConfigPost to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FlagCopyConfigPost to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

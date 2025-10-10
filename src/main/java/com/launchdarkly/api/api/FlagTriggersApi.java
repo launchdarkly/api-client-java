@@ -91,7 +91,8 @@ public class FlagTriggersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Flag trigger response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -101,7 +102,7 @@ public class FlagTriggersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createTriggerWorkflowCall(String projectKey, String environmentKey, String featureFlagKey, TriggerPost triggerPost, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createTriggerWorkflowCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull TriggerPost triggerPost, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -150,7 +151,7 @@ public class FlagTriggersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createTriggerWorkflowValidateBeforeCall(String projectKey, String environmentKey, String featureFlagKey, TriggerPost triggerPost, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createTriggerWorkflowValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull TriggerPost triggerPost, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling createTriggerWorkflow(Async)");
@@ -185,7 +186,8 @@ public class FlagTriggersApi {
      * @return TriggerWorkflowRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Flag trigger response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -195,7 +197,7 @@ public class FlagTriggersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public TriggerWorkflowRep createTriggerWorkflow(String projectKey, String environmentKey, String featureFlagKey, TriggerPost triggerPost) throws ApiException {
+    public TriggerWorkflowRep createTriggerWorkflow(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull TriggerPost triggerPost) throws ApiException {
         ApiResponse<TriggerWorkflowRep> localVarResp = createTriggerWorkflowWithHttpInfo(projectKey, environmentKey, featureFlagKey, triggerPost);
         return localVarResp.getData();
     }
@@ -210,7 +212,8 @@ public class FlagTriggersApi {
      * @return ApiResponse&lt;TriggerWorkflowRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Flag trigger response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -220,7 +223,7 @@ public class FlagTriggersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TriggerWorkflowRep> createTriggerWorkflowWithHttpInfo(String projectKey, String environmentKey, String featureFlagKey, TriggerPost triggerPost) throws ApiException {
+    public ApiResponse<TriggerWorkflowRep> createTriggerWorkflowWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull TriggerPost triggerPost) throws ApiException {
         okhttp3.Call localVarCall = createTriggerWorkflowValidateBeforeCall(projectKey, environmentKey, featureFlagKey, triggerPost, null);
         Type localVarReturnType = new TypeToken<TriggerWorkflowRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -237,7 +240,8 @@ public class FlagTriggersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Flag trigger response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -247,7 +251,7 @@ public class FlagTriggersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createTriggerWorkflowAsync(String projectKey, String environmentKey, String featureFlagKey, TriggerPost triggerPost, final ApiCallback<TriggerWorkflowRep> _callback) throws ApiException {
+    public okhttp3.Call createTriggerWorkflowAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull TriggerPost triggerPost, final ApiCallback<TriggerWorkflowRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createTriggerWorkflowValidateBeforeCall(projectKey, environmentKey, featureFlagKey, triggerPost, _callback);
         Type localVarReturnType = new TypeToken<TriggerWorkflowRep>(){}.getType();
@@ -264,7 +268,8 @@ public class FlagTriggersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -274,7 +279,7 @@ public class FlagTriggersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteTriggerWorkflowCall(String projectKey, String environmentKey, String featureFlagKey, String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteTriggerWorkflowCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -323,7 +328,7 @@ public class FlagTriggersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteTriggerWorkflowValidateBeforeCall(String projectKey, String environmentKey, String featureFlagKey, String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteTriggerWorkflowValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling deleteTriggerWorkflow(Async)");
@@ -357,7 +362,8 @@ public class FlagTriggersApi {
      * @param id The flag trigger ID (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -367,7 +373,7 @@ public class FlagTriggersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteTriggerWorkflow(String projectKey, String environmentKey, String featureFlagKey, String id) throws ApiException {
+    public void deleteTriggerWorkflow(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String id) throws ApiException {
         deleteTriggerWorkflowWithHttpInfo(projectKey, environmentKey, featureFlagKey, id);
     }
 
@@ -381,7 +387,8 @@ public class FlagTriggersApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -391,7 +398,7 @@ public class FlagTriggersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteTriggerWorkflowWithHttpInfo(String projectKey, String environmentKey, String featureFlagKey, String id) throws ApiException {
+    public ApiResponse<Void> deleteTriggerWorkflowWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteTriggerWorkflowValidateBeforeCall(projectKey, environmentKey, featureFlagKey, id, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -407,7 +414,8 @@ public class FlagTriggersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -417,7 +425,7 @@ public class FlagTriggersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteTriggerWorkflowAsync(String projectKey, String environmentKey, String featureFlagKey, String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteTriggerWorkflowAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteTriggerWorkflowValidateBeforeCall(projectKey, environmentKey, featureFlagKey, id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -433,7 +441,8 @@ public class FlagTriggersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag trigger response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -442,7 +451,7 @@ public class FlagTriggersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTriggerWorkflowByIdCall(String projectKey, String featureFlagKey, String environmentKey, String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getTriggerWorkflowByIdCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -491,7 +500,7 @@ public class FlagTriggersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTriggerWorkflowByIdValidateBeforeCall(String projectKey, String featureFlagKey, String environmentKey, String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getTriggerWorkflowByIdValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getTriggerWorkflowById(Async)");
@@ -526,7 +535,8 @@ public class FlagTriggersApi {
      * @return TriggerWorkflowRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag trigger response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -535,7 +545,7 @@ public class FlagTriggersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public TriggerWorkflowRep getTriggerWorkflowById(String projectKey, String featureFlagKey, String environmentKey, String id) throws ApiException {
+    public TriggerWorkflowRep getTriggerWorkflowById(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id) throws ApiException {
         ApiResponse<TriggerWorkflowRep> localVarResp = getTriggerWorkflowByIdWithHttpInfo(projectKey, featureFlagKey, environmentKey, id);
         return localVarResp.getData();
     }
@@ -550,7 +560,8 @@ public class FlagTriggersApi {
      * @return ApiResponse&lt;TriggerWorkflowRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag trigger response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -559,7 +570,7 @@ public class FlagTriggersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TriggerWorkflowRep> getTriggerWorkflowByIdWithHttpInfo(String projectKey, String featureFlagKey, String environmentKey, String id) throws ApiException {
+    public ApiResponse<TriggerWorkflowRep> getTriggerWorkflowByIdWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getTriggerWorkflowByIdValidateBeforeCall(projectKey, featureFlagKey, environmentKey, id, null);
         Type localVarReturnType = new TypeToken<TriggerWorkflowRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -576,7 +587,8 @@ public class FlagTriggersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag trigger response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -585,7 +597,7 @@ public class FlagTriggersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTriggerWorkflowByIdAsync(String projectKey, String featureFlagKey, String environmentKey, String id, final ApiCallback<TriggerWorkflowRep> _callback) throws ApiException {
+    public okhttp3.Call getTriggerWorkflowByIdAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback<TriggerWorkflowRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getTriggerWorkflowByIdValidateBeforeCall(projectKey, featureFlagKey, environmentKey, id, _callback);
         Type localVarReturnType = new TypeToken<TriggerWorkflowRep>(){}.getType();
@@ -601,7 +613,8 @@ public class FlagTriggersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag trigger collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -609,7 +622,7 @@ public class FlagTriggersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTriggerWorkflowsCall(String projectKey, String environmentKey, String featureFlagKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getTriggerWorkflowsCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -657,7 +670,7 @@ public class FlagTriggersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTriggerWorkflowsValidateBeforeCall(String projectKey, String environmentKey, String featureFlagKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getTriggerWorkflowsValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling getTriggerWorkflows(Async)");
@@ -686,7 +699,8 @@ public class FlagTriggersApi {
      * @return TriggerWorkflowCollectionRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag trigger collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -694,7 +708,7 @@ public class FlagTriggersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public TriggerWorkflowCollectionRep getTriggerWorkflows(String projectKey, String environmentKey, String featureFlagKey) throws ApiException {
+    public TriggerWorkflowCollectionRep getTriggerWorkflows(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey) throws ApiException {
         ApiResponse<TriggerWorkflowCollectionRep> localVarResp = getTriggerWorkflowsWithHttpInfo(projectKey, environmentKey, featureFlagKey);
         return localVarResp.getData();
     }
@@ -708,7 +722,8 @@ public class FlagTriggersApi {
      * @return ApiResponse&lt;TriggerWorkflowCollectionRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag trigger collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -716,7 +731,7 @@ public class FlagTriggersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TriggerWorkflowCollectionRep> getTriggerWorkflowsWithHttpInfo(String projectKey, String environmentKey, String featureFlagKey) throws ApiException {
+    public ApiResponse<TriggerWorkflowCollectionRep> getTriggerWorkflowsWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey) throws ApiException {
         okhttp3.Call localVarCall = getTriggerWorkflowsValidateBeforeCall(projectKey, environmentKey, featureFlagKey, null);
         Type localVarReturnType = new TypeToken<TriggerWorkflowCollectionRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -732,7 +747,8 @@ public class FlagTriggersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag trigger collection response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -740,7 +756,7 @@ public class FlagTriggersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTriggerWorkflowsAsync(String projectKey, String environmentKey, String featureFlagKey, final ApiCallback<TriggerWorkflowCollectionRep> _callback) throws ApiException {
+    public okhttp3.Call getTriggerWorkflowsAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, final ApiCallback<TriggerWorkflowCollectionRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getTriggerWorkflowsValidateBeforeCall(projectKey, environmentKey, featureFlagKey, _callback);
         Type localVarReturnType = new TypeToken<TriggerWorkflowCollectionRep>(){}.getType();
@@ -758,7 +774,8 @@ public class FlagTriggersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag trigger response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -769,7 +786,7 @@ public class FlagTriggersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchTriggerWorkflowCall(String projectKey, String environmentKey, String featureFlagKey, String id, FlagTriggerInput flagTriggerInput, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchTriggerWorkflowCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull FlagTriggerInput flagTriggerInput, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -819,7 +836,7 @@ public class FlagTriggersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchTriggerWorkflowValidateBeforeCall(String projectKey, String environmentKey, String featureFlagKey, String id, FlagTriggerInput flagTriggerInput, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchTriggerWorkflowValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull FlagTriggerInput flagTriggerInput, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling patchTriggerWorkflow(Async)");
@@ -860,7 +877,8 @@ public class FlagTriggersApi {
      * @return TriggerWorkflowRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag trigger response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -871,7 +889,7 @@ public class FlagTriggersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public TriggerWorkflowRep patchTriggerWorkflow(String projectKey, String environmentKey, String featureFlagKey, String id, FlagTriggerInput flagTriggerInput) throws ApiException {
+    public TriggerWorkflowRep patchTriggerWorkflow(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull FlagTriggerInput flagTriggerInput) throws ApiException {
         ApiResponse<TriggerWorkflowRep> localVarResp = patchTriggerWorkflowWithHttpInfo(projectKey, environmentKey, featureFlagKey, id, flagTriggerInput);
         return localVarResp.getData();
     }
@@ -887,7 +905,8 @@ public class FlagTriggersApi {
      * @return ApiResponse&lt;TriggerWorkflowRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag trigger response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -898,7 +917,7 @@ public class FlagTriggersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TriggerWorkflowRep> patchTriggerWorkflowWithHttpInfo(String projectKey, String environmentKey, String featureFlagKey, String id, FlagTriggerInput flagTriggerInput) throws ApiException {
+    public ApiResponse<TriggerWorkflowRep> patchTriggerWorkflowWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull FlagTriggerInput flagTriggerInput) throws ApiException {
         okhttp3.Call localVarCall = patchTriggerWorkflowValidateBeforeCall(projectKey, environmentKey, featureFlagKey, id, flagTriggerInput, null);
         Type localVarReturnType = new TypeToken<TriggerWorkflowRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -916,7 +935,8 @@ public class FlagTriggersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Flag trigger response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -927,7 +947,7 @@ public class FlagTriggersApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchTriggerWorkflowAsync(String projectKey, String environmentKey, String featureFlagKey, String id, FlagTriggerInput flagTriggerInput, final ApiCallback<TriggerWorkflowRep> _callback) throws ApiException {
+    public okhttp3.Call patchTriggerWorkflowAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull String id, @javax.annotation.Nonnull FlagTriggerInput flagTriggerInput, final ApiCallback<TriggerWorkflowRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchTriggerWorkflowValidateBeforeCall(projectKey, environmentKey, featureFlagKey, id, flagTriggerInput, _callback);
         Type localVarReturnType = new TypeToken<TriggerWorkflowRep>(){}.getType();

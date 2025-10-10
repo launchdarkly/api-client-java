@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,410 +42,427 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * PullRequestRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class PullRequestRep {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private UUID id;
 
   public static final String SERIALIZED_NAME_EXTERNAL_ID = "externalId";
   @SerializedName(SERIALIZED_NAME_EXTERNAL_ID)
+  @javax.annotation.Nonnull
   private String externalId;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
+  @javax.annotation.Nonnull
   private String title;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nonnull
   private String status;
 
   public static final String SERIALIZED_NAME_AUTHOR = "author";
   @SerializedName(SERIALIZED_NAME_AUTHOR)
+  @javax.annotation.Nonnull
   private String author;
 
   public static final String SERIALIZED_NAME_CREATE_TIME = "createTime";
   @SerializedName(SERIALIZED_NAME_CREATE_TIME)
+  @javax.annotation.Nonnull
   private Long createTime;
 
   public static final String SERIALIZED_NAME_MERGE_TIME = "mergeTime";
   @SerializedName(SERIALIZED_NAME_MERGE_TIME)
+  @javax.annotation.Nullable
   private Long mergeTime;
 
   public static final String SERIALIZED_NAME_MERGE_COMMIT_KEY = "mergeCommitKey";
   @SerializedName(SERIALIZED_NAME_MERGE_COMMIT_KEY)
+  @javax.annotation.Nullable
   private String mergeCommitKey;
 
   public static final String SERIALIZED_NAME_BASE_COMMIT_KEY = "baseCommitKey";
   @SerializedName(SERIALIZED_NAME_BASE_COMMIT_KEY)
+  @javax.annotation.Nonnull
   private String baseCommitKey;
 
   public static final String SERIALIZED_NAME_HEAD_COMMIT_KEY = "headCommitKey";
   @SerializedName(SERIALIZED_NAME_HEAD_COMMIT_KEY)
+  @javax.annotation.Nonnull
   private String headCommitKey;
 
   public static final String SERIALIZED_NAME_FILES_CHANGED = "filesChanged";
   @SerializedName(SERIALIZED_NAME_FILES_CHANGED)
+  @javax.annotation.Nonnull
   private Integer filesChanged;
 
   public static final String SERIALIZED_NAME_LINES_ADDED = "linesAdded";
   @SerializedName(SERIALIZED_NAME_LINES_ADDED)
+  @javax.annotation.Nonnull
   private Integer linesAdded;
 
   public static final String SERIALIZED_NAME_LINES_DELETED = "linesDeleted";
   @SerializedName(SERIALIZED_NAME_LINES_DELETED)
+  @javax.annotation.Nonnull
   private Integer linesDeleted;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
+  @javax.annotation.Nonnull
   private String url;
 
   public static final String SERIALIZED_NAME_DEPLOYMENTS = "deployments";
   @SerializedName(SERIALIZED_NAME_DEPLOYMENTS)
+  @javax.annotation.Nullable
   private DeploymentCollectionRep deployments;
 
   public static final String SERIALIZED_NAME_FLAG_REFERENCES = "flagReferences";
   @SerializedName(SERIALIZED_NAME_FLAG_REFERENCES)
+  @javax.annotation.Nullable
   private FlagReferenceCollectionRep flagReferences;
 
   public static final String SERIALIZED_NAME_LEAD_TIME = "leadTime";
   @SerializedName(SERIALIZED_NAME_LEAD_TIME)
+  @javax.annotation.Nullable
   private PullRequestLeadTimeRep leadTime;
 
   public PullRequestRep() {
   }
 
-  public PullRequestRep id(UUID id) {
+  public PullRequestRep id(@javax.annotation.Nonnull UUID id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The pull request internal ID
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public UUID getId() {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(@javax.annotation.Nonnull UUID id) {
     this.id = id;
   }
 
 
-  public PullRequestRep externalId(String externalId) {
+  public PullRequestRep externalId(@javax.annotation.Nonnull String externalId) {
     this.externalId = externalId;
     return this;
   }
 
-   /**
+  /**
    * The pull request number
    * @return externalId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getExternalId() {
     return externalId;
   }
 
-  public void setExternalId(String externalId) {
+  public void setExternalId(@javax.annotation.Nonnull String externalId) {
     this.externalId = externalId;
   }
 
 
-  public PullRequestRep title(String title) {
+  public PullRequestRep title(@javax.annotation.Nonnull String title) {
     this.title = title;
     return this;
   }
 
-   /**
+  /**
    * The pull request title
    * @return title
-  **/
+   */
   @javax.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(String title) {
+  public void setTitle(@javax.annotation.Nonnull String title) {
     this.title = title;
   }
 
 
-  public PullRequestRep status(String status) {
+  public PullRequestRep status(@javax.annotation.Nonnull String status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * The pull request status
    * @return status
-  **/
+   */
   @javax.annotation.Nonnull
   public String getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(@javax.annotation.Nonnull String status) {
     this.status = status;
   }
 
 
-  public PullRequestRep author(String author) {
+  public PullRequestRep author(@javax.annotation.Nonnull String author) {
     this.author = author;
     return this;
   }
 
-   /**
+  /**
    * The pull request author
    * @return author
-  **/
+   */
   @javax.annotation.Nonnull
   public String getAuthor() {
     return author;
   }
 
-  public void setAuthor(String author) {
+  public void setAuthor(@javax.annotation.Nonnull String author) {
     this.author = author;
   }
 
 
-  public PullRequestRep createTime(Long createTime) {
+  public PullRequestRep createTime(@javax.annotation.Nonnull Long createTime) {
     this.createTime = createTime;
     return this;
   }
 
-   /**
+  /**
    * Get createTime
    * @return createTime
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(Long createTime) {
+  public void setCreateTime(@javax.annotation.Nonnull Long createTime) {
     this.createTime = createTime;
   }
 
 
-  public PullRequestRep mergeTime(Long mergeTime) {
+  public PullRequestRep mergeTime(@javax.annotation.Nullable Long mergeTime) {
     this.mergeTime = mergeTime;
     return this;
   }
 
-   /**
+  /**
    * Get mergeTime
    * @return mergeTime
-  **/
+   */
   @javax.annotation.Nullable
   public Long getMergeTime() {
     return mergeTime;
   }
 
-  public void setMergeTime(Long mergeTime) {
+  public void setMergeTime(@javax.annotation.Nullable Long mergeTime) {
     this.mergeTime = mergeTime;
   }
 
 
-  public PullRequestRep mergeCommitKey(String mergeCommitKey) {
+  public PullRequestRep mergeCommitKey(@javax.annotation.Nullable String mergeCommitKey) {
     this.mergeCommitKey = mergeCommitKey;
     return this;
   }
 
-   /**
+  /**
    * The pull request merge commit key
    * @return mergeCommitKey
-  **/
+   */
   @javax.annotation.Nullable
   public String getMergeCommitKey() {
     return mergeCommitKey;
   }
 
-  public void setMergeCommitKey(String mergeCommitKey) {
+  public void setMergeCommitKey(@javax.annotation.Nullable String mergeCommitKey) {
     this.mergeCommitKey = mergeCommitKey;
   }
 
 
-  public PullRequestRep baseCommitKey(String baseCommitKey) {
+  public PullRequestRep baseCommitKey(@javax.annotation.Nonnull String baseCommitKey) {
     this.baseCommitKey = baseCommitKey;
     return this;
   }
 
-   /**
+  /**
    * The pull request base commit key
    * @return baseCommitKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getBaseCommitKey() {
     return baseCommitKey;
   }
 
-  public void setBaseCommitKey(String baseCommitKey) {
+  public void setBaseCommitKey(@javax.annotation.Nonnull String baseCommitKey) {
     this.baseCommitKey = baseCommitKey;
   }
 
 
-  public PullRequestRep headCommitKey(String headCommitKey) {
+  public PullRequestRep headCommitKey(@javax.annotation.Nonnull String headCommitKey) {
     this.headCommitKey = headCommitKey;
     return this;
   }
 
-   /**
+  /**
    * The pull request head commit key
    * @return headCommitKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getHeadCommitKey() {
     return headCommitKey;
   }
 
-  public void setHeadCommitKey(String headCommitKey) {
+  public void setHeadCommitKey(@javax.annotation.Nonnull String headCommitKey) {
     this.headCommitKey = headCommitKey;
   }
 
 
-  public PullRequestRep filesChanged(Integer filesChanged) {
+  public PullRequestRep filesChanged(@javax.annotation.Nonnull Integer filesChanged) {
     this.filesChanged = filesChanged;
     return this;
   }
 
-   /**
+  /**
    * The number of files changed
    * @return filesChanged
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getFilesChanged() {
     return filesChanged;
   }
 
-  public void setFilesChanged(Integer filesChanged) {
+  public void setFilesChanged(@javax.annotation.Nonnull Integer filesChanged) {
     this.filesChanged = filesChanged;
   }
 
 
-  public PullRequestRep linesAdded(Integer linesAdded) {
+  public PullRequestRep linesAdded(@javax.annotation.Nonnull Integer linesAdded) {
     this.linesAdded = linesAdded;
     return this;
   }
 
-   /**
+  /**
    * The number of lines added
    * @return linesAdded
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getLinesAdded() {
     return linesAdded;
   }
 
-  public void setLinesAdded(Integer linesAdded) {
+  public void setLinesAdded(@javax.annotation.Nonnull Integer linesAdded) {
     this.linesAdded = linesAdded;
   }
 
 
-  public PullRequestRep linesDeleted(Integer linesDeleted) {
+  public PullRequestRep linesDeleted(@javax.annotation.Nonnull Integer linesDeleted) {
     this.linesDeleted = linesDeleted;
     return this;
   }
 
-   /**
+  /**
    * The number of lines deleted
    * @return linesDeleted
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getLinesDeleted() {
     return linesDeleted;
   }
 
-  public void setLinesDeleted(Integer linesDeleted) {
+  public void setLinesDeleted(@javax.annotation.Nonnull Integer linesDeleted) {
     this.linesDeleted = linesDeleted;
   }
 
 
-  public PullRequestRep url(String url) {
+  public PullRequestRep url(@javax.annotation.Nonnull String url) {
     this.url = url;
     return this;
   }
 
-   /**
+  /**
    * The pull request URL
    * @return url
-  **/
+   */
   @javax.annotation.Nonnull
   public String getUrl() {
     return url;
   }
 
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nonnull String url) {
     this.url = url;
   }
 
 
-  public PullRequestRep deployments(DeploymentCollectionRep deployments) {
+  public PullRequestRep deployments(@javax.annotation.Nullable DeploymentCollectionRep deployments) {
     this.deployments = deployments;
     return this;
   }
 
-   /**
+  /**
    * Get deployments
    * @return deployments
-  **/
+   */
   @javax.annotation.Nullable
   public DeploymentCollectionRep getDeployments() {
     return deployments;
   }
 
-  public void setDeployments(DeploymentCollectionRep deployments) {
+  public void setDeployments(@javax.annotation.Nullable DeploymentCollectionRep deployments) {
     this.deployments = deployments;
   }
 
 
-  public PullRequestRep flagReferences(FlagReferenceCollectionRep flagReferences) {
+  public PullRequestRep flagReferences(@javax.annotation.Nullable FlagReferenceCollectionRep flagReferences) {
     this.flagReferences = flagReferences;
     return this;
   }
 
-   /**
+  /**
    * Get flagReferences
    * @return flagReferences
-  **/
+   */
   @javax.annotation.Nullable
   public FlagReferenceCollectionRep getFlagReferences() {
     return flagReferences;
   }
 
-  public void setFlagReferences(FlagReferenceCollectionRep flagReferences) {
+  public void setFlagReferences(@javax.annotation.Nullable FlagReferenceCollectionRep flagReferences) {
     this.flagReferences = flagReferences;
   }
 
 
-  public PullRequestRep leadTime(PullRequestLeadTimeRep leadTime) {
+  public PullRequestRep leadTime(@javax.annotation.Nullable PullRequestLeadTimeRep leadTime) {
     this.leadTime = leadTime;
     return this;
   }
 
-   /**
+  /**
    * Get leadTime
    * @return leadTime
-  **/
+   */
   @javax.annotation.Nullable
   public PullRequestLeadTimeRep getLeadTime() {
     return leadTime;
   }
 
-  public void setLeadTime(PullRequestLeadTimeRep leadTime) {
+  public void setLeadTime(@javax.annotation.Nullable PullRequestLeadTimeRep leadTime) {
     this.leadTime = leadTime;
   }
 
@@ -571,87 +589,58 @@ public class PullRequestRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("externalId");
-    openapiFields.add("title");
-    openapiFields.add("status");
-    openapiFields.add("author");
-    openapiFields.add("createTime");
-    openapiFields.add("mergeTime");
-    openapiFields.add("mergeCommitKey");
-    openapiFields.add("baseCommitKey");
-    openapiFields.add("headCommitKey");
-    openapiFields.add("filesChanged");
-    openapiFields.add("linesAdded");
-    openapiFields.add("linesDeleted");
-    openapiFields.add("url");
-    openapiFields.add("deployments");
-    openapiFields.add("flagReferences");
-    openapiFields.add("leadTime");
+    openapiFields = new HashSet<String>(Arrays.asList("id", "externalId", "title", "status", "author", "createTime", "mergeTime", "mergeCommitKey", "baseCommitKey", "headCommitKey", "filesChanged", "linesAdded", "linesDeleted", "url", "deployments", "flagReferences", "leadTime"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("id");
-    openapiRequiredFields.add("externalId");
-    openapiRequiredFields.add("title");
-    openapiRequiredFields.add("status");
-    openapiRequiredFields.add("author");
-    openapiRequiredFields.add("createTime");
-    openapiRequiredFields.add("baseCommitKey");
-    openapiRequiredFields.add("headCommitKey");
-    openapiRequiredFields.add("filesChanged");
-    openapiRequiredFields.add("linesAdded");
-    openapiRequiredFields.add("linesDeleted");
-    openapiRequiredFields.add("url");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("id", "externalId", "title", "status", "author", "createTime", "baseCommitKey", "headCommitKey", "filesChanged", "linesAdded", "linesDeleted", "url"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to PullRequestRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PullRequestRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PullRequestRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PullRequestRep is not found in the empty JSON string", PullRequestRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in PullRequestRep is not found in the empty JSON string", PullRequestRep.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : PullRequestRep.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
       if (!jsonObj.get("externalId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `externalId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("externalId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `externalId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("externalId").toString()));
       }
       if (!jsonObj.get("title").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
       }
       if (!jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
       if (!jsonObj.get("author").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `author` to be a primitive type in the JSON string but got `%s`", jsonObj.get("author").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `author` to be a primitive type in the JSON string but got `%s`", jsonObj.get("author").toString()));
       }
       if ((jsonObj.get("mergeCommitKey") != null && !jsonObj.get("mergeCommitKey").isJsonNull()) && !jsonObj.get("mergeCommitKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `mergeCommitKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mergeCommitKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `mergeCommitKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mergeCommitKey").toString()));
       }
       if (!jsonObj.get("baseCommitKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `baseCommitKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("baseCommitKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `baseCommitKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("baseCommitKey").toString()));
       }
       if (!jsonObj.get("headCommitKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `headCommitKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("headCommitKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `headCommitKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("headCommitKey").toString()));
       }
       if (!jsonObj.get("url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
       }
       // validate the optional field `deployments`
       if (jsonObj.get("deployments") != null && !jsonObj.get("deployments").isJsonNull()) {
@@ -724,7 +713,7 @@ public class PullRequestRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -739,22 +728,22 @@ public class PullRequestRep {
     }
   }
 
- /**
-  * Create an instance of PullRequestRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PullRequestRep
-  * @throws IOException if the JSON string is invalid with respect to PullRequestRep
-  */
+  /**
+   * Create an instance of PullRequestRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PullRequestRep
+   * @throws IOException if the JSON string is invalid with respect to PullRequestRep
+   */
   public static PullRequestRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PullRequestRep.class);
   }
 
- /**
-  * Convert an instance of PullRequestRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PullRequestRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

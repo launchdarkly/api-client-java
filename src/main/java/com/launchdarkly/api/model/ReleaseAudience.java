@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,75 +45,83 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * ReleaseAudience
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ReleaseAudience {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_ENVIRONMENT = "environment";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT)
+  @javax.annotation.Nullable
   private EnvironmentSummary environment;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_CONFIGURATION = "configuration";
   @SerializedName(SERIALIZED_NAME_CONFIGURATION)
+  @javax.annotation.Nullable
   private AudienceConfiguration _configuration;
 
   public static final String SERIALIZED_NAME_SEGMENT_KEYS = "segmentKeys";
   @SerializedName(SERIALIZED_NAME_SEGMENT_KEYS)
+  @javax.annotation.Nullable
   private List<String> segmentKeys = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private String status;
 
   public static final String SERIALIZED_NAME_RULE_IDS = "_ruleIds";
   @SerializedName(SERIALIZED_NAME_RULE_IDS)
+  @javax.annotation.Nullable
   private List<String> ruleIds = new ArrayList<>();
 
   public ReleaseAudience() {
   }
 
-  public ReleaseAudience id(String id) {
+  public ReleaseAudience id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The audience ID
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public ReleaseAudience links(Map<String, Link> links) {
+  public ReleaseAudience links(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -125,78 +134,78 @@ public class ReleaseAudience {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public ReleaseAudience environment(EnvironmentSummary environment) {
+  public ReleaseAudience environment(@javax.annotation.Nullable EnvironmentSummary environment) {
     this.environment = environment;
     return this;
   }
 
-   /**
+  /**
    * Get environment
    * @return environment
-  **/
+   */
   @javax.annotation.Nullable
   public EnvironmentSummary getEnvironment() {
     return environment;
   }
 
-  public void setEnvironment(EnvironmentSummary environment) {
+  public void setEnvironment(@javax.annotation.Nullable EnvironmentSummary environment) {
     this.environment = environment;
   }
 
 
-  public ReleaseAudience name(String name) {
+  public ReleaseAudience name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The release phase name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public ReleaseAudience _configuration(AudienceConfiguration _configuration) {
+  public ReleaseAudience _configuration(@javax.annotation.Nullable AudienceConfiguration _configuration) {
     this._configuration = _configuration;
     return this;
   }
 
-   /**
+  /**
    * Get _configuration
    * @return _configuration
-  **/
+   */
   @javax.annotation.Nullable
   public AudienceConfiguration getConfiguration() {
     return _configuration;
   }
 
-  public void setConfiguration(AudienceConfiguration _configuration) {
+  public void setConfiguration(@javax.annotation.Nullable AudienceConfiguration _configuration) {
     this._configuration = _configuration;
   }
 
 
-  public ReleaseAudience segmentKeys(List<String> segmentKeys) {
+  public ReleaseAudience segmentKeys(@javax.annotation.Nullable List<String> segmentKeys) {
     this.segmentKeys = segmentKeys;
     return this;
   }
@@ -209,40 +218,40 @@ public class ReleaseAudience {
     return this;
   }
 
-   /**
+  /**
    * A list of segment keys
    * @return segmentKeys
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getSegmentKeys() {
     return segmentKeys;
   }
 
-  public void setSegmentKeys(List<String> segmentKeys) {
+  public void setSegmentKeys(@javax.annotation.Nullable List<String> segmentKeys) {
     this.segmentKeys = segmentKeys;
   }
 
 
-  public ReleaseAudience status(String status) {
+  public ReleaseAudience status(@javax.annotation.Nullable String status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   public String getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(@javax.annotation.Nullable String status) {
     this.status = status;
   }
 
 
-  public ReleaseAudience ruleIds(List<String> ruleIds) {
+  public ReleaseAudience ruleIds(@javax.annotation.Nullable List<String> ruleIds) {
     this.ruleIds = ruleIds;
     return this;
   }
@@ -255,16 +264,16 @@ public class ReleaseAudience {
     return this;
   }
 
-   /**
+  /**
    * The rules IDs added or updated by this audience
    * @return ruleIds
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getRuleIds() {
     return ruleIds;
   }
 
-  public void setRuleIds(List<String> ruleIds) {
+  public void setRuleIds(@javax.annotation.Nullable List<String> ruleIds) {
     this.ruleIds = ruleIds;
   }
 
@@ -373,51 +382,41 @@ public class ReleaseAudience {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_id");
-    openapiFields.add("_links");
-    openapiFields.add("environment");
-    openapiFields.add("name");
-    openapiFields.add("configuration");
-    openapiFields.add("segmentKeys");
-    openapiFields.add("status");
-    openapiFields.add("_ruleIds");
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "_links", "environment", "name", "configuration", "segmentKeys", "status", "_ruleIds"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("_id");
-    openapiRequiredFields.add("name");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "name"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ReleaseAudience
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ReleaseAudience
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ReleaseAudience.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ReleaseAudience is not found in the empty JSON string", ReleaseAudience.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ReleaseAudience is not found in the empty JSON string", ReleaseAudience.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ReleaseAudience.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("_id").toString()));
       }
       // validate the optional field `environment`
       if (jsonObj.get("environment") != null && !jsonObj.get("environment").isJsonNull()) {
         EnvironmentSummary.validateJsonElement(jsonObj.get("environment"));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // validate the optional field `configuration`
       if (jsonObj.get("configuration") != null && !jsonObj.get("configuration").isJsonNull()) {
@@ -425,14 +424,14 @@ public class ReleaseAudience {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("segmentKeys") != null && !jsonObj.get("segmentKeys").isJsonNull() && !jsonObj.get("segmentKeys").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `segmentKeys` to be an array in the JSON string but got `%s`", jsonObj.get("segmentKeys").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `segmentKeys` to be an array in the JSON string but got `%s`", jsonObj.get("segmentKeys").toString()));
       }
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("_ruleIds") != null && !jsonObj.get("_ruleIds").isJsonNull() && !jsonObj.get("_ruleIds").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `_ruleIds` to be an array in the JSON string but got `%s`", jsonObj.get("_ruleIds").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `_ruleIds` to be an array in the JSON string but got `%s`", jsonObj.get("_ruleIds").toString()));
       }
   }
 
@@ -493,7 +492,7 @@ public class ReleaseAudience {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -508,22 +507,22 @@ public class ReleaseAudience {
     }
   }
 
- /**
-  * Create an instance of ReleaseAudience given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ReleaseAudience
-  * @throws IOException if the JSON string is invalid with respect to ReleaseAudience
-  */
+  /**
+   * Create an instance of ReleaseAudience given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ReleaseAudience
+   * @throws IOException if the JSON string is invalid with respect to ReleaseAudience
+   */
   public static ReleaseAudience fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ReleaseAudience.class);
   }
 
- /**
-  * Convert an instance of ReleaseAudience to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ReleaseAudience to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

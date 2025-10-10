@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,51 +41,53 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * TeamProjects
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class TeamProjects {
   public static final String SERIALIZED_NAME_TOTAL_COUNT = "totalCount";
   @SerializedName(SERIALIZED_NAME_TOTAL_COUNT)
+  @javax.annotation.Nullable
   private Integer totalCount;
 
   public static final String SERIALIZED_NAME_ITEMS = "items";
   @SerializedName(SERIALIZED_NAME_ITEMS)
+  @javax.annotation.Nullable
   private List<ProjectSummary> items = new ArrayList<>();
 
   public TeamProjects() {
   }
 
-  public TeamProjects totalCount(Integer totalCount) {
+  public TeamProjects totalCount(@javax.annotation.Nullable Integer totalCount) {
     this.totalCount = totalCount;
     return this;
   }
 
-   /**
+  /**
    * Get totalCount
    * @return totalCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getTotalCount() {
     return totalCount;
   }
 
-  public void setTotalCount(Integer totalCount) {
+  public void setTotalCount(@javax.annotation.Nullable Integer totalCount) {
     this.totalCount = totalCount;
   }
 
 
-  public TeamProjects items(List<ProjectSummary> items) {
+  public TeamProjects items(@javax.annotation.Nullable List<ProjectSummary> items) {
     this.items = items;
     return this;
   }
@@ -97,16 +100,16 @@ public class TeamProjects {
     return this;
   }
 
-   /**
+  /**
    * Details on each project where team members have write privileges on at least one resource type (e.g. flags)
    * @return items
-  **/
+   */
   @javax.annotation.Nullable
   public List<ProjectSummary> getItems() {
     return items;
   }
 
-  public void setItems(List<ProjectSummary> items) {
+  public void setItems(@javax.annotation.Nullable List<ProjectSummary> items) {
     this.items = items;
   }
 
@@ -203,24 +206,22 @@ public class TeamProjects {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("totalCount");
-    openapiFields.add("items");
+    openapiFields = new HashSet<String>(Arrays.asList("totalCount", "items"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to TeamProjects
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to TeamProjects
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!TeamProjects.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in TeamProjects is not found in the empty JSON string", TeamProjects.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in TeamProjects is not found in the empty JSON string", TeamProjects.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -229,7 +230,7 @@ public class TeamProjects {
         if (jsonArrayitems != null) {
           // ensure the json data is an array
           if (!jsonObj.get("items").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
           }
 
           // validate the optional field `items` (array)
@@ -297,7 +298,7 @@ public class TeamProjects {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -312,22 +313,22 @@ public class TeamProjects {
     }
   }
 
- /**
-  * Create an instance of TeamProjects given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of TeamProjects
-  * @throws IOException if the JSON string is invalid with respect to TeamProjects
-  */
+  /**
+   * Create an instance of TeamProjects given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of TeamProjects
+   * @throws IOException if the JSON string is invalid with respect to TeamProjects
+   */
   public static TeamProjects fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, TeamProjects.class);
   }
 
- /**
-  * Convert an instance of TeamProjects to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of TeamProjects to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

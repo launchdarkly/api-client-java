@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,272 +39,283 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * InsightGroupScores
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class InsightGroupScores {
   public static final String SERIALIZED_NAME_OVERALL = "overall";
   @SerializedName(SERIALIZED_NAME_OVERALL)
+  @javax.annotation.Nonnull
   private InsightsMetricScore overall;
 
   public static final String SERIALIZED_NAME_DEPLOYMENT_FREQUENCY = "deploymentFrequency";
   @SerializedName(SERIALIZED_NAME_DEPLOYMENT_FREQUENCY)
+  @javax.annotation.Nonnull
   private InsightsMetricScore deploymentFrequency;
 
   public static final String SERIALIZED_NAME_DEPLOYMENT_FAILURE_RATE = "deploymentFailureRate";
   @SerializedName(SERIALIZED_NAME_DEPLOYMENT_FAILURE_RATE)
+  @javax.annotation.Nonnull
   private InsightsMetricScore deploymentFailureRate;
 
   public static final String SERIALIZED_NAME_LEAD_TIME = "leadTime";
   @SerializedName(SERIALIZED_NAME_LEAD_TIME)
+  @javax.annotation.Nonnull
   private InsightsMetricScore leadTime;
 
   public static final String SERIALIZED_NAME_IMPACT_SIZE = "impactSize";
   @SerializedName(SERIALIZED_NAME_IMPACT_SIZE)
+  @javax.annotation.Nonnull
   private InsightsMetricScore impactSize;
 
   public static final String SERIALIZED_NAME_EXPERIMENTATION_COVERAGE = "experimentationCoverage";
   @SerializedName(SERIALIZED_NAME_EXPERIMENTATION_COVERAGE)
+  @javax.annotation.Nonnull
   private InsightsMetricScore experimentationCoverage;
 
   public static final String SERIALIZED_NAME_FLAG_HEALTH = "flagHealth";
   @SerializedName(SERIALIZED_NAME_FLAG_HEALTH)
+  @javax.annotation.Nonnull
   private InsightsMetricScore flagHealth;
 
   public static final String SERIALIZED_NAME_VELOCITY = "velocity";
   @SerializedName(SERIALIZED_NAME_VELOCITY)
+  @javax.annotation.Nonnull
   private InsightsMetricScore velocity;
 
   public static final String SERIALIZED_NAME_RISK = "risk";
   @SerializedName(SERIALIZED_NAME_RISK)
+  @javax.annotation.Nonnull
   private InsightsMetricScore risk;
 
   public static final String SERIALIZED_NAME_EFFICIENCY = "efficiency";
   @SerializedName(SERIALIZED_NAME_EFFICIENCY)
+  @javax.annotation.Nonnull
   private InsightsMetricScore efficiency;
 
   public static final String SERIALIZED_NAME_CREATION_RATIO = "creationRatio";
   @SerializedName(SERIALIZED_NAME_CREATION_RATIO)
+  @javax.annotation.Nullable
   private InsightsMetricScore creationRatio;
 
   public InsightGroupScores() {
   }
 
-  public InsightGroupScores overall(InsightsMetricScore overall) {
+  public InsightGroupScores overall(@javax.annotation.Nonnull InsightsMetricScore overall) {
     this.overall = overall;
     return this;
   }
 
-   /**
+  /**
    * Get overall
    * @return overall
-  **/
+   */
   @javax.annotation.Nonnull
   public InsightsMetricScore getOverall() {
     return overall;
   }
 
-  public void setOverall(InsightsMetricScore overall) {
+  public void setOverall(@javax.annotation.Nonnull InsightsMetricScore overall) {
     this.overall = overall;
   }
 
 
-  public InsightGroupScores deploymentFrequency(InsightsMetricScore deploymentFrequency) {
+  public InsightGroupScores deploymentFrequency(@javax.annotation.Nonnull InsightsMetricScore deploymentFrequency) {
     this.deploymentFrequency = deploymentFrequency;
     return this;
   }
 
-   /**
+  /**
    * Get deploymentFrequency
    * @return deploymentFrequency
-  **/
+   */
   @javax.annotation.Nonnull
   public InsightsMetricScore getDeploymentFrequency() {
     return deploymentFrequency;
   }
 
-  public void setDeploymentFrequency(InsightsMetricScore deploymentFrequency) {
+  public void setDeploymentFrequency(@javax.annotation.Nonnull InsightsMetricScore deploymentFrequency) {
     this.deploymentFrequency = deploymentFrequency;
   }
 
 
-  public InsightGroupScores deploymentFailureRate(InsightsMetricScore deploymentFailureRate) {
+  public InsightGroupScores deploymentFailureRate(@javax.annotation.Nonnull InsightsMetricScore deploymentFailureRate) {
     this.deploymentFailureRate = deploymentFailureRate;
     return this;
   }
 
-   /**
+  /**
    * Get deploymentFailureRate
    * @return deploymentFailureRate
-  **/
+   */
   @javax.annotation.Nonnull
   public InsightsMetricScore getDeploymentFailureRate() {
     return deploymentFailureRate;
   }
 
-  public void setDeploymentFailureRate(InsightsMetricScore deploymentFailureRate) {
+  public void setDeploymentFailureRate(@javax.annotation.Nonnull InsightsMetricScore deploymentFailureRate) {
     this.deploymentFailureRate = deploymentFailureRate;
   }
 
 
-  public InsightGroupScores leadTime(InsightsMetricScore leadTime) {
+  public InsightGroupScores leadTime(@javax.annotation.Nonnull InsightsMetricScore leadTime) {
     this.leadTime = leadTime;
     return this;
   }
 
-   /**
+  /**
    * Get leadTime
    * @return leadTime
-  **/
+   */
   @javax.annotation.Nonnull
   public InsightsMetricScore getLeadTime() {
     return leadTime;
   }
 
-  public void setLeadTime(InsightsMetricScore leadTime) {
+  public void setLeadTime(@javax.annotation.Nonnull InsightsMetricScore leadTime) {
     this.leadTime = leadTime;
   }
 
 
-  public InsightGroupScores impactSize(InsightsMetricScore impactSize) {
+  public InsightGroupScores impactSize(@javax.annotation.Nonnull InsightsMetricScore impactSize) {
     this.impactSize = impactSize;
     return this;
   }
 
-   /**
+  /**
    * Get impactSize
    * @return impactSize
-  **/
+   */
   @javax.annotation.Nonnull
   public InsightsMetricScore getImpactSize() {
     return impactSize;
   }
 
-  public void setImpactSize(InsightsMetricScore impactSize) {
+  public void setImpactSize(@javax.annotation.Nonnull InsightsMetricScore impactSize) {
     this.impactSize = impactSize;
   }
 
 
-  public InsightGroupScores experimentationCoverage(InsightsMetricScore experimentationCoverage) {
+  public InsightGroupScores experimentationCoverage(@javax.annotation.Nonnull InsightsMetricScore experimentationCoverage) {
     this.experimentationCoverage = experimentationCoverage;
     return this;
   }
 
-   /**
+  /**
    * Get experimentationCoverage
    * @return experimentationCoverage
-  **/
+   */
   @javax.annotation.Nonnull
   public InsightsMetricScore getExperimentationCoverage() {
     return experimentationCoverage;
   }
 
-  public void setExperimentationCoverage(InsightsMetricScore experimentationCoverage) {
+  public void setExperimentationCoverage(@javax.annotation.Nonnull InsightsMetricScore experimentationCoverage) {
     this.experimentationCoverage = experimentationCoverage;
   }
 
 
-  public InsightGroupScores flagHealth(InsightsMetricScore flagHealth) {
+  public InsightGroupScores flagHealth(@javax.annotation.Nonnull InsightsMetricScore flagHealth) {
     this.flagHealth = flagHealth;
     return this;
   }
 
-   /**
+  /**
    * Get flagHealth
    * @return flagHealth
-  **/
+   */
   @javax.annotation.Nonnull
   public InsightsMetricScore getFlagHealth() {
     return flagHealth;
   }
 
-  public void setFlagHealth(InsightsMetricScore flagHealth) {
+  public void setFlagHealth(@javax.annotation.Nonnull InsightsMetricScore flagHealth) {
     this.flagHealth = flagHealth;
   }
 
 
-  public InsightGroupScores velocity(InsightsMetricScore velocity) {
+  public InsightGroupScores velocity(@javax.annotation.Nonnull InsightsMetricScore velocity) {
     this.velocity = velocity;
     return this;
   }
 
-   /**
+  /**
    * Get velocity
    * @return velocity
-  **/
+   */
   @javax.annotation.Nonnull
   public InsightsMetricScore getVelocity() {
     return velocity;
   }
 
-  public void setVelocity(InsightsMetricScore velocity) {
+  public void setVelocity(@javax.annotation.Nonnull InsightsMetricScore velocity) {
     this.velocity = velocity;
   }
 
 
-  public InsightGroupScores risk(InsightsMetricScore risk) {
+  public InsightGroupScores risk(@javax.annotation.Nonnull InsightsMetricScore risk) {
     this.risk = risk;
     return this;
   }
 
-   /**
+  /**
    * Get risk
    * @return risk
-  **/
+   */
   @javax.annotation.Nonnull
   public InsightsMetricScore getRisk() {
     return risk;
   }
 
-  public void setRisk(InsightsMetricScore risk) {
+  public void setRisk(@javax.annotation.Nonnull InsightsMetricScore risk) {
     this.risk = risk;
   }
 
 
-  public InsightGroupScores efficiency(InsightsMetricScore efficiency) {
+  public InsightGroupScores efficiency(@javax.annotation.Nonnull InsightsMetricScore efficiency) {
     this.efficiency = efficiency;
     return this;
   }
 
-   /**
+  /**
    * Get efficiency
    * @return efficiency
-  **/
+   */
   @javax.annotation.Nonnull
   public InsightsMetricScore getEfficiency() {
     return efficiency;
   }
 
-  public void setEfficiency(InsightsMetricScore efficiency) {
+  public void setEfficiency(@javax.annotation.Nonnull InsightsMetricScore efficiency) {
     this.efficiency = efficiency;
   }
 
 
-  public InsightGroupScores creationRatio(InsightsMetricScore creationRatio) {
+  public InsightGroupScores creationRatio(@javax.annotation.Nullable InsightsMetricScore creationRatio) {
     this.creationRatio = creationRatio;
     return this;
   }
 
-   /**
+  /**
    * Get creationRatio
    * @return creationRatio
-  **/
+   */
   @javax.annotation.Nullable
   public InsightsMetricScore getCreationRatio() {
     return creationRatio;
   }
 
-  public void setCreationRatio(InsightsMetricScore creationRatio) {
+  public void setCreationRatio(@javax.annotation.Nullable InsightsMetricScore creationRatio) {
     this.creationRatio = creationRatio;
   }
 
@@ -418,50 +430,29 @@ public class InsightGroupScores {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("overall");
-    openapiFields.add("deploymentFrequency");
-    openapiFields.add("deploymentFailureRate");
-    openapiFields.add("leadTime");
-    openapiFields.add("impactSize");
-    openapiFields.add("experimentationCoverage");
-    openapiFields.add("flagHealth");
-    openapiFields.add("velocity");
-    openapiFields.add("risk");
-    openapiFields.add("efficiency");
-    openapiFields.add("creationRatio");
+    openapiFields = new HashSet<String>(Arrays.asList("overall", "deploymentFrequency", "deploymentFailureRate", "leadTime", "impactSize", "experimentationCoverage", "flagHealth", "velocity", "risk", "efficiency", "creationRatio"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("overall");
-    openapiRequiredFields.add("deploymentFrequency");
-    openapiRequiredFields.add("deploymentFailureRate");
-    openapiRequiredFields.add("leadTime");
-    openapiRequiredFields.add("impactSize");
-    openapiRequiredFields.add("experimentationCoverage");
-    openapiRequiredFields.add("flagHealth");
-    openapiRequiredFields.add("velocity");
-    openapiRequiredFields.add("risk");
-    openapiRequiredFields.add("efficiency");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("overall", "deploymentFrequency", "deploymentFailureRate", "leadTime", "impactSize", "experimentationCoverage", "flagHealth", "velocity", "risk", "efficiency"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to InsightGroupScores
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to InsightGroupScores
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!InsightGroupScores.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in InsightGroupScores is not found in the empty JSON string", InsightGroupScores.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in InsightGroupScores is not found in the empty JSON string", InsightGroupScores.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : InsightGroupScores.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -548,7 +539,7 @@ public class InsightGroupScores {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -563,22 +554,22 @@ public class InsightGroupScores {
     }
   }
 
- /**
-  * Create an instance of InsightGroupScores given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of InsightGroupScores
-  * @throws IOException if the JSON string is invalid with respect to InsightGroupScores
-  */
+  /**
+   * Create an instance of InsightGroupScores given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of InsightGroupScores
+   * @throws IOException if the JSON string is invalid with respect to InsightGroupScores
+   */
   public static InsightGroupScores fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, InsightGroupScores.class);
   }
 
- /**
-  * Convert an instance of InsightGroupScores to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of InsightGroupScores to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

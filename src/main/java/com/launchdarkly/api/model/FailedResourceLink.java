@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,26 +38,28 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * FailedResourceLink
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class FailedResourceLink {
   public static final String SERIALIZED_NAME_RESOURCE_KEY = "resourceKey";
   @SerializedName(SERIALIZED_NAME_RESOURCE_KEY)
+  @javax.annotation.Nonnull
   private String resourceKey;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_ID = "environmentId";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ID)
+  @javax.annotation.Nullable
   private String environmentId;
 
   /**
@@ -70,7 +73,7 @@ public class FailedResourceLink {
     
     METRIC("metric"),
     
-    AICONFIG("aiConfig");
+    AI_CONFIG("aiConfig");
 
     private String value;
 
@@ -117,87 +120,89 @@ public class FailedResourceLink {
 
   public static final String SERIALIZED_NAME_RESOURCE_TYPE = "resourceType";
   @SerializedName(SERIALIZED_NAME_RESOURCE_TYPE)
+  @javax.annotation.Nonnull
   private ResourceTypeEnum resourceType;
 
   public static final String SERIALIZED_NAME_ERROR_MESSAGE = "errorMessage";
   @SerializedName(SERIALIZED_NAME_ERROR_MESSAGE)
+  @javax.annotation.Nonnull
   private String errorMessage;
 
   public FailedResourceLink() {
   }
 
-  public FailedResourceLink resourceKey(String resourceKey) {
+  public FailedResourceLink resourceKey(@javax.annotation.Nonnull String resourceKey) {
     this.resourceKey = resourceKey;
     return this;
   }
 
-   /**
+  /**
    * The key of the resource that failed to link.
    * @return resourceKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getResourceKey() {
     return resourceKey;
   }
 
-  public void setResourceKey(String resourceKey) {
+  public void setResourceKey(@javax.annotation.Nonnull String resourceKey) {
     this.resourceKey = resourceKey;
   }
 
 
-  public FailedResourceLink environmentId(String environmentId) {
+  public FailedResourceLink environmentId(@javax.annotation.Nullable String environmentId) {
     this.environmentId = environmentId;
     return this;
   }
 
-   /**
+  /**
    * Environment ID of the resource (only present for segments)
    * @return environmentId
-  **/
+   */
   @javax.annotation.Nullable
   public String getEnvironmentId() {
     return environmentId;
   }
 
-  public void setEnvironmentId(String environmentId) {
+  public void setEnvironmentId(@javax.annotation.Nullable String environmentId) {
     this.environmentId = environmentId;
   }
 
 
-  public FailedResourceLink resourceType(ResourceTypeEnum resourceType) {
+  public FailedResourceLink resourceType(@javax.annotation.Nonnull ResourceTypeEnum resourceType) {
     this.resourceType = resourceType;
     return this;
   }
 
-   /**
+  /**
    * The type of the resource that failed to link.
    * @return resourceType
-  **/
+   */
   @javax.annotation.Nonnull
   public ResourceTypeEnum getResourceType() {
     return resourceType;
   }
 
-  public void setResourceType(ResourceTypeEnum resourceType) {
+  public void setResourceType(@javax.annotation.Nonnull ResourceTypeEnum resourceType) {
     this.resourceType = resourceType;
   }
 
 
-  public FailedResourceLink errorMessage(String errorMessage) {
+  public FailedResourceLink errorMessage(@javax.annotation.Nonnull String errorMessage) {
     this.errorMessage = errorMessage;
     return this;
   }
 
-   /**
+  /**
    * The reason why linking this resource failed.
    * @return errorMessage
-  **/
+   */
   @javax.annotation.Nonnull
   public String getErrorMessage() {
     return errorMessage;
   }
 
-  public void setErrorMessage(String errorMessage) {
+  public void setErrorMessage(@javax.annotation.Nonnull String errorMessage) {
     this.errorMessage = errorMessage;
   }
 
@@ -298,52 +303,45 @@ public class FailedResourceLink {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("resourceKey");
-    openapiFields.add("environmentId");
-    openapiFields.add("resourceType");
-    openapiFields.add("errorMessage");
+    openapiFields = new HashSet<String>(Arrays.asList("resourceKey", "environmentId", "resourceType", "errorMessage"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("resourceKey");
-    openapiRequiredFields.add("resourceType");
-    openapiRequiredFields.add("errorMessage");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("resourceKey", "resourceType", "errorMessage"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FailedResourceLink
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FailedResourceLink
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FailedResourceLink.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FailedResourceLink is not found in the empty JSON string", FailedResourceLink.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FailedResourceLink is not found in the empty JSON string", FailedResourceLink.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : FailedResourceLink.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("resourceKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `resourceKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resourceKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `resourceKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resourceKey").toString()));
       }
       if ((jsonObj.get("environmentId") != null && !jsonObj.get("environmentId").isJsonNull()) && !jsonObj.get("environmentId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
       }
       if (!jsonObj.get("resourceType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `resourceType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resourceType").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `resourceType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resourceType").toString()));
       }
       // validate the required field `resourceType`
       ResourceTypeEnum.validateJsonElement(jsonObj.get("resourceType"));
       if (!jsonObj.get("errorMessage").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `errorMessage` to be a primitive type in the JSON string but got `%s`", jsonObj.get("errorMessage").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `errorMessage` to be a primitive type in the JSON string but got `%s`", jsonObj.get("errorMessage").toString()));
       }
   }
 
@@ -404,7 +402,7 @@ public class FailedResourceLink {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -419,22 +417,22 @@ public class FailedResourceLink {
     }
   }
 
- /**
-  * Create an instance of FailedResourceLink given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FailedResourceLink
-  * @throws IOException if the JSON string is invalid with respect to FailedResourceLink
-  */
+  /**
+   * Create an instance of FailedResourceLink given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FailedResourceLink
+   * @throws IOException if the JSON string is invalid with respect to FailedResourceLink
+   */
   public static FailedResourceLink fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FailedResourceLink.class);
   }
 
- /**
-  * Convert an instance of FailedResourceLink to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FailedResourceLink to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

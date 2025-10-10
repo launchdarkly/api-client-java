@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,189 +42,197 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * Export
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class Export {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_SEGMENT_KEY = "segmentKey";
   @SerializedName(SERIALIZED_NAME_SEGMENT_KEY)
+  @javax.annotation.Nonnull
   private String segmentKey;
 
   public static final String SERIALIZED_NAME_CREATION_TIME = "creationTime";
   @SerializedName(SERIALIZED_NAME_CREATION_TIME)
+  @javax.annotation.Nonnull
   private Long creationTime;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nonnull
   private String status;
 
   public static final String SERIALIZED_NAME_SIZE_BYTES = "sizeBytes";
   @SerializedName(SERIALIZED_NAME_SIZE_BYTES)
+  @javax.annotation.Nonnull
   private Long sizeBytes;
 
   public static final String SERIALIZED_NAME_SIZE = "size";
   @SerializedName(SERIALIZED_NAME_SIZE)
+  @javax.annotation.Nonnull
   private String size;
 
   public static final String SERIALIZED_NAME_INITIATOR = "initiator";
   @SerializedName(SERIALIZED_NAME_INITIATOR)
+  @javax.annotation.Nonnull
   private InitiatorRep initiator;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nonnull
   private Map<String, Link> links = new HashMap<>();
 
   public Export() {
   }
 
-  public Export id(String id) {
+  public Export id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * The export ID
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public Export segmentKey(String segmentKey) {
+  public Export segmentKey(@javax.annotation.Nonnull String segmentKey) {
     this.segmentKey = segmentKey;
     return this;
   }
 
-   /**
+  /**
    * The segment key
    * @return segmentKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getSegmentKey() {
     return segmentKey;
   }
 
-  public void setSegmentKey(String segmentKey) {
+  public void setSegmentKey(@javax.annotation.Nonnull String segmentKey) {
     this.segmentKey = segmentKey;
   }
 
 
-  public Export creationTime(Long creationTime) {
+  public Export creationTime(@javax.annotation.Nonnull Long creationTime) {
     this.creationTime = creationTime;
     return this;
   }
 
-   /**
+  /**
    * Get creationTime
    * @return creationTime
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getCreationTime() {
     return creationTime;
   }
 
-  public void setCreationTime(Long creationTime) {
+  public void setCreationTime(@javax.annotation.Nonnull Long creationTime) {
     this.creationTime = creationTime;
   }
 
 
-  public Export status(String status) {
+  public Export status(@javax.annotation.Nonnull String status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * The export status
    * @return status
-  **/
+   */
   @javax.annotation.Nonnull
   public String getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(@javax.annotation.Nonnull String status) {
     this.status = status;
   }
 
 
-  public Export sizeBytes(Long sizeBytes) {
+  public Export sizeBytes(@javax.annotation.Nonnull Long sizeBytes) {
     this.sizeBytes = sizeBytes;
     return this;
   }
 
-   /**
+  /**
    * The export size, in bytes
    * @return sizeBytes
-  **/
+   */
   @javax.annotation.Nonnull
   public Long getSizeBytes() {
     return sizeBytes;
   }
 
-  public void setSizeBytes(Long sizeBytes) {
+  public void setSizeBytes(@javax.annotation.Nonnull Long sizeBytes) {
     this.sizeBytes = sizeBytes;
   }
 
 
-  public Export size(String size) {
+  public Export size(@javax.annotation.Nonnull String size) {
     this.size = size;
     return this;
   }
 
-   /**
+  /**
    * The export size, with units
    * @return size
-  **/
+   */
   @javax.annotation.Nonnull
   public String getSize() {
     return size;
   }
 
-  public void setSize(String size) {
+  public void setSize(@javax.annotation.Nonnull String size) {
     this.size = size;
   }
 
 
-  public Export initiator(InitiatorRep initiator) {
+  public Export initiator(@javax.annotation.Nonnull InitiatorRep initiator) {
     this.initiator = initiator;
     return this;
   }
 
-   /**
+  /**
    * Get initiator
    * @return initiator
-  **/
+   */
   @javax.annotation.Nonnull
   public InitiatorRep getInitiator() {
     return initiator;
   }
 
-  public void setInitiator(InitiatorRep initiator) {
+  public void setInitiator(@javax.annotation.Nonnull InitiatorRep initiator) {
     this.initiator = initiator;
   }
 
 
-  public Export links(Map<String, Link> links) {
+  public Export links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -236,16 +245,16 @@ public class Export {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources, including the location of the exported file
    * @return links
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
   }
 
@@ -354,59 +363,43 @@ public class Export {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("segmentKey");
-    openapiFields.add("creationTime");
-    openapiFields.add("status");
-    openapiFields.add("sizeBytes");
-    openapiFields.add("size");
-    openapiFields.add("initiator");
-    openapiFields.add("_links");
+    openapiFields = new HashSet<String>(Arrays.asList("id", "segmentKey", "creationTime", "status", "sizeBytes", "size", "initiator", "_links"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("id");
-    openapiRequiredFields.add("segmentKey");
-    openapiRequiredFields.add("creationTime");
-    openapiRequiredFields.add("status");
-    openapiRequiredFields.add("sizeBytes");
-    openapiRequiredFields.add("size");
-    openapiRequiredFields.add("initiator");
-    openapiRequiredFields.add("_links");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("id", "segmentKey", "creationTime", "status", "sizeBytes", "size", "initiator", "_links"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Export
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Export
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Export.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Export is not found in the empty JSON string", Export.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in Export is not found in the empty JSON string", Export.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : Export.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
       if (!jsonObj.get("segmentKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `segmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("segmentKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `segmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("segmentKey").toString()));
       }
       if (!jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
       if (!jsonObj.get("size").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `size` to be a primitive type in the JSON string but got `%s`", jsonObj.get("size").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `size` to be a primitive type in the JSON string but got `%s`", jsonObj.get("size").toString()));
       }
       // validate the required field `initiator`
       InitiatorRep.validateJsonElement(jsonObj.get("initiator"));
@@ -469,7 +462,7 @@ public class Export {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -484,22 +477,22 @@ public class Export {
     }
   }
 
- /**
-  * Create an instance of Export given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Export
-  * @throws IOException if the JSON string is invalid with respect to Export
-  */
+  /**
+   * Create an instance of Export given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Export
+   * @throws IOException if the JSON string is invalid with respect to Export
+   */
   public static Export fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Export.class);
   }
 
- /**
-  * Convert an instance of Export to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Export to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

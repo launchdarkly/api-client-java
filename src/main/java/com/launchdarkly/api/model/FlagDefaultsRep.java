@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,48 +45,54 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * FlagDefaultsRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class FlagDefaultsRep {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private Map<String, Link> links = new HashMap<>();
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nullable
   private String key;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
   private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TEMPORARY = "temporary";
   @SerializedName(SERIALIZED_NAME_TEMPORARY)
+  @javax.annotation.Nullable
   private Boolean temporary;
 
   public static final String SERIALIZED_NAME_DEFAULT_CLIENT_SIDE_AVAILABILITY = "defaultClientSideAvailability";
   @SerializedName(SERIALIZED_NAME_DEFAULT_CLIENT_SIDE_AVAILABILITY)
+  @javax.annotation.Nullable
   private ClientSideAvailability defaultClientSideAvailability;
 
   public static final String SERIALIZED_NAME_BOOLEAN_DEFAULTS = "booleanDefaults";
   @SerializedName(SERIALIZED_NAME_BOOLEAN_DEFAULTS)
+  @javax.annotation.Nullable
   private BooleanDefaults booleanDefaults;
 
   public FlagDefaultsRep() {
   }
 
-  public FlagDefaultsRep links(Map<String, Link> links) {
+  public FlagDefaultsRep links(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -98,40 +105,40 @@ public class FlagDefaultsRep {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
   }
 
 
-  public FlagDefaultsRep key(String key) {
+  public FlagDefaultsRep key(@javax.annotation.Nullable String key) {
     this.key = key;
     return this;
   }
 
-   /**
+  /**
    * A unique key for the flag default
    * @return key
-  **/
+   */
   @javax.annotation.Nullable
   public String getKey() {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nullable String key) {
     this.key = key;
   }
 
 
-  public FlagDefaultsRep tags(List<String> tags) {
+  public FlagDefaultsRep tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
@@ -144,73 +151,73 @@ public class FlagDefaultsRep {
     return this;
   }
 
-   /**
+  /**
    * A list of default tags for each flag
    * @return tags
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(List<String> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
 
-  public FlagDefaultsRep temporary(Boolean temporary) {
+  public FlagDefaultsRep temporary(@javax.annotation.Nullable Boolean temporary) {
     this.temporary = temporary;
     return this;
   }
 
-   /**
+  /**
    * Whether the flag should be temporary by default
    * @return temporary
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getTemporary() {
     return temporary;
   }
 
-  public void setTemporary(Boolean temporary) {
+  public void setTemporary(@javax.annotation.Nullable Boolean temporary) {
     this.temporary = temporary;
   }
 
 
-  public FlagDefaultsRep defaultClientSideAvailability(ClientSideAvailability defaultClientSideAvailability) {
+  public FlagDefaultsRep defaultClientSideAvailability(@javax.annotation.Nullable ClientSideAvailability defaultClientSideAvailability) {
     this.defaultClientSideAvailability = defaultClientSideAvailability;
     return this;
   }
 
-   /**
+  /**
    * Get defaultClientSideAvailability
    * @return defaultClientSideAvailability
-  **/
+   */
   @javax.annotation.Nullable
   public ClientSideAvailability getDefaultClientSideAvailability() {
     return defaultClientSideAvailability;
   }
 
-  public void setDefaultClientSideAvailability(ClientSideAvailability defaultClientSideAvailability) {
+  public void setDefaultClientSideAvailability(@javax.annotation.Nullable ClientSideAvailability defaultClientSideAvailability) {
     this.defaultClientSideAvailability = defaultClientSideAvailability;
   }
 
 
-  public FlagDefaultsRep booleanDefaults(BooleanDefaults booleanDefaults) {
+  public FlagDefaultsRep booleanDefaults(@javax.annotation.Nullable BooleanDefaults booleanDefaults) {
     this.booleanDefaults = booleanDefaults;
     return this;
   }
 
-   /**
+  /**
    * Get booleanDefaults
    * @return booleanDefaults
-  **/
+   */
   @javax.annotation.Nullable
   public BooleanDefaults getBooleanDefaults() {
     return booleanDefaults;
   }
 
-  public void setBooleanDefaults(BooleanDefaults booleanDefaults) {
+  public void setBooleanDefaults(@javax.annotation.Nullable BooleanDefaults booleanDefaults) {
     this.booleanDefaults = booleanDefaults;
   }
 
@@ -315,37 +322,31 @@ public class FlagDefaultsRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("_links");
-    openapiFields.add("key");
-    openapiFields.add("tags");
-    openapiFields.add("temporary");
-    openapiFields.add("defaultClientSideAvailability");
-    openapiFields.add("booleanDefaults");
+    openapiFields = new HashSet<String>(Arrays.asList("_links", "key", "tags", "temporary", "defaultClientSideAvailability", "booleanDefaults"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FlagDefaultsRep
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FlagDefaultsRep
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FlagDefaultsRep.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in FlagDefaultsRep is not found in the empty JSON string", FlagDefaultsRep.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FlagDefaultsRep is not found in the empty JSON string", FlagDefaultsRep.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       // validate the optional field `defaultClientSideAvailability`
       if (jsonObj.get("defaultClientSideAvailability") != null && !jsonObj.get("defaultClientSideAvailability").isJsonNull()) {
@@ -414,7 +415,7 @@ public class FlagDefaultsRep {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -429,22 +430,22 @@ public class FlagDefaultsRep {
     }
   }
 
- /**
-  * Create an instance of FlagDefaultsRep given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FlagDefaultsRep
-  * @throws IOException if the JSON string is invalid with respect to FlagDefaultsRep
-  */
+  /**
+   * Create an instance of FlagDefaultsRep given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FlagDefaultsRep
+   * @throws IOException if the JSON string is invalid with respect to FlagDefaultsRep
+   */
   public static FlagDefaultsRep fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FlagDefaultsRep.class);
   }
 
- /**
-  * Convert an instance of FlagDefaultsRep to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FlagDefaultsRep to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

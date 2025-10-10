@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,55 +44,58 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * InsightsRepositoryProjectCollection
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class InsightsRepositoryProjectCollection {
   public static final String SERIALIZED_NAME_TOTAL_COUNT = "totalCount";
   @SerializedName(SERIALIZED_NAME_TOTAL_COUNT)
+  @javax.annotation.Nonnull
   private Integer totalCount;
 
   public static final String SERIALIZED_NAME_ITEMS = "items";
   @SerializedName(SERIALIZED_NAME_ITEMS)
+  @javax.annotation.Nonnull
   private List<InsightsRepositoryProject> items = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
+  @javax.annotation.Nullable
   private Map<String, Link> links = new HashMap<>();
 
   public InsightsRepositoryProjectCollection() {
   }
 
-  public InsightsRepositoryProjectCollection totalCount(Integer totalCount) {
+  public InsightsRepositoryProjectCollection totalCount(@javax.annotation.Nonnull Integer totalCount) {
     this.totalCount = totalCount;
     return this;
   }
 
-   /**
+  /**
    * Total number of repository project associations
    * @return totalCount
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getTotalCount() {
     return totalCount;
   }
 
-  public void setTotalCount(Integer totalCount) {
+  public void setTotalCount(@javax.annotation.Nonnull Integer totalCount) {
     this.totalCount = totalCount;
   }
 
 
-  public InsightsRepositoryProjectCollection items(List<InsightsRepositoryProject> items) {
+  public InsightsRepositoryProjectCollection items(@javax.annotation.Nonnull List<InsightsRepositoryProject> items) {
     this.items = items;
     return this;
   }
@@ -104,21 +108,21 @@ public class InsightsRepositoryProjectCollection {
     return this;
   }
 
-   /**
+  /**
    * List of repository project associations
    * @return items
-  **/
+   */
   @javax.annotation.Nonnull
   public List<InsightsRepositoryProject> getItems() {
     return items;
   }
 
-  public void setItems(List<InsightsRepositoryProject> items) {
+  public void setItems(@javax.annotation.Nonnull List<InsightsRepositoryProject> items) {
     this.items = items;
   }
 
 
-  public InsightsRepositoryProjectCollection links(Map<String, Link> links) {
+  public InsightsRepositoryProjectCollection links(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
     return this;
   }
@@ -131,16 +135,16 @@ public class InsightsRepositoryProjectCollection {
     return this;
   }
 
-   /**
+  /**
    * The location and content type of related resources
    * @return links
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Link> getLinks() {
     return links;
   }
 
-  public void setLinks(Map<String, Link> links) {
+  public void setLinks(@javax.annotation.Nullable Map<String, Link> links) {
     this.links = links;
   }
 
@@ -239,40 +243,35 @@ public class InsightsRepositoryProjectCollection {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("totalCount");
-    openapiFields.add("items");
-    openapiFields.add("_links");
+    openapiFields = new HashSet<String>(Arrays.asList("totalCount", "items", "_links"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("totalCount");
-    openapiRequiredFields.add("items");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("totalCount", "items"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to InsightsRepositoryProjectCollection
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to InsightsRepositoryProjectCollection
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!InsightsRepositoryProjectCollection.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in InsightsRepositoryProjectCollection is not found in the empty JSON string", InsightsRepositoryProjectCollection.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in InsightsRepositoryProjectCollection is not found in the empty JSON string", InsightsRepositoryProjectCollection.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : InsightsRepositoryProjectCollection.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the json data is an array
       if (!jsonObj.get("items").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
       }
 
       JsonArray jsonArrayitems = jsonObj.getAsJsonArray("items");
@@ -339,7 +338,7 @@ public class InsightsRepositoryProjectCollection {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -354,22 +353,22 @@ public class InsightsRepositoryProjectCollection {
     }
   }
 
- /**
-  * Create an instance of InsightsRepositoryProjectCollection given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of InsightsRepositoryProjectCollection
-  * @throws IOException if the JSON string is invalid with respect to InsightsRepositoryProjectCollection
-  */
+  /**
+   * Create an instance of InsightsRepositoryProjectCollection given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of InsightsRepositoryProjectCollection
+   * @throws IOException if the JSON string is invalid with respect to InsightsRepositoryProjectCollection
+   */
   public static InsightsRepositoryProjectCollection fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, InsightsRepositoryProjectCollection.class);
   }
 
- /**
-  * Convert an instance of InsightsRepositoryProjectCollection to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of InsightsRepositoryProjectCollection to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,65 +40,67 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * CompletedBy
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class CompletedBy {
   public static final String SERIALIZED_NAME_MEMBER = "member";
   @SerializedName(SERIALIZED_NAME_MEMBER)
+  @javax.annotation.Nullable
   private MemberSummary member;
 
   public static final String SERIALIZED_NAME_TOKEN = "token";
   @SerializedName(SERIALIZED_NAME_TOKEN)
+  @javax.annotation.Nullable
   private TokenSummary token;
 
   public CompletedBy() {
   }
 
-  public CompletedBy member(MemberSummary member) {
+  public CompletedBy member(@javax.annotation.Nullable MemberSummary member) {
     this.member = member;
     return this;
   }
 
-   /**
+  /**
    * Get member
    * @return member
-  **/
+   */
   @javax.annotation.Nullable
   public MemberSummary getMember() {
     return member;
   }
 
-  public void setMember(MemberSummary member) {
+  public void setMember(@javax.annotation.Nullable MemberSummary member) {
     this.member = member;
   }
 
 
-  public CompletedBy token(TokenSummary token) {
+  public CompletedBy token(@javax.annotation.Nullable TokenSummary token) {
     this.token = token;
     return this;
   }
 
-   /**
+  /**
    * Get token
    * @return token
-  **/
+   */
   @javax.annotation.Nullable
   public TokenSummary getToken() {
     return token;
   }
 
-  public void setToken(TokenSummary token) {
+  public void setToken(@javax.annotation.Nullable TokenSummary token) {
     this.token = token;
   }
 
@@ -194,24 +197,22 @@ public class CompletedBy {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("member");
-    openapiFields.add("token");
+    openapiFields = new HashSet<String>(Arrays.asList("member", "token"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to CompletedBy
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CompletedBy
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CompletedBy.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CompletedBy is not found in the empty JSON string", CompletedBy.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in CompletedBy is not found in the empty JSON string", CompletedBy.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -282,7 +283,7 @@ public class CompletedBy {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -297,22 +298,22 @@ public class CompletedBy {
     }
   }
 
- /**
-  * Create an instance of CompletedBy given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CompletedBy
-  * @throws IOException if the JSON string is invalid with respect to CompletedBy
-  */
+  /**
+   * Create an instance of CompletedBy given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CompletedBy
+   * @throws IOException if the JSON string is invalid with respect to CompletedBy
+   */
   public static CompletedBy fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CompletedBy.class);
   }
 
- /**
-  * Convert an instance of CompletedBy to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CompletedBy to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

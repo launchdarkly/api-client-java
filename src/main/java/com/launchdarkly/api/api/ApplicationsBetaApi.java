@@ -88,7 +88,8 @@ public class ApplicationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -97,7 +98,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteApplicationCall(String applicationKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteApplicationCall(@javax.annotation.Nonnull String applicationKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -143,7 +144,7 @@ public class ApplicationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteApplicationValidateBeforeCall(String applicationKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteApplicationValidateBeforeCall(@javax.annotation.Nonnull String applicationKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'applicationKey' is set
         if (applicationKey == null) {
             throw new ApiException("Missing the required parameter 'applicationKey' when calling deleteApplication(Async)");
@@ -159,7 +160,8 @@ public class ApplicationsBetaApi {
      * @param applicationKey The application key (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -168,7 +170,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteApplication(String applicationKey) throws ApiException {
+    public void deleteApplication(@javax.annotation.Nonnull String applicationKey) throws ApiException {
         deleteApplicationWithHttpInfo(applicationKey);
     }
 
@@ -179,7 +181,8 @@ public class ApplicationsBetaApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -188,7 +191,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteApplicationWithHttpInfo(String applicationKey) throws ApiException {
+    public ApiResponse<Void> deleteApplicationWithHttpInfo(@javax.annotation.Nonnull String applicationKey) throws ApiException {
         okhttp3.Call localVarCall = deleteApplicationValidateBeforeCall(applicationKey, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -201,7 +204,8 @@ public class ApplicationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -210,7 +214,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteApplicationAsync(String applicationKey, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteApplicationAsync(@javax.annotation.Nonnull String applicationKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteApplicationValidateBeforeCall(applicationKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -224,7 +228,8 @@ public class ApplicationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -233,7 +238,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteApplicationVersionCall(String applicationKey, String versionKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteApplicationVersionCall(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nonnull String versionKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -280,7 +285,7 @@ public class ApplicationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteApplicationVersionValidateBeforeCall(String applicationKey, String versionKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteApplicationVersionValidateBeforeCall(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nonnull String versionKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'applicationKey' is set
         if (applicationKey == null) {
             throw new ApiException("Missing the required parameter 'applicationKey' when calling deleteApplicationVersion(Async)");
@@ -302,7 +307,8 @@ public class ApplicationsBetaApi {
      * @param versionKey The application version key (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -311,7 +317,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteApplicationVersion(String applicationKey, String versionKey) throws ApiException {
+    public void deleteApplicationVersion(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nonnull String versionKey) throws ApiException {
         deleteApplicationVersionWithHttpInfo(applicationKey, versionKey);
     }
 
@@ -323,7 +329,8 @@ public class ApplicationsBetaApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -332,7 +339,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteApplicationVersionWithHttpInfo(String applicationKey, String versionKey) throws ApiException {
+    public ApiResponse<Void> deleteApplicationVersionWithHttpInfo(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nonnull String versionKey) throws ApiException {
         okhttp3.Call localVarCall = deleteApplicationVersionValidateBeforeCall(applicationKey, versionKey, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -346,7 +353,8 @@ public class ApplicationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -355,7 +363,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteApplicationVersionAsync(String applicationKey, String versionKey, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteApplicationVersionAsync(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nonnull String versionKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteApplicationVersionValidateBeforeCall(applicationKey, versionKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -369,7 +377,8 @@ public class ApplicationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Application response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -379,7 +388,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getApplicationCall(String applicationKey, String expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getApplicationCall(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -429,7 +438,7 @@ public class ApplicationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getApplicationValidateBeforeCall(String applicationKey, String expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getApplicationValidateBeforeCall(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'applicationKey' is set
         if (applicationKey == null) {
             throw new ApiException("Missing the required parameter 'applicationKey' when calling getApplication(Async)");
@@ -447,7 +456,8 @@ public class ApplicationsBetaApi {
      * @return ApplicationRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Application response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -457,7 +467,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApplicationRep getApplication(String applicationKey, String expand) throws ApiException {
+    public ApplicationRep getApplication(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nullable String expand) throws ApiException {
         ApiResponse<ApplicationRep> localVarResp = getApplicationWithHttpInfo(applicationKey, expand);
         return localVarResp.getData();
     }
@@ -470,7 +480,8 @@ public class ApplicationsBetaApi {
      * @return ApiResponse&lt;ApplicationRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Application response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -480,7 +491,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ApplicationRep> getApplicationWithHttpInfo(String applicationKey, String expand) throws ApiException {
+    public ApiResponse<ApplicationRep> getApplicationWithHttpInfo(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nullable String expand) throws ApiException {
         okhttp3.Call localVarCall = getApplicationValidateBeforeCall(applicationKey, expand, null);
         Type localVarReturnType = new TypeToken<ApplicationRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -495,7 +506,8 @@ public class ApplicationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Application response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -505,7 +517,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getApplicationAsync(String applicationKey, String expand, final ApiCallback<ApplicationRep> _callback) throws ApiException {
+    public okhttp3.Call getApplicationAsync(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nullable String expand, final ApiCallback<ApplicationRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getApplicationValidateBeforeCall(applicationKey, expand, _callback);
         Type localVarReturnType = new TypeToken<ApplicationRep>(){}.getType();
@@ -523,7 +535,8 @@ public class ApplicationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Application versions response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -533,7 +546,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getApplicationVersionsCall(String applicationKey, String filter, Long limit, Long offset, String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getApplicationVersionsCall(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -595,7 +608,7 @@ public class ApplicationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getApplicationVersionsValidateBeforeCall(String applicationKey, String filter, Long limit, Long offset, String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getApplicationVersionsValidateBeforeCall(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'applicationKey' is set
         if (applicationKey == null) {
             throw new ApiException("Missing the required parameter 'applicationKey' when calling getApplicationVersions(Async)");
@@ -616,7 +629,8 @@ public class ApplicationsBetaApi {
      * @return ApplicationVersionsCollectionRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Application versions response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -626,7 +640,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApplicationVersionsCollectionRep getApplicationVersions(String applicationKey, String filter, Long limit, Long offset, String sort) throws ApiException {
+    public ApplicationVersionsCollectionRep getApplicationVersions(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort) throws ApiException {
         ApiResponse<ApplicationVersionsCollectionRep> localVarResp = getApplicationVersionsWithHttpInfo(applicationKey, filter, limit, offset, sort);
         return localVarResp.getData();
     }
@@ -642,7 +656,8 @@ public class ApplicationsBetaApi {
      * @return ApiResponse&lt;ApplicationVersionsCollectionRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Application versions response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -652,7 +667,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ApplicationVersionsCollectionRep> getApplicationVersionsWithHttpInfo(String applicationKey, String filter, Long limit, Long offset, String sort) throws ApiException {
+    public ApiResponse<ApplicationVersionsCollectionRep> getApplicationVersionsWithHttpInfo(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = getApplicationVersionsValidateBeforeCall(applicationKey, filter, limit, offset, sort, null);
         Type localVarReturnType = new TypeToken<ApplicationVersionsCollectionRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -670,7 +685,8 @@ public class ApplicationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Application versions response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -680,7 +696,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getApplicationVersionsAsync(String applicationKey, String filter, Long limit, Long offset, String sort, final ApiCallback<ApplicationVersionsCollectionRep> _callback) throws ApiException {
+    public okhttp3.Call getApplicationVersionsAsync(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, final ApiCallback<ApplicationVersionsCollectionRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getApplicationVersionsValidateBeforeCall(applicationKey, filter, limit, offset, sort, _callback);
         Type localVarReturnType = new TypeToken<ApplicationVersionsCollectionRep>(){}.getType();
@@ -698,7 +714,8 @@ public class ApplicationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Applications response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -708,7 +725,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getApplicationsCall(String filter, Long limit, Long offset, String sort, String expand, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getApplicationsCall(@javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -773,7 +790,7 @@ public class ApplicationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getApplicationsValidateBeforeCall(String filter, Long limit, Long offset, String sort, String expand, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getApplicationsValidateBeforeCall(@javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String expand, final ApiCallback _callback) throws ApiException {
         return getApplicationsCall(filter, limit, offset, sort, expand, _callback);
 
     }
@@ -789,7 +806,8 @@ public class ApplicationsBetaApi {
      * @return ApplicationCollectionRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Applications response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -799,7 +817,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApplicationCollectionRep getApplications(String filter, Long limit, Long offset, String sort, String expand) throws ApiException {
+    public ApplicationCollectionRep getApplications(@javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String expand) throws ApiException {
         ApiResponse<ApplicationCollectionRep> localVarResp = getApplicationsWithHttpInfo(filter, limit, offset, sort, expand);
         return localVarResp.getData();
     }
@@ -815,7 +833,8 @@ public class ApplicationsBetaApi {
      * @return ApiResponse&lt;ApplicationCollectionRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Applications response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -825,7 +844,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ApplicationCollectionRep> getApplicationsWithHttpInfo(String filter, Long limit, Long offset, String sort, String expand) throws ApiException {
+    public ApiResponse<ApplicationCollectionRep> getApplicationsWithHttpInfo(@javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String expand) throws ApiException {
         okhttp3.Call localVarCall = getApplicationsValidateBeforeCall(filter, limit, offset, sort, expand, null);
         Type localVarReturnType = new TypeToken<ApplicationCollectionRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -843,7 +862,8 @@ public class ApplicationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Applications response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -853,7 +873,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getApplicationsAsync(String filter, Long limit, Long offset, String sort, String expand, final ApiCallback<ApplicationCollectionRep> _callback) throws ApiException {
+    public okhttp3.Call getApplicationsAsync(@javax.annotation.Nullable String filter, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable Long offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String expand, final ApiCallback<ApplicationCollectionRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getApplicationsValidateBeforeCall(filter, limit, offset, sort, expand, _callback);
         Type localVarReturnType = new TypeToken<ApplicationCollectionRep>(){}.getType();
@@ -868,7 +888,8 @@ public class ApplicationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Application response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -878,7 +899,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchApplicationCall(String applicationKey, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchApplicationCall(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -925,7 +946,7 @@ public class ApplicationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchApplicationValidateBeforeCall(String applicationKey, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchApplicationValidateBeforeCall(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'applicationKey' is set
         if (applicationKey == null) {
             throw new ApiException("Missing the required parameter 'applicationKey' when calling patchApplication(Async)");
@@ -948,7 +969,8 @@ public class ApplicationsBetaApi {
      * @return ApplicationRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Application response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -958,7 +980,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApplicationRep patchApplication(String applicationKey, List<PatchOperation> patchOperation) throws ApiException {
+    public ApplicationRep patchApplication(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         ApiResponse<ApplicationRep> localVarResp = patchApplicationWithHttpInfo(applicationKey, patchOperation);
         return localVarResp.getData();
     }
@@ -971,7 +993,8 @@ public class ApplicationsBetaApi {
      * @return ApiResponse&lt;ApplicationRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Application response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -981,7 +1004,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ApplicationRep> patchApplicationWithHttpInfo(String applicationKey, List<PatchOperation> patchOperation) throws ApiException {
+    public ApiResponse<ApplicationRep> patchApplicationWithHttpInfo(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         okhttp3.Call localVarCall = patchApplicationValidateBeforeCall(applicationKey, patchOperation, null);
         Type localVarReturnType = new TypeToken<ApplicationRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -996,7 +1019,8 @@ public class ApplicationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Application response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1006,7 +1030,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchApplicationAsync(String applicationKey, List<PatchOperation> patchOperation, final ApiCallback<ApplicationRep> _callback) throws ApiException {
+    public okhttp3.Call patchApplicationAsync(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback<ApplicationRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchApplicationValidateBeforeCall(applicationKey, patchOperation, _callback);
         Type localVarReturnType = new TypeToken<ApplicationRep>(){}.getType();
@@ -1022,7 +1046,8 @@ public class ApplicationsBetaApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Application version response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1032,7 +1057,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchApplicationVersionCall(String applicationKey, String versionKey, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchApplicationVersionCall(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nonnull String versionKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1080,7 +1105,7 @@ public class ApplicationsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchApplicationVersionValidateBeforeCall(String applicationKey, String versionKey, List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchApplicationVersionValidateBeforeCall(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nonnull String versionKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'applicationKey' is set
         if (applicationKey == null) {
             throw new ApiException("Missing the required parameter 'applicationKey' when calling patchApplicationVersion(Async)");
@@ -1109,7 +1134,8 @@ public class ApplicationsBetaApi {
      * @return ApplicationVersionRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Application version response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1119,7 +1145,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApplicationVersionRep patchApplicationVersion(String applicationKey, String versionKey, List<PatchOperation> patchOperation) throws ApiException {
+    public ApplicationVersionRep patchApplicationVersion(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nonnull String versionKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         ApiResponse<ApplicationVersionRep> localVarResp = patchApplicationVersionWithHttpInfo(applicationKey, versionKey, patchOperation);
         return localVarResp.getData();
     }
@@ -1133,7 +1159,8 @@ public class ApplicationsBetaApi {
      * @return ApiResponse&lt;ApplicationVersionRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Application version response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1143,7 +1170,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ApplicationVersionRep> patchApplicationVersionWithHttpInfo(String applicationKey, String versionKey, List<PatchOperation> patchOperation) throws ApiException {
+    public ApiResponse<ApplicationVersionRep> patchApplicationVersionWithHttpInfo(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nonnull String versionKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation) throws ApiException {
         okhttp3.Call localVarCall = patchApplicationVersionValidateBeforeCall(applicationKey, versionKey, patchOperation, null);
         Type localVarReturnType = new TypeToken<ApplicationVersionRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1159,7 +1186,8 @@ public class ApplicationsBetaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Application version response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -1169,7 +1197,7 @@ public class ApplicationsBetaApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchApplicationVersionAsync(String applicationKey, String versionKey, List<PatchOperation> patchOperation, final ApiCallback<ApplicationVersionRep> _callback) throws ApiException {
+    public okhttp3.Call patchApplicationVersionAsync(@javax.annotation.Nonnull String applicationKey, @javax.annotation.Nonnull String versionKey, @javax.annotation.Nonnull List<PatchOperation> patchOperation, final ApiCallback<ApplicationVersionRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchApplicationVersionValidateBeforeCall(applicationKey, versionKey, patchOperation, _callback);
         Type localVarReturnType = new TypeToken<ApplicationVersionRep>(){}.getType();

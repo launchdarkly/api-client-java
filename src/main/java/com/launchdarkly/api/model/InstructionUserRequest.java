@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,30 +38,30 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * InstructionUserRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class InstructionUserRequest {
   /**
    * The type of change to make to the removal date for this user from individual targeting for this flag.
    */
   @JsonAdapter(KindEnum.Adapter.class)
   public enum KindEnum {
-    ADDEXPIREUSERTARGETDATE("addExpireUserTargetDate"),
+    ADD_EXPIRE_USER_TARGET_DATE("addExpireUserTargetDate"),
     
-    UPDATEEXPIREUSERTARGETDATE("updateExpireUserTargetDate"),
+    UPDATE_EXPIRE_USER_TARGET_DATE("updateExpireUserTargetDate"),
     
-    REMOVEEXPIREUSERTARGETDATE("removeExpireUserTargetDate");
+    REMOVE_EXPIRE_USER_TARGET_DATE("removeExpireUserTargetDate");
 
     private String value;
 
@@ -107,118 +108,123 @@ public class InstructionUserRequest {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
+  @javax.annotation.Nonnull
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_FLAG_KEY = "flagKey";
   @SerializedName(SERIALIZED_NAME_FLAG_KEY)
+  @javax.annotation.Nonnull
   private String flagKey;
 
   public static final String SERIALIZED_NAME_VARIATION_ID = "variationId";
   @SerializedName(SERIALIZED_NAME_VARIATION_ID)
+  @javax.annotation.Nonnull
   private String variationId;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nullable
   private Integer value;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
   private Integer version;
 
   public InstructionUserRequest() {
   }
 
-  public InstructionUserRequest kind(KindEnum kind) {
+  public InstructionUserRequest kind(@javax.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
 
-   /**
+  /**
    * The type of change to make to the removal date for this user from individual targeting for this flag.
    * @return kind
-  **/
+   */
   @javax.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(KindEnum kind) {
+  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public InstructionUserRequest flagKey(String flagKey) {
+  public InstructionUserRequest flagKey(@javax.annotation.Nonnull String flagKey) {
     this.flagKey = flagKey;
     return this;
   }
 
-   /**
+  /**
    * The flag key
    * @return flagKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getFlagKey() {
     return flagKey;
   }
 
-  public void setFlagKey(String flagKey) {
+  public void setFlagKey(@javax.annotation.Nonnull String flagKey) {
     this.flagKey = flagKey;
   }
 
 
-  public InstructionUserRequest variationId(String variationId) {
+  public InstructionUserRequest variationId(@javax.annotation.Nonnull String variationId) {
     this.variationId = variationId;
     return this;
   }
 
-   /**
+  /**
    * ID of a variation on the flag
    * @return variationId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getVariationId() {
     return variationId;
   }
 
-  public void setVariationId(String variationId) {
+  public void setVariationId(@javax.annotation.Nonnull String variationId) {
     this.variationId = variationId;
   }
 
 
-  public InstructionUserRequest value(Integer value) {
+  public InstructionUserRequest value(@javax.annotation.Nullable Integer value) {
     this.value = value;
     return this;
   }
 
-   /**
+  /**
    * The time, in Unix milliseconds, when LaunchDarkly should remove the user from individual targeting for this flag. Required if &lt;code&gt;kind&lt;/code&gt; is &lt;code&gt;addExpireUserTargetDate&lt;/code&gt; or &lt;code&gt;updateExpireUserTargetDate&lt;/code&gt;.
    * @return value
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getValue() {
     return value;
   }
 
-  public void setValue(Integer value) {
+  public void setValue(@javax.annotation.Nullable Integer value) {
     this.value = value;
   }
 
 
-  public InstructionUserRequest version(Integer version) {
+  public InstructionUserRequest version(@javax.annotation.Nullable Integer version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * The version of the expiring user target to update. Optional and only used if &lt;code&gt;kind&lt;/code&gt; is &lt;code&gt;updateExpireUserTargetDate&lt;/code&gt;. If included, update will fail if version doesn&#39;t match current version of the expiring user target.
    * @return version
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(Integer version) {
+  public void setVersion(@javax.annotation.Nullable Integer version) {
     this.version = version;
   }
 
@@ -321,50 +327,42 @@ public class InstructionUserRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("kind");
-    openapiFields.add("flagKey");
-    openapiFields.add("variationId");
-    openapiFields.add("value");
-    openapiFields.add("version");
+    openapiFields = new HashSet<String>(Arrays.asList("kind", "flagKey", "variationId", "value", "version"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("kind");
-    openapiRequiredFields.add("flagKey");
-    openapiRequiredFields.add("variationId");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("kind", "flagKey", "variationId"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to InstructionUserRequest
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to InstructionUserRequest
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!InstructionUserRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in InstructionUserRequest is not found in the empty JSON string", InstructionUserRequest.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in InstructionUserRequest is not found in the empty JSON string", InstructionUserRequest.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : InstructionUserRequest.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("kind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
       // validate the required field `kind`
       KindEnum.validateJsonElement(jsonObj.get("kind"));
       if (!jsonObj.get("flagKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `flagKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("flagKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `flagKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("flagKey").toString()));
       }
       if (!jsonObj.get("variationId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `variationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("variationId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `variationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("variationId").toString()));
       }
   }
 
@@ -425,7 +423,7 @@ public class InstructionUserRequest {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -440,22 +438,22 @@ public class InstructionUserRequest {
     }
   }
 
- /**
-  * Create an instance of InstructionUserRequest given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of InstructionUserRequest
-  * @throws IOException if the JSON string is invalid with respect to InstructionUserRequest
-  */
+  /**
+   * Create an instance of InstructionUserRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of InstructionUserRequest
+   * @throws IOException if the JSON string is invalid with respect to InstructionUserRequest
+   */
   public static InstructionUserRequest fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, InstructionUserRequest.class);
   }
 
- /**
-  * Convert an instance of InstructionUserRequest to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of InstructionUserRequest to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

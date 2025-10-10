@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,197 +43,207 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * Configuration that controls how changes to a resource are gated by approvals.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ApprovalRequestSetting {
   public static final String SERIALIZED_NAME_REQUIRED = "required";
   @SerializedName(SERIALIZED_NAME_REQUIRED)
+  @javax.annotation.Nonnull
   private Boolean required;
 
   public static final String SERIALIZED_NAME_BYPASS_APPROVALS_FOR_PENDING_CHANGES = "bypassApprovalsForPendingChanges";
   @SerializedName(SERIALIZED_NAME_BYPASS_APPROVALS_FOR_PENDING_CHANGES)
+  @javax.annotation.Nonnull
   private Boolean bypassApprovalsForPendingChanges;
 
   public static final String SERIALIZED_NAME_MIN_NUM_APPROVALS = "minNumApprovals";
   @SerializedName(SERIALIZED_NAME_MIN_NUM_APPROVALS)
+  @javax.annotation.Nonnull
   private Integer minNumApprovals;
 
   public static final String SERIALIZED_NAME_CAN_REVIEW_OWN_REQUEST = "canReviewOwnRequest";
   @SerializedName(SERIALIZED_NAME_CAN_REVIEW_OWN_REQUEST)
+  @javax.annotation.Nonnull
   private Boolean canReviewOwnRequest;
 
   public static final String SERIALIZED_NAME_CAN_APPLY_DECLINED_CHANGES = "canApplyDeclinedChanges";
   @SerializedName(SERIALIZED_NAME_CAN_APPLY_DECLINED_CHANGES)
+  @javax.annotation.Nonnull
   private Boolean canApplyDeclinedChanges;
 
   public static final String SERIALIZED_NAME_AUTO_APPLY_APPROVED_CHANGES = "autoApplyApprovedChanges";
   @SerializedName(SERIALIZED_NAME_AUTO_APPLY_APPROVED_CHANGES)
+  @javax.annotation.Nullable
   private Boolean autoApplyApprovedChanges;
 
   public static final String SERIALIZED_NAME_SERVICE_KIND = "serviceKind";
   @SerializedName(SERIALIZED_NAME_SERVICE_KIND)
+  @javax.annotation.Nonnull
   private String serviceKind;
 
   public static final String SERIALIZED_NAME_SERVICE_CONFIG = "serviceConfig";
   @SerializedName(SERIALIZED_NAME_SERVICE_CONFIG)
+  @javax.annotation.Nonnull
   private Map<String, Object> serviceConfig = new HashMap<>();
 
   public static final String SERIALIZED_NAME_REQUIRED_APPROVAL_TAGS = "requiredApprovalTags";
   @SerializedName(SERIALIZED_NAME_REQUIRED_APPROVAL_TAGS)
+  @javax.annotation.Nonnull
   private List<String> requiredApprovalTags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SERVICE_KIND_CONFIGURATION_ID = "serviceKindConfigurationId";
   @SerializedName(SERIALIZED_NAME_SERVICE_KIND_CONFIGURATION_ID)
+  @javax.annotation.Nullable
   private String serviceKindConfigurationId;
 
   public ApprovalRequestSetting() {
   }
 
-  public ApprovalRequestSetting required(Boolean required) {
+  public ApprovalRequestSetting required(@javax.annotation.Nonnull Boolean required) {
     this.required = required;
     return this;
   }
 
-   /**
+  /**
    * If approvals are required for this environment
    * @return required
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getRequired() {
     return required;
   }
 
-  public void setRequired(Boolean required) {
+  public void setRequired(@javax.annotation.Nonnull Boolean required) {
     this.required = required;
   }
 
 
-  public ApprovalRequestSetting bypassApprovalsForPendingChanges(Boolean bypassApprovalsForPendingChanges) {
+  public ApprovalRequestSetting bypassApprovalsForPendingChanges(@javax.annotation.Nonnull Boolean bypassApprovalsForPendingChanges) {
     this.bypassApprovalsForPendingChanges = bypassApprovalsForPendingChanges;
     return this;
   }
 
-   /**
+  /**
    * Whether to skip approvals for pending changes
    * @return bypassApprovalsForPendingChanges
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getBypassApprovalsForPendingChanges() {
     return bypassApprovalsForPendingChanges;
   }
 
-  public void setBypassApprovalsForPendingChanges(Boolean bypassApprovalsForPendingChanges) {
+  public void setBypassApprovalsForPendingChanges(@javax.annotation.Nonnull Boolean bypassApprovalsForPendingChanges) {
     this.bypassApprovalsForPendingChanges = bypassApprovalsForPendingChanges;
   }
 
 
-  public ApprovalRequestSetting minNumApprovals(Integer minNumApprovals) {
+  public ApprovalRequestSetting minNumApprovals(@javax.annotation.Nonnull Integer minNumApprovals) {
     this.minNumApprovals = minNumApprovals;
     return this;
   }
 
-   /**
+  /**
    * Sets the amount of approvals required before a member can apply a change. The minimum is one and the maximum is five. 
    * @return minNumApprovals
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getMinNumApprovals() {
     return minNumApprovals;
   }
 
-  public void setMinNumApprovals(Integer minNumApprovals) {
+  public void setMinNumApprovals(@javax.annotation.Nonnull Integer minNumApprovals) {
     this.minNumApprovals = minNumApprovals;
   }
 
 
-  public ApprovalRequestSetting canReviewOwnRequest(Boolean canReviewOwnRequest) {
+  public ApprovalRequestSetting canReviewOwnRequest(@javax.annotation.Nonnull Boolean canReviewOwnRequest) {
     this.canReviewOwnRequest = canReviewOwnRequest;
     return this;
   }
 
-   /**
+  /**
    * Allow someone who makes an approval request to apply their own change
    * @return canReviewOwnRequest
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getCanReviewOwnRequest() {
     return canReviewOwnRequest;
   }
 
-  public void setCanReviewOwnRequest(Boolean canReviewOwnRequest) {
+  public void setCanReviewOwnRequest(@javax.annotation.Nonnull Boolean canReviewOwnRequest) {
     this.canReviewOwnRequest = canReviewOwnRequest;
   }
 
 
-  public ApprovalRequestSetting canApplyDeclinedChanges(Boolean canApplyDeclinedChanges) {
+  public ApprovalRequestSetting canApplyDeclinedChanges(@javax.annotation.Nonnull Boolean canApplyDeclinedChanges) {
     this.canApplyDeclinedChanges = canApplyDeclinedChanges;
     return this;
   }
 
-   /**
+  /**
    * Allow applying the change as long as at least one person has approved
    * @return canApplyDeclinedChanges
-  **/
+   */
   @javax.annotation.Nonnull
   public Boolean getCanApplyDeclinedChanges() {
     return canApplyDeclinedChanges;
   }
 
-  public void setCanApplyDeclinedChanges(Boolean canApplyDeclinedChanges) {
+  public void setCanApplyDeclinedChanges(@javax.annotation.Nonnull Boolean canApplyDeclinedChanges) {
     this.canApplyDeclinedChanges = canApplyDeclinedChanges;
   }
 
 
-  public ApprovalRequestSetting autoApplyApprovedChanges(Boolean autoApplyApprovedChanges) {
+  public ApprovalRequestSetting autoApplyApprovedChanges(@javax.annotation.Nullable Boolean autoApplyApprovedChanges) {
     this.autoApplyApprovedChanges = autoApplyApprovedChanges;
     return this;
   }
 
-   /**
+  /**
    * Automatically apply changes that have been approved by all reviewers. This field is only applicable for approval services other than LaunchDarkly. 
    * @return autoApplyApprovedChanges
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getAutoApplyApprovedChanges() {
     return autoApplyApprovedChanges;
   }
 
-  public void setAutoApplyApprovedChanges(Boolean autoApplyApprovedChanges) {
+  public void setAutoApplyApprovedChanges(@javax.annotation.Nullable Boolean autoApplyApprovedChanges) {
     this.autoApplyApprovedChanges = autoApplyApprovedChanges;
   }
 
 
-  public ApprovalRequestSetting serviceKind(String serviceKind) {
+  public ApprovalRequestSetting serviceKind(@javax.annotation.Nonnull String serviceKind) {
     this.serviceKind = serviceKind;
     return this;
   }
 
-   /**
+  /**
    * Which service to use for managing approvals
    * @return serviceKind
-  **/
+   */
   @javax.annotation.Nonnull
   public String getServiceKind() {
     return serviceKind;
   }
 
-  public void setServiceKind(String serviceKind) {
+  public void setServiceKind(@javax.annotation.Nonnull String serviceKind) {
     this.serviceKind = serviceKind;
   }
 
 
-  public ApprovalRequestSetting serviceConfig(Map<String, Object> serviceConfig) {
+  public ApprovalRequestSetting serviceConfig(@javax.annotation.Nonnull Map<String, Object> serviceConfig) {
     this.serviceConfig = serviceConfig;
     return this;
   }
@@ -245,21 +256,21 @@ public class ApprovalRequestSetting {
     return this;
   }
 
-   /**
+  /**
    * Arbitrary service-specific configuration
    * @return serviceConfig
-  **/
+   */
   @javax.annotation.Nonnull
   public Map<String, Object> getServiceConfig() {
     return serviceConfig;
   }
 
-  public void setServiceConfig(Map<String, Object> serviceConfig) {
+  public void setServiceConfig(@javax.annotation.Nonnull Map<String, Object> serviceConfig) {
     this.serviceConfig = serviceConfig;
   }
 
 
-  public ApprovalRequestSetting requiredApprovalTags(List<String> requiredApprovalTags) {
+  public ApprovalRequestSetting requiredApprovalTags(@javax.annotation.Nonnull List<String> requiredApprovalTags) {
     this.requiredApprovalTags = requiredApprovalTags;
     return this;
   }
@@ -272,35 +283,35 @@ public class ApprovalRequestSetting {
     return this;
   }
 
-   /**
+  /**
    * Require approval only on flags with the provided tags. Otherwise all flags will require approval. 
    * @return requiredApprovalTags
-  **/
+   */
   @javax.annotation.Nonnull
   public List<String> getRequiredApprovalTags() {
     return requiredApprovalTags;
   }
 
-  public void setRequiredApprovalTags(List<String> requiredApprovalTags) {
+  public void setRequiredApprovalTags(@javax.annotation.Nonnull List<String> requiredApprovalTags) {
     this.requiredApprovalTags = requiredApprovalTags;
   }
 
 
-  public ApprovalRequestSetting serviceKindConfigurationId(String serviceKindConfigurationId) {
+  public ApprovalRequestSetting serviceKindConfigurationId(@javax.annotation.Nullable String serviceKindConfigurationId) {
     this.serviceKindConfigurationId = serviceKindConfigurationId;
     return this;
   }
 
-   /**
+  /**
    * Optional integration configuration ID of a custom approval integration. This is an Enterprise-only feature. 
    * @return serviceKindConfigurationId
-  **/
+   */
   @javax.annotation.Nullable
   public String getServiceKindConfigurationId() {
     return serviceKindConfigurationId;
   }
 
-  public void setServiceKindConfigurationId(String serviceKindConfigurationId) {
+  public void setServiceKindConfigurationId(@javax.annotation.Nullable String serviceKindConfigurationId) {
     this.serviceKindConfigurationId = serviceKindConfigurationId;
   }
 
@@ -424,61 +435,43 @@ public class ApprovalRequestSetting {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("required");
-    openapiFields.add("bypassApprovalsForPendingChanges");
-    openapiFields.add("minNumApprovals");
-    openapiFields.add("canReviewOwnRequest");
-    openapiFields.add("canApplyDeclinedChanges");
-    openapiFields.add("autoApplyApprovedChanges");
-    openapiFields.add("serviceKind");
-    openapiFields.add("serviceConfig");
-    openapiFields.add("requiredApprovalTags");
-    openapiFields.add("serviceKindConfigurationId");
+    openapiFields = new HashSet<String>(Arrays.asList("required", "bypassApprovalsForPendingChanges", "minNumApprovals", "canReviewOwnRequest", "canApplyDeclinedChanges", "autoApplyApprovedChanges", "serviceKind", "serviceConfig", "requiredApprovalTags", "serviceKindConfigurationId"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("required");
-    openapiRequiredFields.add("bypassApprovalsForPendingChanges");
-    openapiRequiredFields.add("minNumApprovals");
-    openapiRequiredFields.add("canReviewOwnRequest");
-    openapiRequiredFields.add("canApplyDeclinedChanges");
-    openapiRequiredFields.add("serviceKind");
-    openapiRequiredFields.add("serviceConfig");
-    openapiRequiredFields.add("requiredApprovalTags");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("required", "bypassApprovalsForPendingChanges", "minNumApprovals", "canReviewOwnRequest", "canApplyDeclinedChanges", "serviceKind", "serviceConfig", "requiredApprovalTags"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ApprovalRequestSetting
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApprovalRequestSetting
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApprovalRequestSetting.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ApprovalRequestSetting is not found in the empty JSON string", ApprovalRequestSetting.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in ApprovalRequestSetting is not found in the empty JSON string", ApprovalRequestSetting.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ApprovalRequestSetting.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("serviceKind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `serviceKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("serviceKind").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `serviceKind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("serviceKind").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("requiredApprovalTags") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("requiredApprovalTags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `requiredApprovalTags` to be an array in the JSON string but got `%s`", jsonObj.get("requiredApprovalTags").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `requiredApprovalTags` to be an array in the JSON string but got `%s`", jsonObj.get("requiredApprovalTags").toString()));
       }
       if ((jsonObj.get("serviceKindConfigurationId") != null && !jsonObj.get("serviceKindConfigurationId").isJsonNull()) && !jsonObj.get("serviceKindConfigurationId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `serviceKindConfigurationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("serviceKindConfigurationId").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `serviceKindConfigurationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("serviceKindConfigurationId").toString()));
       }
   }
 
@@ -539,7 +532,7 @@ public class ApprovalRequestSetting {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -554,22 +547,22 @@ public class ApprovalRequestSetting {
     }
   }
 
- /**
-  * Create an instance of ApprovalRequestSetting given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApprovalRequestSetting
-  * @throws IOException if the JSON string is invalid with respect to ApprovalRequestSetting
-  */
+  /**
+   * Create an instance of ApprovalRequestSetting given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApprovalRequestSetting
+   * @throws IOException if the JSON string is invalid with respect to ApprovalRequestSetting
+   */
   public static ApprovalRequestSetting fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApprovalRequestSetting.class);
   }
 
- /**
-  * Convert an instance of ApprovalRequestSetting to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApprovalRequestSetting to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

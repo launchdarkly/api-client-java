@@ -14,6 +14,7 @@
 package com.launchdarkly.api.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,78 +41,82 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import com.launchdarkly.api.JSON;
 
 /**
  * AudiencePost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-09T16:56:19.516161Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AudiencePost {
   public static final String SERIALIZED_NAME_ENVIRONMENT_KEY = "environmentKey";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_KEY)
+  @javax.annotation.Nonnull
   private String environmentKey;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_SEGMENT_KEYS = "segmentKeys";
   @SerializedName(SERIALIZED_NAME_SEGMENT_KEYS)
+  @javax.annotation.Nullable
   private List<String> segmentKeys = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CONFIGURATION = "configuration";
   @SerializedName(SERIALIZED_NAME_CONFIGURATION)
+  @javax.annotation.Nullable
   private AudienceConfiguration _configuration;
 
   public AudiencePost() {
   }
 
-  public AudiencePost environmentKey(String environmentKey) {
+  public AudiencePost environmentKey(@javax.annotation.Nonnull String environmentKey) {
     this.environmentKey = environmentKey;
     return this;
   }
 
-   /**
+  /**
    * A project-unique key for the environment.
    * @return environmentKey
-  **/
+   */
   @javax.annotation.Nonnull
   public String getEnvironmentKey() {
     return environmentKey;
   }
 
-  public void setEnvironmentKey(String environmentKey) {
+  public void setEnvironmentKey(@javax.annotation.Nonnull String environmentKey) {
     this.environmentKey = environmentKey;
   }
 
 
-  public AudiencePost name(String name) {
+  public AudiencePost name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The audience name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public AudiencePost segmentKeys(List<String> segmentKeys) {
+  public AudiencePost segmentKeys(@javax.annotation.Nullable List<String> segmentKeys) {
     this.segmentKeys = segmentKeys;
     return this;
   }
@@ -124,35 +129,35 @@ public class AudiencePost {
     return this;
   }
 
-   /**
+  /**
    * Segments targeted by this audience.
    * @return segmentKeys
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getSegmentKeys() {
     return segmentKeys;
   }
 
-  public void setSegmentKeys(List<String> segmentKeys) {
+  public void setSegmentKeys(@javax.annotation.Nullable List<String> segmentKeys) {
     this.segmentKeys = segmentKeys;
   }
 
 
-  public AudiencePost _configuration(AudienceConfiguration _configuration) {
+  public AudiencePost _configuration(@javax.annotation.Nullable AudienceConfiguration _configuration) {
     this._configuration = _configuration;
     return this;
   }
 
-   /**
+  /**
    * Get _configuration
    * @return _configuration
-  **/
+   */
   @javax.annotation.Nullable
   public AudienceConfiguration getConfiguration() {
     return _configuration;
   }
 
-  public void setConfiguration(AudienceConfiguration _configuration) {
+  public void setConfiguration(@javax.annotation.Nullable AudienceConfiguration _configuration) {
     this._configuration = _configuration;
   }
 
@@ -253,47 +258,41 @@ public class AudiencePost {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("environmentKey");
-    openapiFields.add("name");
-    openapiFields.add("segmentKeys");
-    openapiFields.add("configuration");
+    openapiFields = new HashSet<String>(Arrays.asList("environmentKey", "name", "segmentKeys", "configuration"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("environmentKey");
-    openapiRequiredFields.add("name");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("environmentKey", "name"));
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to AudiencePost
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AudiencePost
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AudiencePost.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AudiencePost is not found in the empty JSON string", AudiencePost.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AudiencePost is not found in the empty JSON string", AudiencePost.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : AudiencePost.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("environmentKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("segmentKeys") != null && !jsonObj.get("segmentKeys").isJsonNull() && !jsonObj.get("segmentKeys").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `segmentKeys` to be an array in the JSON string but got `%s`", jsonObj.get("segmentKeys").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `segmentKeys` to be an array in the JSON string but got `%s`", jsonObj.get("segmentKeys").toString()));
       }
       // validate the optional field `configuration`
       if (jsonObj.get("configuration") != null && !jsonObj.get("configuration").isJsonNull()) {
@@ -358,7 +357,7 @@ public class AudiencePost {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
@@ -373,22 +372,22 @@ public class AudiencePost {
     }
   }
 
- /**
-  * Create an instance of AudiencePost given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AudiencePost
-  * @throws IOException if the JSON string is invalid with respect to AudiencePost
-  */
+  /**
+   * Create an instance of AudiencePost given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AudiencePost
+   * @throws IOException if the JSON string is invalid with respect to AudiencePost
+   */
   public static AudiencePost fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AudiencePost.class);
   }
 
- /**
-  * Convert an instance of AudiencePost to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AudiencePost to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -43,8 +43,8 @@
 
 | Name | Value |
 |---- | -----|
-| HIGHERTHANBASELINE | &quot;HigherThanBaseline&quot; |
-| LOWERTHANBASELINE | &quot;LowerThanBaseline&quot; |
+| HIGHER_THAN_BASELINE | &quot;HigherThanBaseline&quot; |
+| LOWER_THAN_BASELINE | &quot;LowerThanBaseline&quot; |
 
 
 

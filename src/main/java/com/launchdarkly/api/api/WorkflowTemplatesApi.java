@@ -86,7 +86,8 @@ public class WorkflowTemplatesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Workflow template response JSON </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -95,7 +96,7 @@ public class WorkflowTemplatesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWorkflowTemplateCall(CreateWorkflowTemplateInput createWorkflowTemplateInput, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createWorkflowTemplateCall(@javax.annotation.Nonnull CreateWorkflowTemplateInput createWorkflowTemplateInput, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -141,7 +142,7 @@ public class WorkflowTemplatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createWorkflowTemplateValidateBeforeCall(CreateWorkflowTemplateInput createWorkflowTemplateInput, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createWorkflowTemplateValidateBeforeCall(@javax.annotation.Nonnull CreateWorkflowTemplateInput createWorkflowTemplateInput, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'createWorkflowTemplateInput' is set
         if (createWorkflowTemplateInput == null) {
             throw new ApiException("Missing the required parameter 'createWorkflowTemplateInput' when calling createWorkflowTemplate(Async)");
@@ -158,7 +159,8 @@ public class WorkflowTemplatesApi {
      * @return WorkflowTemplateOutput
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Workflow template response JSON </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -167,7 +169,7 @@ public class WorkflowTemplatesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public WorkflowTemplateOutput createWorkflowTemplate(CreateWorkflowTemplateInput createWorkflowTemplateInput) throws ApiException {
+    public WorkflowTemplateOutput createWorkflowTemplate(@javax.annotation.Nonnull CreateWorkflowTemplateInput createWorkflowTemplateInput) throws ApiException {
         ApiResponse<WorkflowTemplateOutput> localVarResp = createWorkflowTemplateWithHttpInfo(createWorkflowTemplateInput);
         return localVarResp.getData();
     }
@@ -179,7 +181,8 @@ public class WorkflowTemplatesApi {
      * @return ApiResponse&lt;WorkflowTemplateOutput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Workflow template response JSON </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -188,7 +191,7 @@ public class WorkflowTemplatesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkflowTemplateOutput> createWorkflowTemplateWithHttpInfo(CreateWorkflowTemplateInput createWorkflowTemplateInput) throws ApiException {
+    public ApiResponse<WorkflowTemplateOutput> createWorkflowTemplateWithHttpInfo(@javax.annotation.Nonnull CreateWorkflowTemplateInput createWorkflowTemplateInput) throws ApiException {
         okhttp3.Call localVarCall = createWorkflowTemplateValidateBeforeCall(createWorkflowTemplateInput, null);
         Type localVarReturnType = new TypeToken<WorkflowTemplateOutput>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -202,7 +205,8 @@ public class WorkflowTemplatesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Workflow template response JSON </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -211,7 +215,7 @@ public class WorkflowTemplatesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWorkflowTemplateAsync(CreateWorkflowTemplateInput createWorkflowTemplateInput, final ApiCallback<WorkflowTemplateOutput> _callback) throws ApiException {
+    public okhttp3.Call createWorkflowTemplateAsync(@javax.annotation.Nonnull CreateWorkflowTemplateInput createWorkflowTemplateInput, final ApiCallback<WorkflowTemplateOutput> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createWorkflowTemplateValidateBeforeCall(createWorkflowTemplateInput, _callback);
         Type localVarReturnType = new TypeToken<WorkflowTemplateOutput>(){}.getType();
@@ -225,7 +229,8 @@ public class WorkflowTemplatesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -235,7 +240,7 @@ public class WorkflowTemplatesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWorkflowTemplateCall(String templateKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteWorkflowTemplateCall(@javax.annotation.Nonnull String templateKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -281,7 +286,7 @@ public class WorkflowTemplatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteWorkflowTemplateValidateBeforeCall(String templateKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteWorkflowTemplateValidateBeforeCall(@javax.annotation.Nonnull String templateKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'templateKey' is set
         if (templateKey == null) {
             throw new ApiException("Missing the required parameter 'templateKey' when calling deleteWorkflowTemplate(Async)");
@@ -297,7 +302,8 @@ public class WorkflowTemplatesApi {
      * @param templateKey The template key (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -307,7 +313,7 @@ public class WorkflowTemplatesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteWorkflowTemplate(String templateKey) throws ApiException {
+    public void deleteWorkflowTemplate(@javax.annotation.Nonnull String templateKey) throws ApiException {
         deleteWorkflowTemplateWithHttpInfo(templateKey);
     }
 
@@ -318,7 +324,8 @@ public class WorkflowTemplatesApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -328,7 +335,7 @@ public class WorkflowTemplatesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteWorkflowTemplateWithHttpInfo(String templateKey) throws ApiException {
+    public ApiResponse<Void> deleteWorkflowTemplateWithHttpInfo(@javax.annotation.Nonnull String templateKey) throws ApiException {
         okhttp3.Call localVarCall = deleteWorkflowTemplateValidateBeforeCall(templateKey, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -341,7 +348,8 @@ public class WorkflowTemplatesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Action completed successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -351,7 +359,7 @@ public class WorkflowTemplatesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWorkflowTemplateAsync(String templateKey, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteWorkflowTemplateAsync(@javax.annotation.Nonnull String templateKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteWorkflowTemplateValidateBeforeCall(templateKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -365,7 +373,8 @@ public class WorkflowTemplatesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Workflow templates list response JSON </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -373,7 +382,7 @@ public class WorkflowTemplatesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWorkflowTemplatesCall(Boolean summary, String search, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getWorkflowTemplatesCall(@javax.annotation.Nullable Boolean summary, @javax.annotation.Nullable String search, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -426,7 +435,7 @@ public class WorkflowTemplatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWorkflowTemplatesValidateBeforeCall(Boolean summary, String search, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getWorkflowTemplatesValidateBeforeCall(@javax.annotation.Nullable Boolean summary, @javax.annotation.Nullable String search, final ApiCallback _callback) throws ApiException {
         return getWorkflowTemplatesCall(summary, search, _callback);
 
     }
@@ -439,7 +448,8 @@ public class WorkflowTemplatesApi {
      * @return WorkflowTemplatesListingOutputRep
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Workflow templates list response JSON </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -447,7 +457,7 @@ public class WorkflowTemplatesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public WorkflowTemplatesListingOutputRep getWorkflowTemplates(Boolean summary, String search) throws ApiException {
+    public WorkflowTemplatesListingOutputRep getWorkflowTemplates(@javax.annotation.Nullable Boolean summary, @javax.annotation.Nullable String search) throws ApiException {
         ApiResponse<WorkflowTemplatesListingOutputRep> localVarResp = getWorkflowTemplatesWithHttpInfo(summary, search);
         return localVarResp.getData();
     }
@@ -460,7 +470,8 @@ public class WorkflowTemplatesApi {
      * @return ApiResponse&lt;WorkflowTemplatesListingOutputRep&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Workflow templates list response JSON </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -468,7 +479,7 @@ public class WorkflowTemplatesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkflowTemplatesListingOutputRep> getWorkflowTemplatesWithHttpInfo(Boolean summary, String search) throws ApiException {
+    public ApiResponse<WorkflowTemplatesListingOutputRep> getWorkflowTemplatesWithHttpInfo(@javax.annotation.Nullable Boolean summary, @javax.annotation.Nullable String search) throws ApiException {
         okhttp3.Call localVarCall = getWorkflowTemplatesValidateBeforeCall(summary, search, null);
         Type localVarReturnType = new TypeToken<WorkflowTemplatesListingOutputRep>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -483,7 +494,8 @@ public class WorkflowTemplatesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Workflow templates list response JSON </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
@@ -491,7 +503,7 @@ public class WorkflowTemplatesApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWorkflowTemplatesAsync(Boolean summary, String search, final ApiCallback<WorkflowTemplatesListingOutputRep> _callback) throws ApiException {
+    public okhttp3.Call getWorkflowTemplatesAsync(@javax.annotation.Nullable Boolean summary, @javax.annotation.Nullable String search, final ApiCallback<WorkflowTemplatesListingOutputRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getWorkflowTemplatesValidateBeforeCall(summary, search, _callback);
         Type localVarReturnType = new TypeToken<WorkflowTemplatesListingOutputRep>(){}.getType();
