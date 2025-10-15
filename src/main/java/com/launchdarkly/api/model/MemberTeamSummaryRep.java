@@ -55,7 +55,7 @@ import com.launchdarkly.api.JSON;
 /**
  * MemberTeamSummaryRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-15T15:55:58.019813Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-15T16:38:59.541967Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class MemberTeamSummaryRep {
   public static final String SERIALIZED_NAME_CUSTOM_ROLE_KEYS = "customRoleKeys";
   @SerializedName(SERIALIZED_NAME_CUSTOM_ROLE_KEYS)

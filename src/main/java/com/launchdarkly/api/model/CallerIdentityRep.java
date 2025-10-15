@@ -50,7 +50,7 @@ import com.launchdarkly.api.JSON;
 /**
  * CallerIdentityRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-15T15:55:58.019813Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-15T16:38:59.541967Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class CallerIdentityRep {
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "accountId";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)

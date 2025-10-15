@@ -51,7 +51,7 @@ import com.launchdarkly.api.JSON;
 /**
  * AiConfigsModification
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-15T15:55:58.019813Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-15T16:38:59.541967Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AiConfigsModification {
   public static final String SERIALIZED_NAME_DATE = "date";
   @SerializedName(SERIALIZED_NAME_DATE)

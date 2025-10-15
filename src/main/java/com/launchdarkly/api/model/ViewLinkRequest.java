@@ -64,7 +64,7 @@ import com.google.gson.JsonParseException;
 
 import com.launchdarkly.api.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-15T15:55:58.019813Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-15T16:38:59.541967Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ViewLinkRequest extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(ViewLinkRequest.class.getName());
 
