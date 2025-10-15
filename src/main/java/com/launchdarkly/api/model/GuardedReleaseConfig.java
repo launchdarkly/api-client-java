@@ -50,7 +50,7 @@ import com.launchdarkly.api.JSON;
 /**
  * Configuration for guarded releases
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T14:31:47.006820Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-15T15:55:58.019813Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class GuardedReleaseConfig {
   public static final String SERIALIZED_NAME_MIN_SAMPLE_SIZE = "minSampleSize";
   @SerializedName(SERIALIZED_NAME_MIN_SAMPLE_SIZE)
