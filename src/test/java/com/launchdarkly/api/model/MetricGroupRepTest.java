@@ -166,4 +166,36 @@ public class MetricGroupRepTest {
         // TODO: test experimentCount
     }
 
+    /**
+     * Test the property 'activeExperimentCount'
+     */
+    @Test
+    public void activeExperimentCountTest() {
+        // TODO: test activeExperimentCount
+    }
+
+    /**
+     * Test the property 'activeGuardedRolloutCount'
+     */
+    @Test
+    public void activeGuardedRolloutCountTest() {
+        // TODO: test activeGuardedRolloutCount
+    }
+
+    /**
+     * Test the property 'totalConnectionsCount'
+     */
+    @Test
+    public void totalConnectionsCountTest() {
+        // TODO: test totalConnectionsCount
+    }
+
+    /**
+     * Test the property 'totalActiveConnectionsCount'
+     */
+    @Test
+    public void totalActiveConnectionsCountTest() {
+        // TODO: test totalActiveConnectionsCount
+    }
+
 }

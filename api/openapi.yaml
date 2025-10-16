@@ -10825,7 +10825,7 @@ paths:
       - description: "A comma-separated list of properties that can reveal additional\
           \ information in the response. Supported fields are `experiments`, `experimentCount`,\
           \ `metricGroups`, `metricGroupCount`, `eventSources`, `guardedRollouts`,\
-          \ `guardedRolloutCount`, and `lastUsedInEntity`."
+          \ `guardedRolloutCount`, `lastUsedInExperiment`, and `lastUsedInGuardedRollout`."
         explode: true
         in: query
         name: expand
@@ -10834,7 +10834,7 @@ paths:
           description: "A comma-separated list of properties that can reveal additional\
             \ information in the response. Supported fields are `experiments`, `experimentCount`,\
             \ `metricGroups`, `metricGroupCount`, `eventSources`, `guardedRollouts`,\
-            \ `guardedRolloutCount`, and `lastUsedInEntity`."
+            \ `guardedRolloutCount`, `lastUsedInExperiment`, and `lastUsedInGuardedRollout`."
           format: string
           type: string
         style: form
@@ -56809,6 +56809,7 @@ components:
             self:
               href: /api/v2/projects/my-project/metric-groups/my-metric-group
               type: application/json
+          totalConnectionsCount: 0
           kind: funnel
           experiments:
           - archivedDate: 5
@@ -56838,6 +56839,9 @@ components:
             key: experiment-key-123abc
             environmentKey: production
           description: Description of the metric group
+          activeExperimentCount: 0
+          activeGuardedRolloutCount: 0
+          totalActiveConnectionsCount: 0
           _creationDate: 0
           maintainer:
             member:
@@ -56962,6 +56966,7 @@ components:
             self:
               href: /api/v2/projects/my-project/metric-groups/my-metric-group
               type: application/json
+          totalConnectionsCount: 0
           kind: funnel
           experiments:
           - archivedDate: 5
@@ -56991,6 +56996,9 @@ components:
             key: experiment-key-123abc
             environmentKey: production
           description: Description of the metric group
+          activeExperimentCount: 0
+          activeGuardedRolloutCount: 0
+          totalActiveConnectionsCount: 0
           _creationDate: 0
           maintainer:
             member:
@@ -57198,6 +57206,7 @@ components:
           self:
             href: /api/v2/projects/my-project/metric-groups/my-metric-group
             type: application/json
+        totalConnectionsCount: 0
         kind: funnel
         experiments:
         - archivedDate: 5
@@ -57227,6 +57236,9 @@ components:
           key: experiment-key-123abc
           environmentKey: production
         description: Description of the metric group
+        activeExperimentCount: 0
+        activeGuardedRolloutCount: 0
+        totalActiveConnectionsCount: 0
         _creationDate: 0
         maintainer:
           member:
@@ -57413,6 +57425,22 @@ components:
           type: array
         experimentCount:
           description: The number of experiments using this metric group
+          example: 0
+          type: integer
+        activeExperimentCount:
+          description: The number of active experiments using this metric group
+          example: 0
+          type: integer
+        activeGuardedRolloutCount:
+          description: The number of active guarded rollouts using this metric group
+          example: 0
+          type: integer
+        totalConnectionsCount:
+          description: The total number of connections using this metric group
+          example: 0
+          type: integer
+        totalActiveConnectionsCount:
+          description: The total number of active connections using this metric group
           example: 0
           type: integer
       required:

@@ -16,7 +16,7 @@ package com.launchdarkly.api;
 import java.util.Collection;
 import java.util.Iterator;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-15T16:38:59.541967Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:00:59.734193Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class StringUtil {
   /**
    * Check if the given array contains the given value (with case-insensitive comparison).
