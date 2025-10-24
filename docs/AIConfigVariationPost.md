@@ -11,7 +11,7 @@
 |**description** | **String** | Returns the description for the agent. This is only returned for agent variations. |  [optional] |
 |**instructions** | **String** | Returns the instructions for the agent. This is only returned for agent variations. |  [optional] |
 |**key** | **String** |  |  |
-|**messages** | [**List&lt;Message&gt;**](Message.md) |  |  |
+|**messages** | [**List&lt;Message&gt;**](Message.md) |  |  [optional] |
 |**model** | **Object** |  |  [optional] |
 |**name** | **String** |  |  |
 |**modelConfigKey** | **String** |  |  [optional] |

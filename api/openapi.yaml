@@ -480,13 +480,6 @@ tags:
     > To use this feature, pass in a header including the `LD-API-Version` key with value set to `beta`. Use this header with each call. To learn more, read [Beta resources](https://launchdarkly.com/docs/api#beta-resources).
     >
     > Resources that are in beta are still undergoing testing and development. They may change without notice, including becoming backwards incompatible.
-  name: Account members (beta)
-- description: |
-    > ### This feature is in beta
-    >
-    > To use this feature, pass in a header including the `LD-API-Version` key with value set to `beta`. Use this header with each call. To learn more, read [Beta resources](https://launchdarkly.com/docs/api#beta-resources).
-    >
-    > Resources that are in beta are still undergoing testing and development. They may change without notice, including becoming backwards incompatible.
 
     The account usage API lets you query for metrics about how your account is using LaunchDarkly. To learn more, read [Account usage metrics](https://launchdarkly.com/docs/home/account/metrics).
 
@@ -9971,7 +9964,7 @@ paths:
         ```json
         {
           "instructions": [{
-            "kind": "replaceMemberRoles",
+            "kind": "replaceMembersRoles",
             "value": "reader",
             "memberIDs": [
               "1234a56b7c89d012345e678f",
@@ -10145,7 +10138,7 @@ paths:
           description: Rate limited
       summary: Modify account members
       tags:
-      - Account members (beta)
+      - Account members
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -10614,8 +10607,9 @@ paths:
         style: form
       - description: "A comma-separated list of filters. This endpoint accepts filtering\
           \ by `query`, `tags`, 'eventKind', 'isNumeric', 'unitAggregationType`, `hasConnections`,\
-          \ `maintainerIds`, `maintainerTeamKey` and `view`. To learn more about the\
-          \ filter syntax, read the 'Filtering metrics' section above."
+          \ `maintainerIds`, `maintainerTeamKey`, `view`, and `dataSourceKeys`. To\
+          \ learn more about the filter syntax, read the 'Filtering metrics' section\
+          \ above."
         explode: true
         in: query
         name: filter
@@ -10623,9 +10617,9 @@ paths:
         schema:
           description: "A comma-separated list of filters. This endpoint accepts filtering\
             \ by `query`, `tags`, 'eventKind', 'isNumeric', 'unitAggregationType`,\
-            \ `hasConnections`, `maintainerIds`, `maintainerTeamKey` and `view`. To\
-            \ learn more about the filter syntax, read the 'Filtering metrics' section\
-            \ above."
+            \ `hasConnections`, `maintainerIds`, `maintainerTeamKey`, `view`, and\
+            \ `dataSourceKeys`. To learn more about the filter syntax, read the 'Filtering\
+            \ metrics' section above."
           format: string
           type: string
         style: form
@@ -37079,6 +37073,28 @@ components:
       required:
       - key
       type: object
+    CovarianceInfoRep:
+      example:
+        createdAt: 2
+        fileName: covariance.csv
+        id: 74a49a2b-4834-4246-917e-5d85231d8c2a
+      properties:
+        id:
+          description: The ID of the covariance matrix
+          example: 74a49a2b-4834-4246-917e-5d85231d8c2a
+          type: string
+        fileName:
+          description: The file name of the uploaded covariance matrix
+          example: covariance.csv
+          type: string
+        createdAt:
+          format: int64
+          type: integer
+      required:
+      - createdAt
+      - fileName
+      - id
+      type: object
     CreateApprovalRequestRequest:
       example:
         instructions:
@@ -41978,6 +41994,10 @@ components:
             unitAggregationType: sum
             key: metric-key-123abc
           version: 0
+          covarianceInfo:
+            createdAt: 2
+            fileName: covariance.csv
+            id: 74a49a2b-4834-4246-917e-5d85231d8c2a
           treatments:
           - name: Treatment 1
             _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -42237,6 +42257,10 @@ components:
             unitAggregationType: sum
             key: metric-key-123abc
           version: 0
+          covarianceInfo:
+            createdAt: 2
+            fileName: covariance.csv
+            id: 74a49a2b-4834-4246-917e-5d85231d8c2a
           treatments:
           - name: Treatment 1
             _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -42487,6 +42511,10 @@ components:
             unitAggregationType: sum
             key: metric-key-123abc
           version: 0
+          covarianceInfo:
+            createdAt: 2
+            fileName: covariance.csv
+            id: 74a49a2b-4834-4246-917e-5d85231d8c2a
           treatments:
           - name: Treatment 1
             _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -42741,6 +42769,10 @@ components:
             unitAggregationType: sum
             key: metric-key-123abc
           version: 0
+          covarianceInfo:
+            createdAt: 2
+            fileName: covariance.csv
+            id: 74a49a2b-4834-4246-917e-5d85231d8c2a
           treatments:
           - name: Treatment 1
             _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -42934,7 +42966,7 @@ components:
           key:
             href: href
             type: type
-        total_count: 2
+        total_count: 7
         items:
         - archivedDate: 6
           holdoutId: f3b74309-d581-44e1-8a2b-bb2933b4fe40
@@ -43077,6 +43109,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -43336,6 +43372,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -43586,6 +43626,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -43840,6 +43884,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -44096,6 +44144,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -44355,6 +44407,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -44605,6 +44661,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -44859,6 +44919,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -45351,6 +45415,7 @@ components:
         name: Example experiment
         description: "An example experiment, used in testing"
         iteration:
+          covarianceId: covarianceId
           canReshuffleTraffic: true
           flags:
             key:
@@ -49391,6 +49456,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -49650,6 +49719,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -49900,6 +49973,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -50154,6 +50231,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -50410,6 +50491,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -50669,6 +50754,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -50919,6 +51008,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -51173,6 +51266,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -51432,6 +51529,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -51691,6 +51792,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -51941,6 +52046,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -52195,6 +52304,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -52593,6 +52706,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -52852,6 +52969,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -53102,6 +53223,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -53356,6 +53481,10 @@ components:
               unitAggregationType: sum
               key: metric-key-123abc
             version: 0
+            covarianceInfo:
+              createdAt: 2
+              fileName: covariance.csv
+              id: 74a49a2b-4834-4246-917e-5d85231d8c2a
             treatments:
             - name: Treatment 1
               _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -55036,6 +55165,7 @@ components:
       type: object
     IterationInput:
       example:
+        covarianceId: covarianceId
         canReshuffleTraffic: true
         flags:
           key:
@@ -55112,6 +55242,9 @@ components:
         randomizationUnit:
           description: The unit of randomization for this iteration. Defaults to user.
           example: user
+          type: string
+        covarianceId:
+          description: The ID of the covariance CSV
           type: string
         attributes:
           description: The attributes that this iteration's results can be sliced
@@ -55269,6 +55402,10 @@ components:
           unitAggregationType: sum
           key: metric-key-123abc
         version: 0
+        covarianceInfo:
+          createdAt: 2
+          fileName: covariance.csv
+          id: 74a49a2b-4834-4246-917e-5d85231d8c2a
         treatments:
         - name: Treatment 1
           _id: 122c9f3e-da26-4321-ba68-e0fc02eced58
@@ -55467,6 +55604,8 @@ components:
           type: array
         layerSnapshot:
           $ref: "#/components/schemas/LayerSnapshotRep"
+        covarianceInfo:
+          $ref: "#/components/schemas/CovarianceInfoRep"
       required:
       - createdAt
       - hypothesis
@@ -68725,7 +68864,6 @@ components:
           $ref: "#/components/schemas/JudgeConfiguration"
       required:
       - key
-      - messages
       - name
       type: object
     AIConfigVariationPatch:

@@ -20,6 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.launchdarkly.api.model.CovarianceInfoRep;
 import com.launchdarkly.api.model.DependentMetricGroupRepWithMetrics;
 import com.launchdarkly.api.model.DependentMetricOrMetricGroupRep;
 import com.launchdarkly.api.model.FlagRep;
@@ -60,7 +61,7 @@ import com.launchdarkly.api.JSON;
 /**
  * IterationRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:00:59.734193Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-24T10:39:28.714517Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class IterationRep {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -167,6 +168,11 @@ public class IterationRep {
   @SerializedName(SERIALIZED_NAME_LAYER_SNAPSHOT)
   @javax.annotation.Nullable
   private LayerSnapshotRep layerSnapshot;
+
+  public static final String SERIALIZED_NAME_COVARIANCE_INFO = "covarianceInfo";
+  @SerializedName(SERIALIZED_NAME_COVARIANCE_INFO)
+  @javax.annotation.Nullable
+  private CovarianceInfoRep covarianceInfo;
 
   public IterationRep() {
   }
@@ -613,6 +619,25 @@ public class IterationRep {
     this.layerSnapshot = layerSnapshot;
   }
 
+
+  public IterationRep covarianceInfo(@javax.annotation.Nullable CovarianceInfoRep covarianceInfo) {
+    this.covarianceInfo = covarianceInfo;
+    return this;
+  }
+
+  /**
+   * Get covarianceInfo
+   * @return covarianceInfo
+   */
+  @javax.annotation.Nullable
+  public CovarianceInfoRep getCovarianceInfo() {
+    return covarianceInfo;
+  }
+
+  public void setCovarianceInfo(@javax.annotation.Nullable CovarianceInfoRep covarianceInfo) {
+    this.covarianceInfo = covarianceInfo;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -688,13 +713,14 @@ public class IterationRep {
         Objects.equals(this.treatments, iterationRep.treatments) &&
         Objects.equals(this.secondaryMetrics, iterationRep.secondaryMetrics) &&
         Objects.equals(this.metrics, iterationRep.metrics) &&
-        Objects.equals(this.layerSnapshot, iterationRep.layerSnapshot)&&
+        Objects.equals(this.layerSnapshot, iterationRep.layerSnapshot) &&
+        Objects.equals(this.covarianceInfo, iterationRep.covarianceInfo)&&
         Objects.equals(this.additionalProperties, iterationRep.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, hypothesis, status, createdAt, startedAt, endedAt, winningTreatmentId, winningReason, canReshuffleTraffic, flags, reallocationFrequencyMillis, version, primaryMetric, primarySingleMetric, primaryFunnel, randomizationUnit, attributes, treatments, secondaryMetrics, metrics, layerSnapshot, additionalProperties);
+    return Objects.hash(id, hypothesis, status, createdAt, startedAt, endedAt, winningTreatmentId, winningReason, canReshuffleTraffic, flags, reallocationFrequencyMillis, version, primaryMetric, primarySingleMetric, primaryFunnel, randomizationUnit, attributes, treatments, secondaryMetrics, metrics, layerSnapshot, covarianceInfo, additionalProperties);
   }
 
   @Override
@@ -722,6 +748,7 @@ public class IterationRep {
     sb.append("    secondaryMetrics: ").append(toIndentedString(secondaryMetrics)).append("\n");
     sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");
     sb.append("    layerSnapshot: ").append(toIndentedString(layerSnapshot)).append("\n");
+    sb.append("    covarianceInfo: ").append(toIndentedString(covarianceInfo)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -744,7 +771,7 @@ public class IterationRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("_id", "hypothesis", "status", "createdAt", "startedAt", "endedAt", "winningTreatmentId", "winningReason", "canReshuffleTraffic", "flags", "reallocationFrequencyMillis", "version", "primaryMetric", "primarySingleMetric", "primaryFunnel", "randomizationUnit", "attributes", "treatments", "secondaryMetrics", "metrics", "layerSnapshot"));
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "hypothesis", "status", "createdAt", "startedAt", "endedAt", "winningTreatmentId", "winningReason", "canReshuffleTraffic", "flags", "reallocationFrequencyMillis", "version", "primaryMetric", "primarySingleMetric", "primaryFunnel", "randomizationUnit", "attributes", "treatments", "secondaryMetrics", "metrics", "layerSnapshot", "covarianceInfo"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("hypothesis", "status", "createdAt"));
@@ -849,6 +876,10 @@ public class IterationRep {
       // validate the optional field `layerSnapshot`
       if (jsonObj.get("layerSnapshot") != null && !jsonObj.get("layerSnapshot").isJsonNull()) {
         LayerSnapshotRep.validateJsonElement(jsonObj.get("layerSnapshot"));
+      }
+      // validate the optional field `covarianceInfo`
+      if (jsonObj.get("covarianceInfo") != null && !jsonObj.get("covarianceInfo").isJsonNull()) {
+        CovarianceInfoRep.validateJsonElement(jsonObj.get("covarianceInfo"));
       }
   }
 

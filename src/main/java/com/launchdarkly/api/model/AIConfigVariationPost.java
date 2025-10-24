@@ -55,7 +55,7 @@ import com.launchdarkly.api.JSON;
 /**
  * AIConfigVariationPost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:00:59.734193Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-24T10:39:28.714517Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AIConfigVariationPost {
   public static final String SERIALIZED_NAME_COMMENT = "comment";
   @SerializedName(SERIALIZED_NAME_COMMENT)
@@ -79,7 +79,7 @@ public class AIConfigVariationPost {
 
   public static final String SERIALIZED_NAME_MESSAGES = "messages";
   @SerializedName(SERIALIZED_NAME_MESSAGES)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private List<Message> messages = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MODEL = "model";
@@ -191,7 +191,7 @@ public class AIConfigVariationPost {
   }
 
 
-  public AIConfigVariationPost messages(@javax.annotation.Nonnull List<Message> messages) {
+  public AIConfigVariationPost messages(@javax.annotation.Nullable List<Message> messages) {
     this.messages = messages;
     return this;
   }
@@ -208,12 +208,12 @@ public class AIConfigVariationPost {
    * Get messages
    * @return messages
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public List<Message> getMessages() {
     return messages;
   }
 
-  public void setMessages(@javax.annotation.Nonnull List<Message> messages) {
+  public void setMessages(@javax.annotation.Nullable List<Message> messages) {
     this.messages = messages;
   }
 
@@ -461,7 +461,7 @@ public class AIConfigVariationPost {
     openapiFields = new HashSet<String>(Arrays.asList("comment", "description", "instructions", "key", "messages", "model", "name", "modelConfigKey", "tools", "toolKeys", "judgeConfiguration"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("key", "messages", "name"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("key", "name"));
   }
 
   /**
@@ -496,16 +496,20 @@ public class AIConfigVariationPost {
       if (!jsonObj.get("key").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
-      // ensure the json data is an array
-      if (!jsonObj.get("messages").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `messages` to be an array in the JSON string but got `%s`", jsonObj.get("messages").toString()));
-      }
+      if (jsonObj.get("messages") != null && !jsonObj.get("messages").isJsonNull()) {
+        JsonArray jsonArraymessages = jsonObj.getAsJsonArray("messages");
+        if (jsonArraymessages != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("messages").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `messages` to be an array in the JSON string but got `%s`", jsonObj.get("messages").toString()));
+          }
 
-      JsonArray jsonArraymessages = jsonObj.getAsJsonArray("messages");
-      // validate the required field `messages` (array)
-      for (int i = 0; i < jsonArraymessages.size(); i++) {
-        Message.validateJsonElement(jsonArraymessages.get(i));
-      };
+          // validate the optional field `messages` (array)
+          for (int i = 0; i < jsonArraymessages.size(); i++) {
+            Message.validateJsonElement(jsonArraymessages.get(i));
+          };
+        }
+      }
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }

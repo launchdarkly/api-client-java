@@ -42,7 +42,6 @@ docs/AccessDeniedReason.md
 docs/AccessTokenPost.md
 docs/AccessTokensApi.md
 docs/AccountMembersApi.md
-docs/AccountMembersBetaApi.md
 docs/AccountUsageBetaApi.md
 docs/ActionInput.md
 docs/ActionOutput.md
@@ -150,6 +149,7 @@ docs/Contexts.md
 docs/ContextsApi.md
 docs/CopiedFromEnv.md
 docs/CoreLink.md
+docs/CovarianceInfoRep.md
 docs/CreateAnnouncementBody.md
 docs/CreateApprovalRequestRequest.md
 docs/CreateCopyFlagConfigApprovalRequestRequest.md
@@ -665,7 +665,6 @@ src/main/java/com/launchdarkly/api/ServerVariable.java
 src/main/java/com/launchdarkly/api/StringUtil.java
 src/main/java/com/launchdarkly/api/api/AccessTokensApi.java
 src/main/java/com/launchdarkly/api/api/AccountMembersApi.java
-src/main/java/com/launchdarkly/api/api/AccountMembersBetaApi.java
 src/main/java/com/launchdarkly/api/api/AccountUsageBetaApi.java
 src/main/java/com/launchdarkly/api/api/AiConfigsBetaApi.java
 src/main/java/com/launchdarkly/api/api/AnnouncementsApi.java
@@ -855,6 +854,7 @@ src/main/java/com/launchdarkly/api/model/ContextSearch.java
 src/main/java/com/launchdarkly/api/model/Contexts.java
 src/main/java/com/launchdarkly/api/model/CopiedFromEnv.java
 src/main/java/com/launchdarkly/api/model/CoreLink.java
+src/main/java/com/launchdarkly/api/model/CovarianceInfoRep.java
 src/main/java/com/launchdarkly/api/model/CreateAnnouncementBody.java
 src/main/java/com/launchdarkly/api/model/CreateApprovalRequestRequest.java
 src/main/java/com/launchdarkly/api/model/CreateCopyFlagConfigApprovalRequestRequest.java
@@ -1305,7 +1305,6 @@ src/main/java/com/launchdarkly/api/model/WorkflowTemplateParameter.java
 src/main/java/com/launchdarkly/api/model/WorkflowTemplatesListingOutputRep.java
 src/test/java/com/launchdarkly/api/api/AccessTokensApiTest.java
 src/test/java/com/launchdarkly/api/api/AccountMembersApiTest.java
-src/test/java/com/launchdarkly/api/api/AccountMembersBetaApiTest.java
 src/test/java/com/launchdarkly/api/api/AccountUsageBetaApiTest.java
 src/test/java/com/launchdarkly/api/api/AiConfigsBetaApiTest.java
 src/test/java/com/launchdarkly/api/api/AnnouncementsApiTest.java
@@ -1490,6 +1489,7 @@ src/test/java/com/launchdarkly/api/model/ContextSearchTest.java
 src/test/java/com/launchdarkly/api/model/ContextsTest.java
 src/test/java/com/launchdarkly/api/model/CopiedFromEnvTest.java
 src/test/java/com/launchdarkly/api/model/CoreLinkTest.java
+src/test/java/com/launchdarkly/api/model/CovarianceInfoRepTest.java
 src/test/java/com/launchdarkly/api/model/CreateAnnouncementBodyTest.java
 src/test/java/com/launchdarkly/api/model/CreateApprovalRequestRequestTest.java
 src/test/java/com/launchdarkly/api/model/CreateCopyFlagConfigApprovalRequestRequestTest.java

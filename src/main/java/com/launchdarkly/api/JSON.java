@@ -227,6 +227,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.Contexts.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.CopiedFromEnv.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.CoreLink.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.CovarianceInfoRep.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.CreateAnnouncementBody.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.CreateApprovalRequestRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.CreateCopyFlagConfigApprovalRequestRequest.CustomTypeAdapterFactory());

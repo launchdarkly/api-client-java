@@ -109,6 +109,14 @@ public class IterationInputTest {
     }
 
     /**
+     * Test the property 'covarianceId'
+     */
+    @Test
+    public void covarianceIdTest() {
+        // TODO: test covarianceId
+    }
+
+    /**
      * Test the property 'attributes'
      */
     @Test

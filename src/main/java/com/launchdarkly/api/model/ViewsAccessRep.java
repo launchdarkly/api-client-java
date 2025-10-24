@@ -54,7 +54,7 @@ import com.launchdarkly.api.JSON;
 /**
  * ViewsAccessRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-16T16:00:59.734193Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-24T10:39:28.714517Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ViewsAccessRep {
   public static final String SERIALIZED_NAME_DENIED = "denied";
   @SerializedName(SERIALIZED_NAME_DENIED)
