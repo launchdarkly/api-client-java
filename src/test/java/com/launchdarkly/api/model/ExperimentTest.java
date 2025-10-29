@@ -108,6 +108,14 @@ public class ExperimentTest {
     }
 
     /**
+     * Test the property 'tags'
+     */
+    @Test
+    public void tagsTest() {
+        // TODO: test tags
+    }
+
+    /**
      * Test the property 'links'
      */
     @Test

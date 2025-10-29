@@ -53,7 +53,7 @@ import com.launchdarkly.api.JSON;
 /**
  * Flag representation for Views API - contains only fields actually used by the Views service
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-24T10:39:28.714517Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-29T16:16:49.423595Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ExpandedFlag {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)

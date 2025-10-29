@@ -52,7 +52,7 @@ import com.launchdarkly.api.JSON;
 /**
  * ViewPatch
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-24T10:39:28.714517Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-29T16:16:49.423595Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ViewPatch {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

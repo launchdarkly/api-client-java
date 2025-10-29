@@ -22,7 +22,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.launchdarkly.api.model.IterationInput;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +53,7 @@ import com.launchdarkly.api.JSON;
 /**
  * ExperimentPost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-24T10:39:28.714517Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-29T16:16:49.423595Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ExperimentPost {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -82,6 +84,11 @@ public class ExperimentPost {
   @SerializedName(SERIALIZED_NAME_HOLDOUT_ID)
   @javax.annotation.Nullable
   private String holdoutId;
+
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
+  private List<String> tags = new ArrayList<>();
 
   public ExperimentPost() {
   }
@@ -199,6 +206,33 @@ public class ExperimentPost {
     this.holdoutId = holdoutId;
   }
 
+
+  public ExperimentPost tags(@javax.annotation.Nullable List<String> tags) {
+    this.tags = tags;
+    return this;
+  }
+
+  public ExperimentPost addTagsItem(String tagsItem) {
+    if (this.tags == null) {
+      this.tags = new ArrayList<>();
+    }
+    this.tags.add(tagsItem);
+    return this;
+  }
+
+  /**
+   * Tags for the experiment
+   * @return tags
+   */
+  @javax.annotation.Nullable
+  public List<String> getTags() {
+    return tags;
+  }
+
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
+    this.tags = tags;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -259,13 +293,14 @@ public class ExperimentPost {
         Objects.equals(this.maintainerId, experimentPost.maintainerId) &&
         Objects.equals(this.key, experimentPost.key) &&
         Objects.equals(this.iteration, experimentPost.iteration) &&
-        Objects.equals(this.holdoutId, experimentPost.holdoutId)&&
+        Objects.equals(this.holdoutId, experimentPost.holdoutId) &&
+        Objects.equals(this.tags, experimentPost.tags)&&
         Objects.equals(this.additionalProperties, experimentPost.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, maintainerId, key, iteration, holdoutId, additionalProperties);
+    return Objects.hash(name, description, maintainerId, key, iteration, holdoutId, tags, additionalProperties);
   }
 
   @Override
@@ -278,6 +313,7 @@ public class ExperimentPost {
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("    iteration: ").append(toIndentedString(iteration)).append("\n");
     sb.append("    holdoutId: ").append(toIndentedString(holdoutId)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -300,7 +336,7 @@ public class ExperimentPost {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("name", "description", "maintainerId", "key", "iteration", "holdoutId"));
+    openapiFields = new HashSet<String>(Arrays.asList("name", "description", "maintainerId", "key", "iteration", "holdoutId", "tags"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("name", "key", "iteration"));
@@ -342,6 +378,10 @@ public class ExperimentPost {
       IterationInput.validateJsonElement(jsonObj.get("iteration"));
       if ((jsonObj.get("holdoutId") != null && !jsonObj.get("holdoutId").isJsonNull()) && !jsonObj.get("holdoutId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `holdoutId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("holdoutId").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
   }
 

@@ -20,6 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.launchdarkly.api.model.Access;
 import com.launchdarkly.api.model.ApprovalSettings;
 import com.launchdarkly.api.model.Link;
 import java.io.IOException;
@@ -56,7 +57,7 @@ import com.launchdarkly.api.JSON;
 /**
  * Environment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-24T10:39:28.714517Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-29T16:16:49.423595Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class Environment {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
@@ -102,6 +103,11 @@ public class Environment {
   @SerializedName(SERIALIZED_NAME_SECURE_MODE)
   @javax.annotation.Nonnull
   private Boolean secureMode;
+
+  public static final String SERIALIZED_NAME_ACCESS = "_access";
+  @SerializedName(SERIALIZED_NAME_ACCESS)
+  @javax.annotation.Nullable
+  private Access access;
 
   public static final String SERIALIZED_NAME_DEFAULT_TRACK_EVENTS = "defaultTrackEvents";
   @SerializedName(SERIALIZED_NAME_DEFAULT_TRACK_EVENTS)
@@ -320,6 +326,25 @@ public class Environment {
   }
 
 
+  public Environment access(@javax.annotation.Nullable Access access) {
+    this.access = access;
+    return this;
+  }
+
+  /**
+   * Get access
+   * @return access
+   */
+  @javax.annotation.Nullable
+  public Access getAccess() {
+    return access;
+  }
+
+  public void setAccess(@javax.annotation.Nullable Access access) {
+    this.access = access;
+  }
+
+
   public Environment defaultTrackEvents(@javax.annotation.Nonnull Boolean defaultTrackEvents) {
     this.defaultTrackEvents = defaultTrackEvents;
     return this;
@@ -532,6 +557,7 @@ public class Environment {
         Objects.equals(this.color, environment.color) &&
         Objects.equals(this.defaultTtl, environment.defaultTtl) &&
         Objects.equals(this.secureMode, environment.secureMode) &&
+        Objects.equals(this.access, environment.access) &&
         Objects.equals(this.defaultTrackEvents, environment.defaultTrackEvents) &&
         Objects.equals(this.requireComments, environment.requireComments) &&
         Objects.equals(this.confirmChanges, environment.confirmChanges) &&
@@ -544,7 +570,7 @@ public class Environment {
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, key, name, apiKey, mobileKey, color, defaultTtl, secureMode, defaultTrackEvents, requireComments, confirmChanges, tags, approvalSettings, resourceApprovalSettings, critical, additionalProperties);
+    return Objects.hash(links, id, key, name, apiKey, mobileKey, color, defaultTtl, secureMode, access, defaultTrackEvents, requireComments, confirmChanges, tags, approvalSettings, resourceApprovalSettings, critical, additionalProperties);
   }
 
   @Override
@@ -560,6 +586,7 @@ public class Environment {
     sb.append("    color: ").append(toIndentedString(color)).append("\n");
     sb.append("    defaultTtl: ").append(toIndentedString(defaultTtl)).append("\n");
     sb.append("    secureMode: ").append(toIndentedString(secureMode)).append("\n");
+    sb.append("    access: ").append(toIndentedString(access)).append("\n");
     sb.append("    defaultTrackEvents: ").append(toIndentedString(defaultTrackEvents)).append("\n");
     sb.append("    requireComments: ").append(toIndentedString(requireComments)).append("\n");
     sb.append("    confirmChanges: ").append(toIndentedString(confirmChanges)).append("\n");
@@ -589,7 +616,7 @@ public class Environment {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("_links", "_id", "key", "name", "apiKey", "mobileKey", "color", "defaultTtl", "secureMode", "defaultTrackEvents", "requireComments", "confirmChanges", "tags", "approvalSettings", "resourceApprovalSettings", "critical"));
+    openapiFields = new HashSet<String>(Arrays.asList("_links", "_id", "key", "name", "apiKey", "mobileKey", "color", "defaultTtl", "secureMode", "_access", "defaultTrackEvents", "requireComments", "confirmChanges", "tags", "approvalSettings", "resourceApprovalSettings", "critical"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("_links", "_id", "key", "name", "apiKey", "mobileKey", "color", "defaultTtl", "secureMode", "defaultTrackEvents", "requireComments", "confirmChanges", "tags", "critical"));
@@ -632,6 +659,10 @@ public class Environment {
       }
       if (!jsonObj.get("color").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `color` to be a primitive type in the JSON string but got `%s`", jsonObj.get("color").toString()));
+      }
+      // validate the optional field `_access`
+      if (jsonObj.get("_access") != null && !jsonObj.get("_access").isJsonNull()) {
+        Access.validateJsonElement(jsonObj.get("_access"));
       }
       // ensure the required json array is present
       if (jsonObj.get("tags") == null) {

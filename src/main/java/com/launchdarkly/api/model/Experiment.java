@@ -56,7 +56,7 @@ import com.launchdarkly.api.JSON;
 /**
  * Experiment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-24T10:39:28.714517Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-29T16:16:49.423595Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class Experiment {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -97,6 +97,11 @@ public class Experiment {
   @SerializedName(SERIALIZED_NAME_ARCHIVED_DATE)
   @javax.annotation.Nullable
   private Long archivedDate;
+
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
+  private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
@@ -278,6 +283,33 @@ public class Experiment {
   }
 
 
+  public Experiment tags(@javax.annotation.Nullable List<String> tags) {
+    this.tags = tags;
+    return this;
+  }
+
+  public Experiment addTagsItem(String tagsItem) {
+    if (this.tags == null) {
+      this.tags = new ArrayList<>();
+    }
+    this.tags.add(tagsItem);
+    return this;
+  }
+
+  /**
+   * Tags for the experiment
+   * @return tags
+   */
+  @javax.annotation.Nullable
+  public List<String> getTags() {
+    return tags;
+  }
+
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
+    this.tags = tags;
+  }
+
+
   public Experiment links(@javax.annotation.Nonnull Map<String, Link> links) {
     this.links = links;
     return this;
@@ -451,6 +483,7 @@ public class Experiment {
         Objects.equals(this.creationDate, experiment.creationDate) &&
         Objects.equals(this.environmentKey, experiment.environmentKey) &&
         Objects.equals(this.archivedDate, experiment.archivedDate) &&
+        Objects.equals(this.tags, experiment.tags) &&
         Objects.equals(this.links, experiment.links) &&
         Objects.equals(this.holdoutId, experiment.holdoutId) &&
         Objects.equals(this.currentIteration, experiment.currentIteration) &&
@@ -461,7 +494,7 @@ public class Experiment {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, key, name, description, maintainerId, creationDate, environmentKey, archivedDate, links, holdoutId, currentIteration, draftIteration, previousIterations, additionalProperties);
+    return Objects.hash(id, key, name, description, maintainerId, creationDate, environmentKey, archivedDate, tags, links, holdoutId, currentIteration, draftIteration, previousIterations, additionalProperties);
   }
 
   @Override
@@ -476,6 +509,7 @@ public class Experiment {
     sb.append("    creationDate: ").append(toIndentedString(creationDate)).append("\n");
     sb.append("    environmentKey: ").append(toIndentedString(environmentKey)).append("\n");
     sb.append("    archivedDate: ").append(toIndentedString(archivedDate)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    holdoutId: ").append(toIndentedString(holdoutId)).append("\n");
     sb.append("    currentIteration: ").append(toIndentedString(currentIteration)).append("\n");
@@ -503,7 +537,7 @@ public class Experiment {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("_id", "key", "name", "description", "_maintainerId", "_creationDate", "environmentKey", "archivedDate", "_links", "holdoutId", "currentIteration", "draftIteration", "previousIterations"));
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "key", "name", "description", "_maintainerId", "_creationDate", "environmentKey", "archivedDate", "tags", "_links", "holdoutId", "currentIteration", "draftIteration", "previousIterations"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("key", "name", "_maintainerId", "_creationDate", "environmentKey", "_links"));
@@ -546,6 +580,10 @@ public class Experiment {
       }
       if (!jsonObj.get("environmentKey").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environmentKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentKey").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       if ((jsonObj.get("holdoutId") != null && !jsonObj.get("holdoutId").isJsonNull()) && !jsonObj.get("holdoutId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `holdoutId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("holdoutId").toString()));

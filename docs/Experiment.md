@@ -15,6 +15,7 @@
 |**creationDate** | **Long** |  |  |
 |**environmentKey** | **String** |  |  |
 |**archivedDate** | **Long** |  |  [optional] |
+|**tags** | **List&lt;String&gt;** | Tags for the experiment |  [optional] |
 |**links** | [**Map&lt;String, Link&gt;**](Link.md) | The location and content type of related resources |  |
 |**holdoutId** | **String** | The holdout ID |  [optional] |
 |**currentIteration** | [**IterationRep**](IterationRep.md) |  |  [optional] |

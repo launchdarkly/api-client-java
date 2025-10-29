@@ -13,6 +13,7 @@
 |**key** | **String** | The experiment key |  |
 |**iteration** | [**IterationInput**](IterationInput.md) |  |  |
 |**holdoutId** | **String** | The ID of the holdout |  [optional] |
+|**tags** | **List&lt;String&gt;** | Tags for the experiment |  [optional] |
 
 
 
