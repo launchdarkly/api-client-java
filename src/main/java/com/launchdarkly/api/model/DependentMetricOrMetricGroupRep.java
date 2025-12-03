@@ -56,7 +56,7 @@ import com.launchdarkly.api.JSON;
 /**
  * DependentMetricOrMetricGroupRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-29T16:16:49.423595Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-03T22:03:47.239367Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class DependentMetricOrMetricGroupRep {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)

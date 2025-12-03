@@ -20,6 +20,7 @@
 | UPPER_CAMEL_CASE | &quot;upperCamelCase&quot; |
 | SNAKE_CASE | &quot;snakeCase&quot; |
 | KEBAB_CASE | &quot;kebabCase&quot; |
+| CONSTANT_CASE | &quot;constantCase&quot; |
 
 
 

@@ -139,4 +139,12 @@ public class AIConfigTest {
         // TODO: test updatedAt
     }
 
+    /**
+     * Test the property 'evaluationMetricKeys'
+     */
+    @Test
+    public void evaluationMetricKeysTest() {
+        // TODO: test evaluationMetricKeys
+    }
+
 }

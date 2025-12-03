@@ -670,7 +670,7 @@ public class Example {
     Long limit = 56L; // Long | The number of feature flags to return. Defaults to 20.
     Long offset = 56L; // Long | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
     Boolean archived = true; // Boolean | Deprecated, use `filter=archived:true` instead. A boolean to filter the list to archived flags. When this is absent, only unarchived flags will be returned
-    Boolean summary = true; // Boolean | By default, flags do _not_ include their lists of prerequisites, targets, or rules for each environment. Set `summary=0` to include these fields for each flag returned.
+    Boolean summary = true; // Boolean | By default, flags do _not_ include their lists of prerequisites, targets, or rules for each environment. Set `summary=0` and include the `env` query parameter to include these fields for each flag returned.
     String filter = "filter_example"; // String | A comma-separated list of filters. Each filter is of the form field:value. Read the endpoint description for a full list of available filter fields.
     String sort = "sort_example"; // String | A comma-separated list of fields to sort by. Fields prefixed by a dash ( - ) sort in descending order. Read the endpoint description for a full list of available sort fields.
     Boolean compare = true; // Boolean | Deprecated, unavailable in API version `20240415`. A boolean to filter results by only flags that have differences between environments.
@@ -699,7 +699,7 @@ public class Example {
 | **limit** | **Long**| The number of feature flags to return. Defaults to 20. | [optional] |
 | **offset** | **Long**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
 | **archived** | **Boolean**| Deprecated, use &#x60;filter&#x3D;archived:true&#x60; instead. A boolean to filter the list to archived flags. When this is absent, only unarchived flags will be returned | [optional] |
-| **summary** | **Boolean**| By default, flags do _not_ include their lists of prerequisites, targets, or rules for each environment. Set &#x60;summary&#x3D;0&#x60; to include these fields for each flag returned. | [optional] |
+| **summary** | **Boolean**| By default, flags do _not_ include their lists of prerequisites, targets, or rules for each environment. Set &#x60;summary&#x3D;0&#x60; and include the &#x60;env&#x60; query parameter to include these fields for each flag returned. | [optional] |
 | **filter** | **String**| A comma-separated list of filters. Each filter is of the form field:value. Read the endpoint description for a full list of available filter fields. | [optional] |
 | **sort** | **String**| A comma-separated list of fields to sort by. Fields prefixed by a dash ( - ) sort in descending order. Read the endpoint description for a full list of available sort fields. | [optional] |
 | **compare** | **Boolean**| Deprecated, unavailable in API version &#x60;20240415&#x60;. A boolean to filter results by only flags that have differences between environments. | [optional] |

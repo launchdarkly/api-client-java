@@ -36,7 +36,7 @@ def centralPortalPassword = hasProperty('centralPortalPassword') ? centralPortal
 
 allprojects {
     group = 'com.launchdarkly'
-    version = '18.1.0'
+    version = '19.0.0'
     archivesBaseName = 'api-client'
     sourceCompatibility = 1.8
     targetCompatibility = 1.8

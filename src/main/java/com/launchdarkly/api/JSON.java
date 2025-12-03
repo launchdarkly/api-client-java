@@ -369,6 +369,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.FollowersPerFlag.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.ForbiddenErrorRep.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.FormVariable.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.GenerateTrustPolicyPostRep.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.GenerateWarehouseDestinationKeyPairPostRep.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.GetAnnouncementsPublic200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.GuardedReleaseConfig.CustomTypeAdapterFactory());
@@ -617,6 +618,8 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.TriggerPost.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.TriggerWorkflowCollectionRep.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.TriggerWorkflowRep.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.TrustPolicyDetails.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.TrustPolicyStatement.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.UnauthorizedErrorRep.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.UnlinkResourceSuccessResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.UpdatePhaseStatusInput.CustomTypeAdapterFactory());

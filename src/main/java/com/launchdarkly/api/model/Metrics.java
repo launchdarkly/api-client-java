@@ -50,7 +50,7 @@ import com.launchdarkly.api.JSON;
 /**
  * Metrics
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-29T16:16:49.423595Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-03T22:03:47.239367Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class Metrics {
   public static final String SERIALIZED_NAME_INPUT_TOKENS = "inputTokens";
   @SerializedName(SERIALIZED_NAME_INPUT_TOKENS)
@@ -117,6 +117,21 @@ public class Metrics {
   @SerializedName(SERIALIZED_NAME_OUTPUT_COST)
   @javax.annotation.Nullable
   private Double outputCost;
+
+  public static final String SERIALIZED_NAME_JUDGE_ACCURACY = "judgeAccuracy";
+  @SerializedName(SERIALIZED_NAME_JUDGE_ACCURACY)
+  @javax.annotation.Nullable
+  private Float judgeAccuracy;
+
+  public static final String SERIALIZED_NAME_JUDGE_RELEVANCE = "judgeRelevance";
+  @SerializedName(SERIALIZED_NAME_JUDGE_RELEVANCE)
+  @javax.annotation.Nullable
+  private Float judgeRelevance;
+
+  public static final String SERIALIZED_NAME_JUDGE_TOXICITY = "judgeToxicity";
+  @SerializedName(SERIALIZED_NAME_JUDGE_TOXICITY)
+  @javax.annotation.Nullable
+  private Float judgeToxicity;
 
   public Metrics() {
   }
@@ -373,6 +388,69 @@ public class Metrics {
     this.outputCost = outputCost;
   }
 
+
+  public Metrics judgeAccuracy(@javax.annotation.Nullable Float judgeAccuracy) {
+    this.judgeAccuracy = judgeAccuracy;
+    return this;
+  }
+
+  /**
+   * Average accuracy judge score (0.0-1.0)
+   * minimum: 0
+   * maximum: 1
+   * @return judgeAccuracy
+   */
+  @javax.annotation.Nullable
+  public Float getJudgeAccuracy() {
+    return judgeAccuracy;
+  }
+
+  public void setJudgeAccuracy(@javax.annotation.Nullable Float judgeAccuracy) {
+    this.judgeAccuracy = judgeAccuracy;
+  }
+
+
+  public Metrics judgeRelevance(@javax.annotation.Nullable Float judgeRelevance) {
+    this.judgeRelevance = judgeRelevance;
+    return this;
+  }
+
+  /**
+   * Average relevance judge score (0.0-1.0)
+   * minimum: 0
+   * maximum: 1
+   * @return judgeRelevance
+   */
+  @javax.annotation.Nullable
+  public Float getJudgeRelevance() {
+    return judgeRelevance;
+  }
+
+  public void setJudgeRelevance(@javax.annotation.Nullable Float judgeRelevance) {
+    this.judgeRelevance = judgeRelevance;
+  }
+
+
+  public Metrics judgeToxicity(@javax.annotation.Nullable Float judgeToxicity) {
+    this.judgeToxicity = judgeToxicity;
+    return this;
+  }
+
+  /**
+   * Average toxicity judge score (0.0-1.0)
+   * minimum: 0
+   * maximum: 1
+   * @return judgeToxicity
+   */
+  @javax.annotation.Nullable
+  public Float getJudgeToxicity() {
+    return judgeToxicity;
+  }
+
+  public void setJudgeToxicity(@javax.annotation.Nullable Float judgeToxicity) {
+    this.judgeToxicity = judgeToxicity;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -440,13 +518,16 @@ public class Metrics {
         Objects.equals(this.timeToFirstTokenMs, metrics.timeToFirstTokenMs) &&
         Objects.equals(this.satisfactionRating, metrics.satisfactionRating) &&
         Objects.equals(this.inputCost, metrics.inputCost) &&
-        Objects.equals(this.outputCost, metrics.outputCost)&&
+        Objects.equals(this.outputCost, metrics.outputCost) &&
+        Objects.equals(this.judgeAccuracy, metrics.judgeAccuracy) &&
+        Objects.equals(this.judgeRelevance, metrics.judgeRelevance) &&
+        Objects.equals(this.judgeToxicity, metrics.judgeToxicity)&&
         Objects.equals(this.additionalProperties, metrics.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(inputTokens, outputTokens, totalTokens, generationCount, generationSuccessCount, generationErrorCount, thumbsUp, thumbsDown, durationMs, timeToFirstTokenMs, satisfactionRating, inputCost, outputCost, additionalProperties);
+    return Objects.hash(inputTokens, outputTokens, totalTokens, generationCount, generationSuccessCount, generationErrorCount, thumbsUp, thumbsDown, durationMs, timeToFirstTokenMs, satisfactionRating, inputCost, outputCost, judgeAccuracy, judgeRelevance, judgeToxicity, additionalProperties);
   }
 
   @Override
@@ -466,6 +547,9 @@ public class Metrics {
     sb.append("    satisfactionRating: ").append(toIndentedString(satisfactionRating)).append("\n");
     sb.append("    inputCost: ").append(toIndentedString(inputCost)).append("\n");
     sb.append("    outputCost: ").append(toIndentedString(outputCost)).append("\n");
+    sb.append("    judgeAccuracy: ").append(toIndentedString(judgeAccuracy)).append("\n");
+    sb.append("    judgeRelevance: ").append(toIndentedString(judgeRelevance)).append("\n");
+    sb.append("    judgeToxicity: ").append(toIndentedString(judgeToxicity)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -488,7 +572,7 @@ public class Metrics {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("inputTokens", "outputTokens", "totalTokens", "generationCount", "generationSuccessCount", "generationErrorCount", "thumbsUp", "thumbsDown", "durationMs", "timeToFirstTokenMs", "satisfactionRating", "inputCost", "outputCost"));
+    openapiFields = new HashSet<String>(Arrays.asList("inputTokens", "outputTokens", "totalTokens", "generationCount", "generationSuccessCount", "generationErrorCount", "thumbsUp", "thumbsDown", "durationMs", "timeToFirstTokenMs", "satisfactionRating", "inputCost", "outputCost", "judgeAccuracy", "judgeRelevance", "judgeToxicity"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

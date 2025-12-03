@@ -24,8 +24,6 @@
 |**experimentCount** | **Integer** | The number of experiments using this metric group |  [optional] |
 |**activeExperimentCount** | **Integer** | The number of active experiments using this metric group |  [optional] |
 |**activeGuardedRolloutCount** | **Integer** | The number of active guarded rollouts using this metric group |  [optional] |
-|**totalConnectionsCount** | **Integer** | The total number of connections using this metric group |  [optional] |
-|**totalActiveConnectionsCount** | **Integer** | The total number of active connections using this metric group |  [optional] |
 
 
 

@@ -54,7 +54,7 @@ import com.launchdarkly.api.JSON;
 /**
  * AIConfigTargetingEnvironmentFallthroughRollout
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-29T16:16:49.423595Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-03T22:03:47.239367Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AIConfigTargetingEnvironmentFallthroughRollout {
   public static final String SERIALIZED_NAME_BUCKET_BY = "bucketBy";
   @SerializedName(SERIALIZED_NAME_BUCKET_BY)

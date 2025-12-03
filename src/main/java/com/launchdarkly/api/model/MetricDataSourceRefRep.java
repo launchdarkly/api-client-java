@@ -50,11 +50,11 @@ import com.launchdarkly.api.JSON;
 /**
  * MetricDataSourceRefRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-29T16:16:49.423595Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-03T22:03:47.239367Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class MetricDataSourceRefRep {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_KEY = "environmentKey";
@@ -75,7 +75,7 @@ public class MetricDataSourceRefRep {
   public MetricDataSourceRefRep() {
   }
 
-  public MetricDataSourceRefRep key(@javax.annotation.Nullable String key) {
+  public MetricDataSourceRefRep key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
@@ -84,12 +84,12 @@ public class MetricDataSourceRefRep {
    * Get key
    * @return key
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(@javax.annotation.Nullable String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
@@ -250,7 +250,7 @@ public class MetricDataSourceRefRep {
     openapiFields = new HashSet<String>(Arrays.asList("key", "environmentKey", "_name", "_integrationKey"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("key"));
   }
 
   /**
@@ -265,8 +265,15 @@ public class MetricDataSourceRefRep {
           throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in MetricDataSourceRefRep is not found in the empty JSON string", MetricDataSourceRefRep.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : MetricDataSourceRefRep.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
+      if (!jsonObj.get("key").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if ((jsonObj.get("environmentKey") != null && !jsonObj.get("environmentKey").isJsonNull()) && !jsonObj.get("environmentKey").isJsonPrimitive()) {

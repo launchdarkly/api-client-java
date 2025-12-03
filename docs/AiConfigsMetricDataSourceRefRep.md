@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**key** | **String** |  |  [optional] |
+|**key** | **String** |  |  |
 |**environmentKey** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**integrationKey** | **String** |  |  [optional] |

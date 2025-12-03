@@ -18,6 +18,7 @@ import com.launchdarkly.api.model.Destination;
 import com.launchdarkly.api.model.DestinationPost;
 import com.launchdarkly.api.model.Destinations;
 import com.launchdarkly.api.model.ForbiddenErrorRep;
+import com.launchdarkly.api.model.GenerateTrustPolicyPostRep;
 import com.launchdarkly.api.model.GenerateWarehouseDestinationKeyPairPostRep;
 import com.launchdarkly.api.model.InvalidRequestErrorRep;
 import com.launchdarkly.api.model.NotFoundErrorRep;
@@ -116,6 +117,21 @@ public class DataExportDestinationsApiTest {
         String environmentKey = null;
         DestinationPost destinationPost = null;
         Destination response = api.postDestination(projectKey, environmentKey, destinationPost);
+        // TODO: test validations
+    }
+
+    /**
+     * Generate trust policy
+     *
+     * Trust policy to allow Data Export to assume the role and perform operations on AWS resources
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void postGenerateTrustPolicyTest() throws ApiException {
+        String projKey = null;
+        String envKey = null;
+        GenerateTrustPolicyPostRep response = api.postGenerateTrustPolicy(projKey, envKey);
         // TODO: test validations
     }
 

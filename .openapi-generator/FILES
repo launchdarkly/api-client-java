@@ -301,6 +301,7 @@ docs/FollowFlagsApi.md
 docs/FollowersPerFlag.md
 docs/ForbiddenErrorRep.md
 docs/FormVariable.md
+docs/GenerateTrustPolicyPostRep.md
 docs/GenerateWarehouseDestinationKeyPairPostRep.md
 docs/GetAnnouncementsPublic200Response.md
 docs/GuardedReleaseConfig.md
@@ -576,6 +577,8 @@ docs/TreatmentRep.md
 docs/TriggerPost.md
 docs/TriggerWorkflowCollectionRep.md
 docs/TriggerWorkflowRep.md
+docs/TrustPolicyDetails.md
+docs/TrustPolicyStatement.md
 docs/UnauthorizedErrorRep.md
 docs/UnlinkResourceSuccessResponse.md
 docs/UpdatePhaseStatusInput.md
@@ -996,6 +999,7 @@ src/main/java/com/launchdarkly/api/model/FollowFlagMember.java
 src/main/java/com/launchdarkly/api/model/FollowersPerFlag.java
 src/main/java/com/launchdarkly/api/model/ForbiddenErrorRep.java
 src/main/java/com/launchdarkly/api/model/FormVariable.java
+src/main/java/com/launchdarkly/api/model/GenerateTrustPolicyPostRep.java
 src/main/java/com/launchdarkly/api/model/GenerateWarehouseDestinationKeyPairPostRep.java
 src/main/java/com/launchdarkly/api/model/GetAnnouncementsPublic200Response.java
 src/main/java/com/launchdarkly/api/model/GuardedReleaseConfig.java
@@ -1245,6 +1249,8 @@ src/main/java/com/launchdarkly/api/model/TreatmentRep.java
 src/main/java/com/launchdarkly/api/model/TriggerPost.java
 src/main/java/com/launchdarkly/api/model/TriggerWorkflowCollectionRep.java
 src/main/java/com/launchdarkly/api/model/TriggerWorkflowRep.java
+src/main/java/com/launchdarkly/api/model/TrustPolicyDetails.java
+src/main/java/com/launchdarkly/api/model/TrustPolicyStatement.java
 src/main/java/com/launchdarkly/api/model/UnauthorizedErrorRep.java
 src/main/java/com/launchdarkly/api/model/UnlinkResourceSuccessResponse.java
 src/main/java/com/launchdarkly/api/model/UpdatePhaseStatusInput.java
@@ -1631,6 +1637,7 @@ src/test/java/com/launchdarkly/api/model/FollowFlagMemberTest.java
 src/test/java/com/launchdarkly/api/model/FollowersPerFlagTest.java
 src/test/java/com/launchdarkly/api/model/ForbiddenErrorRepTest.java
 src/test/java/com/launchdarkly/api/model/FormVariableTest.java
+src/test/java/com/launchdarkly/api/model/GenerateTrustPolicyPostRepTest.java
 src/test/java/com/launchdarkly/api/model/GenerateWarehouseDestinationKeyPairPostRepTest.java
 src/test/java/com/launchdarkly/api/model/GetAnnouncementsPublic200ResponseTest.java
 src/test/java/com/launchdarkly/api/model/GuardedReleaseConfigTest.java
@@ -1880,6 +1887,8 @@ src/test/java/com/launchdarkly/api/model/TreatmentRepTest.java
 src/test/java/com/launchdarkly/api/model/TriggerPostTest.java
 src/test/java/com/launchdarkly/api/model/TriggerWorkflowCollectionRepTest.java
 src/test/java/com/launchdarkly/api/model/TriggerWorkflowRepTest.java
+src/test/java/com/launchdarkly/api/model/TrustPolicyDetailsTest.java
+src/test/java/com/launchdarkly/api/model/TrustPolicyStatementTest.java
 src/test/java/com/launchdarkly/api/model/UnauthorizedErrorRepTest.java
 src/test/java/com/launchdarkly/api/model/UnlinkResourceSuccessResponseTest.java
 src/test/java/com/launchdarkly/api/model/UpdatePhaseStatusInputTest.java

@@ -8,7 +8,7 @@ This client library is only compatible with the latest version of our REST API. 
 
 LaunchDarkly REST API
 - API version: 2.0
-  - Build date: 2025-10-29T16:16:49.423595Z[Etc/UTC]
+  - Build date: 2025-12-03T22:03:47.239367Z[Etc/UTC]
   - Generator version: 7.16.0
 
 This documentation describes LaunchDarkly's REST API. To access the complete OpenAPI spec directly, use [Get OpenAPI spec](https://launchdarkly.com/docs/api/other/get-openapi-spec).
@@ -483,7 +483,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>18.1.0</version>
+  <version>19.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -499,7 +499,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.launchdarkly:api-client:18.1.0"
+     implementation "com.launchdarkly:api-client:19.0.0"
   }
 ```
 
@@ -513,7 +513,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-18.1.0.jar`
+* `target/api-client-19.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -685,6 +685,7 @@ Class | Method | HTTP request | Description
 *DataExportDestinationsApi* | [**getDestinations**](docs/DataExportDestinationsApi.md#getDestinations) | **GET** /api/v2/destinations | List destinations
 *DataExportDestinationsApi* | [**patchDestination**](docs/DataExportDestinationsApi.md#patchDestination) | **PATCH** /api/v2/destinations/{projectKey}/{environmentKey}/{id} | Update Data Export destination
 *DataExportDestinationsApi* | [**postDestination**](docs/DataExportDestinationsApi.md#postDestination) | **POST** /api/v2/destinations/{projectKey}/{environmentKey} | Create Data Export destination
+*DataExportDestinationsApi* | [**postGenerateTrustPolicy**](docs/DataExportDestinationsApi.md#postGenerateTrustPolicy) | **POST** /api/v2/destinations/projects/{projKey}/environments/{envKey}/generate-trust-policy | Generate trust policy
 *DataExportDestinationsApi* | [**postGenerateWarehouseDestinationKeyPair**](docs/DataExportDestinationsApi.md#postGenerateWarehouseDestinationKeyPair) | **POST** /api/v2/destinations/generate-warehouse-destination-key-pair | Generate Snowflake destination key pair
 *EnvironmentsApi* | [**deleteEnvironment**](docs/EnvironmentsApi.md#deleteEnvironment) | **DELETE** /api/v2/projects/{projectKey}/environments/{environmentKey} | Delete environment
 *EnvironmentsApi* | [**getEnvironment**](docs/EnvironmentsApi.md#getEnvironment) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey} | Get environment
@@ -1177,6 +1178,7 @@ Class | Method | HTTP request | Description
  - [FollowersPerFlag](docs/FollowersPerFlag.md)
  - [ForbiddenErrorRep](docs/ForbiddenErrorRep.md)
  - [FormVariable](docs/FormVariable.md)
+ - [GenerateTrustPolicyPostRep](docs/GenerateTrustPolicyPostRep.md)
  - [GenerateWarehouseDestinationKeyPairPostRep](docs/GenerateWarehouseDestinationKeyPairPostRep.md)
  - [GetAnnouncementsPublic200Response](docs/GetAnnouncementsPublic200Response.md)
  - [GuardedReleaseConfig](docs/GuardedReleaseConfig.md)
@@ -1426,6 +1428,8 @@ Class | Method | HTTP request | Description
  - [TriggerPost](docs/TriggerPost.md)
  - [TriggerWorkflowCollectionRep](docs/TriggerWorkflowCollectionRep.md)
  - [TriggerWorkflowRep](docs/TriggerWorkflowRep.md)
+ - [TrustPolicyDetails](docs/TrustPolicyDetails.md)
+ - [TrustPolicyStatement](docs/TrustPolicyStatement.md)
  - [UnauthorizedErrorRep](docs/UnauthorizedErrorRep.md)
  - [UnlinkResourceSuccessResponse](docs/UnlinkResourceSuccessResponse.md)
  - [UpdatePhaseStatusInput](docs/UpdatePhaseStatusInput.md)

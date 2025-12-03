@@ -56,7 +56,7 @@ import com.launchdarkly.api.JSON;
 /**
  * AIConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-29T16:16:49.423595Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-03T22:03:47.239367Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AIConfig {
   public static final String SERIALIZED_NAME_ACCESS = "_access";
   @SerializedName(SERIALIZED_NAME_ACCESS)
@@ -171,6 +171,11 @@ public class AIConfig {
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   @javax.annotation.Nonnull
   private Long updatedAt;
+
+  public static final String SERIALIZED_NAME_EVALUATION_METRIC_KEYS = "evaluationMetricKeys";
+  @SerializedName(SERIALIZED_NAME_EVALUATION_METRIC_KEYS)
+  @javax.annotation.Nullable
+  private List<String> evaluationMetricKeys = new ArrayList<>();
 
   public AIConfig() {
   }
@@ -418,6 +423,33 @@ public class AIConfig {
     this.updatedAt = updatedAt;
   }
 
+
+  public AIConfig evaluationMetricKeys(@javax.annotation.Nullable List<String> evaluationMetricKeys) {
+    this.evaluationMetricKeys = evaluationMetricKeys;
+    return this;
+  }
+
+  public AIConfig addEvaluationMetricKeysItem(String evaluationMetricKeysItem) {
+    if (this.evaluationMetricKeys == null) {
+      this.evaluationMetricKeys = new ArrayList<>();
+    }
+    this.evaluationMetricKeys.add(evaluationMetricKeysItem);
+    return this;
+  }
+
+  /**
+   * List of evaluation metric keys for this AI config
+   * @return evaluationMetricKeys
+   */
+  @javax.annotation.Nullable
+  public List<String> getEvaluationMetricKeys() {
+    return evaluationMetricKeys;
+  }
+
+  public void setEvaluationMetricKeys(@javax.annotation.Nullable List<String> evaluationMetricKeys) {
+    this.evaluationMetricKeys = evaluationMetricKeys;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -484,13 +516,14 @@ public class AIConfig {
         Objects.equals(this.version, aiConfig.version) &&
         Objects.equals(this.variations, aiConfig.variations) &&
         Objects.equals(this.createdAt, aiConfig.createdAt) &&
-        Objects.equals(this.updatedAt, aiConfig.updatedAt)&&
+        Objects.equals(this.updatedAt, aiConfig.updatedAt) &&
+        Objects.equals(this.evaluationMetricKeys, aiConfig.evaluationMetricKeys)&&
         Objects.equals(this.additionalProperties, aiConfig.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(access, links, description, key, maintainer, mode, name, tags, version, variations, createdAt, updatedAt, additionalProperties);
+    return Objects.hash(access, links, description, key, maintainer, mode, name, tags, version, variations, createdAt, updatedAt, evaluationMetricKeys, additionalProperties);
   }
 
   @Override
@@ -509,6 +542,7 @@ public class AIConfig {
     sb.append("    variations: ").append(toIndentedString(variations)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    evaluationMetricKeys: ").append(toIndentedString(evaluationMetricKeys)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -531,7 +565,7 @@ public class AIConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("_access", "_links", "description", "key", "_maintainer", "mode", "name", "tags", "version", "variations", "createdAt", "updatedAt"));
+    openapiFields = new HashSet<String>(Arrays.asList("_access", "_links", "description", "key", "_maintainer", "mode", "name", "tags", "version", "variations", "createdAt", "updatedAt", "evaluationMetricKeys"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("description", "key", "name", "tags", "version", "variations", "createdAt", "updatedAt"));
@@ -601,6 +635,10 @@ public class AIConfig {
       for (int i = 0; i < jsonArrayvariations.size(); i++) {
         AIConfigVariation.validateJsonElement(jsonArrayvariations.get(i));
       };
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("evaluationMetricKeys") != null && !jsonObj.get("evaluationMetricKeys").isJsonNull() && !jsonObj.get("evaluationMetricKeys").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `evaluationMetricKeys` to be an array in the JSON string but got `%s`", jsonObj.get("evaluationMetricKeys").toString()));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

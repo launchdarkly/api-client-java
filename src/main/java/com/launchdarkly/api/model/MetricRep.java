@@ -65,7 +65,7 @@ import com.launchdarkly.api.JSON;
 /**
  * MetricRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-29T16:16:49.423595Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-03T22:03:47.239367Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class MetricRep {
   public static final String SERIALIZED_NAME_EXPERIMENT_COUNT = "experimentCount";
   @SerializedName(SERIALIZED_NAME_EXPERIMENT_COUNT)
@@ -434,7 +434,7 @@ public class MetricRep {
 
   public static final String SERIALIZED_NAME_DATA_SOURCE = "dataSource";
   @SerializedName(SERIALIZED_NAME_DATA_SOURCE)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private MetricDataSourceRefRep dataSource;
 
   public static final String SERIALIZED_NAME_ARCHIVED = "archived";
@@ -1103,7 +1103,7 @@ public class MetricRep {
   }
 
 
-  public MetricRep dataSource(@javax.annotation.Nullable MetricDataSourceRefRep dataSource) {
+  public MetricRep dataSource(@javax.annotation.Nonnull MetricDataSourceRefRep dataSource) {
     this.dataSource = dataSource;
     return this;
   }
@@ -1112,12 +1112,12 @@ public class MetricRep {
    * Get dataSource
    * @return dataSource
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public MetricDataSourceRefRep getDataSource() {
     return dataSource;
   }
 
-  public void setDataSource(@javax.annotation.Nullable MetricDataSourceRefRep dataSource) {
+  public void setDataSource(@javax.annotation.Nonnull MetricDataSourceRefRep dataSource) {
     this.dataSource = dataSource;
   }
 
@@ -1519,7 +1519,7 @@ public class MetricRep {
     openapiFields = new HashSet<String>(Arrays.asList("experimentCount", "metricGroupCount", "activeExperimentCount", "activeGuardedRolloutCount", "_id", "_versionId", "_version", "key", "name", "kind", "_attachedFlagCount", "_links", "_site", "_access", "tags", "_creationDate", "lastModified", "maintainerId", "_maintainer", "description", "category", "isNumeric", "successCriteria", "unit", "eventKey", "randomizationUnits", "filters", "unitAggregationType", "analysisType", "percentileValue", "eventDefault", "dataSource", "archived", "archivedAt", "selector", "urls", "experiments", "metricGroups", "lastUsedInExperiment", "lastUsedInGuardedRollout", "isActive", "_attachedFeatures"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "_versionId", "key", "name", "kind", "_links", "tags", "_creationDate"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "_versionId", "key", "name", "kind", "_links", "tags", "_creationDate", "dataSource"));
   }
 
   /**
@@ -1629,10 +1629,8 @@ public class MetricRep {
       if (jsonObj.get("eventDefault") != null && !jsonObj.get("eventDefault").isJsonNull()) {
         MetricEventDefaultRep.validateJsonElement(jsonObj.get("eventDefault"));
       }
-      // validate the optional field `dataSource`
-      if (jsonObj.get("dataSource") != null && !jsonObj.get("dataSource").isJsonNull()) {
-        MetricDataSourceRefRep.validateJsonElement(jsonObj.get("dataSource"));
-      }
+      // validate the required field `dataSource`
+      MetricDataSourceRefRep.validateJsonElement(jsonObj.get("dataSource"));
       if ((jsonObj.get("selector") != null && !jsonObj.get("selector").isJsonNull()) && !jsonObj.get("selector").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `selector` to be a primitive type in the JSON string but got `%s`", jsonObj.get("selector").toString()));
       }

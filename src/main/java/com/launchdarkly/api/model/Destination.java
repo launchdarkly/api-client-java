@@ -56,7 +56,7 @@ import com.launchdarkly.api.JSON;
 /**
  * Destination
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-29T16:16:49.423595Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-03T22:03:47.239367Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class Destination {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -92,7 +92,9 @@ public class Destination {
     
     DATABRICKS("databricks"),
     
-    BIGQUERY("bigquery");
+    BIGQUERY("bigquery"),
+    
+    REDSHIFT("redshift");
 
     private String value;
 

@@ -55,7 +55,7 @@ import com.launchdarkly.api.JSON;
 /**
  * RelayAutoConfigRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-29T16:16:49.423595Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-03T22:03:47.239367Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class RelayAutoConfigRep {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -84,7 +84,7 @@ public class RelayAutoConfigRep {
 
   public static final String SERIALIZED_NAME_FULL_KEY = "fullKey";
   @SerializedName(SERIALIZED_NAME_FULL_KEY)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String fullKey;
 
   public static final String SERIALIZED_NAME_DISPLAY_KEY = "displayKey";
@@ -208,7 +208,7 @@ public class RelayAutoConfigRep {
   }
 
 
-  public RelayAutoConfigRep fullKey(@javax.annotation.Nonnull String fullKey) {
+  public RelayAutoConfigRep fullKey(@javax.annotation.Nullable String fullKey) {
     this.fullKey = fullKey;
     return this;
   }
@@ -217,12 +217,12 @@ public class RelayAutoConfigRep {
    * The Relay Proxy configuration key
    * @return fullKey
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getFullKey() {
     return fullKey;
   }
 
-  public void setFullKey(@javax.annotation.Nonnull String fullKey) {
+  public void setFullKey(@javax.annotation.Nullable String fullKey) {
     this.fullKey = fullKey;
   }
 
@@ -393,7 +393,7 @@ public class RelayAutoConfigRep {
     openapiFields = new HashSet<String>(Arrays.asList("_id", "_creator", "_access", "name", "policy", "fullKey", "displayKey", "creationDate", "lastModified"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "name", "policy", "fullKey", "displayKey", "creationDate", "lastModified"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "name", "policy", "displayKey", "creationDate", "lastModified"));
   }
 
   /**
@@ -440,7 +440,7 @@ public class RelayAutoConfigRep {
       for (int i = 0; i < jsonArraypolicy.size(); i++) {
         Statement.validateJsonElement(jsonArraypolicy.get(i));
       };
-      if (!jsonObj.get("fullKey").isJsonPrimitive()) {
+      if ((jsonObj.get("fullKey") != null && !jsonObj.get("fullKey").isJsonNull()) && !jsonObj.get("fullKey").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `fullKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fullKey").toString()));
       }
       if (!jsonObj.get("displayKey").isJsonPrimitive()) {

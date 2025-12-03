@@ -59,7 +59,7 @@ import com.launchdarkly.api.JSON;
 /**
  * MetricGroupRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-29T16:16:49.423595Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-03T22:03:47.239367Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class MetricGroupRep {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -199,16 +199,6 @@ public class MetricGroupRep {
   @SerializedName(SERIALIZED_NAME_ACTIVE_GUARDED_ROLLOUT_COUNT)
   @javax.annotation.Nullable
   private Integer activeGuardedRolloutCount;
-
-  public static final String SERIALIZED_NAME_TOTAL_CONNECTIONS_COUNT = "totalConnectionsCount";
-  @SerializedName(SERIALIZED_NAME_TOTAL_CONNECTIONS_COUNT)
-  @javax.annotation.Nullable
-  private Integer totalConnectionsCount;
-
-  public static final String SERIALIZED_NAME_TOTAL_ACTIVE_CONNECTIONS_COUNT = "totalActiveConnectionsCount";
-  @SerializedName(SERIALIZED_NAME_TOTAL_ACTIVE_CONNECTIONS_COUNT)
-  @javax.annotation.Nullable
-  private Integer totalActiveConnectionsCount;
 
   public MetricGroupRep() {
   }
@@ -567,44 +557,6 @@ public class MetricGroupRep {
     this.activeGuardedRolloutCount = activeGuardedRolloutCount;
   }
 
-
-  public MetricGroupRep totalConnectionsCount(@javax.annotation.Nullable Integer totalConnectionsCount) {
-    this.totalConnectionsCount = totalConnectionsCount;
-    return this;
-  }
-
-  /**
-   * The total number of connections using this metric group
-   * @return totalConnectionsCount
-   */
-  @javax.annotation.Nullable
-  public Integer getTotalConnectionsCount() {
-    return totalConnectionsCount;
-  }
-
-  public void setTotalConnectionsCount(@javax.annotation.Nullable Integer totalConnectionsCount) {
-    this.totalConnectionsCount = totalConnectionsCount;
-  }
-
-
-  public MetricGroupRep totalActiveConnectionsCount(@javax.annotation.Nullable Integer totalActiveConnectionsCount) {
-    this.totalActiveConnectionsCount = totalActiveConnectionsCount;
-    return this;
-  }
-
-  /**
-   * The total number of active connections using this metric group
-   * @return totalActiveConnectionsCount
-   */
-  @javax.annotation.Nullable
-  public Integer getTotalActiveConnectionsCount() {
-    return totalActiveConnectionsCount;
-  }
-
-  public void setTotalActiveConnectionsCount(@javax.annotation.Nullable Integer totalActiveConnectionsCount) {
-    this.totalActiveConnectionsCount = totalActiveConnectionsCount;
-  }
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -676,15 +628,13 @@ public class MetricGroupRep {
         Objects.equals(this.experiments, metricGroupRep.experiments) &&
         Objects.equals(this.experimentCount, metricGroupRep.experimentCount) &&
         Objects.equals(this.activeExperimentCount, metricGroupRep.activeExperimentCount) &&
-        Objects.equals(this.activeGuardedRolloutCount, metricGroupRep.activeGuardedRolloutCount) &&
-        Objects.equals(this.totalConnectionsCount, metricGroupRep.totalConnectionsCount) &&
-        Objects.equals(this.totalActiveConnectionsCount, metricGroupRep.totalActiveConnectionsCount)&&
+        Objects.equals(this.activeGuardedRolloutCount, metricGroupRep.activeGuardedRolloutCount)&&
         Objects.equals(this.additionalProperties, metricGroupRep.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, key, name, kind, description, links, access, tags, creationDate, lastModified, maintainer, metrics, version, experiments, experimentCount, activeExperimentCount, activeGuardedRolloutCount, totalConnectionsCount, totalActiveConnectionsCount, additionalProperties);
+    return Objects.hash(id, key, name, kind, description, links, access, tags, creationDate, lastModified, maintainer, metrics, version, experiments, experimentCount, activeExperimentCount, activeGuardedRolloutCount, additionalProperties);
   }
 
   @Override
@@ -708,8 +658,6 @@ public class MetricGroupRep {
     sb.append("    experimentCount: ").append(toIndentedString(experimentCount)).append("\n");
     sb.append("    activeExperimentCount: ").append(toIndentedString(activeExperimentCount)).append("\n");
     sb.append("    activeGuardedRolloutCount: ").append(toIndentedString(activeGuardedRolloutCount)).append("\n");
-    sb.append("    totalConnectionsCount: ").append(toIndentedString(totalConnectionsCount)).append("\n");
-    sb.append("    totalActiveConnectionsCount: ").append(toIndentedString(totalActiveConnectionsCount)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -732,7 +680,7 @@ public class MetricGroupRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("_id", "key", "name", "kind", "description", "_links", "_access", "tags", "_creationDate", "_lastModified", "maintainer", "metrics", "_version", "experiments", "experimentCount", "activeExperimentCount", "activeGuardedRolloutCount", "totalConnectionsCount", "totalActiveConnectionsCount"));
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "key", "name", "kind", "description", "_links", "_access", "tags", "_creationDate", "_lastModified", "maintainer", "metrics", "_version", "experiments", "experimentCount", "activeExperimentCount", "activeGuardedRolloutCount"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "key", "name", "kind", "_links", "tags", "_creationDate", "_lastModified", "maintainer", "metrics", "_version"));

@@ -26,6 +26,7 @@
 | SNOWFLAKE_V2 | &quot;snowflake-v2&quot; |
 | DATABRICKS | &quot;databricks&quot; |
 | BIGQUERY | &quot;bigquery&quot; |
+| REDSHIFT | &quot;redshift&quot; |
 
 
 

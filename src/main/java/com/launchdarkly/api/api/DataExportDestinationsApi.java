@@ -31,6 +31,7 @@ import com.launchdarkly.api.model.Destination;
 import com.launchdarkly.api.model.DestinationPost;
 import com.launchdarkly.api.model.Destinations;
 import com.launchdarkly.api.model.ForbiddenErrorRep;
+import com.launchdarkly.api.model.GenerateTrustPolicyPostRep;
 import com.launchdarkly.api.model.GenerateWarehouseDestinationKeyPairPostRep;
 import com.launchdarkly.api.model.InvalidRequestErrorRep;
 import com.launchdarkly.api.model.NotFoundErrorRep;
@@ -878,6 +879,163 @@ public class DataExportDestinationsApi {
 
         okhttp3.Call localVarCall = postDestinationValidateBeforeCall(projectKey, environmentKey, destinationPost, _callback);
         Type localVarReturnType = new TypeToken<Destination>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for postGenerateTrustPolicy
+     * @param projKey The project key (required)
+     * @param envKey The environment key (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Generate trust policy response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call postGenerateTrustPolicyCall(@javax.annotation.Nonnull String projKey, @javax.annotation.Nonnull String envKey, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v2/destinations/projects/{projKey}/environments/{envKey}/generate-trust-policy"
+            .replace("{" + "projKey" + "}", localVarApiClient.escapeString(projKey.toString()))
+            .replace("{" + "envKey" + "}", localVarApiClient.escapeString(envKey.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call postGenerateTrustPolicyValidateBeforeCall(@javax.annotation.Nonnull String projKey, @javax.annotation.Nonnull String envKey, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'projKey' is set
+        if (projKey == null) {
+            throw new ApiException("Missing the required parameter 'projKey' when calling postGenerateTrustPolicy(Async)");
+        }
+
+        // verify the required parameter 'envKey' is set
+        if (envKey == null) {
+            throw new ApiException("Missing the required parameter 'envKey' when calling postGenerateTrustPolicy(Async)");
+        }
+
+        return postGenerateTrustPolicyCall(projKey, envKey, _callback);
+
+    }
+
+    /**
+     * Generate trust policy
+     * Trust policy to allow Data Export to assume the role and perform operations on AWS resources
+     * @param projKey The project key (required)
+     * @param envKey The environment key (required)
+     * @return GenerateTrustPolicyPostRep
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Generate trust policy response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+     </table>
+     */
+    public GenerateTrustPolicyPostRep postGenerateTrustPolicy(@javax.annotation.Nonnull String projKey, @javax.annotation.Nonnull String envKey) throws ApiException {
+        ApiResponse<GenerateTrustPolicyPostRep> localVarResp = postGenerateTrustPolicyWithHttpInfo(projKey, envKey);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Generate trust policy
+     * Trust policy to allow Data Export to assume the role and perform operations on AWS resources
+     * @param projKey The project key (required)
+     * @param envKey The environment key (required)
+     * @return ApiResponse&lt;GenerateTrustPolicyPostRep&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Generate trust policy response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<GenerateTrustPolicyPostRep> postGenerateTrustPolicyWithHttpInfo(@javax.annotation.Nonnull String projKey, @javax.annotation.Nonnull String envKey) throws ApiException {
+        okhttp3.Call localVarCall = postGenerateTrustPolicyValidateBeforeCall(projKey, envKey, null);
+        Type localVarReturnType = new TypeToken<GenerateTrustPolicyPostRep>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Generate trust policy (asynchronously)
+     * Trust policy to allow Data Export to assume the role and perform operations on AWS resources
+     * @param projKey The project key (required)
+     * @param envKey The environment key (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Generate trust policy response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Status conflict </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call postGenerateTrustPolicyAsync(@javax.annotation.Nonnull String projKey, @javax.annotation.Nonnull String envKey, final ApiCallback<GenerateTrustPolicyPostRep> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = postGenerateTrustPolicyValidateBeforeCall(projKey, envKey, _callback);
+        Type localVarReturnType = new TypeToken<GenerateTrustPolicyPostRep>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

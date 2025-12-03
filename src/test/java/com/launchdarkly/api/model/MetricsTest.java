@@ -141,4 +141,28 @@ public class MetricsTest {
         // TODO: test outputCost
     }
 
+    /**
+     * Test the property 'judgeAccuracy'
+     */
+    @Test
+    public void judgeAccuracyTest() {
+        // TODO: test judgeAccuracy
+    }
+
+    /**
+     * Test the property 'judgeRelevance'
+     */
+    @Test
+    public void judgeRelevanceTest() {
+        // TODO: test judgeRelevance
+    }
+
+    /**
+     * Test the property 'judgeToxicity'
+     */
+    @Test
+    public void judgeToxicityTest() {
+        // TODO: test judgeToxicity
+    }
+
 }

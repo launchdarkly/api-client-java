@@ -61,7 +61,7 @@ import com.launchdarkly.api.JSON;
 /**
  * AiConfigsMetricListingRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-29T16:16:49.423595Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-03T22:03:47.239367Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AiConfigsMetricListingRep {
   public static final String SERIALIZED_NAME_EXPERIMENT_COUNT = "experimentCount";
   @SerializedName(SERIALIZED_NAME_EXPERIMENT_COUNT)
@@ -435,7 +435,7 @@ public class AiConfigsMetricListingRep {
 
   public static final String SERIALIZED_NAME_DATA_SOURCE = "dataSource";
   @SerializedName(SERIALIZED_NAME_DATA_SOURCE)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private AiConfigsMetricDataSourceRefRep dataSource;
 
   public static final String SERIALIZED_NAME_ARCHIVED = "archived";
@@ -1093,7 +1093,7 @@ public class AiConfigsMetricListingRep {
   }
 
 
-  public AiConfigsMetricListingRep dataSource(@javax.annotation.Nullable AiConfigsMetricDataSourceRefRep dataSource) {
+  public AiConfigsMetricListingRep dataSource(@javax.annotation.Nonnull AiConfigsMetricDataSourceRefRep dataSource) {
     this.dataSource = dataSource;
     return this;
   }
@@ -1102,12 +1102,12 @@ public class AiConfigsMetricListingRep {
    * Get dataSource
    * @return dataSource
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public AiConfigsMetricDataSourceRefRep getDataSource() {
     return dataSource;
   }
 
-  public void setDataSource(@javax.annotation.Nullable AiConfigsMetricDataSourceRefRep dataSource) {
+  public void setDataSource(@javax.annotation.Nonnull AiConfigsMetricDataSourceRefRep dataSource) {
     this.dataSource = dataSource;
   }
 
@@ -1361,7 +1361,7 @@ public class AiConfigsMetricListingRep {
     openapiFields = new HashSet<String>(Arrays.asList("experimentCount", "metricGroupCount", "guardedRolloutCount", "activeExperimentCount", "activeGuardedRolloutCount", "_id", "_versionId", "_version", "key", "name", "kind", "_attachedFlagCount", "_links", "_site", "_access", "tags", "_creationDate", "lastModified", "maintainerId", "_maintainer", "description", "category", "isNumeric", "successCriteria", "unit", "eventKey", "randomizationUnits", "filters", "unitAggregationType", "analysisType", "percentileValue", "eventDefault", "dataSource", "archived", "archivedAt", "selector", "urls"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "_versionId", "key", "name", "kind", "_links", "tags", "_creationDate"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "_versionId", "key", "name", "kind", "_links", "tags", "_creationDate", "dataSource"));
   }
 
   /**
@@ -1471,10 +1471,8 @@ public class AiConfigsMetricListingRep {
       if (jsonObj.get("eventDefault") != null && !jsonObj.get("eventDefault").isJsonNull()) {
         AiConfigsMetricEventDefaultRep.validateJsonElement(jsonObj.get("eventDefault"));
       }
-      // validate the optional field `dataSource`
-      if (jsonObj.get("dataSource") != null && !jsonObj.get("dataSource").isJsonNull()) {
-        AiConfigsMetricDataSourceRefRep.validateJsonElement(jsonObj.get("dataSource"));
-      }
+      // validate the required field `dataSource`
+      AiConfigsMetricDataSourceRefRep.validateJsonElement(jsonObj.get("dataSource"));
       if ((jsonObj.get("selector") != null && !jsonObj.get("selector").isJsonNull()) && !jsonObj.get("selector").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `selector` to be a primitive type in the JSON string but got `%s`", jsonObj.get("selector").toString()));
       }

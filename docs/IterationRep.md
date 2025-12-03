@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**id** | **String** | The iteration ID |  [optional] |
 |**hypothesis** | **String** | The expected outcome of this experiment |  |
-|**status** | **String** | The status of the iteration: &lt;code&gt;not_started&lt;/code&gt;, &lt;code&gt;running&lt;/code&gt;, &lt;code&gt;stopped&lt;/code&gt; |  |
+|**status** | [**StatusEnum**](#StatusEnum) | The status of the iteration: &lt;code&gt;not_started&lt;/code&gt;, &lt;code&gt;running&lt;/code&gt;, &lt;code&gt;stopped&lt;/code&gt; |  |
 |**createdAt** | **Long** |  |  |
 |**startedAt** | **Long** |  |  [optional] |
 |**endedAt** | **Long** |  |  [optional] |
@@ -29,6 +29,16 @@
 |**metrics** | [**List&lt;DependentMetricOrMetricGroupRep&gt;**](DependentMetricOrMetricGroupRep.md) | Details on the metrics for this experiment |  [optional] |
 |**layerSnapshot** | [**LayerSnapshotRep**](LayerSnapshotRep.md) |  |  [optional] |
 |**covarianceInfo** | [**CovarianceInfoRep**](CovarianceInfoRep.md) |  |  [optional] |
+
+
+
+## Enum: StatusEnum
+
+| Name | Value |
+|---- | -----|
+| NOT_STARTED | &quot;not_started&quot; |
+| RUNNING | &quot;running&quot; |
+| STOPPED | &quot;stopped&quot; |
 
 
 

@@ -38,7 +38,7 @@
 |**analysisType** | [**AnalysisTypeEnum**](#AnalysisTypeEnum) | The method for analyzing metric events |  [optional] |
 |**percentileValue** | **Integer** | The percentile for the analysis method. An integer denoting the target percentile between 0 and 100. Required when &lt;code&gt;analysisType&lt;/code&gt; is &lt;code&gt;percentile&lt;/code&gt;. |  [optional] |
 |**eventDefault** | [**MetricEventDefaultRep**](MetricEventDefaultRep.md) |  |  [optional] |
-|**dataSource** | [**MetricDataSourceRefRep**](MetricDataSourceRefRep.md) |  |  [optional] |
+|**dataSource** | [**MetricDataSourceRefRep**](MetricDataSourceRefRep.md) |  |  |
 |**archived** | **Boolean** | Whether the metric version is archived |  [optional] |
 |**archivedAt** | **Long** |  |  [optional] |
 |**selector** | **String** | For click metrics, the CSS selectors |  [optional] |
