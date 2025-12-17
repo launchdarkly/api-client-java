@@ -38,6 +38,14 @@ public class AgentGraphEdgePostTest {
     }
 
     /**
+     * Test the property 'key'
+     */
+    @Test
+    public void keyTest() {
+        // TODO: test key
+    }
+
+    /**
      * Test the property 'sourceConfig'
      */
     @Test

@@ -7,6 +7,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**deleteAIConfig**](AiConfigsBetaApi.md#deleteAIConfig) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/{configKey} | Delete AI Config |
 | [**deleteAIConfigVariation**](AiConfigsBetaApi.md#deleteAIConfigVariation) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations/{variationKey} | Delete AI Config variation |
 | [**deleteAITool**](AiConfigsBetaApi.md#deleteAITool) | **DELETE** /api/v2/projects/{projectKey}/ai-tools/{toolKey} | Delete AI tool |
+| [**deleteAgentGraph**](AiConfigsBetaApi.md#deleteAgentGraph) | **DELETE** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Delete agent graph |
 | [**deleteModelConfig**](AiConfigsBetaApi.md#deleteModelConfig) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/model-configs/{modelConfigKey} | Delete an AI model config |
 | [**deleteRestrictedModels**](AiConfigsBetaApi.md#deleteRestrictedModels) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/model-configs/restricted | Remove AI models from the restricted list |
 | [**getAIConfig**](AiConfigsBetaApi.md#getAIConfig) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey} | Get AI Config |
@@ -16,6 +17,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**getAIConfigVariation**](AiConfigsBetaApi.md#getAIConfigVariation) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations/{variationKey} | Get AI Config variation |
 | [**getAIConfigs**](AiConfigsBetaApi.md#getAIConfigs) | **GET** /api/v2/projects/{projectKey}/ai-configs | List AI Configs |
 | [**getAITool**](AiConfigsBetaApi.md#getAITool) | **GET** /api/v2/projects/{projectKey}/ai-tools/{toolKey} | Get AI tool |
+| [**getAgentGraph**](AiConfigsBetaApi.md#getAgentGraph) | **GET** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Get agent graph |
 | [**getModelConfig**](AiConfigsBetaApi.md#getModelConfig) | **GET** /api/v2/projects/{projectKey}/ai-configs/model-configs/{modelConfigKey} | Get AI model config |
 | [**listAIToolVersions**](AiConfigsBetaApi.md#listAIToolVersions) | **GET** /api/v2/projects/{projectKey}/ai-tools/{toolKey}/versions | List AI tool versions |
 | [**listAITools**](AiConfigsBetaApi.md#listAITools) | **GET** /api/v2/projects/{projectKey}/ai-tools | List AI tools |
@@ -25,6 +27,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**patchAIConfigTargeting**](AiConfigsBetaApi.md#patchAIConfigTargeting) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey}/targeting | Update AI Config targeting |
 | [**patchAIConfigVariation**](AiConfigsBetaApi.md#patchAIConfigVariation) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations/{variationKey} | Update AI Config variation |
 | [**patchAITool**](AiConfigsBetaApi.md#patchAITool) | **PATCH** /api/v2/projects/{projectKey}/ai-tools/{toolKey} | Update AI tool |
+| [**patchAgentGraph**](AiConfigsBetaApi.md#patchAgentGraph) | **PATCH** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Update agent graph |
 | [**postAIConfig**](AiConfigsBetaApi.md#postAIConfig) | **POST** /api/v2/projects/{projectKey}/ai-configs | Create new AI Config |
 | [**postAIConfigVariation**](AiConfigsBetaApi.md#postAIConfigVariation) | **POST** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations | Create AI Config variation |
 | [**postAITool**](AiConfigsBetaApi.md#postAITool) | **POST** /api/v2/projects/{projectKey}/ai-tools | Create an AI tool |
@@ -240,6 +243,82 @@ public class Example {
 | **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **toolKey** | **String**|  | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No content |  -  |
+| **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not found |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="deleteAgentGraph"></a>
+# **deleteAgentGraph**
+> deleteAgentGraph(ldAPIVersion, projectKey, graphKey)
+
+Delete agent graph
+
+Delete an existing agent graph and all of its edges.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AiConfigsBetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
+    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    String projectKey = "projectKey_example"; // String | 
+    String graphKey = "graphKey_example"; // String | 
+    try {
+      apiInstance.deleteAgentGraph(ldAPIVersion, projectKey, graphKey);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AiConfigsBetaApi#deleteAgentGraph");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
+| **projectKey** | **String**|  | |
+| **graphKey** | **String**|  | |
 
 ### Return type
 
@@ -973,6 +1052,83 @@ public class Example {
 | **404** | Not found |  -  |
 | **500** | Internal server error |  -  |
 
+<a id="getAgentGraph"></a>
+# **getAgentGraph**
+> AgentGraph getAgentGraph(ldAPIVersion, projectKey, graphKey)
+
+Get agent graph
+
+Retrieve a specific agent graph by its key, including its edges.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AiConfigsBetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
+    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    String projectKey = "projectKey_example"; // String | 
+    String graphKey = "graphKey_example"; // String | 
+    try {
+      AgentGraph result = apiInstance.getAgentGraph(ldAPIVersion, projectKey, graphKey);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AiConfigsBetaApi#getAgentGraph");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
+| **projectKey** | **String**|  | |
+| **graphKey** | **String**|  | |
+
+### Return type
+
+[**AgentGraph**](AgentGraph.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Agent graph found |  -  |
+| **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not found |  -  |
+| **500** | Internal server error |  -  |
+
 <a id="getModelConfig"></a>
 # **getModelConfig**
 > ModelConfig getModelConfig(ldAPIVersion, projectKey, modelConfigKey)
@@ -1682,6 +1838,85 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | AI tool updated |  -  |
+| **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not found |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="patchAgentGraph"></a>
+# **patchAgentGraph**
+> AgentGraph patchAgentGraph(ldAPIVersion, projectKey, graphKey, agentGraphPatch)
+
+Update agent graph
+
+Edit an existing agent graph.  The request body must be a JSON object of the fields to update. The values you include replace the existing values for the fields.  If the update includes &#x60;rootConfigKey&#x60; or &#x60;edges&#x60;, both must be present and will be treated as full replacements. 
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AiConfigsBetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
+    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    String projectKey = "projectKey_example"; // String | 
+    String graphKey = "graphKey_example"; // String | 
+    AgentGraphPatch agentGraphPatch = new AgentGraphPatch(); // AgentGraphPatch | Agent graph object to update
+    try {
+      AgentGraph result = apiInstance.patchAgentGraph(ldAPIVersion, projectKey, graphKey, agentGraphPatch);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AiConfigsBetaApi#patchAgentGraph");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
+| **projectKey** | **String**|  | |
+| **graphKey** | **String**|  | |
+| **agentGraphPatch** | [**AgentGraphPatch**](AgentGraphPatch.md)| Agent graph object to update | [optional] |
+
+### Return type
+
+[**AgentGraph**](AgentGraph.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Agent graph updated |  -  |
 | **400** | Bad request |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not found |  -  |

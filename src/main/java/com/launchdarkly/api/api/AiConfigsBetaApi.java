@@ -42,6 +42,7 @@ import com.launchdarkly.api.model.AIToolPatch;
 import com.launchdarkly.api.model.AIToolPost;
 import com.launchdarkly.api.model.AITools;
 import com.launchdarkly.api.model.AgentGraph;
+import com.launchdarkly.api.model.AgentGraphPatch;
 import com.launchdarkly.api.model.AgentGraphPost;
 import com.launchdarkly.api.model.AgentGraphs;
 import com.launchdarkly.api.model.Error;
@@ -591,6 +592,169 @@ public class AiConfigsBetaApi {
     public okhttp3.Call deleteAIToolAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String toolKey, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteAIToolValidateBeforeCall(ldAPIVersion, projectKey, toolKey, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for deleteAgentGraph
+     * @param ldAPIVersion Version of the endpoint. (required)
+     * @param projectKey  (required)
+     * @param graphKey  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteAgentGraphCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String graphKey, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v2/projects/{projectKey}/agent-graphs/{graphKey}"
+            .replace("{" + "projectKey" + "}", localVarApiClient.escapeString(projectKey.toString()))
+            .replace("{" + "graphKey" + "}", localVarApiClient.escapeString(graphKey.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deleteAgentGraphValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String graphKey, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'ldAPIVersion' is set
+        if (ldAPIVersion == null) {
+            throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling deleteAgentGraph(Async)");
+        }
+
+        // verify the required parameter 'projectKey' is set
+        if (projectKey == null) {
+            throw new ApiException("Missing the required parameter 'projectKey' when calling deleteAgentGraph(Async)");
+        }
+
+        // verify the required parameter 'graphKey' is set
+        if (graphKey == null) {
+            throw new ApiException("Missing the required parameter 'graphKey' when calling deleteAgentGraph(Async)");
+        }
+
+        return deleteAgentGraphCall(ldAPIVersion, projectKey, graphKey, _callback);
+
+    }
+
+    /**
+     * Delete agent graph
+     * Delete an existing agent graph and all of its edges.
+     * @param ldAPIVersion Version of the endpoint. (required)
+     * @param projectKey  (required)
+     * @param graphKey  (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public void deleteAgentGraph(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String graphKey) throws ApiException {
+        deleteAgentGraphWithHttpInfo(ldAPIVersion, projectKey, graphKey);
+    }
+
+    /**
+     * Delete agent graph
+     * Delete an existing agent graph and all of its edges.
+     * @param ldAPIVersion Version of the endpoint. (required)
+     * @param projectKey  (required)
+     * @param graphKey  (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> deleteAgentGraphWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String graphKey) throws ApiException {
+        okhttp3.Call localVarCall = deleteAgentGraphValidateBeforeCall(ldAPIVersion, projectKey, graphKey, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Delete agent graph (asynchronously)
+     * Delete an existing agent graph and all of its edges.
+     * @param ldAPIVersion Version of the endpoint. (required)
+     * @param projectKey  (required)
+     * @param graphKey  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> No content </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteAgentGraphAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String graphKey, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = deleteAgentGraphValidateBeforeCall(ldAPIVersion, projectKey, graphKey, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
@@ -2196,6 +2360,173 @@ public class AiConfigsBetaApi {
         return localVarCall;
     }
     /**
+     * Build call for getAgentGraph
+     * @param ldAPIVersion Version of the endpoint. (required)
+     * @param projectKey  (required)
+     * @param graphKey  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Agent graph found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getAgentGraphCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String graphKey, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v2/projects/{projectKey}/agent-graphs/{graphKey}"
+            .replace("{" + "projectKey" + "}", localVarApiClient.escapeString(projectKey.toString()))
+            .replace("{" + "graphKey" + "}", localVarApiClient.escapeString(graphKey.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getAgentGraphValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String graphKey, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'ldAPIVersion' is set
+        if (ldAPIVersion == null) {
+            throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling getAgentGraph(Async)");
+        }
+
+        // verify the required parameter 'projectKey' is set
+        if (projectKey == null) {
+            throw new ApiException("Missing the required parameter 'projectKey' when calling getAgentGraph(Async)");
+        }
+
+        // verify the required parameter 'graphKey' is set
+        if (graphKey == null) {
+            throw new ApiException("Missing the required parameter 'graphKey' when calling getAgentGraph(Async)");
+        }
+
+        return getAgentGraphCall(ldAPIVersion, projectKey, graphKey, _callback);
+
+    }
+
+    /**
+     * Get agent graph
+     * Retrieve a specific agent graph by its key, including its edges.
+     * @param ldAPIVersion Version of the endpoint. (required)
+     * @param projectKey  (required)
+     * @param graphKey  (required)
+     * @return AgentGraph
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Agent graph found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public AgentGraph getAgentGraph(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String graphKey) throws ApiException {
+        ApiResponse<AgentGraph> localVarResp = getAgentGraphWithHttpInfo(ldAPIVersion, projectKey, graphKey);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get agent graph
+     * Retrieve a specific agent graph by its key, including its edges.
+     * @param ldAPIVersion Version of the endpoint. (required)
+     * @param projectKey  (required)
+     * @param graphKey  (required)
+     * @return ApiResponse&lt;AgentGraph&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Agent graph found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AgentGraph> getAgentGraphWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String graphKey) throws ApiException {
+        okhttp3.Call localVarCall = getAgentGraphValidateBeforeCall(ldAPIVersion, projectKey, graphKey, null);
+        Type localVarReturnType = new TypeToken<AgentGraph>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get agent graph (asynchronously)
+     * Retrieve a specific agent graph by its key, including its edges.
+     * @param ldAPIVersion Version of the endpoint. (required)
+     * @param projectKey  (required)
+     * @param graphKey  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Agent graph found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getAgentGraphAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String graphKey, final ApiCallback<AgentGraph> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getAgentGraphValidateBeforeCall(ldAPIVersion, projectKey, graphKey, _callback);
+        Type localVarReturnType = new TypeToken<AgentGraph>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for getModelConfig
      * @param ldAPIVersion Version of the endpoint. (required)
      * @param projectKey  (required)
@@ -3763,6 +4094,178 @@ public class AiConfigsBetaApi {
 
         okhttp3.Call localVarCall = patchAIToolValidateBeforeCall(ldAPIVersion, projectKey, toolKey, aiToolPatch, _callback);
         Type localVarReturnType = new TypeToken<AITool>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for patchAgentGraph
+     * @param ldAPIVersion Version of the endpoint. (required)
+     * @param projectKey  (required)
+     * @param graphKey  (required)
+     * @param agentGraphPatch Agent graph object to update (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Agent graph updated </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call patchAgentGraphCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String graphKey, @javax.annotation.Nullable AgentGraphPatch agentGraphPatch, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = agentGraphPatch;
+
+        // create path and map variables
+        String localVarPath = "/api/v2/projects/{projectKey}/agent-graphs/{graphKey}"
+            .replace("{" + "projectKey" + "}", localVarApiClient.escapeString(projectKey.toString()))
+            .replace("{" + "graphKey" + "}", localVarApiClient.escapeString(graphKey.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call patchAgentGraphValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String graphKey, @javax.annotation.Nullable AgentGraphPatch agentGraphPatch, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'ldAPIVersion' is set
+        if (ldAPIVersion == null) {
+            throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling patchAgentGraph(Async)");
+        }
+
+        // verify the required parameter 'projectKey' is set
+        if (projectKey == null) {
+            throw new ApiException("Missing the required parameter 'projectKey' when calling patchAgentGraph(Async)");
+        }
+
+        // verify the required parameter 'graphKey' is set
+        if (graphKey == null) {
+            throw new ApiException("Missing the required parameter 'graphKey' when calling patchAgentGraph(Async)");
+        }
+
+        return patchAgentGraphCall(ldAPIVersion, projectKey, graphKey, agentGraphPatch, _callback);
+
+    }
+
+    /**
+     * Update agent graph
+     * Edit an existing agent graph.  The request body must be a JSON object of the fields to update. The values you include replace the existing values for the fields.  If the update includes &#x60;rootConfigKey&#x60; or &#x60;edges&#x60;, both must be present and will be treated as full replacements. 
+     * @param ldAPIVersion Version of the endpoint. (required)
+     * @param projectKey  (required)
+     * @param graphKey  (required)
+     * @param agentGraphPatch Agent graph object to update (optional)
+     * @return AgentGraph
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Agent graph updated </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public AgentGraph patchAgentGraph(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String graphKey, @javax.annotation.Nullable AgentGraphPatch agentGraphPatch) throws ApiException {
+        ApiResponse<AgentGraph> localVarResp = patchAgentGraphWithHttpInfo(ldAPIVersion, projectKey, graphKey, agentGraphPatch);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update agent graph
+     * Edit an existing agent graph.  The request body must be a JSON object of the fields to update. The values you include replace the existing values for the fields.  If the update includes &#x60;rootConfigKey&#x60; or &#x60;edges&#x60;, both must be present and will be treated as full replacements. 
+     * @param ldAPIVersion Version of the endpoint. (required)
+     * @param projectKey  (required)
+     * @param graphKey  (required)
+     * @param agentGraphPatch Agent graph object to update (optional)
+     * @return ApiResponse&lt;AgentGraph&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Agent graph updated </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AgentGraph> patchAgentGraphWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String graphKey, @javax.annotation.Nullable AgentGraphPatch agentGraphPatch) throws ApiException {
+        okhttp3.Call localVarCall = patchAgentGraphValidateBeforeCall(ldAPIVersion, projectKey, graphKey, agentGraphPatch, null);
+        Type localVarReturnType = new TypeToken<AgentGraph>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update agent graph (asynchronously)
+     * Edit an existing agent graph.  The request body must be a JSON object of the fields to update. The values you include replace the existing values for the fields.  If the update includes &#x60;rootConfigKey&#x60; or &#x60;edges&#x60;, both must be present and will be treated as full replacements. 
+     * @param ldAPIVersion Version of the endpoint. (required)
+     * @param projectKey  (required)
+     * @param graphKey  (required)
+     * @param agentGraphPatch Agent graph object to update (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Agent graph updated </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call patchAgentGraphAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String graphKey, @javax.annotation.Nullable AgentGraphPatch agentGraphPatch, final ApiCallback<AgentGraph> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = patchAgentGraphValidateBeforeCall(ldAPIVersion, projectKey, graphKey, agentGraphPatch, _callback);
+        Type localVarReturnType = new TypeToken<AgentGraph>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

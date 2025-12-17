@@ -135,6 +135,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.AgentGraph.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.AgentGraphEdge.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.AgentGraphEdgePost.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.AgentGraphPatch.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.AgentGraphPost.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.AgentGraphs.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.AiConfigsAccess.CustomTypeAdapterFactory());

@@ -29,6 +29,7 @@ import com.launchdarkly.api.model.AIToolPatch;
 import com.launchdarkly.api.model.AIToolPost;
 import com.launchdarkly.api.model.AITools;
 import com.launchdarkly.api.model.AgentGraph;
+import com.launchdarkly.api.model.AgentGraphPatch;
 import com.launchdarkly.api.model.AgentGraphPost;
 import com.launchdarkly.api.model.AgentGraphs;
 import com.launchdarkly.api.model.Error;
@@ -100,6 +101,22 @@ public class AiConfigsBetaApiTest {
         String projectKey = null;
         String toolKey = null;
         api.deleteAITool(ldAPIVersion, projectKey, toolKey);
+        // TODO: test validations
+    }
+
+    /**
+     * Delete agent graph
+     *
+     * Delete an existing agent graph and all of its edges.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void deleteAgentGraphTest() throws ApiException {
+        String ldAPIVersion = null;
+        String projectKey = null;
+        String graphKey = null;
+        api.deleteAgentGraph(ldAPIVersion, projectKey, graphKey);
         // TODO: test validations
     }
 
@@ -258,6 +275,22 @@ public class AiConfigsBetaApiTest {
     }
 
     /**
+     * Get agent graph
+     *
+     * Retrieve a specific agent graph by its key, including its edges.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getAgentGraphTest() throws ApiException {
+        String ldAPIVersion = null;
+        String projectKey = null;
+        String graphKey = null;
+        AgentGraph response = api.getAgentGraph(ldAPIVersion, projectKey, graphKey);
+        // TODO: test validations
+    }
+
+    /**
      * Get AI model config
      *
      * Get an AI model config by key.
@@ -410,6 +443,23 @@ public class AiConfigsBetaApiTest {
         String toolKey = null;
         AIToolPatch aiToolPatch = null;
         AITool response = api.patchAITool(ldAPIVersion, projectKey, toolKey, aiToolPatch);
+        // TODO: test validations
+    }
+
+    /**
+     * Update agent graph
+     *
+     * Edit an existing agent graph.  The request body must be a JSON object of the fields to update. The values you include replace the existing values for the fields.  If the update includes &#x60;rootConfigKey&#x60; or &#x60;edges&#x60;, both must be present and will be treated as full replacements. 
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void patchAgentGraphTest() throws ApiException {
+        String ldAPIVersion = null;
+        String projectKey = null;
+        String graphKey = null;
+        AgentGraphPatch agentGraphPatch = null;
+        AgentGraph response = api.patchAgentGraph(ldAPIVersion, projectKey, graphKey, agentGraphPatch);
         // TODO: test validations
     }
 

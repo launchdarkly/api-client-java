@@ -52,7 +52,7 @@ import com.launchdarkly.api.JSON;
 /**
  * AIConfigTargetingEnvironmentRuleClause
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-17T18:25:40.535826Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-17T18:45:22.167125Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AIConfigTargetingEnvironmentRuleClause {
   public static final String SERIALIZED_NAME_ATTRIBUTE = "attribute";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTE)

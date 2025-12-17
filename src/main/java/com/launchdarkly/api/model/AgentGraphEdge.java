@@ -50,8 +50,13 @@ import com.launchdarkly.api.JSON;
 /**
  * An edge in an agent graph connecting two AI Configs
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-17T18:25:40.535826Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-17T18:45:22.167125Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AgentGraphEdge {
+  public static final String SERIALIZED_NAME_KEY = "key";
+  @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
+  private String key;
+
   public static final String SERIALIZED_NAME_SOURCE_CONFIG = "sourceConfig";
   @SerializedName(SERIALIZED_NAME_SOURCE_CONFIG)
   @javax.annotation.Nonnull
@@ -69,6 +74,25 @@ public class AgentGraphEdge {
 
   public AgentGraphEdge() {
   }
+
+  public AgentGraphEdge key(@javax.annotation.Nonnull String key) {
+    this.key = key;
+    return this;
+  }
+
+  /**
+   * A unique key for this edge within the graph
+   * @return key
+   */
+  @javax.annotation.Nonnull
+  public String getKey() {
+    return key;
+  }
+
+  public void setKey(@javax.annotation.Nonnull String key) {
+    this.key = key;
+  }
+
 
   public AgentGraphEdge sourceConfig(@javax.annotation.Nonnull String sourceConfig) {
     this.sourceConfig = sourceConfig;
@@ -181,7 +205,8 @@ public class AgentGraphEdge {
       return false;
     }
     AgentGraphEdge agentGraphEdge = (AgentGraphEdge) o;
-    return Objects.equals(this.sourceConfig, agentGraphEdge.sourceConfig) &&
+    return Objects.equals(this.key, agentGraphEdge.key) &&
+        Objects.equals(this.sourceConfig, agentGraphEdge.sourceConfig) &&
         Objects.equals(this.targetConfig, agentGraphEdge.targetConfig) &&
         Objects.equals(this.handoff, agentGraphEdge.handoff)&&
         Objects.equals(this.additionalProperties, agentGraphEdge.additionalProperties);
@@ -189,13 +214,14 @@ public class AgentGraphEdge {
 
   @Override
   public int hashCode() {
-    return Objects.hash(sourceConfig, targetConfig, handoff, additionalProperties);
+    return Objects.hash(key, sourceConfig, targetConfig, handoff, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AgentGraphEdge {\n");
+    sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("    sourceConfig: ").append(toIndentedString(sourceConfig)).append("\n");
     sb.append("    targetConfig: ").append(toIndentedString(targetConfig)).append("\n");
     sb.append("    handoff: ").append(toIndentedString(handoff)).append("\n");
@@ -221,10 +247,10 @@ public class AgentGraphEdge {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("sourceConfig", "targetConfig", "handoff"));
+    openapiFields = new HashSet<String>(Arrays.asList("key", "sourceConfig", "targetConfig", "handoff"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("sourceConfig", "targetConfig"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("key", "sourceConfig", "targetConfig"));
   }
 
   /**
@@ -247,6 +273,9 @@ public class AgentGraphEdge {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (!jsonObj.get("key").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+      }
       if (!jsonObj.get("sourceConfig").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `sourceConfig` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sourceConfig").toString()));
       }

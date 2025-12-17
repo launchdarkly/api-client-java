@@ -55,7 +55,7 @@ import com.launchdarkly.api.JSON;
 /**
  * ApprovalRequestSettingsPatch
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-17T18:25:40.535826Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-17T18:45:22.167125Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ApprovalRequestSettingsPatch {
   public static final String SERIALIZED_NAME_AUTO_APPLY_APPROVED_CHANGES = "autoApplyApprovedChanges";
   @SerializedName(SERIALIZED_NAME_AUTO_APPLY_APPROVED_CHANGES)

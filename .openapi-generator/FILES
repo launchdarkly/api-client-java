@@ -48,6 +48,7 @@ docs/ActionOutput.md
 docs/AgentGraph.md
 docs/AgentGraphEdge.md
 docs/AgentGraphEdgePost.md
+docs/AgentGraphPatch.md
 docs/AgentGraphPost.md
 docs/AgentGraphs.md
 docs/AiConfigsAccess.md
@@ -771,6 +772,7 @@ src/main/java/com/launchdarkly/api/model/ActionOutput.java
 src/main/java/com/launchdarkly/api/model/AgentGraph.java
 src/main/java/com/launchdarkly/api/model/AgentGraphEdge.java
 src/main/java/com/launchdarkly/api/model/AgentGraphEdgePost.java
+src/main/java/com/launchdarkly/api/model/AgentGraphPatch.java
 src/main/java/com/launchdarkly/api/model/AgentGraphPost.java
 src/main/java/com/launchdarkly/api/model/AgentGraphs.java
 src/main/java/com/launchdarkly/api/model/AiConfigsAccess.java
@@ -1414,6 +1416,7 @@ src/test/java/com/launchdarkly/api/model/ActionInputTest.java
 src/test/java/com/launchdarkly/api/model/ActionOutputTest.java
 src/test/java/com/launchdarkly/api/model/AgentGraphEdgePostTest.java
 src/test/java/com/launchdarkly/api/model/AgentGraphEdgeTest.java
+src/test/java/com/launchdarkly/api/model/AgentGraphPatchTest.java
 src/test/java/com/launchdarkly/api/model/AgentGraphPostTest.java
 src/test/java/com/launchdarkly/api/model/AgentGraphTest.java
 src/test/java/com/launchdarkly/api/model/AgentGraphsTest.java
