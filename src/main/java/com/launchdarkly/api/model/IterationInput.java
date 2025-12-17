@@ -57,7 +57,7 @@ import com.launchdarkly.api.JSON;
 /**
  * IterationInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-03T22:03:47.239367Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-17T18:25:40.535826Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class IterationInput {
   public static final String SERIALIZED_NAME_HYPOTHESIS = "hypothesis";
   @SerializedName(SERIALIZED_NAME_HYPOTHESIS)
@@ -98,11 +98,6 @@ public class IterationInput {
   @SerializedName(SERIALIZED_NAME_RANDOMIZATION_UNIT)
   @javax.annotation.Nullable
   private String randomizationUnit;
-
-  public static final String SERIALIZED_NAME_COVARIANCE_ID = "covarianceId";
-  @SerializedName(SERIALIZED_NAME_COVARIANCE_ID)
-  @javax.annotation.Nullable
-  private String covarianceId;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
@@ -288,25 +283,6 @@ public class IterationInput {
   }
 
 
-  public IterationInput covarianceId(@javax.annotation.Nullable String covarianceId) {
-    this.covarianceId = covarianceId;
-    return this;
-  }
-
-  /**
-   * The ID of the covariance CSV
-   * @return covarianceId
-   */
-  @javax.annotation.Nullable
-  public String getCovarianceId() {
-    return covarianceId;
-  }
-
-  public void setCovarianceId(@javax.annotation.Nullable String covarianceId) {
-    this.covarianceId = covarianceId;
-  }
-
-
   public IterationInput attributes(@javax.annotation.Nullable List<String> attributes) {
     this.attributes = attributes;
     return this;
@@ -396,14 +372,13 @@ public class IterationInput {
         Objects.equals(this.treatments, iterationInput.treatments) &&
         Objects.equals(this.flags, iterationInput.flags) &&
         Objects.equals(this.randomizationUnit, iterationInput.randomizationUnit) &&
-        Objects.equals(this.covarianceId, iterationInput.covarianceId) &&
         Objects.equals(this.attributes, iterationInput.attributes)&&
         Objects.equals(this.additionalProperties, iterationInput.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(hypothesis, canReshuffleTraffic, metrics, primarySingleMetricKey, primaryFunnelKey, treatments, flags, randomizationUnit, covarianceId, attributes, additionalProperties);
+    return Objects.hash(hypothesis, canReshuffleTraffic, metrics, primarySingleMetricKey, primaryFunnelKey, treatments, flags, randomizationUnit, attributes, additionalProperties);
   }
 
   @Override
@@ -418,7 +393,6 @@ public class IterationInput {
     sb.append("    treatments: ").append(toIndentedString(treatments)).append("\n");
     sb.append("    flags: ").append(toIndentedString(flags)).append("\n");
     sb.append("    randomizationUnit: ").append(toIndentedString(randomizationUnit)).append("\n");
-    sb.append("    covarianceId: ").append(toIndentedString(covarianceId)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -442,7 +416,7 @@ public class IterationInput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("hypothesis", "canReshuffleTraffic", "metrics", "primarySingleMetricKey", "primaryFunnelKey", "treatments", "flags", "randomizationUnit", "covarianceId", "attributes"));
+    openapiFields = new HashSet<String>(Arrays.asList("hypothesis", "canReshuffleTraffic", "metrics", "primarySingleMetricKey", "primaryFunnelKey", "treatments", "flags", "randomizationUnit", "attributes"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("hypothesis", "metrics", "treatments", "flags"));
@@ -499,9 +473,6 @@ public class IterationInput {
       };
       if ((jsonObj.get("randomizationUnit") != null && !jsonObj.get("randomizationUnit").isJsonNull()) && !jsonObj.get("randomizationUnit").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `randomizationUnit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("randomizationUnit").toString()));
-      }
-      if ((jsonObj.get("covarianceId") != null && !jsonObj.get("covarianceId").isJsonNull()) && !jsonObj.get("covarianceId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `covarianceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("covarianceId").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("attributes") != null && !jsonObj.get("attributes").isJsonNull() && !jsonObj.get("attributes").isJsonArray()) {

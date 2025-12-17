@@ -890,7 +890,7 @@ public class Example {
 
 <a id="patchFeatureFlag"></a>
 # **patchFeatureFlag**
-> FeatureFlag patchFeatureFlag(projectKey, featureFlagKey, patchWithComment, ignoreConflicts)
+> FeatureFlag patchFeatureFlag(projectKey, featureFlagKey, patchWithComment, ignoreConflicts, dryRun)
 
 Update feature flag
 
@@ -922,8 +922,9 @@ public class Example {
     String featureFlagKey = "featureFlagKey_example"; // String | The feature flag key. The key identifies the flag in your code.
     PatchWithComment patchWithComment = new PatchWithComment(); // PatchWithComment | 
     Boolean ignoreConflicts = true; // Boolean | If true, the patch will be applied even if it causes a pending scheduled change or approval request to fail.
+    Boolean dryRun = true; // Boolean | If true, the patch will be validated but not persisted. Returns a preview of the flag after the patch is applied.
     try {
-      FeatureFlag result = apiInstance.patchFeatureFlag(projectKey, featureFlagKey, patchWithComment, ignoreConflicts);
+      FeatureFlag result = apiInstance.patchFeatureFlag(projectKey, featureFlagKey, patchWithComment, ignoreConflicts, dryRun);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FeatureFlagsApi#patchFeatureFlag");
@@ -944,6 +945,7 @@ public class Example {
 | **featureFlagKey** | **String**| The feature flag key. The key identifies the flag in your code. | |
 | **patchWithComment** | [**PatchWithComment**](PatchWithComment.md)|  | |
 | **ignoreConflicts** | **Boolean**| If true, the patch will be applied even if it causes a pending scheduled change or approval request to fail. | [optional] |
+| **dryRun** | **Boolean**| If true, the patch will be validated but not persisted. Returns a preview of the flag after the patch is applied. | [optional] |
 
 ### Return type
 

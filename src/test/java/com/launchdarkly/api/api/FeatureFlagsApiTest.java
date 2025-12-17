@@ -251,7 +251,8 @@ public class FeatureFlagsApiTest {
         String featureFlagKey = null;
         PatchWithComment patchWithComment = null;
         Boolean ignoreConflicts = null;
-        FeatureFlag response = api.patchFeatureFlag(projectKey, featureFlagKey, patchWithComment, ignoreConflicts);
+        Boolean dryRun = null;
+        FeatureFlag response = api.patchFeatureFlag(projectKey, featureFlagKey, patchWithComment, ignoreConflicts, dryRun);
         // TODO: test validations
     }
 

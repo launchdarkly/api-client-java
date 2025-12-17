@@ -45,6 +45,11 @@ docs/AccountMembersApi.md
 docs/AccountUsageBetaApi.md
 docs/ActionInput.md
 docs/ActionOutput.md
+docs/AgentGraph.md
+docs/AgentGraphEdge.md
+docs/AgentGraphEdgePost.md
+docs/AgentGraphPost.md
+docs/AgentGraphs.md
 docs/AiConfigsAccess.md
 docs/AiConfigsAccessAllowedReason.md
 docs/AiConfigsAccessAllowedRep.md
@@ -149,7 +154,6 @@ docs/Contexts.md
 docs/ContextsApi.md
 docs/CopiedFromEnv.md
 docs/CoreLink.md
-docs/CovarianceInfoRep.md
 docs/CreateAnnouncementBody.md
 docs/CreateApprovalRequestRequest.md
 docs/CreateCopyFlagConfigApprovalRequestRequest.md
@@ -457,6 +461,7 @@ docs/PostFlagScheduledChangesInput.md
 docs/PostInsightGroupParams.md
 docs/PostReleasePolicyRequest.md
 docs/Prerequisite.md
+docs/ProgressiveReleaseConfig.md
 docs/Project.md
 docs/ProjectPost.md
 docs/ProjectRep.md
@@ -500,6 +505,7 @@ docs/ReleasePoliciesBetaApi.md
 docs/ReleasePoliciesResponse.md
 docs/ReleasePolicy.md
 docs/ReleasePolicyScope.md
+docs/ReleasePolicyStage.md
 docs/ReleaseProgression.md
 docs/ReleaseProgressionCollection.md
 docs/ReleaserAudienceConfigInput.md
@@ -762,6 +768,11 @@ src/main/java/com/launchdarkly/api/model/AccessDeniedReason.java
 src/main/java/com/launchdarkly/api/model/AccessTokenPost.java
 src/main/java/com/launchdarkly/api/model/ActionInput.java
 src/main/java/com/launchdarkly/api/model/ActionOutput.java
+src/main/java/com/launchdarkly/api/model/AgentGraph.java
+src/main/java/com/launchdarkly/api/model/AgentGraphEdge.java
+src/main/java/com/launchdarkly/api/model/AgentGraphEdgePost.java
+src/main/java/com/launchdarkly/api/model/AgentGraphPost.java
+src/main/java/com/launchdarkly/api/model/AgentGraphs.java
 src/main/java/com/launchdarkly/api/model/AiConfigsAccess.java
 src/main/java/com/launchdarkly/api/model/AiConfigsAccessAllowedReason.java
 src/main/java/com/launchdarkly/api/model/AiConfigsAccessAllowedRep.java
@@ -857,7 +868,6 @@ src/main/java/com/launchdarkly/api/model/ContextSearch.java
 src/main/java/com/launchdarkly/api/model/Contexts.java
 src/main/java/com/launchdarkly/api/model/CopiedFromEnv.java
 src/main/java/com/launchdarkly/api/model/CoreLink.java
-src/main/java/com/launchdarkly/api/model/CovarianceInfoRep.java
 src/main/java/com/launchdarkly/api/model/CreateAnnouncementBody.java
 src/main/java/com/launchdarkly/api/model/CreateApprovalRequestRequest.java
 src/main/java/com/launchdarkly/api/model/CreateCopyFlagConfigApprovalRequestRequest.java
@@ -1139,6 +1149,7 @@ src/main/java/com/launchdarkly/api/model/PostFlagScheduledChangesInput.java
 src/main/java/com/launchdarkly/api/model/PostInsightGroupParams.java
 src/main/java/com/launchdarkly/api/model/PostReleasePolicyRequest.java
 src/main/java/com/launchdarkly/api/model/Prerequisite.java
+src/main/java/com/launchdarkly/api/model/ProgressiveReleaseConfig.java
 src/main/java/com/launchdarkly/api/model/Project.java
 src/main/java/com/launchdarkly/api/model/ProjectPost.java
 src/main/java/com/launchdarkly/api/model/ProjectRep.java
@@ -1178,6 +1189,7 @@ src/main/java/com/launchdarkly/api/model/ReleasePoliciesAccessRep.java
 src/main/java/com/launchdarkly/api/model/ReleasePoliciesResponse.java
 src/main/java/com/launchdarkly/api/model/ReleasePolicy.java
 src/main/java/com/launchdarkly/api/model/ReleasePolicyScope.java
+src/main/java/com/launchdarkly/api/model/ReleasePolicyStage.java
 src/main/java/com/launchdarkly/api/model/ReleaseProgression.java
 src/main/java/com/launchdarkly/api/model/ReleaseProgressionCollection.java
 src/main/java/com/launchdarkly/api/model/ReleaserAudienceConfigInput.java
@@ -1400,6 +1412,11 @@ src/test/java/com/launchdarkly/api/model/AccessTest.java
 src/test/java/com/launchdarkly/api/model/AccessTokenPostTest.java
 src/test/java/com/launchdarkly/api/model/ActionInputTest.java
 src/test/java/com/launchdarkly/api/model/ActionOutputTest.java
+src/test/java/com/launchdarkly/api/model/AgentGraphEdgePostTest.java
+src/test/java/com/launchdarkly/api/model/AgentGraphEdgeTest.java
+src/test/java/com/launchdarkly/api/model/AgentGraphPostTest.java
+src/test/java/com/launchdarkly/api/model/AgentGraphTest.java
+src/test/java/com/launchdarkly/api/model/AgentGraphsTest.java
 src/test/java/com/launchdarkly/api/model/AiConfigsAccessAllowedReasonTest.java
 src/test/java/com/launchdarkly/api/model/AiConfigsAccessAllowedRepTest.java
 src/test/java/com/launchdarkly/api/model/AiConfigsAccessDeniedReasonTest.java
@@ -1495,7 +1512,6 @@ src/test/java/com/launchdarkly/api/model/ContextSearchTest.java
 src/test/java/com/launchdarkly/api/model/ContextsTest.java
 src/test/java/com/launchdarkly/api/model/CopiedFromEnvTest.java
 src/test/java/com/launchdarkly/api/model/CoreLinkTest.java
-src/test/java/com/launchdarkly/api/model/CovarianceInfoRepTest.java
 src/test/java/com/launchdarkly/api/model/CreateAnnouncementBodyTest.java
 src/test/java/com/launchdarkly/api/model/CreateApprovalRequestRequestTest.java
 src/test/java/com/launchdarkly/api/model/CreateCopyFlagConfigApprovalRequestRequestTest.java
@@ -1777,6 +1793,7 @@ src/test/java/com/launchdarkly/api/model/PostFlagScheduledChangesInputTest.java
 src/test/java/com/launchdarkly/api/model/PostInsightGroupParamsTest.java
 src/test/java/com/launchdarkly/api/model/PostReleasePolicyRequestTest.java
 src/test/java/com/launchdarkly/api/model/PrerequisiteTest.java
+src/test/java/com/launchdarkly/api/model/ProgressiveReleaseConfigTest.java
 src/test/java/com/launchdarkly/api/model/ProjectPostTest.java
 src/test/java/com/launchdarkly/api/model/ProjectRepTest.java
 src/test/java/com/launchdarkly/api/model/ProjectSummaryCollectionTest.java
@@ -1814,6 +1831,7 @@ src/test/java/com/launchdarkly/api/model/ReleasePoliciesAccessRepTest.java
 src/test/java/com/launchdarkly/api/model/ReleasePoliciesAccessTest.java
 src/test/java/com/launchdarkly/api/model/ReleasePoliciesResponseTest.java
 src/test/java/com/launchdarkly/api/model/ReleasePolicyScopeTest.java
+src/test/java/com/launchdarkly/api/model/ReleasePolicyStageTest.java
 src/test/java/com/launchdarkly/api/model/ReleasePolicyTest.java
 src/test/java/com/launchdarkly/api/model/ReleaseProgressionCollectionTest.java
 src/test/java/com/launchdarkly/api/model/ReleaseProgressionTest.java

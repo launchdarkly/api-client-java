@@ -14,6 +14,7 @@
 |**mode** | [**ModeEnum**](#ModeEnum) |  |  [optional] |
 |**name** | **String** |  |  |
 |**tags** | **List&lt;String&gt;** |  |  [optional] |
+|**defaultVariation** | [**AIConfigVariationPost**](AIConfigVariationPost.md) |  |  [optional] |
 
 
 

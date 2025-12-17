@@ -8,7 +8,7 @@ This client library is only compatible with the latest version of our REST API. 
 
 LaunchDarkly REST API
 - API version: 2.0
-  - Build date: 2025-12-03T22:03:47.239367Z[Etc/UTC]
+  - Build date: 2025-12-17T18:25:40.535826Z[Etc/UTC]
   - Generator version: 7.16.0
 
 This documentation describes LaunchDarkly's REST API. To access the complete OpenAPI spec directly, use [Get OpenAPI spec](https://launchdarkly.com/docs/api/other/get-openapi-spec).
@@ -483,7 +483,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>19.0.0</version>
+  <version>20.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -499,7 +499,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.launchdarkly:api-client:19.0.0"
+     implementation "com.launchdarkly:api-client:20.0.0"
   }
 ```
 
@@ -513,7 +513,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-19.0.0.jar`
+* `target/api-client-20.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -584,6 +584,8 @@ Class | Method | HTTP request | Description
 *AccountUsageBetaApi* | [**getEventsUsage**](docs/AccountUsageBetaApi.md#getEventsUsage) | **GET** /api/v2/usage/events/{type} | Get events usage
 *AccountUsageBetaApi* | [**getExperimentationEventsUsage**](docs/AccountUsageBetaApi.md#getExperimentationEventsUsage) | **GET** /api/v2/usage/experimentation-events | Get experimentation events usage
 *AccountUsageBetaApi* | [**getExperimentationKeysUsage**](docs/AccountUsageBetaApi.md#getExperimentationKeysUsage) | **GET** /api/v2/usage/experimentation-keys | Get experimentation keys usage
+*AccountUsageBetaApi* | [**getMAUClientsideUsage**](docs/AccountUsageBetaApi.md#getMAUClientsideUsage) | **GET** /api/v2/usage/clientside-mau | Get MAU clientside usage
+*AccountUsageBetaApi* | [**getMAUTotalUsage**](docs/AccountUsageBetaApi.md#getMAUTotalUsage) | **GET** /api/v2/usage/total-mau | Get MAU total usage
 *AccountUsageBetaApi* | [**getMauSdksByType**](docs/AccountUsageBetaApi.md#getMauSdksByType) | **GET** /api/v2/usage/mau/sdks | Get MAU SDKs by type
 *AccountUsageBetaApi* | [**getMauUsage**](docs/AccountUsageBetaApi.md#getMauUsage) | **GET** /api/v2/usage/mau | Get MAU usage
 *AccountUsageBetaApi* | [**getMauUsageByCategory**](docs/AccountUsageBetaApi.md#getMauUsageByCategory) | **GET** /api/v2/usage/mau/bycategory | Get MAU usage by category
@@ -610,6 +612,7 @@ Class | Method | HTTP request | Description
 *AiConfigsBetaApi* | [**getModelConfig**](docs/AiConfigsBetaApi.md#getModelConfig) | **GET** /api/v2/projects/{projectKey}/ai-configs/model-configs/{modelConfigKey} | Get AI model config
 *AiConfigsBetaApi* | [**listAIToolVersions**](docs/AiConfigsBetaApi.md#listAIToolVersions) | **GET** /api/v2/projects/{projectKey}/ai-tools/{toolKey}/versions | List AI tool versions
 *AiConfigsBetaApi* | [**listAITools**](docs/AiConfigsBetaApi.md#listAITools) | **GET** /api/v2/projects/{projectKey}/ai-tools | List AI tools
+*AiConfigsBetaApi* | [**listAgentGraphs**](docs/AiConfigsBetaApi.md#listAgentGraphs) | **GET** /api/v2/projects/{projectKey}/agent-graphs | List agent graphs
 *AiConfigsBetaApi* | [**listModelConfigs**](docs/AiConfigsBetaApi.md#listModelConfigs) | **GET** /api/v2/projects/{projectKey}/ai-configs/model-configs | List AI model configs
 *AiConfigsBetaApi* | [**patchAIConfig**](docs/AiConfigsBetaApi.md#patchAIConfig) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey} | Update AI Config
 *AiConfigsBetaApi* | [**patchAIConfigTargeting**](docs/AiConfigsBetaApi.md#patchAIConfigTargeting) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey}/targeting | Update AI Config targeting
@@ -618,6 +621,7 @@ Class | Method | HTTP request | Description
 *AiConfigsBetaApi* | [**postAIConfig**](docs/AiConfigsBetaApi.md#postAIConfig) | **POST** /api/v2/projects/{projectKey}/ai-configs | Create new AI Config
 *AiConfigsBetaApi* | [**postAIConfigVariation**](docs/AiConfigsBetaApi.md#postAIConfigVariation) | **POST** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations | Create AI Config variation
 *AiConfigsBetaApi* | [**postAITool**](docs/AiConfigsBetaApi.md#postAITool) | **POST** /api/v2/projects/{projectKey}/ai-tools | Create an AI tool
+*AiConfigsBetaApi* | [**postAgentGraph**](docs/AiConfigsBetaApi.md#postAgentGraph) | **POST** /api/v2/projects/{projectKey}/agent-graphs | Create new agent graph
 *AiConfigsBetaApi* | [**postModelConfig**](docs/AiConfigsBetaApi.md#postModelConfig) | **POST** /api/v2/projects/{projectKey}/ai-configs/model-configs | Create an AI model config
 *AiConfigsBetaApi* | [**postRestrictedModels**](docs/AiConfigsBetaApi.md#postRestrictedModels) | **POST** /api/v2/projects/{projectKey}/ai-configs/model-configs/restricted | Add AI models to the restricted list
 *AnnouncementsApi* | [**createAnnouncementPublic**](docs/AnnouncementsApi.md#createAnnouncementPublic) | **POST** /api/v2/announcements | Create an announcement
@@ -941,6 +945,11 @@ Class | Method | HTTP request | Description
  - [AccessTokenPost](docs/AccessTokenPost.md)
  - [ActionInput](docs/ActionInput.md)
  - [ActionOutput](docs/ActionOutput.md)
+ - [AgentGraph](docs/AgentGraph.md)
+ - [AgentGraphEdge](docs/AgentGraphEdge.md)
+ - [AgentGraphEdgePost](docs/AgentGraphEdgePost.md)
+ - [AgentGraphPost](docs/AgentGraphPost.md)
+ - [AgentGraphs](docs/AgentGraphs.md)
  - [AiConfigsAccess](docs/AiConfigsAccess.md)
  - [AiConfigsAccessAllowedReason](docs/AiConfigsAccessAllowedReason.md)
  - [AiConfigsAccessAllowedRep](docs/AiConfigsAccessAllowedRep.md)
@@ -1036,7 +1045,6 @@ Class | Method | HTTP request | Description
  - [Contexts](docs/Contexts.md)
  - [CopiedFromEnv](docs/CopiedFromEnv.md)
  - [CoreLink](docs/CoreLink.md)
- - [CovarianceInfoRep](docs/CovarianceInfoRep.md)
  - [CreateAnnouncementBody](docs/CreateAnnouncementBody.md)
  - [CreateApprovalRequestRequest](docs/CreateApprovalRequestRequest.md)
  - [CreateCopyFlagConfigApprovalRequestRequest](docs/CreateCopyFlagConfigApprovalRequestRequest.md)
@@ -1318,6 +1326,7 @@ Class | Method | HTTP request | Description
  - [PostInsightGroupParams](docs/PostInsightGroupParams.md)
  - [PostReleasePolicyRequest](docs/PostReleasePolicyRequest.md)
  - [Prerequisite](docs/Prerequisite.md)
+ - [ProgressiveReleaseConfig](docs/ProgressiveReleaseConfig.md)
  - [Project](docs/Project.md)
  - [ProjectPost](docs/ProjectPost.md)
  - [ProjectRep](docs/ProjectRep.md)
@@ -1357,6 +1366,7 @@ Class | Method | HTTP request | Description
  - [ReleasePoliciesResponse](docs/ReleasePoliciesResponse.md)
  - [ReleasePolicy](docs/ReleasePolicy.md)
  - [ReleasePolicyScope](docs/ReleasePolicyScope.md)
+ - [ReleasePolicyStage](docs/ReleasePolicyStage.md)
  - [ReleaseProgression](docs/ReleaseProgression.md)
  - [ReleaseProgressionCollection](docs/ReleaseProgressionCollection.md)
  - [ReleaserAudienceConfigInput](docs/ReleaserAudienceConfigInput.md)

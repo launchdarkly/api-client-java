@@ -41,6 +41,9 @@ import com.launchdarkly.api.model.AITool;
 import com.launchdarkly.api.model.AIToolPatch;
 import com.launchdarkly.api.model.AIToolPost;
 import com.launchdarkly.api.model.AITools;
+import com.launchdarkly.api.model.AgentGraph;
+import com.launchdarkly.api.model.AgentGraphPost;
+import com.launchdarkly.api.model.AgentGraphs;
 import com.launchdarkly.api.model.Error;
 import com.launchdarkly.api.model.MetricByVariation;
 import com.launchdarkly.api.model.Metrics;
@@ -2732,6 +2735,175 @@ public class AiConfigsBetaApi {
         return localVarCall;
     }
     /**
+     * Build call for listAgentGraphs
+     * @param ldAPIVersion Version of the endpoint. (required)
+     * @param projectKey  (required)
+     * @param limit The number of AI Configs to return. (optional)
+     * @param offset Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listAgentGraphsCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v2/projects/{projectKey}/agent-graphs"
+            .replace("{" + "projectKey" + "}", localVarApiClient.escapeString(projectKey.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listAgentGraphsValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'ldAPIVersion' is set
+        if (ldAPIVersion == null) {
+            throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling listAgentGraphs(Async)");
+        }
+
+        // verify the required parameter 'projectKey' is set
+        if (projectKey == null) {
+            throw new ApiException("Missing the required parameter 'projectKey' when calling listAgentGraphs(Async)");
+        }
+
+        return listAgentGraphsCall(ldAPIVersion, projectKey, limit, offset, _callback);
+
+    }
+
+    /**
+     * List agent graphs
+     * Get a list of all agent graphs in the given project. Returns metadata only, without edge data.
+     * @param ldAPIVersion Version of the endpoint. (required)
+     * @param projectKey  (required)
+     * @param limit The number of AI Configs to return. (optional)
+     * @param offset Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. (optional)
+     * @return AgentGraphs
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public AgentGraphs listAgentGraphs(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+        ApiResponse<AgentGraphs> localVarResp = listAgentGraphsWithHttpInfo(ldAPIVersion, projectKey, limit, offset);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List agent graphs
+     * Get a list of all agent graphs in the given project. Returns metadata only, without edge data.
+     * @param ldAPIVersion Version of the endpoint. (required)
+     * @param projectKey  (required)
+     * @param limit The number of AI Configs to return. (optional)
+     * @param offset Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. (optional)
+     * @return ApiResponse&lt;AgentGraphs&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AgentGraphs> listAgentGraphsWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+        okhttp3.Call localVarCall = listAgentGraphsValidateBeforeCall(ldAPIVersion, projectKey, limit, offset, null);
+        Type localVarReturnType = new TypeToken<AgentGraphs>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List agent graphs (asynchronously)
+     * Get a list of all agent graphs in the given project. Returns metadata only, without edge data.
+     * @param ldAPIVersion Version of the endpoint. (required)
+     * @param projectKey  (required)
+     * @param limit The number of AI Configs to return. (optional)
+     * @param offset Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listAgentGraphsAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<AgentGraphs> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listAgentGraphsValidateBeforeCall(ldAPIVersion, projectKey, limit, offset, _callback);
+        Type localVarReturnType = new TypeToken<AgentGraphs>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for listModelConfigs
      * @param ldAPIVersion Version of the endpoint. (required)
      * @param projectKey  (required)
@@ -4090,6 +4262,173 @@ public class AiConfigsBetaApi {
 
         okhttp3.Call localVarCall = postAIToolValidateBeforeCall(ldAPIVersion, projectKey, aiToolPost, _callback);
         Type localVarReturnType = new TypeToken<AITool>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for postAgentGraph
+     * @param ldAPIVersion Version of the endpoint. (required)
+     * @param projectKey  (required)
+     * @param agentGraphPost Agent graph object to create (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Agent graph created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 413 </td><td> Payload too large </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call postAgentGraphCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull AgentGraphPost agentGraphPost, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = agentGraphPost;
+
+        // create path and map variables
+        String localVarPath = "/api/v2/projects/{projectKey}/agent-graphs"
+            .replace("{" + "projectKey" + "}", localVarApiClient.escapeString(projectKey.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (ldAPIVersion != null) {
+            localVarHeaderParams.put("LD-API-Version", localVarApiClient.parameterToString(ldAPIVersion));
+        }
+
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call postAgentGraphValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull AgentGraphPost agentGraphPost, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'ldAPIVersion' is set
+        if (ldAPIVersion == null) {
+            throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling postAgentGraph(Async)");
+        }
+
+        // verify the required parameter 'projectKey' is set
+        if (projectKey == null) {
+            throw new ApiException("Missing the required parameter 'projectKey' when calling postAgentGraph(Async)");
+        }
+
+        // verify the required parameter 'agentGraphPost' is set
+        if (agentGraphPost == null) {
+            throw new ApiException("Missing the required parameter 'agentGraphPost' when calling postAgentGraph(Async)");
+        }
+
+        return postAgentGraphCall(ldAPIVersion, projectKey, agentGraphPost, _callback);
+
+    }
+
+    /**
+     * Create new agent graph
+     * Create a new agent graph within the given project.
+     * @param ldAPIVersion Version of the endpoint. (required)
+     * @param projectKey  (required)
+     * @param agentGraphPost Agent graph object to create (required)
+     * @return AgentGraph
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Agent graph created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 413 </td><td> Payload too large </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public AgentGraph postAgentGraph(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull AgentGraphPost agentGraphPost) throws ApiException {
+        ApiResponse<AgentGraph> localVarResp = postAgentGraphWithHttpInfo(ldAPIVersion, projectKey, agentGraphPost);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Create new agent graph
+     * Create a new agent graph within the given project.
+     * @param ldAPIVersion Version of the endpoint. (required)
+     * @param projectKey  (required)
+     * @param agentGraphPost Agent graph object to create (required)
+     * @return ApiResponse&lt;AgentGraph&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Agent graph created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 413 </td><td> Payload too large </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AgentGraph> postAgentGraphWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull AgentGraphPost agentGraphPost) throws ApiException {
+        okhttp3.Call localVarCall = postAgentGraphValidateBeforeCall(ldAPIVersion, projectKey, agentGraphPost, null);
+        Type localVarReturnType = new TypeToken<AgentGraph>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Create new agent graph (asynchronously)
+     * Create a new agent graph within the given project.
+     * @param ldAPIVersion Version of the endpoint. (required)
+     * @param projectKey  (required)
+     * @param agentGraphPost Agent graph object to create (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Agent graph created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 413 </td><td> Payload too large </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call postAgentGraphAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull AgentGraphPost agentGraphPost, final ApiCallback<AgentGraph> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = postAgentGraphValidateBeforeCall(ldAPIVersion, projectKey, agentGraphPost, _callback);
+        Type localVarReturnType = new TypeToken<AgentGraph>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

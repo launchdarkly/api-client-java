@@ -1969,6 +1969,7 @@ public class FeatureFlagsApi {
      * @param featureFlagKey The feature flag key. The key identifies the flag in your code. (required)
      * @param patchWithComment  (required)
      * @param ignoreConflicts If true, the patch will be applied even if it causes a pending scheduled change or approval request to fail. (optional)
+     * @param dryRun If true, the patch will be validated but not persisted. Returns a preview of the flag after the patch is applied. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1985,7 +1986,7 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchFeatureFlagCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, @javax.annotation.Nullable Boolean ignoreConflicts, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchFeatureFlagCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, @javax.annotation.Nullable Boolean ignoreConflicts, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2016,6 +2017,10 @@ public class FeatureFlagsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("ignoreConflicts", ignoreConflicts));
         }
 
+        if (dryRun != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("dryRun", dryRun));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -2037,7 +2042,7 @@ public class FeatureFlagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchFeatureFlagValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, @javax.annotation.Nullable Boolean ignoreConflicts, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchFeatureFlagValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, @javax.annotation.Nullable Boolean ignoreConflicts, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling patchFeatureFlag(Async)");
@@ -2053,7 +2058,7 @@ public class FeatureFlagsApi {
             throw new ApiException("Missing the required parameter 'patchWithComment' when calling patchFeatureFlag(Async)");
         }
 
-        return patchFeatureFlagCall(projectKey, featureFlagKey, patchWithComment, ignoreConflicts, _callback);
+        return patchFeatureFlagCall(projectKey, featureFlagKey, patchWithComment, ignoreConflicts, dryRun, _callback);
 
     }
 
@@ -2064,6 +2069,7 @@ public class FeatureFlagsApi {
      * @param featureFlagKey The feature flag key. The key identifies the flag in your code. (required)
      * @param patchWithComment  (required)
      * @param ignoreConflicts If true, the patch will be applied even if it causes a pending scheduled change or approval request to fail. (optional)
+     * @param dryRun If true, the patch will be validated but not persisted. Returns a preview of the flag after the patch is applied. (optional)
      * @return FeatureFlag
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2079,8 +2085,8 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public FeatureFlag patchFeatureFlag(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, @javax.annotation.Nullable Boolean ignoreConflicts) throws ApiException {
-        ApiResponse<FeatureFlag> localVarResp = patchFeatureFlagWithHttpInfo(projectKey, featureFlagKey, patchWithComment, ignoreConflicts);
+    public FeatureFlag patchFeatureFlag(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, @javax.annotation.Nullable Boolean ignoreConflicts, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
+        ApiResponse<FeatureFlag> localVarResp = patchFeatureFlagWithHttpInfo(projectKey, featureFlagKey, patchWithComment, ignoreConflicts, dryRun);
         return localVarResp.getData();
     }
 
@@ -2091,6 +2097,7 @@ public class FeatureFlagsApi {
      * @param featureFlagKey The feature flag key. The key identifies the flag in your code. (required)
      * @param patchWithComment  (required)
      * @param ignoreConflicts If true, the patch will be applied even if it causes a pending scheduled change or approval request to fail. (optional)
+     * @param dryRun If true, the patch will be validated but not persisted. Returns a preview of the flag after the patch is applied. (optional)
      * @return ApiResponse&lt;FeatureFlag&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2106,8 +2113,8 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FeatureFlag> patchFeatureFlagWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, @javax.annotation.Nullable Boolean ignoreConflicts) throws ApiException {
-        okhttp3.Call localVarCall = patchFeatureFlagValidateBeforeCall(projectKey, featureFlagKey, patchWithComment, ignoreConflicts, null);
+    public ApiResponse<FeatureFlag> patchFeatureFlagWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, @javax.annotation.Nullable Boolean ignoreConflicts, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
+        okhttp3.Call localVarCall = patchFeatureFlagValidateBeforeCall(projectKey, featureFlagKey, patchWithComment, ignoreConflicts, dryRun, null);
         Type localVarReturnType = new TypeToken<FeatureFlag>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2119,6 +2126,7 @@ public class FeatureFlagsApi {
      * @param featureFlagKey The feature flag key. The key identifies the flag in your code. (required)
      * @param patchWithComment  (required)
      * @param ignoreConflicts If true, the patch will be applied even if it causes a pending scheduled change or approval request to fail. (optional)
+     * @param dryRun If true, the patch will be validated but not persisted. Returns a preview of the flag after the patch is applied. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2135,9 +2143,9 @@ public class FeatureFlagsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchFeatureFlagAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, @javax.annotation.Nullable Boolean ignoreConflicts, final ApiCallback<FeatureFlag> _callback) throws ApiException {
+    public okhttp3.Call patchFeatureFlagAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String featureFlagKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, @javax.annotation.Nullable Boolean ignoreConflicts, @javax.annotation.Nullable Boolean dryRun, final ApiCallback<FeatureFlag> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = patchFeatureFlagValidateBeforeCall(projectKey, featureFlagKey, patchWithComment, ignoreConflicts, _callback);
+        okhttp3.Call localVarCall = patchFeatureFlagValidateBeforeCall(projectKey, featureFlagKey, patchWithComment, ignoreConflicts, dryRun, _callback);
         Type localVarReturnType = new TypeToken<FeatureFlag>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

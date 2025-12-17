@@ -18,7 +18,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.launchdarkly.api.model.CovarianceInfoRep;
 import com.launchdarkly.api.model.DependentMetricGroupRepWithMetrics;
 import com.launchdarkly.api.model.DependentMetricOrMetricGroupRep;
 import com.launchdarkly.api.model.FlagRep;
@@ -214,14 +213,6 @@ public class IterationRepTest {
     @Test
     public void layerSnapshotTest() {
         // TODO: test layerSnapshot
-    }
-
-    /**
-     * Test the property 'covarianceInfo'
-     */
-    @Test
-    public void covarianceInfoTest() {
-        // TODO: test covarianceInfo
     }
 
 }

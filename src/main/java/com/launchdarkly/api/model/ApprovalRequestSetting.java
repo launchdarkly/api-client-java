@@ -55,7 +55,7 @@ import com.launchdarkly.api.JSON;
 /**
  * Configuration that controls how changes to a resource are gated by approvals.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-03T22:03:47.239367Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-17T18:25:40.535826Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ApprovalRequestSetting {
   public static final String SERIALIZED_NAME_REQUIRED = "required";
   @SerializedName(SERIALIZED_NAME_REQUIRED)

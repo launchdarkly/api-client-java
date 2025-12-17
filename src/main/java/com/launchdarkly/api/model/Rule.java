@@ -54,12 +54,17 @@ import com.launchdarkly.api.JSON;
 /**
  * Rule
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-03T22:03:47.239367Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-17T18:25:40.535826Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class Rule {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
   private String id;
+
+  public static final String SERIALIZED_NAME_DISABLED = "disabled";
+  @SerializedName(SERIALIZED_NAME_DISABLED)
+  @javax.annotation.Nullable
+  private Boolean disabled;
 
   public static final String SERIALIZED_NAME_VARIATION = "variation";
   @SerializedName(SERIALIZED_NAME_VARIATION)
@@ -110,6 +115,25 @@ public class Rule {
 
   public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
+  }
+
+
+  public Rule disabled(@javax.annotation.Nullable Boolean disabled) {
+    this.disabled = disabled;
+    return this;
+  }
+
+  /**
+   * Whether the rule is disabled
+   * @return disabled
+   */
+  @javax.annotation.Nullable
+  public Boolean getDisabled() {
+    return disabled;
+  }
+
+  public void setDisabled(@javax.annotation.Nullable Boolean disabled) {
+    this.disabled = disabled;
   }
 
 
@@ -290,6 +314,7 @@ public class Rule {
     }
     Rule rule = (Rule) o;
     return Objects.equals(this.id, rule.id) &&
+        Objects.equals(this.disabled, rule.disabled) &&
         Objects.equals(this.variation, rule.variation) &&
         Objects.equals(this.rollout, rule.rollout) &&
         Objects.equals(this.clauses, rule.clauses) &&
@@ -301,7 +326,7 @@ public class Rule {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, variation, rollout, clauses, trackEvents, description, ref, additionalProperties);
+    return Objects.hash(id, disabled, variation, rollout, clauses, trackEvents, description, ref, additionalProperties);
   }
 
   @Override
@@ -309,6 +334,7 @@ public class Rule {
     StringBuilder sb = new StringBuilder();
     sb.append("class Rule {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    variation: ").append(toIndentedString(variation)).append("\n");
     sb.append("    rollout: ").append(toIndentedString(rollout)).append("\n");
     sb.append("    clauses: ").append(toIndentedString(clauses)).append("\n");
@@ -337,7 +363,7 @@ public class Rule {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("_id", "variation", "rollout", "clauses", "trackEvents", "description", "ref"));
+    openapiFields = new HashSet<String>(Arrays.asList("_id", "disabled", "variation", "rollout", "clauses", "trackEvents", "description", "ref"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("clauses", "trackEvents"));

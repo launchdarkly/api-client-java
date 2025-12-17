@@ -2468,6 +2468,7 @@ public class SegmentsApi {
      * @param environmentKey The environment key (required)
      * @param segmentKey The segment key (required)
      * @param patchWithComment  (required)
+     * @param dryRun If true, the patch will be validated but not persisted. Returns a preview of the segment after the patch is applied. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -2484,7 +2485,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchSegmentCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchSegmentCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2512,6 +2513,10 @@ public class SegmentsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (dryRun != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("dryRun", dryRun));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -2533,7 +2538,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchSegmentValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchSegmentValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, @javax.annotation.Nullable Boolean dryRun, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'projectKey' is set
         if (projectKey == null) {
             throw new ApiException("Missing the required parameter 'projectKey' when calling patchSegment(Async)");
@@ -2554,7 +2559,7 @@ public class SegmentsApi {
             throw new ApiException("Missing the required parameter 'patchWithComment' when calling patchSegment(Async)");
         }
 
-        return patchSegmentCall(projectKey, environmentKey, segmentKey, patchWithComment, _callback);
+        return patchSegmentCall(projectKey, environmentKey, segmentKey, patchWithComment, dryRun, _callback);
 
     }
 
@@ -2565,6 +2570,7 @@ public class SegmentsApi {
      * @param environmentKey The environment key (required)
      * @param segmentKey The segment key (required)
      * @param patchWithComment  (required)
+     * @param dryRun If true, the patch will be validated but not persisted. Returns a preview of the segment after the patch is applied. (optional)
      * @return UserSegment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2580,8 +2586,8 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public UserSegment patchSegment(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchWithComment patchWithComment) throws ApiException {
-        ApiResponse<UserSegment> localVarResp = patchSegmentWithHttpInfo(projectKey, environmentKey, segmentKey, patchWithComment);
+    public UserSegment patchSegment(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
+        ApiResponse<UserSegment> localVarResp = patchSegmentWithHttpInfo(projectKey, environmentKey, segmentKey, patchWithComment, dryRun);
         return localVarResp.getData();
     }
 
@@ -2592,6 +2598,7 @@ public class SegmentsApi {
      * @param environmentKey The environment key (required)
      * @param segmentKey The segment key (required)
      * @param patchWithComment  (required)
+     * @param dryRun If true, the patch will be validated but not persisted. Returns a preview of the segment after the patch is applied. (optional)
      * @return ApiResponse&lt;UserSegment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2607,8 +2614,8 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserSegment> patchSegmentWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchWithComment patchWithComment) throws ApiException {
-        okhttp3.Call localVarCall = patchSegmentValidateBeforeCall(projectKey, environmentKey, segmentKey, patchWithComment, null);
+    public ApiResponse<UserSegment> patchSegmentWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, @javax.annotation.Nullable Boolean dryRun) throws ApiException {
+        okhttp3.Call localVarCall = patchSegmentValidateBeforeCall(projectKey, environmentKey, segmentKey, patchWithComment, dryRun, null);
         Type localVarReturnType = new TypeToken<UserSegment>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2620,6 +2627,7 @@ public class SegmentsApi {
      * @param environmentKey The environment key (required)
      * @param segmentKey The segment key (required)
      * @param patchWithComment  (required)
+     * @param dryRun If true, the patch will be validated but not persisted. Returns a preview of the segment after the patch is applied. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2636,9 +2644,9 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchSegmentAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, final ApiCallback<UserSegment> _callback) throws ApiException {
+    public okhttp3.Call patchSegmentAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String segmentKey, @javax.annotation.Nonnull PatchWithComment patchWithComment, @javax.annotation.Nullable Boolean dryRun, final ApiCallback<UserSegment> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = patchSegmentValidateBeforeCall(projectKey, environmentKey, segmentKey, patchWithComment, _callback);
+        okhttp3.Call localVarCall = patchSegmentValidateBeforeCall(projectKey, environmentKey, segmentKey, patchWithComment, dryRun, _callback);
         Type localVarReturnType = new TypeToken<UserSegment>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

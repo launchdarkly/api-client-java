@@ -47,4 +47,12 @@ public class ReleasePolicyScopeTest {
         // TODO: test environmentKeys
     }
 
+    /**
+     * Test the property 'flagTagKeys'
+     */
+    @Test
+    public void flagTagKeysTest() {
+        // TODO: test flagTagKeys
+    }
+
 }

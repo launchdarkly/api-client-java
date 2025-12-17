@@ -20,6 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.launchdarkly.api.model.AIConfigVariationPost;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -52,7 +53,7 @@ import com.launchdarkly.api.JSON;
 /**
  * AIConfigPost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-03T22:03:47.239367Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-17T18:25:40.535826Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AIConfigPost {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -142,6 +143,11 @@ public class AIConfigPost {
   @SerializedName(SERIALIZED_NAME_TAGS)
   @javax.annotation.Nullable
   private List<String> tags = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_DEFAULT_VARIATION = "defaultVariation";
+  @SerializedName(SERIALIZED_NAME_DEFAULT_VARIATION)
+  @javax.annotation.Nullable
+  private AIConfigVariationPost defaultVariation;
 
   public AIConfigPost() {
   }
@@ -286,6 +292,25 @@ public class AIConfigPost {
     this.tags = tags;
   }
 
+
+  public AIConfigPost defaultVariation(@javax.annotation.Nullable AIConfigVariationPost defaultVariation) {
+    this.defaultVariation = defaultVariation;
+    return this;
+  }
+
+  /**
+   * Get defaultVariation
+   * @return defaultVariation
+   */
+  @javax.annotation.Nullable
+  public AIConfigVariationPost getDefaultVariation() {
+    return defaultVariation;
+  }
+
+  public void setDefaultVariation(@javax.annotation.Nullable AIConfigVariationPost defaultVariation) {
+    this.defaultVariation = defaultVariation;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -347,13 +372,14 @@ public class AIConfigPost {
         Objects.equals(this.maintainerTeamKey, aiConfigPost.maintainerTeamKey) &&
         Objects.equals(this.mode, aiConfigPost.mode) &&
         Objects.equals(this.name, aiConfigPost.name) &&
-        Objects.equals(this.tags, aiConfigPost.tags)&&
+        Objects.equals(this.tags, aiConfigPost.tags) &&
+        Objects.equals(this.defaultVariation, aiConfigPost.defaultVariation)&&
         Objects.equals(this.additionalProperties, aiConfigPost.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, key, maintainerId, maintainerTeamKey, mode, name, tags, additionalProperties);
+    return Objects.hash(description, key, maintainerId, maintainerTeamKey, mode, name, tags, defaultVariation, additionalProperties);
   }
 
   @Override
@@ -367,6 +393,7 @@ public class AIConfigPost {
     sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+    sb.append("    defaultVariation: ").append(toIndentedString(defaultVariation)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -389,7 +416,7 @@ public class AIConfigPost {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("description", "key", "maintainerId", "maintainerTeamKey", "mode", "name", "tags"));
+    openapiFields = new HashSet<String>(Arrays.asList("description", "key", "maintainerId", "maintainerTeamKey", "mode", "name", "tags", "defaultVariation"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("key", "name"));
@@ -440,6 +467,10 @@ public class AIConfigPost {
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+      }
+      // validate the optional field `defaultVariation`
+      if (jsonObj.get("defaultVariation") != null && !jsonObj.get("defaultVariation").isJsonNull()) {
+        AIConfigVariationPost.validateJsonElement(jsonObj.get("defaultVariation"));
       }
   }
 

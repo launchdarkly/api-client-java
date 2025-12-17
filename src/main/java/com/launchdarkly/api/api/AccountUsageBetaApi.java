@@ -1706,6 +1706,432 @@ public class AccountUsageBetaApi {
         return localVarCall;
     }
     /**
+     * Build call for getMAUClientsideUsage
+     * @param from The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time. (optional)
+     * @param projectKey A project key to filter results by. Can be specified multiple times, one query parameter per project key. (optional)
+     * @param environmentKey An environment key to filter results by. If specified, exactly one &#x60;projectKey&#x60; must be provided. Can be specified multiple times, one query parameter per environment key. (optional)
+     * @param sdkName An SDK name to filter results by. Can be specified multiple times, one query parameter per SDK name. (optional)
+     * @param anonymous An anonymous value to filter results by. Can be specified multiple times, one query parameter per anonymous value.&lt;br/&gt;Valid values: &#x60;true&#x60;, &#x60;false&#x60;. (optional)
+     * @param groupBy If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: &#x60;projectId&#x60;, &#x60;environmentId&#x60;, &#x60;sdkName&#x60;, &#x60;sdkAppId&#x60;, &#x60;anonymousV2&#x60;. (optional)
+     * @param aggregationType Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. (optional)
+     * @param granularity Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getMAUClientsideUsageCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v2/usage/clientside-mau";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (from != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("from", from));
+        }
+
+        if (to != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("to", to));
+        }
+
+        if (projectKey != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("projectKey", projectKey));
+        }
+
+        if (environmentKey != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("environmentKey", environmentKey));
+        }
+
+        if (sdkName != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("sdkName", sdkName));
+        }
+
+        if (anonymous != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("anonymous", anonymous));
+        }
+
+        if (groupBy != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("groupBy", groupBy));
+        }
+
+        if (aggregationType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("aggregationType", aggregationType));
+        }
+
+        if (granularity != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("granularity", granularity));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getMAUClientsideUsageValidateBeforeCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback _callback) throws ApiException {
+        return getMAUClientsideUsageCall(from, to, projectKey, environmentKey, sdkName, anonymous, groupBy, aggregationType, granularity, _callback);
+
+    }
+
+    /**
+     * Get MAU clientside usage
+     * Get a time series of the number of context key usages observed by LaunchDarkly in your account, for the primary context kind only. The counts reflect data reported from client-side SDKs.&lt;br/&gt;&lt;br/&gt;For past months, the primary context kind is fixed and reflects the last known primary kind for that month. For the current month, it may vary as new primary context kinds are observed.&lt;br/&gt;&lt;br/&gt;The supported granularity varies by aggregation type. The maximum time range is 365 days.
+     * @param from The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time. (optional)
+     * @param projectKey A project key to filter results by. Can be specified multiple times, one query parameter per project key. (optional)
+     * @param environmentKey An environment key to filter results by. If specified, exactly one &#x60;projectKey&#x60; must be provided. Can be specified multiple times, one query parameter per environment key. (optional)
+     * @param sdkName An SDK name to filter results by. Can be specified multiple times, one query parameter per SDK name. (optional)
+     * @param anonymous An anonymous value to filter results by. Can be specified multiple times, one query parameter per anonymous value.&lt;br/&gt;Valid values: &#x60;true&#x60;, &#x60;false&#x60;. (optional)
+     * @param groupBy If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: &#x60;projectId&#x60;, &#x60;environmentId&#x60;, &#x60;sdkName&#x60;, &#x60;sdkAppId&#x60;, &#x60;anonymousV2&#x60;. (optional)
+     * @param aggregationType Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. (optional)
+     * @param granularity Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. (optional)
+     * @return SeriesListRep
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
+     </table>
+     */
+    public SeriesListRep getMAUClientsideUsage(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity) throws ApiException {
+        ApiResponse<SeriesListRep> localVarResp = getMAUClientsideUsageWithHttpInfo(from, to, projectKey, environmentKey, sdkName, anonymous, groupBy, aggregationType, granularity);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get MAU clientside usage
+     * Get a time series of the number of context key usages observed by LaunchDarkly in your account, for the primary context kind only. The counts reflect data reported from client-side SDKs.&lt;br/&gt;&lt;br/&gt;For past months, the primary context kind is fixed and reflects the last known primary kind for that month. For the current month, it may vary as new primary context kinds are observed.&lt;br/&gt;&lt;br/&gt;The supported granularity varies by aggregation type. The maximum time range is 365 days.
+     * @param from The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time. (optional)
+     * @param projectKey A project key to filter results by. Can be specified multiple times, one query parameter per project key. (optional)
+     * @param environmentKey An environment key to filter results by. If specified, exactly one &#x60;projectKey&#x60; must be provided. Can be specified multiple times, one query parameter per environment key. (optional)
+     * @param sdkName An SDK name to filter results by. Can be specified multiple times, one query parameter per SDK name. (optional)
+     * @param anonymous An anonymous value to filter results by. Can be specified multiple times, one query parameter per anonymous value.&lt;br/&gt;Valid values: &#x60;true&#x60;, &#x60;false&#x60;. (optional)
+     * @param groupBy If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: &#x60;projectId&#x60;, &#x60;environmentId&#x60;, &#x60;sdkName&#x60;, &#x60;sdkAppId&#x60;, &#x60;anonymousV2&#x60;. (optional)
+     * @param aggregationType Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. (optional)
+     * @param granularity Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. (optional)
+     * @return ApiResponse&lt;SeriesListRep&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<SeriesListRep> getMAUClientsideUsageWithHttpInfo(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity) throws ApiException {
+        okhttp3.Call localVarCall = getMAUClientsideUsageValidateBeforeCall(from, to, projectKey, environmentKey, sdkName, anonymous, groupBy, aggregationType, granularity, null);
+        Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get MAU clientside usage (asynchronously)
+     * Get a time series of the number of context key usages observed by LaunchDarkly in your account, for the primary context kind only. The counts reflect data reported from client-side SDKs.&lt;br/&gt;&lt;br/&gt;For past months, the primary context kind is fixed and reflects the last known primary kind for that month. For the current month, it may vary as new primary context kinds are observed.&lt;br/&gt;&lt;br/&gt;The supported granularity varies by aggregation type. The maximum time range is 365 days.
+     * @param from The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time. (optional)
+     * @param projectKey A project key to filter results by. Can be specified multiple times, one query parameter per project key. (optional)
+     * @param environmentKey An environment key to filter results by. If specified, exactly one &#x60;projectKey&#x60; must be provided. Can be specified multiple times, one query parameter per environment key. (optional)
+     * @param sdkName An SDK name to filter results by. Can be specified multiple times, one query parameter per SDK name. (optional)
+     * @param anonymous An anonymous value to filter results by. Can be specified multiple times, one query parameter per anonymous value.&lt;br/&gt;Valid values: &#x60;true&#x60;, &#x60;false&#x60;. (optional)
+     * @param groupBy If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: &#x60;projectId&#x60;, &#x60;environmentId&#x60;, &#x60;sdkName&#x60;, &#x60;sdkAppId&#x60;, &#x60;anonymousV2&#x60;. (optional)
+     * @param aggregationType Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. (optional)
+     * @param granularity Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getMAUClientsideUsageAsync(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback<SeriesListRep> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getMAUClientsideUsageValidateBeforeCall(from, to, projectKey, environmentKey, sdkName, anonymous, groupBy, aggregationType, granularity, _callback);
+        Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getMAUTotalUsage
+     * @param from The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time. (optional)
+     * @param projectKey A project key to filter results by. Can be specified multiple times, one query parameter per project key. (optional)
+     * @param environmentKey An environment key to filter results by. If specified, exactly one &#x60;projectKey&#x60; must be provided. Can be specified multiple times, one query parameter per environment key. (optional)
+     * @param sdkName An SDK name to filter results by. Can be specified multiple times, one query parameter per SDK name. (optional)
+     * @param sdkType An SDK type to filter results by. Can be specified multiple times, one query parameter per SDK type. (optional)
+     * @param anonymous An anonymous value to filter results by. Can be specified multiple times, one query parameter per anonymous value.&lt;br/&gt;Valid values: &#x60;true&#x60;, &#x60;false&#x60;. (optional)
+     * @param groupBy If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: &#x60;projectId&#x60;, &#x60;environmentId&#x60;, &#x60;sdkName&#x60;, &#x60;sdkType&#x60;, &#x60;sdkAppId&#x60;, &#x60;anonymousV2&#x60;. (optional)
+     * @param aggregationType Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. (optional)
+     * @param granularity Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getMAUTotalUsageCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String sdkType, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v2/usage/total-mau";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (from != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("from", from));
+        }
+
+        if (to != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("to", to));
+        }
+
+        if (projectKey != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("projectKey", projectKey));
+        }
+
+        if (environmentKey != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("environmentKey", environmentKey));
+        }
+
+        if (sdkName != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("sdkName", sdkName));
+        }
+
+        if (sdkType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("sdkType", sdkType));
+        }
+
+        if (anonymous != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("anonymous", anonymous));
+        }
+
+        if (groupBy != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("groupBy", groupBy));
+        }
+
+        if (aggregationType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("aggregationType", aggregationType));
+        }
+
+        if (granularity != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("granularity", granularity));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getMAUTotalUsageValidateBeforeCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String sdkType, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback _callback) throws ApiException {
+        return getMAUTotalUsageCall(from, to, projectKey, environmentKey, sdkName, sdkType, anonymous, groupBy, aggregationType, granularity, _callback);
+
+    }
+
+    /**
+     * Get MAU total usage
+     * Get a time series of the number of context key usages observed by LaunchDarkly in your account, for the primary context kind only.&lt;br/&gt;&lt;br/&gt;For past months, this reflects the context kind that was most recently marked as primary for that month. For the current month, the context kind may vary as new primary kinds are observed.&lt;br/&gt;&lt;br/&gt;The supported granularity varies by aggregation type. The maximum time range is 365 days.
+     * @param from The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time. (optional)
+     * @param projectKey A project key to filter results by. Can be specified multiple times, one query parameter per project key. (optional)
+     * @param environmentKey An environment key to filter results by. If specified, exactly one &#x60;projectKey&#x60; must be provided. Can be specified multiple times, one query parameter per environment key. (optional)
+     * @param sdkName An SDK name to filter results by. Can be specified multiple times, one query parameter per SDK name. (optional)
+     * @param sdkType An SDK type to filter results by. Can be specified multiple times, one query parameter per SDK type. (optional)
+     * @param anonymous An anonymous value to filter results by. Can be specified multiple times, one query parameter per anonymous value.&lt;br/&gt;Valid values: &#x60;true&#x60;, &#x60;false&#x60;. (optional)
+     * @param groupBy If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: &#x60;projectId&#x60;, &#x60;environmentId&#x60;, &#x60;sdkName&#x60;, &#x60;sdkType&#x60;, &#x60;sdkAppId&#x60;, &#x60;anonymousV2&#x60;. (optional)
+     * @param aggregationType Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. (optional)
+     * @param granularity Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. (optional)
+     * @return SeriesListRep
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
+     </table>
+     */
+    public SeriesListRep getMAUTotalUsage(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String sdkType, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity) throws ApiException {
+        ApiResponse<SeriesListRep> localVarResp = getMAUTotalUsageWithHttpInfo(from, to, projectKey, environmentKey, sdkName, sdkType, anonymous, groupBy, aggregationType, granularity);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get MAU total usage
+     * Get a time series of the number of context key usages observed by LaunchDarkly in your account, for the primary context kind only.&lt;br/&gt;&lt;br/&gt;For past months, this reflects the context kind that was most recently marked as primary for that month. For the current month, the context kind may vary as new primary kinds are observed.&lt;br/&gt;&lt;br/&gt;The supported granularity varies by aggregation type. The maximum time range is 365 days.
+     * @param from The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time. (optional)
+     * @param projectKey A project key to filter results by. Can be specified multiple times, one query parameter per project key. (optional)
+     * @param environmentKey An environment key to filter results by. If specified, exactly one &#x60;projectKey&#x60; must be provided. Can be specified multiple times, one query parameter per environment key. (optional)
+     * @param sdkName An SDK name to filter results by. Can be specified multiple times, one query parameter per SDK name. (optional)
+     * @param sdkType An SDK type to filter results by. Can be specified multiple times, one query parameter per SDK type. (optional)
+     * @param anonymous An anonymous value to filter results by. Can be specified multiple times, one query parameter per anonymous value.&lt;br/&gt;Valid values: &#x60;true&#x60;, &#x60;false&#x60;. (optional)
+     * @param groupBy If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: &#x60;projectId&#x60;, &#x60;environmentId&#x60;, &#x60;sdkName&#x60;, &#x60;sdkType&#x60;, &#x60;sdkAppId&#x60;, &#x60;anonymousV2&#x60;. (optional)
+     * @param aggregationType Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. (optional)
+     * @param granularity Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. (optional)
+     * @return ApiResponse&lt;SeriesListRep&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<SeriesListRep> getMAUTotalUsageWithHttpInfo(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String sdkType, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity) throws ApiException {
+        okhttp3.Call localVarCall = getMAUTotalUsageValidateBeforeCall(from, to, projectKey, environmentKey, sdkName, sdkType, anonymous, groupBy, aggregationType, granularity, null);
+        Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get MAU total usage (asynchronously)
+     * Get a time series of the number of context key usages observed by LaunchDarkly in your account, for the primary context kind only.&lt;br/&gt;&lt;br/&gt;For past months, this reflects the context kind that was most recently marked as primary for that month. For the current month, the context kind may vary as new primary kinds are observed.&lt;br/&gt;&lt;br/&gt;The supported granularity varies by aggregation type. The maximum time range is 365 days.
+     * @param from The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time. (optional)
+     * @param projectKey A project key to filter results by. Can be specified multiple times, one query parameter per project key. (optional)
+     * @param environmentKey An environment key to filter results by. If specified, exactly one &#x60;projectKey&#x60; must be provided. Can be specified multiple times, one query parameter per environment key. (optional)
+     * @param sdkName An SDK name to filter results by. Can be specified multiple times, one query parameter per SDK name. (optional)
+     * @param sdkType An SDK type to filter results by. Can be specified multiple times, one query parameter per SDK type. (optional)
+     * @param anonymous An anonymous value to filter results by. Can be specified multiple times, one query parameter per anonymous value.&lt;br/&gt;Valid values: &#x60;true&#x60;, &#x60;false&#x60;. (optional)
+     * @param groupBy If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: &#x60;projectId&#x60;, &#x60;environmentId&#x60;, &#x60;sdkName&#x60;, &#x60;sdkType&#x60;, &#x60;sdkAppId&#x60;, &#x60;anonymousV2&#x60;. (optional)
+     * @param aggregationType Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. (optional)
+     * @param granularity Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> Service unavailable </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getMAUTotalUsageAsync(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String environmentKey, @javax.annotation.Nullable String sdkName, @javax.annotation.Nullable String sdkType, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupBy, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String granularity, final ApiCallback<SeriesListRep> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getMAUTotalUsageValidateBeforeCall(from, to, projectKey, environmentKey, sdkName, sdkType, anonymous, groupBy, aggregationType, granularity, _callback);
+        Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for getMauSdksByType
      * @param from The data returned starts from this timestamp. Defaults to seven days ago. The timestamp is in Unix milliseconds, for example, 1656694800000. (optional)
      * @param to The data returned ends at this timestamp. Defaults to the current time. The timestamp is in Unix milliseconds, for example, 1657904400000. (optional)
@@ -1887,7 +2313,9 @@ public class AccountUsageBetaApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call getMauUsageCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String project, @javax.annotation.Nullable String environment, @javax.annotation.Nullable String sdktype, @javax.annotation.Nullable String sdk, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupby, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String contextKind, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -1972,6 +2400,7 @@ public class AccountUsageBetaApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getMauUsageValidateBeforeCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String project, @javax.annotation.Nullable String environment, @javax.annotation.Nullable String sdktype, @javax.annotation.Nullable String sdk, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupby, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String contextKind, final ApiCallback _callback) throws ApiException {
         return getMauUsageCall(from, to, project, environment, sdktype, sdk, anonymous, groupby, aggregationType, contextKind, _callback);
@@ -2003,7 +2432,9 @@ public class AccountUsageBetaApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public SeriesListRep getMauUsage(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String project, @javax.annotation.Nullable String environment, @javax.annotation.Nullable String sdktype, @javax.annotation.Nullable String sdk, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupby, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String contextKind) throws ApiException {
         ApiResponse<SeriesListRep> localVarResp = getMauUsageWithHttpInfo(from, to, project, environment, sdktype, sdk, anonymous, groupby, aggregationType, contextKind);
         return localVarResp.getData();
@@ -2034,7 +2465,9 @@ public class AccountUsageBetaApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public ApiResponse<SeriesListRep> getMauUsageWithHttpInfo(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String project, @javax.annotation.Nullable String environment, @javax.annotation.Nullable String sdktype, @javax.annotation.Nullable String sdk, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupby, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String contextKind) throws ApiException {
         okhttp3.Call localVarCall = getMauUsageValidateBeforeCall(from, to, project, environment, sdktype, sdk, anonymous, groupby, aggregationType, contextKind, null);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
@@ -2067,7 +2500,9 @@ public class AccountUsageBetaApi {
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call getMauUsageAsync(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String project, @javax.annotation.Nullable String environment, @javax.annotation.Nullable String sdktype, @javax.annotation.Nullable String sdk, @javax.annotation.Nullable String anonymous, @javax.annotation.Nullable String groupby, @javax.annotation.Nullable String aggregationType, @javax.annotation.Nullable String contextKind, final ApiCallback<SeriesListRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getMauUsageValidateBeforeCall(from, to, project, environment, sdktype, sdk, anonymous, groupby, aggregationType, contextKind, _callback);
@@ -2093,7 +2528,9 @@ public class AccountUsageBetaApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call getMauUsageByCategoryCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -2146,6 +2583,7 @@ public class AccountUsageBetaApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getMauUsageByCategoryValidateBeforeCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, final ApiCallback _callback) throws ApiException {
         return getMauUsageByCategoryCall(from, to, _callback);
@@ -2170,7 +2608,9 @@ public class AccountUsageBetaApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public SeriesListRep getMauUsageByCategory(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to) throws ApiException {
         ApiResponse<SeriesListRep> localVarResp = getMauUsageByCategoryWithHttpInfo(from, to);
         return localVarResp.getData();
@@ -2194,7 +2634,9 @@ public class AccountUsageBetaApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public ApiResponse<SeriesListRep> getMauUsageByCategoryWithHttpInfo(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to) throws ApiException {
         okhttp3.Call localVarCall = getMauUsageByCategoryValidateBeforeCall(from, to, null);
         Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
@@ -2220,7 +2662,9 @@ public class AccountUsageBetaApi {
         <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call getMauUsageByCategoryAsync(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, final ApiCallback<SeriesListRep> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getMauUsageByCategoryValidateBeforeCall(from, to, _callback);

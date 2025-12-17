@@ -301,7 +301,8 @@ public class SegmentsApiTest {
         String environmentKey = null;
         String segmentKey = null;
         PatchWithComment patchWithComment = null;
-        UserSegment response = api.patchSegment(projectKey, environmentKey, segmentKey, patchWithComment);
+        Boolean dryRun = null;
+        UserSegment response = api.patchSegment(projectKey, environmentKey, segmentKey, patchWithComment, dryRun);
         // TODO: test validations
     }
 

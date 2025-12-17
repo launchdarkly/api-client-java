@@ -19,6 +19,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**getModelConfig**](AiConfigsBetaApi.md#getModelConfig) | **GET** /api/v2/projects/{projectKey}/ai-configs/model-configs/{modelConfigKey} | Get AI model config |
 | [**listAIToolVersions**](AiConfigsBetaApi.md#listAIToolVersions) | **GET** /api/v2/projects/{projectKey}/ai-tools/{toolKey}/versions | List AI tool versions |
 | [**listAITools**](AiConfigsBetaApi.md#listAITools) | **GET** /api/v2/projects/{projectKey}/ai-tools | List AI tools |
+| [**listAgentGraphs**](AiConfigsBetaApi.md#listAgentGraphs) | **GET** /api/v2/projects/{projectKey}/agent-graphs | List agent graphs |
 | [**listModelConfigs**](AiConfigsBetaApi.md#listModelConfigs) | **GET** /api/v2/projects/{projectKey}/ai-configs/model-configs | List AI model configs |
 | [**patchAIConfig**](AiConfigsBetaApi.md#patchAIConfig) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey} | Update AI Config |
 | [**patchAIConfigTargeting**](AiConfigsBetaApi.md#patchAIConfigTargeting) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey}/targeting | Update AI Config targeting |
@@ -27,6 +28,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**postAIConfig**](AiConfigsBetaApi.md#postAIConfig) | **POST** /api/v2/projects/{projectKey}/ai-configs | Create new AI Config |
 | [**postAIConfigVariation**](AiConfigsBetaApi.md#postAIConfigVariation) | **POST** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations | Create AI Config variation |
 | [**postAITool**](AiConfigsBetaApi.md#postAITool) | **POST** /api/v2/projects/{projectKey}/ai-tools | Create an AI tool |
+| [**postAgentGraph**](AiConfigsBetaApi.md#postAgentGraph) | **POST** /api/v2/projects/{projectKey}/agent-graphs | Create new agent graph |
 | [**postModelConfig**](AiConfigsBetaApi.md#postModelConfig) | **POST** /api/v2/projects/{projectKey}/ai-configs/model-configs | Create an AI model config |
 | [**postRestrictedModels**](AiConfigsBetaApi.md#postRestrictedModels) | **POST** /api/v2/projects/{projectKey}/ai-configs/model-configs/restricted | Add AI models to the restricted list |
 
@@ -1212,6 +1214,84 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **500** | Internal server error |  -  |
 
+<a id="listAgentGraphs"></a>
+# **listAgentGraphs**
+> AgentGraphs listAgentGraphs(ldAPIVersion, projectKey, limit, offset)
+
+List agent graphs
+
+Get a list of all agent graphs in the given project. Returns metadata only, without edge data.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AiConfigsBetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
+    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    String projectKey = "projectKey_example"; // String | 
+    Integer limit = 56; // Integer | The number of AI Configs to return.
+    Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
+    try {
+      AgentGraphs result = apiInstance.listAgentGraphs(ldAPIVersion, projectKey, limit, offset);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AiConfigsBetaApi#listAgentGraphs");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
+| **projectKey** | **String**|  | |
+| **limit** | **Integer**| The number of AI Configs to return. | [optional] |
+| **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
+
+### Return type
+
+[**AgentGraphs**](AgentGraphs.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+| **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
+| **500** | Internal server error |  -  |
+
 <a id="listModelConfigs"></a>
 # **listModelConfigs**
 > List&lt;ModelConfig&gt; listModelConfigs(ldAPIVersion, projectKey, restricted)
@@ -1835,6 +1915,83 @@ public class Example {
 | **201** | AI tool created |  -  |
 | **400** | Bad request |  -  |
 | **403** | Forbidden |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="postAgentGraph"></a>
+# **postAgentGraph**
+> AgentGraph postAgentGraph(ldAPIVersion, projectKey, agentGraphPost)
+
+Create new agent graph
+
+Create a new agent graph within the given project.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AiConfigsBetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
+    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    String projectKey = "projectKey_example"; // String | 
+    AgentGraphPost agentGraphPost = new AgentGraphPost(); // AgentGraphPost | Agent graph object to create
+    try {
+      AgentGraph result = apiInstance.postAgentGraph(ldAPIVersion, projectKey, agentGraphPost);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AiConfigsBetaApi#postAgentGraph");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
+| **projectKey** | **String**|  | |
+| **agentGraphPost** | [**AgentGraphPost**](AgentGraphPost.md)| Agent graph object to create | |
+
+### Return type
+
+[**AgentGraph**](AgentGraph.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Agent graph created |  -  |
+| **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
+| **413** | Payload too large |  -  |
 | **500** | Internal server error |  -  |
 
 <a id="postModelConfig"></a>

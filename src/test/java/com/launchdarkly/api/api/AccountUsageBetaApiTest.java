@@ -210,6 +210,51 @@ public class AccountUsageBetaApiTest {
     }
 
     /**
+     * Get MAU clientside usage
+     *
+     * Get a time series of the number of context key usages observed by LaunchDarkly in your account, for the primary context kind only. The counts reflect data reported from client-side SDKs.&lt;br/&gt;&lt;br/&gt;For past months, the primary context kind is fixed and reflects the last known primary kind for that month. For the current month, it may vary as new primary context kinds are observed.&lt;br/&gt;&lt;br/&gt;The supported granularity varies by aggregation type. The maximum time range is 365 days.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getMAUClientsideUsageTest() throws ApiException {
+        String from = null;
+        String to = null;
+        String projectKey = null;
+        String environmentKey = null;
+        String sdkName = null;
+        String anonymous = null;
+        String groupBy = null;
+        String aggregationType = null;
+        String granularity = null;
+        SeriesListRep response = api.getMAUClientsideUsage(from, to, projectKey, environmentKey, sdkName, anonymous, groupBy, aggregationType, granularity);
+        // TODO: test validations
+    }
+
+    /**
+     * Get MAU total usage
+     *
+     * Get a time series of the number of context key usages observed by LaunchDarkly in your account, for the primary context kind only.&lt;br/&gt;&lt;br/&gt;For past months, this reflects the context kind that was most recently marked as primary for that month. For the current month, the context kind may vary as new primary kinds are observed.&lt;br/&gt;&lt;br/&gt;The supported granularity varies by aggregation type. The maximum time range is 365 days.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getMAUTotalUsageTest() throws ApiException {
+        String from = null;
+        String to = null;
+        String projectKey = null;
+        String environmentKey = null;
+        String sdkName = null;
+        String sdkType = null;
+        String anonymous = null;
+        String groupBy = null;
+        String aggregationType = null;
+        String granularity = null;
+        SeriesListRep response = api.getMAUTotalUsage(from, to, projectKey, environmentKey, sdkName, sdkType, anonymous, groupBy, aggregationType, granularity);
+        // TODO: test validations
+    }
+
+    /**
      * Get MAU SDKs by type
      *
      * Get a list of SDKs. These are all of the SDKs that have connected to LaunchDarkly by monthly active users (MAU) in the requested time period.&lt;br/&gt;&lt;br/&gt;Endpoints for retrieving monthly active users (MAU) do not return information about active context instances. After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should not rely on this endpoint. To learn more, read [Account usage metrics](https://launchdarkly.com/docs/home/account/metrics).

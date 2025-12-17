@@ -28,6 +28,9 @@ import com.launchdarkly.api.model.AITool;
 import com.launchdarkly.api.model.AIToolPatch;
 import com.launchdarkly.api.model.AIToolPost;
 import com.launchdarkly.api.model.AITools;
+import com.launchdarkly.api.model.AgentGraph;
+import com.launchdarkly.api.model.AgentGraphPost;
+import com.launchdarkly.api.model.AgentGraphs;
 import com.launchdarkly.api.model.Error;
 import com.launchdarkly.api.model.MetricByVariation;
 import com.launchdarkly.api.model.Metrics;
@@ -309,6 +312,23 @@ public class AiConfigsBetaApiTest {
     }
 
     /**
+     * List agent graphs
+     *
+     * Get a list of all agent graphs in the given project. Returns metadata only, without edge data.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listAgentGraphsTest() throws ApiException {
+        String ldAPIVersion = null;
+        String projectKey = null;
+        Integer limit = null;
+        Integer offset = null;
+        AgentGraphs response = api.listAgentGraphs(ldAPIVersion, projectKey, limit, offset);
+        // TODO: test validations
+    }
+
+    /**
      * List AI model configs
      *
      * Get all AI model configs for a project.
@@ -439,6 +459,22 @@ public class AiConfigsBetaApiTest {
         String projectKey = null;
         AIToolPost aiToolPost = null;
         AITool response = api.postAITool(ldAPIVersion, projectKey, aiToolPost);
+        // TODO: test validations
+    }
+
+    /**
+     * Create new agent graph
+     *
+     * Create a new agent graph within the given project.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void postAgentGraphTest() throws ApiException {
+        String ldAPIVersion = null;
+        String projectKey = null;
+        AgentGraphPost agentGraphPost = null;
+        AgentGraph response = api.postAgentGraph(ldAPIVersion, projectKey, agentGraphPost);
         // TODO: test validations
     }
 

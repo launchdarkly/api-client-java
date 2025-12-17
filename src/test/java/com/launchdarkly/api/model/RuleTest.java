@@ -50,6 +50,14 @@ public class RuleTest {
     }
 
     /**
+     * Test the property 'disabled'
+     */
+    @Test
+    public void disabledTest() {
+        // TODO: test disabled
+    }
+
+    /**
      * Test the property 'variation'
      */
     @Test

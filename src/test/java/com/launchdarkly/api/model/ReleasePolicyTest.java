@@ -19,6 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.launchdarkly.api.model.GuardedReleaseConfig;
+import com.launchdarkly.api.model.ProgressiveReleaseConfig;
 import com.launchdarkly.api.model.ReleaseMethod;
 import com.launchdarkly.api.model.ReleasePoliciesAccessRep;
 import com.launchdarkly.api.model.ReleasePolicyScope;

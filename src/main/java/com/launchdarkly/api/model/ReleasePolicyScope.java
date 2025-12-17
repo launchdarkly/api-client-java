@@ -52,12 +52,17 @@ import com.launchdarkly.api.JSON;
 /**
  * ReleasePolicyScope
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-03T22:03:47.239367Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-17T18:25:40.535826Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ReleasePolicyScope {
   public static final String SERIALIZED_NAME_ENVIRONMENT_KEYS = "environmentKeys";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_KEYS)
   @javax.annotation.Nullable
   private List<String> environmentKeys = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_FLAG_TAG_KEYS = "flagTagKeys";
+  @SerializedName(SERIALIZED_NAME_FLAG_TAG_KEYS)
+  @javax.annotation.Nullable
+  private List<String> flagTagKeys = new ArrayList<>();
 
   public ReleasePolicyScope() {
   }
@@ -86,6 +91,33 @@ public class ReleasePolicyScope {
 
   public void setEnvironmentKeys(@javax.annotation.Nullable List<String> environmentKeys) {
     this.environmentKeys = environmentKeys;
+  }
+
+
+  public ReleasePolicyScope flagTagKeys(@javax.annotation.Nullable List<String> flagTagKeys) {
+    this.flagTagKeys = flagTagKeys;
+    return this;
+  }
+
+  public ReleasePolicyScope addFlagTagKeysItem(String flagTagKeysItem) {
+    if (this.flagTagKeys == null) {
+      this.flagTagKeys = new ArrayList<>();
+    }
+    this.flagTagKeys.add(flagTagKeysItem);
+    return this;
+  }
+
+  /**
+   * List of flag tag keys this policy applies to
+   * @return flagTagKeys
+   */
+  @javax.annotation.Nullable
+  public List<String> getFlagTagKeys() {
+    return flagTagKeys;
+  }
+
+  public void setFlagTagKeys(@javax.annotation.Nullable List<String> flagTagKeys) {
+    this.flagTagKeys = flagTagKeys;
   }
 
   /**
@@ -143,13 +175,14 @@ public class ReleasePolicyScope {
       return false;
     }
     ReleasePolicyScope releasePolicyScope = (ReleasePolicyScope) o;
-    return Objects.equals(this.environmentKeys, releasePolicyScope.environmentKeys)&&
+    return Objects.equals(this.environmentKeys, releasePolicyScope.environmentKeys) &&
+        Objects.equals(this.flagTagKeys, releasePolicyScope.flagTagKeys)&&
         Objects.equals(this.additionalProperties, releasePolicyScope.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(environmentKeys, additionalProperties);
+    return Objects.hash(environmentKeys, flagTagKeys, additionalProperties);
   }
 
   @Override
@@ -157,6 +190,7 @@ public class ReleasePolicyScope {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReleasePolicyScope {\n");
     sb.append("    environmentKeys: ").append(toIndentedString(environmentKeys)).append("\n");
+    sb.append("    flagTagKeys: ").append(toIndentedString(flagTagKeys)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -179,7 +213,7 @@ public class ReleasePolicyScope {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("environmentKeys"));
+    openapiFields = new HashSet<String>(Arrays.asList("environmentKeys", "flagTagKeys"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -201,6 +235,10 @@ public class ReleasePolicyScope {
       // ensure the optional json data is an array if present
       if (jsonObj.get("environmentKeys") != null && !jsonObj.get("environmentKeys").isJsonNull() && !jsonObj.get("environmentKeys").isJsonArray()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `environmentKeys` to be an array in the JSON string but got `%s`", jsonObj.get("environmentKeys").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("flagTagKeys") != null && !jsonObj.get("flagTagKeys").isJsonNull() && !jsonObj.get("flagTagKeys").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `flagTagKeys` to be an array in the JSON string but got `%s`", jsonObj.get("flagTagKeys").toString()));
       }
   }
 

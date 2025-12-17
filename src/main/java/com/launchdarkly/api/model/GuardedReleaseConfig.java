@@ -20,8 +20,11 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.launchdarkly.api.model.ReleasePolicyStage;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,8 +53,13 @@ import com.launchdarkly.api.JSON;
 /**
  * Configuration for guarded releases
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-03T22:03:47.239367Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-17T18:25:40.535826Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class GuardedReleaseConfig {
+  public static final String SERIALIZED_NAME_ROLLOUT_CONTEXT_KIND_KEY = "rolloutContextKindKey";
+  @SerializedName(SERIALIZED_NAME_ROLLOUT_CONTEXT_KIND_KEY)
+  @javax.annotation.Nullable
+  private String rolloutContextKindKey;
+
   public static final String SERIALIZED_NAME_MIN_SAMPLE_SIZE = "minSampleSize";
   @SerializedName(SERIALIZED_NAME_MIN_SAMPLE_SIZE)
   @javax.annotation.Nullable
@@ -59,11 +67,45 @@ public class GuardedReleaseConfig {
 
   public static final String SERIALIZED_NAME_ROLLBACK_ON_REGRESSION = "rollbackOnRegression";
   @SerializedName(SERIALIZED_NAME_ROLLBACK_ON_REGRESSION)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Boolean rollbackOnRegression;
+
+  public static final String SERIALIZED_NAME_METRIC_KEYS = "metricKeys";
+  @SerializedName(SERIALIZED_NAME_METRIC_KEYS)
+  @javax.annotation.Nullable
+  private List<String> metricKeys = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_METRIC_GROUP_KEYS = "metricGroupKeys";
+  @SerializedName(SERIALIZED_NAME_METRIC_GROUP_KEYS)
+  @javax.annotation.Nullable
+  private List<String> metricGroupKeys = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_STAGES = "stages";
+  @SerializedName(SERIALIZED_NAME_STAGES)
+  @javax.annotation.Nullable
+  private List<ReleasePolicyStage> stages = new ArrayList<>();
 
   public GuardedReleaseConfig() {
   }
+
+  public GuardedReleaseConfig rolloutContextKindKey(@javax.annotation.Nullable String rolloutContextKindKey) {
+    this.rolloutContextKindKey = rolloutContextKindKey;
+    return this;
+  }
+
+  /**
+   * Context kind key to use as the randomization unit for the rollout
+   * @return rolloutContextKindKey
+   */
+  @javax.annotation.Nullable
+  public String getRolloutContextKindKey() {
+    return rolloutContextKindKey;
+  }
+
+  public void setRolloutContextKindKey(@javax.annotation.Nullable String rolloutContextKindKey) {
+    this.rolloutContextKindKey = rolloutContextKindKey;
+  }
+
 
   public GuardedReleaseConfig minSampleSize(@javax.annotation.Nullable Integer minSampleSize) {
     this.minSampleSize = minSampleSize;
@@ -84,7 +126,7 @@ public class GuardedReleaseConfig {
   }
 
 
-  public GuardedReleaseConfig rollbackOnRegression(@javax.annotation.Nonnull Boolean rollbackOnRegression) {
+  public GuardedReleaseConfig rollbackOnRegression(@javax.annotation.Nullable Boolean rollbackOnRegression) {
     this.rollbackOnRegression = rollbackOnRegression;
     return this;
   }
@@ -93,13 +135,94 @@ public class GuardedReleaseConfig {
    * Whether to roll back on regression
    * @return rollbackOnRegression
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Boolean getRollbackOnRegression() {
     return rollbackOnRegression;
   }
 
-  public void setRollbackOnRegression(@javax.annotation.Nonnull Boolean rollbackOnRegression) {
+  public void setRollbackOnRegression(@javax.annotation.Nullable Boolean rollbackOnRegression) {
     this.rollbackOnRegression = rollbackOnRegression;
+  }
+
+
+  public GuardedReleaseConfig metricKeys(@javax.annotation.Nullable List<String> metricKeys) {
+    this.metricKeys = metricKeys;
+    return this;
+  }
+
+  public GuardedReleaseConfig addMetricKeysItem(String metricKeysItem) {
+    if (this.metricKeys == null) {
+      this.metricKeys = new ArrayList<>();
+    }
+    this.metricKeys.add(metricKeysItem);
+    return this;
+  }
+
+  /**
+   * List of metric keys
+   * @return metricKeys
+   */
+  @javax.annotation.Nullable
+  public List<String> getMetricKeys() {
+    return metricKeys;
+  }
+
+  public void setMetricKeys(@javax.annotation.Nullable List<String> metricKeys) {
+    this.metricKeys = metricKeys;
+  }
+
+
+  public GuardedReleaseConfig metricGroupKeys(@javax.annotation.Nullable List<String> metricGroupKeys) {
+    this.metricGroupKeys = metricGroupKeys;
+    return this;
+  }
+
+  public GuardedReleaseConfig addMetricGroupKeysItem(String metricGroupKeysItem) {
+    if (this.metricGroupKeys == null) {
+      this.metricGroupKeys = new ArrayList<>();
+    }
+    this.metricGroupKeys.add(metricGroupKeysItem);
+    return this;
+  }
+
+  /**
+   * List of metric group keys
+   * @return metricGroupKeys
+   */
+  @javax.annotation.Nullable
+  public List<String> getMetricGroupKeys() {
+    return metricGroupKeys;
+  }
+
+  public void setMetricGroupKeys(@javax.annotation.Nullable List<String> metricGroupKeys) {
+    this.metricGroupKeys = metricGroupKeys;
+  }
+
+
+  public GuardedReleaseConfig stages(@javax.annotation.Nullable List<ReleasePolicyStage> stages) {
+    this.stages = stages;
+    return this;
+  }
+
+  public GuardedReleaseConfig addStagesItem(ReleasePolicyStage stagesItem) {
+    if (this.stages == null) {
+      this.stages = new ArrayList<>();
+    }
+    this.stages.add(stagesItem);
+    return this;
+  }
+
+  /**
+   * List of stages
+   * @return stages
+   */
+  @javax.annotation.Nullable
+  public List<ReleasePolicyStage> getStages() {
+    return stages;
+  }
+
+  public void setStages(@javax.annotation.Nullable List<ReleasePolicyStage> stages) {
+    this.stages = stages;
   }
 
   /**
@@ -157,22 +280,30 @@ public class GuardedReleaseConfig {
       return false;
     }
     GuardedReleaseConfig guardedReleaseConfig = (GuardedReleaseConfig) o;
-    return Objects.equals(this.minSampleSize, guardedReleaseConfig.minSampleSize) &&
-        Objects.equals(this.rollbackOnRegression, guardedReleaseConfig.rollbackOnRegression)&&
+    return Objects.equals(this.rolloutContextKindKey, guardedReleaseConfig.rolloutContextKindKey) &&
+        Objects.equals(this.minSampleSize, guardedReleaseConfig.minSampleSize) &&
+        Objects.equals(this.rollbackOnRegression, guardedReleaseConfig.rollbackOnRegression) &&
+        Objects.equals(this.metricKeys, guardedReleaseConfig.metricKeys) &&
+        Objects.equals(this.metricGroupKeys, guardedReleaseConfig.metricGroupKeys) &&
+        Objects.equals(this.stages, guardedReleaseConfig.stages)&&
         Objects.equals(this.additionalProperties, guardedReleaseConfig.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(minSampleSize, rollbackOnRegression, additionalProperties);
+    return Objects.hash(rolloutContextKindKey, minSampleSize, rollbackOnRegression, metricKeys, metricGroupKeys, stages, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GuardedReleaseConfig {\n");
+    sb.append("    rolloutContextKindKey: ").append(toIndentedString(rolloutContextKindKey)).append("\n");
     sb.append("    minSampleSize: ").append(toIndentedString(minSampleSize)).append("\n");
     sb.append("    rollbackOnRegression: ").append(toIndentedString(rollbackOnRegression)).append("\n");
+    sb.append("    metricKeys: ").append(toIndentedString(metricKeys)).append("\n");
+    sb.append("    metricGroupKeys: ").append(toIndentedString(metricGroupKeys)).append("\n");
+    sb.append("    stages: ").append(toIndentedString(stages)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -195,10 +326,10 @@ public class GuardedReleaseConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("minSampleSize", "rollbackOnRegression"));
+    openapiFields = new HashSet<String>(Arrays.asList("rolloutContextKindKey", "minSampleSize", "rollbackOnRegression", "metricKeys", "metricGroupKeys", "stages"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("rollbackOnRegression"));
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -213,14 +344,32 @@ public class GuardedReleaseConfig {
           throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in GuardedReleaseConfig is not found in the empty JSON string", GuardedReleaseConfig.openapiRequiredFields.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("rolloutContextKindKey") != null && !jsonObj.get("rolloutContextKindKey").isJsonNull()) && !jsonObj.get("rolloutContextKindKey").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `rolloutContextKindKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rolloutContextKindKey").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("metricKeys") != null && !jsonObj.get("metricKeys").isJsonNull() && !jsonObj.get("metricKeys").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `metricKeys` to be an array in the JSON string but got `%s`", jsonObj.get("metricKeys").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("metricGroupKeys") != null && !jsonObj.get("metricGroupKeys").isJsonNull() && !jsonObj.get("metricGroupKeys").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `metricGroupKeys` to be an array in the JSON string but got `%s`", jsonObj.get("metricGroupKeys").toString()));
+      }
+      if (jsonObj.get("stages") != null && !jsonObj.get("stages").isJsonNull()) {
+        JsonArray jsonArraystages = jsonObj.getAsJsonArray("stages");
+        if (jsonArraystages != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("stages").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `stages` to be an array in the JSON string but got `%s`", jsonObj.get("stages").toString()));
+          }
 
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : GuardedReleaseConfig.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          // validate the optional field `stages` (array)
+          for (int i = 0; i < jsonArraystages.size(); i++) {
+            ReleasePolicyStage.validateJsonElement(jsonArraystages.get(i));
+          };
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

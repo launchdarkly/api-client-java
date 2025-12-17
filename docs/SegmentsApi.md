@@ -1123,7 +1123,7 @@ public class Example {
 
 <a id="patchSegment"></a>
 # **patchSegment**
-> UserSegment patchSegment(projectKey, environmentKey, segmentKey, patchWithComment)
+> UserSegment patchSegment(projectKey, environmentKey, segmentKey, patchWithComment, dryRun)
 
 Patch segment
 
@@ -1155,8 +1155,9 @@ public class Example {
     String environmentKey = "environmentKey_example"; // String | The environment key
     String segmentKey = "segmentKey_example"; // String | The segment key
     PatchWithComment patchWithComment = new PatchWithComment(); // PatchWithComment | 
+    Boolean dryRun = true; // Boolean | If true, the patch will be validated but not persisted. Returns a preview of the segment after the patch is applied.
     try {
-      UserSegment result = apiInstance.patchSegment(projectKey, environmentKey, segmentKey, patchWithComment);
+      UserSegment result = apiInstance.patchSegment(projectKey, environmentKey, segmentKey, patchWithComment, dryRun);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SegmentsApi#patchSegment");
@@ -1177,6 +1178,7 @@ public class Example {
 | **environmentKey** | **String**| The environment key | |
 | **segmentKey** | **String**| The segment key | |
 | **patchWithComment** | [**PatchWithComment**](PatchWithComment.md)|  | |
+| **dryRun** | **Boolean**| If true, the patch will be validated but not persisted. Returns a preview of the segment after the patch is applied. | [optional] |
 
 ### Return type
 

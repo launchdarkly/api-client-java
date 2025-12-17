@@ -132,6 +132,11 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.AccessTokenPost.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.ActionInput.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.ActionOutput.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.AgentGraph.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.AgentGraphEdge.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.AgentGraphEdgePost.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.AgentGraphPost.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.AgentGraphs.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.AiConfigsAccess.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.AiConfigsAccessAllowedReason.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.AiConfigsAccessAllowedRep.CustomTypeAdapterFactory());
@@ -227,7 +232,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.Contexts.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.CopiedFromEnv.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.CoreLink.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.CovarianceInfoRep.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.CreateAnnouncementBody.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.CreateApprovalRequestRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.CreateCopyFlagConfigApprovalRequestRequest.CustomTypeAdapterFactory());
@@ -509,6 +513,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.PostInsightGroupParams.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.PostReleasePolicyRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.Prerequisite.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.ProgressiveReleaseConfig.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.Project.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.ProjectPost.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.ProjectRep.CustomTypeAdapterFactory());
@@ -547,6 +552,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.ReleasePoliciesResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.ReleasePolicy.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.ReleasePolicyScope.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.ReleasePolicyStage.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.ReleaseProgression.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.ReleaseProgressionCollection.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.launchdarkly.api.model.ReleaserAudienceConfigInput.CustomTypeAdapterFactory());

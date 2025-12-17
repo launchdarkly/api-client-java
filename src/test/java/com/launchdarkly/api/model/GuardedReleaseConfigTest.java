@@ -18,8 +18,11 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.launchdarkly.api.model.ReleasePolicyStage;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -38,6 +41,14 @@ public class GuardedReleaseConfigTest {
     }
 
     /**
+     * Test the property 'rolloutContextKindKey'
+     */
+    @Test
+    public void rolloutContextKindKeyTest() {
+        // TODO: test rolloutContextKindKey
+    }
+
+    /**
      * Test the property 'minSampleSize'
      */
     @Test
@@ -51,6 +62,30 @@ public class GuardedReleaseConfigTest {
     @Test
     public void rollbackOnRegressionTest() {
         // TODO: test rollbackOnRegression
+    }
+
+    /**
+     * Test the property 'metricKeys'
+     */
+    @Test
+    public void metricKeysTest() {
+        // TODO: test metricKeys
+    }
+
+    /**
+     * Test the property 'metricGroupKeys'
+     */
+    @Test
+    public void metricGroupKeysTest() {
+        // TODO: test metricGroupKeys
+    }
+
+    /**
+     * Test the property 'stages'
+     */
+    @Test
+    public void stagesTest() {
+        // TODO: test stages
     }
 
 }

@@ -21,6 +21,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.launchdarkly.api.model.GuardedReleaseConfig;
+import com.launchdarkly.api.model.ProgressiveReleaseConfig;
 import com.launchdarkly.api.model.ReleaseMethod;
 import com.launchdarkly.api.model.ReleasePoliciesAccessRep;
 import com.launchdarkly.api.model.ReleasePolicyScope;
@@ -54,7 +55,7 @@ import com.launchdarkly.api.JSON;
 /**
  * ReleasePolicy
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-03T22:03:47.239367Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-17T18:25:40.535826Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class ReleasePolicy {
   public static final String SERIALIZED_NAME_ACCESS = "_access";
   @SerializedName(SERIALIZED_NAME_ACCESS)
@@ -89,7 +90,7 @@ public class ReleasePolicy {
   public static final String SERIALIZED_NAME_PROGRESSIVE_RELEASE_CONFIG = "progressiveReleaseConfig";
   @SerializedName(SERIALIZED_NAME_PROGRESSIVE_RELEASE_CONFIG)
   @javax.annotation.Nullable
-  private Object progressiveReleaseConfig;
+  private ProgressiveReleaseConfig progressiveReleaseConfig;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -218,21 +219,21 @@ public class ReleasePolicy {
   }
 
 
-  public ReleasePolicy progressiveReleaseConfig(@javax.annotation.Nullable Object progressiveReleaseConfig) {
+  public ReleasePolicy progressiveReleaseConfig(@javax.annotation.Nullable ProgressiveReleaseConfig progressiveReleaseConfig) {
     this.progressiveReleaseConfig = progressiveReleaseConfig;
     return this;
   }
 
   /**
-   * Configuration for progressive releases
+   * Get progressiveReleaseConfig
    * @return progressiveReleaseConfig
    */
   @javax.annotation.Nullable
-  public Object getProgressiveReleaseConfig() {
+  public ProgressiveReleaseConfig getProgressiveReleaseConfig() {
     return progressiveReleaseConfig;
   }
 
-  public void setProgressiveReleaseConfig(@javax.annotation.Nullable Object progressiveReleaseConfig) {
+  public void setProgressiveReleaseConfig(@javax.annotation.Nullable ProgressiveReleaseConfig progressiveReleaseConfig) {
     this.progressiveReleaseConfig = progressiveReleaseConfig;
   }
 
@@ -423,6 +424,10 @@ public class ReleasePolicy {
       // validate the optional field `guardedReleaseConfig`
       if (jsonObj.get("guardedReleaseConfig") != null && !jsonObj.get("guardedReleaseConfig").isJsonNull()) {
         GuardedReleaseConfig.validateJsonElement(jsonObj.get("guardedReleaseConfig"));
+      }
+      // validate the optional field `progressiveReleaseConfig`
+      if (jsonObj.get("progressiveReleaseConfig") != null && !jsonObj.get("progressiveReleaseConfig").isJsonNull()) {
+        ProgressiveReleaseConfig.validateJsonElement(jsonObj.get("progressiveReleaseConfig"));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));

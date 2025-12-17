@@ -75,7 +75,7 @@ public class TagsApi {
 
     /**
      * Build call for getTags
-     * @param kind Fetch tags associated with the specified resource type. Options are &#x60;flag&#x60;, &#x60;project&#x60;, &#x60;environment&#x60;, &#x60;segment&#x60;, &#x60;metric&#x60;, &#x60;aiconfig&#x60;, and &#x60;view&#x60;. Returns all types by default. (optional)
+     * @param kind Fetch tags associated with the specified resource type. Options are &#x60;flag&#x60;, &#x60;project&#x60;, &#x60;environment&#x60;, &#x60;segment&#x60;, &#x60;metric&#x60;, &#x60;metric-data-source&#x60;, &#x60;aiconfig&#x60;, and &#x60;view&#x60;. Returns all types by default. (optional)
      * @param pre Return tags with the specified prefix (optional)
      * @param archived Whether or not to return archived flags (optional)
      * @param limit The number of tags to return. Maximum is 1000. (optional)
@@ -173,7 +173,7 @@ public class TagsApi {
     /**
      * List tags
      * Get a list of tags.
-     * @param kind Fetch tags associated with the specified resource type. Options are &#x60;flag&#x60;, &#x60;project&#x60;, &#x60;environment&#x60;, &#x60;segment&#x60;, &#x60;metric&#x60;, &#x60;aiconfig&#x60;, and &#x60;view&#x60;. Returns all types by default. (optional)
+     * @param kind Fetch tags associated with the specified resource type. Options are &#x60;flag&#x60;, &#x60;project&#x60;, &#x60;environment&#x60;, &#x60;segment&#x60;, &#x60;metric&#x60;, &#x60;metric-data-source&#x60;, &#x60;aiconfig&#x60;, and &#x60;view&#x60;. Returns all types by default. (optional)
      * @param pre Return tags with the specified prefix (optional)
      * @param archived Whether or not to return archived flags (optional)
      * @param limit The number of tags to return. Maximum is 1000. (optional)
@@ -201,7 +201,7 @@ public class TagsApi {
     /**
      * List tags
      * Get a list of tags.
-     * @param kind Fetch tags associated with the specified resource type. Options are &#x60;flag&#x60;, &#x60;project&#x60;, &#x60;environment&#x60;, &#x60;segment&#x60;, &#x60;metric&#x60;, &#x60;aiconfig&#x60;, and &#x60;view&#x60;. Returns all types by default. (optional)
+     * @param kind Fetch tags associated with the specified resource type. Options are &#x60;flag&#x60;, &#x60;project&#x60;, &#x60;environment&#x60;, &#x60;segment&#x60;, &#x60;metric&#x60;, &#x60;metric-data-source&#x60;, &#x60;aiconfig&#x60;, and &#x60;view&#x60;. Returns all types by default. (optional)
      * @param pre Return tags with the specified prefix (optional)
      * @param archived Whether or not to return archived flags (optional)
      * @param limit The number of tags to return. Maximum is 1000. (optional)
@@ -230,7 +230,7 @@ public class TagsApi {
     /**
      * List tags (asynchronously)
      * Get a list of tags.
-     * @param kind Fetch tags associated with the specified resource type. Options are &#x60;flag&#x60;, &#x60;project&#x60;, &#x60;environment&#x60;, &#x60;segment&#x60;, &#x60;metric&#x60;, &#x60;aiconfig&#x60;, and &#x60;view&#x60;. Returns all types by default. (optional)
+     * @param kind Fetch tags associated with the specified resource type. Options are &#x60;flag&#x60;, &#x60;project&#x60;, &#x60;environment&#x60;, &#x60;segment&#x60;, &#x60;metric&#x60;, &#x60;metric-data-source&#x60;, &#x60;aiconfig&#x60;, and &#x60;view&#x60;. Returns all types by default. (optional)
      * @param pre Return tags with the specified prefix (optional)
      * @param archived Whether or not to return archived flags (optional)
      * @param limit The number of tags to return. Maximum is 1000. (optional)
