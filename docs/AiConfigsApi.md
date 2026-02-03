@@ -1,44 +1,44 @@
-# AiConfigsBetaApi
+# AiConfigsApi
 
 All URIs are relative to *https://app.launchdarkly.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**deleteAIConfig**](AiConfigsBetaApi.md#deleteAIConfig) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/{configKey} | Delete AI Config |
-| [**deleteAIConfigVariation**](AiConfigsBetaApi.md#deleteAIConfigVariation) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations/{variationKey} | Delete AI Config variation |
-| [**deleteAITool**](AiConfigsBetaApi.md#deleteAITool) | **DELETE** /api/v2/projects/{projectKey}/ai-tools/{toolKey} | Delete AI tool |
-| [**deleteAgentGraph**](AiConfigsBetaApi.md#deleteAgentGraph) | **DELETE** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Delete agent graph |
-| [**deleteModelConfig**](AiConfigsBetaApi.md#deleteModelConfig) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/model-configs/{modelConfigKey} | Delete an AI model config |
-| [**deleteRestrictedModels**](AiConfigsBetaApi.md#deleteRestrictedModels) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/model-configs/restricted | Remove AI models from the restricted list |
-| [**getAIConfig**](AiConfigsBetaApi.md#getAIConfig) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey} | Get AI Config |
-| [**getAIConfigMetrics**](AiConfigsBetaApi.md#getAIConfigMetrics) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/metrics | Get AI Config metrics |
-| [**getAIConfigMetricsByVariation**](AiConfigsBetaApi.md#getAIConfigMetricsByVariation) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/metrics-by-variation | Get AI Config metrics by variation |
-| [**getAIConfigTargeting**](AiConfigsBetaApi.md#getAIConfigTargeting) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/targeting | Show an AI Config&#39;s targeting |
-| [**getAIConfigVariation**](AiConfigsBetaApi.md#getAIConfigVariation) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations/{variationKey} | Get AI Config variation |
-| [**getAIConfigs**](AiConfigsBetaApi.md#getAIConfigs) | **GET** /api/v2/projects/{projectKey}/ai-configs | List AI Configs |
-| [**getAITool**](AiConfigsBetaApi.md#getAITool) | **GET** /api/v2/projects/{projectKey}/ai-tools/{toolKey} | Get AI tool |
-| [**getAgentGraph**](AiConfigsBetaApi.md#getAgentGraph) | **GET** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Get agent graph |
-| [**getModelConfig**](AiConfigsBetaApi.md#getModelConfig) | **GET** /api/v2/projects/{projectKey}/ai-configs/model-configs/{modelConfigKey} | Get AI model config |
-| [**listAIToolVersions**](AiConfigsBetaApi.md#listAIToolVersions) | **GET** /api/v2/projects/{projectKey}/ai-tools/{toolKey}/versions | List AI tool versions |
-| [**listAITools**](AiConfigsBetaApi.md#listAITools) | **GET** /api/v2/projects/{projectKey}/ai-tools | List AI tools |
-| [**listAgentGraphs**](AiConfigsBetaApi.md#listAgentGraphs) | **GET** /api/v2/projects/{projectKey}/agent-graphs | List agent graphs |
-| [**listModelConfigs**](AiConfigsBetaApi.md#listModelConfigs) | **GET** /api/v2/projects/{projectKey}/ai-configs/model-configs | List AI model configs |
-| [**patchAIConfig**](AiConfigsBetaApi.md#patchAIConfig) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey} | Update AI Config |
-| [**patchAIConfigTargeting**](AiConfigsBetaApi.md#patchAIConfigTargeting) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey}/targeting | Update AI Config targeting |
-| [**patchAIConfigVariation**](AiConfigsBetaApi.md#patchAIConfigVariation) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations/{variationKey} | Update AI Config variation |
-| [**patchAITool**](AiConfigsBetaApi.md#patchAITool) | **PATCH** /api/v2/projects/{projectKey}/ai-tools/{toolKey} | Update AI tool |
-| [**patchAgentGraph**](AiConfigsBetaApi.md#patchAgentGraph) | **PATCH** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Update agent graph |
-| [**postAIConfig**](AiConfigsBetaApi.md#postAIConfig) | **POST** /api/v2/projects/{projectKey}/ai-configs | Create new AI Config |
-| [**postAIConfigVariation**](AiConfigsBetaApi.md#postAIConfigVariation) | **POST** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations | Create AI Config variation |
-| [**postAITool**](AiConfigsBetaApi.md#postAITool) | **POST** /api/v2/projects/{projectKey}/ai-tools | Create an AI tool |
-| [**postAgentGraph**](AiConfigsBetaApi.md#postAgentGraph) | **POST** /api/v2/projects/{projectKey}/agent-graphs | Create new agent graph |
-| [**postModelConfig**](AiConfigsBetaApi.md#postModelConfig) | **POST** /api/v2/projects/{projectKey}/ai-configs/model-configs | Create an AI model config |
-| [**postRestrictedModels**](AiConfigsBetaApi.md#postRestrictedModels) | **POST** /api/v2/projects/{projectKey}/ai-configs/model-configs/restricted | Add AI models to the restricted list |
+| [**deleteAIConfig**](AiConfigsApi.md#deleteAIConfig) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/{configKey} | Delete AI Config |
+| [**deleteAIConfigVariation**](AiConfigsApi.md#deleteAIConfigVariation) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations/{variationKey} | Delete AI Config variation |
+| [**deleteAITool**](AiConfigsApi.md#deleteAITool) | **DELETE** /api/v2/projects/{projectKey}/ai-tools/{toolKey} | Delete AI tool |
+| [**deleteAgentGraph**](AiConfigsApi.md#deleteAgentGraph) | **DELETE** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Delete agent graph |
+| [**deleteModelConfig**](AiConfigsApi.md#deleteModelConfig) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/model-configs/{modelConfigKey} | Delete an AI model config |
+| [**deleteRestrictedModels**](AiConfigsApi.md#deleteRestrictedModels) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/model-configs/restricted | Remove AI models from the restricted list |
+| [**getAIConfig**](AiConfigsApi.md#getAIConfig) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey} | Get AI Config |
+| [**getAIConfigMetrics**](AiConfigsApi.md#getAIConfigMetrics) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/metrics | Get AI Config metrics |
+| [**getAIConfigMetricsByVariation**](AiConfigsApi.md#getAIConfigMetricsByVariation) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/metrics-by-variation | Get AI Config metrics by variation |
+| [**getAIConfigTargeting**](AiConfigsApi.md#getAIConfigTargeting) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/targeting | Show an AI Config&#39;s targeting |
+| [**getAIConfigVariation**](AiConfigsApi.md#getAIConfigVariation) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations/{variationKey} | Get AI Config variation |
+| [**getAIConfigs**](AiConfigsApi.md#getAIConfigs) | **GET** /api/v2/projects/{projectKey}/ai-configs | List AI Configs |
+| [**getAITool**](AiConfigsApi.md#getAITool) | **GET** /api/v2/projects/{projectKey}/ai-tools/{toolKey} | Get AI tool |
+| [**getAgentGraph**](AiConfigsApi.md#getAgentGraph) | **GET** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Get agent graph |
+| [**getModelConfig**](AiConfigsApi.md#getModelConfig) | **GET** /api/v2/projects/{projectKey}/ai-configs/model-configs/{modelConfigKey} | Get AI model config |
+| [**listAIToolVersions**](AiConfigsApi.md#listAIToolVersions) | **GET** /api/v2/projects/{projectKey}/ai-tools/{toolKey}/versions | List AI tool versions |
+| [**listAITools**](AiConfigsApi.md#listAITools) | **GET** /api/v2/projects/{projectKey}/ai-tools | List AI tools |
+| [**listAgentGraphs**](AiConfigsApi.md#listAgentGraphs) | **GET** /api/v2/projects/{projectKey}/agent-graphs | List agent graphs |
+| [**listModelConfigs**](AiConfigsApi.md#listModelConfigs) | **GET** /api/v2/projects/{projectKey}/ai-configs/model-configs | List AI model configs |
+| [**patchAIConfig**](AiConfigsApi.md#patchAIConfig) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey} | Update AI Config |
+| [**patchAIConfigTargeting**](AiConfigsApi.md#patchAIConfigTargeting) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey}/targeting | Update AI Config targeting |
+| [**patchAIConfigVariation**](AiConfigsApi.md#patchAIConfigVariation) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations/{variationKey} | Update AI Config variation |
+| [**patchAITool**](AiConfigsApi.md#patchAITool) | **PATCH** /api/v2/projects/{projectKey}/ai-tools/{toolKey} | Update AI tool |
+| [**patchAgentGraph**](AiConfigsApi.md#patchAgentGraph) | **PATCH** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Update agent graph |
+| [**postAIConfig**](AiConfigsApi.md#postAIConfig) | **POST** /api/v2/projects/{projectKey}/ai-configs | Create new AI Config |
+| [**postAIConfigVariation**](AiConfigsApi.md#postAIConfigVariation) | **POST** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations | Create AI Config variation |
+| [**postAITool**](AiConfigsApi.md#postAITool) | **POST** /api/v2/projects/{projectKey}/ai-tools | Create an AI tool |
+| [**postAgentGraph**](AiConfigsApi.md#postAgentGraph) | **POST** /api/v2/projects/{projectKey}/agent-graphs | Create new agent graph |
+| [**postModelConfig**](AiConfigsApi.md#postModelConfig) | **POST** /api/v2/projects/{projectKey}/ai-configs/model-configs | Create an AI model config |
+| [**postRestrictedModels**](AiConfigsApi.md#postRestrictedModels) | **POST** /api/v2/projects/{projectKey}/ai-configs/model-configs/restricted | Add AI models to the restricted list |
 
 
 <a id="deleteAIConfig"></a>
 # **deleteAIConfig**
-> deleteAIConfig(ldAPIVersion, projectKey, configKey)
+> deleteAIConfig(projectKey, configKey)
 
 Delete AI Config
 
@@ -52,7 +52,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -65,14 +65,13 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "default"; // String | 
     String configKey = "configKey_example"; // String | 
     try {
-      apiInstance.deleteAIConfig(ldAPIVersion, projectKey, configKey);
+      apiInstance.deleteAIConfig(projectKey, configKey);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#deleteAIConfig");
+      System.err.println("Exception when calling AiConfigsApi#deleteAIConfig");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -86,7 +85,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **configKey** | **String**|  | |
 
@@ -114,7 +112,7 @@ null (empty response body)
 
 <a id="deleteAIConfigVariation"></a>
 # **deleteAIConfigVariation**
-> deleteAIConfigVariation(ldAPIVersion, projectKey, configKey, variationKey)
+> deleteAIConfigVariation(projectKey, configKey, variationKey)
 
 Delete AI Config variation
 
@@ -128,7 +126,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -141,15 +139,14 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | 
     String configKey = "configKey_example"; // String | 
     String variationKey = "variationKey_example"; // String | 
     try {
-      apiInstance.deleteAIConfigVariation(ldAPIVersion, projectKey, configKey, variationKey);
+      apiInstance.deleteAIConfigVariation(projectKey, configKey, variationKey);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#deleteAIConfigVariation");
+      System.err.println("Exception when calling AiConfigsApi#deleteAIConfigVariation");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -163,7 +160,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **configKey** | **String**|  | |
 | **variationKey** | **String**|  | |
@@ -192,7 +188,7 @@ null (empty response body)
 
 <a id="deleteAITool"></a>
 # **deleteAITool**
-> deleteAITool(ldAPIVersion, projectKey, toolKey)
+> deleteAITool(projectKey, toolKey)
 
 Delete AI tool
 
@@ -206,7 +202,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -219,14 +215,13 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | 
     String toolKey = "toolKey_example"; // String | 
     try {
-      apiInstance.deleteAITool(ldAPIVersion, projectKey, toolKey);
+      apiInstance.deleteAITool(projectKey, toolKey);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#deleteAITool");
+      System.err.println("Exception when calling AiConfigsApi#deleteAITool");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -240,7 +235,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **toolKey** | **String**|  | |
 
@@ -282,7 +276,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -295,14 +289,14 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String ldAPIVersion = "beta"; // String | Version of the endpoint.
     String projectKey = "projectKey_example"; // String | 
     String graphKey = "graphKey_example"; // String | 
     try {
       apiInstance.deleteAgentGraph(ldAPIVersion, projectKey, graphKey);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#deleteAgentGraph");
+      System.err.println("Exception when calling AiConfigsApi#deleteAgentGraph");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -344,7 +338,7 @@ null (empty response body)
 
 <a id="deleteModelConfig"></a>
 # **deleteModelConfig**
-> deleteModelConfig(ldAPIVersion, projectKey, modelConfigKey)
+> deleteModelConfig(projectKey, modelConfigKey)
 
 Delete an AI model config
 
@@ -358,7 +352,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -371,14 +365,13 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "default"; // String | 
     String modelConfigKey = "modelConfigKey_example"; // String | 
     try {
-      apiInstance.deleteModelConfig(ldAPIVersion, projectKey, modelConfigKey);
+      apiInstance.deleteModelConfig(projectKey, modelConfigKey);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#deleteModelConfig");
+      System.err.println("Exception when calling AiConfigsApi#deleteModelConfig");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -392,7 +385,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **modelConfigKey** | **String**|  | |
 
@@ -420,7 +412,7 @@ null (empty response body)
 
 <a id="deleteRestrictedModels"></a>
 # **deleteRestrictedModels**
-> deleteRestrictedModels(ldAPIVersion, projectKey, restrictedModelsRequest)
+> deleteRestrictedModels(projectKey, restrictedModelsRequest)
 
 Remove AI models from the restricted list
 
@@ -434,7 +426,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -447,14 +439,13 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "default"; // String | 
     RestrictedModelsRequest restrictedModelsRequest = new RestrictedModelsRequest(); // RestrictedModelsRequest | List of AI model keys to remove from the restricted list
     try {
-      apiInstance.deleteRestrictedModels(ldAPIVersion, projectKey, restrictedModelsRequest);
+      apiInstance.deleteRestrictedModels(projectKey, restrictedModelsRequest);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#deleteRestrictedModels");
+      System.err.println("Exception when calling AiConfigsApi#deleteRestrictedModels");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -468,7 +459,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **restrictedModelsRequest** | [**RestrictedModelsRequest**](RestrictedModelsRequest.md)| List of AI model keys to remove from the restricted list | |
 
@@ -496,7 +486,7 @@ null (empty response body)
 
 <a id="getAIConfig"></a>
 # **getAIConfig**
-> AIConfig getAIConfig(ldAPIVersion, projectKey, configKey)
+> AIConfig getAIConfig(projectKey, configKey)
 
 Get AI Config
 
@@ -510,7 +500,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -523,15 +513,14 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | 
     String configKey = "configKey_example"; // String | 
     try {
-      AIConfig result = apiInstance.getAIConfig(ldAPIVersion, projectKey, configKey);
+      AIConfig result = apiInstance.getAIConfig(projectKey, configKey);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#getAIConfig");
+      System.err.println("Exception when calling AiConfigsApi#getAIConfig");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -545,7 +534,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **configKey** | **String**|  | |
 
@@ -573,7 +561,7 @@ public class Example {
 
 <a id="getAIConfigMetrics"></a>
 # **getAIConfigMetrics**
-> Metrics getAIConfigMetrics(ldAPIVersion, projectKey, configKey, from, to, env)
+> Metrics getAIConfigMetrics(projectKey, configKey, from, to, env)
 
 Get AI Config metrics
 
@@ -587,7 +575,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -600,18 +588,17 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | 
     String configKey = "configKey_example"; // String | 
     Integer from = 56; // Integer | The starting time, as milliseconds since epoch (inclusive).
     Integer to = 56; // Integer | The ending time, as milliseconds since epoch (exclusive). May not be more than 100 days after `from`.
     String env = "env_example"; // String | An environment key. Only metrics from this environment will be included.
     try {
-      Metrics result = apiInstance.getAIConfigMetrics(ldAPIVersion, projectKey, configKey, from, to, env);
+      Metrics result = apiInstance.getAIConfigMetrics(projectKey, configKey, from, to, env);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#getAIConfigMetrics");
+      System.err.println("Exception when calling AiConfigsApi#getAIConfigMetrics");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -625,7 +612,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **configKey** | **String**|  | |
 | **from** | **Integer**| The starting time, as milliseconds since epoch (inclusive). | |
@@ -656,7 +642,7 @@ public class Example {
 
 <a id="getAIConfigMetricsByVariation"></a>
 # **getAIConfigMetricsByVariation**
-> List&lt;MetricByVariation&gt; getAIConfigMetricsByVariation(ldAPIVersion, projectKey, configKey, from, to, env)
+> List&lt;MetricByVariation&gt; getAIConfigMetricsByVariation(projectKey, configKey, from, to, env)
 
 Get AI Config metrics by variation
 
@@ -670,7 +656,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -683,18 +669,17 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | 
     String configKey = "configKey_example"; // String | 
     Integer from = 56; // Integer | The starting time, as milliseconds since epoch (inclusive).
     Integer to = 56; // Integer | The ending time, as milliseconds since epoch (exclusive). May not be more than 100 days after `from`.
     String env = "env_example"; // String | An environment key. Only metrics from this environment will be included.
     try {
-      List<MetricByVariation> result = apiInstance.getAIConfigMetricsByVariation(ldAPIVersion, projectKey, configKey, from, to, env);
+      List<MetricByVariation> result = apiInstance.getAIConfigMetricsByVariation(projectKey, configKey, from, to, env);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#getAIConfigMetricsByVariation");
+      System.err.println("Exception when calling AiConfigsApi#getAIConfigMetricsByVariation");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -708,7 +693,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **configKey** | **String**|  | |
 | **from** | **Integer**| The starting time, as milliseconds since epoch (inclusive). | |
@@ -739,7 +723,7 @@ public class Example {
 
 <a id="getAIConfigTargeting"></a>
 # **getAIConfigTargeting**
-> AIConfigTargeting getAIConfigTargeting(ldAPIVersion, projectKey, configKey)
+> AIConfigTargeting getAIConfigTargeting(projectKey, configKey)
 
 Show an AI Config&#39;s targeting
 
@@ -753,7 +737,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -766,15 +750,14 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | 
     String configKey = "configKey_example"; // String | 
     try {
-      AIConfigTargeting result = apiInstance.getAIConfigTargeting(ldAPIVersion, projectKey, configKey);
+      AIConfigTargeting result = apiInstance.getAIConfigTargeting(projectKey, configKey);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#getAIConfigTargeting");
+      System.err.println("Exception when calling AiConfigsApi#getAIConfigTargeting");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -788,7 +771,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **configKey** | **String**|  | |
 
@@ -815,7 +797,7 @@ public class Example {
 
 <a id="getAIConfigVariation"></a>
 # **getAIConfigVariation**
-> AIConfigVariationsResponse getAIConfigVariation(ldAPIVersion, projectKey, configKey, variationKey)
+> AIConfigVariationsResponse getAIConfigVariation(projectKey, configKey, variationKey)
 
 Get AI Config variation
 
@@ -829,7 +811,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -842,16 +824,15 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "default"; // String | 
     String configKey = "default"; // String | 
     String variationKey = "default"; // String | 
     try {
-      AIConfigVariationsResponse result = apiInstance.getAIConfigVariation(ldAPIVersion, projectKey, configKey, variationKey);
+      AIConfigVariationsResponse result = apiInstance.getAIConfigVariation(projectKey, configKey, variationKey);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#getAIConfigVariation");
+      System.err.println("Exception when calling AiConfigsApi#getAIConfigVariation");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -865,7 +846,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **configKey** | **String**|  | |
 | **variationKey** | **String**|  | |
@@ -894,7 +874,7 @@ public class Example {
 
 <a id="getAIConfigs"></a>
 # **getAIConfigs**
-> AIConfigs getAIConfigs(ldAPIVersion, projectKey, sort, limit, offset, filter)
+> AIConfigs getAIConfigs(projectKey, sort, limit, offset, filter)
 
 List AI Configs
 
@@ -908,7 +888,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -921,18 +901,17 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "default"; // String | 
     String sort = "sort_example"; // String | A sort to apply to the list of AI Configs.
     Integer limit = 56; // Integer | The number of AI Configs to return.
     Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
     String filter = "filter_example"; // String | A filter to apply to the list of AI Configs.
     try {
-      AIConfigs result = apiInstance.getAIConfigs(ldAPIVersion, projectKey, sort, limit, offset, filter);
+      AIConfigs result = apiInstance.getAIConfigs(projectKey, sort, limit, offset, filter);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#getAIConfigs");
+      System.err.println("Exception when calling AiConfigsApi#getAIConfigs");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -946,7 +925,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **sort** | **String**| A sort to apply to the list of AI Configs. | [optional] |
 | **limit** | **Integer**| The number of AI Configs to return. | [optional] |
@@ -977,7 +955,7 @@ public class Example {
 
 <a id="getAITool"></a>
 # **getAITool**
-> AITool getAITool(ldAPIVersion, projectKey, toolKey)
+> AITool getAITool(projectKey, toolKey)
 
 Get AI tool
 
@@ -991,7 +969,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1004,15 +982,14 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | 
     String toolKey = "toolKey_example"; // String | 
     try {
-      AITool result = apiInstance.getAITool(ldAPIVersion, projectKey, toolKey);
+      AITool result = apiInstance.getAITool(projectKey, toolKey);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#getAITool");
+      System.err.println("Exception when calling AiConfigsApi#getAITool");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1026,7 +1003,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **toolKey** | **String**|  | |
 
@@ -1068,7 +1044,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1081,7 +1057,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String ldAPIVersion = "beta"; // String | Version of the endpoint.
     String projectKey = "projectKey_example"; // String | 
     String graphKey = "graphKey_example"; // String | 
@@ -1089,7 +1065,7 @@ public class Example {
       AgentGraph result = apiInstance.getAgentGraph(ldAPIVersion, projectKey, graphKey);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#getAgentGraph");
+      System.err.println("Exception when calling AiConfigsApi#getAgentGraph");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1131,7 +1107,7 @@ public class Example {
 
 <a id="getModelConfig"></a>
 # **getModelConfig**
-> ModelConfig getModelConfig(ldAPIVersion, projectKey, modelConfigKey)
+> ModelConfig getModelConfig(projectKey, modelConfigKey)
 
 Get AI model config
 
@@ -1145,7 +1121,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1158,15 +1134,14 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "default"; // String | 
     String modelConfigKey = "default"; // String | 
     try {
-      ModelConfig result = apiInstance.getModelConfig(ldAPIVersion, projectKey, modelConfigKey);
+      ModelConfig result = apiInstance.getModelConfig(projectKey, modelConfigKey);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#getModelConfig");
+      System.err.println("Exception when calling AiConfigsApi#getModelConfig");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1180,7 +1155,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **modelConfigKey** | **String**|  | |
 
@@ -1208,7 +1182,7 @@ public class Example {
 
 <a id="listAIToolVersions"></a>
 # **listAIToolVersions**
-> AITools listAIToolVersions(ldAPIVersion, projectKey, toolKey, sort, limit, offset)
+> AITools listAIToolVersions(projectKey, toolKey, sort, limit, offset)
 
 List AI tool versions
 
@@ -1222,7 +1196,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1235,18 +1209,17 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | 
     String toolKey = "toolKey_example"; // String | 
     String sort = "sort_example"; // String | A sort to apply to the list of AI Configs.
     Integer limit = 56; // Integer | The number of AI Configs to return.
     Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
     try {
-      AITools result = apiInstance.listAIToolVersions(ldAPIVersion, projectKey, toolKey, sort, limit, offset);
+      AITools result = apiInstance.listAIToolVersions(projectKey, toolKey, sort, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#listAIToolVersions");
+      System.err.println("Exception when calling AiConfigsApi#listAIToolVersions");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1260,7 +1233,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **toolKey** | **String**|  | |
 | **sort** | **String**| A sort to apply to the list of AI Configs. | [optional] |
@@ -1290,7 +1262,7 @@ public class Example {
 
 <a id="listAITools"></a>
 # **listAITools**
-> AITools listAITools(ldAPIVersion, projectKey, sort, limit, offset, filter)
+> AITools listAITools(projectKey, sort, limit, offset, filter)
 
 List AI tools
 
@@ -1304,7 +1276,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1317,18 +1289,17 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | 
     String sort = "sort_example"; // String | A sort to apply to the list of AI Configs.
     Integer limit = 56; // Integer | The number of AI Configs to return.
     Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
     String filter = "filter_example"; // String | A filter to apply to the list of AI Configs.
     try {
-      AITools result = apiInstance.listAITools(ldAPIVersion, projectKey, sort, limit, offset, filter);
+      AITools result = apiInstance.listAITools(projectKey, sort, limit, offset, filter);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#listAITools");
+      System.err.println("Exception when calling AiConfigsApi#listAITools");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1342,7 +1313,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **sort** | **String**| A sort to apply to the list of AI Configs. | [optional] |
 | **limit** | **Integer**| The number of AI Configs to return. | [optional] |
@@ -1386,7 +1356,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1399,7 +1369,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String ldAPIVersion = "beta"; // String | Version of the endpoint.
     String projectKey = "projectKey_example"; // String | 
     Integer limit = 56; // Integer | The number of AI Configs to return.
@@ -1408,7 +1378,7 @@ public class Example {
       AgentGraphs result = apiInstance.listAgentGraphs(ldAPIVersion, projectKey, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#listAgentGraphs");
+      System.err.println("Exception when calling AiConfigsApi#listAgentGraphs");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1450,7 +1420,7 @@ public class Example {
 
 <a id="listModelConfigs"></a>
 # **listModelConfigs**
-> List&lt;ModelConfig&gt; listModelConfigs(ldAPIVersion, projectKey, restricted)
+> List&lt;ModelConfig&gt; listModelConfigs(projectKey, restricted)
 
 List AI model configs
 
@@ -1464,7 +1434,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1477,15 +1447,14 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "default"; // String | 
     Boolean restricted = true; // Boolean | Whether to return only restricted models
     try {
-      List<ModelConfig> result = apiInstance.listModelConfigs(ldAPIVersion, projectKey, restricted);
+      List<ModelConfig> result = apiInstance.listModelConfigs(projectKey, restricted);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#listModelConfigs");
+      System.err.println("Exception when calling AiConfigsApi#listModelConfigs");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1499,7 +1468,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **restricted** | **Boolean**| Whether to return only restricted models | [optional] |
 
@@ -1527,7 +1495,7 @@ public class Example {
 
 <a id="patchAIConfig"></a>
 # **patchAIConfig**
-> AIConfig patchAIConfig(ldAPIVersion, projectKey, configKey, aiConfigPatch)
+> AIConfig patchAIConfig(projectKey, configKey, aiConfigPatch)
 
 Update AI Config
 
@@ -1541,7 +1509,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1554,16 +1522,15 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | 
     String configKey = "configKey_example"; // String | 
     AIConfigPatch aiConfigPatch = new AIConfigPatch(); // AIConfigPatch | AI Config object to update
     try {
-      AIConfig result = apiInstance.patchAIConfig(ldAPIVersion, projectKey, configKey, aiConfigPatch);
+      AIConfig result = apiInstance.patchAIConfig(projectKey, configKey, aiConfigPatch);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#patchAIConfig");
+      System.err.println("Exception when calling AiConfigsApi#patchAIConfig");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1577,7 +1544,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **configKey** | **String**|  | |
 | **aiConfigPatch** | [**AIConfigPatch**](AIConfigPatch.md)| AI Config object to update | [optional] |
@@ -1606,7 +1572,7 @@ public class Example {
 
 <a id="patchAIConfigTargeting"></a>
 # **patchAIConfigTargeting**
-> AIConfigTargeting patchAIConfigTargeting(ldAPIVersion, projectKey, configKey, aiConfigTargetingPatch)
+> AIConfigTargeting patchAIConfigTargeting(projectKey, configKey, aiConfigTargetingPatch)
 
 Update AI Config targeting
 
@@ -1620,7 +1586,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1633,16 +1599,15 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | 
     String configKey = "configKey_example"; // String | 
     AIConfigTargetingPatch aiConfigTargetingPatch = new AIConfigTargetingPatch(); // AIConfigTargetingPatch | AI Config targeting semantic patch instructions
     try {
-      AIConfigTargeting result = apiInstance.patchAIConfigTargeting(ldAPIVersion, projectKey, configKey, aiConfigTargetingPatch);
+      AIConfigTargeting result = apiInstance.patchAIConfigTargeting(projectKey, configKey, aiConfigTargetingPatch);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#patchAIConfigTargeting");
+      System.err.println("Exception when calling AiConfigsApi#patchAIConfigTargeting");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1656,7 +1621,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **configKey** | **String**|  | |
 | **aiConfigTargetingPatch** | [**AIConfigTargetingPatch**](AIConfigTargetingPatch.md)| AI Config targeting semantic patch instructions | [optional] |
@@ -1685,7 +1649,7 @@ public class Example {
 
 <a id="patchAIConfigVariation"></a>
 # **patchAIConfigVariation**
-> AIConfigVariation patchAIConfigVariation(ldAPIVersion, projectKey, configKey, variationKey, aiConfigVariationPatch)
+> AIConfigVariation patchAIConfigVariation(projectKey, configKey, variationKey, aiConfigVariationPatch)
 
 Update AI Config variation
 
@@ -1699,7 +1663,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1712,17 +1676,16 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | 
     String configKey = "configKey_example"; // String | 
     String variationKey = "variationKey_example"; // String | 
     AIConfigVariationPatch aiConfigVariationPatch = new AIConfigVariationPatch(); // AIConfigVariationPatch | AI Config variation object to update
     try {
-      AIConfigVariation result = apiInstance.patchAIConfigVariation(ldAPIVersion, projectKey, configKey, variationKey, aiConfigVariationPatch);
+      AIConfigVariation result = apiInstance.patchAIConfigVariation(projectKey, configKey, variationKey, aiConfigVariationPatch);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#patchAIConfigVariation");
+      System.err.println("Exception when calling AiConfigsApi#patchAIConfigVariation");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1736,7 +1699,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **configKey** | **String**|  | |
 | **variationKey** | **String**|  | |
@@ -1766,7 +1728,7 @@ public class Example {
 
 <a id="patchAITool"></a>
 # **patchAITool**
-> AITool patchAITool(ldAPIVersion, projectKey, toolKey, aiToolPatch)
+> AITool patchAITool(projectKey, toolKey, aiToolPatch)
 
 Update AI tool
 
@@ -1780,7 +1742,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1793,16 +1755,15 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | 
     String toolKey = "toolKey_example"; // String | 
     AIToolPatch aiToolPatch = new AIToolPatch(); // AIToolPatch | AI tool object to update
     try {
-      AITool result = apiInstance.patchAITool(ldAPIVersion, projectKey, toolKey, aiToolPatch);
+      AITool result = apiInstance.patchAITool(projectKey, toolKey, aiToolPatch);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#patchAITool");
+      System.err.println("Exception when calling AiConfigsApi#patchAITool");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1816,7 +1777,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **toolKey** | **String**|  | |
 | **aiToolPatch** | [**AIToolPatch**](AIToolPatch.md)| AI tool object to update | [optional] |
@@ -1859,7 +1819,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1872,7 +1832,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String ldAPIVersion = "beta"; // String | Version of the endpoint.
     String projectKey = "projectKey_example"; // String | 
     String graphKey = "graphKey_example"; // String | 
@@ -1881,7 +1841,7 @@ public class Example {
       AgentGraph result = apiInstance.patchAgentGraph(ldAPIVersion, projectKey, graphKey, agentGraphPatch);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#patchAgentGraph");
+      System.err.println("Exception when calling AiConfigsApi#patchAgentGraph");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1924,7 +1884,7 @@ public class Example {
 
 <a id="postAIConfig"></a>
 # **postAIConfig**
-> AIConfig postAIConfig(ldAPIVersion, projectKey, aiConfigPost)
+> AIConfig postAIConfig(projectKey, aiConfigPost)
 
 Create new AI Config
 
@@ -1938,7 +1898,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1951,15 +1911,14 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | 
     AIConfigPost aiConfigPost = new AIConfigPost(); // AIConfigPost | AI Config object to create
     try {
-      AIConfig result = apiInstance.postAIConfig(ldAPIVersion, projectKey, aiConfigPost);
+      AIConfig result = apiInstance.postAIConfig(projectKey, aiConfigPost);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#postAIConfig");
+      System.err.println("Exception when calling AiConfigsApi#postAIConfig");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1973,7 +1932,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **aiConfigPost** | [**AIConfigPost**](AIConfigPost.md)| AI Config object to create | |
 
@@ -2000,7 +1958,7 @@ public class Example {
 
 <a id="postAIConfigVariation"></a>
 # **postAIConfigVariation**
-> AIConfigVariation postAIConfigVariation(ldAPIVersion, projectKey, configKey, aiConfigVariationPost)
+> AIConfigVariation postAIConfigVariation(projectKey, configKey, aiConfigVariationPost)
 
 Create AI Config variation
 
@@ -2014,7 +1972,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -2027,16 +1985,15 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | 
     String configKey = "configKey_example"; // String | 
     AIConfigVariationPost aiConfigVariationPost = new AIConfigVariationPost(); // AIConfigVariationPost | AI Config variation object to create
     try {
-      AIConfigVariation result = apiInstance.postAIConfigVariation(ldAPIVersion, projectKey, configKey, aiConfigVariationPost);
+      AIConfigVariation result = apiInstance.postAIConfigVariation(projectKey, configKey, aiConfigVariationPost);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#postAIConfigVariation");
+      System.err.println("Exception when calling AiConfigsApi#postAIConfigVariation");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2050,7 +2007,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **configKey** | **String**|  | |
 | **aiConfigVariationPost** | [**AIConfigVariationPost**](AIConfigVariationPost.md)| AI Config variation object to create | |
@@ -2078,7 +2034,7 @@ public class Example {
 
 <a id="postAITool"></a>
 # **postAITool**
-> AITool postAITool(ldAPIVersion, projectKey, aiToolPost)
+> AITool postAITool(projectKey, aiToolPost)
 
 Create an AI tool
 
@@ -2092,7 +2048,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -2105,15 +2061,14 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | 
     AIToolPost aiToolPost = new AIToolPost(); // AIToolPost | AI tool object to create
     try {
-      AITool result = apiInstance.postAITool(ldAPIVersion, projectKey, aiToolPost);
+      AITool result = apiInstance.postAITool(projectKey, aiToolPost);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#postAITool");
+      System.err.println("Exception when calling AiConfigsApi#postAITool");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2127,7 +2082,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **aiToolPost** | [**AIToolPost**](AIToolPost.md)| AI tool object to create | |
 
@@ -2168,7 +2122,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -2181,7 +2135,7 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String ldAPIVersion = "beta"; // String | Version of the endpoint.
     String projectKey = "projectKey_example"; // String | 
     AgentGraphPost agentGraphPost = new AgentGraphPost(); // AgentGraphPost | Agent graph object to create
@@ -2189,7 +2143,7 @@ public class Example {
       AgentGraph result = apiInstance.postAgentGraph(ldAPIVersion, projectKey, agentGraphPost);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#postAgentGraph");
+      System.err.println("Exception when calling AiConfigsApi#postAgentGraph");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2231,7 +2185,7 @@ public class Example {
 
 <a id="postModelConfig"></a>
 # **postModelConfig**
-> ModelConfig postModelConfig(ldAPIVersion, projectKey, modelConfigPost)
+> ModelConfig postModelConfig(projectKey, modelConfigPost)
 
 Create an AI model config
 
@@ -2245,7 +2199,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -2258,15 +2212,14 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "default"; // String | 
     ModelConfigPost modelConfigPost = new ModelConfigPost(); // ModelConfigPost | AI model config object to create
     try {
-      ModelConfig result = apiInstance.postModelConfig(ldAPIVersion, projectKey, modelConfigPost);
+      ModelConfig result = apiInstance.postModelConfig(projectKey, modelConfigPost);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#postModelConfig");
+      System.err.println("Exception when calling AiConfigsApi#postModelConfig");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2280,7 +2233,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **modelConfigPost** | [**ModelConfigPost**](ModelConfigPost.md)| AI model config object to create | |
 
@@ -2308,11 +2260,11 @@ public class Example {
 
 <a id="postRestrictedModels"></a>
 # **postRestrictedModels**
-> RestrictedModelsResponse postRestrictedModels(ldAPIVersion, projectKey, restrictedModelsRequest)
+> RestrictedModelsResponse postRestrictedModels(projectKey, restrictedModelsRequest)
 
 Add AI models to the restricted list
 
-Add AI models, by key, to the restricted list. Keys are included in the response from the [List AI model configs](https://launchdarkly.com/docs/api/ai-configs-beta/list-model-configs) endpoint.
+Add AI models, by key, to the restricted list. Keys are included in the response from the [List AI model configs](https://launchdarkly.com/docs/api/ai-configs/list-model-configs) endpoint.
 
 ### Example
 ```java
@@ -2322,7 +2274,7 @@ import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.Configuration;
 import com.launchdarkly.api.auth.*;
 import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.AiConfigsBetaApi;
+import com.launchdarkly.api.api.AiConfigsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -2335,15 +2287,14 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //ApiKey.setApiKeyPrefix("Token");
 
-    AiConfigsBetaApi apiInstance = new AiConfigsBetaApi(defaultClient);
-    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    AiConfigsApi apiInstance = new AiConfigsApi(defaultClient);
     String projectKey = "default"; // String | 
     RestrictedModelsRequest restrictedModelsRequest = new RestrictedModelsRequest(); // RestrictedModelsRequest | List of AI model keys to add to the restricted list.
     try {
-      RestrictedModelsResponse result = apiInstance.postRestrictedModels(ldAPIVersion, projectKey, restrictedModelsRequest);
+      RestrictedModelsResponse result = apiInstance.postRestrictedModels(projectKey, restrictedModelsRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AiConfigsBetaApi#postRestrictedModels");
+      System.err.println("Exception when calling AiConfigsApi#postRestrictedModels");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2357,7 +2308,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **restrictedModelsRequest** | [**RestrictedModelsRequest**](RestrictedModelsRequest.md)| List of AI model keys to add to the restricted list. | |
 

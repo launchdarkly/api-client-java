@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     organization := "com.launchdarkly",
     name := "api-client",
-    version := "20.0.0",
+    version := "21.0.0",
     scalaVersion := "2.11.12",
     scalacOptions ++= Seq("-feature"),
     compile / javacOptions ++= Seq("-Xlint:deprecation"),
@@ -15,7 +15,7 @@ lazy val root = (project in file(".")).
       "com.google.code.gson" % "gson" % "2.9.1",
       "org.apache.commons" % "commons-lang3" % "3.18.0",
       "jakarta.ws.rs" % "jakarta.ws.rs-api" % "2.1.6",
-      "org.openapitools" % "jackson-databind-nullable" % "0.2.7",
+      "org.openapitools" % "jackson-databind-nullable" % "0.2.8",
       "io.gsonfire" % "gson-fire" % "1.9.0" % "compile",
       "jakarta.annotation" % "jakarta.annotation-api" % "1.3.5" % "compile",
       "com.google.code.findbugs" % "jsr305" % "3.0.2" % "compile",

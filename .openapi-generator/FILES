@@ -56,7 +56,7 @@ docs/AiConfigsAccessAllowedReason.md
 docs/AiConfigsAccessAllowedRep.md
 docs/AiConfigsAccessDenied.md
 docs/AiConfigsAccessDeniedReason.md
-docs/AiConfigsBetaApi.md
+docs/AiConfigsApi.md
 docs/AiConfigsExperimentEnabledPeriodRep.md
 docs/AiConfigsExperimentEnvironmentSettingRep.md
 docs/AiConfigsExperimentInfoRep.md
@@ -87,6 +87,7 @@ docs/ApplicationRep.md
 docs/ApplicationVersionRep.md
 docs/ApplicationVersionsCollectionRep.md
 docs/ApplicationsBetaApi.md
+docs/ApprovalRequestPatchInput.md
 docs/ApprovalRequestResponse.md
 docs/ApprovalRequestSetting.md
 docs/ApprovalRequestSettingWithEnvs.md
@@ -676,7 +677,7 @@ src/main/java/com/launchdarkly/api/StringUtil.java
 src/main/java/com/launchdarkly/api/api/AccessTokensApi.java
 src/main/java/com/launchdarkly/api/api/AccountMembersApi.java
 src/main/java/com/launchdarkly/api/api/AccountUsageBetaApi.java
-src/main/java/com/launchdarkly/api/api/AiConfigsBetaApi.java
+src/main/java/com/launchdarkly/api/api/AiConfigsApi.java
 src/main/java/com/launchdarkly/api/api/AnnouncementsApi.java
 src/main/java/com/launchdarkly/api/api/ApplicationsBetaApi.java
 src/main/java/com/launchdarkly/api/api/ApprovalsApi.java
@@ -808,6 +809,7 @@ src/main/java/com/launchdarkly/api/model/ApplicationFlagCollectionRep.java
 src/main/java/com/launchdarkly/api/model/ApplicationRep.java
 src/main/java/com/launchdarkly/api/model/ApplicationVersionRep.java
 src/main/java/com/launchdarkly/api/model/ApplicationVersionsCollectionRep.java
+src/main/java/com/launchdarkly/api/model/ApprovalRequestPatchInput.java
 src/main/java/com/launchdarkly/api/model/ApprovalRequestResponse.java
 src/main/java/com/launchdarkly/api/model/ApprovalRequestSetting.java
 src/main/java/com/launchdarkly/api/model/ApprovalRequestSettingWithEnvs.java
@@ -1326,7 +1328,7 @@ src/main/java/com/launchdarkly/api/model/WorkflowTemplatesListingOutputRep.java
 src/test/java/com/launchdarkly/api/api/AccessTokensApiTest.java
 src/test/java/com/launchdarkly/api/api/AccountMembersApiTest.java
 src/test/java/com/launchdarkly/api/api/AccountUsageBetaApiTest.java
-src/test/java/com/launchdarkly/api/api/AiConfigsBetaApiTest.java
+src/test/java/com/launchdarkly/api/api/AiConfigsApiTest.java
 src/test/java/com/launchdarkly/api/api/AnnouncementsApiTest.java
 src/test/java/com/launchdarkly/api/api/ApplicationsBetaApiTest.java
 src/test/java/com/launchdarkly/api/api/ApprovalsApiTest.java
@@ -1453,6 +1455,7 @@ src/test/java/com/launchdarkly/api/model/ApplicationFlagCollectionRepTest.java
 src/test/java/com/launchdarkly/api/model/ApplicationRepTest.java
 src/test/java/com/launchdarkly/api/model/ApplicationVersionRepTest.java
 src/test/java/com/launchdarkly/api/model/ApplicationVersionsCollectionRepTest.java
+src/test/java/com/launchdarkly/api/model/ApprovalRequestPatchInputTest.java
 src/test/java/com/launchdarkly/api/model/ApprovalRequestResponseTest.java
 src/test/java/com/launchdarkly/api/model/ApprovalRequestSettingTest.java
 src/test/java/com/launchdarkly/api/model/ApprovalRequestSettingWithEnvsTest.java

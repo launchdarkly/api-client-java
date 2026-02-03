@@ -93,11 +93,11 @@ public class Example {
 
 <a id="patchApprovalRequest"></a>
 # **patchApprovalRequest**
-> FlagConfigApprovalRequestResponse patchApprovalRequest(id)
+> FlagConfigApprovalRequestResponse patchApprovalRequest(id, approvalRequestPatchInput)
 
 Update approval request
 
-Perform a partial update to an approval request. Updating an approval request uses the semantic patch format. This endpoint works with any approval requests.  To make a semantic patch request, you must append &#x60;domain-model&#x3D;launchdarkly.semanticpatch&#x60; to your &#x60;Content-Type&#x60; header. To learn more, read [Updates using semantic patch](https://launchdarkly.com/docs/api#updates-using-semantic-patch).  ### Instructions  Semantic patch requests support the following &#x60;kind&#x60; instruction for updating an approval request.  #### addReviewers  Adds the specified members and teams to the existing list of reviewers. You must include at least one of &#x60;notifyMemberIds&#x60; and &#x60;notifyTeamKeys&#x60;.  ##### Parameters  - &#x60;notifyMemberIds&#x60;: (Optional) List of member IDs. - &#x60;notifyTeamKeys&#x60;: (Optional) List of team keys.  Here&#39;s an example:  &#x60;&#x60;&#x60;json {   \&quot;instructions\&quot;: [{     \&quot;kind\&quot;: \&quot;addReviewers\&quot;,     \&quot;notifyMemberIds\&quot;: [ \&quot;user-key-123abc\&quot;, \&quot;user-key-456def\&quot; ],     \&quot;notifyTeamKeys\&quot;: [ \&quot;team-key-789abc\&quot;]   }] } &#x60;&#x60;&#x60; 
+Perform a partial update to an approval request. Updating an approval request uses the semantic patch format. This endpoint works with any approval requests.  To make a semantic patch request, you must append &#x60;domain-model&#x3D;launchdarkly.semanticpatch&#x60; to your &#x60;Content-Type&#x60; header. To learn more, read [Updates using semantic patch](https://launchdarkly.com/docs/api#updates-using-semantic-patch).  ### Instructions  Semantic patch requests support the following &#x60;kind&#x60; instructions for updating an approval request.  #### addReviewers  Adds the specified members and teams to the existing list of reviewers. You must include at least one of &#x60;notifyMemberIds&#x60; and &#x60;notifyTeamKeys&#x60;.  ##### Parameters  - &#x60;notifyMemberIds&#x60;: (Optional) List of member IDs. - &#x60;notifyTeamKeys&#x60;: (Optional) List of team keys.  Here&#39;s an example:  &#x60;&#x60;&#x60;json {   \&quot;instructions\&quot;: [{     \&quot;kind\&quot;: \&quot;addReviewers\&quot;,     \&quot;notifyMemberIds\&quot;: [ \&quot;user-key-123abc\&quot;, \&quot;user-key-456def\&quot; ],     \&quot;notifyTeamKeys\&quot;: [ \&quot;team-key-789abc\&quot;]   }] } &#x60;&#x60;&#x60;  #### updateDescription  Updates the description (title) of the approval request.  ##### Parameters  - &#x60;value&#x60;: (Required) The new description for the approval request. Must be non-empty and no more than 5000 characters.  Here&#39;s an example:  &#x60;&#x60;&#x60;json {   \&quot;instructions\&quot;: [{     \&quot;kind\&quot;: \&quot;updateDescription\&quot;,     \&quot;value\&quot;: \&quot;Updated approval request title\&quot;   }] } &#x60;&#x60;&#x60; 
 
 ### Example
 ```java
@@ -122,8 +122,9 @@ public class Example {
 
     ApprovalsBetaApi apiInstance = new ApprovalsBetaApi(defaultClient);
     String id = "id_example"; // String | The approval ID
+    ApprovalRequestPatchInput approvalRequestPatchInput = new ApprovalRequestPatchInput(); // ApprovalRequestPatchInput | 
     try {
-      FlagConfigApprovalRequestResponse result = apiInstance.patchApprovalRequest(id);
+      FlagConfigApprovalRequestResponse result = apiInstance.patchApprovalRequest(id, approvalRequestPatchInput);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ApprovalsBetaApi#patchApprovalRequest");
@@ -141,6 +142,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **String**| The approval ID | |
+| **approvalRequestPatchInput** | [**ApprovalRequestPatchInput**](ApprovalRequestPatchInput.md)|  | |
 
 ### Return type
 
@@ -152,7 +154,7 @@ public class Example {
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -247,7 +249,7 @@ public class Example {
 
 Update flag approval request
 
-Perform a partial update to an approval request. Updating an approval request uses the semantic patch format. This endpoint requires a feature flag key, and can only be used for updating approval requests for flags.  To make a semantic patch request, you must append &#x60;domain-model&#x3D;launchdarkly.semanticpatch&#x60; to your &#x60;Content-Type&#x60; header. To learn more, read [Updates using semantic patch](https://launchdarkly.com/docs/api#updates-using-semantic-patch).  ### Instructions  Semantic patch requests support the following &#x60;kind&#x60; instruction for updating an approval request.  #### addReviewers  Adds the specified members and teams to the existing list of reviewers. You must include at least one of &#x60;notifyMemberIds&#x60; and &#x60;notifyTeamKeys&#x60;.  ##### Parameters  - &#x60;notifyMemberIds&#x60;: (Optional) List of member IDs. - &#x60;notifyTeamKeys&#x60;: (Optional) List of team keys. 
+Perform a partial update to an approval request. Updating an approval request uses the semantic patch format. This endpoint requires a feature flag key, and can only be used for updating approval requests for flags.  To make a semantic patch request, you must append &#x60;domain-model&#x3D;launchdarkly.semanticpatch&#x60; to your &#x60;Content-Type&#x60; header. To learn more, read [Updates using semantic patch](https://launchdarkly.com/docs/api#updates-using-semantic-patch).  ### Instructions  Semantic patch requests support the following &#x60;kind&#x60; instructions for updating an approval request.  #### addReviewers  Adds the specified members and teams to the existing list of reviewers. You must include at least one of &#x60;notifyMemberIds&#x60; and &#x60;notifyTeamKeys&#x60;.  ##### Parameters  - &#x60;notifyMemberIds&#x60;: (Optional) List of member IDs. - &#x60;notifyTeamKeys&#x60;: (Optional) List of team keys.  #### updateDescription  Updates the description (title) of the approval request.  ##### Parameters  - &#x60;value&#x60;: (Required) The new description for the approval request. Must be non-empty and no more than 5000 characters. 
 
 ### Example
 ```java

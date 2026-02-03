@@ -8,8 +8,8 @@ This client library is only compatible with the latest version of our REST API. 
 
 LaunchDarkly REST API
 - API version: 2.0
-  - Build date: 2025-12-17T18:45:22.167125Z[Etc/UTC]
-  - Generator version: 7.16.0
+  - Build date: 2026-02-03T14:44:52.265429Z[Etc/UTC]
+  - Generator version: 7.18.0
 
 This documentation describes LaunchDarkly's REST API. To access the complete OpenAPI spec directly, use [Get OpenAPI spec](https://launchdarkly.com/docs/api/other/get-openapi-spec).
 
@@ -312,7 +312,7 @@ We also employ IP-based rate limiting on some API routes. If you hit an IP-based
 
 We have a [complete OpenAPI (Swagger) specification](https://app.launchdarkly.com/api/v2/openapi.json) for our API.
 
-We auto-generate multiple client libraries based on our OpenAPI specification. To learn more, visit the [collection of client libraries on GitHub](https://github.com/search?q=topic%3Alaunchdarkly-api+org%3Alaunchdarkly&type=Repositories). You can also use this specification to generate client libraries to interact with our REST API in your language of choice.
+We auto-generate multiple client libraries based on our OpenAPI specification. To learn more, visit the [collection of client libraries on GitHub](https://github.com/search?q=topic%3Alaunchdarkly-api+org%3Alaunchdarkly&type=Repositories). Alternatively, you can use the specification to generate client libraries to interact with our REST API in your language of choice. Or, you can refer to our API endpoints' documentation for guidance on how to make requests with a common HTTP library in your language of choice.
 
 Our OpenAPI specification is supported by several API-based tools such as Postman and Insomnia. In many cases, you can directly import our specification to explore our APIs.
 
@@ -483,7 +483,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>20.0.0</version>
+  <version>21.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -499,7 +499,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.launchdarkly:api-client:20.0.0"
+     implementation "com.launchdarkly:api-client:21.0.0"
   }
 ```
 
@@ -513,7 +513,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-20.0.0.jar`
+* `target/api-client-21.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -597,36 +597,36 @@ Class | Method | HTTP request | Description
 *AccountUsageBetaApi* | [**getStreamUsage**](docs/AccountUsageBetaApi.md#getStreamUsage) | **GET** /api/v2/usage/streams/{source} | Get stream usage
 *AccountUsageBetaApi* | [**getStreamUsageBySdkVersion**](docs/AccountUsageBetaApi.md#getStreamUsageBySdkVersion) | **GET** /api/v2/usage/streams/{source}/bysdkversion | Get stream usage by SDK version
 *AccountUsageBetaApi* | [**getStreamUsageSdkversion**](docs/AccountUsageBetaApi.md#getStreamUsageSdkversion) | **GET** /api/v2/usage/streams/{source}/sdkversions | Get stream usage SDK versions
-*AiConfigsBetaApi* | [**deleteAIConfig**](docs/AiConfigsBetaApi.md#deleteAIConfig) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/{configKey} | Delete AI Config
-*AiConfigsBetaApi* | [**deleteAIConfigVariation**](docs/AiConfigsBetaApi.md#deleteAIConfigVariation) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations/{variationKey} | Delete AI Config variation
-*AiConfigsBetaApi* | [**deleteAITool**](docs/AiConfigsBetaApi.md#deleteAITool) | **DELETE** /api/v2/projects/{projectKey}/ai-tools/{toolKey} | Delete AI tool
-*AiConfigsBetaApi* | [**deleteAgentGraph**](docs/AiConfigsBetaApi.md#deleteAgentGraph) | **DELETE** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Delete agent graph
-*AiConfigsBetaApi* | [**deleteModelConfig**](docs/AiConfigsBetaApi.md#deleteModelConfig) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/model-configs/{modelConfigKey} | Delete an AI model config
-*AiConfigsBetaApi* | [**deleteRestrictedModels**](docs/AiConfigsBetaApi.md#deleteRestrictedModels) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/model-configs/restricted | Remove AI models from the restricted list
-*AiConfigsBetaApi* | [**getAIConfig**](docs/AiConfigsBetaApi.md#getAIConfig) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey} | Get AI Config
-*AiConfigsBetaApi* | [**getAIConfigMetrics**](docs/AiConfigsBetaApi.md#getAIConfigMetrics) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/metrics | Get AI Config metrics
-*AiConfigsBetaApi* | [**getAIConfigMetricsByVariation**](docs/AiConfigsBetaApi.md#getAIConfigMetricsByVariation) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/metrics-by-variation | Get AI Config metrics by variation
-*AiConfigsBetaApi* | [**getAIConfigTargeting**](docs/AiConfigsBetaApi.md#getAIConfigTargeting) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/targeting | Show an AI Config&#39;s targeting
-*AiConfigsBetaApi* | [**getAIConfigVariation**](docs/AiConfigsBetaApi.md#getAIConfigVariation) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations/{variationKey} | Get AI Config variation
-*AiConfigsBetaApi* | [**getAIConfigs**](docs/AiConfigsBetaApi.md#getAIConfigs) | **GET** /api/v2/projects/{projectKey}/ai-configs | List AI Configs
-*AiConfigsBetaApi* | [**getAITool**](docs/AiConfigsBetaApi.md#getAITool) | **GET** /api/v2/projects/{projectKey}/ai-tools/{toolKey} | Get AI tool
-*AiConfigsBetaApi* | [**getAgentGraph**](docs/AiConfigsBetaApi.md#getAgentGraph) | **GET** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Get agent graph
-*AiConfigsBetaApi* | [**getModelConfig**](docs/AiConfigsBetaApi.md#getModelConfig) | **GET** /api/v2/projects/{projectKey}/ai-configs/model-configs/{modelConfigKey} | Get AI model config
-*AiConfigsBetaApi* | [**listAIToolVersions**](docs/AiConfigsBetaApi.md#listAIToolVersions) | **GET** /api/v2/projects/{projectKey}/ai-tools/{toolKey}/versions | List AI tool versions
-*AiConfigsBetaApi* | [**listAITools**](docs/AiConfigsBetaApi.md#listAITools) | **GET** /api/v2/projects/{projectKey}/ai-tools | List AI tools
-*AiConfigsBetaApi* | [**listAgentGraphs**](docs/AiConfigsBetaApi.md#listAgentGraphs) | **GET** /api/v2/projects/{projectKey}/agent-graphs | List agent graphs
-*AiConfigsBetaApi* | [**listModelConfigs**](docs/AiConfigsBetaApi.md#listModelConfigs) | **GET** /api/v2/projects/{projectKey}/ai-configs/model-configs | List AI model configs
-*AiConfigsBetaApi* | [**patchAIConfig**](docs/AiConfigsBetaApi.md#patchAIConfig) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey} | Update AI Config
-*AiConfigsBetaApi* | [**patchAIConfigTargeting**](docs/AiConfigsBetaApi.md#patchAIConfigTargeting) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey}/targeting | Update AI Config targeting
-*AiConfigsBetaApi* | [**patchAIConfigVariation**](docs/AiConfigsBetaApi.md#patchAIConfigVariation) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations/{variationKey} | Update AI Config variation
-*AiConfigsBetaApi* | [**patchAITool**](docs/AiConfigsBetaApi.md#patchAITool) | **PATCH** /api/v2/projects/{projectKey}/ai-tools/{toolKey} | Update AI tool
-*AiConfigsBetaApi* | [**patchAgentGraph**](docs/AiConfigsBetaApi.md#patchAgentGraph) | **PATCH** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Update agent graph
-*AiConfigsBetaApi* | [**postAIConfig**](docs/AiConfigsBetaApi.md#postAIConfig) | **POST** /api/v2/projects/{projectKey}/ai-configs | Create new AI Config
-*AiConfigsBetaApi* | [**postAIConfigVariation**](docs/AiConfigsBetaApi.md#postAIConfigVariation) | **POST** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations | Create AI Config variation
-*AiConfigsBetaApi* | [**postAITool**](docs/AiConfigsBetaApi.md#postAITool) | **POST** /api/v2/projects/{projectKey}/ai-tools | Create an AI tool
-*AiConfigsBetaApi* | [**postAgentGraph**](docs/AiConfigsBetaApi.md#postAgentGraph) | **POST** /api/v2/projects/{projectKey}/agent-graphs | Create new agent graph
-*AiConfigsBetaApi* | [**postModelConfig**](docs/AiConfigsBetaApi.md#postModelConfig) | **POST** /api/v2/projects/{projectKey}/ai-configs/model-configs | Create an AI model config
-*AiConfigsBetaApi* | [**postRestrictedModels**](docs/AiConfigsBetaApi.md#postRestrictedModels) | **POST** /api/v2/projects/{projectKey}/ai-configs/model-configs/restricted | Add AI models to the restricted list
+*AiConfigsApi* | [**deleteAIConfig**](docs/AiConfigsApi.md#deleteAIConfig) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/{configKey} | Delete AI Config
+*AiConfigsApi* | [**deleteAIConfigVariation**](docs/AiConfigsApi.md#deleteAIConfigVariation) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations/{variationKey} | Delete AI Config variation
+*AiConfigsApi* | [**deleteAITool**](docs/AiConfigsApi.md#deleteAITool) | **DELETE** /api/v2/projects/{projectKey}/ai-tools/{toolKey} | Delete AI tool
+*AiConfigsApi* | [**deleteAgentGraph**](docs/AiConfigsApi.md#deleteAgentGraph) | **DELETE** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Delete agent graph
+*AiConfigsApi* | [**deleteModelConfig**](docs/AiConfigsApi.md#deleteModelConfig) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/model-configs/{modelConfigKey} | Delete an AI model config
+*AiConfigsApi* | [**deleteRestrictedModels**](docs/AiConfigsApi.md#deleteRestrictedModels) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/model-configs/restricted | Remove AI models from the restricted list
+*AiConfigsApi* | [**getAIConfig**](docs/AiConfigsApi.md#getAIConfig) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey} | Get AI Config
+*AiConfigsApi* | [**getAIConfigMetrics**](docs/AiConfigsApi.md#getAIConfigMetrics) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/metrics | Get AI Config metrics
+*AiConfigsApi* | [**getAIConfigMetricsByVariation**](docs/AiConfigsApi.md#getAIConfigMetricsByVariation) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/metrics-by-variation | Get AI Config metrics by variation
+*AiConfigsApi* | [**getAIConfigTargeting**](docs/AiConfigsApi.md#getAIConfigTargeting) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/targeting | Show an AI Config&#39;s targeting
+*AiConfigsApi* | [**getAIConfigVariation**](docs/AiConfigsApi.md#getAIConfigVariation) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations/{variationKey} | Get AI Config variation
+*AiConfigsApi* | [**getAIConfigs**](docs/AiConfigsApi.md#getAIConfigs) | **GET** /api/v2/projects/{projectKey}/ai-configs | List AI Configs
+*AiConfigsApi* | [**getAITool**](docs/AiConfigsApi.md#getAITool) | **GET** /api/v2/projects/{projectKey}/ai-tools/{toolKey} | Get AI tool
+*AiConfigsApi* | [**getAgentGraph**](docs/AiConfigsApi.md#getAgentGraph) | **GET** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Get agent graph
+*AiConfigsApi* | [**getModelConfig**](docs/AiConfigsApi.md#getModelConfig) | **GET** /api/v2/projects/{projectKey}/ai-configs/model-configs/{modelConfigKey} | Get AI model config
+*AiConfigsApi* | [**listAIToolVersions**](docs/AiConfigsApi.md#listAIToolVersions) | **GET** /api/v2/projects/{projectKey}/ai-tools/{toolKey}/versions | List AI tool versions
+*AiConfigsApi* | [**listAITools**](docs/AiConfigsApi.md#listAITools) | **GET** /api/v2/projects/{projectKey}/ai-tools | List AI tools
+*AiConfigsApi* | [**listAgentGraphs**](docs/AiConfigsApi.md#listAgentGraphs) | **GET** /api/v2/projects/{projectKey}/agent-graphs | List agent graphs
+*AiConfigsApi* | [**listModelConfigs**](docs/AiConfigsApi.md#listModelConfigs) | **GET** /api/v2/projects/{projectKey}/ai-configs/model-configs | List AI model configs
+*AiConfigsApi* | [**patchAIConfig**](docs/AiConfigsApi.md#patchAIConfig) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey} | Update AI Config
+*AiConfigsApi* | [**patchAIConfigTargeting**](docs/AiConfigsApi.md#patchAIConfigTargeting) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey}/targeting | Update AI Config targeting
+*AiConfigsApi* | [**patchAIConfigVariation**](docs/AiConfigsApi.md#patchAIConfigVariation) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations/{variationKey} | Update AI Config variation
+*AiConfigsApi* | [**patchAITool**](docs/AiConfigsApi.md#patchAITool) | **PATCH** /api/v2/projects/{projectKey}/ai-tools/{toolKey} | Update AI tool
+*AiConfigsApi* | [**patchAgentGraph**](docs/AiConfigsApi.md#patchAgentGraph) | **PATCH** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Update agent graph
+*AiConfigsApi* | [**postAIConfig**](docs/AiConfigsApi.md#postAIConfig) | **POST** /api/v2/projects/{projectKey}/ai-configs | Create new AI Config
+*AiConfigsApi* | [**postAIConfigVariation**](docs/AiConfigsApi.md#postAIConfigVariation) | **POST** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations | Create AI Config variation
+*AiConfigsApi* | [**postAITool**](docs/AiConfigsApi.md#postAITool) | **POST** /api/v2/projects/{projectKey}/ai-tools | Create an AI tool
+*AiConfigsApi* | [**postAgentGraph**](docs/AiConfigsApi.md#postAgentGraph) | **POST** /api/v2/projects/{projectKey}/agent-graphs | Create new agent graph
+*AiConfigsApi* | [**postModelConfig**](docs/AiConfigsApi.md#postModelConfig) | **POST** /api/v2/projects/{projectKey}/ai-configs/model-configs | Create an AI model config
+*AiConfigsApi* | [**postRestrictedModels**](docs/AiConfigsApi.md#postRestrictedModels) | **POST** /api/v2/projects/{projectKey}/ai-configs/model-configs/restricted | Add AI models to the restricted list
 *AnnouncementsApi* | [**createAnnouncementPublic**](docs/AnnouncementsApi.md#createAnnouncementPublic) | **POST** /api/v2/announcements | Create an announcement
 *AnnouncementsApi* | [**deleteAnnouncementPublic**](docs/AnnouncementsApi.md#deleteAnnouncementPublic) | **DELETE** /api/v2/announcements/{announcementId} | Delete an announcement
 *AnnouncementsApi* | [**getAnnouncementsPublic**](docs/AnnouncementsApi.md#getAnnouncementsPublic) | **GET** /api/v2/announcements | Get announcements
@@ -987,6 +987,7 @@ Class | Method | HTTP request | Description
  - [ApplicationRep](docs/ApplicationRep.md)
  - [ApplicationVersionRep](docs/ApplicationVersionRep.md)
  - [ApplicationVersionsCollectionRep](docs/ApplicationVersionsCollectionRep.md)
+ - [ApprovalRequestPatchInput](docs/ApprovalRequestPatchInput.md)
  - [ApprovalRequestResponse](docs/ApprovalRequestResponse.md)
  - [ApprovalRequestSetting](docs/ApprovalRequestSetting.md)
  - [ApprovalRequestSettingWithEnvs](docs/ApprovalRequestSettingWithEnvs.md)
