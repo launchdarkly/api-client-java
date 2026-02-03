@@ -50,7 +50,7 @@ import com.launchdarkly.api.JSON;
 /**
  * FlagEventImpactRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T15:34:17.507575Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T15:47:30.004482Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class FlagEventImpactRep {
   /**
    * The size of the flag event impact. Sizes are defined as: none (0%), small (0-20%), medium (20-80%), large (&gt;80%)
