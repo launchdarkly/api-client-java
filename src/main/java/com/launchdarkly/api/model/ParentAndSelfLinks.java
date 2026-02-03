@@ -49,7 +49,7 @@ import com.launchdarkly.api.JSON;
 /**
  * The location and content type of related resources
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T14:44:52.265429Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T15:11:05.823081Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class ParentAndSelfLinks {
   public static final String SERIALIZED_NAME_SELF = "self";
   @SerializedName(SERIALIZED_NAME_SELF)

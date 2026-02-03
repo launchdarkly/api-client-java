@@ -52,7 +52,7 @@ import com.launchdarkly.api.JSON;
 /**
  * CreateFlagConfigApprovalRequestRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T14:44:52.265429Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T15:11:05.823081Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class CreateFlagConfigApprovalRequestRequest {
   public static final String SERIALIZED_NAME_COMMENT = "comment";
   @SerializedName(SERIALIZED_NAME_COMMENT)
