@@ -51,7 +51,7 @@ import com.launchdarkly.api.JSON;
 /**
  * WorkflowTemplateMetadata
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T15:11:05.823081Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T15:34:17.507575Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class WorkflowTemplateMetadata {
   public static final String SERIALIZED_NAME_PARAMETERS = "parameters";
   @SerializedName(SERIALIZED_NAME_PARAMETERS)
