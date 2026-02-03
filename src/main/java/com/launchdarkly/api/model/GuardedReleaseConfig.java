@@ -51,7 +51,7 @@ import com.launchdarkly.api.JSON;
 /**
  * Configuration for guarded releases
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T15:47:30.004482Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T16:08:34.097023Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class GuardedReleaseConfig {
   public static final String SERIALIZED_NAME_ROLLOUT_CONTEXT_KIND_KEY = "rolloutContextKindKey";
   @SerializedName(SERIALIZED_NAME_ROLLOUT_CONTEXT_KIND_KEY)
