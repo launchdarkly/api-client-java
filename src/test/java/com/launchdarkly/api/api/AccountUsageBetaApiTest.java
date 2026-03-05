@@ -345,6 +345,24 @@ public class AccountUsageBetaApiTest {
     }
 
     /**
+     * Get observability metrics usage
+     *
+     * Get time-series arrays of the number of observability metrics. Supports &#x60;daily&#x60; and &#x60;monthly&#x60; granularity.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getObservabilityMetricsUsageTest() throws ApiException {
+        String from = null;
+        String to = null;
+        String projectKey = null;
+        String granularity = null;
+        String aggregationType = null;
+        SeriesListRep response = api.getObservabilityMetricsUsage(from, to, projectKey, granularity, aggregationType);
+        // TODO: test validations
+    }
+
+    /**
      * Get observability sessions usage
      *
      * Get time-series arrays of the number of observability sessions. Supports &#x60;daily&#x60; and &#x60;monthly&#x60; granularity.
@@ -452,6 +470,24 @@ public class AccountUsageBetaApiTest {
     public void getStreamUsageSdkversionTest() throws ApiException {
         String source = null;
         SdkVersionListRep response = api.getStreamUsageSdkversion(source);
+        // TODO: test validations
+    }
+
+    /**
+     * Get Vega AI usage
+     *
+     * Get time-series arrays of the number of Vega AI usage. Supports &#x60;daily&#x60; and &#x60;monthly&#x60; granularity.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getVegaAIUsageTest() throws ApiException {
+        String from = null;
+        String to = null;
+        String projectKey = null;
+        String granularity = null;
+        String aggregationType = null;
+        SeriesListRep response = api.getVegaAIUsage(from, to, projectKey, granularity, aggregationType);
         // TODO: test validations
     }
 

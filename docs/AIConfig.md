@@ -22,6 +22,7 @@
 |**evaluationMetricKey** | **String** | Evaluation metric key for this AI Config |  [optional] |
 |**evaluationMetricKeys** | **List&lt;String&gt;** | List of evaluation metric keys for this AI Config |  [optional] |
 |**isInverted** | **Boolean** | Whether the evaluation metric is inverted, meaning a lower value is better if set as true |  [optional] |
+|**dependencies** | [**List&lt;AIConfigDependency&gt;**](AIConfigDependency.md) | Resources that depend on this AI Config, grouped by type |  [optional] |
 
 
 

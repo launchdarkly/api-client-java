@@ -169,7 +169,7 @@ null (empty response body)
 
 <a id="getLinkedResources"></a>
 # **getLinkedResources**
-> ViewLinkedResources getLinkedResources(ldAPIVersion, projectKey, viewKey, resourceType, limit, offset, sort)
+> ViewLinkedResources getLinkedResources(ldAPIVersion, projectKey, viewKey, resourceType, limit, offset, sort, query, filter, expand)
 
 Get linked resources
 
@@ -204,8 +204,11 @@ public class Example {
     Integer limit = 56; // Integer | The number of views to return.
     Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
     String sort = "linkedAt"; // String | Field to sort by. Default field is `linkedAt`, default order is ascending.
+    String query = "query_example"; // String | Case-insensitive search query for linked resources. Matches resource key and, when expanded, resource name.
+    String filter = "filter_example"; // String | Optional resource filter expression for linked resources. - Supported for `flags` and `segments` resource types. - Uses the same syntax as link/unlink and list endpoints. - For `segments`, `environmentId` is required when `filter` is provided. 
+    List<String> expand = Arrays.asList(); // List<String> | A comma-separated list of fields to expand.
     try {
-      ViewLinkedResources result = apiInstance.getLinkedResources(ldAPIVersion, projectKey, viewKey, resourceType, limit, offset, sort);
+      ViewLinkedResources result = apiInstance.getLinkedResources(ldAPIVersion, projectKey, viewKey, resourceType, limit, offset, sort, query, filter, expand);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ViewsBetaApi#getLinkedResources");
@@ -225,10 +228,13 @@ public class Example {
 | **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **viewKey** | **String**|  | |
-| **resourceType** | **String**|  | [enum: flags, segments, aiConfigs, metrics] |
+| **resourceType** | **String**|  | [enum: flags, segments] |
 | **limit** | **Integer**| The number of views to return. | [optional] |
 | **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
 | **sort** | **String**| Field to sort by. Default field is &#x60;linkedAt&#x60;, default order is ascending. | [optional] [default to linkedAt] [enum: linkedAt, name] |
+| **query** | **String**| Case-insensitive search query for linked resources. Matches resource key and, when expanded, resource name. | [optional] |
+| **filter** | **String**| Optional resource filter expression for linked resources. - Supported for &#x60;flags&#x60; and &#x60;segments&#x60; resource types. - Uses the same syntax as link/unlink and list endpoints. - For &#x60;segments&#x60;, &#x60;environmentId&#x60; is required when &#x60;filter&#x60; is provided.  | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.md)| A comma-separated list of fields to expand. | [optional] [enum: maintainer, resourceDetails] |
 
 ### Return type
 
@@ -258,7 +264,7 @@ public class Example {
 
 Get linked views for a given resource
 
-Get a list of all linked views for a resource. Flags, AI configs and metrics are identified by key. Segments are identified by segment ID.
+Get a list of all linked views for a resource. Flags are identified by key. Segments are identified by segment ID.
 
 ### Example
 ```java
@@ -309,7 +315,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
-| **resourceType** | **String**|  | [enum: flags, segments, aiConfigs, metrics] |
+| **resourceType** | **String**|  | [enum: flags, segments] |
 | **resourceKey** | **String**|  | |
 | **environmentId** | **String**| Environment ID. Required when resourceType is &#39;segments&#39; | [optional] |
 | **limit** | **Integer**| The number of views to return. | [optional] |
@@ -373,7 +379,7 @@ public class Example {
     String sort = "key"; // String | A sort to apply to the list of views.
     Integer limit = 56; // Integer | The number of views to return.
     Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
-    String filter = "filter_example"; // String | A filter to apply to the list of views.
+    String filter = "filter_example"; // String | A filter to apply to the list of views. Supports the following fields and operators: `name` (equals, notEquals, startsWith, contains, anyOf), `key` (equals, notEquals, startsWith, contains, anyOf), `tag` (equals, anyOf), `maintainerId` (equals, anyOf), `isPayloadView` (equals).
     List<String> expand = Arrays.asList(); // List<String> | A comma-separated list of fields to expand.
     try {
       View result = apiInstance.getView(ldAPIVersion, projectKey, viewKey, sort, limit, offset, filter, expand);
@@ -399,8 +405,8 @@ public class Example {
 | **sort** | **String**| A sort to apply to the list of views. | [optional] [enum: key, name, updatedAt] |
 | **limit** | **Integer**| The number of views to return. | [optional] |
 | **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
-| **filter** | **String**| A filter to apply to the list of views. | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.md)| A comma-separated list of fields to expand. | [optional] [enum: allFlags, allSegments, allMetrics, allAIConfigs, allResources, flagsSummary, segmentsSummary, metricsSummary, aiConfigsSummary, resourceSummary] |
+| **filter** | **String**| A filter to apply to the list of views. Supports the following fields and operators: &#x60;name&#x60; (equals, notEquals, startsWith, contains, anyOf), &#x60;key&#x60; (equals, notEquals, startsWith, contains, anyOf), &#x60;tag&#x60; (equals, anyOf), &#x60;maintainerId&#x60; (equals, anyOf), &#x60;isPayloadView&#x60; (equals). | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.md)| A comma-separated list of fields to expand. | [optional] [enum: allFlags, allSegments, allResources, maintainer, flagsSummary, segmentsSummary, resourceSummary] |
 
 ### Return type
 
@@ -459,7 +465,7 @@ public class Example {
     String sort = "key"; // String | A sort to apply to the list of views.
     Integer limit = 56; // Integer | The number of views to return.
     Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
-    String filter = "filter_example"; // String | A filter to apply to the list of views.
+    String filter = "filter_example"; // String | A filter to apply to the list of views. Supports the following fields and operators: `name` (equals, notEquals, startsWith, contains, anyOf), `key` (equals, notEquals, startsWith, contains, anyOf), `tag` (equals, anyOf), `maintainerId` (equals, anyOf), `isPayloadView` (equals).
     List<String> expand = Arrays.asList(); // List<String> | A comma-separated list of fields to expand.
     try {
       Views result = apiInstance.getViews(ldAPIVersion, projectKey, sort, limit, offset, filter, expand);
@@ -484,8 +490,8 @@ public class Example {
 | **sort** | **String**| A sort to apply to the list of views. | [optional] [enum: key, name, updatedAt] |
 | **limit** | **Integer**| The number of views to return. | [optional] |
 | **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
-| **filter** | **String**| A filter to apply to the list of views. | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.md)| A comma-separated list of fields to expand. | [optional] [enum: flagsSummary, segmentsSummary, metricsSummary, aiConfigsSummary, resourceSummary] |
+| **filter** | **String**| A filter to apply to the list of views. Supports the following fields and operators: &#x60;name&#x60; (equals, notEquals, startsWith, contains, anyOf), &#x60;key&#x60; (equals, notEquals, startsWith, contains, anyOf), &#x60;tag&#x60; (equals, anyOf), &#x60;maintainerId&#x60; (equals, anyOf), &#x60;isPayloadView&#x60; (equals). | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.md)| A comma-separated list of fields to expand. | [optional] [enum: flagsSummary, segmentsSummary, resourceSummary] |
 
 ### Return type
 
@@ -515,7 +521,7 @@ public class Example {
 
 Link resource
 
-Link one or multiple resources to a view: - Link flags using flag keys - Link AI configs using AI config keys - Link metrics using metric keys - Link segments using segment IDs 
+Link one or multiple resources to a view by keys, filters, or both: - Link flags using flag keys or filters (maintainerId, maintainerTeamKey, tags, state, query) - Link segments using segment IDs or filters (tags, query, unbounded)  When both keys and filters are provided, resources matching either condition are linked (union). 
 
 ### Example
 ```java
@@ -543,7 +549,7 @@ public class Example {
     String projectKey = "default"; // String | 
     String viewKey = "my-view"; // String | 
     String resourceType = "flags"; // String | 
-    ViewLinkRequest viewLinkRequest = new ViewLinkRequest(); // ViewLinkRequest | The resource to link to the view. Flags are identified by key. Segments are identified by segment ID.
+    ViewLinkRequest viewLinkRequest = new ViewLinkRequest(); // ViewLinkRequest | Resources to link to the view. You can provide explicit keys/IDs, filters, or both. - Flags: identified by key or filtered by maintainerId, maintainerTeamKey, tags, state, query - Segments: identified by segment ID or filtered by tags, query, unbounded 
     try {
       LinkResourceSuccessResponse result = apiInstance.linkResource(ldAPIVersion, projectKey, viewKey, resourceType, viewLinkRequest);
       System.out.println(result);
@@ -565,8 +571,8 @@ public class Example {
 | **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **viewKey** | **String**|  | |
-| **resourceType** | **String**|  | [enum: flags, segments, aiConfigs, metrics] |
-| **viewLinkRequest** | [**ViewLinkRequest**](ViewLinkRequest.md)| The resource to link to the view. Flags are identified by key. Segments are identified by segment ID. | |
+| **resourceType** | **String**|  | [enum: flags, segments] |
+| **viewLinkRequest** | [**ViewLinkRequest**](ViewLinkRequest.md)| Resources to link to the view. You can provide explicit keys/IDs, filters, or both. - Flags: identified by key or filtered by maintainerId, maintainerTeamKey, tags, state, query - Segments: identified by segment ID or filtered by tags, query, unbounded  | |
 
 ### Return type
 
@@ -596,7 +602,7 @@ public class Example {
 
 Unlink resource
 
-Unlink one or multiple resources from a view: - Unlink flags using flag keys - Unlink segments using segment IDs - Unlink AI configs using AI config keys - Unlink metrics using metric keys 
+Unlink one or multiple resources from a view: - Unlink flags using flag keys - Unlink segments using segment IDs 
 
 ### Example
 ```java
@@ -646,7 +652,7 @@ public class Example {
 | **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
 | **projectKey** | **String**|  | |
 | **viewKey** | **String**|  | |
-| **resourceType** | **String**|  | [enum: flags, segments, aiConfigs, metrics] |
+| **resourceType** | **String**|  | [enum: flags, segments] |
 | **viewLinkRequest** | [**ViewLinkRequest**](ViewLinkRequest.md)| The resource to link to the view. Flags are identified by key. Segments are identified by segment ID. | |
 
 ### Return type

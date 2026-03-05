@@ -54,22 +54,6 @@ public class ResourceSummaryTest {
     }
 
     /**
-     * Test the property 'metricCount'
-     */
-    @Test
-    public void metricCountTest() {
-        // TODO: test metricCount
-    }
-
-    /**
-     * Test the property 'aiConfigCount'
-     */
-    @Test
-    public void aiConfigCountTest() {
-        // TODO: test aiConfigCount
-    }
-
-    /**
      * Test the property 'totalCount'
      */
     @Test

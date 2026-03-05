@@ -50,7 +50,7 @@ import com.launchdarkly.api.JSON;
 /**
  * EventFilter
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T16:08:34.097023Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-05T10:21:59.405621Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class EventFilter {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -156,7 +156,7 @@ public class EventFilter {
   }
 
   /**
-   * The context attribute / event property values or group member nodes
+   * The context attribute / event property values or group member nodes. Numeric values must not exceed 14 decimal places.
    * @return values
    */
   @javax.annotation.Nonnull

@@ -305,6 +305,14 @@ public class MetricListingRepTest {
     }
 
     /**
+     * Test the property 'lastSeen'
+     */
+    @Test
+    public void lastSeenTest() {
+        // TODO: test lastSeen
+    }
+
+    /**
      * Test the property 'archived'
      */
     @Test

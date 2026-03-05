@@ -16,6 +16,7 @@ package com.launchdarkly.api.api;
 import com.launchdarkly.api.ApiException;
 import com.launchdarkly.api.model.AuditLogEntryListingRepCollection;
 import com.launchdarkly.api.model.AuditLogEntryRep;
+import com.launchdarkly.api.model.CountBucketsResult;
 import com.launchdarkly.api.model.ForbiddenErrorRep;
 import com.launchdarkly.api.model.InvalidRequestErrorRep;
 import com.launchdarkly.api.model.NotFoundErrorRep;
@@ -85,6 +86,23 @@ public class AuditLogApiTest {
         Long limit = null;
         List<StatementPost> statementPost = null;
         AuditLogEntryListingRepCollection response = api.postAuditLogEntries(before, after, q, limit, statementPost);
+        // TODO: test validations
+    }
+
+    /**
+     * Get audit log entry counts
+     *
+     * Returns aggregate counts of audit log entries per time bucket. Used for dashboard overlays that show flag targeting changes.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void postAuditLogEntryCountsTest() throws ApiException {
+        Long after = null;
+        List<StatementPost> statementPost = null;
+        Long before = null;
+        Long buckets = null;
+        CountBucketsResult response = api.postAuditLogEntryCounts(after, statementPost, before, buckets);
         // TODO: test validations
     }
 

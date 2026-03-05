@@ -48,7 +48,7 @@ import com.launchdarkly.api.JSON;
 /**
  * AIToolPatch
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T16:08:34.097023Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-05T10:21:59.405621Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class AIToolPatch {
   public static final String SERIALIZED_NAME_MAINTAINER_ID = "maintainerId";
   @SerializedName(SERIALIZED_NAME_MAINTAINER_ID)
@@ -69,6 +69,11 @@ public class AIToolPatch {
   @SerializedName(SERIALIZED_NAME_SCHEMA)
   @javax.annotation.Nullable
   private Object schema;
+
+  public static final String SERIALIZED_NAME_CUSTOM_PARAMETERS = "customParameters";
+  @SerializedName(SERIALIZED_NAME_CUSTOM_PARAMETERS)
+  @javax.annotation.Nullable
+  private Object customParameters;
 
   public AIToolPatch() {
   }
@@ -136,7 +141,7 @@ public class AIToolPatch {
   }
 
   /**
-   * Get schema
+   * JSON Schema defining the tool&#39;s parameters for LLM consumption
    * @return schema
    */
   @javax.annotation.Nullable
@@ -146,6 +151,25 @@ public class AIToolPatch {
 
   public void setSchema(@javax.annotation.Nullable Object schema) {
     this.schema = schema;
+  }
+
+
+  public AIToolPatch customParameters(@javax.annotation.Nullable Object customParameters) {
+    this.customParameters = customParameters;
+    return this;
+  }
+
+  /**
+   * Custom metadata and configuration for application-level use (not sent to LLM)
+   * @return customParameters
+   */
+  @javax.annotation.Nullable
+  public Object getCustomParameters() {
+    return customParameters;
+  }
+
+  public void setCustomParameters(@javax.annotation.Nullable Object customParameters) {
+    this.customParameters = customParameters;
   }
 
   /**
@@ -206,13 +230,14 @@ public class AIToolPatch {
     return Objects.equals(this.maintainerId, aiToolPatch.maintainerId) &&
         Objects.equals(this.maintainerTeamKey, aiToolPatch.maintainerTeamKey) &&
         Objects.equals(this.description, aiToolPatch.description) &&
-        Objects.equals(this.schema, aiToolPatch.schema)&&
+        Objects.equals(this.schema, aiToolPatch.schema) &&
+        Objects.equals(this.customParameters, aiToolPatch.customParameters)&&
         Objects.equals(this.additionalProperties, aiToolPatch.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(maintainerId, maintainerTeamKey, description, schema, additionalProperties);
+    return Objects.hash(maintainerId, maintainerTeamKey, description, schema, customParameters, additionalProperties);
   }
 
   @Override
@@ -223,6 +248,7 @@ public class AIToolPatch {
     sb.append("    maintainerTeamKey: ").append(toIndentedString(maintainerTeamKey)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
+    sb.append("    customParameters: ").append(toIndentedString(customParameters)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -245,7 +271,7 @@ public class AIToolPatch {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("maintainerId", "maintainerTeamKey", "description", "schema"));
+    openapiFields = new HashSet<String>(Arrays.asList("maintainerId", "maintainerTeamKey", "description", "schema", "customParameters"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

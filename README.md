@@ -8,7 +8,7 @@ This client library is only compatible with the latest version of our REST API. 
 
 LaunchDarkly REST API
 - API version: 2.0
-  - Build date: 2026-02-03T16:08:34.097023Z[Etc/UTC]
+  - Build date: 2026-03-05T10:21:59.405621Z[Etc/UTC]
   - Generator version: 7.18.0
 
 This documentation describes LaunchDarkly's REST API. To access the complete OpenAPI spec directly, use [Get OpenAPI spec](https://launchdarkly.com/docs/api/other/get-openapi-spec).
@@ -483,7 +483,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>21.0.0</version>
+  <version>22.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -499,7 +499,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.launchdarkly:api-client:21.0.0"
+     implementation "com.launchdarkly:api-client:22.0.0"
   }
 ```
 
@@ -513,7 +513,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-21.0.0.jar`
+* `target/api-client-22.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -591,12 +591,14 @@ Class | Method | HTTP request | Description
 *AccountUsageBetaApi* | [**getMauUsageByCategory**](docs/AccountUsageBetaApi.md#getMauUsageByCategory) | **GET** /api/v2/usage/mau/bycategory | Get MAU usage by category
 *AccountUsageBetaApi* | [**getObservabilityErrorsUsage**](docs/AccountUsageBetaApi.md#getObservabilityErrorsUsage) | **GET** /api/v2/usage/observability/errors | Get observability errors usage
 *AccountUsageBetaApi* | [**getObservabilityLogsUsage**](docs/AccountUsageBetaApi.md#getObservabilityLogsUsage) | **GET** /api/v2/usage/observability/logs | Get observability logs usage
+*AccountUsageBetaApi* | [**getObservabilityMetricsUsage**](docs/AccountUsageBetaApi.md#getObservabilityMetricsUsage) | **GET** /api/v2/usage/observability/metrics | Get observability metrics usage
 *AccountUsageBetaApi* | [**getObservabilitySessionsUsage**](docs/AccountUsageBetaApi.md#getObservabilitySessionsUsage) | **GET** /api/v2/usage/observability/sessions | Get observability sessions usage
 *AccountUsageBetaApi* | [**getObservabilityTracesUsage**](docs/AccountUsageBetaApi.md#getObservabilityTracesUsage) | **GET** /api/v2/usage/observability/traces | Get observability traces usage
 *AccountUsageBetaApi* | [**getServiceConnectionsUsage**](docs/AccountUsageBetaApi.md#getServiceConnectionsUsage) | **GET** /api/v2/usage/service-connections | Get service connections usage
 *AccountUsageBetaApi* | [**getStreamUsage**](docs/AccountUsageBetaApi.md#getStreamUsage) | **GET** /api/v2/usage/streams/{source} | Get stream usage
 *AccountUsageBetaApi* | [**getStreamUsageBySdkVersion**](docs/AccountUsageBetaApi.md#getStreamUsageBySdkVersion) | **GET** /api/v2/usage/streams/{source}/bysdkversion | Get stream usage by SDK version
 *AccountUsageBetaApi* | [**getStreamUsageSdkversion**](docs/AccountUsageBetaApi.md#getStreamUsageSdkversion) | **GET** /api/v2/usage/streams/{source}/sdkversions | Get stream usage SDK versions
+*AccountUsageBetaApi* | [**getVegaAIUsage**](docs/AccountUsageBetaApi.md#getVegaAIUsage) | **GET** /api/v2/usage/vega-ai | Get Vega AI usage
 *AiConfigsApi* | [**deleteAIConfig**](docs/AiConfigsApi.md#deleteAIConfig) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/{configKey} | Delete AI Config
 *AiConfigsApi* | [**deleteAIConfigVariation**](docs/AiConfigsApi.md#deleteAIConfigVariation) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations/{variationKey} | Delete AI Config variation
 *AiConfigsApi* | [**deleteAITool**](docs/AiConfigsApi.md#deleteAITool) | **DELETE** /api/v2/projects/{projectKey}/ai-tools/{toolKey} | Delete AI tool
@@ -658,6 +660,7 @@ Class | Method | HTTP request | Description
 *AuditLogApi* | [**getAuditLogEntries**](docs/AuditLogApi.md#getAuditLogEntries) | **GET** /api/v2/auditlog | List audit log entries
 *AuditLogApi* | [**getAuditLogEntry**](docs/AuditLogApi.md#getAuditLogEntry) | **GET** /api/v2/auditlog/{id} | Get audit log entry
 *AuditLogApi* | [**postAuditLogEntries**](docs/AuditLogApi.md#postAuditLogEntries) | **POST** /api/v2/auditlog | Search audit log entries
+*AuditLogApi* | [**postAuditLogEntryCounts**](docs/AuditLogApi.md#postAuditLogEntryCounts) | **POST** /api/v2/auditlog/counts | Get audit log entry counts
 *CodeReferencesApi* | [**deleteBranches**](docs/CodeReferencesApi.md#deleteBranches) | **POST** /api/v2/code-refs/repositories/{repo}/branch-delete-tasks | Delete branches
 *CodeReferencesApi* | [**deleteRepository**](docs/CodeReferencesApi.md#deleteRepository) | **DELETE** /api/v2/code-refs/repositories/{repo} | Delete repository
 *CodeReferencesApi* | [**getBranch**](docs/CodeReferencesApi.md#getBranch) | **GET** /api/v2/code-refs/repositories/{repo}/branches/{branch} | Get branch
@@ -913,6 +916,7 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [AIConfig](docs/AIConfig.md)
+ - [AIConfigDependency](docs/AIConfigDependency.md)
  - [AIConfigMaintainer](docs/AIConfigMaintainer.md)
  - [AIConfigPatch](docs/AIConfigPatch.md)
  - [AIConfigPost](docs/AIConfigPost.md)
@@ -951,6 +955,7 @@ Class | Method | HTTP request | Description
  - [AgentGraph](docs/AgentGraph.md)
  - [AgentGraphEdge](docs/AgentGraphEdge.md)
  - [AgentGraphEdgePost](docs/AgentGraphEdgePost.md)
+ - [AgentGraphMaintainer](docs/AgentGraphMaintainer.md)
  - [AgentGraphPatch](docs/AgentGraphPatch.md)
  - [AgentGraphPost](docs/AgentGraphPost.md)
  - [AgentGraphs](docs/AgentGraphs.md)
@@ -1050,6 +1055,8 @@ Class | Method | HTTP request | Description
  - [Contexts](docs/Contexts.md)
  - [CopiedFromEnv](docs/CopiedFromEnv.md)
  - [CoreLink](docs/CoreLink.md)
+ - [CountBucket](docs/CountBucket.md)
+ - [CountBucketsResult](docs/CountBucketsResult.md)
  - [CreateAnnouncementBody](docs/CreateAnnouncementBody.md)
  - [CreateApprovalRequestRequest](docs/CreateApprovalRequestRequest.md)
  - [CreateCopyFlagConfigApprovalRequestRequest](docs/CreateCopyFlagConfigApprovalRequestRequest.md)
@@ -1103,15 +1110,14 @@ Class | Method | HTTP request | Description
  - [ExpandedDirectlyLinkedSegment](docs/ExpandedDirectlyLinkedSegment.md)
  - [ExpandedDirectlyLinkedSegments](docs/ExpandedDirectlyLinkedSegments.md)
  - [ExpandedFlag](docs/ExpandedFlag.md)
+ - [ExpandedFlagMaintainer](docs/ExpandedFlagMaintainer.md)
  - [ExpandedFlagRep](docs/ExpandedFlagRep.md)
  - [ExpandedLinkedAIConfigs](docs/ExpandedLinkedAIConfigs.md)
  - [ExpandedLinkedFlags](docs/ExpandedLinkedFlags.md)
  - [ExpandedLinkedMetrics](docs/ExpandedLinkedMetrics.md)
  - [ExpandedLinkedResources](docs/ExpandedLinkedResources.md)
- - [ExpandedLinkedResourcesAIConfigs](docs/ExpandedLinkedResourcesAIConfigs.md)
  - [ExpandedLinkedResourcesFlags](docs/ExpandedLinkedResourcesFlags.md)
  - [ExpandedLinkedResourcesItems](docs/ExpandedLinkedResourcesItems.md)
- - [ExpandedLinkedResourcesMetrics](docs/ExpandedLinkedResourcesMetrics.md)
  - [ExpandedLinkedResourcesSegments](docs/ExpandedLinkedResourcesSegments.md)
  - [ExpandedLinkedSegments](docs/ExpandedLinkedSegments.md)
  - [ExpandedMetric](docs/ExpandedMetric.md)
@@ -1475,6 +1481,7 @@ Class | Method | HTTP request | Description
  - [VersionsRep](docs/VersionsRep.md)
  - [View](docs/View.md)
  - [ViewLinkRequest](docs/ViewLinkRequest.md)
+ - [ViewLinkRequestFilter](docs/ViewLinkRequestFilter.md)
  - [ViewLinkRequestKeys](docs/ViewLinkRequestKeys.md)
  - [ViewLinkRequestSegmentIdentifier](docs/ViewLinkRequestSegmentIdentifier.md)
  - [ViewLinkRequestSegmentIdentifiers](docs/ViewLinkRequestSegmentIdentifiers.md)
@@ -1493,6 +1500,8 @@ Class | Method | HTTP request | Description
  - [ViewsLink](docs/ViewsLink.md)
  - [ViewsMaintainerMember](docs/ViewsMaintainerMember.md)
  - [ViewsMaintainerTeam](docs/ViewsMaintainerTeam.md)
+ - [ViewsMemberSummary](docs/ViewsMemberSummary.md)
+ - [ViewsMemberTeamSummaryRep](docs/ViewsMemberTeamSummaryRep.md)
  - [ViewsPaginatedLinks](docs/ViewsPaginatedLinks.md)
  - [ViewsSelfLink](docs/ViewsSelfLink.md)
  - [Webhook](docs/Webhook.md)

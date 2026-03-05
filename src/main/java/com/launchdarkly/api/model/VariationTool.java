@@ -21,6 +21,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,7 +50,7 @@ import com.launchdarkly.api.JSON;
 /**
  * VariationTool
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T16:08:34.097023Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-05T10:21:59.405621Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class VariationTool {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
@@ -59,6 +61,11 @@ public class VariationTool {
   @SerializedName(SERIALIZED_NAME_VERSION)
   @javax.annotation.Nonnull
   private Integer version;
+
+  public static final String SERIALIZED_NAME_CUSTOM_PARAMETERS = "customParameters";
+  @SerializedName(SERIALIZED_NAME_CUSTOM_PARAMETERS)
+  @javax.annotation.Nullable
+  private Map<String, Object> customParameters = new HashMap<>();
 
   public VariationTool() {
   }
@@ -98,6 +105,33 @@ public class VariationTool {
 
   public void setVersion(@javax.annotation.Nonnull Integer version) {
     this.version = version;
+  }
+
+
+  public VariationTool customParameters(@javax.annotation.Nullable Map<String, Object> customParameters) {
+    this.customParameters = customParameters;
+    return this;
+  }
+
+  public VariationTool putCustomParametersItem(String key, Object customParametersItem) {
+    if (this.customParameters == null) {
+      this.customParameters = new HashMap<>();
+    }
+    this.customParameters.put(key, customParametersItem);
+    return this;
+  }
+
+  /**
+   * Custom metadata and configuration for application-level use
+   * @return customParameters
+   */
+  @javax.annotation.Nullable
+  public Map<String, Object> getCustomParameters() {
+    return customParameters;
+  }
+
+  public void setCustomParameters(@javax.annotation.Nullable Map<String, Object> customParameters) {
+    this.customParameters = customParameters;
   }
 
   /**
@@ -156,13 +190,14 @@ public class VariationTool {
     }
     VariationTool variationTool = (VariationTool) o;
     return Objects.equals(this.key, variationTool.key) &&
-        Objects.equals(this.version, variationTool.version)&&
+        Objects.equals(this.version, variationTool.version) &&
+        Objects.equals(this.customParameters, variationTool.customParameters)&&
         Objects.equals(this.additionalProperties, variationTool.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, version, additionalProperties);
+    return Objects.hash(key, version, customParameters, additionalProperties);
   }
 
   @Override
@@ -171,6 +206,7 @@ public class VariationTool {
     sb.append("class VariationTool {\n");
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    customParameters: ").append(toIndentedString(customParameters)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -193,7 +229,7 @@ public class VariationTool {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("key", "version"));
+    openapiFields = new HashSet<String>(Arrays.asList("key", "version", "customParameters"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("key", "version"));

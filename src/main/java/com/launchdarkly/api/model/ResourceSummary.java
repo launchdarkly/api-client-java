@@ -48,7 +48,7 @@ import com.launchdarkly.api.JSON;
 /**
  * ResourceSummary
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T16:08:34.097023Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-05T10:21:59.405621Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class ResourceSummary {
   public static final String SERIALIZED_NAME_FLAG_COUNT = "flagCount";
   @SerializedName(SERIALIZED_NAME_FLAG_COUNT)
@@ -59,16 +59,6 @@ public class ResourceSummary {
   @SerializedName(SERIALIZED_NAME_SEGMENT_COUNT)
   @javax.annotation.Nullable
   private Integer segmentCount;
-
-  public static final String SERIALIZED_NAME_METRIC_COUNT = "metricCount";
-  @SerializedName(SERIALIZED_NAME_METRIC_COUNT)
-  @javax.annotation.Nullable
-  private Integer metricCount;
-
-  public static final String SERIALIZED_NAME_AI_CONFIG_COUNT = "aiConfigCount";
-  @SerializedName(SERIALIZED_NAME_AI_CONFIG_COUNT)
-  @javax.annotation.Nullable
-  private Integer aiConfigCount;
 
   public static final String SERIALIZED_NAME_TOTAL_COUNT = "totalCount";
   @SerializedName(SERIALIZED_NAME_TOTAL_COUNT)
@@ -113,44 +103,6 @@ public class ResourceSummary {
 
   public void setSegmentCount(@javax.annotation.Nullable Integer segmentCount) {
     this.segmentCount = segmentCount;
-  }
-
-
-  public ResourceSummary metricCount(@javax.annotation.Nullable Integer metricCount) {
-    this.metricCount = metricCount;
-    return this;
-  }
-
-  /**
-   * Get metricCount
-   * @return metricCount
-   */
-  @javax.annotation.Nullable
-  public Integer getMetricCount() {
-    return metricCount;
-  }
-
-  public void setMetricCount(@javax.annotation.Nullable Integer metricCount) {
-    this.metricCount = metricCount;
-  }
-
-
-  public ResourceSummary aiConfigCount(@javax.annotation.Nullable Integer aiConfigCount) {
-    this.aiConfigCount = aiConfigCount;
-    return this;
-  }
-
-  /**
-   * Get aiConfigCount
-   * @return aiConfigCount
-   */
-  @javax.annotation.Nullable
-  public Integer getAiConfigCount() {
-    return aiConfigCount;
-  }
-
-  public void setAiConfigCount(@javax.annotation.Nullable Integer aiConfigCount) {
-    this.aiConfigCount = aiConfigCount;
   }
 
 
@@ -229,15 +181,13 @@ public class ResourceSummary {
     ResourceSummary resourceSummary = (ResourceSummary) o;
     return Objects.equals(this.flagCount, resourceSummary.flagCount) &&
         Objects.equals(this.segmentCount, resourceSummary.segmentCount) &&
-        Objects.equals(this.metricCount, resourceSummary.metricCount) &&
-        Objects.equals(this.aiConfigCount, resourceSummary.aiConfigCount) &&
         Objects.equals(this.totalCount, resourceSummary.totalCount)&&
         Objects.equals(this.additionalProperties, resourceSummary.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(flagCount, segmentCount, metricCount, aiConfigCount, totalCount, additionalProperties);
+    return Objects.hash(flagCount, segmentCount, totalCount, additionalProperties);
   }
 
   @Override
@@ -246,8 +196,6 @@ public class ResourceSummary {
     sb.append("class ResourceSummary {\n");
     sb.append("    flagCount: ").append(toIndentedString(flagCount)).append("\n");
     sb.append("    segmentCount: ").append(toIndentedString(segmentCount)).append("\n");
-    sb.append("    metricCount: ").append(toIndentedString(metricCount)).append("\n");
-    sb.append("    aiConfigCount: ").append(toIndentedString(aiConfigCount)).append("\n");
     sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -271,7 +219,7 @@ public class ResourceSummary {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("flagCount", "segmentCount", "metricCount", "aiConfigCount", "totalCount"));
+    openapiFields = new HashSet<String>(Arrays.asList("flagCount", "segmentCount", "totalCount"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("flagCount", "totalCount"));

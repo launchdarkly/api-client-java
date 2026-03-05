@@ -51,12 +51,22 @@ import com.launchdarkly.api.JSON;
 /**
  * ViewLinkRequestSegmentIdentifiers
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T16:08:34.097023Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-05T10:21:59.405621Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class ViewLinkRequestSegmentIdentifiers {
   public static final String SERIALIZED_NAME_SEGMENT_IDENTIFIERS = "segmentIdentifiers";
   @SerializedName(SERIALIZED_NAME_SEGMENT_IDENTIFIERS)
   @javax.annotation.Nonnull
   private List<ViewLinkRequestSegmentIdentifier> segmentIdentifiers = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_FILTER = "filter";
+  @SerializedName(SERIALIZED_NAME_FILTER)
+  @javax.annotation.Nullable
+  private String filter;
+
+  public static final String SERIALIZED_NAME_ENVIRONMENT_ID = "environmentId";
+  @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ID)
+  @javax.annotation.Nullable
+  private String environmentId;
 
   public static final String SERIALIZED_NAME_COMMENT = "comment";
   @SerializedName(SERIALIZED_NAME_COMMENT)
@@ -93,6 +103,44 @@ public class ViewLinkRequestSegmentIdentifiers {
   }
 
 
+  public ViewLinkRequestSegmentIdentifiers filter(@javax.annotation.Nullable String filter) {
+    this.filter = filter;
+    return this;
+  }
+
+  /**
+   * Optional filter string to determine which resources should be linked. Resources only need to match either the filter or explicitly-listed keys to be linked (union). Uses the same queryfilter syntax as the segments list endpoint.  Supported filters for segments: query, tags, keys, excludedKeys, unbounded, external, view, type 
+   * @return filter
+   */
+  @javax.annotation.Nullable
+  public String getFilter() {
+    return filter;
+  }
+
+  public void setFilter(@javax.annotation.Nullable String filter) {
+    this.filter = filter;
+  }
+
+
+  public ViewLinkRequestSegmentIdentifiers environmentId(@javax.annotation.Nullable String environmentId) {
+    this.environmentId = environmentId;
+    return this;
+  }
+
+  /**
+   * Required when using filter for segment resources. Specifies which environment to query for segments matching the filter. Ignored when only using explicit segmentIdentifiers (since each identifier contains its own environmentId). 
+   * @return environmentId
+   */
+  @javax.annotation.Nullable
+  public String getEnvironmentId() {
+    return environmentId;
+  }
+
+  public void setEnvironmentId(@javax.annotation.Nullable String environmentId) {
+    this.environmentId = environmentId;
+  }
+
+
   public ViewLinkRequestSegmentIdentifiers comment(@javax.annotation.Nullable String comment) {
     this.comment = comment;
     return this;
@@ -111,50 +159,6 @@ public class ViewLinkRequestSegmentIdentifiers {
     this.comment = comment;
   }
 
-  /**
-   * A container for additional, undeclared properties.
-   * This is a holder for any undeclared properties as specified with
-   * the 'additionalProperties' keyword in the OAS document.
-   */
-  private Map<String, Object> additionalProperties;
-
-  /**
-   * Set the additional (undeclared) property with the specified name and value.
-   * If the property does not already exist, create it otherwise replace it.
-   *
-   * @param key name of the property
-   * @param value value of the property
-   * @return the ViewLinkRequestSegmentIdentifiers instance itself
-   */
-  public ViewLinkRequestSegmentIdentifiers putAdditionalProperty(String key, Object value) {
-    if (this.additionalProperties == null) {
-        this.additionalProperties = new HashMap<String, Object>();
-    }
-    this.additionalProperties.put(key, value);
-    return this;
-  }
-
-  /**
-   * Return the additional (undeclared) property.
-   *
-   * @return a map of objects
-   */
-  public Map<String, Object> getAdditionalProperties() {
-    return additionalProperties;
-  }
-
-  /**
-   * Return the additional (undeclared) property with the specified name.
-   *
-   * @param key name of the property
-   * @return an object
-   */
-  public Object getAdditionalProperty(String key) {
-    if (this.additionalProperties == null) {
-        return null;
-    }
-    return this.additionalProperties.get(key);
-  }
 
 
   @Override
@@ -167,13 +171,14 @@ public class ViewLinkRequestSegmentIdentifiers {
     }
     ViewLinkRequestSegmentIdentifiers viewLinkRequestSegmentIdentifiers = (ViewLinkRequestSegmentIdentifiers) o;
     return Objects.equals(this.segmentIdentifiers, viewLinkRequestSegmentIdentifiers.segmentIdentifiers) &&
-        Objects.equals(this.comment, viewLinkRequestSegmentIdentifiers.comment)&&
-        Objects.equals(this.additionalProperties, viewLinkRequestSegmentIdentifiers.additionalProperties);
+        Objects.equals(this.filter, viewLinkRequestSegmentIdentifiers.filter) &&
+        Objects.equals(this.environmentId, viewLinkRequestSegmentIdentifiers.environmentId) &&
+        Objects.equals(this.comment, viewLinkRequestSegmentIdentifiers.comment);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(segmentIdentifiers, comment, additionalProperties);
+    return Objects.hash(segmentIdentifiers, filter, environmentId, comment);
   }
 
   @Override
@@ -181,8 +186,9 @@ public class ViewLinkRequestSegmentIdentifiers {
     StringBuilder sb = new StringBuilder();
     sb.append("class ViewLinkRequestSegmentIdentifiers {\n");
     sb.append("    segmentIdentifiers: ").append(toIndentedString(segmentIdentifiers)).append("\n");
+    sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
+    sb.append("    environmentId: ").append(toIndentedString(environmentId)).append("\n");
     sb.append("    comment: ").append(toIndentedString(comment)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -204,7 +210,7 @@ public class ViewLinkRequestSegmentIdentifiers {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("segmentIdentifiers", "comment"));
+    openapiFields = new HashSet<String>(Arrays.asList("segmentIdentifiers", "filter", "environmentId", "comment"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("segmentIdentifiers"));
@@ -220,6 +226,14 @@ public class ViewLinkRequestSegmentIdentifiers {
       if (jsonElement == null) {
         if (!ViewLinkRequestSegmentIdentifiers.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ViewLinkRequestSegmentIdentifiers is not found in the empty JSON string", ViewLinkRequestSegmentIdentifiers.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!ViewLinkRequestSegmentIdentifiers.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ViewLinkRequestSegmentIdentifiers` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
@@ -240,6 +254,12 @@ public class ViewLinkRequestSegmentIdentifiers {
       for (int i = 0; i < jsonArraysegmentIdentifiers.size(); i++) {
         ViewLinkRequestSegmentIdentifier.validateJsonElement(jsonArraysegmentIdentifiers.get(i));
       };
+      if ((jsonObj.get("filter") != null && !jsonObj.get("filter").isJsonNull()) && !jsonObj.get("filter").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `filter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("filter").toString()));
+      }
+      if ((jsonObj.get("environmentId") != null && !jsonObj.get("environmentId").isJsonNull()) && !jsonObj.get("environmentId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
+      }
       if ((jsonObj.get("comment") != null && !jsonObj.get("comment").isJsonNull()) && !jsonObj.get("comment").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `comment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comment").toString()));
       }
@@ -260,28 +280,6 @@ public class ViewLinkRequestSegmentIdentifiers {
            @Override
            public void write(JsonWriter out, ViewLinkRequestSegmentIdentifiers value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             obj.remove("additionalProperties");
-             // serialize additional properties
-             if (value.getAdditionalProperties() != null) {
-               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
-                 if (entry.getValue() instanceof String)
-                   obj.addProperty(entry.getKey(), (String) entry.getValue());
-                 else if (entry.getValue() instanceof Number)
-                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
-                 else if (entry.getValue() instanceof Boolean)
-                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
-                 else if (entry.getValue() instanceof Character)
-                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
-                 else {
-                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
-                   if (jsonElement.isJsonArray()) {
-                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
-                   } else {
-                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
-                   }
-                 }
-               }
-             }
              elementAdapter.write(out, obj);
            }
 
@@ -289,28 +287,7 @@ public class ViewLinkRequestSegmentIdentifiers {
            public ViewLinkRequestSegmentIdentifiers read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
-             JsonObject jsonObj = jsonElement.getAsJsonObject();
-             // store additional fields in the deserialized instance
-             ViewLinkRequestSegmentIdentifiers instance = thisAdapter.fromJsonTree(jsonObj);
-             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
-               if (!openapiFields.contains(entry.getKey())) {
-                 if (entry.getValue().isJsonPrimitive()) { // primitive type
-                   if (entry.getValue().getAsJsonPrimitive().isString())
-                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
-                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
-                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
-                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
-                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
-                   else
-                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
-                 } else if (entry.getValue().isJsonArray()) {
-                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
-                 } else { // JSON object
-                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
-                 }
-               }
-             }
-             return instance;
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();

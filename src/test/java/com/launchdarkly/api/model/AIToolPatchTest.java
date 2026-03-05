@@ -69,4 +69,12 @@ public class AIToolPatchTest {
         // TODO: test schema
     }
 
+    /**
+     * Test the property 'customParameters'
+     */
+    @Test
+    public void customParametersTest() {
+        // TODO: test customParameters
+    }
+
 }

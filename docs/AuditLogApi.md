@@ -7,6 +7,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**getAuditLogEntries**](AuditLogApi.md#getAuditLogEntries) | **GET** /api/v2/auditlog | List audit log entries |
 | [**getAuditLogEntry**](AuditLogApi.md#getAuditLogEntry) | **GET** /api/v2/auditlog/{id} | Get audit log entry |
 | [**postAuditLogEntries**](AuditLogApi.md#postAuditLogEntries) | **POST** /api/v2/auditlog | Search audit log entries |
+| [**postAuditLogEntryCounts**](AuditLogApi.md#postAuditLogEntryCounts) | **POST** /api/v2/auditlog/counts | Get audit log entry counts |
 
 
 <a id="getAuditLogEntries"></a>
@@ -239,6 +240,85 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Audit log entries response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **429** | Rate limited |  -  |
+
+<a id="postAuditLogEntryCounts"></a>
+# **postAuditLogEntryCounts**
+> CountBucketsResult postAuditLogEntryCounts(after, statementPost, before, buckets)
+
+Get audit log entry counts
+
+Returns aggregate counts of audit log entries per time bucket. Used for dashboard overlays that show flag targeting changes.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AuditLogApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AuditLogApi apiInstance = new AuditLogApi(defaultClient);
+    Long after = 56L; // Long | A timestamp filter, expressed as a Unix epoch time in milliseconds. Required.
+    List<StatementPost> statementPost = Arrays.asList(); // List<StatementPost> | 
+    Long before = 56L; // Long | A timestamp filter, expressed as a Unix epoch time in milliseconds. Defaults to now.
+    Long buckets = 56L; // Long | Number of time buckets to divide the range into. Default 50, max 500.
+    try {
+      CountBucketsResult result = apiInstance.postAuditLogEntryCounts(after, statementPost, before, buckets);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuditLogApi#postAuditLogEntryCounts");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **after** | **Long**| A timestamp filter, expressed as a Unix epoch time in milliseconds. Required. | |
+| **statementPost** | [**List&lt;StatementPost&gt;**](StatementPost.md)|  | |
+| **before** | **Long**| A timestamp filter, expressed as a Unix epoch time in milliseconds. Defaults to now. | [optional] |
+| **buckets** | **Long**| Number of time buckets to divide the range into. Default 50, max 500. | [optional] |
+
+### Return type
+
+[**CountBucketsResult**](CountBucketsResult.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Audit log entry counts response |  -  |
 | **400** | Invalid request |  -  |
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |

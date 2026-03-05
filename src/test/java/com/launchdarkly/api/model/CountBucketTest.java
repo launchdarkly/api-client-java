@@ -18,42 +18,39 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.launchdarkly.api.model.ExpandedMetric;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for ExpandedLinkedResourcesMetrics
+ * Model tests for CountBucket
  */
-public class ExpandedLinkedResourcesMetricsTest {
-    private final ExpandedLinkedResourcesMetrics model = new ExpandedLinkedResourcesMetrics();
+public class CountBucketTest {
+    private final CountBucket model = new CountBucket();
 
     /**
-     * Model tests for ExpandedLinkedResourcesMetrics
+     * Model tests for CountBucket
      */
     @Test
-    public void testExpandedLinkedResourcesMetrics() {
-        // TODO: test ExpandedLinkedResourcesMetrics
+    public void testCountBucket() {
+        // TODO: test CountBucket
     }
 
     /**
-     * Test the property 'items'
+     * Test the property 'timestamp'
      */
     @Test
-    public void itemsTest() {
-        // TODO: test items
+    public void timestampTest() {
+        // TODO: test timestamp
     }
 
     /**
-     * Test the property 'totalCount'
+     * Test the property 'count'
      */
     @Test
-    public void totalCountTest() {
-        // TODO: test totalCount
+    public void countTest() {
+        // TODO: test count
     }
 
 }

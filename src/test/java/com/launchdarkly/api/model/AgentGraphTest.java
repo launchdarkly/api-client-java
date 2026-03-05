@@ -19,6 +19,8 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.launchdarkly.api.model.AgentGraphEdge;
+import com.launchdarkly.api.model.AgentGraphMaintainer;
+import com.launchdarkly.api.model.AiConfigsAccess;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,6 +40,14 @@ public class AgentGraphTest {
     @Test
     public void testAgentGraph() {
         // TODO: test AgentGraph
+    }
+
+    /**
+     * Test the property 'access'
+     */
+    @Test
+    public void accessTest() {
+        // TODO: test access
     }
 
     /**
@@ -62,6 +72,14 @@ public class AgentGraphTest {
     @Test
     public void descriptionTest() {
         // TODO: test description
+    }
+
+    /**
+     * Test the property 'maintainer'
+     */
+    @Test
+    public void maintainerTest() {
+        // TODO: test maintainer
     }
 
     /**

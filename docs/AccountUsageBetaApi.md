@@ -19,12 +19,14 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**getMauUsageByCategory**](AccountUsageBetaApi.md#getMauUsageByCategory) | **GET** /api/v2/usage/mau/bycategory | Get MAU usage by category |
 | [**getObservabilityErrorsUsage**](AccountUsageBetaApi.md#getObservabilityErrorsUsage) | **GET** /api/v2/usage/observability/errors | Get observability errors usage |
 | [**getObservabilityLogsUsage**](AccountUsageBetaApi.md#getObservabilityLogsUsage) | **GET** /api/v2/usage/observability/logs | Get observability logs usage |
+| [**getObservabilityMetricsUsage**](AccountUsageBetaApi.md#getObservabilityMetricsUsage) | **GET** /api/v2/usage/observability/metrics | Get observability metrics usage |
 | [**getObservabilitySessionsUsage**](AccountUsageBetaApi.md#getObservabilitySessionsUsage) | **GET** /api/v2/usage/observability/sessions | Get observability sessions usage |
 | [**getObservabilityTracesUsage**](AccountUsageBetaApi.md#getObservabilityTracesUsage) | **GET** /api/v2/usage/observability/traces | Get observability traces usage |
 | [**getServiceConnectionsUsage**](AccountUsageBetaApi.md#getServiceConnectionsUsage) | **GET** /api/v2/usage/service-connections | Get service connections usage |
 | [**getStreamUsage**](AccountUsageBetaApi.md#getStreamUsage) | **GET** /api/v2/usage/streams/{source} | Get stream usage |
 | [**getStreamUsageBySdkVersion**](AccountUsageBetaApi.md#getStreamUsageBySdkVersion) | **GET** /api/v2/usage/streams/{source}/bysdkversion | Get stream usage by SDK version |
 | [**getStreamUsageSdkversion**](AccountUsageBetaApi.md#getStreamUsageSdkversion) | **GET** /api/v2/usage/streams/{source}/sdkversions | Get stream usage SDK versions |
+| [**getVegaAIUsage**](AccountUsageBetaApi.md#getVegaAIUsage) | **GET** /api/v2/usage/vega-ai | Get Vega AI usage |
 
 
 <a id="getContextsClientsideUsage"></a>
@@ -1323,6 +1325,88 @@ public class Example {
 | **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 
+<a id="getObservabilityMetricsUsage"></a>
+# **getObservabilityMetricsUsage**
+> SeriesListRep getObservabilityMetricsUsage(from, to, projectKey, granularity, aggregationType)
+
+Get observability metrics usage
+
+Get time-series arrays of the number of observability metrics. Supports &#x60;daily&#x60; and &#x60;monthly&#x60; granularity.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AccountUsageBetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
+    String from = "from_example"; // String | The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month.
+    String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time.
+    String projectKey = "projectKey_example"; // String | A project key to filter results by. Can be specified multiple times, one query parameter per project key.
+    String granularity = "granularity_example"; // String | Specifies the data granularity. Defaults to `daily`. Valid values depend on `aggregationType`: **month_to_date** supports `daily` and `monthly`; **incremental** and **rolling_30d** support `daily` only.
+    String aggregationType = "aggregationType_example"; // String | Specifies the aggregation method. Defaults to `month_to_date`.<br/>Valid values: `month_to_date`, `incremental`, `rolling_30d`.
+    try {
+      SeriesListRep result = apiInstance.getObservabilityMetricsUsage(from, to, projectKey, granularity, aggregationType);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AccountUsageBetaApi#getObservabilityMetricsUsage");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **from** | **String**| The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. | [optional] |
+| **to** | **String**| The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. | [optional] |
+| **projectKey** | **String**| A project key to filter results by. Can be specified multiple times, one query parameter per project key. | [optional] |
+| **granularity** | **String**| Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. | [optional] |
+| **aggregationType** | **String**| Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. | [optional] |
+
+### Return type
+
+[**SeriesListRep**](SeriesListRep.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Usage response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
+| **429** | Rate limited |  -  |
+
 <a id="getObservabilitySessionsUsage"></a>
 # **getObservabilitySessionsUsage**
 > SeriesListRep getObservabilitySessionsUsage(from, to, projectKey, granularity, aggregationType)
@@ -1817,5 +1901,87 @@ public class Example {
 | **200** | SDK Versions response |  -  |
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |
+| **429** | Rate limited |  -  |
+
+<a id="getVegaAIUsage"></a>
+# **getVegaAIUsage**
+> SeriesListRep getVegaAIUsage(from, to, projectKey, granularity, aggregationType)
+
+Get Vega AI usage
+
+Get time-series arrays of the number of Vega AI usage. Supports &#x60;daily&#x60; and &#x60;monthly&#x60; granularity.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AccountUsageBetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
+    String from = "from_example"; // String | The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month.
+    String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time.
+    String projectKey = "projectKey_example"; // String | A project key to filter results by. Can be specified multiple times, one query parameter per project key.
+    String granularity = "granularity_example"; // String | Specifies the data granularity. Defaults to `daily`. Valid values depend on `aggregationType`: **month_to_date** supports `daily` and `monthly`; **incremental** and **rolling_30d** support `daily` only.
+    String aggregationType = "aggregationType_example"; // String | Specifies the aggregation method. Defaults to `month_to_date`.<br/>Valid values: `month_to_date`, `incremental`, `rolling_30d`.
+    try {
+      SeriesListRep result = apiInstance.getVegaAIUsage(from, to, projectKey, granularity, aggregationType);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AccountUsageBetaApi#getVegaAIUsage");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **from** | **String**| The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. | [optional] |
+| **to** | **String**| The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. | [optional] |
+| **projectKey** | **String**| A project key to filter results by. Can be specified multiple times, one query parameter per project key. | [optional] |
+| **granularity** | **String**| Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. | [optional] |
+| **aggregationType** | **String**| Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. | [optional] |
+
+### Return type
+
+[**SeriesListRep**](SeriesListRep.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Usage response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Invalid resource identifier |  -  |
 | **429** | Rate limited |  -  |
 

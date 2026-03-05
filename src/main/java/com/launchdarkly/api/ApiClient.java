@@ -147,7 +147,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("OpenAPI-Generator/21.0.0/java");
+        setUserAgent("OpenAPI-Generator/22.0.0/java");
 
         // CUSTOM-START
         // Set default API version.

@@ -77,4 +77,12 @@ public class AIToolPostTest {
         // TODO: test schema
     }
 
+    /**
+     * Test the property 'customParameters'
+     */
+    @Test
+    public void customParametersTest() {
+        // TODO: test customParameters
+    }
+
 }

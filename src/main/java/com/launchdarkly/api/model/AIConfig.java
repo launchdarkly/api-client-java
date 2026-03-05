@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.launchdarkly.api.model.AIConfigDependency;
 import com.launchdarkly.api.model.AIConfigMaintainer;
 import com.launchdarkly.api.model.AIConfigVariation;
 import com.launchdarkly.api.model.AiConfigsAccess;
@@ -54,7 +55,7 @@ import com.launchdarkly.api.JSON;
 /**
  * AIConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T16:08:34.097023Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-05T10:21:59.405621Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class AIConfig {
   public static final String SERIALIZED_NAME_ACCESS = "_access";
   @SerializedName(SERIALIZED_NAME_ACCESS)
@@ -185,6 +186,11 @@ public class AIConfig {
   @SerializedName(SERIALIZED_NAME_IS_INVERTED)
   @javax.annotation.Nullable
   private Boolean isInverted;
+
+  public static final String SERIALIZED_NAME_DEPENDENCIES = "dependencies";
+  @SerializedName(SERIALIZED_NAME_DEPENDENCIES)
+  @javax.annotation.Nullable
+  private List<AIConfigDependency> dependencies = new ArrayList<>();
 
   public AIConfig() {
   }
@@ -501,6 +507,33 @@ public class AIConfig {
     this.isInverted = isInverted;
   }
 
+
+  public AIConfig dependencies(@javax.annotation.Nullable List<AIConfigDependency> dependencies) {
+    this.dependencies = dependencies;
+    return this;
+  }
+
+  public AIConfig addDependenciesItem(AIConfigDependency dependenciesItem) {
+    if (this.dependencies == null) {
+      this.dependencies = new ArrayList<>();
+    }
+    this.dependencies.add(dependenciesItem);
+    return this;
+  }
+
+  /**
+   * Resources that depend on this AI Config, grouped by type
+   * @return dependencies
+   */
+  @javax.annotation.Nullable
+  public List<AIConfigDependency> getDependencies() {
+    return dependencies;
+  }
+
+  public void setDependencies(@javax.annotation.Nullable List<AIConfigDependency> dependencies) {
+    this.dependencies = dependencies;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -570,13 +603,14 @@ public class AIConfig {
         Objects.equals(this.updatedAt, aiConfig.updatedAt) &&
         Objects.equals(this.evaluationMetricKey, aiConfig.evaluationMetricKey) &&
         Objects.equals(this.evaluationMetricKeys, aiConfig.evaluationMetricKeys) &&
-        Objects.equals(this.isInverted, aiConfig.isInverted)&&
+        Objects.equals(this.isInverted, aiConfig.isInverted) &&
+        Objects.equals(this.dependencies, aiConfig.dependencies)&&
         Objects.equals(this.additionalProperties, aiConfig.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(access, links, description, key, maintainer, mode, name, tags, version, variations, createdAt, updatedAt, evaluationMetricKey, evaluationMetricKeys, isInverted, additionalProperties);
+    return Objects.hash(access, links, description, key, maintainer, mode, name, tags, version, variations, createdAt, updatedAt, evaluationMetricKey, evaluationMetricKeys, isInverted, dependencies, additionalProperties);
   }
 
   @Override
@@ -598,6 +632,7 @@ public class AIConfig {
     sb.append("    evaluationMetricKey: ").append(toIndentedString(evaluationMetricKey)).append("\n");
     sb.append("    evaluationMetricKeys: ").append(toIndentedString(evaluationMetricKeys)).append("\n");
     sb.append("    isInverted: ").append(toIndentedString(isInverted)).append("\n");
+    sb.append("    dependencies: ").append(toIndentedString(dependencies)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -620,7 +655,7 @@ public class AIConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("_access", "_links", "description", "key", "_maintainer", "mode", "name", "tags", "version", "variations", "createdAt", "updatedAt", "evaluationMetricKey", "evaluationMetricKeys", "isInverted"));
+    openapiFields = new HashSet<String>(Arrays.asList("_access", "_links", "description", "key", "_maintainer", "mode", "name", "tags", "version", "variations", "createdAt", "updatedAt", "evaluationMetricKey", "evaluationMetricKeys", "isInverted", "dependencies"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("description", "key", "name", "tags", "version", "variations", "createdAt", "updatedAt"));
@@ -696,6 +731,20 @@ public class AIConfig {
       // ensure the optional json data is an array if present
       if (jsonObj.get("evaluationMetricKeys") != null && !jsonObj.get("evaluationMetricKeys").isJsonNull() && !jsonObj.get("evaluationMetricKeys").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `evaluationMetricKeys` to be an array in the JSON string but got `%s`", jsonObj.get("evaluationMetricKeys").toString()));
+      }
+      if (jsonObj.get("dependencies") != null && !jsonObj.get("dependencies").isJsonNull()) {
+        JsonArray jsonArraydependencies = jsonObj.getAsJsonArray("dependencies");
+        if (jsonArraydependencies != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("dependencies").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `dependencies` to be an array in the JSON string but got `%s`", jsonObj.get("dependencies").toString()));
+          }
+
+          // validate the optional field `dependencies` (array)
+          for (int i = 0; i < jsonArraydependencies.size(); i++) {
+            AIConfigDependency.validateJsonElement(jsonArraydependencies.get(i));
+          };
+        }
       }
   }
 

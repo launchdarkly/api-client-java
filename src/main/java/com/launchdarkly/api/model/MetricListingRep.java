@@ -59,7 +59,7 @@ import com.launchdarkly.api.JSON;
 /**
  * MetricListingRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T16:08:34.097023Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-05T10:21:59.405621Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class MetricListingRep {
   public static final String SERIALIZED_NAME_EXPERIMENT_COUNT = "experimentCount";
   @SerializedName(SERIALIZED_NAME_EXPERIMENT_COUNT)
@@ -430,6 +430,11 @@ public class MetricListingRep {
   @SerializedName(SERIALIZED_NAME_DATA_SOURCE)
   @javax.annotation.Nonnull
   private MetricDataSourceRefRep dataSource;
+
+  public static final String SERIALIZED_NAME_LAST_SEEN = "lastSeen";
+  @SerializedName(SERIALIZED_NAME_LAST_SEEN)
+  @javax.annotation.Nullable
+  private Long lastSeen;
 
   public static final String SERIALIZED_NAME_ARCHIVED = "archived";
   @SerializedName(SERIALIZED_NAME_ARCHIVED)
@@ -1086,6 +1091,25 @@ public class MetricListingRep {
   }
 
 
+  public MetricListingRep lastSeen(@javax.annotation.Nullable Long lastSeen) {
+    this.lastSeen = lastSeen;
+    return this;
+  }
+
+  /**
+   * Get lastSeen
+   * @return lastSeen
+   */
+  @javax.annotation.Nullable
+  public Long getLastSeen() {
+    return lastSeen;
+  }
+
+  public void setLastSeen(@javax.annotation.Nullable Long lastSeen) {
+    this.lastSeen = lastSeen;
+  }
+
+
   public MetricListingRep archived(@javax.annotation.Nullable Boolean archived) {
     this.archived = archived;
     return this;
@@ -1256,6 +1280,7 @@ public class MetricListingRep {
         Objects.equals(this.percentileValue, metricListingRep.percentileValue) &&
         Objects.equals(this.eventDefault, metricListingRep.eventDefault) &&
         Objects.equals(this.dataSource, metricListingRep.dataSource) &&
+        Objects.equals(this.lastSeen, metricListingRep.lastSeen) &&
         Objects.equals(this.archived, metricListingRep.archived) &&
         Objects.equals(this.archivedAt, metricListingRep.archivedAt) &&
         Objects.equals(this.selector, metricListingRep.selector) &&
@@ -1265,7 +1290,7 @@ public class MetricListingRep {
 
   @Override
   public int hashCode() {
-    return Objects.hash(experimentCount, metricGroupCount, activeExperimentCount, activeGuardedRolloutCount, id, versionId, version, key, name, kind, attachedFlagCount, links, site, access, tags, creationDate, lastModified, maintainerId, maintainer, description, category, isNumeric, successCriteria, unit, eventKey, randomizationUnits, filters, unitAggregationType, analysisType, percentileValue, eventDefault, dataSource, archived, archivedAt, selector, urls, additionalProperties);
+    return Objects.hash(experimentCount, metricGroupCount, activeExperimentCount, activeGuardedRolloutCount, id, versionId, version, key, name, kind, attachedFlagCount, links, site, access, tags, creationDate, lastModified, maintainerId, maintainer, description, category, isNumeric, successCriteria, unit, eventKey, randomizationUnits, filters, unitAggregationType, analysisType, percentileValue, eventDefault, dataSource, lastSeen, archived, archivedAt, selector, urls, additionalProperties);
   }
 
   @Override
@@ -1304,6 +1329,7 @@ public class MetricListingRep {
     sb.append("    percentileValue: ").append(toIndentedString(percentileValue)).append("\n");
     sb.append("    eventDefault: ").append(toIndentedString(eventDefault)).append("\n");
     sb.append("    dataSource: ").append(toIndentedString(dataSource)).append("\n");
+    sb.append("    lastSeen: ").append(toIndentedString(lastSeen)).append("\n");
     sb.append("    archived: ").append(toIndentedString(archived)).append("\n");
     sb.append("    archivedAt: ").append(toIndentedString(archivedAt)).append("\n");
     sb.append("    selector: ").append(toIndentedString(selector)).append("\n");
@@ -1330,7 +1356,7 @@ public class MetricListingRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("experimentCount", "metricGroupCount", "activeExperimentCount", "activeGuardedRolloutCount", "_id", "_versionId", "_version", "key", "name", "kind", "_attachedFlagCount", "_links", "_site", "_access", "tags", "_creationDate", "lastModified", "maintainerId", "_maintainer", "description", "category", "isNumeric", "successCriteria", "unit", "eventKey", "randomizationUnits", "filters", "unitAggregationType", "analysisType", "percentileValue", "eventDefault", "dataSource", "archived", "archivedAt", "selector", "urls"));
+    openapiFields = new HashSet<String>(Arrays.asList("experimentCount", "metricGroupCount", "activeExperimentCount", "activeGuardedRolloutCount", "_id", "_versionId", "_version", "key", "name", "kind", "_attachedFlagCount", "_links", "_site", "_access", "tags", "_creationDate", "lastModified", "maintainerId", "_maintainer", "description", "category", "isNumeric", "successCriteria", "unit", "eventKey", "randomizationUnits", "filters", "unitAggregationType", "analysisType", "percentileValue", "eventDefault", "dataSource", "lastSeen", "archived", "archivedAt", "selector", "urls"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "_versionId", "key", "name", "kind", "_links", "tags", "_creationDate", "dataSource"));

@@ -13,325 +13,86 @@
 
 package com.launchdarkly.api.model;
 
-import java.util.Objects;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.launchdarkly.api.model.ExpandedMetric;
+import com.launchdarkly.api.model.AiConfigsMaintainerTeam;
+import com.launchdarkly.api.model.MaintainerMember;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.TypeAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
-
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import com.launchdarkly.api.JSON;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
- * ExpandedLinkedResourcesMetrics
+ * Model tests for AgentGraphMaintainer
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T16:08:34.097023Z[Etc/UTC]", comments = "Generator version: 7.18.0")
-public class ExpandedLinkedResourcesMetrics {
-  public static final String SERIALIZED_NAME_ITEMS = "items";
-  @SerializedName(SERIALIZED_NAME_ITEMS)
-  @javax.annotation.Nonnull
-  private List<ExpandedMetric> items = new ArrayList<>();
+public class AgentGraphMaintainerTest {
+    private final AgentGraphMaintainer model = new AgentGraphMaintainer();
 
-  public static final String SERIALIZED_NAME_TOTAL_COUNT = "totalCount";
-  @SerializedName(SERIALIZED_NAME_TOTAL_COUNT)
-  @javax.annotation.Nonnull
-  private Integer totalCount;
-
-  public ExpandedLinkedResourcesMetrics() {
-  }
-
-  public ExpandedLinkedResourcesMetrics items(@javax.annotation.Nonnull List<ExpandedMetric> items) {
-    this.items = items;
-    return this;
-  }
-
-  public ExpandedLinkedResourcesMetrics addItemsItem(ExpandedMetric itemsItem) {
-    if (this.items == null) {
-      this.items = new ArrayList<>();
+    /**
+     * Model tests for AgentGraphMaintainer
+     */
+    @Test
+    public void testAgentGraphMaintainer() {
+        // TODO: test AgentGraphMaintainer
     }
-    this.items.add(itemsItem);
-    return this;
-  }
 
-  /**
-   * Get items
-   * @return items
-   */
-  @javax.annotation.Nonnull
-  public List<ExpandedMetric> getItems() {
-    return items;
-  }
-
-  public void setItems(@javax.annotation.Nonnull List<ExpandedMetric> items) {
-    this.items = items;
-  }
-
-
-  public ExpandedLinkedResourcesMetrics totalCount(@javax.annotation.Nonnull Integer totalCount) {
-    this.totalCount = totalCount;
-    return this;
-  }
-
-  /**
-   * Get totalCount
-   * @return totalCount
-   */
-  @javax.annotation.Nonnull
-  public Integer getTotalCount() {
-    return totalCount;
-  }
-
-  public void setTotalCount(@javax.annotation.Nonnull Integer totalCount) {
-    this.totalCount = totalCount;
-  }
-
-  /**
-   * A container for additional, undeclared properties.
-   * This is a holder for any undeclared properties as specified with
-   * the 'additionalProperties' keyword in the OAS document.
-   */
-  private Map<String, Object> additionalProperties;
-
-  /**
-   * Set the additional (undeclared) property with the specified name and value.
-   * If the property does not already exist, create it otherwise replace it.
-   *
-   * @param key name of the property
-   * @param value value of the property
-   * @return the ExpandedLinkedResourcesMetrics instance itself
-   */
-  public ExpandedLinkedResourcesMetrics putAdditionalProperty(String key, Object value) {
-    if (this.additionalProperties == null) {
-        this.additionalProperties = new HashMap<String, Object>();
+    /**
+     * Test the property 'id'
+     */
+    @Test
+    public void idTest() {
+        // TODO: test id
     }
-    this.additionalProperties.put(key, value);
-    return this;
-  }
 
-  /**
-   * Return the additional (undeclared) property.
-   *
-   * @return a map of objects
-   */
-  public Map<String, Object> getAdditionalProperties() {
-    return additionalProperties;
-  }
-
-  /**
-   * Return the additional (undeclared) property with the specified name.
-   *
-   * @param key name of the property
-   * @return an object
-   */
-  public Object getAdditionalProperty(String key) {
-    if (this.additionalProperties == null) {
-        return null;
+    /**
+     * Test the property 'email'
+     */
+    @Test
+    public void emailTest() {
+        // TODO: test email
     }
-    return this.additionalProperties.get(key);
-  }
 
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+    /**
+     * Test the property 'firstName'
+     */
+    @Test
+    public void firstNameTest() {
+        // TODO: test firstName
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    /**
+     * Test the property 'lastName'
+     */
+    @Test
+    public void lastNameTest() {
+        // TODO: test lastName
     }
-    ExpandedLinkedResourcesMetrics expandedLinkedResourcesMetrics = (ExpandedLinkedResourcesMetrics) o;
-    return Objects.equals(this.items, expandedLinkedResourcesMetrics.items) &&
-        Objects.equals(this.totalCount, expandedLinkedResourcesMetrics.totalCount)&&
-        Objects.equals(this.additionalProperties, expandedLinkedResourcesMetrics.additionalProperties);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(items, totalCount, additionalProperties);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ExpandedLinkedResourcesMetrics {\n");
-    sb.append("    items: ").append(toIndentedString(items)).append("\n");
-    sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
-    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    /**
+     * Test the property 'role'
+     */
+    @Test
+    public void roleTest() {
+        // TODO: test role
     }
-    return o.toString().replace("\n", "\n    ");
-  }
 
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("items", "totalCount"));
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("items", "totalCount"));
-  }
-
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ExpandedLinkedResourcesMetrics
-   */
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      if (jsonElement == null) {
-        if (!ExpandedLinkedResourcesMetrics.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ExpandedLinkedResourcesMetrics is not found in the empty JSON string", ExpandedLinkedResourcesMetrics.openapiRequiredFields.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : ExpandedLinkedResourcesMetrics.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
-        }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the json data is an array
-      if (!jsonObj.get("items").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
-      }
-
-      JsonArray jsonArrayitems = jsonObj.getAsJsonArray("items");
-      // validate the required field `items` (array)
-      for (int i = 0; i < jsonArrayitems.size(); i++) {
-        ExpandedMetric.validateJsonElement(jsonArrayitems.get(i));
-      };
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ExpandedLinkedResourcesMetrics.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ExpandedLinkedResourcesMetrics' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ExpandedLinkedResourcesMetrics> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ExpandedLinkedResourcesMetrics.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<ExpandedLinkedResourcesMetrics>() {
-           @Override
-           public void write(JsonWriter out, ExpandedLinkedResourcesMetrics value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             obj.remove("additionalProperties");
-             // serialize additional properties
-             if (value.getAdditionalProperties() != null) {
-               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
-                 if (entry.getValue() instanceof String)
-                   obj.addProperty(entry.getKey(), (String) entry.getValue());
-                 else if (entry.getValue() instanceof Number)
-                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
-                 else if (entry.getValue() instanceof Boolean)
-                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
-                 else if (entry.getValue() instanceof Character)
-                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
-                 else {
-                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
-                   if (jsonElement.isJsonArray()) {
-                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
-                   } else {
-                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
-                   }
-                 }
-               }
-             }
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public ExpandedLinkedResourcesMetrics read(JsonReader in) throws IOException {
-             JsonElement jsonElement = elementAdapter.read(in);
-             validateJsonElement(jsonElement);
-             JsonObject jsonObj = jsonElement.getAsJsonObject();
-             // store additional fields in the deserialized instance
-             ExpandedLinkedResourcesMetrics instance = thisAdapter.fromJsonTree(jsonObj);
-             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
-               if (!openapiFields.contains(entry.getKey())) {
-                 if (entry.getValue().isJsonPrimitive()) { // primitive type
-                   if (entry.getValue().getAsJsonPrimitive().isString())
-                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
-                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
-                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
-                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
-                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
-                   else
-                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
-                 } else if (entry.getValue().isJsonArray()) {
-                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
-                 } else { // JSON object
-                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
-                 }
-               }
-             }
-             return instance;
-           }
-
-       }.nullSafe();
+    /**
+     * Test the property 'key'
+     */
+    @Test
+    public void keyTest() {
+        // TODO: test key
     }
-  }
 
-  /**
-   * Create an instance of ExpandedLinkedResourcesMetrics given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of ExpandedLinkedResourcesMetrics
-   * @throws IOException if the JSON string is invalid with respect to ExpandedLinkedResourcesMetrics
-   */
-  public static ExpandedLinkedResourcesMetrics fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ExpandedLinkedResourcesMetrics.class);
-  }
+    /**
+     * Test the property 'name'
+     */
+    @Test
+    public void nameTest() {
+        // TODO: test name
+    }
 
-  /**
-   * Convert an instance of ExpandedLinkedResourcesMetrics to an JSON string
-   *
-   * @return JSON string
-   */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
 }
-

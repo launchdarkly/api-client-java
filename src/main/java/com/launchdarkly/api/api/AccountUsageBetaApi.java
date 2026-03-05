@@ -3027,6 +3027,183 @@ public class AccountUsageBetaApi {
         return localVarCall;
     }
     /**
+     * Build call for getObservabilityMetricsUsage
+     * @param from The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. (optional)
+     * @param projectKey A project key to filter results by. Can be specified multiple times, one query parameter per project key. (optional)
+     * @param granularity Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. (optional)
+     * @param aggregationType Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getObservabilityMetricsUsageCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v2/usage/observability/metrics";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (from != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("from", from));
+        }
+
+        if (to != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("to", to));
+        }
+
+        if (projectKey != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("projectKey", projectKey));
+        }
+
+        if (granularity != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("granularity", granularity));
+        }
+
+        if (aggregationType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("aggregationType", aggregationType));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getObservabilityMetricsUsageValidateBeforeCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType, final ApiCallback _callback) throws ApiException {
+        return getObservabilityMetricsUsageCall(from, to, projectKey, granularity, aggregationType, _callback);
+
+    }
+
+    /**
+     * Get observability metrics usage
+     * Get time-series arrays of the number of observability metrics. Supports &#x60;daily&#x60; and &#x60;monthly&#x60; granularity.
+     * @param from The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. (optional)
+     * @param projectKey A project key to filter results by. Can be specified multiple times, one query parameter per project key. (optional)
+     * @param granularity Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. (optional)
+     * @param aggregationType Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. (optional)
+     * @return SeriesListRep
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+     </table>
+     */
+    public SeriesListRep getObservabilityMetricsUsage(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType) throws ApiException {
+        ApiResponse<SeriesListRep> localVarResp = getObservabilityMetricsUsageWithHttpInfo(from, to, projectKey, granularity, aggregationType);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get observability metrics usage
+     * Get time-series arrays of the number of observability metrics. Supports &#x60;daily&#x60; and &#x60;monthly&#x60; granularity.
+     * @param from The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. (optional)
+     * @param projectKey A project key to filter results by. Can be specified multiple times, one query parameter per project key. (optional)
+     * @param granularity Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. (optional)
+     * @param aggregationType Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. (optional)
+     * @return ApiResponse&lt;SeriesListRep&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<SeriesListRep> getObservabilityMetricsUsageWithHttpInfo(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType) throws ApiException {
+        okhttp3.Call localVarCall = getObservabilityMetricsUsageValidateBeforeCall(from, to, projectKey, granularity, aggregationType, null);
+        Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get observability metrics usage (asynchronously)
+     * Get time-series arrays of the number of observability metrics. Supports &#x60;daily&#x60; and &#x60;monthly&#x60; granularity.
+     * @param from The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. (optional)
+     * @param projectKey A project key to filter results by. Can be specified multiple times, one query parameter per project key. (optional)
+     * @param granularity Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. (optional)
+     * @param aggregationType Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getObservabilityMetricsUsageAsync(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType, final ApiCallback<SeriesListRep> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getObservabilityMetricsUsageValidateBeforeCall(from, to, projectKey, granularity, aggregationType, _callback);
+        Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for getObservabilitySessionsUsage
      * @param from The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. (optional)
      * @param to The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. (optional)
@@ -4107,6 +4284,183 @@ public class AccountUsageBetaApi {
 
         okhttp3.Call localVarCall = getStreamUsageSdkversionValidateBeforeCall(source, _callback);
         Type localVarReturnType = new TypeToken<SdkVersionListRep>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getVegaAIUsage
+     * @param from The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. (optional)
+     * @param projectKey A project key to filter results by. Can be specified multiple times, one query parameter per project key. (optional)
+     * @param granularity Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. (optional)
+     * @param aggregationType Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getVegaAIUsageCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v2/usage/vega-ai";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (from != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("from", from));
+        }
+
+        if (to != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("to", to));
+        }
+
+        if (projectKey != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("projectKey", projectKey));
+        }
+
+        if (granularity != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("granularity", granularity));
+        }
+
+        if (aggregationType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("aggregationType", aggregationType));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getVegaAIUsageValidateBeforeCall(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType, final ApiCallback _callback) throws ApiException {
+        return getVegaAIUsageCall(from, to, projectKey, granularity, aggregationType, _callback);
+
+    }
+
+    /**
+     * Get Vega AI usage
+     * Get time-series arrays of the number of Vega AI usage. Supports &#x60;daily&#x60; and &#x60;monthly&#x60; granularity.
+     * @param from The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. (optional)
+     * @param projectKey A project key to filter results by. Can be specified multiple times, one query parameter per project key. (optional)
+     * @param granularity Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. (optional)
+     * @param aggregationType Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. (optional)
+     * @return SeriesListRep
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+     </table>
+     */
+    public SeriesListRep getVegaAIUsage(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType) throws ApiException {
+        ApiResponse<SeriesListRep> localVarResp = getVegaAIUsageWithHttpInfo(from, to, projectKey, granularity, aggregationType);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Vega AI usage
+     * Get time-series arrays of the number of Vega AI usage. Supports &#x60;daily&#x60; and &#x60;monthly&#x60; granularity.
+     * @param from The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. (optional)
+     * @param projectKey A project key to filter results by. Can be specified multiple times, one query parameter per project key. (optional)
+     * @param granularity Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. (optional)
+     * @param aggregationType Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. (optional)
+     * @return ApiResponse&lt;SeriesListRep&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<SeriesListRep> getVegaAIUsageWithHttpInfo(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType) throws ApiException {
+        okhttp3.Call localVarCall = getVegaAIUsageValidateBeforeCall(from, to, projectKey, granularity, aggregationType, null);
+        Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Vega AI usage (asynchronously)
+     * Get time-series arrays of the number of Vega AI usage. Supports &#x60;daily&#x60; and &#x60;monthly&#x60; granularity.
+     * @param from The series of data returned starts from this timestamp (Unix seconds). Defaults to the beginning of the current month. (optional)
+     * @param to The series of data returned ends at this timestamp (Unix seconds). Defaults to the current time. (optional)
+     * @param projectKey A project key to filter results by. Can be specified multiple times, one query parameter per project key. (optional)
+     * @param granularity Specifies the data granularity. Defaults to &#x60;daily&#x60;. Valid values depend on &#x60;aggregationType&#x60;: **month_to_date** supports &#x60;daily&#x60; and &#x60;monthly&#x60;; **incremental** and **rolling_30d** support &#x60;daily&#x60; only. (optional)
+     * @param aggregationType Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;, &#x60;rolling_30d&#x60;. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Usage response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getVegaAIUsageAsync(@javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable String projectKey, @javax.annotation.Nullable String granularity, @javax.annotation.Nullable String aggregationType, final ApiCallback<SeriesListRep> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getVegaAIUsageValidateBeforeCall(from, to, projectKey, granularity, aggregationType, _callback);
+        Type localVarReturnType = new TypeToken<SeriesListRep>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

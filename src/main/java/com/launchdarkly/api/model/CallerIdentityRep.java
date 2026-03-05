@@ -20,7 +20,9 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,7 +50,7 @@ import com.launchdarkly.api.JSON;
 /**
  * CallerIdentityRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T16:08:34.097023Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-05T10:21:59.405621Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class CallerIdentityRep {
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "accountId";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
@@ -109,6 +111,11 @@ public class CallerIdentityRep {
   @SerializedName(SERIALIZED_NAME_SERVICE_TOKEN)
   @javax.annotation.Nullable
   private Boolean serviceToken;
+
+  public static final String SERIALIZED_NAME_SCOPES = "scopes";
+  @SerializedName(SERIALIZED_NAME_SCOPES)
+  @javax.annotation.Nullable
+  private List<String> scopes = new ArrayList<>();
 
   public CallerIdentityRep() {
   }
@@ -340,6 +347,33 @@ public class CallerIdentityRep {
     this.serviceToken = serviceToken;
   }
 
+
+  public CallerIdentityRep scopes(@javax.annotation.Nullable List<String> scopes) {
+    this.scopes = scopes;
+    return this;
+  }
+
+  public CallerIdentityRep addScopesItem(String scopesItem) {
+    if (this.scopes == null) {
+      this.scopes = new ArrayList<>();
+    }
+    this.scopes.add(scopesItem);
+    return this;
+  }
+
+  /**
+   * Get scopes
+   * @return scopes
+   */
+  @javax.annotation.Nullable
+  public List<String> getScopes() {
+    return scopes;
+  }
+
+  public void setScopes(@javax.annotation.Nullable List<String> scopes) {
+    this.scopes = scopes;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -406,13 +440,14 @@ public class CallerIdentityRep {
         Objects.equals(this.tokenName, callerIdentityRep.tokenName) &&
         Objects.equals(this.tokenId, callerIdentityRep.tokenId) &&
         Objects.equals(this.memberId, callerIdentityRep.memberId) &&
-        Objects.equals(this.serviceToken, callerIdentityRep.serviceToken)&&
+        Objects.equals(this.serviceToken, callerIdentityRep.serviceToken) &&
+        Objects.equals(this.scopes, callerIdentityRep.scopes)&&
         Objects.equals(this.additionalProperties, callerIdentityRep.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, environmentId, projectId, environmentName, projectName, authKind, tokenKind, clientId, tokenName, tokenId, memberId, serviceToken, additionalProperties);
+    return Objects.hash(accountId, environmentId, projectId, environmentName, projectName, authKind, tokenKind, clientId, tokenName, tokenId, memberId, serviceToken, scopes, additionalProperties);
   }
 
   @Override
@@ -431,6 +466,7 @@ public class CallerIdentityRep {
     sb.append("    tokenId: ").append(toIndentedString(tokenId)).append("\n");
     sb.append("    memberId: ").append(toIndentedString(memberId)).append("\n");
     sb.append("    serviceToken: ").append(toIndentedString(serviceToken)).append("\n");
+    sb.append("    scopes: ").append(toIndentedString(scopes)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -453,7 +489,7 @@ public class CallerIdentityRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("accountId", "environmentId", "projectId", "environmentName", "projectName", "authKind", "tokenKind", "clientId", "tokenName", "tokenId", "memberId", "serviceToken"));
+    openapiFields = new HashSet<String>(Arrays.asList("accountId", "environmentId", "projectId", "environmentName", "projectName", "authKind", "tokenKind", "clientId", "tokenName", "tokenId", "memberId", "serviceToken", "scopes"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -504,6 +540,10 @@ public class CallerIdentityRep {
       }
       if ((jsonObj.get("memberId") != null && !jsonObj.get("memberId").isJsonNull()) && !jsonObj.get("memberId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `memberId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("memberId").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("scopes") != null && !jsonObj.get("scopes").isJsonNull() && !jsonObj.get("scopes").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `scopes` to be an array in the JSON string but got `%s`", jsonObj.get("scopes").toString()));
       }
   }
 

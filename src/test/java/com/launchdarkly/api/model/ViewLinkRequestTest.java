@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.launchdarkly.api.model.ViewLinkRequestFilter;
 import com.launchdarkly.api.model.ViewLinkRequestKeys;
 import com.launchdarkly.api.model.ViewLinkRequestSegmentIdentifier;
 import com.launchdarkly.api.model.ViewLinkRequestSegmentIdentifiers;
@@ -51,6 +52,14 @@ public class ViewLinkRequestTest {
     }
 
     /**
+     * Test the property 'filter'
+     */
+    @Test
+    public void filterTest() {
+        // TODO: test filter
+    }
+
+    /**
      * Test the property 'comment'
      */
     @Test
@@ -64,6 +73,14 @@ public class ViewLinkRequestTest {
     @Test
     public void segmentIdentifiersTest() {
         // TODO: test segmentIdentifiers
+    }
+
+    /**
+     * Test the property 'environmentId'
+     */
+    @Test
+    public void environmentIdTest() {
+        // TODO: test environmentId
     }
 
 }

@@ -7,6 +7,7 @@ api/openapi.yaml
 build.gradle
 build.sbt
 docs/AIConfig.md
+docs/AIConfigDependency.md
 docs/AIConfigMaintainer.md
 docs/AIConfigPatch.md
 docs/AIConfigPost.md
@@ -48,6 +49,7 @@ docs/ActionOutput.md
 docs/AgentGraph.md
 docs/AgentGraphEdge.md
 docs/AgentGraphEdgePost.md
+docs/AgentGraphMaintainer.md
 docs/AgentGraphPatch.md
 docs/AgentGraphPost.md
 docs/AgentGraphs.md
@@ -156,6 +158,8 @@ docs/Contexts.md
 docs/ContextsApi.md
 docs/CopiedFromEnv.md
 docs/CoreLink.md
+docs/CountBucket.md
+docs/CountBucketsResult.md
 docs/CreateAnnouncementBody.md
 docs/CreateApprovalRequestRequest.md
 docs/CreateCopyFlagConfigApprovalRequestRequest.md
@@ -212,15 +216,14 @@ docs/ExpandedDirectlyLinkedFlags.md
 docs/ExpandedDirectlyLinkedSegment.md
 docs/ExpandedDirectlyLinkedSegments.md
 docs/ExpandedFlag.md
+docs/ExpandedFlagMaintainer.md
 docs/ExpandedFlagRep.md
 docs/ExpandedLinkedAIConfigs.md
 docs/ExpandedLinkedFlags.md
 docs/ExpandedLinkedMetrics.md
 docs/ExpandedLinkedResources.md
-docs/ExpandedLinkedResourcesAIConfigs.md
 docs/ExpandedLinkedResourcesFlags.md
 docs/ExpandedLinkedResourcesItems.md
-docs/ExpandedLinkedResourcesMetrics.md
 docs/ExpandedLinkedResourcesSegments.md
 docs/ExpandedLinkedSegments.md
 docs/ExpandedMetric.md
@@ -620,6 +623,7 @@ docs/VariationToolPost.md
 docs/VersionsRep.md
 docs/View.md
 docs/ViewLinkRequest.md
+docs/ViewLinkRequestFilter.md
 docs/ViewLinkRequestKeys.md
 docs/ViewLinkRequestSegmentIdentifier.md
 docs/ViewLinkRequestSegmentIdentifiers.md
@@ -639,6 +643,8 @@ docs/ViewsBetaApi.md
 docs/ViewsLink.md
 docs/ViewsMaintainerMember.md
 docs/ViewsMaintainerTeam.md
+docs/ViewsMemberSummary.md
+docs/ViewsMemberTeamSummaryRep.md
 docs/ViewsPaginatedLinks.md
 docs/ViewsSelfLink.md
 docs/Webhook.md
@@ -734,6 +740,7 @@ src/main/java/com/launchdarkly/api/auth/Authentication.java
 src/main/java/com/launchdarkly/api/auth/HttpBasicAuth.java
 src/main/java/com/launchdarkly/api/auth/HttpBearerAuth.java
 src/main/java/com/launchdarkly/api/model/AIConfig.java
+src/main/java/com/launchdarkly/api/model/AIConfigDependency.java
 src/main/java/com/launchdarkly/api/model/AIConfigMaintainer.java
 src/main/java/com/launchdarkly/api/model/AIConfigPatch.java
 src/main/java/com/launchdarkly/api/model/AIConfigPost.java
@@ -773,6 +780,7 @@ src/main/java/com/launchdarkly/api/model/ActionOutput.java
 src/main/java/com/launchdarkly/api/model/AgentGraph.java
 src/main/java/com/launchdarkly/api/model/AgentGraphEdge.java
 src/main/java/com/launchdarkly/api/model/AgentGraphEdgePost.java
+src/main/java/com/launchdarkly/api/model/AgentGraphMaintainer.java
 src/main/java/com/launchdarkly/api/model/AgentGraphPatch.java
 src/main/java/com/launchdarkly/api/model/AgentGraphPost.java
 src/main/java/com/launchdarkly/api/model/AgentGraphs.java
@@ -872,6 +880,8 @@ src/main/java/com/launchdarkly/api/model/ContextSearch.java
 src/main/java/com/launchdarkly/api/model/Contexts.java
 src/main/java/com/launchdarkly/api/model/CopiedFromEnv.java
 src/main/java/com/launchdarkly/api/model/CoreLink.java
+src/main/java/com/launchdarkly/api/model/CountBucket.java
+src/main/java/com/launchdarkly/api/model/CountBucketsResult.java
 src/main/java/com/launchdarkly/api/model/CreateAnnouncementBody.java
 src/main/java/com/launchdarkly/api/model/CreateApprovalRequestRequest.java
 src/main/java/com/launchdarkly/api/model/CreateCopyFlagConfigApprovalRequestRequest.java
@@ -925,15 +935,14 @@ src/main/java/com/launchdarkly/api/model/ExpandedDirectlyLinkedFlags.java
 src/main/java/com/launchdarkly/api/model/ExpandedDirectlyLinkedSegment.java
 src/main/java/com/launchdarkly/api/model/ExpandedDirectlyLinkedSegments.java
 src/main/java/com/launchdarkly/api/model/ExpandedFlag.java
+src/main/java/com/launchdarkly/api/model/ExpandedFlagMaintainer.java
 src/main/java/com/launchdarkly/api/model/ExpandedFlagRep.java
 src/main/java/com/launchdarkly/api/model/ExpandedLinkedAIConfigs.java
 src/main/java/com/launchdarkly/api/model/ExpandedLinkedFlags.java
 src/main/java/com/launchdarkly/api/model/ExpandedLinkedMetrics.java
 src/main/java/com/launchdarkly/api/model/ExpandedLinkedResources.java
-src/main/java/com/launchdarkly/api/model/ExpandedLinkedResourcesAIConfigs.java
 src/main/java/com/launchdarkly/api/model/ExpandedLinkedResourcesFlags.java
 src/main/java/com/launchdarkly/api/model/ExpandedLinkedResourcesItems.java
-src/main/java/com/launchdarkly/api/model/ExpandedLinkedResourcesMetrics.java
 src/main/java/com/launchdarkly/api/model/ExpandedLinkedResourcesSegments.java
 src/main/java/com/launchdarkly/api/model/ExpandedLinkedSegments.java
 src/main/java/com/launchdarkly/api/model/ExpandedMetric.java
@@ -1297,6 +1306,7 @@ src/main/java/com/launchdarkly/api/model/VariationToolPost.java
 src/main/java/com/launchdarkly/api/model/VersionsRep.java
 src/main/java/com/launchdarkly/api/model/View.java
 src/main/java/com/launchdarkly/api/model/ViewLinkRequest.java
+src/main/java/com/launchdarkly/api/model/ViewLinkRequestFilter.java
 src/main/java/com/launchdarkly/api/model/ViewLinkRequestKeys.java
 src/main/java/com/launchdarkly/api/model/ViewLinkRequestSegmentIdentifier.java
 src/main/java/com/launchdarkly/api/model/ViewLinkRequestSegmentIdentifiers.java
@@ -1315,6 +1325,8 @@ src/main/java/com/launchdarkly/api/model/ViewsAccessRep.java
 src/main/java/com/launchdarkly/api/model/ViewsLink.java
 src/main/java/com/launchdarkly/api/model/ViewsMaintainerMember.java
 src/main/java/com/launchdarkly/api/model/ViewsMaintainerTeam.java
+src/main/java/com/launchdarkly/api/model/ViewsMemberSummary.java
+src/main/java/com/launchdarkly/api/model/ViewsMemberTeamSummaryRep.java
 src/main/java/com/launchdarkly/api/model/ViewsPaginatedLinks.java
 src/main/java/com/launchdarkly/api/model/ViewsSelfLink.java
 src/main/java/com/launchdarkly/api/model/Webhook.java
@@ -1380,6 +1392,7 @@ src/test/java/com/launchdarkly/api/api/ViewsBetaApiTest.java
 src/test/java/com/launchdarkly/api/api/WebhooksApiTest.java
 src/test/java/com/launchdarkly/api/api/WorkflowTemplatesApiTest.java
 src/test/java/com/launchdarkly/api/api/WorkflowsApiTest.java
+src/test/java/com/launchdarkly/api/model/AIConfigDependencyTest.java
 src/test/java/com/launchdarkly/api/model/AIConfigMaintainerTest.java
 src/test/java/com/launchdarkly/api/model/AIConfigPatchTest.java
 src/test/java/com/launchdarkly/api/model/AIConfigPostTest.java
@@ -1418,6 +1431,7 @@ src/test/java/com/launchdarkly/api/model/ActionInputTest.java
 src/test/java/com/launchdarkly/api/model/ActionOutputTest.java
 src/test/java/com/launchdarkly/api/model/AgentGraphEdgePostTest.java
 src/test/java/com/launchdarkly/api/model/AgentGraphEdgeTest.java
+src/test/java/com/launchdarkly/api/model/AgentGraphMaintainerTest.java
 src/test/java/com/launchdarkly/api/model/AgentGraphPatchTest.java
 src/test/java/com/launchdarkly/api/model/AgentGraphPostTest.java
 src/test/java/com/launchdarkly/api/model/AgentGraphTest.java
@@ -1518,6 +1532,8 @@ src/test/java/com/launchdarkly/api/model/ContextSearchTest.java
 src/test/java/com/launchdarkly/api/model/ContextsTest.java
 src/test/java/com/launchdarkly/api/model/CopiedFromEnvTest.java
 src/test/java/com/launchdarkly/api/model/CoreLinkTest.java
+src/test/java/com/launchdarkly/api/model/CountBucketTest.java
+src/test/java/com/launchdarkly/api/model/CountBucketsResultTest.java
 src/test/java/com/launchdarkly/api/model/CreateAnnouncementBodyTest.java
 src/test/java/com/launchdarkly/api/model/CreateApprovalRequestRequestTest.java
 src/test/java/com/launchdarkly/api/model/CreateCopyFlagConfigApprovalRequestRequestTest.java
@@ -1570,15 +1586,14 @@ src/test/java/com/launchdarkly/api/model/ExpandedDirectlyLinkedFlagTest.java
 src/test/java/com/launchdarkly/api/model/ExpandedDirectlyLinkedFlagsTest.java
 src/test/java/com/launchdarkly/api/model/ExpandedDirectlyLinkedSegmentTest.java
 src/test/java/com/launchdarkly/api/model/ExpandedDirectlyLinkedSegmentsTest.java
+src/test/java/com/launchdarkly/api/model/ExpandedFlagMaintainerTest.java
 src/test/java/com/launchdarkly/api/model/ExpandedFlagRepTest.java
 src/test/java/com/launchdarkly/api/model/ExpandedFlagTest.java
 src/test/java/com/launchdarkly/api/model/ExpandedLinkedAIConfigsTest.java
 src/test/java/com/launchdarkly/api/model/ExpandedLinkedFlagsTest.java
 src/test/java/com/launchdarkly/api/model/ExpandedLinkedMetricsTest.java
-src/test/java/com/launchdarkly/api/model/ExpandedLinkedResourcesAIConfigsTest.java
 src/test/java/com/launchdarkly/api/model/ExpandedLinkedResourcesFlagsTest.java
 src/test/java/com/launchdarkly/api/model/ExpandedLinkedResourcesItemsTest.java
-src/test/java/com/launchdarkly/api/model/ExpandedLinkedResourcesMetricsTest.java
 src/test/java/com/launchdarkly/api/model/ExpandedLinkedResourcesSegmentsTest.java
 src/test/java/com/launchdarkly/api/model/ExpandedLinkedResourcesTest.java
 src/test/java/com/launchdarkly/api/model/ExpandedLinkedSegmentsTest.java
@@ -1941,6 +1956,7 @@ src/test/java/com/launchdarkly/api/model/VariationTest.java
 src/test/java/com/launchdarkly/api/model/VariationToolPostTest.java
 src/test/java/com/launchdarkly/api/model/VariationToolTest.java
 src/test/java/com/launchdarkly/api/model/VersionsRepTest.java
+src/test/java/com/launchdarkly/api/model/ViewLinkRequestFilterTest.java
 src/test/java/com/launchdarkly/api/model/ViewLinkRequestKeysTest.java
 src/test/java/com/launchdarkly/api/model/ViewLinkRequestSegmentIdentifierTest.java
 src/test/java/com/launchdarkly/api/model/ViewLinkRequestSegmentIdentifiersTest.java
@@ -1960,6 +1976,8 @@ src/test/java/com/launchdarkly/api/model/ViewsAccessTest.java
 src/test/java/com/launchdarkly/api/model/ViewsLinkTest.java
 src/test/java/com/launchdarkly/api/model/ViewsMaintainerMemberTest.java
 src/test/java/com/launchdarkly/api/model/ViewsMaintainerTeamTest.java
+src/test/java/com/launchdarkly/api/model/ViewsMemberSummaryTest.java
+src/test/java/com/launchdarkly/api/model/ViewsMemberTeamSummaryRepTest.java
 src/test/java/com/launchdarkly/api/model/ViewsPaginatedLinksTest.java
 src/test/java/com/launchdarkly/api/model/ViewsSelfLinkTest.java
 src/test/java/com/launchdarkly/api/model/ViewsTest.java

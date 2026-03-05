@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.launchdarkly.api.model.ExpandedFlagMaintainer;
 import com.launchdarkly.api.model.ParentAndSelfLinks;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -51,7 +52,7 @@ import com.launchdarkly.api.JSON;
 /**
  * Flag representation for Views API - contains only fields actually used by the Views service
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T16:08:34.097023Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-05T10:21:59.405621Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class ExpandedFlag {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
@@ -73,7 +74,7 @@ public class ExpandedFlag {
   @javax.annotation.Nullable
   private Long creationDate;
 
-  public static final String SERIALIZED_NAME_VERSION = "version";
+  public static final String SERIALIZED_NAME_VERSION = "_version";
   @SerializedName(SERIALIZED_NAME_VERSION)
   @javax.annotation.Nullable
   private Integer version;
@@ -97,6 +98,11 @@ public class ExpandedFlag {
   @SerializedName(SERIALIZED_NAME_INCLUDE_IN_SNIPPET)
   @javax.annotation.Nullable
   private Boolean includeInSnippet;
+
+  public static final String SERIALIZED_NAME_MAINTAINER = "maintainer";
+  @SerializedName(SERIALIZED_NAME_MAINTAINER)
+  @javax.annotation.Nullable
+  private ExpandedFlagMaintainer maintainer;
 
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
@@ -285,6 +291,25 @@ public class ExpandedFlag {
   }
 
 
+  public ExpandedFlag maintainer(@javax.annotation.Nullable ExpandedFlagMaintainer maintainer) {
+    this.maintainer = maintainer;
+    return this;
+  }
+
+  /**
+   * Get maintainer
+   * @return maintainer
+   */
+  @javax.annotation.Nullable
+  public ExpandedFlagMaintainer getMaintainer() {
+    return maintainer;
+  }
+
+  public void setMaintainer(@javax.annotation.Nullable ExpandedFlagMaintainer maintainer) {
+    this.maintainer = maintainer;
+  }
+
+
   public ExpandedFlag links(@javax.annotation.Nullable ParentAndSelfLinks links) {
     this.links = links;
     return this;
@@ -367,13 +392,14 @@ public class ExpandedFlag {
         Objects.equals(this.tags, expandedFlag.tags) &&
         Objects.equals(this.temporary, expandedFlag.temporary) &&
         Objects.equals(this.includeInSnippet, expandedFlag.includeInSnippet) &&
+        Objects.equals(this.maintainer, expandedFlag.maintainer) &&
         Objects.equals(this.links, expandedFlag.links)&&
         Objects.equals(this.additionalProperties, expandedFlag.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, name, description, creationDate, version, archived, tags, temporary, includeInSnippet, links, additionalProperties);
+    return Objects.hash(key, name, description, creationDate, version, archived, tags, temporary, includeInSnippet, maintainer, links, additionalProperties);
   }
 
   @Override
@@ -389,6 +415,7 @@ public class ExpandedFlag {
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    temporary: ").append(toIndentedString(temporary)).append("\n");
     sb.append("    includeInSnippet: ").append(toIndentedString(includeInSnippet)).append("\n");
+    sb.append("    maintainer: ").append(toIndentedString(maintainer)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -412,7 +439,7 @@ public class ExpandedFlag {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("key", "name", "description", "creationDate", "version", "archived", "tags", "temporary", "includeInSnippet", "_links"));
+    openapiFields = new HashSet<String>(Arrays.asList("key", "name", "description", "creationDate", "_version", "archived", "tags", "temporary", "includeInSnippet", "maintainer", "_links"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("key", "name"));
@@ -450,6 +477,10 @@ public class ExpandedFlag {
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+      }
+      // validate the optional field `maintainer`
+      if (jsonObj.get("maintainer") != null && !jsonObj.get("maintainer").isJsonNull()) {
+        ExpandedFlagMaintainer.validateJsonElement(jsonObj.get("maintainer"));
       }
       // validate the optional field `_links`
       if (jsonObj.get("_links") != null && !jsonObj.get("_links").isJsonNull()) {

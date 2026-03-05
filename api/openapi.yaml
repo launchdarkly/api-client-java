@@ -3437,6 +3437,91 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
+  /api/v2/auditlog/counts:
+    post:
+      description: Returns aggregate counts of audit log entries per time bucket.
+        Used for dashboard overlays that show flag targeting changes.
+      operationId: postAuditLogEntryCounts
+      parameters:
+      - description: "A timestamp filter, expressed as a Unix epoch time in milliseconds.\
+          \ Defaults to now."
+        explode: true
+        in: query
+        name: before
+        required: false
+        schema:
+          description: "A timestamp filter, expressed as a Unix epoch time in milliseconds.\
+            \ Defaults to now."
+          format: int64
+          type: integer
+        style: form
+      - description: "A timestamp filter, expressed as a Unix epoch time in milliseconds.\
+          \ Required."
+        explode: true
+        in: query
+        name: after
+        required: true
+        schema:
+          description: "A timestamp filter, expressed as a Unix epoch time in milliseconds.\
+            \ Required."
+          format: int64
+          type: integer
+        style: form
+      - description: "Number of time buckets to divide the range into. Default 50,\
+          \ max 500."
+        explode: true
+        in: query
+        name: buckets
+        required: false
+        schema:
+          description: "Number of time buckets to divide the range into. Default 50,\
+            \ max 500."
+          format: int64
+          type: integer
+        style: form
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/StatementPostList"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CountBucketsResult"
+          description: Audit log entry counts response
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvalidRequestErrorRep"
+          description: Invalid request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedErrorRep"
+          description: Invalid access token
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ForbiddenErrorRep"
+          description: Forbidden
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RateLimitedErrorRep"
+          description: Rate limited
+      summary: Get audit log entry counts
+      tags:
+      - Audit log
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /api/v2/auditlog/{id}:
     get:
       description: |
@@ -13864,7 +13949,7 @@ paths:
         \ created with a status of `not_started` and appear in the `draftIteration`\
         \ field of an experiment. To start or stop an iteration, [update the experiment](https://launchdarkly.com/docs/api/experiments/patch-experiment)\
         \ with the `startIteration` or `stopIteration` instruction. \n\nTo learn more,\
-        \ read [Start experiment iterations](https://launchdarkly.com/docs/home/experimentation/feature#start-experiment-iterations).\n"
+        \ read [Start experiment iterations](https://launchdarkly.com/docs/home/experimentation/create#start-an-experiment-iteration).\n"
       operationId: createIteration
       parameters:
       - description: The project key
@@ -24154,6 +24239,116 @@ paths:
       - Account usage (beta)
       x-accepts:
       - application/json
+  /api/v2/usage/observability/metrics:
+    get:
+      description: Get time-series arrays of the number of observability metrics.
+        Supports `daily` and `monthly` granularity.
+      operationId: getObservabilityMetricsUsage
+      parameters:
+      - description: The series of data returned starts from this timestamp (Unix
+          seconds). Defaults to the beginning of the current month.
+        explode: true
+        in: query
+        name: from
+        required: false
+        schema:
+          description: The series of data returned starts from this timestamp (Unix
+            seconds). Defaults to the beginning of the current month.
+          format: string
+          type: string
+        style: form
+      - description: The series of data returned ends at this timestamp (Unix seconds).
+          Defaults to the current time.
+        explode: true
+        in: query
+        name: to
+        required: false
+        schema:
+          description: The series of data returned ends at this timestamp (Unix seconds).
+            Defaults to the current time.
+          format: string
+          type: string
+        style: form
+      - description: "A project key to filter results by. Can be specified multiple\
+          \ times, one query parameter per project key."
+        explode: true
+        in: query
+        name: projectKey
+        required: false
+        schema:
+          description: "A project key to filter results by. Can be specified multiple\
+            \ times, one query parameter per project key."
+          format: string
+          type: string
+        style: form
+      - description: "Specifies the data granularity. Defaults to `daily`. Valid values\
+          \ depend on `aggregationType`: **month_to_date** supports `daily` and `monthly`;\
+          \ **incremental** and **rolling_30d** support `daily` only."
+        explode: true
+        in: query
+        name: granularity
+        required: false
+        schema:
+          description: "Specifies the data granularity. Defaults to `daily`. Valid\
+            \ values depend on `aggregationType`: **month_to_date** supports `daily`\
+            \ and `monthly`; **incremental** and **rolling_30d** support `daily` only."
+          format: string
+          type: string
+        style: form
+      - description: "Specifies the aggregation method. Defaults to `month_to_date`.<br/>Valid\
+          \ values: `month_to_date`, `incremental`, `rolling_30d`."
+        explode: true
+        in: query
+        name: aggregationType
+        required: false
+        schema:
+          description: "Specifies the aggregation method. Defaults to `month_to_date`.<br/>Valid\
+            \ values: `month_to_date`, `incremental`, `rolling_30d`."
+          format: string
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SeriesListRep"
+          description: Usage response
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvalidRequestErrorRep"
+          description: Invalid request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedErrorRep"
+          description: Invalid access token
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ForbiddenErrorRep"
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFoundErrorRep"
+          description: Invalid resource identifier
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RateLimitedErrorRep"
+          description: Rate limited
+      summary: Get observability metrics usage
+      tags:
+      - Account usage (beta)
+      x-accepts:
+      - application/json
   /api/v2/usage/observability/sessions:
     get:
       description: Get time-series arrays of the number of observability sessions.
@@ -25405,6 +25600,116 @@ paths:
                 $ref: "#/components/schemas/StatusServiceUnavailable"
           description: Service unavailable
       summary: Get MAU total usage
+      tags:
+      - Account usage (beta)
+      x-accepts:
+      - application/json
+  /api/v2/usage/vega-ai:
+    get:
+      description: Get time-series arrays of the number of Vega AI usage. Supports
+        `daily` and `monthly` granularity.
+      operationId: getVegaAIUsage
+      parameters:
+      - description: The series of data returned starts from this timestamp (Unix
+          seconds). Defaults to the beginning of the current month.
+        explode: true
+        in: query
+        name: from
+        required: false
+        schema:
+          description: The series of data returned starts from this timestamp (Unix
+            seconds). Defaults to the beginning of the current month.
+          format: string
+          type: string
+        style: form
+      - description: The series of data returned ends at this timestamp (Unix seconds).
+          Defaults to the current time.
+        explode: true
+        in: query
+        name: to
+        required: false
+        schema:
+          description: The series of data returned ends at this timestamp (Unix seconds).
+            Defaults to the current time.
+          format: string
+          type: string
+        style: form
+      - description: "A project key to filter results by. Can be specified multiple\
+          \ times, one query parameter per project key."
+        explode: true
+        in: query
+        name: projectKey
+        required: false
+        schema:
+          description: "A project key to filter results by. Can be specified multiple\
+            \ times, one query parameter per project key."
+          format: string
+          type: string
+        style: form
+      - description: "Specifies the data granularity. Defaults to `daily`. Valid values\
+          \ depend on `aggregationType`: **month_to_date** supports `daily` and `monthly`;\
+          \ **incremental** and **rolling_30d** support `daily` only."
+        explode: true
+        in: query
+        name: granularity
+        required: false
+        schema:
+          description: "Specifies the data granularity. Defaults to `daily`. Valid\
+            \ values depend on `aggregationType`: **month_to_date** supports `daily`\
+            \ and `monthly`; **incremental** and **rolling_30d** support `daily` only."
+          format: string
+          type: string
+        style: form
+      - description: "Specifies the aggregation method. Defaults to `month_to_date`.<br/>Valid\
+          \ values: `month_to_date`, `incremental`, `rolling_30d`."
+        explode: true
+        in: query
+        name: aggregationType
+        required: false
+        schema:
+          description: "Specifies the aggregation method. Defaults to `month_to_date`.<br/>Valid\
+            \ values: `month_to_date`, `incremental`, `rolling_30d`."
+          format: string
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SeriesListRep"
+          description: Usage response
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InvalidRequestErrorRep"
+          description: Invalid request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedErrorRep"
+          description: Invalid access token
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ForbiddenErrorRep"
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFoundErrorRep"
+          description: Invalid resource identifier
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RateLimitedErrorRep"
+          description: Rate limited
+      summary: Get Vega AI usage
       tags:
       - Account usage (beta)
       x-accepts:
@@ -29649,7 +29954,10 @@ paths:
         schema:
           type: integer
         style: form
-      - description: A filter to apply to the list of views.
+      - description: "A filter to apply to the list of views. Supports the following\
+          \ fields and operators: `name` (equals, notEquals, startsWith, contains,\
+          \ anyOf), `key` (equals, notEquals, startsWith, contains, anyOf), `tag`\
+          \ (equals, anyOf), `maintainerId` (equals, anyOf), `isPayloadView` (equals)."
         explode: true
         in: query
         name: filter
@@ -29667,8 +29975,6 @@ paths:
             enum:
             - flagsSummary
             - segmentsSummary
-            - metricsSummary
-            - aiConfigsSummary
             - resourceSummary
             type: string
           type: array
@@ -29892,7 +30198,10 @@ paths:
         schema:
           type: integer
         style: form
-      - description: A filter to apply to the list of views.
+      - description: "A filter to apply to the list of views. Supports the following\
+          \ fields and operators: `name` (equals, notEquals, startsWith, contains,\
+          \ anyOf), `key` (equals, notEquals, startsWith, contains, anyOf), `tag`\
+          \ (equals, anyOf), `maintainerId` (equals, anyOf), `isPayloadView` (equals)."
         explode: true
         in: query
         name: filter
@@ -29910,13 +30219,10 @@ paths:
             enum:
             - allFlags
             - allSegments
-            - allMetrics
-            - allAIConfigs
             - allResources
+            - maintainer
             - flagsSummary
             - segmentsSummary
-            - metricsSummary
-            - aiConfigsSummary
             - resourceSummary
             type: string
           type: array
@@ -30049,8 +30355,6 @@ paths:
         Unlink one or multiple resources from a view:
         - Unlink flags using flag keys
         - Unlink segments using segment IDs
-        - Unlink AI configs using AI config keys
-        - Unlink metrics using metric keys
       operationId: unlinkResource
       parameters:
       - description: Version of the endpoint.
@@ -30088,8 +30392,6 @@ paths:
           enum:
           - flags
           - segments
-          - aiConfigs
-          - metrics
           type: string
         style: simple
       requestBody:
@@ -30139,11 +30441,11 @@ paths:
       - application/json
     post:
       description: |
-        Link one or multiple resources to a view:
-        - Link flags using flag keys
-        - Link AI configs using AI config keys
-        - Link metrics using metric keys
-        - Link segments using segment IDs
+        Link one or multiple resources to a view by keys, filters, or both:
+        - Link flags using flag keys or filters (maintainerId, maintainerTeamKey, tags, state, query)
+        - Link segments using segment IDs or filters (tags, query, unbounded)
+
+        When both keys and filters are provided, resources matching either condition are linked (union).
       operationId: linkResource
       parameters:
       - description: Version of the endpoint.
@@ -30181,8 +30483,6 @@ paths:
           enum:
           - flags
           - segments
-          - aiConfigs
-          - metrics
           type: string
         style: simple
       requestBody:
@@ -30190,8 +30490,10 @@ paths:
           application/json:
             schema:
               $ref: "#/components/schemas/ViewLinkRequest"
-        description: The resource to link to the view. Flags are identified by key.
-          Segments are identified by segment ID.
+        description: |
+          Resources to link to the view. You can provide explicit keys/IDs, filters, or both.
+          - Flags: identified by key or filtered by maintainerId, maintainerTeamKey, tags, state, query
+          - Segments: identified by segment ID or filtered by tags, query, unbounded
         required: true
       responses:
         "200":
@@ -30270,8 +30572,6 @@ paths:
           enum:
           - flags
           - segments
-          - aiConfigs
-          - metrics
           type: string
         style: simple
       - description: The number of views to return.
@@ -30304,6 +30604,40 @@ paths:
           - linkedAt
           - name
           type: string
+        style: form
+      - description: "Case-insensitive search query for linked resources. Matches\
+          \ resource key and, when expanded, resource name."
+        explode: true
+        in: query
+        name: query
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: |
+          Optional resource filter expression for linked resources.
+          - Supported for `flags` and `segments` resource types.
+          - Uses the same syntax as link/unlink and list endpoints.
+          - For `segments`, `environmentId` is required when `filter` is provided.
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: A comma-separated list of fields to expand.
+        explode: false
+        in: query
+        name: expand
+        required: false
+        schema:
+          items:
+            enum:
+            - maintainer
+            - resourceDetails
+            type: string
+          type: array
         style: form
       responses:
         "200":
@@ -30343,8 +30677,8 @@ paths:
       - application/json
   /api/v2/projects/{projectKey}/view-associations/{resourceType}/{resourceKey}:
     get:
-      description: "Get a list of all linked views for a resource. Flags, AI configs\
-        \ and metrics are identified by key. Segments are identified by segment ID."
+      description: Get a list of all linked views for a resource. Flags are identified
+        by key. Segments are identified by segment ID.
       operationId: getLinkedViews
       parameters:
       - description: Version of the endpoint.
@@ -30374,8 +30708,6 @@ paths:
           enum:
           - flags
           - segments
-          - aiConfigs
-          - metrics
           type: string
         style: simple
       - example: my-flag
@@ -35987,14 +36319,17 @@ components:
       type: object
     CallerIdentityRep:
       example:
-        accountId: accountId
-        environmentId: environmentId
         clientId: clientId
         tokenId: tokenId
-        environmentName: environmentName
         authKind: authKind
         tokenKind: tokenKind
         tokenName: tokenName
+        accountId: accountId
+        environmentId: environmentId
+        environmentName: environmentName
+        scopes:
+        - scopes
+        - scopes
         projectName: projectName
         serviceToken: true
         projectId: projectId
@@ -36024,6 +36359,10 @@ components:
           type: string
         serviceToken:
           type: boolean
+        scopes:
+          items:
+            type: string
+          type: array
       type: object
     CapabilityConfigPost:
       example:
@@ -37658,6 +37997,46 @@ components:
       required:
       - key
       type: object
+    CountBucket:
+      example:
+        count: 6
+        timestamp: 0
+      properties:
+        timestamp:
+          format: int64
+          type: integer
+        count:
+          format: int64
+          type: integer
+      required:
+      - count
+      - timestamp
+      type: object
+    CountBucketsResult:
+      example:
+        buckets:
+        - count: 6
+          timestamp: 0
+        - count: 6
+          timestamp: 0
+        totalCount: 1
+        bucketIntervalMs: 5
+      properties:
+        buckets:
+          items:
+            $ref: "#/components/schemas/CountBucket"
+          type: array
+        totalCount:
+          format: int64
+          type: integer
+        bucketIntervalMs:
+          format: int64
+          type: integer
+      required:
+      - bucketIntervalMs
+      - buckets
+      - totalCount
+      type: object
     CreateApprovalRequestRequest:
       example:
         instructions:
@@ -38929,7 +39308,7 @@ components:
             href: /api/v2/projects/my-project/environments/my-environment/experiments/example-experiment
             type: application/json
         name: Example experiment
-        creationDate: 1
+        creationDate: 5
         key: experiment-key-123abc
         environmentKey: production
       properties:
@@ -39096,7 +39475,7 @@ components:
         environmentName: Production
         flagName: My Flag
         _id: 885ccadf-181b-4a9a-8414-7ad6f7ba2db0
-        creationDate: 5
+        creationDate: 2
         flagKey: my-flag
         environmentKey: production
         status: monitoring
@@ -40346,7 +40725,7 @@ components:
           type: string
         values:
           description: The context attribute / event property values or group member
-            nodes
+            nodes. Numeric values must not exceed 14 decimal places.
           example:
           - JP
           items: {}
@@ -46484,8 +46863,8 @@ components:
       type: object
     ExperimentEnabledPeriodRep:
       example:
-        startDate: 7
-        stopDate: 9
+        startDate: 9
+        stopDate: 3
       properties:
         startDate:
           format: int64
@@ -46496,13 +46875,13 @@ components:
       type: object
     ExperimentEnvironmentSettingRep:
       example:
-        startDate: 5
-        stopDate: 2
+        startDate: 2
+        stopDate: 7
         enabledPeriods:
-        - startDate: 7
-          stopDate: 9
-        - startDate: 7
-          stopDate: 9
+        - startDate: 9
+          stopDate: 3
+        - startDate: 9
+          stopDate: 3
       properties:
         startDate:
           format: int64
@@ -46526,13 +46905,13 @@ components:
           - my-environment
           _environmentSettings:
             key:
-              startDate: 5
-              stopDate: 2
+              startDate: 2
+              stopDate: 7
               enabledPeriods:
-              - startDate: 7
-                stopDate: 9
-              - startDate: 7
-                stopDate: 9
+              - startDate: 9
+                stopDate: 3
+              - startDate: 9
+                stopDate: 3
           _metric:
             _maintainer:
               firstName: Ariel
@@ -46645,6 +47024,7 @@ components:
             archivedAt: 5
             maintainerId: 569fdeadbeef1644facecafe
             unit: unit
+            lastSeen: 5
             successCriteria: HigherThanBaseline
             _versionId: version-id-123abc
             isNumeric: true
@@ -46669,13 +47049,13 @@ components:
           - my-environment
           _environmentSettings:
             key:
-              startDate: 5
-              stopDate: 2
+              startDate: 2
+              stopDate: 7
               enabledPeriods:
-              - startDate: 7
-                stopDate: 9
-              - startDate: 7
-                stopDate: 9
+              - startDate: 9
+                stopDate: 3
+              - startDate: 9
+                stopDate: 3
           _metric:
             _maintainer:
               firstName: Ariel
@@ -46788,6 +47168,7 @@ components:
             archivedAt: 5
             maintainerId: 569fdeadbeef1644facecafe
             unit: unit
+            lastSeen: 5
             successCriteria: HigherThanBaseline
             _versionId: version-id-123abc
             isNumeric: true
@@ -47476,13 +47857,13 @@ components:
             - my-environment
             _environmentSettings:
               key:
-                startDate: 5
-                stopDate: 2
+                startDate: 2
+                stopDate: 7
                 enabledPeriods:
-                - startDate: 7
-                  stopDate: 9
-                - startDate: 7
-                  stopDate: 9
+                - startDate: 9
+                  stopDate: 3
+                - startDate: 9
+                  stopDate: 3
             _metric:
               _maintainer:
                 firstName: Ariel
@@ -47595,6 +47976,7 @@ components:
               archivedAt: 5
               maintainerId: 569fdeadbeef1644facecafe
               unit: unit
+              lastSeen: 5
               successCriteria: HigherThanBaseline
               _versionId: version-id-123abc
               isNumeric: true
@@ -47619,13 +48001,13 @@ components:
             - my-environment
             _environmentSettings:
               key:
-                startDate: 5
-                stopDate: 2
+                startDate: 2
+                stopDate: 7
                 enabledPeriods:
-                - startDate: 7
-                  stopDate: 9
-                - startDate: 7
-                  stopDate: 9
+                - startDate: 9
+                  stopDate: 3
+                - startDate: 9
+                  stopDate: 3
             _metric:
               _maintainer:
                 firstName: Ariel
@@ -47738,6 +48120,7 @@ components:
               archivedAt: 5
               maintainerId: 569fdeadbeef1644facecafe
               unit: unit
+              lastSeen: 5
               successCriteria: HigherThanBaseline
               _versionId: version-id-123abc
               isNumeric: true
@@ -47769,7 +48152,7 @@ components:
           value: false
         _version: 1
         key: flag-key-123abc
-        archivedDate: 3
+        archivedDate: 2
         kind: boolean
         creationDate: 0
         tags:
@@ -47787,7 +48170,7 @@ components:
           onVariation: 0
           offVariation: 1
         _purpose: _purpose
-        deprecatedDate: 2
+        deprecatedDate: 4
         name: My Flag
         _maintainerTeam:
           _links:
@@ -48467,13 +48850,13 @@ components:
               - my-environment
               _environmentSettings:
                 key:
-                  startDate: 5
-                  stopDate: 2
+                  startDate: 2
+                  stopDate: 7
                   enabledPeriods:
-                  - startDate: 7
-                    stopDate: 9
-                  - startDate: 7
-                    stopDate: 9
+                  - startDate: 9
+                    stopDate: 3
+                  - startDate: 9
+                    stopDate: 3
               _metric:
                 _maintainer:
                   firstName: Ariel
@@ -48586,6 +48969,7 @@ components:
                 archivedAt: 5
                 maintainerId: 569fdeadbeef1644facecafe
                 unit: unit
+                lastSeen: 5
                 successCriteria: HigherThanBaseline
                 _versionId: version-id-123abc
                 isNumeric: true
@@ -48610,13 +48994,13 @@ components:
               - my-environment
               _environmentSettings:
                 key:
-                  startDate: 5
-                  stopDate: 2
+                  startDate: 2
+                  stopDate: 7
                   enabledPeriods:
-                  - startDate: 7
-                    stopDate: 9
-                  - startDate: 7
-                    stopDate: 9
+                  - startDate: 9
+                    stopDate: 3
+                  - startDate: 9
+                    stopDate: 3
               _metric:
                 _maintainer:
                   firstName: Ariel
@@ -48729,6 +49113,7 @@ components:
                 archivedAt: 5
                 maintainerId: 569fdeadbeef1644facecafe
                 unit: unit
+                lastSeen: 5
                 successCriteria: HigherThanBaseline
                 _versionId: version-id-123abc
                 isNumeric: true
@@ -48760,7 +49145,7 @@ components:
             value: false
           _version: 1
           key: flag-key-123abc
-          archivedDate: 3
+          archivedDate: 2
           kind: boolean
           creationDate: 0
           tags:
@@ -48778,7 +49163,7 @@ components:
             onVariation: 0
             offVariation: 1
           _purpose: _purpose
-          deprecatedDate: 2
+          deprecatedDate: 4
           name: My Flag
           _maintainerTeam:
             _links:
@@ -48867,13 +49252,13 @@ components:
               - my-environment
               _environmentSettings:
                 key:
-                  startDate: 5
-                  stopDate: 2
+                  startDate: 2
+                  stopDate: 7
                   enabledPeriods:
-                  - startDate: 7
-                    stopDate: 9
-                  - startDate: 7
-                    stopDate: 9
+                  - startDate: 9
+                    stopDate: 3
+                  - startDate: 9
+                    stopDate: 3
               _metric:
                 _maintainer:
                   firstName: Ariel
@@ -48986,6 +49371,7 @@ components:
                 archivedAt: 5
                 maintainerId: 569fdeadbeef1644facecafe
                 unit: unit
+                lastSeen: 5
                 successCriteria: HigherThanBaseline
                 _versionId: version-id-123abc
                 isNumeric: true
@@ -49010,13 +49396,13 @@ components:
               - my-environment
               _environmentSettings:
                 key:
-                  startDate: 5
-                  stopDate: 2
+                  startDate: 2
+                  stopDate: 7
                   enabledPeriods:
-                  - startDate: 7
-                    stopDate: 9
-                  - startDate: 7
-                    stopDate: 9
+                  - startDate: 9
+                    stopDate: 3
+                  - startDate: 9
+                    stopDate: 3
               _metric:
                 _maintainer:
                   firstName: Ariel
@@ -49129,6 +49515,7 @@ components:
                 archivedAt: 5
                 maintainerId: 569fdeadbeef1644facecafe
                 unit: unit
+                lastSeen: 5
                 successCriteria: HigherThanBaseline
                 _versionId: version-id-123abc
                 isNumeric: true
@@ -49160,7 +49547,7 @@ components:
             value: false
           _version: 1
           key: flag-key-123abc
-          archivedDate: 3
+          archivedDate: 2
           kind: boolean
           creationDate: 0
           tags:
@@ -49178,7 +49565,7 @@ components:
             onVariation: 0
             offVariation: 1
           _purpose: _purpose
-          deprecatedDate: 2
+          deprecatedDate: 4
           name: My Flag
           _maintainerTeam:
             _links:
@@ -57253,13 +57640,13 @@ components:
         - my-environment
         _environmentSettings:
           key:
-            startDate: 5
-            stopDate: 2
+            startDate: 2
+            stopDate: 7
             enabledPeriods:
-            - startDate: 7
-              stopDate: 9
-            - startDate: 7
-              stopDate: 9
+            - startDate: 9
+              stopDate: 3
+            - startDate: 9
+              stopDate: 3
         _metric:
           _maintainer:
             firstName: Ariel
@@ -57372,6 +57759,7 @@ components:
           archivedAt: 5
           maintainerId: 569fdeadbeef1644facecafe
           unit: unit
+          lastSeen: 5
           successCriteria: HigherThanBaseline
           _versionId: version-id-123abc
           isNumeric: true
@@ -58132,6 +58520,7 @@ components:
           archivedAt: 5
           maintainerId: 569fdeadbeef1644facecafe
           unit: unit
+          lastSeen: 5
           successCriteria: HigherThanBaseline
           _versionId: version-id-123abc
           isNumeric: true
@@ -58260,6 +58649,7 @@ components:
           archivedAt: 5
           maintainerId: 569fdeadbeef1644facecafe
           unit: unit
+          lastSeen: 5
           successCriteria: HigherThanBaseline
           _versionId: version-id-123abc
           isNumeric: true
@@ -58358,7 +58748,7 @@ components:
                 href: /api/v2/projects/my-project/environments/my-environment/experiments/example-experiment
                 type: application/json
             name: Example experiment
-            creationDate: 1
+            creationDate: 5
             key: experiment-key-123abc
             environmentKey: production
           - archivedDate: 5
@@ -58371,7 +58761,7 @@ components:
                 href: /api/v2/projects/my-project/environments/my-environment/experiments/example-experiment
                 type: application/json
             name: Example experiment
-            creationDate: 1
+            creationDate: 5
             key: experiment-key-123abc
             environmentKey: production
           description: Description of the metric group
@@ -58513,7 +58903,7 @@ components:
                 href: /api/v2/projects/my-project/environments/my-environment/experiments/example-experiment
                 type: application/json
             name: Example experiment
-            creationDate: 1
+            creationDate: 5
             key: experiment-key-123abc
             environmentKey: production
           - archivedDate: 5
@@ -58526,7 +58916,7 @@ components:
                 href: /api/v2/projects/my-project/environments/my-environment/experiments/example-experiment
                 type: application/json
             name: Example experiment
-            creationDate: 1
+            creationDate: 5
             key: experiment-key-123abc
             environmentKey: production
           description: Description of the metric group
@@ -58700,7 +59090,6 @@ components:
           enum:
           - funnel
           - standard
-          - guardrail
           example: funnel
           type: string
         description:
@@ -58751,7 +59140,7 @@ components:
               href: /api/v2/projects/my-project/environments/my-environment/experiments/example-experiment
               type: application/json
           name: Example experiment
-          creationDate: 1
+          creationDate: 5
           key: experiment-key-123abc
           environmentKey: production
         - archivedDate: 5
@@ -58764,7 +59153,7 @@ components:
               href: /api/v2/projects/my-project/environments/my-environment/experiments/example-experiment
               type: application/json
           name: Example experiment
-          creationDate: 1
+          creationDate: 5
           key: experiment-key-123abc
           environmentKey: production
         description: Description of the metric group
@@ -59217,6 +59606,7 @@ components:
         archivedAt: 5
         maintainerId: 569fdeadbeef1644facecafe
         unit: unit
+        lastSeen: 5
         successCriteria: HigherThanBaseline
         _versionId: version-id-123abc
         isNumeric: true
@@ -59375,6 +59765,9 @@ components:
           $ref: "#/components/schemas/MetricEventDefaultRep"
         dataSource:
           $ref: "#/components/schemas/MetricDataSourceRefRep"
+        lastSeen:
+          format: int64
+          type: integer
         archived:
           description: Whether the metric version is archived
           type: boolean
@@ -59585,7 +59978,7 @@ components:
           environmentName: Production
           flagName: My Flag
           _id: 885ccadf-181b-4a9a-8414-7ad6f7ba2db0
-          creationDate: 5
+          creationDate: 2
           flagKey: my-flag
           environmentKey: production
           status: monitoring
@@ -59600,7 +59993,7 @@ components:
               href: /api/v2/projects/my-project/environments/my-environment/experiments/example-experiment
               type: application/json
           name: Example experiment
-          creationDate: 1
+          creationDate: 5
           key: experiment-key-123abc
           environmentKey: production
         - archivedDate: 5
@@ -59613,7 +60006,7 @@ components:
               href: /api/v2/projects/my-project/environments/my-environment/experiments/example-experiment
               type: application/json
           name: Example experiment
-          creationDate: 1
+          creationDate: 5
           key: experiment-key-123abc
           environmentKey: production
         description: description
@@ -59727,9 +60120,10 @@ components:
         eventDefault:
           disabled: true
           value: 0
-        archivedAt: 6
+        archivedAt: 1
         maintainerId: 569fdeadbeef1644facecafe
         unit: unit
+        lastSeen: 6
         successCriteria: HigherThanBaseline
         _versionId: version-id-123abc
         isNumeric: true
@@ -59747,7 +60141,7 @@ components:
               href: /api/v2/projects/my-project/environments/my-environment/experiments/example-experiment
               type: application/json
           name: Example experiment
-          creationDate: 1
+          creationDate: 5
           key: experiment-key-123abc
           environmentKey: production
         _id: 5902deadbeef667524a01290
@@ -59902,6 +60296,9 @@ components:
           $ref: "#/components/schemas/MetricEventDefaultRep"
         dataSource:
           $ref: "#/components/schemas/MetricDataSourceRefRep"
+        lastSeen:
+          format: int64
+          type: integer
         archived:
           description: Whether the metric version is archived
           type: boolean
@@ -69965,6 +70362,11 @@ components:
           tags:
           - tags
           - tags
+          dependencies:
+          - type: agent-graph
+            key: key
+          - type: agent-graph
+            key: key
           mode: completion
           createdAt: 9
           evaluationMetricKeys:
@@ -70049,9 +70451,13 @@ components:
             - judgingConfigKeys
             version: 1
             tools:
-            - version: 2
+            - customParameters:
+                key: ""
+              version: 2
               key: key
-            - version: 2
+            - customParameters:
+                key: ""
+              version: 2
               key: key
             createdAt: 6
             _publishedAt: 5
@@ -70086,9 +70492,13 @@ components:
             - judgingConfigKeys
             version: 1
             tools:
-            - version: 2
+            - customParameters:
+                key: ""
+              version: 2
               key: key
-            - version: 2
+            - customParameters:
+                key: ""
+              version: 2
               key: key
             createdAt: 6
             _publishedAt: 5
@@ -70123,6 +70533,11 @@ components:
           tags:
           - tags
           - tags
+          dependencies:
+          - type: agent-graph
+            key: key
+          - type: agent-graph
+            key: key
           mode: completion
           createdAt: 9
           evaluationMetricKeys:
@@ -70207,9 +70622,13 @@ components:
             - judgingConfigKeys
             version: 1
             tools:
-            - version: 2
+            - customParameters:
+                key: ""
+              version: 2
               key: key
-            - version: 2
+            - customParameters:
+                key: ""
+              version: 2
               key: key
             createdAt: 6
             _publishedAt: 5
@@ -70244,9 +70663,13 @@ components:
             - judgingConfigKeys
             version: 1
             tools:
-            - version: 2
+            - customParameters:
+                key: ""
+              version: 2
               key: key
-            - version: 2
+            - customParameters:
+                key: ""
+              version: 2
               key: key
             createdAt: 6
             _publishedAt: 5
@@ -70296,6 +70719,11 @@ components:
         tags:
         - tags
         - tags
+        dependencies:
+        - type: agent-graph
+          key: key
+        - type: agent-graph
+          key: key
         mode: completion
         createdAt: 9
         evaluationMetricKeys:
@@ -70380,9 +70808,13 @@ components:
           - judgingConfigKeys
           version: 1
           tools:
-          - version: 2
+          - customParameters:
+              key: ""
+            version: 2
             key: key
-          - version: 2
+          - customParameters:
+              key: ""
+            version: 2
             key: key
           createdAt: 6
           _publishedAt: 5
@@ -70417,9 +70849,13 @@ components:
           - judgingConfigKeys
           version: 1
           tools:
-          - version: 2
+          - customParameters:
+              key: ""
+            version: 2
             key: key
-          - version: 2
+          - customParameters:
+              key: ""
+            version: 2
             key: key
           createdAt: 6
           _publishedAt: 5
@@ -70488,6 +70924,11 @@ components:
           description: "Whether the evaluation metric is inverted, meaning a lower\
             \ value is better if set as true"
           type: boolean
+        dependencies:
+          description: "Resources that depend on this AI Config, grouped by type"
+          items:
+            $ref: "#/components/schemas/AIConfigDependency"
+          type: array
       required:
       - createdAt
       - description
@@ -70528,8 +70969,8 @@ components:
           - version: 0
             key: key
           key: key
-        maintainerId: maintainerId
-        maintainerTeamKey: maintainerTeamKey
+        maintainerId: 507f1f77bcf86cd799439011
+        maintainerTeamKey: example-team-key
         name: name
         description: ""
         evaluationMetricKey: evaluationMetricKey
@@ -70545,8 +70986,10 @@ components:
         key:
           type: string
         maintainerId:
+          example: 507f1f77bcf86cd799439011
           type: string
         maintainerTeamKey:
+          example: example-team-key
           type: string
         mode:
           default: completion
@@ -70576,8 +71019,8 @@ components:
       type: object
     AIConfigPatch:
       example:
-        maintainerId: maintainerId
-        maintainerTeamKey: maintainerTeamKey
+        maintainerId: 507f1f77bcf86cd799439011
+        maintainerTeamKey: example-team-key
         name: name
         description: description
         evaluationMetricKey: evaluationMetricKey
@@ -70589,8 +71032,10 @@ components:
         description:
           type: string
         maintainerId:
+          example: 507f1f77bcf86cd799439011
           type: string
         maintainerTeamKey:
+          example: example-team-key
           type: string
         name:
           type: string
@@ -70627,9 +71072,13 @@ components:
         - judgingConfigKeys
         version: 1
         tools:
-        - version: 2
+        - customParameters:
+            key: ""
+          version: 2
           key: key
-        - version: 2
+        - customParameters:
+            key: ""
+          version: 2
           key: key
         createdAt: 6
         _publishedAt: 5
@@ -70728,9 +71177,13 @@ components:
           - judgingConfigKeys
           version: 1
           tools:
-          - version: 2
+          - customParameters:
+              key: ""
+            version: 2
             key: key
-          - version: 2
+          - customParameters:
+              key: ""
+            version: 2
             key: key
           createdAt: 6
           _publishedAt: 5
@@ -70765,9 +71218,13 @@ components:
           - judgingConfigKeys
           version: 1
           tools:
-          - version: 2
+          - customParameters:
+              key: ""
+            version: 2
             key: key
-          - version: 2
+          - customParameters:
+              key: ""
+            version: 2
             key: key
           createdAt: 6
           _publishedAt: 5
@@ -71345,13 +71802,13 @@ components:
             - my-environment
             _environmentSettings:
               key:
-                startDate: 6
-                stopDate: 7
+                startDate: 7
+                stopDate: 1
                 enabledPeriods:
-                - startDate: 1
-                  stopDate: 4
-                - startDate: 1
-                  stopDate: 4
+                - startDate: 4
+                  stopDate: 5
+                - startDate: 4
+                  stopDate: 5
             _metric:
               _maintainer:
                 firstName: Ariel
@@ -71462,10 +71919,12 @@ components:
               eventDefault:
                 disabled: true
                 value: 0
-              archivedAt: 1
+              archivedAt: 6
               maintainerId: 569fdeadbeef1644facecafe
               unit: unit
+              lastSeen: 1
               successCriteria: HigherThanBaseline
+              releasePolicyCount: 0
               _versionId: version-id-123abc
               isNumeric: true
               eventKey: Order placed
@@ -71489,13 +71948,13 @@ components:
             - my-environment
             _environmentSettings:
               key:
-                startDate: 6
-                stopDate: 7
+                startDate: 7
+                stopDate: 1
                 enabledPeriods:
-                - startDate: 1
-                  stopDate: 4
-                - startDate: 1
-                  stopDate: 4
+                - startDate: 4
+                  stopDate: 5
+                - startDate: 4
+                  stopDate: 5
             _metric:
               _maintainer:
                 firstName: Ariel
@@ -71606,10 +72065,12 @@ components:
               eventDefault:
                 disabled: true
                 value: 0
-              archivedAt: 1
+              archivedAt: 6
               maintainerId: 569fdeadbeef1644facecafe
               unit: unit
+              lastSeen: 1
               successCriteria: HigherThanBaseline
+              releasePolicyCount: 0
               _versionId: version-id-123abc
               isNumeric: true
               eventKey: Order placed
@@ -71627,7 +72088,7 @@ components:
                 key: key
                 environmentKey: environmentKey
         name: name
-        _version: 5
+        _version: 9
         key: key
         tags:
         - tags
@@ -72260,6 +72721,7 @@ components:
             href: href
             type: type
         description: description
+        customParameters: "{}"
         version: 0
         key: key
       properties:
@@ -72274,6 +72736,11 @@ components:
         description:
           type: string
         schema:
+          description: JSON Schema defining the tool's parameters for LLM consumption
+          type: object
+        customParameters:
+          description: Custom metadata and configuration for application-level use
+            (not sent to LLM)
           type: object
         version:
           type: integer
@@ -72377,6 +72844,7 @@ components:
               href: href
               type: type
           description: description
+          customParameters: "{}"
           version: 0
           key: key
         - schema: "{}"
@@ -72450,6 +72918,7 @@ components:
               href: href
               type: type
           description: description
+          customParameters: "{}"
           version: 0
           key: key
       properties:
@@ -72468,20 +72937,28 @@ components:
     AIToolPost:
       example:
         schema: "{}"
-        maintainerId: maintainerId
-        maintainerTeamKey: maintainerTeamKey
+        maintainerId: 507f1f77bcf86cd799439011
+        maintainerTeamKey: example-team-key
         description: description
+        customParameters: "{}"
         key: key
       properties:
         key:
           type: string
         maintainerId:
+          example: 507f1f77bcf86cd799439011
           type: string
         maintainerTeamKey:
+          example: example-team-key
           type: string
         description:
           type: string
         schema:
+          description: JSON Schema defining the tool's parameters for LLM consumption
+          type: object
+        customParameters:
+          description: Custom metadata and configuration for application-level use
+            (not sent to LLM)
           type: object
       required:
       - key
@@ -72490,17 +72967,25 @@ components:
     AIToolPatch:
       example:
         schema: "{}"
-        maintainerId: maintainerId
-        maintainerTeamKey: maintainerTeamKey
+        maintainerId: 507f1f77bcf86cd799439011
+        maintainerTeamKey: example-team-key
         description: description
+        customParameters: "{}"
       properties:
         maintainerId:
+          example: 507f1f77bcf86cd799439011
           type: string
         maintainerTeamKey:
+          example: example-team-key
           type: string
         description:
           type: string
         schema:
+          description: JSON Schema defining the tool's parameters for LLM consumption
+          type: object
+        customParameters:
+          description: Custom metadata and configuration for application-level use
+            (not sent to LLM)
           type: object
       type: object
     VariationToolPost:
@@ -72520,6 +73005,8 @@ components:
       type: object
     VariationTool:
       example:
+        customParameters:
+          key: ""
         version: 2
         key: key
       properties:
@@ -72529,6 +73016,10 @@ components:
         version:
           description: The version of the tool.
           type: integer
+        customParameters:
+          additionalProperties: true
+          description: Custom metadata and configuration for application-level use
+          type: object
       required:
       - key
       - version
@@ -72536,8 +73027,10 @@ components:
     AgentGraphPost:
       description: Request body for creating an agent graph
       example:
+        maintainerId: 507f1f77bcf86cd799439011
         rootConfigKey: rootConfigKey
         name: name
+        maintainerTeamKey: example-team-key
         edges:
         - sourceConfig: sourceConfig
           targetConfig: targetConfig
@@ -72558,6 +73051,14 @@ components:
           type: string
         description:
           description: A description of the agent graph
+          type: string
+        maintainerId:
+          description: The ID of the member who maintains this agent graph
+          example: 507f1f77bcf86cd799439011
+          type: string
+        maintainerTeamKey:
+          description: The key of the team that maintains this agent graph
+          example: example-team-key
           type: string
         rootConfigKey:
           description: The AI Config key of the root node. A missing root implies
@@ -72603,6 +73104,67 @@ components:
       description: An agent graph representing a directed graph of AI Configs
       example:
         createdAt: 0
+        _maintainer:
+          kind: kind
+        _access:
+          allowed:
+          - reason:
+              role_name: role_name
+              notActions:
+              - null
+              - null
+              notResources:
+              - notResources
+              - notResources
+              effect: allow
+              resources:
+              - proj/*:env/*;qa_*:/flag/*
+              actions:
+              - '*'
+            action: action
+          - reason:
+              role_name: role_name
+              notActions:
+              - null
+              - null
+              notResources:
+              - notResources
+              - notResources
+              effect: allow
+              resources:
+              - proj/*:env/*;qa_*:/flag/*
+              actions:
+              - '*'
+            action: action
+          denied:
+          - reason:
+              role_name: role_name
+              notActions:
+              - null
+              - null
+              notResources:
+              - notResources
+              - notResources
+              effect: allow
+              resources:
+              - proj/*:env/*;qa_*:/flag/*
+              actions:
+              - '*'
+            action: action
+          - reason:
+              role_name: role_name
+              notActions:
+              - null
+              - null
+              notResources:
+              - notResources
+              - notResources
+              effect: allow
+              resources:
+              - proj/*:env/*;qa_*:/flag/*
+              actions:
+              - '*'
+            action: action
         rootConfigKey: rootConfigKey
         name: name
         edges:
@@ -72618,6 +73180,8 @@ components:
         key: key
         updatedAt: 6
       properties:
+        _access:
+          $ref: "#/components/schemas/AiConfigsAccess"
         key:
           description: A unique key for the agent graph
           type: string
@@ -72627,6 +73191,8 @@ components:
         description:
           description: A description of the agent graph
           type: string
+        _maintainer:
+          $ref: "#/components/schemas/AgentGraph__maintainer"
         rootConfigKey:
           description: The AI Config key of the root node
           type: string
@@ -72695,6 +73261,67 @@ components:
         totalCount: 1
         items:
         - createdAt: 0
+          _maintainer:
+            kind: kind
+          _access:
+            allowed:
+            - reason:
+                role_name: role_name
+                notActions:
+                - null
+                - null
+                notResources:
+                - notResources
+                - notResources
+                effect: allow
+                resources:
+                - proj/*:env/*;qa_*:/flag/*
+                actions:
+                - '*'
+              action: action
+            - reason:
+                role_name: role_name
+                notActions:
+                - null
+                - null
+                notResources:
+                - notResources
+                - notResources
+                effect: allow
+                resources:
+                - proj/*:env/*;qa_*:/flag/*
+                actions:
+                - '*'
+              action: action
+            denied:
+            - reason:
+                role_name: role_name
+                notActions:
+                - null
+                - null
+                notResources:
+                - notResources
+                - notResources
+                effect: allow
+                resources:
+                - proj/*:env/*;qa_*:/flag/*
+                actions:
+                - '*'
+              action: action
+            - reason:
+                role_name: role_name
+                notActions:
+                - null
+                - null
+                notResources:
+                - notResources
+                - notResources
+                effect: allow
+                resources:
+                - proj/*:env/*;qa_*:/flag/*
+                actions:
+                - '*'
+              action: action
           rootConfigKey: rootConfigKey
           name: name
           edges:
@@ -72710,6 +73337,67 @@ components:
           key: key
           updatedAt: 6
         - createdAt: 0
+          _maintainer:
+            kind: kind
+          _access:
+            allowed:
+            - reason:
+                role_name: role_name
+                notActions:
+                - null
+                - null
+                notResources:
+                - notResources
+                - notResources
+                effect: allow
+                resources:
+                - proj/*:env/*;qa_*:/flag/*
+                actions:
+                - '*'
+              action: action
+            - reason:
+                role_name: role_name
+                notActions:
+                - null
+                - null
+                notResources:
+                - notResources
+                - notResources
+                effect: allow
+                resources:
+                - proj/*:env/*;qa_*:/flag/*
+                actions:
+                - '*'
+              action: action
+            denied:
+            - reason:
+                role_name: role_name
+                notActions:
+                - null
+                - null
+                notResources:
+                - notResources
+                - notResources
+                effect: allow
+                resources:
+                - proj/*:env/*;qa_*:/flag/*
+                actions:
+                - '*'
+              action: action
+            - reason:
+                role_name: role_name
+                notActions:
+                - null
+                - null
+                notResources:
+                - notResources
+                - notResources
+                effect: allow
+                resources:
+                - proj/*:env/*;qa_*:/flag/*
+                actions:
+                - '*'
+              action: action
           rootConfigKey: rootConfigKey
           name: name
           edges:
@@ -72741,8 +73429,10 @@ components:
       description: "Request body for updating an agent graph. If rootConfigKey or\
         \ edges are present, both must be present."
       example:
+        maintainerId: 507f1f77bcf86cd799439011
         rootConfigKey: rootConfigKey
         name: name
+        maintainerTeamKey: example-team-key
         edges:
         - sourceConfig: sourceConfig
           targetConfig: targetConfig
@@ -72760,6 +73450,16 @@ components:
         description:
           description: A description of the agent graph
           type: string
+        maintainerId:
+          description: The ID of the member who maintains this agent graph. Pass an
+            empty string to remove maintainer.
+          example: 507f1f77bcf86cd799439011
+          type: string
+        maintainerTeamKey:
+          description: The key of the team that maintains this agent graph. Pass an
+            empty string to remove maintainer.
+          example: example-team-key
+          type: string
         rootConfigKey:
           description: "The AI Config key of the root node. If present, edges must\
             \ also be present."
@@ -72770,6 +73470,24 @@ components:
           items:
             $ref: "#/components/schemas/AgentGraphEdge"
           type: array
+      type: object
+    AIConfigDependency:
+      description: A resource that depends on this AI Config
+      example:
+        type: agent-graph
+        key: key
+      properties:
+        type:
+          description: The type of the dependent resource
+          enum:
+          - agent-graph
+          type: string
+        key:
+          description: The key of the dependent resource
+          type: string
+      required:
+      - key
+      - type
       type: object
     AccessRep:
       $ref: "#/components/schemas/AiConfigsAccess"
@@ -73017,13 +73735,13 @@ components:
           - my-environment
           _environmentSettings:
             key:
-              startDate: 6
-              stopDate: 7
+              startDate: 7
+              stopDate: 1
               enabledPeriods:
-              - startDate: 1
-                stopDate: 4
-              - startDate: 1
-                stopDate: 4
+              - startDate: 4
+                stopDate: 5
+              - startDate: 4
+                stopDate: 5
           _metric:
             _maintainer:
               firstName: Ariel
@@ -73134,10 +73852,12 @@ components:
             eventDefault:
               disabled: true
               value: 0
-            archivedAt: 1
+            archivedAt: 6
             maintainerId: 569fdeadbeef1644facecafe
             unit: unit
+            lastSeen: 1
             successCriteria: HigherThanBaseline
+            releasePolicyCount: 0
             _versionId: version-id-123abc
             isNumeric: true
             eventKey: Order placed
@@ -73161,13 +73881,13 @@ components:
           - my-environment
           _environmentSettings:
             key:
-              startDate: 6
-              stopDate: 7
+              startDate: 7
+              stopDate: 1
               enabledPeriods:
-              - startDate: 1
-                stopDate: 4
-              - startDate: 1
-                stopDate: 4
+              - startDate: 4
+                stopDate: 5
+              - startDate: 4
+                stopDate: 5
           _metric:
             _maintainer:
               firstName: Ariel
@@ -73278,10 +73998,12 @@ components:
             eventDefault:
               disabled: true
               value: 0
-            archivedAt: 1
+            archivedAt: 6
             maintainerId: 569fdeadbeef1644facecafe
             unit: unit
+            lastSeen: 1
             successCriteria: HigherThanBaseline
+            releasePolicyCount: 0
             _versionId: version-id-123abc
             isNumeric: true
             eventKey: Order placed
@@ -73318,13 +74040,13 @@ components:
         - my-environment
         _environmentSettings:
           key:
-            startDate: 6
-            stopDate: 7
+            startDate: 7
+            stopDate: 1
             enabledPeriods:
-            - startDate: 1
-              stopDate: 4
-            - startDate: 1
-              stopDate: 4
+            - startDate: 4
+              stopDate: 5
+            - startDate: 4
+              stopDate: 5
         _metric:
           _maintainer:
             firstName: Ariel
@@ -73435,10 +74157,12 @@ components:
           eventDefault:
             disabled: true
             value: 0
-          archivedAt: 1
+          archivedAt: 6
           maintainerId: 569fdeadbeef1644facecafe
           unit: unit
+          lastSeen: 1
           successCriteria: HigherThanBaseline
+          releasePolicyCount: 0
           _versionId: version-id-123abc
           isNumeric: true
           eventKey: Order placed
@@ -73585,10 +74309,12 @@ components:
         eventDefault:
           disabled: true
           value: 0
-        archivedAt: 1
+        archivedAt: 6
         maintainerId: 569fdeadbeef1644facecafe
         unit: unit
+        lastSeen: 1
         successCriteria: HigherThanBaseline
+        releasePolicyCount: 0
         _versionId: version-id-123abc
         isNumeric: true
         eventKey: Order placed
@@ -73616,6 +74342,10 @@ components:
           type: integer
         guardedRolloutCount:
           description: The number of guarded rollouts using this metric
+          example: 0
+          type: integer
+        releasePolicyCount:
+          description: The number of release policies using this metric
           example: 0
           type: integer
         activeExperimentCount:
@@ -73750,6 +74480,9 @@ components:
           $ref: "#/components/schemas/AiConfigsMetricEventDefaultRep"
         dataSource:
           $ref: "#/components/schemas/AiConfigsMetricDataSourceRefRep"
+        lastSeen:
+          format: int64
+          type: integer
         archived:
           description: Whether the metric version is archived
           type: boolean
@@ -73923,13 +74656,13 @@ components:
       type: object
     AiConfigsExperimentEnvironmentSettingRep:
       example:
-        startDate: 6
-        stopDate: 7
+        startDate: 7
+        stopDate: 1
         enabledPeriods:
-        - startDate: 1
-          stopDate: 4
-        - startDate: 1
-          stopDate: 4
+        - startDate: 4
+          stopDate: 5
+        - startDate: 4
+          stopDate: 5
       properties:
         startDate:
           format: int64
@@ -73944,8 +74677,8 @@ components:
       type: object
     AiConfigsExperimentEnabledPeriodRep:
       example:
-        startDate: 1
-        stopDate: 4
+        startDate: 4
+        stopDate: 5
       properties:
         startDate:
           format: int64
@@ -73971,6 +74704,16 @@ components:
       - $ref: "#/components/schemas/AIConfigTargetingVariationJSON"
       - $ref: "#/components/schemas/AIConfigTargetingVariationNumber"
       - $ref: "#/components/schemas/AIConfigTargetingVariationString"
+    AgentGraph__maintainer:
+      example:
+        kind: kind
+      oneOf:
+      - $ref: "#/components/schemas/MaintainerMember"
+      - $ref: "#/components/schemas/AiConfigsMaintainerTeam"
+      properties:
+        kind:
+          type: string
+      type: object
     AnnouncementResponse:
       description: Announcement response
       example:
@@ -75019,8 +75762,30 @@ components:
                   name: name
                   description: description
                   creationDate: 7
-                  version: 1
+                  _version: 1
                   key: key
+                  maintainer:
+                    kind: member
+                    _member:
+                      firstName: Ariel
+                      lastName: Flores
+                      role: admin
+                      _links:
+                        self:
+                          href: /api/v2/members/569f183514f4432160000007
+                          type: application/json
+                      _id: 569f183514f4432160000007
+                      email: ariel@acme.com
+                    _team:
+                      _links:
+                        key:
+                          href: href
+                          type: type
+                      name: QA Team
+                      customRoleKeys:
+                      - access-to-test-projects
+                      key: team-key-123abc
+                    key: key
                   tags:
                   - tags
                   - tags
@@ -75037,8 +75802,30 @@ components:
                   name: name
                   description: description
                   creationDate: 7
-                  version: 1
+                  _version: 1
                   key: key
+                  maintainer:
+                    kind: member
+                    _member:
+                      firstName: Ariel
+                      lastName: Flores
+                      role: admin
+                      _links:
+                        self:
+                          href: /api/v2/members/569f183514f4432160000007
+                          type: application/json
+                      _id: 569f183514f4432160000007
+                      email: ariel@acme.com
+                    _team:
+                      _links:
+                        key:
+                          href: href
+                          type: type
+                      name: QA Team
+                      customRoleKeys:
+                      - access-to-test-projects
+                      key: team-key-123abc
+                    key: key
                   tags:
                   - tags
                   - tags
@@ -75300,8 +76087,30 @@ components:
               name: name
               description: description
               creationDate: 7
-              version: 1
+              _version: 1
               key: key
+              maintainer:
+                kind: member
+                _member:
+                  firstName: Ariel
+                  lastName: Flores
+                  role: admin
+                  _links:
+                    self:
+                      href: /api/v2/members/569f183514f4432160000007
+                      type: application/json
+                  _id: 569f183514f4432160000007
+                  email: ariel@acme.com
+                _team:
+                  _links:
+                    key:
+                      href: href
+                      type: type
+                  name: QA Team
+                  customRoleKeys:
+                  - access-to-test-projects
+                  key: team-key-123abc
+                key: key
               tags:
               - tags
               - tags
@@ -75318,8 +76127,30 @@ components:
               name: name
               description: description
               creationDate: 7
-              version: 1
+              _version: 1
               key: key
+              maintainer:
+                kind: member
+                _member:
+                  firstName: Ariel
+                  lastName: Flores
+                  role: admin
+                  _links:
+                    self:
+                      href: /api/v2/members/569f183514f4432160000007
+                      type: application/json
+                  _id: 569f183514f4432160000007
+                  email: ariel@acme.com
+                _team:
+                  _links:
+                    key:
+                      href: href
+                      type: type
+                  name: QA Team
+                  customRoleKeys:
+                  - access-to-test-projects
+                  key: team-key-123abc
+                key: key
               tags:
               - tags
               - tags
@@ -75493,8 +76324,30 @@ components:
                   name: name
                   description: description
                   creationDate: 7
-                  version: 1
+                  _version: 1
                   key: key
+                  maintainer:
+                    kind: member
+                    _member:
+                      firstName: Ariel
+                      lastName: Flores
+                      role: admin
+                      _links:
+                        self:
+                          href: /api/v2/members/569f183514f4432160000007
+                          type: application/json
+                      _id: 569f183514f4432160000007
+                      email: ariel@acme.com
+                    _team:
+                      _links:
+                        key:
+                          href: href
+                          type: type
+                      name: QA Team
+                      customRoleKeys:
+                      - access-to-test-projects
+                      key: team-key-123abc
+                    key: key
                   tags:
                   - tags
                   - tags
@@ -75511,8 +76364,30 @@ components:
                   name: name
                   description: description
                   creationDate: 7
-                  version: 1
+                  _version: 1
                   key: key
+                  maintainer:
+                    kind: member
+                    _member:
+                      firstName: Ariel
+                      lastName: Flores
+                      role: admin
+                      _links:
+                        self:
+                          href: /api/v2/members/569f183514f4432160000007
+                          type: application/json
+                      _id: 569f183514f4432160000007
+                      email: ariel@acme.com
+                    _team:
+                      _links:
+                        key:
+                          href: href
+                          type: type
+                      name: QA Team
+                      customRoleKeys:
+                      - access-to-test-projects
+                      key: team-key-123abc
+                    key: key
                   tags:
                   - tags
                   - tags
@@ -75774,8 +76649,30 @@ components:
               name: name
               description: description
               creationDate: 7
-              version: 1
+              _version: 1
               key: key
+              maintainer:
+                kind: member
+                _member:
+                  firstName: Ariel
+                  lastName: Flores
+                  role: admin
+                  _links:
+                    self:
+                      href: /api/v2/members/569f183514f4432160000007
+                      type: application/json
+                  _id: 569f183514f4432160000007
+                  email: ariel@acme.com
+                _team:
+                  _links:
+                    key:
+                      href: href
+                      type: type
+                  name: QA Team
+                  customRoleKeys:
+                  - access-to-test-projects
+                  key: team-key-123abc
+                key: key
               tags:
               - tags
               - tags
@@ -75792,8 +76689,30 @@ components:
               name: name
               description: description
               creationDate: 7
-              version: 1
+              _version: 1
               key: key
+              maintainer:
+                kind: member
+                _member:
+                  firstName: Ariel
+                  lastName: Flores
+                  role: admin
+                  _links:
+                    self:
+                      href: /api/v2/members/569f183514f4432160000007
+                      type: application/json
+                  _id: 569f183514f4432160000007
+                  email: ariel@acme.com
+                _team:
+                  _links:
+                    key:
+                      href: href
+                      type: type
+                  name: QA Team
+                  customRoleKeys:
+                  - access-to-test-projects
+                  key: team-key-123abc
+                key: key
               tags:
               - tags
               - tags
@@ -75982,8 +76901,30 @@ components:
                 name: name
                 description: description
                 creationDate: 7
-                version: 1
+                _version: 1
                 key: key
+                maintainer:
+                  kind: member
+                  _member:
+                    firstName: Ariel
+                    lastName: Flores
+                    role: admin
+                    _links:
+                      self:
+                        href: /api/v2/members/569f183514f4432160000007
+                        type: application/json
+                    _id: 569f183514f4432160000007
+                    email: ariel@acme.com
+                  _team:
+                    _links:
+                      key:
+                        href: href
+                        type: type
+                    name: QA Team
+                    customRoleKeys:
+                    - access-to-test-projects
+                    key: team-key-123abc
+                  key: key
                 tags:
                 - tags
                 - tags
@@ -76000,8 +76941,30 @@ components:
                 name: name
                 description: description
                 creationDate: 7
-                version: 1
+                _version: 1
                 key: key
+                maintainer:
+                  kind: member
+                  _member:
+                    firstName: Ariel
+                    lastName: Flores
+                    role: admin
+                    _links:
+                      self:
+                        href: /api/v2/members/569f183514f4432160000007
+                        type: application/json
+                    _id: 569f183514f4432160000007
+                    email: ariel@acme.com
+                  _team:
+                    _links:
+                      key:
+                        href: href
+                        type: type
+                    name: QA Team
+                    customRoleKeys:
+                    - access-to-test-projects
+                    key: team-key-123abc
+                  key: key
                 tags:
                 - tags
                 - tags
@@ -76263,8 +77226,30 @@ components:
             name: name
             description: description
             creationDate: 7
-            version: 1
+            _version: 1
             key: key
+            maintainer:
+              kind: member
+              _member:
+                firstName: Ariel
+                lastName: Flores
+                role: admin
+                _links:
+                  self:
+                    href: /api/v2/members/569f183514f4432160000007
+                    type: application/json
+                _id: 569f183514f4432160000007
+                email: ariel@acme.com
+              _team:
+                _links:
+                  key:
+                    href: href
+                    type: type
+                name: QA Team
+                customRoleKeys:
+                - access-to-test-projects
+                key: team-key-123abc
+              key: key
             tags:
             - tags
             - tags
@@ -76281,8 +77266,30 @@ components:
             name: name
             description: description
             creationDate: 7
-            version: 1
+            _version: 1
             key: key
+            maintainer:
+              kind: member
+              _member:
+                firstName: Ariel
+                lastName: Flores
+                role: admin
+                _links:
+                  self:
+                    href: /api/v2/members/569f183514f4432160000007
+                    type: application/json
+                _id: 569f183514f4432160000007
+                email: ariel@acme.com
+              _team:
+                _links:
+                  key:
+                    href: href
+                    type: type
+                name: QA Team
+                customRoleKeys:
+                - access-to-test-projects
+                key: team-key-123abc
+              key: key
             tags:
             - tags
             - tags
@@ -76731,8 +77738,30 @@ components:
                       name: name
                       description: description
                       creationDate: 7
-                      version: 1
+                      _version: 1
                       key: key
+                      maintainer:
+                        kind: member
+                        _member:
+                          firstName: Ariel
+                          lastName: Flores
+                          role: admin
+                          _links:
+                            self:
+                              href: /api/v2/members/569f183514f4432160000007
+                              type: application/json
+                          _id: 569f183514f4432160000007
+                          email: ariel@acme.com
+                        _team:
+                          _links:
+                            key:
+                              href: href
+                              type: type
+                          name: QA Team
+                          customRoleKeys:
+                          - access-to-test-projects
+                          key: team-key-123abc
+                        key: key
                       tags:
                       - tags
                       - tags
@@ -76749,8 +77778,30 @@ components:
                       name: name
                       description: description
                       creationDate: 7
-                      version: 1
+                      _version: 1
                       key: key
+                      maintainer:
+                        kind: member
+                        _member:
+                          firstName: Ariel
+                          lastName: Flores
+                          role: admin
+                          _links:
+                            self:
+                              href: /api/v2/members/569f183514f4432160000007
+                              type: application/json
+                          _id: 569f183514f4432160000007
+                          email: ariel@acme.com
+                        _team:
+                          _links:
+                            key:
+                              href: href
+                              type: type
+                          name: QA Team
+                          customRoleKeys:
+                          - access-to-test-projects
+                          key: team-key-123abc
+                        key: key
                       tags:
                       - tags
                       - tags
@@ -77012,8 +78063,30 @@ components:
                   name: name
                   description: description
                   creationDate: 7
-                  version: 1
+                  _version: 1
                   key: key
+                  maintainer:
+                    kind: member
+                    _member:
+                      firstName: Ariel
+                      lastName: Flores
+                      role: admin
+                      _links:
+                        self:
+                          href: /api/v2/members/569f183514f4432160000007
+                          type: application/json
+                      _id: 569f183514f4432160000007
+                      email: ariel@acme.com
+                    _team:
+                      _links:
+                        key:
+                          href: href
+                          type: type
+                      name: QA Team
+                      customRoleKeys:
+                      - access-to-test-projects
+                      key: team-key-123abc
+                    key: key
                   tags:
                   - tags
                   - tags
@@ -77030,8 +78103,30 @@ components:
                   name: name
                   description: description
                   creationDate: 7
-                  version: 1
+                  _version: 1
                   key: key
+                  maintainer:
+                    kind: member
+                    _member:
+                      firstName: Ariel
+                      lastName: Flores
+                      role: admin
+                      _links:
+                        self:
+                          href: /api/v2/members/569f183514f4432160000007
+                          type: application/json
+                      _id: 569f183514f4432160000007
+                      email: ariel@acme.com
+                    _team:
+                      _links:
+                        key:
+                          href: href
+                          type: type
+                      name: QA Team
+                      customRoleKeys:
+                      - access-to-test-projects
+                      key: team-key-123abc
+                    key: key
                   tags:
                   - tags
                   - tags
@@ -77049,8 +78144,30 @@ components:
               name: name
               description: description
               creationDate: 7
-              version: 1
+              _version: 1
               key: key
+              maintainer:
+                kind: member
+                _member:
+                  firstName: Ariel
+                  lastName: Flores
+                  role: admin
+                  _links:
+                    self:
+                      href: /api/v2/members/569f183514f4432160000007
+                      type: application/json
+                  _id: 569f183514f4432160000007
+                  email: ariel@acme.com
+                _team:
+                  _links:
+                    key:
+                      href: href
+                      type: type
+                  name: QA Team
+                  customRoleKeys:
+                  - access-to-test-projects
+                  key: team-key-123abc
+                key: key
               tags:
               - tags
               - tags
@@ -77299,8 +78416,30 @@ components:
                       name: name
                       description: description
                       creationDate: 7
-                      version: 1
+                      _version: 1
                       key: key
+                      maintainer:
+                        kind: member
+                        _member:
+                          firstName: Ariel
+                          lastName: Flores
+                          role: admin
+                          _links:
+                            self:
+                              href: /api/v2/members/569f183514f4432160000007
+                              type: application/json
+                          _id: 569f183514f4432160000007
+                          email: ariel@acme.com
+                        _team:
+                          _links:
+                            key:
+                              href: href
+                              type: type
+                          name: QA Team
+                          customRoleKeys:
+                          - access-to-test-projects
+                          key: team-key-123abc
+                        key: key
                       tags:
                       - tags
                       - tags
@@ -77317,8 +78456,30 @@ components:
                       name: name
                       description: description
                       creationDate: 7
-                      version: 1
+                      _version: 1
                       key: key
+                      maintainer:
+                        kind: member
+                        _member:
+                          firstName: Ariel
+                          lastName: Flores
+                          role: admin
+                          _links:
+                            self:
+                              href: /api/v2/members/569f183514f4432160000007
+                              type: application/json
+                          _id: 569f183514f4432160000007
+                          email: ariel@acme.com
+                        _team:
+                          _links:
+                            key:
+                              href: href
+                              type: type
+                          name: QA Team
+                          customRoleKeys:
+                          - access-to-test-projects
+                          key: team-key-123abc
+                        key: key
                       tags:
                       - tags
                       - tags
@@ -77580,8 +78741,30 @@ components:
                   name: name
                   description: description
                   creationDate: 7
-                  version: 1
+                  _version: 1
                   key: key
+                  maintainer:
+                    kind: member
+                    _member:
+                      firstName: Ariel
+                      lastName: Flores
+                      role: admin
+                      _links:
+                        self:
+                          href: /api/v2/members/569f183514f4432160000007
+                          type: application/json
+                      _id: 569f183514f4432160000007
+                      email: ariel@acme.com
+                    _team:
+                      _links:
+                        key:
+                          href: href
+                          type: type
+                      name: QA Team
+                      customRoleKeys:
+                      - access-to-test-projects
+                      key: team-key-123abc
+                    key: key
                   tags:
                   - tags
                   - tags
@@ -77598,8 +78781,30 @@ components:
                   name: name
                   description: description
                   creationDate: 7
-                  version: 1
+                  _version: 1
                   key: key
+                  maintainer:
+                    kind: member
+                    _member:
+                      firstName: Ariel
+                      lastName: Flores
+                      role: admin
+                      _links:
+                        self:
+                          href: /api/v2/members/569f183514f4432160000007
+                          type: application/json
+                      _id: 569f183514f4432160000007
+                      email: ariel@acme.com
+                    _team:
+                      _links:
+                        key:
+                          href: href
+                          type: type
+                      name: QA Team
+                      customRoleKeys:
+                      - access-to-test-projects
+                      key: team-key-123abc
+                    key: key
                   tags:
                   - tags
                   - tags
@@ -77617,8 +78822,30 @@ components:
               name: name
               description: description
               creationDate: 7
-              version: 1
+              _version: 1
               key: key
+              maintainer:
+                kind: member
+                _member:
+                  firstName: Ariel
+                  lastName: Flores
+                  role: admin
+                  _links:
+                    self:
+                      href: /api/v2/members/569f183514f4432160000007
+                      type: application/json
+                  _id: 569f183514f4432160000007
+                  email: ariel@acme.com
+                _team:
+                  _links:
+                    key:
+                      href: href
+                      type: type
+                  name: QA Team
+                  customRoleKeys:
+                  - access-to-test-projects
+                  key: team-key-123abc
+                key: key
               tags:
               - tags
               - tags
@@ -77882,8 +79109,30 @@ components:
                     name: name
                     description: description
                     creationDate: 7
-                    version: 1
+                    _version: 1
                     key: key
+                    maintainer:
+                      kind: member
+                      _member:
+                        firstName: Ariel
+                        lastName: Flores
+                        role: admin
+                        _links:
+                          self:
+                            href: /api/v2/members/569f183514f4432160000007
+                            type: application/json
+                        _id: 569f183514f4432160000007
+                        email: ariel@acme.com
+                      _team:
+                        _links:
+                          key:
+                            href: href
+                            type: type
+                        name: QA Team
+                        customRoleKeys:
+                        - access-to-test-projects
+                        key: team-key-123abc
+                      key: key
                     tags:
                     - tags
                     - tags
@@ -77900,8 +79149,30 @@ components:
                     name: name
                     description: description
                     creationDate: 7
-                    version: 1
+                    _version: 1
                     key: key
+                    maintainer:
+                      kind: member
+                      _member:
+                        firstName: Ariel
+                        lastName: Flores
+                        role: admin
+                        _links:
+                          self:
+                            href: /api/v2/members/569f183514f4432160000007
+                            type: application/json
+                        _id: 569f183514f4432160000007
+                        email: ariel@acme.com
+                      _team:
+                        _links:
+                          key:
+                            href: href
+                            type: type
+                        name: QA Team
+                        customRoleKeys:
+                        - access-to-test-projects
+                        key: team-key-123abc
+                      key: key
                     tags:
                     - tags
                     - tags
@@ -78163,8 +79434,30 @@ components:
                 name: name
                 description: description
                 creationDate: 7
-                version: 1
+                _version: 1
                 key: key
+                maintainer:
+                  kind: member
+                  _member:
+                    firstName: Ariel
+                    lastName: Flores
+                    role: admin
+                    _links:
+                      self:
+                        href: /api/v2/members/569f183514f4432160000007
+                        type: application/json
+                    _id: 569f183514f4432160000007
+                    email: ariel@acme.com
+                  _team:
+                    _links:
+                      key:
+                        href: href
+                        type: type
+                    name: QA Team
+                    customRoleKeys:
+                    - access-to-test-projects
+                    key: team-key-123abc
+                  key: key
                 tags:
                 - tags
                 - tags
@@ -78181,8 +79474,30 @@ components:
                 name: name
                 description: description
                 creationDate: 7
-                version: 1
+                _version: 1
                 key: key
+                maintainer:
+                  kind: member
+                  _member:
+                    firstName: Ariel
+                    lastName: Flores
+                    role: admin
+                    _links:
+                      self:
+                        href: /api/v2/members/569f183514f4432160000007
+                        type: application/json
+                    _id: 569f183514f4432160000007
+                    email: ariel@acme.com
+                  _team:
+                    _links:
+                      key:
+                        href: href
+                        type: type
+                    name: QA Team
+                    customRoleKeys:
+                    - access-to-test-projects
+                    key: team-key-123abc
+                  key: key
                 tags:
                 - tags
                 - tags
@@ -78200,8 +79515,30 @@ components:
             name: name
             description: description
             creationDate: 7
-            version: 1
+            _version: 1
             key: key
+            maintainer:
+              kind: member
+              _member:
+                firstName: Ariel
+                lastName: Flores
+                role: admin
+                _links:
+                  self:
+                    href: /api/v2/members/569f183514f4432160000007
+                    type: application/json
+                _id: 569f183514f4432160000007
+                email: ariel@acme.com
+              _team:
+                _links:
+                  key:
+                    href: href
+                    type: type
+                name: QA Team
+                customRoleKeys:
+                - access-to-test-projects
+                key: team-key-123abc
+              key: key
             tags:
             - tags
             - tags
@@ -78273,7 +79610,7 @@ components:
         _links:
           $ref: "#/components/schemas/ParentAndSelfLinks"
         resourceKey:
-          description: "Key of the resource (flag, segment, AI config or metric)"
+          description: Key of the resource (flag or segment)
           type: string
         environmentId:
           description: Environment ID of the resource (only present for segments)
@@ -78285,8 +79622,6 @@ components:
           enum:
           - flag
           - segment
-          - metric
-          - aiConfig
           type: string
         linkedAt:
           format: int64
@@ -78303,6 +79638,7 @@ components:
       oneOf:
       - $ref: "#/components/schemas/ViewLinkRequestKeys"
       - $ref: "#/components/schemas/ViewLinkRequestSegmentIdentifiers"
+      - $ref: "#/components/schemas/ViewLinkRequestFilter"
       type: object
     FailedResourceLink:
       example:
@@ -78322,8 +79658,6 @@ components:
           enum:
           - flag
           - segment
-          - metric
-          - aiConfig
           type: string
         errorMessage:
           description: The reason why linking this resource failed.
@@ -78535,8 +79869,30 @@ components:
                         name: name
                         description: description
                         creationDate: 7
-                        version: 1
+                        _version: 1
                         key: key
+                        maintainer:
+                          kind: member
+                          _member:
+                            firstName: Ariel
+                            lastName: Flores
+                            role: admin
+                            _links:
+                              self:
+                                href: /api/v2/members/569f183514f4432160000007
+                                type: application/json
+                            _id: 569f183514f4432160000007
+                            email: ariel@acme.com
+                          _team:
+                            _links:
+                              key:
+                                href: href
+                                type: type
+                            name: QA Team
+                            customRoleKeys:
+                            - access-to-test-projects
+                            key: team-key-123abc
+                          key: key
                         tags:
                         - tags
                         - tags
@@ -78553,8 +79909,30 @@ components:
                         name: name
                         description: description
                         creationDate: 7
-                        version: 1
+                        _version: 1
                         key: key
+                        maintainer:
+                          kind: member
+                          _member:
+                            firstName: Ariel
+                            lastName: Flores
+                            role: admin
+                            _links:
+                              self:
+                                href: /api/v2/members/569f183514f4432160000007
+                                type: application/json
+                            _id: 569f183514f4432160000007
+                            email: ariel@acme.com
+                          _team:
+                            _links:
+                              key:
+                                href: href
+                                type: type
+                            name: QA Team
+                            customRoleKeys:
+                            - access-to-test-projects
+                            key: team-key-123abc
+                          key: key
                         tags:
                         - tags
                         - tags
@@ -78816,8 +80194,30 @@ components:
                     name: name
                     description: description
                     creationDate: 7
-                    version: 1
+                    _version: 1
                     key: key
+                    maintainer:
+                      kind: member
+                      _member:
+                        firstName: Ariel
+                        lastName: Flores
+                        role: admin
+                        _links:
+                          self:
+                            href: /api/v2/members/569f183514f4432160000007
+                            type: application/json
+                        _id: 569f183514f4432160000007
+                        email: ariel@acme.com
+                      _team:
+                        _links:
+                          key:
+                            href: href
+                            type: type
+                        name: QA Team
+                        customRoleKeys:
+                        - access-to-test-projects
+                        key: team-key-123abc
+                      key: key
                     tags:
                     - tags
                     - tags
@@ -78834,8 +80234,30 @@ components:
                     name: name
                     description: description
                     creationDate: 7
-                    version: 1
+                    _version: 1
                     key: key
+                    maintainer:
+                      kind: member
+                      _member:
+                        firstName: Ariel
+                        lastName: Flores
+                        role: admin
+                        _links:
+                          self:
+                            href: /api/v2/members/569f183514f4432160000007
+                            type: application/json
+                        _id: 569f183514f4432160000007
+                        email: ariel@acme.com
+                      _team:
+                        _links:
+                          key:
+                            href: href
+                            type: type
+                        name: QA Team
+                        customRoleKeys:
+                        - access-to-test-projects
+                        key: team-key-123abc
+                      key: key
                     tags:
                     - tags
                     - tags
@@ -78853,8 +80275,30 @@ components:
                 name: name
                 description: description
                 creationDate: 7
-                version: 1
+                _version: 1
                 key: key
+                maintainer:
+                  kind: member
+                  _member:
+                    firstName: Ariel
+                    lastName: Flores
+                    role: admin
+                    _links:
+                      self:
+                        href: /api/v2/members/569f183514f4432160000007
+                        type: application/json
+                    _id: 569f183514f4432160000007
+                    email: ariel@acme.com
+                  _team:
+                    _links:
+                      key:
+                        href: href
+                        type: type
+                    name: QA Team
+                    customRoleKeys:
+                    - access-to-test-projects
+                    key: team-key-123abc
+                  key: key
                 tags:
                 - tags
                 - tags
@@ -79103,8 +80547,30 @@ components:
                         name: name
                         description: description
                         creationDate: 7
-                        version: 1
+                        _version: 1
                         key: key
+                        maintainer:
+                          kind: member
+                          _member:
+                            firstName: Ariel
+                            lastName: Flores
+                            role: admin
+                            _links:
+                              self:
+                                href: /api/v2/members/569f183514f4432160000007
+                                type: application/json
+                            _id: 569f183514f4432160000007
+                            email: ariel@acme.com
+                          _team:
+                            _links:
+                              key:
+                                href: href
+                                type: type
+                            name: QA Team
+                            customRoleKeys:
+                            - access-to-test-projects
+                            key: team-key-123abc
+                          key: key
                         tags:
                         - tags
                         - tags
@@ -79121,8 +80587,30 @@ components:
                         name: name
                         description: description
                         creationDate: 7
-                        version: 1
+                        _version: 1
                         key: key
+                        maintainer:
+                          kind: member
+                          _member:
+                            firstName: Ariel
+                            lastName: Flores
+                            role: admin
+                            _links:
+                              self:
+                                href: /api/v2/members/569f183514f4432160000007
+                                type: application/json
+                            _id: 569f183514f4432160000007
+                            email: ariel@acme.com
+                          _team:
+                            _links:
+                              key:
+                                href: href
+                                type: type
+                            name: QA Team
+                            customRoleKeys:
+                            - access-to-test-projects
+                            key: team-key-123abc
+                          key: key
                         tags:
                         - tags
                         - tags
@@ -79384,8 +80872,30 @@ components:
                     name: name
                     description: description
                     creationDate: 7
-                    version: 1
+                    _version: 1
                     key: key
+                    maintainer:
+                      kind: member
+                      _member:
+                        firstName: Ariel
+                        lastName: Flores
+                        role: admin
+                        _links:
+                          self:
+                            href: /api/v2/members/569f183514f4432160000007
+                            type: application/json
+                        _id: 569f183514f4432160000007
+                        email: ariel@acme.com
+                      _team:
+                        _links:
+                          key:
+                            href: href
+                            type: type
+                        name: QA Team
+                        customRoleKeys:
+                        - access-to-test-projects
+                        key: team-key-123abc
+                      key: key
                     tags:
                     - tags
                     - tags
@@ -79402,8 +80912,30 @@ components:
                     name: name
                     description: description
                     creationDate: 7
-                    version: 1
+                    _version: 1
                     key: key
+                    maintainer:
+                      kind: member
+                      _member:
+                        firstName: Ariel
+                        lastName: Flores
+                        role: admin
+                        _links:
+                          self:
+                            href: /api/v2/members/569f183514f4432160000007
+                            type: application/json
+                        _id: 569f183514f4432160000007
+                        email: ariel@acme.com
+                      _team:
+                        _links:
+                          key:
+                            href: href
+                            type: type
+                        name: QA Team
+                        customRoleKeys:
+                        - access-to-test-projects
+                        key: team-key-123abc
+                      key: key
                     tags:
                     - tags
                     - tags
@@ -79421,8 +80953,30 @@ components:
                 name: name
                 description: description
                 creationDate: 7
-                version: 1
+                _version: 1
                 key: key
+                maintainer:
+                  kind: member
+                  _member:
+                    firstName: Ariel
+                    lastName: Flores
+                    role: admin
+                    _links:
+                      self:
+                        href: /api/v2/members/569f183514f4432160000007
+                        type: application/json
+                    _id: 569f183514f4432160000007
+                    email: ariel@acme.com
+                  _team:
+                    _links:
+                      key:
+                        href: href
+                        type: type
+                    name: QA Team
+                    customRoleKeys:
+                    - access-to-test-projects
+                    key: team-key-123abc
+                  key: key
                 tags:
                 - tags
                 - tags
@@ -79628,10 +81182,6 @@ components:
           type: integer
         segmentCount:
           type: integer
-        metricCount:
-          type: integer
-        aiConfigCount:
-          type: integer
         totalCount:
           type: integer
       required:
@@ -79759,8 +81309,30 @@ components:
           name: name
           description: description
           creationDate: 7
-          version: 1
+          _version: 1
           key: key
+          maintainer:
+            kind: member
+            _member:
+              firstName: Ariel
+              lastName: Flores
+              role: admin
+              _links:
+                self:
+                  href: /api/v2/members/569f183514f4432160000007
+                  type: application/json
+              _id: 569f183514f4432160000007
+              email: ariel@acme.com
+            _team:
+              _links:
+                key:
+                  href: href
+                  type: type
+              name: QA Team
+              customRoleKeys:
+              - access-to-test-projects
+              key: team-key-123abc
+            key: key
           tags:
           - tags
           - tags
@@ -79777,8 +81349,30 @@ components:
           name: name
           description: description
           creationDate: 7
-          version: 1
+          _version: 1
           key: key
+          maintainer:
+            kind: member
+            _member:
+              firstName: Ariel
+              lastName: Flores
+              role: admin
+              _links:
+                self:
+                  href: /api/v2/members/569f183514f4432160000007
+                  type: application/json
+              _id: 569f183514f4432160000007
+              email: ariel@acme.com
+            _team:
+              _links:
+                key:
+                  href: href
+                  type: type
+              name: QA Team
+              customRoleKeys:
+              - access-to-test-projects
+              key: team-key-123abc
+            key: key
           tags:
           - tags
           - tags
@@ -79978,8 +81572,30 @@ components:
               name: name
               description: description
               creationDate: 7
-              version: 1
+              _version: 1
               key: key
+              maintainer:
+                kind: member
+                _member:
+                  firstName: Ariel
+                  lastName: Flores
+                  role: admin
+                  _links:
+                    self:
+                      href: /api/v2/members/569f183514f4432160000007
+                      type: application/json
+                  _id: 569f183514f4432160000007
+                  email: ariel@acme.com
+                _team:
+                  _links:
+                    key:
+                      href: href
+                      type: type
+                  name: QA Team
+                  customRoleKeys:
+                  - access-to-test-projects
+                  key: team-key-123abc
+                key: key
               tags:
               - tags
               - tags
@@ -79996,8 +81612,30 @@ components:
               name: name
               description: description
               creationDate: 7
-              version: 1
+              _version: 1
               key: key
+              maintainer:
+                kind: member
+                _member:
+                  firstName: Ariel
+                  lastName: Flores
+                  role: admin
+                  _links:
+                    self:
+                      href: /api/v2/members/569f183514f4432160000007
+                      type: application/json
+                  _id: 569f183514f4432160000007
+                  email: ariel@acme.com
+                _team:
+                  _links:
+                    key:
+                      href: href
+                      type: type
+                  name: QA Team
+                  customRoleKeys:
+                  - access-to-test-projects
+                  key: team-key-123abc
+                key: key
               tags:
               - tags
               - tags
@@ -80196,8 +81834,30 @@ components:
         name: name
         description: description
         creationDate: 7
-        version: 1
+        _version: 1
         key: key
+        maintainer:
+          kind: member
+          _member:
+            firstName: Ariel
+            lastName: Flores
+            role: admin
+            _links:
+              self:
+                href: /api/v2/members/569f183514f4432160000007
+                type: application/json
+            _id: 569f183514f4432160000007
+            email: ariel@acme.com
+          _team:
+            _links:
+              key:
+                href: href
+                type: type
+            name: QA Team
+            customRoleKeys:
+            - access-to-test-projects
+            key: team-key-123abc
+          key: key
         tags:
         - tags
         - tags
@@ -80215,7 +81875,7 @@ components:
           description: Creation date in milliseconds
           format: int64
           type: integer
-        version:
+        _version:
           description: Version of the flag
           type: integer
         archived:
@@ -80232,13 +81892,57 @@ components:
         includeInSnippet:
           description: Whether to include in snippet
           type: boolean
+        maintainer:
+          $ref: "#/components/schemas/ExpandedFlagMaintainer"
         _links:
           $ref: "#/components/schemas/ParentAndSelfLinks"
       required:
       - key
       - name
       type: object
-      x-go-type: reps2.FlagGlobalAttributesRep
+    ExpandedFlagMaintainer:
+      example:
+        kind: member
+        _member:
+          firstName: Ariel
+          lastName: Flores
+          role: admin
+          _links:
+            self:
+              href: /api/v2/members/569f183514f4432160000007
+              type: application/json
+          _id: 569f183514f4432160000007
+          email: ariel@acme.com
+        _team:
+          _links:
+            key:
+              href: href
+              type: type
+          name: QA Team
+          customRoleKeys:
+          - access-to-test-projects
+          key: team-key-123abc
+        key: key
+      properties:
+        key:
+          description: "The ID of the maintainer member, or the key of the maintainer\
+            \ team"
+          type: string
+        kind:
+          description: The type of the maintainer
+          enum:
+          - member
+          - team
+          type: string
+        _member:
+          $ref: "#/components/schemas/ViewsMemberSummary"
+        _team:
+          $ref: "#/components/schemas/ViewsMemberTeamSummaryRep"
+      required:
+      - key
+      - kind
+      type: object
+      x-go-type: reps2.MaintainerRep
       x-go-type-import:
         path: github.com/launchdarkly/gonfalon/internal/reps2
         name: reps2
@@ -80516,6 +82220,89 @@ components:
           type: string
         type:
           type: string
+      type: object
+    ViewsMemberSummary:
+      example:
+        firstName: Ariel
+        lastName: Flores
+        role: admin
+        _links:
+          self:
+            href: /api/v2/members/569f183514f4432160000007
+            type: application/json
+        _id: 569f183514f4432160000007
+        email: ariel@acme.com
+      properties:
+        _links:
+          additionalProperties:
+            $ref: "#/components/schemas/ViewsLink"
+          description: The location and content type of related resources
+          example:
+            self:
+              href: /api/v2/members/569f183514f4432160000007
+              type: application/json
+          type: object
+        _id:
+          description: The member's ID
+          example: 569f183514f4432160000007
+          type: string
+        firstName:
+          description: The member's first name
+          example: Ariel
+          type: string
+        lastName:
+          description: The member's last name
+          example: Flores
+          type: string
+        role:
+          description: "The member's base role. If the member has no additional roles,\
+            \ this role will be in effect."
+          example: admin
+          type: string
+        email:
+          description: The member's email address
+          example: ariel@acme.com
+          type: string
+      required:
+      - _id
+      - _links
+      - email
+      - role
+      type: object
+    ViewsMemberTeamSummaryRep:
+      example:
+        _links:
+          key:
+            href: href
+            type: type
+        name: QA Team
+        customRoleKeys:
+        - access-to-test-projects
+        key: team-key-123abc
+      properties:
+        customRoleKeys:
+          description: A list of keys of the custom roles this team has access to
+          example:
+          - access-to-test-projects
+          items:
+            type: string
+          type: array
+        key:
+          description: The team key
+          example: team-key-123abc
+          type: string
+        _links:
+          additionalProperties:
+            $ref: "#/components/schemas/ViewsLink"
+          type: object
+        name:
+          description: The team name
+          example: QA Team
+          type: string
+      required:
+      - customRoleKeys
+      - key
+      - name
       type: object
     ViewsAccess:
       properties:
@@ -80864,8 +82651,30 @@ components:
                   name: name
                   description: description
                   creationDate: 7
-                  version: 1
+                  _version: 1
                   key: key
+                  maintainer:
+                    kind: member
+                    _member:
+                      firstName: Ariel
+                      lastName: Flores
+                      role: admin
+                      _links:
+                        self:
+                          href: /api/v2/members/569f183514f4432160000007
+                          type: application/json
+                      _id: 569f183514f4432160000007
+                      email: ariel@acme.com
+                    _team:
+                      _links:
+                        key:
+                          href: href
+                          type: type
+                      name: QA Team
+                      customRoleKeys:
+                      - access-to-test-projects
+                      key: team-key-123abc
+                    key: key
                   tags:
                   - tags
                   - tags
@@ -80882,8 +82691,30 @@ components:
                   name: name
                   description: description
                   creationDate: 7
-                  version: 1
+                  _version: 1
                   key: key
+                  maintainer:
+                    kind: member
+                    _member:
+                      firstName: Ariel
+                      lastName: Flores
+                      role: admin
+                      _links:
+                        self:
+                          href: /api/v2/members/569f183514f4432160000007
+                          type: application/json
+                      _id: 569f183514f4432160000007
+                      email: ariel@acme.com
+                    _team:
+                      _links:
+                        key:
+                          href: href
+                          type: type
+                      name: QA Team
+                      customRoleKeys:
+                      - access-to-test-projects
+                      key: team-key-123abc
+                    key: key
                   tags:
                   - tags
                   - tags
@@ -81145,8 +82976,30 @@ components:
               name: name
               description: description
               creationDate: 7
-              version: 1
+              _version: 1
               key: key
+              maintainer:
+                kind: member
+                _member:
+                  firstName: Ariel
+                  lastName: Flores
+                  role: admin
+                  _links:
+                    self:
+                      href: /api/v2/members/569f183514f4432160000007
+                      type: application/json
+                  _id: 569f183514f4432160000007
+                  email: ariel@acme.com
+                _team:
+                  _links:
+                    key:
+                      href: href
+                      type: type
+                  name: QA Team
+                  customRoleKeys:
+                  - access-to-test-projects
+                  key: team-key-123abc
+                key: key
               tags:
               - tags
               - tags
@@ -81163,8 +83016,30 @@ components:
               name: name
               description: description
               creationDate: 7
-              version: 1
+              _version: 1
               key: key
+              maintainer:
+                kind: member
+                _member:
+                  firstName: Ariel
+                  lastName: Flores
+                  role: admin
+                  _links:
+                    self:
+                      href: /api/v2/members/569f183514f4432160000007
+                      type: application/json
+                  _id: 569f183514f4432160000007
+                  email: ariel@acme.com
+                _team:
+                  _links:
+                    key:
+                      href: href
+                      type: type
+                  name: QA Team
+                  customRoleKeys:
+                  - access-to-test-projects
+                  key: team-key-123abc
+                key: key
               tags:
               - tags
               - tags
@@ -81182,8 +83057,30 @@ components:
           name: name
           description: description
           creationDate: 7
-          version: 1
+          _version: 1
           key: key
+          maintainer:
+            kind: member
+            _member:
+              firstName: Ariel
+              lastName: Flores
+              role: admin
+              _links:
+                self:
+                  href: /api/v2/members/569f183514f4432160000007
+                  type: application/json
+              _id: 569f183514f4432160000007
+              email: ariel@acme.com
+            _team:
+              _links:
+                key:
+                  href: href
+                  type: type
+              name: QA Team
+              customRoleKeys:
+              - access-to-test-projects
+              key: team-key-123abc
+            key: key
           tags:
           - tags
           - tags
@@ -81262,17 +83159,33 @@ components:
       title: ViewLinkedResourceDetails
       type: object
     ViewLinkRequestKeys:
+      additionalProperties: false
       example:
+        filter: "maintainerId:507f1f77bcf86cd799439011,tags:backend+beta"
         keys:
-        - keys
-        - keys
+        - flag-1
+        - flag-2
         comment: ""
       properties:
         keys:
-          description: "Keys of the resources (flags, segments, AI configs) to link/unlink"
+          description: "Keys of the resources (flags, segments) to link/unlink"
+          example:
+          - flag-1
+          - flag-2
           items:
             type: string
           type: array
+        filter:
+          description: |
+            Optional filter string to determine which resources should be linked. Resources only need to match either the filter or explicitly-listed keys to be linked (union).
+            Uses the same syntax as list endpoints: flags use comma-separated field:value filters, segments use queryfilter syntax.
+
+            Supported filters by resource type:
+            - flags: query, tags, maintainerId, maintainerTeamKey, type, status, state, staleState, sdkAvailability, targeting, hasExperiment, hasDataExport, evaluated, creationDate, contextKindTargeted, contextKindsEvaluated, filterEnv, segmentTargeted, codeReferences.min, codeReferences.max, excludeSettings, releasePipeline, applicationEvaluated, purpose, guardedRollout, view, key, name, archived, followerId
+            - segments (queryfilter): query, tags, keys, excludedKeys, unbounded, external, view, type
+            Some filters are only available when the corresponding feature is enabled on your account.
+          example: "maintainerId:507f1f77bcf86cd799439011,tags:backend+beta"
+          type: string
         comment:
           default: ""
           description: Optional comment for the link/unlink operation
@@ -81293,6 +83206,7 @@ components:
       title: ViewLinkRequestSegmentIdentifier
       type: object
     ViewLinkRequestSegmentIdentifiers:
+      additionalProperties: false
       properties:
         segmentIdentifiers:
           description: Identifiers of the segments to link/unlink (environmentId and
@@ -81300,6 +83214,19 @@ components:
           items:
             $ref: "#/components/schemas/ViewLinkRequestSegmentIdentifier"
           type: array
+        filter:
+          description: |
+            Optional filter string to determine which resources should be linked. Resources only need to match either the filter or explicitly-listed keys to be linked (union).
+            Uses the same queryfilter syntax as the segments list endpoint.
+
+            Supported filters for segments: query, tags, keys, excludedKeys, unbounded, external, view, type
+          example: "tags anyOf [\"backend\"]"
+          type: string
+        environmentId:
+          description: |
+            Required when using filter for segment resources. Specifies which environment to query for segments matching the filter.
+            Ignored when only using explicit segmentIdentifiers (since each identifier contains its own environmentId).
+          type: string
         comment:
           default: ""
           description: Optional comment for the link/unlink operation
@@ -81307,6 +83234,32 @@ components:
       required:
       - segmentIdentifiers
       title: ViewLinkRequestSegmentIdentifiers
+      type: object
+    ViewLinkRequestFilter:
+      additionalProperties: false
+      properties:
+        filter:
+          description: |
+            Filter string to match resources for linking. Uses the same syntax as list endpoints: flags use comma-separated field:value filters, segments use queryfilter syntax.
+
+            Supported filters by resource type:
+            - flags: query, tags, maintainerId, maintainerTeamKey, type, status, state, staleState, sdkAvailability, targeting, hasExperiment, hasDataExport, evaluated, creationDate, contextKindTargeted, contextKindsEvaluated, filterEnv, segmentTargeted, codeReferences.min, codeReferences.max, excludeSettings, releasePipeline, applicationEvaluated, purpose, guardedRollout, view, key, name, archived, followerId
+            - segments (queryfilter): query, tags, keys, excludedKeys, unbounded, external, view, type
+            Some filters are only available when the corresponding feature is enabled on your account.
+          example: "maintainerId:507f1f77bcf86cd799439011,tags:backend+beta"
+          type: string
+        environmentId:
+          description: |
+            Required when using filter for segment resources. Specifies which environment to query for segments matching the filter.
+            Ignored for flag resources (flags are global across environments).
+          type: string
+        comment:
+          default: ""
+          description: Optional comment for the link/unlink operation
+          type: string
+      required:
+      - filter
+      title: ViewLinkRequestFilter
       type: object
     ExpandedLinkedResourcesFlags:
       example:
@@ -81325,8 +83278,30 @@ components:
           name: name
           description: description
           creationDate: 7
-          version: 1
+          _version: 1
           key: key
+          maintainer:
+            kind: member
+            _member:
+              firstName: Ariel
+              lastName: Flores
+              role: admin
+              _links:
+                self:
+                  href: /api/v2/members/569f183514f4432160000007
+                  type: application/json
+              _id: 569f183514f4432160000007
+              email: ariel@acme.com
+            _team:
+              _links:
+                key:
+                  href: href
+                  type: type
+              name: QA Team
+              customRoleKeys:
+              - access-to-test-projects
+              key: team-key-123abc
+            key: key
           tags:
           - tags
           - tags
@@ -81343,8 +83318,30 @@ components:
           name: name
           description: description
           creationDate: 7
-          version: 1
+          _version: 1
           key: key
+          maintainer:
+            kind: member
+            _member:
+              firstName: Ariel
+              lastName: Flores
+              role: admin
+              _links:
+                self:
+                  href: /api/v2/members/569f183514f4432160000007
+                  type: application/json
+              _id: 569f183514f4432160000007
+              email: ariel@acme.com
+            _team:
+              _links:
+                key:
+                  href: href
+                  type: type
+              name: QA Team
+              customRoleKeys:
+              - access-to-test-projects
+              key: team-key-123abc
+            key: key
           tags:
           - tags
           - tags
@@ -81418,112 +83415,6 @@ components:
       - totalCount
       title: ExpandedLinkedResourcesSegments
       type: object
-    ExpandedLinkedResourcesAIConfigs:
-      example:
-        totalCount: 3
-        items:
-        - createdAt: 2
-          _links:
-            parent:
-              href: href
-              type: type
-            self:
-              href: href
-              type: type
-          name: name
-          description: description
-          version: 1
-          key: key
-          flagKey: flagKey
-          tags:
-          - tags
-          - tags
-          updatedAt: 6
-        - createdAt: 2
-          _links:
-            parent:
-              href: href
-              type: type
-            self:
-              href: href
-              type: type
-          name: name
-          description: description
-          version: 1
-          key: key
-          flagKey: flagKey
-          tags:
-          - tags
-          - tags
-          updatedAt: 6
-      properties:
-        items:
-          items:
-            $ref: "#/components/schemas/ExpandedAIConfig"
-          type: array
-        totalCount:
-          type: integer
-      required:
-      - items
-      - totalCount
-      title: ExpandedLinkedResourcesAIConfigs
-      type: object
-    ExpandedLinkedResourcesMetrics:
-      example:
-        totalCount: 3
-        items:
-        - _links:
-            parent:
-              href: href
-              type: type
-            self:
-              href: href
-              type: type
-          kind: kind
-          description: description
-          creationDate: 9
-          isActive: true
-          lastSeen: 3
-          eventKey: eventKey
-          _versionId: _versionId
-          isNumeric: true
-          name: name
-          lastModified: 6
-          _id: _id
-          category: category
-          key: key
-        - _links:
-            parent:
-              href: href
-              type: type
-            self:
-              href: href
-              type: type
-          kind: kind
-          description: description
-          creationDate: 9
-          isActive: true
-          lastSeen: 3
-          eventKey: eventKey
-          _versionId: _versionId
-          isNumeric: true
-          name: name
-          lastModified: 6
-          _id: _id
-          category: category
-          key: key
-      properties:
-        items:
-          items:
-            $ref: "#/components/schemas/ExpandedMetric"
-          type: array
-        totalCount:
-          type: integer
-      required:
-      - items
-      - totalCount
-      title: ExpandedLinkedResourcesMetrics
-      type: object
     ExpandedLinkedResourcesItems:
       example:
         flags:
@@ -81542,8 +83433,30 @@ components:
             name: name
             description: description
             creationDate: 7
-            version: 1
+            _version: 1
             key: key
+            maintainer:
+              kind: member
+              _member:
+                firstName: Ariel
+                lastName: Flores
+                role: admin
+                _links:
+                  self:
+                    href: /api/v2/members/569f183514f4432160000007
+                    type: application/json
+                _id: 569f183514f4432160000007
+                email: ariel@acme.com
+              _team:
+                _links:
+                  key:
+                    href: href
+                    type: type
+                name: QA Team
+                customRoleKeys:
+                - access-to-test-projects
+                key: team-key-123abc
+              key: key
             tags:
             - tags
             - tags
@@ -81560,8 +83473,30 @@ components:
             name: name
             description: description
             creationDate: 7
-            version: 1
+            _version: 1
             key: key
+            maintainer:
+              kind: member
+              _member:
+                firstName: Ariel
+                lastName: Flores
+                role: admin
+                _links:
+                  self:
+                    href: /api/v2/members/569f183514f4432160000007
+                    type: application/json
+                _id: 569f183514f4432160000007
+                email: ariel@acme.com
+              _team:
+                _links:
+                  key:
+                    href: href
+                    type: type
+                name: QA Team
+                customRoleKeys:
+                - access-to-test-projects
+                key: team-key-123abc
+              key: key
             tags:
             - tags
             - tags
@@ -81695,10 +83630,6 @@ components:
           $ref: "#/components/schemas/ExpandedLinkedResourcesFlags"
         segments:
           $ref: "#/components/schemas/ExpandedLinkedResourcesSegments"
-        aiConfigs:
-          $ref: "#/components/schemas/ExpandedLinkedResourcesAIConfigs"
-        metrics:
-          $ref: "#/components/schemas/ExpandedLinkedResourcesMetrics"
       required:
       - flags
       title: ExpandedLinkedResourcesItems

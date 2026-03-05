@@ -87,14 +87,17 @@ public class ViewsBetaApiTest {
         Integer limit = null;
         Integer offset = null;
         String sort = null;
-        ViewLinkedResources response = api.getLinkedResources(ldAPIVersion, projectKey, viewKey, resourceType, limit, offset, sort);
+        String query = null;
+        String filter = null;
+        List<String> expand = null;
+        ViewLinkedResources response = api.getLinkedResources(ldAPIVersion, projectKey, viewKey, resourceType, limit, offset, sort, query, filter, expand);
         // TODO: test validations
     }
 
     /**
      * Get linked views for a given resource
      *
-     * Get a list of all linked views for a resource. Flags, AI configs and metrics are identified by key. Segments are identified by segment ID.
+     * Get a list of all linked views for a resource. Flags are identified by key. Segments are identified by segment ID.
      *
      * @throws ApiException if the Api call fails
      */
@@ -155,7 +158,7 @@ public class ViewsBetaApiTest {
     /**
      * Link resource
      *
-     * Link one or multiple resources to a view: - Link flags using flag keys - Link AI configs using AI config keys - Link metrics using metric keys - Link segments using segment IDs 
+     * Link one or multiple resources to a view by keys, filters, or both: - Link flags using flag keys or filters (maintainerId, maintainerTeamKey, tags, state, query) - Link segments using segment IDs or filters (tags, query, unbounded)  When both keys and filters are provided, resources matching either condition are linked (union). 
      *
      * @throws ApiException if the Api call fails
      */
@@ -173,7 +176,7 @@ public class ViewsBetaApiTest {
     /**
      * Unlink resource
      *
-     * Unlink one or multiple resources from a view: - Unlink flags using flag keys - Unlink segments using segment IDs - Unlink AI configs using AI config keys - Unlink metrics using metric keys 
+     * Unlink one or multiple resources from a view: - Unlink flags using flag keys - Unlink segments using segment IDs 
      *
      * @throws ApiException if the Api call fails
      */

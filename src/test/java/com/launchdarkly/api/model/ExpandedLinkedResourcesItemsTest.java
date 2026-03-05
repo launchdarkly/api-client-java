@@ -18,9 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.launchdarkly.api.model.ExpandedLinkedResourcesAIConfigs;
 import com.launchdarkly.api.model.ExpandedLinkedResourcesFlags;
-import com.launchdarkly.api.model.ExpandedLinkedResourcesMetrics;
 import com.launchdarkly.api.model.ExpandedLinkedResourcesSegments;
 import java.io.IOException;
 import java.util.Arrays;
@@ -55,22 +53,6 @@ public class ExpandedLinkedResourcesItemsTest {
     @Test
     public void segmentsTest() {
         // TODO: test segments
-    }
-
-    /**
-     * Test the property 'aiConfigs'
-     */
-    @Test
-    public void aiConfigsTest() {
-        // TODO: test aiConfigs
-    }
-
-    /**
-     * Test the property 'metrics'
-     */
-    @Test
-    public void metricsTest() {
-        // TODO: test metrics
     }
 
 }

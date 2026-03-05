@@ -48,7 +48,7 @@ import com.launchdarkly.api.JSON;
 /**
  * AIToolPost
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T16:08:34.097023Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-05T10:21:59.405621Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class AIToolPost {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
@@ -74,6 +74,11 @@ public class AIToolPost {
   @SerializedName(SERIALIZED_NAME_SCHEMA)
   @javax.annotation.Nonnull
   private Object schema;
+
+  public static final String SERIALIZED_NAME_CUSTOM_PARAMETERS = "customParameters";
+  @SerializedName(SERIALIZED_NAME_CUSTOM_PARAMETERS)
+  @javax.annotation.Nullable
+  private Object customParameters;
 
   public AIToolPost() {
   }
@@ -160,7 +165,7 @@ public class AIToolPost {
   }
 
   /**
-   * Get schema
+   * JSON Schema defining the tool&#39;s parameters for LLM consumption
    * @return schema
    */
   @javax.annotation.Nonnull
@@ -170,6 +175,25 @@ public class AIToolPost {
 
   public void setSchema(@javax.annotation.Nonnull Object schema) {
     this.schema = schema;
+  }
+
+
+  public AIToolPost customParameters(@javax.annotation.Nullable Object customParameters) {
+    this.customParameters = customParameters;
+    return this;
+  }
+
+  /**
+   * Custom metadata and configuration for application-level use (not sent to LLM)
+   * @return customParameters
+   */
+  @javax.annotation.Nullable
+  public Object getCustomParameters() {
+    return customParameters;
+  }
+
+  public void setCustomParameters(@javax.annotation.Nullable Object customParameters) {
+    this.customParameters = customParameters;
   }
 
   /**
@@ -231,13 +255,14 @@ public class AIToolPost {
         Objects.equals(this.maintainerId, aiToolPost.maintainerId) &&
         Objects.equals(this.maintainerTeamKey, aiToolPost.maintainerTeamKey) &&
         Objects.equals(this.description, aiToolPost.description) &&
-        Objects.equals(this.schema, aiToolPost.schema)&&
+        Objects.equals(this.schema, aiToolPost.schema) &&
+        Objects.equals(this.customParameters, aiToolPost.customParameters)&&
         Objects.equals(this.additionalProperties, aiToolPost.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, maintainerId, maintainerTeamKey, description, schema, additionalProperties);
+    return Objects.hash(key, maintainerId, maintainerTeamKey, description, schema, customParameters, additionalProperties);
   }
 
   @Override
@@ -249,6 +274,7 @@ public class AIToolPost {
     sb.append("    maintainerTeamKey: ").append(toIndentedString(maintainerTeamKey)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
+    sb.append("    customParameters: ").append(toIndentedString(customParameters)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -271,7 +297,7 @@ public class AIToolPost {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("key", "maintainerId", "maintainerTeamKey", "description", "schema"));
+    openapiFields = new HashSet<String>(Arrays.asList("key", "maintainerId", "maintainerTeamKey", "description", "schema", "customParameters"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("key", "schema"));

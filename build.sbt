@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     organization := "com.launchdarkly",
     name := "api-client",
-    version := "21.0.0",
+    version := "22.0.0",
     scalaVersion := "2.11.12",
     scalacOptions ++= Seq("-feature"),
     compile / javacOptions ++= Seq("-Xlint:deprecation"),

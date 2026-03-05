@@ -20,6 +20,8 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.launchdarkly.api.model.AgentGraphEdge;
+import com.launchdarkly.api.model.AgentGraphMaintainer;
+import com.launchdarkly.api.model.AiConfigsAccess;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -51,8 +53,13 @@ import com.launchdarkly.api.JSON;
 /**
  * An agent graph representing a directed graph of AI Configs
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T16:08:34.097023Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-05T10:21:59.405621Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class AgentGraph {
+  public static final String SERIALIZED_NAME_ACCESS = "_access";
+  @SerializedName(SERIALIZED_NAME_ACCESS)
+  @javax.annotation.Nullable
+  private AiConfigsAccess access;
+
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
   @javax.annotation.Nonnull
@@ -67,6 +74,11 @@ public class AgentGraph {
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @javax.annotation.Nullable
   private String description;
+
+  public static final String SERIALIZED_NAME_MAINTAINER = "_maintainer";
+  @SerializedName(SERIALIZED_NAME_MAINTAINER)
+  @javax.annotation.Nullable
+  private AgentGraphMaintainer maintainer;
 
   public static final String SERIALIZED_NAME_ROOT_CONFIG_KEY = "rootConfigKey";
   @SerializedName(SERIALIZED_NAME_ROOT_CONFIG_KEY)
@@ -90,6 +102,25 @@ public class AgentGraph {
 
   public AgentGraph() {
   }
+
+  public AgentGraph access(@javax.annotation.Nullable AiConfigsAccess access) {
+    this.access = access;
+    return this;
+  }
+
+  /**
+   * Get access
+   * @return access
+   */
+  @javax.annotation.Nullable
+  public AiConfigsAccess getAccess() {
+    return access;
+  }
+
+  public void setAccess(@javax.annotation.Nullable AiConfigsAccess access) {
+    this.access = access;
+  }
+
 
   public AgentGraph key(@javax.annotation.Nonnull String key) {
     this.key = key;
@@ -145,6 +176,25 @@ public class AgentGraph {
 
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
+  }
+
+
+  public AgentGraph maintainer(@javax.annotation.Nullable AgentGraphMaintainer maintainer) {
+    this.maintainer = maintainer;
+    return this;
+  }
+
+  /**
+   * Get maintainer
+   * @return maintainer
+   */
+  @javax.annotation.Nullable
+  public AgentGraphMaintainer getMaintainer() {
+    return maintainer;
+  }
+
+  public void setMaintainer(@javax.annotation.Nullable AgentGraphMaintainer maintainer) {
+    this.maintainer = maintainer;
   }
 
 
@@ -286,9 +336,11 @@ public class AgentGraph {
       return false;
     }
     AgentGraph agentGraph = (AgentGraph) o;
-    return Objects.equals(this.key, agentGraph.key) &&
+    return Objects.equals(this.access, agentGraph.access) &&
+        Objects.equals(this.key, agentGraph.key) &&
         Objects.equals(this.name, agentGraph.name) &&
         Objects.equals(this.description, agentGraph.description) &&
+        Objects.equals(this.maintainer, agentGraph.maintainer) &&
         Objects.equals(this.rootConfigKey, agentGraph.rootConfigKey) &&
         Objects.equals(this.edges, agentGraph.edges) &&
         Objects.equals(this.createdAt, agentGraph.createdAt) &&
@@ -298,16 +350,18 @@ public class AgentGraph {
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, name, description, rootConfigKey, edges, createdAt, updatedAt, additionalProperties);
+    return Objects.hash(access, key, name, description, maintainer, rootConfigKey, edges, createdAt, updatedAt, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AgentGraph {\n");
+    sb.append("    access: ").append(toIndentedString(access)).append("\n");
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    maintainer: ").append(toIndentedString(maintainer)).append("\n");
     sb.append("    rootConfigKey: ").append(toIndentedString(rootConfigKey)).append("\n");
     sb.append("    edges: ").append(toIndentedString(edges)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
@@ -334,7 +388,7 @@ public class AgentGraph {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("key", "name", "description", "rootConfigKey", "edges", "createdAt", "updatedAt"));
+    openapiFields = new HashSet<String>(Arrays.asList("_access", "key", "name", "description", "_maintainer", "rootConfigKey", "edges", "createdAt", "updatedAt"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("key", "name", "createdAt", "updatedAt"));
@@ -360,6 +414,10 @@ public class AgentGraph {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `_access`
+      if (jsonObj.get("_access") != null && !jsonObj.get("_access").isJsonNull()) {
+        AiConfigsAccess.validateJsonElement(jsonObj.get("_access"));
+      }
       if (!jsonObj.get("key").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
@@ -368,6 +426,10 @@ public class AgentGraph {
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      // validate the optional field `_maintainer`
+      if (jsonObj.get("_maintainer") != null && !jsonObj.get("_maintainer").isJsonNull()) {
+        AgentGraphMaintainer.validateJsonElement(jsonObj.get("_maintainer"));
       }
       if ((jsonObj.get("rootConfigKey") != null && !jsonObj.get("rootConfigKey").isJsonNull()) && !jsonObj.get("rootConfigKey").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `rootConfigKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rootConfigKey").toString()));

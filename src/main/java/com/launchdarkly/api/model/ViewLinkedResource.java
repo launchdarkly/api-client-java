@@ -50,7 +50,7 @@ import com.launchdarkly.api.JSON;
 /**
  * ViewLinkedResource
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T16:08:34.097023Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-05T10:21:59.405621Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class ViewLinkedResource {
   public static final String SERIALIZED_NAME_LINKS = "_links";
   @SerializedName(SERIALIZED_NAME_LINKS)
@@ -79,11 +79,7 @@ public class ViewLinkedResource {
   public enum ResourceTypeEnum {
     FLAG("flag"),
     
-    SEGMENT("segment"),
-    
-    METRIC("metric"),
-    
-    AI_CONFIG("aiConfig");
+    SEGMENT("segment");
 
     private String value;
 
@@ -171,7 +167,7 @@ public class ViewLinkedResource {
   }
 
   /**
-   * Key of the resource (flag, segment, AI config or metric)
+   * Key of the resource (flag or segment)
    * @return resourceKey
    */
   @javax.annotation.Nonnull

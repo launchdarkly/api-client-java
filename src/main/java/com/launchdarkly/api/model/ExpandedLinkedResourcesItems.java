@@ -19,9 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.launchdarkly.api.model.ExpandedLinkedResourcesAIConfigs;
 import com.launchdarkly.api.model.ExpandedLinkedResourcesFlags;
-import com.launchdarkly.api.model.ExpandedLinkedResourcesMetrics;
 import com.launchdarkly.api.model.ExpandedLinkedResourcesSegments;
 import java.io.IOException;
 import java.util.Arrays;
@@ -52,7 +50,7 @@ import com.launchdarkly.api.JSON;
 /**
  * ExpandedLinkedResourcesItems
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T16:08:34.097023Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-05T10:21:59.405621Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class ExpandedLinkedResourcesItems {
   public static final String SERIALIZED_NAME_FLAGS = "flags";
   @SerializedName(SERIALIZED_NAME_FLAGS)
@@ -63,16 +61,6 @@ public class ExpandedLinkedResourcesItems {
   @SerializedName(SERIALIZED_NAME_SEGMENTS)
   @javax.annotation.Nullable
   private ExpandedLinkedResourcesSegments segments;
-
-  public static final String SERIALIZED_NAME_AI_CONFIGS = "aiConfigs";
-  @SerializedName(SERIALIZED_NAME_AI_CONFIGS)
-  @javax.annotation.Nullable
-  private ExpandedLinkedResourcesAIConfigs aiConfigs;
-
-  public static final String SERIALIZED_NAME_METRICS = "metrics";
-  @SerializedName(SERIALIZED_NAME_METRICS)
-  @javax.annotation.Nullable
-  private ExpandedLinkedResourcesMetrics metrics;
 
   public ExpandedLinkedResourcesItems() {
   }
@@ -112,44 +100,6 @@ public class ExpandedLinkedResourcesItems {
 
   public void setSegments(@javax.annotation.Nullable ExpandedLinkedResourcesSegments segments) {
     this.segments = segments;
-  }
-
-
-  public ExpandedLinkedResourcesItems aiConfigs(@javax.annotation.Nullable ExpandedLinkedResourcesAIConfigs aiConfigs) {
-    this.aiConfigs = aiConfigs;
-    return this;
-  }
-
-  /**
-   * Get aiConfigs
-   * @return aiConfigs
-   */
-  @javax.annotation.Nullable
-  public ExpandedLinkedResourcesAIConfigs getAiConfigs() {
-    return aiConfigs;
-  }
-
-  public void setAiConfigs(@javax.annotation.Nullable ExpandedLinkedResourcesAIConfigs aiConfigs) {
-    this.aiConfigs = aiConfigs;
-  }
-
-
-  public ExpandedLinkedResourcesItems metrics(@javax.annotation.Nullable ExpandedLinkedResourcesMetrics metrics) {
-    this.metrics = metrics;
-    return this;
-  }
-
-  /**
-   * Get metrics
-   * @return metrics
-   */
-  @javax.annotation.Nullable
-  public ExpandedLinkedResourcesMetrics getMetrics() {
-    return metrics;
-  }
-
-  public void setMetrics(@javax.annotation.Nullable ExpandedLinkedResourcesMetrics metrics) {
-    this.metrics = metrics;
   }
 
   /**
@@ -208,15 +158,13 @@ public class ExpandedLinkedResourcesItems {
     }
     ExpandedLinkedResourcesItems expandedLinkedResourcesItems = (ExpandedLinkedResourcesItems) o;
     return Objects.equals(this.flags, expandedLinkedResourcesItems.flags) &&
-        Objects.equals(this.segments, expandedLinkedResourcesItems.segments) &&
-        Objects.equals(this.aiConfigs, expandedLinkedResourcesItems.aiConfigs) &&
-        Objects.equals(this.metrics, expandedLinkedResourcesItems.metrics)&&
+        Objects.equals(this.segments, expandedLinkedResourcesItems.segments)&&
         Objects.equals(this.additionalProperties, expandedLinkedResourcesItems.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(flags, segments, aiConfigs, metrics, additionalProperties);
+    return Objects.hash(flags, segments, additionalProperties);
   }
 
   @Override
@@ -225,8 +173,6 @@ public class ExpandedLinkedResourcesItems {
     sb.append("class ExpandedLinkedResourcesItems {\n");
     sb.append("    flags: ").append(toIndentedString(flags)).append("\n");
     sb.append("    segments: ").append(toIndentedString(segments)).append("\n");
-    sb.append("    aiConfigs: ").append(toIndentedString(aiConfigs)).append("\n");
-    sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -249,7 +195,7 @@ public class ExpandedLinkedResourcesItems {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("flags", "segments", "aiConfigs", "metrics"));
+    openapiFields = new HashSet<String>(Arrays.asList("flags", "segments"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("flags"));
@@ -280,14 +226,6 @@ public class ExpandedLinkedResourcesItems {
       // validate the optional field `segments`
       if (jsonObj.get("segments") != null && !jsonObj.get("segments").isJsonNull()) {
         ExpandedLinkedResourcesSegments.validateJsonElement(jsonObj.get("segments"));
-      }
-      // validate the optional field `aiConfigs`
-      if (jsonObj.get("aiConfigs") != null && !jsonObj.get("aiConfigs").isJsonNull()) {
-        ExpandedLinkedResourcesAIConfigs.validateJsonElement(jsonObj.get("aiConfigs"));
-      }
-      // validate the optional field `metrics`
-      if (jsonObj.get("metrics") != null && !jsonObj.get("metrics").isJsonNull()) {
-        ExpandedLinkedResourcesMetrics.validateJsonElement(jsonObj.get("metrics"));
       }
   }
 

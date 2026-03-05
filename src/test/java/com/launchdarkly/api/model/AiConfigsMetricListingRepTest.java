@@ -73,6 +73,14 @@ public class AiConfigsMetricListingRepTest {
     }
 
     /**
+     * Test the property 'releasePolicyCount'
+     */
+    @Test
+    public void releasePolicyCountTest() {
+        // TODO: test releasePolicyCount
+    }
+
+    /**
      * Test the property 'activeExperimentCount'
      */
     @Test
@@ -310,6 +318,14 @@ public class AiConfigsMetricListingRepTest {
     @Test
     public void dataSourceTest() {
         // TODO: test dataSource
+    }
+
+    /**
+     * Test the property 'lastSeen'
+     */
+    @Test
+    public void lastSeenTest() {
+        // TODO: test lastSeen
     }
 
     /**

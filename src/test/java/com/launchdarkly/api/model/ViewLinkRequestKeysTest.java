@@ -48,6 +48,14 @@ public class ViewLinkRequestKeysTest {
     }
 
     /**
+     * Test the property 'filter'
+     */
+    @Test
+    public void filterTest() {
+        // TODO: test filter
+    }
+
+    /**
      * Test the property 'comment'
      */
     @Test

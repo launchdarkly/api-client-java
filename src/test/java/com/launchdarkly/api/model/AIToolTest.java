@@ -89,6 +89,14 @@ public class AIToolTest {
     }
 
     /**
+     * Test the property 'customParameters'
+     */
+    @Test
+    public void customParametersTest() {
+        // TODO: test customParameters
+    }
+
+    /**
      * Test the property 'version'
      */
     @Test

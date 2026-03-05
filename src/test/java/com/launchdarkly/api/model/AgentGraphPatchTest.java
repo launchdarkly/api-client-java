@@ -57,6 +57,22 @@ public class AgentGraphPatchTest {
     }
 
     /**
+     * Test the property 'maintainerId'
+     */
+    @Test
+    public void maintainerIdTest() {
+        // TODO: test maintainerId
+    }
+
+    /**
+     * Test the property 'maintainerTeamKey'
+     */
+    @Test
+    public void maintainerTeamKeyTest() {
+        // TODO: test maintainerTeamKey
+    }
+
+    /**
      * Test the property 'rootConfigKey'
      */
     @Test

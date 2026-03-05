@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**links** | [**ParentAndSelfLinks**](ParentAndSelfLinks.md) |  |  |
-|**resourceKey** | **String** | Key of the resource (flag, segment, AI config or metric) |  |
+|**resourceKey** | **String** | Key of the resource (flag or segment) |  |
 |**environmentId** | **String** | Environment ID of the resource (only present for segments) |  [optional] |
 |**environmentKey** | **String** | Environment Key of the resource (only present for segments) |  [optional] |
 |**resourceType** | [**ResourceTypeEnum**](#ResourceTypeEnum) |  |  |
@@ -23,8 +23,6 @@
 |---- | -----|
 | FLAG | &quot;flag&quot; |
 | SEGMENT | &quot;segment&quot; |
-| METRIC | &quot;metric&quot; |
-| AI_CONFIG | &quot;aiConfig&quot; |
 
 
 

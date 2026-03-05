@@ -17,6 +17,7 @@ Flag representation for Views API - contains only fields actually used by the Vi
 |**tags** | **List&lt;String&gt;** | Tags for the flag |  [optional] |
 |**temporary** | **Boolean** | Whether the flag is temporary |  [optional] |
 |**includeInSnippet** | **Boolean** | Whether to include in snippet |  [optional] |
+|**maintainer** | [**ExpandedFlagMaintainer**](ExpandedFlagMaintainer.md) |  |  [optional] |
 |**links** | [**ParentAndSelfLinks**](ParentAndSelfLinks.md) |  |  [optional] |
 
 

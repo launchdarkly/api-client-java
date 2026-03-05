@@ -415,6 +415,9 @@ public class ViewsBetaApi {
      * @param limit The number of views to return. (optional)
      * @param offset Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. (optional)
      * @param sort Field to sort by. Default field is &#x60;linkedAt&#x60;, default order is ascending. (optional, default to linkedAt)
+     * @param query Case-insensitive search query for linked resources. Matches resource key and, when expanded, resource name. (optional)
+     * @param filter Optional resource filter expression for linked resources. - Supported for &#x60;flags&#x60; and &#x60;segments&#x60; resource types. - Uses the same syntax as link/unlink and list endpoints. - For &#x60;segments&#x60;, &#x60;environmentId&#x60; is required when &#x60;filter&#x60; is provided.  (optional)
+     * @param expand A comma-separated list of fields to expand. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -429,7 +432,7 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getLinkedResourcesCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getLinkedResourcesCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable String filter, @javax.annotation.Nullable List<String> expand, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -469,6 +472,18 @@ public class ViewsBetaApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
         }
 
+        if (query != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("query", query));
+        }
+
+        if (filter != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter", filter));
+        }
+
+        if (expand != null) {
+            localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("csv", "expand", expand));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -494,7 +509,7 @@ public class ViewsBetaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getLinkedResourcesValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getLinkedResourcesValidateBeforeCall(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable String filter, @javax.annotation.Nullable List<String> expand, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'ldAPIVersion' is set
         if (ldAPIVersion == null) {
             throw new ApiException("Missing the required parameter 'ldAPIVersion' when calling getLinkedResources(Async)");
@@ -515,7 +530,7 @@ public class ViewsBetaApi {
             throw new ApiException("Missing the required parameter 'resourceType' when calling getLinkedResources(Async)");
         }
 
-        return getLinkedResourcesCall(ldAPIVersion, projectKey, viewKey, resourceType, limit, offset, sort, _callback);
+        return getLinkedResourcesCall(ldAPIVersion, projectKey, viewKey, resourceType, limit, offset, sort, query, filter, expand, _callback);
 
     }
 
@@ -529,6 +544,9 @@ public class ViewsBetaApi {
      * @param limit The number of views to return. (optional)
      * @param offset Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. (optional)
      * @param sort Field to sort by. Default field is &#x60;linkedAt&#x60;, default order is ascending. (optional, default to linkedAt)
+     * @param query Case-insensitive search query for linked resources. Matches resource key and, when expanded, resource name. (optional)
+     * @param filter Optional resource filter expression for linked resources. - Supported for &#x60;flags&#x60; and &#x60;segments&#x60; resource types. - Uses the same syntax as link/unlink and list endpoints. - For &#x60;segments&#x60;, &#x60;environmentId&#x60; is required when &#x60;filter&#x60; is provided.  (optional)
+     * @param expand A comma-separated list of fields to expand. (optional)
      * @return ViewLinkedResources
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -542,8 +560,8 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ViewLinkedResources getLinkedResources(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort) throws ApiException {
-        ApiResponse<ViewLinkedResources> localVarResp = getLinkedResourcesWithHttpInfo(ldAPIVersion, projectKey, viewKey, resourceType, limit, offset, sort);
+    public ViewLinkedResources getLinkedResources(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable String filter, @javax.annotation.Nullable List<String> expand) throws ApiException {
+        ApiResponse<ViewLinkedResources> localVarResp = getLinkedResourcesWithHttpInfo(ldAPIVersion, projectKey, viewKey, resourceType, limit, offset, sort, query, filter, expand);
         return localVarResp.getData();
     }
 
@@ -557,6 +575,9 @@ public class ViewsBetaApi {
      * @param limit The number of views to return. (optional)
      * @param offset Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. (optional)
      * @param sort Field to sort by. Default field is &#x60;linkedAt&#x60;, default order is ascending. (optional, default to linkedAt)
+     * @param query Case-insensitive search query for linked resources. Matches resource key and, when expanded, resource name. (optional)
+     * @param filter Optional resource filter expression for linked resources. - Supported for &#x60;flags&#x60; and &#x60;segments&#x60; resource types. - Uses the same syntax as link/unlink and list endpoints. - For &#x60;segments&#x60;, &#x60;environmentId&#x60; is required when &#x60;filter&#x60; is provided.  (optional)
+     * @param expand A comma-separated list of fields to expand. (optional)
      * @return ApiResponse&lt;ViewLinkedResources&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -570,8 +591,8 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ViewLinkedResources> getLinkedResourcesWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort) throws ApiException {
-        okhttp3.Call localVarCall = getLinkedResourcesValidateBeforeCall(ldAPIVersion, projectKey, viewKey, resourceType, limit, offset, sort, null);
+    public ApiResponse<ViewLinkedResources> getLinkedResourcesWithHttpInfo(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable String filter, @javax.annotation.Nullable List<String> expand) throws ApiException {
+        okhttp3.Call localVarCall = getLinkedResourcesValidateBeforeCall(ldAPIVersion, projectKey, viewKey, resourceType, limit, offset, sort, query, filter, expand, null);
         Type localVarReturnType = new TypeToken<ViewLinkedResources>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -586,6 +607,9 @@ public class ViewsBetaApi {
      * @param limit The number of views to return. (optional)
      * @param offset Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. (optional)
      * @param sort Field to sort by. Default field is &#x60;linkedAt&#x60;, default order is ascending. (optional, default to linkedAt)
+     * @param query Case-insensitive search query for linked resources. Matches resource key and, when expanded, resource name. (optional)
+     * @param filter Optional resource filter expression for linked resources. - Supported for &#x60;flags&#x60; and &#x60;segments&#x60; resource types. - Uses the same syntax as link/unlink and list endpoints. - For &#x60;segments&#x60;, &#x60;environmentId&#x60; is required when &#x60;filter&#x60; is provided.  (optional)
+     * @param expand A comma-separated list of fields to expand. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -600,9 +624,9 @@ public class ViewsBetaApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getLinkedResourcesAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort, final ApiCallback<ViewLinkedResources> _callback) throws ApiException {
+    public okhttp3.Call getLinkedResourcesAsync(@javax.annotation.Nonnull String ldAPIVersion, @javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String viewKey, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String query, @javax.annotation.Nullable String filter, @javax.annotation.Nullable List<String> expand, final ApiCallback<ViewLinkedResources> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getLinkedResourcesValidateBeforeCall(ldAPIVersion, projectKey, viewKey, resourceType, limit, offset, sort, _callback);
+        okhttp3.Call localVarCall = getLinkedResourcesValidateBeforeCall(ldAPIVersion, projectKey, viewKey, resourceType, limit, offset, sort, query, filter, expand, _callback);
         Type localVarReturnType = new TypeToken<ViewLinkedResources>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -722,7 +746,7 @@ public class ViewsBetaApi {
 
     /**
      * Get linked views for a given resource
-     * Get a list of all linked views for a resource. Flags, AI configs and metrics are identified by key. Segments are identified by segment ID.
+     * Get a list of all linked views for a resource. Flags are identified by key. Segments are identified by segment ID.
      * @param ldAPIVersion Version of the endpoint. (required)
      * @param projectKey  (required)
      * @param resourceType  (required)
@@ -750,7 +774,7 @@ public class ViewsBetaApi {
 
     /**
      * Get linked views for a given resource
-     * Get a list of all linked views for a resource. Flags, AI configs and metrics are identified by key. Segments are identified by segment ID.
+     * Get a list of all linked views for a resource. Flags are identified by key. Segments are identified by segment ID.
      * @param ldAPIVersion Version of the endpoint. (required)
      * @param projectKey  (required)
      * @param resourceType  (required)
@@ -779,7 +803,7 @@ public class ViewsBetaApi {
 
     /**
      * Get linked views for a given resource (asynchronously)
-     * Get a list of all linked views for a resource. Flags, AI configs and metrics are identified by key. Segments are identified by segment ID.
+     * Get a list of all linked views for a resource. Flags are identified by key. Segments are identified by segment ID.
      * @param ldAPIVersion Version of the endpoint. (required)
      * @param projectKey  (required)
      * @param resourceType  (required)
@@ -816,7 +840,7 @@ public class ViewsBetaApi {
      * @param sort A sort to apply to the list of views. (optional)
      * @param limit The number of views to return. (optional)
      * @param offset Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. (optional)
-     * @param filter A filter to apply to the list of views. (optional)
+     * @param filter A filter to apply to the list of views. Supports the following fields and operators: &#x60;name&#x60; (equals, notEquals, startsWith, contains, anyOf), &#x60;key&#x60; (equals, notEquals, startsWith, contains, anyOf), &#x60;tag&#x60; (equals, anyOf), &#x60;maintainerId&#x60; (equals, anyOf), &#x60;isPayloadView&#x60; (equals). (optional)
      * @param expand A comma-separated list of fields to expand. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -933,7 +957,7 @@ public class ViewsBetaApi {
      * @param sort A sort to apply to the list of views. (optional)
      * @param limit The number of views to return. (optional)
      * @param offset Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. (optional)
-     * @param filter A filter to apply to the list of views. (optional)
+     * @param filter A filter to apply to the list of views. Supports the following fields and operators: &#x60;name&#x60; (equals, notEquals, startsWith, contains, anyOf), &#x60;key&#x60; (equals, notEquals, startsWith, contains, anyOf), &#x60;tag&#x60; (equals, anyOf), &#x60;maintainerId&#x60; (equals, anyOf), &#x60;isPayloadView&#x60; (equals). (optional)
      * @param expand A comma-separated list of fields to expand. (optional)
      * @return View
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -962,7 +986,7 @@ public class ViewsBetaApi {
      * @param sort A sort to apply to the list of views. (optional)
      * @param limit The number of views to return. (optional)
      * @param offset Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. (optional)
-     * @param filter A filter to apply to the list of views. (optional)
+     * @param filter A filter to apply to the list of views. Supports the following fields and operators: &#x60;name&#x60; (equals, notEquals, startsWith, contains, anyOf), &#x60;key&#x60; (equals, notEquals, startsWith, contains, anyOf), &#x60;tag&#x60; (equals, anyOf), &#x60;maintainerId&#x60; (equals, anyOf), &#x60;isPayloadView&#x60; (equals). (optional)
      * @param expand A comma-separated list of fields to expand. (optional)
      * @return ApiResponse&lt;View&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -992,7 +1016,7 @@ public class ViewsBetaApi {
      * @param sort A sort to apply to the list of views. (optional)
      * @param limit The number of views to return. (optional)
      * @param offset Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. (optional)
-     * @param filter A filter to apply to the list of views. (optional)
+     * @param filter A filter to apply to the list of views. Supports the following fields and operators: &#x60;name&#x60; (equals, notEquals, startsWith, contains, anyOf), &#x60;key&#x60; (equals, notEquals, startsWith, contains, anyOf), &#x60;tag&#x60; (equals, anyOf), &#x60;maintainerId&#x60; (equals, anyOf), &#x60;isPayloadView&#x60; (equals). (optional)
      * @param expand A comma-separated list of fields to expand. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1022,7 +1046,7 @@ public class ViewsBetaApi {
      * @param sort A sort to apply to the list of views. (optional)
      * @param limit The number of views to return. (optional)
      * @param offset Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. (optional)
-     * @param filter A filter to apply to the list of views. (optional)
+     * @param filter A filter to apply to the list of views. Supports the following fields and operators: &#x60;name&#x60; (equals, notEquals, startsWith, contains, anyOf), &#x60;key&#x60; (equals, notEquals, startsWith, contains, anyOf), &#x60;tag&#x60; (equals, anyOf), &#x60;maintainerId&#x60; (equals, anyOf), &#x60;isPayloadView&#x60; (equals). (optional)
      * @param expand A comma-separated list of fields to expand. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1132,7 +1156,7 @@ public class ViewsBetaApi {
      * @param sort A sort to apply to the list of views. (optional)
      * @param limit The number of views to return. (optional)
      * @param offset Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. (optional)
-     * @param filter A filter to apply to the list of views. (optional)
+     * @param filter A filter to apply to the list of views. Supports the following fields and operators: &#x60;name&#x60; (equals, notEquals, startsWith, contains, anyOf), &#x60;key&#x60; (equals, notEquals, startsWith, contains, anyOf), &#x60;tag&#x60; (equals, anyOf), &#x60;maintainerId&#x60; (equals, anyOf), &#x60;isPayloadView&#x60; (equals). (optional)
      * @param expand A comma-separated list of fields to expand. (optional)
      * @return Views
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1160,7 +1184,7 @@ public class ViewsBetaApi {
      * @param sort A sort to apply to the list of views. (optional)
      * @param limit The number of views to return. (optional)
      * @param offset Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. (optional)
-     * @param filter A filter to apply to the list of views. (optional)
+     * @param filter A filter to apply to the list of views. Supports the following fields and operators: &#x60;name&#x60; (equals, notEquals, startsWith, contains, anyOf), &#x60;key&#x60; (equals, notEquals, startsWith, contains, anyOf), &#x60;tag&#x60; (equals, anyOf), &#x60;maintainerId&#x60; (equals, anyOf), &#x60;isPayloadView&#x60; (equals). (optional)
      * @param expand A comma-separated list of fields to expand. (optional)
      * @return ApiResponse&lt;Views&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1189,7 +1213,7 @@ public class ViewsBetaApi {
      * @param sort A sort to apply to the list of views. (optional)
      * @param limit The number of views to return. (optional)
      * @param offset Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. (optional)
-     * @param filter A filter to apply to the list of views. (optional)
+     * @param filter A filter to apply to the list of views. Supports the following fields and operators: &#x60;name&#x60; (equals, notEquals, startsWith, contains, anyOf), &#x60;key&#x60; (equals, notEquals, startsWith, contains, anyOf), &#x60;tag&#x60; (equals, anyOf), &#x60;maintainerId&#x60; (equals, anyOf), &#x60;isPayloadView&#x60; (equals). (optional)
      * @param expand A comma-separated list of fields to expand. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1218,7 +1242,7 @@ public class ViewsBetaApi {
      * @param projectKey  (required)
      * @param viewKey  (required)
      * @param resourceType  (required)
-     * @param viewLinkRequest The resource to link to the view. Flags are identified by key. Segments are identified by segment ID. (required)
+     * @param viewLinkRequest Resources to link to the view. You can provide explicit keys/IDs, filters, or both. - Flags: identified by key or filtered by maintainerId, maintainerTeamKey, tags, state, query - Segments: identified by segment ID or filtered by tags, query, unbounded  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1319,12 +1343,12 @@ public class ViewsBetaApi {
 
     /**
      * Link resource
-     * Link one or multiple resources to a view: - Link flags using flag keys - Link AI configs using AI config keys - Link metrics using metric keys - Link segments using segment IDs 
+     * Link one or multiple resources to a view by keys, filters, or both: - Link flags using flag keys or filters (maintainerId, maintainerTeamKey, tags, state, query) - Link segments using segment IDs or filters (tags, query, unbounded)  When both keys and filters are provided, resources matching either condition are linked (union). 
      * @param ldAPIVersion Version of the endpoint. (required)
      * @param projectKey  (required)
      * @param viewKey  (required)
      * @param resourceType  (required)
-     * @param viewLinkRequest The resource to link to the view. Flags are identified by key. Segments are identified by segment ID. (required)
+     * @param viewLinkRequest Resources to link to the view. You can provide explicit keys/IDs, filters, or both. - Flags: identified by key or filtered by maintainerId, maintainerTeamKey, tags, state, query - Segments: identified by segment ID or filtered by tags, query, unbounded  (required)
      * @return LinkResourceSuccessResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1345,12 +1369,12 @@ public class ViewsBetaApi {
 
     /**
      * Link resource
-     * Link one or multiple resources to a view: - Link flags using flag keys - Link AI configs using AI config keys - Link metrics using metric keys - Link segments using segment IDs 
+     * Link one or multiple resources to a view by keys, filters, or both: - Link flags using flag keys or filters (maintainerId, maintainerTeamKey, tags, state, query) - Link segments using segment IDs or filters (tags, query, unbounded)  When both keys and filters are provided, resources matching either condition are linked (union). 
      * @param ldAPIVersion Version of the endpoint. (required)
      * @param projectKey  (required)
      * @param viewKey  (required)
      * @param resourceType  (required)
-     * @param viewLinkRequest The resource to link to the view. Flags are identified by key. Segments are identified by segment ID. (required)
+     * @param viewLinkRequest Resources to link to the view. You can provide explicit keys/IDs, filters, or both. - Flags: identified by key or filtered by maintainerId, maintainerTeamKey, tags, state, query - Segments: identified by segment ID or filtered by tags, query, unbounded  (required)
      * @return ApiResponse&lt;LinkResourceSuccessResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1372,12 +1396,12 @@ public class ViewsBetaApi {
 
     /**
      * Link resource (asynchronously)
-     * Link one or multiple resources to a view: - Link flags using flag keys - Link AI configs using AI config keys - Link metrics using metric keys - Link segments using segment IDs 
+     * Link one or multiple resources to a view by keys, filters, or both: - Link flags using flag keys or filters (maintainerId, maintainerTeamKey, tags, state, query) - Link segments using segment IDs or filters (tags, query, unbounded)  When both keys and filters are provided, resources matching either condition are linked (union). 
      * @param ldAPIVersion Version of the endpoint. (required)
      * @param projectKey  (required)
      * @param viewKey  (required)
      * @param resourceType  (required)
-     * @param viewLinkRequest The resource to link to the view. Flags are identified by key. Segments are identified by segment ID. (required)
+     * @param viewLinkRequest Resources to link to the view. You can provide explicit keys/IDs, filters, or both. - Flags: identified by key or filtered by maintainerId, maintainerTeamKey, tags, state, query - Segments: identified by segment ID or filtered by tags, query, unbounded  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1506,7 +1530,7 @@ public class ViewsBetaApi {
 
     /**
      * Unlink resource
-     * Unlink one or multiple resources from a view: - Unlink flags using flag keys - Unlink segments using segment IDs - Unlink AI configs using AI config keys - Unlink metrics using metric keys 
+     * Unlink one or multiple resources from a view: - Unlink flags using flag keys - Unlink segments using segment IDs 
      * @param ldAPIVersion Version of the endpoint. (required)
      * @param projectKey  (required)
      * @param viewKey  (required)
@@ -1532,7 +1556,7 @@ public class ViewsBetaApi {
 
     /**
      * Unlink resource
-     * Unlink one or multiple resources from a view: - Unlink flags using flag keys - Unlink segments using segment IDs - Unlink AI configs using AI config keys - Unlink metrics using metric keys 
+     * Unlink one or multiple resources from a view: - Unlink flags using flag keys - Unlink segments using segment IDs 
      * @param ldAPIVersion Version of the endpoint. (required)
      * @param projectKey  (required)
      * @param viewKey  (required)
@@ -1559,7 +1583,7 @@ public class ViewsBetaApi {
 
     /**
      * Unlink resource (asynchronously)
-     * Unlink one or multiple resources from a view: - Unlink flags using flag keys - Unlink segments using segment IDs - Unlink AI configs using AI config keys - Unlink metrics using metric keys 
+     * Unlink one or multiple resources from a view: - Unlink flags using flag keys - Unlink segments using segment IDs 
      * @param ldAPIVersion Version of the endpoint. (required)
      * @param projectKey  (required)
      * @param viewKey  (required)

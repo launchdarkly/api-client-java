@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.launchdarkly.api.model.ExpandedFlagMaintainer;
 import com.launchdarkly.api.model.ParentAndSelfLinks;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -110,6 +111,14 @@ public class ExpandedFlagTest {
     @Test
     public void includeInSnippetTest() {
         // TODO: test includeInSnippet
+    }
+
+    /**
+     * Test the property 'maintainer'
+     */
+    @Test
+    public void maintainerTest() {
+        // TODO: test maintainer
     }
 
     /**

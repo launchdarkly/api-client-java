@@ -49,6 +49,22 @@ public class ViewLinkRequestSegmentIdentifiersTest {
     }
 
     /**
+     * Test the property 'filter'
+     */
+    @Test
+    public void filterTest() {
+        // TODO: test filter
+    }
+
+    /**
+     * Test the property 'environmentId'
+     */
+    @Test
+    public void environmentIdTest() {
+        // TODO: test environmentId
+    }
+
+    /**
      * Test the property 'comment'
      */
     @Test

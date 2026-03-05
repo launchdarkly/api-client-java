@@ -59,7 +59,7 @@ import com.launchdarkly.api.JSON;
 /**
  * AiConfigsMetricListingRep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T16:08:34.097023Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-05T10:21:59.405621Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class AiConfigsMetricListingRep {
   public static final String SERIALIZED_NAME_EXPERIMENT_COUNT = "experimentCount";
   @SerializedName(SERIALIZED_NAME_EXPERIMENT_COUNT)
@@ -75,6 +75,11 @@ public class AiConfigsMetricListingRep {
   @SerializedName(SERIALIZED_NAME_GUARDED_ROLLOUT_COUNT)
   @javax.annotation.Nullable
   private Integer guardedRolloutCount;
+
+  public static final String SERIALIZED_NAME_RELEASE_POLICY_COUNT = "releasePolicyCount";
+  @SerializedName(SERIALIZED_NAME_RELEASE_POLICY_COUNT)
+  @javax.annotation.Nullable
+  private Integer releasePolicyCount;
 
   public static final String SERIALIZED_NAME_ACTIVE_EXPERIMENT_COUNT = "activeExperimentCount";
   @SerializedName(SERIALIZED_NAME_ACTIVE_EXPERIMENT_COUNT)
@@ -436,6 +441,11 @@ public class AiConfigsMetricListingRep {
   @javax.annotation.Nonnull
   private AiConfigsMetricDataSourceRefRep dataSource;
 
+  public static final String SERIALIZED_NAME_LAST_SEEN = "lastSeen";
+  @SerializedName(SERIALIZED_NAME_LAST_SEEN)
+  @javax.annotation.Nullable
+  private Long lastSeen;
+
   public static final String SERIALIZED_NAME_ARCHIVED = "archived";
   @SerializedName(SERIALIZED_NAME_ARCHIVED)
   @javax.annotation.Nullable
@@ -513,6 +523,25 @@ public class AiConfigsMetricListingRep {
 
   public void setGuardedRolloutCount(@javax.annotation.Nullable Integer guardedRolloutCount) {
     this.guardedRolloutCount = guardedRolloutCount;
+  }
+
+
+  public AiConfigsMetricListingRep releasePolicyCount(@javax.annotation.Nullable Integer releasePolicyCount) {
+    this.releasePolicyCount = releasePolicyCount;
+    return this;
+  }
+
+  /**
+   * The number of release policies using this metric
+   * @return releasePolicyCount
+   */
+  @javax.annotation.Nullable
+  public Integer getReleasePolicyCount() {
+    return releasePolicyCount;
+  }
+
+  public void setReleasePolicyCount(@javax.annotation.Nullable Integer releasePolicyCount) {
+    this.releasePolicyCount = releasePolicyCount;
   }
 
 
@@ -1110,6 +1139,25 @@ public class AiConfigsMetricListingRep {
   }
 
 
+  public AiConfigsMetricListingRep lastSeen(@javax.annotation.Nullable Long lastSeen) {
+    this.lastSeen = lastSeen;
+    return this;
+  }
+
+  /**
+   * Get lastSeen
+   * @return lastSeen
+   */
+  @javax.annotation.Nullable
+  public Long getLastSeen() {
+    return lastSeen;
+  }
+
+  public void setLastSeen(@javax.annotation.Nullable Long lastSeen) {
+    this.lastSeen = lastSeen;
+  }
+
+
   public AiConfigsMetricListingRep archived(@javax.annotation.Nullable Boolean archived) {
     this.archived = archived;
     return this;
@@ -1251,6 +1299,7 @@ public class AiConfigsMetricListingRep {
     return Objects.equals(this.experimentCount, aiConfigsMetricListingRep.experimentCount) &&
         Objects.equals(this.metricGroupCount, aiConfigsMetricListingRep.metricGroupCount) &&
         Objects.equals(this.guardedRolloutCount, aiConfigsMetricListingRep.guardedRolloutCount) &&
+        Objects.equals(this.releasePolicyCount, aiConfigsMetricListingRep.releasePolicyCount) &&
         Objects.equals(this.activeExperimentCount, aiConfigsMetricListingRep.activeExperimentCount) &&
         Objects.equals(this.activeGuardedRolloutCount, aiConfigsMetricListingRep.activeGuardedRolloutCount) &&
         Objects.equals(this.id, aiConfigsMetricListingRep.id) &&
@@ -1281,6 +1330,7 @@ public class AiConfigsMetricListingRep {
         Objects.equals(this.percentileValue, aiConfigsMetricListingRep.percentileValue) &&
         Objects.equals(this.eventDefault, aiConfigsMetricListingRep.eventDefault) &&
         Objects.equals(this.dataSource, aiConfigsMetricListingRep.dataSource) &&
+        Objects.equals(this.lastSeen, aiConfigsMetricListingRep.lastSeen) &&
         Objects.equals(this.archived, aiConfigsMetricListingRep.archived) &&
         Objects.equals(this.archivedAt, aiConfigsMetricListingRep.archivedAt) &&
         Objects.equals(this.selector, aiConfigsMetricListingRep.selector) &&
@@ -1290,7 +1340,7 @@ public class AiConfigsMetricListingRep {
 
   @Override
   public int hashCode() {
-    return Objects.hash(experimentCount, metricGroupCount, guardedRolloutCount, activeExperimentCount, activeGuardedRolloutCount, id, versionId, version, key, name, kind, attachedFlagCount, links, site, access, tags, creationDate, lastModified, maintainerId, maintainer, description, category, isNumeric, successCriteria, unit, eventKey, randomizationUnits, filters, unitAggregationType, analysisType, percentileValue, eventDefault, dataSource, archived, archivedAt, selector, urls, additionalProperties);
+    return Objects.hash(experimentCount, metricGroupCount, guardedRolloutCount, releasePolicyCount, activeExperimentCount, activeGuardedRolloutCount, id, versionId, version, key, name, kind, attachedFlagCount, links, site, access, tags, creationDate, lastModified, maintainerId, maintainer, description, category, isNumeric, successCriteria, unit, eventKey, randomizationUnits, filters, unitAggregationType, analysisType, percentileValue, eventDefault, dataSource, lastSeen, archived, archivedAt, selector, urls, additionalProperties);
   }
 
   @Override
@@ -1300,6 +1350,7 @@ public class AiConfigsMetricListingRep {
     sb.append("    experimentCount: ").append(toIndentedString(experimentCount)).append("\n");
     sb.append("    metricGroupCount: ").append(toIndentedString(metricGroupCount)).append("\n");
     sb.append("    guardedRolloutCount: ").append(toIndentedString(guardedRolloutCount)).append("\n");
+    sb.append("    releasePolicyCount: ").append(toIndentedString(releasePolicyCount)).append("\n");
     sb.append("    activeExperimentCount: ").append(toIndentedString(activeExperimentCount)).append("\n");
     sb.append("    activeGuardedRolloutCount: ").append(toIndentedString(activeGuardedRolloutCount)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
@@ -1330,6 +1381,7 @@ public class AiConfigsMetricListingRep {
     sb.append("    percentileValue: ").append(toIndentedString(percentileValue)).append("\n");
     sb.append("    eventDefault: ").append(toIndentedString(eventDefault)).append("\n");
     sb.append("    dataSource: ").append(toIndentedString(dataSource)).append("\n");
+    sb.append("    lastSeen: ").append(toIndentedString(lastSeen)).append("\n");
     sb.append("    archived: ").append(toIndentedString(archived)).append("\n");
     sb.append("    archivedAt: ").append(toIndentedString(archivedAt)).append("\n");
     sb.append("    selector: ").append(toIndentedString(selector)).append("\n");
@@ -1356,7 +1408,7 @@ public class AiConfigsMetricListingRep {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("experimentCount", "metricGroupCount", "guardedRolloutCount", "activeExperimentCount", "activeGuardedRolloutCount", "_id", "_versionId", "_version", "key", "name", "kind", "_attachedFlagCount", "_links", "_site", "_access", "tags", "_creationDate", "lastModified", "maintainerId", "_maintainer", "description", "category", "isNumeric", "successCriteria", "unit", "eventKey", "randomizationUnits", "filters", "unitAggregationType", "analysisType", "percentileValue", "eventDefault", "dataSource", "archived", "archivedAt", "selector", "urls"));
+    openapiFields = new HashSet<String>(Arrays.asList("experimentCount", "metricGroupCount", "guardedRolloutCount", "releasePolicyCount", "activeExperimentCount", "activeGuardedRolloutCount", "_id", "_versionId", "_version", "key", "name", "kind", "_attachedFlagCount", "_links", "_site", "_access", "tags", "_creationDate", "lastModified", "maintainerId", "_maintainer", "description", "category", "isNumeric", "successCriteria", "unit", "eventKey", "randomizationUnits", "filters", "unitAggregationType", "analysisType", "percentileValue", "eventDefault", "dataSource", "lastSeen", "archived", "archivedAt", "selector", "urls"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("_id", "_versionId", "key", "name", "kind", "_links", "tags", "_creationDate", "dataSource"));

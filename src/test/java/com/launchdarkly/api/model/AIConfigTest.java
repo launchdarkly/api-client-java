@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.launchdarkly.api.model.AIConfigDependency;
 import com.launchdarkly.api.model.AIConfigMaintainer;
 import com.launchdarkly.api.model.AIConfigVariation;
 import com.launchdarkly.api.model.AiConfigsAccess;
@@ -161,6 +162,14 @@ public class AIConfigTest {
     @Test
     public void isInvertedTest() {
         // TODO: test isInverted
+    }
+
+    /**
+     * Test the property 'dependencies'
+     */
+    @Test
+    public void dependenciesTest() {
+        // TODO: test dependencies
     }
 
 }

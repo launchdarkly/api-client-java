@@ -18,42 +18,74 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.launchdarkly.api.model.ExpandedAIConfig;
+import com.launchdarkly.api.model.ViewsLink;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for ExpandedLinkedResourcesAIConfigs
+ * Model tests for ViewsMemberSummary
  */
-public class ExpandedLinkedResourcesAIConfigsTest {
-    private final ExpandedLinkedResourcesAIConfigs model = new ExpandedLinkedResourcesAIConfigs();
+public class ViewsMemberSummaryTest {
+    private final ViewsMemberSummary model = new ViewsMemberSummary();
 
     /**
-     * Model tests for ExpandedLinkedResourcesAIConfigs
+     * Model tests for ViewsMemberSummary
      */
     @Test
-    public void testExpandedLinkedResourcesAIConfigs() {
-        // TODO: test ExpandedLinkedResourcesAIConfigs
+    public void testViewsMemberSummary() {
+        // TODO: test ViewsMemberSummary
     }
 
     /**
-     * Test the property 'items'
+     * Test the property 'links'
      */
     @Test
-    public void itemsTest() {
-        // TODO: test items
+    public void linksTest() {
+        // TODO: test links
     }
 
     /**
-     * Test the property 'totalCount'
+     * Test the property 'id'
      */
     @Test
-    public void totalCountTest() {
-        // TODO: test totalCount
+    public void idTest() {
+        // TODO: test id
+    }
+
+    /**
+     * Test the property 'firstName'
+     */
+    @Test
+    public void firstNameTest() {
+        // TODO: test firstName
+    }
+
+    /**
+     * Test the property 'lastName'
+     */
+    @Test
+    public void lastNameTest() {
+        // TODO: test lastName
+    }
+
+    /**
+     * Test the property 'role'
+     */
+    @Test
+    public void roleTest() {
+        // TODO: test role
+    }
+
+    /**
+     * Test the property 'email'
+     */
+    @Test
+    public void emailTest() {
+        // TODO: test email
     }
 
 }

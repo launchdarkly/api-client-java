@@ -20,6 +20,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -51,6 +53,14 @@ public class VariationToolTest {
     @Test
     public void versionTest() {
         // TODO: test version
+    }
+
+    /**
+     * Test the property 'customParameters'
+     */
+    @Test
+    public void customParametersTest() {
+        // TODO: test customParameters
     }
 
 }

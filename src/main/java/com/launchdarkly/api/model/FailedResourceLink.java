@@ -48,7 +48,7 @@ import com.launchdarkly.api.JSON;
 /**
  * FailedResourceLink
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T16:08:34.097023Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-05T10:21:59.405621Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class FailedResourceLink {
   public static final String SERIALIZED_NAME_RESOURCE_KEY = "resourceKey";
   @SerializedName(SERIALIZED_NAME_RESOURCE_KEY)
@@ -67,11 +67,7 @@ public class FailedResourceLink {
   public enum ResourceTypeEnum {
     FLAG("flag"),
     
-    SEGMENT("segment"),
-    
-    METRIC("metric"),
-    
-    AI_CONFIG("aiConfig");
+    SEGMENT("segment");
 
     private String value;
 

@@ -51,7 +51,7 @@ import com.launchdarkly.api.JSON;
 /**
  * Request body for creating an agent graph
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-03T16:08:34.097023Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-05T10:21:59.405621Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class AgentGraphPost {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
@@ -67,6 +67,16 @@ public class AgentGraphPost {
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @javax.annotation.Nullable
   private String description;
+
+  public static final String SERIALIZED_NAME_MAINTAINER_ID = "maintainerId";
+  @SerializedName(SERIALIZED_NAME_MAINTAINER_ID)
+  @javax.annotation.Nullable
+  private String maintainerId;
+
+  public static final String SERIALIZED_NAME_MAINTAINER_TEAM_KEY = "maintainerTeamKey";
+  @SerializedName(SERIALIZED_NAME_MAINTAINER_TEAM_KEY)
+  @javax.annotation.Nullable
+  private String maintainerTeamKey;
 
   public static final String SERIALIZED_NAME_ROOT_CONFIG_KEY = "rootConfigKey";
   @SerializedName(SERIALIZED_NAME_ROOT_CONFIG_KEY)
@@ -135,6 +145,44 @@ public class AgentGraphPost {
 
   public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
+  }
+
+
+  public AgentGraphPost maintainerId(@javax.annotation.Nullable String maintainerId) {
+    this.maintainerId = maintainerId;
+    return this;
+  }
+
+  /**
+   * The ID of the member who maintains this agent graph
+   * @return maintainerId
+   */
+  @javax.annotation.Nullable
+  public String getMaintainerId() {
+    return maintainerId;
+  }
+
+  public void setMaintainerId(@javax.annotation.Nullable String maintainerId) {
+    this.maintainerId = maintainerId;
+  }
+
+
+  public AgentGraphPost maintainerTeamKey(@javax.annotation.Nullable String maintainerTeamKey) {
+    this.maintainerTeamKey = maintainerTeamKey;
+    return this;
+  }
+
+  /**
+   * The key of the team that maintains this agent graph
+   * @return maintainerTeamKey
+   */
+  @javax.annotation.Nullable
+  public String getMaintainerTeamKey() {
+    return maintainerTeamKey;
+  }
+
+  public void setMaintainerTeamKey(@javax.annotation.Nullable String maintainerTeamKey) {
+    this.maintainerTeamKey = maintainerTeamKey;
   }
 
 
@@ -241,6 +289,8 @@ public class AgentGraphPost {
     return Objects.equals(this.key, agentGraphPost.key) &&
         Objects.equals(this.name, agentGraphPost.name) &&
         Objects.equals(this.description, agentGraphPost.description) &&
+        Objects.equals(this.maintainerId, agentGraphPost.maintainerId) &&
+        Objects.equals(this.maintainerTeamKey, agentGraphPost.maintainerTeamKey) &&
         Objects.equals(this.rootConfigKey, agentGraphPost.rootConfigKey) &&
         Objects.equals(this.edges, agentGraphPost.edges)&&
         Objects.equals(this.additionalProperties, agentGraphPost.additionalProperties);
@@ -248,7 +298,7 @@ public class AgentGraphPost {
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, name, description, rootConfigKey, edges, additionalProperties);
+    return Objects.hash(key, name, description, maintainerId, maintainerTeamKey, rootConfigKey, edges, additionalProperties);
   }
 
   @Override
@@ -258,6 +308,8 @@ public class AgentGraphPost {
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    maintainerId: ").append(toIndentedString(maintainerId)).append("\n");
+    sb.append("    maintainerTeamKey: ").append(toIndentedString(maintainerTeamKey)).append("\n");
     sb.append("    rootConfigKey: ").append(toIndentedString(rootConfigKey)).append("\n");
     sb.append("    edges: ").append(toIndentedString(edges)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
@@ -282,7 +334,7 @@ public class AgentGraphPost {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("key", "name", "description", "rootConfigKey", "edges"));
+    openapiFields = new HashSet<String>(Arrays.asList("key", "name", "description", "maintainerId", "maintainerTeamKey", "rootConfigKey", "edges"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("key", "name"));
@@ -316,6 +368,12 @@ public class AgentGraphPost {
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      if ((jsonObj.get("maintainerId") != null && !jsonObj.get("maintainerId").isJsonNull()) && !jsonObj.get("maintainerId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `maintainerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerId").toString()));
+      }
+      if ((jsonObj.get("maintainerTeamKey") != null && !jsonObj.get("maintainerTeamKey").isJsonNull()) && !jsonObj.get("maintainerTeamKey").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `maintainerTeamKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maintainerTeamKey").toString()));
       }
       if ((jsonObj.get("rootConfigKey") != null && !jsonObj.get("rootConfigKey").isJsonNull()) && !jsonObj.get("rootConfigKey").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `rootConfigKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rootConfigKey").toString()));

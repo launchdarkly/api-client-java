@@ -19,6 +19,7 @@
 |**tokenId** | **String** |  |  [optional] |
 |**memberId** | **String** |  |  [optional] |
 |**serviceToken** | **Boolean** |  |  [optional] |
+|**scopes** | **List&lt;String&gt;** |  |  [optional] |
 
 
 

@@ -29,6 +29,7 @@ import java.io.IOException;
 
 import com.launchdarkly.api.model.AuditLogEntryListingRepCollection;
 import com.launchdarkly.api.model.AuditLogEntryRep;
+import com.launchdarkly.api.model.CountBucketsResult;
 import com.launchdarkly.api.model.ForbiddenErrorRep;
 import com.launchdarkly.api.model.InvalidRequestErrorRep;
 import com.launchdarkly.api.model.NotFoundErrorRep;
@@ -562,6 +563,178 @@ public class AuditLogApi {
 
         okhttp3.Call localVarCall = postAuditLogEntriesValidateBeforeCall(before, after, q, limit, statementPost, _callback);
         Type localVarReturnType = new TypeToken<AuditLogEntryListingRepCollection>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for postAuditLogEntryCounts
+     * @param after A timestamp filter, expressed as a Unix epoch time in milliseconds. Required. (required)
+     * @param statementPost  (required)
+     * @param before A timestamp filter, expressed as a Unix epoch time in milliseconds. Defaults to now. (optional)
+     * @param buckets Number of time buckets to divide the range into. Default 50, max 500. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Audit log entry counts response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call postAuditLogEntryCountsCall(@javax.annotation.Nonnull Long after, @javax.annotation.Nonnull List<StatementPost> statementPost, @javax.annotation.Nullable Long before, @javax.annotation.Nullable Long buckets, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = statementPost;
+
+        // create path and map variables
+        String localVarPath = "/api/v2/auditlog/counts";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (before != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("before", before));
+        }
+
+        if (after != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("after", after));
+        }
+
+        if (buckets != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("buckets", buckets));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call postAuditLogEntryCountsValidateBeforeCall(@javax.annotation.Nonnull Long after, @javax.annotation.Nonnull List<StatementPost> statementPost, @javax.annotation.Nullable Long before, @javax.annotation.Nullable Long buckets, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'after' is set
+        if (after == null) {
+            throw new ApiException("Missing the required parameter 'after' when calling postAuditLogEntryCounts(Async)");
+        }
+
+        // verify the required parameter 'statementPost' is set
+        if (statementPost == null) {
+            throw new ApiException("Missing the required parameter 'statementPost' when calling postAuditLogEntryCounts(Async)");
+        }
+
+        return postAuditLogEntryCountsCall(after, statementPost, before, buckets, _callback);
+
+    }
+
+    /**
+     * Get audit log entry counts
+     * Returns aggregate counts of audit log entries per time bucket. Used for dashboard overlays that show flag targeting changes.
+     * @param after A timestamp filter, expressed as a Unix epoch time in milliseconds. Required. (required)
+     * @param statementPost  (required)
+     * @param before A timestamp filter, expressed as a Unix epoch time in milliseconds. Defaults to now. (optional)
+     * @param buckets Number of time buckets to divide the range into. Default 50, max 500. (optional)
+     * @return CountBucketsResult
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Audit log entry counts response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+     </table>
+     */
+    public CountBucketsResult postAuditLogEntryCounts(@javax.annotation.Nonnull Long after, @javax.annotation.Nonnull List<StatementPost> statementPost, @javax.annotation.Nullable Long before, @javax.annotation.Nullable Long buckets) throws ApiException {
+        ApiResponse<CountBucketsResult> localVarResp = postAuditLogEntryCountsWithHttpInfo(after, statementPost, before, buckets);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get audit log entry counts
+     * Returns aggregate counts of audit log entries per time bucket. Used for dashboard overlays that show flag targeting changes.
+     * @param after A timestamp filter, expressed as a Unix epoch time in milliseconds. Required. (required)
+     * @param statementPost  (required)
+     * @param before A timestamp filter, expressed as a Unix epoch time in milliseconds. Defaults to now. (optional)
+     * @param buckets Number of time buckets to divide the range into. Default 50, max 500. (optional)
+     * @return ApiResponse&lt;CountBucketsResult&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Audit log entry counts response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<CountBucketsResult> postAuditLogEntryCountsWithHttpInfo(@javax.annotation.Nonnull Long after, @javax.annotation.Nonnull List<StatementPost> statementPost, @javax.annotation.Nullable Long before, @javax.annotation.Nullable Long buckets) throws ApiException {
+        okhttp3.Call localVarCall = postAuditLogEntryCountsValidateBeforeCall(after, statementPost, before, buckets, null);
+        Type localVarReturnType = new TypeToken<CountBucketsResult>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get audit log entry counts (asynchronously)
+     * Returns aggregate counts of audit log entries per time bucket. Used for dashboard overlays that show flag targeting changes.
+     * @param after A timestamp filter, expressed as a Unix epoch time in milliseconds. Required. (required)
+     * @param statementPost  (required)
+     * @param before A timestamp filter, expressed as a Unix epoch time in milliseconds. Defaults to now. (optional)
+     * @param buckets Number of time buckets to divide the range into. Default 50, max 500. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Audit log entry counts response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call postAuditLogEntryCountsAsync(@javax.annotation.Nonnull Long after, @javax.annotation.Nonnull List<StatementPost> statementPost, @javax.annotation.Nullable Long before, @javax.annotation.Nullable Long buckets, final ApiCallback<CountBucketsResult> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = postAuditLogEntryCountsValidateBeforeCall(after, statementPost, before, buckets, _callback);
+        Type localVarReturnType = new TypeToken<CountBucketsResult>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
