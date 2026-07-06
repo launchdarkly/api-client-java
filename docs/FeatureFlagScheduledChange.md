@@ -10,6 +10,7 @@
 |**id** | **String** |  |  |
 |**creationDate** | **Long** |  |  |
 |**maintainerId** | **String** | The ID of the scheduled change maintainer |  |
+|**maintainerServiceTokenId** | **String** | The ID of the service token that created or updated this scheduled change |  [optional] |
 |**version** | **Integer** | Version of the scheduled change |  |
 |**executionDate** | **Long** |  |  |
 |**instructions** | **List&lt;Map&lt;String, Object&gt;&gt;** |  |  |

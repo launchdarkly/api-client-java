@@ -8,9 +8,12 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**getDestination**](DataExportDestinationsApi.md#getDestination) | **GET** /api/v2/destinations/{projectKey}/{environmentKey}/{id} | Get destination |
 | [**getDestinations**](DataExportDestinationsApi.md#getDestinations) | **GET** /api/v2/destinations | List destinations |
 | [**patchDestination**](DataExportDestinationsApi.md#patchDestination) | **PATCH** /api/v2/destinations/{projectKey}/{environmentKey}/{id} | Update Data Export destination |
+| [**postCompleteWarehouseDestinationSetup**](DataExportDestinationsApi.md#postCompleteWarehouseDestinationSetup) | **POST** /api/v2/destinations/projects/{projKey}/environments/{envKey}/kinds/{kind}/complete-setup | Complete warehouse destination setup |
 | [**postDestination**](DataExportDestinationsApi.md#postDestination) | **POST** /api/v2/destinations/{projectKey}/{environmentKey} | Create Data Export destination |
+| [**postGenerateProjectEnvWarehouseDestinationKeyPair**](DataExportDestinationsApi.md#postGenerateProjectEnvWarehouseDestinationKeyPair) | **POST** /api/v2/destinations/projects/{projKey}/environments/{envKey}/generate-warehouse-destination-key-pair | Generate Snowflake destination key pair |
 | [**postGenerateTrustPolicy**](DataExportDestinationsApi.md#postGenerateTrustPolicy) | **POST** /api/v2/destinations/projects/{projKey}/environments/{envKey}/generate-trust-policy | Generate trust policy |
 | [**postGenerateWarehouseDestinationKeyPair**](DataExportDestinationsApi.md#postGenerateWarehouseDestinationKeyPair) | **POST** /api/v2/destinations/generate-warehouse-destination-key-pair | Generate Snowflake destination key pair |
+| [**postGenerateWarehouseDestinationSetupScript**](DataExportDestinationsApi.md#postGenerateWarehouseDestinationSetupScript) | **POST** /api/v2/destinations/projects/{projKey}/environments/{envKey}/kinds/{kind}/setup | Generate warehouse destination setup script |
 
 
 <a id="deleteDestination"></a>
@@ -315,6 +318,86 @@ public class Example {
 | **409** | Status conflict |  -  |
 | **429** | Rate limited |  -  |
 
+<a id="postCompleteWarehouseDestinationSetup"></a>
+# **postCompleteWarehouseDestinationSetup**
+> Destination postCompleteWarehouseDestinationSetup(projKey, envKey, kind, completeSetupPostBody)
+
+Complete warehouse destination setup
+
+Complete the setup of a warehouse destination by providing the Snowflake host address and the public keys from the /setup response. The custom names are read from the stored configuration.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.DataExportDestinationsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    DataExportDestinationsApi apiInstance = new DataExportDestinationsApi(defaultClient);
+    String projKey = "projKey_example"; // String | The project key
+    String envKey = "envKey_example"; // String | The environment key
+    String kind = "kind_example"; // String | The destination kind (snowflake-v2, bigquery, clickhouse, redshift)
+    CompleteSetupPostBody completeSetupPostBody = new CompleteSetupPostBody(); // CompleteSetupPostBody | 
+    try {
+      Destination result = apiInstance.postCompleteWarehouseDestinationSetup(projKey, envKey, kind, completeSetupPostBody);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DataExportDestinationsApi#postCompleteWarehouseDestinationSetup");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projKey** | **String**| The project key | |
+| **envKey** | **String**| The environment key | |
+| **kind** | **String**| The destination kind (snowflake-v2, bigquery, clickhouse, redshift) | |
+| **completeSetupPostBody** | [**CompleteSetupPostBody**](CompleteSetupPostBody.md)|  | |
+
+### Return type
+
+[**Destination**](Destination.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Completed destination |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Pending destination not found |  -  |
+| **429** | Rate limited |  -  |
+
 <a id="postDestination"></a>
 # **postDestination**
 > Destination postDestination(projectKey, environmentKey, destinationPost)
@@ -387,6 +470,82 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Destination response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **409** | Status conflict |  -  |
+| **429** | Rate limited |  -  |
+
+<a id="postGenerateProjectEnvWarehouseDestinationKeyPair"></a>
+# **postGenerateProjectEnvWarehouseDestinationKeyPair**
+> GenerateWarehouseDestinationKeyPairPostRep postGenerateProjectEnvWarehouseDestinationKeyPair(projKey, envKey)
+
+Generate Snowflake destination key pair
+
+Generate key pair to allow Data Export to authenticate into a Snowflake warehouse destination
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.DataExportDestinationsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    DataExportDestinationsApi apiInstance = new DataExportDestinationsApi(defaultClient);
+    String projKey = "projKey_example"; // String | The project key
+    String envKey = "envKey_example"; // String | The environment key
+    try {
+      GenerateWarehouseDestinationKeyPairPostRep result = apiInstance.postGenerateProjectEnvWarehouseDestinationKeyPair(projKey, envKey);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DataExportDestinationsApi#postGenerateProjectEnvWarehouseDestinationKeyPair");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projKey** | **String**| The project key | |
+| **envKey** | **String**| The environment key | |
+
+### Return type
+
+[**GenerateWarehouseDestinationKeyPairPostRep**](GenerateWarehouseDestinationKeyPairPostRep.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Generate warehouse destination key pair response |  -  |
 | **400** | Invalid request |  -  |
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |
@@ -537,5 +696,84 @@ This endpoint does not need any parameter.
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |
 | **409** | Status conflict |  -  |
+| **429** | Rate limited |  -  |
+
+<a id="postGenerateWarehouseDestinationSetupScript"></a>
+# **postGenerateWarehouseDestinationSetupScript**
+> WarehouseDestinationSetupScriptRep postGenerateWarehouseDestinationSetupScript(projKey, envKey, kind, warehouseSetupScriptPostBody)
+
+Generate warehouse destination setup script
+
+Generate the SQL setup script required to prepare a warehouse for LaunchDarkly Data Export. For Snowflake, this also generates a key pair. Custom Snowflake object names may be provided. If omitted, defaults are used.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.DataExportDestinationsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    DataExportDestinationsApi apiInstance = new DataExportDestinationsApi(defaultClient);
+    String projKey = "projKey_example"; // String | The project key
+    String envKey = "envKey_example"; // String | The environment key
+    String kind = "kind_example"; // String | The destination kind (snowflake-v2, redshift, clickhouse)
+    WarehouseSetupScriptPostBody warehouseSetupScriptPostBody = new WarehouseSetupScriptPostBody(); // WarehouseSetupScriptPostBody | 
+    try {
+      WarehouseDestinationSetupScriptRep result = apiInstance.postGenerateWarehouseDestinationSetupScript(projKey, envKey, kind, warehouseSetupScriptPostBody);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DataExportDestinationsApi#postGenerateWarehouseDestinationSetupScript");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projKey** | **String**| The project key | |
+| **envKey** | **String**| The environment key | |
+| **kind** | **String**| The destination kind (snowflake-v2, redshift, clickhouse) | |
+| **warehouseSetupScriptPostBody** | [**WarehouseSetupScriptPostBody**](WarehouseSetupScriptPostBody.md)|  | [optional] |
+
+### Return type
+
+[**WarehouseDestinationSetupScriptRep**](WarehouseDestinationSetupScriptRep.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Generate warehouse destination setup script response |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
 | **429** | Rate limited |  -  |
 

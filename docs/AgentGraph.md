@@ -2,7 +2,7 @@
 
 # AgentGraph
 
-An agent graph representing a directed graph of AI Configs
+An agent graph representing a directed graph of configs
 
 ## Properties
 
@@ -13,7 +13,7 @@ An agent graph representing a directed graph of AI Configs
 |**name** | **String** | A human-readable name for the agent graph |  |
 |**description** | **String** | A description of the agent graph |  [optional] |
 |**maintainer** | [**AgentGraphMaintainer**](AgentGraphMaintainer.md) |  |  [optional] |
-|**rootConfigKey** | **String** | The AI Config key of the root node |  [optional] |
+|**rootConfigKey** | **String** | The config key of the root node |  [optional] |
 |**edges** | [**List&lt;AgentGraphEdge&gt;**](AgentGraphEdge.md) | The edges in the graph |  [optional] |
 |**createdAt** | **Long** |  |  |
 |**updatedAt** | **Long** |  |  |

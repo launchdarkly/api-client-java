@@ -14,7 +14,10 @@
 |**version** | **BigDecimal** |  |  [optional] |
 |**config** | **Object** | An object with the configuration parameters required for the destination type |  [optional] |
 |**on** | **Boolean** | Whether the export is on, that is, the status of the integration |  [optional] |
+|**createdAt** | **Long** |  |  [optional] |
+|**maintainerId** | **String** | The ID of the member who maintains this Data Export destination |  [optional] |
 |**access** | [**Access**](Access.md) |  |  [optional] |
+|**completedArtifacts** | [**RedshiftDataExportCompletedArtifactsRep**](RedshiftDataExportCompletedArtifactsRep.md) |  |  [optional] |
 
 
 

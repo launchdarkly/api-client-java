@@ -17,6 +17,7 @@
 |**tags** | **List&lt;String&gt;** |  |  [optional] |
 |**costPerInputToken** | **Double** | Cost per input token in USD |  [optional] |
 |**costPerOutputToken** | **Double** | Cost per output token in USD |  [optional] |
+|**costPerCachedInputToken** | **Double** | Cost per cached input token in USD |  [optional] |
 
 
 

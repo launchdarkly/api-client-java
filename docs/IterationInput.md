@@ -15,6 +15,8 @@
 |**treatments** | [**List&lt;TreatmentInput&gt;**](TreatmentInput.md) |  |  |
 |**flags** | [**Map&lt;String, FlagInput&gt;**](FlagInput.md) |  |  |
 |**randomizationUnit** | **String** | The unit of randomization for this iteration. Defaults to user. |  [optional] |
+|**reallocationFrequencyMillis** | **Integer** | The cadence (in milliseconds) to update the allocation. |  [optional] |
+|**covariateId** | **String** | The ID of the covariate CSV |  [optional] |
 |**attributes** | **List&lt;String&gt;** | The attributes that this iteration&#39;s results can be sliced by |  [optional] |
 
 

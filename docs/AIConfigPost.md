@@ -14,8 +14,9 @@
 |**mode** | [**ModeEnum**](#ModeEnum) |  |  [optional] |
 |**name** | **String** |  |  |
 |**tags** | **List&lt;String&gt;** |  |  [optional] |
+|**viewKeys** | **List&lt;String&gt;** |  |  [optional] |
 |**defaultVariation** | [**AIConfigVariationPost**](AIConfigVariationPost.md) |  |  [optional] |
-|**evaluationMetricKey** | **String** | Evaluation metric key for this AI Config |  [optional] |
+|**evaluationMetricKey** | **String** | Evaluation metric key for this config |  [optional] |
 |**isInverted** | **Boolean** | Whether the evaluation metric is inverted, meaning a lower value is better if set as true |  [optional] |
 
 

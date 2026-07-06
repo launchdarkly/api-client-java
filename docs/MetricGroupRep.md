@@ -33,7 +33,6 @@
 |---- | -----|
 | FUNNEL | &quot;funnel&quot; |
 | STANDARD | &quot;standard&quot; |
-| GUARDRAIL | &quot;guardrail&quot; |
 
 
 

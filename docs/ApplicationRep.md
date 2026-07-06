@@ -16,7 +16,7 @@
 |**description** | **String** | The application description |  [optional] |
 |**key** | **String** | The unique identifier of this application |  |
 |**kind** | [**KindEnum**](#KindEnum) | To distinguish the kind of application |  |
-|**maintainer** | [**MaintainerRep**](MaintainerRep.md) |  |  [optional] |
+|**maintainer** | [**ApplicationMaintainerRep**](ApplicationMaintainerRep.md) |  |  [optional] |
 |**name** | **String** | The name of the application |  |
 
 

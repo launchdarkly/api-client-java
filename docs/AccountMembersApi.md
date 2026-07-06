@@ -92,7 +92,7 @@ null (empty response body)
 
 Get account member
 
-Get a single account member by member ID.  &#x60;me&#x60; is a reserved value for the &#x60;id&#x60; parameter that returns the caller&#39;s member information.  ### Expanding the member response LaunchDarkly supports one field for expanding the \&quot;Get member\&quot; response. By default, this field is **not** included in the response.  To expand the response, append the &#x60;expand&#x60; query parameter and add a comma-separated list with any of the following fields:  * &#x60;roleAttributes&#x60; includes a list of the role attributes that you have assigned to the member.  For example, &#x60;expand&#x3D;roleAttributes&#x60; includes &#x60;roleAttributes&#x60; field in the response. 
+Get a single account member by member ID.  &#x60;me&#x60; is a reserved value for the &#x60;id&#x60; parameter that returns the caller&#39;s member information.  ### Expanding the member response LaunchDarkly supports the following fields for expanding the \&quot;Get member\&quot; response. By default, these fields are **not** included in the response.  To expand the response, append the &#x60;expand&#x60; query parameter and add a comma-separated list with any of the following fields:  * &#x60;customRoles&#x60; includes details on each custom role assigned to the member, including the role key, name, and ID. * &#x60;roleAttributes&#x60; includes a list of the role attributes that you have assigned to the member.  For example, &#x60;expand&#x3D;customRoles,roleAttributes&#x60; includes both the &#x60;customRolesInfo&#x60; and &#x60;roleAttributes&#x60; fields in the response. 
 
 ### Example
 ```java

@@ -26,8 +26,11 @@
 |**permissionGrants** | [**List&lt;MemberPermissionGrantSummaryRep&gt;**](MemberPermissionGrantSummaryRep.md) | A list of permission grants. Permission grants allow a member to have access to a specific action, without having to create or update a custom role. |  [optional] |
 |**creationDate** | **Long** |  |  |
 |**oauthProviders** | **List&lt;String&gt;** | A list of OAuth providers |  [optional] |
+|**hasPassword** | **Boolean** | Whether the member has a password set (basic auth). False for OAuth-only or SCIM-provisioned members without a password. |  [optional] |
 |**version** | **Integer** | Version of the current configuration |  [optional] |
 |**roleAttributes** | **Map&lt;String, List&lt;String&gt;&gt;** |  |  [optional] |
+|**mfaEnforced** | **Boolean** |  |  [optional] |
+|**mfaGracePeriodExpiresAt** | **Long** |  |  [optional] |
 
 
 

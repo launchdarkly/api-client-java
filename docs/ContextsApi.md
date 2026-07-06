@@ -91,6 +91,7 @@ null (empty response body)
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
+| **410** | Endpoint deprecated |  -  |
 | **429** | Rate limited |  -  |
 
 <a id="evaluateContextInstance"></a>

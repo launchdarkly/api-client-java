@@ -17,6 +17,11 @@
 |**access** | [**Access**](Access.md) |  |  [optional] |
 |**configValues** | **Map&lt;String, Object&gt;** | Details on configuration for an integration of this type. Refer to the &lt;code&gt;formVariables&lt;/code&gt; field in the corresponding &lt;code&gt;manifest.json&lt;/code&gt; for a full list of fields for each integration. |  [optional] |
 |**capabilityConfig** | [**CapabilityConfigRep**](CapabilityConfigRep.md) |  |  [optional] |
+|**snowflakeSetupScript** | **String** | Consolidated SQL script for Snowflake Warehouse Native Experimentation setup. Present only for setup endpoint responses. |  [optional] |
+|**redshiftSetupScripts** | **List&lt;String&gt;** | SQL setup scripts (4 parts) for Redshift Native Experimentation setup. Present only for setup endpoint responses. |  [optional] |
+|**redshiftIAMPermissionsPolicy** | **String** | IAM permissions policy JSON for the customer&#39;s Redshift IAM role. Present only for setup endpoint responses. |  [optional] |
+|**redshiftIAMTrustPolicy** | **String** | IAM trust policy JSON for the customer&#39;s Redshift IAM role. Present only for setup endpoint responses. |  [optional] |
+|**maintainerId** | **String** | The ID of the member who maintains this integration configuration. Defaults to the member who created it. |  [optional] |
 
 
 

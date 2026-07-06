@@ -16,7 +16,8 @@
 |**key** | **String** | Unique key for the view within the account/project |  |
 |**name** | **String** | Human-readable name for the view |  |
 |**description** | **String** | Optional detailed description of the view |  |
-|**generateSdkKeys** | **Boolean** | Whether to generate SDK keys for this view. Defaults to false. |  |
+|**affectsSdkPayload** | **Boolean** | Whether this view is used to filter SDK payloads |  |
+|**generateSdkKeys** | **Boolean** | Deprecated compatibility field. Mirrors &#x60;_affectsSdkPayload&#x60; during rollout. |  [optional] [readonly] |
 |**version** | **Integer** | Version number for tracking changes |  |
 |**tags** | **List&lt;String&gt;** | Tags associated with this view |  |
 |**createdAt** | **Long** |  |  |

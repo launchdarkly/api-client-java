@@ -18,6 +18,7 @@
 |**model** | **Object** |  |  |
 |**modelConfigKey** | **String** |  |  [optional] |
 |**name** | **String** |  |  |
+|**outputFormat** | **Map&lt;String, Object&gt;** | JSON Schema defining the structured output format for the variation. |  [optional] |
 |**createdAt** | **Long** |  |  |
 |**version** | **Integer** |  |  |
 |**state** | **String** |  |  [optional] |

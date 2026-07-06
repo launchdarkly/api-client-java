@@ -20,6 +20,7 @@
 |---- | -----|
 | FLAG | &quot;flag&quot; |
 | SEGMENT | &quot;segment&quot; |
+| AI_CONFIG | &quot;aiConfig&quot; |
 
 
 

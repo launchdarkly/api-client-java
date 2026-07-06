@@ -8,7 +8,7 @@ This client library is only compatible with the latest version of our REST API. 
 
 LaunchDarkly REST API
 - API version: 2.0
-  - Build date: 2026-03-05T10:45:26.516033Z[Etc/UTC]
+  - Build date: 2026-07-06T16:21:06.581384Z[Etc/UTC]
   - Generator version: 7.18.0
 
 This documentation describes LaunchDarkly's REST API. To access the complete OpenAPI spec directly, use [Get OpenAPI spec](https://launchdarkly.com/docs/api/other/get-openapi-spec).
@@ -54,7 +54,7 @@ Depending on the permissions granted as part of your [role](https://launchdarkly
 >
 > If the Origin header does not match what's expected, LaunchDarkly returns an error. This error can prevent the LaunchDarkly app from working correctly.
 >
-> Any browser extension that intentionally changes the Origin header can cause this problem. For example, the `Allow-Control-Allow-Origin: *` Chrome extension changes the Origin header to `http://evil.com` and causes the app to fail.
+> Any browser extension that intentionally changes the Origin header can cause this problem. For example, Cross-Origin Resource Sharing (CORS) extensions used during development can modify the Origin header and cause the app to fail.
 >
 > To prevent this error, do not modify your Origin header.
 >
@@ -483,7 +483,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.launchdarkly</groupId>
   <artifactId>api-client</artifactId>
-  <version>22.0.0</version>
+  <version>23.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -499,7 +499,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.launchdarkly:api-client:22.0.0"
+     implementation "com.launchdarkly:api-client:23.0.0"
   }
 ```
 
@@ -513,7 +513,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-client-22.0.0.jar`
+* `target/api-client-23.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -576,6 +576,7 @@ Class | Method | HTTP request | Description
 *AccountMembersApi* | [**patchMembers**](docs/AccountMembersApi.md#patchMembers) | **PATCH** /api/v2/members | Modify account members
 *AccountMembersApi* | [**postMemberTeams**](docs/AccountMembersApi.md#postMemberTeams) | **POST** /api/v2/members/{id}/teams | Add a member to teams
 *AccountMembersApi* | [**postMembers**](docs/AccountMembersApi.md#postMembers) | **POST** /api/v2/members | Invite new members
+*AccountUsageBetaApi* | [**getAIRunsUsage**](docs/AccountUsageBetaApi.md#getAIRunsUsage) | **GET** /api/v2/usage/ai-runs | Get AI runs usage
 *AccountUsageBetaApi* | [**getContextsClientsideUsage**](docs/AccountUsageBetaApi.md#getContextsClientsideUsage) | **GET** /api/v2/usage/clientside-contexts | Get contexts clientside usage
 *AccountUsageBetaApi* | [**getContextsServersideUsage**](docs/AccountUsageBetaApi.md#getContextsServersideUsage) | **GET** /api/v2/usage/serverside-contexts | Get contexts serverside usage
 *AccountUsageBetaApi* | [**getContextsTotalUsage**](docs/AccountUsageBetaApi.md#getContextsTotalUsage) | **GET** /api/v2/usage/total-contexts | Get contexts total usage
@@ -594,41 +595,65 @@ Class | Method | HTTP request | Description
 *AccountUsageBetaApi* | [**getObservabilityMetricsUsage**](docs/AccountUsageBetaApi.md#getObservabilityMetricsUsage) | **GET** /api/v2/usage/observability/metrics | Get observability metrics usage
 *AccountUsageBetaApi* | [**getObservabilitySessionsUsage**](docs/AccountUsageBetaApi.md#getObservabilitySessionsUsage) | **GET** /api/v2/usage/observability/sessions | Get observability sessions usage
 *AccountUsageBetaApi* | [**getObservabilityTracesUsage**](docs/AccountUsageBetaApi.md#getObservabilityTracesUsage) | **GET** /api/v2/usage/observability/traces | Get observability traces usage
+*AccountUsageBetaApi* | [**getSdkAllVersions**](docs/AccountUsageBetaApi.md#getSdkAllVersions) | **GET** /api/v2/usage/sdk-versions/all | Get usage details for all SDK versions
+*AccountUsageBetaApi* | [**getSdkVersionsDetails**](docs/AccountUsageBetaApi.md#getSdkVersionsDetails) | **GET** /api/v2/usage/sdk-versions/details | Get SDK versions usage details
 *AccountUsageBetaApi* | [**getServiceConnectionsUsage**](docs/AccountUsageBetaApi.md#getServiceConnectionsUsage) | **GET** /api/v2/usage/service-connections | Get service connections usage
 *AccountUsageBetaApi* | [**getStreamUsage**](docs/AccountUsageBetaApi.md#getStreamUsage) | **GET** /api/v2/usage/streams/{source} | Get stream usage
 *AccountUsageBetaApi* | [**getStreamUsageBySdkVersion**](docs/AccountUsageBetaApi.md#getStreamUsageBySdkVersion) | **GET** /api/v2/usage/streams/{source}/bysdkversion | Get stream usage by SDK version
 *AccountUsageBetaApi* | [**getStreamUsageSdkversion**](docs/AccountUsageBetaApi.md#getStreamUsageSdkversion) | **GET** /api/v2/usage/streams/{source}/sdkversions | Get stream usage SDK versions
 *AccountUsageBetaApi* | [**getVegaAIUsage**](docs/AccountUsageBetaApi.md#getVegaAIUsage) | **GET** /api/v2/usage/vega-ai | Get Vega AI usage
-*AiConfigsApi* | [**deleteAIConfig**](docs/AiConfigsApi.md#deleteAIConfig) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/{configKey} | Delete AI Config
-*AiConfigsApi* | [**deleteAIConfigVariation**](docs/AiConfigsApi.md#deleteAIConfigVariation) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations/{variationKey} | Delete AI Config variation
-*AiConfigsApi* | [**deleteAITool**](docs/AiConfigsApi.md#deleteAITool) | **DELETE** /api/v2/projects/{projectKey}/ai-tools/{toolKey} | Delete AI tool
-*AiConfigsApi* | [**deleteAgentGraph**](docs/AiConfigsApi.md#deleteAgentGraph) | **DELETE** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Delete agent graph
-*AiConfigsApi* | [**deleteModelConfig**](docs/AiConfigsApi.md#deleteModelConfig) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/model-configs/{modelConfigKey} | Delete an AI model config
-*AiConfigsApi* | [**deleteRestrictedModels**](docs/AiConfigsApi.md#deleteRestrictedModels) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/model-configs/restricted | Remove AI models from the restricted list
-*AiConfigsApi* | [**getAIConfig**](docs/AiConfigsApi.md#getAIConfig) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey} | Get AI Config
-*AiConfigsApi* | [**getAIConfigMetrics**](docs/AiConfigsApi.md#getAIConfigMetrics) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/metrics | Get AI Config metrics
-*AiConfigsApi* | [**getAIConfigMetricsByVariation**](docs/AiConfigsApi.md#getAIConfigMetricsByVariation) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/metrics-by-variation | Get AI Config metrics by variation
-*AiConfigsApi* | [**getAIConfigTargeting**](docs/AiConfigsApi.md#getAIConfigTargeting) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/targeting | Show an AI Config&#39;s targeting
-*AiConfigsApi* | [**getAIConfigVariation**](docs/AiConfigsApi.md#getAIConfigVariation) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations/{variationKey} | Get AI Config variation
-*AiConfigsApi* | [**getAIConfigs**](docs/AiConfigsApi.md#getAIConfigs) | **GET** /api/v2/projects/{projectKey}/ai-configs | List AI Configs
-*AiConfigsApi* | [**getAITool**](docs/AiConfigsApi.md#getAITool) | **GET** /api/v2/projects/{projectKey}/ai-tools/{toolKey} | Get AI tool
-*AiConfigsApi* | [**getAgentGraph**](docs/AiConfigsApi.md#getAgentGraph) | **GET** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Get agent graph
-*AiConfigsApi* | [**getModelConfig**](docs/AiConfigsApi.md#getModelConfig) | **GET** /api/v2/projects/{projectKey}/ai-configs/model-configs/{modelConfigKey} | Get AI model config
-*AiConfigsApi* | [**listAIToolVersions**](docs/AiConfigsApi.md#listAIToolVersions) | **GET** /api/v2/projects/{projectKey}/ai-tools/{toolKey}/versions | List AI tool versions
-*AiConfigsApi* | [**listAITools**](docs/AiConfigsApi.md#listAITools) | **GET** /api/v2/projects/{projectKey}/ai-tools | List AI tools
-*AiConfigsApi* | [**listAgentGraphs**](docs/AiConfigsApi.md#listAgentGraphs) | **GET** /api/v2/projects/{projectKey}/agent-graphs | List agent graphs
-*AiConfigsApi* | [**listModelConfigs**](docs/AiConfigsApi.md#listModelConfigs) | **GET** /api/v2/projects/{projectKey}/ai-configs/model-configs | List AI model configs
-*AiConfigsApi* | [**patchAIConfig**](docs/AiConfigsApi.md#patchAIConfig) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey} | Update AI Config
-*AiConfigsApi* | [**patchAIConfigTargeting**](docs/AiConfigsApi.md#patchAIConfigTargeting) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey}/targeting | Update AI Config targeting
-*AiConfigsApi* | [**patchAIConfigVariation**](docs/AiConfigsApi.md#patchAIConfigVariation) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations/{variationKey} | Update AI Config variation
-*AiConfigsApi* | [**patchAITool**](docs/AiConfigsApi.md#patchAITool) | **PATCH** /api/v2/projects/{projectKey}/ai-tools/{toolKey} | Update AI tool
-*AiConfigsApi* | [**patchAgentGraph**](docs/AiConfigsApi.md#patchAgentGraph) | **PATCH** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Update agent graph
-*AiConfigsApi* | [**postAIConfig**](docs/AiConfigsApi.md#postAIConfig) | **POST** /api/v2/projects/{projectKey}/ai-configs | Create new AI Config
-*AiConfigsApi* | [**postAIConfigVariation**](docs/AiConfigsApi.md#postAIConfigVariation) | **POST** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations | Create AI Config variation
-*AiConfigsApi* | [**postAITool**](docs/AiConfigsApi.md#postAITool) | **POST** /api/v2/projects/{projectKey}/ai-tools | Create an AI tool
-*AiConfigsApi* | [**postAgentGraph**](docs/AiConfigsApi.md#postAgentGraph) | **POST** /api/v2/projects/{projectKey}/agent-graphs | Create new agent graph
-*AiConfigsApi* | [**postModelConfig**](docs/AiConfigsApi.md#postModelConfig) | **POST** /api/v2/projects/{projectKey}/ai-configs/model-configs | Create an AI model config
-*AiConfigsApi* | [**postRestrictedModels**](docs/AiConfigsApi.md#postRestrictedModels) | **POST** /api/v2/projects/{projectKey}/ai-configs/model-configs/restricted | Add AI models to the restricted list
+*AccountUsageBetaApi* | [**getWarehouseExportUsage**](docs/AccountUsageBetaApi.md#getWarehouseExportUsage) | **GET** /api/v2/usage/warehouse-export | Get warehouse Data Export usage
+*AgentControlApi* | [**deleteAIConfig**](docs/AgentControlApi.md#deleteAIConfig) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/{configKey} | Delete AI Config
+*AgentControlApi* | [**deleteAIConfigVariation**](docs/AgentControlApi.md#deleteAIConfigVariation) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations/{variationKey} | Delete AI Config variation
+*AgentControlApi* | [**deleteAITool**](docs/AgentControlApi.md#deleteAITool) | **DELETE** /api/v2/projects/{projectKey}/ai-tools/{toolKey} | Delete AI tool
+*AgentControlApi* | [**deleteAgentGraph**](docs/AgentControlApi.md#deleteAgentGraph) | **DELETE** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Delete agent graph
+*AgentControlApi* | [**deleteAgentOptimization**](docs/AgentControlApi.md#deleteAgentOptimization) | **DELETE** /api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey} | Delete an agent optimization
+*AgentControlApi* | [**deleteAgentOptimizationRun**](docs/AgentControlApi.md#deleteAgentOptimizationRun) | **DELETE** /api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey}/runs/{runId} | Delete an agent optimization run
+*AgentControlApi* | [**deleteModelConfig**](docs/AgentControlApi.md#deleteModelConfig) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/model-configs/{modelConfigKey} | Delete an AI model config
+*AgentControlApi* | [**deletePromptSnippet**](docs/AgentControlApi.md#deletePromptSnippet) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/prompt-snippets/{snippetKey} | Delete a prompt snippet
+*AgentControlApi* | [**deleteRestrictedModels**](docs/AgentControlApi.md#deleteRestrictedModels) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/model-configs/restricted | Remove AI models from the restricted list
+*AgentControlApi* | [**getAIConfig**](docs/AgentControlApi.md#getAIConfig) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey} | Get AI Config
+*AgentControlApi* | [**getAIConfigMetrics**](docs/AgentControlApi.md#getAIConfigMetrics) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/metrics | Get AI Config metrics
+*AgentControlApi* | [**getAIConfigMetricsByVariation**](docs/AgentControlApi.md#getAIConfigMetricsByVariation) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/metrics-by-variation | Get AI Config metrics by variation
+*AgentControlApi* | [**getAIConfigQuickStats**](docs/AgentControlApi.md#getAIConfigQuickStats) | **GET** /api/v2/projects/{projectKey}/ai-configs/quick-stats | Get AI Config quick stats
+*AgentControlApi* | [**getAIConfigTargeting**](docs/AgentControlApi.md#getAIConfigTargeting) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/targeting | Show an AI Config&#39;s targeting
+*AgentControlApi* | [**getAIConfigVariation**](docs/AgentControlApi.md#getAIConfigVariation) | **GET** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations/{variationKey} | Get AI Config variation
+*AgentControlApi* | [**getAIConfigs**](docs/AgentControlApi.md#getAIConfigs) | **GET** /api/v2/projects/{projectKey}/ai-configs | List AI Configs
+*AgentControlApi* | [**getAITool**](docs/AgentControlApi.md#getAITool) | **GET** /api/v2/projects/{projectKey}/ai-tools/{toolKey} | Get AI tool
+*AgentControlApi* | [**getAgentGraph**](docs/AgentControlApi.md#getAgentGraph) | **GET** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Get agent graph
+*AgentControlApi* | [**getAgentOptimization**](docs/AgentControlApi.md#getAgentOptimization) | **GET** /api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey} | Get an agent optimization
+*AgentControlApi* | [**getModelConfig**](docs/AgentControlApi.md#getModelConfig) | **GET** /api/v2/projects/{projectKey}/ai-configs/model-configs/{modelConfigKey} | Get AI model config
+*AgentControlApi* | [**getPromptSnippet**](docs/AgentControlApi.md#getPromptSnippet) | **GET** /api/v2/projects/{projectKey}/ai-configs/prompt-snippets/{snippetKey} | Get a prompt snippet
+*AgentControlApi* | [**listAIToolVersions**](docs/AgentControlApi.md#listAIToolVersions) | **GET** /api/v2/projects/{projectKey}/ai-tools/{toolKey}/versions | List AI tool versions
+*AgentControlApi* | [**listAITools**](docs/AgentControlApi.md#listAITools) | **GET** /api/v2/projects/{projectKey}/ai-tools | List AI tools
+*AgentControlApi* | [**listAgentGraphs**](docs/AgentControlApi.md#listAgentGraphs) | **GET** /api/v2/projects/{projectKey}/agent-graphs | List agent graphs
+*AgentControlApi* | [**listAgentOptimizationResults**](docs/AgentControlApi.md#listAgentOptimizationResults) | **GET** /api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey}/results | List agent optimization runs
+*AgentControlApi* | [**listAgentOptimizationResultsByRunId**](docs/AgentControlApi.md#listAgentOptimizationResultsByRunId) | **GET** /api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey}/runs/{runId}/results | List agent optimization results for a run
+*AgentControlApi* | [**listAgentOptimizations**](docs/AgentControlApi.md#listAgentOptimizations) | **GET** /api/v2/projects/{projectKey}/agent-optimizations | List agent optimizations
+*AgentControlApi* | [**listAllAgentOptimizationResults**](docs/AgentControlApi.md#listAllAgentOptimizationResults) | **GET** /api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey}/all-results | List all agent optimization results across versions
+*AgentControlApi* | [**listModelConfigs**](docs/AgentControlApi.md#listModelConfigs) | **GET** /api/v2/projects/{projectKey}/ai-configs/model-configs | List AI model configs
+*AgentControlApi* | [**listPromptSnippetReferences**](docs/AgentControlApi.md#listPromptSnippetReferences) | **GET** /api/v2/projects/{projectKey}/ai-configs/prompt-snippets/{snippetKey}/references | List prompt snippet references
+*AgentControlApi* | [**listPromptSnippetVersions**](docs/AgentControlApi.md#listPromptSnippetVersions) | **GET** /api/v2/projects/{projectKey}/ai-configs/prompt-snippets/{snippetKey}/versions | List prompt snippet versions
+*AgentControlApi* | [**listPromptSnippets**](docs/AgentControlApi.md#listPromptSnippets) | **GET** /api/v2/projects/{projectKey}/ai-configs/prompt-snippets | List prompt snippets
+*AgentControlApi* | [**patchAIConfig**](docs/AgentControlApi.md#patchAIConfig) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey} | Update AI Config
+*AgentControlApi* | [**patchAIConfigTargeting**](docs/AgentControlApi.md#patchAIConfigTargeting) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey}/targeting | Update AI Config targeting
+*AgentControlApi* | [**patchAIConfigVariation**](docs/AgentControlApi.md#patchAIConfigVariation) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations/{variationKey} | Update AI Config variation
+*AgentControlApi* | [**patchAITool**](docs/AgentControlApi.md#patchAITool) | **PATCH** /api/v2/projects/{projectKey}/ai-tools/{toolKey} | Update AI tool
+*AgentControlApi* | [**patchAgentGraph**](docs/AgentControlApi.md#patchAgentGraph) | **PATCH** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Update agent graph
+*AgentControlApi* | [**patchAgentOptimization**](docs/AgentControlApi.md#patchAgentOptimization) | **PATCH** /api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey} | Update an agent optimization
+*AgentControlApi* | [**patchAgentOptimizationResult**](docs/AgentControlApi.md#patchAgentOptimizationResult) | **PATCH** /api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey}/results/{resultId} | Update an agent optimization result
+*AgentControlApi* | [**patchPromptSnippet**](docs/AgentControlApi.md#patchPromptSnippet) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/prompt-snippets/{snippetKey} | Update a prompt snippet
+*AgentControlApi* | [**postAIConfig**](docs/AgentControlApi.md#postAIConfig) | **POST** /api/v2/projects/{projectKey}/ai-configs | Create new AI Config
+*AgentControlApi* | [**postAIConfigVariation**](docs/AgentControlApi.md#postAIConfigVariation) | **POST** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations | Create AI Config variation
+*AgentControlApi* | [**postAITool**](docs/AgentControlApi.md#postAITool) | **POST** /api/v2/projects/{projectKey}/ai-tools | Create an AI tool
+*AgentControlApi* | [**postAgentGraph**](docs/AgentControlApi.md#postAgentGraph) | **POST** /api/v2/projects/{projectKey}/agent-graphs | Create new agent graph
+*AgentControlApi* | [**postAgentOptimization**](docs/AgentControlApi.md#postAgentOptimization) | **POST** /api/v2/projects/{projectKey}/agent-optimizations | Create agent optimization
+*AgentControlApi* | [**postAgentOptimizationResult**](docs/AgentControlApi.md#postAgentOptimizationResult) | **POST** /api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey}/results | Create agent optimization result
+*AgentControlApi* | [**postModelConfig**](docs/AgentControlApi.md#postModelConfig) | **POST** /api/v2/projects/{projectKey}/ai-configs/model-configs | Create an AI model config
+*AgentControlApi* | [**postPromptSnippet**](docs/AgentControlApi.md#postPromptSnippet) | **POST** /api/v2/projects/{projectKey}/ai-configs/prompt-snippets | Create a prompt snippet
+*AgentControlApi* | [**postRestrictedModels**](docs/AgentControlApi.md#postRestrictedModels) | **POST** /api/v2/projects/{projectKey}/ai-configs/model-configs/restricted | Add AI models to the restricted list
+*AiConfigsApi* | [**listAIToolReferences**](docs/AiConfigsApi.md#listAIToolReferences) | **GET** /api/v2/projects/{projectKey}/ai-tools/{toolKey}/references | List AI tool references
+*AiConfigsApi* | [**listAgentOptimizationRuns**](docs/AiConfigsApi.md#listAgentOptimizationRuns) | **GET** /api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey}/runs | List agent optimization runs
 *AnnouncementsApi* | [**createAnnouncementPublic**](docs/AnnouncementsApi.md#createAnnouncementPublic) | **POST** /api/v2/announcements | Create an announcement
 *AnnouncementsApi* | [**deleteAnnouncementPublic**](docs/AnnouncementsApi.md#deleteAnnouncementPublic) | **DELETE** /api/v2/announcements/{announcementId} | Delete an announcement
 *AnnouncementsApi* | [**getAnnouncementsPublic**](docs/AnnouncementsApi.md#getAnnouncementsPublic) | **GET** /api/v2/announcements | Get announcements
@@ -694,9 +719,12 @@ Class | Method | HTTP request | Description
 *DataExportDestinationsApi* | [**getDestination**](docs/DataExportDestinationsApi.md#getDestination) | **GET** /api/v2/destinations/{projectKey}/{environmentKey}/{id} | Get destination
 *DataExportDestinationsApi* | [**getDestinations**](docs/DataExportDestinationsApi.md#getDestinations) | **GET** /api/v2/destinations | List destinations
 *DataExportDestinationsApi* | [**patchDestination**](docs/DataExportDestinationsApi.md#patchDestination) | **PATCH** /api/v2/destinations/{projectKey}/{environmentKey}/{id} | Update Data Export destination
+*DataExportDestinationsApi* | [**postCompleteWarehouseDestinationSetup**](docs/DataExportDestinationsApi.md#postCompleteWarehouseDestinationSetup) | **POST** /api/v2/destinations/projects/{projKey}/environments/{envKey}/kinds/{kind}/complete-setup | Complete warehouse destination setup
 *DataExportDestinationsApi* | [**postDestination**](docs/DataExportDestinationsApi.md#postDestination) | **POST** /api/v2/destinations/{projectKey}/{environmentKey} | Create Data Export destination
+*DataExportDestinationsApi* | [**postGenerateProjectEnvWarehouseDestinationKeyPair**](docs/DataExportDestinationsApi.md#postGenerateProjectEnvWarehouseDestinationKeyPair) | **POST** /api/v2/destinations/projects/{projKey}/environments/{envKey}/generate-warehouse-destination-key-pair | Generate Snowflake destination key pair
 *DataExportDestinationsApi* | [**postGenerateTrustPolicy**](docs/DataExportDestinationsApi.md#postGenerateTrustPolicy) | **POST** /api/v2/destinations/projects/{projKey}/environments/{envKey}/generate-trust-policy | Generate trust policy
 *DataExportDestinationsApi* | [**postGenerateWarehouseDestinationKeyPair**](docs/DataExportDestinationsApi.md#postGenerateWarehouseDestinationKeyPair) | **POST** /api/v2/destinations/generate-warehouse-destination-key-pair | Generate Snowflake destination key pair
+*DataExportDestinationsApi* | [**postGenerateWarehouseDestinationSetupScript**](docs/DataExportDestinationsApi.md#postGenerateWarehouseDestinationSetupScript) | **POST** /api/v2/destinations/projects/{projKey}/environments/{envKey}/kinds/{kind}/setup | Generate warehouse destination setup script
 *EnvironmentsApi* | [**deleteEnvironment**](docs/EnvironmentsApi.md#deleteEnvironment) | **DELETE** /api/v2/projects/{projectKey}/environments/{environmentKey} | Delete environment
 *EnvironmentsApi* | [**getEnvironment**](docs/EnvironmentsApi.md#getEnvironment) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey} | Get environment
 *EnvironmentsApi* | [**getEnvironmentsByProject**](docs/EnvironmentsApi.md#getEnvironmentsByProject) | **GET** /api/v2/projects/{projectKey}/environments | List environments
@@ -709,6 +737,7 @@ Class | Method | HTTP request | Description
 *ExperimentsApi* | [**getExperiment**](docs/ExperimentsApi.md#getExperiment) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments/{experimentKey} | Get experiment
 *ExperimentsApi* | [**getExperimentationSettings**](docs/ExperimentsApi.md#getExperimentationSettings) | **GET** /api/v2/projects/{projectKey}/experimentation-settings | Get experimentation settings
 *ExperimentsApi* | [**getExperiments**](docs/ExperimentsApi.md#getExperiments) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments | Get experiments
+*ExperimentsApi* | [**getExperimentsAnyEnv**](docs/ExperimentsApi.md#getExperimentsAnyEnv) | **GET** /api/v2/projects/{projectKey}/experiments | Get experiments any environment
 *ExperimentsApi* | [**patchExperiment**](docs/ExperimentsApi.md#patchExperiment) | **PATCH** /api/v2/projects/{projectKey}/environments/{environmentKey}/experiments/{experimentKey} | Patch experiment
 *ExperimentsApi* | [**putExperimentationSettings**](docs/ExperimentsApi.md#putExperimentationSettings) | **PUT** /api/v2/projects/{projectKey}/experimentation-settings | Update experimentation settings
 *FeatureFlagsApi* | [**copyFeatureFlag**](docs/FeatureFlagsApi.md#copyFeatureFlag) | **POST** /api/v2/flags/{projectKey}/{featureFlagKey}/copy | Copy feature flag
@@ -746,11 +775,11 @@ Class | Method | HTTP request | Description
 *FollowFlagsApi* | [**getFlagFollowers**](docs/FollowFlagsApi.md#getFlagFollowers) | **GET** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/followers | Get followers of a flag in a project and environment
 *FollowFlagsApi* | [**getFollowersByProjEnv**](docs/FollowFlagsApi.md#getFollowersByProjEnv) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/followers | Get followers of all flags in a given project and environment
 *FollowFlagsApi* | [**putFlagFollower**](docs/FollowFlagsApi.md#putFlagFollower) | **PUT** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/followers/{memberId} | Add a member as a follower of a flag in a project and environment
-*HoldoutsBetaApi* | [**getAllHoldouts**](docs/HoldoutsBetaApi.md#getAllHoldouts) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/holdouts | Get all holdouts
-*HoldoutsBetaApi* | [**getHoldout**](docs/HoldoutsBetaApi.md#getHoldout) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/holdouts/{holdoutKey} | Get holdout
-*HoldoutsBetaApi* | [**getHoldoutById**](docs/HoldoutsBetaApi.md#getHoldoutById) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/holdouts/id/{holdoutId} | Get Holdout by Id
-*HoldoutsBetaApi* | [**patchHoldout**](docs/HoldoutsBetaApi.md#patchHoldout) | **PATCH** /api/v2/projects/{projectKey}/environments/{environmentKey}/holdouts/{holdoutKey} | Patch holdout
-*HoldoutsBetaApi* | [**postHoldout**](docs/HoldoutsBetaApi.md#postHoldout) | **POST** /api/v2/projects/{projectKey}/environments/{environmentKey}/holdouts | Create holdout
+*HoldoutsApi* | [**getAllHoldouts**](docs/HoldoutsApi.md#getAllHoldouts) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/holdouts | Get all holdouts
+*HoldoutsApi* | [**getHoldout**](docs/HoldoutsApi.md#getHoldout) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/holdouts/{holdoutKey} | Get holdout
+*HoldoutsApi* | [**getHoldoutById**](docs/HoldoutsApi.md#getHoldoutById) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/holdouts/id/{holdoutId} | Get Holdout by Id
+*HoldoutsApi* | [**patchHoldout**](docs/HoldoutsApi.md#patchHoldout) | **PATCH** /api/v2/projects/{projectKey}/environments/{environmentKey}/holdouts/{holdoutKey} | Patch holdout
+*HoldoutsApi* | [**postHoldout**](docs/HoldoutsApi.md#postHoldout) | **POST** /api/v2/projects/{projectKey}/environments/{environmentKey}/holdouts | Create holdout
 *InsightsChartsBetaApi* | [**getDeploymentFrequencyChart**](docs/InsightsChartsBetaApi.md#getDeploymentFrequencyChart) | **GET** /api/v2/engineering-insights/charts/deployments/frequency | Get deployment frequency chart data
 *InsightsChartsBetaApi* | [**getFlagStatusChart**](docs/InsightsChartsBetaApi.md#getFlagStatusChart) | **GET** /api/v2/engineering-insights/charts/flags/status | Get flag status chart data
 *InsightsChartsBetaApi* | [**getLeadTimeChart**](docs/InsightsChartsBetaApi.md#getLeadTimeChart) | **GET** /api/v2/engineering-insights/charts/lead-time | Get lead time chart data
@@ -788,6 +817,11 @@ Class | Method | HTTP request | Description
 *IntegrationsBetaApi* | [**getAllIntegrationConfigurations**](docs/IntegrationsBetaApi.md#getAllIntegrationConfigurations) | **GET** /api/v2/integration-configurations/keys/{integrationKey} | Get all configurations for the integration
 *IntegrationsBetaApi* | [**getIntegrationConfiguration**](docs/IntegrationsBetaApi.md#getIntegrationConfiguration) | **GET** /api/v2/integration-configurations/{integrationConfigurationId} | Get an integration configuration
 *IntegrationsBetaApi* | [**updateIntegrationConfiguration**](docs/IntegrationsBetaApi.md#updateIntegrationConfiguration) | **PATCH** /api/v2/integration-configurations/{integrationConfigurationId} | Update integration configuration
+*IpAllowlistBetaApi* | [**createIpAllowlistEntry**](docs/IpAllowlistBetaApi.md#createIpAllowlistEntry) | **POST** /api/v2/account/ip-allowlist | Create IP Allowlist Entry
+*IpAllowlistBetaApi* | [**deleteIpAllowlistEntry**](docs/IpAllowlistBetaApi.md#deleteIpAllowlistEntry) | **DELETE** /api/v2/account/ip-allowlist/{id} | Delete IP Allowlist Entry
+*IpAllowlistBetaApi* | [**getIpAllowlist**](docs/IpAllowlistBetaApi.md#getIpAllowlist) | **GET** /api/v2/account/ip-allowlist | Get IP Allowlist
+*IpAllowlistBetaApi* | [**patchIpAllowlistConfig**](docs/IpAllowlistBetaApi.md#patchIpAllowlistConfig) | **PATCH** /api/v2/account/ip-allowlist | Update IP Allowlist Configuration
+*IpAllowlistBetaApi* | [**patchIpAllowlistEntry**](docs/IpAllowlistBetaApi.md#patchIpAllowlistEntry) | **PATCH** /api/v2/account/ip-allowlist/{id} | Update IP Allowlist Entry Description
 *LayersApi* | [**createLayer**](docs/LayersApi.md#createLayer) | **POST** /api/v2/projects/{projectKey}/layers | Create layer
 *LayersApi* | [**getLayers**](docs/LayersApi.md#getLayers) | **GET** /api/v2/projects/{projectKey}/layers | Get layers
 *LayersApi* | [**updateLayer**](docs/LayersApi.md#updateLayer) | **PATCH** /api/v2/projects/{projectKey}/layers/{layerKey} | Update layer
@@ -852,6 +886,10 @@ Class | Method | HTTP request | Description
 *ScheduledChangesApi* | [**getFlagConfigScheduledChanges**](docs/ScheduledChangesApi.md#getFlagConfigScheduledChanges) | **GET** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes | List scheduled changes
 *ScheduledChangesApi* | [**patchFlagConfigScheduledChange**](docs/ScheduledChangesApi.md#patchFlagConfigScheduledChange) | **PATCH** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes/{id} | Update scheduled changes workflow
 *ScheduledChangesApi* | [**postFlagConfigScheduledChanges**](docs/ScheduledChangesApi.md#postFlagConfigScheduledChanges) | **POST** /api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes | Create scheduled changes workflow
+*SdkKeysBetaApi* | [**deleteSdkKeyByKey**](docs/SdkKeysBetaApi.md#deleteSdkKeyByKey) | **DELETE** /api/v2/projects/{projectKey}/environments/{environmentKey}/sdk-keys/{sdkKeyKey} | Delete SDK key
+*SdkKeysBetaApi* | [**getSdkKeyByKey**](docs/SdkKeysBetaApi.md#getSdkKeyByKey) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/sdk-keys/{sdkKeyKey} | Get SDK key
+*SdkKeysBetaApi* | [**patchSdkKeyByKey**](docs/SdkKeysBetaApi.md#patchSdkKeyByKey) | **PATCH** /api/v2/projects/{projectKey}/environments/{environmentKey}/sdk-keys/{sdkKeyKey} | Update SDK key
+*SdkKeysBetaApi* | [**postSdkKey**](docs/SdkKeysBetaApi.md#postSdkKey) | **POST** /api/v2/projects/{projectKey}/environments/{environmentKey}/sdk-keys | Create SDK key
 *SegmentsApi* | [**createBigSegmentExport**](docs/SegmentsApi.md#createBigSegmentExport) | **POST** /api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}/exports | Create big segment export
 *SegmentsApi* | [**createBigSegmentImport**](docs/SegmentsApi.md#createBigSegmentImport) | **POST** /api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}/imports | Create big segment import
 *SegmentsApi* | [**deleteSegment**](docs/SegmentsApi.md#deleteSegment) | **DELETE** /api/v2/segments/{projectKey}/{environmentKey}/{segmentKey} | Delete segment
@@ -889,7 +927,6 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**getSearchUsers**](docs/UsersApi.md#getSearchUsers) | **GET** /api/v2/user-search/{projectKey}/{environmentKey} | Find users
 *UsersApi* | [**getUser**](docs/UsersApi.md#getUser) | **GET** /api/v2/users/{projectKey}/{environmentKey}/{userKey} | Get user
 *UsersApi* | [**getUsers**](docs/UsersApi.md#getUsers) | **GET** /api/v2/users/{projectKey}/{environmentKey} | List users
-*UsersBetaApi* | [**getUserAttributeNames**](docs/UsersBetaApi.md#getUserAttributeNames) | **GET** /api/v2/user-attributes/{projectKey}/{environmentKey} | Get user attribute names
 *ViewsBetaApi* | [**createView**](docs/ViewsBetaApi.md#createView) | **POST** /api/v2/projects/{projectKey}/views | Create view
 *ViewsBetaApi* | [**deleteView**](docs/ViewsBetaApi.md#deleteView) | **DELETE** /api/v2/projects/{projectKey}/views/{viewKey} | Delete view
 *ViewsBetaApi* | [**getLinkedResources**](docs/ViewsBetaApi.md#getLinkedResources) | **GET** /api/v2/projects/{projectKey}/views/{viewKey}/linked/{resourceType} | Get linked resources
@@ -959,6 +996,20 @@ Class | Method | HTTP request | Description
  - [AgentGraphPatch](docs/AgentGraphPatch.md)
  - [AgentGraphPost](docs/AgentGraphPost.md)
  - [AgentGraphs](docs/AgentGraphs.md)
+ - [AgentOptimization](docs/AgentOptimization.md)
+ - [AgentOptimizationAcceptanceStatement](docs/AgentOptimizationAcceptanceStatement.md)
+ - [AgentOptimizationJudge](docs/AgentOptimizationJudge.md)
+ - [AgentOptimizationPatch](docs/AgentOptimizationPatch.md)
+ - [AgentOptimizationPost](docs/AgentOptimizationPost.md)
+ - [AgentOptimizationResult](docs/AgentOptimizationResult.md)
+ - [AgentOptimizationResultActivity](docs/AgentOptimizationResultActivity.md)
+ - [AgentOptimizationResultPatch](docs/AgentOptimizationResultPatch.md)
+ - [AgentOptimizationResultPost](docs/AgentOptimizationResultPost.md)
+ - [AgentOptimizationResultStatus](docs/AgentOptimizationResultStatus.md)
+ - [AgentOptimizationResults](docs/AgentOptimizationResults.md)
+ - [AgentOptimizationRun](docs/AgentOptimizationRun.md)
+ - [AgentOptimizationRuns](docs/AgentOptimizationRuns.md)
+ - [AgentOptimizations](docs/AgentOptimizations.md)
  - [AiConfigsAccess](docs/AiConfigsAccess.md)
  - [AiConfigsAccessAllowedReason](docs/AiConfigsAccessAllowedReason.md)
  - [AiConfigsAccessAllowedRep](docs/AiConfigsAccessAllowedRep.md)
@@ -973,9 +1024,12 @@ Class | Method | HTTP request | Description
  - [AiConfigsMaintainerTeam](docs/AiConfigsMaintainerTeam.md)
  - [AiConfigsMemberSummary](docs/AiConfigsMemberSummary.md)
  - [AiConfigsMetricDataSourceRefRep](docs/AiConfigsMetricDataSourceRefRep.md)
+ - [AiConfigsMetricDenominatorRep](docs/AiConfigsMetricDenominatorRep.md)
  - [AiConfigsMetricEventDefaultRep](docs/AiConfigsMetricEventDefaultRep.md)
  - [AiConfigsMetricListingRep](docs/AiConfigsMetricListingRep.md)
  - [AiConfigsModification](docs/AiConfigsModification.md)
+ - [AnalysisConfigInput](docs/AnalysisConfigInput.md)
+ - [AnalysisConfigRep](docs/AnalysisConfigRep.md)
  - [AnnouncementAccess](docs/AnnouncementAccess.md)
  - [AnnouncementAccessAllowedReason](docs/AnnouncementAccessAllowedReason.md)
  - [AnnouncementAccessAllowedRep](docs/AnnouncementAccessAllowedRep.md)
@@ -989,6 +1043,7 @@ Class | Method | HTTP request | Description
  - [AnnouncementResponseLinks](docs/AnnouncementResponseLinks.md)
  - [ApplicationCollectionRep](docs/ApplicationCollectionRep.md)
  - [ApplicationFlagCollectionRep](docs/ApplicationFlagCollectionRep.md)
+ - [ApplicationMaintainerRep](docs/ApplicationMaintainerRep.md)
  - [ApplicationRep](docs/ApplicationRep.md)
  - [ApplicationVersionRep](docs/ApplicationVersionRep.md)
  - [ApplicationVersionsCollectionRep](docs/ApplicationVersionsCollectionRep.md)
@@ -1029,6 +1084,7 @@ Class | Method | HTTP request | Description
  - [ClientCollection](docs/ClientCollection.md)
  - [ClientSideAvailability](docs/ClientSideAvailability.md)
  - [ClientSideAvailabilityPost](docs/ClientSideAvailabilityPost.md)
+ - [CompleteSetupPostBody](docs/CompleteSetupPostBody.md)
  - [CompletedBy](docs/CompletedBy.md)
  - [ConditionInput](docs/ConditionInput.md)
  - [ConditionOutput](docs/ConditionOutput.md)
@@ -1057,10 +1113,12 @@ Class | Method | HTTP request | Description
  - [CoreLink](docs/CoreLink.md)
  - [CountBucket](docs/CountBucket.md)
  - [CountBucketsResult](docs/CountBucketsResult.md)
+ - [CovariateInfoRep](docs/CovariateInfoRep.md)
  - [CreateAnnouncementBody](docs/CreateAnnouncementBody.md)
  - [CreateApprovalRequestRequest](docs/CreateApprovalRequestRequest.md)
  - [CreateCopyFlagConfigApprovalRequestRequest](docs/CreateCopyFlagConfigApprovalRequestRequest.md)
  - [CreateFlagConfigApprovalRequestRequest](docs/CreateFlagConfigApprovalRequestRequest.md)
+ - [CreateIpAllowlistEntryRequest](docs/CreateIpAllowlistEntryRequest.md)
  - [CreatePhaseInput](docs/CreatePhaseInput.md)
  - [CreateReleaseInput](docs/CreateReleaseInput.md)
  - [CreateReleasePipelineInput](docs/CreateReleasePipelineInput.md)
@@ -1077,6 +1135,7 @@ Class | Method | HTTP request | Description
  - [DefaultClientSideAvailability](docs/DefaultClientSideAvailability.md)
  - [DefaultClientSideAvailabilityPost](docs/DefaultClientSideAvailabilityPost.md)
  - [Defaults](docs/Defaults.md)
+ - [DenominatorPost](docs/DenominatorPost.md)
  - [DependentExperimentRep](docs/DependentExperimentRep.md)
  - [DependentFlag](docs/DependentFlag.md)
  - [DependentFlagEnvironment](docs/DependentFlagEnvironment.md)
@@ -1109,6 +1168,7 @@ Class | Method | HTTP request | Description
  - [ExpandedDirectlyLinkedFlags](docs/ExpandedDirectlyLinkedFlags.md)
  - [ExpandedDirectlyLinkedSegment](docs/ExpandedDirectlyLinkedSegment.md)
  - [ExpandedDirectlyLinkedSegments](docs/ExpandedDirectlyLinkedSegments.md)
+ - [ExpandedExperimentRep](docs/ExpandedExperimentRep.md)
  - [ExpandedFlag](docs/ExpandedFlag.md)
  - [ExpandedFlagMaintainer](docs/ExpandedFlagMaintainer.md)
  - [ExpandedFlagRep](docs/ExpandedFlagRep.md)
@@ -1251,6 +1311,8 @@ Class | Method | HTTP request | Description
  - [IntegrationSubscriptionStatusRep](docs/IntegrationSubscriptionStatusRep.md)
  - [Integrations](docs/Integrations.md)
  - [InvalidRequestErrorRep](docs/InvalidRequestErrorRep.md)
+ - [IpAllowlistEntryResponse](docs/IpAllowlistEntryResponse.md)
+ - [IpAllowlistResponse](docs/IpAllowlistResponse.md)
  - [IpList](docs/IpList.md)
  - [IterationInput](docs/IterationInput.md)
  - [IterationRep](docs/IterationRep.md)
@@ -1286,6 +1348,7 @@ Class | Method | HTTP request | Description
  - [MetricByVariation](docs/MetricByVariation.md)
  - [MetricCollectionRep](docs/MetricCollectionRep.md)
  - [MetricDataSourceRefRep](docs/MetricDataSourceRefRep.md)
+ - [MetricDenominatorRep](docs/MetricDenominatorRep.md)
  - [MetricEventDefaultRep](docs/MetricEventDefaultRep.md)
  - [MetricGroupCollectionRep](docs/MetricGroupCollectionRep.md)
  - [MetricGroupPost](docs/MetricGroupPost.md)
@@ -1307,6 +1370,7 @@ Class | Method | HTTP request | Description
  - [Modification](docs/Modification.md)
  - [MultiEnvironmentDependentFlag](docs/MultiEnvironmentDependentFlag.md)
  - [MultiEnvironmentDependentFlags](docs/MultiEnvironmentDependentFlags.md)
+ - [MutableFieldsByStatusRep](docs/MutableFieldsByStatusRep.md)
  - [NamingConvention](docs/NamingConvention.md)
  - [NewMemberForm](docs/NewMemberForm.md)
  - [NotFoundErrorRep](docs/NotFoundErrorRep.md)
@@ -1320,6 +1384,8 @@ Class | Method | HTTP request | Description
  - [ParentResourceRep](docs/ParentResourceRep.md)
  - [PatchFailedErrorRep](docs/PatchFailedErrorRep.md)
  - [PatchFlagsRequest](docs/PatchFlagsRequest.md)
+ - [PatchIpAllowlistConfigRequest](docs/PatchIpAllowlistConfigRequest.md)
+ - [PatchIpAllowlistEntryRequest](docs/PatchIpAllowlistEntryRequest.md)
  - [PatchOperation](docs/PatchOperation.md)
  - [PatchSegmentExpiringTargetInputRep](docs/PatchSegmentExpiringTargetInputRep.md)
  - [PatchSegmentExpiringTargetInstruction](docs/PatchSegmentExpiringTargetInstruction.md)
@@ -1344,19 +1410,28 @@ Class | Method | HTTP request | Description
  - [ProjectSummary](docs/ProjectSummary.md)
  - [ProjectSummaryCollection](docs/ProjectSummaryCollection.md)
  - [Projects](docs/Projects.md)
+ - [PromptSnippet](docs/PromptSnippet.md)
+ - [PromptSnippetPatch](docs/PromptSnippetPatch.md)
+ - [PromptSnippetPost](docs/PromptSnippetPost.md)
+ - [PromptSnippets](docs/PromptSnippets.md)
  - [PullRequestCollectionRep](docs/PullRequestCollectionRep.md)
  - [PullRequestLeadTimeRep](docs/PullRequestLeadTimeRep.md)
  - [PullRequestRep](docs/PullRequestRep.md)
  - [PutBranch](docs/PutBranch.md)
  - [PutReleasePolicyRequest](docs/PutReleasePolicyRequest.md)
+ - [QuickStats](docs/QuickStats.md)
  - [RandomizationSettingsPut](docs/RandomizationSettingsPut.md)
  - [RandomizationSettingsRep](docs/RandomizationSettingsRep.md)
  - [RandomizationUnitInput](docs/RandomizationUnitInput.md)
  - [RandomizationUnitRep](docs/RandomizationUnitRep.md)
  - [RateLimitedErrorRep](docs/RateLimitedErrorRep.md)
  - [RecentTriggerBody](docs/RecentTriggerBody.md)
+ - [RedshiftDataExportCompletedArtifactsRep](docs/RedshiftDataExportCompletedArtifactsRep.md)
  - [ReferenceRep](docs/ReferenceRep.md)
+ - [RelatedAIConfig](docs/RelatedAIConfig.md)
+ - [RelatedExperiment](docs/RelatedExperiment.md)
  - [RelatedExperimentRep](docs/RelatedExperimentRep.md)
+ - [RelatedFlag](docs/RelatedFlag.md)
  - [RelayAutoConfigCollectionRep](docs/RelayAutoConfigCollectionRep.md)
  - [RelayAutoConfigPost](docs/RelayAutoConfigPost.md)
  - [RelayAutoConfigRep](docs/RelayAutoConfigRep.md)
@@ -1397,7 +1472,12 @@ Class | Method | HTTP request | Description
  - [RootResponse](docs/RootResponse.md)
  - [Rule](docs/Rule.md)
  - [RuleClause](docs/RuleClause.md)
+ - [SdkKey](docs/SdkKey.md)
+ - [SdkKeyKind](docs/SdkKeyKind.md)
+ - [SdkKeyPatch](docs/SdkKeyPatch.md)
+ - [SdkKeyPost](docs/SdkKeyPost.md)
  - [SdkListRep](docs/SdkListRep.md)
+ - [SdkVersionDetailsRep](docs/SdkVersionDetailsRep.md)
  - [SdkVersionListRep](docs/SdkVersionListRep.md)
  - [SdkVersionRep](docs/SdkVersionRep.md)
  - [SegmentBody](docs/SegmentBody.md)
@@ -1409,6 +1489,8 @@ Class | Method | HTTP request | Description
  - [SeriesListRep](docs/SeriesListRep.md)
  - [SeriesListRepFloat](docs/SeriesListRepFloat.md)
  - [SimpleHoldoutRep](docs/SimpleHoldoutRep.md)
+ - [SnippetReference](docs/SnippetReference.md)
+ - [SnippetReferences](docs/SnippetReferences.md)
  - [SourceEnv](docs/SourceEnv.md)
  - [SourceFlag](docs/SourceFlag.md)
  - [StageInput](docs/StageInput.md)
@@ -1443,6 +1525,8 @@ Class | Method | HTTP request | Description
  - [Token](docs/Token.md)
  - [TokenSummary](docs/TokenSummary.md)
  - [Tokens](docs/Tokens.md)
+ - [ToolReference](docs/ToolReference.md)
+ - [ToolReferences](docs/ToolReferences.md)
  - [TreatmentInput](docs/TreatmentInput.md)
  - [TreatmentParameterInput](docs/TreatmentParameterInput.md)
  - [TreatmentRep](docs/TreatmentRep.md)
@@ -1461,7 +1545,6 @@ Class | Method | HTTP request | Description
  - [UpsertResponseRep](docs/UpsertResponseRep.md)
  - [UrlPost](docs/UrlPost.md)
  - [User](docs/User.md)
- - [UserAttributeNamesRep](docs/UserAttributeNamesRep.md)
  - [UserFlagSetting](docs/UserFlagSetting.md)
  - [UserFlagSettings](docs/UserFlagSettings.md)
  - [UserRecord](docs/UserRecord.md)
@@ -1490,6 +1573,8 @@ Class | Method | HTTP request | Description
  - [ViewLinkedResources](docs/ViewLinkedResources.md)
  - [ViewPatch](docs/ViewPatch.md)
  - [ViewPost](docs/ViewPost.md)
+ - [ViewResourceSummary](docs/ViewResourceSummary.md)
+ - [ViewSummary](docs/ViewSummary.md)
  - [Views](docs/Views.md)
  - [ViewsAccess](docs/ViewsAccess.md)
  - [ViewsAccessAllowedReason](docs/ViewsAccessAllowedReason.md)
@@ -1504,6 +1589,8 @@ Class | Method | HTTP request | Description
  - [ViewsMemberTeamSummaryRep](docs/ViewsMemberTeamSummaryRep.md)
  - [ViewsPaginatedLinks](docs/ViewsPaginatedLinks.md)
  - [ViewsSelfLink](docs/ViewsSelfLink.md)
+ - [WarehouseDestinationSetupScriptRep](docs/WarehouseDestinationSetupScriptRep.md)
+ - [WarehouseSetupScriptPostBody](docs/WarehouseSetupScriptPostBody.md)
  - [Webhook](docs/Webhook.md)
  - [WebhookPost](docs/WebhookPost.md)
  - [Webhooks](docs/Webhooks.md)

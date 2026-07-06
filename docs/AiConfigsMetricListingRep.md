@@ -30,11 +30,12 @@
 |**maintainer** | [**AiConfigsMemberSummary**](AiConfigsMemberSummary.md) |  |  [optional] |
 |**description** | **String** | Description of the metric |  [optional] |
 |**category** | **String** | The category of the metric |  [optional] |
-|**isNumeric** | **Boolean** | For custom metrics, whether to track numeric changes in value against a baseline (&lt;code&gt;true&lt;/code&gt;) or to track a conversion when an end user takes an action (&lt;code&gt;false&lt;/code&gt;). |  [optional] |
-|**successCriteria** | [**SuccessCriteriaEnum**](#SuccessCriteriaEnum) | For custom metrics, the success criteria |  [optional] |
-|**unit** | **String** | For numeric custom metrics, the unit of measure |  [optional] |
+|**isNumeric** | **Boolean** | For custom and trace metrics, whether to track numeric changes in value against a baseline (&lt;code&gt;true&lt;/code&gt;) or to track a conversion when an end user takes an action (&lt;code&gt;false&lt;/code&gt;). |  [optional] |
+|**successCriteria** | [**SuccessCriteriaEnum**](#SuccessCriteriaEnum) | For custom and trace metrics, the success criteria |  [optional] |
+|**unit** | **String** | For numeric custom and trace metrics, the unit of measure |  [optional] |
 |**eventKey** | **String** | For custom metrics, the event key to use in your code |  [optional] |
-|**randomizationUnits** | **List&lt;String&gt;** | An array of randomization units allowed for this metric |  [optional] |
+|**randomizationUnits** | **List&lt;String&gt;** | Deprecated, use &lt;code&gt;analysisUnits&lt;/code&gt; instead. |  [optional] |
+|**analysisUnits** | **List&lt;String&gt;** | An array of analysis units allowed for this metric. |  [optional] |
 |**filters** | [**AiConfigsFilter**](AiConfigsFilter.md) |  |  [optional] |
 |**unitAggregationType** | [**UnitAggregationTypeEnum**](#UnitAggregationTypeEnum) | The method by which multiple unit event values are aggregated |  [optional] |
 |**analysisType** | [**AnalysisTypeEnum**](#AnalysisTypeEnum) | The method for analyzing metric events |  [optional] |
@@ -46,6 +47,15 @@
 |**archivedAt** | **Long** |  |  [optional] |
 |**selector** | **String** | For click metrics, the CSS selectors |  [optional] |
 |**urls** | **List&lt;Map&lt;String, Object&gt;&gt;** |  |  [optional] |
+|**windowStartOffset** | **Long** | Not yet implemented - The start of the measurement window, in milliseconds relative to the unit&#39;s first exposure to a flag variation |  [optional] |
+|**windowEndOffset** | **Long** | Not yet implemented - The end of the measurement window, in milliseconds relative to the unit&#39;s first exposure to a flag variation |  [optional] |
+|**winsorLowerPercentile** | **BigDecimal** | Lower winsorization percentile, expressed as a percent in the open interval (0, 100). When both bounds are set, defines a two-sided clamp range. Otherwise lower-only winsorization. |  [optional] |
+|**winsorUpperPercentile** | **BigDecimal** | Upper winsorization percentile, expressed as a percent in the open interval (0, 100). When both bounds are set, must be greater than winsorLowerPercentile. |  [optional] |
+|**winsorExcludeImputed** | **Boolean** | Deprecated and ignored. Use winsorIncludeImputed instead. |  [optional] |
+|**winsorIncludeImputed** | **Boolean** | When true, the percentile bound calculation includes imputed zeros. Only meaningful when at least one bound is set and the metric includes units that didn&#39;t send events. |  [optional] |
+|**traceQuery** | **String** | For trace metrics, the trace query to use for the metric. |  [optional] |
+|**traceValueLocation** | **String** | For trace metrics, the location in the trace to use for numeric values. |  [optional] |
+|**denominator** | [**AiConfigsMetricDenominatorRep**](AiConfigsMetricDenominatorRep.md) |  |  [optional] |
 
 
 
@@ -56,6 +66,7 @@
 | PAGEVIEW | &quot;pageview&quot; |
 | CLICK | &quot;click&quot; |
 | CUSTOM | &quot;custom&quot; |
+| TRACE | &quot;trace&quot; |
 
 
 
@@ -74,6 +85,7 @@
 |---- | -----|
 | AVERAGE | &quot;average&quot; |
 | SUM | &quot;sum&quot; |
+| COUNT_DISTINCT | &quot;count_distinct&quot; |
 
 
 
