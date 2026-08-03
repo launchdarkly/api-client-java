@@ -16,6 +16,8 @@
 |**links** | [**Map&lt;String, Link&gt;**](Link.md) | The location and content type of related resources |  |
 |**isGroup** | **Boolean** | Whether this is a metric group or a metric |  |
 |**metrics** | [**List&lt;MetricInGroupRep&gt;**](MetricInGroupRep.md) | An ordered list of the metrics in this metric group |  [optional] |
+|**analysisType** | [**AnalysisTypeEnum**](#AnalysisTypeEnum) | The method for analyzing metric events. Only set for individual metrics, not metric groups. |  [optional] |
+|**analysisUnit** | **String** | The context kind chosen as the analysis unit for this metric in the iteration. If null, analysis uses the iteration&#39;s randomization unit. |  [optional] |
 
 
 
@@ -29,6 +31,15 @@
 | TRACE | &quot;trace&quot; |
 | FUNNEL | &quot;funnel&quot; |
 | STANDARD | &quot;standard&quot; |
+
+
+
+## Enum: AnalysisTypeEnum
+
+| Name | Value |
+|---- | -----|
+| MEAN | &quot;mean&quot; |
+| PERCENTILE | &quot;percentile&quot; |
 
 
 

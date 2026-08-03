@@ -22,8 +22,6 @@
 |**tags** | **List&lt;String&gt;** | Tags associated with this view |  |
 |**createdAt** | **Long** |  |  |
 |**updatedAt** | **Long** |  |  |
-|**archived** | **Boolean** | Whether this view is archived |  |
-|**archivedAt** | **Long** |  |  [optional] |
 |**deletedAt** | **Long** |  |  [optional] |
 |**deleted** | **Boolean** | Whether this view is deleted |  |
 |**maintainer** | [**Maintainer**](Maintainer.md) |  |  [optional] |

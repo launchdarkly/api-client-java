@@ -11,13 +11,13 @@
 |**isNumeric** | **Boolean** | Whether the denominator aggregates a numeric value |  [optional] |
 |**unitAggregationType** | **String** | How individual unit values are aggregated for the denominator |  [optional] |
 |**unitAggregationField** | **String** | The column to count distinct values of; required when unitAggregationType is count_distinct |  [optional] |
+|**valueColumn** | **String** | For a numeric denominator, the column holding the numeric value |  [optional] |
 |**dataSource** | [**AiConfigsMetricDataSourceRefRep**](AiConfigsMetricDataSourceRefRep.md) |  |  [optional] |
 |**filters** | [**AiConfigsFilter**](AiConfigsFilter.md) |  |  [optional] |
 |**windowStartOffset** | **Long** | Start of the measurement window in milliseconds |  [optional] |
 |**windowEndOffset** | **Long** | End of the measurement window in milliseconds |  [optional] |
 |**winsorLowerPercentile** | **BigDecimal** | Lower winsorization percentile in the open interval (0, 100) |  [optional] |
 |**winsorUpperPercentile** | **BigDecimal** | Upper winsorization percentile in the open interval (0, 100) |  [optional] |
-|**winsorExcludeImputed** | **Boolean** | Deprecated and ignored. Use winsorIncludeImputed instead. |  [optional] |
 |**winsorIncludeImputed** | **Boolean** | When true, the percentile bound calculation includes imputed zeros |  [optional] |
 
 

@@ -68,6 +68,12 @@ docs/AgentOptimizationResults.md
 docs/AgentOptimizationRun.md
 docs/AgentOptimizationRuns.md
 docs/AgentOptimizations.md
+docs/AgentSkill.md
+docs/AgentSkillPatch.md
+docs/AgentSkillPost.md
+docs/AgentSkillReference.md
+docs/AgentSkillReferences.md
+docs/AgentSkills.md
 docs/AiConfigsAccess.md
 docs/AiConfigsAccessAllowedReason.md
 docs/AiConfigsAccessAllowedRep.md
@@ -169,6 +175,7 @@ docs/ContextInstanceSearch.md
 docs/ContextInstanceSegmentMembership.md
 docs/ContextInstanceSegmentMemberships.md
 docs/ContextInstances.md
+docs/ContextKindEnvironmentObservation.md
 docs/ContextKindRep.md
 docs/ContextKindsCollectionRep.md
 docs/ContextRecord.md
@@ -347,6 +354,7 @@ docs/HoldoutRep.md
 docs/HoldoutsApi.md
 docs/HoldoutsCollectionRep.md
 docs/HunkRep.md
+docs/IPAllowlistSelfLink.md
 docs/InitiatorRep.md
 docs/InsightGroup.md
 docs/InsightGroupCollection.md
@@ -456,7 +464,9 @@ docs/MetricsSummary.md
 docs/MigrationSafetyIssueRep.md
 docs/MigrationSettingsPost.md
 docs/ModelConfig.md
+docs/ModelConfigPatch.md
 docs/ModelConfigPost.md
+docs/ModelConfigs.md
 docs/ModelImport.md
 docs/Modification.md
 docs/MultiEnvironmentDependentFlag.md
@@ -573,10 +583,15 @@ docs/Rule.md
 docs/RuleClause.md
 docs/ScheduledChangesApi.md
 docs/SdkKey.md
+docs/SdkKeyForPutSdkKeyViews.md
 docs/SdkKeyKind.md
+docs/SdkKeyListItem.md
 docs/SdkKeyPatch.md
 docs/SdkKeyPost.md
 docs/SdkKeysBetaApi.md
+docs/SdkKeysEnvironmentSummary.md
+docs/SdkKeysForGetSdkKeys.md
+docs/SdkKeysSelfLink.md
 docs/SdkListRep.md
 docs/SdkVersionDetailsRep.md
 docs/SdkVersionListRep.md
@@ -597,6 +612,7 @@ docs/SourceEnv.md
 docs/SourceFlag.md
 docs/StageInput.md
 docs/StageOutput.md
+docs/StaleFlagData.md
 docs/Statement.md
 docs/StatementPost.md
 docs/StatisticCollectionRep.md
@@ -665,6 +681,8 @@ docs/ValuePut.md
 docs/Variation.md
 docs/VariationEvalSummary.md
 docs/VariationOrRolloutRep.md
+docs/VariationSkill.md
+docs/VariationSkillPost.md
 docs/VariationSummary.md
 docs/VariationTool.md
 docs/VariationToolPost.md
@@ -852,6 +870,12 @@ src/main/java/com/launchdarkly/api/model/AgentOptimizationResults.java
 src/main/java/com/launchdarkly/api/model/AgentOptimizationRun.java
 src/main/java/com/launchdarkly/api/model/AgentOptimizationRuns.java
 src/main/java/com/launchdarkly/api/model/AgentOptimizations.java
+src/main/java/com/launchdarkly/api/model/AgentSkill.java
+src/main/java/com/launchdarkly/api/model/AgentSkillPatch.java
+src/main/java/com/launchdarkly/api/model/AgentSkillPost.java
+src/main/java/com/launchdarkly/api/model/AgentSkillReference.java
+src/main/java/com/launchdarkly/api/model/AgentSkillReferences.java
+src/main/java/com/launchdarkly/api/model/AgentSkills.java
 src/main/java/com/launchdarkly/api/model/AiConfigsAccess.java
 src/main/java/com/launchdarkly/api/model/AiConfigsAccessAllowedReason.java
 src/main/java/com/launchdarkly/api/model/AiConfigsAccessAllowedRep.java
@@ -946,6 +970,7 @@ src/main/java/com/launchdarkly/api/model/ContextInstanceSearch.java
 src/main/java/com/launchdarkly/api/model/ContextInstanceSegmentMembership.java
 src/main/java/com/launchdarkly/api/model/ContextInstanceSegmentMemberships.java
 src/main/java/com/launchdarkly/api/model/ContextInstances.java
+src/main/java/com/launchdarkly/api/model/ContextKindEnvironmentObservation.java
 src/main/java/com/launchdarkly/api/model/ContextKindRep.java
 src/main/java/com/launchdarkly/api/model/ContextKindsCollectionRep.java
 src/main/java/com/launchdarkly/api/model/ContextRecord.java
@@ -1111,6 +1136,7 @@ src/main/java/com/launchdarkly/api/model/HoldoutPostRequest.java
 src/main/java/com/launchdarkly/api/model/HoldoutRep.java
 src/main/java/com/launchdarkly/api/model/HoldoutsCollectionRep.java
 src/main/java/com/launchdarkly/api/model/HunkRep.java
+src/main/java/com/launchdarkly/api/model/IPAllowlistSelfLink.java
 src/main/java/com/launchdarkly/api/model/InitiatorRep.java
 src/main/java/com/launchdarkly/api/model/InsightGroup.java
 src/main/java/com/launchdarkly/api/model/InsightGroupCollection.java
@@ -1207,7 +1233,9 @@ src/main/java/com/launchdarkly/api/model/MetricsSummary.java
 src/main/java/com/launchdarkly/api/model/MigrationSafetyIssueRep.java
 src/main/java/com/launchdarkly/api/model/MigrationSettingsPost.java
 src/main/java/com/launchdarkly/api/model/ModelConfig.java
+src/main/java/com/launchdarkly/api/model/ModelConfigPatch.java
 src/main/java/com/launchdarkly/api/model/ModelConfigPost.java
+src/main/java/com/launchdarkly/api/model/ModelConfigs.java
 src/main/java/com/launchdarkly/api/model/ModelImport.java
 src/main/java/com/launchdarkly/api/model/Modification.java
 src/main/java/com/launchdarkly/api/model/MultiEnvironmentDependentFlag.java
@@ -1315,9 +1343,14 @@ src/main/java/com/launchdarkly/api/model/RootResponse.java
 src/main/java/com/launchdarkly/api/model/Rule.java
 src/main/java/com/launchdarkly/api/model/RuleClause.java
 src/main/java/com/launchdarkly/api/model/SdkKey.java
+src/main/java/com/launchdarkly/api/model/SdkKeyForPutSdkKeyViews.java
 src/main/java/com/launchdarkly/api/model/SdkKeyKind.java
+src/main/java/com/launchdarkly/api/model/SdkKeyListItem.java
 src/main/java/com/launchdarkly/api/model/SdkKeyPatch.java
 src/main/java/com/launchdarkly/api/model/SdkKeyPost.java
+src/main/java/com/launchdarkly/api/model/SdkKeysEnvironmentSummary.java
+src/main/java/com/launchdarkly/api/model/SdkKeysForGetSdkKeys.java
+src/main/java/com/launchdarkly/api/model/SdkKeysSelfLink.java
 src/main/java/com/launchdarkly/api/model/SdkListRep.java
 src/main/java/com/launchdarkly/api/model/SdkVersionDetailsRep.java
 src/main/java/com/launchdarkly/api/model/SdkVersionListRep.java
@@ -1337,6 +1370,7 @@ src/main/java/com/launchdarkly/api/model/SourceEnv.java
 src/main/java/com/launchdarkly/api/model/SourceFlag.java
 src/main/java/com/launchdarkly/api/model/StageInput.java
 src/main/java/com/launchdarkly/api/model/StageOutput.java
+src/main/java/com/launchdarkly/api/model/StaleFlagData.java
 src/main/java/com/launchdarkly/api/model/Statement.java
 src/main/java/com/launchdarkly/api/model/StatementPost.java
 src/main/java/com/launchdarkly/api/model/StatisticCollectionRep.java
@@ -1400,6 +1434,8 @@ src/main/java/com/launchdarkly/api/model/ValuePut.java
 src/main/java/com/launchdarkly/api/model/Variation.java
 src/main/java/com/launchdarkly/api/model/VariationEvalSummary.java
 src/main/java/com/launchdarkly/api/model/VariationOrRolloutRep.java
+src/main/java/com/launchdarkly/api/model/VariationSkill.java
+src/main/java/com/launchdarkly/api/model/VariationSkillPost.java
 src/main/java/com/launchdarkly/api/model/VariationSummary.java
 src/main/java/com/launchdarkly/api/model/VariationTool.java
 src/main/java/com/launchdarkly/api/model/VariationToolPost.java
@@ -1556,6 +1592,12 @@ src/test/java/com/launchdarkly/api/model/AgentOptimizationRunTest.java
 src/test/java/com/launchdarkly/api/model/AgentOptimizationRunsTest.java
 src/test/java/com/launchdarkly/api/model/AgentOptimizationTest.java
 src/test/java/com/launchdarkly/api/model/AgentOptimizationsTest.java
+src/test/java/com/launchdarkly/api/model/AgentSkillPatchTest.java
+src/test/java/com/launchdarkly/api/model/AgentSkillPostTest.java
+src/test/java/com/launchdarkly/api/model/AgentSkillReferenceTest.java
+src/test/java/com/launchdarkly/api/model/AgentSkillReferencesTest.java
+src/test/java/com/launchdarkly/api/model/AgentSkillTest.java
+src/test/java/com/launchdarkly/api/model/AgentSkillsTest.java
 src/test/java/com/launchdarkly/api/model/AiConfigsAccessAllowedReasonTest.java
 src/test/java/com/launchdarkly/api/model/AiConfigsAccessAllowedRepTest.java
 src/test/java/com/launchdarkly/api/model/AiConfigsAccessDeniedReasonTest.java
@@ -1650,6 +1692,7 @@ src/test/java/com/launchdarkly/api/model/ContextInstanceSearchTest.java
 src/test/java/com/launchdarkly/api/model/ContextInstanceSegmentMembershipTest.java
 src/test/java/com/launchdarkly/api/model/ContextInstanceSegmentMembershipsTest.java
 src/test/java/com/launchdarkly/api/model/ContextInstancesTest.java
+src/test/java/com/launchdarkly/api/model/ContextKindEnvironmentObservationTest.java
 src/test/java/com/launchdarkly/api/model/ContextKindRepTest.java
 src/test/java/com/launchdarkly/api/model/ContextKindsCollectionRepTest.java
 src/test/java/com/launchdarkly/api/model/ContextRecordTest.java
@@ -1815,6 +1858,7 @@ src/test/java/com/launchdarkly/api/model/HoldoutPostRequestTest.java
 src/test/java/com/launchdarkly/api/model/HoldoutRepTest.java
 src/test/java/com/launchdarkly/api/model/HoldoutsCollectionRepTest.java
 src/test/java/com/launchdarkly/api/model/HunkRepTest.java
+src/test/java/com/launchdarkly/api/model/IPAllowlistSelfLinkTest.java
 src/test/java/com/launchdarkly/api/model/InitiatorRepTest.java
 src/test/java/com/launchdarkly/api/model/InsightGroupCollectionMetadataTest.java
 src/test/java/com/launchdarkly/api/model/InsightGroupCollectionScoreMetadataTest.java
@@ -1910,8 +1954,10 @@ src/test/java/com/launchdarkly/api/model/MetricsSummaryTest.java
 src/test/java/com/launchdarkly/api/model/MetricsTest.java
 src/test/java/com/launchdarkly/api/model/MigrationSafetyIssueRepTest.java
 src/test/java/com/launchdarkly/api/model/MigrationSettingsPostTest.java
+src/test/java/com/launchdarkly/api/model/ModelConfigPatchTest.java
 src/test/java/com/launchdarkly/api/model/ModelConfigPostTest.java
 src/test/java/com/launchdarkly/api/model/ModelConfigTest.java
+src/test/java/com/launchdarkly/api/model/ModelConfigsTest.java
 src/test/java/com/launchdarkly/api/model/ModelImportTest.java
 src/test/java/com/launchdarkly/api/model/ModificationTest.java
 src/test/java/com/launchdarkly/api/model/MultiEnvironmentDependentFlagTest.java
@@ -2018,10 +2064,15 @@ src/test/java/com/launchdarkly/api/model/RolloutTest.java
 src/test/java/com/launchdarkly/api/model/RootResponseTest.java
 src/test/java/com/launchdarkly/api/model/RuleClauseTest.java
 src/test/java/com/launchdarkly/api/model/RuleTest.java
+src/test/java/com/launchdarkly/api/model/SdkKeyForPutSdkKeyViewsTest.java
 src/test/java/com/launchdarkly/api/model/SdkKeyKindTest.java
+src/test/java/com/launchdarkly/api/model/SdkKeyListItemTest.java
 src/test/java/com/launchdarkly/api/model/SdkKeyPatchTest.java
 src/test/java/com/launchdarkly/api/model/SdkKeyPostTest.java
 src/test/java/com/launchdarkly/api/model/SdkKeyTest.java
+src/test/java/com/launchdarkly/api/model/SdkKeysEnvironmentSummaryTest.java
+src/test/java/com/launchdarkly/api/model/SdkKeysForGetSdkKeysTest.java
+src/test/java/com/launchdarkly/api/model/SdkKeysSelfLinkTest.java
 src/test/java/com/launchdarkly/api/model/SdkListRepTest.java
 src/test/java/com/launchdarkly/api/model/SdkVersionDetailsRepTest.java
 src/test/java/com/launchdarkly/api/model/SdkVersionListRepTest.java
@@ -2041,6 +2092,7 @@ src/test/java/com/launchdarkly/api/model/SourceEnvTest.java
 src/test/java/com/launchdarkly/api/model/SourceFlagTest.java
 src/test/java/com/launchdarkly/api/model/StageInputTest.java
 src/test/java/com/launchdarkly/api/model/StageOutputTest.java
+src/test/java/com/launchdarkly/api/model/StaleFlagDataTest.java
 src/test/java/com/launchdarkly/api/model/StatementPostTest.java
 src/test/java/com/launchdarkly/api/model/StatementTest.java
 src/test/java/com/launchdarkly/api/model/StatisticCollectionRepTest.java
@@ -2103,6 +2155,8 @@ src/test/java/com/launchdarkly/api/model/ValidationFailedErrorRepTest.java
 src/test/java/com/launchdarkly/api/model/ValuePutTest.java
 src/test/java/com/launchdarkly/api/model/VariationEvalSummaryTest.java
 src/test/java/com/launchdarkly/api/model/VariationOrRolloutRepTest.java
+src/test/java/com/launchdarkly/api/model/VariationSkillPostTest.java
+src/test/java/com/launchdarkly/api/model/VariationSkillTest.java
 src/test/java/com/launchdarkly/api/model/VariationSummaryTest.java
 src/test/java/com/launchdarkly/api/model/VariationTest.java
 src/test/java/com/launchdarkly/api/model/VariationToolPostTest.java

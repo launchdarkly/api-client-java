@@ -25,6 +25,7 @@
 |**archivedAt** | **Long** |  |  [optional] |
 |**publishedAt** | **Long** |  |  [optional] |
 |**tools** | [**List&lt;VariationTool&gt;**](VariationTool.md) |  |  [optional] |
+|**skills** | [**List&lt;VariationSkill&gt;**](VariationSkill.md) |  |  [optional] |
 |**judgeConfiguration** | [**JudgeConfiguration**](JudgeConfiguration.md) |  |  [optional] |
 |**judgingConfigKeys** | **List&lt;String&gt;** |  |  [optional] |
 

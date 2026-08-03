@@ -10,6 +10,8 @@
 |**name** | **String** | Human readable name of the model |  |
 |**key** | **String** | Unique key for the model |  |
 |**id** | **String** | Identifier for the model, for use with third party providers |  |
+|**maintainerId** | **String** |  |  [optional] |
+|**maintainerTeamKey** | **String** |  |  [optional] |
 |**icon** | **String** | Icon for the model |  [optional] |
 |**provider** | **String** | Provider for the model |  [optional] |
 |**params** | **Object** |  |  [optional] |

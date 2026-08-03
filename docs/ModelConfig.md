@@ -8,7 +8,8 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**access** | [**AiConfigsAccess**](AiConfigsAccess.md) |  |  [optional] |
-|**name** | **String** | Human readable name of the model |  |
+|**maintainer** | [**AIConfigMaintainer**](AIConfigMaintainer.md) |  |  [optional] |
+|**name** | **String** | Human-readable name of the model |  |
 |**key** | **String** | Unique key for the model |  |
 |**id** | **String** | Identifier for the model, for use with third party providers |  |
 |**icon** | **String** | Icon for the model |  [optional] |

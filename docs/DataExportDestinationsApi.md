@@ -350,7 +350,7 @@ public class Example {
     DataExportDestinationsApi apiInstance = new DataExportDestinationsApi(defaultClient);
     String projKey = "projKey_example"; // String | The project key
     String envKey = "envKey_example"; // String | The environment key
-    String kind = "kind_example"; // String | The destination kind (snowflake-v2, bigquery, clickhouse, redshift)
+    String kind = "kind_example"; // String | The destination kind (snowflake-v2, bigquery, clickhouse, redshift, databricks)
     CompleteSetupPostBody completeSetupPostBody = new CompleteSetupPostBody(); // CompleteSetupPostBody | 
     try {
       Destination result = apiInstance.postCompleteWarehouseDestinationSetup(projKey, envKey, kind, completeSetupPostBody);
@@ -372,7 +372,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **projKey** | **String**| The project key | |
 | **envKey** | **String**| The environment key | |
-| **kind** | **String**| The destination kind (snowflake-v2, bigquery, clickhouse, redshift) | |
+| **kind** | **String**| The destination kind (snowflake-v2, bigquery, clickhouse, redshift, databricks) | |
 | **completeSetupPostBody** | [**CompleteSetupPostBody**](CompleteSetupPostBody.md)|  | |
 
 ### Return type

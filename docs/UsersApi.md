@@ -4,88 +4,10 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**deleteUser**](UsersApi.md#deleteUser) | **DELETE** /api/v2/users/{projectKey}/{environmentKey}/{userKey} | Delete user |
 | [**getSearchUsers**](UsersApi.md#getSearchUsers) | **GET** /api/v2/user-search/{projectKey}/{environmentKey} | Find users |
 | [**getUser**](UsersApi.md#getUser) | **GET** /api/v2/users/{projectKey}/{environmentKey}/{userKey} | Get user |
 | [**getUsers**](UsersApi.md#getUsers) | **GET** /api/v2/users/{projectKey}/{environmentKey} | List users |
 
-
-<a id="deleteUser"></a>
-# **deleteUser**
-> deleteUser(projectKey, environmentKey, userKey)
-
-Delete user
-
-&gt; ### Use contexts instead &gt; &gt; After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should use [Delete context instances](https://launchdarkly.com/docs/api/contexts/delete-context-instances) instead of this endpoint.  Delete a user by key. 
-
-### Example
-```java
-// Import classes:
-import com.launchdarkly.api.ApiClient;
-import com.launchdarkly.api.ApiException;
-import com.launchdarkly.api.Configuration;
-import com.launchdarkly.api.auth.*;
-import com.launchdarkly.api.models.*;
-import com.launchdarkly.api.api.UsersApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://app.launchdarkly.com");
-    
-    // Configure API key authorization: ApiKey
-    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
-    ApiKey.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKey.setApiKeyPrefix("Token");
-
-    UsersApi apiInstance = new UsersApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | The project key
-    String environmentKey = "environmentKey_example"; // String | The environment key
-    String userKey = "userKey_example"; // String | The user key
-    try {
-      apiInstance.deleteUser(projectKey, environmentKey, userKey);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling UsersApi#deleteUser");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**| The project key | |
-| **environmentKey** | **String**| The environment key | |
-| **userKey** | **String**| The user key | |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[ApiKey](../README.md#ApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **204** | Action succeeded |  -  |
-| **401** | Invalid access token |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Invalid resource identifier |  -  |
-| **409** | Status conflict |  -  |
-| **429** | Rate limited |  -  |
 
 <a id="getSearchUsers"></a>
 # **getSearchUsers**

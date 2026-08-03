@@ -162,7 +162,7 @@ null (empty response body)
 
 <a id="getIpAllowlist"></a>
 # **getIpAllowlist**
-> IpAllowlistResponse getIpAllowlist()
+> IpAllowlistResponse getIpAllowlist(search, limit, offset)
 
 Get IP Allowlist
 
@@ -190,8 +190,11 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     IpAllowlistBetaApi apiInstance = new IpAllowlistBetaApi(defaultClient);
+    String search = "search_example"; // String | A case-insensitive substring to filter entries by. Matches against the IP address or CIDR block and the description.
+    Integer limit = 56; // Integer | The number of entries to return. When omitted, all matching entries are returned. Maximum is 100.
+    Integer offset = 56; // Integer | The number of entries to skip. Used for pagination.
     try {
-      IpAllowlistResponse result = apiInstance.getIpAllowlist();
+      IpAllowlistResponse result = apiInstance.getIpAllowlist(search, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling IpAllowlistBetaApi#getIpAllowlist");
@@ -205,7 +208,12 @@ public class Example {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **search** | **String**| A case-insensitive substring to filter entries by. Matches against the IP address or CIDR block and the description. | [optional] |
+| **limit** | **Integer**| The number of entries to return. When omitted, all matching entries are returned. Maximum is 100. | [optional] |
+| **offset** | **Integer**| The number of entries to skip. Used for pagination. | [optional] |
 
 ### Return type
 

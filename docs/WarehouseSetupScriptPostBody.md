@@ -25,6 +25,7 @@
 |**clickHouseIncludeHostRestriction** | **Boolean** |  |  [optional] |
 |**clickHouseServiceRoleArn** | **String** |  |  [optional] |
 |**clickHousePassword** | **String** |  |  [optional] |
+|**s3BucketName** | **String** |  |  [optional] |
 
 
 

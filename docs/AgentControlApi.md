@@ -10,6 +10,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**deleteAgentGraph**](AgentControlApi.md#deleteAgentGraph) | **DELETE** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Delete agent graph |
 | [**deleteAgentOptimization**](AgentControlApi.md#deleteAgentOptimization) | **DELETE** /api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey} | Delete an agent optimization |
 | [**deleteAgentOptimizationRun**](AgentControlApi.md#deleteAgentOptimizationRun) | **DELETE** /api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey}/runs/{runId} | Delete an agent optimization run |
+| [**deleteAgentSkill**](AgentControlApi.md#deleteAgentSkill) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/skills/{skillKey} | Delete an agent skill |
 | [**deleteModelConfig**](AgentControlApi.md#deleteModelConfig) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/model-configs/{modelConfigKey} | Delete an AI model config |
 | [**deletePromptSnippet**](AgentControlApi.md#deletePromptSnippet) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/prompt-snippets/{snippetKey} | Delete a prompt snippet |
 | [**deleteRestrictedModels**](AgentControlApi.md#deleteRestrictedModels) | **DELETE** /api/v2/projects/{projectKey}/ai-configs/model-configs/restricted | Remove AI models from the restricted list |
@@ -23,6 +24,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**getAITool**](AgentControlApi.md#getAITool) | **GET** /api/v2/projects/{projectKey}/ai-tools/{toolKey} | Get AI tool |
 | [**getAgentGraph**](AgentControlApi.md#getAgentGraph) | **GET** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Get agent graph |
 | [**getAgentOptimization**](AgentControlApi.md#getAgentOptimization) | **GET** /api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey} | Get an agent optimization |
+| [**getAgentSkill**](AgentControlApi.md#getAgentSkill) | **GET** /api/v2/projects/{projectKey}/ai-configs/skills/{skillKey} | Get an agent skill |
 | [**getModelConfig**](AgentControlApi.md#getModelConfig) | **GET** /api/v2/projects/{projectKey}/ai-configs/model-configs/{modelConfigKey} | Get AI model config |
 | [**getPromptSnippet**](AgentControlApi.md#getPromptSnippet) | **GET** /api/v2/projects/{projectKey}/ai-configs/prompt-snippets/{snippetKey} | Get a prompt snippet |
 | [**listAIToolVersions**](AgentControlApi.md#listAIToolVersions) | **GET** /api/v2/projects/{projectKey}/ai-tools/{toolKey}/versions | List AI tool versions |
@@ -31,7 +33,11 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**listAgentOptimizationResults**](AgentControlApi.md#listAgentOptimizationResults) | **GET** /api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey}/results | List agent optimization runs |
 | [**listAgentOptimizationResultsByRunId**](AgentControlApi.md#listAgentOptimizationResultsByRunId) | **GET** /api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey}/runs/{runId}/results | List agent optimization results for a run |
 | [**listAgentOptimizations**](AgentControlApi.md#listAgentOptimizations) | **GET** /api/v2/projects/{projectKey}/agent-optimizations | List agent optimizations |
+| [**listAgentSkillReferences**](AgentControlApi.md#listAgentSkillReferences) | **GET** /api/v2/projects/{projectKey}/ai-configs/skills/{skillKey}/references | List agent skill references |
+| [**listAgentSkillVersions**](AgentControlApi.md#listAgentSkillVersions) | **GET** /api/v2/projects/{projectKey}/ai-configs/skills/{skillKey}/versions | List agent skill versions |
+| [**listAgentSkills**](AgentControlApi.md#listAgentSkills) | **GET** /api/v2/projects/{projectKey}/ai-configs/skills | List agent skills |
 | [**listAllAgentOptimizationResults**](AgentControlApi.md#listAllAgentOptimizationResults) | **GET** /api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey}/all-results | List all agent optimization results across versions |
+| [**listModelConfigVersions**](AgentControlApi.md#listModelConfigVersions) | **GET** /api/v2/projects/{projectKey}/ai-configs/model-configs/{modelConfigKey}/versions | List AI model config versions |
 | [**listModelConfigs**](AgentControlApi.md#listModelConfigs) | **GET** /api/v2/projects/{projectKey}/ai-configs/model-configs | List AI model configs |
 | [**listPromptSnippetReferences**](AgentControlApi.md#listPromptSnippetReferences) | **GET** /api/v2/projects/{projectKey}/ai-configs/prompt-snippets/{snippetKey}/references | List prompt snippet references |
 | [**listPromptSnippetVersions**](AgentControlApi.md#listPromptSnippetVersions) | **GET** /api/v2/projects/{projectKey}/ai-configs/prompt-snippets/{snippetKey}/versions | List prompt snippet versions |
@@ -43,6 +49,8 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**patchAgentGraph**](AgentControlApi.md#patchAgentGraph) | **PATCH** /api/v2/projects/{projectKey}/agent-graphs/{graphKey} | Update agent graph |
 | [**patchAgentOptimization**](AgentControlApi.md#patchAgentOptimization) | **PATCH** /api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey} | Update an agent optimization |
 | [**patchAgentOptimizationResult**](AgentControlApi.md#patchAgentOptimizationResult) | **PATCH** /api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey}/results/{resultId} | Update an agent optimization result |
+| [**patchAgentSkill**](AgentControlApi.md#patchAgentSkill) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/skills/{skillKey} | Update an agent skill |
+| [**patchModelConfig**](AgentControlApi.md#patchModelConfig) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/model-configs/{modelConfigKey} | Update an AI model config |
 | [**patchPromptSnippet**](AgentControlApi.md#patchPromptSnippet) | **PATCH** /api/v2/projects/{projectKey}/ai-configs/prompt-snippets/{snippetKey} | Update a prompt snippet |
 | [**postAIConfig**](AgentControlApi.md#postAIConfig) | **POST** /api/v2/projects/{projectKey}/ai-configs | Create new AI Config |
 | [**postAIConfigVariation**](AgentControlApi.md#postAIConfigVariation) | **POST** /api/v2/projects/{projectKey}/ai-configs/{configKey}/variations | Create AI Config variation |
@@ -50,6 +58,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**postAgentGraph**](AgentControlApi.md#postAgentGraph) | **POST** /api/v2/projects/{projectKey}/agent-graphs | Create new agent graph |
 | [**postAgentOptimization**](AgentControlApi.md#postAgentOptimization) | **POST** /api/v2/projects/{projectKey}/agent-optimizations | Create agent optimization |
 | [**postAgentOptimizationResult**](AgentControlApi.md#postAgentOptimizationResult) | **POST** /api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey}/results | Create agent optimization result |
+| [**postAgentSkill**](AgentControlApi.md#postAgentSkill) | **POST** /api/v2/projects/{projectKey}/ai-configs/skills | Create an agent skill |
 | [**postModelConfig**](AgentControlApi.md#postModelConfig) | **POST** /api/v2/projects/{projectKey}/ai-configs/model-configs | Create an AI model config |
 | [**postPromptSnippet**](AgentControlApi.md#postPromptSnippet) | **POST** /api/v2/projects/{projectKey}/ai-configs/prompt-snippets | Create a prompt snippet |
 | [**postRestrictedModels**](AgentControlApi.md#postRestrictedModels) | **POST** /api/v2/projects/{projectKey}/ai-configs/model-configs/restricted | Add AI models to the restricted list |
@@ -503,6 +512,80 @@ null (empty response body)
 | **204** | No content |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not found |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="deleteAgentSkill"></a>
+# **deleteAgentSkill**
+> deleteAgentSkill(projectKey, skillKey)
+
+Delete an agent skill
+
+Delete an agent skill, including all of its versions.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AgentControlApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AgentControlApi apiInstance = new AgentControlApi(defaultClient);
+    String projectKey = "projectKey_example"; // String | 
+    String skillKey = "skillKey_example"; // String | 
+    try {
+      apiInstance.deleteAgentSkill(projectKey, skillKey);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AgentControlApi#deleteAgentSkill");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**|  | |
+| **skillKey** | **String**|  | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No content |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not found |  -  |
+| **409** | Conflict |  -  |
 | **500** | Internal server error |  -  |
 
 <a id="deleteModelConfig"></a>
@@ -1504,13 +1587,87 @@ public class Example {
 | **404** | Not found |  -  |
 | **500** | Internal server error |  -  |
 
+<a id="getAgentSkill"></a>
+# **getAgentSkill**
+> AgentSkill getAgentSkill(projectKey, skillKey)
+
+Get an agent skill
+
+Retrieve a specific agent skill by its key.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AgentControlApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AgentControlApi apiInstance = new AgentControlApi(defaultClient);
+    String projectKey = "projectKey_example"; // String | 
+    String skillKey = "skillKey_example"; // String | 
+    try {
+      AgentSkill result = apiInstance.getAgentSkill(projectKey, skillKey);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AgentControlApi#getAgentSkill");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**|  | |
+| **skillKey** | **String**|  | |
+
+### Return type
+
+[**AgentSkill**](AgentSkill.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Agent skill found |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not found |  -  |
+| **500** | Internal server error |  -  |
+
 <a id="getModelConfig"></a>
 # **getModelConfig**
-> ModelConfig getModelConfig(projectKey, modelConfigKey)
+> ModelConfig getModelConfig(projectKey, modelConfigKey, version)
 
 Get AI model config
 
-Get an AI model config by key.
+Get an AI model config by key. Specify a version to retrieve a historical custom model config version. Global model configs accept version 0 or 1 and return their current representation.
 
 ### Example
 ```java
@@ -1536,8 +1693,9 @@ public class Example {
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
     String projectKey = "default"; // String | 
     String modelConfigKey = "default"; // String | 
+    Integer version = 56; // Integer | Specific model config version to return. Omit to return the latest version.
     try {
-      ModelConfig result = apiInstance.getModelConfig(projectKey, modelConfigKey);
+      ModelConfig result = apiInstance.getModelConfig(projectKey, modelConfigKey, version);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AgentControlApi#getModelConfig");
@@ -1556,6 +1714,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **projectKey** | **String**|  | |
 | **modelConfigKey** | **String**|  | |
+| **version** | **Integer**| Specific model config version to return. Omit to return the latest version. | [optional] |
 
 ### Return type
 
@@ -2126,6 +2285,242 @@ public class Example {
 | **404** | Not found |  -  |
 | **500** | Internal server error |  -  |
 
+<a id="listAgentSkillReferences"></a>
+# **listAgentSkillReferences**
+> AgentSkillReferences listAgentSkillReferences(projectKey, skillKey, limit, offset)
+
+List agent skill references
+
+Get all config variations that currently reference this agent skill.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AgentControlApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AgentControlApi apiInstance = new AgentControlApi(defaultClient);
+    String projectKey = "projectKey_example"; // String | 
+    String skillKey = "skillKey_example"; // String | 
+    Integer limit = 56; // Integer | The number of resources to return.
+    Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
+    try {
+      AgentSkillReferences result = apiInstance.listAgentSkillReferences(projectKey, skillKey, limit, offset);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AgentControlApi#listAgentSkillReferences");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**|  | |
+| **skillKey** | **String**|  | |
+| **limit** | **Integer**| The number of resources to return. | [optional] |
+| **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
+
+### Return type
+
+[**AgentSkillReferences**](AgentSkillReferences.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Agent skill references |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not found |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="listAgentSkillVersions"></a>
+# **listAgentSkillVersions**
+> AgentSkills listAgentSkillVersions(projectKey, skillKey, limit, offset)
+
+List agent skill versions
+
+Get all versions of an agent skill in the given project, ordered by version descending.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AgentControlApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AgentControlApi apiInstance = new AgentControlApi(defaultClient);
+    String projectKey = "projectKey_example"; // String | 
+    String skillKey = "skillKey_example"; // String | 
+    Integer limit = 56; // Integer | The number of resources to return.
+    Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
+    try {
+      AgentSkills result = apiInstance.listAgentSkillVersions(projectKey, skillKey, limit, offset);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AgentControlApi#listAgentSkillVersions");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**|  | |
+| **skillKey** | **String**|  | |
+| **limit** | **Integer**| The number of resources to return. | [optional] |
+| **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
+
+### Return type
+
+[**AgentSkills**](AgentSkills.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+| **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not found |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="listAgentSkills"></a>
+# **listAgentSkills**
+> AgentSkills listAgentSkills(projectKey, limit, offset, filter)
+
+List agent skills
+
+Get a list of all agent skills in the given project.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AgentControlApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AgentControlApi apiInstance = new AgentControlApi(defaultClient);
+    String projectKey = "projectKey_example"; // String | 
+    Integer limit = 56; // Integer | The number of resources to return.
+    Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
+    String filter = "filter_example"; // String | A filter to apply to the list.
+    try {
+      AgentSkills result = apiInstance.listAgentSkills(projectKey, limit, offset, filter);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AgentControlApi#listAgentSkills");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**|  | |
+| **limit** | **Integer**| The number of resources to return. | [optional] |
+| **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
+| **filter** | **String**| A filter to apply to the list. | [optional] |
+
+### Return type
+
+[**AgentSkills**](AgentSkills.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Agent skills list |  -  |
+| **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not found |  -  |
+| **500** | Internal server error |  -  |
+
 <a id="listAllAgentOptimizationResults"></a>
 # **listAllAgentOptimizationResults**
 > AgentOptimizationResults listAllAgentOptimizationResults(projectKey, optimizationKey, limit, offset)
@@ -2200,6 +2595,85 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Agent optimization results list |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not found |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="listModelConfigVersions"></a>
+# **listModelConfigVersions**
+> ModelConfigs listModelConfigVersions(projectKey, modelConfigKey, limit, offset)
+
+List AI model config versions
+
+Get a paginated list of all available versions of an AI model config, ordered from newest to oldest. Global model configs return their single current representation.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AgentControlApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AgentControlApi apiInstance = new AgentControlApi(defaultClient);
+    String projectKey = "default"; // String | 
+    String modelConfigKey = "default"; // String | 
+    Integer limit = 56; // Integer | The number of resources to return.
+    Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
+    try {
+      ModelConfigs result = apiInstance.listModelConfigVersions(projectKey, modelConfigKey, limit, offset);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AgentControlApi#listModelConfigVersions");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**|  | |
+| **modelConfigKey** | **String**|  | |
+| **limit** | **Integer**| The number of resources to return. | [optional] |
+| **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
+
+### Return type
+
+[**ModelConfigs**](ModelConfigs.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+| **400** | Bad request |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not found |  -  |
 | **500** | Internal server error |  -  |
@@ -3061,6 +3535,161 @@ public class Example {
 | **404** | Not found |  -  |
 | **500** | Internal server error |  -  |
 
+<a id="patchAgentSkill"></a>
+# **patchAgentSkill**
+> AgentSkill patchAgentSkill(projectKey, skillKey, agentSkillPatch)
+
+Update an agent skill
+
+Update an existing agent skill. Creates a new version of the skill.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AgentControlApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AgentControlApi apiInstance = new AgentControlApi(defaultClient);
+    String projectKey = "projectKey_example"; // String | 
+    String skillKey = "skillKey_example"; // String | 
+    AgentSkillPatch agentSkillPatch = new AgentSkillPatch(); // AgentSkillPatch | Agent skill fields to update
+    try {
+      AgentSkill result = apiInstance.patchAgentSkill(projectKey, skillKey, agentSkillPatch);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AgentControlApi#patchAgentSkill");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**|  | |
+| **skillKey** | **String**|  | |
+| **agentSkillPatch** | [**AgentSkillPatch**](AgentSkillPatch.md)| Agent skill fields to update | |
+
+### Return type
+
+[**AgentSkill**](AgentSkill.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Agent skill updated |  -  |
+| **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not found |  -  |
+| **409** | Conflict |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="patchModelConfig"></a>
+# **patchModelConfig**
+> ModelConfig patchModelConfig(projectKey, modelConfigKey, modelConfigPatch)
+
+Update an AI model config
+
+Update an AI model config.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AgentControlApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AgentControlApi apiInstance = new AgentControlApi(defaultClient);
+    String projectKey = "default"; // String | 
+    String modelConfigKey = "modelConfigKey_example"; // String | 
+    ModelConfigPatch modelConfigPatch = new ModelConfigPatch(); // ModelConfigPatch | AI model config object to update
+    try {
+      ModelConfig result = apiInstance.patchModelConfig(projectKey, modelConfigKey, modelConfigPatch);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AgentControlApi#patchModelConfig");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**|  | |
+| **modelConfigKey** | **String**|  | |
+| **modelConfigPatch** | [**ModelConfigPatch**](ModelConfigPatch.md)| AI model config object to update | |
+
+### Return type
+
+[**ModelConfig**](ModelConfig.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+| **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not found |  -  |
+| **500** | Internal server error |  -  |
+
 <a id="patchPromptSnippet"></a>
 # **patchPromptSnippet**
 > PromptSnippet patchPromptSnippet(projectKey, snippetKey, promptSnippetPatch)
@@ -3594,6 +4223,82 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **409** | Conflict |  -  |
 | **429** | Rate Limited |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="postAgentSkill"></a>
+# **postAgentSkill**
+> AgentSkill postAgentSkill(projectKey, agentSkillPost)
+
+Create an agent skill
+
+Create a new agent skill within the given project.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AgentControlApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AgentControlApi apiInstance = new AgentControlApi(defaultClient);
+    String projectKey = "projectKey_example"; // String | 
+    AgentSkillPost agentSkillPost = new AgentSkillPost(); // AgentSkillPost | Agent skill object to create
+    try {
+      AgentSkill result = apiInstance.postAgentSkill(projectKey, agentSkillPost);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AgentControlApi#postAgentSkill");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**|  | |
+| **agentSkillPost** | [**AgentSkillPost**](AgentSkillPost.md)| Agent skill object to create | |
+
+### Return type
+
+[**AgentSkill**](AgentSkill.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Agent skill created |  -  |
+| **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not found |  -  |
+| **409** | Conflict |  -  |
 | **500** | Internal server error |  -  |
 
 <a id="postModelConfig"></a>

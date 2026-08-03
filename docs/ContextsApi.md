@@ -429,7 +429,7 @@ public class Example {
 
 <a id="getContextKindsByProjectKey"></a>
 # **getContextKindsByProjectKey**
-> ContextKindsCollectionRep getContextKindsByProjectKey(projectKey)
+> ContextKindsCollectionRep getContextKindsByProjectKey(projectKey, expand)
 
 Get context kinds
 
@@ -458,8 +458,9 @@ public class Example {
 
     ContextsApi apiInstance = new ContextsApi(defaultClient);
     String projectKey = "projectKey_example"; // String | The project key
+    String expand = "expand_example"; // String | A comma-separated list of properties that can reveal additional information in the response. Options: `environmentObservations`.
     try {
-      ContextKindsCollectionRep result = apiInstance.getContextKindsByProjectKey(projectKey);
+      ContextKindsCollectionRep result = apiInstance.getContextKindsByProjectKey(projectKey, expand);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ContextsApi#getContextKindsByProjectKey");
@@ -477,6 +478,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **projectKey** | **String**| The project key | |
+| **expand** | **String**| A comma-separated list of properties that can reveal additional information in the response. Options: &#x60;environmentObservations&#x60;. | [optional] |
 
 ### Return type
 

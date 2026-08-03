@@ -15,6 +15,7 @@
 |**unitAggregationType** | [**UnitAggregationTypeEnum**](#UnitAggregationTypeEnum) | The type of unit aggregation to use for the metric |  [optional] |
 |**analysisType** | [**AnalysisTypeEnum**](#AnalysisTypeEnum) | The method for analyzing metric events |  [optional] |
 |**eventKey** | **String** | The event key sent with the metric. Only relevant for custom metrics. |  [optional] |
+|**analysisUnit** | **String** | The context kind used as the analysis unit for this metric in the experiment iteration |  [optional] |
 |**links** | [**Map&lt;String, Link&gt;**](Link.md) | The location and content type of related resources |  |
 
 

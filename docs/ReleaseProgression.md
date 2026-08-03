@@ -11,6 +11,7 @@
 |**completedAt** | **Long** |  |  [optional] |
 |**flagKey** | **String** | The flag key |  |
 |**activePhaseId** | **String** | The ID of the currently active release phase |  [optional] |
+|**activePhaseStatus** | **String** |  |  [optional] |
 |**links** | [**Map&lt;String, Link&gt;**](Link.md) | The location and content type of related resources |  |
 
 

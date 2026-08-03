@@ -51,7 +51,6 @@
 |**windowEndOffset** | **Long** | Not yet implemented - The end of the measurement window, in milliseconds relative to the unit&#39;s first exposure to a flag variation |  [optional] |
 |**winsorLowerPercentile** | **BigDecimal** | Lower winsorization percentile, expressed as a percent in the open interval (0, 100). When both bounds are set, defines a two-sided clamp range. Otherwise lower-only winsorization. |  [optional] |
 |**winsorUpperPercentile** | **BigDecimal** | Upper winsorization percentile, expressed as a percent in the open interval (0, 100). When both bounds are set, must be greater than winsorLowerPercentile. |  [optional] |
-|**winsorExcludeImputed** | **Boolean** | Deprecated and ignored. Use winsorIncludeImputed instead. |  [optional] |
 |**winsorIncludeImputed** | **Boolean** | When true, the percentile bound calculation includes imputed zeros. Only meaningful when at least one bound is set and the metric includes units that didn&#39;t send events. |  [optional] |
 |**traceQuery** | **String** | For trace metrics, the trace query to use for the metric. |  [optional] |
 |**traceValueLocation** | **String** | For trace metrics, the location in the trace to use for numeric values. |  [optional] |
