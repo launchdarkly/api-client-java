@@ -2,6 +2,7 @@
 
 # ModelConfigPatch
 
+Fields to update. Omitted fields keep their current values. `params`, `customParams`, and `tags` replace the current values. Global model configs cannot be updated.
 
 ## Properties
 
@@ -13,11 +14,11 @@
 |**costPerInputToken** | **Double** | Cost per input token in USD |  [optional] |
 |**costPerOutputToken** | **Double** | Cost per output token in USD |  [optional] |
 |**costPerCachedInputToken** | **Double** | Cost per cached input token in USD |  [optional] |
-|**params** | **Object** |  |  [optional] |
-|**customParams** | **Object** |  |  [optional] |
-|**tags** | **List&lt;String&gt;** |  |  [optional] |
-|**maintainerId** | **String** |  |  [optional] |
-|**maintainerTeamKey** | **String** |  |  [optional] |
+|**params** | **Object** | Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, &#x60;params&#x60; and &#x60;customParams&#x60; hold parameters that the provider&#39;s API accepts, for example &#x60;{\&quot;temperature\&quot;: 0.7, \&quot;maxTokens\&quot;: 4096}&#x60;. |  [optional] |
+|**customParams** | **Object** | Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, &#x60;params&#x60; and &#x60;customParams&#x60; hold parameters that the provider&#39;s API accepts, for example &#x60;{\&quot;temperature\&quot;: 0.7, \&quot;maxTokens\&quot;: 4096}&#x60;. |  [optional] |
+|**tags** | **List&lt;String&gt;** | Tags for the model config. Replaces the current tags. |  [optional] |
+|**maintainerId** | **String** | The member ID of the new maintainer. Set &#x60;maintainerId&#x60; or &#x60;maintainerTeamKey&#x60;, not both. An empty string removes the maintainer. |  [optional] |
+|**maintainerTeamKey** | **String** | The key of the team to set as the new maintainer. Set &#x60;maintainerId&#x60; or &#x60;maintainerTeamKey&#x60;, not both. |  [optional] |
 
 
 

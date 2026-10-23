@@ -27,11 +27,13 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**getAgentSkill**](AgentControlApi.md#getAgentSkill) | **GET** /api/v2/projects/{projectKey}/ai-configs/skills/{skillKey} | Get an agent skill |
 | [**getModelConfig**](AgentControlApi.md#getModelConfig) | **GET** /api/v2/projects/{projectKey}/ai-configs/model-configs/{modelConfigKey} | Get AI model config |
 | [**getPromptSnippet**](AgentControlApi.md#getPromptSnippet) | **GET** /api/v2/projects/{projectKey}/ai-configs/prompt-snippets/{snippetKey} | Get a prompt snippet |
+| [**listAIToolReferences**](AgentControlApi.md#listAIToolReferences) | **GET** /api/v2/projects/{projectKey}/ai-tools/{toolKey}/references | List AI tool references |
 | [**listAIToolVersions**](AgentControlApi.md#listAIToolVersions) | **GET** /api/v2/projects/{projectKey}/ai-tools/{toolKey}/versions | List AI tool versions |
 | [**listAITools**](AgentControlApi.md#listAITools) | **GET** /api/v2/projects/{projectKey}/ai-tools | List AI tools |
 | [**listAgentGraphs**](AgentControlApi.md#listAgentGraphs) | **GET** /api/v2/projects/{projectKey}/agent-graphs | List agent graphs |
-| [**listAgentOptimizationResults**](AgentControlApi.md#listAgentOptimizationResults) | **GET** /api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey}/results | List agent optimization runs |
+| [**listAgentOptimizationResults**](AgentControlApi.md#listAgentOptimizationResults) | **GET** /api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey}/results | List latest agent optimization result per run |
 | [**listAgentOptimizationResultsByRunId**](AgentControlApi.md#listAgentOptimizationResultsByRunId) | **GET** /api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey}/runs/{runId}/results | List agent optimization results for a run |
+| [**listAgentOptimizationRuns**](AgentControlApi.md#listAgentOptimizationRuns) | **GET** /api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey}/runs | List agent optimization runs |
 | [**listAgentOptimizations**](AgentControlApi.md#listAgentOptimizations) | **GET** /api/v2/projects/{projectKey}/agent-optimizations | List agent optimizations |
 | [**listAgentSkillReferences**](AgentControlApi.md#listAgentSkillReferences) | **GET** /api/v2/projects/{projectKey}/ai-configs/skills/{skillKey}/references | List agent skill references |
 | [**listAgentSkillVersions**](AgentControlApi.md#listAgentSkillVersions) | **GET** /api/v2/projects/{projectKey}/ai-configs/skills/{skillKey}/versions | List agent skill versions |
@@ -94,8 +96,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "default"; // String | 
-    String configKey = "configKey_example"; // String | 
+    String projectKey = "default"; // String | The project key
+    String configKey = "configKey_example"; // String | The AI Config key
     try {
       apiInstance.deleteAIConfig(projectKey, configKey);
     } catch (ApiException e) {
@@ -113,8 +115,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **configKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **configKey** | **String**| The AI Config key | |
 
 ### Return type
 
@@ -168,9 +170,9 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String configKey = "configKey_example"; // String | 
-    String variationKey = "variationKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String configKey = "configKey_example"; // String | The AI Config key
+    String variationKey = "variationKey_example"; // String | The AI Config variation key
     try {
       apiInstance.deleteAIConfigVariation(projectKey, configKey, variationKey);
     } catch (ApiException e) {
@@ -188,9 +190,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **configKey** | **String**|  | |
-| **variationKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **configKey** | **String**| The AI Config key | |
+| **variationKey** | **String**| The AI Config variation key | |
 
 ### Return type
 
@@ -244,8 +246,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String toolKey = "toolKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String toolKey = "toolKey_example"; // String | The AI tool key
     try {
       apiInstance.deleteAITool(projectKey, toolKey);
     } catch (ApiException e) {
@@ -263,8 +265,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **toolKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **toolKey** | **String**| The AI tool key | |
 
 ### Return type
 
@@ -319,8 +321,8 @@ public class Example {
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
     String ldAPIVersion = "beta"; // String | Version of the endpoint.
-    String projectKey = "projectKey_example"; // String | 
-    String graphKey = "graphKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String graphKey = "graphKey_example"; // String | The agent graph key
     try {
       apiInstance.deleteAgentGraph(ldAPIVersion, projectKey, graphKey);
     } catch (ApiException e) {
@@ -339,8 +341,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
-| **projectKey** | **String**|  | |
-| **graphKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **graphKey** | **String**| The agent graph key | |
 
 ### Return type
 
@@ -394,8 +396,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String optimizationKey = "optimizationKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String optimizationKey = "optimizationKey_example"; // String | The agent optimization key
     try {
       apiInstance.deleteAgentOptimization(projectKey, optimizationKey);
     } catch (ApiException e) {
@@ -413,8 +415,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **optimizationKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **optimizationKey** | **String**| The agent optimization key | |
 
 ### Return type
 
@@ -468,9 +470,9 @@ public class Example {
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
     String ldAPIVersion = "beta"; // String | Version of the endpoint.
-    String projectKey = "projectKey_example"; // String | 
-    String optimizationKey = "optimizationKey_example"; // String | 
-    UUID runId = UUID.randomUUID(); // UUID | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String optimizationKey = "optimizationKey_example"; // String | The agent optimization key
+    UUID runId = UUID.randomUUID(); // UUID | The agent optimization run ID
     try {
       apiInstance.deleteAgentOptimizationRun(ldAPIVersion, projectKey, optimizationKey, runId);
     } catch (ApiException e) {
@@ -489,9 +491,9 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
-| **projectKey** | **String**|  | |
-| **optimizationKey** | **String**|  | |
-| **runId** | **UUID**|  | |
+| **projectKey** | **String**| The project key | |
+| **optimizationKey** | **String**| The agent optimization key | |
+| **runId** | **UUID**| The agent optimization run ID | |
 
 ### Return type
 
@@ -544,8 +546,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String skillKey = "skillKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String skillKey = "skillKey_example"; // String | The agent skill key
     try {
       apiInstance.deleteAgentSkill(projectKey, skillKey);
     } catch (ApiException e) {
@@ -563,8 +565,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **skillKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **skillKey** | **String**| The agent skill key | |
 
 ### Return type
 
@@ -618,8 +620,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "default"; // String | 
-    String modelConfigKey = "modelConfigKey_example"; // String | 
+    String projectKey = "default"; // String | The project key
+    String modelConfigKey = "modelConfigKey_example"; // String | The AI model config key
     try {
       apiInstance.deleteModelConfig(projectKey, modelConfigKey);
     } catch (ApiException e) {
@@ -637,8 +639,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **modelConfigKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **modelConfigKey** | **String**| The AI model config key | |
 
 ### Return type
 
@@ -692,8 +694,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String snippetKey = "snippetKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String snippetKey = "snippetKey_example"; // String | The prompt snippet key
     try {
       apiInstance.deletePromptSnippet(projectKey, snippetKey);
     } catch (ApiException e) {
@@ -711,8 +713,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **snippetKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **snippetKey** | **String**| The prompt snippet key | |
 
 ### Return type
 
@@ -765,7 +767,7 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "default"; // String | 
+    String projectKey = "default"; // String | The project key
     RestrictedModelsRequest restrictedModelsRequest = new RestrictedModelsRequest(); // RestrictedModelsRequest | List of AI model keys to remove from the restricted list
     try {
       apiInstance.deleteRestrictedModels(projectKey, restrictedModelsRequest);
@@ -784,7 +786,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
 | **restrictedModelsRequest** | [**RestrictedModelsRequest**](RestrictedModelsRequest.md)| List of AI model keys to remove from the restricted list | |
 
 ### Return type
@@ -839,8 +841,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String configKey = "configKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String configKey = "configKey_example"; // String | The AI Config key
     try {
       AIConfig result = apiInstance.getAIConfig(projectKey, configKey);
       System.out.println(result);
@@ -859,8 +861,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **configKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **configKey** | **String**| The AI Config key | |
 
 ### Return type
 
@@ -914,8 +916,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String configKey = "configKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String configKey = "configKey_example"; // String | The AI Config key
     Integer from = 56; // Integer | The starting time, as milliseconds since epoch (inclusive).
     Integer to = 56; // Integer | The ending time, as milliseconds since epoch (exclusive). May not be more than 100 days after `from`.
     String env = "env_example"; // String | An environment key. Only metrics from this environment will be included.
@@ -939,8 +941,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **configKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **configKey** | **String**| The AI Config key | |
 | **from** | **Integer**| The starting time, as milliseconds since epoch (inclusive). | |
 | **to** | **Integer**| The ending time, as milliseconds since epoch (exclusive). May not be more than 100 days after &#x60;from&#x60;. | |
 | **env** | **String**| An environment key. Only metrics from this environment will be included. | |
@@ -999,8 +1001,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String configKey = "configKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String configKey = "configKey_example"; // String | The AI Config key
     Integer from = 56; // Integer | The starting time, as milliseconds since epoch (inclusive).
     Integer to = 56; // Integer | The ending time, as milliseconds since epoch (exclusive). May not be more than 100 days after `from`.
     String env = "env_example"; // String | An environment key. Only metrics from this environment will be included.
@@ -1024,8 +1026,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **configKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **configKey** | **String**| The AI Config key | |
 | **from** | **Integer**| The starting time, as milliseconds since epoch (inclusive). | |
 | **to** | **Integer**| The ending time, as milliseconds since epoch (exclusive). May not be more than 100 days after &#x60;from&#x60;. | |
 | **env** | **String**| An environment key. Only metrics from this environment will be included. | |
@@ -1084,7 +1086,7 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
     String env = "env_example"; // String | An environment key. Only metrics from this environment will be included.
     try {
       QuickStats result = apiInstance.getAIConfigQuickStats(projectKey, env);
@@ -1104,7 +1106,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
 | **env** | **String**| An environment key. Only metrics from this environment will be included. | |
 
 ### Return type
@@ -1159,8 +1161,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String configKey = "configKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String configKey = "configKey_example"; // String | The AI Config key
     try {
       AIConfigTargeting result = apiInstance.getAIConfigTargeting(projectKey, configKey);
       System.out.println(result);
@@ -1179,8 +1181,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **configKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **configKey** | **String**| The AI Config key | |
 
 ### Return type
 
@@ -1233,9 +1235,9 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "default"; // String | 
-    String configKey = "default"; // String | 
-    String variationKey = "default"; // String | 
+    String projectKey = "default"; // String | The project key
+    String configKey = "default"; // String | The AI Config key
+    String variationKey = "default"; // String | The AI Config variation key
     try {
       AIConfigVariationsResponse result = apiInstance.getAIConfigVariation(projectKey, configKey, variationKey);
       System.out.println(result);
@@ -1254,9 +1256,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **configKey** | **String**|  | |
-| **variationKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **configKey** | **String**| The AI Config key | |
+| **variationKey** | **String**| The AI Config variation key | |
 
 ### Return type
 
@@ -1310,7 +1312,7 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "default"; // String | 
+    String projectKey = "default"; // String | The project key
     String sort = "sort_example"; // String | A sort to apply to the list of AgentControl configs.
     Integer limit = 56; // Integer | The number of resources to return.
     Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
@@ -1333,7 +1335,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
 | **sort** | **String**| A sort to apply to the list of AgentControl configs. | [optional] |
 | **limit** | **Integer**| The number of resources to return. | [optional] |
 | **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
@@ -1391,8 +1393,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String toolKey = "toolKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String toolKey = "toolKey_example"; // String | The AI tool key
     try {
       AITool result = apiInstance.getAITool(projectKey, toolKey);
       System.out.println(result);
@@ -1411,8 +1413,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **toolKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **toolKey** | **String**| The AI tool key | |
 
 ### Return type
 
@@ -1467,8 +1469,8 @@ public class Example {
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
     String ldAPIVersion = "beta"; // String | Version of the endpoint.
-    String projectKey = "projectKey_example"; // String | 
-    String graphKey = "graphKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String graphKey = "graphKey_example"; // String | The agent graph key
     try {
       AgentGraph result = apiInstance.getAgentGraph(ldAPIVersion, projectKey, graphKey);
       System.out.println(result);
@@ -1488,8 +1490,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
-| **projectKey** | **String**|  | |
-| **graphKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **graphKey** | **String**| The agent graph key | |
 
 ### Return type
 
@@ -1543,8 +1545,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String optimizationKey = "optimizationKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String optimizationKey = "optimizationKey_example"; // String | The agent optimization key
     try {
       AgentOptimization result = apiInstance.getAgentOptimization(projectKey, optimizationKey);
       System.out.println(result);
@@ -1563,8 +1565,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **optimizationKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **optimizationKey** | **String**| The agent optimization key | |
 
 ### Return type
 
@@ -1617,8 +1619,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String skillKey = "skillKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String skillKey = "skillKey_example"; // String | The agent skill key
     try {
       AgentSkill result = apiInstance.getAgentSkill(projectKey, skillKey);
       System.out.println(result);
@@ -1637,8 +1639,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **skillKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **skillKey** | **String**| The agent skill key | |
 
 ### Return type
 
@@ -1691,8 +1693,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "default"; // String | 
-    String modelConfigKey = "default"; // String | 
+    String projectKey = "default"; // String | The project key
+    String modelConfigKey = "default"; // String | The AI model config key
     Integer version = 56; // Integer | Specific model config version to return. Omit to return the latest version.
     try {
       ModelConfig result = apiInstance.getModelConfig(projectKey, modelConfigKey, version);
@@ -1712,8 +1714,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **modelConfigKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **modelConfigKey** | **String**| The AI model config key | |
 | **version** | **Integer**| Specific model config version to return. Omit to return the latest version. | [optional] |
 
 ### Return type
@@ -1768,8 +1770,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String snippetKey = "snippetKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String snippetKey = "snippetKey_example"; // String | The prompt snippet key
     try {
       PromptSnippet result = apiInstance.getPromptSnippet(projectKey, snippetKey);
       System.out.println(result);
@@ -1788,8 +1790,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **snippetKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **snippetKey** | **String**| The prompt snippet key | |
 
 ### Return type
 
@@ -1808,6 +1810,85 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Prompt snippet found |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not found |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="listAIToolReferences"></a>
+# **listAIToolReferences**
+> ToolReferences listAIToolReferences(projectKey, toolKey, limit, offset)
+
+List AI tool references
+
+Get all AgentControl config variations that currently reference this tool.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AgentControlApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AgentControlApi apiInstance = new AgentControlApi(defaultClient);
+    String projectKey = "projectKey_example"; // String | The project key
+    String toolKey = "toolKey_example"; // String | The AI tool key
+    Integer limit = 56; // Integer | The number of resources to return.
+    Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
+    try {
+      ToolReferences result = apiInstance.listAIToolReferences(projectKey, toolKey, limit, offset);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AgentControlApi#listAIToolReferences");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **toolKey** | **String**| The AI tool key | |
+| **limit** | **Integer**| The number of resources to return. | [optional] |
+| **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
+
+### Return type
+
+[**ToolReferences**](ToolReferences.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | AI tool references |  -  |
+| **400** | Bad request |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not found |  -  |
 | **500** | Internal server error |  -  |
@@ -1842,8 +1923,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String toolKey = "toolKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String toolKey = "toolKey_example"; // String | The AI tool key
     String sort = "sort_example"; // String | A sort to apply to the list of AgentControl configs.
     Integer limit = 56; // Integer | The number of resources to return.
     Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
@@ -1865,8 +1946,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **toolKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **toolKey** | **String**| The AI tool key | |
 | **sort** | **String**| A sort to apply to the list of AgentControl configs. | [optional] |
 | **limit** | **Integer**| The number of resources to return. | [optional] |
 | **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
@@ -1922,7 +2003,7 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
     String sort = "sort_example"; // String | A sort to apply to the list of AgentControl configs.
     Integer limit = 56; // Integer | The number of resources to return.
     Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
@@ -1945,7 +2026,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
 | **sort** | **String**| A sort to apply to the list of AgentControl configs. | [optional] |
 | **limit** | **Integer**| The number of resources to return. | [optional] |
 | **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
@@ -2003,7 +2084,7 @@ public class Example {
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
     String ldAPIVersion = "beta"; // String | Version of the endpoint.
-    String projectKey = "projectKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
     Integer limit = 56; // Integer | The number of resources to return.
     Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
     String filter = "filter_example"; // String | A filter to apply to the list.
@@ -2026,7 +2107,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
-| **projectKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
 | **limit** | **Integer**| The number of resources to return. | [optional] |
 | **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
 | **filter** | **String**| A filter to apply to the list. | [optional] |
@@ -2056,7 +2137,7 @@ public class Example {
 # **listAgentOptimizationResults**
 > AgentOptimizationResults listAgentOptimizationResults(projectKey, optimizationKey, limit, offset)
 
-List agent optimization runs
+List latest agent optimization result per run
 
 Get the most recent result for each unique run of an agent optimization.
 
@@ -2082,8 +2163,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String optimizationKey = "optimizationKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String optimizationKey = "optimizationKey_example"; // String | The agent optimization key
     Integer limit = 56; // Integer | The number of resources to return.
     Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
     try {
@@ -2104,8 +2185,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **optimizationKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **optimizationKey** | **String**| The agent optimization key | |
 | **limit** | **Integer**| The number of resources to return. | [optional] |
 | **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
 
@@ -2160,9 +2241,9 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String optimizationKey = "optimizationKey_example"; // String | 
-    UUID runId = UUID.randomUUID(); // UUID | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String optimizationKey = "optimizationKey_example"; // String | The agent optimization key
+    UUID runId = UUID.randomUUID(); // UUID | The agent optimization run ID
     try {
       AgentOptimizationResults result = apiInstance.listAgentOptimizationResultsByRunId(projectKey, optimizationKey, runId);
       System.out.println(result);
@@ -2181,9 +2262,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **optimizationKey** | **String**|  | |
-| **runId** | **UUID**|  | |
+| **projectKey** | **String**| The project key | |
+| **optimizationKey** | **String**| The agent optimization key | |
+| **runId** | **UUID**| The agent optimization run ID | |
 
 ### Return type
 
@@ -2202,6 +2283,85 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Agent optimization results for run |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not found |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="listAgentOptimizationRuns"></a>
+# **listAgentOptimizationRuns**
+> AgentOptimizationRuns listAgentOptimizationRuns(projectKey, optimizationKey, limit, offset)
+
+List agent optimization runs
+
+Get one run summary per distinct run_id across all versions of an agent optimization config, ordered by created_at DESC.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AgentControlApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AgentControlApi apiInstance = new AgentControlApi(defaultClient);
+    String projectKey = "projectKey_example"; // String | The project key
+    String optimizationKey = "optimizationKey_example"; // String | The agent optimization key
+    Integer limit = 56; // Integer | The number of resources to return.
+    Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
+    try {
+      AgentOptimizationRuns result = apiInstance.listAgentOptimizationRuns(projectKey, optimizationKey, limit, offset);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AgentControlApi#listAgentOptimizationRuns");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **projectKey** | **String**| The project key | |
+| **optimizationKey** | **String**| The agent optimization key | |
+| **limit** | **Integer**| The number of resources to return. | [optional] |
+| **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
+
+### Return type
+
+[**AgentOptimizationRuns**](AgentOptimizationRuns.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Agent optimization run list |  -  |
+| **400** | Bad request |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not found |  -  |
 | **500** | Internal server error |  -  |
@@ -2236,7 +2396,7 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
     Integer limit = 56; // Integer | The number of resources to return.
     Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
     String filter = "filter_example"; // String | A filter to apply to the list.
@@ -2258,7 +2418,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
 | **limit** | **Integer**| The number of resources to return. | [optional] |
 | **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
 | **filter** | **String**| A filter to apply to the list. | [optional] |
@@ -2315,8 +2475,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String skillKey = "skillKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String skillKey = "skillKey_example"; // String | The agent skill key
     Integer limit = 56; // Integer | The number of resources to return.
     Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
     try {
@@ -2337,8 +2497,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **skillKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **skillKey** | **String**| The agent skill key | |
 | **limit** | **Integer**| The number of resources to return. | [optional] |
 | **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
 
@@ -2393,8 +2553,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String skillKey = "skillKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String skillKey = "skillKey_example"; // String | The agent skill key
     Integer limit = 56; // Integer | The number of resources to return.
     Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
     try {
@@ -2415,8 +2575,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **skillKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **skillKey** | **String**| The agent skill key | |
 | **limit** | **Integer**| The number of resources to return. | [optional] |
 | **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
 
@@ -2472,7 +2632,7 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
     Integer limit = 56; // Integer | The number of resources to return.
     Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
     String filter = "filter_example"; // String | A filter to apply to the list.
@@ -2494,7 +2654,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
 | **limit** | **Integer**| The number of resources to return. | [optional] |
 | **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
 | **filter** | **String**| A filter to apply to the list. | [optional] |
@@ -2551,8 +2711,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String optimizationKey = "optimizationKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String optimizationKey = "optimizationKey_example"; // String | The agent optimization key
     Integer limit = 56; // Integer | The number of resources to return.
     Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
     try {
@@ -2573,8 +2733,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **optimizationKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **optimizationKey** | **String**| The agent optimization key | |
 | **limit** | **Integer**| The number of resources to return. | [optional] |
 | **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
 
@@ -2629,8 +2789,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "default"; // String | 
-    String modelConfigKey = "default"; // String | 
+    String projectKey = "default"; // String | The project key
+    String modelConfigKey = "default"; // String | The AI model config key
     Integer limit = 56; // Integer | The number of resources to return.
     Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
     try {
@@ -2651,8 +2811,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **modelConfigKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **modelConfigKey** | **String**| The AI model config key | |
 | **limit** | **Integer**| The number of resources to return. | [optional] |
 | **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
 
@@ -2680,7 +2840,7 @@ public class Example {
 
 <a id="listModelConfigs"></a>
 # **listModelConfigs**
-> List&lt;ModelConfig&gt; listModelConfigs(projectKey, restricted)
+> List&lt;ModelConfig&gt; listModelConfigs(projectKey, restricted, sort, filter)
 
 List AI model configs
 
@@ -2708,10 +2868,12 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "default"; // String | 
+    String projectKey = "default"; // String | The project key
     Boolean restricted = true; // Boolean | Whether to return only restricted models
+    String sort = "sort_example"; // String | A sort to apply to the list of AgentControl configs.
+    String filter = "filter_example"; // String | A filter to apply to the list.
     try {
-      List<ModelConfig> result = apiInstance.listModelConfigs(projectKey, restricted);
+      List<ModelConfig> result = apiInstance.listModelConfigs(projectKey, restricted, sort, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AgentControlApi#listModelConfigs");
@@ -2728,8 +2890,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
 | **restricted** | **Boolean**| Whether to return only restricted models | [optional] |
+| **sort** | **String**| A sort to apply to the list of AgentControl configs. | [optional] |
+| **filter** | **String**| A filter to apply to the list. | [optional] |
 
 ### Return type
 
@@ -2783,8 +2947,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String snippetKey = "snippetKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String snippetKey = "snippetKey_example"; // String | The prompt snippet key
     Integer limit = 56; // Integer | The number of resources to return.
     Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
     try {
@@ -2805,8 +2969,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **snippetKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **snippetKey** | **String**| The prompt snippet key | |
 | **limit** | **Integer**| The number of resources to return. | [optional] |
 | **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
 
@@ -2861,8 +3025,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String snippetKey = "snippetKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String snippetKey = "snippetKey_example"; // String | The prompt snippet key
     Integer limit = 56; // Integer | The number of resources to return.
     Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
     try {
@@ -2883,8 +3047,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **snippetKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **snippetKey** | **String**| The prompt snippet key | |
 | **limit** | **Integer**| The number of resources to return. | [optional] |
 | **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
 
@@ -2940,7 +3104,7 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
     Integer limit = 56; // Integer | The number of resources to return.
     Integer offset = 56; // Integer | Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.
     String filter = "filter_example"; // String | A filter to apply to the list.
@@ -2962,7 +3126,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
 | **limit** | **Integer**| The number of resources to return. | [optional] |
 | **offset** | **Integer**| Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query &#x60;limit&#x60;. | [optional] |
 | **filter** | **String**| A filter to apply to the list. | [optional] |
@@ -3019,8 +3183,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String configKey = "configKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String configKey = "configKey_example"; // String | The AI Config key
     AIConfigPatch aiConfigPatch = new AIConfigPatch(); // AIConfigPatch | AI Config object to update
     try {
       AIConfig result = apiInstance.patchAIConfig(projectKey, configKey, aiConfigPatch);
@@ -3040,8 +3204,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **configKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **configKey** | **String**| The AI Config key | |
 | **aiConfigPatch** | [**AIConfigPatch**](AIConfigPatch.md)| AI Config object to update | [optional] |
 
 ### Return type
@@ -3096,8 +3260,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String configKey = "configKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String configKey = "configKey_example"; // String | The AI Config key
     AIConfigTargetingPatch aiConfigTargetingPatch = new AIConfigTargetingPatch(); // AIConfigTargetingPatch | AI Config targeting semantic patch instructions
     try {
       AIConfigTargeting result = apiInstance.patchAIConfigTargeting(projectKey, configKey, aiConfigTargetingPatch);
@@ -3117,8 +3281,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **configKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **configKey** | **String**| The AI Config key | |
 | **aiConfigTargetingPatch** | [**AIConfigTargetingPatch**](AIConfigTargetingPatch.md)| AI Config targeting semantic patch instructions | [optional] |
 
 ### Return type
@@ -3149,7 +3313,7 @@ public class Example {
 
 Update AI Config variation
 
-Edit an existing variation of an AI Config. This creates a new version of the variation.  The request body must be a JSON object of the fields to update. The values you include replace the existing values for the fields.  Here&#39;s an example: &#x60;&#x60;&#x60;   {     \&quot;messages\&quot;: [       {         \&quot;role\&quot;: \&quot;system\&quot;,         \&quot;content\&quot;: \&quot;The new message\&quot;       }     ]   } &#x60;&#x60;&#x60; 
+Edit an existing variation of an AI Config. This creates a new version of the variation.  The request body must be a JSON object of the fields to update. The values you include replace the existing values for the fields.  If the variation is in use in a project environment where approval settings require review for this AI Config, this endpoint returns 403 and the change must be submitted through an approval request.  Here&#39;s an example: &#x60;&#x60;&#x60;   {     \&quot;messages\&quot;: [       {         \&quot;role\&quot;: \&quot;system\&quot;,         \&quot;content\&quot;: \&quot;The new message\&quot;       }     ]   } &#x60;&#x60;&#x60; 
 
 ### Example
 ```java
@@ -3173,9 +3337,9 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String configKey = "configKey_example"; // String | 
-    String variationKey = "variationKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String configKey = "configKey_example"; // String | The AI Config key
+    String variationKey = "variationKey_example"; // String | The AI Config variation key
     AIConfigVariationPatch aiConfigVariationPatch = new AIConfigVariationPatch(); // AIConfigVariationPatch | AI Config variation object to update
     try {
       AIConfigVariation result = apiInstance.patchAIConfigVariation(projectKey, configKey, variationKey, aiConfigVariationPatch);
@@ -3195,9 +3359,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **configKey** | **String**|  | |
-| **variationKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **configKey** | **String**| The AI Config key | |
+| **variationKey** | **String**| The AI Config variation key | |
 | **aiConfigVariationPatch** | [**AIConfigVariationPatch**](AIConfigVariationPatch.md)| AI Config variation object to update | [optional] |
 
 ### Return type
@@ -3252,8 +3416,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String toolKey = "toolKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String toolKey = "toolKey_example"; // String | The AI tool key
     AIToolPatch aiToolPatch = new AIToolPatch(); // AIToolPatch | AI tool object to update
     try {
       AITool result = apiInstance.patchAITool(projectKey, toolKey, aiToolPatch);
@@ -3273,8 +3437,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **toolKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **toolKey** | **String**| The AI tool key | |
 | **aiToolPatch** | [**AIToolPatch**](AIToolPatch.md)| AI tool object to update | [optional] |
 
 ### Return type
@@ -3330,8 +3494,8 @@ public class Example {
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
     String ldAPIVersion = "beta"; // String | Version of the endpoint.
-    String projectKey = "projectKey_example"; // String | 
-    String graphKey = "graphKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String graphKey = "graphKey_example"; // String | The agent graph key
     AgentGraphPatch agentGraphPatch = new AgentGraphPatch(); // AgentGraphPatch | Agent graph object to update
     try {
       AgentGraph result = apiInstance.patchAgentGraph(ldAPIVersion, projectKey, graphKey, agentGraphPatch);
@@ -3352,8 +3516,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
-| **projectKey** | **String**|  | |
-| **graphKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **graphKey** | **String**| The agent graph key | |
 | **agentGraphPatch** | [**AgentGraphPatch**](AgentGraphPatch.md)| Agent graph object to update | [optional] |
 
 ### Return type
@@ -3408,8 +3572,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String optimizationKey = "optimizationKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String optimizationKey = "optimizationKey_example"; // String | The agent optimization key
     AgentOptimizationPatch agentOptimizationPatch = new AgentOptimizationPatch(); // AgentOptimizationPatch | Agent optimization fields to update
     try {
       AgentOptimization result = apiInstance.patchAgentOptimization(projectKey, optimizationKey, agentOptimizationPatch);
@@ -3429,8 +3593,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **optimizationKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **optimizationKey** | **String**| The agent optimization key | |
 | **agentOptimizationPatch** | [**AgentOptimizationPatch**](AgentOptimizationPatch.md)| Agent optimization fields to update | |
 
 ### Return type
@@ -3486,9 +3650,9 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String optimizationKey = "optimizationKey_example"; // String | 
-    UUID resultId = UUID.randomUUID(); // UUID | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String optimizationKey = "optimizationKey_example"; // String | The agent optimization key
+    UUID resultId = UUID.randomUUID(); // UUID | The agent optimization result ID
     AgentOptimizationResultPatch agentOptimizationResultPatch = new AgentOptimizationResultPatch(); // AgentOptimizationResultPatch | Agent optimization result fields to update
     try {
       AgentOptimizationResult result = apiInstance.patchAgentOptimizationResult(projectKey, optimizationKey, resultId, agentOptimizationResultPatch);
@@ -3508,9 +3672,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **optimizationKey** | **String**|  | |
-| **resultId** | **UUID**|  | |
+| **projectKey** | **String**| The project key | |
+| **optimizationKey** | **String**| The agent optimization key | |
+| **resultId** | **UUID**| The agent optimization result ID | |
 | **agentOptimizationResultPatch** | [**AgentOptimizationResultPatch**](AgentOptimizationResultPatch.md)| Agent optimization result fields to update | |
 
 ### Return type
@@ -3565,8 +3729,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String skillKey = "skillKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String skillKey = "skillKey_example"; // String | The agent skill key
     AgentSkillPatch agentSkillPatch = new AgentSkillPatch(); // AgentSkillPatch | Agent skill fields to update
     try {
       AgentSkill result = apiInstance.patchAgentSkill(projectKey, skillKey, agentSkillPatch);
@@ -3586,8 +3750,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **skillKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **skillKey** | **String**| The agent skill key | |
 | **agentSkillPatch** | [**AgentSkillPatch**](AgentSkillPatch.md)| Agent skill fields to update | |
 
 ### Return type
@@ -3643,8 +3807,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "default"; // String | 
-    String modelConfigKey = "modelConfigKey_example"; // String | 
+    String projectKey = "default"; // String | The project key
+    String modelConfigKey = "modelConfigKey_example"; // String | The AI model config key
     ModelConfigPatch modelConfigPatch = new ModelConfigPatch(); // ModelConfigPatch | AI model config object to update
     try {
       ModelConfig result = apiInstance.patchModelConfig(projectKey, modelConfigKey, modelConfigPatch);
@@ -3664,8 +3828,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **modelConfigKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **modelConfigKey** | **String**| The AI model config key | |
 | **modelConfigPatch** | [**ModelConfigPatch**](ModelConfigPatch.md)| AI model config object to update | |
 
 ### Return type
@@ -3720,8 +3884,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String snippetKey = "snippetKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String snippetKey = "snippetKey_example"; // String | The prompt snippet key
     PromptSnippetPatch promptSnippetPatch = new PromptSnippetPatch(); // PromptSnippetPatch | Prompt snippet fields to update
     try {
       PromptSnippet result = apiInstance.patchPromptSnippet(projectKey, snippetKey, promptSnippetPatch);
@@ -3741,8 +3905,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **snippetKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **snippetKey** | **String**| The prompt snippet key | |
 | **promptSnippetPatch** | [**PromptSnippetPatch**](PromptSnippetPatch.md)| Prompt snippet fields to update | |
 
 ### Return type
@@ -3798,7 +3962,7 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
     AIConfigPost aiConfigPost = new AIConfigPost(); // AIConfigPost | AI Config object to create
     try {
       AIConfig result = apiInstance.postAIConfig(projectKey, aiConfigPost);
@@ -3818,7 +3982,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
 | **aiConfigPost** | [**AIConfigPost**](AIConfigPost.md)| AI Config object to create | |
 
 ### Return type
@@ -3873,8 +4037,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String configKey = "configKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String configKey = "configKey_example"; // String | The AI Config key
     AIConfigVariationPost aiConfigVariationPost = new AIConfigVariationPost(); // AIConfigVariationPost | AI Config variation object to create
     try {
       AIConfigVariation result = apiInstance.postAIConfigVariation(projectKey, configKey, aiConfigVariationPost);
@@ -3894,8 +4058,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **configKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **configKey** | **String**| The AI Config key | |
 | **aiConfigVariationPost** | [**AIConfigVariationPost**](AIConfigVariationPost.md)| AI Config variation object to create | |
 
 ### Return type
@@ -3950,7 +4114,7 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
     AIToolPost aiToolPost = new AIToolPost(); // AIToolPost | AI tool object to create
     try {
       AITool result = apiInstance.postAITool(projectKey, aiToolPost);
@@ -3970,7 +4134,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
 | **aiToolPost** | [**AIToolPost**](AIToolPost.md)| AI tool object to create | |
 
 ### Return type
@@ -4026,7 +4190,7 @@ public class Example {
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
     String ldAPIVersion = "beta"; // String | Version of the endpoint.
-    String projectKey = "projectKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
     AgentGraphPost agentGraphPost = new AgentGraphPost(); // AgentGraphPost | Agent graph object to create
     try {
       AgentGraph result = apiInstance.postAgentGraph(ldAPIVersion, projectKey, agentGraphPost);
@@ -4047,7 +4211,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
-| **projectKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
 | **agentGraphPost** | [**AgentGraphPost**](AgentGraphPost.md)| Agent graph object to create | |
 
 ### Return type
@@ -4102,7 +4266,7 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
     AgentOptimizationPost agentOptimizationPost = new AgentOptimizationPost(); // AgentOptimizationPost | Agent optimization object to create
     try {
       AgentOptimization result = apiInstance.postAgentOptimization(projectKey, agentOptimizationPost);
@@ -4122,7 +4286,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
 | **agentOptimizationPost** | [**AgentOptimizationPost**](AgentOptimizationPost.md)| Agent optimization object to create | |
 
 ### Return type
@@ -4177,8 +4341,8 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
-    String optimizationKey = "optimizationKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
+    String optimizationKey = "optimizationKey_example"; // String | The agent optimization key
     AgentOptimizationResultPost agentOptimizationResultPost = new AgentOptimizationResultPost(); // AgentOptimizationResultPost | Agent optimization result to create
     try {
       AgentOptimizationResult result = apiInstance.postAgentOptimizationResult(projectKey, optimizationKey, agentOptimizationResultPost);
@@ -4198,8 +4362,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
-| **optimizationKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
+| **optimizationKey** | **String**| The agent optimization key | |
 | **agentOptimizationResultPost** | [**AgentOptimizationResultPost**](AgentOptimizationResultPost.md)| Agent optimization result to create | |
 
 ### Return type
@@ -4255,7 +4419,7 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
     AgentSkillPost agentSkillPost = new AgentSkillPost(); // AgentSkillPost | Agent skill object to create
     try {
       AgentSkill result = apiInstance.postAgentSkill(projectKey, agentSkillPost);
@@ -4275,7 +4439,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
 | **agentSkillPost** | [**AgentSkillPost**](AgentSkillPost.md)| Agent skill object to create | |
 
 ### Return type
@@ -4331,7 +4495,7 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "default"; // String | 
+    String projectKey = "default"; // String | The project key
     ModelConfigPost modelConfigPost = new ModelConfigPost(); // ModelConfigPost | AI model config object to create
     try {
       ModelConfig result = apiInstance.postModelConfig(projectKey, modelConfigPost);
@@ -4351,7 +4515,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
 | **modelConfigPost** | [**ModelConfigPost**](ModelConfigPost.md)| AI model config object to create | |
 
 ### Return type
@@ -4406,7 +4570,7 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "projectKey_example"; // String | 
+    String projectKey = "projectKey_example"; // String | The project key
     PromptSnippetPost promptSnippetPost = new PromptSnippetPost(); // PromptSnippetPost | Prompt snippet object to create
     try {
       PromptSnippet result = apiInstance.postPromptSnippet(projectKey, promptSnippetPost);
@@ -4426,7 +4590,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
 | **promptSnippetPost** | [**PromptSnippetPost**](PromptSnippetPost.md)| Prompt snippet object to create | |
 
 ### Return type
@@ -4482,7 +4646,7 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     AgentControlApi apiInstance = new AgentControlApi(defaultClient);
-    String projectKey = "default"; // String | 
+    String projectKey = "default"; // String | The project key
     RestrictedModelsRequest restrictedModelsRequest = new RestrictedModelsRequest(); // RestrictedModelsRequest | List of AI model keys to add to the restricted list.
     try {
       RestrictedModelsResponse result = apiInstance.postRestrictedModels(projectKey, restrictedModelsRequest);
@@ -4502,7 +4666,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **projectKey** | **String**|  | |
+| **projectKey** | **String**| The project key | |
 | **restrictedModelsRequest** | [**RestrictedModelsRequest**](RestrictedModelsRequest.md)| List of AI model keys to add to the restricted list. | |
 
 ### Return type

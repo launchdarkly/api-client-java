@@ -9,14 +9,15 @@
 |------------ | ------------- | ------------- | -------------|
 |**access** | [**AiConfigsAccess**](AiConfigsAccess.md) |  |  [optional] |
 |**links** | [**ParentAndSelfLinks**](ParentAndSelfLinks.md) |  |  [optional] |
-|**description** | **String** |  |  |
-|**key** | **String** |  |  |
+|**site** | [**CoreLink**](CoreLink.md) |  |  [optional] |
+|**description** | **String** | A description of the AI Config |  |
+|**key** | **String** | The AI Config key |  |
 |**maintainer** | [**AIConfigMaintainer**](AIConfigMaintainer.md) |  |  [optional] |
-|**mode** | [**ModeEnum**](#ModeEnum) |  |  [optional] |
-|**name** | **String** |  |  |
-|**tags** | **List&lt;String&gt;** |  |  |
-|**version** | **Integer** |  |  |
-|**variations** | [**List&lt;AIConfigVariation&gt;**](AIConfigVariation.md) |  |  |
+|**mode** | [**ModeEnum**](#ModeEnum) | The AI Config mode |  [optional] |
+|**name** | **String** | The AI Config name |  |
+|**tags** | **List&lt;String&gt;** | Tags for this resource |  |
+|**version** | **Integer** | The version number of this resource |  |
+|**variations** | [**List&lt;AIConfigVariation&gt;**](AIConfigVariation.md) | The variations of this AI Config |  |
 |**createdAt** | **Long** |  |  |
 |**updatedAt** | **Long** |  |  |
 |**evaluationMetricKey** | **String** | Evaluation metric key for this config |  [optional] |

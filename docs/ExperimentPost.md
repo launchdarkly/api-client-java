@@ -14,7 +14,7 @@
 |**iteration** | [**IterationInput**](IterationInput.md) |  |  |
 |**holdoutId** | **String** | The ID of the holdout |  [optional] |
 |**tags** | **List&lt;String&gt;** | Tags for the experiment |  [optional] |
-|**methodology** | [**MethodologyEnum**](#MethodologyEnum) | The results analysis approach. |  [optional] |
+|**methodology** | [**MethodologyEnum**](#MethodologyEnum) | The results analysis approach. Defaults to \&quot;frequentist\&quot; when not provided, or \&quot;bayesian\&quot; for multi-armed bandit experiments. |  [optional] |
 |**analysisConfig** | [**AnalysisConfigInput**](AnalysisConfigInput.md) |  |  [optional] |
 |**dataSource** | [**DataSourceEnum**](#DataSourceEnum) | The source of metric data in order to analyze results. Defaults to \&quot;launchdarkly\&quot; when not provided. |  [optional] |
 |**type** | [**TypeEnum**](#TypeEnum) | The type of experiment. |  [optional] |

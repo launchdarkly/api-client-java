@@ -11,7 +11,7 @@
 |**links** | [**Map&lt;String, Link&gt;**](Link.md) | The location and content type of related resources |  [optional] |
 |**name** | **String** | A human-readable name for your Data Export destination |  [optional] |
 |**kind** | [**KindEnum**](#KindEnum) | The type of Data Export destination |  [optional] |
-|**version** | **BigDecimal** |  |  [optional] |
+|**version** | **Double** |  |  [optional] |
 |**config** | **Object** | An object with the configuration parameters required for the destination type |  [optional] |
 |**on** | **Boolean** | Whether the export is on, that is, the status of the integration |  [optional] |
 |**createdAt** | **Long** |  |  [optional] |

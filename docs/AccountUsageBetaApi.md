@@ -9,6 +9,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 | [**getContextsServersideUsage**](AccountUsageBetaApi.md#getContextsServersideUsage) | **GET** /api/v2/usage/serverside-contexts | Get contexts serverside usage |
 | [**getContextsTotalUsage**](AccountUsageBetaApi.md#getContextsTotalUsage) | **GET** /api/v2/usage/total-contexts | Get contexts total usage |
 | [**getDataExportEventsUsage**](AccountUsageBetaApi.md#getDataExportEventsUsage) | **GET** /api/v2/usage/data-export-events | Get data export events usage |
+| [**getDataExportProjectRanking**](AccountUsageBetaApi.md#getDataExportProjectRanking) | **GET** /api/v2/usage/data-export-events/projects/ranking | Rank Streaming usage by project |
 | [**getEvaluationsUsage**](AccountUsageBetaApi.md#getEvaluationsUsage) | **GET** /api/v2/usage/evaluations/{projectKey}/{environmentKey}/{featureFlagKey} | Get evaluations usage |
 | [**getEventsUsage**](AccountUsageBetaApi.md#getEventsUsage) | **GET** /api/v2/usage/events/{type} | Get events usage |
 | [**getExperimentationEventsUsage**](AccountUsageBetaApi.md#getExperimentationEventsUsage) | **GET** /api/v2/usage/experimentation-events | Get experimentation events usage |
@@ -405,11 +406,11 @@ public class Example {
 
 <a id="getDataExportEventsUsage"></a>
 # **getDataExportEventsUsage**
-> SeriesListRep getDataExportEventsUsage(from, to, projectKey, environmentKey, eventKind, groupBy, aggregationType, granularity)
+> DataExportSeriesListRep getDataExportEventsUsage(from, to, projectKey, environmentKey, eventKind, destinationKind, groupBy, aggregationType, granularity)
 
 Get data export events usage
 
-Get a time series array showing the number of data export events from your account. The supported granularity varies by aggregation type. The maximum time range is 365 days.
+Get a time series array showing the number of data export events from your account. The supported granularity varies by aggregation type. The maximum time range is 365 days. &#x60;groupBy&#x3D;projectId&#x60; resolves legacy rows through the account&#39;s current environment-to-project mapping and returns &#x60;409&#x60; instead of a partial series when any successful row remains unattributed. Plain project filtering keeps its current-environment compatibility behavior.
 
 ### Example
 ```java
@@ -435,14 +436,15 @@ public class Example {
     AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
     String from = "from_example"; // String | The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month.
     String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time.
-    String projectKey = "projectKey_example"; // String | A project key to filter results by. Can be specified multiple times, one query parameter per project key.
+    String projectKey = "projectKey_example"; // String | A project key to filter results by. Without `groupBy=projectId`, filters to the project's current environments so retained pre-materialization usage remains visible. Can be specified multiple times, one query parameter per project key.
     String environmentKey = "environmentKey_example"; // String | An environment key to filter results by. If specified, exactly one `projectKey` must be provided. Can be specified multiple times, one query parameter per environment key.
     String eventKind = "eventKind_example"; // String | An event kind to filter results by. Can be specified multiple times, one query parameter per event kind.
-    String groupBy = "groupBy_example"; // String | If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.<br/>Valid values: `environmentId`, `eventKind`.
+    String destinationKind = "destinationKind_example"; // String | A Streaming configuration kind to filter results by. Values preserve raw product identity; `snowflake` is legacy Streaming Snowflake and is distinct from Warehouse `snowflake-v2`. Can be specified multiple times.<br/>Valid values: `kinesis`, `google-pubsub`, `mparticle`, `segment`, `azure-event-hubs`, `snowflake`, `unknown`.
+    String groupBy = "groupBy_example"; // String | If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension. `projectId` requires one or more explicit `projectKey` filters and is capped at 100 selected projects. `destinationId` returns one series per streaming destination with `destinationName` metadata, plus `destinationViewable` when the destination is in the current configuration. The destination's own kind is added as `destinationKind` only when you can view the destination. A kind requested with `groupBy=destinationKind` is returned unchanged. A destination ID absent from the current configuration is named `Unknown historical destination`. Destinations you cannot view are reported together in one `Unknown destination` series with `destinationId` `hidden` and `destinationViewable` `false`, one per combination of the other requested dimensions, such as `destinationKind`. Usage without a destination ID is one series with an empty `destinationId` named `Unattributed`.<br/>Valid values: `projectId`, `environmentId`, `eventKind`, `destinationKind`, `destinationId`.
     String aggregationType = "aggregationType_example"; // String | Specifies the aggregation method. Defaults to `month_to_date`.<br/>Valid values: `month_to_date`, `incremental`.
     String granularity = "granularity_example"; // String | Specifies the data granularity. Defaults to `daily`. `monthly` granularity is only supported with the **month_to_date** aggregation type.<br/>Valid values: `daily`, `hourly`, `monthly`.
     try {
-      SeriesListRep result = apiInstance.getDataExportEventsUsage(from, to, projectKey, environmentKey, eventKind, groupBy, aggregationType, granularity);
+      DataExportSeriesListRep result = apiInstance.getDataExportEventsUsage(from, to, projectKey, environmentKey, eventKind, destinationKind, groupBy, aggregationType, granularity);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AccountUsageBetaApi#getDataExportEventsUsage");
@@ -461,16 +463,17 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **from** | **String**| The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month. | [optional] |
 | **to** | **String**| The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time. | [optional] |
-| **projectKey** | **String**| A project key to filter results by. Can be specified multiple times, one query parameter per project key. | [optional] |
+| **projectKey** | **String**| A project key to filter results by. Without &#x60;groupBy&#x3D;projectId&#x60;, filters to the project&#39;s current environments so retained pre-materialization usage remains visible. Can be specified multiple times, one query parameter per project key. | [optional] |
 | **environmentKey** | **String**| An environment key to filter results by. If specified, exactly one &#x60;projectKey&#x60; must be provided. Can be specified multiple times, one query parameter per environment key. | [optional] |
 | **eventKind** | **String**| An event kind to filter results by. Can be specified multiple times, one query parameter per event kind. | [optional] |
-| **groupBy** | **String**| If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: &#x60;environmentId&#x60;, &#x60;eventKind&#x60;. | [optional] |
+| **destinationKind** | **String**| A Streaming configuration kind to filter results by. Values preserve raw product identity; &#x60;snowflake&#x60; is legacy Streaming Snowflake and is distinct from Warehouse &#x60;snowflake-v2&#x60;. Can be specified multiple times.&lt;br/&gt;Valid values: &#x60;kinesis&#x60;, &#x60;google-pubsub&#x60;, &#x60;mparticle&#x60;, &#x60;segment&#x60;, &#x60;azure-event-hubs&#x60;, &#x60;snowflake&#x60;, &#x60;unknown&#x60;. | [optional] |
+| **groupBy** | **String**| If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension. &#x60;projectId&#x60; requires one or more explicit &#x60;projectKey&#x60; filters and is capped at 100 selected projects. &#x60;destinationId&#x60; returns one series per streaming destination with &#x60;destinationName&#x60; metadata, plus &#x60;destinationViewable&#x60; when the destination is in the current configuration. The destination&#39;s own kind is added as &#x60;destinationKind&#x60; only when you can view the destination. A kind requested with &#x60;groupBy&#x3D;destinationKind&#x60; is returned unchanged. A destination ID absent from the current configuration is named &#x60;Unknown historical destination&#x60;. Destinations you cannot view are reported together in one &#x60;Unknown destination&#x60; series with &#x60;destinationId&#x60; &#x60;hidden&#x60; and &#x60;destinationViewable&#x60; &#x60;false&#x60;, one per combination of the other requested dimensions, such as &#x60;destinationKind&#x60;. Usage without a destination ID is one series with an empty &#x60;destinationId&#x60; named &#x60;Unattributed&#x60;.&lt;br/&gt;Valid values: &#x60;projectId&#x60;, &#x60;environmentId&#x60;, &#x60;eventKind&#x60;, &#x60;destinationKind&#x60;, &#x60;destinationId&#x60;. | [optional] |
 | **aggregationType** | **String**| Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;. | [optional] |
 | **granularity** | **String**| Specifies the data granularity. Defaults to &#x60;daily&#x60;. &#x60;monthly&#x60; granularity is only supported with the **month_to_date** aggregation type.&lt;br/&gt;Valid values: &#x60;daily&#x60;, &#x60;hourly&#x60;, &#x60;monthly&#x60;. | [optional] |
 
 ### Return type
 
-[**SeriesListRep**](SeriesListRep.md)
+[**DataExportSeriesListRep**](DataExportSeriesListRep.md)
 
 ### Authorization
 
@@ -488,8 +491,98 @@ public class Example {
 | **400** | Invalid request |  -  |
 | **401** | Invalid access token |  -  |
 | **403** | Forbidden |  -  |
+| **409** | Project identity is incomplete for the requested range |  -  |
 | **429** | Rate limited |  -  |
 | **503** | Service unavailable |  -  |
+
+<a id="getDataExportProjectRanking"></a>
+# **getDataExportProjectRanking**
+> DataExportProjectRankingRep getDataExportProjectRanking(from, to, source, dimension, projectKey, search, cursor, limit)
+
+Rank Streaming usage by project
+
+Rank projects with usage in the requested range by successful Streaming transfers. Legacy rows are attributed through the account&#39;s complete current environment-to-project mapping. If any successful row remains unattributed after resolution, the operation returns &#x60;409&#x60; instead of a partial ranking. The result limit does not cap the account-wide project universe or environment mapping. This source-specific operation does not provide Combined or Warehouse ranking.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.AccountUsageBetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
+    Long from = 56L; // Long | Inclusive UTC range start in Unix milliseconds.
+    Long to = 56L; // Long | Exclusive UTC range end in Unix milliseconds.
+    String source = "streaming"; // String | The source scope. Only `streaming` is supported.
+    String dimension = "project"; // String | The ranking dimension. Only `project` is supported.
+    List<String> projectKey = Arrays.asList(); // List<String> | A canonical project key to include. Can be specified multiple times, with at most 100 unique explicit selections; duplicates do not consume the limit. When omitted, all account projects with usage in the requested range are ranked.
+    String search = "search_example"; // String | A case-insensitive substring matched against canonical project keys before querying usage. Project names are not searched.
+    String cursor = "cursor_example"; // String | An opaque cursor returned by a previous response. Cursors are bound to the account and ranking inputs.
+    Integer limit = 5; // Integer | The maximum number of ranked projects to return. This bounds response rows and look-ahead, not the account-wide candidate universe.
+    try {
+      DataExportProjectRankingRep result = apiInstance.getDataExportProjectRanking(from, to, source, dimension, projectKey, search, cursor, limit);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AccountUsageBetaApi#getDataExportProjectRanking");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **from** | **Long**| Inclusive UTC range start in Unix milliseconds. | |
+| **to** | **Long**| Exclusive UTC range end in Unix milliseconds. | |
+| **source** | **String**| The source scope. Only &#x60;streaming&#x60; is supported. | [optional] [default to streaming] |
+| **dimension** | **String**| The ranking dimension. Only &#x60;project&#x60; is supported. | [optional] [default to project] |
+| **projectKey** | [**List&lt;String&gt;**](String.md)| A canonical project key to include. Can be specified multiple times, with at most 100 unique explicit selections; duplicates do not consume the limit. When omitted, all account projects with usage in the requested range are ranked. | [optional] |
+| **search** | **String**| A case-insensitive substring matched against canonical project keys before querying usage. Project names are not searched. | [optional] |
+| **cursor** | **String**| An opaque cursor returned by a previous response. Cursors are bound to the account and ranking inputs. | [optional] |
+| **limit** | **Integer**| The maximum number of ranked projects to return. This bounds response rows and look-ahead, not the account-wide candidate universe. | [optional] [default to 5] |
+
+### Return type
+
+[**DataExportProjectRankingRep**](DataExportProjectRankingRep.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Bounded project ranking |  -  |
+| **400** | Invalid request |  -  |
+| **401** | Invalid access token |  -  |
+| **403** | Forbidden |  -  |
+| **409** | Current account metadata cannot attribute every successful usage row in the requested range to a project |  -  |
+| **429** | Rate limited |  -  |
+| **500** | Internal server error |  -  |
 
 <a id="getEvaluationsUsage"></a>
 # **getEvaluationsUsage**
@@ -497,7 +590,7 @@ public class Example {
 
 Get evaluations usage
 
-Get time-series arrays of the number of times a flag is evaluated, broken down by the variation that resulted from that evaluation. The granularity of the data depends on the age of the data requested. If the requested range is within the past two hours, minutely data is returned. If it is within the last two days, hourly data is returned. Otherwise, daily data is returned.
+Get time-series arrays of the number of times a flag is evaluated, broken down by the variation that resulted from that evaluation. The granularity of the returned data depends on the length of the requested time range: ranges shorter than two hours return minutely data, ranges shorter than two days return hourly data, and ranges of two days or longer return daily data. Minutely data is retained for 70 days; a range shorter than two hours that starts before then is returned at hourly granularity instead, with the start of the range widened to the containing hour. Ranges that predate available data return an empty series list. If a flag has served many distinct variation values in the requested range, the least recently seen values may be aggregated into a single additional series labeled \&quot;Other Variations\&quot;.
 
 ### Example
 ```java
@@ -685,7 +778,7 @@ public class Example {
     AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
     String from = "from_example"; // String | The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month.
     String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time.
-    String projectKey = "projectKey_example"; // String | A project key to filter results by. Can be specified multiple times, one query parameter per project key.
+    String projectKey = "projectKey_example"; // String | A project key to filter results by. Without `environmentKey`, filters to the project's current environments. Can be specified multiple times, one query parameter per project key.
     String environmentKey = "environmentKey_example"; // String | An environment key to filter results by. If specified, exactly one `projectKey` must be provided. Can be specified multiple times, one query parameter per environment key.
     String eventKey = "eventKey_example"; // String | An event key to filter results by. Can be specified multiple times, one query parameter per event key.
     String eventKind = "eventKind_example"; // String | An event kind to filter results by. Can be specified multiple times, one query parameter per event kind.
@@ -712,7 +805,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **from** | **String**| The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month. | [optional] |
 | **to** | **String**| The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time. | [optional] |
-| **projectKey** | **String**| A project key to filter results by. Can be specified multiple times, one query parameter per project key. | [optional] |
+| **projectKey** | **String**| A project key to filter results by. Without &#x60;environmentKey&#x60;, filters to the project&#39;s current environments. Can be specified multiple times, one query parameter per project key. | [optional] |
 | **environmentKey** | **String**| An environment key to filter results by. If specified, exactly one &#x60;projectKey&#x60; must be provided. Can be specified multiple times, one query parameter per environment key. | [optional] |
 | **eventKey** | **String**| An event key to filter results by. Can be specified multiple times, one query parameter per event key. | [optional] |
 | **eventKind** | **String**| An event kind to filter results by. Can be specified multiple times, one query parameter per event kind. | [optional] |
@@ -775,7 +868,7 @@ public class Example {
     AccountUsageBetaApi apiInstance = new AccountUsageBetaApi(defaultClient);
     String from = "from_example"; // String | The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month.
     String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time.
-    String projectKey = "projectKey_example"; // String | A project key to filter results by. Can be specified multiple times, one query parameter per project key.
+    String projectKey = "projectKey_example"; // String | A project key to filter results by. Without `environmentKey`, filters by project, including projects that currently have no environments. Can be specified multiple times, one query parameter per project key.
     String environmentKey = "environmentKey_example"; // String | An environment key to filter results by. If specified, exactly one `projectKey` must be provided. Can be specified multiple times, one query parameter per environment key.
     String experimentId = "experimentId_example"; // String | An experiment ID to filter results by. Can be specified multiple times, one query parameter per experiment ID.
     String groupBy = "groupBy_example"; // String | If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.<br/>Valid values: `projectId`, `environmentId`, `experimentId`.
@@ -801,7 +894,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **from** | **String**| The series of data returned starts from this timestamp (Unix milliseconds). Defaults to the beginning of the current month. | [optional] |
 | **to** | **String**| The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time. | [optional] |
-| **projectKey** | **String**| A project key to filter results by. Can be specified multiple times, one query parameter per project key. | [optional] |
+| **projectKey** | **String**| A project key to filter results by. Without &#x60;environmentKey&#x60;, filters by project, including projects that currently have no environments. Can be specified multiple times, one query parameter per project key. | [optional] |
 | **environmentKey** | **String**| An environment key to filter results by. If specified, exactly one &#x60;projectKey&#x60; must be provided. Can be specified multiple times, one query parameter per environment key. | [optional] |
 | **experimentId** | **String**| An experiment ID to filter results by. Can be specified multiple times, one query parameter per experiment ID. | [optional] |
 | **groupBy** | **String**| If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: &#x60;projectId&#x60;, &#x60;environmentId&#x60;, &#x60;experimentId&#x60;. | [optional] |
@@ -1859,9 +1952,9 @@ public class Example {
     String relayVersion = "relayVersion_example"; // String | A relay version to filter results by. Can be specified multiple times, one query parameter per relay version.
     String sdkName = "sdkName_example"; // String | An SDK name to filter results by. Can be specified multiple times, one query parameter per SDK name.
     String sdkVersion = "sdkVersion_example"; // String | An SDK version to filter results by. Can be specified multiple times, one query parameter per SDK version.
-    String sdkType = "sdkType_example"; // String | An SDK type to filter results by. Can be specified multiple times, one query parameter per SDK type.
+    String sdkType = "sdkType_example"; // String | Deprecated. This endpoint reports server-side connections only, so `server` is the only value that returns data and omitting the parameter is equivalent. Any other value returns an empty series. To report client-side connections, use `GET /api/v2/usage/streams/{source}`.
     String sdkAppId = "sdkAppId_example"; // String | An SDK app ID to filter results by. Can be specified multiple times, one query parameter per SDK app ID.
-    String groupBy = "groupBy_example"; // String | If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.<br/>Valid values: `projectId`, `environmentId`, `connectionType`, `relayVersion`, `sdkName`, `sdkVersion`, `sdkType`, `sdkAppId`.
+    String groupBy = "groupBy_example"; // String | If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.<br/>Valid values: `projectId`, `environmentId`, `connectionType`, `relayVersion`, `sdkName`, `sdkVersion`, `sdkAppId`.<br/>`sdkType` is no longer offered: this endpoint reports server-side connections only, so grouping by it returns a single group. It is still accepted, for compatibility.
     String aggregationType = "aggregationType_example"; // String | Specifies the aggregation method. Defaults to `month_to_date`.<br/>Valid values: `month_to_date`, `incremental`.
     String granularity = "granularity_example"; // String | Specifies the data granularity. Defaults to `daily`. `monthly` granularity is only supported with the **month_to_date** aggregation type.<br/>Valid values: `daily`, `hourly`, `monthly`.
     try {
@@ -1890,9 +1983,9 @@ public class Example {
 | **relayVersion** | **String**| A relay version to filter results by. Can be specified multiple times, one query parameter per relay version. | [optional] |
 | **sdkName** | **String**| An SDK name to filter results by. Can be specified multiple times, one query parameter per SDK name. | [optional] |
 | **sdkVersion** | **String**| An SDK version to filter results by. Can be specified multiple times, one query parameter per SDK version. | [optional] |
-| **sdkType** | **String**| An SDK type to filter results by. Can be specified multiple times, one query parameter per SDK type. | [optional] |
+| **sdkType** | **String**| Deprecated. This endpoint reports server-side connections only, so &#x60;server&#x60; is the only value that returns data and omitting the parameter is equivalent. Any other value returns an empty series. To report client-side connections, use &#x60;GET /api/v2/usage/streams/{source}&#x60;. | [optional] |
 | **sdkAppId** | **String**| An SDK app ID to filter results by. Can be specified multiple times, one query parameter per SDK app ID. | [optional] |
-| **groupBy** | **String**| If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: &#x60;projectId&#x60;, &#x60;environmentId&#x60;, &#x60;connectionType&#x60;, &#x60;relayVersion&#x60;, &#x60;sdkName&#x60;, &#x60;sdkVersion&#x60;, &#x60;sdkType&#x60;, &#x60;sdkAppId&#x60;. | [optional] |
+| **groupBy** | **String**| If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: &#x60;projectId&#x60;, &#x60;environmentId&#x60;, &#x60;connectionType&#x60;, &#x60;relayVersion&#x60;, &#x60;sdkName&#x60;, &#x60;sdkVersion&#x60;, &#x60;sdkAppId&#x60;.&lt;br/&gt;&#x60;sdkType&#x60; is no longer offered: this endpoint reports server-side connections only, so grouping by it returns a single group. It is still accepted, for compatibility. | [optional] |
 | **aggregationType** | **String**| Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;. | [optional] |
 | **granularity** | **String**| Specifies the data granularity. Defaults to &#x60;daily&#x60;. &#x60;monthly&#x60; granularity is only supported with the **month_to_date** aggregation type.&lt;br/&gt;Valid values: &#x60;daily&#x60;, &#x60;hourly&#x60;, &#x60;monthly&#x60;. | [optional] |
 
@@ -2239,7 +2332,7 @@ public class Example {
 
 <a id="getWarehouseExportUsage"></a>
 # **getWarehouseExportUsage**
-> SeriesListRep getWarehouseExportUsage(from, to, projectKey, environmentKey, destination, groupBy, aggregationType, granularity)
+> DataExportSeriesListRep getWarehouseExportUsage(from, to, projectKey, environmentKey, destinationKind, destination, groupBy, aggregationType, granularity)
 
 Get warehouse Data Export usage
 
@@ -2271,12 +2364,13 @@ public class Example {
     String to = "to_example"; // String | The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time.
     String projectKey = "projectKey_example"; // String | A project key to filter results by. Can be specified multiple times, one query parameter per project key.
     String environmentKey = "environmentKey_example"; // String | An environment key to filter results by. If specified, exactly one `projectKey` must be provided. Can be specified multiple times, one query parameter per environment key.
-    String destination = "destination_example"; // String | A destination kind to filter results by. Can be specified multiple times, one query parameter per destination kind.<br/>Valid values: `snowflake-v2`, `databricks`, `bigquery`, `redshift`, `clickhouse`.
-    String groupBy = "groupBy_example"; // String | If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.<br/>Valid values: `projectId`, `environmentId`, `destination`.
+    String destinationKind = "destinationKind_example"; // String | A Warehouse configuration kind to filter results by. Cannot be combined with `destination`. Can be specified multiple times.<br/>Valid values: `snowflake-v2`, `databricks`, `bigquery`, `redshift`, `clickhouse`, `s3`.
+    String destination = "destination_example"; // String | A Warehouse configuration kind to filter results by. Cannot be combined with `destinationKind`. Existing behavior is unchanged. Can be specified multiple times.<br/>Valid values: `snowflake-v2`, `databricks`, `bigquery`, `redshift`, `clickhouse`.
+    String groupBy = "groupBy_example"; // String | If specified, returns data for each distinct value of the given field. Can be specified multiple times.<br/>Valid values: `projectId`, `environmentId`, `destination`, `destinationKind`, `destinationId`. `destination` and `destinationKind` return the same raw Warehouse configuration kinds. `destinationId` returns one series per warehouse destination with `destinationName` metadata. When a current destination you can view matches, its `destinationId` is the LaunchDarkly destination ID, with `destinationViewable`. Otherwise, it is the warehouse provider's destination ID, named `Unknown destination`. The destination's own kind is added as `destinationKind` only when you can view the destination. A kind requested with `groupBy=destinationKind` is returned unchanged. Destinations you cannot view are reported together in one `Unknown destination` series with `destinationId` `hidden` and `destinationViewable` `false`, one per combination of the other requested dimensions, such as `destinationKind`. Usage without a destination ID is one series with an empty `destinationId` named `Unattributed`.
     String aggregationType = "aggregationType_example"; // String | Specifies the aggregation method. Defaults to `month_to_date`.<br/>Valid values: `month_to_date`, `incremental`.
     String granularity = "granularity_example"; // String | Specifies the data granularity. Defaults to `daily`. `monthly` granularity is only supported with the **month_to_date** aggregation type.<br/>Valid values: `daily`, `hourly`, `monthly`.
     try {
-      SeriesListRep result = apiInstance.getWarehouseExportUsage(from, to, projectKey, environmentKey, destination, groupBy, aggregationType, granularity);
+      DataExportSeriesListRep result = apiInstance.getWarehouseExportUsage(from, to, projectKey, environmentKey, destinationKind, destination, groupBy, aggregationType, granularity);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AccountUsageBetaApi#getWarehouseExportUsage");
@@ -2297,14 +2391,15 @@ public class Example {
 | **to** | **String**| The series of data returned ends at this timestamp (Unix milliseconds). Defaults to the current time. | [optional] |
 | **projectKey** | **String**| A project key to filter results by. Can be specified multiple times, one query parameter per project key. | [optional] |
 | **environmentKey** | **String**| An environment key to filter results by. If specified, exactly one &#x60;projectKey&#x60; must be provided. Can be specified multiple times, one query parameter per environment key. | [optional] |
-| **destination** | **String**| A destination kind to filter results by. Can be specified multiple times, one query parameter per destination kind.&lt;br/&gt;Valid values: &#x60;snowflake-v2&#x60;, &#x60;databricks&#x60;, &#x60;bigquery&#x60;, &#x60;redshift&#x60;, &#x60;clickhouse&#x60;. | [optional] |
-| **groupBy** | **String**| If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: &#x60;projectId&#x60;, &#x60;environmentId&#x60;, &#x60;destination&#x60;. | [optional] |
+| **destinationKind** | **String**| A Warehouse configuration kind to filter results by. Cannot be combined with &#x60;destination&#x60;. Can be specified multiple times.&lt;br/&gt;Valid values: &#x60;snowflake-v2&#x60;, &#x60;databricks&#x60;, &#x60;bigquery&#x60;, &#x60;redshift&#x60;, &#x60;clickhouse&#x60;, &#x60;s3&#x60;. | [optional] |
+| **destination** | **String**| A Warehouse configuration kind to filter results by. Cannot be combined with &#x60;destinationKind&#x60;. Existing behavior is unchanged. Can be specified multiple times.&lt;br/&gt;Valid values: &#x60;snowflake-v2&#x60;, &#x60;databricks&#x60;, &#x60;bigquery&#x60;, &#x60;redshift&#x60;, &#x60;clickhouse&#x60;. | [optional] |
+| **groupBy** | **String**| If specified, returns data for each distinct value of the given field. Can be specified multiple times.&lt;br/&gt;Valid values: &#x60;projectId&#x60;, &#x60;environmentId&#x60;, &#x60;destination&#x60;, &#x60;destinationKind&#x60;, &#x60;destinationId&#x60;. &#x60;destination&#x60; and &#x60;destinationKind&#x60; return the same raw Warehouse configuration kinds. &#x60;destinationId&#x60; returns one series per warehouse destination with &#x60;destinationName&#x60; metadata. When a current destination you can view matches, its &#x60;destinationId&#x60; is the LaunchDarkly destination ID, with &#x60;destinationViewable&#x60;. Otherwise, it is the warehouse provider&#39;s destination ID, named &#x60;Unknown destination&#x60;. The destination&#39;s own kind is added as &#x60;destinationKind&#x60; only when you can view the destination. A kind requested with &#x60;groupBy&#x3D;destinationKind&#x60; is returned unchanged. Destinations you cannot view are reported together in one &#x60;Unknown destination&#x60; series with &#x60;destinationId&#x60; &#x60;hidden&#x60; and &#x60;destinationViewable&#x60; &#x60;false&#x60;, one per combination of the other requested dimensions, such as &#x60;destinationKind&#x60;. Usage without a destination ID is one series with an empty &#x60;destinationId&#x60; named &#x60;Unattributed&#x60;. | [optional] |
 | **aggregationType** | **String**| Specifies the aggregation method. Defaults to &#x60;month_to_date&#x60;.&lt;br/&gt;Valid values: &#x60;month_to_date&#x60;, &#x60;incremental&#x60;. | [optional] |
 | **granularity** | **String**| Specifies the data granularity. Defaults to &#x60;daily&#x60;. &#x60;monthly&#x60; granularity is only supported with the **month_to_date** aggregation type.&lt;br/&gt;Valid values: &#x60;daily&#x60;, &#x60;hourly&#x60;, &#x60;monthly&#x60;. | [optional] |
 
 ### Return type
 
-[**SeriesListRep**](SeriesListRep.md)
+[**DataExportSeriesListRep**](DataExportSeriesListRep.md)
 
 ### Authorization
 

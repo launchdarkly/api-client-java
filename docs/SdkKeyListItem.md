@@ -20,6 +20,7 @@
 |**updatedAt** | **Long** |  |  |
 |**version** | **Integer** | The auto-incremented version number of the SDK key. |  |
 |**environmentSummary** | [**SdkKeysEnvironmentSummary**](SdkKeysEnvironmentSummary.md) |  |  [optional] |
+|**viewSummaries** | [**List&lt;ViewSummary&gt;**](ViewSummary.md) | Summaries of views associated with the SDK key. |  [optional] |
 
 
 

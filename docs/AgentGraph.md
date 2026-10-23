@@ -9,6 +9,7 @@ An agent graph representing a directed graph of configs
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**access** | [**AiConfigsAccess**](AiConfigsAccess.md) |  |  [optional] |
+|**site** | [**CoreLink**](CoreLink.md) |  |  [optional] |
 |**key** | **String** | A unique key for the agent graph |  |
 |**name** | **String** | A human-readable name for the agent graph |  |
 |**description** | **String** | A description of the agent graph |  [optional] |

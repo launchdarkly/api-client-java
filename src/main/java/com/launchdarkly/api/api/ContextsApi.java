@@ -1,6 +1,6 @@
 /*
  * LaunchDarkly REST API
- * This documentation describes LaunchDarkly's REST API. To access the complete OpenAPI spec directly, use [Get OpenAPI spec](https://launchdarkly.com/docs/api/other/get-openapi-spec).  To learn how to use LaunchDarkly using the user interface (UI) instead, read our [product documentation](https://launchdarkly.com/docs/home).  ## Authentication  LaunchDarkly's REST API uses the HTTPS protocol with a minimum TLS version of 1.2.  All REST API resources are authenticated with either [personal or service access tokens](https://launchdarkly.com/docs/home/account/api), or session cookies. Other authentication mechanisms are not supported. You can manage personal access tokens on your [**Authorization**](https://app.launchdarkly.com/settings/authorization) page in the LaunchDarkly UI.  LaunchDarkly also has SDK keys, mobile keys, and client-side IDs that are used by our server-side SDKs, mobile SDKs, and JavaScript-based SDKs, respectively. **These keys cannot be used to access our REST API**. These keys are environment-specific, and can only perform read-only operations such as fetching feature flag settings.  | Auth mechanism                                                                                  | Allowed resources                                                                                     | Use cases                                          | | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | -------------------------------------------------- | | [Personal or service access tokens](https://launchdarkly.com/docs/home/account/api) | Can be customized on a per-token basis                                                                | Building scripts, custom integrations, data export. | | SDK keys                                                                                        | Can only access read-only resources specific to server-side SDKs. Restricted to a single environment. | Server-side SDKs                     | | Mobile keys                                                                                     | Can only access read-only resources specific to mobile SDKs, and only for flags marked available to mobile keys. Restricted to a single environment.           | Mobile SDKs                                        | | Client-side ID                                                                                  | Can only access read-only resources specific to JavaScript-based client-side SDKs, and only for flags marked available to client-side. Restricted to a single environment.           | Client-side JavaScript                             |  > #### Keep your access tokens and SDK keys private > > Access tokens should _never_ be exposed in untrusted contexts. Never put an access token in client-side JavaScript, or embed it in a mobile application. LaunchDarkly has special mobile keys that you can embed in mobile apps. If you accidentally expose an access token or SDK key, you can reset it from your [**Authorization**](https://app.launchdarkly.com/settings/authorization) page. > > The client-side ID is safe to embed in untrusted contexts. It's designed for use in client-side JavaScript.  ### Authentication using request header  The preferred way to authenticate with the API is by adding an `Authorization` header containing your access token to your requests. The value of the `Authorization` header must be your access token.  Manage personal access tokens from the [**Authorization**](https://app.launchdarkly.com/settings/authorization) page.  ### Authentication using session cookie  For testing purposes, you can make API calls directly from your web browser. If you are logged in to the LaunchDarkly application, the API will use your existing session to authenticate calls.  Depending on the permissions granted as part of your [role](https://launchdarkly.com/docs/home/account/roles), you may not have permission to perform some API calls. You will receive a `401` response code in that case.  > ### Modifying the Origin header causes an error > > LaunchDarkly validates that the Origin header for any API request authenticated by a session cookie matches the expected Origin header. The expected Origin header is `https://app.launchdarkly.com`. > > If the Origin header does not match what's expected, LaunchDarkly returns an error. This error can prevent the LaunchDarkly app from working correctly. > > Any browser extension that intentionally changes the Origin header can cause this problem. For example, Cross-Origin Resource Sharing (CORS) extensions used during development can modify the Origin header and cause the app to fail. > > To prevent this error, do not modify your Origin header. > > LaunchDarkly does not require origin matching when authenticating with an access token, so this issue does not affect normal API usage.  ## Representations  All resources expect and return JSON response bodies. Error responses also send a JSON body. To learn more about the error format of the API, read [Errors](https://launchdarkly.com/docs/api#errors).  In practice this means that you always get a response with a `Content-Type` header set to `application/json`.  In addition, request bodies for `PATCH`, `POST`, and `PUT` requests must be encoded as JSON with a `Content-Type` header set to `application/json`.  ### Summary and detailed representations  When you fetch a list of resources, the response includes only the most important attributes of each resource. This is a _summary representation_ of the resource. When you fetch an individual resource, such as a single feature flag, you receive a _detailed representation_ of the resource.  The best way to find a detailed representation is to follow links. Every summary representation includes a link to its detailed representation.  ### Expanding responses  Sometimes the detailed representation of a resource does not include all of the attributes of the resource by default. If this is the case, the request method will clearly document this and describe which attributes you can include in an expanded response.  To include the additional attributes, append the `expand` request parameter to your request and add a comma-separated list of the attributes to include. For example, when you append `?expand=members,maintainers` to the [Get team](https://launchdarkly.com/docs/api/teams/get-team) endpoint, the expanded response includes both of these attributes.  ### Links and addressability  The best way to navigate the API is by following links. These are attributes in representations that link to other resources. The API always uses the same format for links:  - Links to other resources within the API are encapsulated in a `_links` object - If the resource has a corresponding link to HTML content on the site, it is stored in a special `_site` link  Each link has two attributes:  - An `href`, which contains the URL - A `type`, which describes the content type  For example, a feature resource might return the following:  ```json {   \"_links\": {     \"parent\": {       \"href\": \"/api/features\",       \"type\": \"application/json\"     },     \"self\": {       \"href\": \"/api/features/sort.order\",       \"type\": \"application/json\"     }   },   \"_site\": {     \"href\": \"/features/sort.order\",     \"type\": \"text/html\"   } } ```  From this, you can navigate to the parent collection of features by following the `parent` link, or navigate to the site page for the feature by following the `_site` link.  Collections are always represented as a JSON object with an `items` attribute containing an array of representations. Like all other representations, collections have `_links` defined at the top level.  Paginated collections include `first`, `last`, `next`, and `prev` links containing a URL with the respective set of elements in the collection.  ## Updates  Resources that accept partial updates use the `PATCH` verb. Most resources support the [JSON patch](https://launchdarkly.com/docs/api#updates-using-json-patch) format. Some resources also support the [JSON merge patch](https://launchdarkly.com/docs/api#updates-using-json-merge-patch) format, and some resources support the [semantic patch](https://launchdarkly.com/docs/api#updates-using-semantic-patch) format, which is a way to specify the modifications to perform as a set of executable instructions. Each resource supports optional [comments](https://launchdarkly.com/docs/api#updates-with-comments) that you can submit with updates. Comments appear in outgoing webhooks, the audit log, and other integrations.  When a resource supports both JSON patch and semantic patch, we document both in the request method. However, the specific request body fields and descriptions included in our documentation only match one type of patch or the other.  ### Updates using JSON patch  [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) is a way to specify the modifications to perform on a resource. JSON patch uses paths and a limited set of operations to describe how to transform the current state of the resource into a new state. JSON patch documents are always arrays, where each element contains an operation, a path to the field to update, and the new value.  For example, in this feature flag representation:  ```json {     \"name\": \"New recommendations engine\",     \"key\": \"engine.enable\",     \"description\": \"This is the description\",     ... } ``` You can change the feature flag's description with the following patch document:  ```json [{ \"op\": \"replace\", \"path\": \"/description\", \"value\": \"This is the new description\" }] ```  You can specify multiple modifications to perform in a single request. You can also test that certain preconditions are met before applying the patch:  ```json [   { \"op\": \"test\", \"path\": \"/version\", \"value\": 10 },   { \"op\": \"replace\", \"path\": \"/description\", \"value\": \"The new description\" } ] ```  The above patch request tests whether the feature flag's `version` is `10`, and if so, changes the feature flag's description.  Attributes that are not editable, such as a resource's `_links`, have names that start with an underscore.  ### Updates using JSON merge patch  [JSON merge patch](https://datatracker.ietf.org/doc/html/rfc7386) is another format for specifying the modifications to perform on a resource. JSON merge patch is less expressive than JSON patch. However, in many cases it is simpler to construct a merge patch document. For example, you can change a feature flag's description with the following merge patch document:  ```json {   \"description\": \"New flag description\" } ```  ### Updates using semantic patch  Some resources support the semantic patch format. A semantic patch is a way to specify the modifications to perform on a resource as a set of executable instructions.  Semantic patch allows you to be explicit about intent using precise, custom instructions. In many cases, you can define semantic patch instructions independently of the current state of the resource. This can be useful when defining a change that may be applied at a future date.  To make a semantic patch request, you must append `domain-model=launchdarkly.semanticpatch` to your `Content-Type` header.  Here's how:  ``` Content-Type: application/json; domain-model=launchdarkly.semanticpatch ```  If you call a semantic patch resource without this header, you will receive a `400` response because your semantic patch will be interpreted as a JSON patch.  The body of a semantic patch request takes the following properties:  * `comment` (string): (Optional) A description of the update. * `environmentKey` (string): (Required for some resources only) The environment key. * `instructions` (array): (Required) A list of actions the update should perform. Each action in the list must be an object with a `kind` property that indicates the instruction. If the instruction requires parameters, you must include those parameters as additional fields in the object. The documentation for each resource that supports semantic patch includes the available instructions and any additional parameters.  For example:  ```json {   \"comment\": \"optional comment\",   \"instructions\": [ {\"kind\": \"turnFlagOn\"} ] } ```  Semantic patches are not applied partially; either all of the instructions are applied or none of them are. If **any** instruction is invalid, the endpoint returns an error and will not change the resource. If all instructions are valid, the request succeeds and the resources are updated if necessary, or left unchanged if they are already in the state you request.  ### Updates with comments  You can submit optional comments with `PATCH` changes.  To submit a comment along with a JSON patch document, use the following format:  ```json {   \"comment\": \"This is a comment string\",   \"patch\": [{ \"op\": \"replace\", \"path\": \"/description\", \"value\": \"The new description\" }] } ```  To submit a comment along with a JSON merge patch document, use the following format:  ```json {   \"comment\": \"This is a comment string\",   \"merge\": { \"description\": \"New flag description\" } } ```  To submit a comment along with a semantic patch, use the following format:  ```json {   \"comment\": \"This is a comment string\",   \"instructions\": [ {\"kind\": \"turnFlagOn\"} ] } ```  ## Errors  The API always returns errors in a common format. Here's an example:  ```json {   \"code\": \"invalid_request\",   \"message\": \"A feature with that key already exists\",   \"id\": \"30ce6058-87da-11e4-b116-123b93f75cba\" } ```  The `code` indicates the general class of error. The `message` is a human-readable explanation of what went wrong. The `id` is a unique identifier. Use it when you're working with LaunchDarkly Support to debug a problem with a specific API call.  ### HTTP status error response codes  | Code | Definition        | Description                                                                                       | Possible Solution                                                | | ---- | ----------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | | 400  | Invalid request       | The request cannot be understood.                                    | Ensure JSON syntax in request body is correct.                   | | 401  | Invalid access token      | Requestor is unauthorized or does not have permission for this API call.                                                | Ensure your API access token is valid and has the appropriate permissions.                                     | | 403  | Forbidden         | Requestor does not have access to this resource.                                                | Ensure that the account member or access token has proper permissions set. | | 404  | Invalid resource identifier | The requested resource is not valid. | Ensure that the resource is correctly identified by ID or key. | | 405  | Method not allowed | The request method is not allowed on this resource. | Ensure that the HTTP verb is correct. | | 409  | Conflict          | The API request can not be completed because it conflicts with a concurrent API request. | Retry your request.                                              | | 422  | Unprocessable entity | The API request can not be completed because the update description can not be understood. | Ensure that the request body is correct for the type of patch you are using, either JSON patch or semantic patch. | 429  | Too many requests | Read [Rate limiting](https://launchdarkly.com/docs/api#rate-limiting).                                               | Wait and try again later.                                        |  ## CORS  The LaunchDarkly API supports Cross Origin Resource Sharing (CORS) for AJAX requests from any origin. If an `Origin` header is given in a request, it will be echoed as an explicitly allowed origin. Otherwise the request returns a wildcard, `Access-Control-Allow-Origin: *`. For more information on CORS, read the [CORS W3C Recommendation](http://www.w3.org/TR/cors). Example CORS headers might look like:  ```http Access-Control-Allow-Headers: Accept, Content-Type, Content-Length, Accept-Encoding, Authorization Access-Control-Allow-Methods: OPTIONS, GET, DELETE, PATCH Access-Control-Allow-Origin: * Access-Control-Max-Age: 300 ```  You can make authenticated CORS calls just as you would make same-origin calls, using either [token or session-based authentication](https://launchdarkly.com/docs/api#authentication). If you are using session authentication, you should set the `withCredentials` property for your `xhr` request to `true`. You should never expose your access tokens to untrusted entities.  ## Rate limiting  We use several rate-limiting strategies to ensure the availability of our APIs. Rate-limited calls to our APIs return a `429` status code and include headers to indicate the current rate limit status. The specific headers returned depend on the API route that was called. Limits differ based on the route, authentication mechanism, and other factors.  Each set of headers below appears only when the corresponding limit is being enforced for your call. A given route may be subject to any combination of these limits, so a response can include one, several, or none of these headers. A missing header indicates that the limit was not applied to this specific call; it does not necessarily indicate that the limit does not exist. To reduce usage before hitting a `429` status, program against whichever rate limit headers are present rather than expecting a specific header.  We do not publicly document the specific number of calls permitted by any of these limits, and these limits may change. We encourage clients to program against the specification and rely on the headers described below, rather than hardcoding the current limits.  > ### Rate limiting and SDKs > > LaunchDarkly SDKs are never rate limited and do not use the API endpoints defined here. LaunchDarkly uses a different set of approaches, including streaming/server-sent events and a global CDN, to ensure availability to the routes used by LaunchDarkly SDKs.  ### Global rate limits  Authenticated requests are subject to a global limit. This is the maximum number of calls that your account can make to the API per ten seconds. All service and personal access tokens on the account share this limit, so exceeding the limit with one access token will impact other tokens. Calls that are subject to global rate limits may return the headers below:  | Header name                    | Description                                                                      | | ------------------------------ | -------------------------------------------------------------------------------- | | `X-Ratelimit-Global-Limit`     | The maximum number of requests the account is permitted to make per ten seconds. | | `X-Ratelimit-Global-Remaining` | The number of requests remaining in the current global rate limit window.        | | `X-Ratelimit-Reset`            | The time at which the current rate limit window resets in epoch milliseconds.    |  ### Route-level rate limits  Some authenticated routes have custom rate limits. These also reset every ten seconds. Any service or personal access tokens hitting the same route share this limit, so exceeding the limit with one access token may impact other tokens. Calls that are subject to route-level rate limits return the headers below:  | Header name                   | Description                                                                                           | | ----------------------------- | ----------------------------------------------------------------------------------------------------- | | `X-Ratelimit-Route-Limit`     | The maximum number of requests to the current route permitted per ten seconds.           | | `X-Ratelimit-Route-Remaining` | The number of requests remaining for the current route in the current rate limit window. | | `X-Ratelimit-Reset`           | The time at which the current rate limit window resets in epoch milliseconds.            |  A _route_ represents a specific URL pattern and verb. For example, the [Delete environment](https://launchdarkly.com/docs/api/environments/delete-environment) endpoint is considered a single route, and each call to delete an environment counts against your route-level rate limit for that route.  ### Access token rate limits  Some calls are rate limited per access token. Unlike the global and route-level limits, this limit applies to a single service or personal access token on its own. Exceeding a limit with one access token does not affect other tokens on the account. Calls that are subject to access token rate limits return these headers:  | Header name                        | Description                                                                             | | ---------------------------------- | --------------------------------------------------------------------------------------- | | `X-Ratelimit-Auth-Token-Limit`     | The maximum number of requests the access token can make per ten seconds.               | | `X-Ratelimit-Auth-Token-Remaining` | The number of requests remaining for the access token in the current rate limit window. | | `X-Ratelimit-Auth-Token-Reset`     | The time at which the current rate limit window resets in epoch milliseconds.           |  Unlike the other rate limits, access token rate limits report their own reset time in the `X-Ratelimit-Auth-Token-Reset` header instead of in `X-Ratelimit-Reset`.  ### IP-based rate limiting  We also employ IP-based rate limiting on some API routes. If you hit an IP-based rate limit, your API response will include a `Retry-After` header indicating how long to wait before re-trying the call. Clients must wait at least `Retry-After` seconds before making additional calls to our API, and should employ jitter and backoff strategies to avoid triggering rate limits again.  ## OpenAPI (Swagger) and client libraries  We have a [complete OpenAPI (Swagger) specification](https://app.launchdarkly.com/api/v2/openapi.json) for our API.  We auto-generate multiple client libraries based on our OpenAPI specification. To learn more, visit the [collection of client libraries on GitHub](https://github.com/search?q=topic%3Alaunchdarkly-api+org%3Alaunchdarkly&type=Repositories). Alternatively, you can use the specification to generate client libraries to interact with our REST API in your language of choice. Or, you can refer to our API endpoints' documentation for guidance on how to make requests with a common HTTP library in your language of choice.  Our OpenAPI specification is supported by several API-based tools such as Postman and Insomnia. In many cases, you can directly import our specification to explore our APIs.  ## Method overriding  Some firewalls and HTTP clients restrict the use of verbs other than `GET` and `POST`. In those environments, our API endpoints that use `DELETE`, `PATCH`, and `PUT` verbs are inaccessible.  To avoid this issue, our API supports the `X-HTTP-Method-Override` header, allowing clients to \"tunnel\" `DELETE`, `PATCH`, and `PUT` requests using a `POST` request.  For example, to call a `PATCH` endpoint using a `POST` request, you can include `X-HTTP-Method-Override:PATCH` as a header.  ## Beta resources  We sometimes release new API resources in **beta** status before we release them with general availability.  Resources that are in beta are still undergoing testing and development. They may change without notice, including becoming backwards incompatible.  We try to promote resources into general availability as quickly as possible. This happens after sufficient testing and when we're satisfied that we no longer need to make backwards-incompatible changes.  We mark beta resources with a \"Beta\" callout in our documentation, pictured below:  > ### This feature is in beta > > To use this feature, pass in a header including the `LD-API-Version` key with value set to `beta`. Use this header with each call. To learn more, read [Beta resources](https://launchdarkly.com/docs/api#beta-resources). > > Resources that are in beta are still undergoing testing and development. They may change without notice, including becoming backwards incompatible.  ### Using beta resources  To use a beta resource, you must include a header in the request. If you call a beta resource without this header, you receive a `403` response.  Use this header:  ``` LD-API-Version: beta ```  ## Federal and EU environments  In addition to the commercial versions, LaunchDarkly offers instances for federal agencies and those based in the European Union (EU).  ### Federal environments  The version of LaunchDarkly that is available on domains controlled by the United States government is different from the version of LaunchDarkly available to the general public. If you are an employee or contractor for a United States federal agency and use LaunchDarkly in your work, you likely use the federal instance of LaunchDarkly.  If you are working in the federal instance of LaunchDarkly, the base URI for each request is `https://app.launchdarkly.us`.  To learn more, read [LaunchDarkly in federal environments](https://launchdarkly.com/docs/home/infrastructure/federal).  ### EU environments  The version of LaunchDarkly that is available in the EU is different from the version of LaunchDarkly available to other regions. If you are based in the EU, you likely use the EU instance of LaunchDarkly. The LaunchDarkly EU instance complies with EU data residency principles, including the protection and confidentiality of EU customer information.  If you are working in the EU instance of LaunchDarkly, the base URI for each request is `https://app.eu.launchdarkly.com`.  To learn more, read [LaunchDarkly in the European Union (EU)](https://launchdarkly.com/docs/home/infrastructure/eu).  ## Versioning  We try hard to keep our REST API backwards compatible, but we occasionally have to make backwards-incompatible changes in the process of shipping new features. These breaking changes can cause unexpected behavior if you don't prepare for them accordingly.  Updates to our REST API include support for the latest features in LaunchDarkly. We also release a new version of our REST API every time we make a breaking change. We provide simultaneous support for multiple API versions so you can migrate from your current API version to a new version at your own pace.  ### Setting the API version per request  You can set the API version on a specific request by sending an `LD-API-Version` header, as shown in the example below:  ``` LD-API-Version: 20240415 ```  The header value is the version number of the API version you would like to request. The number for each version corresponds to the date the version was released in `yyyymmdd` format. In the example above the version `20240415` corresponds to April 15, 2024.  ### Setting the API version per access token  When you create an access token, you must specify a specific version of the API to use. This ensures that integrations using this token cannot be broken by version changes.  Tokens created before versioning was released have their version set to `20160426`, which is the version of the API that existed before the current versioning scheme, so that they continue working the same way they did before versioning.  If you would like to upgrade your integration to use a new API version, you can explicitly set the header described above.  > ### Best practice: Set the header for every client or integration > > We recommend that you set the API version header explicitly in any client or integration you build. > > Only rely on the access token API version during manual testing.  ### API version changelog  <table>   <tr>     <th>Version</th>     <th>Changes</th>     <th>End of life (EOL)</th>   </tr>   <tr>     <td>`20240415`</td>     <td>       <ul><li>Changed several endpoints from unpaginated to paginated. Use the `limit` and `offset` query parameters to page through the results.</li> <li>Changed the [list access tokens](https://launchdarkly.com/docs/api/access-tokens/get-tokens) endpoint: <ul><li>Response is now paginated with a default limit of `25`</li></ul></li> <li>Changed the [list account members](https://launchdarkly.com/docs/api/account-members/get-members) endpoint: <ul><li>The `accessCheck` filter is no longer available</li></ul></li> <li>Changed the [list custom roles](https://launchdarkly.com/docs/api/custom-roles/get-custom-roles) endpoint: <ul><li>Response is now paginated with a default limit of `20`</li></ul></li> <li>Changed the [list feature flags](https://launchdarkly.com/docs/api/feature-flags/get-feature-flags) endpoint: <ul><li>Response is now paginated with a default limit of `20`</li><li>The `environments` field is now only returned if the request is filtered by environment, using the `filterEnv` query parameter</li><li>The `followerId`, `hasDataExport`, `status`, `contextKindTargeted`, and `segmentTargeted` filters are no longer available</li><li>The `compare` query parameter is no longer available</li></ul></li> <li>Changed the [list segments](https://launchdarkly.com/docs/api/segments/get-segments) endpoint: <ul><li>Response is now paginated with a default limit of `20`</li></ul></li> <li>Changed the [list teams](https://launchdarkly.com/docs/api/teams/get-teams) endpoint: <ul><li>The `expand` parameter no longer supports including `projects` or `roles`</li><li>In paginated results, the maximum page size is now 100</li></ul></li> <li>Changed the [get workflows](https://launchdarkly.com/docs/api/workflows/get-workflows) endpoint: <ul><li>Response is now paginated with a default limit of `20`</li><li>The `_conflicts` field in the response is no longer available</li></ul></li> </ul>     </td>     <td>Current</td>   </tr>   <tr>     <td>`20220603`</td>     <td>       <ul><li>Changed the [list projects](https://launchdarkly.com/docs/api/projects/get-projects) return value:<ul><li>Response is now paginated with a default limit of `20`.</li><li>Added support for filter and sort.</li><li>The project `environments` field is now expandable. This field is omitted by default.</li></ul></li><li>Changed the [get project](https://launchdarkly.com/docs/api/projects/get-project) return value:<ul><li>The `environments` field is now expandable. This field is omitted by default.</li></ul></li></ul>     </td>     <td>2025-04-15</td>   </tr>   <tr>     <td>`20210729`</td>     <td>       <ul><li>Changed the [create approval request](https://launchdarkly.com/docs/api/approvals/post-approval-request) return value. It now returns HTTP Status Code `201` instead of `200`.</li><li> Changed the [get user](https://launchdarkly.com/docs/api/users/get-user) return value. It now returns a user record, not a user. </li><li>Added additional optional fields to environment, segments, flags, members, and segments, including the ability to create big segments. </li><li> Added default values for flag variations when new environments are created. </li><li>Added filtering and pagination for getting flags and members, including `limit`, `number`, `filter`, and `sort` query parameters. </li><li>Added endpoints for expiring user targets for flags and segments, scheduled changes, access tokens, Relay Proxy configuration, integrations and subscriptions, and approvals. </li></ul>     </td>     <td>2023-06-03</td>   </tr>   <tr>     <td>`20191212`</td>     <td>       <ul><li>[List feature flags](https://launchdarkly.com/docs/api/feature-flags/get-feature-flags) now defaults to sending summaries of feature flag configurations, equivalent to setting the query parameter `summary=true`. Summaries omit flag targeting rules and individual user targets from the payload. </li><li> Added endpoints for flags, flag status, projects, environments, audit logs, members, users, custom roles, segments, usage, streams, events, and data export. </li></ul>     </td>     <td>2022-07-29</td>   </tr>   <tr>     <td>`20160426`</td>     <td>       <ul><li>Initial versioning of API. Tokens created before versioning have their version set to this.</li></ul>     </td>     <td>2020-12-12</td>   </tr> </table>  To learn more about how EOL is determined, read LaunchDarkly's [End of Life (EOL) Policy](https://launchdarkly.com/policies/end-of-life-policy/). 
+ * This documentation describes LaunchDarkly's REST API. To access the complete OpenAPI spec directly, use [Get OpenAPI spec](https://launchdarkly.com/docs/api/other/get-openapi-spec).  To learn how to use LaunchDarkly using the user interface (UI) instead, read our [product documentation](https://launchdarkly.com/docs/home).  ## Authentication  LaunchDarkly's REST API uses the HTTPS protocol with a minimum TLS version of 1.2.  All REST API resources are authenticated with either [personal or service access tokens](https://launchdarkly.com/docs/home/account/api), or session cookies. Other authentication mechanisms are not supported. You can manage personal access tokens on your [**Authorization**](https://app.launchdarkly.com/settings/authorization) page in the LaunchDarkly UI.  LaunchDarkly also has SDK keys, mobile keys, and client-side IDs that are used by our server-side SDKs, mobile SDKs, and JavaScript-based SDKs, respectively. **These keys cannot be used to access our REST API**. These keys are environment-specific, and can only perform read-only operations such as fetching feature flag settings.  | Auth mechanism                                                                                  | Allowed resources                                                                                     | Use cases                                          | | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | -------------------------------------------------- | | [Personal or service access tokens](https://launchdarkly.com/docs/home/account/api) | Can be customized on a per-token basis                                                                | Building scripts, custom integrations, data export. | | SDK keys                                                                                        | Can only access read-only resources specific to server-side SDKs. Restricted to a single environment. | Server-side SDKs                     | | Mobile keys                                                                                     | Can only access read-only resources specific to mobile SDKs, and only for flags marked available to mobile keys. Restricted to a single environment.           | Mobile SDKs                                        | | Client-side ID                                                                                  | Can only access read-only resources specific to JavaScript-based client-side SDKs, and only for flags marked available to client-side. Restricted to a single environment.           | Client-side JavaScript                             |  > #### Keep your access tokens and SDK keys private > > Access tokens should _never_ be exposed in untrusted contexts. Never put an access token in client-side JavaScript, or embed it in a mobile application. LaunchDarkly has special mobile keys that you can embed in mobile apps. If you accidentally expose an access token or SDK key, you can reset it from your [**Authorization**](https://app.launchdarkly.com/settings/authorization) page. > > The client-side ID is safe to embed in untrusted contexts. It's designed for use in client-side JavaScript.  ### Authentication using request header  The preferred way to authenticate with the API is by adding an `Authorization` header containing your access token to your requests. The value of the `Authorization` header must be your access token.  Manage personal access tokens from the [**Authorization**](https://app.launchdarkly.com/settings/authorization) page.  ### Authentication using session cookie  For testing purposes, you can make API calls directly from your web browser. If you are logged in to the LaunchDarkly application, the API will use your existing session to authenticate calls.  Depending on the permissions granted as part of your [role](https://launchdarkly.com/docs/home/account/roles), you may not have permission to perform some API calls. You will receive a `401` response code in that case.  > ### Modifying the Origin header causes an error > > LaunchDarkly validates that the Origin header for any API request authenticated by a session cookie matches the expected Origin header. The expected Origin header is `https://app.launchdarkly.com`. > > If the Origin header does not match what's expected, LaunchDarkly returns an error. This error can prevent the LaunchDarkly app from working correctly. > > Any browser extension that intentionally changes the Origin header can cause this problem. For example, Cross-Origin Resource Sharing (CORS) extensions used during development can modify the Origin header and cause the app to fail. > > To prevent this error, do not modify your Origin header. > > LaunchDarkly does not require origin matching when authenticating with an access token, so this issue does not affect normal API usage.  ## Representations  All resources expect and return JSON response bodies. Error responses also send a JSON body. To learn more about the error format of the API, read [Errors](https://launchdarkly.com/docs/api#errors).  In practice this means that you always get a response with a `Content-Type` header set to `application/json`.  In addition, request bodies for `PATCH`, `POST`, and `PUT` requests must be encoded as JSON with a `Content-Type` header set to `application/json`.  Unless an endpoint's documentation says otherwise, the API ignores request body fields that are not part of that endpoint's request schema, and does not return an error for them. A successful response does not mean that every field you sent was applied. To confirm the result, check the response body.  ### Summary and detailed representations  When you fetch a list of resources, the response includes only the most important attributes of each resource. This is a _summary representation_ of the resource. When you fetch an individual resource, such as a single feature flag, you receive a _detailed representation_ of the resource.  The best way to find a detailed representation is to follow links. Every summary representation includes a link to its detailed representation.  ### Expanding responses  Sometimes the detailed representation of a resource does not include all of the attributes of the resource by default. If this is the case, the request method will clearly document this and describe which attributes you can include in an expanded response.  To include the additional attributes, append the `expand` request parameter to your request and add a comma-separated list of the attributes to include. For example, when you append `?expand=members,maintainers` to the [Get team](https://launchdarkly.com/docs/api/teams/get-team) endpoint, the expanded response includes both of these attributes.  ### Links and addressability  The best way to navigate the API is by following links. These are attributes in representations that link to other resources. The API always uses the same format for links:  - Links to other resources within the API are encapsulated in a `_links` object - If the resource has a corresponding link to HTML content on the site, it is stored in a special `_site` link  Each link has two attributes:  - An `href`, which contains the URL - A `type`, which describes the content type  For example, a feature resource might return the following:  ```json {   \"_links\": {     \"parent\": {       \"href\": \"/api/features\",       \"type\": \"application/json\"     },     \"self\": {       \"href\": \"/api/features/sort.order\",       \"type\": \"application/json\"     }   },   \"_site\": {     \"href\": \"/features/sort.order\",     \"type\": \"text/html\"   } } ```  From this, you can navigate to the parent collection of features by following the `parent` link, or navigate to the site page for the feature by following the `_site` link.  Collections are always represented as a JSON object with an `items` attribute containing an array of representations. Like all other representations, collections have `_links` defined at the top level.  Paginated collections include `first`, `last`, `next`, and `prev` links containing a URL with the respective set of elements in the collection.  ## Updates  Resources that accept partial updates use the `PATCH` verb. Most resources support the [JSON patch](https://launchdarkly.com/docs/api#updates-using-json-patch) format. Some resources also support the [JSON merge patch](https://launchdarkly.com/docs/api#updates-using-json-merge-patch) format, and some resources support the [semantic patch](https://launchdarkly.com/docs/api#updates-using-semantic-patch) format, which is a way to specify the modifications to perform as a set of executable instructions. Each resource supports optional [comments](https://launchdarkly.com/docs/api#updates-with-comments) that you can submit with updates. Comments appear in outgoing webhooks, the audit log, and other integrations.  When a resource supports both JSON patch and semantic patch, we document both in the request method. However, the specific request body fields and descriptions included in our documentation only match one type of patch or the other.  ### Updates using JSON patch  [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) is a way to specify the modifications to perform on a resource. JSON patch uses paths and a limited set of operations to describe how to transform the current state of the resource into a new state. JSON patch documents are always arrays, where each element contains an operation, a path to the field to update, and the new value.  For example, in this feature flag representation:  ```json {     \"name\": \"New recommendations engine\",     \"key\": \"engine.enable\",     \"description\": \"This is the description\",     ... } ``` You can change the feature flag's description with the following patch document:  ```json [{ \"op\": \"replace\", \"path\": \"/description\", \"value\": \"This is the new description\" }] ```  You can specify multiple modifications to perform in a single request. You can also test that certain preconditions are met before applying the patch:  ```json [   { \"op\": \"test\", \"path\": \"/version\", \"value\": 10 },   { \"op\": \"replace\", \"path\": \"/description\", \"value\": \"The new description\" } ] ```  The above patch request tests whether the feature flag's `version` is `10`, and if so, changes the feature flag's description.  Attributes that are not editable, such as a resource's `_links`, have names that start with an underscore.  ### Updates using JSON merge patch  [JSON merge patch](https://datatracker.ietf.org/doc/html/rfc7386) is another format for specifying the modifications to perform on a resource. JSON merge patch is less expressive than JSON patch. However, in many cases it is simpler to construct a merge patch document. For example, you can change a feature flag's description with the following merge patch document:  ```json {   \"description\": \"New flag description\" } ```  ### Updates using semantic patch  Some resources support the semantic patch format. A semantic patch is a way to specify the modifications to perform on a resource as a set of executable instructions.  Semantic patch allows you to be explicit about intent using precise, custom instructions. In many cases, you can define semantic patch instructions independently of the current state of the resource. This can be useful when defining a change that may be applied at a future date.  To make a semantic patch request, you must append `domain-model=launchdarkly.semanticpatch` to your `Content-Type` header.  Here's how:  ``` Content-Type: application/json; domain-model=launchdarkly.semanticpatch ```  If you call a semantic patch resource without this header, you will receive a `400` response because your semantic patch will be interpreted as a JSON patch.  The body of a semantic patch request takes the following properties:  * `comment` (string): (Optional) A description of the update. * `environmentKey` (string): (Required for some resources only) The environment key. * `instructions` (array): (Required) A list of actions the update should perform. Each action in the list must be an object with a `kind` property that indicates the instruction. If the instruction requires parameters, you must include those parameters as additional fields in the object. The documentation for each resource that supports semantic patch includes the available instructions and any additional parameters.  For example:  ```json {   \"comment\": \"optional comment\",   \"instructions\": [ {\"kind\": \"turnFlagOn\"} ] } ```  Semantic patches are not applied partially; either all of the instructions are applied or none of them are. If **any** instruction is invalid, the endpoint returns an error and will not change the resource. If all instructions are valid, the request succeeds and the resources are updated if necessary, or left unchanged if they are already in the state you request.  ### Updates with comments  You can submit optional comments with `PATCH` changes.  To submit a comment along with a JSON patch document, use the following format:  ```json {   \"comment\": \"This is a comment string\",   \"patch\": [{ \"op\": \"replace\", \"path\": \"/description\", \"value\": \"The new description\" }] } ```  To submit a comment along with a JSON merge patch document, use the following format:  ```json {   \"comment\": \"This is a comment string\",   \"merge\": { \"description\": \"New flag description\" } } ```  To submit a comment along with a semantic patch, use the following format:  ```json {   \"comment\": \"This is a comment string\",   \"instructions\": [ {\"kind\": \"turnFlagOn\"} ] } ```  ## Errors  The API always returns errors in a common format. Here's an example:  ```json {   \"code\": \"invalid_request\",   \"message\": \"A feature with that key already exists\",   \"id\": \"30ce6058-87da-11e4-b116-123b93f75cba\" } ```  The `code` indicates the general class of error. The `message` is a human-readable explanation of what went wrong. The `id` is a unique identifier. Use it when you're working with LaunchDarkly Support to debug a problem with a specific API call.  ### HTTP status error response codes  | Code | Definition        | Description                                                                                       | Possible Solution                                                | | ---- | ----------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | | 400  | Invalid request       | The request cannot be understood.                                    | Ensure JSON syntax in request body is correct.                   | | 401  | Invalid access token      | Requestor is unauthorized or does not have permission for this API call.                                                | Ensure your API access token is valid and has the appropriate permissions.                                     | | 403  | Forbidden         | Requestor does not have access to this resource.                                                | Ensure that the account member or access token has proper permissions set. | | 404  | Invalid resource identifier | The requested resource is not valid. | Ensure that the resource is correctly identified by ID or key. | | 405  | Method not allowed | The request method is not allowed on this resource. | Ensure that the HTTP verb is correct. | | 409  | Conflict          | The API request can not be completed because it conflicts with a concurrent API request. | Retry your request.                                              | | 422  | Unprocessable entity | The API request can not be completed because the update description can not be understood. | Ensure that the request body is correct for the type of patch you are using, either JSON patch or semantic patch. | 429  | Too many requests | Read [Rate limiting](https://launchdarkly.com/docs/api#rate-limiting).                                               | Wait and try again later.                                        |  ## CORS  The LaunchDarkly API supports Cross Origin Resource Sharing (CORS) for AJAX requests from any origin. If an `Origin` header is given in a request, it will be echoed as an explicitly allowed origin. Otherwise the request returns a wildcard, `Access-Control-Allow-Origin: *`. For more information on CORS, read the [CORS W3C Recommendation](http://www.w3.org/TR/cors). Example CORS headers might look like:  ```http Access-Control-Allow-Headers: Accept, Content-Type, Content-Length, Accept-Encoding, Authorization Access-Control-Allow-Methods: OPTIONS, GET, DELETE, PATCH Access-Control-Allow-Origin: * Access-Control-Max-Age: 300 ```  You can make authenticated CORS calls just as you would make same-origin calls, using either [token or session-based authentication](https://launchdarkly.com/docs/api#authentication). If you are using session authentication, you should set the `withCredentials` property for your `xhr` request to `true`. You should never expose your access tokens to untrusted entities.  ## Rate limiting  We use several rate-limiting strategies to ensure the availability of our APIs. Rate-limited calls to our APIs return a `429` status code and include headers to indicate the current rate limit status. The specific headers returned depend on the API route that was called. Limits differ based on the route, authentication mechanism, and other factors.  Each set of headers below appears only when the corresponding limit is being enforced for your call. A given route may be subject to any combination of these limits, so a response can include one, several, or none of these headers. A missing header indicates that the limit was not applied to this specific call; it does not necessarily indicate that the limit does not exist. To reduce usage before hitting a `429` status, program against whichever rate limit headers are present rather than expecting a specific header.  We do not publicly document the specific number of calls permitted by any of these limits, and these limits may change. We encourage clients to program against the specification and rely on the headers described below, rather than hardcoding the current limits.  > ### Rate limiting and SDKs > > LaunchDarkly SDKs are never rate limited and do not use the API endpoints defined here. LaunchDarkly uses a different set of approaches, including streaming/server-sent events and a global CDN, to ensure availability to the routes used by LaunchDarkly SDKs.  ### Global rate limits  Authenticated requests are subject to a global limit. This is the maximum number of calls that your account can make to the API per ten seconds. All service and personal access tokens on the account share this limit, so exceeding the limit with one access token will impact other tokens. Calls that are subject to global rate limits may return the headers below:  | Header name                    | Description                                                                      | | ------------------------------ | -------------------------------------------------------------------------------- | | `X-Ratelimit-Global-Limit`     | The maximum number of requests the account is permitted to make per ten seconds. | | `X-Ratelimit-Global-Remaining` | The number of requests remaining in the current global rate limit window.        | | `X-Ratelimit-Reset`            | The time at which the current rate limit window resets in epoch milliseconds.    |  ### Route-level rate limits  Some authenticated routes have custom rate limits. These also reset every ten seconds. Any service or personal access tokens hitting the same route share this limit, so exceeding the limit with one access token may impact other tokens. Calls that are subject to route-level rate limits return the headers below:  | Header name                   | Description                                                                                           | | ----------------------------- | ----------------------------------------------------------------------------------------------------- | | `X-Ratelimit-Route-Limit`     | The maximum number of requests to the current route permitted per ten seconds.           | | `X-Ratelimit-Route-Remaining` | The number of requests remaining for the current route in the current rate limit window. | | `X-Ratelimit-Reset`           | The time at which the current rate limit window resets in epoch milliseconds.            |  A _route_ represents a specific URL pattern and verb. For example, the [Delete environment](https://launchdarkly.com/docs/api/environments/delete-environment) endpoint is considered a single route, and each call to delete an environment counts against your route-level rate limit for that route.  ### Access token rate limits  Some calls are rate limited per access token. Unlike the global and route-level limits, this limit applies to a single service or personal access token on its own. Exceeding a limit with one access token does not affect other tokens on the account. Calls that are subject to access token rate limits return these headers:  | Header name                        | Description                                                                             | | ---------------------------------- | --------------------------------------------------------------------------------------- | | `X-Ratelimit-Auth-Token-Limit`     | The maximum number of requests the access token can make per ten seconds.               | | `X-Ratelimit-Auth-Token-Remaining` | The number of requests remaining for the access token in the current rate limit window. | | `X-Ratelimit-Auth-Token-Reset`     | The time at which the current rate limit window resets in epoch milliseconds.           |  Unlike the other rate limits, access token rate limits report their own reset time in the `X-Ratelimit-Auth-Token-Reset` header instead of in `X-Ratelimit-Reset`.  ### IP-based rate limiting  We also employ IP-based rate limiting on some API routes. If you hit an IP-based rate limit, your API response will include a `Retry-After` header indicating how long to wait before re-trying the call. Clients must wait at least `Retry-After` seconds before making additional calls to our API, and should employ jitter and backoff strategies to avoid triggering rate limits again.  ## OpenAPI (Swagger) and client libraries  We have a [complete OpenAPI (Swagger) specification](https://app.launchdarkly.com/api/v2/openapi.json) for our API.  We auto-generate multiple client libraries based on our OpenAPI specification. To learn more, visit the [collection of client libraries on GitHub](https://github.com/search?q=topic%3Alaunchdarkly-api+org%3Alaunchdarkly&type=Repositories). Alternatively, you can use the specification to generate client libraries to interact with our REST API in your language of choice. Or, you can refer to our API endpoints' documentation for guidance on how to make requests with a common HTTP library in your language of choice.  Our OpenAPI specification is supported by several API-based tools such as Postman and Insomnia. In many cases, you can directly import our specification to explore our APIs.  ## Method overriding  Some firewalls and HTTP clients restrict the use of verbs other than `GET` and `POST`. In those environments, our API endpoints that use `DELETE`, `PATCH`, and `PUT` verbs are inaccessible.  To avoid this issue, our API supports the `X-HTTP-Method-Override` header, allowing clients to \"tunnel\" `DELETE`, `PATCH`, and `PUT` requests using a `POST` request.  For example, to call a `PATCH` endpoint using a `POST` request, you can include `X-HTTP-Method-Override:PATCH` as a header.  ## Beta resources  We sometimes release new API resources in **beta** status before we release them with general availability.  Resources that are in beta are still undergoing testing and development. They may change without notice, including becoming backwards incompatible.  We try to promote resources into general availability as quickly as possible. This happens after sufficient testing and when we're satisfied that we no longer need to make backwards-incompatible changes.  We mark beta resources with a \"Beta\" callout in our documentation, pictured below:  > ### This feature is in beta > > To use this feature, pass in a header including the `LD-API-Version` key with value set to `beta`. Use this header with each call. To learn more, read [Beta resources](https://launchdarkly.com/docs/api#beta-resources). > > Resources that are in beta are still undergoing testing and development. They may change without notice, including becoming backwards incompatible.  ### Using beta resources  To use a beta resource, you must include a header in the request. If you call a beta resource without this header, you receive a `403` response.  Use this header:  ``` LD-API-Version: beta ```  ## Federal and EU environments  In addition to the commercial versions, LaunchDarkly offers instances for federal agencies and those based in the European Union (EU).  ### Federal environments  The version of LaunchDarkly that is available on domains controlled by the United States government is different from the version of LaunchDarkly available to the general public. If you are an employee or contractor for a United States federal agency and use LaunchDarkly in your work, you likely use the federal instance of LaunchDarkly.  If you are working in the federal instance of LaunchDarkly, the base URI for each request is `https://app.launchdarkly.us`.  To learn more, read [LaunchDarkly in federal environments](https://launchdarkly.com/docs/home/infrastructure/federal).  ### EU environments  The version of LaunchDarkly that is available in the EU is different from the version of LaunchDarkly available to other regions. If you are based in the EU, you likely use the EU instance of LaunchDarkly. The LaunchDarkly EU instance complies with EU data residency principles, including the protection and confidentiality of EU customer information.  If you are working in the EU instance of LaunchDarkly, the base URI for each request is `https://app.eu.launchdarkly.com`.  To learn more, read [LaunchDarkly in the European Union (EU)](https://launchdarkly.com/docs/home/infrastructure/eu).  ## Versioning  We try hard to keep our REST API backwards compatible, but we occasionally have to make backwards-incompatible changes in the process of shipping new features. These breaking changes can cause unexpected behavior if you don't prepare for them accordingly.  Updates to our REST API include support for the latest features in LaunchDarkly. We also release a new version of our REST API every time we make a breaking change. We provide simultaneous support for multiple API versions so you can migrate from your current API version to a new version at your own pace.  ### Setting the API version per request  You can set the API version on a specific request by sending an `LD-API-Version` header, as shown in the example below:  ``` LD-API-Version: 20240415 ```  The header value is the version number of the API version you would like to request. The number for each version corresponds to the date the version was released in `yyyymmdd` format. In the example above the version `20240415` corresponds to April 15, 2024.  ### Setting the API version per access token  When you create an access token, you must specify a specific version of the API to use. This ensures that integrations using this token cannot be broken by version changes.  Tokens created before versioning was released have their version set to `20160426`, which is the version of the API that existed before the current versioning scheme, so that they continue working the same way they did before versioning.  If you would like to upgrade your integration to use a new API version, you can explicitly set the header described above.  > ### Best practice: Set the header for every client or integration > > We recommend that you set the API version header explicitly in any client or integration you build. > > Only rely on the access token API version during manual testing.  ### API version changelog  <table>   <tr>     <th>Version</th>     <th>Changes</th>     <th>End of life (EOL)</th>   </tr>   <tr>     <td>`20240415`</td>     <td>       <ul><li>Changed several endpoints from unpaginated to paginated. Use the `limit` and `offset` query parameters to page through the results.</li> <li>Changed the [list access tokens](https://launchdarkly.com/docs/api/access-tokens/get-tokens) endpoint: <ul><li>Response is now paginated with a default limit of `25`</li></ul></li> <li>Changed the [list account members](https://launchdarkly.com/docs/api/account-members/get-members) endpoint: <ul><li>The `accessCheck` filter is no longer available</li></ul></li> <li>Changed the [list custom roles](https://launchdarkly.com/docs/api/custom-roles/get-custom-roles) endpoint: <ul><li>Response is now paginated with a default limit of `20`</li></ul></li> <li>Changed the [list feature flags](https://launchdarkly.com/docs/api/feature-flags/get-feature-flags) endpoint: <ul><li>Response is now paginated with a default limit of `20`</li><li>The `environments` field is now only returned if the request is filtered by environment, using the `filterEnv` query parameter</li><li>The `followerId`, `hasDataExport`, `status`, `contextKindTargeted`, and `segmentTargeted` filters are no longer available</li><li>The `compare` query parameter is no longer available</li></ul></li> <li>Changed the [list segments](https://launchdarkly.com/docs/api/segments/get-segments) endpoint: <ul><li>Response is now paginated with a default limit of `20`</li></ul></li> <li>Changed the [list teams](https://launchdarkly.com/docs/api/teams/get-teams) endpoint: <ul><li>The `expand` parameter no longer supports including `projects` or `roles`</li><li>In paginated results, the maximum page size is now 100</li></ul></li> <li>Changed the [get workflows](https://launchdarkly.com/docs/api/workflows/get-workflows) endpoint: <ul><li>Response is now paginated with a default limit of `20`</li><li>The `_conflicts` field in the response is no longer available</li></ul></li> </ul>     </td>     <td>Current</td>   </tr>   <tr>     <td>`20220603`</td>     <td>       <ul><li>Changed the [list projects](https://launchdarkly.com/docs/api/projects/get-projects) return value:<ul><li>Response is now paginated with a default limit of `20`.</li><li>Added support for filter and sort.</li><li>The project `environments` field is now expandable. This field is omitted by default.</li></ul></li><li>Changed the [get project](https://launchdarkly.com/docs/api/projects/get-project) return value:<ul><li>The `environments` field is now expandable. This field is omitted by default.</li></ul></li></ul>     </td>     <td>2025-04-15</td>   </tr>   <tr>     <td>`20210729`</td>     <td>       <ul><li>Changed the [create approval request](https://launchdarkly.com/docs/api/approvals/post-approval-request) return value. It now returns HTTP Status Code `201` instead of `200`.</li><li> Changed the [get user](https://launchdarkly.com/docs/api/users/get-user) return value. It now returns a user record, not a user. </li><li>Added additional optional fields to environment, segments, flags, members, and segments, including the ability to create big segments. </li><li> Added default values for flag variations when new environments are created. </li><li>Added filtering and pagination for getting flags and members, including `limit`, `number`, `filter`, and `sort` query parameters. </li><li>Added endpoints for expiring user targets for flags and segments, scheduled changes, access tokens, Relay Proxy configuration, integrations and subscriptions, and approvals. </li></ul>     </td>     <td>2023-06-03</td>   </tr>   <tr>     <td>`20191212`</td>     <td>       <ul><li>[List feature flags](https://launchdarkly.com/docs/api/feature-flags/get-feature-flags) now defaults to sending summaries of feature flag configurations, equivalent to setting the query parameter `summary=true`. Summaries omit flag targeting rules and individual user targets from the payload. </li><li> Added endpoints for flags, flag status, projects, environments, audit logs, members, users, custom roles, segments, usage, streams, events, and data export. </li></ul>     </td>     <td>2022-07-29</td>   </tr>   <tr>     <td>`20160426`</td>     <td>       <ul><li>Initial versioning of API. Tokens created before versioning have their version set to this.</li></ul>     </td>     <td>2020-12-12</td>   </tr> </table>  To learn more about how EOL is determined, read LaunchDarkly's [End of Life (EOL) Policy](https://launchdarkly.com/policies/end-of-life-policy/). 
  *
  * The version of the OpenAPI document: 2.0
  * Contact: support@launchdarkly.com
@@ -30,8 +30,6 @@ import java.io.IOException;
 import com.launchdarkly.api.model.ContextAttributeNamesCollection;
 import com.launchdarkly.api.model.ContextAttributeValuesCollection;
 import com.launchdarkly.api.model.ContextInstanceEvaluations;
-import com.launchdarkly.api.model.ContextInstanceSearch;
-import com.launchdarkly.api.model.ContextInstances;
 import com.launchdarkly.api.model.ContextKindsCollectionRep;
 import com.launchdarkly.api.model.ContextSearch;
 import com.launchdarkly.api.model.Contexts;
@@ -86,173 +84,6 @@ public class ContextsApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
-    /**
-     * Build call for deleteContextInstances
-     * @param projectKey The project key (required)
-     * @param environmentKey The environment key (required)
-     * @param id The context instance ID (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
-        <tr><td> 410 </td><td> Endpoint deprecated </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call deleteContextInstancesCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v2/projects/{projectKey}/environments/{environmentKey}/context-instances/{id}"
-            .replace("{" + "projectKey" + "}", localVarApiClient.escapeString(projectKey.toString()))
-            .replace("{" + "environmentKey" + "}", localVarApiClient.escapeString(environmentKey.toString()))
-            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteContextInstancesValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'projectKey' is set
-        if (projectKey == null) {
-            throw new ApiException("Missing the required parameter 'projectKey' when calling deleteContextInstances(Async)");
-        }
-
-        // verify the required parameter 'environmentKey' is set
-        if (environmentKey == null) {
-            throw new ApiException("Missing the required parameter 'environmentKey' when calling deleteContextInstances(Async)");
-        }
-
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling deleteContextInstances(Async)");
-        }
-
-        return deleteContextInstancesCall(projectKey, environmentKey, id, _callback);
-
-    }
-
-    /**
-     * Delete context instances
-     * Delete context instances by ID.
-     * @param projectKey The project key (required)
-     * @param environmentKey The environment key (required)
-     * @param id The context instance ID (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
-        <tr><td> 410 </td><td> Endpoint deprecated </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
-     </table>
-     */
-    public void deleteContextInstances(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id) throws ApiException {
-        deleteContextInstancesWithHttpInfo(projectKey, environmentKey, id);
-    }
-
-    /**
-     * Delete context instances
-     * Delete context instances by ID.
-     * @param projectKey The project key (required)
-     * @param environmentKey The environment key (required)
-     * @param id The context instance ID (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
-        <tr><td> 410 </td><td> Endpoint deprecated </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> deleteContextInstancesWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id) throws ApiException {
-        okhttp3.Call localVarCall = deleteContextInstancesValidateBeforeCall(projectKey, environmentKey, id, null);
-        return localVarApiClient.execute(localVarCall);
-    }
-
-    /**
-     * Delete context instances (asynchronously)
-     * Delete context instances by ID.
-     * @param projectKey The project key (required)
-     * @param environmentKey The environment key (required)
-     * @param id The context instance ID (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Action succeeded </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Invalid resource identifier </td><td>  -  </td></tr>
-        <tr><td> 410 </td><td> Endpoint deprecated </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call deleteContextInstancesAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = deleteContextInstancesValidateBeforeCall(projectKey, environmentKey, id, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
-        return localVarCall;
-    }
     /**
      * Build call for evaluateContextInstance
      * @param projectKey The project key (required)
@@ -456,7 +287,7 @@ public class ContextsApi {
      * Build call for getContextAttributeNames
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
-     * @param filter A comma-separated list of context filters. This endpoint only accepts &#x60;kind&#x60; filters, with the &#x60;equals&#x60; operator, and &#x60;name&#x60; filters, with the &#x60;startsWith&#x60; operator. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
+     * @param filter A comma-separated list of context filters. This endpoint only accepts &#x60;kind&#x60; filters, with the &#x60;equals&#x60; operator, and &#x60;name&#x60; filters, with the &#x60;startsWith&#x60; operator. To learn more about the filter syntax, read [Filtering contexts](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts). (optional)
      * @param limit Specifies the maximum number of items in the collection to return (max: 100, default: 100) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -547,7 +378,7 @@ public class ContextsApi {
      * Get context attribute names.
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
-     * @param filter A comma-separated list of context filters. This endpoint only accepts &#x60;kind&#x60; filters, with the &#x60;equals&#x60; operator, and &#x60;name&#x60; filters, with the &#x60;startsWith&#x60; operator. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
+     * @param filter A comma-separated list of context filters. This endpoint only accepts &#x60;kind&#x60; filters, with the &#x60;equals&#x60; operator, and &#x60;name&#x60; filters, with the &#x60;startsWith&#x60; operator. To learn more about the filter syntax, read [Filtering contexts](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts). (optional)
      * @param limit Specifies the maximum number of items in the collection to return (max: 100, default: 100) (optional)
      * @return ContextAttributeNamesCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -572,7 +403,7 @@ public class ContextsApi {
      * Get context attribute names.
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
-     * @param filter A comma-separated list of context filters. This endpoint only accepts &#x60;kind&#x60; filters, with the &#x60;equals&#x60; operator, and &#x60;name&#x60; filters, with the &#x60;startsWith&#x60; operator. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
+     * @param filter A comma-separated list of context filters. This endpoint only accepts &#x60;kind&#x60; filters, with the &#x60;equals&#x60; operator, and &#x60;name&#x60; filters, with the &#x60;startsWith&#x60; operator. To learn more about the filter syntax, read [Filtering contexts](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts). (optional)
      * @param limit Specifies the maximum number of items in the collection to return (max: 100, default: 100) (optional)
      * @return ApiResponse&lt;ContextAttributeNamesCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -598,7 +429,7 @@ public class ContextsApi {
      * Get context attribute names.
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
-     * @param filter A comma-separated list of context filters. This endpoint only accepts &#x60;kind&#x60; filters, with the &#x60;equals&#x60; operator, and &#x60;name&#x60; filters, with the &#x60;startsWith&#x60; operator. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
+     * @param filter A comma-separated list of context filters. This endpoint only accepts &#x60;kind&#x60; filters, with the &#x60;equals&#x60; operator, and &#x60;name&#x60; filters, with the &#x60;startsWith&#x60; operator. To learn more about the filter syntax, read [Filtering contexts](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts). (optional)
      * @param limit Specifies the maximum number of items in the collection to return (max: 100, default: 100) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -626,7 +457,7 @@ public class ContextsApi {
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
      * @param attributeName The attribute name (required)
-     * @param filter A comma-separated list of context filters. This endpoint only accepts &#x60;kind&#x60; filters, with the &#x60;equals&#x60; operator, and &#x60;value&#x60; filters, with the &#x60;startsWith&#x60; operator. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
+     * @param filter A comma-separated list of context filters. This endpoint requires a &#x60;kind&#x60; filter, with the &#x60;equals&#x60; operator, and also accepts a &#x60;value&#x60; filter, with the &#x60;startsWith&#x60; operator. To learn more about the filter syntax, read [Filtering contexts](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts). (optional)
      * @param limit Specifies the maximum number of items in the collection to return (max: 100, default: 50) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -724,7 +555,7 @@ public class ContextsApi {
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
      * @param attributeName The attribute name (required)
-     * @param filter A comma-separated list of context filters. This endpoint only accepts &#x60;kind&#x60; filters, with the &#x60;equals&#x60; operator, and &#x60;value&#x60; filters, with the &#x60;startsWith&#x60; operator. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
+     * @param filter A comma-separated list of context filters. This endpoint requires a &#x60;kind&#x60; filter, with the &#x60;equals&#x60; operator, and also accepts a &#x60;value&#x60; filter, with the &#x60;startsWith&#x60; operator. To learn more about the filter syntax, read [Filtering contexts](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts). (optional)
      * @param limit Specifies the maximum number of items in the collection to return (max: 100, default: 50) (optional)
      * @return ContextAttributeValuesCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -750,7 +581,7 @@ public class ContextsApi {
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
      * @param attributeName The attribute name (required)
-     * @param filter A comma-separated list of context filters. This endpoint only accepts &#x60;kind&#x60; filters, with the &#x60;equals&#x60; operator, and &#x60;value&#x60; filters, with the &#x60;startsWith&#x60; operator. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
+     * @param filter A comma-separated list of context filters. This endpoint requires a &#x60;kind&#x60; filter, with the &#x60;equals&#x60; operator, and also accepts a &#x60;value&#x60; filter, with the &#x60;startsWith&#x60; operator. To learn more about the filter syntax, read [Filtering contexts](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts). (optional)
      * @param limit Specifies the maximum number of items in the collection to return (max: 100, default: 50) (optional)
      * @return ApiResponse&lt;ContextAttributeValuesCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -777,7 +608,7 @@ public class ContextsApi {
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
      * @param attributeName The attribute name (required)
-     * @param filter A comma-separated list of context filters. This endpoint only accepts &#x60;kind&#x60; filters, with the &#x60;equals&#x60; operator, and &#x60;value&#x60; filters, with the &#x60;startsWith&#x60; operator. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
+     * @param filter A comma-separated list of context filters. This endpoint requires a &#x60;kind&#x60; filter, with the &#x60;equals&#x60; operator, and also accepts a &#x60;value&#x60; filter, with the &#x60;startsWith&#x60; operator. To learn more about the filter syntax, read [Filtering contexts](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts). (optional)
      * @param limit Specifies the maximum number of items in the collection to return (max: 100, default: 50) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -797,209 +628,6 @@ public class ContextsApi {
 
         okhttp3.Call localVarCall = getContextAttributeValuesValidateBeforeCall(projectKey, environmentKey, attributeName, filter, limit, _callback);
         Type localVarReturnType = new TypeToken<ContextAttributeValuesCollection>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for getContextInstances
-     * @param projectKey The project key (required)
-     * @param environmentKey The environment key (required)
-     * @param id The context instance ID (required)
-     * @param limit Specifies the maximum number of context instances to return (max: 50, default: 20) (optional)
-     * @param continuationToken Limits results to context instances with sort values after the value specified. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
-     * @param sort Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying &#x60;ts&#x60; for this value, or descending order by specifying &#x60;-ts&#x60;. (optional)
-     * @param filter A comma-separated list of context filters. This endpoint only accepts an &#x60;applicationId&#x60; filter. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
-     * @param includeTotalCount Specifies whether to include or omit the total count of matching context instances. Defaults to true. (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Context instances collection response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getContextInstancesCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v2/projects/{projectKey}/environments/{environmentKey}/context-instances/{id}"
-            .replace("{" + "projectKey" + "}", localVarApiClient.escapeString(projectKey.toString()))
-            .replace("{" + "environmentKey" + "}", localVarApiClient.escapeString(environmentKey.toString()))
-            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (limit != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
-        }
-
-        if (continuationToken != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("continuationToken", continuationToken));
-        }
-
-        if (sort != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
-        }
-
-        if (filter != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter", filter));
-        }
-
-        if (includeTotalCount != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("includeTotalCount", includeTotalCount));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call getContextInstancesValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'projectKey' is set
-        if (projectKey == null) {
-            throw new ApiException("Missing the required parameter 'projectKey' when calling getContextInstances(Async)");
-        }
-
-        // verify the required parameter 'environmentKey' is set
-        if (environmentKey == null) {
-            throw new ApiException("Missing the required parameter 'environmentKey' when calling getContextInstances(Async)");
-        }
-
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling getContextInstances(Async)");
-        }
-
-        return getContextInstancesCall(projectKey, environmentKey, id, limit, continuationToken, sort, filter, includeTotalCount, _callback);
-
-    }
-
-    /**
-     * Get context instances
-     * Get context instances by ID.
-     * @param projectKey The project key (required)
-     * @param environmentKey The environment key (required)
-     * @param id The context instance ID (required)
-     * @param limit Specifies the maximum number of context instances to return (max: 50, default: 20) (optional)
-     * @param continuationToken Limits results to context instances with sort values after the value specified. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
-     * @param sort Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying &#x60;ts&#x60; for this value, or descending order by specifying &#x60;-ts&#x60;. (optional)
-     * @param filter A comma-separated list of context filters. This endpoint only accepts an &#x60;applicationId&#x60; filter. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
-     * @param includeTotalCount Specifies whether to include or omit the total count of matching context instances. Defaults to true. (optional)
-     * @return ContextInstances
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Context instances collection response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
-     </table>
-     */
-    public ContextInstances getContextInstances(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount) throws ApiException {
-        ApiResponse<ContextInstances> localVarResp = getContextInstancesWithHttpInfo(projectKey, environmentKey, id, limit, continuationToken, sort, filter, includeTotalCount);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Get context instances
-     * Get context instances by ID.
-     * @param projectKey The project key (required)
-     * @param environmentKey The environment key (required)
-     * @param id The context instance ID (required)
-     * @param limit Specifies the maximum number of context instances to return (max: 50, default: 20) (optional)
-     * @param continuationToken Limits results to context instances with sort values after the value specified. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
-     * @param sort Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying &#x60;ts&#x60; for this value, or descending order by specifying &#x60;-ts&#x60;. (optional)
-     * @param filter A comma-separated list of context filters. This endpoint only accepts an &#x60;applicationId&#x60; filter. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
-     * @param includeTotalCount Specifies whether to include or omit the total count of matching context instances. Defaults to true. (optional)
-     * @return ApiResponse&lt;ContextInstances&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Context instances collection response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<ContextInstances> getContextInstancesWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount) throws ApiException {
-        okhttp3.Call localVarCall = getContextInstancesValidateBeforeCall(projectKey, environmentKey, id, limit, continuationToken, sort, filter, includeTotalCount, null);
-        Type localVarReturnType = new TypeToken<ContextInstances>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Get context instances (asynchronously)
-     * Get context instances by ID.
-     * @param projectKey The project key (required)
-     * @param environmentKey The environment key (required)
-     * @param id The context instance ID (required)
-     * @param limit Specifies the maximum number of context instances to return (max: 50, default: 20) (optional)
-     * @param continuationToken Limits results to context instances with sort values after the value specified. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
-     * @param sort Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying &#x60;ts&#x60; for this value, or descending order by specifying &#x60;-ts&#x60;. (optional)
-     * @param filter A comma-separated list of context filters. This endpoint only accepts an &#x60;applicationId&#x60; filter. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
-     * @param includeTotalCount Specifies whether to include or omit the total count of matching context instances. Defaults to true. (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Context instances collection response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getContextInstancesAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull String id, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount, final ApiCallback<ContextInstances> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = getContextInstancesValidateBeforeCall(projectKey, environmentKey, id, limit, continuationToken, sort, filter, includeTotalCount, _callback);
-        Type localVarReturnType = new TypeToken<ContextInstances>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1157,9 +785,9 @@ public class ContextsApi {
      * @param kind The context kind (required)
      * @param key The context key (required)
      * @param limit Specifies the maximum number of items in the collection to return (max: 50, default: 20) (optional)
-     * @param continuationToken Limits results to contexts with sort values after the value specified. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
-     * @param sort Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying &#x60;ts&#x60; for this value, or descending order by specifying &#x60;-ts&#x60;. (optional)
-     * @param filter A comma-separated list of context filters. This endpoint only accepts an &#x60;applicationId&#x60; filter. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
+     * @param continuationToken An opaque cursor that identifies the next page of results. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
+     * @param sort Deprecated. This endpoint does not support sorting. Requests that include this parameter are rejected with a &#x60;400&#x60; response, so omit it. Results are always sorted by context kind and key. (optional)
+     * @param filter A comma-separated list of context filters. This endpoint only accepts an &#x60;applicationId&#x60; filter. To learn more about the filter syntax, read [Filtering contexts](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts). (optional)
      * @param includeTotalCount Specifies whether to include or omit the total count of matching contexts. Defaults to true. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1271,15 +899,15 @@ public class ContextsApi {
 
     /**
      * Get contexts
-     * Get contexts based on kind and key.
+     * Get contexts based on kind and key. Returns one item for each application from which LaunchDarkly has received the context, with the &#x60;applicationId&#x60; field populated.
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
      * @param kind The context kind (required)
      * @param key The context key (required)
      * @param limit Specifies the maximum number of items in the collection to return (max: 50, default: 20) (optional)
-     * @param continuationToken Limits results to contexts with sort values after the value specified. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
-     * @param sort Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying &#x60;ts&#x60; for this value, or descending order by specifying &#x60;-ts&#x60;. (optional)
-     * @param filter A comma-separated list of context filters. This endpoint only accepts an &#x60;applicationId&#x60; filter. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
+     * @param continuationToken An opaque cursor that identifies the next page of results. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
+     * @param sort Deprecated. This endpoint does not support sorting. Requests that include this parameter are rejected with a &#x60;400&#x60; response, so omit it. Results are always sorted by context kind and key. (optional)
+     * @param filter A comma-separated list of context filters. This endpoint only accepts an &#x60;applicationId&#x60; filter. To learn more about the filter syntax, read [Filtering contexts](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts). (optional)
      * @param includeTotalCount Specifies whether to include or omit the total count of matching contexts. Defaults to true. (optional)
      * @return Contexts
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1301,15 +929,15 @@ public class ContextsApi {
 
     /**
      * Get contexts
-     * Get contexts based on kind and key.
+     * Get contexts based on kind and key. Returns one item for each application from which LaunchDarkly has received the context, with the &#x60;applicationId&#x60; field populated.
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
      * @param kind The context kind (required)
      * @param key The context key (required)
      * @param limit Specifies the maximum number of items in the collection to return (max: 50, default: 20) (optional)
-     * @param continuationToken Limits results to contexts with sort values after the value specified. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
-     * @param sort Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying &#x60;ts&#x60; for this value, or descending order by specifying &#x60;-ts&#x60;. (optional)
-     * @param filter A comma-separated list of context filters. This endpoint only accepts an &#x60;applicationId&#x60; filter. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
+     * @param continuationToken An opaque cursor that identifies the next page of results. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
+     * @param sort Deprecated. This endpoint does not support sorting. Requests that include this parameter are rejected with a &#x60;400&#x60; response, so omit it. Results are always sorted by context kind and key. (optional)
+     * @param filter A comma-separated list of context filters. This endpoint only accepts an &#x60;applicationId&#x60; filter. To learn more about the filter syntax, read [Filtering contexts](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts). (optional)
      * @param includeTotalCount Specifies whether to include or omit the total count of matching contexts. Defaults to true. (optional)
      * @return ApiResponse&lt;Contexts&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1332,15 +960,15 @@ public class ContextsApi {
 
     /**
      * Get contexts (asynchronously)
-     * Get contexts based on kind and key.
+     * Get contexts based on kind and key. Returns one item for each application from which LaunchDarkly has received the context, with the &#x60;applicationId&#x60; field populated.
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
      * @param kind The context kind (required)
      * @param key The context key (required)
      * @param limit Specifies the maximum number of items in the collection to return (max: 50, default: 20) (optional)
-     * @param continuationToken Limits results to contexts with sort values after the value specified. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
-     * @param sort Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying &#x60;ts&#x60; for this value, or descending order by specifying &#x60;-ts&#x60;. (optional)
-     * @param filter A comma-separated list of context filters. This endpoint only accepts an &#x60;applicationId&#x60; filter. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
+     * @param continuationToken An opaque cursor that identifies the next page of results. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
+     * @param sort Deprecated. This endpoint does not support sorting. Requests that include this parameter are rejected with a &#x60;400&#x60; response, so omit it. Results are always sorted by context kind and key. (optional)
+     * @param filter A comma-separated list of context filters. This endpoint only accepts an &#x60;applicationId&#x60; filter. To learn more about the filter syntax, read [Filtering contexts](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts). (optional)
      * @param includeTotalCount Specifies whether to include or omit the total count of matching contexts. Defaults to true. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1527,218 +1155,15 @@ public class ContextsApi {
         return localVarCall;
     }
     /**
-     * Build call for searchContextInstances
-     * @param projectKey The project key (required)
-     * @param environmentKey The environment key (required)
-     * @param contextInstanceSearch  (required)
-     * @param limit Specifies the maximum number of items in the collection to return (max: 50, default: 20) (optional)
-     * @param continuationToken Limits results to context instances with sort values after the value specified. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
-     * @param sort Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying &#x60;ts&#x60; for this value, or descending order by specifying &#x60;-ts&#x60;. (optional)
-     * @param filter A comma-separated list of context filters. This endpoint only accepts an &#x60;applicationId&#x60; filter. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
-     * @param includeTotalCount Specifies whether to include or omit the total count of matching context instances. Defaults to true. (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Context instances collection response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call searchContextInstancesCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull ContextInstanceSearch contextInstanceSearch, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = contextInstanceSearch;
-
-        // create path and map variables
-        String localVarPath = "/api/v2/projects/{projectKey}/environments/{environmentKey}/context-instances/search"
-            .replace("{" + "projectKey" + "}", localVarApiClient.escapeString(projectKey.toString()))
-            .replace("{" + "environmentKey" + "}", localVarApiClient.escapeString(environmentKey.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (limit != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
-        }
-
-        if (continuationToken != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("continuationToken", continuationToken));
-        }
-
-        if (sort != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
-        }
-
-        if (filter != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter", filter));
-        }
-
-        if (includeTotalCount != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("includeTotalCount", includeTotalCount));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call searchContextInstancesValidateBeforeCall(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull ContextInstanceSearch contextInstanceSearch, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'projectKey' is set
-        if (projectKey == null) {
-            throw new ApiException("Missing the required parameter 'projectKey' when calling searchContextInstances(Async)");
-        }
-
-        // verify the required parameter 'environmentKey' is set
-        if (environmentKey == null) {
-            throw new ApiException("Missing the required parameter 'environmentKey' when calling searchContextInstances(Async)");
-        }
-
-        // verify the required parameter 'contextInstanceSearch' is set
-        if (contextInstanceSearch == null) {
-            throw new ApiException("Missing the required parameter 'contextInstanceSearch' when calling searchContextInstances(Async)");
-        }
-
-        return searchContextInstancesCall(projectKey, environmentKey, contextInstanceSearch, limit, continuationToken, sort, filter, includeTotalCount, _callback);
-
-    }
-
-    /**
-     * Search for context instances
-     *  Search for context instances.  You can use either the query parameters or the request body parameters. If both are provided, there is an error.  To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/api/contexts#filtering-contexts-and-context-instances). To learn more about context instances, read [Context instances](https://launchdarkly.com/docs/home/observability/multi-contexts#context-instances). 
-     * @param projectKey The project key (required)
-     * @param environmentKey The environment key (required)
-     * @param contextInstanceSearch  (required)
-     * @param limit Specifies the maximum number of items in the collection to return (max: 50, default: 20) (optional)
-     * @param continuationToken Limits results to context instances with sort values after the value specified. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
-     * @param sort Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying &#x60;ts&#x60; for this value, or descending order by specifying &#x60;-ts&#x60;. (optional)
-     * @param filter A comma-separated list of context filters. This endpoint only accepts an &#x60;applicationId&#x60; filter. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
-     * @param includeTotalCount Specifies whether to include or omit the total count of matching context instances. Defaults to true. (optional)
-     * @return ContextInstances
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Context instances collection response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
-     </table>
-     */
-    public ContextInstances searchContextInstances(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull ContextInstanceSearch contextInstanceSearch, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount) throws ApiException {
-        ApiResponse<ContextInstances> localVarResp = searchContextInstancesWithHttpInfo(projectKey, environmentKey, contextInstanceSearch, limit, continuationToken, sort, filter, includeTotalCount);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Search for context instances
-     *  Search for context instances.  You can use either the query parameters or the request body parameters. If both are provided, there is an error.  To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/api/contexts#filtering-contexts-and-context-instances). To learn more about context instances, read [Context instances](https://launchdarkly.com/docs/home/observability/multi-contexts#context-instances). 
-     * @param projectKey The project key (required)
-     * @param environmentKey The environment key (required)
-     * @param contextInstanceSearch  (required)
-     * @param limit Specifies the maximum number of items in the collection to return (max: 50, default: 20) (optional)
-     * @param continuationToken Limits results to context instances with sort values after the value specified. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
-     * @param sort Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying &#x60;ts&#x60; for this value, or descending order by specifying &#x60;-ts&#x60;. (optional)
-     * @param filter A comma-separated list of context filters. This endpoint only accepts an &#x60;applicationId&#x60; filter. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
-     * @param includeTotalCount Specifies whether to include or omit the total count of matching context instances. Defaults to true. (optional)
-     * @return ApiResponse&lt;ContextInstances&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Context instances collection response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<ContextInstances> searchContextInstancesWithHttpInfo(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull ContextInstanceSearch contextInstanceSearch, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount) throws ApiException {
-        okhttp3.Call localVarCall = searchContextInstancesValidateBeforeCall(projectKey, environmentKey, contextInstanceSearch, limit, continuationToken, sort, filter, includeTotalCount, null);
-        Type localVarReturnType = new TypeToken<ContextInstances>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Search for context instances (asynchronously)
-     *  Search for context instances.  You can use either the query parameters or the request body parameters. If both are provided, there is an error.  To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/api/contexts#filtering-contexts-and-context-instances). To learn more about context instances, read [Context instances](https://launchdarkly.com/docs/home/observability/multi-contexts#context-instances). 
-     * @param projectKey The project key (required)
-     * @param environmentKey The environment key (required)
-     * @param contextInstanceSearch  (required)
-     * @param limit Specifies the maximum number of items in the collection to return (max: 50, default: 20) (optional)
-     * @param continuationToken Limits results to context instances with sort values after the value specified. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
-     * @param sort Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying &#x60;ts&#x60; for this value, or descending order by specifying &#x60;-ts&#x60;. (optional)
-     * @param filter A comma-separated list of context filters. This endpoint only accepts an &#x60;applicationId&#x60; filter. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
-     * @param includeTotalCount Specifies whether to include or omit the total count of matching context instances. Defaults to true. (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Context instances collection response </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid access token </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Rate limited </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call searchContextInstancesAsync(@javax.annotation.Nonnull String projectKey, @javax.annotation.Nonnull String environmentKey, @javax.annotation.Nonnull ContextInstanceSearch contextInstanceSearch, @javax.annotation.Nullable Long limit, @javax.annotation.Nullable String continuationToken, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String filter, @javax.annotation.Nullable Boolean includeTotalCount, final ApiCallback<ContextInstances> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = searchContextInstancesValidateBeforeCall(projectKey, environmentKey, contextInstanceSearch, limit, continuationToken, sort, filter, includeTotalCount, _callback);
-        Type localVarReturnType = new TypeToken<ContextInstances>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
      * Build call for searchContexts
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
      * @param contextSearch  (required)
      * @param limit Specifies the maximum number of items in the collection to return (max: 50, default: 20) (optional)
-     * @param continuationToken Limits results to contexts with sort values after the value specified. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
-     * @param sort Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying &#x60;ts&#x60; for this value, or descending order by specifying &#x60;-ts&#x60;. (optional)
-     * @param filter A comma-separated list of context filters. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
-     * @param includeTotalCount Specifies whether to include or omit the total count of matching contexts. Defaults to true. (optional)
+     * @param continuationToken An opaque cursor that identifies the next page of results. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
+     * @param sort Deprecated. This endpoint does not support sorting. Requests that include this parameter are rejected with a &#x60;400&#x60; response, so omit it. Results are always sorted by context kind and key. (optional)
+     * @param filter A comma-separated list of context filters. To learn more about the filter syntax, read [Filtering contexts](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts). (optional)
+     * @param includeTotalCount Specifies whether to include or omit the total count of matching contexts. Defaults to true. The total count is approximate and may be omitted if it is unavailable. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1843,15 +1268,15 @@ public class ContextsApi {
 
     /**
      * Search for contexts
-     *  Search for contexts.  You can use either the query parameters or the request body parameters. If both are provided, there is an error.  To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/api/contexts#filtering-contexts-and-context-instances). To learn more about contexts, read [Contexts and context kinds](https://launchdarkly.com/docs/home/observability/contexts#contexts-and-context-kinds). 
+     *  Search for contexts.  You can use either the query parameters or the request body parameters. If both are provided, there is an error.  Results are sorted by context kind and key. Each context appears once, with its most recently reported attributes. Results include contexts that LaunchDarkly has received within the last 30 days.  To learn more about the filter syntax, read [Filtering contexts](https://launchdarkly.com/docs/api/contexts#filtering-contexts). To learn more about contexts, read [Contexts](https://launchdarkly.com/docs/home/flags/contexts). 
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
      * @param contextSearch  (required)
      * @param limit Specifies the maximum number of items in the collection to return (max: 50, default: 20) (optional)
-     * @param continuationToken Limits results to contexts with sort values after the value specified. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
-     * @param sort Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying &#x60;ts&#x60; for this value, or descending order by specifying &#x60;-ts&#x60;. (optional)
-     * @param filter A comma-separated list of context filters. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
-     * @param includeTotalCount Specifies whether to include or omit the total count of matching contexts. Defaults to true. (optional)
+     * @param continuationToken An opaque cursor that identifies the next page of results. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
+     * @param sort Deprecated. This endpoint does not support sorting. Requests that include this parameter are rejected with a &#x60;400&#x60; response, so omit it. Results are always sorted by context kind and key. (optional)
+     * @param filter A comma-separated list of context filters. To learn more about the filter syntax, read [Filtering contexts](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts). (optional)
+     * @param includeTotalCount Specifies whether to include or omit the total count of matching contexts. Defaults to true. The total count is approximate and may be omitted if it is unavailable. (optional)
      * @return Contexts
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1872,15 +1297,15 @@ public class ContextsApi {
 
     /**
      * Search for contexts
-     *  Search for contexts.  You can use either the query parameters or the request body parameters. If both are provided, there is an error.  To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/api/contexts#filtering-contexts-and-context-instances). To learn more about contexts, read [Contexts and context kinds](https://launchdarkly.com/docs/home/observability/contexts#contexts-and-context-kinds). 
+     *  Search for contexts.  You can use either the query parameters or the request body parameters. If both are provided, there is an error.  Results are sorted by context kind and key. Each context appears once, with its most recently reported attributes. Results include contexts that LaunchDarkly has received within the last 30 days.  To learn more about the filter syntax, read [Filtering contexts](https://launchdarkly.com/docs/api/contexts#filtering-contexts). To learn more about contexts, read [Contexts](https://launchdarkly.com/docs/home/flags/contexts). 
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
      * @param contextSearch  (required)
      * @param limit Specifies the maximum number of items in the collection to return (max: 50, default: 20) (optional)
-     * @param continuationToken Limits results to contexts with sort values after the value specified. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
-     * @param sort Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying &#x60;ts&#x60; for this value, or descending order by specifying &#x60;-ts&#x60;. (optional)
-     * @param filter A comma-separated list of context filters. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
-     * @param includeTotalCount Specifies whether to include or omit the total count of matching contexts. Defaults to true. (optional)
+     * @param continuationToken An opaque cursor that identifies the next page of results. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
+     * @param sort Deprecated. This endpoint does not support sorting. Requests that include this parameter are rejected with a &#x60;400&#x60; response, so omit it. Results are always sorted by context kind and key. (optional)
+     * @param filter A comma-separated list of context filters. To learn more about the filter syntax, read [Filtering contexts](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts). (optional)
+     * @param includeTotalCount Specifies whether to include or omit the total count of matching contexts. Defaults to true. The total count is approximate and may be omitted if it is unavailable. (optional)
      * @return ApiResponse&lt;Contexts&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1902,15 +1327,15 @@ public class ContextsApi {
 
     /**
      * Search for contexts (asynchronously)
-     *  Search for contexts.  You can use either the query parameters or the request body parameters. If both are provided, there is an error.  To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/api/contexts#filtering-contexts-and-context-instances). To learn more about contexts, read [Contexts and context kinds](https://launchdarkly.com/docs/home/observability/contexts#contexts-and-context-kinds). 
+     *  Search for contexts.  You can use either the query parameters or the request body parameters. If both are provided, there is an error.  Results are sorted by context kind and key. Each context appears once, with its most recently reported attributes. Results include contexts that LaunchDarkly has received within the last 30 days.  To learn more about the filter syntax, read [Filtering contexts](https://launchdarkly.com/docs/api/contexts#filtering-contexts). To learn more about contexts, read [Contexts](https://launchdarkly.com/docs/home/flags/contexts). 
      * @param projectKey The project key (required)
      * @param environmentKey The environment key (required)
      * @param contextSearch  (required)
      * @param limit Specifies the maximum number of items in the collection to return (max: 50, default: 20) (optional)
-     * @param continuationToken Limits results to contexts with sort values after the value specified. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
-     * @param sort Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying &#x60;ts&#x60; for this value, or descending order by specifying &#x60;-ts&#x60;. (optional)
-     * @param filter A comma-separated list of context filters. To learn more about the filter syntax, read [Filtering contexts and context instances](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts-and-context-instances). (optional)
-     * @param includeTotalCount Specifies whether to include or omit the total count of matching contexts. Defaults to true. (optional)
+     * @param continuationToken An opaque cursor that identifies the next page of results. You can use this for pagination, however, we recommend using the &#x60;next&#x60; link we provide instead. (optional)
+     * @param sort Deprecated. This endpoint does not support sorting. Requests that include this parameter are rejected with a &#x60;400&#x60; response, so omit it. Results are always sorted by context kind and key. (optional)
+     * @param filter A comma-separated list of context filters. To learn more about the filter syntax, read [Filtering contexts](https://launchdarkly.com/docs/ld-docs/api/contexts#filtering-contexts). (optional)
+     * @param includeTotalCount Specifies whether to include or omit the total count of matching contexts. Defaults to true. The total count is approximate and may be omitted if it is unavailable. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**contextKind** | **String** |  |  |
-|**values** | **List&lt;String&gt;** |  |  |
-|**variation** | **Integer** |  |  |
+|**contextKind** | **String** | The context kind |  |
+|**values** | **List&lt;String&gt;** | The context keys to target |  |
+|**variation** | **Integer** | Index of the variation to serve |  |
 
 
 

@@ -191,7 +191,7 @@ public class Example {
 
     IpAllowlistBetaApi apiInstance = new IpAllowlistBetaApi(defaultClient);
     String search = "search_example"; // String | A case-insensitive substring to filter entries by. Matches against the IP address or CIDR block and the description.
-    Integer limit = 56; // Integer | The number of entries to return. When omitted, all matching entries are returned. Maximum is 100.
+    Integer limit = 56; // Integer | The number of entries to return. Defaults to 20. Maximum is 100.
     Integer offset = 56; // Integer | The number of entries to skip. Used for pagination.
     try {
       IpAllowlistResponse result = apiInstance.getIpAllowlist(search, limit, offset);
@@ -212,7 +212,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **search** | **String**| A case-insensitive substring to filter entries by. Matches against the IP address or CIDR block and the description. | [optional] |
-| **limit** | **Integer**| The number of entries to return. When omitted, all matching entries are returned. Maximum is 100. | [optional] |
+| **limit** | **Integer**| The number of entries to return. Defaults to 20. Maximum is 100. | [optional] |
 | **offset** | **Integer**| The number of entries to skip. Used for pagination. | [optional] |
 
 ### Return type

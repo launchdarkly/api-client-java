@@ -20,7 +20,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 Create experiment
 
-Create an experiment.  To run this experiment, you&#39;ll need to [create an iteration](https://launchdarkly.com/docs/api/experiments/create-iteration) and then [update the experiment](https://launchdarkly.com/docs/api/experiments/patch-experiment) with the &#x60;startIteration&#x60; instruction.  ### Experiment types  Use the &#x60;type&#x60; field to specify the experiment type: &#x60;experiment&#x60; (default), &#x60;mab&#x60; (multi-armed bandit), or &#x60;holdout&#x60;.  For multi-armed bandit experiments, set &#x60;reallocationFrequencyMillis&#x60; on the iteration to control how often traffic is reallocated across variations.  ### Results analysis  Use the &#x60;methodology&#x60; field to specify the results analysis approach: &#x60;bayesian&#x60; (default) or &#x60;frequentist&#x60;.  Use the &#x60;dataSource&#x60; field to specify the source of metric data: &#x60;launchdarkly&#x60; (default), &#x60;snowflake&#x60;, or &#x60;databricks&#x60;.  Use the &#x60;analysisConfig&#x60; field to customize analysis settings such as the Bayesian threshold, significance threshold, or multiple comparison correction method.  To learn more, read [Creating experiments](https://launchdarkly.com/docs/home/experimentation/create). 
+Create an experiment.  To run this experiment, you&#39;ll need to [create an iteration](https://launchdarkly.com/docs/api/experiments/create-iteration) and then [update the experiment](https://launchdarkly.com/docs/api/experiments/patch-experiment) with the &#x60;startIteration&#x60; instruction.  ### Experiment types  Use the &#x60;type&#x60; field to specify the experiment type: &#x60;experiment&#x60; (default), &#x60;mab&#x60; (multi-armed bandit), or &#x60;holdout&#x60;.  For multi-armed bandit experiments, set &#x60;reallocationFrequencyMillis&#x60; on the iteration to control how often traffic is reallocated across variations.  ### Results analysis  Use the &#x60;methodology&#x60; field to specify the results analysis approach: &#x60;frequentist&#x60; (default) or &#x60;bayesian&#x60;. Multi-armed bandit experiments support only &#x60;bayesian&#x60;, which is their default.  Use the &#x60;dataSource&#x60; field to specify the source of metric data: &#x60;launchdarkly&#x60; (default), &#x60;snowflake&#x60;, or &#x60;databricks&#x60;.  Use the &#x60;analysisConfig&#x60; field to customize analysis settings such as the Bayesian threshold, significance threshold, or multiple comparison correction method.  To learn more, read [Creating experiments](https://launchdarkly.com/docs/home/experimentation/create). 
 
 ### Example
 ```java
@@ -579,6 +579,7 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **404** | Invalid resource identifier |  -  |
 | **409** | Conflict |  -  |
+| **422** | The patch cannot be applied |  -  |
 | **429** | Rate limited |  -  |
 
 <a id="putExperimentationSettings"></a>

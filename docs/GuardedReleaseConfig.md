@@ -13,7 +13,7 @@ Configuration for guarded releases
 |**rollbackOnRegression** | **Boolean** | Whether to roll back on regression |  [optional] |
 |**metricKeys** | **List&lt;String&gt;** | List of metric keys |  [optional] |
 |**metricGroupKeys** | **List&lt;String&gt;** | List of metric group keys |  [optional] |
-|**stages** | [**List&lt;ReleasePolicyStage&gt;**](ReleasePolicyStage.md) | List of stages |  [optional] |
+|**stages** | [**List&lt;ReleasePolicyStage&gt;**](ReleasePolicyStage.md) | List of stages. At most 10 stages by default; the server enforces the per-account limit, which is never more than 20. |  [optional] |
 
 
 

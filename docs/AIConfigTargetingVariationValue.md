@@ -2,6 +2,7 @@
 
 # AIConfigTargetingVariationValue
 
+The variation value
 
 ## Properties
 

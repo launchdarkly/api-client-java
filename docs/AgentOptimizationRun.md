@@ -7,14 +7,14 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**runId** | **UUID** |  |  |
-|**optimizationKey** | **String** |  |  |
-|**agentOptimizationId** | **UUID** |  |  |
-|**agentOptimizationVersion** | **Integer** |  |  |
+|**runId** | **UUID** | The run ID |  |
+|**optimizationKey** | **String** | The agent optimization key |  |
+|**agentOptimizationId** | **UUID** | The agent optimization ID |  |
+|**agentOptimizationVersion** | **Integer** | The version of the agent optimization used |  |
 |**status** | **AgentOptimizationResultStatus** |  |  |
 |**activity** | **AgentOptimizationResultActivity** |  |  |
-|**createdAt** | **Long** |  |  |
-|**completedAt** | **Long** |  |  [optional] |
+|**createdAt** | **Long** | When this resource was created, in Unix milliseconds |  |
+|**completedAt** | **Long** | When this finished, in Unix milliseconds |  [optional] |
 
 
 

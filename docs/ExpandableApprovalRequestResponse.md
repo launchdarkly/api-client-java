@@ -16,6 +16,7 @@
 |**reviewStatus** | [**ReviewStatusEnum**](#ReviewStatusEnum) | Current status of the review of this approval request |  |
 |**allReviews** | [**List&lt;ReviewResponse&gt;**](ReviewResponse.md) | An array of individual reviews of this approval request |  |
 |**notifyMemberIds** | **List&lt;String&gt;** | An array of member IDs. These members are notified to review the approval request. |  |
+|**notifyTeamKeys** | **List&lt;String&gt;** | An array of team keys, if teams were specified when the approval request was created. The members of these teams are listed in &lt;code&gt;notifyMemberIds&lt;/code&gt;, resolved when the request was made. Team membership may have changed since then. |  [optional] |
 |**appliedDate** | **Long** |  |  [optional] |
 |**appliedByMemberId** | **String** | The member ID of the member who applied the approval request |  [optional] |
 |**appliedByServiceTokenId** | **String** | The service token ID of the service token which applied the approval request |  [optional] |

@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**content** | **String** |  |  |
-|**role** | **String** |  |  |
+|**content** | **String** | The message text |  |
+|**role** | **String** | The message role, such as system, user, or assistant |  |
 
 
 
