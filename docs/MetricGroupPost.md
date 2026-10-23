@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**key** | **String** | A unique key to reference the metric group |  [optional] |
+|**key** | **String** | A unique key to reference the metric group |  |
 |**name** | **String** | A human-friendly name for the metric group |  |
 |**kind** | [**KindEnum**](#KindEnum) | The type of the metric group |  |
 |**description** | **String** | Description of the metric group |  [optional] |

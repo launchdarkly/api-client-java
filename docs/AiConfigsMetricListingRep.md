@@ -54,6 +54,7 @@
 |**winsorIncludeImputed** | **Boolean** | When true, the percentile bound calculation includes imputed zeros. Only meaningful when at least one bound is set and the metric includes units that didn&#39;t send events. |  [optional] |
 |**traceQuery** | **String** | For trace metrics, the trace query to use for the metric. |  [optional] |
 |**traceValueLocation** | **String** | For trace metrics, the location in the trace to use for numeric values. |  [optional] |
+|**unitAggregationField** | **String** | For count_distinct metrics, the column to count distinct values of |  [optional] |
 |**denominator** | [**AiConfigsMetricDenominatorRep**](AiConfigsMetricDenominatorRep.md) |  |  [optional] |
 
 

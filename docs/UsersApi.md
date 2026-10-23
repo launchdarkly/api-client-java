@@ -15,7 +15,7 @@ All URIs are relative to *https://app.launchdarkly.com*
 
 Find users
 
-&gt; ### Use contexts instead &gt; &gt; After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should use [Search for context instances](https://launchdarkly.com/docs/api/contexts/search-context-instances) instead of this endpoint.  Search users in LaunchDarkly based on their last active date, a user attribute filter set, or a search query.  An example user attribute filter set is &#x60;filter&#x3D;firstName:Anna,activeTrial:false&#x60;. This matches users that have the user attribute &#x60;firstName&#x60; set to &#x60;Anna&#x60;, that also have the attribute &#x60;activeTrial&#x60; set to &#x60;false&#x60;.  To paginate through results, follow the &#x60;next&#x60; link in the &#x60;_links&#x60; object. To learn more, read [Representations](https://launchdarkly.com/docs/api#representations). 
+&gt; ### Use contexts instead &gt; &gt; After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should use [Search for contexts](https://launchdarkly.com/docs/api/contexts/search-contexts) instead of this endpoint.  Search users in LaunchDarkly based on their last active date, a user attribute filter set, or a search query.  An example user attribute filter set is &#x60;filter&#x3D;firstName:Anna,activeTrial:false&#x60;. This matches users that have the user attribute &#x60;firstName&#x60; set to &#x60;Anna&#x60;, that also have the attribute &#x60;activeTrial&#x60; set to &#x60;false&#x60;.  To paginate through results, follow the &#x60;next&#x60; link in the &#x60;_links&#x60; object. To learn more, read [Representations](https://launchdarkly.com/docs/api#representations). 
 
 ### Example
 ```java
@@ -99,7 +99,7 @@ public class Example {
 
 Get user
 
-&gt; ### Use contexts instead &gt; &gt; After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should use [Get context instances](https://launchdarkly.com/docs/api/contexts/get-context-instances) instead of this endpoint.  Get a user by key. The &#x60;user&#x60; object contains all attributes sent in &#x60;variation&#x60; calls for that key. 
+&gt; ### Use contexts instead &gt; &gt; After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should use [Get contexts](https://launchdarkly.com/docs/api/contexts/get-contexts) instead of this endpoint.  Get a user by key. The &#x60;user&#x60; object contains all attributes sent in &#x60;variation&#x60; calls for that key. 
 
 ### Example
 ```java

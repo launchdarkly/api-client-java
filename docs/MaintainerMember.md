@@ -7,11 +7,11 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**id** | **String** |  |  |
-|**email** | **String** |  |  |
-|**firstName** | **String** |  |  [optional] |
-|**lastName** | **String** |  |  [optional] |
-|**role** | **String** |  |  |
+|**id** | **String** | The member ID |  |
+|**email** | **String** | The member email address |  |
+|**firstName** | **String** | The member first name |  [optional] |
+|**lastName** | **String** | The member last name |  [optional] |
+|**role** | **String** | The member role |  |
 
 
 

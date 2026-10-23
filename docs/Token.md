@@ -23,6 +23,7 @@
 |**links** | [**Map&lt;String, Link&gt;**](Link.md) | The location and content type of related resources |  |
 |**defaultApiVersion** | **Integer** | The default API version for this token |  [optional] |
 |**lastUsed** | **Long** |  |  [optional] |
+|**expiry** | **Long** |  |  [optional] |
 
 
 

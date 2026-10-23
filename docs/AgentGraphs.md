@@ -9,8 +9,8 @@ A collection of agent graphs
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**links** | [**PaginatedLinks**](PaginatedLinks.md) |  |  [optional] |
-|**items** | [**List&lt;AgentGraph&gt;**](AgentGraph.md) |  |  |
-|**totalCount** | **Integer** |  |  |
+|**items** | [**List&lt;AgentGraph&gt;**](AgentGraph.md) | The items on this page |  |
+|**totalCount** | **Integer** | The total number of items |  |
 
 
 

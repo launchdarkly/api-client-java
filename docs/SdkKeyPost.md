@@ -12,6 +12,7 @@
 |**name** | **String** | The human-readable name of the SDK key. |  |
 |**description** | **String** | The optional description of the SDK key. |  [optional] |
 |**expiry** | **Long** |  |  [optional] |
+|**viewKeys** | **List&lt;String&gt;** | List of view keys to associate with the SDK key. |  [optional] |
 
 
 

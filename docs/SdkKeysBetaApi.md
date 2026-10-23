@@ -5,10 +5,12 @@ All URIs are relative to *https://app.launchdarkly.com*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**deleteSdkKeyByKey**](SdkKeysBetaApi.md#deleteSdkKeyByKey) | **DELETE** /api/v2/projects/{projectKey}/environments/{environmentKey}/sdk-keys/{sdkKeyKey} | Delete SDK key |
+| [**getProjectSdkKeys**](SdkKeysBetaApi.md#getProjectSdkKeys) | **GET** /api/v2/projects/{projectKey}/sdk-keys | Get all project SDK keys |
 | [**getSdkKeyByKey**](SdkKeysBetaApi.md#getSdkKeyByKey) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/sdk-keys/{sdkKeyKey} | Get SDK key |
 | [**getSdkKeys**](SdkKeysBetaApi.md#getSdkKeys) | **GET** /api/v2/projects/{projectKey}/environments/{environmentKey}/sdk-keys | Get all environment SDK keys |
 | [**patchSdkKeyByKey**](SdkKeysBetaApi.md#patchSdkKeyByKey) | **PATCH** /api/v2/projects/{projectKey}/environments/{environmentKey}/sdk-keys/{sdkKeyKey} | Update SDK key |
 | [**postSdkKey**](SdkKeysBetaApi.md#postSdkKey) | **POST** /api/v2/projects/{projectKey}/environments/{environmentKey}/sdk-keys | Create SDK key |
+| [**putSdkKeyViews**](SdkKeysBetaApi.md#putSdkKeyViews) | **PUT** /api/v2/projects/{projectKey}/environments/{environmentKey}/sdk-keys/{sdkKeyKey}/views | Replace SDK key views |
 
 
 <a id="deleteSdkKeyByKey"></a>
@@ -88,6 +90,91 @@ null (empty response body)
 | **403** | Forbidden |  -  |
 | **404** | Not found |  -  |
 | **409** | Conflict |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="getProjectSdkKeys"></a>
+# **getProjectSdkKeys**
+> SdkKeys getProjectSdkKeys(ldAPIVersion, projectKey, filter, limit, offset, expand, sort)
+
+Get all project SDK keys
+
+Get all SDK keys for a given project across environments.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.SdkKeysBetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    SdkKeysBetaApi apiInstance = new SdkKeysBetaApi(defaultClient);
+    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    String projectKey = "default"; // String | 
+    String filter = "filter_example"; // String | A queryfilter expression to apply to the list of SDK keys. Supports the following fields and operators: `kind` (`equals`, `anyOf`; values: \"sdk\", \"mobile\"), `active` (`equals`, `anyOf`; values: `true`, `false`), `environmentKey` (`equals`, `anyOf`; values: environment keys), `viewKey` (`equals`, `anyOf`; values: view key strings — returns only SDK keys linked to the specified view(s)), `name` (`equals` only; returns SDK keys whose name or key contains the value, matched case-insensitively). Example: `kind anyOf [\"sdk\",\"mobile\"], environmentKey anyOf [\"production\",\"test\"], viewKey equals my-view, name equals \"production\"`.
+    Integer limit = 56; // Integer | The number of SDK keys to return. Defaults to 20. Maximum is 100.
+    Integer offset = 56; // Integer | The number of SDK keys to skip. Used for pagination.
+    String expand = "expand_example"; // String | A comma-separated list of fields to expand in the response. Supported fields: `environmentSummary`, `viewSummaries`.
+    String sort = "createdAt"; // String | A sort to apply to the list of SDK keys. Supported fields: `createdAt` and `environmentKey`. Prefix `createdAt` with `-` to sort in descending order (for example, `-createdAt`). `environmentKey` orders keys by environment key ascending, then by creation time ascending within each environment, so each page is environment-contiguous.
+    try {
+      SdkKeys result = apiInstance.getProjectSdkKeys(ldAPIVersion, projectKey, filter, limit, offset, expand, sort);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling SdkKeysBetaApi#getProjectSdkKeys");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
+| **projectKey** | **String**|  | |
+| **filter** | **String**| A queryfilter expression to apply to the list of SDK keys. Supports the following fields and operators: &#x60;kind&#x60; (&#x60;equals&#x60;, &#x60;anyOf&#x60;; values: \&quot;sdk\&quot;, \&quot;mobile\&quot;), &#x60;active&#x60; (&#x60;equals&#x60;, &#x60;anyOf&#x60;; values: &#x60;true&#x60;, &#x60;false&#x60;), &#x60;environmentKey&#x60; (&#x60;equals&#x60;, &#x60;anyOf&#x60;; values: environment keys), &#x60;viewKey&#x60; (&#x60;equals&#x60;, &#x60;anyOf&#x60;; values: view key strings — returns only SDK keys linked to the specified view(s)), &#x60;name&#x60; (&#x60;equals&#x60; only; returns SDK keys whose name or key contains the value, matched case-insensitively). Example: &#x60;kind anyOf [\&quot;sdk\&quot;,\&quot;mobile\&quot;], environmentKey anyOf [\&quot;production\&quot;,\&quot;test\&quot;], viewKey equals my-view, name equals \&quot;production\&quot;&#x60;. | [optional] |
+| **limit** | **Integer**| The number of SDK keys to return. Defaults to 20. Maximum is 100. | [optional] |
+| **offset** | **Integer**| The number of SDK keys to skip. Used for pagination. | [optional] |
+| **expand** | **String**| A comma-separated list of fields to expand in the response. Supported fields: &#x60;environmentSummary&#x60;, &#x60;viewSummaries&#x60;. | [optional] |
+| **sort** | **String**| A sort to apply to the list of SDK keys. Supported fields: &#x60;createdAt&#x60; and &#x60;environmentKey&#x60;. Prefix &#x60;createdAt&#x60; with &#x60;-&#x60; to sort in descending order (for example, &#x60;-createdAt&#x60;). &#x60;environmentKey&#x60; orders keys by environment key ascending, then by creation time ascending within each environment, so each page is environment-contiguous. | [optional] [enum: createdAt, -createdAt, environmentKey] |
+
+### Return type
+
+[**SdkKeys**](SdkKeys.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+| **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not found |  -  |
 | **500** | Internal server error |  -  |
 
 <a id="getSdkKeyByKey"></a>
@@ -344,7 +431,7 @@ public class Example {
 
 Create SDK key
 
-Create a new server-side or mobile SDK key.
+Create a new server-side or mobile SDK key.  Deleted SDK keys are retained for 180 days. During that period you cannot reuse the &#x60;key&#x60; of a deleted SDK key, even though the deleted key no longer appears in the list of SDK keys for the environment.
 
 ### Example
 ```java
@@ -416,5 +503,88 @@ public class Example {
 | **403** | Forbidden |  -  |
 | **404** | Not found |  -  |
 | **409** | Conflict |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="putSdkKeyViews"></a>
+# **putSdkKeyViews**
+> SdkKeyForPutSdkKeyViews putSdkKeyViews(ldAPIVersion, projectKey, environmentKey, sdkKeyKey, sdkKeyViewsPut, expand)
+
+Replace SDK key views
+
+Replace the set of views associated with an SDK key. The &#x60;viewKeys&#x60; field is required. To remove all views from the SDK key, pass an empty &#x60;viewKeys&#x60; array.
+
+### Example
+```java
+// Import classes:
+import com.launchdarkly.api.ApiClient;
+import com.launchdarkly.api.ApiException;
+import com.launchdarkly.api.Configuration;
+import com.launchdarkly.api.auth.*;
+import com.launchdarkly.api.models.*;
+import com.launchdarkly.api.api.SdkKeysBetaApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://app.launchdarkly.com");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    SdkKeysBetaApi apiInstance = new SdkKeysBetaApi(defaultClient);
+    String ldAPIVersion = "beta"; // String | Version of the endpoint.
+    String projectKey = "projectKey_example"; // String | 
+    String environmentKey = "environmentKey_example"; // String | 
+    String sdkKeyKey = "sdkKeyKey_example"; // String | 
+    SdkKeyViewsPut sdkKeyViewsPut = new SdkKeyViewsPut(); // SdkKeyViewsPut | 
+    String expand = "expand_example"; // String | A comma-separated list of fields to expand in the response. Supported fields: `viewSummaries`.
+    try {
+      SdkKeyForPutSdkKeyViews result = apiInstance.putSdkKeyViews(ldAPIVersion, projectKey, environmentKey, sdkKeyKey, sdkKeyViewsPut, expand);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling SdkKeysBetaApi#putSdkKeyViews");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **ldAPIVersion** | **String**| Version of the endpoint. | [enum: beta] |
+| **projectKey** | **String**|  | |
+| **environmentKey** | **String**|  | |
+| **sdkKeyKey** | **String**|  | |
+| **sdkKeyViewsPut** | [**SdkKeyViewsPut**](SdkKeyViewsPut.md)|  | |
+| **expand** | **String**| A comma-separated list of fields to expand in the response. Supported fields: &#x60;viewSummaries&#x60;. | [optional] |
+
+### Return type
+
+[**SdkKeyForPutSdkKeyViews**](SdkKeyForPutSdkKeyViews.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+| **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not found |  -  |
 | **500** | Internal server error |  -  |
 

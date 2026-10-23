@@ -1210,7 +1210,7 @@ public class Example {
 
 Create segment
 
-Create a new segment.
+Create a new segment. The new segment has no individual targets or rules.  The request body only accepts the fields documented below. If you include targeting fields such as &#x60;included&#x60;, &#x60;excluded&#x60;, &#x60;includedContexts&#x60;, &#x60;excludedContexts&#x60;, or &#x60;rules&#x60;, LaunchDarkly ignores them and does not return an error. These fields are empty in the response.  To add individual targets or rules after you create the segment, use [Update segment](https://launchdarkly.com/docs/api/segments/patch-segment) with a semantic patch. For example, use the &#x60;addIncludedTargets&#x60; or &#x60;addExcludedTargets&#x60; instruction to add individual targets, and the &#x60;addRule&#x60; instruction to add a rule. For big segments, use the &#x60;addBigSegmentIncludedTargets&#x60; or &#x60;addBigSegmentExcludedTargets&#x60; instruction. 
 
 ### Example
 ```java

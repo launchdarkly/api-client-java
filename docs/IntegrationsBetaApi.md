@@ -163,7 +163,7 @@ null (empty response body)
 
 <a id="getAllIntegrationConfigurations"></a>
 # **getAllIntegrationConfigurations**
-> IntegrationConfigurationCollectionRep getAllIntegrationConfigurations(integrationKey)
+> IntegrationConfigurationCollectionRep getAllIntegrationConfigurations(integrationKey, includePending)
 
 Get all configurations for the integration
 
@@ -191,9 +191,10 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     IntegrationsBetaApi apiInstance = new IntegrationsBetaApi(defaultClient);
-    String integrationKey = "integrationKey_example"; // String | Integration key
+    String integrationKey = "integrationKey_example"; // String | A key that corresponds to the third-party integration you are configuring. For example, `mezmo`.
+    Boolean includePending = true; // Boolean | When `true`, includes pending two-step setup drafts that were created using `/setup` but are not yet finalized. Defaults to `false`, which returns only active configurations.
     try {
-      IntegrationConfigurationCollectionRep result = apiInstance.getAllIntegrationConfigurations(integrationKey);
+      IntegrationConfigurationCollectionRep result = apiInstance.getAllIntegrationConfigurations(integrationKey, includePending);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling IntegrationsBetaApi#getAllIntegrationConfigurations");
@@ -210,7 +211,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **integrationKey** | **String**| Integration key | |
+| **integrationKey** | **String**| A key that corresponds to the third-party integration you are configuring. For example, &#x60;mezmo&#x60;. | |
+| **includePending** | **Boolean**| When &#x60;true&#x60;, includes pending two-step setup drafts that were created using &#x60;/setup&#x60; but are not yet finalized. Defaults to &#x60;false&#x60;, which returns only active configurations. | [optional] |
 
 ### Return type
 

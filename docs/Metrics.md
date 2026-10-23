@@ -7,16 +7,16 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**inputTokens** | **Integer** |  |  [optional] |
-|**outputTokens** | **Integer** |  |  [optional] |
-|**totalTokens** | **Integer** |  |  [optional] |
+|**inputTokens** | **Integer** | Number of input tokens |  [optional] |
+|**outputTokens** | **Integer** | Number of output tokens |  [optional] |
+|**totalTokens** | **Integer** | Total number of tokens |  [optional] |
 |**generationCount** | **Integer** | Number of attempted generations |  [optional] |
 |**generationSuccessCount** | **Integer** | Number of successful generations |  [optional] |
 |**generationErrorCount** | **Integer** | Number of generations with errors |  [optional] |
-|**thumbsUp** | **Integer** |  |  [optional] |
-|**thumbsDown** | **Integer** |  |  [optional] |
-|**durationMs** | **Integer** |  |  [optional] |
-|**timeToFirstTokenMs** | **Integer** |  |  [optional] |
+|**thumbsUp** | **Integer** | Number of positive feedback ratings |  [optional] |
+|**thumbsDown** | **Integer** | Number of negative feedback ratings |  [optional] |
+|**durationMs** | **Integer** | Total generation duration, in milliseconds |  [optional] |
+|**timeToFirstTokenMs** | **Integer** | Time to the first token, in milliseconds |  [optional] |
 |**satisfactionRating** | **Float** | A value between 0 and 1 representing satisfaction rating |  [optional] |
 |**inputCost** | **Double** | Cost of input tokens in USD |  [optional] |
 |**outputCost** | **Double** | Cost of output tokens in USD |  [optional] |
